@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified B2cAuthenticationMethodsPolicy using POST.
         /// </summary>
         /// <param name="b2cAuthenticationMethodsPolicyToCreate">The B2cAuthenticationMethodsPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created B2cAuthenticationMethodsPolicy.</returns>
-        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> CreateAsync(B2cAuthenticationMethodsPolicy b2cAuthenticationMethodsPolicyToCreate);        /// <summary>
-        /// Creates the specified B2cAuthenticationMethodsPolicy using POST.
+        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> CreateAsync(B2cAuthenticationMethodsPolicy b2cAuthenticationMethodsPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified B2cAuthenticationMethodsPolicy using POST and returns a <see cref="GraphResponse{B2cAuthenticationMethodsPolicy}"/> object.
         /// </summary>
         /// <param name="b2cAuthenticationMethodsPolicyToCreate">The B2cAuthenticationMethodsPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created B2cAuthenticationMethodsPolicy.</returns>
-        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> CreateAsync(B2cAuthenticationMethodsPolicy b2cAuthenticationMethodsPolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified B2cAuthenticationMethodsPolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{B2cAuthenticationMethodsPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<B2cAuthenticationMethodsPolicy>> CreateResponseAsync(B2cAuthenticationMethodsPolicy b2cAuthenticationMethodsPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified B2cAuthenticationMethodsPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified B2cAuthenticationMethodsPolicy.
+        /// Deletes the specified B2cAuthenticationMethodsPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The B2cAuthenticationMethodsPolicy.</returns>
-        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified B2cAuthenticationMethodsPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The B2cAuthenticationMethodsPolicy.</returns>
-        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified B2cAuthenticationMethodsPolicy using PATCH.
+        /// Gets the specified B2cAuthenticationMethodsPolicy and returns a <see cref="GraphResponse{B2cAuthenticationMethodsPolicy}"/> object.
         /// </summary>
-        /// <param name="b2cAuthenticationMethodsPolicyToUpdate">The B2cAuthenticationMethodsPolicy to update.</param>
-        /// <returns>The updated B2cAuthenticationMethodsPolicy.</returns>
-        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> UpdateAsync(B2cAuthenticationMethodsPolicy b2cAuthenticationMethodsPolicyToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{B2cAuthenticationMethodsPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<B2cAuthenticationMethodsPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified B2cAuthenticationMethodsPolicy using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated B2cAuthenticationMethodsPolicy.</returns>
-        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> UpdateAsync(B2cAuthenticationMethodsPolicy b2cAuthenticationMethodsPolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> UpdateAsync(B2cAuthenticationMethodsPolicy b2cAuthenticationMethodsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified B2cAuthenticationMethodsPolicy using PATCH and returns a <see cref="GraphResponse{B2cAuthenticationMethodsPolicy}"/> object.
+        /// </summary>
+        /// <param name="b2cAuthenticationMethodsPolicyToUpdate">The B2cAuthenticationMethodsPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{B2cAuthenticationMethodsPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<B2cAuthenticationMethodsPolicy>> UpdateResponseAsync(B2cAuthenticationMethodsPolicy b2cAuthenticationMethodsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

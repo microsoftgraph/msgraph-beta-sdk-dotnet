@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AuthenticationContextClassReference using POST.
         /// </summary>
         /// <param name="authenticationContextClassReferenceToCreate">The AuthenticationContextClassReference to create.</param>
-        /// <returns>The created AuthenticationContextClassReference.</returns>
-        public System.Threading.Tasks.Task<AuthenticationContextClassReference> CreateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate)
-        {
-            return this.CreateAsync(authenticationContextClassReferenceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AuthenticationContextClassReference using POST.
-        /// </summary>
-        /// <param name="authenticationContextClassReferenceToCreate">The AuthenticationContextClassReference to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuthenticationContextClassReference.</returns>
-        public async System.Threading.Tasks.Task<AuthenticationContextClassReference> CreateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AuthenticationContextClassReference> CreateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AuthenticationContextClassReference>(authenticationContextClassReferenceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AuthenticationContextClassReference.
+        /// Creates the specified AuthenticationContextClassReference using POST and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="authenticationContextClassReferenceToCreate">The AuthenticationContextClassReference to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> CreateResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AuthenticationContextClassReference>(authenticationContextClassReferenceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AuthenticationContextClassReference>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AuthenticationContextClassReference.
+        /// Deletes the specified AuthenticationContextClassReference and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AuthenticationContextClassReference.</returns>
-        public System.Threading.Tasks.Task<AuthenticationContextClassReference> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AuthenticationContextClassReference.</returns>
-        public async System.Threading.Tasks.Task<AuthenticationContextClassReference> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AuthenticationContextClassReference> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AuthenticationContextClassReference>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AuthenticationContextClassReference using PATCH.
+        /// Gets the specified AuthenticationContextClassReference and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
         /// </summary>
-        /// <param name="authenticationContextClassReferenceToUpdate">The AuthenticationContextClassReference to update.</param>
-        /// <returns>The updated AuthenticationContextClassReference.</returns>
-        public System.Threading.Tasks.Task<AuthenticationContextClassReference> UpdateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(authenticationContextClassReferenceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AuthenticationContextClassReference>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AuthenticationContextClassReference.</returns>
-        public async System.Threading.Tasks.Task<AuthenticationContextClassReference> UpdateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AuthenticationContextClassReference> UpdateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (authenticationContextClassReferenceToUpdate.AdditionalData != null)
-			{
-				if (authenticationContextClassReferenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					authenticationContextClassReferenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationContextClassReferenceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (authenticationContextClassReferenceToUpdate.AdditionalData != null)
-            {
-                if (authenticationContextClassReferenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    authenticationContextClassReferenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationContextClassReferenceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AuthenticationContextClassReference>(authenticationContextClassReferenceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AuthenticationContextClassReference using PATCH and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
+        /// </summary>
+        /// <param name="authenticationContextClassReferenceToUpdate">The AuthenticationContextClassReference to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> UpdateResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AuthenticationContextClassReference>(authenticationContextClassReferenceToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified EducationCategory to the collection via POST.
-        /// </summary>
-        /// <param name="educationCategory">The EducationCategory to add.</param>
-        /// <returns>The created EducationCategory.</returns>
-        public System.Threading.Tasks.Task<EducationCategory> AddAsync(EducationCategory educationCategory)
-        {
-            return this.AddAsync(educationCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EducationCategory to the collection via POST.
         /// </summary>
         /// <param name="educationCategory">The EducationCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationCategory.</returns>
-        public System.Threading.Tasks.Task<EducationCategory> AddAsync(EducationCategory educationCategory, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<EducationCategory> AddAsync(EducationCategory educationCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<EducationCategory>(educationCategory, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified EducationCategory to the collection via POST and returns a <see cref="GraphResponse{EducationCategory}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IEducationClassAssignmentCategoriesCollectionPage> GetAsync()
+        /// <param name="educationCategory">The EducationCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationCategory>> AddResponseAsync(EducationCategory educationCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<EducationCategory>(educationCategory, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IEducationClassAssignmentCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IEducationClassAssignmentCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<EducationClassAssignmentCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EducationClassAssignmentCategoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationClassAssignmentCategoriesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationClassAssignmentCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<EducationClassAssignmentCategoriesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

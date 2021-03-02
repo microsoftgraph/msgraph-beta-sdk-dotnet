@@ -181,7 +181,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred single sign on mode.
-        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.
+        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
         /// </summary>
         [JsonPropertyName("preferredSingleSignOnMode")]
         public string PreferredSingleSignOnMode { get; set; }
@@ -271,14 +271,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app role assigned to.
-        /// Principals (users, groups, and service principals) that are assigned to this service principal. Read-only.
+        /// App role assignments for this app or service, granted to users, groups, and other service principals.
         /// </summary>
         [JsonPropertyName("appRoleAssignedTo")]
         public IServicePrincipalAppRoleAssignedToCollectionPage AppRoleAssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets app role assignments.
-        /// Applications that this service principal is assigned to. Read-only. Nullable.
+        /// App role assignment for another app or service, granted to this service principal.
         /// </summary>
         [JsonPropertyName("appRoleAssignments")]
         public IServicePrincipalAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }

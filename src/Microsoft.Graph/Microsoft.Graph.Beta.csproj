@@ -25,13 +25,13 @@
 - [Breaking change] Replace Newtosoft.Json with System.Text.Json
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>0.37.0</VersionPrefix>
+    <VersionPrefix>4.0.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->
     <!-- $(Prerelease).$(BUILD_BUILDID) -->
     <!-- <VersionSuffix Condition=" '$(Prerelease)' != '' ">$(Prerelease)</VersionSuffix> -->
-    <VersionSuffix>preview.netstandard2.0</VersionSuffix>
+    <VersionSuffix>preview</VersionSuffix>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
     <DocumentationFile>bin\Release\Microsoft.Graph.Beta.xml</DocumentationFile>
@@ -41,7 +41,7 @@
     <None Include=".\..\..\LICENSE.txt" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Core" Version="2.0.0-preview.4*" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="2.0.0-preview.7" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
     <Reference Include="System" />
@@ -52,7 +52,6 @@
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Exceptions\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 </Project>

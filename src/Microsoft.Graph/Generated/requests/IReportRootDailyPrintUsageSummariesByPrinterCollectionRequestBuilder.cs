@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         IReportRootDailyPrintUsageSummariesByPrinterCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IPrintUsageSummaryByPrinterRequestBuilder"/> for the specified PrintUsageSummaryByPrinter.
+        /// Gets an <see cref="IPrintUsageByPrinterRequestBuilder"/> for the specified PrintUsageByPrinter.
         /// </summary>
-        /// <param name="id">The ID for the PrintUsageSummaryByPrinter.</param>
-        /// <returns>The <see cref="IPrintUsageSummaryByPrinterRequestBuilder"/>.</returns>
-        IPrintUsageSummaryByPrinterRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the PrintUsageByPrinter.</param>
+        /// <returns>The <see cref="IPrintUsageByPrinterRequestBuilder"/>.</returns>
+        IPrintUsageByPrinterRequestBuilder this[string id] { get; }
 
         
     }

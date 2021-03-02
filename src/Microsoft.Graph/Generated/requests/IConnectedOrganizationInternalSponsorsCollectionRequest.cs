@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IConnectedOrganizationInternalSponsorsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DirectoryObject to the collection via POST.
-        /// </summary>
-        /// <param name="directoryObject">The DirectoryObject to add.</param>
-        /// <returns>The created DirectoryObject.</returns>
-        System.Threading.Tasks.Task<DirectoryObject> AddAsync(DirectoryObject directoryObject);
-
         /// <summary>
         /// Adds the specified DirectoryObject to the collection via POST.
         /// </summary>
         /// <param name="directoryObject">The DirectoryObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryObject.</returns>
-        System.Threading.Tasks.Task<DirectoryObject> AddAsync(DirectoryObject directoryObject, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DirectoryObject> AddAsync(DirectoryObject directoryObject, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DirectoryObject to the collection via POST and returns a <see cref="GraphResponse{DirectoryObject}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IConnectedOrganizationInternalSponsorsCollectionPage> GetAsync();
+        /// <param name="directoryObject">The DirectoryObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryObject>> AddResponseAsync(DirectoryObject directoryObject, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IConnectedOrganizationInternalSponsorsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IConnectedOrganizationInternalSponsorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ConnectedOrganizationInternalSponsorsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectedOrganizationInternalSponsorsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConnectedOrganizationInternalSponsorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

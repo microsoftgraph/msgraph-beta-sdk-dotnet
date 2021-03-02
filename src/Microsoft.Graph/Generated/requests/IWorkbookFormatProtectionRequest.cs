@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookFormatProtection using POST.
         /// </summary>
         /// <param name="workbookFormatProtectionToCreate">The WorkbookFormatProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookFormatProtection.</returns>
-        System.Threading.Tasks.Task<WorkbookFormatProtection> CreateAsync(WorkbookFormatProtection workbookFormatProtectionToCreate);        /// <summary>
-        /// Creates the specified WorkbookFormatProtection using POST.
+        System.Threading.Tasks.Task<WorkbookFormatProtection> CreateAsync(WorkbookFormatProtection workbookFormatProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified WorkbookFormatProtection using POST and returns a <see cref="GraphResponse{WorkbookFormatProtection}"/> object.
         /// </summary>
         /// <param name="workbookFormatProtectionToCreate">The WorkbookFormatProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WorkbookFormatProtection.</returns>
-        System.Threading.Tasks.Task<WorkbookFormatProtection> CreateAsync(WorkbookFormatProtection workbookFormatProtectionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookFormatProtection.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WorkbookFormatProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFormatProtection>> CreateResponseAsync(WorkbookFormatProtection workbookFormatProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkbookFormatProtection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified WorkbookFormatProtection.
+        /// Deletes the specified WorkbookFormatProtection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookFormatProtection.</returns>
-        System.Threading.Tasks.Task<WorkbookFormatProtection> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookFormatProtection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookFormatProtection.</returns>
-        System.Threading.Tasks.Task<WorkbookFormatProtection> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookFormatProtection> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified WorkbookFormatProtection using PATCH.
+        /// Gets the specified WorkbookFormatProtection and returns a <see cref="GraphResponse{WorkbookFormatProtection}"/> object.
         /// </summary>
-        /// <param name="workbookFormatProtectionToUpdate">The WorkbookFormatProtection to update.</param>
-        /// <returns>The updated WorkbookFormatProtection.</returns>
-        System.Threading.Tasks.Task<WorkbookFormatProtection> UpdateAsync(WorkbookFormatProtection workbookFormatProtectionToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFormatProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFormatProtection>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookFormatProtection using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookFormatProtection.</returns>
-        System.Threading.Tasks.Task<WorkbookFormatProtection> UpdateAsync(WorkbookFormatProtection workbookFormatProtectionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookFormatProtection> UpdateAsync(WorkbookFormatProtection workbookFormatProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WorkbookFormatProtection using PATCH and returns a <see cref="GraphResponse{WorkbookFormatProtection}"/> object.
+        /// </summary>
+        /// <param name="workbookFormatProtectionToUpdate">The WorkbookFormatProtection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookFormatProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFormatProtection>> UpdateResponseAsync(WorkbookFormatProtection workbookFormatProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

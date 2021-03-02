@@ -51,28 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for CompletedSteps.
+        /// Gets the request builder for Steps.
         /// </summary>
-        /// <returns>The <see cref="IApprovalCompletedStepsCollectionRequestBuilder"/>.</returns>
-        public IApprovalCompletedStepsCollectionRequestBuilder CompletedSteps
+        /// <returns>The <see cref="IApprovalStepsCollectionRequestBuilder"/>.</returns>
+        public IApprovalStepsCollectionRequestBuilder Steps
         {
             get
             {
-                return new ApprovalCompletedStepsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("completedSteps"), this.Client);
+                return new ApprovalStepsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("steps"), this.Client);
             }
         }
-
-        /// <summary>
-        /// Gets the request builder for PendingSteps.
-        /// </summary>
-        /// <returns>The <see cref="IApprovalPendingStepsCollectionRequestBuilder"/>.</returns>
-        public IApprovalPendingStepsCollectionRequestBuilder PendingSteps
-        {
-            get
-            {
-                return new ApprovalPendingStepsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("pendingSteps"), this.Client);
-            }
-        }
+    
+        
     
     }
 }

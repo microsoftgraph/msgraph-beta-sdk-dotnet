@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified CloudAppSecurityProfile using POST.
         /// </summary>
         /// <param name="cloudAppSecurityProfileToCreate">The CloudAppSecurityProfile to create.</param>
-        /// <returns>The created CloudAppSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<CloudAppSecurityProfile> CreateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate)
-        {
-            return this.CreateAsync(cloudAppSecurityProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CloudAppSecurityProfile using POST.
-        /// </summary>
-        /// <param name="cloudAppSecurityProfileToCreate">The CloudAppSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudAppSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<CloudAppSecurityProfile> CreateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CloudAppSecurityProfile> CreateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<CloudAppSecurityProfile>(cloudAppSecurityProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified CloudAppSecurityProfile.
+        /// Creates the specified CloudAppSecurityProfile using POST and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="cloudAppSecurityProfileToCreate">The CloudAppSecurityProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> CreateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<CloudAppSecurityProfile>(cloudAppSecurityProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<CloudAppSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified CloudAppSecurityProfile.
+        /// Deletes the specified CloudAppSecurityProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CloudAppSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<CloudAppSecurityProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CloudAppSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<CloudAppSecurityProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CloudAppSecurityProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<CloudAppSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified CloudAppSecurityProfile using PATCH.
+        /// Gets the specified CloudAppSecurityProfile and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
         /// </summary>
-        /// <param name="cloudAppSecurityProfileToUpdate">The CloudAppSecurityProfile to update.</param>
-        /// <returns>The updated CloudAppSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<CloudAppSecurityProfile> UpdateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(cloudAppSecurityProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<CloudAppSecurityProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CloudAppSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<CloudAppSecurityProfile> UpdateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CloudAppSecurityProfile> UpdateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (cloudAppSecurityProfileToUpdate.AdditionalData != null)
-			{
-				if (cloudAppSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					cloudAppSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudAppSecurityProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (cloudAppSecurityProfileToUpdate.AdditionalData != null)
-            {
-                if (cloudAppSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    cloudAppSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudAppSecurityProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<CloudAppSecurityProfile>(cloudAppSecurityProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CloudAppSecurityProfile using PATCH and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="cloudAppSecurityProfileToUpdate">The CloudAppSecurityProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> UpdateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<CloudAppSecurityProfile>(cloudAppSecurityProfileToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -185,12 +185,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AcceptedSenders.
         /// </summary>
-        /// <returns>The <see cref="IGroupAcceptedSendersCollectionRequestBuilder"/>.</returns>
-        public IGroupAcceptedSendersCollectionRequestBuilder AcceptedSenders
+        /// <returns>The <see cref="IGroupAcceptedSendersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IGroupAcceptedSendersCollectionWithReferencesRequestBuilder AcceptedSenders
         {
             get
             {
-                return new GroupAcceptedSendersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("acceptedSenders"), this.Client);
+                return new GroupAcceptedSendersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("acceptedSenders"), this.Client);
             }
         }
 
@@ -243,38 +243,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Photo.
-        /// </summary>
-        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
-        public IProfilePhotoRequestBuilder Photo
-        {
-            get
-            {
-                return new ProfilePhotoRequestBuilder(this.AppendSegmentToRequestUrl("photo"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Photos.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPhotosCollectionRequestBuilder"/>.</returns>
-        public IGroupPhotosCollectionRequestBuilder Photos
-        {
-            get
-            {
-                return new GroupPhotosCollectionRequestBuilder(this.AppendSegmentToRequestUrl("photos"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for RejectedSenders.
         /// </summary>
-        /// <returns>The <see cref="IGroupRejectedSendersCollectionRequestBuilder"/>.</returns>
-        public IGroupRejectedSendersCollectionRequestBuilder RejectedSenders
+        /// <returns>The <see cref="IGroupRejectedSendersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IGroupRejectedSendersCollectionWithReferencesRequestBuilder RejectedSenders
         {
             get
             {
-                return new GroupRejectedSendersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rejectedSenders"), this.Client);
+                return new GroupRejectedSendersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("rejectedSenders"), this.Client);
             }
         }
 
@@ -371,6 +347,30 @@ namespace Microsoft.Graph
             get
             {
                 return new OnenoteRequestBuilder(this.AppendSegmentToRequestUrl("onenote"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Photo.
+        /// </summary>
+        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
+        public IProfilePhotoRequestBuilder Photo
+        {
+            get
+            {
+                return new ProfilePhotoRequestBuilder(this.AppendSegmentToRequestUrl("photo"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Photos.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPhotosCollectionRequestBuilder"/>.</returns>
+        public IGroupPhotosCollectionRequestBuilder Photos
+        {
+            get
+            {
+                return new GroupPhotosCollectionRequestBuilder(this.AppendSegmentToRequestUrl("photos"), this.Client);
             }
         }
 

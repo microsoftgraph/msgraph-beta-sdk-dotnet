@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserExperienceAnalyticsRegressionSummaryOperatingSystemRegressionCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsMetric to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsMetric">The UserExperienceAnalyticsMetric to add.</param>
-        /// <returns>The created UserExperienceAnalyticsMetric.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> AddAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric);
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsMetric to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsMetric">The UserExperienceAnalyticsMetric to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsMetric.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> AddAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> AddAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UserExperienceAnalyticsMetric to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserExperienceAnalyticsRegressionSummaryOperatingSystemRegressionCollectionPage> GetAsync();
+        /// <param name="userExperienceAnalyticsMetric">The UserExperienceAnalyticsMetric to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> AddResponseAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserExperienceAnalyticsRegressionSummaryOperatingSystemRegressionCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IUserExperienceAnalyticsRegressionSummaryOperatingSystemRegressionCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummaryOperatingSystemRegressionCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummaryOperatingSystemRegressionCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummaryOperatingSystemRegressionCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

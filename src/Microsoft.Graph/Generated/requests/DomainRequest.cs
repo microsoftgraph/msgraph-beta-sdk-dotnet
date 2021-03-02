@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Domain using POST.
         /// </summary>
         /// <param name="domainToCreate">The Domain to create.</param>
-        /// <returns>The created Domain.</returns>
-        public System.Threading.Tasks.Task<Domain> CreateAsync(Domain domainToCreate)
-        {
-            return this.CreateAsync(domainToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Domain using POST.
-        /// </summary>
-        /// <param name="domainToCreate">The Domain to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Domain.</returns>
-        public async System.Threading.Tasks.Task<Domain> CreateAsync(Domain domainToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Domain> CreateAsync(Domain domainToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Domain>(domainToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Domain.
+        /// Creates the specified Domain using POST and returns a <see cref="GraphResponse{Domain}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="domainToCreate">The Domain to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Domain>> CreateResponseAsync(Domain domainToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Domain>(domainToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Domain>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Domain.
+        /// Deletes the specified Domain and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Domain.</returns>
-        public System.Threading.Tasks.Task<Domain> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Domain.</returns>
-        public async System.Threading.Tasks.Task<Domain> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Domain> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Domain>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Domain using PATCH.
+        /// Gets the specified Domain and returns a <see cref="GraphResponse{Domain}"/> object.
         /// </summary>
-        /// <param name="domainToUpdate">The Domain to update.</param>
-        /// <returns>The updated Domain.</returns>
-        public System.Threading.Tasks.Task<Domain> UpdateAsync(Domain domainToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Domain>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(domainToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Domain>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Domain.</returns>
-        public async System.Threading.Tasks.Task<Domain> UpdateAsync(Domain domainToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Domain> UpdateAsync(Domain domainToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (domainToUpdate.AdditionalData != null)
-			{
-				if (domainToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					domainToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (domainToUpdate.AdditionalData != null)
-            {
-                if (domainToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    domainToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Domain>(domainToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Domain using PATCH and returns a <see cref="GraphResponse{Domain}"/> object.
+        /// </summary>
+        /// <param name="domainToUpdate">The Domain to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Domain>> UpdateResponseAsync(Domain domainToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Domain>(domainToUpdate, cancellationToken);
         }
 
         /// <summary>

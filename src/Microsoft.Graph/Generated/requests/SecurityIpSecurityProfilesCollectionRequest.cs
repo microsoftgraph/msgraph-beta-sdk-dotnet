@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified IpSecurityProfile to the collection via POST.
-        /// </summary>
-        /// <param name="ipSecurityProfile">The IpSecurityProfile to add.</param>
-        /// <returns>The created IpSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<IpSecurityProfile> AddAsync(IpSecurityProfile ipSecurityProfile)
-        {
-            return this.AddAsync(ipSecurityProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified IpSecurityProfile to the collection via POST.
         /// </summary>
         /// <param name="ipSecurityProfile">The IpSecurityProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IpSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<IpSecurityProfile> AddAsync(IpSecurityProfile ipSecurityProfile, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<IpSecurityProfile> AddAsync(IpSecurityProfile ipSecurityProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<IpSecurityProfile>(ipSecurityProfile, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified IpSecurityProfile to the collection via POST and returns a <see cref="GraphResponse{IpSecurityProfile}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISecurityIpSecurityProfilesCollectionPage> GetAsync()
+        /// <param name="ipSecurityProfile">The IpSecurityProfile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IpSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IpSecurityProfile>> AddResponseAsync(IpSecurityProfile ipSecurityProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IpSecurityProfile>(ipSecurityProfile, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISecurityIpSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISecurityIpSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<SecurityIpSecurityProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityIpSecurityProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityIpSecurityProfilesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityIpSecurityProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SecurityIpSecurityProfilesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified SalesCreditMemoLine using POST.
         /// </summary>
         /// <param name="salesCreditMemoLineToCreate">The SalesCreditMemoLine to create.</param>
-        /// <returns>The created SalesCreditMemoLine.</returns>
-        public System.Threading.Tasks.Task<SalesCreditMemoLine> CreateAsync(SalesCreditMemoLine salesCreditMemoLineToCreate)
-        {
-            return this.CreateAsync(salesCreditMemoLineToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SalesCreditMemoLine using POST.
-        /// </summary>
-        /// <param name="salesCreditMemoLineToCreate">The SalesCreditMemoLine to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesCreditMemoLine.</returns>
-        public async System.Threading.Tasks.Task<SalesCreditMemoLine> CreateAsync(SalesCreditMemoLine salesCreditMemoLineToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SalesCreditMemoLine> CreateAsync(SalesCreditMemoLine salesCreditMemoLineToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SalesCreditMemoLine>(salesCreditMemoLineToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified SalesCreditMemoLine.
+        /// Creates the specified SalesCreditMemoLine using POST and returns a <see cref="GraphResponse{SalesCreditMemoLine}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="salesCreditMemoLineToCreate">The SalesCreditMemoLine to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesCreditMemoLine}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> CreateResponseAsync(SalesCreditMemoLine salesCreditMemoLineToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SalesCreditMemoLine>(salesCreditMemoLineToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SalesCreditMemoLine>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified SalesCreditMemoLine.
+        /// Deletes the specified SalesCreditMemoLine and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SalesCreditMemoLine.</returns>
-        public System.Threading.Tasks.Task<SalesCreditMemoLine> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SalesCreditMemoLine.</returns>
-        public async System.Threading.Tasks.Task<SalesCreditMemoLine> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SalesCreditMemoLine> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<SalesCreditMemoLine>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified SalesCreditMemoLine using PATCH.
+        /// Gets the specified SalesCreditMemoLine and returns a <see cref="GraphResponse{SalesCreditMemoLine}"/> object.
         /// </summary>
-        /// <param name="salesCreditMemoLineToUpdate">The SalesCreditMemoLine to update.</param>
-        /// <returns>The updated SalesCreditMemoLine.</returns>
-        public System.Threading.Tasks.Task<SalesCreditMemoLine> UpdateAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesCreditMemoLine}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(salesCreditMemoLineToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SalesCreditMemoLine>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SalesCreditMemoLine.</returns>
-        public async System.Threading.Tasks.Task<SalesCreditMemoLine> UpdateAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SalesCreditMemoLine> UpdateAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (salesCreditMemoLineToUpdate.AdditionalData != null)
-			{
-				if (salesCreditMemoLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					salesCreditMemoLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesCreditMemoLineToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (salesCreditMemoLineToUpdate.AdditionalData != null)
-            {
-                if (salesCreditMemoLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    salesCreditMemoLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesCreditMemoLineToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SalesCreditMemoLine>(salesCreditMemoLineToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SalesCreditMemoLine using PATCH and returns a <see cref="GraphResponse{SalesCreditMemoLine}"/> object.
+        /// </summary>
+        /// <param name="salesCreditMemoLineToUpdate">The SalesCreditMemoLine to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SalesCreditMemoLine}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> UpdateResponseAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SalesCreditMemoLine>(salesCreditMemoLineToUpdate, cancellationToken);
         }
 
         /// <summary>

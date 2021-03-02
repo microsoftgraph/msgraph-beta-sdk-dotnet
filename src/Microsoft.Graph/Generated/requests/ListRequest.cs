@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified List using POST.
         /// </summary>
         /// <param name="listToCreate">The List to create.</param>
-        /// <returns>The created List.</returns>
-        public System.Threading.Tasks.Task<List> CreateAsync(List listToCreate)
-        {
-            return this.CreateAsync(listToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified List using POST.
-        /// </summary>
-        /// <param name="listToCreate">The List to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created List.</returns>
-        public async System.Threading.Tasks.Task<List> CreateAsync(List listToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<List> CreateAsync(List listToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<List>(listToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified List.
+        /// Creates the specified List using POST and returns a <see cref="GraphResponse{List}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="listToCreate">The List to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{List}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<List>> CreateResponseAsync(List listToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<List>(listToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<List>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified List.
+        /// Deletes the specified List and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The List.</returns>
-        public System.Threading.Tasks.Task<List> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The List.</returns>
-        public async System.Threading.Tasks.Task<List> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<List> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<List>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified List using PATCH.
+        /// Gets the specified List and returns a <see cref="GraphResponse{List}"/> object.
         /// </summary>
-        /// <param name="listToUpdate">The List to update.</param>
-        /// <returns>The updated List.</returns>
-        public System.Threading.Tasks.Task<List> UpdateAsync(List listToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{List}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<List>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(listToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<List>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated List.</returns>
-        public async System.Threading.Tasks.Task<List> UpdateAsync(List listToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<List> UpdateAsync(List listToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (listToUpdate.AdditionalData != null)
-			{
-				if (listToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					listToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, listToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (listToUpdate.AdditionalData != null)
-            {
-                if (listToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    listToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, listToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<List>(listToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified List using PATCH and returns a <see cref="GraphResponse{List}"/> object.
+        /// </summary>
+        /// <param name="listToUpdate">The List to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{List}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<List>> UpdateResponseAsync(List listToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<List>(listToUpdate, cancellationToken);
         }
 
         /// <summary>

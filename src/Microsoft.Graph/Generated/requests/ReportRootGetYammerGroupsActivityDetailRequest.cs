@@ -34,20 +34,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the GET request.
         /// </summary>
-        public System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Issues the GET request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> GetAsync(
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -74,16 +66,17 @@ namespace Microsoft.Graph
             return null;
         }
 
-
         /// <summary>
-        /// Issues the PATCH request.
+        /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="yammergroupsactivitydetail">The YammerGroupsActivityDetail object set with the properties to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> PatchAsync(YammerGroupsActivityDetail yammergroupsactivitydetail)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.PatchAsync(yammergroupsactivitydetail, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(null, cancellationToken);
         }
+
 
         /// <summary>
         /// Issues the PATCH request.
@@ -92,9 +85,9 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> PatchAsync(YammerGroupsActivityDetail yammergroupsactivitydetail, 
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
+            this.Method = HttpMethods.PATCH;
             var response = await this.SendAsync<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(yammergroupsactivitydetail, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -119,16 +112,18 @@ namespace Microsoft.Graph
             }
 
             return null;
-        }        
+        }
 
         /// <summary>
-        /// Issues the PUT request.
+        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="yammergroupsactivitydetail">The YammerGroupsActivityDetail object to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> PutAsync(YammerGroupsActivityDetail yammergroupsactivitydetail)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="yammergroupsactivitydetail">The YammerGroupsActivityDetail object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>> PatchResponseAsync(YammerGroupsActivityDetail yammergroupsactivitydetail, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.PutAsync(yammergroupsactivitydetail, CancellationToken.None);
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(yammergroupsactivitydetail, cancellationToken);
         }
 
         /// <summary>
@@ -138,9 +133,9 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> PutAsync(YammerGroupsActivityDetail yammergroupsactivitydetail, 
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
+            this.Method = HttpMethods.PUT;
             var response = await this.SendAsync<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(yammergroupsactivitydetail, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -165,7 +160,19 @@ namespace Microsoft.Graph
             }
 
             return null;
-        }        
+        }
+
+        /// <summary>
+        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="yammergroupsactivitydetail">The YammerGroupsActivityDetail object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>> PutResponseAsync(YammerGroupsActivityDetail yammergroupsactivitydetail, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(yammergroupsactivitydetail, cancellationToken);
+        }
 
         /// <summary>
         /// Adds the specified expand value to the request.

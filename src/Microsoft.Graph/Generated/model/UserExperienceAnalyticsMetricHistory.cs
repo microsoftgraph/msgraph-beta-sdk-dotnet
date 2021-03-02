@@ -29,11 +29,25 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets device id.
+        /// The user experience analytics device id.
+        /// </summary>
+        [JsonPropertyName("deviceId")]
+        public string DeviceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets metric date time.
         /// The user experience analytics metric date time.
         /// </summary>
         [JsonPropertyName("metricDateTime")]
         public DateTimeOffset? MetricDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets metric type.
+        /// The user experience analytics metric type.
+        /// </summary>
+        [JsonPropertyName("metricType")]
+        public string MetricType { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics metric.

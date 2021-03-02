@@ -28,6 +28,20 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.authenticationMethodTarget";
         }
 	
+        /// <summary>
+        /// Gets or sets is registration required.
+        /// Determines if the user is enforced to register the authentication method.
+        /// </summary>
+        [JsonPropertyName("isRegistrationRequired")]
+        public bool? IsRegistrationRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target type.
+        /// Possible values are: user, group.
+        /// </summary>
+        [JsonPropertyName("targetType")]
+        public AuthenticationMethodTargetType? TargetType { get; set; }
+    
     }
 }
 

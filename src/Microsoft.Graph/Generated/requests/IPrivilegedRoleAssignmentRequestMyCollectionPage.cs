@@ -15,7 +15,7 @@ namespace Microsoft.Graph
     /// The interface IPrivilegedRoleAssignmentRequestMyCollectionPage.
     /// </summary>
     [InterfaceConverter(typeof(InterfaceConverter<PrivilegedRoleAssignmentRequestMyCollectionPage>))]
-    public interface IPrivilegedRoleAssignmentRequestMyCollectionPage : ICollectionPage<PrivilegedRoleAssignmentRequest>
+    public interface IPrivilegedRoleAssignmentRequestMyCollectionPage : ICollectionPage<PrivilegedRoleAssignmentRequestObject>
     {
         /// <summary>
         /// Gets the next page <see cref="IPrivilegedRoleAssignmentRequestMyRequest"/> instance.

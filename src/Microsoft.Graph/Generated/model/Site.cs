@@ -98,6 +98,12 @@ namespace Microsoft.Graph
         public ISiteDrivesCollectionPage Drives { get; set; }
     
         /// <summary>
+        /// Gets or sets external columns.
+        /// </summary>
+        [JsonPropertyName("externalColumns")]
+        public ISiteExternalColumnsCollectionWithReferencesPage ExternalColumns { get; set; }
+    
+        /// <summary>
         /// Gets or sets items.
         /// Used to address any item contained in this site. This collection cannot be enumerated.
         /// </summary>
@@ -117,6 +123,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("pages")]
         public ISitePagesCollectionPage Pages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets permissions.
+        /// The permissions associated with the site. Nullable.
+        /// </summary>
+        [JsonPropertyName("permissions")]
+        public ISitePermissionsCollectionPage Permissions { get; set; }
     
         /// <summary>
         /// Gets or sets sites.

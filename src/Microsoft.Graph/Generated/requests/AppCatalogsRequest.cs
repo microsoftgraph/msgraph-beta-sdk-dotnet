@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AppCatalogs using POST.
         /// </summary>
         /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
-        /// <returns>The created AppCatalogs.</returns>
-        public System.Threading.Tasks.Task<AppCatalogs> CreateAsync(AppCatalogs appCatalogsToCreate)
-        {
-            return this.CreateAsync(appCatalogsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AppCatalogs using POST.
-        /// </summary>
-        /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppCatalogs.</returns>
-        public async System.Threading.Tasks.Task<AppCatalogs> CreateAsync(AppCatalogs appCatalogsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppCatalogs> CreateAsync(AppCatalogs appCatalogsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AppCatalogs>(appCatalogsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AppCatalogs.
+        /// Creates the specified AppCatalogs using POST and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> CreateResponseAsync(AppCatalogs appCatalogsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AppCatalogs>(appCatalogsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AppCatalogs>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AppCatalogs.
+        /// Deletes the specified AppCatalogs and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AppCatalogs.</returns>
-        public System.Threading.Tasks.Task<AppCatalogs> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppCatalogs.</returns>
-        public async System.Threading.Tasks.Task<AppCatalogs> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppCatalogs> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AppCatalogs>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AppCatalogs using PATCH.
+        /// Gets the specified AppCatalogs and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
         /// </summary>
-        /// <param name="appCatalogsToUpdate">The AppCatalogs to update.</param>
-        /// <returns>The updated AppCatalogs.</returns>
-        public System.Threading.Tasks.Task<AppCatalogs> UpdateAsync(AppCatalogs appCatalogsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(appCatalogsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AppCatalogs>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AppCatalogs.</returns>
-        public async System.Threading.Tasks.Task<AppCatalogs> UpdateAsync(AppCatalogs appCatalogsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppCatalogs> UpdateAsync(AppCatalogs appCatalogsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (appCatalogsToUpdate.AdditionalData != null)
-			{
-				if (appCatalogsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					appCatalogsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appCatalogsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (appCatalogsToUpdate.AdditionalData != null)
-            {
-                if (appCatalogsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    appCatalogsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appCatalogsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AppCatalogs>(appCatalogsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AppCatalogs using PATCH and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="appCatalogsToUpdate">The AppCatalogs to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> UpdateResponseAsync(AppCatalogs appCatalogsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AppCatalogs>(appCatalogsToUpdate, cancellationToken);
         }
 
         /// <summary>

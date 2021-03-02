@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Room to the collection via POST.
-        /// </summary>
-        /// <param name="room">The Room to add.</param>
-        /// <returns>The created Room.</returns>
-        public System.Threading.Tasks.Task<Room> AddAsync(Room room)
-        {
-            return this.AddAsync(room, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Room to the collection via POST.
         /// </summary>
         /// <param name="room">The Room to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Room.</returns>
-        public System.Threading.Tasks.Task<Room> AddAsync(Room room, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Room> AddAsync(Room room, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<Room>(room, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Room to the collection via POST and returns a <see cref="GraphResponse{Room}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IRoomListRoomsCollectionPage> GetAsync()
+        /// <param name="room">The Room to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Room>> AddResponseAsync(Room room, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Room>(room, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IRoomListRoomsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IRoomListRoomsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<RoomListRoomsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{RoomListRoomsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoomListRoomsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoomListRoomsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<RoomListRoomsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

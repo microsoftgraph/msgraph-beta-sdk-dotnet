@@ -225,7 +225,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last password change date time.
-        /// The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' Returned only on $select.
+        /// The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is '2014-01-01T00:00:00Z' Returned only on $select. Read-only.
         /// </summary>
         [JsonPropertyName("lastPasswordChangeDateTime")]
         public DateTimeOffset? LastPasswordChangeDateTime { get; set; }
@@ -246,7 +246,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the user, for example, 'jeff@contoso.onmicrosoft.com'. Returned by default. Supports $filter.
+        /// The SMTP address for the user, for example, 'jeff@contoso.onmicrosoft.com'. Returned by default. Supports $filter and endsWith.
         /// </summary>
         [JsonPropertyName("mail")]
         public string Mail { get; set; }
@@ -302,7 +302,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned only on $select. Read-only.
+        /// Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is '2014-01-01T00:00:00Z'. Returned only on $select. Read-only.
         /// </summary>
         [JsonPropertyName("onPremisesLastSyncDateTime")]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
@@ -449,7 +449,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter and $orderby.
+        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter, $orderby, and endsWith.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
@@ -484,14 +484,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets birthday.
-        /// The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' Returned only on $select.
+        /// The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is '2014-01-01T00:00:00Z' Returned only on $select.
         /// </summary>
         [JsonPropertyName("birthday")]
         public DateTimeOffset? Birthday { get; set; }
     
         /// <summary>
         /// Gets or sets hire date.
-        /// The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+        /// The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is '2014-01-01T00:00:00Z'. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
         /// </summary>
         [JsonPropertyName("hireDate")]
         public DateTimeOffset? HireDate { get; set; }
@@ -552,6 +552,12 @@ namespace Microsoft.Graph
         public UserAnalytics Analytics { get; set; }
     
         /// <summary>
+        /// Gets or sets usage rights.
+        /// </summary>
+        [JsonPropertyName("usageRights")]
+        public IUserUsageRightsCollectionPage UsageRights { get; set; }
+    
+        /// <summary>
         /// Gets or sets information protection.
         /// </summary>
         [JsonPropertyName("informationProtection")]
@@ -559,6 +565,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app role assignments.
+        /// Represents the app roles a user has been granted for an application.
         /// </summary>
         [JsonPropertyName("appRoleAssignments")]
         public IUserAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
@@ -724,20 +731,6 @@ namespace Microsoft.Graph
         public IUserPeopleCollectionPage People { get; set; }
     
         /// <summary>
-        /// Gets or sets photo.
-        /// The user's profile photo. Read-only.
-        /// </summary>
-        [JsonPropertyName("photo")]
-        public ProfilePhoto Photo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets photos.
-        /// Read-only. Nullable.
-        /// </summary>
-        [JsonPropertyName("photos")]
-        public IUserPhotosCollectionPage Photos { get; set; }
-    
-        /// <summary>
         /// Gets or sets drive.
         /// The user's OneDrive. Read-only.
         /// </summary>
@@ -872,6 +865,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("onenote")]
         public Onenote Onenote { get; set; }
+    
+        /// <summary>
+        /// Gets or sets photo.
+        /// The user's profile photo. Read-only.
+        /// </summary>
+        [JsonPropertyName("photo")]
+        public ProfilePhoto Photo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets photos.
+        /// Read-only. Nullable.
+        /// </summary>
+        [JsonPropertyName("photos")]
+        public IUserPhotosCollectionPage Photos { get; set; }
     
         /// <summary>
         /// Gets or sets profile.

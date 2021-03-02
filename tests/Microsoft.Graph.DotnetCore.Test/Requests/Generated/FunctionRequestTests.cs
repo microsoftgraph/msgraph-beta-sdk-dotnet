@@ -33,7 +33,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var deltaRequest = deltaRequestBuilder.Request() as DriveItemDeltaRequest;
             Assert.NotNull(deltaRequest);
             Assert.Equal(new Uri(expectedRequestUrl), new Uri(deltaRequest.RequestUrl));
-            Assert.Equal("GET", deltaRequest.Method);
+            Assert.Equal("GET", deltaRequest.Method.ToString());
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var searchRequest = searchRequestBuilder.Request() as DriveItemSearchRequest;
             Assert.NotNull(searchRequest);
             Assert.Equal(new Uri(expectedRequestUrl), new Uri(searchRequest.RequestUrl));
-            Assert.Equal("GET", searchRequest.Method);
+            Assert.Equal("GET", searchRequest.Method.ToString());
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var searchRequest = searchRequestBuilder.Request() as DriveItemSearchRequest;
             Assert.NotNull(searchRequest);
             Assert.Equal(new Uri(expectedRequestUrl), new Uri(searchRequest.RequestUrl));
-            Assert.Equal("GET", searchRequest.Method);
+            Assert.Equal("GET", searchRequest.Method.ToString());
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var reminderViewRequest = reminderViewRequestBuilder.Request() as UserReminderViewRequest;
             Assert.NotNull(reminderViewRequest);
             Assert.Equal(new Uri(expectedRequestUrl), new Uri(reminderViewRequest.RequestUrl));
-            Assert.Equal("GET", reminderViewRequest.Method);
+            Assert.Equal("GET", reminderViewRequest.Method.ToString());
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var reminderViewRequest = reminderViewRequestBuilder.Request() as UserReminderViewRequest;
             Assert.NotNull(reminderViewRequest);
             Assert.Equal(new Uri(expectedRequestUrl), new Uri(reminderViewRequest.RequestUrl));
-            Assert.Equal("GET", reminderViewRequest.Method);
+            Assert.Equal("GET", reminderViewRequest.Method.ToString());
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 };
 
                 this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<UserReminderViewCollectionResponse>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<UserReminderViewCollectionResponse>(It.IsAny<Stream>()))
                     .Returns(userReminderViewCollectionResponse);
 
                 var returnedCollectionPage = await this.graphServiceClient.Me.ReminderView("now", "later").Request().GetAsync() as UserReminderViewCollectionPage;

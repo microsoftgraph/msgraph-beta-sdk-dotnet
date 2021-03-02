@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookChartGridlinesFormat using POST.
         /// </summary>
         /// <param name="workbookChartGridlinesFormatToCreate">The WorkbookChartGridlinesFormat to create.</param>
-        /// <returns>The created WorkbookChartGridlinesFormat.</returns>
-        public System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> CreateAsync(WorkbookChartGridlinesFormat workbookChartGridlinesFormatToCreate)
-        {
-            return this.CreateAsync(workbookChartGridlinesFormatToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookChartGridlinesFormat using POST.
-        /// </summary>
-        /// <param name="workbookChartGridlinesFormatToCreate">The WorkbookChartGridlinesFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartGridlinesFormat.</returns>
-        public async System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> CreateAsync(WorkbookChartGridlinesFormat workbookChartGridlinesFormatToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> CreateAsync(WorkbookChartGridlinesFormat workbookChartGridlinesFormatToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WorkbookChartGridlinesFormat>(workbookChartGridlinesFormatToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WorkbookChartGridlinesFormat.
+        /// Creates the specified WorkbookChartGridlinesFormat using POST and returns a <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="workbookChartGridlinesFormatToCreate">The WorkbookChartGridlinesFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartGridlinesFormat>> CreateResponseAsync(WorkbookChartGridlinesFormat workbookChartGridlinesFormatToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkbookChartGridlinesFormat>(workbookChartGridlinesFormatToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WorkbookChartGridlinesFormat>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WorkbookChartGridlinesFormat.
+        /// Deletes the specified WorkbookChartGridlinesFormat and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookChartGridlinesFormat.</returns>
-        public System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartGridlinesFormat.</returns>
-        public async System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WorkbookChartGridlinesFormat>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WorkbookChartGridlinesFormat using PATCH.
+        /// Gets the specified WorkbookChartGridlinesFormat and returns a <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object.
         /// </summary>
-        /// <param name="workbookChartGridlinesFormatToUpdate">The WorkbookChartGridlinesFormat to update.</param>
-        /// <returns>The updated WorkbookChartGridlinesFormat.</returns>
-        public System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> UpdateAsync(WorkbookChartGridlinesFormat workbookChartGridlinesFormatToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartGridlinesFormat>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(workbookChartGridlinesFormatToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkbookChartGridlinesFormat>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartGridlinesFormat.</returns>
-        public async System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> UpdateAsync(WorkbookChartGridlinesFormat workbookChartGridlinesFormatToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> UpdateAsync(WorkbookChartGridlinesFormat workbookChartGridlinesFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookChartGridlinesFormatToUpdate.AdditionalData != null)
-			{
-				if (workbookChartGridlinesFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookChartGridlinesFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartGridlinesFormatToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookChartGridlinesFormatToUpdate.AdditionalData != null)
-            {
-                if (workbookChartGridlinesFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookChartGridlinesFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartGridlinesFormatToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WorkbookChartGridlinesFormat>(workbookChartGridlinesFormatToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookChartGridlinesFormat using PATCH and returns a <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartGridlinesFormatToUpdate">The WorkbookChartGridlinesFormat to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartGridlinesFormat>> UpdateResponseAsync(WorkbookChartGridlinesFormat workbookChartGridlinesFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WorkbookChartGridlinesFormat>(workbookChartGridlinesFormatToUpdate, cancellationToken);
         }
 
         /// <summary>

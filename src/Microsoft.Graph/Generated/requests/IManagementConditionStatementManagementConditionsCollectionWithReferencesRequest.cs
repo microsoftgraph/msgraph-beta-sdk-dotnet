@@ -20,18 +20,20 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IManagementConditionStatementManagementConditionsCollectionWithReferencesRequest : IBaseRequest
     {
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagementConditionStatementManagementConditionsCollectionWithReferencesPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagementConditionStatementManagementConditionsCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IManagementConditionStatementManagementConditionsCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

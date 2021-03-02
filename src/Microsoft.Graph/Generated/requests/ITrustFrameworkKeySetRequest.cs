@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified TrustFrameworkKeySet using POST.
         /// </summary>
         /// <param name="trustFrameworkKeySetToCreate">The TrustFrameworkKeySet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TrustFrameworkKeySet.</returns>
-        System.Threading.Tasks.Task<TrustFrameworkKeySet> CreateAsync(TrustFrameworkKeySet trustFrameworkKeySetToCreate);        /// <summary>
-        /// Creates the specified TrustFrameworkKeySet using POST.
+        System.Threading.Tasks.Task<TrustFrameworkKeySet> CreateAsync(TrustFrameworkKeySet trustFrameworkKeySetToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified TrustFrameworkKeySet using POST and returns a <see cref="GraphResponse{TrustFrameworkKeySet}"/> object.
         /// </summary>
         /// <param name="trustFrameworkKeySetToCreate">The TrustFrameworkKeySet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TrustFrameworkKeySet.</returns>
-        System.Threading.Tasks.Task<TrustFrameworkKeySet> CreateAsync(TrustFrameworkKeySet trustFrameworkKeySetToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TrustFrameworkKeySet.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TrustFrameworkKeySet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySet>> CreateResponseAsync(TrustFrameworkKeySet trustFrameworkKeySetToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified TrustFrameworkKeySet.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified TrustFrameworkKeySet.
+        /// Deletes the specified TrustFrameworkKeySet and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TrustFrameworkKeySet.</returns>
-        System.Threading.Tasks.Task<TrustFrameworkKeySet> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TrustFrameworkKeySet.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TrustFrameworkKeySet.</returns>
-        System.Threading.Tasks.Task<TrustFrameworkKeySet> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TrustFrameworkKeySet> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified TrustFrameworkKeySet using PATCH.
+        /// Gets the specified TrustFrameworkKeySet and returns a <see cref="GraphResponse{TrustFrameworkKeySet}"/> object.
         /// </summary>
-        /// <param name="trustFrameworkKeySetToUpdate">The TrustFrameworkKeySet to update.</param>
-        /// <returns>The updated TrustFrameworkKeySet.</returns>
-        System.Threading.Tasks.Task<TrustFrameworkKeySet> UpdateAsync(TrustFrameworkKeySet trustFrameworkKeySetToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TrustFrameworkKeySet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySet>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TrustFrameworkKeySet using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TrustFrameworkKeySet.</returns>
-        System.Threading.Tasks.Task<TrustFrameworkKeySet> UpdateAsync(TrustFrameworkKeySet trustFrameworkKeySetToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TrustFrameworkKeySet> UpdateAsync(TrustFrameworkKeySet trustFrameworkKeySetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TrustFrameworkKeySet using PATCH and returns a <see cref="GraphResponse{TrustFrameworkKeySet}"/> object.
+        /// </summary>
+        /// <param name="trustFrameworkKeySetToUpdate">The TrustFrameworkKeySet to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TrustFrameworkKeySet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySet>> UpdateResponseAsync(TrustFrameworkKeySet trustFrameworkKeySetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

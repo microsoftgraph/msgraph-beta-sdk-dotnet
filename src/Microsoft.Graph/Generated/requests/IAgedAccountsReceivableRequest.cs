@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AgedAccountsReceivable using POST.
         /// </summary>
         /// <param name="agedAccountsReceivableToCreate">The AgedAccountsReceivable to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgedAccountsReceivable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsReceivable> CreateAsync(AgedAccountsReceivable agedAccountsReceivableToCreate);        /// <summary>
-        /// Creates the specified AgedAccountsReceivable using POST.
+        System.Threading.Tasks.Task<AgedAccountsReceivable> CreateAsync(AgedAccountsReceivable agedAccountsReceivableToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified AgedAccountsReceivable using POST and returns a <see cref="GraphResponse{AgedAccountsReceivable}"/> object.
         /// </summary>
         /// <param name="agedAccountsReceivableToCreate">The AgedAccountsReceivable to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AgedAccountsReceivable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsReceivable> CreateAsync(AgedAccountsReceivable agedAccountsReceivableToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AgedAccountsReceivable.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> CreateResponseAsync(AgedAccountsReceivable agedAccountsReceivableToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AgedAccountsReceivable.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified AgedAccountsReceivable.
+        /// Deletes the specified AgedAccountsReceivable and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AgedAccountsReceivable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsReceivable> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AgedAccountsReceivable.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AgedAccountsReceivable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsReceivable> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AgedAccountsReceivable> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified AgedAccountsReceivable using PATCH.
+        /// Gets the specified AgedAccountsReceivable and returns a <see cref="GraphResponse{AgedAccountsReceivable}"/> object.
         /// </summary>
-        /// <param name="agedAccountsReceivableToUpdate">The AgedAccountsReceivable to update.</param>
-        /// <returns>The updated AgedAccountsReceivable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsReceivable> UpdateAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AgedAccountsReceivable using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AgedAccountsReceivable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsReceivable> UpdateAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AgedAccountsReceivable> UpdateAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AgedAccountsReceivable using PATCH and returns a <see cref="GraphResponse{AgedAccountsReceivable}"/> object.
+        /// </summary>
+        /// <param name="agedAccountsReceivableToUpdate">The AgedAccountsReceivable to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> UpdateResponseAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

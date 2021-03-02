@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentApprovals.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder AccessPackageAssignmentApprovals
+        {
+            get
+            {
+                return new EntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageAssignmentApprovals"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageAssignmentPolicies.
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentPoliciesCollectionRequestBuilder"/>.</returns>
@@ -107,6 +119,18 @@ namespace Microsoft.Graph
             get
             {
                 return new EntitlementManagementAccessPackageCatalogsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageCatalogs"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageResourceEnvironments.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceEnvironmentsCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementAccessPackageResourceEnvironmentsCollectionRequestBuilder AccessPackageResourceEnvironments
+        {
+            get
+            {
+                return new EntitlementManagementAccessPackageResourceEnvironmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceEnvironments"), this.Client);
             }
         }
 

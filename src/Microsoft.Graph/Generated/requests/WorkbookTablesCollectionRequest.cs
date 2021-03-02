@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WorkbookTable to the collection via POST.
-        /// </summary>
-        /// <param name="workbookTable">The WorkbookTable to add.</param>
-        /// <returns>The created WorkbookTable.</returns>
-        public System.Threading.Tasks.Task<WorkbookTable> AddAsync(WorkbookTable workbookTable)
-        {
-            return this.AddAsync(workbookTable, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WorkbookTable to the collection via POST.
         /// </summary>
         /// <param name="workbookTable">The WorkbookTable to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookTable.</returns>
-        public System.Threading.Tasks.Task<WorkbookTable> AddAsync(WorkbookTable workbookTable, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WorkbookTable> AddAsync(WorkbookTable workbookTable, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<WorkbookTable>(workbookTable, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified WorkbookTable to the collection via POST and returns a <see cref="GraphResponse{WorkbookTable}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IWorkbookTablesCollectionPage> GetAsync()
+        /// <param name="workbookTable">The WorkbookTable to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTable}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> AddResponseAsync(WorkbookTable workbookTable, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkbookTable>(workbookTable, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IWorkbookTablesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IWorkbookTablesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<WorkbookTablesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookTablesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTablesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookTablesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkbookTablesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

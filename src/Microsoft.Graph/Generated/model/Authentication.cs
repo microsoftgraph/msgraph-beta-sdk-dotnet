@@ -47,6 +47,12 @@ namespace Microsoft.Graph
         public IAuthenticationMethodsCollectionPage Methods { get; set; }
     
         /// <summary>
+        /// Gets or sets microsoft authenticator methods.
+        /// </summary>
+        [JsonPropertyName("microsoftAuthenticatorMethods")]
+        public IAuthenticationMicrosoftAuthenticatorMethodsCollectionPage MicrosoftAuthenticatorMethods { get; set; }
+    
+        /// <summary>
         /// Gets or sets operations.
         /// </summary>
         [JsonPropertyName("operations")]
@@ -69,6 +75,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("phoneMethods")]
         public IAuthenticationPhoneMethodsCollectionPage PhoneMethods { get; set; }
+    
+        /// <summary>
+        /// Gets or sets temporary access pass methods.
+        /// </summary>
+        [JsonPropertyName("temporaryAccessPassMethods")]
+        public IAuthenticationTemporaryAccessPassMethodsCollectionPage TemporaryAccessPassMethods { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows hello for business methods.
+        /// </summary>
+        [JsonPropertyName("windowsHelloForBusinessMethods")]
+        public IAuthenticationWindowsHelloForBusinessMethodsCollectionPage WindowsHelloForBusinessMethods { get; set; }
     
     }
 }

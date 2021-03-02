@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SalesOrder to the collection via POST.
-        /// </summary>
-        /// <param name="salesOrder">The SalesOrder to add.</param>
-        /// <returns>The created SalesOrder.</returns>
-        public System.Threading.Tasks.Task<SalesOrder> AddAsync(SalesOrder salesOrder)
-        {
-            return this.AddAsync(salesOrder, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SalesOrder to the collection via POST.
         /// </summary>
         /// <param name="salesOrder">The SalesOrder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesOrder.</returns>
-        public System.Threading.Tasks.Task<SalesOrder> AddAsync(SalesOrder salesOrder, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SalesOrder> AddAsync(SalesOrder salesOrder, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<SalesOrder>(salesOrder, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified SalesOrder to the collection via POST and returns a <see cref="GraphResponse{SalesOrder}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICompanySalesOrdersCollectionPage> GetAsync()
+        /// <param name="salesOrder">The SalesOrder to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesOrder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesOrder>> AddResponseAsync(SalesOrder salesOrder, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SalesOrder>(salesOrder, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICompanySalesOrdersCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICompanySalesOrdersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CompanySalesOrdersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanySalesOrdersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanySalesOrdersCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CompanySalesOrdersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<CompanySalesOrdersCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsPhoneEASEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="windowsPhoneEASEmailProfileConfigurationToCreate">The WindowsPhoneEASEmailProfileConfiguration to create.</param>
-        /// <returns>The created WindowsPhoneEASEmailProfileConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> CreateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToCreate)
-        {
-            return this.CreateAsync(windowsPhoneEASEmailProfileConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsPhoneEASEmailProfileConfiguration using POST.
-        /// </summary>
-        /// <param name="windowsPhoneEASEmailProfileConfigurationToCreate">The WindowsPhoneEASEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsPhoneEASEmailProfileConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> CreateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> CreateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsPhoneEASEmailProfileConfiguration>(windowsPhoneEASEmailProfileConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsPhoneEASEmailProfileConfiguration.
+        /// Creates the specified WindowsPhoneEASEmailProfileConfiguration using POST and returns a <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsPhoneEASEmailProfileConfigurationToCreate">The WindowsPhoneEASEmailProfileConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhoneEASEmailProfileConfiguration>> CreateResponseAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsPhoneEASEmailProfileConfiguration>(windowsPhoneEASEmailProfileConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsPhoneEASEmailProfileConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsPhoneEASEmailProfileConfiguration.
+        /// Deletes the specified WindowsPhoneEASEmailProfileConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsPhoneEASEmailProfileConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhoneEASEmailProfileConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsPhoneEASEmailProfileConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsPhoneEASEmailProfileConfiguration using PATCH.
+        /// Gets the specified WindowsPhoneEASEmailProfileConfiguration and returns a <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object.
         /// </summary>
-        /// <param name="windowsPhoneEASEmailProfileConfigurationToUpdate">The WindowsPhoneEASEmailProfileConfiguration to update.</param>
-        /// <returns>The updated WindowsPhoneEASEmailProfileConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> UpdateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhoneEASEmailProfileConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(windowsPhoneEASEmailProfileConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsPhoneEASEmailProfileConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhoneEASEmailProfileConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> UpdateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> UpdateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsPhoneEASEmailProfileConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windowsPhoneEASEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsPhoneEASEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhoneEASEmailProfileConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsPhoneEASEmailProfileConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windowsPhoneEASEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsPhoneEASEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhoneEASEmailProfileConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsPhoneEASEmailProfileConfiguration>(windowsPhoneEASEmailProfileConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsPhoneEASEmailProfileConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsPhoneEASEmailProfileConfigurationToUpdate">The WindowsPhoneEASEmailProfileConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhoneEASEmailProfileConfiguration>> UpdateResponseAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsPhoneEASEmailProfileConfiguration>(windowsPhoneEASEmailProfileConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

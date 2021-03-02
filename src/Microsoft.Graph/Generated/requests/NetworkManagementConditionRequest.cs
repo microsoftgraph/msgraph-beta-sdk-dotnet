@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified NetworkManagementCondition using POST.
         /// </summary>
         /// <param name="networkManagementConditionToCreate">The NetworkManagementCondition to create.</param>
-        /// <returns>The created NetworkManagementCondition.</returns>
-        public System.Threading.Tasks.Task<NetworkManagementCondition> CreateAsync(NetworkManagementCondition networkManagementConditionToCreate)
-        {
-            return this.CreateAsync(networkManagementConditionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified NetworkManagementCondition using POST.
-        /// </summary>
-        /// <param name="networkManagementConditionToCreate">The NetworkManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NetworkManagementCondition.</returns>
-        public async System.Threading.Tasks.Task<NetworkManagementCondition> CreateAsync(NetworkManagementCondition networkManagementConditionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<NetworkManagementCondition> CreateAsync(NetworkManagementCondition networkManagementConditionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<NetworkManagementCondition>(networkManagementConditionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified NetworkManagementCondition.
+        /// Creates the specified NetworkManagementCondition using POST and returns a <see cref="GraphResponse{NetworkManagementCondition}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="networkManagementConditionToCreate">The NetworkManagementCondition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NetworkManagementCondition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<NetworkManagementCondition>> CreateResponseAsync(NetworkManagementCondition networkManagementConditionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<NetworkManagementCondition>(networkManagementConditionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<NetworkManagementCondition>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified NetworkManagementCondition.
+        /// Deletes the specified NetworkManagementCondition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The NetworkManagementCondition.</returns>
-        public System.Threading.Tasks.Task<NetworkManagementCondition> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The NetworkManagementCondition.</returns>
-        public async System.Threading.Tasks.Task<NetworkManagementCondition> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<NetworkManagementCondition> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<NetworkManagementCondition>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified NetworkManagementCondition using PATCH.
+        /// Gets the specified NetworkManagementCondition and returns a <see cref="GraphResponse{NetworkManagementCondition}"/> object.
         /// </summary>
-        /// <param name="networkManagementConditionToUpdate">The NetworkManagementCondition to update.</param>
-        /// <returns>The updated NetworkManagementCondition.</returns>
-        public System.Threading.Tasks.Task<NetworkManagementCondition> UpdateAsync(NetworkManagementCondition networkManagementConditionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NetworkManagementCondition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<NetworkManagementCondition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(networkManagementConditionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<NetworkManagementCondition>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated NetworkManagementCondition.</returns>
-        public async System.Threading.Tasks.Task<NetworkManagementCondition> UpdateAsync(NetworkManagementCondition networkManagementConditionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<NetworkManagementCondition> UpdateAsync(NetworkManagementCondition networkManagementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (networkManagementConditionToUpdate.AdditionalData != null)
-			{
-				if (networkManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					networkManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, networkManagementConditionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (networkManagementConditionToUpdate.AdditionalData != null)
-            {
-                if (networkManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    networkManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, networkManagementConditionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<NetworkManagementCondition>(networkManagementConditionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified NetworkManagementCondition using PATCH and returns a <see cref="GraphResponse{NetworkManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="networkManagementConditionToUpdate">The NetworkManagementCondition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{NetworkManagementCondition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<NetworkManagementCondition>> UpdateResponseAsync(NetworkManagementCondition networkManagementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<NetworkManagementCondition>(networkManagementConditionToUpdate, cancellationToken);
         }
 
         /// <summary>

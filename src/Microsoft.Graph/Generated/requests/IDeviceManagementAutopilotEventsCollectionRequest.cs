@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementAutopilotEventsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementAutopilotEvent to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementAutopilotEvent">The DeviceManagementAutopilotEvent to add.</param>
-        /// <returns>The created DeviceManagementAutopilotEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAutopilotEvent> AddAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEvent);
-
         /// <summary>
         /// Adds the specified DeviceManagementAutopilotEvent to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementAutopilotEvent">The DeviceManagementAutopilotEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementAutopilotEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAutopilotEvent> AddAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEvent, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementAutopilotEvent> AddAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEvent, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceManagementAutopilotEvent to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementAutopilotEventsCollectionPage> GetAsync();
+        /// <param name="deviceManagementAutopilotEvent">The DeviceManagementAutopilotEvent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> AddResponseAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEvent, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementAutopilotEventsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementAutopilotEventsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAutopilotEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEventsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

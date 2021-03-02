@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AccessReviewReviewer to the collection via POST.
-        /// </summary>
-        /// <param name="accessReviewReviewer">The AccessReviewReviewer to add.</param>
-        /// <returns>The created AccessReviewReviewer.</returns>
-        public System.Threading.Tasks.Task<AccessReviewReviewer> AddAsync(AccessReviewReviewer accessReviewReviewer)
-        {
-            return this.AddAsync(accessReviewReviewer, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AccessReviewReviewer to the collection via POST.
         /// </summary>
         /// <param name="accessReviewReviewer">The AccessReviewReviewer to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewReviewer.</returns>
-        public System.Threading.Tasks.Task<AccessReviewReviewer> AddAsync(AccessReviewReviewer accessReviewReviewer, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AccessReviewReviewer> AddAsync(AccessReviewReviewer accessReviewReviewer, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<AccessReviewReviewer>(accessReviewReviewer, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AccessReviewReviewer to the collection via POST and returns a <see cref="GraphResponse{AccessReviewReviewer}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAccessReviewReviewersCollectionPage> GetAsync()
+        /// <param name="accessReviewReviewer">The AccessReviewReviewer to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewReviewer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewReviewer>> AddResponseAsync(AccessReviewReviewer accessReviewReviewer, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AccessReviewReviewer>(accessReviewReviewer, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAccessReviewReviewersCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAccessReviewReviewersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AccessReviewReviewersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessReviewReviewersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewReviewersCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewReviewersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AccessReviewReviewersCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

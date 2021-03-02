@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified FeatureRolloutPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="featureRolloutPolicy">The FeatureRolloutPolicy to add.</param>
-        /// <returns>The created FeatureRolloutPolicy.</returns>
-        public System.Threading.Tasks.Task<FeatureRolloutPolicy> AddAsync(FeatureRolloutPolicy featureRolloutPolicy)
-        {
-            return this.AddAsync(featureRolloutPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified FeatureRolloutPolicy to the collection via POST.
         /// </summary>
         /// <param name="featureRolloutPolicy">The FeatureRolloutPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FeatureRolloutPolicy.</returns>
-        public System.Threading.Tasks.Task<FeatureRolloutPolicy> AddAsync(FeatureRolloutPolicy featureRolloutPolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<FeatureRolloutPolicy> AddAsync(FeatureRolloutPolicy featureRolloutPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<FeatureRolloutPolicy>(featureRolloutPolicy, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified FeatureRolloutPolicy to the collection via POST and returns a <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDirectoryFeatureRolloutPoliciesCollectionPage> GetAsync()
+        /// <param name="featureRolloutPolicy">The FeatureRolloutPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FeatureRolloutPolicy>> AddResponseAsync(FeatureRolloutPolicy featureRolloutPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<FeatureRolloutPolicy>(featureRolloutPolicy, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDirectoryFeatureRolloutPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDirectoryFeatureRolloutPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DirectoryFeatureRolloutPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DirectoryFeatureRolloutPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryFeatureRolloutPoliciesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryFeatureRolloutPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DirectoryFeatureRolloutPoliciesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

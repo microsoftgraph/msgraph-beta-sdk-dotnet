@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified TimeCard using POST.
         /// </summary>
         /// <param name="timeCardToCreate">The TimeCard to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TimeCard.</returns>
-        System.Threading.Tasks.Task<TimeCard> CreateAsync(TimeCard timeCardToCreate);        /// <summary>
-        /// Creates the specified TimeCard using POST.
+        System.Threading.Tasks.Task<TimeCard> CreateAsync(TimeCard timeCardToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified TimeCard using POST and returns a <see cref="GraphResponse{TimeCard}"/> object.
         /// </summary>
         /// <param name="timeCardToCreate">The TimeCard to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TimeCard.</returns>
-        System.Threading.Tasks.Task<TimeCard> CreateAsync(TimeCard timeCardToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TimeCard.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TimeCard}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeCard>> CreateResponseAsync(TimeCard timeCardToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified TimeCard.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified TimeCard.
+        /// Deletes the specified TimeCard and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TimeCard.</returns>
-        System.Threading.Tasks.Task<TimeCard> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TimeCard.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TimeCard.</returns>
-        System.Threading.Tasks.Task<TimeCard> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TimeCard> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified TimeCard using PATCH.
+        /// Gets the specified TimeCard and returns a <see cref="GraphResponse{TimeCard}"/> object.
         /// </summary>
-        /// <param name="timeCardToUpdate">The TimeCard to update.</param>
-        /// <returns>The updated TimeCard.</returns>
-        System.Threading.Tasks.Task<TimeCard> UpdateAsync(TimeCard timeCardToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TimeCard}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeCard>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TimeCard using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TimeCard.</returns>
-        System.Threading.Tasks.Task<TimeCard> UpdateAsync(TimeCard timeCardToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TimeCard> UpdateAsync(TimeCard timeCardToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TimeCard using PATCH and returns a <see cref="GraphResponse{TimeCard}"/> object.
+        /// </summary>
+        /// <param name="timeCardToUpdate">The TimeCard to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TimeCard}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeCard>> UpdateResponseAsync(TimeCard timeCardToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified InformationProtectionPolicy using POST.
         /// </summary>
         /// <param name="informationProtectionPolicyToCreate">The InformationProtectionPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<InformationProtectionPolicy> CreateAsync(InformationProtectionPolicy informationProtectionPolicyToCreate);        /// <summary>
-        /// Creates the specified InformationProtectionPolicy using POST.
+        System.Threading.Tasks.Task<InformationProtectionPolicy> CreateAsync(InformationProtectionPolicy informationProtectionPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified InformationProtectionPolicy using POST and returns a <see cref="GraphResponse{InformationProtectionPolicy}"/> object.
         /// </summary>
         /// <param name="informationProtectionPolicyToCreate">The InformationProtectionPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created InformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<InformationProtectionPolicy> CreateAsync(InformationProtectionPolicy informationProtectionPolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified InformationProtectionPolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{InformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionPolicy>> CreateResponseAsync(InformationProtectionPolicy informationProtectionPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified InformationProtectionPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified InformationProtectionPolicy.
+        /// Deletes the specified InformationProtectionPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The InformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<InformationProtectionPolicy> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified InformationProtectionPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The InformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<InformationProtectionPolicy> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<InformationProtectionPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified InformationProtectionPolicy using PATCH.
+        /// Gets the specified InformationProtectionPolicy and returns a <see cref="GraphResponse{InformationProtectionPolicy}"/> object.
         /// </summary>
-        /// <param name="informationProtectionPolicyToUpdate">The InformationProtectionPolicy to update.</param>
-        /// <returns>The updated InformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<InformationProtectionPolicy> UpdateAsync(InformationProtectionPolicy informationProtectionPolicyToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified InformationProtectionPolicy using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated InformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<InformationProtectionPolicy> UpdateAsync(InformationProtectionPolicy informationProtectionPolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<InformationProtectionPolicy> UpdateAsync(InformationProtectionPolicy informationProtectionPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified InformationProtectionPolicy using PATCH and returns a <see cref="GraphResponse{InformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="informationProtectionPolicyToUpdate">The InformationProtectionPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionPolicy>> UpdateResponseAsync(InformationProtectionPolicy informationProtectionPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

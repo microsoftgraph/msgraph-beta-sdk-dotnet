@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10XTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="windows10XTrustedRootCertificateToCreate">The Windows10XTrustedRootCertificate to create.</param>
-        /// <returns>The created Windows10XTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> CreateAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToCreate)
-        {
-            return this.CreateAsync(windows10XTrustedRootCertificateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10XTrustedRootCertificate using POST.
-        /// </summary>
-        /// <param name="windows10XTrustedRootCertificateToCreate">The Windows10XTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10XTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> CreateAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> CreateAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Windows10XTrustedRootCertificate>(windows10XTrustedRootCertificateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Windows10XTrustedRootCertificate.
+        /// Creates the specified Windows10XTrustedRootCertificate using POST and returns a <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windows10XTrustedRootCertificateToCreate">The Windows10XTrustedRootCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> CreateResponseAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Windows10XTrustedRootCertificate>(windows10XTrustedRootCertificateToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Windows10XTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Windows10XTrustedRootCertificate.
+        /// Deletes the specified Windows10XTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Windows10XTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10XTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Windows10XTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Windows10XTrustedRootCertificate using PATCH.
+        /// Gets the specified Windows10XTrustedRootCertificate and returns a <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object.
         /// </summary>
-        /// <param name="windows10XTrustedRootCertificateToUpdate">The Windows10XTrustedRootCertificate to update.</param>
-        /// <returns>The updated Windows10XTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> UpdateAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(windows10XTrustedRootCertificateToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Windows10XTrustedRootCertificate>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10XTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> UpdateAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> UpdateAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windows10XTrustedRootCertificateToUpdate.AdditionalData != null)
-			{
-				if (windows10XTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10XTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10XTrustedRootCertificateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10XTrustedRootCertificateToUpdate.AdditionalData != null)
-            {
-                if (windows10XTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10XTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10XTrustedRootCertificateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Windows10XTrustedRootCertificate>(windows10XTrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10XTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="windows10XTrustedRootCertificateToUpdate">The Windows10XTrustedRootCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> UpdateResponseAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Windows10XTrustedRootCertificate>(windows10XTrustedRootCertificateToUpdate, cancellationToken);
         }
 
         /// <summary>

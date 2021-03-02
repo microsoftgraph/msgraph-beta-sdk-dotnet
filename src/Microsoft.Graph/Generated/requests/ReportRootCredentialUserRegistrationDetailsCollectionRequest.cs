@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified CredentialUserRegistrationDetails to the collection via POST.
-        /// </summary>
-        /// <param name="credentialUserRegistrationDetails">The CredentialUserRegistrationDetails to add.</param>
-        /// <returns>The created CredentialUserRegistrationDetails.</returns>
-        public System.Threading.Tasks.Task<CredentialUserRegistrationDetails> AddAsync(CredentialUserRegistrationDetails credentialUserRegistrationDetails)
-        {
-            return this.AddAsync(credentialUserRegistrationDetails, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified CredentialUserRegistrationDetails to the collection via POST.
         /// </summary>
         /// <param name="credentialUserRegistrationDetails">The CredentialUserRegistrationDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CredentialUserRegistrationDetails.</returns>
-        public System.Threading.Tasks.Task<CredentialUserRegistrationDetails> AddAsync(CredentialUserRegistrationDetails credentialUserRegistrationDetails, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<CredentialUserRegistrationDetails> AddAsync(CredentialUserRegistrationDetails credentialUserRegistrationDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<CredentialUserRegistrationDetails>(credentialUserRegistrationDetails, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified CredentialUserRegistrationDetails to the collection via POST and returns a <see cref="GraphResponse{CredentialUserRegistrationDetails}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IReportRootCredentialUserRegistrationDetailsCollectionPage> GetAsync()
+        /// <param name="credentialUserRegistrationDetails">The CredentialUserRegistrationDetails to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationDetails}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationDetails>> AddResponseAsync(CredentialUserRegistrationDetails credentialUserRegistrationDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<CredentialUserRegistrationDetails>(credentialUserRegistrationDetails, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IReportRootCredentialUserRegistrationDetailsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IReportRootCredentialUserRegistrationDetailsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ReportRootCredentialUserRegistrationDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ReportRootCredentialUserRegistrationDetailsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReportRootCredentialUserRegistrationDetailsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootCredentialUserRegistrationDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ReportRootCredentialUserRegistrationDetailsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

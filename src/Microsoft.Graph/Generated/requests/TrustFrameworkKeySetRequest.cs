@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified TrustFrameworkKeySet using POST.
         /// </summary>
         /// <param name="trustFrameworkKeySetToCreate">The TrustFrameworkKeySet to create.</param>
-        /// <returns>The created TrustFrameworkKeySet.</returns>
-        public System.Threading.Tasks.Task<TrustFrameworkKeySet> CreateAsync(TrustFrameworkKeySet trustFrameworkKeySetToCreate)
-        {
-            return this.CreateAsync(trustFrameworkKeySetToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TrustFrameworkKeySet using POST.
-        /// </summary>
-        /// <param name="trustFrameworkKeySetToCreate">The TrustFrameworkKeySet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TrustFrameworkKeySet.</returns>
-        public async System.Threading.Tasks.Task<TrustFrameworkKeySet> CreateAsync(TrustFrameworkKeySet trustFrameworkKeySetToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TrustFrameworkKeySet> CreateAsync(TrustFrameworkKeySet trustFrameworkKeySetToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<TrustFrameworkKeySet>(trustFrameworkKeySetToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified TrustFrameworkKeySet.
+        /// Creates the specified TrustFrameworkKeySet using POST and returns a <see cref="GraphResponse{TrustFrameworkKeySet}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="trustFrameworkKeySetToCreate">The TrustFrameworkKeySet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TrustFrameworkKeySet}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySet>> CreateResponseAsync(TrustFrameworkKeySet trustFrameworkKeySetToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<TrustFrameworkKeySet>(trustFrameworkKeySetToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<TrustFrameworkKeySet>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified TrustFrameworkKeySet.
+        /// Deletes the specified TrustFrameworkKeySet and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TrustFrameworkKeySet.</returns>
-        public System.Threading.Tasks.Task<TrustFrameworkKeySet> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TrustFrameworkKeySet.</returns>
-        public async System.Threading.Tasks.Task<TrustFrameworkKeySet> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TrustFrameworkKeySet> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<TrustFrameworkKeySet>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified TrustFrameworkKeySet using PATCH.
+        /// Gets the specified TrustFrameworkKeySet and returns a <see cref="GraphResponse{TrustFrameworkKeySet}"/> object.
         /// </summary>
-        /// <param name="trustFrameworkKeySetToUpdate">The TrustFrameworkKeySet to update.</param>
-        /// <returns>The updated TrustFrameworkKeySet.</returns>
-        public System.Threading.Tasks.Task<TrustFrameworkKeySet> UpdateAsync(TrustFrameworkKeySet trustFrameworkKeySetToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TrustFrameworkKeySet}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySet>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(trustFrameworkKeySetToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<TrustFrameworkKeySet>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TrustFrameworkKeySet.</returns>
-        public async System.Threading.Tasks.Task<TrustFrameworkKeySet> UpdateAsync(TrustFrameworkKeySet trustFrameworkKeySetToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TrustFrameworkKeySet> UpdateAsync(TrustFrameworkKeySet trustFrameworkKeySetToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (trustFrameworkKeySetToUpdate.AdditionalData != null)
-			{
-				if (trustFrameworkKeySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					trustFrameworkKeySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, trustFrameworkKeySetToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (trustFrameworkKeySetToUpdate.AdditionalData != null)
-            {
-                if (trustFrameworkKeySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    trustFrameworkKeySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, trustFrameworkKeySetToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<TrustFrameworkKeySet>(trustFrameworkKeySetToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TrustFrameworkKeySet using PATCH and returns a <see cref="GraphResponse{TrustFrameworkKeySet}"/> object.
+        /// </summary>
+        /// <param name="trustFrameworkKeySetToUpdate">The TrustFrameworkKeySet to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TrustFrameworkKeySet}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySet>> UpdateResponseAsync(TrustFrameworkKeySet trustFrameworkKeySetToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<TrustFrameworkKeySet>(trustFrameworkKeySetToUpdate, cancellationToken);
         }
 
         /// <summary>

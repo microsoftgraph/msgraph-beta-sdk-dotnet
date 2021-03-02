@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ReportRoot using POST.
         /// </summary>
         /// <param name="reportRootToCreate">The ReportRoot to create.</param>
-        /// <returns>The created ReportRoot.</returns>
-        public System.Threading.Tasks.Task<ReportRoot> CreateAsync(ReportRoot reportRootToCreate)
-        {
-            return this.CreateAsync(reportRootToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ReportRoot using POST.
-        /// </summary>
-        /// <param name="reportRootToCreate">The ReportRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ReportRoot.</returns>
-        public async System.Threading.Tasks.Task<ReportRoot> CreateAsync(ReportRoot reportRootToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ReportRoot> CreateAsync(ReportRoot reportRootToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ReportRoot>(reportRootToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ReportRoot.
+        /// Creates the specified ReportRoot using POST and returns a <see cref="GraphResponse{ReportRoot}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="reportRootToCreate">The ReportRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReportRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReportRoot>> CreateResponseAsync(ReportRoot reportRootToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ReportRoot>(reportRootToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ReportRoot>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ReportRoot.
+        /// Deletes the specified ReportRoot and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ReportRoot.</returns>
-        public System.Threading.Tasks.Task<ReportRoot> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ReportRoot.</returns>
-        public async System.Threading.Tasks.Task<ReportRoot> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ReportRoot> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ReportRoot>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ReportRoot using PATCH.
+        /// Gets the specified ReportRoot and returns a <see cref="GraphResponse{ReportRoot}"/> object.
         /// </summary>
-        /// <param name="reportRootToUpdate">The ReportRoot to update.</param>
-        /// <returns>The updated ReportRoot.</returns>
-        public System.Threading.Tasks.Task<ReportRoot> UpdateAsync(ReportRoot reportRootToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReportRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReportRoot>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(reportRootToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ReportRoot>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ReportRoot.</returns>
-        public async System.Threading.Tasks.Task<ReportRoot> UpdateAsync(ReportRoot reportRootToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ReportRoot> UpdateAsync(ReportRoot reportRootToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (reportRootToUpdate.AdditionalData != null)
-			{
-				if (reportRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					reportRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, reportRootToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (reportRootToUpdate.AdditionalData != null)
-            {
-                if (reportRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    reportRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, reportRootToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ReportRoot>(reportRootToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ReportRoot using PATCH and returns a <see cref="GraphResponse{ReportRoot}"/> object.
+        /// </summary>
+        /// <param name="reportRootToUpdate">The ReportRoot to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ReportRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReportRoot>> UpdateResponseAsync(ReportRoot reportRootToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ReportRoot>(reportRootToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -282,6 +267,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (reportRootToInitialize.DailyPrintUsageByPrinter != null && reportRootToInitialize.DailyPrintUsageByPrinter.CurrentPage != null)
+                {
+                    reportRootToInitialize.DailyPrintUsageByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageByPrinter@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        reportRootToInitialize.DailyPrintUsageByPrinter.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (reportRootToInitialize.DailyPrintUsageByUser != null && reportRootToInitialize.DailyPrintUsageByUser.CurrentPage != null)
+                {
+                    reportRootToInitialize.DailyPrintUsageByUser.AdditionalData = reportRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageByUser@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        reportRootToInitialize.DailyPrintUsageByUser.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (reportRootToInitialize.DailyPrintUsageSummariesByPrinter != null && reportRootToInitialize.DailyPrintUsageSummariesByPrinter.CurrentPage != null)
                 {
                     reportRootToInitialize.DailyPrintUsageSummariesByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
@@ -309,6 +326,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         reportRootToInitialize.DailyPrintUsageSummariesByUser.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (reportRootToInitialize.MonthlyPrintUsageByPrinter != null && reportRootToInitialize.MonthlyPrintUsageByPrinter.CurrentPage != null)
+                {
+                    reportRootToInitialize.MonthlyPrintUsageByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageByPrinter@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        reportRootToInitialize.MonthlyPrintUsageByPrinter.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (reportRootToInitialize.MonthlyPrintUsageByUser != null && reportRootToInitialize.MonthlyPrintUsageByUser.CurrentPage != null)
+                {
+                    reportRootToInitialize.MonthlyPrintUsageByUser.AdditionalData = reportRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageByUser@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        reportRootToInitialize.MonthlyPrintUsageByUser.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

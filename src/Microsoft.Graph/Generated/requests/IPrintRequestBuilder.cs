@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Reports.
         /// </summary>
-        /// <returns>The <see cref="IPrintReportsCollectionRequestBuilder"/>.</returns>
-        IPrintReportsCollectionRequestBuilder Reports { get; }
+        /// <returns>The <see cref="IReportRootRequestBuilder"/>.</returns>
+        IReportRootRequestBuilder Reports { get; }
 
         /// <summary>
         /// Gets the request builder for Services.

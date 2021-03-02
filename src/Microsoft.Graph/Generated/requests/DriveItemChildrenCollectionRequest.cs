@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DriveItem to the collection via POST.
-        /// </summary>
-        /// <param name="driveItem">The DriveItem to add.</param>
-        /// <returns>The created DriveItem.</returns>
-        public System.Threading.Tasks.Task<DriveItem> AddAsync(DriveItem driveItem)
-        {
-            return this.AddAsync(driveItem, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DriveItem to the collection via POST.
         /// </summary>
         /// <param name="driveItem">The DriveItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DriveItem.</returns>
-        public System.Threading.Tasks.Task<DriveItem> AddAsync(DriveItem driveItem, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DriveItem> AddAsync(DriveItem driveItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<DriveItem>(driveItem, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DriveItem to the collection via POST and returns a <see cref="GraphResponse{DriveItem}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDriveItemChildrenCollectionPage> GetAsync()
+        /// <param name="driveItem">The DriveItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItem>> AddResponseAsync(DriveItem driveItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DriveItem>(driveItem, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDriveItemChildrenCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDriveItemChildrenCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DriveItemChildrenCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemChildrenCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItemChildrenCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItemChildrenCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DriveItemChildrenCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

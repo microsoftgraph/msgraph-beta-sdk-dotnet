@@ -20,33 +20,36 @@ namespace Microsoft.Graph.TermStore
     /// </summary>
     public partial interface ITermChildrenCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Term to the collection via POST.
-        /// </summary>
-        /// <param name="term">The Term to add.</param>
-        /// <returns>The created Term.</returns>
-        System.Threading.Tasks.Task<Term> AddAsync(Term term);
-
         /// <summary>
         /// Adds the specified Term to the collection via POST.
         /// </summary>
         /// <param name="term">The Term to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Term.</returns>
-        System.Threading.Tasks.Task<Term> AddAsync(Term term, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Term> AddAsync(Term term, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Term to the collection via POST and returns a <see cref="GraphResponse{Term}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITermChildrenCollectionPage> GetAsync();
+        /// <param name="term">The Term to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Term}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Term>> AddResponseAsync(Term term, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITermChildrenCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ITermChildrenCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TermChildrenCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermChildrenCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermChildrenCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IAndroidScepCertificateProfileManagedDeviceCertificateStatesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ManagedDeviceCertificateState to the collection via POST.
-        /// </summary>
-        /// <param name="managedDeviceCertificateState">The ManagedDeviceCertificateState to add.</param>
-        /// <returns>The created ManagedDeviceCertificateState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCertificateState> AddAsync(ManagedDeviceCertificateState managedDeviceCertificateState);
-
         /// <summary>
         /// Adds the specified ManagedDeviceCertificateState to the collection via POST.
         /// </summary>
         /// <param name="managedDeviceCertificateState">The ManagedDeviceCertificateState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceCertificateState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCertificateState> AddAsync(ManagedDeviceCertificateState managedDeviceCertificateState, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagedDeviceCertificateState> AddAsync(ManagedDeviceCertificateState managedDeviceCertificateState, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ManagedDeviceCertificateState to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAndroidScepCertificateProfileManagedDeviceCertificateStatesCollectionPage> GetAsync();
+        /// <param name="managedDeviceCertificateState">The ManagedDeviceCertificateState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> AddResponseAsync(ManagedDeviceCertificateState managedDeviceCertificateState, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAndroidScepCertificateProfileManagedDeviceCertificateStatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IAndroidScepCertificateProfileManagedDeviceCertificateStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AndroidScepCertificateProfileManagedDeviceCertificateStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidScepCertificateProfileManagedDeviceCertificateStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidScepCertificateProfileManagedDeviceCertificateStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

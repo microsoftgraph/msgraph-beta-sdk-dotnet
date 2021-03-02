@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignment">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to add.</param>
-        /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> AddAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignment)
-        {
-            return this.AddAsync(windowsDefenderApplicationControlSupplementalPolicyAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment to the collection via POST.
         /// </summary>
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignment">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> AddAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> AddAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(windowsDefenderApplicationControlSupplementalPolicyAssignment, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment to the collection via POST and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IWindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionPage> GetAsync()
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignment">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> AddResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(windowsDefenderApplicationControlSupplementalPolicyAssignment, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IWindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IWindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

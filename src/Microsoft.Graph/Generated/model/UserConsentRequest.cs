@@ -29,28 +29,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets created by.
-        /// </summary>
-        [JsonPropertyName("createdBy")]
-        public IdentitySet CreatedBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created date time.
-        /// </summary>
-        [JsonPropertyName("createdDateTime")]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets reason.
         /// </summary>
         [JsonPropertyName("reason")]
         public string Reason { get; set; }
     
         /// <summary>
-        /// Gets or sets status.
+        /// Gets or sets approval.
         /// </summary>
-        [JsonPropertyName("status")]
-        public string Status { get; set; }
+        [JsonPropertyName("approval")]
+        public Approval Approval { get; set; }
     
     }
 }

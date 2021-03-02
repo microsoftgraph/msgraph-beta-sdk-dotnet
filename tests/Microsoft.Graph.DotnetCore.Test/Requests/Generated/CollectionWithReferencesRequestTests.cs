@@ -73,7 +73,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 };
 
                 this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<GroupMembersCollectionWithReferencesResponse>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<GroupMembersCollectionWithReferencesResponse>(It.IsAny<Stream>()))
                     .Returns(membersCollectionResponse);
 
                 var returnedCollectionPage = await this.graphServiceClient.Groups["groupId"].Members.Request().GetAsync() as GroupMembersCollectionWithReferencesPage;

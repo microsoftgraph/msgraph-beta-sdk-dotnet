@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified LocalizedNotificationMessage to the collection via POST.
-        /// </summary>
-        /// <param name="localizedNotificationMessage">The LocalizedNotificationMessage to add.</param>
-        /// <returns>The created LocalizedNotificationMessage.</returns>
-        public System.Threading.Tasks.Task<LocalizedNotificationMessage> AddAsync(LocalizedNotificationMessage localizedNotificationMessage)
-        {
-            return this.AddAsync(localizedNotificationMessage, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified LocalizedNotificationMessage to the collection via POST.
         /// </summary>
         /// <param name="localizedNotificationMessage">The LocalizedNotificationMessage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LocalizedNotificationMessage.</returns>
-        public System.Threading.Tasks.Task<LocalizedNotificationMessage> AddAsync(LocalizedNotificationMessage localizedNotificationMessage, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<LocalizedNotificationMessage> AddAsync(LocalizedNotificationMessage localizedNotificationMessage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<LocalizedNotificationMessage>(localizedNotificationMessage, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified LocalizedNotificationMessage to the collection via POST and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<INotificationMessageTemplateLocalizedNotificationMessagesCollectionPage> GetAsync()
+        /// <param name="localizedNotificationMessage">The LocalizedNotificationMessage to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> AddResponseAsync(LocalizedNotificationMessage localizedNotificationMessage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<LocalizedNotificationMessage>(localizedNotificationMessage, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<INotificationMessageTemplateLocalizedNotificationMessagesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<INotificationMessageTemplateLocalizedNotificationMessagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<NotificationMessageTemplateLocalizedNotificationMessagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{NotificationMessageTemplateLocalizedNotificationMessagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NotificationMessageTemplateLocalizedNotificationMessagesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplateLocalizedNotificationMessagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<NotificationMessageTemplateLocalizedNotificationMessagesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

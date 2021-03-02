@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified GovernanceResource using POST.
         /// </summary>
         /// <param name="governanceResourceToCreate">The GovernanceResource to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernanceResource.</returns>
-        System.Threading.Tasks.Task<GovernanceResource> CreateAsync(GovernanceResource governanceResourceToCreate);        /// <summary>
-        /// Creates the specified GovernanceResource using POST.
+        System.Threading.Tasks.Task<GovernanceResource> CreateAsync(GovernanceResource governanceResourceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified GovernanceResource using POST and returns a <see cref="GraphResponse{GovernanceResource}"/> object.
         /// </summary>
         /// <param name="governanceResourceToCreate">The GovernanceResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created GovernanceResource.</returns>
-        System.Threading.Tasks.Task<GovernanceResource> CreateAsync(GovernanceResource governanceResourceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GovernanceResource.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{GovernanceResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceResource>> CreateResponseAsync(GovernanceResource governanceResourceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GovernanceResource.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified GovernanceResource.
+        /// Deletes the specified GovernanceResource and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The GovernanceResource.</returns>
-        System.Threading.Tasks.Task<GovernanceResource> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GovernanceResource.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GovernanceResource.</returns>
-        System.Threading.Tasks.Task<GovernanceResource> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GovernanceResource> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified GovernanceResource using PATCH.
+        /// Gets the specified GovernanceResource and returns a <see cref="GraphResponse{GovernanceResource}"/> object.
         /// </summary>
-        /// <param name="governanceResourceToUpdate">The GovernanceResource to update.</param>
-        /// <returns>The updated GovernanceResource.</returns>
-        System.Threading.Tasks.Task<GovernanceResource> UpdateAsync(GovernanceResource governanceResourceToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceResource>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GovernanceResource using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GovernanceResource.</returns>
-        System.Threading.Tasks.Task<GovernanceResource> UpdateAsync(GovernanceResource governanceResourceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GovernanceResource> UpdateAsync(GovernanceResource governanceResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GovernanceResource using PATCH and returns a <see cref="GraphResponse{GovernanceResource}"/> object.
+        /// </summary>
+        /// <param name="governanceResourceToUpdate">The GovernanceResource to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GovernanceResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceResource>> UpdateResponseAsync(GovernanceResource governanceResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

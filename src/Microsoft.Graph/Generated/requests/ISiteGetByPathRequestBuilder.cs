@@ -48,6 +48,13 @@ namespace Microsoft.Graph
             string endDateTime,
             string interval);
         /// <summary>
+        /// Gets the request builder for SiteGetApplicableContentTypesForListRequestBuilder.
+        /// </summary>
+        /// <param name="listId">A listId parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteGetApplicableContentTypesForListRequestBuilder"/>.</returns>
+        ISiteGetApplicableContentTypesForListRequestBuilder GetApplicableContentTypesForList(
+            string listId);
+        /// <summary>
         /// Gets the request builder for SiteGetByPathRequestBuilder.
         /// </summary>
         /// <param name="path">A path parameter for the OData method call.</param>
@@ -92,6 +99,12 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDriveRequestBuilder"/>.</returns>
         IDriveRequestBuilder Drives  { get; }
         /// <summary>
+        /// Gets the request builder for ExternalColumns.
+        /// 
+        /// </summary>
+        /// <returns>The <see cref="IColumnDefinitionRequestBuilder"/>.</returns>
+        IColumnDefinitionRequestBuilder ExternalColumns  { get; }
+        /// <summary>
         /// Gets the request builder for Items.
         /// Used to address any item contained in this site. This collection cannot be enumerated.
         /// </summary>
@@ -115,6 +128,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISitePageRequestBuilder"/>.</returns>
         ISitePageRequestBuilder Pages  { get; }
+        /// <summary>
+        /// Gets the request builder for Permissions.
+        /// The permissions associated with the site. Nullable.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionRequestBuilder"/>.</returns>
+        IPermissionRequestBuilder Permissions  { get; }
         /// <summary>
         /// Gets the request builder for Sites.
         /// The collection of the sub-sites under this site.

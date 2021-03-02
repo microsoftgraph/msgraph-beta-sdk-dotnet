@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified SecurityConfigurationTask using POST.
         /// </summary>
         /// <param name="securityConfigurationTaskToCreate">The SecurityConfigurationTask to create.</param>
-        /// <returns>The created SecurityConfigurationTask.</returns>
-        public System.Threading.Tasks.Task<SecurityConfigurationTask> CreateAsync(SecurityConfigurationTask securityConfigurationTaskToCreate)
-        {
-            return this.CreateAsync(securityConfigurationTaskToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SecurityConfigurationTask using POST.
-        /// </summary>
-        /// <param name="securityConfigurationTaskToCreate">The SecurityConfigurationTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityConfigurationTask.</returns>
-        public async System.Threading.Tasks.Task<SecurityConfigurationTask> CreateAsync(SecurityConfigurationTask securityConfigurationTaskToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SecurityConfigurationTask> CreateAsync(SecurityConfigurationTask securityConfigurationTaskToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SecurityConfigurationTask>(securityConfigurationTaskToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified SecurityConfigurationTask.
+        /// Creates the specified SecurityConfigurationTask using POST and returns a <see cref="GraphResponse{SecurityConfigurationTask}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="securityConfigurationTaskToCreate">The SecurityConfigurationTask to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityConfigurationTask}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityConfigurationTask>> CreateResponseAsync(SecurityConfigurationTask securityConfigurationTaskToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SecurityConfigurationTask>(securityConfigurationTaskToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SecurityConfigurationTask>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified SecurityConfigurationTask.
+        /// Deletes the specified SecurityConfigurationTask and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SecurityConfigurationTask.</returns>
-        public System.Threading.Tasks.Task<SecurityConfigurationTask> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SecurityConfigurationTask.</returns>
-        public async System.Threading.Tasks.Task<SecurityConfigurationTask> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SecurityConfigurationTask> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<SecurityConfigurationTask>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified SecurityConfigurationTask using PATCH.
+        /// Gets the specified SecurityConfigurationTask and returns a <see cref="GraphResponse{SecurityConfigurationTask}"/> object.
         /// </summary>
-        /// <param name="securityConfigurationTaskToUpdate">The SecurityConfigurationTask to update.</param>
-        /// <returns>The updated SecurityConfigurationTask.</returns>
-        public System.Threading.Tasks.Task<SecurityConfigurationTask> UpdateAsync(SecurityConfigurationTask securityConfigurationTaskToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityConfigurationTask}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityConfigurationTask>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(securityConfigurationTaskToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SecurityConfigurationTask>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SecurityConfigurationTask.</returns>
-        public async System.Threading.Tasks.Task<SecurityConfigurationTask> UpdateAsync(SecurityConfigurationTask securityConfigurationTaskToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SecurityConfigurationTask> UpdateAsync(SecurityConfigurationTask securityConfigurationTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (securityConfigurationTaskToUpdate.AdditionalData != null)
-			{
-				if (securityConfigurationTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					securityConfigurationTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityConfigurationTaskToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (securityConfigurationTaskToUpdate.AdditionalData != null)
-            {
-                if (securityConfigurationTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    securityConfigurationTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityConfigurationTaskToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SecurityConfigurationTask>(securityConfigurationTaskToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SecurityConfigurationTask using PATCH and returns a <see cref="GraphResponse{SecurityConfigurationTask}"/> object.
+        /// </summary>
+        /// <param name="securityConfigurationTaskToUpdate">The SecurityConfigurationTask to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SecurityConfigurationTask}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityConfigurationTask>> UpdateResponseAsync(SecurityConfigurationTask securityConfigurationTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SecurityConfigurationTask>(securityConfigurationTaskToUpdate, cancellationToken);
         }
 
         /// <summary>

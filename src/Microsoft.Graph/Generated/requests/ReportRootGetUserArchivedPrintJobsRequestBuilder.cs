@@ -24,19 +24,19 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="userId">A userId parameter for the OData method call.</param>
-        /// <param name="periodStart">A periodStart parameter for the OData method call.</param>
-        /// <param name="periodEnd">A periodEnd parameter for the OData method call.</param>
+        /// <param name="startDateTime">A startDateTime parameter for the OData method call.</param>
+        /// <param name="endDateTime">A endDateTime parameter for the OData method call.</param>
         public ReportRootGetUserArchivedPrintJobsRequestBuilder(
             string requestUrl,
             IBaseClient client,
             string userId,
-            DateTimeOffset? periodStart,
-            DateTimeOffset? periodEnd)
+            DateTimeOffset? startDateTime,
+            DateTimeOffset? endDateTime)
             : base(requestUrl, client)
         {
             this.SetParameter("userId", userId, true);
-            this.SetParameter("periodStart", periodStart, true);
-            this.SetParameter("periodEnd", periodEnd, true);
+            this.SetParameter("startDateTime", startDateTime, true);
+            this.SetParameter("endDateTime", endDateTime, true);
             this.SetFunctionParameters();
         }
 

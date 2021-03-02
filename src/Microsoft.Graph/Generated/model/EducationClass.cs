@@ -119,11 +119,23 @@ namespace Microsoft.Graph
         public IEducationClassAssignmentCategoriesCollectionPage AssignmentCategories { get; set; }
     
         /// <summary>
+        /// Gets or sets assignment defaults.
+        /// </summary>
+        [JsonPropertyName("assignmentDefaults")]
+        public EducationAssignmentDefaults AssignmentDefaults { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// All assignments associated with this class. Nullable.
         /// </summary>
         [JsonPropertyName("assignments")]
         public IEducationClassAssignmentsCollectionPage Assignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignment settings.
+        /// </summary>
+        [JsonPropertyName("assignmentSettings")]
+        public EducationAssignmentSettings AssignmentSettings { get; set; }
     
         /// <summary>
         /// Gets or sets group.

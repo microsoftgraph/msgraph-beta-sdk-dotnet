@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Agreement using POST.
         /// </summary>
         /// <param name="agreementToCreate">The Agreement to create.</param>
-        /// <returns>The created Agreement.</returns>
-        public System.Threading.Tasks.Task<Agreement> CreateAsync(Agreement agreementToCreate)
-        {
-            return this.CreateAsync(agreementToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Agreement using POST.
-        /// </summary>
-        /// <param name="agreementToCreate">The Agreement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Agreement.</returns>
-        public async System.Threading.Tasks.Task<Agreement> CreateAsync(Agreement agreementToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Agreement> CreateAsync(Agreement agreementToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Agreement>(agreementToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Agreement.
+        /// Creates the specified Agreement using POST and returns a <see cref="GraphResponse{Agreement}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="agreementToCreate">The Agreement to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Agreement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Agreement>> CreateResponseAsync(Agreement agreementToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Agreement>(agreementToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Agreement>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Agreement.
+        /// Deletes the specified Agreement and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Agreement.</returns>
-        public System.Threading.Tasks.Task<Agreement> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Agreement.</returns>
-        public async System.Threading.Tasks.Task<Agreement> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Agreement> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Agreement>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Agreement using PATCH.
+        /// Gets the specified Agreement and returns a <see cref="GraphResponse{Agreement}"/> object.
         /// </summary>
-        /// <param name="agreementToUpdate">The Agreement to update.</param>
-        /// <returns>The updated Agreement.</returns>
-        public System.Threading.Tasks.Task<Agreement> UpdateAsync(Agreement agreementToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Agreement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Agreement>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(agreementToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Agreement>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Agreement.</returns>
-        public async System.Threading.Tasks.Task<Agreement> UpdateAsync(Agreement agreementToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Agreement> UpdateAsync(Agreement agreementToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (agreementToUpdate.AdditionalData != null)
-			{
-				if (agreementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					agreementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agreementToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (agreementToUpdate.AdditionalData != null)
-            {
-                if (agreementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    agreementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agreementToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Agreement>(agreementToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Agreement using PATCH and returns a <see cref="GraphResponse{Agreement}"/> object.
+        /// </summary>
+        /// <param name="agreementToUpdate">The Agreement to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Agreement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Agreement>> UpdateResponseAsync(Agreement agreementToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Agreement>(agreementToUpdate, cancellationToken);
         }
 
         /// <summary>

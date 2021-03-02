@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AndroidForWorkEnrollmentProfile to the collection via POST.
-        /// </summary>
-        /// <param name="androidForWorkEnrollmentProfile">The AndroidForWorkEnrollmentProfile to add.</param>
-        /// <returns>The created AndroidForWorkEnrollmentProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkEnrollmentProfile> AddAsync(AndroidForWorkEnrollmentProfile androidForWorkEnrollmentProfile)
-        {
-            return this.AddAsync(androidForWorkEnrollmentProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AndroidForWorkEnrollmentProfile to the collection via POST.
         /// </summary>
         /// <param name="androidForWorkEnrollmentProfile">The AndroidForWorkEnrollmentProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkEnrollmentProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkEnrollmentProfile> AddAsync(AndroidForWorkEnrollmentProfile androidForWorkEnrollmentProfile, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AndroidForWorkEnrollmentProfile> AddAsync(AndroidForWorkEnrollmentProfile androidForWorkEnrollmentProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<AndroidForWorkEnrollmentProfile>(androidForWorkEnrollmentProfile, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AndroidForWorkEnrollmentProfile to the collection via POST and returns a <see cref="GraphResponse{AndroidForWorkEnrollmentProfile}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementAndroidForWorkEnrollmentProfilesCollectionPage> GetAsync()
+        /// <param name="androidForWorkEnrollmentProfile">The AndroidForWorkEnrollmentProfile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkEnrollmentProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkEnrollmentProfile>> AddResponseAsync(AndroidForWorkEnrollmentProfile androidForWorkEnrollmentProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkEnrollmentProfile>(androidForWorkEnrollmentProfile, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementAndroidForWorkEnrollmentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementAndroidForWorkEnrollmentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementAndroidForWorkEnrollmentProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidForWorkEnrollmentProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidForWorkEnrollmentProfilesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidForWorkEnrollmentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementAndroidForWorkEnrollmentProfilesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

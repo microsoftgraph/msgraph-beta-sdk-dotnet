@@ -35,6 +35,12 @@ namespace Microsoft.Graph
         public IReportRootApplicationSignInDetailedSummaryCollectionPage ApplicationSignInDetailedSummary { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication methods.
+        /// </summary>
+        [JsonPropertyName("authenticationMethods")]
+        public AuthenticationMethodsRoot AuthenticationMethods { get; set; }
+    
+        /// <summary>
         /// Gets or sets credential user registration details.
         /// </summary>
         [JsonPropertyName("credentialUserRegistrationDetails")]
@@ -47,6 +53,18 @@ namespace Microsoft.Graph
         public IReportRootUserCredentialUsageDetailsCollectionPage UserCredentialUsageDetails { get; set; }
     
         /// <summary>
+        /// Gets or sets daily print usage by printer.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByPrinter")]
+        public IReportRootDailyPrintUsageByPrinterCollectionPage DailyPrintUsageByPrinter { get; set; }
+    
+        /// <summary>
+        /// Gets or sets daily print usage by user.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByUser")]
+        public IReportRootDailyPrintUsageByUserCollectionPage DailyPrintUsageByUser { get; set; }
+    
+        /// <summary>
         /// Gets or sets daily print usage summaries by printer.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageSummariesByPrinter")]
@@ -57,6 +75,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("dailyPrintUsageSummariesByUser")]
         public IReportRootDailyPrintUsageSummariesByUserCollectionPage DailyPrintUsageSummariesByUser { get; set; }
+    
+        /// <summary>
+        /// Gets or sets monthly print usage by printer.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByPrinter")]
+        public IReportRootMonthlyPrintUsageByPrinterCollectionPage MonthlyPrintUsageByPrinter { get; set; }
+    
+        /// <summary>
+        /// Gets or sets monthly print usage by user.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByUser")]
+        public IReportRootMonthlyPrintUsageByUserCollectionPage MonthlyPrintUsageByUser { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage summaries by printer.

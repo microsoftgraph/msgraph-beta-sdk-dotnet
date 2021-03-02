@@ -126,11 +126,29 @@ namespace Microsoft.Graph
         public DeviceDetail DeviceDetail { get; set; }
     
         /// <summary>
+        /// Gets or sets flagged for review.
+        /// </summary>
+        [JsonPropertyName("flaggedForReview")]
+        public bool? FlaggedForReview { get; set; }
+    
+        /// <summary>
+        /// Gets or sets home tenant id.
+        /// </summary>
+        [JsonPropertyName("homeTenantId")]
+        public string HomeTenantId { get; set; }
+    
+        /// <summary>
         /// Gets or sets ip address.
         /// The IP address of the client from where the sign-in occurred.
         /// </summary>
         [JsonPropertyName("ipAddress")]
         public string IpAddress { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ip address from resource provider.
+        /// </summary>
+        [JsonPropertyName("ipAddressFromResourceProvider")]
+        public string IpAddressFromResourceProvider { get; set; }
     
         /// <summary>
         /// Gets or sets is interactive.
@@ -256,6 +274,18 @@ namespace Microsoft.Graph
         public IEnumerable<string> SignInEventTypes { get; set; }
     
         /// <summary>
+        /// Gets or sets sign in identifier.
+        /// </summary>
+        [JsonPropertyName("signInIdentifier")]
+        public string SignInIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sign in identifier type.
+        /// </summary>
+        [JsonPropertyName("signInIdentifierType")]
+        public SignInIdentifierType? SignInIdentifierType { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).
         /// </summary>
@@ -303,6 +333,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user type.
+        /// </summary>
+        [JsonPropertyName("userType")]
+        public SignInUserType? UserType { get; set; }
     
     }
 }

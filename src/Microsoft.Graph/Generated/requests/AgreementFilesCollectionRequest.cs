@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AgreementFileLocalization to the collection via POST.
-        /// </summary>
-        /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
-        /// <returns>The created AgreementFileLocalization.</returns>
-        public System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization)
-        {
-            return this.AddAsync(agreementFileLocalization, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AgreementFileLocalization to the collection via POST.
         /// </summary>
         /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementFileLocalization.</returns>
-        public System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<AgreementFileLocalization>(agreementFileLocalization, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AgreementFileLocalization to the collection via POST and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAgreementFilesCollectionPage> GetAsync()
+        /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> AddResponseAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AgreementFileLocalization>(agreementFileLocalization, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAgreementFilesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAgreementFilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AgreementFilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AgreementFilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFilesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AgreementFilesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

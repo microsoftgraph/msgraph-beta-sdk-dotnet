@@ -106,6 +106,13 @@ namespace Microsoft.Graph
         public bool? AppleNewsBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets apple personalized ads blocked.
+        /// Limits Apple personalized advertising when true. Available in iOS 14 and later.
+        /// </summary>
+        [JsonPropertyName("applePersonalizedAdsBlocked")]
+        public bool? ApplePersonalizedAdsBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets apple watch block pairing.
         /// Indicates whether or not to allow Apple Watch pairing when the device is in supervised mode (iOS 9.0 and later).
         /// </summary>

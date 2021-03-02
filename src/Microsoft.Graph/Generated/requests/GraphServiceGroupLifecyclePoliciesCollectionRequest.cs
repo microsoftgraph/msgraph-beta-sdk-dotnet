@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified GroupLifecyclePolicy to the collection via POST.
-        /// </summary>
-        /// <param name="groupLifecyclePolicy">The GroupLifecyclePolicy to add.</param>
-        /// <returns>The created GroupLifecyclePolicy.</returns>
-        public System.Threading.Tasks.Task<GroupLifecyclePolicy> AddAsync(GroupLifecyclePolicy groupLifecyclePolicy)
-        {
-            return this.AddAsync(groupLifecyclePolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GroupLifecyclePolicy to the collection via POST.
         /// </summary>
         /// <param name="groupLifecyclePolicy">The GroupLifecyclePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupLifecyclePolicy.</returns>
-        public System.Threading.Tasks.Task<GroupLifecyclePolicy> AddAsync(GroupLifecyclePolicy groupLifecyclePolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GroupLifecyclePolicy> AddAsync(GroupLifecyclePolicy groupLifecyclePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<GroupLifecyclePolicy>(groupLifecyclePolicy, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified GroupLifecyclePolicy to the collection via POST and returns a <see cref="GraphResponse{GroupLifecyclePolicy}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceGroupLifecyclePoliciesCollectionPage> GetAsync()
+        /// <param name="groupLifecyclePolicy">The GroupLifecyclePolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupLifecyclePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupLifecyclePolicy>> AddResponseAsync(GroupLifecyclePolicy groupLifecyclePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<GroupLifecyclePolicy>(groupLifecyclePolicy, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceGroupLifecyclePoliciesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceGroupLifecyclePoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GraphServiceGroupLifecyclePoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceGroupLifecyclePoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceGroupLifecyclePoliciesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceGroupLifecyclePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GraphServiceGroupLifecyclePoliciesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

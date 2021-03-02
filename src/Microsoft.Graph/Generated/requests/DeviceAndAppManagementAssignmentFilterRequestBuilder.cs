@@ -50,5 +50,7 @@ namespace Microsoft.Graph
             return new DeviceAndAppManagementAssignmentFilterRequest(this.RequestUrl, this.Client, options);
         }
     
+        
+    
     }
 }

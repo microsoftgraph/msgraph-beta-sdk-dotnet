@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified OneDriveUsageAccountDetail using POST.
         /// </summary>
         /// <param name="oneDriveUsageAccountDetailToCreate">The OneDriveUsageAccountDetail to create.</param>
-        /// <returns>The created OneDriveUsageAccountDetail.</returns>
-        public System.Threading.Tasks.Task<OneDriveUsageAccountDetail> CreateAsync(OneDriveUsageAccountDetail oneDriveUsageAccountDetailToCreate)
-        {
-            return this.CreateAsync(oneDriveUsageAccountDetailToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OneDriveUsageAccountDetail using POST.
-        /// </summary>
-        /// <param name="oneDriveUsageAccountDetailToCreate">The OneDriveUsageAccountDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OneDriveUsageAccountDetail.</returns>
-        public async System.Threading.Tasks.Task<OneDriveUsageAccountDetail> CreateAsync(OneDriveUsageAccountDetail oneDriveUsageAccountDetailToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OneDriveUsageAccountDetail> CreateAsync(OneDriveUsageAccountDetail oneDriveUsageAccountDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<OneDriveUsageAccountDetail>(oneDriveUsageAccountDetailToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified OneDriveUsageAccountDetail.
+        /// Creates the specified OneDriveUsageAccountDetail using POST and returns a <see cref="GraphResponse{OneDriveUsageAccountDetail}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="oneDriveUsageAccountDetailToCreate">The OneDriveUsageAccountDetail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OneDriveUsageAccountDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OneDriveUsageAccountDetail>> CreateResponseAsync(OneDriveUsageAccountDetail oneDriveUsageAccountDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OneDriveUsageAccountDetail>(oneDriveUsageAccountDetailToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<OneDriveUsageAccountDetail>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified OneDriveUsageAccountDetail.
+        /// Deletes the specified OneDriveUsageAccountDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OneDriveUsageAccountDetail.</returns>
-        public System.Threading.Tasks.Task<OneDriveUsageAccountDetail> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OneDriveUsageAccountDetail.</returns>
-        public async System.Threading.Tasks.Task<OneDriveUsageAccountDetail> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OneDriveUsageAccountDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<OneDriveUsageAccountDetail>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified OneDriveUsageAccountDetail using PATCH.
+        /// Gets the specified OneDriveUsageAccountDetail and returns a <see cref="GraphResponse{OneDriveUsageAccountDetail}"/> object.
         /// </summary>
-        /// <param name="oneDriveUsageAccountDetailToUpdate">The OneDriveUsageAccountDetail to update.</param>
-        /// <returns>The updated OneDriveUsageAccountDetail.</returns>
-        public System.Threading.Tasks.Task<OneDriveUsageAccountDetail> UpdateAsync(OneDriveUsageAccountDetail oneDriveUsageAccountDetailToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OneDriveUsageAccountDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OneDriveUsageAccountDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(oneDriveUsageAccountDetailToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<OneDriveUsageAccountDetail>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OneDriveUsageAccountDetail.</returns>
-        public async System.Threading.Tasks.Task<OneDriveUsageAccountDetail> UpdateAsync(OneDriveUsageAccountDetail oneDriveUsageAccountDetailToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OneDriveUsageAccountDetail> UpdateAsync(OneDriveUsageAccountDetail oneDriveUsageAccountDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (oneDriveUsageAccountDetailToUpdate.AdditionalData != null)
-			{
-				if (oneDriveUsageAccountDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					oneDriveUsageAccountDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, oneDriveUsageAccountDetailToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (oneDriveUsageAccountDetailToUpdate.AdditionalData != null)
-            {
-                if (oneDriveUsageAccountDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    oneDriveUsageAccountDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, oneDriveUsageAccountDetailToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<OneDriveUsageAccountDetail>(oneDriveUsageAccountDetailToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OneDriveUsageAccountDetail using PATCH and returns a <see cref="GraphResponse{OneDriveUsageAccountDetail}"/> object.
+        /// </summary>
+        /// <param name="oneDriveUsageAccountDetailToUpdate">The OneDriveUsageAccountDetail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OneDriveUsageAccountDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OneDriveUsageAccountDetail>> UpdateResponseAsync(OneDriveUsageAccountDetail oneDriveUsageAccountDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<OneDriveUsageAccountDetail>(oneDriveUsageAccountDetailToUpdate, cancellationToken);
         }
 
         /// <summary>

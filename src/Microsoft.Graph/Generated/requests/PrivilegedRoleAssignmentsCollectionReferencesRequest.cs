@@ -32,27 +32,16 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PrivilegedRoleAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="privilegedRoleAssignment">The PrivilegedRoleAssignment to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(PrivilegedRoleAssignment privilegedRoleAssignment)
-        {
-            return this.AddAsync(privilegedRoleAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PrivilegedRoleAssignment to the collection via POST.
         /// </summary>
         /// <param name="privilegedRoleAssignment">The PrivilegedRoleAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(PrivilegedRoleAssignment privilegedRoleAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(PrivilegedRoleAssignment privilegedRoleAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
 
             if (string.IsNullOrEmpty(privilegedRoleAssignment.Id))
             {
@@ -61,6 +50,26 @@ namespace Microsoft.Graph
 
             var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/privilegedRoleAssignments/{1}", this.Client.BaseUrl, privilegedRoleAssignment.Id) };
             return this.SendAsync(requestBody, cancellationToken);
+        }
+
+        /// <summary>
+        /// Adds the specified PrivilegedRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="privilegedRoleAssignment">The PrivilegedRoleAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignment, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+
+            if (string.IsNullOrEmpty(privilegedRoleAssignment.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/privilegedRoleAssignments/{1}", this.Client.BaseUrl, privilegedRoleAssignment.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
         }
 
     }

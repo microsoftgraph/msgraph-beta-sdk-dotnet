@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SalesCreditMemoLine to the collection via POST.
-        /// </summary>
-        /// <param name="salesCreditMemoLine">The SalesCreditMemoLine to add.</param>
-        /// <returns>The created SalesCreditMemoLine.</returns>
-        public System.Threading.Tasks.Task<SalesCreditMemoLine> AddAsync(SalesCreditMemoLine salesCreditMemoLine)
-        {
-            return this.AddAsync(salesCreditMemoLine, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SalesCreditMemoLine to the collection via POST.
         /// </summary>
         /// <param name="salesCreditMemoLine">The SalesCreditMemoLine to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesCreditMemoLine.</returns>
-        public System.Threading.Tasks.Task<SalesCreditMemoLine> AddAsync(SalesCreditMemoLine salesCreditMemoLine, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SalesCreditMemoLine> AddAsync(SalesCreditMemoLine salesCreditMemoLine, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<SalesCreditMemoLine>(salesCreditMemoLine, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified SalesCreditMemoLine to the collection via POST and returns a <see cref="GraphResponse{SalesCreditMemoLine}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISalesCreditMemoSalesCreditMemoLinesCollectionPage> GetAsync()
+        /// <param name="salesCreditMemoLine">The SalesCreditMemoLine to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesCreditMemoLine}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> AddResponseAsync(SalesCreditMemoLine salesCreditMemoLine, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SalesCreditMemoLine>(salesCreditMemoLine, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISalesCreditMemoSalesCreditMemoLinesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISalesCreditMemoSalesCreditMemoLinesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<SalesCreditMemoSalesCreditMemoLinesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SalesCreditMemoSalesCreditMemoLinesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesCreditMemoSalesCreditMemoLinesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoSalesCreditMemoLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SalesCreditMemoSalesCreditMemoLinesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

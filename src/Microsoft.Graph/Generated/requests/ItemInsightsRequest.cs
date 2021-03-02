@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ItemInsights using POST.
         /// </summary>
         /// <param name="itemInsightsToCreate">The ItemInsights to create.</param>
-        /// <returns>The created ItemInsights.</returns>
-        public System.Threading.Tasks.Task<ItemInsights> CreateAsync(ItemInsights itemInsightsToCreate)
-        {
-            return this.CreateAsync(itemInsightsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ItemInsights using POST.
-        /// </summary>
-        /// <param name="itemInsightsToCreate">The ItemInsights to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemInsights.</returns>
-        public async System.Threading.Tasks.Task<ItemInsights> CreateAsync(ItemInsights itemInsightsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemInsights> CreateAsync(ItemInsights itemInsightsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ItemInsights>(itemInsightsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ItemInsights.
+        /// Creates the specified ItemInsights using POST and returns a <see cref="GraphResponse{ItemInsights}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="itemInsightsToCreate">The ItemInsights to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemInsights}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemInsights>> CreateResponseAsync(ItemInsights itemInsightsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ItemInsights>(itemInsightsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ItemInsights>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ItemInsights.
+        /// Deletes the specified ItemInsights and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ItemInsights.</returns>
-        public System.Threading.Tasks.Task<ItemInsights> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemInsights.</returns>
-        public async System.Threading.Tasks.Task<ItemInsights> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemInsights> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ItemInsights>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ItemInsights using PATCH.
+        /// Gets the specified ItemInsights and returns a <see cref="GraphResponse{ItemInsights}"/> object.
         /// </summary>
-        /// <param name="itemInsightsToUpdate">The ItemInsights to update.</param>
-        /// <returns>The updated ItemInsights.</returns>
-        public System.Threading.Tasks.Task<ItemInsights> UpdateAsync(ItemInsights itemInsightsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemInsights}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemInsights>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(itemInsightsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ItemInsights>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemInsights.</returns>
-        public async System.Threading.Tasks.Task<ItemInsights> UpdateAsync(ItemInsights itemInsightsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemInsights> UpdateAsync(ItemInsights itemInsightsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (itemInsightsToUpdate.AdditionalData != null)
-			{
-				if (itemInsightsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					itemInsightsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemInsightsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (itemInsightsToUpdate.AdditionalData != null)
-            {
-                if (itemInsightsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    itemInsightsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemInsightsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ItemInsights>(itemInsightsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ItemInsights using PATCH and returns a <see cref="GraphResponse{ItemInsights}"/> object.
+        /// </summary>
+        /// <param name="itemInsightsToUpdate">The ItemInsights to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ItemInsights}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemInsights>> UpdateResponseAsync(ItemInsights itemInsightsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ItemInsights>(itemInsightsToUpdate, cancellationToken);
         }
 
         /// <summary>

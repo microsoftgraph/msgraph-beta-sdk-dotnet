@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceAndAppManagementAssignmentFilter using POST.
         /// </summary>
         /// <param name="deviceAndAppManagementAssignmentFilterToCreate">The DeviceAndAppManagementAssignmentFilter to create.</param>
-        /// <returns>The created DeviceAndAppManagementAssignmentFilter.</returns>
-        public System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> CreateAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToCreate)
-        {
-            return this.CreateAsync(deviceAndAppManagementAssignmentFilterToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceAndAppManagementAssignmentFilter using POST.
-        /// </summary>
-        /// <param name="deviceAndAppManagementAssignmentFilterToCreate">The DeviceAndAppManagementAssignmentFilter to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceAndAppManagementAssignmentFilter.</returns>
-        public async System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> CreateAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> CreateAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceAndAppManagementAssignmentFilter>(deviceAndAppManagementAssignmentFilterToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceAndAppManagementAssignmentFilter.
+        /// Creates the specified DeviceAndAppManagementAssignmentFilter using POST and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceAndAppManagementAssignmentFilterToCreate">The DeviceAndAppManagementAssignmentFilter to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> CreateResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceAndAppManagementAssignmentFilter>(deviceAndAppManagementAssignmentFilterToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceAndAppManagementAssignmentFilter>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceAndAppManagementAssignmentFilter.
+        /// Deletes the specified DeviceAndAppManagementAssignmentFilter and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceAndAppManagementAssignmentFilter.</returns>
-        public System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceAndAppManagementAssignmentFilter.</returns>
-        public async System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceAndAppManagementAssignmentFilter>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceAndAppManagementAssignmentFilter using PATCH.
+        /// Gets the specified DeviceAndAppManagementAssignmentFilter and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object.
         /// </summary>
-        /// <param name="deviceAndAppManagementAssignmentFilterToUpdate">The DeviceAndAppManagementAssignmentFilter to update.</param>
-        /// <returns>The updated DeviceAndAppManagementAssignmentFilter.</returns>
-        public System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> UpdateAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(deviceAndAppManagementAssignmentFilterToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceAndAppManagementAssignmentFilter>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceAndAppManagementAssignmentFilter.</returns>
-        public async System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> UpdateAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> UpdateAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceAndAppManagementAssignmentFilterToUpdate.AdditionalData != null)
-			{
-				if (deviceAndAppManagementAssignmentFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceAndAppManagementAssignmentFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAndAppManagementAssignmentFilterToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceAndAppManagementAssignmentFilterToUpdate.AdditionalData != null)
-            {
-                if (deviceAndAppManagementAssignmentFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceAndAppManagementAssignmentFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAndAppManagementAssignmentFilterToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceAndAppManagementAssignmentFilter>(deviceAndAppManagementAssignmentFilterToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceAndAppManagementAssignmentFilter using PATCH and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementAssignmentFilterToUpdate">The DeviceAndAppManagementAssignmentFilter to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> UpdateResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceAndAppManagementAssignmentFilter>(deviceAndAppManagementAssignmentFilterToUpdate, cancellationToken);
         }
 
         /// <summary>

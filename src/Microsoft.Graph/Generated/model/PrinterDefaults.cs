@@ -90,6 +90,13 @@ namespace Microsoft.Graph
         public bool? FitPdfToPage { get; set; }
     
         /// <summary>
+        /// Gets or sets inputBin.
+        /// The default input bin that serves as the paper source.
+        /// </summary>
+        [JsonPropertyName("inputBin")]
+        public string InputBin { get; set; }
+    
+        /// <summary>
         /// Gets or sets mediaColor.
         /// The default media (such as paper) color to print the document on.
         /// </summary>

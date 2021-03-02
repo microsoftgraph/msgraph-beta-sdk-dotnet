@@ -46,6 +46,42 @@ namespace Microsoft.Graph
         [JsonPropertyName("roleDefinitions")]
         public IRbacApplicationRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
     
+        /// <summary>
+        /// Gets or sets role assignment requests.
+        /// </summary>
+        [JsonPropertyName("roleAssignmentRequests")]
+        public IRbacApplicationRoleAssignmentRequestsCollectionPage RoleAssignmentRequests { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role assignment schedule instances.
+        /// </summary>
+        [JsonPropertyName("roleAssignmentScheduleInstances")]
+        public IRbacApplicationRoleAssignmentScheduleInstancesCollectionPage RoleAssignmentScheduleInstances { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role assignment schedules.
+        /// </summary>
+        [JsonPropertyName("roleAssignmentSchedules")]
+        public IRbacApplicationRoleAssignmentSchedulesCollectionPage RoleAssignmentSchedules { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role eligibility requests.
+        /// </summary>
+        [JsonPropertyName("roleEligibilityRequests")]
+        public IRbacApplicationRoleEligibilityRequestsCollectionPage RoleEligibilityRequests { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role eligibility schedule instances.
+        /// </summary>
+        [JsonPropertyName("roleEligibilityScheduleInstances")]
+        public IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage RoleEligibilityScheduleInstances { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role eligibility schedules.
+        /// </summary>
+        [JsonPropertyName("roleEligibilitySchedules")]
+        public IRbacApplicationRoleEligibilitySchedulesCollectionPage RoleEligibilitySchedules { get; set; }
+    
     }
 }
 

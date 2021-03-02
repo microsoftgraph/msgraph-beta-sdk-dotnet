@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified PersonWebsite using POST.
         /// </summary>
         /// <param name="personWebsiteToCreate">The PersonWebsite to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonWebsite.</returns>
-        System.Threading.Tasks.Task<PersonWebsite> CreateAsync(PersonWebsite personWebsiteToCreate);        /// <summary>
-        /// Creates the specified PersonWebsite using POST.
+        System.Threading.Tasks.Task<PersonWebsite> CreateAsync(PersonWebsite personWebsiteToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified PersonWebsite using POST and returns a <see cref="GraphResponse{PersonWebsite}"/> object.
         /// </summary>
         /// <param name="personWebsiteToCreate">The PersonWebsite to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PersonWebsite.</returns>
-        System.Threading.Tasks.Task<PersonWebsite> CreateAsync(PersonWebsite personWebsiteToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PersonWebsite.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> CreateResponseAsync(PersonWebsite personWebsiteToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PersonWebsite.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified PersonWebsite.
+        /// Deletes the specified PersonWebsite and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PersonWebsite.</returns>
-        System.Threading.Tasks.Task<PersonWebsite> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PersonWebsite.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PersonWebsite.</returns>
-        System.Threading.Tasks.Task<PersonWebsite> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PersonWebsite> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified PersonWebsite using PATCH.
+        /// Gets the specified PersonWebsite and returns a <see cref="GraphResponse{PersonWebsite}"/> object.
         /// </summary>
-        /// <param name="personWebsiteToUpdate">The PersonWebsite to update.</param>
-        /// <returns>The updated PersonWebsite.</returns>
-        System.Threading.Tasks.Task<PersonWebsite> UpdateAsync(PersonWebsite personWebsiteToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PersonWebsite using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PersonWebsite.</returns>
-        System.Threading.Tasks.Task<PersonWebsite> UpdateAsync(PersonWebsite personWebsiteToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PersonWebsite> UpdateAsync(PersonWebsite personWebsiteToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified PersonWebsite using PATCH and returns a <see cref="GraphResponse{PersonWebsite}"/> object.
+        /// </summary>
+        /// <param name="personWebsiteToUpdate">The PersonWebsite to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> UpdateResponseAsync(PersonWebsite personWebsiteToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

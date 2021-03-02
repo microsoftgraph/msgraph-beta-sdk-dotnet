@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         IPolicyRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AuthenticationMethodsPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodsPolicyRequestBuilder"/>.</returns>
+        IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for AuthenticationFlowsPolicy.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationFlowsPolicyRequestBuilder"/>.</returns>
@@ -42,12 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IB2cAuthenticationMethodsPolicyRequestBuilder"/>.</returns>
         IB2cAuthenticationMethodsPolicyRequestBuilder B2cAuthenticationMethodsPolicy { get; }
-
-        /// <summary>
-        /// Gets the request builder for DeviceRegistrationPolicy.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceRegistrationPolicyRequestBuilder"/>.</returns>
-        IDeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy { get; }
 
         /// <summary>
         /// Gets the request builder for ActivityBasedTimeoutPolicies.
@@ -120,6 +120,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder"/>.</returns>
         IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootRoleManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootRoleManagementPoliciesCollectionRequestBuilder RoleManagementPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementPolicyAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder"/>.</returns>
+        IPolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder RoleManagementPolicyAssignments { get; }
     
     }
 }

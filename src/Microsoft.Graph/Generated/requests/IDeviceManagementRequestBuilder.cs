@@ -428,6 +428,12 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsCategoriesCollectionRequestBuilder UserExperienceAnalyticsCategories { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceMetricHistory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceMetricHistoryCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsDeviceMetricHistoryCollectionRequestBuilder UserExperienceAnalyticsDeviceMetricHistory { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsDevicePerformance.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionRequestBuilder"/>.</returns>
@@ -452,6 +458,18 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionRequestBuilder UserExperienceAnalyticsDeviceStartupProcessPerformance { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDevicesWithoutCloudIdentity.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionRequestBuilder UserExperienceAnalyticsDevicesWithoutCloudIdentity { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsImpactingProcess.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionRequestBuilder UserExperienceAnalyticsImpactingProcess { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsMetricHistory.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequestBuilder"/>.</returns>
@@ -468,6 +486,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryRequestBuilder"/>.</returns>
         IUserExperienceAnalyticsRegressionSummaryRequestBuilder UserExperienceAnalyticsRegressionSummary { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsRemoteConnection.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionRequestBuilder UserExperienceAnalyticsRemoteConnection { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsResourcePerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsResourcePerformanceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsResourcePerformanceCollectionRequestBuilder UserExperienceAnalyticsResourcePerformance { get; }
 
         /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsScoreHistory.
@@ -596,6 +626,18 @@ namespace Microsoft.Graph
         IDeviceManagementMicrosoftTunnelConfigurationsCollectionRequestBuilder MicrosoftTunnelConfigurations { get; }
 
         /// <summary>
+        /// Gets the request builder for MicrosoftTunnelHealthThresholds.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementMicrosoftTunnelHealthThresholdsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementMicrosoftTunnelHealthThresholdsCollectionRequestBuilder MicrosoftTunnelHealthThresholds { get; }
+
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelServerLogCollectionResponses.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionRequestBuilder MicrosoftTunnelServerLogCollectionResponses { get; }
+
+        /// <summary>
         /// Gets the request builder for MicrosoftTunnelSites.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementMicrosoftTunnelSitesCollectionRequestBuilder"/>.</returns>
@@ -686,6 +728,18 @@ namespace Microsoft.Graph
         IDeviceManagementWindowsFeatureUpdateProfilesCollectionRequestBuilder WindowsFeatureUpdateProfiles { get; }
 
         /// <summary>
+        /// Gets the request builder for WindowsQualityUpdateProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementWindowsQualityUpdateProfilesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementWindowsQualityUpdateProfilesCollectionRequestBuilder WindowsQualityUpdateProfiles { get; }
+
+        /// <summary>
+        /// Gets the request builder for WindowsUpdateCatalogItems.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementWindowsUpdateCatalogItemsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementWindowsUpdateCatalogItemsCollectionRequestBuilder WindowsUpdateCatalogItems { get; }
+
+        /// <summary>
         /// Gets the request builder for IntuneBrandingProfiles.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIntuneBrandingProfilesCollectionRequestBuilder"/>.</returns>
@@ -709,6 +763,18 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceManagementUserPfxCertificatesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementUserPfxCertificatesCollectionRequestBuilder UserPfxCertificates { get; }
     
+        /// <summary>
+        /// Gets the request builder for DeviceManagementGetAssignmentFiltersStatusDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetAssignmentFiltersStatusDetailsRequestBuilder"/>.</returns>
+        IDeviceManagementGetAssignmentFiltersStatusDetailsRequestBuilder GetAssignmentFiltersStatusDetails(
+            string managedDeviceId = null,
+            string payloadId = null,
+            string userId = null,
+            IEnumerable<string> assignmentFilterIds = null,
+            Int32? top = null,
+            Int32? skip = null);
+
         /// <summary>
         /// Gets the request builder for DeviceManagementEnableAndroidDeviceAdministratorEnrollment.
         /// </summary>

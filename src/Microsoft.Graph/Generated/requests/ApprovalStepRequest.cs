@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ApprovalStep using POST.
         /// </summary>
         /// <param name="approvalStepToCreate">The ApprovalStep to create.</param>
-        /// <returns>The created ApprovalStep.</returns>
-        public System.Threading.Tasks.Task<ApprovalStep> CreateAsync(ApprovalStep approvalStepToCreate)
-        {
-            return this.CreateAsync(approvalStepToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ApprovalStep using POST.
-        /// </summary>
-        /// <param name="approvalStepToCreate">The ApprovalStep to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApprovalStep.</returns>
-        public async System.Threading.Tasks.Task<ApprovalStep> CreateAsync(ApprovalStep approvalStepToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApprovalStep> CreateAsync(ApprovalStep approvalStepToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ApprovalStep>(approvalStepToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ApprovalStep.
+        /// Creates the specified ApprovalStep using POST and returns a <see cref="GraphResponse{ApprovalStep}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="approvalStepToCreate">The ApprovalStep to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApprovalStep}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> CreateResponseAsync(ApprovalStep approvalStepToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ApprovalStep>(approvalStepToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ApprovalStep>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ApprovalStep.
+        /// Deletes the specified ApprovalStep and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ApprovalStep.</returns>
-        public System.Threading.Tasks.Task<ApprovalStep> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ApprovalStep.</returns>
-        public async System.Threading.Tasks.Task<ApprovalStep> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApprovalStep> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ApprovalStep>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ApprovalStep using PATCH.
+        /// Gets the specified ApprovalStep and returns a <see cref="GraphResponse{ApprovalStep}"/> object.
         /// </summary>
-        /// <param name="approvalStepToUpdate">The ApprovalStep to update.</param>
-        /// <returns>The updated ApprovalStep.</returns>
-        public System.Threading.Tasks.Task<ApprovalStep> UpdateAsync(ApprovalStep approvalStepToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApprovalStep}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(approvalStepToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ApprovalStep>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ApprovalStep.</returns>
-        public async System.Threading.Tasks.Task<ApprovalStep> UpdateAsync(ApprovalStep approvalStepToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApprovalStep> UpdateAsync(ApprovalStep approvalStepToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (approvalStepToUpdate.AdditionalData != null)
-			{
-				if (approvalStepToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					approvalStepToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, approvalStepToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (approvalStepToUpdate.AdditionalData != null)
-            {
-                if (approvalStepToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    approvalStepToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, approvalStepToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ApprovalStep>(approvalStepToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ApprovalStep using PATCH and returns a <see cref="GraphResponse{ApprovalStep}"/> object.
+        /// </summary>
+        /// <param name="approvalStepToUpdate">The ApprovalStep to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ApprovalStep}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> UpdateResponseAsync(ApprovalStep approvalStepToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ApprovalStep>(approvalStepToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsAppHealthOSVersionPerformance to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsAppHealthOSVersionPerformance">The UserExperienceAnalyticsAppHealthOSVersionPerformance to add.</param>
-        /// <returns>The created UserExperienceAnalyticsAppHealthOSVersionPerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthOSVersionPerformance> AddAsync(UserExperienceAnalyticsAppHealthOSVersionPerformance userExperienceAnalyticsAppHealthOSVersionPerformance);
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsAppHealthOSVersionPerformance to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsAppHealthOSVersionPerformance">The UserExperienceAnalyticsAppHealthOSVersionPerformance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsAppHealthOSVersionPerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthOSVersionPerformance> AddAsync(UserExperienceAnalyticsAppHealthOSVersionPerformance userExperienceAnalyticsAppHealthOSVersionPerformance, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthOSVersionPerformance> AddAsync(UserExperienceAnalyticsAppHealthOSVersionPerformance userExperienceAnalyticsAppHealthOSVersionPerformance, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UserExperienceAnalyticsAppHealthOSVersionPerformance to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthOSVersionPerformance}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionPage> GetAsync();
+        /// <param name="userExperienceAnalyticsAppHealthOSVersionPerformance">The UserExperienceAnalyticsAppHealthOSVersionPerformance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthOSVersionPerformance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthOSVersionPerformance>> AddResponseAsync(UserExperienceAnalyticsAppHealthOSVersionPerformance userExperienceAnalyticsAppHealthOSVersionPerformance, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

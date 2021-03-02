@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ListItemVersion to the collection via POST.
-        /// </summary>
-        /// <param name="listItemVersion">The ListItemVersion to add.</param>
-        /// <returns>The created ListItemVersion.</returns>
-        public System.Threading.Tasks.Task<ListItemVersion> AddAsync(ListItemVersion listItemVersion)
-        {
-            return this.AddAsync(listItemVersion, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ListItemVersion to the collection via POST.
         /// </summary>
         /// <param name="listItemVersion">The ListItemVersion to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ListItemVersion.</returns>
-        public System.Threading.Tasks.Task<ListItemVersion> AddAsync(ListItemVersion listItemVersion, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ListItemVersion> AddAsync(ListItemVersion listItemVersion, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ListItemVersion>(listItemVersion, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ListItemVersion to the collection via POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IListItemVersionsCollectionPage> GetAsync()
+        /// <param name="listItemVersion">The ListItemVersion to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> AddResponseAsync(ListItemVersion listItemVersion, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ListItemVersion>(listItemVersion, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IListItemVersionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IListItemVersionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ListItemVersionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ListItemVersionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ListItemVersionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ListItemVersionsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

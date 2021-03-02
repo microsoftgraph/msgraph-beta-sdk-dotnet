@@ -30,30 +30,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowedAudience.
+        /// Defines who can join the live event. Possible values are listed in the following table.
         /// </summary>
         [JsonPropertyName("allowedAudience")]
         public BroadcastMeetingAudience? AllowedAudience { get; set; }
     
         /// <summary>
         /// Gets or sets isAttendeeReportEnabled.
+        /// Indicates whether attendee report is enabled for this live event. Default value is false.
         /// </summary>
         [JsonPropertyName("isAttendeeReportEnabled")]
         public bool? IsAttendeeReportEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isQuestionAndAnswerEnabled.
+        /// Indicates whether Q&amp;A is enabled for this live event. Default value is false.
         /// </summary>
         [JsonPropertyName("isQuestionAndAnswerEnabled")]
         public bool? IsQuestionAndAnswerEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isRecordingEnabled.
+        /// Indicates whether recording is enabled for this live event. Default value is false.
         /// </summary>
         [JsonPropertyName("isRecordingEnabled")]
         public bool? IsRecordingEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isVideoOnDemandEnabled.
+        /// Indicates whether video on demand is enabled for this live event. Default value is false.
         /// </summary>
         [JsonPropertyName("isVideoOnDemandEnabled")]
         public bool? IsVideoOnDemandEnabled { get; set; }

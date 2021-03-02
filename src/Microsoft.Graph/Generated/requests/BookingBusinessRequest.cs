@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified BookingBusiness using POST.
         /// </summary>
         /// <param name="bookingBusinessToCreate">The BookingBusiness to create.</param>
-        /// <returns>The created BookingBusiness.</returns>
-        public System.Threading.Tasks.Task<BookingBusiness> CreateAsync(BookingBusiness bookingBusinessToCreate)
-        {
-            return this.CreateAsync(bookingBusinessToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified BookingBusiness using POST.
-        /// </summary>
-        /// <param name="bookingBusinessToCreate">The BookingBusiness to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingBusiness.</returns>
-        public async System.Threading.Tasks.Task<BookingBusiness> CreateAsync(BookingBusiness bookingBusinessToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingBusiness> CreateAsync(BookingBusiness bookingBusinessToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<BookingBusiness>(bookingBusinessToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified BookingBusiness.
+        /// Creates the specified BookingBusiness using POST and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="bookingBusinessToCreate">The BookingBusiness to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> CreateResponseAsync(BookingBusiness bookingBusinessToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<BookingBusiness>(bookingBusinessToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<BookingBusiness>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified BookingBusiness.
+        /// Deletes the specified BookingBusiness and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The BookingBusiness.</returns>
-        public System.Threading.Tasks.Task<BookingBusiness> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingBusiness.</returns>
-        public async System.Threading.Tasks.Task<BookingBusiness> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingBusiness> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<BookingBusiness>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified BookingBusiness using PATCH.
+        /// Gets the specified BookingBusiness and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
         /// </summary>
-        /// <param name="bookingBusinessToUpdate">The BookingBusiness to update.</param>
-        /// <returns>The updated BookingBusiness.</returns>
-        public System.Threading.Tasks.Task<BookingBusiness> UpdateAsync(BookingBusiness bookingBusinessToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(bookingBusinessToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<BookingBusiness>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingBusiness.</returns>
-        public async System.Threading.Tasks.Task<BookingBusiness> UpdateAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingBusiness> UpdateAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (bookingBusinessToUpdate.AdditionalData != null)
-			{
-				if (bookingBusinessToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					bookingBusinessToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingBusinessToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (bookingBusinessToUpdate.AdditionalData != null)
-            {
-                if (bookingBusinessToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    bookingBusinessToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingBusinessToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<BookingBusiness>(bookingBusinessToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified BookingBusiness using PATCH and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
+        /// </summary>
+        /// <param name="bookingBusinessToUpdate">The BookingBusiness to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> UpdateResponseAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<BookingBusiness>(bookingBusinessToUpdate, cancellationToken);
         }
 
         /// <summary>

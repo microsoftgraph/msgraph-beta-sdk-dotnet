@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AccessPackage using POST.
         /// </summary>
         /// <param name="accessPackageToCreate">The AccessPackage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackage.</returns>
-        System.Threading.Tasks.Task<AccessPackage> CreateAsync(AccessPackage accessPackageToCreate);        /// <summary>
-        /// Creates the specified AccessPackage using POST.
+        System.Threading.Tasks.Task<AccessPackage> CreateAsync(AccessPackage accessPackageToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified AccessPackage using POST and returns a <see cref="GraphResponse{AccessPackage}"/> object.
         /// </summary>
         /// <param name="accessPackageToCreate">The AccessPackage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AccessPackage.</returns>
-        System.Threading.Tasks.Task<AccessPackage> CreateAsync(AccessPackage accessPackageToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AccessPackage.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AccessPackage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackage>> CreateResponseAsync(AccessPackage accessPackageToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AccessPackage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified AccessPackage.
+        /// Deletes the specified AccessPackage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AccessPackage.</returns>
-        System.Threading.Tasks.Task<AccessPackage> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AccessPackage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackage.</returns>
-        System.Threading.Tasks.Task<AccessPackage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessPackage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified AccessPackage using PATCH.
+        /// Gets the specified AccessPackage and returns a <see cref="GraphResponse{AccessPackage}"/> object.
         /// </summary>
-        /// <param name="accessPackageToUpdate">The AccessPackage to update.</param>
-        /// <returns>The updated AccessPackage.</returns>
-        System.Threading.Tasks.Task<AccessPackage> UpdateAsync(AccessPackage accessPackageToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AccessPackage using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessPackage.</returns>
-        System.Threading.Tasks.Task<AccessPackage> UpdateAsync(AccessPackage accessPackageToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessPackage> UpdateAsync(AccessPackage accessPackageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AccessPackage using PATCH and returns a <see cref="GraphResponse{AccessPackage}"/> object.
+        /// </summary>
+        /// <param name="accessPackageToUpdate">The AccessPackage to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessPackage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackage>> UpdateResponseAsync(AccessPackage accessPackageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

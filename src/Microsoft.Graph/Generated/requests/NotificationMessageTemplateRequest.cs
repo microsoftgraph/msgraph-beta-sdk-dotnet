@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified NotificationMessageTemplate using POST.
         /// </summary>
         /// <param name="notificationMessageTemplateToCreate">The NotificationMessageTemplate to create.</param>
-        /// <returns>The created NotificationMessageTemplate.</returns>
-        public System.Threading.Tasks.Task<NotificationMessageTemplate> CreateAsync(NotificationMessageTemplate notificationMessageTemplateToCreate)
-        {
-            return this.CreateAsync(notificationMessageTemplateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified NotificationMessageTemplate using POST.
-        /// </summary>
-        /// <param name="notificationMessageTemplateToCreate">The NotificationMessageTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NotificationMessageTemplate.</returns>
-        public async System.Threading.Tasks.Task<NotificationMessageTemplate> CreateAsync(NotificationMessageTemplate notificationMessageTemplateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<NotificationMessageTemplate> CreateAsync(NotificationMessageTemplate notificationMessageTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<NotificationMessageTemplate>(notificationMessageTemplateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified NotificationMessageTemplate.
+        /// Creates the specified NotificationMessageTemplate using POST and returns a <see cref="GraphResponse{NotificationMessageTemplate}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="notificationMessageTemplateToCreate">The NotificationMessageTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NotificationMessageTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplate>> CreateResponseAsync(NotificationMessageTemplate notificationMessageTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<NotificationMessageTemplate>(notificationMessageTemplateToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<NotificationMessageTemplate>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified NotificationMessageTemplate.
+        /// Deletes the specified NotificationMessageTemplate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The NotificationMessageTemplate.</returns>
-        public System.Threading.Tasks.Task<NotificationMessageTemplate> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The NotificationMessageTemplate.</returns>
-        public async System.Threading.Tasks.Task<NotificationMessageTemplate> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<NotificationMessageTemplate> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<NotificationMessageTemplate>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified NotificationMessageTemplate using PATCH.
+        /// Gets the specified NotificationMessageTemplate and returns a <see cref="GraphResponse{NotificationMessageTemplate}"/> object.
         /// </summary>
-        /// <param name="notificationMessageTemplateToUpdate">The NotificationMessageTemplate to update.</param>
-        /// <returns>The updated NotificationMessageTemplate.</returns>
-        public System.Threading.Tasks.Task<NotificationMessageTemplate> UpdateAsync(NotificationMessageTemplate notificationMessageTemplateToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NotificationMessageTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(notificationMessageTemplateToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<NotificationMessageTemplate>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated NotificationMessageTemplate.</returns>
-        public async System.Threading.Tasks.Task<NotificationMessageTemplate> UpdateAsync(NotificationMessageTemplate notificationMessageTemplateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<NotificationMessageTemplate> UpdateAsync(NotificationMessageTemplate notificationMessageTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (notificationMessageTemplateToUpdate.AdditionalData != null)
-			{
-				if (notificationMessageTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					notificationMessageTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, notificationMessageTemplateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (notificationMessageTemplateToUpdate.AdditionalData != null)
-            {
-                if (notificationMessageTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    notificationMessageTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, notificationMessageTemplateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<NotificationMessageTemplate>(notificationMessageTemplateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified NotificationMessageTemplate using PATCH and returns a <see cref="GraphResponse{NotificationMessageTemplate}"/> object.
+        /// </summary>
+        /// <param name="notificationMessageTemplateToUpdate">The NotificationMessageTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{NotificationMessageTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplate>> UpdateResponseAsync(NotificationMessageTemplate notificationMessageTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<NotificationMessageTemplate>(notificationMessageTemplateToUpdate, cancellationToken);
         }
 
         /// <summary>

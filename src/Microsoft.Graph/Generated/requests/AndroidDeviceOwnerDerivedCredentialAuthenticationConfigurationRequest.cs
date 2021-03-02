@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToCreate">The AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration to create.</param>
-        /// <returns>The created AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration> CreateAsync(AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToCreate)
-        {
-            return this.CreateAsync(androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration using POST.
-        /// </summary>
-        /// <param name="androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToCreate">The AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration> CreateAsync(AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration> CreateAsync(AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration>(androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration.
+        /// Creates the specified AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToCreate">The AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration>> CreateResponseAsync(AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration>(androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration.
+        /// Deletes the specified AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration using PATCH.
+        /// Gets the specified AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration and returns a <see cref="GraphResponse{AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration}"/> object.
         /// </summary>
-        /// <param name="androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate">The AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration to update.</param>
-        /// <returns>The updated AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration> UpdateAsync(AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration> UpdateAsync(AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration> UpdateAsync(AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData != null)
-			{
-				if (androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData != null)
-            {
-                if (androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration>(androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate">The AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration>> UpdateResponseAsync(AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration>(androidDeviceOwnerDerivedCredentialAuthenticationConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

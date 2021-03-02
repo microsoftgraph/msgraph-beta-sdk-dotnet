@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Fido2AuthenticationMethod to the collection via POST.
-        /// </summary>
-        /// <param name="fido2AuthenticationMethod">The Fido2AuthenticationMethod to add.</param>
-        /// <returns>The created Fido2AuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<Fido2AuthenticationMethod> AddAsync(Fido2AuthenticationMethod fido2AuthenticationMethod)
-        {
-            return this.AddAsync(fido2AuthenticationMethod, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Fido2AuthenticationMethod to the collection via POST.
         /// </summary>
         /// <param name="fido2AuthenticationMethod">The Fido2AuthenticationMethod to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Fido2AuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<Fido2AuthenticationMethod> AddAsync(Fido2AuthenticationMethod fido2AuthenticationMethod, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Fido2AuthenticationMethod> AddAsync(Fido2AuthenticationMethod fido2AuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<Fido2AuthenticationMethod>(fido2AuthenticationMethod, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Fido2AuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAuthenticationFido2MethodsCollectionPage> GetAsync()
+        /// <param name="fido2AuthenticationMethod">The Fido2AuthenticationMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> AddResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Fido2AuthenticationMethod>(fido2AuthenticationMethod, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAuthenticationFido2MethodsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAuthenticationFido2MethodsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AuthenticationFido2MethodsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationFido2MethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationFido2MethodsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationFido2MethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AuthenticationFido2MethodsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

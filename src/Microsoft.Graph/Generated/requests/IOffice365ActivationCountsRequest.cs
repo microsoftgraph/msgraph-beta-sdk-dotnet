@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Office365ActivationCounts using POST.
         /// </summary>
         /// <param name="office365ActivationCountsToCreate">The Office365ActivationCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Office365ActivationCounts.</returns>
-        System.Threading.Tasks.Task<Office365ActivationCounts> CreateAsync(Office365ActivationCounts office365ActivationCountsToCreate);        /// <summary>
-        /// Creates the specified Office365ActivationCounts using POST.
+        System.Threading.Tasks.Task<Office365ActivationCounts> CreateAsync(Office365ActivationCounts office365ActivationCountsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified Office365ActivationCounts using POST and returns a <see cref="GraphResponse{Office365ActivationCounts}"/> object.
         /// </summary>
         /// <param name="office365ActivationCountsToCreate">The Office365ActivationCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Office365ActivationCounts.</returns>
-        System.Threading.Tasks.Task<Office365ActivationCounts> CreateAsync(Office365ActivationCounts office365ActivationCountsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Office365ActivationCounts.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Office365ActivationCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365ActivationCounts>> CreateResponseAsync(Office365ActivationCounts office365ActivationCountsToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Office365ActivationCounts.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified Office365ActivationCounts.
+        /// Deletes the specified Office365ActivationCounts and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Office365ActivationCounts.</returns>
-        System.Threading.Tasks.Task<Office365ActivationCounts> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Office365ActivationCounts.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Office365ActivationCounts.</returns>
-        System.Threading.Tasks.Task<Office365ActivationCounts> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Office365ActivationCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified Office365ActivationCounts using PATCH.
+        /// Gets the specified Office365ActivationCounts and returns a <see cref="GraphResponse{Office365ActivationCounts}"/> object.
         /// </summary>
-        /// <param name="office365ActivationCountsToUpdate">The Office365ActivationCounts to update.</param>
-        /// <returns>The updated Office365ActivationCounts.</returns>
-        System.Threading.Tasks.Task<Office365ActivationCounts> UpdateAsync(Office365ActivationCounts office365ActivationCountsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365ActivationCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Office365ActivationCounts using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365ActivationCounts.</returns>
-        System.Threading.Tasks.Task<Office365ActivationCounts> UpdateAsync(Office365ActivationCounts office365ActivationCountsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Office365ActivationCounts> UpdateAsync(Office365ActivationCounts office365ActivationCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Office365ActivationCounts using PATCH and returns a <see cref="GraphResponse{Office365ActivationCounts}"/> object.
+        /// </summary>
+        /// <param name="office365ActivationCountsToUpdate">The Office365ActivationCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365ActivationCounts>> UpdateResponseAsync(Office365ActivationCounts office365ActivationCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

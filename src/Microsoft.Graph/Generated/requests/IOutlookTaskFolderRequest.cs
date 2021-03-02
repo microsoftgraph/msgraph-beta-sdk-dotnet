@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified OutlookTaskFolder using POST.
         /// </summary>
         /// <param name="outlookTaskFolderToCreate">The OutlookTaskFolder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookTaskFolder.</returns>
-        System.Threading.Tasks.Task<OutlookTaskFolder> CreateAsync(OutlookTaskFolder outlookTaskFolderToCreate);        /// <summary>
-        /// Creates the specified OutlookTaskFolder using POST.
+        System.Threading.Tasks.Task<OutlookTaskFolder> CreateAsync(OutlookTaskFolder outlookTaskFolderToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified OutlookTaskFolder using POST and returns a <see cref="GraphResponse{OutlookTaskFolder}"/> object.
         /// </summary>
         /// <param name="outlookTaskFolderToCreate">The OutlookTaskFolder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created OutlookTaskFolder.</returns>
-        System.Threading.Tasks.Task<OutlookTaskFolder> CreateAsync(OutlookTaskFolder outlookTaskFolderToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified OutlookTaskFolder.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{OutlookTaskFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookTaskFolder>> CreateResponseAsync(OutlookTaskFolder outlookTaskFolderToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified OutlookTaskFolder.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified OutlookTaskFolder.
+        /// Deletes the specified OutlookTaskFolder and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OutlookTaskFolder.</returns>
-        System.Threading.Tasks.Task<OutlookTaskFolder> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OutlookTaskFolder.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OutlookTaskFolder.</returns>
-        System.Threading.Tasks.Task<OutlookTaskFolder> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OutlookTaskFolder> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified OutlookTaskFolder using PATCH.
+        /// Gets the specified OutlookTaskFolder and returns a <see cref="GraphResponse{OutlookTaskFolder}"/> object.
         /// </summary>
-        /// <param name="outlookTaskFolderToUpdate">The OutlookTaskFolder to update.</param>
-        /// <returns>The updated OutlookTaskFolder.</returns>
-        System.Threading.Tasks.Task<OutlookTaskFolder> UpdateAsync(OutlookTaskFolder outlookTaskFolderToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookTaskFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookTaskFolder>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OutlookTaskFolder using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OutlookTaskFolder.</returns>
-        System.Threading.Tasks.Task<OutlookTaskFolder> UpdateAsync(OutlookTaskFolder outlookTaskFolderToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OutlookTaskFolder> UpdateAsync(OutlookTaskFolder outlookTaskFolderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified OutlookTaskFolder using PATCH and returns a <see cref="GraphResponse{OutlookTaskFolder}"/> object.
+        /// </summary>
+        /// <param name="outlookTaskFolderToUpdate">The OutlookTaskFolder to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OutlookTaskFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookTaskFolder>> UpdateResponseAsync(OutlookTaskFolder outlookTaskFolderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

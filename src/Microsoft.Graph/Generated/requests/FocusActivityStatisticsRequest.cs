@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified FocusActivityStatistics using POST.
         /// </summary>
         /// <param name="focusActivityStatisticsToCreate">The FocusActivityStatistics to create.</param>
-        /// <returns>The created FocusActivityStatistics.</returns>
-        public System.Threading.Tasks.Task<FocusActivityStatistics> CreateAsync(FocusActivityStatistics focusActivityStatisticsToCreate)
-        {
-            return this.CreateAsync(focusActivityStatisticsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified FocusActivityStatistics using POST.
-        /// </summary>
-        /// <param name="focusActivityStatisticsToCreate">The FocusActivityStatistics to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FocusActivityStatistics.</returns>
-        public async System.Threading.Tasks.Task<FocusActivityStatistics> CreateAsync(FocusActivityStatistics focusActivityStatisticsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FocusActivityStatistics> CreateAsync(FocusActivityStatistics focusActivityStatisticsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<FocusActivityStatistics>(focusActivityStatisticsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified FocusActivityStatistics.
+        /// Creates the specified FocusActivityStatistics using POST and returns a <see cref="GraphResponse{FocusActivityStatistics}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="focusActivityStatisticsToCreate">The FocusActivityStatistics to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FocusActivityStatistics}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FocusActivityStatistics>> CreateResponseAsync(FocusActivityStatistics focusActivityStatisticsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<FocusActivityStatistics>(focusActivityStatisticsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<FocusActivityStatistics>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified FocusActivityStatistics.
+        /// Deletes the specified FocusActivityStatistics and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The FocusActivityStatistics.</returns>
-        public System.Threading.Tasks.Task<FocusActivityStatistics> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The FocusActivityStatistics.</returns>
-        public async System.Threading.Tasks.Task<FocusActivityStatistics> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FocusActivityStatistics> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<FocusActivityStatistics>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified FocusActivityStatistics using PATCH.
+        /// Gets the specified FocusActivityStatistics and returns a <see cref="GraphResponse{FocusActivityStatistics}"/> object.
         /// </summary>
-        /// <param name="focusActivityStatisticsToUpdate">The FocusActivityStatistics to update.</param>
-        /// <returns>The updated FocusActivityStatistics.</returns>
-        public System.Threading.Tasks.Task<FocusActivityStatistics> UpdateAsync(FocusActivityStatistics focusActivityStatisticsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FocusActivityStatistics}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FocusActivityStatistics>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(focusActivityStatisticsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<FocusActivityStatistics>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FocusActivityStatistics.</returns>
-        public async System.Threading.Tasks.Task<FocusActivityStatistics> UpdateAsync(FocusActivityStatistics focusActivityStatisticsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FocusActivityStatistics> UpdateAsync(FocusActivityStatistics focusActivityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (focusActivityStatisticsToUpdate.AdditionalData != null)
-			{
-				if (focusActivityStatisticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					focusActivityStatisticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, focusActivityStatisticsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (focusActivityStatisticsToUpdate.AdditionalData != null)
-            {
-                if (focusActivityStatisticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    focusActivityStatisticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, focusActivityStatisticsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<FocusActivityStatistics>(focusActivityStatisticsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified FocusActivityStatistics using PATCH and returns a <see cref="GraphResponse{FocusActivityStatistics}"/> object.
+        /// </summary>
+        /// <param name="focusActivityStatisticsToUpdate">The FocusActivityStatistics to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{FocusActivityStatistics}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FocusActivityStatistics>> UpdateResponseAsync(FocusActivityStatistics focusActivityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<FocusActivityStatistics>(focusActivityStatisticsToUpdate, cancellationToken);
         }
 
         /// <summary>

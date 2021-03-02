@@ -183,13 +183,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                     Value = checkMemberGroupsCollectionPage,
                     AdditionalData = new Dictionary<string, object> { { "@odata.nextLink", nextPageRequestUrl } },
                 };
-
+                
                 this.serializer.Setup(
-                    serializer => serializer.SerializeObject(It.IsAny<DirectoryObjectCheckMemberGroupsRequestBody>()))
-                    .Returns("request body string");
-
-                this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<DirectoryObjectCheckMemberGroupsCollectionResponse>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<DirectoryObjectCheckMemberGroupsCollectionResponse>(It.IsAny<Stream>()))
                     .Returns(checkMemberGroupsCollectionResponse);
 
                 var returnedCollectionPage = await this.graphServiceClient.Me.CheckMemberGroups(new List<string>()).Request().PostAsync();
@@ -235,11 +231,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var expectedPermission = new Permission { Id = "id", Link = new SharingLink { Type = "edit" } };
 
                 this.serializer.Setup(
-                    serializer => serializer.SerializeObject(It.IsAny<DriveItemCreateLinkRequestBody>()))
-                    .Returns("request body value");
-
-                this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<Permission>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<Permission>(It.IsAny<Stream>()))
                     .Returns(expectedPermission);
 
                 var permission = await this.graphServiceClient.Me.Drive.Items["id"].CreateLink("edit", "scope").Request().PostAsync();

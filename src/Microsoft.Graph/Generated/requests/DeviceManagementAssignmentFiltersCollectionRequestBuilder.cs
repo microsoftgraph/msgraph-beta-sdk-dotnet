@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceAndAppManagementAssignmentFilterValidateFilter.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterValidateFilterRequestBuilder"/>.</returns>
+        public IDeviceAndAppManagementAssignmentFilterValidateFilterRequestBuilder ValidateFilter(
+            DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter = null)
+        {
+            return new DeviceAndAppManagementAssignmentFilterValidateFilterRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.validateFilter"),
+                this.Client,
+                deviceAndAppManagementAssignmentFilter);
+        }
     }
 }

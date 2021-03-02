@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Calendar using POST.
         /// </summary>
         /// <param name="calendarToCreate">The Calendar to create.</param>
-        /// <returns>The created Calendar.</returns>
-        public System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate)
-        {
-            return this.CreateAsync(calendarToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Calendar using POST.
-        /// </summary>
-        /// <param name="calendarToCreate">The Calendar to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Calendar.</returns>
-        public async System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Calendar>(calendarToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Calendar.
+        /// Creates the specified Calendar using POST and returns a <see cref="GraphResponse{Calendar}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="calendarToCreate">The Calendar to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Calendar>> CreateResponseAsync(Calendar calendarToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Calendar>(calendarToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Calendar>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Calendar.
+        /// Deletes the specified Calendar and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Calendar.</returns>
-        public System.Threading.Tasks.Task<Calendar> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Calendar.</returns>
-        public async System.Threading.Tasks.Task<Calendar> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Calendar> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Calendar>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Calendar using PATCH.
+        /// Gets the specified Calendar and returns a <see cref="GraphResponse{Calendar}"/> object.
         /// </summary>
-        /// <param name="calendarToUpdate">The Calendar to update.</param>
-        /// <returns>The updated Calendar.</returns>
-        public System.Threading.Tasks.Task<Calendar> UpdateAsync(Calendar calendarToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Calendar>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(calendarToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Calendar>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Calendar.</returns>
-        public async System.Threading.Tasks.Task<Calendar> UpdateAsync(Calendar calendarToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Calendar> UpdateAsync(Calendar calendarToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (calendarToUpdate.AdditionalData != null)
-			{
-				if (calendarToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					calendarToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, calendarToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (calendarToUpdate.AdditionalData != null)
-            {
-                if (calendarToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    calendarToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, calendarToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Calendar>(calendarToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Calendar using PATCH and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <param name="calendarToUpdate">The Calendar to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Calendar>> UpdateResponseAsync(Calendar calendarToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Calendar>(calendarToUpdate, cancellationToken);
         }
 
         /// <summary>

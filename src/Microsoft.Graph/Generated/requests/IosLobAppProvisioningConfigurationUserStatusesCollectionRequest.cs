@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ManagedDeviceMobileAppConfigurationUserStatus to the collection via POST.
-        /// </summary>
-        /// <param name="managedDeviceMobileAppConfigurationUserStatus">The ManagedDeviceMobileAppConfigurationUserStatus to add.</param>
-        /// <returns>The created ManagedDeviceMobileAppConfigurationUserStatus.</returns>
-        public System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> AddAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatus)
-        {
-            return this.AddAsync(managedDeviceMobileAppConfigurationUserStatus, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedDeviceMobileAppConfigurationUserStatus to the collection via POST.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationUserStatus">The ManagedDeviceMobileAppConfigurationUserStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceMobileAppConfigurationUserStatus.</returns>
-        public System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> AddAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatus, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> AddAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ManagedDeviceMobileAppConfigurationUserStatus>(managedDeviceMobileAppConfigurationUserStatus, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ManagedDeviceMobileAppConfigurationUserStatus to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IIosLobAppProvisioningConfigurationUserStatusesCollectionPage> GetAsync()
+        /// <param name="managedDeviceMobileAppConfigurationUserStatus">The ManagedDeviceMobileAppConfigurationUserStatus to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>> AddResponseAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>(managedDeviceMobileAppConfigurationUserStatus, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IIosLobAppProvisioningConfigurationUserStatusesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IIosLobAppProvisioningConfigurationUserStatusesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<IosLobAppProvisioningConfigurationUserStatusesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IosLobAppProvisioningConfigurationUserStatusesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfigurationUserStatusesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationUserStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IosLobAppProvisioningConfigurationUserStatusesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

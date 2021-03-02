@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSVpnConfiguration using POST.
         /// </summary>
         /// <param name="macOSVpnConfigurationToCreate">The MacOSVpnConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSVpnConfiguration> CreateAsync(MacOSVpnConfiguration macOSVpnConfigurationToCreate);        /// <summary>
-        /// Creates the specified MacOSVpnConfiguration using POST.
+        System.Threading.Tasks.Task<MacOSVpnConfiguration> CreateAsync(MacOSVpnConfiguration macOSVpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified MacOSVpnConfiguration using POST and returns a <see cref="GraphResponse{MacOSVpnConfiguration}"/> object.
         /// </summary>
         /// <param name="macOSVpnConfigurationToCreate">The MacOSVpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MacOSVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSVpnConfiguration> CreateAsync(MacOSVpnConfiguration macOSVpnConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MacOSVpnConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MacOSVpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSVpnConfiguration>> CreateResponseAsync(MacOSVpnConfiguration macOSVpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MacOSVpnConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified MacOSVpnConfiguration.
+        /// Deletes the specified MacOSVpnConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MacOSVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSVpnConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSVpnConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSVpnConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MacOSVpnConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified MacOSVpnConfiguration using PATCH.
+        /// Gets the specified MacOSVpnConfiguration and returns a <see cref="GraphResponse{MacOSVpnConfiguration}"/> object.
         /// </summary>
-        /// <param name="macOSVpnConfigurationToUpdate">The MacOSVpnConfiguration to update.</param>
-        /// <returns>The updated MacOSVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSVpnConfiguration> UpdateAsync(MacOSVpnConfiguration macOSVpnConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSVpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSVpnConfiguration using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSVpnConfiguration> UpdateAsync(MacOSVpnConfiguration macOSVpnConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MacOSVpnConfiguration> UpdateAsync(MacOSVpnConfiguration macOSVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MacOSVpnConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSVpnConfigurationToUpdate">The MacOSVpnConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSVpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSVpnConfiguration>> UpdateResponseAsync(MacOSVpnConfiguration macOSVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

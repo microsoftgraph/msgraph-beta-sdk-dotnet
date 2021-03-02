@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified MuteParticipantOperation using POST.
         /// </summary>
         /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
-        /// <returns>The created MuteParticipantOperation.</returns>
-        public System.Threading.Tasks.Task<MuteParticipantOperation> CreateAsync(MuteParticipantOperation muteParticipantOperationToCreate)
-        {
-            return this.CreateAsync(muteParticipantOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MuteParticipantOperation using POST.
-        /// </summary>
-        /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MuteParticipantOperation.</returns>
-        public async System.Threading.Tasks.Task<MuteParticipantOperation> CreateAsync(MuteParticipantOperation muteParticipantOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MuteParticipantOperation> CreateAsync(MuteParticipantOperation muteParticipantOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<MuteParticipantOperation>(muteParticipantOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified MuteParticipantOperation.
+        /// Creates the specified MuteParticipantOperation using POST and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> CreateResponseAsync(MuteParticipantOperation muteParticipantOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MuteParticipantOperation>(muteParticipantOperationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<MuteParticipantOperation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified MuteParticipantOperation.
+        /// Deletes the specified MuteParticipantOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MuteParticipantOperation.</returns>
-        public System.Threading.Tasks.Task<MuteParticipantOperation> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MuteParticipantOperation.</returns>
-        public async System.Threading.Tasks.Task<MuteParticipantOperation> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MuteParticipantOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<MuteParticipantOperation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified MuteParticipantOperation using PATCH.
+        /// Gets the specified MuteParticipantOperation and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
         /// </summary>
-        /// <param name="muteParticipantOperationToUpdate">The MuteParticipantOperation to update.</param>
-        /// <returns>The updated MuteParticipantOperation.</returns>
-        public System.Threading.Tasks.Task<MuteParticipantOperation> UpdateAsync(MuteParticipantOperation muteParticipantOperationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(muteParticipantOperationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MuteParticipantOperation>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MuteParticipantOperation.</returns>
-        public async System.Threading.Tasks.Task<MuteParticipantOperation> UpdateAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MuteParticipantOperation> UpdateAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (muteParticipantOperationToUpdate.AdditionalData != null)
-			{
-				if (muteParticipantOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					muteParticipantOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, muteParticipantOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (muteParticipantOperationToUpdate.AdditionalData != null)
-            {
-                if (muteParticipantOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    muteParticipantOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, muteParticipantOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<MuteParticipantOperation>(muteParticipantOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MuteParticipantOperation using PATCH and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="muteParticipantOperationToUpdate">The MuteParticipantOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> UpdateResponseAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<MuteParticipantOperation>(muteParticipantOperationToUpdate, cancellationToken);
         }
 
         /// <summary>

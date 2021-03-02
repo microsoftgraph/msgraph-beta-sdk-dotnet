@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DataClassificationService using POST.
         /// </summary>
         /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
-        /// <returns>The created DataClassificationService.</returns>
-        public System.Threading.Tasks.Task<DataClassificationService> CreateAsync(DataClassificationService dataClassificationServiceToCreate)
-        {
-            return this.CreateAsync(dataClassificationServiceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DataClassificationService using POST.
-        /// </summary>
-        /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataClassificationService.</returns>
-        public async System.Threading.Tasks.Task<DataClassificationService> CreateAsync(DataClassificationService dataClassificationServiceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DataClassificationService> CreateAsync(DataClassificationService dataClassificationServiceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DataClassificationService>(dataClassificationServiceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DataClassificationService.
+        /// Creates the specified DataClassificationService using POST and returns a <see cref="GraphResponse{DataClassificationService}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataClassificationService}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> CreateResponseAsync(DataClassificationService dataClassificationServiceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DataClassificationService>(dataClassificationServiceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DataClassificationService>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DataClassificationService.
+        /// Deletes the specified DataClassificationService and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DataClassificationService.</returns>
-        public System.Threading.Tasks.Task<DataClassificationService> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DataClassificationService.</returns>
-        public async System.Threading.Tasks.Task<DataClassificationService> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DataClassificationService> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DataClassificationService>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DataClassificationService using PATCH.
+        /// Gets the specified DataClassificationService and returns a <see cref="GraphResponse{DataClassificationService}"/> object.
         /// </summary>
-        /// <param name="dataClassificationServiceToUpdate">The DataClassificationService to update.</param>
-        /// <returns>The updated DataClassificationService.</returns>
-        public System.Threading.Tasks.Task<DataClassificationService> UpdateAsync(DataClassificationService dataClassificationServiceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataClassificationService}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(dataClassificationServiceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DataClassificationService>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataClassificationService.</returns>
-        public async System.Threading.Tasks.Task<DataClassificationService> UpdateAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DataClassificationService> UpdateAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (dataClassificationServiceToUpdate.AdditionalData != null)
-			{
-				if (dataClassificationServiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					dataClassificationServiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataClassificationServiceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (dataClassificationServiceToUpdate.AdditionalData != null)
-            {
-                if (dataClassificationServiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    dataClassificationServiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataClassificationServiceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DataClassificationService>(dataClassificationServiceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DataClassificationService using PATCH and returns a <see cref="GraphResponse{DataClassificationService}"/> object.
+        /// </summary>
+        /// <param name="dataClassificationServiceToUpdate">The DataClassificationService to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DataClassificationService}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> UpdateResponseAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DataClassificationService>(dataClassificationServiceToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -357,22 +342,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         dataClassificationServiceToInitialize.Jobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs != null && dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs.CurrentPage != null)
-                {
-                    dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("labelsAndPoliciesEvaluationJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

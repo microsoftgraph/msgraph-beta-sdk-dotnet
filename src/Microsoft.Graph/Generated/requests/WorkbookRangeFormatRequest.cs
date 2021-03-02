@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookRangeFormat using POST.
         /// </summary>
         /// <param name="workbookRangeFormatToCreate">The WorkbookRangeFormat to create.</param>
-        /// <returns>The created WorkbookRangeFormat.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeFormat> CreateAsync(WorkbookRangeFormat workbookRangeFormatToCreate)
-        {
-            return this.CreateAsync(workbookRangeFormatToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookRangeFormat using POST.
-        /// </summary>
-        /// <param name="workbookRangeFormatToCreate">The WorkbookRangeFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeFormat.</returns>
-        public async System.Threading.Tasks.Task<WorkbookRangeFormat> CreateAsync(WorkbookRangeFormat workbookRangeFormatToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookRangeFormat> CreateAsync(WorkbookRangeFormat workbookRangeFormatToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WorkbookRangeFormat>(workbookRangeFormatToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WorkbookRangeFormat.
+        /// Creates the specified WorkbookRangeFormat using POST and returns a <see cref="GraphResponse{WorkbookRangeFormat}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="workbookRangeFormatToCreate">The WorkbookRangeFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormat>> CreateResponseAsync(WorkbookRangeFormat workbookRangeFormatToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeFormat>(workbookRangeFormatToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WorkbookRangeFormat>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WorkbookRangeFormat.
+        /// Deletes the specified WorkbookRangeFormat and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookRangeFormat.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeFormat> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookRangeFormat.</returns>
-        public async System.Threading.Tasks.Task<WorkbookRangeFormat> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookRangeFormat> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WorkbookRangeFormat>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WorkbookRangeFormat using PATCH.
+        /// Gets the specified WorkbookRangeFormat and returns a <see cref="GraphResponse{WorkbookRangeFormat}"/> object.
         /// </summary>
-        /// <param name="workbookRangeFormatToUpdate">The WorkbookRangeFormat to update.</param>
-        /// <returns>The updated WorkbookRangeFormat.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeFormat> UpdateAsync(WorkbookRangeFormat workbookRangeFormatToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormat>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(workbookRangeFormatToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeFormat>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookRangeFormat.</returns>
-        public async System.Threading.Tasks.Task<WorkbookRangeFormat> UpdateAsync(WorkbookRangeFormat workbookRangeFormatToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookRangeFormat> UpdateAsync(WorkbookRangeFormat workbookRangeFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookRangeFormatToUpdate.AdditionalData != null)
-			{
-				if (workbookRangeFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookRangeFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeFormatToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookRangeFormatToUpdate.AdditionalData != null)
-            {
-                if (workbookRangeFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookRangeFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeFormatToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WorkbookRangeFormat>(workbookRangeFormatToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookRangeFormat using PATCH and returns a <see cref="GraphResponse{WorkbookRangeFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeFormatToUpdate">The WorkbookRangeFormat to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormat>> UpdateResponseAsync(WorkbookRangeFormat workbookRangeFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeFormat>(workbookRangeFormatToUpdate, cancellationToken);
         }
 
         /// <summary>

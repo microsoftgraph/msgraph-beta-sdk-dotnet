@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> DisplayNameSegments { get; set; }
     
         /// <summary>
+        /// Gets or sets isCreationContext.
+        /// Read-only. Indicates whether the plan is created from the specified context. Auto-generated based on whether the context is specified as part of plan creation.
+        /// </summary>
+        [JsonPropertyName("isCreationContext")]
+        public bool? IsCreationContext { get; set; }
+    
+        /// <summary>
         /// Gets or sets ownerAppId.
         /// Read-only. ID of the app that created the plannerPlanContext.
         /// </summary>

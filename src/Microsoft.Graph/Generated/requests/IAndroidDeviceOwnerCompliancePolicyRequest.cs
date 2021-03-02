@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidDeviceOwnerCompliancePolicy using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerCompliancePolicyToCreate">The AndroidDeviceOwnerCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> CreateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToCreate);        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerCompliancePolicy using POST.
+        System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> CreateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified AndroidDeviceOwnerCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object.
         /// </summary>
         /// <param name="androidDeviceOwnerCompliancePolicyToCreate">The AndroidDeviceOwnerCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AndroidDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> CreateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidDeviceOwnerCompliancePolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerCompliancePolicy>> CreateResponseAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AndroidDeviceOwnerCompliancePolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified AndroidDeviceOwnerCompliancePolicy.
+        /// Deletes the specified AndroidDeviceOwnerCompliancePolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerCompliancePolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified AndroidDeviceOwnerCompliancePolicy using PATCH.
+        /// Gets the specified AndroidDeviceOwnerCompliancePolicy and returns a <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object.
         /// </summary>
-        /// <param name="androidDeviceOwnerCompliancePolicyToUpdate">The AndroidDeviceOwnerCompliancePolicy to update.</param>
-        /// <returns>The updated AndroidDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> UpdateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidDeviceOwnerCompliancePolicy using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> UpdateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> UpdateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerCompliancePolicy using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerCompliancePolicyToUpdate">The AndroidDeviceOwnerCompliancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerCompliancePolicy>> UpdateResponseAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

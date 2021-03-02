@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SignIn to the collection via POST.
-        /// </summary>
-        /// <param name="signIn">The SignIn to add.</param>
-        /// <returns>The created SignIn.</returns>
-        public System.Threading.Tasks.Task<SignIn> AddAsync(SignIn signIn)
-        {
-            return this.AddAsync(signIn, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SignIn to the collection via POST.
         /// </summary>
         /// <param name="signIn">The SignIn to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SignIn.</returns>
-        public System.Threading.Tasks.Task<SignIn> AddAsync(SignIn signIn, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SignIn> AddAsync(SignIn signIn, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<SignIn>(signIn, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified SignIn to the collection via POST and returns a <see cref="GraphResponse{SignIn}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAuditLogRootSignInsCollectionPage> GetAsync()
+        /// <param name="signIn">The SignIn to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SignIn}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SignIn>> AddResponseAsync(SignIn signIn, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SignIn>(signIn, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAuditLogRootSignInsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAuditLogRootSignInsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AuditLogRootSignInsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuditLogRootSignInsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuditLogRootSignInsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuditLogRootSignInsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AuditLogRootSignInsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

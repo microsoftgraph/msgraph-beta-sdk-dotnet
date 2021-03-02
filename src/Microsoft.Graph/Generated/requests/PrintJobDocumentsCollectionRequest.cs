@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PrintDocument to the collection via POST.
-        /// </summary>
-        /// <param name="printDocument">The PrintDocument to add.</param>
-        /// <returns>The created PrintDocument.</returns>
-        public System.Threading.Tasks.Task<PrintDocument> AddAsync(PrintDocument printDocument)
-        {
-            return this.AddAsync(printDocument, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PrintDocument to the collection via POST.
         /// </summary>
         /// <param name="printDocument">The PrintDocument to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintDocument.</returns>
-        public System.Threading.Tasks.Task<PrintDocument> AddAsync(PrintDocument printDocument, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PrintDocument> AddAsync(PrintDocument printDocument, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<PrintDocument>(printDocument, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PrintDocument to the collection via POST and returns a <see cref="GraphResponse{PrintDocument}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPrintJobDocumentsCollectionPage> GetAsync()
+        /// <param name="printDocument">The PrintDocument to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintDocument}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintDocument>> AddResponseAsync(PrintDocument printDocument, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PrintDocument>(printDocument, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPrintJobDocumentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPrintJobDocumentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<PrintJobDocumentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PrintJobDocumentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintJobDocumentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintJobDocumentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PrintJobDocumentsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

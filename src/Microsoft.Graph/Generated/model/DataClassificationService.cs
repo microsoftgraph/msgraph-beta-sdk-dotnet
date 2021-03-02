@@ -77,12 +77,6 @@ namespace Microsoft.Graph
         public IDataClassificationServiceJobsCollectionPage Jobs { get; set; }
     
         /// <summary>
-        /// Gets or sets labels and policies evaluation jobs.
-        /// </summary>
-        [JsonPropertyName("labelsAndPoliciesEvaluationJobs")]
-        public IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionPage LabelsAndPoliciesEvaluationJobs { get; set; }
-    
-        /// <summary>
         /// Gets or sets sensitive types.
         /// </summary>
         [JsonPropertyName("sensitiveTypes")]

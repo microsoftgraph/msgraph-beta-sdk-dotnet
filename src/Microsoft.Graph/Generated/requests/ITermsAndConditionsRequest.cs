@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified TermsAndConditions using POST.
         /// </summary>
         /// <param name="termsAndConditionsToCreate">The TermsAndConditions to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TermsAndConditions.</returns>
-        System.Threading.Tasks.Task<TermsAndConditions> CreateAsync(TermsAndConditions termsAndConditionsToCreate);        /// <summary>
-        /// Creates the specified TermsAndConditions using POST.
+        System.Threading.Tasks.Task<TermsAndConditions> CreateAsync(TermsAndConditions termsAndConditionsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified TermsAndConditions using POST and returns a <see cref="GraphResponse{TermsAndConditions}"/> object.
         /// </summary>
         /// <param name="termsAndConditionsToCreate">The TermsAndConditions to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TermsAndConditions.</returns>
-        System.Threading.Tasks.Task<TermsAndConditions> CreateAsync(TermsAndConditions termsAndConditionsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TermsAndConditions.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> CreateResponseAsync(TermsAndConditions termsAndConditionsToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified TermsAndConditions.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified TermsAndConditions.
+        /// Deletes the specified TermsAndConditions and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TermsAndConditions.</returns>
-        System.Threading.Tasks.Task<TermsAndConditions> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TermsAndConditions.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TermsAndConditions.</returns>
-        System.Threading.Tasks.Task<TermsAndConditions> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TermsAndConditions> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified TermsAndConditions using PATCH.
+        /// Gets the specified TermsAndConditions and returns a <see cref="GraphResponse{TermsAndConditions}"/> object.
         /// </summary>
-        /// <param name="termsAndConditionsToUpdate">The TermsAndConditions to update.</param>
-        /// <returns>The updated TermsAndConditions.</returns>
-        System.Threading.Tasks.Task<TermsAndConditions> UpdateAsync(TermsAndConditions termsAndConditionsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TermsAndConditions using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TermsAndConditions.</returns>
-        System.Threading.Tasks.Task<TermsAndConditions> UpdateAsync(TermsAndConditions termsAndConditionsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TermsAndConditions> UpdateAsync(TermsAndConditions termsAndConditionsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TermsAndConditions using PATCH and returns a <see cref="GraphResponse{TermsAndConditions}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsToUpdate">The TermsAndConditions to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> UpdateResponseAsync(TermsAndConditions termsAndConditionsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

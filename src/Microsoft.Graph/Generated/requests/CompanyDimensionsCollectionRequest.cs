@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Dimension to the collection via POST.
-        /// </summary>
-        /// <param name="dimension">The Dimension to add.</param>
-        /// <returns>The created Dimension.</returns>
-        public System.Threading.Tasks.Task<Dimension> AddAsync(Dimension dimension)
-        {
-            return this.AddAsync(dimension, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Dimension to the collection via POST.
         /// </summary>
         /// <param name="dimension">The Dimension to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Dimension.</returns>
-        public System.Threading.Tasks.Task<Dimension> AddAsync(Dimension dimension, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Dimension> AddAsync(Dimension dimension, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<Dimension>(dimension, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Dimension to the collection via POST and returns a <see cref="GraphResponse{Dimension}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICompanyDimensionsCollectionPage> GetAsync()
+        /// <param name="dimension">The Dimension to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Dimension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Dimension>> AddResponseAsync(Dimension dimension, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Dimension>(dimension, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICompanyDimensionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICompanyDimensionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CompanyDimensionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyDimensionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyDimensionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CompanyDimensionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<CompanyDimensionsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

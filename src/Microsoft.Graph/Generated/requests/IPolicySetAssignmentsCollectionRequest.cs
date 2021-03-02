@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPolicySetAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PolicySetAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="policySetAssignment">The PolicySetAssignment to add.</param>
-        /// <returns>The created PolicySetAssignment.</returns>
-        System.Threading.Tasks.Task<PolicySetAssignment> AddAsync(PolicySetAssignment policySetAssignment);
-
         /// <summary>
         /// Adds the specified PolicySetAssignment to the collection via POST.
         /// </summary>
         /// <param name="policySetAssignment">The PolicySetAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicySetAssignment.</returns>
-        System.Threading.Tasks.Task<PolicySetAssignment> AddAsync(PolicySetAssignment policySetAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PolicySetAssignment> AddAsync(PolicySetAssignment policySetAssignment, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PolicySetAssignment to the collection via POST and returns a <see cref="GraphResponse{PolicySetAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicySetAssignmentsCollectionPage> GetAsync();
+        /// <param name="policySetAssignment">The PolicySetAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySetAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetAssignment>> AddResponseAsync(PolicySetAssignment policySetAssignment, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicySetAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IPolicySetAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicySetAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySetAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

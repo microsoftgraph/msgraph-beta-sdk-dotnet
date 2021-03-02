@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AccessPackageResourceEnvironment.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageResourceEnvironmentWithReferenceRequestBuilder"/>.</returns>
+        public IAccessPackageResourceEnvironmentWithReferenceRequestBuilder AccessPackageResourceEnvironment
+        {
+            get
+            {
+                return new AccessPackageResourceEnvironmentWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceEnvironment"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageResourceRoles.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageResourceAccessPackageResourceRolesCollectionRequestBuilder"/>.</returns>

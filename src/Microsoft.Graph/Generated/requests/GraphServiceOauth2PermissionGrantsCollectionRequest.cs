@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified OAuth2PermissionGrant to the collection via POST.
-        /// </summary>
-        /// <param name="oAuth2PermissionGrant">The OAuth2PermissionGrant to add.</param>
-        /// <returns>The created OAuth2PermissionGrant.</returns>
-        public System.Threading.Tasks.Task<OAuth2PermissionGrant> AddAsync(OAuth2PermissionGrant oAuth2PermissionGrant)
-        {
-            return this.AddAsync(oAuth2PermissionGrant, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OAuth2PermissionGrant to the collection via POST.
         /// </summary>
         /// <param name="oAuth2PermissionGrant">The OAuth2PermissionGrant to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OAuth2PermissionGrant.</returns>
-        public System.Threading.Tasks.Task<OAuth2PermissionGrant> AddAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<OAuth2PermissionGrant> AddAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<OAuth2PermissionGrant>(oAuth2PermissionGrant, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified OAuth2PermissionGrant to the collection via POST and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceOauth2PermissionGrantsCollectionPage> GetAsync()
+        /// <param name="oAuth2PermissionGrant">The OAuth2PermissionGrant to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> AddResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OAuth2PermissionGrant>(oAuth2PermissionGrant, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceOauth2PermissionGrantsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceOauth2PermissionGrantsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GraphServiceOauth2PermissionGrantsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceOauth2PermissionGrantsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceOauth2PermissionGrantsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceOauth2PermissionGrantsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GraphServiceOauth2PermissionGrantsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

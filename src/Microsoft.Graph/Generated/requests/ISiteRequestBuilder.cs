@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         ISiteDrivesCollectionRequestBuilder Drives { get; }
 
         /// <summary>
+        /// Gets the request builder for ExternalColumns.
+        /// </summary>
+        /// <returns>The <see cref="ISiteExternalColumnsCollectionWithReferencesRequestBuilder"/>.</returns>
+        ISiteExternalColumnsCollectionWithReferencesRequestBuilder ExternalColumns { get; }
+
+        /// <summary>
         /// Gets the request builder for Items.
         /// </summary>
         /// <returns>The <see cref="ISiteItemsCollectionRequestBuilder"/>.</returns>
@@ -78,6 +84,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISitePagesCollectionRequestBuilder"/>.</returns>
         ISitePagesCollectionRequestBuilder Pages { get; }
+
+        /// <summary>
+        /// Gets the request builder for Permissions.
+        /// </summary>
+        /// <returns>The <see cref="ISitePermissionsCollectionRequestBuilder"/>.</returns>
+        ISitePermissionsCollectionRequestBuilder Permissions { get; }
 
         /// <summary>
         /// Gets the request builder for Sites.
@@ -99,6 +111,13 @@ namespace Microsoft.Graph
             string startDateTime = null,
             string endDateTime = null,
             string interval = null);
+
+        /// <summary>
+        /// Gets the request builder for SiteGetApplicableContentTypesForList.
+        /// </summary>
+        /// <returns>The <see cref="ISiteGetApplicableContentTypesForListRequestBuilder"/>.</returns>
+        ISiteGetApplicableContentTypesForListRequestBuilder GetApplicableContentTypesForList(
+            string listId);
 
         /// <summary>
         /// Gets the request builder for SiteGetByPath.

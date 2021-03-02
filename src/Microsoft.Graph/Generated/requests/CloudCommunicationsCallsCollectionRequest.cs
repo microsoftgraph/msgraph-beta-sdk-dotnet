@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Call to the collection via POST.
-        /// </summary>
-        /// <param name="call">The Call to add.</param>
-        /// <returns>The created Call.</returns>
-        public System.Threading.Tasks.Task<Call> AddAsync(Call call)
-        {
-            return this.AddAsync(call, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Call to the collection via POST.
         /// </summary>
         /// <param name="call">The Call to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Call.</returns>
-        public System.Threading.Tasks.Task<Call> AddAsync(Call call, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Call> AddAsync(Call call, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<Call>(call, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Call to the collection via POST and returns a <see cref="GraphResponse{Call}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICloudCommunicationsCallsCollectionPage> GetAsync()
+        /// <param name="call">The Call to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Call}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Call>> AddResponseAsync(Call call, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Call>(call, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICloudCommunicationsCallsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICloudCommunicationsCallsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CloudCommunicationsCallsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CloudCommunicationsCallsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudCommunicationsCallsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudCommunicationsCallsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<CloudCommunicationsCallsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -30,6 +30,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets authentication methods policy.
+        /// </summary>
+        [JsonPropertyName("authenticationMethodsPolicy")]
+        public AuthenticationMethodsPolicy AuthenticationMethodsPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication flows policy.
         /// </summary>
         [JsonPropertyName("authenticationFlowsPolicy")]
@@ -40,12 +46,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("b2cAuthenticationMethodsPolicy")]
         public B2cAuthenticationMethodsPolicy B2cAuthenticationMethodsPolicy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device registration policy.
-        /// </summary>
-        [JsonPropertyName("deviceRegistrationPolicy")]
-        public DeviceRegistrationPolicy DeviceRegistrationPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets activity based timeout policies.
@@ -118,6 +118,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("identitySecurityDefaultsEnforcementPolicy")]
         public IdentitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role management policies.
+        /// </summary>
+        [JsonPropertyName("roleManagementPolicies")]
+        public IPolicyRootRoleManagementPoliciesCollectionPage RoleManagementPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role management policy assignments.
+        /// </summary>
+        [JsonPropertyName("roleManagementPolicyAssignments")]
+        public IPolicyRootRoleManagementPolicyAssignmentsCollectionPage RoleManagementPolicyAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

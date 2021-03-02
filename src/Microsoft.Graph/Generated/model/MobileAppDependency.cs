@@ -37,10 +37,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets dependent app count.
-        /// The total number of dependencies the child app has.
+        /// The total number of apps that directly or indirectly depend on the parent app.
         /// </summary>
         [JsonPropertyName("dependentAppCount")]
         public Int32? DependentAppCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets depends on app count.
+        /// The total number of apps the child app directly or indirectly depends on.
+        /// </summary>
+        [JsonPropertyName("dependsOnAppCount")]
+        public Int32? DependsOnAppCount { get; set; }
     
     }
 }

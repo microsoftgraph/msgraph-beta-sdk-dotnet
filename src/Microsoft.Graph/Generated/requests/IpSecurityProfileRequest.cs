@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IpSecurityProfile using POST.
         /// </summary>
         /// <param name="ipSecurityProfileToCreate">The IpSecurityProfile to create.</param>
-        /// <returns>The created IpSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<IpSecurityProfile> CreateAsync(IpSecurityProfile ipSecurityProfileToCreate)
-        {
-            return this.CreateAsync(ipSecurityProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IpSecurityProfile using POST.
-        /// </summary>
-        /// <param name="ipSecurityProfileToCreate">The IpSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IpSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<IpSecurityProfile> CreateAsync(IpSecurityProfile ipSecurityProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IpSecurityProfile> CreateAsync(IpSecurityProfile ipSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IpSecurityProfile>(ipSecurityProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IpSecurityProfile.
+        /// Creates the specified IpSecurityProfile using POST and returns a <see cref="GraphResponse{IpSecurityProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="ipSecurityProfileToCreate">The IpSecurityProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IpSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IpSecurityProfile>> CreateResponseAsync(IpSecurityProfile ipSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IpSecurityProfile>(ipSecurityProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IpSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IpSecurityProfile.
+        /// Deletes the specified IpSecurityProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IpSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<IpSecurityProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IpSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<IpSecurityProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IpSecurityProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IpSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IpSecurityProfile using PATCH.
+        /// Gets the specified IpSecurityProfile and returns a <see cref="GraphResponse{IpSecurityProfile}"/> object.
         /// </summary>
-        /// <param name="ipSecurityProfileToUpdate">The IpSecurityProfile to update.</param>
-        /// <returns>The updated IpSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<IpSecurityProfile> UpdateAsync(IpSecurityProfile ipSecurityProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IpSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IpSecurityProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(ipSecurityProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IpSecurityProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IpSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<IpSecurityProfile> UpdateAsync(IpSecurityProfile ipSecurityProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IpSecurityProfile> UpdateAsync(IpSecurityProfile ipSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (ipSecurityProfileToUpdate.AdditionalData != null)
-			{
-				if (ipSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					ipSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, ipSecurityProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (ipSecurityProfileToUpdate.AdditionalData != null)
-            {
-                if (ipSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    ipSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, ipSecurityProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IpSecurityProfile>(ipSecurityProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IpSecurityProfile using PATCH and returns a <see cref="GraphResponse{IpSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="ipSecurityProfileToUpdate">The IpSecurityProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IpSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IpSecurityProfile>> UpdateResponseAsync(IpSecurityProfile ipSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IpSecurityProfile>(ipSecurityProfileToUpdate, cancellationToken);
         }
 
         /// <summary>

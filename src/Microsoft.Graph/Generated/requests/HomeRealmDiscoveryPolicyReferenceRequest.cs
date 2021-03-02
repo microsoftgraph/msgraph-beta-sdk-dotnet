@@ -35,31 +35,23 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified HomeRealmDiscoveryPolicy reference.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified HomeRealmDiscoveryPolicy reference.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<HomeRealmDiscoveryPolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Puts the specified HomeRealmDiscoveryPolicy reference.
+        /// Deletes the specified HomeRealmDiscoveryPolicy reference and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="id">The HomeRealmDiscoveryPolicy reference to update.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task PutAsync(string id)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.PutAsync(id, CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -68,22 +60,48 @@ namespace Microsoft.Graph
         /// <param name="id">The HomeRealmDiscoveryPolicy reference to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task PutAsync(string id, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task PutAsync(string id, CancellationToken cancellationToken = default(CancellationToken))
         {
             var baseUrl = this.Client.BaseUrl;
             var objectUri = string.Format(@"{0}/users/{1}", baseUrl, id);
-            var stream = new System.IO.MemoryStream();
+            var payload = string.Empty;
+            using (var stream = new System.IO.MemoryStream())
             using (var writer = new System.Text.Json.Utf8JsonWriter(stream))
             {
                 writer.WriteStartObject();
                 writer.WriteString("@odata.id", objectUri);
                 writer.WriteEndObject();
                 await writer.FlushAsync();
+                payload = System.Text.Encoding.UTF8.GetString(stream.ToArray());
             }
-            var payload = System.Text.Encoding.UTF8.GetString(stream.ToArray());
-            this.Method = "PUT";
-            this.ContentType = "application/json";
+            this.Method = HttpMethods.PUT;
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             await this.SendAsync(payload, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Puts the specified HomeRealmDiscoveryPolicy reference and returns <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="id">The HomeRealmDiscoveryPolicy reference to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse"/>.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(string id, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var baseUrl = this.Client.BaseUrl;
+            var objectUri = string.Format(@"{0}/users/{1}", baseUrl, id);
+            var payload = string.Empty;
+            using (var stream = new System.IO.MemoryStream())
+            using (var writer = new System.Text.Json.Utf8JsonWriter(stream))
+            {
+                writer.WriteStartObject();
+                writer.WriteString("@odata.id", objectUri);
+                writer.WriteEndObject();
+                await writer.FlushAsync();
+                payload = System.Text.Encoding.UTF8.GetString(stream.ToArray());
+            }
+            this.Method = HttpMethods.PUT;
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            return await this.SendAsyncWithGraphResponse(payload, cancellationToken).ConfigureAwait(false);
         }
     }
 }

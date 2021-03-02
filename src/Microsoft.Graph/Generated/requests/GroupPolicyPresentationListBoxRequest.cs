@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyPresentationListBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationListBoxToCreate">The GroupPolicyPresentationListBox to create.</param>
-        /// <returns>The created GroupPolicyPresentationListBox.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyPresentationListBox> CreateAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToCreate)
-        {
-            return this.CreateAsync(groupPolicyPresentationListBoxToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupPolicyPresentationListBox using POST.
-        /// </summary>
-        /// <param name="groupPolicyPresentationListBoxToCreate">The GroupPolicyPresentationListBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationListBox.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyPresentationListBox> CreateAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationListBox> CreateAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<GroupPolicyPresentationListBox>(groupPolicyPresentationListBoxToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified GroupPolicyPresentationListBox.
+        /// Creates the specified GroupPolicyPresentationListBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="groupPolicyPresentationListBoxToCreate">The GroupPolicyPresentationListBox to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationListBox>> CreateResponseAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<GroupPolicyPresentationListBox>(groupPolicyPresentationListBoxToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<GroupPolicyPresentationListBox>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified GroupPolicyPresentationListBox.
+        /// Deletes the specified GroupPolicyPresentationListBox and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The GroupPolicyPresentationListBox.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyPresentationListBox> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationListBox.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyPresentationListBox> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationListBox> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<GroupPolicyPresentationListBox>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified GroupPolicyPresentationListBox using PATCH.
+        /// Gets the specified GroupPolicyPresentationListBox and returns a <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object.
         /// </summary>
-        /// <param name="groupPolicyPresentationListBoxToUpdate">The GroupPolicyPresentationListBox to update.</param>
-        /// <returns>The updated GroupPolicyPresentationListBox.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyPresentationListBox> UpdateAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationListBox>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(groupPolicyPresentationListBoxToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GroupPolicyPresentationListBox>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationListBox.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyPresentationListBox> UpdateAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationListBox> UpdateAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (groupPolicyPresentationListBoxToUpdate.AdditionalData != null)
-			{
-				if (groupPolicyPresentationListBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupPolicyPresentationListBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationListBoxToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupPolicyPresentationListBoxToUpdate.AdditionalData != null)
-            {
-                if (groupPolicyPresentationListBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupPolicyPresentationListBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationListBoxToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<GroupPolicyPresentationListBox>(groupPolicyPresentationListBoxToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationListBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationListBoxToUpdate">The GroupPolicyPresentationListBox to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationListBox>> UpdateResponseAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<GroupPolicyPresentationListBox>(groupPolicyPresentationListBoxToUpdate, cancellationToken);
         }
 
         /// <summary>

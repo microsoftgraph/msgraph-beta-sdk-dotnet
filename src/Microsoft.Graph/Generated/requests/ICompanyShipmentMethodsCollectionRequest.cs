@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanyShipmentMethodsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ShipmentMethod to the collection via POST.
-        /// </summary>
-        /// <param name="shipmentMethod">The ShipmentMethod to add.</param>
-        /// <returns>The created ShipmentMethod.</returns>
-        System.Threading.Tasks.Task<ShipmentMethod> AddAsync(ShipmentMethod shipmentMethod);
-
         /// <summary>
         /// Adds the specified ShipmentMethod to the collection via POST.
         /// </summary>
         /// <param name="shipmentMethod">The ShipmentMethod to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ShipmentMethod.</returns>
-        System.Threading.Tasks.Task<ShipmentMethod> AddAsync(ShipmentMethod shipmentMethod, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ShipmentMethod> AddAsync(ShipmentMethod shipmentMethod, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ShipmentMethod to the collection via POST and returns a <see cref="GraphResponse{ShipmentMethod}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyShipmentMethodsCollectionPage> GetAsync();
+        /// <param name="shipmentMethod">The ShipmentMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> AddResponseAsync(ShipmentMethod shipmentMethod, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyShipmentMethodsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICompanyShipmentMethodsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyShipmentMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyShipmentMethodsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyShipmentMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

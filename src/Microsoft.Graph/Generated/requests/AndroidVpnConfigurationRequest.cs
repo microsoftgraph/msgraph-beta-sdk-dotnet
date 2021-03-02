@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidVpnConfiguration using POST.
         /// </summary>
         /// <param name="androidVpnConfigurationToCreate">The AndroidVpnConfiguration to create.</param>
-        /// <returns>The created AndroidVpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidVpnConfiguration> CreateAsync(AndroidVpnConfiguration androidVpnConfigurationToCreate)
-        {
-            return this.CreateAsync(androidVpnConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidVpnConfiguration using POST.
-        /// </summary>
-        /// <param name="androidVpnConfigurationToCreate">The AndroidVpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidVpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidVpnConfiguration> CreateAsync(AndroidVpnConfiguration androidVpnConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidVpnConfiguration> CreateAsync(AndroidVpnConfiguration androidVpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidVpnConfiguration>(androidVpnConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidVpnConfiguration.
+        /// Creates the specified AndroidVpnConfiguration using POST and returns a <see cref="GraphResponse{AndroidVpnConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidVpnConfigurationToCreate">The AndroidVpnConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidVpnConfiguration>> CreateResponseAsync(AndroidVpnConfiguration androidVpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidVpnConfiguration>(androidVpnConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidVpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidVpnConfiguration.
+        /// Deletes the specified AndroidVpnConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidVpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidVpnConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidVpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidVpnConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidVpnConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidVpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidVpnConfiguration using PATCH.
+        /// Gets the specified AndroidVpnConfiguration and returns a <see cref="GraphResponse{AndroidVpnConfiguration}"/> object.
         /// </summary>
-        /// <param name="androidVpnConfigurationToUpdate">The AndroidVpnConfiguration to update.</param>
-        /// <returns>The updated AndroidVpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidVpnConfiguration> UpdateAsync(AndroidVpnConfiguration androidVpnConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(androidVpnConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidVpnConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidVpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidVpnConfiguration> UpdateAsync(AndroidVpnConfiguration androidVpnConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidVpnConfiguration> UpdateAsync(AndroidVpnConfiguration androidVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidVpnConfigurationToUpdate.AdditionalData != null)
-			{
-				if (androidVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidVpnConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidVpnConfigurationToUpdate.AdditionalData != null)
-            {
-                if (androidVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidVpnConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidVpnConfiguration>(androidVpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidVpnConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidVpnConfigurationToUpdate">The AndroidVpnConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidVpnConfiguration>> UpdateResponseAsync(AndroidVpnConfiguration androidVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidVpnConfiguration>(androidVpnConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UserPFXCertificate using POST.
         /// </summary>
         /// <param name="userPFXCertificateToCreate">The UserPFXCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserPFXCertificate.</returns>
-        System.Threading.Tasks.Task<UserPFXCertificate> CreateAsync(UserPFXCertificate userPFXCertificateToCreate);        /// <summary>
-        /// Creates the specified UserPFXCertificate using POST.
+        System.Threading.Tasks.Task<UserPFXCertificate> CreateAsync(UserPFXCertificate userPFXCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified UserPFXCertificate using POST and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object.
         /// </summary>
         /// <param name="userPFXCertificateToCreate">The UserPFXCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UserPFXCertificate.</returns>
-        System.Threading.Tasks.Task<UserPFXCertificate> CreateAsync(UserPFXCertificate userPFXCertificateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserPFXCertificate.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> CreateResponseAsync(UserPFXCertificate userPFXCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UserPFXCertificate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified UserPFXCertificate.
+        /// Deletes the specified UserPFXCertificate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserPFXCertificate.</returns>
-        System.Threading.Tasks.Task<UserPFXCertificate> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserPFXCertificate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserPFXCertificate.</returns>
-        System.Threading.Tasks.Task<UserPFXCertificate> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserPFXCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified UserPFXCertificate using PATCH.
+        /// Gets the specified UserPFXCertificate and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object.
         /// </summary>
-        /// <param name="userPFXCertificateToUpdate">The UserPFXCertificate to update.</param>
-        /// <returns>The updated UserPFXCertificate.</returns>
-        System.Threading.Tasks.Task<UserPFXCertificate> UpdateAsync(UserPFXCertificate userPFXCertificateToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserPFXCertificate using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserPFXCertificate.</returns>
-        System.Threading.Tasks.Task<UserPFXCertificate> UpdateAsync(UserPFXCertificate userPFXCertificateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserPFXCertificate> UpdateAsync(UserPFXCertificate userPFXCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UserPFXCertificate using PATCH and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object.
+        /// </summary>
+        /// <param name="userPFXCertificateToUpdate">The UserPFXCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> UpdateResponseAsync(UserPFXCertificate userPFXCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

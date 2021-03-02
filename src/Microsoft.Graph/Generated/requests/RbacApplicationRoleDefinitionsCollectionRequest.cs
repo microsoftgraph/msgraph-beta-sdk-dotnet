@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleDefinition to the collection via POST.
-        /// </summary>
-        /// <param name="unifiedRoleDefinition">The UnifiedRoleDefinition to add.</param>
-        /// <returns>The created UnifiedRoleDefinition.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleDefinition> AddAsync(UnifiedRoleDefinition unifiedRoleDefinition)
-        {
-            return this.AddAsync(unifiedRoleDefinition, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRoleDefinition to the collection via POST.
         /// </summary>
         /// <param name="unifiedRoleDefinition">The UnifiedRoleDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleDefinition.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleDefinition> AddAsync(UnifiedRoleDefinition unifiedRoleDefinition, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UnifiedRoleDefinition> AddAsync(UnifiedRoleDefinition unifiedRoleDefinition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<UnifiedRoleDefinition>(unifiedRoleDefinition, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UnifiedRoleDefinition to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleDefinition}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IRbacApplicationRoleDefinitionsCollectionPage> GetAsync()
+        /// <param name="unifiedRoleDefinition">The UnifiedRoleDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleDefinition>> AddResponseAsync(UnifiedRoleDefinition unifiedRoleDefinition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleDefinition>(unifiedRoleDefinition, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IRbacApplicationRoleDefinitionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IRbacApplicationRoleDefinitionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<RbacApplicationRoleDefinitionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationRoleDefinitionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationRoleDefinitionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleDefinitionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<RbacApplicationRoleDefinitionsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

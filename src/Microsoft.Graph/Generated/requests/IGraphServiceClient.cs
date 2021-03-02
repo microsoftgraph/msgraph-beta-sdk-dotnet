@@ -42,6 +42,11 @@ namespace Microsoft.Graph
         IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals { get; }
     
         /// <summary>
+        /// Gets the GraphServiceAuthenticationMethodConfigurations request builder.
+        /// </summary>
+        IGraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder AuthenticationMethodConfigurations { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceBookingBusinesses request builder.
         /// </summary>
         IGraphServiceBookingBusinessesCollectionRequestBuilder BookingBusinesses { get; }
@@ -50,6 +55,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceBookingCurrencies request builder.
         /// </summary>
         IGraphServiceBookingCurrenciesCollectionRequestBuilder BookingCurrencies { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceDevices request builder.
+        /// </summary>
+        IGraphServiceDevicesCollectionRequestBuilder Devices { get; }
     
         /// <summary>
         /// Gets the GraphServiceIdentityProviders request builder.
@@ -90,11 +100,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceContracts request builder.
         /// </summary>
         IGraphServiceContractsCollectionRequestBuilder Contracts { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceDevices request builder.
-        /// </summary>
-        IGraphServiceDevicesCollectionRequestBuilder Devices { get; }
     
         /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
@@ -382,6 +387,11 @@ namespace Microsoft.Graph
         IReportRootRequestBuilder Reports { get; }
     
         /// <summary>
+        /// Gets the GraphServiceAuthenticationMethodsPolicy request builder.
+        /// </summary>
+        IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceBitlocker request builder.
         /// </summary>
         IBitlockerRequestBuilder Bitlocker { get; }
@@ -462,14 +472,14 @@ namespace Microsoft.Graph
         ICloudCommunicationsRequestBuilder Communications { get; }
     
         /// <summary>
-        /// Gets the GraphServiceIdentityProtection request builder.
-        /// </summary>
-        IIdentityProtectionRootRequestBuilder IdentityProtection { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceIdentityGovernance request builder.
         /// </summary>
         IIdentityGovernanceRequestBuilder IdentityGovernance { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceIdentityProtection request builder.
+        /// </summary>
+        IIdentityProtectionRootRequestBuilder IdentityProtection { get; }
     
         /// <summary>
         /// Gets the GraphServiceDeviceAppManagement request builder.

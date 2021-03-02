@@ -33,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets ediscovery.
         /// </summary>
         [JsonPropertyName("ediscovery")]
-        public Ediscovery Ediscovery { get; set; }
+        public Microsoft.Graph.Ediscovery.Ediscoveryroot Ediscovery { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

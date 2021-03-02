@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ImportedDeviceIdentity using POST.
         /// </summary>
         /// <param name="importedDeviceIdentityToCreate">The ImportedDeviceIdentity to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ImportedDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedDeviceIdentity> CreateAsync(ImportedDeviceIdentity importedDeviceIdentityToCreate);        /// <summary>
-        /// Creates the specified ImportedDeviceIdentity using POST.
+        System.Threading.Tasks.Task<ImportedDeviceIdentity> CreateAsync(ImportedDeviceIdentity importedDeviceIdentityToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified ImportedDeviceIdentity using POST and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object.
         /// </summary>
         /// <param name="importedDeviceIdentityToCreate">The ImportedDeviceIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ImportedDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedDeviceIdentity> CreateAsync(ImportedDeviceIdentity importedDeviceIdentityToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ImportedDeviceIdentity.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> CreateResponseAsync(ImportedDeviceIdentity importedDeviceIdentityToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ImportedDeviceIdentity.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified ImportedDeviceIdentity.
+        /// Deletes the specified ImportedDeviceIdentity and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ImportedDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedDeviceIdentity> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ImportedDeviceIdentity.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ImportedDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedDeviceIdentity> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ImportedDeviceIdentity> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified ImportedDeviceIdentity using PATCH.
+        /// Gets the specified ImportedDeviceIdentity and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object.
         /// </summary>
-        /// <param name="importedDeviceIdentityToUpdate">The ImportedDeviceIdentity to update.</param>
-        /// <returns>The updated ImportedDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedDeviceIdentity> UpdateAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ImportedDeviceIdentity using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ImportedDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedDeviceIdentity> UpdateAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ImportedDeviceIdentity> UpdateAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ImportedDeviceIdentity using PATCH and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object.
+        /// </summary>
+        /// <param name="importedDeviceIdentityToUpdate">The ImportedDeviceIdentity to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> UpdateResponseAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

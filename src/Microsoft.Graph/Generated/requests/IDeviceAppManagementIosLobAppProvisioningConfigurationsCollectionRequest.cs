@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceAppManagementIosLobAppProvisioningConfigurationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified IosLobAppProvisioningConfiguration to the collection via POST.
-        /// </summary>
-        /// <param name="iosLobAppProvisioningConfiguration">The IosLobAppProvisioningConfiguration to add.</param>
-        /// <returns>The created IosLobAppProvisioningConfiguration.</returns>
-        System.Threading.Tasks.Task<IosLobAppProvisioningConfiguration> AddAsync(IosLobAppProvisioningConfiguration iosLobAppProvisioningConfiguration);
-
         /// <summary>
         /// Adds the specified IosLobAppProvisioningConfiguration to the collection via POST.
         /// </summary>
         /// <param name="iosLobAppProvisioningConfiguration">The IosLobAppProvisioningConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosLobAppProvisioningConfiguration.</returns>
-        System.Threading.Tasks.Task<IosLobAppProvisioningConfiguration> AddAsync(IosLobAppProvisioningConfiguration iosLobAppProvisioningConfiguration, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IosLobAppProvisioningConfiguration> AddAsync(IosLobAppProvisioningConfiguration iosLobAppProvisioningConfiguration, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified IosLobAppProvisioningConfiguration to the collection via POST and returns a <see cref="GraphResponse{IosLobAppProvisioningConfiguration}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementIosLobAppProvisioningConfigurationsCollectionPage> GetAsync();
+        /// <param name="iosLobAppProvisioningConfiguration">The IosLobAppProvisioningConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfiguration>> AddResponseAsync(IosLobAppProvisioningConfiguration iosLobAppProvisioningConfiguration, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementIosLobAppProvisioningConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceAppManagementIosLobAppProvisioningConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementIosLobAppProvisioningConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementIosLobAppProvisioningConfigurationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementIosLobAppProvisioningConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

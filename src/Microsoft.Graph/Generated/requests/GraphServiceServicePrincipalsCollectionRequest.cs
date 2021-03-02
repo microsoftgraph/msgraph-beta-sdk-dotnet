@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ServicePrincipal to the collection via POST.
-        /// </summary>
-        /// <param name="servicePrincipal">The ServicePrincipal to add.</param>
-        /// <returns>The created ServicePrincipal.</returns>
-        public System.Threading.Tasks.Task<ServicePrincipal> AddAsync(ServicePrincipal servicePrincipal)
-        {
-            return this.AddAsync(servicePrincipal, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ServicePrincipal to the collection via POST.
         /// </summary>
         /// <param name="servicePrincipal">The ServicePrincipal to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServicePrincipal.</returns>
-        public System.Threading.Tasks.Task<ServicePrincipal> AddAsync(ServicePrincipal servicePrincipal, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ServicePrincipal> AddAsync(ServicePrincipal servicePrincipal, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ServicePrincipal>(servicePrincipal, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ServicePrincipal to the collection via POST and returns a <see cref="GraphResponse{ServicePrincipal}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceServicePrincipalsCollectionPage> GetAsync()
+        /// <param name="servicePrincipal">The ServicePrincipal to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> AddResponseAsync(ServicePrincipal servicePrincipal, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ServicePrincipal>(servicePrincipal, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceServicePrincipalsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceServicePrincipalsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GraphServiceServicePrincipalsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceServicePrincipalsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceServicePrincipalsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceServicePrincipalsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GraphServiceServicePrincipalsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidManagedStoreAppConfigurationSchema using POST.
         /// </summary>
         /// <param name="androidManagedStoreAppConfigurationSchemaToCreate">The AndroidManagedStoreAppConfigurationSchema to create.</param>
-        /// <returns>The created AndroidManagedStoreAppConfigurationSchema.</returns>
-        public System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> CreateAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToCreate)
-        {
-            return this.CreateAsync(androidManagedStoreAppConfigurationSchemaToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidManagedStoreAppConfigurationSchema using POST.
-        /// </summary>
-        /// <param name="androidManagedStoreAppConfigurationSchemaToCreate">The AndroidManagedStoreAppConfigurationSchema to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidManagedStoreAppConfigurationSchema.</returns>
-        public async System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> CreateAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> CreateAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchemaToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidManagedStoreAppConfigurationSchema.
+        /// Creates the specified AndroidManagedStoreAppConfigurationSchema using POST and returns a <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidManagedStoreAppConfigurationSchemaToCreate">The AndroidManagedStoreAppConfigurationSchema to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> CreateResponseAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchemaToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidManagedStoreAppConfigurationSchema>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidManagedStoreAppConfigurationSchema.
+        /// Deletes the specified AndroidManagedStoreAppConfigurationSchema and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidManagedStoreAppConfigurationSchema.</returns>
-        public System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidManagedStoreAppConfigurationSchema.</returns>
-        public async System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidManagedStoreAppConfigurationSchema>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidManagedStoreAppConfigurationSchema using PATCH.
+        /// Gets the specified AndroidManagedStoreAppConfigurationSchema and returns a <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object.
         /// </summary>
-        /// <param name="androidManagedStoreAppConfigurationSchemaToUpdate">The AndroidManagedStoreAppConfigurationSchema to update.</param>
-        /// <returns>The updated AndroidManagedStoreAppConfigurationSchema.</returns>
-        public System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> UpdateAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(androidManagedStoreAppConfigurationSchemaToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidManagedStoreAppConfigurationSchema>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidManagedStoreAppConfigurationSchema.</returns>
-        public async System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> UpdateAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> UpdateAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidManagedStoreAppConfigurationSchemaToUpdate.AdditionalData != null)
-			{
-				if (androidManagedStoreAppConfigurationSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidManagedStoreAppConfigurationSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidManagedStoreAppConfigurationSchemaToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidManagedStoreAppConfigurationSchemaToUpdate.AdditionalData != null)
-            {
-                if (androidManagedStoreAppConfigurationSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidManagedStoreAppConfigurationSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidManagedStoreAppConfigurationSchemaToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchemaToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidManagedStoreAppConfigurationSchema using PATCH and returns a <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object.
+        /// </summary>
+        /// <param name="androidManagedStoreAppConfigurationSchemaToUpdate">The AndroidManagedStoreAppConfigurationSchema to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> UpdateResponseAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchemaToUpdate, cancellationToken);
         }
 
         /// <summary>

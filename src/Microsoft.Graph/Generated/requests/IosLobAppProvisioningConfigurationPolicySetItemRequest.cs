@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IosLobAppProvisioningConfigurationPolicySetItem using POST.
         /// </summary>
         /// <param name="iosLobAppProvisioningConfigurationPolicySetItemToCreate">The IosLobAppProvisioningConfigurationPolicySetItem to create.</param>
-        /// <returns>The created IosLobAppProvisioningConfigurationPolicySetItem.</returns>
-        public System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationPolicySetItem> CreateAsync(IosLobAppProvisioningConfigurationPolicySetItem iosLobAppProvisioningConfigurationPolicySetItemToCreate)
-        {
-            return this.CreateAsync(iosLobAppProvisioningConfigurationPolicySetItemToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosLobAppProvisioningConfigurationPolicySetItem using POST.
-        /// </summary>
-        /// <param name="iosLobAppProvisioningConfigurationPolicySetItemToCreate">The IosLobAppProvisioningConfigurationPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosLobAppProvisioningConfigurationPolicySetItem.</returns>
-        public async System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationPolicySetItem> CreateAsync(IosLobAppProvisioningConfigurationPolicySetItem iosLobAppProvisioningConfigurationPolicySetItemToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationPolicySetItem> CreateAsync(IosLobAppProvisioningConfigurationPolicySetItem iosLobAppProvisioningConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IosLobAppProvisioningConfigurationPolicySetItem>(iosLobAppProvisioningConfigurationPolicySetItemToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IosLobAppProvisioningConfigurationPolicySetItem.
+        /// Creates the specified IosLobAppProvisioningConfigurationPolicySetItem using POST and returns a <see cref="GraphResponse{IosLobAppProvisioningConfigurationPolicySetItem}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="iosLobAppProvisioningConfigurationPolicySetItemToCreate">The IosLobAppProvisioningConfigurationPolicySetItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfigurationPolicySetItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationPolicySetItem>> CreateResponseAsync(IosLobAppProvisioningConfigurationPolicySetItem iosLobAppProvisioningConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IosLobAppProvisioningConfigurationPolicySetItem>(iosLobAppProvisioningConfigurationPolicySetItemToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IosLobAppProvisioningConfigurationPolicySetItem>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IosLobAppProvisioningConfigurationPolicySetItem.
+        /// Deletes the specified IosLobAppProvisioningConfigurationPolicySetItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosLobAppProvisioningConfigurationPolicySetItem.</returns>
-        public System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationPolicySetItem> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosLobAppProvisioningConfigurationPolicySetItem.</returns>
-        public async System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IosLobAppProvisioningConfigurationPolicySetItem>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IosLobAppProvisioningConfigurationPolicySetItem using PATCH.
+        /// Gets the specified IosLobAppProvisioningConfigurationPolicySetItem and returns a <see cref="GraphResponse{IosLobAppProvisioningConfigurationPolicySetItem}"/> object.
         /// </summary>
-        /// <param name="iosLobAppProvisioningConfigurationPolicySetItemToUpdate">The IosLobAppProvisioningConfigurationPolicySetItem to update.</param>
-        /// <returns>The updated IosLobAppProvisioningConfigurationPolicySetItem.</returns>
-        public System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationPolicySetItem> UpdateAsync(IosLobAppProvisioningConfigurationPolicySetItem iosLobAppProvisioningConfigurationPolicySetItemToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfigurationPolicySetItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(iosLobAppProvisioningConfigurationPolicySetItemToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IosLobAppProvisioningConfigurationPolicySetItem>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosLobAppProvisioningConfigurationPolicySetItem.</returns>
-        public async System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationPolicySetItem> UpdateAsync(IosLobAppProvisioningConfigurationPolicySetItem iosLobAppProvisioningConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationPolicySetItem> UpdateAsync(IosLobAppProvisioningConfigurationPolicySetItem iosLobAppProvisioningConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosLobAppProvisioningConfigurationPolicySetItemToUpdate.AdditionalData != null)
-			{
-				if (iosLobAppProvisioningConfigurationPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosLobAppProvisioningConfigurationPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosLobAppProvisioningConfigurationPolicySetItemToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosLobAppProvisioningConfigurationPolicySetItemToUpdate.AdditionalData != null)
-            {
-                if (iosLobAppProvisioningConfigurationPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosLobAppProvisioningConfigurationPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosLobAppProvisioningConfigurationPolicySetItemToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IosLobAppProvisioningConfigurationPolicySetItem>(iosLobAppProvisioningConfigurationPolicySetItemToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosLobAppProvisioningConfigurationPolicySetItem using PATCH and returns a <see cref="GraphResponse{IosLobAppProvisioningConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="iosLobAppProvisioningConfigurationPolicySetItemToUpdate">The IosLobAppProvisioningConfigurationPolicySetItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfigurationPolicySetItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationPolicySetItem>> UpdateResponseAsync(IosLobAppProvisioningConfigurationPolicySetItem iosLobAppProvisioningConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IosLobAppProvisioningConfigurationPolicySetItem>(iosLobAppProvisioningConfigurationPolicySetItemToUpdate, cancellationToken);
         }
 
         /// <summary>

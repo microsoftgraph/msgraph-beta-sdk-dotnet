@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IProfileAnniversariesCollectionRequest : IBaseRequest
     {
-        
         /// <summary>
-        /// Adds the specified PersonAnniversary to the collection via POST.
+        /// Adds the specified PersonAnnualEvent to the collection via POST.
         /// </summary>
-        /// <param name="personAnniversary">The PersonAnniversary to add.</param>
-        /// <returns>The created PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> AddAsync(PersonAnniversary personAnniversary);
+        /// <param name="personAnnualEvent">The PersonAnnualEvent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The created PersonAnnualEvent.</returns>
+        System.Threading.Tasks.Task<PersonAnnualEvent> AddAsync(PersonAnnualEvent personAnnualEvent, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Adds the specified PersonAnniversary to the collection via POST.
+        /// Adds the specified PersonAnnualEvent to the collection via POST and returns a <see cref="GraphResponse{PersonAnnualEvent}"/> object of the request.
         /// </summary>
-        /// <param name="personAnniversary">The PersonAnniversary to add.</param>
+        /// <param name="personAnnualEvent">The PersonAnnualEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> AddAsync(PersonAnniversary personAnniversary, CancellationToken cancellationToken);
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileAnniversariesCollectionPage> GetAsync();
+        /// <returns>The <see cref="GraphResponse{PersonAnnualEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonAnnualEvent>> AddResponseAsync(PersonAnnualEvent personAnnualEvent, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileAnniversariesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IProfileAnniversariesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAnniversariesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileAnniversariesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfileAnniversariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.
@@ -60,7 +63,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IProfileAnniversariesCollectionRequest Expand(Expression<Func<PersonAnniversary, object>> expandExpression);
+        IProfileAnniversariesCollectionRequest Expand(Expression<Func<PersonAnnualEvent, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -74,7 +77,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IProfileAnniversariesCollectionRequest Select(Expression<Func<PersonAnniversary, object>> selectExpression);
+        IProfileAnniversariesCollectionRequest Select(Expression<Func<PersonAnnualEvent, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

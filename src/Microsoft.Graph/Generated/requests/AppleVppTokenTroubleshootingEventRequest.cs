@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AppleVppTokenTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="appleVppTokenTroubleshootingEventToCreate">The AppleVppTokenTroubleshootingEvent to create.</param>
-        /// <returns>The created AppleVppTokenTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> CreateAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToCreate)
-        {
-            return this.CreateAsync(appleVppTokenTroubleshootingEventToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AppleVppTokenTroubleshootingEvent using POST.
-        /// </summary>
-        /// <param name="appleVppTokenTroubleshootingEventToCreate">The AppleVppTokenTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppleVppTokenTroubleshootingEvent.</returns>
-        public async System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> CreateAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> CreateAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AppleVppTokenTroubleshootingEvent>(appleVppTokenTroubleshootingEventToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AppleVppTokenTroubleshootingEvent.
+        /// Creates the specified AppleVppTokenTroubleshootingEvent using POST and returns a <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="appleVppTokenTroubleshootingEventToCreate">The AppleVppTokenTroubleshootingEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppleVppTokenTroubleshootingEvent>> CreateResponseAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AppleVppTokenTroubleshootingEvent>(appleVppTokenTroubleshootingEventToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AppleVppTokenTroubleshootingEvent>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AppleVppTokenTroubleshootingEvent.
+        /// Deletes the specified AppleVppTokenTroubleshootingEvent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AppleVppTokenTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppleVppTokenTroubleshootingEvent.</returns>
-        public async System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AppleVppTokenTroubleshootingEvent>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AppleVppTokenTroubleshootingEvent using PATCH.
+        /// Gets the specified AppleVppTokenTroubleshootingEvent and returns a <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object.
         /// </summary>
-        /// <param name="appleVppTokenTroubleshootingEventToUpdate">The AppleVppTokenTroubleshootingEvent to update.</param>
-        /// <returns>The updated AppleVppTokenTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> UpdateAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppleVppTokenTroubleshootingEvent>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(appleVppTokenTroubleshootingEventToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AppleVppTokenTroubleshootingEvent>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AppleVppTokenTroubleshootingEvent.</returns>
-        public async System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> UpdateAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> UpdateAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (appleVppTokenTroubleshootingEventToUpdate.AdditionalData != null)
-			{
-				if (appleVppTokenTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					appleVppTokenTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appleVppTokenTroubleshootingEventToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (appleVppTokenTroubleshootingEventToUpdate.AdditionalData != null)
-            {
-                if (appleVppTokenTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    appleVppTokenTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appleVppTokenTroubleshootingEventToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AppleVppTokenTroubleshootingEvent>(appleVppTokenTroubleshootingEventToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AppleVppTokenTroubleshootingEvent using PATCH and returns a <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="appleVppTokenTroubleshootingEventToUpdate">The AppleVppTokenTroubleshootingEvent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppleVppTokenTroubleshootingEvent>> UpdateResponseAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AppleVppTokenTroubleshootingEvent>(appleVppTokenTroubleshootingEventToUpdate, cancellationToken);
         }
 
         /// <summary>

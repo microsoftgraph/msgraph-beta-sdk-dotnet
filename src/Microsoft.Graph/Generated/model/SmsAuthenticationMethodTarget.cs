@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets is usable for sign in.
+        /// Determines if the users or groups can use this authentication method to sign in to Azure AD. The value is always true.
         /// </summary>
         [JsonPropertyName("isUsableForSignIn")]
         public bool? IsUsableForSignIn { get; set; }

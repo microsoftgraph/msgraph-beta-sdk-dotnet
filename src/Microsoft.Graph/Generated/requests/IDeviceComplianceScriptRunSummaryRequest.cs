@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceComplianceScriptRunSummary using POST.
         /// </summary>
         /// <param name="deviceComplianceScriptRunSummaryToCreate">The DeviceComplianceScriptRunSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> CreateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToCreate);        /// <summary>
-        /// Creates the specified DeviceComplianceScriptRunSummary using POST.
+        System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> CreateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified DeviceComplianceScriptRunSummary using POST and returns a <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object.
         /// </summary>
         /// <param name="deviceComplianceScriptRunSummaryToCreate">The DeviceComplianceScriptRunSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceComplianceScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> CreateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceComplianceScriptRunSummary.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptRunSummary>> CreateResponseAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceComplianceScriptRunSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified DeviceComplianceScriptRunSummary.
+        /// Deletes the specified DeviceComplianceScriptRunSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceComplianceScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceComplianceScriptRunSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceComplianceScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified DeviceComplianceScriptRunSummary using PATCH.
+        /// Gets the specified DeviceComplianceScriptRunSummary and returns a <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object.
         /// </summary>
-        /// <param name="deviceComplianceScriptRunSummaryToUpdate">The DeviceComplianceScriptRunSummary to update.</param>
-        /// <returns>The updated DeviceComplianceScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> UpdateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptRunSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceComplianceScriptRunSummary using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComplianceScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> UpdateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> UpdateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceScriptRunSummary using PATCH and returns a <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScriptRunSummaryToUpdate">The DeviceComplianceScriptRunSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptRunSummary>> UpdateResponseAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

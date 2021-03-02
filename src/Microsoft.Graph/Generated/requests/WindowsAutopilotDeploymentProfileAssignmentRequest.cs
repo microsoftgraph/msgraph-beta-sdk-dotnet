@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsAutopilotDeploymentProfileAssignment using POST.
         /// </summary>
         /// <param name="windowsAutopilotDeploymentProfileAssignmentToCreate">The WindowsAutopilotDeploymentProfileAssignment to create.</param>
-        /// <returns>The created WindowsAutopilotDeploymentProfileAssignment.</returns>
-        public System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> CreateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToCreate)
-        {
-            return this.CreateAsync(windowsAutopilotDeploymentProfileAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsAutopilotDeploymentProfileAssignment using POST.
-        /// </summary>
-        /// <param name="windowsAutopilotDeploymentProfileAssignmentToCreate">The WindowsAutopilotDeploymentProfileAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsAutopilotDeploymentProfileAssignment.</returns>
-        public async System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> CreateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> CreateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsAutopilotDeploymentProfileAssignment>(windowsAutopilotDeploymentProfileAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsAutopilotDeploymentProfileAssignment.
+        /// Creates the specified WindowsAutopilotDeploymentProfileAssignment using POST and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsAutopilotDeploymentProfileAssignmentToCreate">The WindowsAutopilotDeploymentProfileAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfileAssignment>> CreateResponseAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsAutopilotDeploymentProfileAssignment>(windowsAutopilotDeploymentProfileAssignmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsAutopilotDeploymentProfileAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsAutopilotDeploymentProfileAssignment.
+        /// Deletes the specified WindowsAutopilotDeploymentProfileAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsAutopilotDeploymentProfileAssignment.</returns>
-        public System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsAutopilotDeploymentProfileAssignment.</returns>
-        public async System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsAutopilotDeploymentProfileAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsAutopilotDeploymentProfileAssignment using PATCH.
+        /// Gets the specified WindowsAutopilotDeploymentProfileAssignment and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object.
         /// </summary>
-        /// <param name="windowsAutopilotDeploymentProfileAssignmentToUpdate">The WindowsAutopilotDeploymentProfileAssignment to update.</param>
-        /// <returns>The updated WindowsAutopilotDeploymentProfileAssignment.</returns>
-        public System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> UpdateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(windowsAutopilotDeploymentProfileAssignmentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsAutopilotDeploymentProfileAssignment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsAutopilotDeploymentProfileAssignment.</returns>
-        public async System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> UpdateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> UpdateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsAutopilotDeploymentProfileAssignmentToUpdate.AdditionalData != null)
-			{
-				if (windowsAutopilotDeploymentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsAutopilotDeploymentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAutopilotDeploymentProfileAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsAutopilotDeploymentProfileAssignmentToUpdate.AdditionalData != null)
-            {
-                if (windowsAutopilotDeploymentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsAutopilotDeploymentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAutopilotDeploymentProfileAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsAutopilotDeploymentProfileAssignment>(windowsAutopilotDeploymentProfileAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsAutopilotDeploymentProfileAssignment using PATCH and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsAutopilotDeploymentProfileAssignmentToUpdate">The WindowsAutopilotDeploymentProfileAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfileAssignment>> UpdateResponseAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsAutopilotDeploymentProfileAssignment>(windowsAutopilotDeploymentProfileAssignmentToUpdate, cancellationToken);
         }
 
         /// <summary>

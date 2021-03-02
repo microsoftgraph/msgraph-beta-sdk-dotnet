@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IB2cIdentityUserFlowUserAttributeAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified IdentityUserFlowAttributeAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="identityUserFlowAttributeAssignment">The IdentityUserFlowAttributeAssignment to add.</param>
-        /// <returns>The created IdentityUserFlowAttributeAssignment.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlowAttributeAssignment> AddAsync(IdentityUserFlowAttributeAssignment identityUserFlowAttributeAssignment);
-
         /// <summary>
         /// Adds the specified IdentityUserFlowAttributeAssignment to the collection via POST.
         /// </summary>
         /// <param name="identityUserFlowAttributeAssignment">The IdentityUserFlowAttributeAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityUserFlowAttributeAssignment.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlowAttributeAssignment> AddAsync(IdentityUserFlowAttributeAssignment identityUserFlowAttributeAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IdentityUserFlowAttributeAssignment> AddAsync(IdentityUserFlowAttributeAssignment identityUserFlowAttributeAssignment, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified IdentityUserFlowAttributeAssignment to the collection via POST and returns a <see cref="GraphResponse{IdentityUserFlowAttributeAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IB2cIdentityUserFlowUserAttributeAssignmentsCollectionPage> GetAsync();
+        /// <param name="identityUserFlowAttributeAssignment">The IdentityUserFlowAttributeAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttributeAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttributeAssignment>> AddResponseAsync(IdentityUserFlowAttributeAssignment identityUserFlowAttributeAssignment, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IB2cIdentityUserFlowUserAttributeAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IB2cIdentityUserFlowUserAttributeAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{B2cIdentityUserFlowUserAttributeAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{B2cIdentityUserFlowUserAttributeAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlowUserAttributeAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

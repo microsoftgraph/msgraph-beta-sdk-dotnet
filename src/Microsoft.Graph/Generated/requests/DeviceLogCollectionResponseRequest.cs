@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceLogCollectionResponse using POST.
         /// </summary>
         /// <param name="deviceLogCollectionResponseToCreate">The DeviceLogCollectionResponse to create.</param>
-        /// <returns>The created DeviceLogCollectionResponse.</returns>
-        public System.Threading.Tasks.Task<DeviceLogCollectionResponse> CreateAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToCreate)
-        {
-            return this.CreateAsync(deviceLogCollectionResponseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceLogCollectionResponse using POST.
-        /// </summary>
-        /// <param name="deviceLogCollectionResponseToCreate">The DeviceLogCollectionResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceLogCollectionResponse.</returns>
-        public async System.Threading.Tasks.Task<DeviceLogCollectionResponse> CreateAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceLogCollectionResponse> CreateAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceLogCollectionResponse>(deviceLogCollectionResponseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceLogCollectionResponse.
+        /// Creates the specified DeviceLogCollectionResponse using POST and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceLogCollectionResponseToCreate">The DeviceLogCollectionResponse to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> CreateResponseAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceLogCollectionResponse>(deviceLogCollectionResponseToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceLogCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceLogCollectionResponse.
+        /// Deletes the specified DeviceLogCollectionResponse and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceLogCollectionResponse.</returns>
-        public System.Threading.Tasks.Task<DeviceLogCollectionResponse> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceLogCollectionResponse.</returns>
-        public async System.Threading.Tasks.Task<DeviceLogCollectionResponse> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceLogCollectionResponse> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceLogCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceLogCollectionResponse using PATCH.
+        /// Gets the specified DeviceLogCollectionResponse and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object.
         /// </summary>
-        /// <param name="deviceLogCollectionResponseToUpdate">The DeviceLogCollectionResponse to update.</param>
-        /// <returns>The updated DeviceLogCollectionResponse.</returns>
-        public System.Threading.Tasks.Task<DeviceLogCollectionResponse> UpdateAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(deviceLogCollectionResponseToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceLogCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceLogCollectionResponse.</returns>
-        public async System.Threading.Tasks.Task<DeviceLogCollectionResponse> UpdateAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceLogCollectionResponse> UpdateAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceLogCollectionResponseToUpdate.AdditionalData != null)
-			{
-				if (deviceLogCollectionResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceLogCollectionResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceLogCollectionResponseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceLogCollectionResponseToUpdate.AdditionalData != null)
-            {
-                if (deviceLogCollectionResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceLogCollectionResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceLogCollectionResponseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceLogCollectionResponse>(deviceLogCollectionResponseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceLogCollectionResponse using PATCH and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="deviceLogCollectionResponseToUpdate">The DeviceLogCollectionResponse to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> UpdateResponseAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceLogCollectionResponse>(deviceLogCollectionResponseToUpdate, cancellationToken);
         }
 
         /// <summary>

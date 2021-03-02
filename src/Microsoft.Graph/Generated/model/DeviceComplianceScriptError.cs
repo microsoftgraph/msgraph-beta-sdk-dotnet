@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public Code? Code { get; set; }
     
         /// <summary>
+        /// Gets or sets deviceComplianceScriptRulesValidationError.
+        /// Error code. Possible values are: none, jsonFileInvalid, jsonFileMissing, jsonFileTooLarge, rulesMissing, duplicateRules, tooManyRulesSpecified, operatorMissing, operatorNotSupported, datatypeMissing, datatypeNotSupported, operatorDataTypeCombinationNotSupported, moreInfoUriMissing, moreInfoUriInvalid, moreInfoUriTooLarge, descriptionMissing, descriptionInvalid, descriptionTooLarge, titleMissing, titleInvalid, titleTooLarge, operandMissing, operandInvalid, operandTooLarge, settingNameMissing, settingNameInvalid, settingNameTooLarge, englishLocaleMissing, duplicateLocales, unrecognizedLocale, unknown, remediationStringsMissing.
+        /// </summary>
+        [JsonPropertyName("deviceComplianceScriptRulesValidationError")]
+        public DeviceComplianceScriptRulesValidationError? DeviceComplianceScriptRulesValidationError { get; set; }
+    
+        /// <summary>
         /// Gets or sets message.
         /// Error message.
         /// </summary>

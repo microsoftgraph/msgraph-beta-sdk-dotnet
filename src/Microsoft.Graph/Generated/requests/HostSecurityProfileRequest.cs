@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified HostSecurityProfile using POST.
         /// </summary>
         /// <param name="hostSecurityProfileToCreate">The HostSecurityProfile to create.</param>
-        /// <returns>The created HostSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<HostSecurityProfile> CreateAsync(HostSecurityProfile hostSecurityProfileToCreate)
-        {
-            return this.CreateAsync(hostSecurityProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified HostSecurityProfile using POST.
-        /// </summary>
-        /// <param name="hostSecurityProfileToCreate">The HostSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created HostSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<HostSecurityProfile> CreateAsync(HostSecurityProfile hostSecurityProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<HostSecurityProfile> CreateAsync(HostSecurityProfile hostSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<HostSecurityProfile>(hostSecurityProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified HostSecurityProfile.
+        /// Creates the specified HostSecurityProfile using POST and returns a <see cref="GraphResponse{HostSecurityProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="hostSecurityProfileToCreate">The HostSecurityProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{HostSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<HostSecurityProfile>> CreateResponseAsync(HostSecurityProfile hostSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<HostSecurityProfile>(hostSecurityProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<HostSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified HostSecurityProfile.
+        /// Deletes the specified HostSecurityProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The HostSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<HostSecurityProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The HostSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<HostSecurityProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<HostSecurityProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<HostSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified HostSecurityProfile using PATCH.
+        /// Gets the specified HostSecurityProfile and returns a <see cref="GraphResponse{HostSecurityProfile}"/> object.
         /// </summary>
-        /// <param name="hostSecurityProfileToUpdate">The HostSecurityProfile to update.</param>
-        /// <returns>The updated HostSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<HostSecurityProfile> UpdateAsync(HostSecurityProfile hostSecurityProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{HostSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<HostSecurityProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(hostSecurityProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<HostSecurityProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated HostSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<HostSecurityProfile> UpdateAsync(HostSecurityProfile hostSecurityProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<HostSecurityProfile> UpdateAsync(HostSecurityProfile hostSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (hostSecurityProfileToUpdate.AdditionalData != null)
-			{
-				if (hostSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					hostSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, hostSecurityProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (hostSecurityProfileToUpdate.AdditionalData != null)
-            {
-                if (hostSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    hostSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, hostSecurityProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<HostSecurityProfile>(hostSecurityProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified HostSecurityProfile using PATCH and returns a <see cref="GraphResponse{HostSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="hostSecurityProfileToUpdate">The HostSecurityProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{HostSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<HostSecurityProfile>> UpdateResponseAsync(HostSecurityProfile hostSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<HostSecurityProfile>(hostSecurityProfileToUpdate, cancellationToken);
         }
 
         /// <summary>

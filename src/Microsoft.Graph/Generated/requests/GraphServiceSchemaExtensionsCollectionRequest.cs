@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SchemaExtension to the collection via POST.
-        /// </summary>
-        /// <param name="schemaExtension">The SchemaExtension to add.</param>
-        /// <returns>The created SchemaExtension.</returns>
-        public System.Threading.Tasks.Task<SchemaExtension> AddAsync(SchemaExtension schemaExtension)
-        {
-            return this.AddAsync(schemaExtension, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SchemaExtension to the collection via POST.
         /// </summary>
         /// <param name="schemaExtension">The SchemaExtension to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SchemaExtension.</returns>
-        public System.Threading.Tasks.Task<SchemaExtension> AddAsync(SchemaExtension schemaExtension, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SchemaExtension> AddAsync(SchemaExtension schemaExtension, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<SchemaExtension>(schemaExtension, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified SchemaExtension to the collection via POST and returns a <see cref="GraphResponse{SchemaExtension}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceSchemaExtensionsCollectionPage> GetAsync()
+        /// <param name="schemaExtension">The SchemaExtension to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> AddResponseAsync(SchemaExtension schemaExtension, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SchemaExtension>(schemaExtension, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceSchemaExtensionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceSchemaExtensionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GraphServiceSchemaExtensionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceSchemaExtensionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceSchemaExtensionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceSchemaExtensionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GraphServiceSchemaExtensionsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

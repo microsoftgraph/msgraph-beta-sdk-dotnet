@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MobileAppTroubleshootingEvent to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppTroubleshootingEvent">The MobileAppTroubleshootingEvent to add.</param>
-        /// <returns>The created MobileAppTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> AddAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEvent)
-        {
-            return this.AddAsync(mobileAppTroubleshootingEvent, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MobileAppTroubleshootingEvent to the collection via POST.
         /// </summary>
         /// <param name="mobileAppTroubleshootingEvent">The MobileAppTroubleshootingEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> AddAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEvent, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> AddAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<MobileAppTroubleshootingEvent>(mobileAppTroubleshootingEvent, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MobileAppTroubleshootingEvent to the collection via POST and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserMobileAppTroubleshootingEventsCollectionPage> GetAsync()
+        /// <param name="mobileAppTroubleshootingEvent">The MobileAppTroubleshootingEvent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> AddResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MobileAppTroubleshootingEvent>(mobileAppTroubleshootingEvent, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserMobileAppTroubleshootingEventsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserMobileAppTroubleshootingEventsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UserMobileAppTroubleshootingEventsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserMobileAppTroubleshootingEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserMobileAppTroubleshootingEventsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserMobileAppTroubleshootingEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserMobileAppTroubleshootingEventsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

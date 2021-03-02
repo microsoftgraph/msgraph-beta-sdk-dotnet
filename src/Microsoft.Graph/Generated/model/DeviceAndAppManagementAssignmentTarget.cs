@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deviceAndAppManagementAssignmentFilterType.
-        /// The type of filter of the target assignment i.e. Exclude or Include. Possible values are: none, include.
+        /// The type of filter of the target assignment i.e. Exclude or Include. Possible values are: none, include, exclude.
         /// </summary>
         [JsonPropertyName("deviceAndAppManagementAssignmentFilterType")]
         public DeviceAndAppManagementAssignmentFilterType? DeviceAndAppManagementAssignmentFilterType { get; set; }

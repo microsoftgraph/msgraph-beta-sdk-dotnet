@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsMicrosoftEdgeApp using POST.
         /// </summary>
         /// <param name="windowsMicrosoftEdgeAppToCreate">The WindowsMicrosoftEdgeApp to create.</param>
-        /// <returns>The created WindowsMicrosoftEdgeApp.</returns>
-        public System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> CreateAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToCreate)
-        {
-            return this.CreateAsync(windowsMicrosoftEdgeAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsMicrosoftEdgeApp using POST.
-        /// </summary>
-        /// <param name="windowsMicrosoftEdgeAppToCreate">The WindowsMicrosoftEdgeApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsMicrosoftEdgeApp.</returns>
-        public async System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> CreateAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> CreateAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsMicrosoftEdgeApp>(windowsMicrosoftEdgeAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsMicrosoftEdgeApp.
+        /// Creates the specified WindowsMicrosoftEdgeApp using POST and returns a <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsMicrosoftEdgeAppToCreate">The WindowsMicrosoftEdgeApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> CreateResponseAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsMicrosoftEdgeApp>(windowsMicrosoftEdgeAppToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsMicrosoftEdgeApp>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsMicrosoftEdgeApp.
+        /// Deletes the specified WindowsMicrosoftEdgeApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsMicrosoftEdgeApp.</returns>
-        public System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsMicrosoftEdgeApp.</returns>
-        public async System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsMicrosoftEdgeApp>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsMicrosoftEdgeApp using PATCH.
+        /// Gets the specified WindowsMicrosoftEdgeApp and returns a <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object.
         /// </summary>
-        /// <param name="windowsMicrosoftEdgeAppToUpdate">The WindowsMicrosoftEdgeApp to update.</param>
-        /// <returns>The updated WindowsMicrosoftEdgeApp.</returns>
-        public System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> UpdateAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(windowsMicrosoftEdgeAppToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsMicrosoftEdgeApp>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsMicrosoftEdgeApp.</returns>
-        public async System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> UpdateAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> UpdateAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsMicrosoftEdgeAppToUpdate.AdditionalData != null)
-			{
-				if (windowsMicrosoftEdgeAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsMicrosoftEdgeAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsMicrosoftEdgeAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsMicrosoftEdgeAppToUpdate.AdditionalData != null)
-            {
-                if (windowsMicrosoftEdgeAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsMicrosoftEdgeAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsMicrosoftEdgeAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsMicrosoftEdgeApp>(windowsMicrosoftEdgeAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsMicrosoftEdgeApp using PATCH and returns a <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object.
+        /// </summary>
+        /// <param name="windowsMicrosoftEdgeAppToUpdate">The WindowsMicrosoftEdgeApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> UpdateResponseAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsMicrosoftEdgeApp>(windowsMicrosoftEdgeAppToUpdate, cancellationToken);
         }
 
         /// <summary>

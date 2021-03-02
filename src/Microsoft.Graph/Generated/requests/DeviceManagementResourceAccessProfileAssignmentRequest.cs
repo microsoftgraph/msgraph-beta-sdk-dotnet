@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementResourceAccessProfileAssignment using POST.
         /// </summary>
         /// <param name="deviceManagementResourceAccessProfileAssignmentToCreate">The DeviceManagementResourceAccessProfileAssignment to create.</param>
-        /// <returns>The created DeviceManagementResourceAccessProfileAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileAssignment> CreateAsync(DeviceManagementResourceAccessProfileAssignment deviceManagementResourceAccessProfileAssignmentToCreate)
-        {
-            return this.CreateAsync(deviceManagementResourceAccessProfileAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementResourceAccessProfileAssignment using POST.
-        /// </summary>
-        /// <param name="deviceManagementResourceAccessProfileAssignmentToCreate">The DeviceManagementResourceAccessProfileAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementResourceAccessProfileAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileAssignment> CreateAsync(DeviceManagementResourceAccessProfileAssignment deviceManagementResourceAccessProfileAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileAssignment> CreateAsync(DeviceManagementResourceAccessProfileAssignment deviceManagementResourceAccessProfileAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceManagementResourceAccessProfileAssignment>(deviceManagementResourceAccessProfileAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceManagementResourceAccessProfileAssignment.
+        /// Creates the specified DeviceManagementResourceAccessProfileAssignment using POST and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileAssignment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceManagementResourceAccessProfileAssignmentToCreate">The DeviceManagementResourceAccessProfileAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileAssignment>> CreateResponseAsync(DeviceManagementResourceAccessProfileAssignment deviceManagementResourceAccessProfileAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfileAssignment>(deviceManagementResourceAccessProfileAssignmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceManagementResourceAccessProfileAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceManagementResourceAccessProfileAssignment.
+        /// Deletes the specified DeviceManagementResourceAccessProfileAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementResourceAccessProfileAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileAssignment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementResourceAccessProfileAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileAssignment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceManagementResourceAccessProfileAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceManagementResourceAccessProfileAssignment using PATCH.
+        /// Gets the specified DeviceManagementResourceAccessProfileAssignment and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileAssignment}"/> object.
         /// </summary>
-        /// <param name="deviceManagementResourceAccessProfileAssignmentToUpdate">The DeviceManagementResourceAccessProfileAssignment to update.</param>
-        /// <returns>The updated DeviceManagementResourceAccessProfileAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileAssignment> UpdateAsync(DeviceManagementResourceAccessProfileAssignment deviceManagementResourceAccessProfileAssignmentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(deviceManagementResourceAccessProfileAssignmentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfileAssignment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementResourceAccessProfileAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileAssignment> UpdateAsync(DeviceManagementResourceAccessProfileAssignment deviceManagementResourceAccessProfileAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileAssignment> UpdateAsync(DeviceManagementResourceAccessProfileAssignment deviceManagementResourceAccessProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementResourceAccessProfileAssignmentToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementResourceAccessProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementResourceAccessProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementResourceAccessProfileAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementResourceAccessProfileAssignmentToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementResourceAccessProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementResourceAccessProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementResourceAccessProfileAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceManagementResourceAccessProfileAssignment>(deviceManagementResourceAccessProfileAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementResourceAccessProfileAssignment using PATCH and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementResourceAccessProfileAssignmentToUpdate">The DeviceManagementResourceAccessProfileAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileAssignment>> UpdateResponseAsync(DeviceManagementResourceAccessProfileAssignment deviceManagementResourceAccessProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfileAssignment>(deviceManagementResourceAccessProfileAssignmentToUpdate, cancellationToken);
         }
 
         /// <summary>

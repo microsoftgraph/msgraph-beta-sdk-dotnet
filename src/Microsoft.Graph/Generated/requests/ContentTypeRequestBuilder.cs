@@ -51,6 +51,30 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Base.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeWithReferenceRequestBuilder"/>.</returns>
+        public IContentTypeWithReferenceRequestBuilder Base
+        {
+            get
+            {
+                return new ContentTypeWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("base"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for BaseTypes.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeBaseTypesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IContentTypeBaseTypesCollectionWithReferencesRequestBuilder BaseTypes
+        {
+            get
+            {
+                return new ContentTypeBaseTypesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("baseTypes"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ColumnLinks.
         /// </summary>
         /// <returns>The <see cref="IContentTypeColumnLinksCollectionRequestBuilder"/>.</returns>
@@ -60,6 +84,93 @@ namespace Microsoft.Graph
             {
                 return new ContentTypeColumnLinksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("columnLinks"), this.Client);
             }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ColumnPositions.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeColumnPositionsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IContentTypeColumnPositionsCollectionWithReferencesRequestBuilder ColumnPositions
+        {
+            get
+            {
+                return new ContentTypeColumnPositionsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("columnPositions"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Columns.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeColumnsCollectionRequestBuilder"/>.</returns>
+        public IContentTypeColumnsCollectionRequestBuilder Columns
+        {
+            get
+            {
+                return new ContentTypeColumnsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("columns"), this.Client);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the request builder for ContentTypePublish.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypePublishRequestBuilder"/>.</returns>
+        public IContentTypePublishRequestBuilder Publish()
+        {
+            return new ContentTypePublishRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.publish"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ContentTypeUnpublish.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeUnpublishRequestBuilder"/>.</returns>
+        public IContentTypeUnpublishRequestBuilder Unpublish()
+        {
+            return new ContentTypeUnpublishRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unpublish"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ContentTypeAssociateWithHubSites.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeAssociateWithHubSitesRequestBuilder"/>.</returns>
+        public IContentTypeAssociateWithHubSitesRequestBuilder AssociateWithHubSites(
+            IEnumerable<string> hubSiteUrls,
+            bool? propagateToExistingLists = null)
+        {
+            return new ContentTypeAssociateWithHubSitesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.associateWithHubSites"),
+                this.Client,
+                hubSiteUrls,
+                propagateToExistingLists);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ContentTypeCopyToDefaultContentLocation.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeCopyToDefaultContentLocationRequestBuilder"/>.</returns>
+        public IContentTypeCopyToDefaultContentLocationRequestBuilder CopyToDefaultContentLocation(
+            ItemReference sourceFile,
+            string destinationFileName = null)
+        {
+            return new ContentTypeCopyToDefaultContentLocationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.copyToDefaultContentLocation"),
+                this.Client,
+                sourceFile,
+                destinationFileName);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ContentTypeIsPublished.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeIsPublishedRequestBuilder"/>.</returns>
+        public IContentTypeIsPublishedRequestBuilder IsPublished()
+        {
+            return new ContentTypeIsPublishedRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.isPublished"),
+                this.Client);
         }
     
     }

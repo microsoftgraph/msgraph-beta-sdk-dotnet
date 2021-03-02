@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IUserAnalyticsRequestBuilder Analytics { get; }
 
         /// <summary>
+        /// Gets the request builder for UsageRights.
+        /// </summary>
+        /// <returns>The <see cref="IUserUsageRightsCollectionRequestBuilder"/>.</returns>
+        IUserUsageRightsCollectionRequestBuilder UsageRights { get; }
+
+        /// <summary>
         /// Gets the request builder for InformationProtection.
         /// </summary>
         /// <returns>The <see cref="IInformationProtectionRequestBuilder"/>.</returns>
@@ -188,18 +194,6 @@ namespace Microsoft.Graph
         IUserPeopleCollectionRequestBuilder People { get; }
 
         /// <summary>
-        /// Gets the request builder for Photo.
-        /// </summary>
-        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
-        IProfilePhotoRequestBuilder Photo { get; }
-
-        /// <summary>
-        /// Gets the request builder for Photos.
-        /// </summary>
-        /// <returns>The <see cref="IUserPhotosCollectionRequestBuilder"/>.</returns>
-        IUserPhotosCollectionRequestBuilder Photos { get; }
-
-        /// <summary>
         /// Gets the request builder for Drive.
         /// </summary>
         /// <returns>The <see cref="IDriveRequestBuilder"/>.</returns>
@@ -320,6 +314,18 @@ namespace Microsoft.Graph
         IOnenoteRequestBuilder Onenote { get; }
 
         /// <summary>
+        /// Gets the request builder for Photo.
+        /// </summary>
+        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
+        IProfilePhotoRequestBuilder Photo { get; }
+
+        /// <summary>
+        /// Gets the request builder for Photos.
+        /// </summary>
+        /// <returns>The <see cref="IUserPhotosCollectionRequestBuilder"/>.</returns>
+        IUserPhotosCollectionRequestBuilder Photos { get; }
+
+        /// <summary>
         /// Gets the request builder for Profile.
         /// </summary>
         /// <returns>The <see cref="IProfileRequestBuilder"/>.</returns>
@@ -379,6 +385,14 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ITodoRequestBuilder"/>.</returns>
         ITodoRequestBuilder Todo { get; }
     
+        /// <summary>
+        /// Gets the request builder for UserActivateServicePlan.
+        /// </summary>
+        /// <returns>The <see cref="IUserActivateServicePlanRequestBuilder"/>.</returns>
+        IUserActivateServicePlanRequestBuilder ActivateServicePlan(
+            Guid servicePlanId,
+            Guid skuId);
+
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
         /// </summary>

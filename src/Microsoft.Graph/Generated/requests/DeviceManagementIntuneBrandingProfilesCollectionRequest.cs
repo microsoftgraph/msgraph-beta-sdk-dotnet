@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified IntuneBrandingProfile to the collection via POST.
-        /// </summary>
-        /// <param name="intuneBrandingProfile">The IntuneBrandingProfile to add.</param>
-        /// <returns>The created IntuneBrandingProfile.</returns>
-        public System.Threading.Tasks.Task<IntuneBrandingProfile> AddAsync(IntuneBrandingProfile intuneBrandingProfile)
-        {
-            return this.AddAsync(intuneBrandingProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified IntuneBrandingProfile to the collection via POST.
         /// </summary>
         /// <param name="intuneBrandingProfile">The IntuneBrandingProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IntuneBrandingProfile.</returns>
-        public System.Threading.Tasks.Task<IntuneBrandingProfile> AddAsync(IntuneBrandingProfile intuneBrandingProfile, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<IntuneBrandingProfile> AddAsync(IntuneBrandingProfile intuneBrandingProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<IntuneBrandingProfile>(intuneBrandingProfile, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified IntuneBrandingProfile to the collection via POST and returns a <see cref="GraphResponse{IntuneBrandingProfile}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementIntuneBrandingProfilesCollectionPage> GetAsync()
+        /// <param name="intuneBrandingProfile">The IntuneBrandingProfile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IntuneBrandingProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfile>> AddResponseAsync(IntuneBrandingProfile intuneBrandingProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IntuneBrandingProfile>(intuneBrandingProfile, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementIntuneBrandingProfilesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementIntuneBrandingProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementIntuneBrandingProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIntuneBrandingProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntuneBrandingProfilesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntuneBrandingProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntuneBrandingProfilesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

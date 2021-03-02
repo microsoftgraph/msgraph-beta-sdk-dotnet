@@ -130,6 +130,11 @@ namespace Microsoft.Graph
         CloudPC = 21,
 	
         /// <summary>
+        /// Linux
+        /// </summary>
+        Linux = 22,
+	
+        /// <summary>
         /// Blackberry
         /// </summary>
         Blackberry = 100,

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Windows81VpnConfiguration using POST.
         /// </summary>
         /// <param name="windows81VpnConfigurationToCreate">The Windows81VpnConfiguration to create.</param>
-        /// <returns>The created Windows81VpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows81VpnConfiguration> CreateAsync(Windows81VpnConfiguration windows81VpnConfigurationToCreate)
-        {
-            return this.CreateAsync(windows81VpnConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows81VpnConfiguration using POST.
-        /// </summary>
-        /// <param name="windows81VpnConfigurationToCreate">The Windows81VpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows81VpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows81VpnConfiguration> CreateAsync(Windows81VpnConfiguration windows81VpnConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows81VpnConfiguration> CreateAsync(Windows81VpnConfiguration windows81VpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Windows81VpnConfiguration>(windows81VpnConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Windows81VpnConfiguration.
+        /// Creates the specified Windows81VpnConfiguration using POST and returns a <see cref="GraphResponse{Windows81VpnConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windows81VpnConfigurationToCreate">The Windows81VpnConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows81VpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows81VpnConfiguration>> CreateResponseAsync(Windows81VpnConfiguration windows81VpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Windows81VpnConfiguration>(windows81VpnConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Windows81VpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Windows81VpnConfiguration.
+        /// Deletes the specified Windows81VpnConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Windows81VpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows81VpnConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows81VpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows81VpnConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows81VpnConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Windows81VpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Windows81VpnConfiguration using PATCH.
+        /// Gets the specified Windows81VpnConfiguration and returns a <see cref="GraphResponse{Windows81VpnConfiguration}"/> object.
         /// </summary>
-        /// <param name="windows81VpnConfigurationToUpdate">The Windows81VpnConfiguration to update.</param>
-        /// <returns>The updated Windows81VpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows81VpnConfiguration> UpdateAsync(Windows81VpnConfiguration windows81VpnConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows81VpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows81VpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(windows81VpnConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Windows81VpnConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows81VpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows81VpnConfiguration> UpdateAsync(Windows81VpnConfiguration windows81VpnConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows81VpnConfiguration> UpdateAsync(Windows81VpnConfiguration windows81VpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windows81VpnConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windows81VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows81VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows81VpnConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows81VpnConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windows81VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows81VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows81VpnConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Windows81VpnConfiguration>(windows81VpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows81VpnConfiguration using PATCH and returns a <see cref="GraphResponse{Windows81VpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows81VpnConfigurationToUpdate">The Windows81VpnConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows81VpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows81VpnConfiguration>> UpdateResponseAsync(Windows81VpnConfiguration windows81VpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Windows81VpnConfiguration>(windows81VpnConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

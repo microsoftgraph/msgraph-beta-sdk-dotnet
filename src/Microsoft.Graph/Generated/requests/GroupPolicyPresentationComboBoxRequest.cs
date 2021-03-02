@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyPresentationComboBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationComboBoxToCreate">The GroupPolicyPresentationComboBox to create.</param>
-        /// <returns>The created GroupPolicyPresentationComboBox.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> CreateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToCreate)
-        {
-            return this.CreateAsync(groupPolicyPresentationComboBoxToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupPolicyPresentationComboBox using POST.
-        /// </summary>
-        /// <param name="groupPolicyPresentationComboBoxToCreate">The GroupPolicyPresentationComboBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationComboBox.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> CreateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> CreateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<GroupPolicyPresentationComboBox>(groupPolicyPresentationComboBoxToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified GroupPolicyPresentationComboBox.
+        /// Creates the specified GroupPolicyPresentationComboBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="groupPolicyPresentationComboBoxToCreate">The GroupPolicyPresentationComboBox to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> CreateResponseAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<GroupPolicyPresentationComboBox>(groupPolicyPresentationComboBoxToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<GroupPolicyPresentationComboBox>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified GroupPolicyPresentationComboBox.
+        /// Deletes the specified GroupPolicyPresentationComboBox and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The GroupPolicyPresentationComboBox.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationComboBox.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<GroupPolicyPresentationComboBox>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified GroupPolicyPresentationComboBox using PATCH.
+        /// Gets the specified GroupPolicyPresentationComboBox and returns a <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object.
         /// </summary>
-        /// <param name="groupPolicyPresentationComboBoxToUpdate">The GroupPolicyPresentationComboBox to update.</param>
-        /// <returns>The updated GroupPolicyPresentationComboBox.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> UpdateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(groupPolicyPresentationComboBoxToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GroupPolicyPresentationComboBox>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationComboBox.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> UpdateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> UpdateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (groupPolicyPresentationComboBoxToUpdate.AdditionalData != null)
-			{
-				if (groupPolicyPresentationComboBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupPolicyPresentationComboBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationComboBoxToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupPolicyPresentationComboBoxToUpdate.AdditionalData != null)
-            {
-                if (groupPolicyPresentationComboBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupPolicyPresentationComboBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationComboBoxToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<GroupPolicyPresentationComboBox>(groupPolicyPresentationComboBoxToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationComboBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationComboBoxToUpdate">The GroupPolicyPresentationComboBox to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> UpdateResponseAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<GroupPolicyPresentationComboBox>(groupPolicyPresentationComboBoxToUpdate, cancellationToken);
         }
 
         /// <summary>

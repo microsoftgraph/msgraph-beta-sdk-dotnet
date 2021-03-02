@@ -37,20 +37,11 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IServicePrincipalOwnersCollectionWithReferencesPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IServicePrincipalOwnersCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IServicePrincipalOwnersCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ServicePrincipalOwnersCollectionWithReferencesResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -76,6 +67,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ServicePrincipalOwnersCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipalOwnersCollectionWithReferencesResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServicePrincipalOwnersCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ServicePrincipalOwnersCollectionWithReferencesResponse>(null, cancellationToken);
         }
 
         /// <summary>

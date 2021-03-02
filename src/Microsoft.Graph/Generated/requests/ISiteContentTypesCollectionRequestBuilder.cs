@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IContentTypeRequestBuilder"/>.</returns>
         IContentTypeRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for ContentTypeAddCopy.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeAddCopyRequestBuilder"/>.</returns>
+        IContentTypeAddCopyRequestBuilder AddCopy(
+            string contentType);
     }
 }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRoleAssignmentMultiple using POST.
         /// </summary>
         /// <param name="unifiedRoleAssignmentMultipleToCreate">The UnifiedRoleAssignmentMultiple to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleAssignmentMultiple.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> CreateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToCreate);        /// <summary>
-        /// Creates the specified UnifiedRoleAssignmentMultiple using POST.
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> CreateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified UnifiedRoleAssignmentMultiple using POST and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object.
         /// </summary>
         /// <param name="unifiedRoleAssignmentMultipleToCreate">The UnifiedRoleAssignmentMultiple to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UnifiedRoleAssignmentMultiple.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> CreateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UnifiedRoleAssignmentMultiple.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> CreateResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UnifiedRoleAssignmentMultiple.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified UnifiedRoleAssignmentMultiple.
+        /// Deletes the specified UnifiedRoleAssignmentMultiple and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UnifiedRoleAssignmentMultiple.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRoleAssignmentMultiple.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleAssignmentMultiple.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified UnifiedRoleAssignmentMultiple using PATCH.
+        /// Gets the specified UnifiedRoleAssignmentMultiple and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object.
         /// </summary>
-        /// <param name="unifiedRoleAssignmentMultipleToUpdate">The UnifiedRoleAssignmentMultiple to update.</param>
-        /// <returns>The updated UnifiedRoleAssignmentMultiple.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> UpdateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnifiedRoleAssignmentMultiple using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleAssignmentMultiple.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> UpdateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> UpdateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleAssignmentMultiple using PATCH and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleAssignmentMultipleToUpdate">The UnifiedRoleAssignmentMultiple to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> UpdateResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

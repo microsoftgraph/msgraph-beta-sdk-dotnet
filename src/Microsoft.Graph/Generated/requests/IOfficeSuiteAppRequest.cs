@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified OfficeSuiteApp using POST.
         /// </summary>
         /// <param name="officeSuiteAppToCreate">The OfficeSuiteApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OfficeSuiteApp.</returns>
-        System.Threading.Tasks.Task<OfficeSuiteApp> CreateAsync(OfficeSuiteApp officeSuiteAppToCreate);        /// <summary>
-        /// Creates the specified OfficeSuiteApp using POST.
+        System.Threading.Tasks.Task<OfficeSuiteApp> CreateAsync(OfficeSuiteApp officeSuiteAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified OfficeSuiteApp using POST and returns a <see cref="GraphResponse{OfficeSuiteApp}"/> object.
         /// </summary>
         /// <param name="officeSuiteAppToCreate">The OfficeSuiteApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created OfficeSuiteApp.</returns>
-        System.Threading.Tasks.Task<OfficeSuiteApp> CreateAsync(OfficeSuiteApp officeSuiteAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified OfficeSuiteApp.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{OfficeSuiteApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeSuiteApp>> CreateResponseAsync(OfficeSuiteApp officeSuiteAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified OfficeSuiteApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified OfficeSuiteApp.
+        /// Deletes the specified OfficeSuiteApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OfficeSuiteApp.</returns>
-        System.Threading.Tasks.Task<OfficeSuiteApp> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OfficeSuiteApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OfficeSuiteApp.</returns>
-        System.Threading.Tasks.Task<OfficeSuiteApp> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OfficeSuiteApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified OfficeSuiteApp using PATCH.
+        /// Gets the specified OfficeSuiteApp and returns a <see cref="GraphResponse{OfficeSuiteApp}"/> object.
         /// </summary>
-        /// <param name="officeSuiteAppToUpdate">The OfficeSuiteApp to update.</param>
-        /// <returns>The updated OfficeSuiteApp.</returns>
-        System.Threading.Tasks.Task<OfficeSuiteApp> UpdateAsync(OfficeSuiteApp officeSuiteAppToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeSuiteApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeSuiteApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OfficeSuiteApp using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OfficeSuiteApp.</returns>
-        System.Threading.Tasks.Task<OfficeSuiteApp> UpdateAsync(OfficeSuiteApp officeSuiteAppToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OfficeSuiteApp> UpdateAsync(OfficeSuiteApp officeSuiteAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified OfficeSuiteApp using PATCH and returns a <see cref="GraphResponse{OfficeSuiteApp}"/> object.
+        /// </summary>
+        /// <param name="officeSuiteAppToUpdate">The OfficeSuiteApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OfficeSuiteApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeSuiteApp>> UpdateResponseAsync(OfficeSuiteApp officeSuiteAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

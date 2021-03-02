@@ -29,5 +29,10 @@ namespace Microsoft.Graph
         /// </summary>
         Include = 1,
 	
+        /// <summary>
+        /// Exclude
+        /// </summary>
+        Exclude = 2,
+	
     }
 }

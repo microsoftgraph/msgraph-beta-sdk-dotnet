@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedDevice using POST.
         /// </summary>
         /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
-        /// <returns>The created ManagedDevice.</returns>
-        public System.Threading.Tasks.Task<ManagedDevice> CreateAsync(ManagedDevice managedDeviceToCreate)
-        {
-            return this.CreateAsync(managedDeviceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedDevice using POST.
-        /// </summary>
-        /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDevice.</returns>
-        public async System.Threading.Tasks.Task<ManagedDevice> CreateAsync(ManagedDevice managedDeviceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedDevice> CreateAsync(ManagedDevice managedDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ManagedDevice>(managedDeviceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ManagedDevice.
+        /// Creates the specified ManagedDevice using POST and returns a <see cref="GraphResponse{ManagedDevice}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDevice}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDevice>> CreateResponseAsync(ManagedDevice managedDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ManagedDevice>(managedDeviceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ManagedDevice>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ManagedDevice.
+        /// Deletes the specified ManagedDevice and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagedDevice.</returns>
-        public System.Threading.Tasks.Task<ManagedDevice> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDevice.</returns>
-        public async System.Threading.Tasks.Task<ManagedDevice> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedDevice> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ManagedDevice>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ManagedDevice using PATCH.
+        /// Gets the specified ManagedDevice and returns a <see cref="GraphResponse{ManagedDevice}"/> object.
         /// </summary>
-        /// <param name="managedDeviceToUpdate">The ManagedDevice to update.</param>
-        /// <returns>The updated ManagedDevice.</returns>
-        public System.Threading.Tasks.Task<ManagedDevice> UpdateAsync(ManagedDevice managedDeviceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDevice}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDevice>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(managedDeviceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagedDevice>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDevice.</returns>
-        public async System.Threading.Tasks.Task<ManagedDevice> UpdateAsync(ManagedDevice managedDeviceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedDevice> UpdateAsync(ManagedDevice managedDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (managedDeviceToUpdate.AdditionalData != null)
-			{
-				if (managedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedDeviceToUpdate.AdditionalData != null)
-            {
-                if (managedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ManagedDevice>(managedDeviceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedDevice using PATCH and returns a <see cref="GraphResponse{ManagedDevice}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceToUpdate">The ManagedDevice to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedDevice}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDevice>> UpdateResponseAsync(ManagedDevice managedDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ManagedDevice>(managedDeviceToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -234,22 +219,6 @@ namespace Microsoft.Graph
             if (managedDeviceToInitialize != null && managedDeviceToInitialize.AdditionalData != null)
             {
 
-                if (managedDeviceToInitialize.SecurityBaselineStates != null && managedDeviceToInitialize.SecurityBaselineStates.CurrentPage != null)
-                {
-                    managedDeviceToInitialize.SecurityBaselineStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceToInitialize.AdditionalData.TryGetValue("securityBaselineStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceToInitialize.SecurityBaselineStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (managedDeviceToInitialize.DeviceCompliancePolicyStates != null && managedDeviceToInitialize.DeviceCompliancePolicyStates.CurrentPage != null)
                 {
                     managedDeviceToInitialize.DeviceCompliancePolicyStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
@@ -261,6 +230,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         managedDeviceToInitialize.DeviceCompliancePolicyStates.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails != null && managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails.CurrentPage != null)
+                {
+                    managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails.AdditionalData = managedDeviceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedDeviceToInitialize.AdditionalData.TryGetValue("assignmentFilterEvaluationStatusDetails@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -293,6 +278,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         managedDeviceToInitialize.ManagedDeviceMobileAppConfigurationStates.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedDeviceToInitialize.SecurityBaselineStates != null && managedDeviceToInitialize.SecurityBaselineStates.CurrentPage != null)
+                {
+                    managedDeviceToInitialize.SecurityBaselineStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedDeviceToInitialize.AdditionalData.TryGetValue("securityBaselineStates@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedDeviceToInitialize.SecurityBaselineStates.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

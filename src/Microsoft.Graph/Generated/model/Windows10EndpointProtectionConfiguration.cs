@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets application guard allow camera microphone redirection.
+        /// Gets or sets whether applications inside Microsoft Defender Application Guard can access the device’s camera and microphone.
+        /// </summary>
+        [JsonPropertyName("applicationGuardAllowCameraMicrophoneRedirection")]
+        public bool? ApplicationGuardAllowCameraMicrophoneRedirection { get; set; }
+    
+        /// <summary>
         /// Gets or sets application guard allow file save on host.
         /// Allow users to download files from Edge in the application guard container and save them on the host file system
         /// </summary>
@@ -97,6 +104,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("applicationGuardBlockNonEnterpriseContent")]
         public bool? ApplicationGuardBlockNonEnterpriseContent { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard certificate thumbprints.
+        /// Allows certain device level Root Certificates to be shared with the Microsoft Defender Application Guard container.
+        /// </summary>
+        [JsonPropertyName("applicationGuardCertificateThumbprints")]
+        public IEnumerable<string> ApplicationGuardCertificateThumbprints { get; set; }
     
         /// <summary>
         /// Gets or sets application guard enabled.
@@ -293,6 +307,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("defenderBlockEndUserAccess")]
         public bool? DefenderBlockEndUserAccess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender block persistence through wmi type.
+        /// Value indicating the behavior of Block persistence through WMI event subscription. Possible values are: userDefined, block, auditMode, warn, disable.
+        /// </summary>
+        [JsonPropertyName("defenderBlockPersistenceThroughWmiType")]
+        public DefenderAttackSurfaceType? DefenderBlockPersistenceThroughWmiType { get; set; }
     
         /// <summary>
         /// Gets or sets defender check for signatures before running scan.

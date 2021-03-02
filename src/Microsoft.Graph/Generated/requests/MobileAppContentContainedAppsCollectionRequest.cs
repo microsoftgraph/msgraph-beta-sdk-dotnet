@@ -33,48 +33,43 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MobileContainedApp to the collection via POST.
-        /// </summary>
-        /// <param name="mobileContainedApp">The MobileContainedApp to add.</param>
-        /// <returns>The created MobileContainedApp.</returns>
-        public System.Threading.Tasks.Task<MobileContainedApp> AddAsync(MobileContainedApp mobileContainedApp)
-        {
-            return this.AddAsync(mobileContainedApp, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MobileContainedApp to the collection via POST.
         /// </summary>
         /// <param name="mobileContainedApp">The MobileContainedApp to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileContainedApp.</returns>
-        public System.Threading.Tasks.Task<MobileContainedApp> AddAsync(MobileContainedApp mobileContainedApp, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MobileContainedApp> AddAsync(MobileContainedApp mobileContainedApp, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             mobileContainedApp.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(mobileContainedApp.GetType().FullName));
             return this.SendAsync<MobileContainedApp>(mobileContainedApp, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MobileContainedApp to the collection via POST and returns a <see cref="GraphResponse{MobileContainedApp}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IMobileAppContentContainedAppsCollectionPage> GetAsync()
+        /// <param name="mobileContainedApp">The MobileContainedApp to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileContainedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileContainedApp>> AddResponseAsync(MobileContainedApp mobileContainedApp, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            mobileContainedApp.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(mobileContainedApp.GetType().FullName));
+            return this.SendAsyncWithGraphResponse<MobileContainedApp>(mobileContainedApp, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IMobileAppContentContainedAppsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IMobileAppContentContainedAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<MobileAppContentContainedAppsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,6 +95,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppContentContainedAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentContainedAppsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppContentContainedAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MobileAppContentContainedAppsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

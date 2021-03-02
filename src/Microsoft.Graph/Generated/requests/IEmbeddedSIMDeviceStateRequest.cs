@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified EmbeddedSIMDeviceState using POST.
         /// </summary>
         /// <param name="embeddedSIMDeviceStateToCreate">The EmbeddedSIMDeviceState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmbeddedSIMDeviceState.</returns>
-        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> CreateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToCreate);        /// <summary>
-        /// Creates the specified EmbeddedSIMDeviceState using POST.
+        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> CreateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified EmbeddedSIMDeviceState using POST and returns a <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object.
         /// </summary>
         /// <param name="embeddedSIMDeviceStateToCreate">The EmbeddedSIMDeviceState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created EmbeddedSIMDeviceState.</returns>
-        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> CreateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EmbeddedSIMDeviceState.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> CreateResponseAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified EmbeddedSIMDeviceState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified EmbeddedSIMDeviceState.
+        /// Deletes the specified EmbeddedSIMDeviceState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EmbeddedSIMDeviceState.</returns>
-        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EmbeddedSIMDeviceState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EmbeddedSIMDeviceState.</returns>
-        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified EmbeddedSIMDeviceState using PATCH.
+        /// Gets the specified EmbeddedSIMDeviceState and returns a <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object.
         /// </summary>
-        /// <param name="embeddedSIMDeviceStateToUpdate">The EmbeddedSIMDeviceState to update.</param>
-        /// <returns>The updated EmbeddedSIMDeviceState.</returns>
-        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> UpdateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EmbeddedSIMDeviceState using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmbeddedSIMDeviceState.</returns>
-        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> UpdateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> UpdateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EmbeddedSIMDeviceState using PATCH and returns a <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object.
+        /// </summary>
+        /// <param name="embeddedSIMDeviceStateToUpdate">The EmbeddedSIMDeviceState to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> UpdateResponseAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

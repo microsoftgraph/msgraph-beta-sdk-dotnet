@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsMetric to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsMetric">The UserExperienceAnalyticsMetric to add.</param>
-        /// <returns>The created UserExperienceAnalyticsMetric.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> AddAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric)
-        {
-            return this.AddAsync(userExperienceAnalyticsMetric, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsMetric to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsMetric">The UserExperienceAnalyticsMetric to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsMetric.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> AddAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> AddAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<UserExperienceAnalyticsMetric>(userExperienceAnalyticsMetric, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UserExperienceAnalyticsMetric to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionPage> GetAsync()
+        /// <param name="userExperienceAnalyticsMetric">The UserExperienceAnalyticsMetric to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> AddResponseAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsMetric>(userExperienceAnalyticsMetric, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

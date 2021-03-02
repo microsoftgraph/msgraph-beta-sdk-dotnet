@@ -57,14 +57,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets justification.
-        /// The requestor's justification for adding the resource.
+        /// The requestor's justification for adding or removing the resource.
         /// </summary>
         [JsonPropertyName("justification")]
         public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets request state.
-        /// The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added. Read-Only.
+        /// The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
         /// </summary>
         [JsonPropertyName("requestState")]
         public string RequestState { get; set; }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request type.
-        /// Use AdminAdd to add a resource, if the caller is an administrator or resource owner.
+        /// Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
         /// </summary>
         [JsonPropertyName("requestType")]
         public string RequestType { get; set; }

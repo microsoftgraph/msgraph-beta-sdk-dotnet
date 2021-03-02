@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AzureADWindowsAutopilotDeploymentProfile using POST.
         /// </summary>
         /// <param name="azureADWindowsAutopilotDeploymentProfileToCreate">The AzureADWindowsAutopilotDeploymentProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AzureADWindowsAutopilotDeploymentProfile.</returns>
-        System.Threading.Tasks.Task<AzureADWindowsAutopilotDeploymentProfile> CreateAsync(AzureADWindowsAutopilotDeploymentProfile azureADWindowsAutopilotDeploymentProfileToCreate);        /// <summary>
-        /// Creates the specified AzureADWindowsAutopilotDeploymentProfile using POST.
+        System.Threading.Tasks.Task<AzureADWindowsAutopilotDeploymentProfile> CreateAsync(AzureADWindowsAutopilotDeploymentProfile azureADWindowsAutopilotDeploymentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified AzureADWindowsAutopilotDeploymentProfile using POST and returns a <see cref="GraphResponse{AzureADWindowsAutopilotDeploymentProfile}"/> object.
         /// </summary>
         /// <param name="azureADWindowsAutopilotDeploymentProfileToCreate">The AzureADWindowsAutopilotDeploymentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AzureADWindowsAutopilotDeploymentProfile.</returns>
-        System.Threading.Tasks.Task<AzureADWindowsAutopilotDeploymentProfile> CreateAsync(AzureADWindowsAutopilotDeploymentProfile azureADWindowsAutopilotDeploymentProfileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AzureADWindowsAutopilotDeploymentProfile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AzureADWindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AzureADWindowsAutopilotDeploymentProfile>> CreateResponseAsync(AzureADWindowsAutopilotDeploymentProfile azureADWindowsAutopilotDeploymentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AzureADWindowsAutopilotDeploymentProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified AzureADWindowsAutopilotDeploymentProfile.
+        /// Deletes the specified AzureADWindowsAutopilotDeploymentProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AzureADWindowsAutopilotDeploymentProfile.</returns>
-        System.Threading.Tasks.Task<AzureADWindowsAutopilotDeploymentProfile> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AzureADWindowsAutopilotDeploymentProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AzureADWindowsAutopilotDeploymentProfile.</returns>
-        System.Threading.Tasks.Task<AzureADWindowsAutopilotDeploymentProfile> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AzureADWindowsAutopilotDeploymentProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified AzureADWindowsAutopilotDeploymentProfile using PATCH.
+        /// Gets the specified AzureADWindowsAutopilotDeploymentProfile and returns a <see cref="GraphResponse{AzureADWindowsAutopilotDeploymentProfile}"/> object.
         /// </summary>
-        /// <param name="azureADWindowsAutopilotDeploymentProfileToUpdate">The AzureADWindowsAutopilotDeploymentProfile to update.</param>
-        /// <returns>The updated AzureADWindowsAutopilotDeploymentProfile.</returns>
-        System.Threading.Tasks.Task<AzureADWindowsAutopilotDeploymentProfile> UpdateAsync(AzureADWindowsAutopilotDeploymentProfile azureADWindowsAutopilotDeploymentProfileToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AzureADWindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AzureADWindowsAutopilotDeploymentProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AzureADWindowsAutopilotDeploymentProfile using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AzureADWindowsAutopilotDeploymentProfile.</returns>
-        System.Threading.Tasks.Task<AzureADWindowsAutopilotDeploymentProfile> UpdateAsync(AzureADWindowsAutopilotDeploymentProfile azureADWindowsAutopilotDeploymentProfileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AzureADWindowsAutopilotDeploymentProfile> UpdateAsync(AzureADWindowsAutopilotDeploymentProfile azureADWindowsAutopilotDeploymentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AzureADWindowsAutopilotDeploymentProfile using PATCH and returns a <see cref="GraphResponse{AzureADWindowsAutopilotDeploymentProfile}"/> object.
+        /// </summary>
+        /// <param name="azureADWindowsAutopilotDeploymentProfileToUpdate">The AzureADWindowsAutopilotDeploymentProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AzureADWindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AzureADWindowsAutopilotDeploymentProfile>> UpdateResponseAsync(AzureADWindowsAutopilotDeploymentProfile azureADWindowsAutopilotDeploymentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

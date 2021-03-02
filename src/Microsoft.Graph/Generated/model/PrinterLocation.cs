@@ -81,14 +81,14 @@ namespace Microsoft.Graph
         /// The latitude that the printer is located at.
         /// </summary>
         [JsonPropertyName("latitude")]
-        public Single? Latitude { get; set; }
+        public double? Latitude { get; set; }
     
         /// <summary>
         /// Gets or sets longitude.
         /// The longitude that the printer is located at.
         /// </summary>
         [JsonPropertyName("longitude")]
-        public Single? Longitude { get; set; }
+        public double? Longitude { get; set; }
     
         /// <summary>
         /// Gets or sets organization.

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementReportsCachedReportConfigurationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementCachedReportConfiguration to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementCachedReportConfiguration">The DeviceManagementCachedReportConfiguration to add.</param>
-        /// <returns>The created DeviceManagementCachedReportConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> AddAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfiguration);
-
         /// <summary>
         /// Adds the specified DeviceManagementCachedReportConfiguration to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementCachedReportConfiguration">The DeviceManagementCachedReportConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementCachedReportConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> AddAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfiguration, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> AddAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfiguration, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceManagementCachedReportConfiguration to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementReportsCachedReportConfigurationsCollectionPage> GetAsync();
+        /// <param name="deviceManagementCachedReportConfiguration">The DeviceManagementCachedReportConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> AddResponseAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfiguration, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementReportsCachedReportConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementReportsCachedReportConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementReportsCachedReportConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReportsCachedReportConfigurationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportsCachedReportConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

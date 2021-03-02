@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PersonAnnotation to the collection via POST.
-        /// </summary>
-        /// <param name="personAnnotation">The PersonAnnotation to add.</param>
-        /// <returns>The created PersonAnnotation.</returns>
-        public System.Threading.Tasks.Task<PersonAnnotation> AddAsync(PersonAnnotation personAnnotation)
-        {
-            return this.AddAsync(personAnnotation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PersonAnnotation to the collection via POST.
         /// </summary>
         /// <param name="personAnnotation">The PersonAnnotation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonAnnotation.</returns>
-        public System.Threading.Tasks.Task<PersonAnnotation> AddAsync(PersonAnnotation personAnnotation, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PersonAnnotation> AddAsync(PersonAnnotation personAnnotation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<PersonAnnotation>(personAnnotation, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PersonAnnotation to the collection via POST and returns a <see cref="GraphResponse{PersonAnnotation}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IProfileNotesCollectionPage> GetAsync()
+        /// <param name="personAnnotation">The PersonAnnotation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonAnnotation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> AddResponseAsync(PersonAnnotation personAnnotation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PersonAnnotation>(personAnnotation, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IProfileNotesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IProfileNotesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ProfileNotesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileNotesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileNotesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ProfileNotesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ProfileNotesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

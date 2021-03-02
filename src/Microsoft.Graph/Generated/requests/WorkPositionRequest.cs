@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WorkPosition using POST.
         /// </summary>
         /// <param name="workPositionToCreate">The WorkPosition to create.</param>
-        /// <returns>The created WorkPosition.</returns>
-        public System.Threading.Tasks.Task<WorkPosition> CreateAsync(WorkPosition workPositionToCreate)
-        {
-            return this.CreateAsync(workPositionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkPosition using POST.
-        /// </summary>
-        /// <param name="workPositionToCreate">The WorkPosition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkPosition.</returns>
-        public async System.Threading.Tasks.Task<WorkPosition> CreateAsync(WorkPosition workPositionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkPosition> CreateAsync(WorkPosition workPositionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WorkPosition>(workPositionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WorkPosition.
+        /// Creates the specified WorkPosition using POST and returns a <see cref="GraphResponse{WorkPosition}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="workPositionToCreate">The WorkPosition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkPosition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkPosition>> CreateResponseAsync(WorkPosition workPositionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkPosition>(workPositionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WorkPosition>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WorkPosition.
+        /// Deletes the specified WorkPosition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkPosition.</returns>
-        public System.Threading.Tasks.Task<WorkPosition> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkPosition.</returns>
-        public async System.Threading.Tasks.Task<WorkPosition> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkPosition> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WorkPosition>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WorkPosition using PATCH.
+        /// Gets the specified WorkPosition and returns a <see cref="GraphResponse{WorkPosition}"/> object.
         /// </summary>
-        /// <param name="workPositionToUpdate">The WorkPosition to update.</param>
-        /// <returns>The updated WorkPosition.</returns>
-        public System.Threading.Tasks.Task<WorkPosition> UpdateAsync(WorkPosition workPositionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkPosition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkPosition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(workPositionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkPosition>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkPosition.</returns>
-        public async System.Threading.Tasks.Task<WorkPosition> UpdateAsync(WorkPosition workPositionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkPosition> UpdateAsync(WorkPosition workPositionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workPositionToUpdate.AdditionalData != null)
-			{
-				if (workPositionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workPositionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workPositionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workPositionToUpdate.AdditionalData != null)
-            {
-                if (workPositionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workPositionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workPositionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WorkPosition>(workPositionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkPosition using PATCH and returns a <see cref="GraphResponse{WorkPosition}"/> object.
+        /// </summary>
+        /// <param name="workPositionToUpdate">The WorkPosition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkPosition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkPosition>> UpdateResponseAsync(WorkPosition workPositionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WorkPosition>(workPositionToUpdate, cancellationToken);
         }
 
         /// <summary>

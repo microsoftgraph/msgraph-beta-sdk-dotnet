@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyPresentationCheckBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationCheckBoxToCreate">The GroupPolicyPresentationCheckBox to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationCheckBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> CreateAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToCreate);        /// <summary>
-        /// Creates the specified GroupPolicyPresentationCheckBox using POST.
+        System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> CreateAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationCheckBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object.
         /// </summary>
         /// <param name="groupPolicyPresentationCheckBoxToCreate">The GroupPolicyPresentationCheckBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created GroupPolicyPresentationCheckBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> CreateAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyPresentationCheckBox.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationCheckBox>> CreateResponseAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationCheckBox.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified GroupPolicyPresentationCheckBox.
+        /// Deletes the specified GroupPolicyPresentationCheckBox and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The GroupPolicyPresentationCheckBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationCheckBox.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationCheckBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified GroupPolicyPresentationCheckBox using PATCH.
+        /// Gets the specified GroupPolicyPresentationCheckBox and returns a <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object.
         /// </summary>
-        /// <param name="groupPolicyPresentationCheckBoxToUpdate">The GroupPolicyPresentationCheckBox to update.</param>
-        /// <returns>The updated GroupPolicyPresentationCheckBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> UpdateAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationCheckBox>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationCheckBox using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationCheckBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> UpdateAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> UpdateAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationCheckBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationCheckBoxToUpdate">The GroupPolicyPresentationCheckBox to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationCheckBox>> UpdateResponseAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

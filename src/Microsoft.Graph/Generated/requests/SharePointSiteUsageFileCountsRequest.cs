@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified SharePointSiteUsageFileCounts using POST.
         /// </summary>
         /// <param name="sharePointSiteUsageFileCountsToCreate">The SharePointSiteUsageFileCounts to create.</param>
-        /// <returns>The created SharePointSiteUsageFileCounts.</returns>
-        public System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> CreateAsync(SharePointSiteUsageFileCounts sharePointSiteUsageFileCountsToCreate)
-        {
-            return this.CreateAsync(sharePointSiteUsageFileCountsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SharePointSiteUsageFileCounts using POST.
-        /// </summary>
-        /// <param name="sharePointSiteUsageFileCountsToCreate">The SharePointSiteUsageFileCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharePointSiteUsageFileCounts.</returns>
-        public async System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> CreateAsync(SharePointSiteUsageFileCounts sharePointSiteUsageFileCountsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> CreateAsync(SharePointSiteUsageFileCounts sharePointSiteUsageFileCountsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SharePointSiteUsageFileCounts>(sharePointSiteUsageFileCountsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified SharePointSiteUsageFileCounts.
+        /// Creates the specified SharePointSiteUsageFileCounts using POST and returns a <see cref="GraphResponse{SharePointSiteUsageFileCounts}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="sharePointSiteUsageFileCountsToCreate">The SharePointSiteUsageFileCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageFileCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageFileCounts>> CreateResponseAsync(SharePointSiteUsageFileCounts sharePointSiteUsageFileCountsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SharePointSiteUsageFileCounts>(sharePointSiteUsageFileCountsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SharePointSiteUsageFileCounts>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified SharePointSiteUsageFileCounts.
+        /// Deletes the specified SharePointSiteUsageFileCounts and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SharePointSiteUsageFileCounts.</returns>
-        public System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharePointSiteUsageFileCounts.</returns>
-        public async System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<SharePointSiteUsageFileCounts>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified SharePointSiteUsageFileCounts using PATCH.
+        /// Gets the specified SharePointSiteUsageFileCounts and returns a <see cref="GraphResponse{SharePointSiteUsageFileCounts}"/> object.
         /// </summary>
-        /// <param name="sharePointSiteUsageFileCountsToUpdate">The SharePointSiteUsageFileCounts to update.</param>
-        /// <returns>The updated SharePointSiteUsageFileCounts.</returns>
-        public System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> UpdateAsync(SharePointSiteUsageFileCounts sharePointSiteUsageFileCountsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageFileCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageFileCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(sharePointSiteUsageFileCountsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SharePointSiteUsageFileCounts>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharePointSiteUsageFileCounts.</returns>
-        public async System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> UpdateAsync(SharePointSiteUsageFileCounts sharePointSiteUsageFileCountsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> UpdateAsync(SharePointSiteUsageFileCounts sharePointSiteUsageFileCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (sharePointSiteUsageFileCountsToUpdate.AdditionalData != null)
-			{
-				if (sharePointSiteUsageFileCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					sharePointSiteUsageFileCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharePointSiteUsageFileCountsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (sharePointSiteUsageFileCountsToUpdate.AdditionalData != null)
-            {
-                if (sharePointSiteUsageFileCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    sharePointSiteUsageFileCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharePointSiteUsageFileCountsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SharePointSiteUsageFileCounts>(sharePointSiteUsageFileCountsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SharePointSiteUsageFileCounts using PATCH and returns a <see cref="GraphResponse{SharePointSiteUsageFileCounts}"/> object.
+        /// </summary>
+        /// <param name="sharePointSiteUsageFileCountsToUpdate">The SharePointSiteUsageFileCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageFileCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageFileCounts>> UpdateResponseAsync(SharePointSiteUsageFileCounts sharePointSiteUsageFileCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SharePointSiteUsageFileCounts>(sharePointSiteUsageFileCountsToUpdate, cancellationToken);
         }
 
         /// <summary>

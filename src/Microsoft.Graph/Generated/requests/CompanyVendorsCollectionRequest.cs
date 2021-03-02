@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Vendor to the collection via POST.
-        /// </summary>
-        /// <param name="vendor">The Vendor to add.</param>
-        /// <returns>The created Vendor.</returns>
-        public System.Threading.Tasks.Task<Vendor> AddAsync(Vendor vendor)
-        {
-            return this.AddAsync(vendor, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Vendor to the collection via POST.
         /// </summary>
         /// <param name="vendor">The Vendor to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Vendor.</returns>
-        public System.Threading.Tasks.Task<Vendor> AddAsync(Vendor vendor, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Vendor> AddAsync(Vendor vendor, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<Vendor>(vendor, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Vendor to the collection via POST and returns a <see cref="GraphResponse{Vendor}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICompanyVendorsCollectionPage> GetAsync()
+        /// <param name="vendor">The Vendor to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Vendor>> AddResponseAsync(Vendor vendor, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Vendor>(vendor, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICompanyVendorsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICompanyVendorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CompanyVendorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyVendorsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyVendorsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CompanyVendorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<CompanyVendorsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

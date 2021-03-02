@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MobileAppCategory to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
-        /// <returns>The created MobileAppCategory.</returns>
-        public System.Threading.Tasks.Task<MobileAppCategory> AddAsync(MobileAppCategory mobileAppCategory)
-        {
-            return this.AddAsync(mobileAppCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MobileAppCategory to the collection via POST.
         /// </summary>
         /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppCategory.</returns>
-        public System.Threading.Tasks.Task<MobileAppCategory> AddAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MobileAppCategory> AddAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<MobileAppCategory>(mobileAppCategory, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MobileAppCategory to the collection via POST and returns a <see cref="GraphResponse{MobileAppCategory}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceAppManagementMobileAppCategoriesCollectionPage> GetAsync()
+        /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> AddResponseAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MobileAppCategory>(mobileAppCategory, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceAppManagementMobileAppCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceAppManagementMobileAppCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceAppManagementMobileAppCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementMobileAppCategoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementMobileAppCategoriesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementMobileAppCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceAppManagementMobileAppCategoriesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

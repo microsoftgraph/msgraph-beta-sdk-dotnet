@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementTroubleshootingEvent to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementTroubleshootingEvent">The DeviceManagementTroubleshootingEvent to add.</param>
-        /// <returns>The created DeviceManagementTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> AddAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent)
-        {
-            return this.AddAsync(deviceManagementTroubleshootingEvent, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementTroubleshootingEvent to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementTroubleshootingEvent">The DeviceManagementTroubleshootingEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> AddAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> AddAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<DeviceManagementTroubleshootingEvent>(deviceManagementTroubleshootingEvent, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceManagementTroubleshootingEvent to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementTroubleshootingEventsCollectionPage> GetAsync()
+        /// <param name="deviceManagementTroubleshootingEvent">The DeviceManagementTroubleshootingEvent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> AddResponseAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagementTroubleshootingEvent>(deviceManagementTroubleshootingEvent, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementTroubleshootingEventsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementTroubleshootingEventsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementTroubleshootingEventsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEventsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementTroubleshootingEventsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

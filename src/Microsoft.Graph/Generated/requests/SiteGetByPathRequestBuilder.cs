@@ -89,6 +89,19 @@ namespace Microsoft.Graph
                 interval);
         }
         /// <summary>
+        /// Gets the request builder for SiteGetApplicableContentTypesForListRequestBuilder.
+        /// </summary>
+        /// <param name="listId">A listId parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteGetApplicableContentTypesForListRequestBuilder"/>.</returns>
+        public ISiteGetApplicableContentTypesForListRequestBuilder GetApplicableContentTypesForList(
+            string listId)
+        {
+            return new SiteGetApplicableContentTypesForListRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getApplicableContentTypesForList"),
+                this.Client,
+                listId);
+        }
+        /// <summary>
         /// Gets the request builder for SiteGetByPathRequestBuilder.
         /// </summary>
         /// <param name="path">A path parameter for the OData method call.</param>
@@ -175,6 +188,18 @@ namespace Microsoft.Graph
             }
         }
         /// <summary>
+        /// Gets the request builder for ExternalColumns.
+        /// 
+        /// </summary>
+        /// <returns>The <see cref="IColumnDefinitionRequestBuilder"/>.</returns>
+        public IColumnDefinitionRequestBuilder ExternalColumns
+        {
+            get
+            {
+                return new ColumnDefinitionRequestBuilder(this.AppendSegmentToRequestUrl("externalColumns"), this.Client);
+            }
+        }
+        /// <summary>
         /// Gets the request builder for Items.
         /// Used to address any item contained in this site. This collection cannot be enumerated.
         /// </summary>
@@ -220,6 +245,18 @@ namespace Microsoft.Graph
             get
             {
                 return new SitePageRequestBuilder(this.AppendSegmentToRequestUrl("pages"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for Permissions.
+        /// The permissions associated with the site. Nullable.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionRequestBuilder"/>.</returns>
+        public IPermissionRequestBuilder Permissions
+        {
+            get
+            {
+                return new PermissionRequestBuilder(this.AppendSegmentToRequestUrl("permissions"), this.Client);
             }
         }
         /// <summary>

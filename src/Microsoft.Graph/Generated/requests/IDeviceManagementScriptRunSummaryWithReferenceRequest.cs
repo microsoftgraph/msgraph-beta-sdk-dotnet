@@ -23,57 +23,64 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementScriptRunSummary.
         /// </summary>
-        /// <returns>The DeviceManagementScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementScriptRunSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the specified DeviceManagementScriptRunSummary and returns a <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified DeviceManagementScriptRunSummary using POST.
         /// </summary>
         /// <param name="deviceManagementScriptRunSummaryToCreate">The DeviceManagementScriptRunSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> CreateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementScriptRunSummary using POST.
+        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> CreateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Creates the specified DeviceManagementScriptRunSummary using POST and returns a <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object.
         /// </summary>
         /// <param name="deviceManagementScriptRunSummaryToCreate">The DeviceManagementScriptRunSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceManagementScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> CreateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> CreateResponseAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
-        /// Updates the specified DeviceManagementScriptRunSummary using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementScriptRunSummaryToUpdate">The DeviceManagementScriptRunSummary to update.</param>
-        /// <returns>The updated DeviceManagementScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> UpdateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToUpdate);
-
-        /// <summary>
         /// Updates the specified DeviceManagementScriptRunSummary using PATCH.
         /// </summary>
         /// <param name="deviceManagementScriptRunSummaryToUpdate">The DeviceManagementScriptRunSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> UpdateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> UpdateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Updates the specified DeviceManagementScriptRunSummary using PATCH and returns a <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptRunSummaryToUpdate">The DeviceManagementScriptRunSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> UpdateResponseAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Deletes the specified DeviceManagementScriptRunSummary.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementScriptRunSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Deletes the specified DeviceManagementScriptRunSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

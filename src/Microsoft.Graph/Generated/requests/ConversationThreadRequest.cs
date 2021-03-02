@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ConversationThread using POST.
         /// </summary>
         /// <param name="conversationThreadToCreate">The ConversationThread to create.</param>
-        /// <returns>The created ConversationThread.</returns>
-        public System.Threading.Tasks.Task<ConversationThread> CreateAsync(ConversationThread conversationThreadToCreate)
-        {
-            return this.CreateAsync(conversationThreadToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ConversationThread using POST.
-        /// </summary>
-        /// <param name="conversationThreadToCreate">The ConversationThread to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConversationThread.</returns>
-        public async System.Threading.Tasks.Task<ConversationThread> CreateAsync(ConversationThread conversationThreadToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConversationThread> CreateAsync(ConversationThread conversationThreadToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ConversationThread>(conversationThreadToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ConversationThread.
+        /// Creates the specified ConversationThread using POST and returns a <see cref="GraphResponse{ConversationThread}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="conversationThreadToCreate">The ConversationThread to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConversationThread}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConversationThread>> CreateResponseAsync(ConversationThread conversationThreadToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ConversationThread>(conversationThreadToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ConversationThread>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ConversationThread.
+        /// Deletes the specified ConversationThread and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ConversationThread.</returns>
-        public System.Threading.Tasks.Task<ConversationThread> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ConversationThread.</returns>
-        public async System.Threading.Tasks.Task<ConversationThread> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConversationThread> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ConversationThread>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ConversationThread using PATCH.
+        /// Gets the specified ConversationThread and returns a <see cref="GraphResponse{ConversationThread}"/> object.
         /// </summary>
-        /// <param name="conversationThreadToUpdate">The ConversationThread to update.</param>
-        /// <returns>The updated ConversationThread.</returns>
-        public System.Threading.Tasks.Task<ConversationThread> UpdateAsync(ConversationThread conversationThreadToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConversationThread}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConversationThread>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(conversationThreadToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ConversationThread>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ConversationThread.</returns>
-        public async System.Threading.Tasks.Task<ConversationThread> UpdateAsync(ConversationThread conversationThreadToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConversationThread> UpdateAsync(ConversationThread conversationThreadToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (conversationThreadToUpdate.AdditionalData != null)
-			{
-				if (conversationThreadToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					conversationThreadToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, conversationThreadToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (conversationThreadToUpdate.AdditionalData != null)
-            {
-                if (conversationThreadToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    conversationThreadToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, conversationThreadToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ConversationThread>(conversationThreadToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ConversationThread using PATCH and returns a <see cref="GraphResponse{ConversationThread}"/> object.
+        /// </summary>
+        /// <param name="conversationThreadToUpdate">The ConversationThread to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConversationThread}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConversationThread>> UpdateResponseAsync(ConversationThread conversationThreadToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ConversationThread>(conversationThreadToUpdate, cancellationToken);
         }
 
         /// <summary>

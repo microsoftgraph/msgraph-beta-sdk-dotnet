@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ConnectionOperation to the collection via POST.
-        /// </summary>
-        /// <param name="connectionOperation">The ConnectionOperation to add.</param>
-        /// <returns>The created ConnectionOperation.</returns>
-        public System.Threading.Tasks.Task<ConnectionOperation> AddAsync(ConnectionOperation connectionOperation)
-        {
-            return this.AddAsync(connectionOperation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ConnectionOperation to the collection via POST.
         /// </summary>
         /// <param name="connectionOperation">The ConnectionOperation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConnectionOperation.</returns>
-        public System.Threading.Tasks.Task<ConnectionOperation> AddAsync(ConnectionOperation connectionOperation, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ConnectionOperation> AddAsync(ConnectionOperation connectionOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ConnectionOperation>(connectionOperation, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ConnectionOperation to the collection via POST and returns a <see cref="GraphResponse{ConnectionOperation}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IExternalConnectionOperationsCollectionPage> GetAsync()
+        /// <param name="connectionOperation">The ConnectionOperation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectionOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectionOperation>> AddResponseAsync(ConnectionOperation connectionOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ConnectionOperation>(connectionOperation, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IExternalConnectionOperationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IExternalConnectionOperationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ExternalConnectionOperationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ExternalConnectionOperationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExternalConnectionOperationsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalConnectionOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ExternalConnectionOperationsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

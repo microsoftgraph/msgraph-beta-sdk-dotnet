@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified BusinessFlowTemplate using POST.
         /// </summary>
         /// <param name="businessFlowTemplateToCreate">The BusinessFlowTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BusinessFlowTemplate.</returns>
-        System.Threading.Tasks.Task<BusinessFlowTemplate> CreateAsync(BusinessFlowTemplate businessFlowTemplateToCreate);        /// <summary>
-        /// Creates the specified BusinessFlowTemplate using POST.
+        System.Threading.Tasks.Task<BusinessFlowTemplate> CreateAsync(BusinessFlowTemplate businessFlowTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified BusinessFlowTemplate using POST and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object.
         /// </summary>
         /// <param name="businessFlowTemplateToCreate">The BusinessFlowTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created BusinessFlowTemplate.</returns>
-        System.Threading.Tasks.Task<BusinessFlowTemplate> CreateAsync(BusinessFlowTemplate businessFlowTemplateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified BusinessFlowTemplate.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> CreateResponseAsync(BusinessFlowTemplate businessFlowTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified BusinessFlowTemplate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified BusinessFlowTemplate.
+        /// Deletes the specified BusinessFlowTemplate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The BusinessFlowTemplate.</returns>
-        System.Threading.Tasks.Task<BusinessFlowTemplate> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified BusinessFlowTemplate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BusinessFlowTemplate.</returns>
-        System.Threading.Tasks.Task<BusinessFlowTemplate> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<BusinessFlowTemplate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified BusinessFlowTemplate using PATCH.
+        /// Gets the specified BusinessFlowTemplate and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object.
         /// </summary>
-        /// <param name="businessFlowTemplateToUpdate">The BusinessFlowTemplate to update.</param>
-        /// <returns>The updated BusinessFlowTemplate.</returns>
-        System.Threading.Tasks.Task<BusinessFlowTemplate> UpdateAsync(BusinessFlowTemplate businessFlowTemplateToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified BusinessFlowTemplate using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BusinessFlowTemplate.</returns>
-        System.Threading.Tasks.Task<BusinessFlowTemplate> UpdateAsync(BusinessFlowTemplate businessFlowTemplateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<BusinessFlowTemplate> UpdateAsync(BusinessFlowTemplate businessFlowTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified BusinessFlowTemplate using PATCH and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object.
+        /// </summary>
+        /// <param name="businessFlowTemplateToUpdate">The BusinessFlowTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> UpdateResponseAsync(BusinessFlowTemplate businessFlowTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AssignmentDefaults.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentDefaultsRequestBuilder"/>.</returns>
+        public IEducationAssignmentDefaultsRequestBuilder AssignmentDefaults
+        {
+            get
+            {
+                return new EducationAssignmentDefaultsRequestBuilder(this.AppendSegmentToRequestUrl("assignmentDefaults"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IEducationClassAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new EducationClassAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AssignmentSettings.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentSettingsRequestBuilder"/>.</returns>
+        public IEducationAssignmentSettingsRequestBuilder AssignmentSettings
+        {
+            get
+            {
+                return new EducationAssignmentSettingsRequestBuilder(this.AppendSegmentToRequestUrl("assignmentSettings"), this.Client);
             }
         }
 

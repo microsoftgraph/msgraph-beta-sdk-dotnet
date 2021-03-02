@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyPresentationText using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationTextToCreate">The GroupPolicyPresentationText to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationText.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationText> CreateAsync(GroupPolicyPresentationText groupPolicyPresentationTextToCreate);        /// <summary>
-        /// Creates the specified GroupPolicyPresentationText using POST.
+        System.Threading.Tasks.Task<GroupPolicyPresentationText> CreateAsync(GroupPolicyPresentationText groupPolicyPresentationTextToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationText using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationText}"/> object.
         /// </summary>
         /// <param name="groupPolicyPresentationTextToCreate">The GroupPolicyPresentationText to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created GroupPolicyPresentationText.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationText> CreateAsync(GroupPolicyPresentationText groupPolicyPresentationTextToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyPresentationText.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationText}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationText>> CreateResponseAsync(GroupPolicyPresentationText groupPolicyPresentationTextToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationText.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified GroupPolicyPresentationText.
+        /// Deletes the specified GroupPolicyPresentationText and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The GroupPolicyPresentationText.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationText> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationText.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationText.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationText> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupPolicyPresentationText> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified GroupPolicyPresentationText using PATCH.
+        /// Gets the specified GroupPolicyPresentationText and returns a <see cref="GraphResponse{GroupPolicyPresentationText}"/> object.
         /// </summary>
-        /// <param name="groupPolicyPresentationTextToUpdate">The GroupPolicyPresentationText to update.</param>
-        /// <returns>The updated GroupPolicyPresentationText.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationText> UpdateAsync(GroupPolicyPresentationText groupPolicyPresentationTextToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationText}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationText>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationText using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationText.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationText> UpdateAsync(GroupPolicyPresentationText groupPolicyPresentationTextToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupPolicyPresentationText> UpdateAsync(GroupPolicyPresentationText groupPolicyPresentationTextToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationText using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationText}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationTextToUpdate">The GroupPolicyPresentationText to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationText}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationText>> UpdateResponseAsync(GroupPolicyPresentationText groupPolicyPresentationTextToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

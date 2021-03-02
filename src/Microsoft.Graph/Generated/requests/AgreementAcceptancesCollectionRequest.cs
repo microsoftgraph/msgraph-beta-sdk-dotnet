@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AgreementAcceptance to the collection via POST.
-        /// </summary>
-        /// <param name="agreementAcceptance">The AgreementAcceptance to add.</param>
-        /// <returns>The created AgreementAcceptance.</returns>
-        public System.Threading.Tasks.Task<AgreementAcceptance> AddAsync(AgreementAcceptance agreementAcceptance)
-        {
-            return this.AddAsync(agreementAcceptance, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AgreementAcceptance to the collection via POST.
         /// </summary>
         /// <param name="agreementAcceptance">The AgreementAcceptance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementAcceptance.</returns>
-        public System.Threading.Tasks.Task<AgreementAcceptance> AddAsync(AgreementAcceptance agreementAcceptance, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AgreementAcceptance> AddAsync(AgreementAcceptance agreementAcceptance, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<AgreementAcceptance>(agreementAcceptance, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AgreementAcceptance to the collection via POST and returns a <see cref="GraphResponse{AgreementAcceptance}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAgreementAcceptancesCollectionPage> GetAsync()
+        /// <param name="agreementAcceptance">The AgreementAcceptance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementAcceptance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementAcceptance>> AddResponseAsync(AgreementAcceptance agreementAcceptance, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AgreementAcceptance>(agreementAcceptance, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAgreementAcceptancesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAgreementAcceptancesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AgreementAcceptancesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AgreementAcceptancesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementAcceptancesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementAcceptancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AgreementAcceptancesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

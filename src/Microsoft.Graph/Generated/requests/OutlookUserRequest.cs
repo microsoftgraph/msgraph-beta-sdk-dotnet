@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified OutlookUser using POST.
         /// </summary>
         /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
-        /// <returns>The created OutlookUser.</returns>
-        public System.Threading.Tasks.Task<OutlookUser> CreateAsync(OutlookUser outlookUserToCreate)
-        {
-            return this.CreateAsync(outlookUserToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OutlookUser using POST.
-        /// </summary>
-        /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookUser.</returns>
-        public async System.Threading.Tasks.Task<OutlookUser> CreateAsync(OutlookUser outlookUserToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OutlookUser> CreateAsync(OutlookUser outlookUserToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<OutlookUser>(outlookUserToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified OutlookUser.
+        /// Creates the specified OutlookUser using POST and returns a <see cref="GraphResponse{OutlookUser}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OutlookUser>> CreateResponseAsync(OutlookUser outlookUserToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OutlookUser>(outlookUserToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<OutlookUser>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified OutlookUser.
+        /// Deletes the specified OutlookUser and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OutlookUser.</returns>
-        public System.Threading.Tasks.Task<OutlookUser> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OutlookUser.</returns>
-        public async System.Threading.Tasks.Task<OutlookUser> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OutlookUser> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<OutlookUser>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified OutlookUser using PATCH.
+        /// Gets the specified OutlookUser and returns a <see cref="GraphResponse{OutlookUser}"/> object.
         /// </summary>
-        /// <param name="outlookUserToUpdate">The OutlookUser to update.</param>
-        /// <returns>The updated OutlookUser.</returns>
-        public System.Threading.Tasks.Task<OutlookUser> UpdateAsync(OutlookUser outlookUserToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OutlookUser>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(outlookUserToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<OutlookUser>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OutlookUser.</returns>
-        public async System.Threading.Tasks.Task<OutlookUser> UpdateAsync(OutlookUser outlookUserToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OutlookUser> UpdateAsync(OutlookUser outlookUserToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (outlookUserToUpdate.AdditionalData != null)
-			{
-				if (outlookUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					outlookUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, outlookUserToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (outlookUserToUpdate.AdditionalData != null)
-            {
-                if (outlookUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    outlookUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, outlookUserToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<OutlookUser>(outlookUserToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OutlookUser using PATCH and returns a <see cref="GraphResponse{OutlookUser}"/> object.
+        /// </summary>
+        /// <param name="outlookUserToUpdate">The OutlookUser to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OutlookUser>> UpdateResponseAsync(OutlookUser outlookUserToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<OutlookUser>(outlookUserToUpdate, cancellationToken);
         }
 
         /// <summary>

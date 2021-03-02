@@ -33,48 +33,43 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ManagedAppPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="managedAppPolicy">The ManagedAppPolicy to add.</param>
-        /// <returns>The created ManagedAppPolicy.</returns>
-        public System.Threading.Tasks.Task<ManagedAppPolicy> AddAsync(ManagedAppPolicy managedAppPolicy)
-        {
-            return this.AddAsync(managedAppPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedAppPolicy to the collection via POST.
         /// </summary>
         /// <param name="managedAppPolicy">The ManagedAppPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppPolicy.</returns>
-        public System.Threading.Tasks.Task<ManagedAppPolicy> AddAsync(ManagedAppPolicy managedAppPolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ManagedAppPolicy> AddAsync(ManagedAppPolicy managedAppPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             managedAppPolicy.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppPolicy.GetType().FullName));
             return this.SendAsync<ManagedAppPolicy>(managedAppPolicy, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ManagedAppPolicy to the collection via POST and returns a <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IManagedAppRegistrationIntendedPoliciesCollectionPage> GetAsync()
+        /// <param name="managedAppPolicy">The ManagedAppPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicy>> AddResponseAsync(ManagedAppPolicy managedAppPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            managedAppPolicy.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppPolicy.GetType().FullName));
+            return this.SendAsyncWithGraphResponse<ManagedAppPolicy>(managedAppPolicy, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedAppRegistrationIntendedPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IManagedAppRegistrationIntendedPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ManagedAppRegistrationIntendedPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,6 +95,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedAppRegistrationIntendedPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppRegistrationIntendedPoliciesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistrationIntendedPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagedAppRegistrationIntendedPoliciesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

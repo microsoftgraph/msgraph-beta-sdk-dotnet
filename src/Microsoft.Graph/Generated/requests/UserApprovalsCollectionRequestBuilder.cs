@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for ApprovalFilterByCurrentUser.
+        /// </summary>
+        /// <returns>The <see cref="IApprovalFilterByCurrentUserRequestBuilder"/>.</returns>
+        public IApprovalFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            ApprovalFilterByCurrentUserOptions on)
+        {
+            return new ApprovalFilterByCurrentUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.filterByCurrentUser"),
+                this.Client,
+                on);
+        }
     }
 }

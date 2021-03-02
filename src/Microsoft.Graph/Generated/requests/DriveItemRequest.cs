@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DriveItem using POST.
         /// </summary>
         /// <param name="driveItemToCreate">The DriveItem to create.</param>
-        /// <returns>The created DriveItem.</returns>
-        public System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate)
-        {
-            return this.CreateAsync(driveItemToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DriveItem using POST.
-        /// </summary>
-        /// <param name="driveItemToCreate">The DriveItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DriveItem.</returns>
-        public async System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DriveItem>(driveItemToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DriveItem.
+        /// Creates the specified DriveItem using POST and returns a <see cref="GraphResponse{DriveItem}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="driveItemToCreate">The DriveItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItem>> CreateResponseAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DriveItem>(driveItemToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DriveItem>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DriveItem.
+        /// Deletes the specified DriveItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DriveItem.</returns>
-        public System.Threading.Tasks.Task<DriveItem> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DriveItem.</returns>
-        public async System.Threading.Tasks.Task<DriveItem> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DriveItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DriveItem>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DriveItem using PATCH.
+        /// Gets the specified DriveItem and returns a <see cref="GraphResponse{DriveItem}"/> object.
         /// </summary>
-        /// <param name="driveItemToUpdate">The DriveItem to update.</param>
-        /// <returns>The updated DriveItem.</returns>
-        public System.Threading.Tasks.Task<DriveItem> UpdateAsync(DriveItem driveItemToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(driveItemToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DriveItem>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DriveItem.</returns>
-        public async System.Threading.Tasks.Task<DriveItem> UpdateAsync(DriveItem driveItemToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DriveItem> UpdateAsync(DriveItem driveItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (driveItemToUpdate.AdditionalData != null)
-			{
-				if (driveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					driveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, driveItemToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (driveItemToUpdate.AdditionalData != null)
-            {
-                if (driveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    driveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, driveItemToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DriveItem>(driveItemToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DriveItem using PATCH and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="driveItemToUpdate">The DriveItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItem>> UpdateResponseAsync(DriveItem driveItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DriveItem>(driveItemToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -98,6 +98,13 @@ namespace Microsoft.Graph
         public string Url { get; set; }
     
         /// <summary>
+        /// Gets or sets access package resource environment.
+        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceEnvironment")]
+        public AccessPackageResourceEnvironment AccessPackageResourceEnvironment { get; set; }
+    
+        /// <summary>
         /// Gets or sets access package resource roles.
         /// Read-only. Nullable.
         /// </summary>

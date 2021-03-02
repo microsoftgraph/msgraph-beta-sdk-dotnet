@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ConversationThread to the collection via POST.
-        /// </summary>
-        /// <param name="conversationThread">The ConversationThread to add.</param>
-        /// <returns>The created ConversationThread.</returns>
-        public System.Threading.Tasks.Task<ConversationThread> AddAsync(ConversationThread conversationThread)
-        {
-            return this.AddAsync(conversationThread, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ConversationThread to the collection via POST.
         /// </summary>
         /// <param name="conversationThread">The ConversationThread to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConversationThread.</returns>
-        public System.Threading.Tasks.Task<ConversationThread> AddAsync(ConversationThread conversationThread, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ConversationThread> AddAsync(ConversationThread conversationThread, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ConversationThread>(conversationThread, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ConversationThread to the collection via POST and returns a <see cref="GraphResponse{ConversationThread}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IConversationThreadsCollectionPage> GetAsync()
+        /// <param name="conversationThread">The ConversationThread to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConversationThread}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConversationThread>> AddResponseAsync(ConversationThread conversationThread, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ConversationThread>(conversationThread, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IConversationThreadsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IConversationThreadsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ConversationThreadsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ConversationThreadsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConversationThreadsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConversationThreadsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ConversationThreadsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

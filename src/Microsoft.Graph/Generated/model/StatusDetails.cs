@@ -36,14 +36,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets errorCategory.
-        /// Categorizes the error code.
+        /// Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
         /// </summary>
         [JsonPropertyName("errorCategory")]
         public string ErrorCategory { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
-        /// Unique error code if any occurred.
+        /// Unique error code if any occurred. Learn more
         /// </summary>
         [JsonPropertyName("errorCode")]
         public string ErrorCode { get; set; }

@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IEntitlementManagementRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentApprovals.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder"/>.</returns>
+        IEntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder AccessPackageAssignmentApprovals { get; }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageAssignmentPolicies.
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentPoliciesCollectionRequestBuilder"/>.</returns>
@@ -60,6 +66,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementAccessPackageCatalogsCollectionRequestBuilder"/>.</returns>
         IEntitlementManagementAccessPackageCatalogsCollectionRequestBuilder AccessPackageCatalogs { get; }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageResourceEnvironments.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceEnvironmentsCollectionRequestBuilder"/>.</returns>
+        IEntitlementManagementAccessPackageResourceEnvironmentsCollectionRequestBuilder AccessPackageResourceEnvironments { get; }
 
         /// <summary>
         /// Gets the request builder for AccessPackageResourceRequests.

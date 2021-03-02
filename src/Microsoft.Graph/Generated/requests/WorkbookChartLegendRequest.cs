@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookChartLegend using POST.
         /// </summary>
         /// <param name="workbookChartLegendToCreate">The WorkbookChartLegend to create.</param>
-        /// <returns>The created WorkbookChartLegend.</returns>
-        public System.Threading.Tasks.Task<WorkbookChartLegend> CreateAsync(WorkbookChartLegend workbookChartLegendToCreate)
-        {
-            return this.CreateAsync(workbookChartLegendToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookChartLegend using POST.
-        /// </summary>
-        /// <param name="workbookChartLegendToCreate">The WorkbookChartLegend to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartLegend.</returns>
-        public async System.Threading.Tasks.Task<WorkbookChartLegend> CreateAsync(WorkbookChartLegend workbookChartLegendToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookChartLegend> CreateAsync(WorkbookChartLegend workbookChartLegendToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WorkbookChartLegend>(workbookChartLegendToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WorkbookChartLegend.
+        /// Creates the specified WorkbookChartLegend using POST and returns a <see cref="GraphResponse{WorkbookChartLegend}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="workbookChartLegendToCreate">The WorkbookChartLegend to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegend}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegend>> CreateResponseAsync(WorkbookChartLegend workbookChartLegendToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkbookChartLegend>(workbookChartLegendToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WorkbookChartLegend>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WorkbookChartLegend.
+        /// Deletes the specified WorkbookChartLegend and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookChartLegend.</returns>
-        public System.Threading.Tasks.Task<WorkbookChartLegend> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartLegend.</returns>
-        public async System.Threading.Tasks.Task<WorkbookChartLegend> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookChartLegend> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WorkbookChartLegend>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WorkbookChartLegend using PATCH.
+        /// Gets the specified WorkbookChartLegend and returns a <see cref="GraphResponse{WorkbookChartLegend}"/> object.
         /// </summary>
-        /// <param name="workbookChartLegendToUpdate">The WorkbookChartLegend to update.</param>
-        /// <returns>The updated WorkbookChartLegend.</returns>
-        public System.Threading.Tasks.Task<WorkbookChartLegend> UpdateAsync(WorkbookChartLegend workbookChartLegendToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegend}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegend>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(workbookChartLegendToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkbookChartLegend>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartLegend.</returns>
-        public async System.Threading.Tasks.Task<WorkbookChartLegend> UpdateAsync(WorkbookChartLegend workbookChartLegendToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookChartLegend> UpdateAsync(WorkbookChartLegend workbookChartLegendToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookChartLegendToUpdate.AdditionalData != null)
-			{
-				if (workbookChartLegendToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookChartLegendToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartLegendToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookChartLegendToUpdate.AdditionalData != null)
-            {
-                if (workbookChartLegendToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookChartLegendToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartLegendToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WorkbookChartLegend>(workbookChartLegendToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookChartLegend using PATCH and returns a <see cref="GraphResponse{WorkbookChartLegend}"/> object.
+        /// </summary>
+        /// <param name="workbookChartLegendToUpdate">The WorkbookChartLegend to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegend}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegend>> UpdateResponseAsync(WorkbookChartLegend workbookChartLegendToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WorkbookChartLegend>(workbookChartLegendToUpdate, cancellationToken);
         }
 
         /// <summary>

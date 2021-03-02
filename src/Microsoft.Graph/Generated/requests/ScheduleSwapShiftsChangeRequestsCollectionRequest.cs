@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SwapShiftsChangeRequestObject to the collection via POST.
-        /// </summary>
-        /// <param name="swapShiftsChangeRequest">The SwapShiftsChangeRequestObject to add.</param>
-        /// <returns>The created SwapShiftsChangeRequestObject.</returns>
-        public System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> AddAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequest)
-        {
-            return this.AddAsync(swapShiftsChangeRequest, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SwapShiftsChangeRequestObject to the collection via POST.
         /// </summary>
         /// <param name="swapShiftsChangeRequest">The SwapShiftsChangeRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SwapShiftsChangeRequestObject.</returns>
-        public System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> AddAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequest, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> AddAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<SwapShiftsChangeRequestObject>(swapShiftsChangeRequest, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified SwapShiftsChangeRequestObject to the collection via POST and returns a <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IScheduleSwapShiftsChangeRequestsCollectionPage> GetAsync()
+        /// <param name="swapShiftsChangeRequest">The SwapShiftsChangeRequestObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SwapShiftsChangeRequestObject>> AddResponseAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SwapShiftsChangeRequestObject>(swapShiftsChangeRequest, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IScheduleSwapShiftsChangeRequestsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IScheduleSwapShiftsChangeRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ScheduleSwapShiftsChangeRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleSwapShiftsChangeRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleSwapShiftsChangeRequestsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ScheduleSwapShiftsChangeRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ScheduleSwapShiftsChangeRequestsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

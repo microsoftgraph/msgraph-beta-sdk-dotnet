@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ProfileAnniversariesCollectionPage.
     /// </summary>
-    public partial class ProfileAnniversariesCollectionPage : CollectionPage<PersonAnniversary>, IProfileAnniversariesCollectionPage
+    public partial class ProfileAnniversariesCollectionPage : CollectionPage<PersonAnnualEvent>, IProfileAnniversariesCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IProfileAnniversariesCollectionRequest"/> instance.

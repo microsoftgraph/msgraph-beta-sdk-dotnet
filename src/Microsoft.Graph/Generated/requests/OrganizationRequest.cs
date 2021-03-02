@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Organization using POST.
         /// </summary>
         /// <param name="organizationToCreate">The Organization to create.</param>
-        /// <returns>The created Organization.</returns>
-        public System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate)
-        {
-            return this.CreateAsync(organizationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Organization using POST.
-        /// </summary>
-        /// <param name="organizationToCreate">The Organization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Organization.</returns>
-        public async System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Organization>(organizationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Organization.
+        /// Creates the specified Organization using POST and returns a <see cref="GraphResponse{Organization}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="organizationToCreate">The Organization to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Organization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Organization>> CreateResponseAsync(Organization organizationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Organization>(organizationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Organization>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Organization.
+        /// Deletes the specified Organization and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Organization.</returns>
-        public System.Threading.Tasks.Task<Organization> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Organization.</returns>
-        public async System.Threading.Tasks.Task<Organization> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Organization> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Organization>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Organization using PATCH.
+        /// Gets the specified Organization and returns a <see cref="GraphResponse{Organization}"/> object.
         /// </summary>
-        /// <param name="organizationToUpdate">The Organization to update.</param>
-        /// <returns>The updated Organization.</returns>
-        public System.Threading.Tasks.Task<Organization> UpdateAsync(Organization organizationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Organization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Organization>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(organizationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Organization>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Organization.</returns>
-        public async System.Threading.Tasks.Task<Organization> UpdateAsync(Organization organizationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Organization> UpdateAsync(Organization organizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (organizationToUpdate.AdditionalData != null)
-			{
-				if (organizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					organizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (organizationToUpdate.AdditionalData != null)
-            {
-                if (organizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    organizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Organization>(organizationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Organization using PATCH and returns a <see cref="GraphResponse{Organization}"/> object.
+        /// </summary>
+        /// <param name="organizationToUpdate">The Organization to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Organization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Organization>> UpdateResponseAsync(Organization organizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Organization>(organizationToUpdate, cancellationToken);
         }
 
         /// <summary>

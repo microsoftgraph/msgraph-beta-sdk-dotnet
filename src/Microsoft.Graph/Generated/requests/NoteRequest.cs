@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Note using POST.
         /// </summary>
         /// <param name="noteToCreate">The Note to create.</param>
-        /// <returns>The created Note.</returns>
-        public System.Threading.Tasks.Task<Note> CreateAsync(Note noteToCreate)
-        {
-            return this.CreateAsync(noteToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Note using POST.
-        /// </summary>
-        /// <param name="noteToCreate">The Note to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Note.</returns>
-        public async System.Threading.Tasks.Task<Note> CreateAsync(Note noteToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Note> CreateAsync(Note noteToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Note>(noteToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Note.
+        /// Creates the specified Note using POST and returns a <see cref="GraphResponse{Note}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="noteToCreate">The Note to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Note>> CreateResponseAsync(Note noteToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Note>(noteToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Note>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Note.
+        /// Deletes the specified Note and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Note.</returns>
-        public System.Threading.Tasks.Task<Note> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Note.</returns>
-        public async System.Threading.Tasks.Task<Note> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Note> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Note>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Note using PATCH.
+        /// Gets the specified Note and returns a <see cref="GraphResponse{Note}"/> object.
         /// </summary>
-        /// <param name="noteToUpdate">The Note to update.</param>
-        /// <returns>The updated Note.</returns>
-        public System.Threading.Tasks.Task<Note> UpdateAsync(Note noteToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Note>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(noteToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Note>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Note.</returns>
-        public async System.Threading.Tasks.Task<Note> UpdateAsync(Note noteToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Note> UpdateAsync(Note noteToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (noteToUpdate.AdditionalData != null)
-			{
-				if (noteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					noteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, noteToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (noteToUpdate.AdditionalData != null)
-            {
-                if (noteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    noteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, noteToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Note>(noteToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Note using PATCH and returns a <see cref="GraphResponse{Note}"/> object.
+        /// </summary>
+        /// <param name="noteToUpdate">The Note to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Note>> UpdateResponseAsync(Note noteToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Note>(noteToUpdate, cancellationToken);
         }
 
         /// <summary>

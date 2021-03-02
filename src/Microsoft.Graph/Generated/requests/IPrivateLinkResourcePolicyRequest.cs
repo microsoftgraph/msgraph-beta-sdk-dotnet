@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified PrivateLinkResourcePolicy using POST.
         /// </summary>
         /// <param name="privateLinkResourcePolicyToCreate">The PrivateLinkResourcePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivateLinkResourcePolicy.</returns>
-        System.Threading.Tasks.Task<PrivateLinkResourcePolicy> CreateAsync(PrivateLinkResourcePolicy privateLinkResourcePolicyToCreate);        /// <summary>
-        /// Creates the specified PrivateLinkResourcePolicy using POST.
+        System.Threading.Tasks.Task<PrivateLinkResourcePolicy> CreateAsync(PrivateLinkResourcePolicy privateLinkResourcePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified PrivateLinkResourcePolicy using POST and returns a <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object.
         /// </summary>
         /// <param name="privateLinkResourcePolicyToCreate">The PrivateLinkResourcePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PrivateLinkResourcePolicy.</returns>
-        System.Threading.Tasks.Task<PrivateLinkResourcePolicy> CreateAsync(PrivateLinkResourcePolicy privateLinkResourcePolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PrivateLinkResourcePolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivateLinkResourcePolicy>> CreateResponseAsync(PrivateLinkResourcePolicy privateLinkResourcePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PrivateLinkResourcePolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified PrivateLinkResourcePolicy.
+        /// Deletes the specified PrivateLinkResourcePolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PrivateLinkResourcePolicy.</returns>
-        System.Threading.Tasks.Task<PrivateLinkResourcePolicy> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PrivateLinkResourcePolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrivateLinkResourcePolicy.</returns>
-        System.Threading.Tasks.Task<PrivateLinkResourcePolicy> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PrivateLinkResourcePolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified PrivateLinkResourcePolicy using PATCH.
+        /// Gets the specified PrivateLinkResourcePolicy and returns a <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object.
         /// </summary>
-        /// <param name="privateLinkResourcePolicyToUpdate">The PrivateLinkResourcePolicy to update.</param>
-        /// <returns>The updated PrivateLinkResourcePolicy.</returns>
-        System.Threading.Tasks.Task<PrivateLinkResourcePolicy> UpdateAsync(PrivateLinkResourcePolicy privateLinkResourcePolicyToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivateLinkResourcePolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PrivateLinkResourcePolicy using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrivateLinkResourcePolicy.</returns>
-        System.Threading.Tasks.Task<PrivateLinkResourcePolicy> UpdateAsync(PrivateLinkResourcePolicy privateLinkResourcePolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PrivateLinkResourcePolicy> UpdateAsync(PrivateLinkResourcePolicy privateLinkResourcePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified PrivateLinkResourcePolicy using PATCH and returns a <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object.
+        /// </summary>
+        /// <param name="privateLinkResourcePolicyToUpdate">The PrivateLinkResourcePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivateLinkResourcePolicy>> UpdateResponseAsync(PrivateLinkResourcePolicy privateLinkResourcePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

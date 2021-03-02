@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ContinuousAccessEvaluationPolicy using POST.
         /// </summary>
         /// <param name="continuousAccessEvaluationPolicyToCreate">The ContinuousAccessEvaluationPolicy to create.</param>
-        /// <returns>The created ContinuousAccessEvaluationPolicy.</returns>
-        public System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> CreateAsync(ContinuousAccessEvaluationPolicy continuousAccessEvaluationPolicyToCreate)
-        {
-            return this.CreateAsync(continuousAccessEvaluationPolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ContinuousAccessEvaluationPolicy using POST.
-        /// </summary>
-        /// <param name="continuousAccessEvaluationPolicyToCreate">The ContinuousAccessEvaluationPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ContinuousAccessEvaluationPolicy.</returns>
-        public async System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> CreateAsync(ContinuousAccessEvaluationPolicy continuousAccessEvaluationPolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> CreateAsync(ContinuousAccessEvaluationPolicy continuousAccessEvaluationPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ContinuousAccessEvaluationPolicy>(continuousAccessEvaluationPolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ContinuousAccessEvaluationPolicy.
+        /// Creates the specified ContinuousAccessEvaluationPolicy using POST and returns a <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="continuousAccessEvaluationPolicyToCreate">The ContinuousAccessEvaluationPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ContinuousAccessEvaluationPolicy>> CreateResponseAsync(ContinuousAccessEvaluationPolicy continuousAccessEvaluationPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ContinuousAccessEvaluationPolicy>(continuousAccessEvaluationPolicyToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ContinuousAccessEvaluationPolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ContinuousAccessEvaluationPolicy.
+        /// Deletes the specified ContinuousAccessEvaluationPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ContinuousAccessEvaluationPolicy.</returns>
-        public System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ContinuousAccessEvaluationPolicy.</returns>
-        public async System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ContinuousAccessEvaluationPolicy>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ContinuousAccessEvaluationPolicy using PATCH.
+        /// Gets the specified ContinuousAccessEvaluationPolicy and returns a <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> object.
         /// </summary>
-        /// <param name="continuousAccessEvaluationPolicyToUpdate">The ContinuousAccessEvaluationPolicy to update.</param>
-        /// <returns>The updated ContinuousAccessEvaluationPolicy.</returns>
-        public System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> UpdateAsync(ContinuousAccessEvaluationPolicy continuousAccessEvaluationPolicyToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ContinuousAccessEvaluationPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(continuousAccessEvaluationPolicyToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ContinuousAccessEvaluationPolicy>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,27 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ContinuousAccessEvaluationPolicy.</returns>
-        public async System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> UpdateAsync(ContinuousAccessEvaluationPolicy continuousAccessEvaluationPolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> UpdateAsync(ContinuousAccessEvaluationPolicy continuousAccessEvaluationPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (continuousAccessEvaluationPolicyToUpdate.AdditionalData != null)
-			{
-				if (continuousAccessEvaluationPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					continuousAccessEvaluationPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, continuousAccessEvaluationPolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (continuousAccessEvaluationPolicyToUpdate.AdditionalData != null)
-            {
-                if (continuousAccessEvaluationPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    continuousAccessEvaluationPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, continuousAccessEvaluationPolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ContinuousAccessEvaluationPolicy>(continuousAccessEvaluationPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ContinuousAccessEvaluationPolicy using PATCH and returns a <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> object.
+        /// </summary>
+        /// <param name="continuousAccessEvaluationPolicyToUpdate">The ContinuousAccessEvaluationPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ContinuousAccessEvaluationPolicy>> UpdateResponseAsync(ContinuousAccessEvaluationPolicy continuousAccessEvaluationPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ContinuousAccessEvaluationPolicy>(continuousAccessEvaluationPolicyToUpdate, cancellationToken);
         }
 
         /// <summary>

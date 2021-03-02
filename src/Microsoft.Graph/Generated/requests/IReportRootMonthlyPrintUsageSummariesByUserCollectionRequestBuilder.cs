@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         IReportRootMonthlyPrintUsageSummariesByUserCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IPrintUsageSummaryByUserRequestBuilder"/> for the specified PrintUsageSummaryByUser.
+        /// Gets an <see cref="IPrintUsageByUserRequestBuilder"/> for the specified PrintUsageByUser.
         /// </summary>
-        /// <param name="id">The ID for the PrintUsageSummaryByUser.</param>
-        /// <returns>The <see cref="IPrintUsageSummaryByUserRequestBuilder"/>.</returns>
-        IPrintUsageSummaryByUserRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the PrintUsageByUser.</param>
+        /// <returns>The <see cref="IPrintUsageByUserRequestBuilder"/>.</returns>
+        IPrintUsageByUserRequestBuilder this[string id] { get; }
 
         
     }

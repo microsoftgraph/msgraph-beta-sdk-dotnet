@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Mention using POST.
         /// </summary>
         /// <param name="mentionToCreate">The Mention to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Mention.</returns>
-        System.Threading.Tasks.Task<Mention> CreateAsync(Mention mentionToCreate);        /// <summary>
-        /// Creates the specified Mention using POST.
+        System.Threading.Tasks.Task<Mention> CreateAsync(Mention mentionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified Mention using POST and returns a <see cref="GraphResponse{Mention}"/> object.
         /// </summary>
         /// <param name="mentionToCreate">The Mention to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Mention.</returns>
-        System.Threading.Tasks.Task<Mention> CreateAsync(Mention mentionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Mention.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Mention}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Mention>> CreateResponseAsync(Mention mentionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Mention.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified Mention.
+        /// Deletes the specified Mention and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Mention.</returns>
-        System.Threading.Tasks.Task<Mention> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Mention.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Mention.</returns>
-        System.Threading.Tasks.Task<Mention> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Mention> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified Mention using PATCH.
+        /// Gets the specified Mention and returns a <see cref="GraphResponse{Mention}"/> object.
         /// </summary>
-        /// <param name="mentionToUpdate">The Mention to update.</param>
-        /// <returns>The updated Mention.</returns>
-        System.Threading.Tasks.Task<Mention> UpdateAsync(Mention mentionToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Mention}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Mention>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Mention using PATCH.
@@ -73,7 +71,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Mention.</returns>
-        System.Threading.Tasks.Task<Mention> UpdateAsync(Mention mentionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Mention> UpdateAsync(Mention mentionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Mention using PATCH and returns a <see cref="GraphResponse{Mention}"/> object.
+        /// </summary>
+        /// <param name="mentionToUpdate">The Mention to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Mention}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Mention>> UpdateResponseAsync(Mention mentionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

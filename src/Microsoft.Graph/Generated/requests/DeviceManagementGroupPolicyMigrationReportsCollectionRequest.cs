@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified GroupPolicyMigrationReport to the collection via POST.
-        /// </summary>
-        /// <param name="groupPolicyMigrationReport">The GroupPolicyMigrationReport to add.</param>
-        /// <returns>The created GroupPolicyMigrationReport.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyMigrationReport> AddAsync(GroupPolicyMigrationReport groupPolicyMigrationReport)
-        {
-            return this.AddAsync(groupPolicyMigrationReport, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GroupPolicyMigrationReport to the collection via POST.
         /// </summary>
         /// <param name="groupPolicyMigrationReport">The GroupPolicyMigrationReport to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyMigrationReport.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyMigrationReport> AddAsync(GroupPolicyMigrationReport groupPolicyMigrationReport, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GroupPolicyMigrationReport> AddAsync(GroupPolicyMigrationReport groupPolicyMigrationReport, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<GroupPolicyMigrationReport>(groupPolicyMigrationReport, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified GroupPolicyMigrationReport to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementGroupPolicyMigrationReportsCollectionPage> GetAsync()
+        /// <param name="groupPolicyMigrationReport">The GroupPolicyMigrationReport to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReport>> AddResponseAsync(GroupPolicyMigrationReport groupPolicyMigrationReport, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<GroupPolicyMigrationReport>(groupPolicyMigrationReport, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementGroupPolicyMigrationReportsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementGroupPolicyMigrationReportsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementGroupPolicyMigrationReportsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementGroupPolicyMigrationReportsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementGroupPolicyMigrationReportsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyMigrationReportsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementGroupPolicyMigrationReportsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

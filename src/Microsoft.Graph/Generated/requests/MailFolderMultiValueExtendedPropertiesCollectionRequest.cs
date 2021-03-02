@@ -33,47 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MultiValueLegacyExtendedProperty to the collection via POST.
-        /// </summary>
-        /// <param name="multiValueLegacyExtendedProperty">The MultiValueLegacyExtendedProperty to add.</param>
-        /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
-        public System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> AddAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty)
-        {
-            return this.AddAsync(multiValueLegacyExtendedProperty, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MultiValueLegacyExtendedProperty to the collection via POST.
         /// </summary>
         /// <param name="multiValueLegacyExtendedProperty">The MultiValueLegacyExtendedProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
-        public System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> AddAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> AddAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<MultiValueLegacyExtendedProperty>(multiValueLegacyExtendedProperty, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MultiValueLegacyExtendedProperty to the collection via POST and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IMailFolderMultiValueExtendedPropertiesCollectionPage> GetAsync()
+        /// <param name="multiValueLegacyExtendedProperty">The MultiValueLegacyExtendedProperty to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> AddResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MultiValueLegacyExtendedProperty>(multiValueLegacyExtendedProperty, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IMailFolderMultiValueExtendedPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IMailFolderMultiValueExtendedPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<MailFolderMultiValueExtendedPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -99,6 +93,17 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MailFolderMultiValueExtendedPropertiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailFolderMultiValueExtendedPropertiesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailFolderMultiValueExtendedPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MailFolderMultiValueExtendedPropertiesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>
