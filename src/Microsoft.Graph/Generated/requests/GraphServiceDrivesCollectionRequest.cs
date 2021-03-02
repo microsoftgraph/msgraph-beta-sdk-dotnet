@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created Drive.</returns>
         public System.Threading.Tasks.Task<Drive> AddAsync(Drive drive, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<Drive>(drive, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Drive}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<Drive>> AddResponseAsync(Drive drive, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<Drive>(drive, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IGraphServiceDrivesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GraphServiceDrivesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{GraphServiceDrivesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<GraphServiceDrivesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<GraphServiceDrivesCollectionResponse>(null, cancellationToken);
         }
 

@@ -43,8 +43,8 @@ namespace Microsoft.Graph
         /// <returns>The created ProfileCardProperty.</returns>
         public async System.Threading.Tasks.Task<ProfileCardProperty> CreateAsync(ProfileCardProperty profileCardPropertyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ProfileCardProperty>(profileCardPropertyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ProfileCardProperty}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ProfileCardProperty>> CreateResponseAsync(ProfileCardProperty profileCardPropertyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<ProfileCardProperty>(profileCardPropertyToCreate, cancellationToken);
         }
 
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ProfileCardProperty>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <returns>The ProfileCardProperty.</returns>
         public async System.Threading.Tasks.Task<ProfileCardProperty> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ProfileCardProperty>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ProfileCardProperty}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ProfileCardProperty>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ProfileCardProperty>(null, cancellationToken);
         }
 
@@ -118,8 +118,8 @@ namespace Microsoft.Graph
         /// <returns>The updated ProfileCardProperty.</returns>
         public async System.Threading.Tasks.Task<ProfileCardProperty> UpdateAsync(ProfileCardProperty profileCardPropertyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ProfileCardProperty>(profileCardPropertyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -134,8 +134,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ProfileCardProperty}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ProfileCardProperty>> UpdateResponseAsync(ProfileCardProperty profileCardPropertyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<ProfileCardProperty>(profileCardPropertyToUpdate, cancellationToken);
         }
 

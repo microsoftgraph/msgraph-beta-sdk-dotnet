@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Ediscovery
         public async System.Threading.Tasks.Task<ITagAsHierarchyCollectionPage> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<TagAsHierarchyCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<TagAsHierarchyCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<TagAsHierarchyCollectionResponse>(null, cancellationToken);
         }
 

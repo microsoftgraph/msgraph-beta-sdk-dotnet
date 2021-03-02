@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created OnenoteResource.</returns>
         public System.Threading.Tasks.Task<OnenoteResource> AddAsync(OnenoteResource onenoteResource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<OnenoteResource>(onenoteResource, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> AddResponseAsync(OnenoteResource onenoteResource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<OnenoteResource>(onenoteResource, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IOnenoteResourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<OnenoteResourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{OnenoteResourcesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<OnenoteResourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<OnenoteResourcesCollectionResponse>(null, cancellationToken);
         }
 

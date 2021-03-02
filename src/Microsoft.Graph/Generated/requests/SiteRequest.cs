@@ -43,8 +43,8 @@ namespace Microsoft.Graph
         /// <returns>The created Site.</returns>
         public async System.Threading.Tasks.Task<Site> CreateAsync(Site siteToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Site>(siteToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<Site>> CreateResponseAsync(Site siteToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<Site>(siteToCreate, cancellationToken);
         }
 
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Site>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <returns>The Site.</returns>
         public async System.Threading.Tasks.Task<Site> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Site>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<Site>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<Site>(null, cancellationToken);
         }
 
@@ -118,8 +118,8 @@ namespace Microsoft.Graph
         /// <returns>The updated Site.</returns>
         public async System.Threading.Tasks.Task<Site> UpdateAsync(Site siteToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Site>(siteToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -134,8 +134,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<Site>> UpdateResponseAsync(Site siteToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<Site>(siteToUpdate, cancellationToken);
         }
 
@@ -262,6 +262,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         siteToInitialize.Drives.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (siteToInitialize.ExternalColumns != null && siteToInitialize.ExternalColumns.CurrentPage != null)
+                {
+                    siteToInitialize.ExternalColumns.AdditionalData = siteToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    siteToInitialize.AdditionalData.TryGetValue("externalColumns@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        siteToInitialize.ExternalColumns.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created MicrosoftTunnelConfiguration.</returns>
         public System.Threading.Tasks.Task<MicrosoftTunnelConfiguration> AddAsync(MicrosoftTunnelConfiguration microsoftTunnelConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<MicrosoftTunnelConfiguration>(microsoftTunnelConfiguration, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> AddResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<MicrosoftTunnelConfiguration>(microsoftTunnelConfiguration, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementMicrosoftTunnelConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementMicrosoftTunnelConfigurationsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementMicrosoftTunnelConfigurationsCollectionResponse>(null, cancellationToken);
         }
 

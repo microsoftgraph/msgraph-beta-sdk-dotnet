@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created AndroidManagedStoreAppConfigurationSchema.</returns>
         public System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> AddAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchema, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchema, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> AddResponseAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchema, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchema, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse>(null, cancellationToken);
         }
 

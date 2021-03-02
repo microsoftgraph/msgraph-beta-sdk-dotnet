@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IEducationClassAssignmentCategoriesCollectionRequestBuilder AssignmentCategories { get; }
 
         /// <summary>
+        /// Gets the request builder for AssignmentDefaults.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentDefaultsRequestBuilder"/>.</returns>
+        IEducationAssignmentDefaultsRequestBuilder AssignmentDefaults { get; }
+
+        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IEducationClassAssignmentsCollectionRequestBuilder"/>.</returns>

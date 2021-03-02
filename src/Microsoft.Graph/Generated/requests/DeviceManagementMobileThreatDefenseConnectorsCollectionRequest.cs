@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created MobileThreatDefenseConnector.</returns>
         public System.Threading.Tasks.Task<MobileThreatDefenseConnector> AddAsync(MobileThreatDefenseConnector mobileThreatDefenseConnector, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<MobileThreatDefenseConnector>(mobileThreatDefenseConnector, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<MobileThreatDefenseConnector>> AddResponseAsync(MobileThreatDefenseConnector mobileThreatDefenseConnector, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<MobileThreatDefenseConnector>(mobileThreatDefenseConnector, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementMobileThreatDefenseConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementMobileThreatDefenseConnectorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementMobileThreatDefenseConnectorsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementMobileThreatDefenseConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementMobileThreatDefenseConnectorsCollectionResponse>(null, cancellationToken);
         }
 

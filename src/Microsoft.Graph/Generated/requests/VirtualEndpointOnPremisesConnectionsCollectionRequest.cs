@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created CloudPcOnPremisesConnection.</returns>
         public System.Threading.Tasks.Task<CloudPcOnPremisesConnection> AddAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnection, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<CloudPcOnPremisesConnection>(cloudPcOnPremisesConnection, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CloudPcOnPremisesConnection}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<CloudPcOnPremisesConnection>> AddResponseAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnection, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<CloudPcOnPremisesConnection>(cloudPcOnPremisesConnection, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IVirtualEndpointOnPremisesConnectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<VirtualEndpointOnPremisesConnectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{VirtualEndpointOnPremisesConnectionsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<VirtualEndpointOnPremisesConnectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<VirtualEndpointOnPremisesConnectionsCollectionResponse>(null, cancellationToken);
         }
 

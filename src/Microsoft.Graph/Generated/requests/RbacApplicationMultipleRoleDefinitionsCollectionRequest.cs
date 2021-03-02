@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created UnifiedRoleDefinition.</returns>
         public System.Threading.Tasks.Task<UnifiedRoleDefinition> AddAsync(UnifiedRoleDefinition unifiedRoleDefinition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<UnifiedRoleDefinition>(unifiedRoleDefinition, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UnifiedRoleDefinition}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleDefinition>> AddResponseAsync(UnifiedRoleDefinition unifiedRoleDefinition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<UnifiedRoleDefinition>(unifiedRoleDefinition, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IRbacApplicationMultipleRoleDefinitionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<RbacApplicationMultipleRoleDefinitionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{RbacApplicationMultipleRoleDefinitionsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultipleRoleDefinitionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<RbacApplicationMultipleRoleDefinitionsCollectionResponse>(null, cancellationToken);
         }
 

@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created WindowsAutopilotDeploymentProfile.</returns>
         public System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfile> AddAsync(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             windowsAutopilotDeploymentProfile.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(windowsAutopilotDeploymentProfile.GetType().FullName));
             return this.SendAsync<WindowsAutopilotDeploymentProfile>(windowsAutopilotDeploymentProfile, cancellationToken);
         }
@@ -55,8 +55,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfile>> AddResponseAsync(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             windowsAutopilotDeploymentProfile.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(windowsAutopilotDeploymentProfile.GetType().FullName));
             return this.SendAsyncWithGraphResponse<WindowsAutopilotDeploymentProfile>(windowsAutopilotDeploymentProfile, cancellationToken);
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse>(null, cancellationToken);
         }
 

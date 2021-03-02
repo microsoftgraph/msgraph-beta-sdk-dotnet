@@ -29,7 +29,7 @@ namespace Microsoft.Graph
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.RequestBody = new PermissionGrantRequestBody();
         }
 
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IPermissionGrantCollectionPage> PostAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.Method = HttpMethods.POST;
             var response = await this.SendAsync<PermissionGrantCollectionResponse>(this.RequestBody, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<PermissionGrantCollectionResponse>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<PermissionGrantCollectionResponse>(this.RequestBody, cancellationToken);
         }
 

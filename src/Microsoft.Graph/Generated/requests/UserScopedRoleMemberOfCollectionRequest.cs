@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created ScopedRoleMembership.</returns>
         public System.Threading.Tasks.Task<ScopedRoleMembership> AddAsync(ScopedRoleMembership scopedRoleMembership, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ScopedRoleMembership>(scopedRoleMembership, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> AddResponseAsync(ScopedRoleMembership scopedRoleMembership, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<ScopedRoleMembership>(scopedRoleMembership, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IUserScopedRoleMemberOfCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UserScopedRoleMemberOfCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserScopedRoleMemberOfCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UserScopedRoleMemberOfCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<UserScopedRoleMemberOfCollectionResponse>(null, cancellationToken);
         }
 

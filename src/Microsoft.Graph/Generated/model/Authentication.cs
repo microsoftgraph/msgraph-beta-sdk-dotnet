@@ -77,6 +77,12 @@ namespace Microsoft.Graph
         public IAuthenticationPhoneMethodsCollectionPage PhoneMethods { get; set; }
     
         /// <summary>
+        /// Gets or sets temporary access pass methods.
+        /// </summary>
+        [JsonPropertyName("temporaryAccessPassMethods")]
+        public IAuthenticationTemporaryAccessPassMethodsCollectionPage TemporaryAccessPassMethods { get; set; }
+    
+        /// <summary>
         /// Gets or sets windows hello for business methods.
         /// </summary>
         [JsonPropertyName("windowsHelloForBusinessMethods")]

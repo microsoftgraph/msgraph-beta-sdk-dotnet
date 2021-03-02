@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created RestrictedSignIn.</returns>
         public System.Threading.Tasks.Task<RestrictedSignIn> AddAsync(RestrictedSignIn restrictedSignIn, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<RestrictedSignIn>(restrictedSignIn, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<RestrictedSignIn>> AddResponseAsync(RestrictedSignIn restrictedSignIn, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<RestrictedSignIn>(restrictedSignIn, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IAuditLogRootRestrictedSignInsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AuditLogRootRestrictedSignInsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AuditLogRootRestrictedSignInsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AuditLogRootRestrictedSignInsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<AuditLogRootRestrictedSignInsCollectionResponse>(null, cancellationToken);
         }
 

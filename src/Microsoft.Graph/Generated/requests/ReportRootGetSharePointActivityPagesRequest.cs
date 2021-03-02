@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetSharePointActivityPagesCollectionPage> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ReportRootGetSharePointActivityPagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -73,7 +73,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointActivityPagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ReportRootGetSharePointActivityPagesCollectionResponse>(null, cancellationToken);
         }
 
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetSharePointActivityPagesCollectionPage> PatchAsync(SharePointActivityPages sharepointactivitypages, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.Method = HttpMethods.PATCH;
             var response = await this.SendAsync<ReportRootGetSharePointActivityPagesCollectionResponse>(sharepointactivitypages, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointActivityPagesCollectionResponse>> PatchResponseAsync(SharePointActivityPages sharepointactivitypages, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<ReportRootGetSharePointActivityPagesCollectionResponse>(sharepointactivitypages, cancellationToken);
         }
 
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetSharePointActivityPagesCollectionPage> PutAsync(SharePointActivityPages sharepointactivitypages, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.PUT.ToString();
+            this.Method = HttpMethods.PUT;
             var response = await this.SendAsync<ReportRootGetSharePointActivityPagesCollectionResponse>(sharepointactivitypages, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -170,7 +170,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointActivityPagesCollectionResponse>> PutResponseAsync(SharePointActivityPages sharepointactivitypages, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.PUT.ToString();
+            this.Method = HttpMethods.PUT;
             return this.SendAsyncWithGraphResponse<ReportRootGetSharePointActivityPagesCollectionResponse>(sharepointactivitypages, cancellationToken);
         }
 

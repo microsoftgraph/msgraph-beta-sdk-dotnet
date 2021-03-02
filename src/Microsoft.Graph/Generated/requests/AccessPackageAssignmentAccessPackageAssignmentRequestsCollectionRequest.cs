@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created AccessPackageAssignmentRequestObject.</returns>
         public System.Threading.Tasks.Task<AccessPackageAssignmentRequestObject> AddAsync(AccessPackageAssignmentRequestObject accessPackageAssignmentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<AccessPackageAssignmentRequestObject>(accessPackageAssignmentRequest, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentRequestObject>> AddResponseAsync(AccessPackageAssignmentRequestObject accessPackageAssignmentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<AccessPackageAssignmentRequestObject>(accessPackageAssignmentRequest, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IAccessPackageAssignmentAccessPackageAssignmentRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AccessPackageAssignmentAccessPackageAssignmentRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentAccessPackageAssignmentRequestsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentAccessPackageAssignmentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<AccessPackageAssignmentAccessPackageAssignmentRequestsCollectionResponse>(null, cancellationToken);
         }
 

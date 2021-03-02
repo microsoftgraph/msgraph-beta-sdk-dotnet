@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<WorkbookChartSeries> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsync<WorkbookChartSeries>(null, cancellationToken);
         }
 
@@ -50,7 +50,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<WorkbookChartSeries>(null, cancellationToken);
         }
 
@@ -64,7 +64,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<WorkbookChartSeries> PatchAsync(WorkbookChartSeries workbookchartseries, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.Method = HttpMethods.PATCH;
             return this.SendAsync<WorkbookChartSeries>(workbookchartseries, cancellationToken);
         }
 
@@ -76,7 +76,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> PatchResponseAsync(WorkbookChartSeries workbookchartseries, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<WorkbookChartSeries>(workbookchartseries, cancellationToken);
         }
 
@@ -89,7 +89,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<WorkbookChartSeries> PutAsync(WorkbookChartSeries workbookchartseries, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.PUT.ToString();
+            this.Method = HttpMethods.PUT;
             return this.SendAsync<WorkbookChartSeries>(workbookchartseries, cancellationToken);
         }
 
@@ -101,7 +101,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> PutResponseAsync(WorkbookChartSeries workbookchartseries, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.PUT.ToString();
+            this.Method = HttpMethods.PUT;
             return this.SendAsyncWithGraphResponse<WorkbookChartSeries>(workbookchartseries, cancellationToken);
         }
 

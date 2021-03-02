@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         public string StatusMessage { get; set; }
     
         /// <summary>
+        /// Gets or sets thumbnail url.
+        /// </summary>
+        [JsonPropertyName("thumbnailUrl")]
+        public string ThumbnailUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets user id.
         /// The user name  displayed for the webaccount.
         /// </summary>

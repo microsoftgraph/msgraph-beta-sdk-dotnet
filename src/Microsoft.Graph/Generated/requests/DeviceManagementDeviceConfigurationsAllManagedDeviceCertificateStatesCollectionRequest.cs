@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedAllDeviceCertificateState.</returns>
         public System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> AddAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ManagedAllDeviceCertificateState>(managedAllDeviceCertificateState, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> AddResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<ManagedAllDeviceCertificateState>(managedAllDeviceCertificateState, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse>(null, cancellationToken);
         }
 

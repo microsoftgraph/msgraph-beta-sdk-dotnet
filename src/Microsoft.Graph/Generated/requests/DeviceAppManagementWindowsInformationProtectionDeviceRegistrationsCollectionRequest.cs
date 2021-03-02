@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created WindowsInformationProtectionDeviceRegistration.</returns>
         public System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> AddAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistration, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> AddResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistration, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceAppManagementWindowsInformationProtectionDeviceRegistrationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceAppManagementWindowsInformationProtectionDeviceRegistrationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionDeviceRegistrationsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementWindowsInformationProtectionDeviceRegistrationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceAppManagementWindowsInformationProtectionDeviceRegistrationsCollectionResponse>(null, cancellationToken);
         }
 

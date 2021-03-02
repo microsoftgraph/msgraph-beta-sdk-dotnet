@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IManagedDeviceDetectedAppsCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ManagedDeviceDetectedAppsCollectionWithReferencesResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedDeviceDetectedAppsCollectionWithReferencesResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceDetectedAppsCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ManagedDeviceDetectedAppsCollectionWithReferencesResponse>(null, cancellationToken);
         }
 

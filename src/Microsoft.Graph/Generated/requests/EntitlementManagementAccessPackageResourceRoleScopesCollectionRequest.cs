@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created AccessPackageResourceRoleScope.</returns>
         public System.Threading.Tasks.Task<AccessPackageResourceRoleScope> AddAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScope, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<AccessPackageResourceRoleScope>(accessPackageResourceRoleScope, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRoleScope>> AddResponseAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScope, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<AccessPackageResourceRoleScope>(accessPackageResourceRoleScope, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IEntitlementManagementAccessPackageResourceRoleScopesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<EntitlementManagementAccessPackageResourceRoleScopesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{EntitlementManagementAccessPackageResourceRoleScopesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<EntitlementManagementAccessPackageResourceRoleScopesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<EntitlementManagementAccessPackageResourceRoleScopesCollectionResponse>(null, cancellationToken);
         }
 

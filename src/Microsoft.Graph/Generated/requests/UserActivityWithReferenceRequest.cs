@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         /// <returns>The UserActivity.</returns>
         public async System.Threading.Tasks.Task<UserActivity> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserActivity>(null, cancellationToken).ConfigureAwait(false);
             return retrievedEntity;
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UserActivity>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<UserActivity>(null, cancellationToken);
         }
 
@@ -66,8 +66,8 @@ namespace Microsoft.Graph
         /// <returns>The created UserActivity.</returns>
         public async System.Threading.Tasks.Task<UserActivity> CreateAsync(UserActivity userActivityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserActivity>(userActivityToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
@@ -80,8 +80,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UserActivity>> CreateResponseAsync(UserActivity userActivityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<UserActivity>(userActivityToCreate, cancellationToken);
         }
 
@@ -94,8 +94,8 @@ namespace Microsoft.Graph
         /// <returns>The updated UserActivity.</returns>
         public async System.Threading.Tasks.Task<UserActivity> UpdateAsync(UserActivity userActivityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserActivity>(userActivityToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
@@ -109,8 +109,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UserActivity>> UpdateResponseAsync(UserActivity userActivityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<UserActivity>(userActivityToUpdate, cancellationToken);
         }
 
@@ -121,7 +121,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserActivity>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 

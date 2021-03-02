@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceCompliancePolicy.</returns>
         public System.Threading.Tasks.Task<DeviceCompliancePolicy> AddAsync(DeviceCompliancePolicy deviceCompliancePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             deviceCompliancePolicy.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceCompliancePolicy.GetType().FullName));
             return this.SendAsync<DeviceCompliancePolicy>(deviceCompliancePolicy, cancellationToken);
         }
@@ -55,8 +55,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicy}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicy>> AddResponseAsync(DeviceCompliancePolicy deviceCompliancePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             deviceCompliancePolicy.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceCompliancePolicy.GetType().FullName));
             return this.SendAsyncWithGraphResponse<DeviceCompliancePolicy>(deviceCompliancePolicy, cancellationToken);
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementDeviceCompliancePoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementDeviceCompliancePoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceCompliancePoliciesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceCompliancePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementDeviceCompliancePoliciesCollectionResponse>(null, cancellationToken);
         }
 

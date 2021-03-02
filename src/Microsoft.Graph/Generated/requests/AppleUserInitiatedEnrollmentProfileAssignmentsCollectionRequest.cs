@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created AppleEnrollmentProfileAssignment.</returns>
         public System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> AddAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<AppleEnrollmentProfileAssignment>(appleEnrollmentProfileAssignment, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> AddResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<AppleEnrollmentProfileAssignment>(appleEnrollmentProfileAssignment, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IAppleUserInitiatedEnrollmentProfileAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AppleUserInitiatedEnrollmentProfileAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfileAssignmentsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AppleUserInitiatedEnrollmentProfileAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<AppleUserInitiatedEnrollmentProfileAssignmentsCollectionResponse>(null, cancellationToken);
         }
 

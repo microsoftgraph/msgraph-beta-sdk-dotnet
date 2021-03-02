@@ -41,8 +41,8 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The created UnifiedGroupSource.</returns>
         public System.Threading.Tasks.Task<UnifiedGroupSource> AddAsync(UnifiedGroupSource unifiedGroupSource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<UnifiedGroupSource>(unifiedGroupSource, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="GraphResponse{UnifiedGroupSource}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UnifiedGroupSource>> AddResponseAsync(UnifiedGroupSource unifiedGroupSource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<UnifiedGroupSource>(unifiedGroupSource, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ILegalHoldUnifiedGroupSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<LegalHoldUnifiedGroupSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="GraphResponse{LegalHoldUnifiedGroupSourcesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<LegalHoldUnifiedGroupSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<LegalHoldUnifiedGroupSourcesCollectionResponse>(null, cancellationToken);
         }
 

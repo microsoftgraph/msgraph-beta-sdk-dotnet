@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceAndAppManagementAssignmentFilter.</returns>
         public System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> AddAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<DeviceAndAppManagementAssignmentFilter>(deviceAndAppManagementAssignmentFilter, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> AddResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<DeviceAndAppManagementAssignmentFilter>(deviceAndAppManagementAssignmentFilter, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementAssignmentFiltersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementAssignmentFiltersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementAssignmentFiltersCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAssignmentFiltersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementAssignmentFiltersCollectionResponse>(null, cancellationToken);
         }
 

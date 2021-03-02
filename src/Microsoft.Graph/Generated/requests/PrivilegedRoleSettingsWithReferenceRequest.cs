@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         /// <returns>The PrivilegedRoleSettings.</returns>
         public async System.Threading.Tasks.Task<PrivilegedRoleSettings> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PrivilegedRoleSettings>(null, cancellationToken).ConfigureAwait(false);
             return retrievedEntity;
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PrivilegedRoleSettings}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleSettings>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<PrivilegedRoleSettings>(null, cancellationToken);
         }
 
@@ -66,8 +66,8 @@ namespace Microsoft.Graph
         /// <returns>The created PrivilegedRoleSettings.</returns>
         public async System.Threading.Tasks.Task<PrivilegedRoleSettings> CreateAsync(PrivilegedRoleSettings privilegedRoleSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PrivilegedRoleSettings>(privilegedRoleSettingsToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
@@ -80,8 +80,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PrivilegedRoleSettings}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleSettings>> CreateResponseAsync(PrivilegedRoleSettings privilegedRoleSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<PrivilegedRoleSettings>(privilegedRoleSettingsToCreate, cancellationToken);
         }
 
@@ -94,8 +94,8 @@ namespace Microsoft.Graph
         /// <returns>The updated PrivilegedRoleSettings.</returns>
         public async System.Threading.Tasks.Task<PrivilegedRoleSettings> UpdateAsync(PrivilegedRoleSettings privilegedRoleSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PrivilegedRoleSettings>(privilegedRoleSettingsToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
@@ -109,8 +109,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PrivilegedRoleSettings}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleSettings>> UpdateResponseAsync(PrivilegedRoleSettings privilegedRoleSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<PrivilegedRoleSettings>(privilegedRoleSettingsToUpdate, cancellationToken);
         }
 
@@ -121,7 +121,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PrivilegedRoleSettings>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 

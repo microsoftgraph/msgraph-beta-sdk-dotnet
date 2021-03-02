@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created UnitOfMeasure.</returns>
         public System.Threading.Tasks.Task<UnitOfMeasure> AddAsync(UnitOfMeasure unitOfMeasure, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<UnitOfMeasure>(unitOfMeasure, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UnitOfMeasure}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UnitOfMeasure>> AddResponseAsync(UnitOfMeasure unitOfMeasure, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<UnitOfMeasure>(unitOfMeasure, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ICompanyUnitsOfMeasureCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CompanyUnitsOfMeasureCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CompanyUnitsOfMeasureCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<CompanyUnitsOfMeasureCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<CompanyUnitsOfMeasureCollectionResponse>(null, cancellationToken);
         }
 

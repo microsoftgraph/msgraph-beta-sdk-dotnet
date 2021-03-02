@@ -121,7 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subscription state.
-        /// Tenant mobile device management subscription state. The possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+        /// Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
         /// </summary>
         [JsonPropertyName("subscriptionState")]
         public DeviceManagementSubscriptionState? SubscriptionState { get; set; }
@@ -602,6 +602,13 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsCategoriesCollectionPage UserExperienceAnalyticsCategories { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics device metric history.
+        /// User experience analytics device metric history
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceMetricHistory")]
+        public IDeviceManagementUserExperienceAnalyticsDeviceMetricHistoryCollectionPage UserExperienceAnalyticsDeviceMetricHistory { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics device performance.
         /// User experience analytics device performance
         /// </summary>
@@ -637,6 +644,13 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionPage UserExperienceAnalyticsDevicesWithoutCloudIdentity { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics impacting process.
+        /// User experience analytics impacting process
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsImpactingProcess")]
+        public IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionPage UserExperienceAnalyticsImpactingProcess { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics metric history.
         /// User experience analytics metric history
         /// </summary>
@@ -656,6 +670,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsRegressionSummary")]
         public UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics remote connection.
+        /// User experience analytics remote connection
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsRemoteConnection")]
+        public IDeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionPage UserExperienceAnalyticsRemoteConnection { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics resource performance.

@@ -43,8 +43,8 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceManagementResourceAccessProfileBase.</returns>
         public async System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> CreateAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceManagementResourceAccessProfileBase>(deviceManagementResourceAccessProfileBaseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> CreateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfileBase>(deviceManagementResourceAccessProfileBaseToCreate, cancellationToken);
         }
 
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceManagementResourceAccessProfileBase>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <returns>The DeviceManagementResourceAccessProfileBase.</returns>
         public async System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceManagementResourceAccessProfileBase>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfileBase>(null, cancellationToken);
         }
 
@@ -118,8 +118,8 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceManagementResourceAccessProfileBase.</returns>
         public async System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> UpdateAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceManagementResourceAccessProfileBase>(deviceManagementResourceAccessProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -134,8 +134,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> UpdateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfileBase>(deviceManagementResourceAccessProfileBaseToUpdate, cancellationToken);
         }
 

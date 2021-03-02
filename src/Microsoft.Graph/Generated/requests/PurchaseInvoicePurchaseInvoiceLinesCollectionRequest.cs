@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created PurchaseInvoiceLine.</returns>
         public System.Threading.Tasks.Task<PurchaseInvoiceLine> AddAsync(PurchaseInvoiceLine purchaseInvoiceLine, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<PurchaseInvoiceLine>(purchaseInvoiceLine, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PurchaseInvoiceLine}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<PurchaseInvoiceLine>> AddResponseAsync(PurchaseInvoiceLine purchaseInvoiceLine, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<PurchaseInvoiceLine>(purchaseInvoiceLine, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IPurchaseInvoicePurchaseInvoiceLinesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<PurchaseInvoicePurchaseInvoiceLinesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PurchaseInvoicePurchaseInvoiceLinesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<PurchaseInvoicePurchaseInvoiceLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<PurchaseInvoicePurchaseInvoiceLinesCollectionResponse>(null, cancellationToken);
         }
 

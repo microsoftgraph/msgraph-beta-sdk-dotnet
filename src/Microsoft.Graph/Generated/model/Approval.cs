@@ -29,16 +29,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets completed steps.
+        /// Gets or sets steps.
         /// </summary>
-        [JsonPropertyName("completedSteps")]
-        public IApprovalCompletedStepsCollectionPage CompletedSteps { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pending steps.
-        /// </summary>
-        [JsonPropertyName("pendingSteps")]
-        public IApprovalPendingStepsCollectionPage PendingSteps { get; set; }
+        [JsonPropertyName("steps")]
+        public IApprovalStepsCollectionPage Steps { get; set; }
     
     }
 }

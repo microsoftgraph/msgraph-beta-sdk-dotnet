@@ -43,8 +43,8 @@ namespace Microsoft.Graph
         /// <returns>The created MacOSSoftwareUpdateAccountSummary.</returns>
         public async System.Threading.Tasks.Task<MacOSSoftwareUpdateAccountSummary> CreateAsync(MacOSSoftwareUpdateAccountSummary macOSSoftwareUpdateAccountSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<MacOSSoftwareUpdateAccountSummary>(macOSSoftwareUpdateAccountSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummary>> CreateResponseAsync(MacOSSoftwareUpdateAccountSummary macOSSoftwareUpdateAccountSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<MacOSSoftwareUpdateAccountSummary>(macOSSoftwareUpdateAccountSummaryToCreate, cancellationToken);
         }
 
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<MacOSSoftwareUpdateAccountSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <returns>The MacOSSoftwareUpdateAccountSummary.</returns>
         public async System.Threading.Tasks.Task<MacOSSoftwareUpdateAccountSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<MacOSSoftwareUpdateAccountSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<MacOSSoftwareUpdateAccountSummary>(null, cancellationToken);
         }
 
@@ -118,8 +118,8 @@ namespace Microsoft.Graph
         /// <returns>The updated MacOSSoftwareUpdateAccountSummary.</returns>
         public async System.Threading.Tasks.Task<MacOSSoftwareUpdateAccountSummary> UpdateAsync(MacOSSoftwareUpdateAccountSummary macOSSoftwareUpdateAccountSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<MacOSSoftwareUpdateAccountSummary>(macOSSoftwareUpdateAccountSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -134,8 +134,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummary>> UpdateResponseAsync(MacOSSoftwareUpdateAccountSummary macOSSoftwareUpdateAccountSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<MacOSSoftwareUpdateAccountSummary>(macOSSoftwareUpdateAccountSummaryToUpdate, cancellationToken);
         }
 

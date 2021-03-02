@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         /// <returns>The GroupPolicyDefinitionFile.</returns>
         public async System.Threading.Tasks.Task<GroupPolicyDefinitionFile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<GroupPolicyDefinitionFile>(null, cancellationToken).ConfigureAwait(false);
             return retrievedEntity;
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{GroupPolicyDefinitionFile}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<GroupPolicyDefinitionFile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<GroupPolicyDefinitionFile>(null, cancellationToken);
         }
 
@@ -66,8 +66,8 @@ namespace Microsoft.Graph
         /// <returns>The created GroupPolicyDefinitionFile.</returns>
         public async System.Threading.Tasks.Task<GroupPolicyDefinitionFile> CreateAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<GroupPolicyDefinitionFile>(groupPolicyDefinitionFileToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
@@ -80,8 +80,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{GroupPolicyDefinitionFile}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<GroupPolicyDefinitionFile>> CreateResponseAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<GroupPolicyDefinitionFile>(groupPolicyDefinitionFileToCreate, cancellationToken);
         }
 
@@ -94,8 +94,8 @@ namespace Microsoft.Graph
         /// <returns>The updated GroupPolicyDefinitionFile.</returns>
         public async System.Threading.Tasks.Task<GroupPolicyDefinitionFile> UpdateAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<GroupPolicyDefinitionFile>(groupPolicyDefinitionFileToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
@@ -109,8 +109,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{GroupPolicyDefinitionFile}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<GroupPolicyDefinitionFile>> UpdateResponseAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<GroupPolicyDefinitionFile>(groupPolicyDefinitionFileToUpdate, cancellationToken);
         }
 
@@ -121,7 +121,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<GroupPolicyDefinitionFile>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 

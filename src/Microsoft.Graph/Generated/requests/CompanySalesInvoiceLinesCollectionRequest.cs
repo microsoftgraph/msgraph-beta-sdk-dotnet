@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created SalesInvoiceLine.</returns>
         public System.Threading.Tasks.Task<SalesInvoiceLine> AddAsync(SalesInvoiceLine salesInvoiceLine, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<SalesInvoiceLine>(salesInvoiceLine, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SalesInvoiceLine}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<SalesInvoiceLine>> AddResponseAsync(SalesInvoiceLine salesInvoiceLine, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<SalesInvoiceLine>(salesInvoiceLine, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ICompanySalesInvoiceLinesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CompanySalesInvoiceLinesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CompanySalesInvoiceLinesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<CompanySalesInvoiceLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<CompanySalesInvoiceLinesCollectionResponse>(null, cancellationToken);
         }
 

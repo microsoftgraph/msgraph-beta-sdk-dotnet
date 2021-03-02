@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceManagementTroubleshootingEvent.</returns>
         public System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> AddAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<DeviceManagementTroubleshootingEvent>(deviceManagementTroubleshootingEvent, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> AddResponseAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<DeviceManagementTroubleshootingEvent>(deviceManagementTroubleshootingEvent, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IUserDeviceManagementTroubleshootingEventsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UserDeviceManagementTroubleshootingEventsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserDeviceManagementTroubleshootingEventsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UserDeviceManagementTroubleshootingEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<UserDeviceManagementTroubleshootingEventsCollectionResponse>(null, cancellationToken);
         }
 

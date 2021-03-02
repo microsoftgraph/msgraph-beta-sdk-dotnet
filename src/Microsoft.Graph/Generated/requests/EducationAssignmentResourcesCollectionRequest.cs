@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created EducationAssignmentResource.</returns>
         public System.Threading.Tasks.Task<EducationAssignmentResource> AddAsync(EducationAssignmentResource educationAssignmentResource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<EducationAssignmentResource>(educationAssignmentResource, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{EducationAssignmentResource}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<EducationAssignmentResource>> AddResponseAsync(EducationAssignmentResource educationAssignmentResource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<EducationAssignmentResource>(educationAssignmentResource, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IEducationAssignmentResourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<EducationAssignmentResourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{EducationAssignmentResourcesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<EducationAssignmentResourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<EducationAssignmentResourcesCollectionResponse>(null, cancellationToken);
         }
 

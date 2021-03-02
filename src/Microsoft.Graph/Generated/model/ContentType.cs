@@ -29,11 +29,29 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets associated hubs urls.
+        /// </summary>
+        [JsonPropertyName("associatedHubsUrls")]
+        public IEnumerable<string> AssociatedHubsUrls { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// The descriptive text for the item.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets document set.
+        /// </summary>
+        [JsonPropertyName("documentSet")]
+        public DocumentSet DocumentSet { get; set; }
+    
+        /// <summary>
+        /// Gets or sets document template.
+        /// </summary>
+        [JsonPropertyName("documentTemplate")]
+        public DocumentSetContent DocumentTemplate { get; set; }
     
         /// <summary>
         /// Gets or sets group.
@@ -57,6 +75,12 @@ namespace Microsoft.Graph
         public ItemReference InheritedFrom { get; set; }
     
         /// <summary>
+        /// Gets or sets is built in.
+        /// </summary>
+        [JsonPropertyName("isBuiltIn")]
+        public bool? IsBuiltIn { get; set; }
+    
+        /// <summary>
         /// Gets or sets name.
         /// The name of the content type.
         /// </summary>
@@ -78,6 +102,12 @@ namespace Microsoft.Graph
         public string ParentId { get; set; }
     
         /// <summary>
+        /// Gets or sets propagate changes.
+        /// </summary>
+        [JsonPropertyName("propagateChanges")]
+        public bool? PropagateChanges { get; set; }
+    
+        /// <summary>
         /// Gets or sets read only.
         /// If true, the content type cannot be modified unless this value is first set to false.
         /// </summary>
@@ -92,11 +122,35 @@ namespace Microsoft.Graph
         public bool? Sealed { get; set; }
     
         /// <summary>
+        /// Gets or sets base.
+        /// </summary>
+        [JsonPropertyName("base")]
+        public ContentType Base { get; set; }
+    
+        /// <summary>
+        /// Gets or sets base types.
+        /// </summary>
+        [JsonPropertyName("baseTypes")]
+        public IContentTypeBaseTypesCollectionWithReferencesPage BaseTypes { get; set; }
+    
+        /// <summary>
         /// Gets or sets column links.
         /// The collection of columns that are required by this content type
         /// </summary>
         [JsonPropertyName("columnLinks")]
         public IContentTypeColumnLinksCollectionPage ColumnLinks { get; set; }
+    
+        /// <summary>
+        /// Gets or sets column positions.
+        /// </summary>
+        [JsonPropertyName("columnPositions")]
+        public IContentTypeColumnPositionsCollectionWithReferencesPage ColumnPositions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets columns.
+        /// </summary>
+        [JsonPropertyName("columns")]
+        public IContentTypeColumnsCollectionPage Columns { get; set; }
     
     }
 }

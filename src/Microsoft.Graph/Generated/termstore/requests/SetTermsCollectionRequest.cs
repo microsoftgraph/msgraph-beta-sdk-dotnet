@@ -41,8 +41,8 @@ namespace Microsoft.Graph.TermStore
         /// <returns>The created Term.</returns>
         public System.Threading.Tasks.Task<Term> AddAsync(Term term, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<Term>(term, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.TermStore
         /// <returns>The <see cref="GraphResponse{Term}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<Term>> AddResponseAsync(Term term, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<Term>(term, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.TermStore
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ISetTermsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<SetTermsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.TermStore
         /// <returns>The <see cref="GraphResponse{SetTermsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<SetTermsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<SetTermsCollectionResponse>(null, cancellationToken);
         }
 

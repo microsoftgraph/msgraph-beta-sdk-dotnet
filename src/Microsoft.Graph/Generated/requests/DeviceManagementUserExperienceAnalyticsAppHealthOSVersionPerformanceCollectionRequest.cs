@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created UserExperienceAnalyticsAppHealthOSVersionPerformance.</returns>
         public System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthOSVersionPerformance> AddAsync(UserExperienceAnalyticsAppHealthOSVersionPerformance userExperienceAnalyticsAppHealthOSVersionPerformance, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<UserExperienceAnalyticsAppHealthOSVersionPerformance>(userExperienceAnalyticsAppHealthOSVersionPerformance, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthOSVersionPerformance}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthOSVersionPerformance>> AddResponseAsync(UserExperienceAnalyticsAppHealthOSVersionPerformance userExperienceAnalyticsAppHealthOSVersionPerformance, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsAppHealthOSVersionPerformance>(userExperienceAnalyticsAppHealthOSVersionPerformance, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionResponse>(null, cancellationToken);
         }
 

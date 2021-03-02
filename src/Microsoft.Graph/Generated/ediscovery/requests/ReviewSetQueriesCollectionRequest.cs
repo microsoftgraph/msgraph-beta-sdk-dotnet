@@ -41,8 +41,8 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The created ReviewSetQuery.</returns>
         public System.Threading.Tasks.Task<ReviewSetQuery> AddAsync(ReviewSetQuery reviewSetQuery, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ReviewSetQuery>(reviewSetQuery, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="GraphResponse{ReviewSetQuery}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> AddResponseAsync(ReviewSetQuery reviewSetQuery, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<ReviewSetQuery>(reviewSetQuery, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IReviewSetQueriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ReviewSetQueriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="GraphResponse{ReviewSetQueriesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReviewSetQueriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ReviewSetQueriesCollectionResponse>(null, cancellationToken);
         }
 

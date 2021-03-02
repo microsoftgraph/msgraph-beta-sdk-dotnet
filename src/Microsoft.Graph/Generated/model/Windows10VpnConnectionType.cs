@@ -69,5 +69,10 @@ namespace Microsoft.Graph
         /// </summary>
         PaloAltoGlobalProtect = 9,
 	
+        /// <summary>
+        /// Cisco Any Connect
+        /// </summary>
+        CiscoAnyConnect = 10,
+	
     }
 }

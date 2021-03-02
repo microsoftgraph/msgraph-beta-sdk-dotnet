@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created PhoneAuthenticationMethod.</returns>
         public System.Threading.Tasks.Task<PhoneAuthenticationMethod> AddAsync(PhoneAuthenticationMethod phoneAuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<PhoneAuthenticationMethod>(phoneAuthenticationMethod, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> AddResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<PhoneAuthenticationMethod>(phoneAuthenticationMethod, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IAuthenticationPhoneMethodsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AuthenticationPhoneMethodsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AuthenticationPhoneMethodsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AuthenticationPhoneMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<AuthenticationPhoneMethodsCollectionResponse>(null, cancellationToken);
         }
 

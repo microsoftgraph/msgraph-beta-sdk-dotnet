@@ -147,6 +147,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TemporaryAccessPassMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder TemporaryAccessPassMethods
+        {
+            get
+            {
+                return new AuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("temporaryAccessPassMethods"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for WindowsHelloForBusinessMethods.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationWindowsHelloForBusinessMethodsCollectionRequestBuilder"/>.</returns>

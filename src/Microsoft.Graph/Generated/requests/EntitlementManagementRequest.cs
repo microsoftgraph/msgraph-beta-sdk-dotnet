@@ -43,8 +43,8 @@ namespace Microsoft.Graph
         /// <returns>The created EntitlementManagement.</returns>
         public async System.Threading.Tasks.Task<EntitlementManagement> CreateAsync(EntitlementManagement entitlementManagementToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<EntitlementManagement>(entitlementManagementToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> CreateResponseAsync(EntitlementManagement entitlementManagementToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<EntitlementManagement>(entitlementManagementToCreate, cancellationToken);
         }
 
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<EntitlementManagement>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <returns>The EntitlementManagement.</returns>
         public async System.Threading.Tasks.Task<EntitlementManagement> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<EntitlementManagement>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<EntitlementManagement>(null, cancellationToken);
         }
 
@@ -118,8 +118,8 @@ namespace Microsoft.Graph
         /// <returns>The updated EntitlementManagement.</returns>
         public async System.Threading.Tasks.Task<EntitlementManagement> UpdateAsync(EntitlementManagement entitlementManagementToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<EntitlementManagement>(entitlementManagementToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -134,8 +134,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> UpdateResponseAsync(EntitlementManagement entitlementManagementToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<EntitlementManagement>(entitlementManagementToUpdate, cancellationToken);
         }
 
@@ -218,6 +218,22 @@ namespace Microsoft.Graph
 
             if (entitlementManagementToInitialize != null && entitlementManagementToInitialize.AdditionalData != null)
             {
+
+                if (entitlementManagementToInitialize.AccessPackageAssignmentApprovals != null && entitlementManagementToInitialize.AccessPackageAssignmentApprovals.CurrentPage != null)
+                {
+                    entitlementManagementToInitialize.AccessPackageAssignmentApprovals.AdditionalData = entitlementManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentApprovals@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        entitlementManagementToInitialize.AccessPackageAssignmentApprovals.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
 
                 if (entitlementManagementToInitialize.AccessPackageAssignmentPolicies != null && entitlementManagementToInitialize.AccessPackageAssignmentPolicies.CurrentPage != null)
                 {

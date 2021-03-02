@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedMobileApp.</returns>
         public System.Threading.Tasks.Task<ManagedMobileApp> AddAsync(ManagedMobileApp managedMobileApp, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ManagedMobileApp>(managedMobileApp, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> AddResponseAsync(ManagedMobileApp managedMobileApp, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<ManagedMobileApp>(managedMobileApp, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDefaultManagedAppProtectionAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DefaultManagedAppProtectionAppsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DefaultManagedAppProtectionAppsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtectionAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DefaultManagedAppProtectionAppsCollectionResponse>(null, cancellationToken);
         }
 

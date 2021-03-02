@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets limit.
-        /// Not yet documented
+        /// The maximum number of devices that a user can enroll
         /// </summary>
         [JsonPropertyName("limit")]
         public Int32? Limit { get; set; }

@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created GroupLifecyclePolicy.</returns>
         public System.Threading.Tasks.Task<GroupLifecyclePolicy> AddAsync(GroupLifecyclePolicy groupLifecyclePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<GroupLifecyclePolicy>(groupLifecyclePolicy, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{GroupLifecyclePolicy}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<GroupLifecyclePolicy>> AddResponseAsync(GroupLifecyclePolicy groupLifecyclePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<GroupLifecyclePolicy>(groupLifecyclePolicy, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IGroupGroupLifecyclePoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GroupGroupLifecyclePoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{GroupGroupLifecyclePoliciesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<GroupGroupLifecyclePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<GroupGroupLifecyclePoliciesCollectionResponse>(null, cancellationToken);
         }
 

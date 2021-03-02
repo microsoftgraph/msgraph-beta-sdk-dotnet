@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created TeamworkTagMember.</returns>
         public System.Threading.Tasks.Task<TeamworkTagMember> AddAsync(TeamworkTagMember teamworkTagMember, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<TeamworkTagMember>(teamworkTagMember, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TeamworkTagMember}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<TeamworkTagMember>> AddResponseAsync(TeamworkTagMember teamworkTagMember, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<TeamworkTagMember>(teamworkTagMember, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ITeamworkTagMembersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<TeamworkTagMembersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TeamworkTagMembersCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<TeamworkTagMembersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<TeamworkTagMembersCollectionResponse>(null, cancellationToken);
         }
 

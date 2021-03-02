@@ -43,8 +43,8 @@ namespace Microsoft.Graph
         /// <returns>The created AndroidManagedStoreAppConfigurationSchema.</returns>
         public async System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> CreateAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchemaToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> CreateResponseAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchemaToCreate, cancellationToken);
         }
 
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidManagedStoreAppConfigurationSchema>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <returns>The AndroidManagedStoreAppConfigurationSchema.</returns>
         public async System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidManagedStoreAppConfigurationSchema>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<AndroidManagedStoreAppConfigurationSchema>(null, cancellationToken);
         }
 
@@ -118,8 +118,8 @@ namespace Microsoft.Graph
         /// <returns>The updated AndroidManagedStoreAppConfigurationSchema.</returns>
         public async System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> UpdateAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchemaToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -134,8 +134,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> UpdateResponseAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchemaToUpdate, cancellationToken);
         }
 

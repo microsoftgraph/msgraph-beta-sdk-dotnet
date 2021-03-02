@@ -77,6 +77,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("sponsors")]
         public IEnumerable<RelatedPerson> Sponsors { get; set; }
     
+        /// <summary>
+        /// Gets or sets thumbnail url.
+        /// </summary>
+        [JsonPropertyName("thumbnailUrl")]
+        public string ThumbnailUrl { get; set; }
+    
     }
 }
 

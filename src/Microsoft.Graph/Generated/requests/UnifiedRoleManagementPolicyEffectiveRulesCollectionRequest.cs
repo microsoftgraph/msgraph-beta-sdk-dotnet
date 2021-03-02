@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created UnifiedRoleManagementPolicyRule.</returns>
         public System.Threading.Tasks.Task<UnifiedRoleManagementPolicyRule> AddAsync(UnifiedRoleManagementPolicyRule unifiedRoleManagementPolicyRule, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             unifiedRoleManagementPolicyRule.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(unifiedRoleManagementPolicyRule.GetType().FullName));
             return this.SendAsync<UnifiedRoleManagementPolicyRule>(unifiedRoleManagementPolicyRule, cancellationToken);
         }
@@ -55,8 +55,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyRule}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyRule>> AddResponseAsync(UnifiedRoleManagementPolicyRule unifiedRoleManagementPolicyRule, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             unifiedRoleManagementPolicyRule.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(unifiedRoleManagementPolicyRule.GetType().FullName));
             return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicyRule>(unifiedRoleManagementPolicyRule, cancellationToken);
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IUnifiedRoleManagementPolicyEffectiveRulesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UnifiedRoleManagementPolicyEffectiveRulesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyEffectiveRulesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyEffectiveRulesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicyEffectiveRulesCollectionResponse>(null, cancellationToken);
         }
 

@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created PrintOperation.</returns>
         public System.Threading.Tasks.Task<PrintOperation> AddAsync(PrintOperation printOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             printOperation.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(printOperation.GetType().FullName));
             return this.SendAsync<PrintOperation>(printOperation, cancellationToken);
         }
@@ -55,8 +55,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<PrintOperation>> AddResponseAsync(PrintOperation printOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             printOperation.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(printOperation.GetType().FullName));
             return this.SendAsyncWithGraphResponse<PrintOperation>(printOperation, cancellationToken);
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IPrintOperationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<PrintOperationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PrintOperationsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<PrintOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<PrintOperationsCollectionResponse>(null, cancellationToken);
         }
 

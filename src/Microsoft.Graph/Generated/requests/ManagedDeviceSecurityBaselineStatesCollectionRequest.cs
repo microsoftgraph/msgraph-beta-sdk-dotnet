@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created SecurityBaselineState.</returns>
         public System.Threading.Tasks.Task<SecurityBaselineState> AddAsync(SecurityBaselineState securityBaselineState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<SecurityBaselineState>(securityBaselineState, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SecurityBaselineState}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineState>> AddResponseAsync(SecurityBaselineState securityBaselineState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<SecurityBaselineState>(securityBaselineState, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IManagedDeviceSecurityBaselineStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ManagedDeviceSecurityBaselineStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedDeviceSecurityBaselineStatesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceSecurityBaselineStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ManagedDeviceSecurityBaselineStatesCollectionResponse>(null, cancellationToken);
         }
 

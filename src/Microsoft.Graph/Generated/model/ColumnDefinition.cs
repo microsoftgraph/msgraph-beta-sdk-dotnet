@@ -57,6 +57,12 @@ namespace Microsoft.Graph
         public string ColumnGroup { get; set; }
     
         /// <summary>
+        /// Gets or sets content approval status.
+        /// </summary>
+        [JsonPropertyName("contentApprovalStatus")]
+        public ContentApprovalStatusColumn ContentApprovalStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets currency.
         /// This column stores currency values.
         /// </summary>
@@ -113,11 +119,35 @@ namespace Microsoft.Graph
         public bool? Hidden { get; set; }
     
         /// <summary>
+        /// Gets or sets hyperlink or picture.
+        /// </summary>
+        [JsonPropertyName("hyperlinkOrPicture")]
+        public HyperlinkOrPictureColumn HyperlinkOrPicture { get; set; }
+    
+        /// <summary>
         /// Gets or sets indexed.
         /// Specifies whether the column values can used for sorting and searching.
         /// </summary>
         [JsonPropertyName("indexed")]
         public bool? Indexed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is deletable.
+        /// </summary>
+        [JsonPropertyName("isDeletable")]
+        public bool? IsDeletable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is reorderable.
+        /// </summary>
+        [JsonPropertyName("isReorderable")]
+        public bool? IsReorderable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is sealed.
+        /// </summary>
+        [JsonPropertyName("isSealed")]
+        public bool? IsSealed { get; set; }
     
         /// <summary>
         /// Gets or sets lookup.
@@ -148,6 +178,12 @@ namespace Microsoft.Graph
         public PersonOrGroupColumn PersonOrGroup { get; set; }
     
         /// <summary>
+        /// Gets or sets propagate changes.
+        /// </summary>
+        [JsonPropertyName("propagateChanges")]
+        public bool? PropagateChanges { get; set; }
+    
+        /// <summary>
         /// Gets or sets read only.
         /// Specifies whether the column values can be modified.
         /// </summary>
@@ -162,11 +198,41 @@ namespace Microsoft.Graph
         public bool? Required { get; set; }
     
         /// <summary>
+        /// Gets or sets term.
+        /// </summary>
+        [JsonPropertyName("term")]
+        public TermColumn Term { get; set; }
+    
+        /// <summary>
         /// Gets or sets text.
         /// This column stores text values.
         /// </summary>
         [JsonPropertyName("text")]
         public TextColumn Text { get; set; }
+    
+        /// <summary>
+        /// Gets or sets thumbnail.
+        /// </summary>
+        [JsonPropertyName("thumbnail")]
+        public ThumbnailColumn Thumbnail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [JsonPropertyName("type")]
+        public ColumnTypes? Type { get; set; }
+    
+        /// <summary>
+        /// Gets or sets validation.
+        /// </summary>
+        [JsonPropertyName("validation")]
+        public ColumnValidation Validation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source column.
+        /// </summary>
+        [JsonPropertyName("sourceColumn")]
+        public ColumnDefinition SourceColumn { get; set; }
     
     }
 }

@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created UserScopeTeamsAppInstallation.</returns>
         public System.Threading.Tasks.Task<UserScopeTeamsAppInstallation> AddAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<UserScopeTeamsAppInstallation>(userScopeTeamsAppInstallation, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UserScopeTeamsAppInstallation>> AddResponseAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<UserScopeTeamsAppInstallation>(userScopeTeamsAppInstallation, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IUserTeamworkInstalledAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UserTeamworkInstalledAppsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserTeamworkInstalledAppsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UserTeamworkInstalledAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<UserTeamworkInstalledAppsCollectionResponse>(null, cancellationToken);
         }
 

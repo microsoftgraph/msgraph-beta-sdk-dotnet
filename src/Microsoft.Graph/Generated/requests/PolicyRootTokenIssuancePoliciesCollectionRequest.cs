@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created TokenIssuancePolicy.</returns>
         public System.Threading.Tasks.Task<TokenIssuancePolicy> AddAsync(TokenIssuancePolicy tokenIssuancePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<TokenIssuancePolicy>(tokenIssuancePolicy, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> AddResponseAsync(TokenIssuancePolicy tokenIssuancePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<TokenIssuancePolicy>(tokenIssuancePolicy, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IPolicyRootTokenIssuancePoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<PolicyRootTokenIssuancePoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PolicyRootTokenIssuancePoliciesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<PolicyRootTokenIssuancePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<PolicyRootTokenIssuancePoliciesCollectionResponse>(null, cancellationToken);
         }
 

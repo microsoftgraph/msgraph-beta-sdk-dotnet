@@ -29,7 +29,7 @@ namespace Microsoft.Graph
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.RequestBody = new SynchronizationJobProvisionOnDemandRequestBody();
         }
 
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<StringKeyStringValuePair> PostAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.Method = HttpMethods.POST;
             return this.SendAsync<StringKeyStringValuePair>(this.RequestBody, cancellationToken);
         }
 
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<StringKeyStringValuePair>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<StringKeyStringValuePair>(this.RequestBody, cancellationToken);
         }
 

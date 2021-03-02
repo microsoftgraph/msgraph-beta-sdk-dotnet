@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created AudioRoutingGroup.</returns>
         public System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup audioRoutingGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<AudioRoutingGroup>(audioRoutingGroup, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AudioRoutingGroup}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AudioRoutingGroup>> AddResponseAsync(AudioRoutingGroup audioRoutingGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<AudioRoutingGroup>(audioRoutingGroup, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ICallAudioRoutingGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CallAudioRoutingGroupsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CallAudioRoutingGroupsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<CallAudioRoutingGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<CallAudioRoutingGroupsCollectionResponse>(null, cancellationToken);
         }
 

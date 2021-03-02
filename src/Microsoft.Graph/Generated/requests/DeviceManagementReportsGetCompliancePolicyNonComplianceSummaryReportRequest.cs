@@ -29,7 +29,7 @@ namespace Microsoft.Graph
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.RequestBody = new DeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReportRequestBody();
         }
 
@@ -48,7 +48,7 @@ namespace Microsoft.Graph
             CancellationToken cancellationToken = default(CancellationToken),
             HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead)
         {
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.Method = HttpMethods.POST;
             return this.SendStreamRequestAsync(null, cancellationToken, httpCompletionOption);
         }
 
@@ -59,7 +59,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse(this.RequestBody, cancellationToken);
         }
 

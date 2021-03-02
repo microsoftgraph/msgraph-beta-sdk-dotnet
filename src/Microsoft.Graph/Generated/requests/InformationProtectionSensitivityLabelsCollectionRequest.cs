@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created SensitivityLabel.</returns>
         public System.Threading.Tasks.Task<SensitivityLabel> AddAsync(SensitivityLabel sensitivityLabel, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<SensitivityLabel>(sensitivityLabel, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SensitivityLabel}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> AddResponseAsync(SensitivityLabel sensitivityLabel, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<SensitivityLabel>(sensitivityLabel, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IInformationProtectionSensitivityLabelsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<InformationProtectionSensitivityLabelsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{InformationProtectionSensitivityLabelsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<InformationProtectionSensitivityLabelsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<InformationProtectionSensitivityLabelsCollectionResponse>(null, cancellationToken);
         }
 

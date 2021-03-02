@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AuthenticationMethodsPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodsPolicyRequestBuilder"/>.</returns>
+        public IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
+        {
+            get
+            {
+                return new AuthenticationMethodsPolicyRequestBuilder(this.AppendSegmentToRequestUrl("authenticationMethodsPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AuthenticationFlowsPolicy.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationFlowsPolicyRequestBuilder"/>.</returns>

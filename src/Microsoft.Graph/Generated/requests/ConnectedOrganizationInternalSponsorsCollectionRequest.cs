@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created DirectoryObject.</returns>
         public System.Threading.Tasks.Task<DirectoryObject> AddAsync(DirectoryObject directoryObject, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<DirectoryObject>(directoryObject, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DirectoryObject}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DirectoryObject>> AddResponseAsync(DirectoryObject directoryObject, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<DirectoryObject>(directoryObject, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IConnectedOrganizationInternalSponsorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ConnectedOrganizationInternalSponsorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ConnectedOrganizationInternalSponsorsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ConnectedOrganizationInternalSponsorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ConnectedOrganizationInternalSponsorsCollectionResponse>(null, cancellationToken);
         }
 

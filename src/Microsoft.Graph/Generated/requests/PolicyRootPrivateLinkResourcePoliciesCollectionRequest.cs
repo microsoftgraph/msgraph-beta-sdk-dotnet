@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created PrivateLinkResourcePolicy.</returns>
         public System.Threading.Tasks.Task<PrivateLinkResourcePolicy> AddAsync(PrivateLinkResourcePolicy privateLinkResourcePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<PrivateLinkResourcePolicy>(privateLinkResourcePolicy, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<PrivateLinkResourcePolicy>> AddResponseAsync(PrivateLinkResourcePolicy privateLinkResourcePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<PrivateLinkResourcePolicy>(privateLinkResourcePolicy, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IPolicyRootPrivateLinkResourcePoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<PolicyRootPrivateLinkResourcePoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PolicyRootPrivateLinkResourcePoliciesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<PolicyRootPrivateLinkResourcePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<PolicyRootPrivateLinkResourcePoliciesCollectionResponse>(null, cancellationToken);
         }
 

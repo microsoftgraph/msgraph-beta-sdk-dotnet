@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created WorkforceIntegration.</returns>
         public System.Threading.Tasks.Task<WorkforceIntegration> AddAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<WorkforceIntegration>(workforceIntegration, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> AddResponseAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<WorkforceIntegration>(workforceIntegration, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ITeamworkWorkforceIntegrationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<TeamworkWorkforceIntegrationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>(null, cancellationToken);
         }
 

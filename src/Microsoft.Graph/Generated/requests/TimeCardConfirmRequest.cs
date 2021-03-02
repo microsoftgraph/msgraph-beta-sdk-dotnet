@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<TimeCard> PostAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.Method = HttpMethods.POST;
             return this.SendAsync<TimeCard>(null, cancellationToken);
         }
 
@@ -50,7 +50,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<TimeCard>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<TimeCard>(null, cancellationToken);
         }
 

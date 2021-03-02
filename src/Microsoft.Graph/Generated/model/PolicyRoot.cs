@@ -30,6 +30,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets authentication methods policy.
+        /// </summary>
+        [JsonPropertyName("authenticationMethodsPolicy")]
+        public AuthenticationMethodsPolicy AuthenticationMethodsPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication flows policy.
         /// </summary>
         [JsonPropertyName("authenticationFlowsPolicy")]

@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IColumnDefinitionRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for SourceColumn.
+        /// </summary>
+        /// <returns>The <see cref="IColumnDefinitionWithReferenceRequestBuilder"/>.</returns>
+        IColumnDefinitionWithReferenceRequestBuilder SourceColumn { get; }
+    
     }
 }

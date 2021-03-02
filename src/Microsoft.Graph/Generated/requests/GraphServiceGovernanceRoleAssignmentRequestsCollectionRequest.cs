@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created GovernanceRoleAssignmentRequestObject.</returns>
         public System.Threading.Tasks.Task<GovernanceRoleAssignmentRequestObject> AddAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<GovernanceRoleAssignmentRequestObject>(governanceRoleAssignmentRequest, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignmentRequestObject>> AddResponseAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<GovernanceRoleAssignmentRequestObject>(governanceRoleAssignmentRequest, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IGraphServiceGovernanceRoleAssignmentRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GraphServiceGovernanceRoleAssignmentRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{GraphServiceGovernanceRoleAssignmentRequestsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<GraphServiceGovernanceRoleAssignmentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<GraphServiceGovernanceRoleAssignmentRequestsCollectionResponse>(null, cancellationToken);
         }
 

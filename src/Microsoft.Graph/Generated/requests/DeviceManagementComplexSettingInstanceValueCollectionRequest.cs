@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceManagementSettingInstance.</returns>
         public System.Threading.Tasks.Task<DeviceManagementSettingInstance> AddAsync(DeviceManagementSettingInstance deviceManagementSettingInstance, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             deviceManagementSettingInstance.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceManagementSettingInstance.GetType().FullName));
             return this.SendAsync<DeviceManagementSettingInstance>(deviceManagementSettingInstance, cancellationToken);
         }
@@ -55,8 +55,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementSettingInstance}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingInstance>> AddResponseAsync(DeviceManagementSettingInstance deviceManagementSettingInstance, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             deviceManagementSettingInstance.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceManagementSettingInstance.GetType().FullName));
             return this.SendAsyncWithGraphResponse<DeviceManagementSettingInstance>(deviceManagementSettingInstance, cancellationToken);
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementComplexSettingInstanceValueCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementComplexSettingInstanceValueCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingInstanceValueCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingInstanceValueCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementComplexSettingInstanceValueCollectionResponse>(null, cancellationToken);
         }
 
