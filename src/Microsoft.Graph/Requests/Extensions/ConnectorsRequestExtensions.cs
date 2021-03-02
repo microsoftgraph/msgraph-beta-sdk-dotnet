@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<ExternalItem> PutAsync(ExternalItem externalItemToCreate, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
-            this.Method = "PUT";
+            this.Method = HttpMethods.PUT;
             var newEntity = await this.SendAsync<ExternalItem>(externalItemToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
