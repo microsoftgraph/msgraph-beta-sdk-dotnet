@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created BusinessFlow.</returns>
         public System.Threading.Tasks.Task<BusinessFlow> AddAsync(BusinessFlow businessFlow, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<BusinessFlow>(businessFlow, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{BusinessFlow}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<BusinessFlow>> AddResponseAsync(BusinessFlow businessFlow, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<BusinessFlow>(businessFlow, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IApprovalWorkflowProviderBusinessFlowsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ApprovalWorkflowProviderBusinessFlowsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProviderBusinessFlowsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProviderBusinessFlowsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ApprovalWorkflowProviderBusinessFlowsCollectionResponse>(null, cancellationToken);
         }
 

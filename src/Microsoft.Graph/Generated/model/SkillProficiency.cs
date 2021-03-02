@@ -57,6 +57,12 @@ namespace Microsoft.Graph
         public SkillProficiencyLevel? Proficiency { get; set; }
     
         /// <summary>
+        /// Gets or sets thumbnail url.
+        /// </summary>
+        [JsonPropertyName("thumbnailUrl")]
+        public string ThumbnailUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets web url.
         /// Contains a link to an information source about the skill.
         /// </summary>

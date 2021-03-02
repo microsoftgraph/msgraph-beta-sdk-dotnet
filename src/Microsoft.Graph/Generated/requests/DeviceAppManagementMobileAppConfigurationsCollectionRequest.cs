@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedDeviceMobileAppConfiguration.</returns>
         public System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> AddAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             managedDeviceMobileAppConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedDeviceMobileAppConfiguration.GetType().FullName));
             return this.SendAsync<ManagedDeviceMobileAppConfiguration>(managedDeviceMobileAppConfiguration, cancellationToken);
         }
@@ -55,8 +55,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfiguration>> AddResponseAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             managedDeviceMobileAppConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedDeviceMobileAppConfiguration.GetType().FullName));
             return this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfiguration>(managedDeviceMobileAppConfiguration, cancellationToken);
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceAppManagementMobileAppConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceAppManagementMobileAppConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementMobileAppConfigurationsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementMobileAppConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceAppManagementMobileAppConfigurationsCollectionResponse>(null, cancellationToken);
         }
 

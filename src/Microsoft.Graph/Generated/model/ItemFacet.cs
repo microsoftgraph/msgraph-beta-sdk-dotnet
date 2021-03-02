@@ -57,6 +57,12 @@ namespace Microsoft.Graph
         public InferenceData Inference { get; set; }
     
         /// <summary>
+        /// Gets or sets is searchable.
+        /// </summary>
+        [JsonPropertyName("isSearchable")]
+        public bool? IsSearchable { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified by.
         /// Provides the identifier of the user and/or application that last modified the entity.
         /// </summary>

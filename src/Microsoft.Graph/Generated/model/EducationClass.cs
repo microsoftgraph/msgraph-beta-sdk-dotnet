@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external source.
-        /// How this class was created. The possible values are: sis, manual, unknownFutureValue.
+        /// The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
         /// </summary>
         [JsonPropertyName("externalSource")]
         public EducationExternalSource? ExternalSource { get; set; }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets term.
-        /// Term for this class.
+        /// Term for the class.
         /// </summary>
         [JsonPropertyName("term")]
         public EducationTerm Term { get; set; }
@@ -117,6 +117,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignmentCategories")]
         public IEducationClassAssignmentCategoriesCollectionPage AssignmentCategories { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignment defaults.
+        /// </summary>
+        [JsonPropertyName("assignmentDefaults")]
+        public EducationAssignmentDefaults AssignmentDefaults { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.

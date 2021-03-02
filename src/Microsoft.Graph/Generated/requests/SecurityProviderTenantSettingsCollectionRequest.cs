@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created ProviderTenantSetting.</returns>
         public System.Threading.Tasks.Task<ProviderTenantSetting> AddAsync(ProviderTenantSetting providerTenantSetting, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ProviderTenantSetting>(providerTenantSetting, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> AddResponseAsync(ProviderTenantSetting providerTenantSetting, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<ProviderTenantSetting>(providerTenantSetting, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ISecurityProviderTenantSettingsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<SecurityProviderTenantSettingsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SecurityProviderTenantSettingsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<SecurityProviderTenantSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<SecurityProviderTenantSettingsCollectionResponse>(null, cancellationToken);
         }
 

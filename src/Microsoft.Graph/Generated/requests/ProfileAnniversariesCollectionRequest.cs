@@ -34,29 +34,29 @@ namespace Microsoft.Graph
         {
         }
         /// <summary>
-        /// Adds the specified PersonAnniversary to the collection via POST.
+        /// Adds the specified PersonAnnualEvent to the collection via POST.
         /// </summary>
-        /// <param name="personAnniversary">The PersonAnniversary to add.</param>
+        /// <param name="personAnnualEvent">The PersonAnnualEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PersonAnniversary.</returns>
-        public System.Threading.Tasks.Task<PersonAnniversary> AddAsync(PersonAnniversary personAnniversary, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The created PersonAnnualEvent.</returns>
+        public System.Threading.Tasks.Task<PersonAnnualEvent> AddAsync(PersonAnnualEvent personAnnualEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
-            return this.SendAsync<PersonAnniversary>(personAnniversary, cancellationToken);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsync<PersonAnnualEvent>(personAnnualEvent, cancellationToken);
         }
 
         /// <summary>
-        /// Adds the specified PersonAnniversary to the collection via POST and returns a <see cref="GraphResponse{PersonAnniversary}"/> object of the request.
+        /// Adds the specified PersonAnnualEvent to the collection via POST and returns a <see cref="GraphResponse{PersonAnnualEvent}"/> object of the request.
         /// </summary>
-        /// <param name="personAnniversary">The PersonAnniversary to add.</param>
+        /// <param name="personAnnualEvent">The PersonAnnualEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{PersonAnniversary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> AddResponseAsync(PersonAnniversary personAnniversary, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The <see cref="GraphResponse{PersonAnnualEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PersonAnnualEvent>> AddResponseAsync(PersonAnnualEvent personAnnualEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
-            return this.SendAsyncWithGraphResponse<PersonAnniversary>(personAnniversary, cancellationToken);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PersonAnnualEvent>(personAnnualEvent, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IProfileAnniversariesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ProfileAnniversariesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ProfileAnniversariesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ProfileAnniversariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ProfileAnniversariesCollectionResponse>(null, cancellationToken);
         }
 
@@ -122,7 +122,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IProfileAnniversariesCollectionRequest Expand(Expression<Func<PersonAnniversary, object>> expandExpression)
+        public IProfileAnniversariesCollectionRequest Expand(Expression<Func<PersonAnnualEvent, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -157,7 +157,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IProfileAnniversariesCollectionRequest Select(Expression<Func<PersonAnniversary, object>> selectExpression)
+        public IProfileAnniversariesCollectionRequest Select(Expression<Func<PersonAnnualEvent, object>> selectExpression)
         {
             if (selectExpression == null)
             {

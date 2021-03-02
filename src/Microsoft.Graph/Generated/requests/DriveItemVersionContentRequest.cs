@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The stream.</returns>
         public System.Threading.Tasks.Task<Stream> GetAsync(CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead)
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendStreamRequestAsync(null, cancellationToken, completionOption);
         }
 
@@ -53,7 +53,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead)
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse(null, cancellationToken, completionOption);
         }
     
@@ -67,8 +67,8 @@ namespace Microsoft.Graph
         /// <returns>The object returned by the PUT call.</returns>
         public System.Threading.Tasks.Task<T> PutAsync<T>(Stream content, CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : DriveItemVersion
         {
-            this.ContentType = Constants.ContentTypes.StreamContentType;
-            this.Method = CoreConstants.HttpMethods.PUT.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Stream;
+            this.Method = HttpMethods.PUT;
             return this.SendAsync<T>(content, cancellationToken, completionOption);
         }
 
@@ -82,8 +82,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object returned by the PUT call.</returns>
         public System.Threading.Tasks.Task<GraphResponse<T>> PutResponseAsync<T>(Stream content, CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : DriveItemVersion
         {
-            this.ContentType = Constants.ContentTypes.StreamContentType;
-            this.Method = CoreConstants.HttpMethods.PUT.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Stream;
+            this.Method = HttpMethods.PUT;
             return this.SendAsyncWithGraphResponse<T>(content, cancellationToken, completionOption);
         }
     

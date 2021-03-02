@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created B2cIdentityUserFlow.</returns>
         public System.Threading.Tasks.Task<B2cIdentityUserFlow> AddAsync(B2cIdentityUserFlow b2cIdentityUserFlow, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<B2cIdentityUserFlow>(b2cIdentityUserFlow, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{B2cIdentityUserFlow}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlow>> AddResponseAsync(B2cIdentityUserFlow b2cIdentityUserFlow, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<B2cIdentityUserFlow>(b2cIdentityUserFlow, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IIdentityContainerB2cUserFlowsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<IdentityContainerB2cUserFlowsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{IdentityContainerB2cUserFlowsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<IdentityContainerB2cUserFlowsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<IdentityContainerB2cUserFlowsCollectionResponse>(null, cancellationToken);
         }
 

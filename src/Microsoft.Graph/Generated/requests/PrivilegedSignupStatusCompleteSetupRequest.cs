@@ -29,7 +29,7 @@ namespace Microsoft.Graph
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.RequestBody = new PrivilegedSignupStatusCompleteSetupRequestBody();
         }
 
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IPrivilegedSignupStatusCompleteSetupCollectionPage> PostAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.Method = HttpMethods.POST;
             var response = await this.SendAsync<PrivilegedSignupStatusCompleteSetupCollectionResponse>(this.RequestBody, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatusCompleteSetupCollectionResponse>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<PrivilegedSignupStatusCompleteSetupCollectionResponse>(this.RequestBody, cancellationToken);
         }
 

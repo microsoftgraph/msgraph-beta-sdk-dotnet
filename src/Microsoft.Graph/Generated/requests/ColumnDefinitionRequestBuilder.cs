@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new ColumnDefinitionRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for SourceColumn.
+        /// </summary>
+        /// <returns>The <see cref="IColumnDefinitionWithReferenceRequestBuilder"/>.</returns>
+        public IColumnDefinitionWithReferenceRequestBuilder SourceColumn
+        {
+            get
+            {
+                return new ColumnDefinitionWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("sourceColumn"), this.Client);
+            }
+        }
+    
     }
 }

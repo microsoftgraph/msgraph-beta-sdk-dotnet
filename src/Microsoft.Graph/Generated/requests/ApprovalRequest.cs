@@ -43,8 +43,8 @@ namespace Microsoft.Graph
         /// <returns>The created Approval.</returns>
         public async System.Threading.Tasks.Task<Approval> CreateAsync(Approval approvalToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Approval>(approvalToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<Approval>> CreateResponseAsync(Approval approvalToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<Approval>(approvalToCreate, cancellationToken);
         }
 
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Approval>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <returns>The Approval.</returns>
         public async System.Threading.Tasks.Task<Approval> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Approval>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<Approval>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<Approval>(null, cancellationToken);
         }
 
@@ -118,8 +118,8 @@ namespace Microsoft.Graph
         /// <returns>The updated Approval.</returns>
         public async System.Threading.Tasks.Task<Approval> UpdateAsync(Approval approvalToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Approval>(approvalToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -134,8 +134,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<Approval>> UpdateResponseAsync(Approval approvalToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<Approval>(approvalToUpdate, cancellationToken);
         }
 
@@ -219,33 +219,17 @@ namespace Microsoft.Graph
             if (approvalToInitialize != null && approvalToInitialize.AdditionalData != null)
             {
 
-                if (approvalToInitialize.CompletedSteps != null && approvalToInitialize.CompletedSteps.CurrentPage != null)
+                if (approvalToInitialize.Steps != null && approvalToInitialize.Steps.CurrentPage != null)
                 {
-                    approvalToInitialize.CompletedSteps.AdditionalData = approvalToInitialize.AdditionalData;
+                    approvalToInitialize.Steps.AdditionalData = approvalToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    approvalToInitialize.AdditionalData.TryGetValue("completedSteps@odata.nextLink", out nextPageLink);
+                    approvalToInitialize.AdditionalData.TryGetValue("steps@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        approvalToInitialize.CompletedSteps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (approvalToInitialize.PendingSteps != null && approvalToInitialize.PendingSteps.CurrentPage != null)
-                {
-                    approvalToInitialize.PendingSteps.AdditionalData = approvalToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalToInitialize.AdditionalData.TryGetValue("pendingSteps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalToInitialize.PendingSteps.InitializeNextPageRequest(
+                        approvalToInitialize.Steps.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
         public System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> AddAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<MultiValueLegacyExtendedProperty>(multiValueLegacyExtendedProperty, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> AddResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<MultiValueLegacyExtendedProperty>(multiValueLegacyExtendedProperty, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IContactFolderMultiValueExtendedPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ContactFolderMultiValueExtendedPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ContactFolderMultiValueExtendedPropertiesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ContactFolderMultiValueExtendedPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ContactFolderMultiValueExtendedPropertiesCollectionResponse>(null, cancellationToken);
         }
 

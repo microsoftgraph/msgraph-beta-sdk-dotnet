@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         IPolicyRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AuthenticationMethodsPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodsPolicyRequestBuilder"/>.</returns>
+        IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for AuthenticationFlowsPolicy.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationFlowsPolicyRequestBuilder"/>.</returns>

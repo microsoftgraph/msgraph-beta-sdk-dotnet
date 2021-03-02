@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         public DeviceManagementReportFileFormat? Format { get; set; }
     
         /// <summary>
+        /// Gets or sets localization type.
+        /// Configures how the requested export job is localized
+        /// </summary>
+        [JsonPropertyName("localizationType")]
+        public DeviceManagementExportJobLocalizationType? LocalizationType { get; set; }
+    
+        /// <summary>
         /// Gets or sets report name.
         /// Name of the report
         /// </summary>

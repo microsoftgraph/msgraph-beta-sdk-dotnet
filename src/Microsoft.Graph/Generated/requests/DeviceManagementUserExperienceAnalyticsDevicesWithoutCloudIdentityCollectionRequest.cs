@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created UserExperienceAnalyticsDeviceWithoutCloudIdentity.</returns>
         public System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceWithoutCloudIdentity> AddAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentity, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<UserExperienceAnalyticsDeviceWithoutCloudIdentity>(userExperienceAnalyticsDeviceWithoutCloudIdentity, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceWithoutCloudIdentity}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceWithoutCloudIdentity>> AddResponseAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentity, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsDeviceWithoutCloudIdentity>(userExperienceAnalyticsDeviceWithoutCloudIdentity, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionResponse>(null, cancellationToken);
         }
 

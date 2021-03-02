@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public bool? IsShared { get; set; }
     
         /// <summary>
+        /// Gets or sets last seen date time.
+        /// </summary>
+        [JsonPropertyName("lastSeenDateTime")]
+        public DateTimeOffset? LastSeenDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets registered date time.
         /// The DateTimeOffset when the printer was registered. Read-only.
         /// </summary>

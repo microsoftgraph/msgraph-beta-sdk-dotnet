@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentApprovals.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder AccessPackageAssignmentApprovals
+        {
+            get
+            {
+                return new EntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageAssignmentApprovals"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageAssignmentPolicies.
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentPoliciesCollectionRequestBuilder"/>.</returns>

@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created WindowsInformationProtectionWipeAction.</returns>
         public System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> AddAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<WindowsInformationProtectionWipeAction>(windowsInformationProtectionWipeAction, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> AddResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<WindowsInformationProtectionWipeAction>(windowsInformationProtectionWipeAction, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse>(null, cancellationToken);
         }
 

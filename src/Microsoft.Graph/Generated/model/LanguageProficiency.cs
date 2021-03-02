@@ -63,6 +63,12 @@ namespace Microsoft.Graph
         public string Tag { get; set; }
     
         /// <summary>
+        /// Gets or sets thumbnail url.
+        /// </summary>
+        [JsonPropertyName("thumbnailUrl")]
+        public string ThumbnailUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets written.
         /// Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
         /// </summary>

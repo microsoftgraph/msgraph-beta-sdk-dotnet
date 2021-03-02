@@ -843,6 +843,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceMetricHistory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceMetricHistoryCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsDeviceMetricHistoryCollectionRequestBuilder UserExperienceAnalyticsDeviceMetricHistory
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsDeviceMetricHistoryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsDeviceMetricHistory"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsDevicePerformance.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionRequestBuilder"/>.</returns>
@@ -903,6 +915,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsImpactingProcess.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionRequestBuilder UserExperienceAnalyticsImpactingProcess
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsImpactingProcessCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsImpactingProcess"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsMetricHistory.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequestBuilder"/>.</returns>
@@ -935,6 +959,18 @@ namespace Microsoft.Graph
             get
             {
                 return new UserExperienceAnalyticsRegressionSummaryRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsRegressionSummary"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsRemoteConnection.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionRequestBuilder UserExperienceAnalyticsRemoteConnection
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsRemoteConnection"), this.Client);
             }
         }
 

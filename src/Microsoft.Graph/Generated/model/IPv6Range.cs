@@ -29,14 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets lowerAddress.
-        /// Lower address
+        /// Lower address.
         /// </summary>
         [JsonPropertyName("lowerAddress")]
         public string LowerAddress { get; set; }
     
         /// <summary>
         /// Gets or sets upperAddress.
-        /// Upper address
+        /// Upper address.
         /// </summary>
         [JsonPropertyName("upperAddress")]
         public string UpperAddress { get; set; }

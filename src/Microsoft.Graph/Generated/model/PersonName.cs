@@ -89,7 +89,7 @@ namespace Microsoft.Graph
         /// Guidance on how to pronounce the users name.
         /// </summary>
         [JsonPropertyName("pronunciation")]
-        public YomiPersonName Pronunciation { get; set; }
+        public PersonNamePronounciation Pronunciation { get; set; }
     
         /// <summary>
         /// Gets or sets suffix.

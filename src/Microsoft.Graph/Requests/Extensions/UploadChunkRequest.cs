@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// is true, then the item has completed, and the value is the created item from the server.</returns>
         public virtual async Task<UploadChunkResult> PutAsync(Stream stream, CancellationToken cancellationToken)
         {
-            this.Method = "PUT";
+            this.Method = HttpMethods.PUT;
             using (var response = await this.SendRequestAsync(stream, cancellationToken).ConfigureAwait(false))
             {
                 if (response.Content != null)

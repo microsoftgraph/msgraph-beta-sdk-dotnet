@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created OrganizationalBrandingLocalization.</returns>
         public System.Threading.Tasks.Task<OrganizationalBrandingLocalization> AddAsync(OrganizationalBrandingLocalization organizationalBrandingLocalization, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<OrganizationalBrandingLocalization>(organizationalBrandingLocalization, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> AddResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalization, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<OrganizationalBrandingLocalization>(organizationalBrandingLocalization, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IOrganizationalBrandingLocalizationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<OrganizationalBrandingLocalizationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalizationsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalizationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<OrganizationalBrandingLocalizationsCollectionResponse>(null, cancellationToken);
         }
 

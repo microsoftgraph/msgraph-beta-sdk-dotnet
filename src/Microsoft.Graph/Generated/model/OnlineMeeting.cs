@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed presenters.
-        /// Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
+        /// Specifies who can be a presenter in a meeting. Possible values are everyone, organization, roleIsPresenter, organizer, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("allowedPresenters")]
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
@@ -144,7 +144,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets join information.
-        /// The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
+        /// The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only
         /// </summary>
         [JsonPropertyName("joinInformation")]
         public ItemBody JoinInformation { get; set; }
@@ -157,7 +157,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lobby bypass settings.
-        /// Specifies which participants can bypass the meeting   lobby.
+        /// Specifies which participants can bypass the meeting lobby.
         /// </summary>
         [JsonPropertyName("lobbyBypassSettings")]
         public LobbyBypassSettings LobbyBypassSettings { get; set; }

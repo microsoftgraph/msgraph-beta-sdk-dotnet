@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created CredentialUserRegistrationDetails.</returns>
         public System.Threading.Tasks.Task<CredentialUserRegistrationDetails> AddAsync(CredentialUserRegistrationDetails credentialUserRegistrationDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<CredentialUserRegistrationDetails>(credentialUserRegistrationDetails, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationDetails}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationDetails>> AddResponseAsync(CredentialUserRegistrationDetails credentialUserRegistrationDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<CredentialUserRegistrationDetails>(credentialUserRegistrationDetails, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IReportRootCredentialUserRegistrationDetailsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ReportRootCredentialUserRegistrationDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ReportRootCredentialUserRegistrationDetailsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootCredentialUserRegistrationDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ReportRootCredentialUserRegistrationDetailsCollectionResponse>(null, cancellationToken);
         }
 

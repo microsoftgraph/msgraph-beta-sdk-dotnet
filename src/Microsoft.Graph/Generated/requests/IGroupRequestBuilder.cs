@@ -128,18 +128,6 @@ namespace Microsoft.Graph
         IGroupEventsCollectionRequestBuilder Events { get; }
 
         /// <summary>
-        /// Gets the request builder for Photo.
-        /// </summary>
-        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
-        IProfilePhotoRequestBuilder Photo { get; }
-
-        /// <summary>
-        /// Gets the request builder for Photos.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPhotosCollectionRequestBuilder"/>.</returns>
-        IGroupPhotosCollectionRequestBuilder Photos { get; }
-
-        /// <summary>
         /// Gets the request builder for RejectedSenders.
         /// </summary>
         /// <returns>The <see cref="IGroupRejectedSendersCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -192,6 +180,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>
         IOnenoteRequestBuilder Onenote { get; }
+
+        /// <summary>
+        /// Gets the request builder for Photo.
+        /// </summary>
+        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
+        IProfilePhotoRequestBuilder Photo { get; }
+
+        /// <summary>
+        /// Gets the request builder for Photos.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPhotosCollectionRequestBuilder"/>.</returns>
+        IGroupPhotosCollectionRequestBuilder Photos { get; }
 
         /// <summary>
         /// Gets the request builder for Team.

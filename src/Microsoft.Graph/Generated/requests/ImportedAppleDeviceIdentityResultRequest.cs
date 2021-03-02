@@ -43,8 +43,8 @@ namespace Microsoft.Graph
         /// <returns>The created ImportedAppleDeviceIdentityResult.</returns>
         public async System.Threading.Tasks.Task<ImportedAppleDeviceIdentityResult> CreateAsync(ImportedAppleDeviceIdentityResult importedAppleDeviceIdentityResultToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ImportedAppleDeviceIdentityResult>(importedAppleDeviceIdentityResultToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentityResult}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentityResult>> CreateResponseAsync(ImportedAppleDeviceIdentityResult importedAppleDeviceIdentityResultToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<ImportedAppleDeviceIdentityResult>(importedAppleDeviceIdentityResultToCreate, cancellationToken);
         }
 
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ImportedAppleDeviceIdentityResult>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.DELETE.ToString();
+            this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <returns>The ImportedAppleDeviceIdentityResult.</returns>
         public async System.Threading.Tasks.Task<ImportedAppleDeviceIdentityResult> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ImportedAppleDeviceIdentityResult>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentityResult}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentityResult>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ImportedAppleDeviceIdentityResult>(null, cancellationToken);
         }
 
@@ -118,8 +118,8 @@ namespace Microsoft.Graph
         /// <returns>The updated ImportedAppleDeviceIdentityResult.</returns>
         public async System.Threading.Tasks.Task<ImportedAppleDeviceIdentityResult> UpdateAsync(ImportedAppleDeviceIdentityResult importedAppleDeviceIdentityResultToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ImportedAppleDeviceIdentityResult>(importedAppleDeviceIdentityResultToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -134,8 +134,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentityResult}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentityResult>> UpdateResponseAsync(ImportedAppleDeviceIdentityResult importedAppleDeviceIdentityResultToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<ImportedAppleDeviceIdentityResult>(importedAppleDeviceIdentityResultToUpdate, cancellationToken);
         }
 

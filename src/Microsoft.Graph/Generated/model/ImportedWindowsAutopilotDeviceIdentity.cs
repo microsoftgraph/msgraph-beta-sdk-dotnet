@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets order identifier.
-        /// Order Id of the Windows autopilot device.
+        /// Order Id of the Windows autopilot device. - Deprecate
         /// </summary>
         [JsonPropertyName("orderIdentifier")]
         public string OrderIdentifier { get; set; }

@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created CloudPcDeviceImage.</returns>
         public System.Threading.Tasks.Task<CloudPcDeviceImage> AddAsync(CloudPcDeviceImage cloudPcDeviceImage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<CloudPcDeviceImage>(cloudPcDeviceImage, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> AddResponseAsync(CloudPcDeviceImage cloudPcDeviceImage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<CloudPcDeviceImage>(cloudPcDeviceImage, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IVirtualEndpointDeviceImagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<VirtualEndpointDeviceImagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{VirtualEndpointDeviceImagesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<VirtualEndpointDeviceImagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<VirtualEndpointDeviceImagesCollectionResponse>(null, cancellationToken);
         }
 

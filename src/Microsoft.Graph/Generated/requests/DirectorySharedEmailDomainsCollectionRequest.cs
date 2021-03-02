@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created SharedEmailDomain.</returns>
         public System.Threading.Tasks.Task<SharedEmailDomain> AddAsync(SharedEmailDomain sharedEmailDomain, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<SharedEmailDomain>(sharedEmailDomain, cancellationToken);
         }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SharedEmailDomain}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<SharedEmailDomain>> AddResponseAsync(SharedEmailDomain sharedEmailDomain, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<SharedEmailDomain>(sharedEmailDomain, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDirectorySharedEmailDomainsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DirectorySharedEmailDomainsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DirectorySharedEmailDomainsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DirectorySharedEmailDomainsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DirectorySharedEmailDomainsCollectionResponse>(null, cancellationToken);
         }
 
