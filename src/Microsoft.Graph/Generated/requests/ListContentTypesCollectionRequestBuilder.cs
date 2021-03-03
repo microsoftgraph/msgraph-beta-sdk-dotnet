@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for ContentTypeAddCopy.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeAddCopyRequestBuilder"/>.</returns>
+        public IContentTypeAddCopyRequestBuilder AddCopy(
+            string contentType)
+        {
+            return new ContentTypeAddCopyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.addCopy"),
+                this.Client,
+                contentType);
+        }
     }
 }

@@ -604,6 +604,13 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsCategoriesCollectionPage UserExperienceAnalyticsCategories { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics device metric history.
+        /// User experience analytics device metric history
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsDeviceMetricHistory", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsDeviceMetricHistoryCollectionPage UserExperienceAnalyticsDeviceMetricHistory { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics device performance.
         /// User experience analytics device performance
         /// </summary>
@@ -639,6 +646,13 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionPage UserExperienceAnalyticsDevicesWithoutCloudIdentity { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics impacting process.
+        /// User experience analytics impacting process
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsImpactingProcess", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionPage UserExperienceAnalyticsImpactingProcess { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics metric history.
         /// User experience analytics metric history
         /// </summary>
@@ -658,6 +672,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsRegressionSummary", Required = Newtonsoft.Json.Required.Default)]
         public UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics remote connection.
+        /// User experience analytics remote connection
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsRemoteConnection", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionPage UserExperienceAnalyticsRemoteConnection { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics resource performance.

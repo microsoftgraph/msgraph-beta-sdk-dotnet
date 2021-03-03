@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// The interface IProfileAnniversariesCollectionPage.
     /// </summary>
     [JsonConverter(typeof(InterfaceConverter<ProfileAnniversariesCollectionPage>))]
-    public interface IProfileAnniversariesCollectionPage : ICollectionPage<PersonAnniversary>
+    public interface IProfileAnniversariesCollectionPage : ICollectionPage<PersonAnnualEvent>
     {
         /// <summary>
         /// Gets the next page <see cref="IProfileAnniversariesCollectionRequest"/> instance.

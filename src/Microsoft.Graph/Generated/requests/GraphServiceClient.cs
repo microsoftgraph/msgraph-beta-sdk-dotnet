@@ -110,6 +110,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceAuthenticationMethodConfigurations request builder.
+        /// </summary>
+        public IGraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder AuthenticationMethodConfigurations
+        {
+            get
+            {
+                return new GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder(this.BaseUrl + "/authenticationMethodConfigurations", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceBookingBusinesses request builder.
         /// </summary>
         public IGraphServiceBookingBusinessesCollectionRequestBuilder BookingBusinesses
@@ -858,6 +869,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceAuthenticationMethodsPolicy request builder.
+        /// </summary>
+        public IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
+        {
+            get
+            {
+                return new AuthenticationMethodsPolicyRequestBuilder(this.BaseUrl + "/authenticationMethodsPolicy", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceBitlocker request builder.
         /// </summary>
         public IBitlockerRequestBuilder Bitlocker
@@ -1034,17 +1056,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceIdentityProtection request builder.
-        /// </summary>
-        public IIdentityProtectionRootRequestBuilder IdentityProtection
-        {
-            get
-            {
-                return new IdentityProtectionRootRequestBuilder(this.BaseUrl + "/identityProtection", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceIdentityGovernance request builder.
         /// </summary>
         public IIdentityGovernanceRequestBuilder IdentityGovernance
@@ -1052,6 +1063,17 @@ namespace Microsoft.Graph
             get
             {
                 return new IdentityGovernanceRequestBuilder(this.BaseUrl + "/identityGovernance", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceIdentityProtection request builder.
+        /// </summary>
+        public IIdentityProtectionRootRequestBuilder IdentityProtection
+        {
+            get
+            {
+                return new IdentityProtectionRootRequestBuilder(this.BaseUrl + "/identityProtection", this);
             }
         }
     

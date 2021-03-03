@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets authentication methods policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethodsPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public AuthenticationMethodsPolicy AuthenticationMethodsPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication flows policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationFlowsPolicy", Required = Newtonsoft.Json.Required.Default)]

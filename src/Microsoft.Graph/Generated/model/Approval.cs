@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets completed steps.
+        /// Gets or sets steps.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedSteps", Required = Newtonsoft.Json.Required.Default)]
-        public IApprovalCompletedStepsCollectionPage CompletedSteps { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pending steps.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingSteps", Required = Newtonsoft.Json.Required.Default)]
-        public IApprovalPendingStepsCollectionPage PendingSteps { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "steps", Required = Newtonsoft.Json.Required.Default)]
+        public IApprovalStepsCollectionPage Steps { get; set; }
     
     }
 }

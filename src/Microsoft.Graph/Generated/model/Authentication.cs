@@ -79,6 +79,12 @@ namespace Microsoft.Graph
         public IAuthenticationPhoneMethodsCollectionPage PhoneMethods { get; set; }
     
         /// <summary>
+        /// Gets or sets temporary access pass methods.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "temporaryAccessPassMethods", Required = Newtonsoft.Json.Required.Default)]
+        public IAuthenticationTemporaryAccessPassMethodsCollectionPage TemporaryAccessPassMethods { get; set; }
+    
+        /// <summary>
         /// Gets or sets windows hello for business methods.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsHelloForBusinessMethods", Required = Newtonsoft.Json.Required.Default)]

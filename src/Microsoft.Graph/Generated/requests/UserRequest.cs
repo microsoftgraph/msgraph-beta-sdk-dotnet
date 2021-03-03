@@ -570,22 +570,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (userToInitialize.Photos != null && userToInitialize.Photos.CurrentPage != null)
-                {
-                    userToInitialize.Photos.AdditionalData = userToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("photos@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userToInitialize.Photos.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (userToInitialize.Drives != null && userToInitialize.Drives.CurrentPage != null)
                 {
                     userToInitialize.Drives.AdditionalData = userToInitialize.AdditionalData;
@@ -821,6 +805,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         userToInitialize.Notifications.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.Photos != null && userToInitialize.Photos.CurrentPage != null)
+                {
+                    userToInitialize.Photos.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("photos@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.Photos.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

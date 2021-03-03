@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         IProfileAnniversariesCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IPersonAnniversaryRequestBuilder"/> for the specified PersonAnniversary.
+        /// Gets an <see cref="IPersonAnnualEventRequestBuilder"/> for the specified PersonAnnualEvent.
         /// </summary>
-        /// <param name="id">The ID for the PersonAnniversary.</param>
-        /// <returns>The <see cref="IPersonAnniversaryRequestBuilder"/>.</returns>
-        IPersonAnniversaryRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the PersonAnnualEvent.</param>
+        /// <returns>The <see cref="IPersonAnnualEventRequestBuilder"/>.</returns>
+        IPersonAnnualEventRequestBuilder this[string id] { get; }
 
         
     }

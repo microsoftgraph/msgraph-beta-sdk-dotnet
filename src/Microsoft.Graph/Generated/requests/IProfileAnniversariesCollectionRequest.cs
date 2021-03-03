@@ -22,19 +22,19 @@ namespace Microsoft.Graph
     {
         
         /// <summary>
-        /// Adds the specified PersonAnniversary to the collection via POST.
+        /// Adds the specified PersonAnnualEvent to the collection via POST.
         /// </summary>
-        /// <param name="personAnniversary">The PersonAnniversary to add.</param>
-        /// <returns>The created PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> AddAsync(PersonAnniversary personAnniversary);
+        /// <param name="personAnnualEvent">The PersonAnnualEvent to add.</param>
+        /// <returns>The created PersonAnnualEvent.</returns>
+        System.Threading.Tasks.Task<PersonAnnualEvent> AddAsync(PersonAnnualEvent personAnnualEvent);
 
         /// <summary>
-        /// Adds the specified PersonAnniversary to the collection via POST.
+        /// Adds the specified PersonAnnualEvent to the collection via POST.
         /// </summary>
-        /// <param name="personAnniversary">The PersonAnniversary to add.</param>
+        /// <param name="personAnnualEvent">The PersonAnnualEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> AddAsync(PersonAnniversary personAnniversary, CancellationToken cancellationToken);
+        /// <returns>The created PersonAnnualEvent.</returns>
+        System.Threading.Tasks.Task<PersonAnnualEvent> AddAsync(PersonAnnualEvent personAnnualEvent, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IProfileAnniversariesCollectionRequest Expand(Expression<Func<PersonAnniversary, object>> expandExpression);
+        IProfileAnniversariesCollectionRequest Expand(Expression<Func<PersonAnnualEvent, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IProfileAnniversariesCollectionRequest Select(Expression<Func<PersonAnniversary, object>> selectExpression);
+        IProfileAnniversariesCollectionRequest Select(Expression<Func<PersonAnnualEvent, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

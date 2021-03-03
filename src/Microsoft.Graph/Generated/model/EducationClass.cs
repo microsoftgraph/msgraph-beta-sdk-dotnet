@@ -121,6 +121,12 @@ namespace Microsoft.Graph
         public IEducationClassAssignmentCategoriesCollectionPage AssignmentCategories { get; set; }
     
         /// <summary>
+        /// Gets or sets assignment defaults.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentDefaults", Required = Newtonsoft.Json.Required.Default)]
+        public EducationAssignmentDefaults AssignmentDefaults { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// All assignments associated with this class. Nullable.
         /// </summary>

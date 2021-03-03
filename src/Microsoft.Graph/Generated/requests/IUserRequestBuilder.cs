@@ -194,18 +194,6 @@ namespace Microsoft.Graph
         IUserPeopleCollectionRequestBuilder People { get; }
 
         /// <summary>
-        /// Gets the request builder for Photo.
-        /// </summary>
-        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
-        IProfilePhotoRequestBuilder Photo { get; }
-
-        /// <summary>
-        /// Gets the request builder for Photos.
-        /// </summary>
-        /// <returns>The <see cref="IUserPhotosCollectionRequestBuilder"/>.</returns>
-        IUserPhotosCollectionRequestBuilder Photos { get; }
-
-        /// <summary>
         /// Gets the request builder for Drive.
         /// </summary>
         /// <returns>The <see cref="IDriveRequestBuilder"/>.</returns>
@@ -324,6 +312,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>
         IOnenoteRequestBuilder Onenote { get; }
+
+        /// <summary>
+        /// Gets the request builder for Photo.
+        /// </summary>
+        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
+        IProfilePhotoRequestBuilder Photo { get; }
+
+        /// <summary>
+        /// Gets the request builder for Photos.
+        /// </summary>
+        /// <returns>The <see cref="IUserPhotosCollectionRequestBuilder"/>.</returns>
+        IUserPhotosCollectionRequestBuilder Photos { get; }
 
         /// <summary>
         /// Gets the request builder for Profile.

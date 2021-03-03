@@ -1082,6 +1082,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceMetricHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceMetricHistory.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceMetricHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsDeviceMetricHistory@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsDeviceMetricHistory.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.UserExperienceAnalyticsDevicePerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsDevicePerformance.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserExperienceAnalyticsDevicePerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1162,6 +1178,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess != null && deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsImpactingProcess@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1173,6 +1205,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.UserExperienceAnalyticsRemoteConnection != null && deviceManagementToInitialize.UserExperienceAnalyticsRemoteConnection.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsRemoteConnection.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsRemoteConnection@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsRemoteConnection.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
