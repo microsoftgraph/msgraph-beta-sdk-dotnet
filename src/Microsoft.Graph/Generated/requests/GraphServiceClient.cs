@@ -9,13 +9,15 @@
 
 namespace Microsoft.Graph
 {
+    using Azure.Core;
     using System;
     using System.Net.Http;
+    using System.Collections.Generic;
 
     /// <summary>
     /// The type GraphServiceClient.
     /// </summary>
-    public partial class GraphServiceClient : BaseClient, IGraphServiceClient
+    public partial class GraphServiceClient : BaseClient
     {
         /// <summary>
         /// Instantiates a new GraphServiceClient.
@@ -26,6 +28,20 @@ namespace Microsoft.Graph
             IAuthenticationProvider authenticationProvider,
             IHttpProvider httpProvider = null)
             : this("https://graph.microsoft.com/beta", authenticationProvider, httpProvider)
+        {
+        }
+
+        /// <summary>
+        /// Instantiates a new GraphServiceClient using a <see cref="TokenCredential"/> instance.
+        /// </summary>
+        /// <param name="tokenCredential">The <see cref="TokenCredential"/> to use for authentication</param>
+        /// <param name="scopes">Scopes required to access Microsoft Graph. This defaults to https://graph.microsoft.com/.default when none is set.</param>
+        /// <param name="httpProvider">The <see cref="IHttpProvider"/> for sending requests.</param>
+        public GraphServiceClient(
+            TokenCredential tokenCredential,
+            IEnumerable<string> scopes = null,
+            IHttpProvider httpProvider = null)
+            : this("https://graph.microsoft.com/beta", new TokenCredentialAuthProvider(tokenCredential,scopes), httpProvider)
         {
         }
 
