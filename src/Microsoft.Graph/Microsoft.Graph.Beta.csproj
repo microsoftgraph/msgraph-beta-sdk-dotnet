@@ -23,6 +23,10 @@
     <PackageReleaseNotes>
 - [Breaking change] Update Microsoft.Graph.Core to v2.0.0
 - [Breaking change] Replace Newtosoft.Json with System.Text.Json
+- Add request builder methods for GraphResponse
+- [Breaking change] Removed IGraphServiceClient interface
+- Added GraphServiceClient constructor that accepts TokenCredential instance
+- [Breaking change] Bump minimun .NetFramework version to 4.6.2 from 4.6.1
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
     <VersionPrefix>4.0.0</VersionPrefix>
