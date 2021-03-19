@@ -1,3 +1,13 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: '.NET Beta Service Library - CI'
+trigger:
+  branches:
+    include:
+      - master
+
+
 pool:
   name: Hosted Windows 2019 with VS2019
   demands:
@@ -196,4 +206,3 @@ steps:
   displayName: 'Publish Artifact: Microsoft.Graph.Beta.nupkg and release pipeline scripts'
 
 #Task group has not been exported, task groups are not supported yet
-
