@@ -30,16 +30,24 @@
     <!-- $(Prerelease).$(BUILD_BUILDID) -->
     <!-- <VersionSuffix Condition=" '$(Prerelease)' != '' ">$(Prerelease)</VersionSuffix> -->
     <VersionSuffix>preview</VersionSuffix>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
     <DocumentationFile>bin\Release\Microsoft.Graph.Beta.xml</DocumentationFile>
     <NoWarn>1701;1702;1705;1591</NoWarn>
+  </PropertyGroup>
+  <!-- https://github.com/clairernovotny/DeterministicBuilds#deterministic-builds -->
+  <PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
   <ItemGroup>
     <None Include=".\..\..\LICENSE.txt" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Graph.Core" Version="1.*" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netnet461' ">
     <Reference Include="System" />
