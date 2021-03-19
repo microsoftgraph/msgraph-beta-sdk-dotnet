@@ -21,12 +21,20 @@ Param(
 
 Write-Host "Get the NuGet package version and set it in the global variable: VERSION_STRING" -ForegroundColor Magenta
 
-$nugetPackageName = (Get-ChildItem $packageDirPath | Where Name -match Microsoft.Graph.Beta).Name
+$nugetPackageName = (Get-ChildItem $packageDirPath -Include *.nupkg -Exclude *.symbols.nupkg).Name
 
 Write-Host "Found NuGet package: $nugetPackageName" -ForegroundColor Magenta
+$packageVersionRegex = "Microsoft\.Graph\.Beta\.([0-9]+\.[0-9]+\.[0-9]+-\w+)\.nupkg"
 
 ## Extracts the package version from nupkg file name.
-$packageVersion = $nugetPackageName -replace "^(.*?)\.((?:\.?[0-9]+){3,}(?:[-a-z]+)?)\.nupkg$", '$2'
-
-Write-Host "##vso[task.setvariable variable=VERSION_STRING]$($packageVersion)";
-Write-Host "Updated the VERSION_STRING environment variable with the package version value '$packageVersion'." -ForegroundColor Green
+if ($nugetPackageName -match $packageVersionRegex)
+{
+    $packageVersion = $Matches[1]
+    Write-Host "##vso[task.setvariable variable=VERSION_STRING]$($packageVersion)";
+    Write-Host "Updated the VERSION_STRING environment variable with the package version value '$packageVersion'." -ForegroundColor Green
+}
+else
+{
+    Write-Host "Regular expression used in extracting the package version is: $packageVersionRegex"
+    Write-Error "We can't extract package version from the string"
+}
