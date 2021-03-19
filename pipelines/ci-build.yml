@@ -1,12 +1,11 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-name: '.NET Beta Service Library - CI'
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 trigger:
   branches:
     include:
       - master
-
 
 pool:
   name: Hosted Windows 2019 with VS2019
