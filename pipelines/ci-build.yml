@@ -159,13 +159,8 @@ steps:
      ]
     SessionTimeout: 20
 
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet pack (no build, create NuGet)'
-  inputs:
-    command: pack
-    packagesToPack: '**\Microsoft.Graph.Beta.csproj'
-    nobuild: true
-    arguments: '/p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg'
+- powershell: |
+    dotnet pack $env:BUILD_SOURCESDIRECTORY/src/Microsoft.Graph/Microsoft.Graph.Beta.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg --no-build --output $env:BUILD_ARTIFACTSTAGINGDIRECTORY
 
 - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
   displayName: 'ESRP NuGet CodeSigning'
