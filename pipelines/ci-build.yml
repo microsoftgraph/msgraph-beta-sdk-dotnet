@@ -160,7 +160,9 @@ steps:
     SessionTimeout: 20
 
 - powershell: |
-    dotnet pack $env:BUILD_SOURCESDIRECTORY/src/Microsoft.Graph/Microsoft.Graph.Beta.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg --no-build --output $env:BUILD_ARTIFACTSTAGINGDIRECTORY
+    dotnet pack $env:BUILD_SOURCESDIRECTORY/src/Microsoft.Graph/Microsoft.Graph.Beta.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg --no-build --output $env:BUILD_ARTIFACTSTAGINGDIRECTORY --configuration $env:BUILD_CONFIGURATION
+  env:
+    BUILD_CONFIGURATION: $(BuildConfiguration)
 
 - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
   displayName: 'ESRP NuGet CodeSigning'
