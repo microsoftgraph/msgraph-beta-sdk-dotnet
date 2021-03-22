@@ -165,7 +165,7 @@ steps:
     command: pack
     packagesToPack: '**\Microsoft.Graph.Beta.csproj'
     nobuild: true
-    includesymbols: true
+    arguments: '/p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg'
 
 - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
   displayName: 'ESRP NuGet CodeSigning'
