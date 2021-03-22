@@ -167,7 +167,7 @@ steps:
   inputs:
     ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
     FolderPath: '$(Build.ArtifactStagingDirectory)'
-    Pattern: '*.nupkg'
+    Pattern: '*nupkg'
     signConfigType: inlineSignParams
     inlineOperation: |
           [
