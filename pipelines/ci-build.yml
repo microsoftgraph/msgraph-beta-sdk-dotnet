@@ -9,9 +9,6 @@ trigger:
 
 pool:
   name: Hosted Windows 2019 with VS2019
-  demands:
-  - msbuild
-  - vstest
 
 variables:
   BuildConfiguration: 'release'
@@ -22,36 +19,11 @@ steps:
   inputs:
     debugMode: false
 
-- task: NuGetCommand@2
-  displayName: 'NuGet restore'
-  enabled: false
-
 - task: DotNetCoreCLI@2
   displayName: 'dotnet restore'
   inputs:
     command: restore
     projects: '**/*.csproj'
-
-- task: MSBuild@1
-  displayName: 'Build solution to run unit test'
-  inputs:
-    configuration: release
-    clean: true
-
-- task: VSTest@2
-  displayName: 'Run enabled tests'
-  inputs:
-    testAssemblyVer2: |
-     **\*.Test.dll
-     !*testhost.dll
-     !**\*testhost.dll
-     !**\*Exceptions.Handling.Tests.dll
-     !**\obj\**
-     !**\xunit.runner.visualstudio.testadapter.dll
-     !**\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-    otherConsoleOptions: '/Framework:.NETCoreApp,Version=v3.1 /logger:console;verbosity="normal"'
-    configuration: release
-    diagnosticsEnabled: True
 
 - powershell: |
    # This allows us to not have to checkin .csproj files with DelaySign and SignAssembly set to to true. If the flag is set,
@@ -85,6 +57,13 @@ steps:
   inputs:
     projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj'
     arguments: '-c $(BuildConfiguration) --no-incremental'
+
+- task: DotNetCoreCLI@2
+  displayName: 'run tests'
+  inputs:
+    command: 'test'
+    projects: 'tests/Microsoft.Graph.DotnetCore.Test/Microsoft.Graph.DotnetCore.Test.csproj'
+    arguments: '--configuration $(BuildConfiguration) --verbosity normal'
 
 - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
   displayName: 'ESRP DLL Strong Name (Microsoft.Graph.Beta)'
@@ -159,10 +138,12 @@ steps:
      ]
     SessionTimeout: 20
 
+# arguments are not parsed in DotNetCoreCLI@2 task for `pack` command, that's why we have a custom pack command here
 - powershell: |
     dotnet pack $env:BUILD_SOURCESDIRECTORY/src/Microsoft.Graph/Microsoft.Graph.Beta.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg --no-build --output $env:BUILD_ARTIFACTSTAGINGDIRECTORY --configuration $env:BUILD_CONFIGURATION
   env:
     BUILD_CONFIGURATION: $(BuildConfiguration)
+  displayName: 'dotnet pack'
 
 - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
   displayName: 'ESRP NuGet CodeSigning'
