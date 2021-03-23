@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets languageOverrides.
+        /// Translation override behavior for languages, if any.Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageOverrides", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<TranslationLanguageOverride> LanguageOverrides { get; set; }
     
         /// <summary>
         /// Gets or sets translationBehavior.
+        /// The user's preferred translation behavior.Returned by default. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "translationBehavior", Required = Newtonsoft.Json.Required.Default)]
         public TranslationBehavior? TranslationBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets untranslatedLanguages.
+        /// The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "untranslatedLanguages", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> UntranslatedLanguages { get; set; }

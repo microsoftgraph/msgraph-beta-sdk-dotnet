@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets defaultLanguage.
+        /// Default BCP 47 language tag for the description.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultLanguage", Required = Newtonsoft.Json.Required.Default)]
         public string DefaultLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets descriptions.
+        /// Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "descriptions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DisplayNameLocalization> Descriptions { get; set; }
     
         /// <summary>
         /// Gets or sets formula.
+        /// The formula to validate column value. For examples, see Examples of common formulas in lists
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "formula", Required = Newtonsoft.Json.Required.Default)]
         public string Formula { get; set; }

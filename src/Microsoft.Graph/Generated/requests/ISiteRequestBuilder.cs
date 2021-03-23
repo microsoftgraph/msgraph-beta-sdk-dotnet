@@ -98,6 +98,12 @@ namespace Microsoft.Graph
         ISiteSitesCollectionRequestBuilder Sites { get; }
 
         /// <summary>
+        /// Gets the request builder for TermStore.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.TermStore.IStoreRequestBuilder"/>.</returns>
+        Microsoft.Graph.TermStore.IStoreRequestBuilder TermStore { get; }
+
+        /// <summary>
         /// Gets the request builder for Onenote.
         /// </summary>
         /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>

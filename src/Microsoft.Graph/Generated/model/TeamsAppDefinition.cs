@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets allowed installation scopes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedInstallationScopes", Required = Newtonsoft.Json.Required.Default)]
+        public TeamsAppInstallationScopes? AllowedInstallationScopes { get; set; }
+    
+        /// <summary>
         /// Gets or sets azure adapp id.
         /// The WebApplicationInfo.id from the Teams App manifest.
         /// </summary>
@@ -45,6 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
+        /// Verbose description of the application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }

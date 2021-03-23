@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets inviteUri.
+        /// URI to receive new incoming call notification.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inviteUri", Required = Newtonsoft.Json.Required.Default)]
         public string InviteUri { get; set; }

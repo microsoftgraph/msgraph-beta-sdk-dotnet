@@ -100,6 +100,12 @@ namespace Microsoft.Graph
         public GeoCoordinates Location { get; set; }
     
         /// <summary>
+        /// Gets or sets media.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "media", Required = Newtonsoft.Json.Required.Default)]
+        public Media Media { get; set; }
+    
+        /// <summary>
         /// Gets or sets package.
         /// If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
         /// </summary>
@@ -168,6 +174,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Size { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
+        public DriveItemSource Source { get; set; }
     
         /// <summary>
         /// Gets or sets special folder.

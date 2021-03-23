@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets emailAddress.
-        /// Primary email address of the contact.
+        /// Email address of the contact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddress", Required = Newtonsoft.Json.Required.Default)]
         public string EmailAddress { get; set; }
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets relationship.
-        /// Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other.
+        /// Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relationship", Required = Newtonsoft.Json.Required.Default)]
         public ContactRelationship? Relationship { get; set; }

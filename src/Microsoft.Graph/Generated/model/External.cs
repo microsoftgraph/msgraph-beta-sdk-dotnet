@@ -18,9 +18,9 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type External.
     /// </summary>
+    [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class External
+    public partial class External : Entity
     {
     
 		///<summary>
@@ -34,20 +34,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets connections.
         /// </summary>
+        [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connections", Required = Newtonsoft.Json.Required.Default)]
         public IExternalConnectionsCollectionPage Connections { get; set; }
-    
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
-        public string ODataType { get; set; }
-
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
-        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

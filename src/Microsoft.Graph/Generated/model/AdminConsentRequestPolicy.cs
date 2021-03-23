@@ -32,36 +32,42 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets is enabled.
+        /// Specifies whether the admin consent request feature is enabled or disabled. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets notify reviewers.
+        /// Specifies whether reviewers will receive notifications. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifyReviewers", Required = Newtonsoft.Json.Required.Default)]
         public bool? NotifyReviewers { get; set; }
     
         /// <summary>
         /// Gets or sets reminders enabled.
+        /// Specifies whether reviewers will receive reminder emails. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remindersEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? RemindersEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets request duration in days.
+        /// Specifies the duration the request is active before it automatically expires if no decision is applied.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestDurationInDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? RequestDurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets reviewers.
+        /// Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AccessReviewScope> Reviewers { get; set; }
     
         /// <summary>
         /// Gets or sets version.
+        /// Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Version { get; set; }

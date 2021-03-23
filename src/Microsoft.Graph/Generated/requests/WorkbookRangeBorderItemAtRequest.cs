@@ -68,12 +68,12 @@ namespace Microsoft.Graph
         /// <param name="workbookrangeborder">The WorkbookRangeBorder object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeBorder> PatchAsync(WorkbookRangeBorder workbookrangeborder, 
+        public System.Threading.Tasks.Task<WorkbookRangeBorder> PatchAsync(WorkbookRangeBorder workbookrangeborder,
             CancellationToken cancellationToken)
         {
             this.Method = "PATCH";
             return this.SendAsync<WorkbookRangeBorder>(workbookrangeborder, cancellationToken);
-        }        
+        }
 
         /// <summary>
         /// Issues the PUT request.
@@ -91,12 +91,12 @@ namespace Microsoft.Graph
         /// <param name="workbookrangeborder">The WorkbookRangeBorder object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeBorder> PutAsync(WorkbookRangeBorder workbookrangeborder, 
+        public System.Threading.Tasks.Task<WorkbookRangeBorder> PutAsync(WorkbookRangeBorder workbookrangeborder,
             CancellationToken cancellationToken)
         {
             this.Method = "PUT";
             return this.SendAsync<WorkbookRangeBorder>(workbookrangeborder, cancellationToken);
-        }        
+        }
 
         /// <summary>
         /// Adds the specified expand value to the request.

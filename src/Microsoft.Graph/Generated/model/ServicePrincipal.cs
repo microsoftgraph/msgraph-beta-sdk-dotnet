@@ -60,6 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app description.
+        /// The description exposed by the associated application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDescription", Required = Newtonsoft.Json.Required.Default)]
         public string AppDescription { get; set; }
@@ -108,6 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
+        /// Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
@@ -163,6 +165,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notes.
+        /// Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
         public string Notes { get; set; }

@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets localization type.
-        /// Configures how the requested export job is localized
+        /// Configures how the requested export job is localized. Possible values are: localizedValuesAsAdditionalColumn, replaceLocalizableValues.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localizationType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementExportJobLocalizationType? LocalizationType { get; set; }

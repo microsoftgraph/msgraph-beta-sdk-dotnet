@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public bool? IsDeleted { get; set; }
     
         /// <summary>
+        /// Gets or sets is licensed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isLicensed", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsLicensed { get; set; }
+    
+        /// <summary>
         /// Gets or sets last activity date.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
@@ -67,10 +73,22 @@ namespace Microsoft.Graph
         public bool? UsedAndroidPhone { get; set; }
     
         /// <summary>
+        /// Gets or sets used chrome os.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedChromeOS", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UsedChromeOS { get; set; }
+    
+        /// <summary>
         /// Gets or sets usedi os.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usediOS", Required = Newtonsoft.Json.Required.Default)]
         public bool? UsediOS { get; set; }
+    
+        /// <summary>
+        /// Gets or sets used linux.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedLinux", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UsedLinux { get; set; }
     
         /// <summary>
         /// Gets or sets used mac.

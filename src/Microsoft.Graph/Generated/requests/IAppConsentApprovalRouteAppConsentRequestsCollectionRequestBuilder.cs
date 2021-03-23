@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IAppConsentRequestRequestBuilder"/>.</returns>
         IAppConsentRequestRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for AppConsentRequestFilterByCurrentUser.
+        /// </summary>
+        /// <returns>The <see cref="IAppConsentRequestFilterByCurrentUserRequestBuilder"/>.</returns>
+        IAppConsentRequestFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            ConsentRequestFilterByCurrentUserOptions on);
     }
 }

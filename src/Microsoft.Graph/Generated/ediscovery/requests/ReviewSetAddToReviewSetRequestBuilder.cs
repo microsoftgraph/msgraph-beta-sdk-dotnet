@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Ediscovery
             string requestUrl,
             Microsoft.Graph.IBaseClient client,
             SourceCollection sourceCollection,
-            DataCollectionScope? additionalData)
+            AdditionalDataOptions? additionalData)
             : base(requestUrl, client)
         {
             this.SetParameter("sourceCollection", sourceCollection, true);
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Ediscovery
 
             if (this.HasParameter("additionalData"))
             {
-                request.RequestBody.AdditionalData = this.GetParameter<DataCollectionScope?>("additionalData");
+                request.RequestBody.AdditionalData = this.GetParameter<AdditionalDataOptions?>("additionalData");
             }
 
             return request;

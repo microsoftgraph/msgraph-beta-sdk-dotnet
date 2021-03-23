@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets percent complete.
-        /// The operation percent complete if the operation is still in running status
+        /// The operation percent complete if the operation is still in running status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "percentComplete", Required = Newtonsoft.Json.Required.Default)]
         public string PercentComplete { get; set; }

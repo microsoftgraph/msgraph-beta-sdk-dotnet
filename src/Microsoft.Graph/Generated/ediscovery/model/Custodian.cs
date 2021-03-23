@@ -32,36 +32,42 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets acknowledged date time.
+        /// Date and time the custodian acknowledged a hold notification.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acknowledgedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? AcknowledgedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets apply hold to sources.
+        /// Identifies whether a custodian's sources were placed on hold during creation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyHoldToSources", Required = Newtonsoft.Json.Required.Default)]
         public bool? ApplyHoldToSources { get; set; }
     
         /// <summary>
         /// Gets or sets email.
+        /// Email address of the custodian.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets site sources.
+        /// Data source entity for SharePoint sites associated with the custodian.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteSources", Required = Newtonsoft.Json.Required.Default)]
         public ICustodianSiteSourcesCollectionPage SiteSources { get; set; }
     
         /// <summary>
         /// Gets or sets unified group sources.
+        /// Data source entity for groups associated with the custodian.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unifiedGroupSources", Required = Newtonsoft.Json.Required.Default)]
         public ICustodianUnifiedGroupSourcesCollectionPage UnifiedGroupSources { get; set; }
     
         /// <summary>
         /// Gets or sets user sources.
+        /// Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userSources", Required = Newtonsoft.Json.Required.Default)]
         public ICustodianUserSourcesCollectionPage UserSources { get; set; }

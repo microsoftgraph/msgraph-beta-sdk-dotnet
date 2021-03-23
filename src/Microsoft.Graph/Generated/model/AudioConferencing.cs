@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets conferenceId.
+        /// The conference id of the online meeting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conferenceId", Required = Newtonsoft.Json.Required.Default)]
         public string ConferenceId { get; set; }

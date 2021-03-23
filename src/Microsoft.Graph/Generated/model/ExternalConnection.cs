@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type External Connection.
     /// </summary>
+    [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ExternalConnection : Entity
     {
@@ -61,6 +62,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets groups.
         /// </summary>
+        [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groups", Required = Newtonsoft.Json.Required.Default)]
         public IExternalConnectionGroupsCollectionPage Groups { get; set; }
     
@@ -68,6 +70,7 @@ namespace Microsoft.Graph
         /// Gets or sets items.
         /// Read-only. Nullable.
         /// </summary>
+        [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
         public IExternalConnectionItemsCollectionPage Items { get; set; }
     
@@ -75,6 +78,7 @@ namespace Microsoft.Graph
         /// Gets or sets operations.
         /// Read-only. Nullable.
         /// </summary>
+        [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
         public IExternalConnectionOperationsCollectionPage Operations { get; set; }
     
@@ -82,6 +86,7 @@ namespace Microsoft.Graph
         /// Gets or sets schema.
         /// Read-only. Nullable.
         /// </summary>
+        [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schema", Required = Newtonsoft.Json.Required.Default)]
         public Schema Schema { get; set; }
     

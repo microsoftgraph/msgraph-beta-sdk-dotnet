@@ -37,5 +37,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IApprovalRequestBuilder"/>.</returns>
         IApprovalRequestBuilder Approval { get; }
     
+        
+    
     }
 }

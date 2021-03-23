@@ -102,12 +102,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notification content type.
+        /// Desired content-type for MS Graph change notifications for supported resource types. The default content-type is the 'application/json' content-type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationContentType", Required = Newtonsoft.Json.Required.Default)]
         public string NotificationContentType { get; set; }
     
         /// <summary>
         /// Gets or sets notification query options.
+        /// OData Query Options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg  when the print job is completed, when a print job resource isFetchable property value becomes true etc.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationQueryOptions", Required = Newtonsoft.Json.Required.Default)]
         public string NotificationQueryOptions { get; set; }

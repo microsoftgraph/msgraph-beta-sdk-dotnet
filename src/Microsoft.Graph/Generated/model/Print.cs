@@ -47,6 +47,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operations.
+        /// The list of print long running operations.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
         public IPrintOperationsCollectionPage Operations { get; set; }
@@ -86,6 +87,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets task definitions.
+        /// List of abstract definition for a task that can be triggered when various events occur within Universal Print.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taskDefinitions", Required = Newtonsoft.Json.Required.Default)]
         public IPrintTaskDefinitionsCollectionPage TaskDefinitions { get; set; }

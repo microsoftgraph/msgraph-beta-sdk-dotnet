@@ -91,7 +91,7 @@ namespace Microsoft.Graph
         /// <param name="teamsuseractivitycounts">The TeamsUserActivityCounts object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityCountsCollectionPage> PatchAsync(TeamsUserActivityCounts teamsuseractivitycounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityCountsCollectionPage> PatchAsync(TeamsUserActivityCounts teamsuseractivitycounts,
             CancellationToken cancellationToken)
         {
             this.Method = "PATCH";
@@ -119,7 +119,7 @@ namespace Microsoft.Graph
             }
 
             return null;
-        }        
+        }
 
         /// <summary>
         /// Issues the PUT request.
@@ -137,7 +137,7 @@ namespace Microsoft.Graph
         /// <param name="teamsuseractivitycounts">The TeamsUserActivityCounts object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityCountsCollectionPage> PutAsync(TeamsUserActivityCounts teamsuseractivitycounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityCountsCollectionPage> PutAsync(TeamsUserActivityCounts teamsuseractivitycounts,
             CancellationToken cancellationToken)
         {
             this.Method = "PUT";
@@ -165,7 +165,7 @@ namespace Microsoft.Graph
             }
 
             return null;
-        }        
+        }
 
         /// <summary>
         /// Adds the specified expand value to the request.

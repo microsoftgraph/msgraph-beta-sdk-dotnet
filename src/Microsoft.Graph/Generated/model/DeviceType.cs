@@ -126,9 +126,9 @@ namespace Microsoft.Graph
         AndroidnGMS = 20,
 	
         /// <summary>
-        /// Cloud PC
+        /// Chrome OS
         /// </summary>
-        CloudPC = 21,
+        ChromeOS = 21,
 	
         /// <summary>
         /// Linux
@@ -149,6 +149,11 @@ namespace Microsoft.Graph
         /// Unknown
         /// </summary>
         Unknown = 255,
+	
+        /// <summary>
+        /// Cloud PC
+        /// </summary>
+        CloudPC = 257,
 	
     }
 }

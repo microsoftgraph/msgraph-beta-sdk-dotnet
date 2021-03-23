@@ -37,10 +37,22 @@ namespace Microsoft.Graph
         public Int64? AndroidPhone { get; set; }
     
         /// <summary>
+        /// Gets or sets chrome os.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chromeOS", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? ChromeOS { get; set; }
+    
+        /// <summary>
         /// Gets or sets ios.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ios", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Ios { get; set; }
+    
+        /// <summary>
+        /// Gets or sets linux.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linux", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Linux { get; set; }
     
         /// <summary>
         /// Gets or sets mac.

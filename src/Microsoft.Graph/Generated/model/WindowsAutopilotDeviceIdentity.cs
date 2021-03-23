@@ -39,10 +39,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets azure active directory device id.
-        /// AAD Device ID
+        /// AAD Device ID - to be deprecated
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureActiveDirectoryDeviceId", Required = Newtonsoft.Json.Required.Default)]
         public string AzureActiveDirectoryDeviceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets azure ad device id.
+        /// AAD Device ID
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureAdDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string AzureAdDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets deployment profile assigned date time.
@@ -113,13 +120,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
         public string Model { get; set; }
-    
-        /// <summary>
-        /// Gets or sets order identifier.
-        /// Order Identifier of the Windows autopilot device - Deprecated
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string OrderIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets product key.

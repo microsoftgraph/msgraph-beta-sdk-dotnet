@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets query.
-        /// The query specifying what will be reviewed. See table for examples.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "query", Required = Newtonsoft.Json.Required.Default)]
-        public string Query { get; set; }
-    
-        /// <summary>
-        /// Gets or sets queryType.
-        /// The type of query. Examples include MicrosoftGraph and ARM.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queryType", Required = Newtonsoft.Json.Required.Default)]
-        public string QueryType { get; set; }
-    
-        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

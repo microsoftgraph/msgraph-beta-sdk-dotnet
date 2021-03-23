@@ -36,14 +36,14 @@ namespace Microsoft.Graph
         Skipped = 2,
 	
         /// <summary>
-        /// Unknown Future Value
-        /// </summary>
-        UnknownFutureValue = 4,
-	
-        /// <summary>
         /// Warning
         /// </summary>
         Warning = 3,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4,
 	
     }
 }

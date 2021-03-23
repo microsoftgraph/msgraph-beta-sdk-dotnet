@@ -68,12 +68,12 @@ namespace Microsoft.Graph
         /// <param name="userexperienceanalyticsregressionsummary">The UserExperienceAnalyticsRegressionSummary object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> PatchAsync(UserExperienceAnalyticsRegressionSummary userexperienceanalyticsregressionsummary, 
+        public System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> PatchAsync(UserExperienceAnalyticsRegressionSummary userexperienceanalyticsregressionsummary,
             CancellationToken cancellationToken)
         {
             this.Method = "PATCH";
             return this.SendAsync<UserExperienceAnalyticsRegressionSummary>(userexperienceanalyticsregressionsummary, cancellationToken);
-        }        
+        }
 
         /// <summary>
         /// Issues the PUT request.
@@ -91,12 +91,12 @@ namespace Microsoft.Graph
         /// <param name="userexperienceanalyticsregressionsummary">The UserExperienceAnalyticsRegressionSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> PutAsync(UserExperienceAnalyticsRegressionSummary userexperienceanalyticsregressionsummary, 
+        public System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> PutAsync(UserExperienceAnalyticsRegressionSummary userexperienceanalyticsregressionsummary,
             CancellationToken cancellationToken)
         {
             this.Method = "PUT";
             return this.SendAsync<UserExperienceAnalyticsRegressionSummary>(userexperienceanalyticsregressionsummary, cancellationToken);
-        }        
+        }
 
         /// <summary>
         /// Adds the specified expand value to the request.

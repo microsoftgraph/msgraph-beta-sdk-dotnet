@@ -94,7 +94,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets client app used.
-        /// The legacy client used for sign-in activity. For example, Browser, Exchange Active Sync,Modern clients, IMAP, MAPI, SMTP, or POP.
+        /// The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientAppUsed", Required = Newtonsoft.Json.Required.Default)]
         public string ClientAppUsed { get; set; }
@@ -115,7 +115,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -174,7 +174,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets network location details.
-        /// The network location details, such as IP address, location of the sign-in, the type of network used, and its names. Possible values: Named Netowrk, Extranet, Intranet, or Trusted Network.
+        /// The network location details including the type of network used and its names.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkLocationDetails", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<NetworkLocationDetail> NetworkLocationDetails { get; set; }

@@ -189,7 +189,7 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for ExternalColumns.
-        /// 
+        /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
         /// </summary>
         /// <returns>The <see cref="IColumnDefinitionRequestBuilder"/>.</returns>
         public IColumnDefinitionRequestBuilder ExternalColumns
@@ -269,6 +269,18 @@ namespace Microsoft.Graph
             get
             {
                 return new SiteRequestBuilder(this.AppendSegmentToRequestUrl("sites"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for TermStore.
+        /// 
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.TermStore.IStoreRequestBuilder"/>.</returns>
+        public Microsoft.Graph.TermStore.IStoreRequestBuilder TermStore
+        {
+            get
+            {
+                return new Microsoft.Graph.TermStore.StoreRequestBuilder(this.AppendSegmentToRequestUrl("termStore"), this.Client);
             }
         }
     }

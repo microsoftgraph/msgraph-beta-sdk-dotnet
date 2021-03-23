@@ -660,6 +660,13 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionPage UserExperienceAnalyticsMetricHistory { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics not autopilot ready device.
+        /// User experience analytics devices not Windows Autopilot ready.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsNotAutopilotReadyDevice", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionPage UserExperienceAnalyticsNotAutopilotReadyDevice { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics overview.
         /// User experience analytics overview
         /// </summary>

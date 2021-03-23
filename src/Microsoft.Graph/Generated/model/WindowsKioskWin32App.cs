@@ -52,7 +52,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets edgeKioskType.
-        /// Edge kiosk type for Edge kiosk mode
+        /// Edge kiosk type for Edge kiosk mode. Possible values are: publicBrowsing, fullScreen.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeKioskType", Required = Newtonsoft.Json.Required.Default)]
         public WindowsEdgeKioskType? EdgeKioskType { get; set; }

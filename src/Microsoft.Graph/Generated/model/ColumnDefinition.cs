@@ -60,6 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content approval status.
+        /// This column stores content approval status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentApprovalStatus", Required = Newtonsoft.Json.Required.Default)]
         public ContentApprovalStatusColumn ContentApprovalStatus { get; set; }
@@ -122,6 +123,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hyperlink or picture.
+        /// This column stores hyperlink or picture values.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hyperlinkOrPicture", Required = Newtonsoft.Json.Required.Default)]
         public HyperlinkOrPictureColumn HyperlinkOrPicture { get; set; }
@@ -135,18 +137,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is deletable.
+        /// Indicates whether this column can be deleted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeletable", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDeletable { get; set; }
     
         /// <summary>
         /// Gets or sets is reorderable.
+        /// Indicates whether values in the column can be reordered. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isReorderable", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsReorderable { get; set; }
     
         /// <summary>
         /// Gets or sets is sealed.
+        /// Specifies whether column can be changed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSealed", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsSealed { get; set; }
@@ -181,6 +186,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets propagate changes.
+        /// If 'True' changes to this column will be propagated to lists that implement the column.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propagateChanges", Required = Newtonsoft.Json.Required.Default)]
         public bool? PropagateChanges { get; set; }
@@ -201,6 +207,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets term.
+        /// This column stores taxonomy terms.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "term", Required = Newtonsoft.Json.Required.Default)]
         public TermColumn Term { get; set; }
@@ -214,24 +221,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets thumbnail.
+        /// This column stores thumbnail values.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnail", Required = Newtonsoft.Json.Required.Default)]
         public ThumbnailColumn Thumbnail { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// For site columns, the type of column. Read-only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public ColumnTypes? Type { get; set; }
     
         /// <summary>
         /// Gets or sets validation.
+        /// This column stores validation formula and message for the column.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "validation", Required = Newtonsoft.Json.Required.Default)]
         public ColumnValidation Validation { get; set; }
     
         /// <summary>
         /// Gets or sets source column.
+        /// The source column for content type column.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceColumn", Required = Newtonsoft.Json.Required.Default)]
         public ColumnDefinition SourceColumn { get; set; }

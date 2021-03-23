@@ -37,5 +37,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IAppConsentRequestUserConsentRequestsCollectionRequestBuilder"/>.</returns>
         IAppConsentRequestUserConsentRequestsCollectionRequestBuilder UserConsentRequests { get; }
     
+        
+    
     }
 }

@@ -39,6 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets printer.
+        /// The created printer entity. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printer", Required = Newtonsoft.Json.Required.Default)]
         public Printer Printer { get; set; }

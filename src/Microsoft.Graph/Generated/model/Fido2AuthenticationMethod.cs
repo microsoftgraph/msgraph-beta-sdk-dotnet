@@ -46,13 +46,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attestation level.
-        /// The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
+        /// The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attestationLevel", Required = Newtonsoft.Json.Required.Default)]
         public AttestationLevel? AttestationLevel { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The timestamp when this key was registered to the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }

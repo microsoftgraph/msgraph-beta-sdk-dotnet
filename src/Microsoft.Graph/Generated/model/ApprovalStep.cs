@@ -31,34 +31,53 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets assigned to me.
+        /// Indicates whether the step is assigned to the calling user to review. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedToMe", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AssignedToMe { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
+        /// The label provided by the policy creator to identify an approval step. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets justification.
+        /// The justification associated with the approval step decision.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
         public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed by.
+        /// The identifier of the reviewer. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedBy", Required = Newtonsoft.Json.Required.Default)]
         public Identity ReviewedBy { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed date time.
+        /// The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ReviewedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets review result.
+        /// The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewResult", Required = Newtonsoft.Json.Required.Default)]
         public string ReviewResult { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public string Status { get; set; }
     
     }
 }

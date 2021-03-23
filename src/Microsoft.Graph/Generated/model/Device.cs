@@ -46,14 +46,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets approximate last sign in date time.
-        /// The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approximateLastSignInDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ApproximateLastSignInDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets compliance expiration date time.
-        /// The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ComplianceExpirationDateTime { get; set; }
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device id.
-        /// Unique identifier set by Azure Device Registration Service at the time of registration.
+        /// Identifier set by Azure Device Registration Service at the time of registration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceId { get; set; }
@@ -129,6 +129,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hostnames.
+        /// List of hostNames for the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostnames", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Hostnames { get; set; }
@@ -163,7 +164,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' Read-only.
+        /// The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesLastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
@@ -198,14 +199,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets profile type.
-        /// The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
+        /// The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileType", Required = Newtonsoft.Json.Required.Default)]
         public string ProfileType { get; set; }
     
         /// <summary>
         /// Gets or sets registration date time.
-        /// Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registrationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? RegistrationDateTime { get; set; }
@@ -219,13 +220,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets trust type.
-        /// Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory
+        /// Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustType", Required = Newtonsoft.Json.Required.Default)]
         public string TrustType { get; set; }
     
         /// <summary>
         /// Gets or sets kind.
+        /// Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kind", Required = Newtonsoft.Json.Required.Default)]
         public string Kind { get; set; }
@@ -246,18 +248,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets name.
+        /// Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
+        /// Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
         public string Platform { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public string Status { get; set; }

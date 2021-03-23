@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ItemInsights.
+        /// </summary>
+        /// <returns>The <see cref="IUserInsightsSettingsRequestBuilder"/>.</returns>
+        public IUserInsightsSettingsRequestBuilder ItemInsights
+        {
+            get
+            {
+                return new UserInsightsSettingsRequestBuilder(this.AppendSegmentToRequestUrl("itemInsights"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RegionalAndLanguageSettings.
         /// </summary>
         /// <returns>The <see cref="IRegionalAndLanguageSettingsRequestBuilder"/>.</returns>

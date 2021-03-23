@@ -31,10 +31,28 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets ad hoc meetings attended count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adHocMeetingsAttendedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? AdHocMeetingsAttendedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ad hoc meetings organized count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adHocMeetingsOrganizedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? AdHocMeetingsOrganizedCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets assigned products.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedProducts", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> AssignedProducts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets audio duration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioDuration", Required = Newtonsoft.Json.Required.Default)]
+        public Duration AudioDuration { get; set; }
     
         /// <summary>
         /// Gets or sets call count.
@@ -61,6 +79,12 @@ namespace Microsoft.Graph
         public bool? IsDeleted { get; set; }
     
         /// <summary>
+        /// Gets or sets is licensed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isLicensed", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsLicensed { get; set; }
+    
+        /// <summary>
         /// Gets or sets last activity date.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
@@ -71,6 +95,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? MeetingCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets meetings attended count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingsAttendedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? MeetingsAttendedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets meetings organized count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingsOrganizedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? MeetingsOrganizedCount { get; set; }
     
         /// <summary>
         /// Gets or sets private chat message count.
@@ -91,6 +127,36 @@ namespace Microsoft.Graph
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
+        /// Gets or sets scheduled one time meetings attended count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledOneTimeMeetingsAttendedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? ScheduledOneTimeMeetingsAttendedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduled one time meetings organized count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledOneTimeMeetingsOrganizedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? ScheduledOneTimeMeetingsOrganizedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduled recurring meetings attended count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledRecurringMeetingsAttendedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? ScheduledRecurringMeetingsAttendedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduled recurring meetings organized count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledRecurringMeetingsOrganizedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? ScheduledRecurringMeetingsOrganizedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets screen share duration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenShareDuration", Required = Newtonsoft.Json.Required.Default)]
+        public Duration ScreenShareDuration { get; set; }
+    
+        /// <summary>
         /// Gets or sets team chat message count.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamChatMessageCount", Required = Newtonsoft.Json.Required.Default)]
@@ -101,6 +167,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets video duration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "videoDuration", Required = Newtonsoft.Json.Required.Default)]
+        public Duration VideoDuration { get; set; }
     
     }
 }

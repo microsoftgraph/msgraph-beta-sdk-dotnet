@@ -38,12 +38,6 @@ namespace Microsoft.Graph
         public IEnumerable<string> Aliases { get; set; }
     
         /// <summary>
-        /// Gets or sets isContent.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isContent", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsContent { get; set; }
-    
-        /// <summary>
         /// Gets or sets isQueryable.
         /// Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
         /// </summary>

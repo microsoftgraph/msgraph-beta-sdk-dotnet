@@ -32,30 +32,35 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets azure blob container.
+        /// The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureBlobContainer", Required = Newtonsoft.Json.Required.Default)]
         public string AzureBlobContainer { get; set; }
     
         /// <summary>
         /// Gets or sets azure blob token.
+        /// The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureBlobToken", Required = Newtonsoft.Json.Required.Default)]
         public string AzureBlobToken { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The description provided for the export.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets export options.
+        /// The options provided for the export. See reviewSet: export for more details. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exportOptions", Required = Newtonsoft.Json.Required.Default)]
         public ExportOptions? ExportOptions { get; set; }
     
         /// <summary>
         /// Gets or sets export structure.
+        /// The options provided that specify the structure of the export. See reviewSet: export for more details. Possible values are: none, directory, pst.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exportStructure", Required = Newtonsoft.Json.Required.Default)]
         public ExportFileStructure? ExportStructure { get; set; }
@@ -68,12 +73,14 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets output name.
+        /// The name provided for the export.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outputName", Required = Newtonsoft.Json.Required.Default)]
         public string OutputName { get; set; }
     
         /// <summary>
         /// Gets or sets review set.
+        /// The review set the content is being exported from.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewSet", Required = Newtonsoft.Json.Required.Default)]
         public ReviewSet ReviewSet { get; set; }

@@ -32,42 +32,49 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets action.
+        /// The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
         public CaseAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets completed date time.
+        /// The date and time the operation was completed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// The user that created the operation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
         public Microsoft.Graph.IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time the operation was created.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets percent progress.
+        /// The progress of the operation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "percentProgress", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PercentProgress { get; set; }
     
         /// <summary>
         /// Gets or sets result info.
+        /// Contains success and failure-specific result information.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultInfo", Required = Newtonsoft.Json.Required.Default)]
         public Microsoft.Graph.ResultInfo ResultInfo { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public CaseOperationStatus? Status { get; set; }

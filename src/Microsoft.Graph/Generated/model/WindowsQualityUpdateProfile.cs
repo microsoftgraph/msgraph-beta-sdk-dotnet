@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets deployable content display name.
+        /// Friendly display name of the quality update profile deployable content
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployableContentDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeployableContentDisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// The description of the profile which is specified by the user.
         /// </summary>
@@ -64,6 +71,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets release date display name.
+        /// Friendly release date to display for a Quality Update release
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releaseDateDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string ReleaseDateDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
