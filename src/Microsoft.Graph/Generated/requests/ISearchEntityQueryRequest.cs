@@ -29,14 +29,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the POST request.
         /// </summary>
-        System.Threading.Tasks.Task<ISearchEntityQueryCollectionPage> PostAsync();
+        System.Threading.Tasks.Task<SearchResponse> PostAsync();
 
         /// <summary>
         /// Issues the POST request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<ISearchEntityQueryCollectionPage> PostAsync(
+        System.Threading.Tasks.Task<SearchResponse> PostAsync(
             CancellationToken cancellationToken);
 
 
@@ -53,33 +53,5 @@ namespace Microsoft.Graph
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
         ISearchEntityQueryRequest Select(string value);
-
-        /// <summary>
-        /// Adds the specified top value to the request.
-        /// </summary>
-        /// <param name="value">The top value.</param>
-        /// <returns>The request object to send.</returns>
-        ISearchEntityQueryRequest Top(int value);
-
-        /// <summary>
-        /// Adds the specified filter value to the request.
-        /// </summary>
-        /// <param name="value">The filter value.</param>
-        /// <returns>The request object to send.</returns>
-        ISearchEntityQueryRequest Filter(string value);
-
-        /// <summary>
-        /// Adds the specified skip value to the request.
-        /// </summary>
-        /// <param name="value">The skip value.</param>
-        /// <returns>The request object to send.</returns>
-        ISearchEntityQueryRequest Skip(int value);
-
-        /// <summary>
-        /// Adds the specified orderby value to the request.
-        /// </summary>
-        /// <param name="value">The orderby value.</param>
-        /// <returns>The request object to send.</returns>
-        ISearchEntityQueryRequest OrderBy(string value);
     }
 }

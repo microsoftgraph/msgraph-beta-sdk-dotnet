@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public IRbacApplicationRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
     
         /// <summary>
+        /// Gets or sets role assignment approvals.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentApprovals", Required = Newtonsoft.Json.Required.Default)]
+        public IRbacApplicationRoleAssignmentApprovalsCollectionPage RoleAssignmentApprovals { get; set; }
+    
+        /// <summary>
         /// Gets or sets role assignment requests.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentRequests", Required = Newtonsoft.Json.Required.Default)]

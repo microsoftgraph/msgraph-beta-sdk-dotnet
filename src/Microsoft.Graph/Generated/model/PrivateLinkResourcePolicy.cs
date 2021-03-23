@@ -31,16 +31,28 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets allowed tenant ids.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedTenantIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AllowedTenantIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets external private link id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalPrivateLinkId", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalPrivateLinkId { get; set; }
     
         /// <summary>
-        /// Gets or sets tenant approvals.
+        /// Gets or sets private endpoint connections.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantApprovals", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<TenantApprovals> TenantApprovals { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privateEndpointConnections", Required = Newtonsoft.Json.Required.Default)]
+        public IPrivateLinkResourcePolicyPrivateEndpointConnectionsCollectionPage PrivateEndpointConnections { get; set; }
     
     }
 }

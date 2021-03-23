@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets channelId.
+        /// The identity of the channel in which the message was posted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channelId", Required = Newtonsoft.Json.Required.Default)]
         public string ChannelId { get; set; }
     
         /// <summary>
         /// Gets or sets teamId.
+        /// The identity of the team in which the message was posted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamId", Required = Newtonsoft.Json.Required.Default)]
         public string TeamId { get; set; }

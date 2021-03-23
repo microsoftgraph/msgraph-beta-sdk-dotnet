@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// The interface IGraphServiceConnectionsCollectionPage.
     /// </summary>
     [JsonConverter(typeof(InterfaceConverter<GraphServiceConnectionsCollectionPage>))]
-    public interface IGraphServiceConnectionsCollectionPage : ICollectionPage<ExternalConnection>
+    public interface IGraphServiceConnectionsCollectionPage : ICollectionPage<Microsoft.Graph.ExternalConnectors.ExternalConnection>
     {
         /// <summary>
         /// Gets the next page <see cref="IGraphServiceConnectionsCollectionRequest"/> instance.

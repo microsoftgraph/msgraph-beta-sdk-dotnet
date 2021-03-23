@@ -32,42 +32,49 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets indexed item count.
+        /// The estimated count of items for the sourceCollection that matched the content query.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "indexedItemCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? IndexedItemCount { get; set; }
     
         /// <summary>
         /// Gets or sets indexed items size.
+        /// The estimated size of items for the sourceCollection that matched the content query.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "indexedItemsSize", Required = Newtonsoft.Json.Required.Default)]
         public Int64? IndexedItemsSize { get; set; }
     
         /// <summary>
         /// Gets or sets mailbox count.
+        /// The number of mailboxes that had search hits.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailboxCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MailboxCount { get; set; }
     
         /// <summary>
         /// Gets or sets site count.
+        /// The number of mailboxes that had search hits.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? SiteCount { get; set; }
     
         /// <summary>
         /// Gets or sets unindexed item count.
+        /// The estimated count of unindexed items for the collection.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unindexedItemCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? UnindexedItemCount { get; set; }
     
         /// <summary>
         /// Gets or sets unindexed items size.
+        /// The estimated size of unindexed items for the collection.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unindexedItemsSize", Required = Newtonsoft.Json.Required.Default)]
         public Int64? UnindexedItemsSize { get; set; }
     
         /// <summary>
         /// Gets or sets source collection.
+        /// eDiscovery collection, commonly known as a search.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceCollection", Required = Newtonsoft.Json.Required.Default)]
         public SourceCollection SourceCollection { get; set; }

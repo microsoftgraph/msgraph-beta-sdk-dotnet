@@ -116,14 +116,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets timeBegan.
-        /// Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeBegan", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? TimeBegan { get; set; }
     
         /// <summary>
         /// Gets or sets timeEnded.
-        /// Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeEnded", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? TimeEnded { get; set; }

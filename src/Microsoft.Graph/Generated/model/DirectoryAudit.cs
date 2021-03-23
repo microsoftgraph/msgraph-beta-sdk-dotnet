@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets activity date time.
-        /// Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ActivityDateTime { get; set; }
@@ -94,7 +94,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets result reason.
-        /// Indicates the reason for failure if the result is 'Failure' or 'timeout'.
+        /// Indicates the reason for failure if the result is failure or timeout.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultReason", Required = Newtonsoft.Json.Required.Default)]
         public string ResultReason { get; set; }

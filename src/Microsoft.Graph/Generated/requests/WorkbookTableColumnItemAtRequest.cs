@@ -68,12 +68,12 @@ namespace Microsoft.Graph
         /// <param name="workbooktablecolumn">The WorkbookTableColumn object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<WorkbookTableColumn> PatchAsync(WorkbookTableColumn workbooktablecolumn, 
+        public System.Threading.Tasks.Task<WorkbookTableColumn> PatchAsync(WorkbookTableColumn workbooktablecolumn,
             CancellationToken cancellationToken)
         {
             this.Method = "PATCH";
             return this.SendAsync<WorkbookTableColumn>(workbooktablecolumn, cancellationToken);
-        }        
+        }
 
         /// <summary>
         /// Issues the PUT request.
@@ -91,12 +91,12 @@ namespace Microsoft.Graph
         /// <param name="workbooktablecolumn">The WorkbookTableColumn object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<WorkbookTableColumn> PutAsync(WorkbookTableColumn workbooktablecolumn, 
+        public System.Threading.Tasks.Task<WorkbookTableColumn> PutAsync(WorkbookTableColumn workbooktablecolumn,
             CancellationToken cancellationToken)
         {
             this.Method = "PUT";
             return this.SendAsync<WorkbookTableColumn>(workbooktablecolumn, cancellationToken);
-        }        
+        }
 
         /// <summary>
         /// Adds the specified expand value to the request.

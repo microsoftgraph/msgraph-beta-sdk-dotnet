@@ -58,11 +58,5 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipient", Required = Newtonsoft.Json.Required.Default)]
         public TeamworkNotificationRecipient Recipient { get; set; }
     
-        /// <summary>
-        /// Gets or sets TeamsAppId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsAppId", Required = Newtonsoft.Json.Required.Default)]
-        public string TeamsAppId { get; set; }
-    
     }
 }

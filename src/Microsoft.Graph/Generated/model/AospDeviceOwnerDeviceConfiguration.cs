@@ -102,7 +102,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password required type.
-        /// Indicates the minimum password quality required on the device.
+        /// Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType { get; set; }

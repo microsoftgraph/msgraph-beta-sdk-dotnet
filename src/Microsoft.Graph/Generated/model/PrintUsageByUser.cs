@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets user principal name.
+        /// The UPN of the user represented by these statistics.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }

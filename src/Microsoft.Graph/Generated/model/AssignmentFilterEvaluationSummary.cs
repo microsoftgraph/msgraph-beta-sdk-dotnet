@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType { get; set; }
     
         /// <summary>
+        /// Gets or sets assignmentFilterTypeAndEvaluationResults.
+        /// A collection of filter types and their corresponding evaluation results.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilterTypeAndEvaluationResults", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AssignmentFilterTypeAndEvaluationResult> AssignmentFilterTypeAndEvaluationResults { get; set; }
+    
+        /// <summary>
         /// Gets or sets evaluationDateTime.
         /// The time assignment filter was evaluated.
         /// </summary>

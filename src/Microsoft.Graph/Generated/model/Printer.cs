@@ -52,6 +52,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last seen date time.
+        /// The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSeenDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSeenDateTime { get; set; }

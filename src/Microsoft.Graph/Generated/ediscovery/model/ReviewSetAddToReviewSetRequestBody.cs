@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets AdditionalData.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalData", Required = Newtonsoft.Json.Required.Default)]
-        public DataCollectionScope? AdditionalData { get; set; }
+        public AdditionalDataOptions? AdditionalData { get; set; }
     
     }
 }

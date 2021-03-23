@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets currentBegan.
-        /// Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentBegan", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CurrentBegan { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets nextAttempt.
-        /// Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nextAttempt", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? NextAttempt { get; set; }
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets seriesBegan.
-        /// Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "seriesBegan", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? SeriesBegan { get; set; }

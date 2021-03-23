@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowedContentTypes.
+        /// Content types allowed in document set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedContentTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ContentTypeInfo> AllowedContentTypes { get; set; }
     
         /// <summary>
         /// Gets or sets defaultContents.
+        /// Default contents of document set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultContents", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DocumentSetContent> DefaultContents { get; set; }
     
         /// <summary>
         /// Gets or sets propagateWelcomePageChanges.
+        /// Specifies whether to push welcome page changes to inherited content types.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propagateWelcomePageChanges", Required = Newtonsoft.Json.Required.Default)]
         public bool? PropagateWelcomePageChanges { get; set; }
     
         /// <summary>
         /// Gets or sets shouldPrefixNameToFile.
+        /// Add the name of the Document Set to each file name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shouldPrefixNameToFile", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShouldPrefixNameToFile { get; set; }
     
         /// <summary>
         /// Gets or sets welcomePageUrl.
+        /// Welcome page absolute URL.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "welcomePageUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WelcomePageUrl { get; set; }

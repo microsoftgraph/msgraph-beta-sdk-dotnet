@@ -68,12 +68,12 @@ namespace Microsoft.Graph
         /// <param name="userregistrationmethodsummary">The UserRegistrationMethodSummary object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<UserRegistrationMethodSummary> PatchAsync(UserRegistrationMethodSummary userregistrationmethodsummary, 
+        public System.Threading.Tasks.Task<UserRegistrationMethodSummary> PatchAsync(UserRegistrationMethodSummary userregistrationmethodsummary,
             CancellationToken cancellationToken)
         {
             this.Method = "PATCH";
             return this.SendAsync<UserRegistrationMethodSummary>(userregistrationmethodsummary, cancellationToken);
-        }        
+        }
 
         /// <summary>
         /// Issues the PUT request.
@@ -91,12 +91,12 @@ namespace Microsoft.Graph
         /// <param name="userregistrationmethodsummary">The UserRegistrationMethodSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<UserRegistrationMethodSummary> PutAsync(UserRegistrationMethodSummary userregistrationmethodsummary, 
+        public System.Threading.Tasks.Task<UserRegistrationMethodSummary> PutAsync(UserRegistrationMethodSummary userregistrationmethodsummary,
             CancellationToken cancellationToken)
         {
             this.Method = "PUT";
             return this.SendAsync<UserRegistrationMethodSummary>(userregistrationmethodsummary, cancellationToken);
-        }        
+        }
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contentType.
+        /// Content type information of the file.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
         public ContentTypeInfo ContentType { get; set; }
     
         /// <summary>
         /// Gets or sets fileName.
+        /// Name of the file in resource folder that should be added as a default content or a template in the document set
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
         public string FileName { get; set; }
     
         /// <summary>
         /// Gets or sets folderName.
+        /// Folder name in which the file will be placed when a new document set is created in the library.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "folderName", Required = Newtonsoft.Json.Required.Default)]
         public string FolderName { get; set; }

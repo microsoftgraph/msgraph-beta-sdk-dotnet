@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IExternalRequestBuilder.
     /// </summary>
-    public partial interface IExternalRequestBuilder : IBaseRequestBuilder
+    public partial interface IExternalRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        IExternalRequest Request();
+        new IExternalRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        IExternalRequest Request(IEnumerable<Option> options);
+        new IExternalRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Connections.

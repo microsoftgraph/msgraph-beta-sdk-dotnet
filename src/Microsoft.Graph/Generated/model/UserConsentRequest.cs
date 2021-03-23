@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets reason.
+        /// The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
         public string Reason { get; set; }
     
         /// <summary>
         /// Gets or sets approval.
+        /// Approval decisions associated with a request.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approval", Required = Newtonsoft.Json.Required.Default)]
         public Approval Approval { get; set; }

@@ -32,24 +32,28 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets created by.
+        /// The user who created the review set. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
         public Microsoft.Graph.IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The review set name. The name is unique with a maximum limit of 64 characters.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets queries.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queries", Required = Newtonsoft.Json.Required.Default)]
         public IReviewSetQueriesCollectionPage Queries { get; set; }

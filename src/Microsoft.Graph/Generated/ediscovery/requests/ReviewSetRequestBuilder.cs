@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="IReviewSetAddToReviewSetRequestBuilder"/>.</returns>
         public IReviewSetAddToReviewSetRequestBuilder AddToReviewSet(
             SourceCollection sourceCollection = null,
-            DataCollectionScope? additionalData = null)
+            AdditionalDataOptions? additionalData = null)
         {
             return new ReviewSetAddToReviewSetRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.addToReviewSet"),

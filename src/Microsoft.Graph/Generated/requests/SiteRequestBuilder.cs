@@ -183,6 +183,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TermStore.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.TermStore.IStoreRequestBuilder"/>.</returns>
+        public Microsoft.Graph.TermStore.IStoreRequestBuilder TermStore
+        {
+            get
+            {
+                return new Microsoft.Graph.TermStore.StoreRequestBuilder(this.AppendSegmentToRequestUrl("termStore"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Onenote.
         /// </summary>
         /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>

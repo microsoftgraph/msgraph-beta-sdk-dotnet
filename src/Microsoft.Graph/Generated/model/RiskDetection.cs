@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activity date time.
-        /// Date and time that the risky activity occurred.
+        /// Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ActivityDateTime { get; set; }
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets detected date time.
-        /// Date and time that the risk was detected.
+        /// Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? DetectedDateTime { get; set; }
@@ -109,7 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets risk event type.
-        /// The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, genericadminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue.
+        /// The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskEventType", Required = Newtonsoft.Json.Required.Default)]
         public string RiskEventType { get; set; }
@@ -130,14 +130,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets risk type.
-        /// List of risk event types.Note: This property is deprecated. Use riskEventTypes instead.
+        /// List of risk event types.Note: This property is deprecated. Use riskEventType instead.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskType", Required = Newtonsoft.Json.Required.Default)]
         public RiskEventType? RiskType { get; set; }
     
         /// <summary>
         /// Gets or sets source.
-        /// Source of the risk detection. For example, 'activeDirectory'.
+        /// Source of the risk detection. For example, activeDirectory.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
         public string Source { get; set; }
@@ -158,7 +158,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user id.
-        /// Unique ID of the user.
+        /// Unique ID of the user.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
         public string UserId { get; set; }

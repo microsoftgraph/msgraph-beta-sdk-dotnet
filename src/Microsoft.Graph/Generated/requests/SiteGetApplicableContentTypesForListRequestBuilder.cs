@@ -123,7 +123,7 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for Base.
-        /// 
+        /// Parent contentType from which this content type is derived.
         /// </summary>
         /// <returns>The <see cref="IContentTypeRequestBuilder"/>.</returns>
         public IContentTypeRequestBuilder Base
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for BaseTypes.
-        /// 
+        /// The collection of content types that are ancestors of this content type.
         /// </summary>
         /// <returns>The <see cref="IContentTypeRequestBuilder"/>.</returns>
         public IContentTypeRequestBuilder BaseTypes
@@ -159,7 +159,7 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for ColumnPositions.
-        /// 
+        /// Column order information in a content type.
         /// </summary>
         /// <returns>The <see cref="IColumnDefinitionRequestBuilder"/>.</returns>
         public IColumnDefinitionRequestBuilder ColumnPositions
@@ -171,7 +171,7 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for Columns.
-        /// 
+        /// The collection of column definitions for this contentType.
         /// </summary>
         /// <returns>The <see cref="IColumnDefinitionRequestBuilder"/>.</returns>
         public IColumnDefinitionRequestBuilder Columns

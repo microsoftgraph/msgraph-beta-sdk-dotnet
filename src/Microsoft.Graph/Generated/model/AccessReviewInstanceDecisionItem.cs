@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets applied date time.
-        /// The DateTime when the approval decision was applied.
+        /// The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? AppliedDateTime { get; set; }
@@ -73,11 +73,35 @@ namespace Microsoft.Graph
         public string Justification { get; set; }
     
         /// <summary>
+        /// Gets or sets principal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principal", Required = Newtonsoft.Json.Required.Default)]
+        public Identity Principal { get; set; }
+    
+        /// <summary>
+        /// Gets or sets principal link.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalLink", Required = Newtonsoft.Json.Required.Default)]
+        public string PrincipalLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets recommendation.
         /// A system-generated recommendation for the approval decision. Possible values: Approve, Deny, or NotAvailable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendation", Required = Newtonsoft.Json.Required.Default)]
         public string Recommendation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        public AccessReviewInstanceDecisionItemResource Resource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource link.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceLink", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceLink { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed by.
@@ -88,7 +112,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reviewed date time.
-        /// The DateTime when the review occurred.
+        /// The timestamp when the review occurred.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ReviewedDateTime { get; set; }

@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets discovery date time.
-        /// Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoveryDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? DiscoveryDateTime { get; set; }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets version.
-        /// Read only value that indicates version discovered. Null if discovery has not yet occurred.
+        /// Read only value that indicates version discovered. null if discovery has not yet occurred.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public string Version { get; set; }

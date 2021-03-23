@@ -93,7 +93,7 @@ namespace Microsoft.Graph
         public IAccessPackageAssignmentRequestCancelRequestBuilder Cancel()
         {
             return new AccessPackageAssignmentRequestCancelRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.Cancel"),
+                this.AppendSegmentToRequestUrl("microsoft.graph.cancel"),
                 this.Client);
         }
     

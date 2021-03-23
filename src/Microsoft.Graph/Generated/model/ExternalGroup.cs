@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type External Group.
     /// </summary>
+    [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ExternalGroup : Entity
     {
@@ -48,6 +49,7 @@ namespace Microsoft.Graph
         /// Gets or sets members.
         /// A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
         /// </summary>
+        [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
         public IExternalGroupMembersCollectionPage Members { get; set; }
     

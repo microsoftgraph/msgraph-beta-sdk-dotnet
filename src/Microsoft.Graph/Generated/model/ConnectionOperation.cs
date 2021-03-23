@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Connection Operation.
     /// </summary>
+    [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ConnectionOperation : Entity
     {
@@ -35,7 +36,7 @@ namespace Microsoft.Graph
         /// If status is failed, provides more information about the error that caused the failure.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
-        public ErrorDetail Error { get; set; }
+        public PublicError Error { get; set; }
     
         /// <summary>
         /// Gets or sets status.

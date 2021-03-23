@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets conditionsNotSatisfied.
+        /// Refers to the conditional access policy conditions that are not satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsNotSatisfied", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessConditions? ConditionsNotSatisfied { get; set; }
     
         /// <summary>
         /// Gets or sets conditionsSatisfied.
+        /// Refers to the conditional access policy conditions that are satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsSatisfied", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessConditions? ConditionsSatisfied { get; set; }
@@ -65,14 +67,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets id.
-        /// Unique GUID of the conditional access policy.
+        /// Identifier of the conditional access policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets result.
-        /// Indicates the result of the CA policy that was triggered. Possible values are:successfailurenotApplied - Policy isn't applied because policy conditions were not met.notEnabled - This is due to the policy in disabled state.
+        /// Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "result", Required = Newtonsoft.Json.Required.Default)]
         public AppliedConditionalAccessPolicyResult? Result { get; set; }

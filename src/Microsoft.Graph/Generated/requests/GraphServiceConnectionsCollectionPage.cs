@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GraphServiceConnectionsCollectionPage.
     /// </summary>
-    public partial class GraphServiceConnectionsCollectionPage : CollectionPage<ExternalConnection>, IGraphServiceConnectionsCollectionPage
+    public partial class GraphServiceConnectionsCollectionPage : CollectionPage<Microsoft.Graph.ExternalConnectors.ExternalConnection>, IGraphServiceConnectionsCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IGraphServiceConnectionsCollectionRequest"/> instance.

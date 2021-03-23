@@ -86,6 +86,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourcePerformanceMetrics", Required = Newtonsoft.Json.Required.Default)]
         public UserExperienceAnalyticsCategory ResourcePerformanceMetrics { get; set; }
     
+        /// <summary>
+        /// Gets or sets work from anywhere metrics.
+        /// The user experience analytics work from anywhere metrics.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workFromAnywhereMetrics", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsCategory WorkFromAnywhereMetrics { get; set; }
+    
     }
 }
 

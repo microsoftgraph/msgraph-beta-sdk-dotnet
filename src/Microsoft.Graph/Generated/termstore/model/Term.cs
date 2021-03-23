@@ -46,6 +46,7 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets labels.
+        /// Label metadata for a term
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labels", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<LocalizedLabel> Labels { get; set; }

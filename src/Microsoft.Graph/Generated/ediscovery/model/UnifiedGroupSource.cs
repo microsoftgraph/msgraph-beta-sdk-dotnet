@@ -32,12 +32,14 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets included sources.
+        /// Specifies which sources are included in this group. Possible values are: mailbox, site.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includedSources", Required = Newtonsoft.Json.Required.Default)]
         public SourceType? IncludedSources { get; set; }
     
         /// <summary>
         /// Gets or sets group.
+        /// The group associated with the unifiedGroupSource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
         public Microsoft.Graph.Group Group { get; set; }

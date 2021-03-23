@@ -39,6 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created by.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
         public UserIdentity CreatedBy { get; set; }

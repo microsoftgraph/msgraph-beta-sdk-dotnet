@@ -32,42 +32,49 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets child selectability.
+        /// Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "childSelectability", Required = Newtonsoft.Json.Required.Default)]
         public ChildSelectability? ChildSelectability { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// The user who created the tag.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
         public Microsoft.Graph.IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The description for the tag.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Display name of the tag.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The date and time the tag was last modified.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets child tags.
+        /// Returns the tags that are a child of a tag.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "childTags", Required = Newtonsoft.Json.Required.Default)]
         public ITagChildTagsCollectionWithReferencesPage ChildTags { get; set; }
     
         /// <summary>
         /// Gets or sets parent.
+        /// Returns the parent tag of the specified tag.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parent", Required = Newtonsoft.Json.Required.Default)]
         public Tag Parent { get; set; }

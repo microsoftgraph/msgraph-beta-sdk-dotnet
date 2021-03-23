@@ -524,7 +524,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceExternal request builder.
         /// </summary>
-        IExternalRequestBuilder External { get; }
+        Microsoft.Graph.ExternalConnectors.IExternalRequestBuilder External { get; }
     
         /// <summary>
         /// Gets the GraphServiceAppCatalogs request builder.

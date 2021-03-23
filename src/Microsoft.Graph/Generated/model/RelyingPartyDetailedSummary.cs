@@ -39,14 +39,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets migration status.
-        /// Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired.
+        /// Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "migrationStatus", Required = Newtonsoft.Json.Required.Default)]
         public MigrationStatus? MigrationStatus { get; set; }
     
         /// <summary>
         /// Gets or sets migration validation details.
-        /// Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult. Possible result values are 0, 1, or 2. 0 when the validation check passed, 1 when the validation check failed and 2 when the validation check is a warning.
+        /// Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "migrationValidationDetails", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValuePair> MigrationValidationDetails { get; set; }

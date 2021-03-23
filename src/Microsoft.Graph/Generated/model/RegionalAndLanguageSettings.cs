@@ -74,6 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets translation preferences.
+        /// The user's preferred settings when consuming translated documents, emails, messages, and websites.Returned by default. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "translationPreferences", Required = Newtonsoft.Json.Required.Default)]
         public TranslationPreferences TranslationPreferences { get; set; }

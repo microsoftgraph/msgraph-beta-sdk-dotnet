@@ -35,26 +35,26 @@ namespace Microsoft.Graph
         }
         
         /// <summary>
-        /// Adds the specified ExternalConnection to the collection via POST.
+        /// Adds the specified Microsoft.Graph.ExternalConnectors.ExternalConnection to the collection via POST.
         /// </summary>
-        /// <param name="externalConnection">The ExternalConnection to add.</param>
-        /// <returns>The created ExternalConnection.</returns>
-        public System.Threading.Tasks.Task<ExternalConnection> AddAsync(ExternalConnection externalConnection)
+        /// <param name="externalConnection">The Microsoft.Graph.ExternalConnectors.ExternalConnection to add.</param>
+        /// <returns>The created Microsoft.Graph.ExternalConnectors.ExternalConnection.</returns>
+        public System.Threading.Tasks.Task<Microsoft.Graph.ExternalConnectors.ExternalConnection> AddAsync(Microsoft.Graph.ExternalConnectors.ExternalConnection externalConnection)
         {
             return this.AddAsync(externalConnection, CancellationToken.None);
         }
 
         /// <summary>
-        /// Adds the specified ExternalConnection to the collection via POST.
+        /// Adds the specified Microsoft.Graph.ExternalConnectors.ExternalConnection to the collection via POST.
         /// </summary>
-        /// <param name="externalConnection">The ExternalConnection to add.</param>
+        /// <param name="externalConnection">The Microsoft.Graph.ExternalConnectors.ExternalConnection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ExternalConnection.</returns>
-        public System.Threading.Tasks.Task<ExternalConnection> AddAsync(ExternalConnection externalConnection, CancellationToken cancellationToken)
+        /// <returns>The created Microsoft.Graph.ExternalConnectors.ExternalConnection.</returns>
+        public System.Threading.Tasks.Task<Microsoft.Graph.ExternalConnectors.ExternalConnection> AddAsync(Microsoft.Graph.ExternalConnectors.ExternalConnection externalConnection, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<ExternalConnection>(externalConnection, cancellationToken);
+            return this.SendAsync<Microsoft.Graph.ExternalConnectors.ExternalConnection>(externalConnection, cancellationToken);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IGraphServiceConnectionsCollectionRequest Expand(Expression<Func<ExternalConnection, object>> expandExpression)
+        public IGraphServiceConnectionsCollectionRequest Expand(Expression<Func<Microsoft.Graph.ExternalConnectors.ExternalConnection, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IGraphServiceConnectionsCollectionRequest Select(Expression<Func<ExternalConnection, object>> selectExpression)
+        public IGraphServiceConnectionsCollectionRequest Select(Expression<Func<Microsoft.Graph.ExternalConnectors.ExternalConnection, object>> selectExpression)
         {
             if (selectExpression == null)
             {

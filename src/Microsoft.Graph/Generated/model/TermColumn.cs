@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowMultipleValues.
+        /// Specifies whether the column will allow more than one value
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowMultipleValues", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowMultipleValues { get; set; }
     
         /// <summary>
         /// Gets or sets showFullyQualifiedName.
+        /// Specifies whether to display the entire term path or only the term label.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showFullyQualifiedName", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowFullyQualifiedName { get; set; }

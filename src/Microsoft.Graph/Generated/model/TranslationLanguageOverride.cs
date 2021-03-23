@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets languageTag.
+        /// The language to apply the override.Returned by default. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageTag", Required = Newtonsoft.Json.Required.Default)]
         public string LanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets translationBehavior.
+        /// The translation override behavior for the language, if any.Returned by default. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "translationBehavior", Required = Newtonsoft.Json.Required.Default)]
         public TranslationBehavior? TranslationBehavior { get; set; }

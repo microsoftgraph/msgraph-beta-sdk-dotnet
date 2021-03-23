@@ -52,6 +52,12 @@ namespace Microsoft.Graph.TermStore
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets parent site id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentSiteId", Required = Newtonsoft.Json.Required.Default)]
+        public string ParentSiteId { get; set; }
+    
+        /// <summary>
         /// Gets or sets scope.
         /// Returns type of group. Possible values are 'global', 'system' and 'siteCollection'.
         /// </summary>

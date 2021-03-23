@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         /// The source of identity. Possible values are azureActiveDirectory or external.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySource", Required = Newtonsoft.Json.Required.Default)]
-        public string IdentitySource { get; set; }
+        public IdentitySourceType? IdentitySource { get; set; }
     
         /// <summary>
         /// Gets or sets type.
