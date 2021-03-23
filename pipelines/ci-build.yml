@@ -1,0 +1,185 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+trigger:
+  branches:
+    include:
+      - master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  BuildConfiguration: 'release'
+
+steps:
+- task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+  displayName: 'Run CredScan'
+  inputs:
+    debugMode: false
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
+  inputs:
+    command: restore
+    projects: '**/*.csproj'
+
+- powershell: |
+   # This allows us to not have to checkin .csproj files with DelaySign and SignAssembly set to to true. If the flag is set,
+   # then project is not debuggable with SignAssembly set to true.
+   # Assumption: working directory is /src/
+
+   $csprojPaths = @(".\Microsoft.Graph\Microsoft.Graph.Beta.csproj")
+
+   foreach ($csprojPath in $csprojPaths) {
+
+       $doc = New-Object System.Xml.XmlDocument
+       $doc.Load($csprojPath)
+
+       # Set the DelaySign element to 'true' so that delay signing is set.
+       $delaySign = $doc.SelectSingleNode("//DelaySign");
+       $delaySign.'#text'= "true"
+
+       # Set the SignAssembly element to 'true' so that we can sign the assemblies.
+       $signAssembly = $doc.SelectSingleNode("//SignAssembly");
+       $signAssembly.'#text'= "true"
+
+       $doc.Save($csprojPath);
+   }
+
+   Write-Host "Updated the .csproj files so that we can sign the built assemblies."
+  workingDirectory: src
+  displayName: 'Set project ready to sign'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
+  inputs:
+    projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj'
+    arguments: '-c $(BuildConfiguration) --no-incremental'
+
+- task: DotNetCoreCLI@2
+  displayName: 'run tests'
+  inputs:
+    command: 'test'
+    projects: 'tests/Microsoft.Graph.DotnetCore.Test/Microsoft.Graph.DotnetCore.Test.csproj'
+    arguments: '--configuration $(BuildConfiguration) --verbosity normal'
+
+- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+  displayName: 'ESRP DLL Strong Name (Microsoft.Graph.Beta)'
+  inputs:
+    ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
+    FolderPath: src/Microsoft.Graph/bin/release
+    Pattern: Microsoft.Graph.Beta.dll
+    signConfigType: inlineSignParams
+    inlineOperation: |
+     [
+         {
+             "keyCode": "CP-233863-SN",
+             "operationSetCode": "StrongNameSign",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         },
+         {
+             "keyCode": "CP-233863-SN",
+             "operationSetCode": "StrongNameVerify",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         }
+     ]
+    SessionTimeout: 20
+
+- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+  displayName: 'ESRP DLL CodeSigning (Microsoft.Graph.Beta)'
+  inputs:
+    ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
+    FolderPath: src/Microsoft.Graph/bin/release
+    Pattern: Microsoft.Graph.Beta.dll
+    signConfigType: inlineSignParams
+    inlineOperation: |
+     [
+         {
+             "keyCode": "CP-230012",
+             "operationSetCode": "SigntoolSign",
+             "parameters": [
+                 {
+                     "parameterName": "OpusName",
+                     "parameterValue": "Microsoft"
+                 },
+                 {
+                     "parameterName": "OpusInfo",
+                     "parameterValue": "http://www.microsoft.com"
+                 },
+                 {
+                     "parameterName": "FileDigest",
+                     "parameterValue": "/fd \"SHA256\""
+                 },
+                 {
+                     "parameterName": "PageHash",
+                     "parameterValue": "/NPH"
+                 },
+                 {
+                     "parameterName": "TimeStamp",
+                     "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
+                 }
+             ],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         },
+         {
+             "keyCode": "CP-230012",
+             "operationSetCode": "SigntoolVerify",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         }
+     ]
+    SessionTimeout: 20
+
+# arguments are not parsed in DotNetCoreCLI@2 task for `pack` command, that's why we have a custom pack command here
+- powershell: |
+    dotnet pack $env:BUILD_SOURCESDIRECTORY/src/Microsoft.Graph/Microsoft.Graph.Beta.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg --no-build --output $env:BUILD_ARTIFACTSTAGINGDIRECTORY --configuration $env:BUILD_CONFIGURATION
+  env:
+    BUILD_CONFIGURATION: $(BuildConfiguration)
+  displayName: 'dotnet pack'
+
+- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+  displayName: 'ESRP NuGet CodeSigning'
+  inputs:
+    ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
+    FolderPath: '$(Build.ArtifactStagingDirectory)'
+    Pattern: '*nupkg'
+    signConfigType: inlineSignParams
+    inlineOperation: |
+          [
+              {
+                  "keyCode": "CP-401405",
+                  "operationSetCode": "NuGetSign",
+                  "parameters": [ ],
+                  "toolName": "sign",
+                  "toolVersion": "1.0"
+              },
+              {
+                  "keyCode": "CP-401405",
+                  "operationSetCode": "NuGetVerify",
+                  "parameters": [ ],
+                  "toolName": "sign",
+                  "toolVersion": "1.0"
+              }
+          ]
+
+    SessionTimeout: 20
+
+- task: CopyFiles@2
+  displayName: 'Copy release scripts to artifact staging directory'
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: 'scripts\**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory) '
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Microsoft.Graph.Beta.nupkg and release pipeline scripts'
+
+#Task group has not been exported, task groups are not supported yet
