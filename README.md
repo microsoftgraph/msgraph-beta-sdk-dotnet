@@ -10,7 +10,8 @@
 Integrate the [Microsoft Graph Beta API](https://graph.microsoft.io) into your .NET
 project!
 
-The Microsoft Graph Beta .NET Client Library targets .NetStandard 1.1 and .Net Framework 4.5.
+The Microsoft Graph Beta .NET Client Library 0.x targets .NetStandard 1.1 and .Net Framework 4.5.
+The Microsoft Graph Beta .NET Client Library 4.x targets .NetStandard 2.0 and .Net Framework 4.6.2.
 
 ## Installation via NuGet
 
