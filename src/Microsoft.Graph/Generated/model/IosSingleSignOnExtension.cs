@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosSingleSignOnExtension.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IosSingleSignOnExtension>))]
     public abstract partial class IosSingleSignOnExtension : SingleSignOnExtension
     {
 

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Compliance Local Action Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceComplianceLocalActionBase>))]
     public partial class AndroidDeviceComplianceLocalActionBase : Entity
     {
     

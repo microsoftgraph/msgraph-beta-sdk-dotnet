@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedApp>))]
     public partial class ManagedApp : MobileApp
     {
     

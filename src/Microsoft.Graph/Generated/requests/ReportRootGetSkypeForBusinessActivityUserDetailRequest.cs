@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="skypeforbusinessactivityuserdetail">The SkypeForBusinessActivityUserDetail object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessActivityUserDetailCollectionPage> PatchAsync(SkypeForBusinessActivityUserDetail skypeforbusinessactivityuserdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessActivityUserDetailCollectionPage> PatchAsync(SkypeForBusinessActivityUserDetail skypeforbusinessactivityuserdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="skypeforbusinessactivityuserdetail">The SkypeForBusinessActivityUserDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessActivityUserDetailCollectionPage> PutAsync(SkypeForBusinessActivityUserDetail skypeforbusinessactivityuserdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessActivityUserDetailCollectionPage> PutAsync(SkypeForBusinessActivityUserDetail skypeforbusinessactivityuserdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

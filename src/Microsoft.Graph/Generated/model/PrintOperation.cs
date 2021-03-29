@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Print Operation.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PrintOperation>))]
     public partial class PrintOperation : Entity
     {
     

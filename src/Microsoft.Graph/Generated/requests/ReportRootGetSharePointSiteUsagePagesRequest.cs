@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="sharepointsiteusagepages">The SharePointSiteUsagePages object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetSharePointSiteUsagePagesCollectionPage> PatchAsync(SharePointSiteUsagePages sharepointsiteusagepages, 
+        public async System.Threading.Tasks.Task<IReportRootGetSharePointSiteUsagePagesCollectionPage> PatchAsync(SharePointSiteUsagePages sharepointsiteusagepages,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="sharepointsiteusagepages">The SharePointSiteUsagePages object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetSharePointSiteUsagePagesCollectionPage> PutAsync(SharePointSiteUsagePages sharepointsiteusagepages, 
+        public async System.Threading.Tasks.Task<IReportRootGetSharePointSiteUsagePagesCollectionPage> PutAsync(SharePointSiteUsagePages sharepointsiteusagepages,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

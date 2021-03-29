@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="yammergroupsactivitycounts">The YammerGroupsActivityCounts object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityCountsCollectionPage> PatchAsync(YammerGroupsActivityCounts yammergroupsactivitycounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityCountsCollectionPage> PatchAsync(YammerGroupsActivityCounts yammergroupsactivitycounts,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="yammergroupsactivitycounts">The YammerGroupsActivityCounts object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityCountsCollectionPage> PutAsync(YammerGroupsActivityCounts yammergroupsactivitycounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityCountsCollectionPage> PutAsync(YammerGroupsActivityCounts yammergroupsactivitycounts,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Apple Expedited Checkin Configuration Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AppleExpeditedCheckinConfigurationBase>))]
     public partial class AppleExpeditedCheckinConfigurationBase : DeviceConfiguration
     {
     

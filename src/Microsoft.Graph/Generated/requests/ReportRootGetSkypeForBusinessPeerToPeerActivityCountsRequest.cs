@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="skypeforbusinesspeertopeeractivitycounts">The SkypeForBusinessPeerToPeerActivityCounts object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessPeerToPeerActivityCountsCollectionPage> PatchAsync(SkypeForBusinessPeerToPeerActivityCounts skypeforbusinesspeertopeeractivitycounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessPeerToPeerActivityCountsCollectionPage> PatchAsync(SkypeForBusinessPeerToPeerActivityCounts skypeforbusinesspeertopeeractivitycounts,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="skypeforbusinesspeertopeeractivitycounts">The SkypeForBusinessPeerToPeerActivityCounts object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessPeerToPeerActivityCountsCollectionPage> PutAsync(SkypeForBusinessPeerToPeerActivityCounts skypeforbusinesspeertopeeractivitycounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessPeerToPeerActivityCountsCollectionPage> PutAsync(SkypeForBusinessPeerToPeerActivityCounts skypeforbusinesspeertopeeractivitycounts,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

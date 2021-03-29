@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Certificate Profile Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10CertificateProfileBase>))]
     public partial class Windows10CertificateProfileBase : WindowsCertificateProfileBase
     {
     

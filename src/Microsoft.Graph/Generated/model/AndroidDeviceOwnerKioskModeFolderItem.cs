@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidDeviceOwnerKioskModeFolderItem.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerKioskModeFolderItem>))]
     public abstract partial class AndroidDeviceOwnerKioskModeFolderItem : AndroidDeviceOwnerKioskModeHomeScreenItem
     {
 

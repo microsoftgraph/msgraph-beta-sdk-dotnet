@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagementConditionExpressionModel.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagementConditionExpressionModel>))]
     public abstract partial class ManagementConditionExpressionModel : ManagementConditionExpression
     {
 

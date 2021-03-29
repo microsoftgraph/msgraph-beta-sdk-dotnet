@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 
 using Microsoft.Graph;
+using Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -171,5 +172,29 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
 
             Assert.Equal(expectedSerializedString, serializedString);
         }
+
+        [Fact]
+        public void SerializeDerivedTypeProperty()
+        {
+            // Arrange
+            NoncustodialDataSource ncds = new NoncustodialDataSource()
+            {
+                ApplyHoldToSource = true,
+                DataSource = new UserSource()
+                {
+                    Email = "jewell@ediscodemo.onmicrosoft.com"
+                }
+            };
+            // The email property should exist even though it the property of a derived type.
+            var expectedString = @"{""applyHoldToSource"":true,""dataSource"":{""email"":""jewell@ediscodemo.onmicrosoft.com"",""@odata.type"":""microsoft.graph.ediscovery.userSource""},""@odata.type"":""microsoft.graph.ediscovery.noncustodialDataSource""}";
+            
+            // Act
+            var serializedString = this.serializer.SerializeObject(ncds);
+
+            // Assert
+            Assert.Equal(expectedString,serializedString);
+
+        }
+
     }
 }

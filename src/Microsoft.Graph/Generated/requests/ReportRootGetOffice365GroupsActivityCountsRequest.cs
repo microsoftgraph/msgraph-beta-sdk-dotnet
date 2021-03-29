@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="office365groupsactivitycounts">The Office365GroupsActivityCounts object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetOffice365GroupsActivityCountsCollectionPage> PatchAsync(Office365GroupsActivityCounts office365groupsactivitycounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetOffice365GroupsActivityCountsCollectionPage> PatchAsync(Office365GroupsActivityCounts office365groupsactivitycounts,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="office365groupsactivitycounts">The Office365GroupsActivityCounts object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetOffice365GroupsActivityCountsCollectionPage> PutAsync(Office365GroupsActivityCounts office365groupsactivitycounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetOffice365GroupsActivityCountsCollectionPage> PutAsync(Office365GroupsActivityCounts office365groupsactivitycounts,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

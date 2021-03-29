@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Certificate Profile Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidCertificateProfileBase>))]
     public partial class AndroidCertificateProfileBase : DeviceConfiguration
     {
     

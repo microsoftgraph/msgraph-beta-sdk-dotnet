@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed App Registration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedAppRegistration>))]
     public partial class ManagedAppRegistration : Entity
     {
     

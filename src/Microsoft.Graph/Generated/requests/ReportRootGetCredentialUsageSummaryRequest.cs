@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="credentialusagesummary">The CredentialUsageSummary object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetCredentialUsageSummaryCollectionPage> PatchAsync(CredentialUsageSummary credentialusagesummary, 
+        public async System.Threading.Tasks.Task<IReportRootGetCredentialUsageSummaryCollectionPage> PatchAsync(CredentialUsageSummary credentialusagesummary,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="credentialusagesummary">The CredentialUsageSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetCredentialUsageSummaryCollectionPage> PutAsync(CredentialUsageSummary credentialusagesummary, 
+        public async System.Threading.Tasks.Task<IReportRootGetCredentialUsageSummaryCollectionPage> PutAsync(CredentialUsageSummary credentialusagesummary,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

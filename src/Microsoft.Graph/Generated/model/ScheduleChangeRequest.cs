@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Schedule Change Request.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ScheduleChangeRequestObject>))]
     public partial class ScheduleChangeRequestObject : ChangeTrackedEntity
     {
     

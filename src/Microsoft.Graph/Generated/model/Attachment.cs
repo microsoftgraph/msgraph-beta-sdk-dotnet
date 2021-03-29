@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Attachment.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Attachment>))]
     public partial class Attachment : Entity
     {
     

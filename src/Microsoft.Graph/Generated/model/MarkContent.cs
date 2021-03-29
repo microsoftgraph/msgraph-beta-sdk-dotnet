@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MarkContent.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MarkContent>))]
     public abstract partial class MarkContent : LabelActionBase
     {
 

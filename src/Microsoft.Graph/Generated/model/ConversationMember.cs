@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Conversation Member.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ConversationMember>))]
     public partial class ConversationMember : Entity
     {
     

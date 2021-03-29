@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="relyingpartydetailedsummary">The RelyingPartyDetailedSummary object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetRelyingPartyDetailedSummaryCollectionPage> PatchAsync(RelyingPartyDetailedSummary relyingpartydetailedsummary, 
+        public async System.Threading.Tasks.Task<IReportRootGetRelyingPartyDetailedSummaryCollectionPage> PatchAsync(RelyingPartyDetailedSummary relyingpartydetailedsummary,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="relyingpartydetailedsummary">The RelyingPartyDetailedSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetRelyingPartyDetailedSummaryCollectionPage> PutAsync(RelyingPartyDetailedSummary relyingpartydetailedsummary, 
+        public async System.Threading.Tasks.Task<IReportRootGetRelyingPartyDetailedSummaryCollectionPage> PutAsync(RelyingPartyDetailedSummary relyingpartydetailedsummary,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

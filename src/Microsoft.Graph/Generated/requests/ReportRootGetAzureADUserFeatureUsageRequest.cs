@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="azureaduserfeatureusage">The AzureADUserFeatureUsage object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetAzureADUserFeatureUsageCollectionPage> PatchAsync(AzureADUserFeatureUsage azureaduserfeatureusage, 
+        public async System.Threading.Tasks.Task<IReportRootGetAzureADUserFeatureUsageCollectionPage> PatchAsync(AzureADUserFeatureUsage azureaduserfeatureusage,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="azureaduserfeatureusage">The AzureADUserFeatureUsage object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetAzureADUserFeatureUsageCollectionPage> PutAsync(AzureADUserFeatureUsage azureaduserfeatureusage, 
+        public async System.Threading.Tasks.Task<IReportRootGetAzureADUserFeatureUsageCollectionPage> PutAsync(AzureADUserFeatureUsage azureaduserfeatureusage,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

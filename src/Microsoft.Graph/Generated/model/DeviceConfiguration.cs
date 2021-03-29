@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceConfiguration>))]
     public partial class DeviceConfiguration : Entity
     {
     

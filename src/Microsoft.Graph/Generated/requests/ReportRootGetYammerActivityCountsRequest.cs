@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="yammeractivitysummary">The YammerActivitySummary object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetYammerActivityCountsCollectionPage> PatchAsync(YammerActivitySummary yammeractivitysummary, 
+        public async System.Threading.Tasks.Task<IReportRootGetYammerActivityCountsCollectionPage> PatchAsync(YammerActivitySummary yammeractivitysummary,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="yammeractivitysummary">The YammerActivitySummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetYammerActivityCountsCollectionPage> PutAsync(YammerActivitySummary yammeractivitysummary, 
+        public async System.Threading.Tasks.Task<IReportRootGetYammerActivityCountsCollectionPage> PutAsync(YammerActivitySummary yammeractivitysummary,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

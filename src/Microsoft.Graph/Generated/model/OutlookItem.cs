@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Outlook Item.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OutlookItem>))]
     public partial class OutlookItem : Entity
     {
     

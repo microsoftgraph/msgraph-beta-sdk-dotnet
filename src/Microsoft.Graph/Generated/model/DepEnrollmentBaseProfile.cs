@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Dep Enrollment Base Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DepEnrollmentBaseProfile>))]
     public partial class DepEnrollmentBaseProfile : EnrollmentProfile
     {
     

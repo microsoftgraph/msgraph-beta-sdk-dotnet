@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Extension.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Extension>))]
     public partial class Extension : Entity
     {
     

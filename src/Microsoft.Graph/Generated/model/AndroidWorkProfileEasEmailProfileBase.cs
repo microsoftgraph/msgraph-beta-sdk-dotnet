@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Work Profile Eas Email Profile Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidWorkProfileEasEmailProfileBase>))]
     public partial class AndroidWorkProfileEasEmailProfileBase : DeviceConfiguration
     {
     

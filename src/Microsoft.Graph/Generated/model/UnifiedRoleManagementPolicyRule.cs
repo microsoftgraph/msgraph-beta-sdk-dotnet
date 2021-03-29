@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unified Role Management Policy Rule.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UnifiedRoleManagementPolicyRule>))]
     public partial class UnifiedRoleManagementPolicyRule : Entity
     {
     

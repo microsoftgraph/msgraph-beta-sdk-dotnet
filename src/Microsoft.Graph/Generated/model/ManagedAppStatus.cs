@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed App Status.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedAppStatus>))]
     public partial class ManagedAppStatus : Entity
     {
     

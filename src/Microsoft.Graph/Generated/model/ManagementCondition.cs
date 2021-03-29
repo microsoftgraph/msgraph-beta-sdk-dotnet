@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Management Condition.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagementCondition>))]
     public partial class ManagementCondition : Entity
     {
     

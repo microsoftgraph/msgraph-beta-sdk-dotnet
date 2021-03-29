@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Activity Statistics.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ActivityStatistics>))]
     public partial class ActivityStatistics : Entity
     {
     

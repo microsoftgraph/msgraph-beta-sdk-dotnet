@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Base Item Version.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<BaseItemVersion>))]
     public partial class BaseItemVersion : Entity
     {
     
