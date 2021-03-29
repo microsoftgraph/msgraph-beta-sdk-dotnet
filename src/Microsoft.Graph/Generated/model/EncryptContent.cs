@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EncryptContent.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EncryptContent>))]
     public abstract partial class EncryptContent : LabelActionBase
     {
 

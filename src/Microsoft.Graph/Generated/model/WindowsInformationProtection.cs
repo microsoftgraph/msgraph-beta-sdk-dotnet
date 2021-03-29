@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Information Protection.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsInformationProtection>))]
     public partial class WindowsInformationProtection : ManagedAppPolicy
     {
     

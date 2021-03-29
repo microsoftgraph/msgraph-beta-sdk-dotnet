@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Exact Match Job Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ExactMatchJobBase>))]
     public partial class ExactMatchJobBase : Entity
     {
     

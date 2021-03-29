@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Place.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Place>))]
     public partial class Place : Entity
     {
     

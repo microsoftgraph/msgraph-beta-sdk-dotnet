@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="sharepointactivityuserdetail">The SharePointActivityUserDetail object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetSharePointActivityUserDetailCollectionPage> PatchAsync(SharePointActivityUserDetail sharepointactivityuserdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetSharePointActivityUserDetailCollectionPage> PatchAsync(SharePointActivityUserDetail sharepointactivityuserdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="sharepointactivityuserdetail">The SharePointActivityUserDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetSharePointActivityUserDetailCollectionPage> PutAsync(SharePointActivityUserDetail sharepointactivityuserdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetSharePointActivityUserDetailCollectionPage> PutAsync(SharePointActivityUserDetail sharepointactivityuserdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

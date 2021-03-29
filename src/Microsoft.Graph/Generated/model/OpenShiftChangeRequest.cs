@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Open Shift Change Request.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OpenShiftChangeRequestObject>))]
     public partial class OpenShiftChangeRequestObject : ScheduleChangeRequestObject
     {
     

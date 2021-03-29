@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Vpn Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<VpnConfiguration>))]
     public partial class VpnConfiguration : DeviceConfiguration
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Printer Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PrinterBase>))]
     public partial class PrinterBase : Entity
     {
     

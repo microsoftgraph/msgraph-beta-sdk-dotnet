@@ -17,6 +17,7 @@ namespace Microsoft.Graph.Ediscovery
     /// <summary>
     /// The type Data Source.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<DataSource>))]
     public partial class DataSource : Microsoft.Graph.Entity
     {
     

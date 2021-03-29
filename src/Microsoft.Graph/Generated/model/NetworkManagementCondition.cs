@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Network Management Condition.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<NetworkManagementCondition>))]
     public partial class NetworkManagementCondition : ManagementCondition
     {
     

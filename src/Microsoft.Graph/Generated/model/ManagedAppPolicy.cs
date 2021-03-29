@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed App Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedAppPolicy>))]
     public partial class ManagedAppPolicy : Entity
     {
     

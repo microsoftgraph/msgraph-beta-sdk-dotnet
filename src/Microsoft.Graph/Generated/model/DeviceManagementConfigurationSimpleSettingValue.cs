@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementConfigurationSimpleSettingValue.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationSimpleSettingValue>))]
     public abstract partial class DeviceManagementConfigurationSimpleSettingValue : DeviceManagementConfigurationSettingValue
     {
 

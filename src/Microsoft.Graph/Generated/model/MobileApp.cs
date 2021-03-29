@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MobileApp>))]
     public partial class MobileApp : Entity
     {
     

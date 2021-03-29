@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile Lob App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MobileLobApp>))]
     public partial class MobileLobApp : MobileApp
     {
     

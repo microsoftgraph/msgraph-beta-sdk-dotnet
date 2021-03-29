@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type KerberosSingleSignOnExtension.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<KerberosSingleSignOnExtension>))]
     public abstract partial class KerberosSingleSignOnExtension : SingleSignOnExtension
     {
 

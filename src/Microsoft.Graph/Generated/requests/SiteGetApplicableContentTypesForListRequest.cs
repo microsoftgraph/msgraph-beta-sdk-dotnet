@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="contenttype">The ContentType object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<ISiteGetApplicableContentTypesForListCollectionPage> PatchAsync(ContentType contenttype, 
+        public async System.Threading.Tasks.Task<ISiteGetApplicableContentTypesForListCollectionPage> PatchAsync(ContentType contenttype,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="contenttype">The ContentType object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<ISiteGetApplicableContentTypesForListCollectionPage> PutAsync(ContentType contenttype, 
+        public async System.Threading.Tasks.Task<ISiteGetApplicableContentTypesForListCollectionPage> PutAsync(ContentType contenttype,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

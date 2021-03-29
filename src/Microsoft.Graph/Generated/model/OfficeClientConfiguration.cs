@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Office Client Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OfficeClientConfiguration>))]
     public partial class OfficeClientConfiguration : Entity
     {
     

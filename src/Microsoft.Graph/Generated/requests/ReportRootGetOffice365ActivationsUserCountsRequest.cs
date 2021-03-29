@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="office365activationsusercounts">The Office365ActivationsUserCounts object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetOffice365ActivationsUserCountsCollectionPage> PatchAsync(Office365ActivationsUserCounts office365activationsusercounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetOffice365ActivationsUserCountsCollectionPage> PatchAsync(Office365ActivationsUserCounts office365activationsusercounts,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="office365activationsusercounts">The Office365ActivationsUserCounts object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetOffice365ActivationsUserCountsCollectionPage> PutAsync(Office365ActivationsUserCounts office365activationsusercounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetOffice365ActivationsUserCountsCollectionPage> PutAsync(Office365ActivationsUserCounts office365activationsusercounts,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="sharepointactivitypages">The SharePointActivityPages object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetSharePointActivityPagesCollectionPage> PatchAsync(SharePointActivityPages sharepointactivitypages, 
+        public async System.Threading.Tasks.Task<IReportRootGetSharePointActivityPagesCollectionPage> PatchAsync(SharePointActivityPages sharepointactivitypages,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="sharepointactivitypages">The SharePointActivityPages object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetSharePointActivityPagesCollectionPage> PutAsync(SharePointActivityPages sharepointactivitypages, 
+        public async System.Threading.Tasks.Task<IReportRootGetSharePointActivityPagesCollectionPage> PutAsync(SharePointActivityPages sharepointactivitypages,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

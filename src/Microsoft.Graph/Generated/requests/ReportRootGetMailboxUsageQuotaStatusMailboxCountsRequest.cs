@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="mailboxusagequotastatusmailboxcounts">The MailboxUsageQuotaStatusMailboxCounts object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetMailboxUsageQuotaStatusMailboxCountsCollectionPage> PatchAsync(MailboxUsageQuotaStatusMailboxCounts mailboxusagequotastatusmailboxcounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetMailboxUsageQuotaStatusMailboxCountsCollectionPage> PatchAsync(MailboxUsageQuotaStatusMailboxCounts mailboxusagequotastatusmailboxcounts,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="mailboxusagequotastatusmailboxcounts">The MailboxUsageQuotaStatusMailboxCounts object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetMailboxUsageQuotaStatusMailboxCountsCollectionPage> PutAsync(MailboxUsageQuotaStatusMailboxCounts mailboxusagequotastatusmailboxcounts, 
+        public async System.Threading.Tasks.Task<IReportRootGetMailboxUsageQuotaStatusMailboxCountsCollectionPage> PutAsync(MailboxUsageQuotaStatusMailboxCounts mailboxusagequotastatusmailboxcounts,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

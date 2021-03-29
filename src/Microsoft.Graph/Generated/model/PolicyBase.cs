@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Policy Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PolicyBase>))]
     public partial class PolicyBase : DirectoryObject
     {
     

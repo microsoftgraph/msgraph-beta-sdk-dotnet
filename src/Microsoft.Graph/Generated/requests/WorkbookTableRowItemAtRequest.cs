@@ -61,7 +61,7 @@ namespace Microsoft.Graph
         /// <param name="workbooktablerow">The WorkbookTableRow object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<WorkbookTableRow> PatchAsync(WorkbookTableRow workbooktablerow, 
+        public System.Threading.Tasks.Task<WorkbookTableRow> PatchAsync(WorkbookTableRow workbooktablerow,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -86,7 +86,7 @@ namespace Microsoft.Graph
         /// <param name="workbooktablerow">The WorkbookTableRow object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<WorkbookTableRow> PutAsync(WorkbookTableRow workbooktablerow, 
+        public System.Threading.Tasks.Task<WorkbookTableRow> PutAsync(WorkbookTableRow workbooktablerow,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

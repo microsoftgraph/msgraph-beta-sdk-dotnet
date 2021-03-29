@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Resource Access Profile Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementResourceAccessProfileBase>))]
     public partial class DeviceManagementResourceAccessProfileBase : Entity
     {
     

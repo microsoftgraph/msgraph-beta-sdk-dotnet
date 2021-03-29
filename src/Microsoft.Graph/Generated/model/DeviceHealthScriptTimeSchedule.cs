@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceHealthScriptTimeSchedule.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceHealthScriptTimeSchedule>))]
     public abstract partial class DeviceHealthScriptTimeSchedule : DeviceHealthScriptRunSchedule
     {
 

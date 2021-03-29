@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Onenote Entity Base Model.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OnenoteEntityBaseModel>))]
     public partial class OnenoteEntityBaseModel : Entity
     {
     

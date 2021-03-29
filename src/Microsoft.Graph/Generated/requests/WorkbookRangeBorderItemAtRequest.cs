@@ -61,7 +61,7 @@ namespace Microsoft.Graph
         /// <param name="workbookrangeborder">The WorkbookRangeBorder object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeBorder> PatchAsync(WorkbookRangeBorder workbookrangeborder, 
+        public System.Threading.Tasks.Task<WorkbookRangeBorder> PatchAsync(WorkbookRangeBorder workbookrangeborder,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -86,7 +86,7 @@ namespace Microsoft.Graph
         /// <param name="workbookrangeborder">The WorkbookRangeBorder object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeBorder> PutAsync(WorkbookRangeBorder workbookrangeborder, 
+        public System.Threading.Tasks.Task<WorkbookRangeBorder> PutAsync(WorkbookRangeBorder workbookrangeborder,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

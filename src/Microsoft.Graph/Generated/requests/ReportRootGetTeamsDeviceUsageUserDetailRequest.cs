@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="teamsdeviceusageuserdetail">The TeamsDeviceUsageUserDetail object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetTeamsDeviceUsageUserDetailCollectionPage> PatchAsync(TeamsDeviceUsageUserDetail teamsdeviceusageuserdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetTeamsDeviceUsageUserDetailCollectionPage> PatchAsync(TeamsDeviceUsageUserDetail teamsdeviceusageuserdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="teamsdeviceusageuserdetail">The TeamsDeviceUsageUserDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetTeamsDeviceUsageUserDetailCollectionPage> PutAsync(TeamsDeviceUsageUserDetail teamsdeviceusageuserdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetTeamsDeviceUsageUserDetailCollectionPage> PutAsync(TeamsDeviceUsageUserDetail teamsdeviceusageuserdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

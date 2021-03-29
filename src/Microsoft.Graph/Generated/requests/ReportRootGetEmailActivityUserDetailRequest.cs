@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="emailactivityuserdetail">The EmailActivityUserDetail object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetEmailActivityUserDetailCollectionPage> PatchAsync(EmailActivityUserDetail emailactivityuserdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetEmailActivityUserDetailCollectionPage> PatchAsync(EmailActivityUserDetail emailactivityuserdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="emailactivityuserdetail">The EmailActivityUserDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetEmailActivityUserDetailCollectionPage> PutAsync(EmailActivityUserDetail emailactivityuserdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetEmailActivityUserDetailCollectionPage> PutAsync(EmailActivityUserDetail emailactivityuserdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

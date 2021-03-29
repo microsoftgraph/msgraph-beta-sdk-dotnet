@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Certificate Profile Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsCertificateProfileBase>))]
     public partial class WindowsCertificateProfileBase : DeviceConfiguration
     {
     

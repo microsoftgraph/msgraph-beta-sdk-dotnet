@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Location Management Condition.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<LocationManagementCondition>))]
     public partial class LocationManagementCondition : ManagementCondition
     {
     

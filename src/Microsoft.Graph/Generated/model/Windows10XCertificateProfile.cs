@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10XCertificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10XCertificateProfile>))]
     public partial class Windows10XCertificateProfile : DeviceManagementResourceAccessProfileBase
     {
     

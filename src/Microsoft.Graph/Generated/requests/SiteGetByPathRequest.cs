@@ -61,7 +61,7 @@ namespace Microsoft.Graph
         /// <param name="site">The Site object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<Site> PatchAsync(Site site, 
+        public System.Threading.Tasks.Task<Site> PatchAsync(Site site,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -86,7 +86,7 @@ namespace Microsoft.Graph
         /// <param name="site">The Site object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<Site> PutAsync(Site site, 
+        public System.Threading.Tasks.Task<Site> PutAsync(Site site,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

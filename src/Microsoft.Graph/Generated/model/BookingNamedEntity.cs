@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Booking Named Entity.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<BookingNamedEntity>))]
     public partial class BookingNamedEntity : Entity
     {
     

@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="yammerdeviceusageuserdetail">The YammerDeviceUsageUserDetail object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetYammerDeviceUsageUserDetailCollectionPage> PatchAsync(YammerDeviceUsageUserDetail yammerdeviceusageuserdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetYammerDeviceUsageUserDetailCollectionPage> PatchAsync(YammerDeviceUsageUserDetail yammerdeviceusageuserdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="yammerdeviceusageuserdetail">The YammerDeviceUsageUserDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetYammerDeviceUsageUserDetailCollectionPage> PutAsync(YammerDeviceUsageUserDetail yammerdeviceusageuserdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetYammerDeviceUsageUserDetailCollectionPage> PutAsync(YammerDeviceUsageUserDetail yammerdeviceusageuserdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;

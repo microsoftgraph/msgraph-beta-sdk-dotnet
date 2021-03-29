@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSCertificate Profile Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSCertificateProfileBase>))]
     public partial class MacOSCertificateProfileBase : DeviceConfiguration
     {
     

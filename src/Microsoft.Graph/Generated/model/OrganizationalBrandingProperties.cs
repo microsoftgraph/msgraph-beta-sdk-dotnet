@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Organizational Branding Properties.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OrganizationalBrandingProperties>))]
     public partial class OrganizationalBrandingProperties : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph.Ediscovery
     /// <summary>
     /// The type Data Source Container.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<DataSourceContainer>))]
     public partial class DataSourceContainer : Microsoft.Graph.Entity
     {
     

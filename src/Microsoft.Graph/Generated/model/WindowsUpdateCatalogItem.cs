@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Update Catalog Item.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsUpdateCatalogItem>))]
     public partial class WindowsUpdateCatalogItem : Entity
     {
     

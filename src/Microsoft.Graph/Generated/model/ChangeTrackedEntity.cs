@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Change Tracked Entity.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ChangeTrackedEntity>))]
     public partial class ChangeTrackedEntity : Entity
     {
     

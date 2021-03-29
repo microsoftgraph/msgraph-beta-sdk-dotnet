@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Facet.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ItemFacet>))]
     public partial class ItemFacet : Entity
     {
     

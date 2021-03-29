@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sts Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<StsPolicy>))]
     public partial class StsPolicy : PolicyBase
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Print Usage.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PrintUsage>))]
     public partial class PrintUsage : Entity
     {
     

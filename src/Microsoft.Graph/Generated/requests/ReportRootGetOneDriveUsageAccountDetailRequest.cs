@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <param name="onedriveusageaccountdetail">The OneDriveUsageAccountDetail object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetOneDriveUsageAccountDetailCollectionPage> PatchAsync(OneDriveUsageAccountDetail onedriveusageaccountdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetOneDriveUsageAccountDetailCollectionPage> PatchAsync(OneDriveUsageAccountDetail onedriveusageaccountdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="onedriveusageaccountdetail">The OneDriveUsageAccountDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetOneDriveUsageAccountDetailCollectionPage> PutAsync(OneDriveUsageAccountDetail onedriveusageaccountdetail, 
+        public async System.Threading.Tasks.Task<IReportRootGetOneDriveUsageAccountDetailCollectionPage> PutAsync(OneDriveUsageAccountDetail onedriveusageaccountdetail,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.PUT;
