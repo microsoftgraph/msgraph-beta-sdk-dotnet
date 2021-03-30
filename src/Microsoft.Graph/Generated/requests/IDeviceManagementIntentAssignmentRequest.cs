@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> UpdateResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementIntentAssignment using PUT.
+        /// </summary>
+        /// <param name="deviceManagementIntentAssignmentToUpdate">The DeviceManagementIntentAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementIntentAssignment> PutAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntentAssignment using PUT and returns a <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentAssignmentToUpdate">The DeviceManagementIntentAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> PutResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

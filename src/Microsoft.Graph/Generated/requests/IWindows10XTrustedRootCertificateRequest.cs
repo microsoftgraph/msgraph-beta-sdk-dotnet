@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> UpdateResponseAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Windows10XTrustedRootCertificate using PUT.
+        /// </summary>
+        /// <param name="windows10XTrustedRootCertificateToUpdate">The Windows10XTrustedRootCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> PutAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Windows10XTrustedRootCertificate using PUT and returns a <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="windows10XTrustedRootCertificateToUpdate">The Windows10XTrustedRootCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> PutResponseAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

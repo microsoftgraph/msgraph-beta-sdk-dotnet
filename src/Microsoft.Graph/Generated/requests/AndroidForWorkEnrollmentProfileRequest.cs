@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified AndroidForWorkEnrollmentProfile using PUT.
+        /// </summary>
+        /// <param name="androidForWorkEnrollmentProfileToUpdate">The AndroidForWorkEnrollmentProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidForWorkEnrollmentProfile> PutAsync(AndroidForWorkEnrollmentProfile androidForWorkEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidForWorkEnrollmentProfile>(androidForWorkEnrollmentProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkEnrollmentProfile using PUT and returns a <see cref="GraphResponse{AndroidForWorkEnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkEnrollmentProfileToUpdate">The AndroidForWorkEnrollmentProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidForWorkEnrollmentProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkEnrollmentProfile>> PutResponseAsync(AndroidForWorkEnrollmentProfile androidForWorkEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkEnrollmentProfile>(androidForWorkEnrollmentProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

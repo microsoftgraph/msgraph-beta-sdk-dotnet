@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Domain>> UpdateResponseAsync(Domain domainToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Domain using PUT.
+        /// </summary>
+        /// <param name="domainToUpdate">The Domain object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Domain> PutAsync(Domain domainToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Domain using PUT and returns a <see cref="GraphResponse{Domain}"/> object.
+        /// </summary>
+        /// <param name="domainToUpdate">The Domain object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Domain}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Domain>> PutResponseAsync(Domain domainToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified SalesOrderLine using PUT.
+        /// </summary>
+        /// <param name="salesOrderLineToUpdate">The SalesOrderLine object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SalesOrderLine> PutAsync(SalesOrderLine salesOrderLineToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SalesOrderLine>(salesOrderLineToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SalesOrderLine using PUT and returns a <see cref="GraphResponse{SalesOrderLine}"/> object.
+        /// </summary>
+        /// <param name="salesOrderLineToUpdate">The SalesOrderLine object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SalesOrderLine}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesOrderLine>> PutResponseAsync(SalesOrderLine salesOrderLineToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SalesOrderLine>(salesOrderLineToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

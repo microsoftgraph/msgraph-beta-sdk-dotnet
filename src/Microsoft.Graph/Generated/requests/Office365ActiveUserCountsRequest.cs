@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Office365ActiveUserCounts using PUT.
+        /// </summary>
+        /// <param name="office365ActiveUserCountsToUpdate">The Office365ActiveUserCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Office365ActiveUserCounts> PutAsync(Office365ActiveUserCounts office365ActiveUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Office365ActiveUserCounts>(office365ActiveUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Office365ActiveUserCounts using PUT and returns a <see cref="GraphResponse{Office365ActiveUserCounts}"/> object.
+        /// </summary>
+        /// <param name="office365ActiveUserCountsToUpdate">The Office365ActiveUserCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Office365ActiveUserCounts}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Office365ActiveUserCounts>> PutResponseAsync(Office365ActiveUserCounts office365ActiveUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Office365ActiveUserCounts>(office365ActiveUserCountsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

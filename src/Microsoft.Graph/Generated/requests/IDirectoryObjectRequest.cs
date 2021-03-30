@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DirectoryObject>> UpdateResponseAsync(DirectoryObject directoryObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DirectoryObject using PUT.
+        /// </summary>
+        /// <param name="directoryObjectToUpdate">The DirectoryObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DirectoryObject> PutAsync(DirectoryObject directoryObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DirectoryObject using PUT and returns a <see cref="GraphResponse{DirectoryObject}"/> object.
+        /// </summary>
+        /// <param name="directoryObjectToUpdate">The DirectoryObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DirectoryObject}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryObject>> PutResponseAsync(DirectoryObject directoryObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcess>> UpdateResponseAsync(UserExperienceAnalyticsDeviceStartupProcess userExperienceAnalyticsDeviceStartupProcessToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified UserExperienceAnalyticsDeviceStartupProcess using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsDeviceStartupProcessToUpdate">The UserExperienceAnalyticsDeviceStartupProcess object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcess> PutAsync(UserExperienceAnalyticsDeviceStartupProcess userExperienceAnalyticsDeviceStartupProcessToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsDeviceStartupProcess using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcess}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsDeviceStartupProcessToUpdate">The UserExperienceAnalyticsDeviceStartupProcess object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcess}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcess>> PutResponseAsync(UserExperienceAnalyticsDeviceStartupProcess userExperienceAnalyticsDeviceStartupProcessToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

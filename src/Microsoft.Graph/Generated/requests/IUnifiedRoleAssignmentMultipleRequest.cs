@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> UpdateResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified UnifiedRoleAssignmentMultiple using PUT.
+        /// </summary>
+        /// <param name="unifiedRoleAssignmentMultipleToUpdate">The UnifiedRoleAssignmentMultiple object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> PutAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleAssignmentMultiple using PUT and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleAssignmentMultipleToUpdate">The UnifiedRoleAssignmentMultiple object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> PutResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

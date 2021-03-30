@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> UpdateResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified EnrollmentConfigurationAssignment using PUT.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignmentToUpdate">The EnrollmentConfigurationAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> PutAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EnrollmentConfigurationAssignment using PUT and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignmentToUpdate">The EnrollmentConfigurationAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> PutResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary using PUT.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary> PutAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary using PUT and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>> PutResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

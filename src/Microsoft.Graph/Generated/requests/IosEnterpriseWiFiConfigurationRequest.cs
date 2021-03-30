@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified IosEnterpriseWiFiConfiguration using PUT.
+        /// </summary>
+        /// <param name="iosEnterpriseWiFiConfigurationToUpdate">The IosEnterpriseWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosEnterpriseWiFiConfiguration> PutAsync(IosEnterpriseWiFiConfiguration iosEnterpriseWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosEnterpriseWiFiConfiguration>(iosEnterpriseWiFiConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosEnterpriseWiFiConfiguration using PUT and returns a <see cref="GraphResponse{IosEnterpriseWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosEnterpriseWiFiConfigurationToUpdate">The IosEnterpriseWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosEnterpriseWiFiConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosEnterpriseWiFiConfiguration>> PutResponseAsync(IosEnterpriseWiFiConfiguration iosEnterpriseWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosEnterpriseWiFiConfiguration>(iosEnterpriseWiFiConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

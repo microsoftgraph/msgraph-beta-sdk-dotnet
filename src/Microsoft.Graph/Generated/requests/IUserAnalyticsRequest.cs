@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> UpdateResponseAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified UserAnalytics using PUT.
+        /// </summary>
+        /// <param name="userAnalyticsToUpdate">The UserAnalytics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UserAnalytics> PutAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UserAnalytics using PUT and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
+        /// </summary>
+        /// <param name="userAnalyticsToUpdate">The UserAnalytics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UserAnalytics}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> PutResponseAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerGeneralDeviceConfiguration>> UpdateResponseAsync(AndroidDeviceOwnerGeneralDeviceConfiguration androidDeviceOwnerGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AndroidDeviceOwnerGeneralDeviceConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidDeviceOwnerGeneralDeviceConfigurationToUpdate">The AndroidDeviceOwnerGeneralDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidDeviceOwnerGeneralDeviceConfiguration> PutAsync(AndroidDeviceOwnerGeneralDeviceConfiguration androidDeviceOwnerGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerGeneralDeviceConfiguration using PUT and returns a <see cref="GraphResponse{AndroidDeviceOwnerGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerGeneralDeviceConfigurationToUpdate">The AndroidDeviceOwnerGeneralDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidDeviceOwnerGeneralDeviceConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerGeneralDeviceConfiguration>> PutResponseAsync(AndroidDeviceOwnerGeneralDeviceConfiguration androidDeviceOwnerGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

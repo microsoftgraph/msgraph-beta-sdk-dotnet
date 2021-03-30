@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<EmailActivitySummary>> UpdateResponseAsync(EmailActivitySummary emailActivitySummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified EmailActivitySummary using PUT.
+        /// </summary>
+        /// <param name="emailActivitySummaryToUpdate">The EmailActivitySummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EmailActivitySummary> PutAsync(EmailActivitySummary emailActivitySummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EmailActivitySummary using PUT and returns a <see cref="GraphResponse{EmailActivitySummary}"/> object.
+        /// </summary>
+        /// <param name="emailActivitySummaryToUpdate">The EmailActivitySummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EmailActivitySummary}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailActivitySummary>> PutResponseAsync(EmailActivitySummary emailActivitySummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

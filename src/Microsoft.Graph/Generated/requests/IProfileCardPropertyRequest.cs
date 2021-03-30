@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ProfileCardProperty>> UpdateResponseAsync(ProfileCardProperty profileCardPropertyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ProfileCardProperty using PUT.
+        /// </summary>
+        /// <param name="profileCardPropertyToUpdate">The ProfileCardProperty object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ProfileCardProperty> PutAsync(ProfileCardProperty profileCardPropertyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ProfileCardProperty using PUT and returns a <see cref="GraphResponse{ProfileCardProperty}"/> object.
+        /// </summary>
+        /// <param name="profileCardPropertyToUpdate">The ProfileCardProperty object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ProfileCardProperty}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfileCardProperty>> PutResponseAsync(ProfileCardProperty profileCardPropertyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

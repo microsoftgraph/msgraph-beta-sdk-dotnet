@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified IosCustomConfiguration using PUT.
+        /// </summary>
+        /// <param name="iosCustomConfigurationToUpdate">The IosCustomConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosCustomConfiguration> PutAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosCustomConfiguration>(iosCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosCustomConfiguration using PUT and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosCustomConfigurationToUpdate">The IosCustomConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosCustomConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> PutResponseAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosCustomConfiguration>(iosCustomConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

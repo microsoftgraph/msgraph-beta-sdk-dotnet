@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptPolicySetItem>> UpdateResponseAsync(DeviceManagementScriptPolicySetItem deviceManagementScriptPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementScriptPolicySetItem using PUT.
+        /// </summary>
+        /// <param name="deviceManagementScriptPolicySetItemToUpdate">The DeviceManagementScriptPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementScriptPolicySetItem> PutAsync(DeviceManagementScriptPolicySetItem deviceManagementScriptPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementScriptPolicySetItem using PUT and returns a <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptPolicySetItemToUpdate">The DeviceManagementScriptPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptPolicySetItem>> PutResponseAsync(DeviceManagementScriptPolicySetItem deviceManagementScriptPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

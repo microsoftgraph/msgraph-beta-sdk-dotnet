@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified AuthenticationFlowsPolicy using PUT.
+        /// </summary>
+        /// <param name="authenticationFlowsPolicyToUpdate">The AuthenticationFlowsPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AuthenticationFlowsPolicy> PutAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AuthenticationFlowsPolicy>(authenticationFlowsPolicyToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AuthenticationFlowsPolicy using PUT and returns a <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object.
+        /// </summary>
+        /// <param name="authenticationFlowsPolicyToUpdate">The AuthenticationFlowsPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AuthenticationFlowsPolicy}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> PutResponseAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AuthenticationFlowsPolicy>(authenticationFlowsPolicyToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> UpdateResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ManagedAllDeviceCertificateState using PUT.
+        /// </summary>
+        /// <param name="managedAllDeviceCertificateStateToUpdate">The ManagedAllDeviceCertificateState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> PutAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ManagedAllDeviceCertificateState using PUT and returns a <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object.
+        /// </summary>
+        /// <param name="managedAllDeviceCertificateStateToUpdate">The ManagedAllDeviceCertificateState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> PutResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

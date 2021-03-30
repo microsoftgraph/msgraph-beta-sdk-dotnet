@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<IosManagedAppRegistration>> UpdateResponseAsync(IosManagedAppRegistration iosManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified IosManagedAppRegistration using PUT.
+        /// </summary>
+        /// <param name="iosManagedAppRegistrationToUpdate">The IosManagedAppRegistration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IosManagedAppRegistration> PutAsync(IosManagedAppRegistration iosManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified IosManagedAppRegistration using PUT and returns a <see cref="GraphResponse{IosManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="iosManagedAppRegistrationToUpdate">The IosManagedAppRegistration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IosManagedAppRegistration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosManagedAppRegistration>> PutResponseAsync(IosManagedAppRegistration iosManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

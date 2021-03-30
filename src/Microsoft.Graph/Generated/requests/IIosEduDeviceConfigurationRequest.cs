@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<IosEduDeviceConfiguration>> UpdateResponseAsync(IosEduDeviceConfiguration iosEduDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified IosEduDeviceConfiguration using PUT.
+        /// </summary>
+        /// <param name="iosEduDeviceConfigurationToUpdate">The IosEduDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IosEduDeviceConfiguration> PutAsync(IosEduDeviceConfiguration iosEduDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified IosEduDeviceConfiguration using PUT and returns a <see cref="GraphResponse{IosEduDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosEduDeviceConfigurationToUpdate">The IosEduDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IosEduDeviceConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosEduDeviceConfiguration>> PutResponseAsync(IosEduDeviceConfiguration iosEduDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

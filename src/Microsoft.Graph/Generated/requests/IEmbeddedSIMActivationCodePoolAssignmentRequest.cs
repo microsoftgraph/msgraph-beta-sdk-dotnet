@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignment>> UpdateResponseAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified EmbeddedSIMActivationCodePoolAssignment using PUT.
+        /// </summary>
+        /// <param name="embeddedSIMActivationCodePoolAssignmentToUpdate">The EmbeddedSIMActivationCodePoolAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EmbeddedSIMActivationCodePoolAssignment> PutAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EmbeddedSIMActivationCodePoolAssignment using PUT and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignment}"/> object.
+        /// </summary>
+        /// <param name="embeddedSIMActivationCodePoolAssignmentToUpdate">The EmbeddedSIMActivationCodePoolAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignment>> PutResponseAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

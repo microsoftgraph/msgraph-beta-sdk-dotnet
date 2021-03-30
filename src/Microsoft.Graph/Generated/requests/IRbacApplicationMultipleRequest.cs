@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> UpdateResponseAsync(RbacApplicationMultiple rbacApplicationMultipleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified RbacApplicationMultiple using PUT.
+        /// </summary>
+        /// <param name="rbacApplicationMultipleToUpdate">The RbacApplicationMultiple object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<RbacApplicationMultiple> PutAsync(RbacApplicationMultiple rbacApplicationMultipleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified RbacApplicationMultiple using PUT and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
+        /// </summary>
+        /// <param name="rbacApplicationMultipleToUpdate">The RbacApplicationMultiple object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{RbacApplicationMultiple}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> PutResponseAsync(RbacApplicationMultiple rbacApplicationMultipleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessPeerToPeerActivityUserCounts>> UpdateResponseAsync(SkypeForBusinessPeerToPeerActivityUserCounts skypeForBusinessPeerToPeerActivityUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SkypeForBusinessPeerToPeerActivityUserCounts using PUT.
+        /// </summary>
+        /// <param name="skypeForBusinessPeerToPeerActivityUserCountsToUpdate">The SkypeForBusinessPeerToPeerActivityUserCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SkypeForBusinessPeerToPeerActivityUserCounts> PutAsync(SkypeForBusinessPeerToPeerActivityUserCounts skypeForBusinessPeerToPeerActivityUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessPeerToPeerActivityUserCounts using PUT and returns a <see cref="GraphResponse{SkypeForBusinessPeerToPeerActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessPeerToPeerActivityUserCountsToUpdate">The SkypeForBusinessPeerToPeerActivityUserCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SkypeForBusinessPeerToPeerActivityUserCounts}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessPeerToPeerActivityUserCounts>> PutResponseAsync(SkypeForBusinessPeerToPeerActivityUserCounts skypeForBusinessPeerToPeerActivityUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

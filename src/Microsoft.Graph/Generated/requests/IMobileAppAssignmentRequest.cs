@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> UpdateResponseAsync(MobileAppAssignment mobileAppAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MobileAppAssignment using PUT.
+        /// </summary>
+        /// <param name="mobileAppAssignmentToUpdate">The MobileAppAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MobileAppAssignment> PutAsync(MobileAppAssignment mobileAppAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MobileAppAssignment using PUT and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppAssignmentToUpdate">The MobileAppAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MobileAppAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> PutResponseAsync(MobileAppAssignment mobileAppAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

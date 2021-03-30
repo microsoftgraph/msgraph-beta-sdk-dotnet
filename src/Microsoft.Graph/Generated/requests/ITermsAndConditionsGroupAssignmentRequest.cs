@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsGroupAssignment>> UpdateResponseAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified TermsAndConditionsGroupAssignment using PUT.
+        /// </summary>
+        /// <param name="termsAndConditionsGroupAssignmentToUpdate">The TermsAndConditionsGroupAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TermsAndConditionsGroupAssignment> PutAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TermsAndConditionsGroupAssignment using PUT and returns a <see cref="GraphResponse{TermsAndConditionsGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsGroupAssignmentToUpdate">The TermsAndConditionsGroupAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TermsAndConditionsGroupAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsGroupAssignment>> PutResponseAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

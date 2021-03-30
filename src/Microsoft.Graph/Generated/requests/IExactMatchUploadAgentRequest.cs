@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ExactMatchUploadAgent>> UpdateResponseAsync(ExactMatchUploadAgent exactMatchUploadAgentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ExactMatchUploadAgent using PUT.
+        /// </summary>
+        /// <param name="exactMatchUploadAgentToUpdate">The ExactMatchUploadAgent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ExactMatchUploadAgent> PutAsync(ExactMatchUploadAgent exactMatchUploadAgentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ExactMatchUploadAgent using PUT and returns a <see cref="GraphResponse{ExactMatchUploadAgent}"/> object.
+        /// </summary>
+        /// <param name="exactMatchUploadAgentToUpdate">The ExactMatchUploadAgent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ExactMatchUploadAgent}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchUploadAgent>> PutResponseAsync(ExactMatchUploadAgent exactMatchUploadAgentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

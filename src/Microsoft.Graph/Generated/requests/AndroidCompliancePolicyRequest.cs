@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified AndroidCompliancePolicy using PUT.
+        /// </summary>
+        /// <param name="androidCompliancePolicyToUpdate">The AndroidCompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidCompliancePolicy> PutAsync(AndroidCompliancePolicy androidCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidCompliancePolicy>(androidCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidCompliancePolicy using PUT and returns a <see cref="GraphResponse{AndroidCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidCompliancePolicyToUpdate">The AndroidCompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidCompliancePolicy}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidCompliancePolicy>> PutResponseAsync(AndroidCompliancePolicy androidCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidCompliancePolicy>(androidCompliancePolicyToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

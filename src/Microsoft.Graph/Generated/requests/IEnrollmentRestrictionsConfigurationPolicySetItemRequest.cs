@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<EnrollmentRestrictionsConfigurationPolicySetItem>> UpdateResponseAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified EnrollmentRestrictionsConfigurationPolicySetItem using PUT.
+        /// </summary>
+        /// <param name="enrollmentRestrictionsConfigurationPolicySetItemToUpdate">The EnrollmentRestrictionsConfigurationPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EnrollmentRestrictionsConfigurationPolicySetItem> PutAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EnrollmentRestrictionsConfigurationPolicySetItem using PUT and returns a <see cref="GraphResponse{EnrollmentRestrictionsConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="enrollmentRestrictionsConfigurationPolicySetItemToUpdate">The EnrollmentRestrictionsConfigurationPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EnrollmentRestrictionsConfigurationPolicySetItem}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentRestrictionsConfigurationPolicySetItem>> PutResponseAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

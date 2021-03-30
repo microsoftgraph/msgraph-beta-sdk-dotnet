@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> UpdateResponseAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified BookingBusiness using PUT.
+        /// </summary>
+        /// <param name="bookingBusinessToUpdate">The BookingBusiness object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<BookingBusiness> PutAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified BookingBusiness using PUT and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
+        /// </summary>
+        /// <param name="bookingBusinessToUpdate">The BookingBusiness object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{BookingBusiness}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> PutResponseAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

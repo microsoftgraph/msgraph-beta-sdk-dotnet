@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> UpdateResponseAsync(DeviceInstallState deviceInstallStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceInstallState using PUT.
+        /// </summary>
+        /// <param name="deviceInstallStateToUpdate">The DeviceInstallState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceInstallState> PutAsync(DeviceInstallState deviceInstallStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceInstallState using PUT and returns a <see cref="GraphResponse{DeviceInstallState}"/> object.
+        /// </summary>
+        /// <param name="deviceInstallStateToUpdate">The DeviceInstallState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceInstallState}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> PutResponseAsync(DeviceInstallState deviceInstallStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

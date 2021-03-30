@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> UpdateResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AndroidManagedAppProtection using PUT.
+        /// </summary>
+        /// <param name="androidManagedAppProtectionToUpdate">The AndroidManagedAppProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidManagedAppProtection> PutAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AndroidManagedAppProtection using PUT and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="androidManagedAppProtectionToUpdate">The AndroidManagedAppProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidManagedAppProtection}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> PutResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

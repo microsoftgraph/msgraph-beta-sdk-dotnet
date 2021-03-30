@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified YammerDeviceUsageDistributionUserCounts using PUT.
+        /// </summary>
+        /// <param name="yammerDeviceUsageDistributionUserCountsToUpdate">The YammerDeviceUsageDistributionUserCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<YammerDeviceUsageDistributionUserCounts> PutAsync(YammerDeviceUsageDistributionUserCounts yammerDeviceUsageDistributionUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<YammerDeviceUsageDistributionUserCounts>(yammerDeviceUsageDistributionUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified YammerDeviceUsageDistributionUserCounts using PUT and returns a <see cref="GraphResponse{YammerDeviceUsageDistributionUserCounts}"/> object.
+        /// </summary>
+        /// <param name="yammerDeviceUsageDistributionUserCountsToUpdate">The YammerDeviceUsageDistributionUserCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{YammerDeviceUsageDistributionUserCounts}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageDistributionUserCounts>> PutResponseAsync(YammerDeviceUsageDistributionUserCounts yammerDeviceUsageDistributionUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<YammerDeviceUsageDistributionUserCounts>(yammerDeviceUsageDistributionUserCountsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

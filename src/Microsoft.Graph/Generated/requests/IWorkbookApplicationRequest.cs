@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> UpdateResponseAsync(WorkbookApplication workbookApplicationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WorkbookApplication using PUT.
+        /// </summary>
+        /// <param name="workbookApplicationToUpdate">The WorkbookApplication object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkbookApplication> PutAsync(WorkbookApplication workbookApplicationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WorkbookApplication using PUT and returns a <see cref="GraphResponse{WorkbookApplication}"/> object.
+        /// </summary>
+        /// <param name="workbookApplicationToUpdate">The WorkbookApplication object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkbookApplication}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> PutResponseAsync(WorkbookApplication workbookApplicationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

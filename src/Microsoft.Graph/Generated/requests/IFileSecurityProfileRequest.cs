@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> UpdateResponseAsync(FileSecurityProfile fileSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified FileSecurityProfile using PUT.
+        /// </summary>
+        /// <param name="fileSecurityProfileToUpdate">The FileSecurityProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<FileSecurityProfile> PutAsync(FileSecurityProfile fileSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified FileSecurityProfile using PUT and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="fileSecurityProfileToUpdate">The FileSecurityProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{FileSecurityProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> PutResponseAsync(FileSecurityProfile fileSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

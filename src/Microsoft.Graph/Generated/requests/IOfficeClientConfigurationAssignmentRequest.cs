@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignment>> UpdateResponseAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified OfficeClientConfigurationAssignment using PUT.
+        /// </summary>
+        /// <param name="officeClientConfigurationAssignmentToUpdate">The OfficeClientConfigurationAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<OfficeClientConfigurationAssignment> PutAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified OfficeClientConfigurationAssignment using PUT and returns a <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="officeClientConfigurationAssignmentToUpdate">The OfficeClientConfigurationAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignment>> PutResponseAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

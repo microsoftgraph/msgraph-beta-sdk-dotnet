@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified AccessReviewScheduleDefinition using PUT.
+        /// </summary>
+        /// <param name="accessReviewScheduleDefinitionToUpdate">The AccessReviewScheduleDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AccessReviewScheduleDefinition> PutAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AccessReviewScheduleDefinition>(accessReviewScheduleDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AccessReviewScheduleDefinition using PUT and returns a <see cref="GraphResponse{AccessReviewScheduleDefinition}"/> object.
+        /// </summary>
+        /// <param name="accessReviewScheduleDefinitionToUpdate">The AccessReviewScheduleDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AccessReviewScheduleDefinition}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewScheduleDefinition>> PutResponseAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AccessReviewScheduleDefinition>(accessReviewScheduleDefinitionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

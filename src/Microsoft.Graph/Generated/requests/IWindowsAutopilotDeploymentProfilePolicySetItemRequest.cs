@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfilePolicySetItem>> UpdateResponseAsync(WindowsAutopilotDeploymentProfilePolicySetItem windowsAutopilotDeploymentProfilePolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsAutopilotDeploymentProfilePolicySetItem using PUT.
+        /// </summary>
+        /// <param name="windowsAutopilotDeploymentProfilePolicySetItemToUpdate">The WindowsAutopilotDeploymentProfilePolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfilePolicySetItem> PutAsync(WindowsAutopilotDeploymentProfilePolicySetItem windowsAutopilotDeploymentProfilePolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsAutopilotDeploymentProfilePolicySetItem using PUT and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfilePolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="windowsAutopilotDeploymentProfilePolicySetItemToUpdate">The WindowsAutopilotDeploymentProfilePolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsAutopilotDeploymentProfilePolicySetItem}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfilePolicySetItem>> PutResponseAsync(WindowsAutopilotDeploymentProfilePolicySetItem windowsAutopilotDeploymentProfilePolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

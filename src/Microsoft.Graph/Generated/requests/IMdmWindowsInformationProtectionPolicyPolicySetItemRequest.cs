@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicyPolicySetItem>> UpdateResponseAsync(MdmWindowsInformationProtectionPolicyPolicySetItem mdmWindowsInformationProtectionPolicyPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MdmWindowsInformationProtectionPolicyPolicySetItem using PUT.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyPolicySetItemToUpdate">The MdmWindowsInformationProtectionPolicyPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicyPolicySetItem> PutAsync(MdmWindowsInformationProtectionPolicyPolicySetItem mdmWindowsInformationProtectionPolicyPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MdmWindowsInformationProtectionPolicyPolicySetItem using PUT and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyPolicySetItemToUpdate">The MdmWindowsInformationProtectionPolicyPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicyPolicySetItem>> PutResponseAsync(MdmWindowsInformationProtectionPolicyPolicySetItem mdmWindowsInformationProtectionPolicyPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

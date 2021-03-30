@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ChatActivityStatistics>> UpdateResponseAsync(ChatActivityStatistics chatActivityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ChatActivityStatistics using PUT.
+        /// </summary>
+        /// <param name="chatActivityStatisticsToUpdate">The ChatActivityStatistics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ChatActivityStatistics> PutAsync(ChatActivityStatistics chatActivityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ChatActivityStatistics using PUT and returns a <see cref="GraphResponse{ChatActivityStatistics}"/> object.
+        /// </summary>
+        /// <param name="chatActivityStatisticsToUpdate">The ChatActivityStatistics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ChatActivityStatistics}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ChatActivityStatistics>> PutResponseAsync(ChatActivityStatistics chatActivityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

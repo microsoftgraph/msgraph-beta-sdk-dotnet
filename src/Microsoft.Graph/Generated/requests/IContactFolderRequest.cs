@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ContactFolder>> UpdateResponseAsync(ContactFolder contactFolderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ContactFolder using PUT.
+        /// </summary>
+        /// <param name="contactFolderToUpdate">The ContactFolder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ContactFolder> PutAsync(ContactFolder contactFolderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ContactFolder using PUT and returns a <see cref="GraphResponse{ContactFolder}"/> object.
+        /// </summary>
+        /// <param name="contactFolderToUpdate">The ContactFolder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ContactFolder}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContactFolder>> PutResponseAsync(ContactFolder contactFolderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

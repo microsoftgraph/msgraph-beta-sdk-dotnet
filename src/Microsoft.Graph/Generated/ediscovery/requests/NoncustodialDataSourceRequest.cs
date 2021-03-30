@@ -140,6 +140,34 @@ namespace Microsoft.Graph.Ediscovery
         }
 
         /// <summary>
+        /// Updates the specified NoncustodialDataSource using PUT.
+        /// </summary>
+        /// <param name="noncustodialDataSourceToUpdate">The NoncustodialDataSource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<NoncustodialDataSource> PutAsync(NoncustodialDataSource noncustodialDataSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<NoncustodialDataSource>(noncustodialDataSourceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified NoncustodialDataSource using PUT and returns a <see cref="GraphResponse{NoncustodialDataSource}"/> object.
+        /// </summary>
+        /// <param name="noncustodialDataSourceToUpdate">The NoncustodialDataSource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{NoncustodialDataSource}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> PutResponseAsync(NoncustodialDataSource noncustodialDataSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<NoncustodialDataSource>(noncustodialDataSourceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

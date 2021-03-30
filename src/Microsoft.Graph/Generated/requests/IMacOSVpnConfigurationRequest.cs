@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MacOSVpnConfiguration>> UpdateResponseAsync(MacOSVpnConfiguration macOSVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MacOSVpnConfiguration using PUT.
+        /// </summary>
+        /// <param name="macOSVpnConfigurationToUpdate">The MacOSVpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MacOSVpnConfiguration> PutAsync(MacOSVpnConfiguration macOSVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MacOSVpnConfiguration using PUT and returns a <see cref="GraphResponse{MacOSVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSVpnConfigurationToUpdate">The MacOSVpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MacOSVpnConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSVpnConfiguration>> PutResponseAsync(MacOSVpnConfiguration macOSVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

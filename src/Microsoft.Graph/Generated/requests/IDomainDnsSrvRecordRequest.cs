@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DomainDnsSrvRecord>> UpdateResponseAsync(DomainDnsSrvRecord domainDnsSrvRecordToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DomainDnsSrvRecord using PUT.
+        /// </summary>
+        /// <param name="domainDnsSrvRecordToUpdate">The DomainDnsSrvRecord object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DomainDnsSrvRecord> PutAsync(DomainDnsSrvRecord domainDnsSrvRecordToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DomainDnsSrvRecord using PUT and returns a <see cref="GraphResponse{DomainDnsSrvRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsSrvRecordToUpdate">The DomainDnsSrvRecord object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DomainDnsSrvRecord}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsSrvRecord>> PutResponseAsync(DomainDnsSrvRecord domainDnsSrvRecordToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

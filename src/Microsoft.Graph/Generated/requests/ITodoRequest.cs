@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Todo>> UpdateResponseAsync(Todo todoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Todo using PUT.
+        /// </summary>
+        /// <param name="todoToUpdate">The Todo object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Todo> PutAsync(Todo todoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Todo using PUT and returns a <see cref="GraphResponse{Todo}"/> object.
+        /// </summary>
+        /// <param name="todoToUpdate">The Todo object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Todo}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Todo>> PutResponseAsync(Todo todoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified CredentialUserRegistrationCount using PUT.
+        /// </summary>
+        /// <param name="credentialUserRegistrationCountToUpdate">The CredentialUserRegistrationCount object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<CredentialUserRegistrationCount> PutAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<CredentialUserRegistrationCount>(credentialUserRegistrationCountToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CredentialUserRegistrationCount using PUT and returns a <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object.
+        /// </summary>
+        /// <param name="credentialUserRegistrationCountToUpdate">The CredentialUserRegistrationCount object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{CredentialUserRegistrationCount}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationCount>> PutResponseAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<CredentialUserRegistrationCount>(credentialUserRegistrationCountToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

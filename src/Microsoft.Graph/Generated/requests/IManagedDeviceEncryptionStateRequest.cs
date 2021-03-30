@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> UpdateResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ManagedDeviceEncryptionState using PUT.
+        /// </summary>
+        /// <param name="managedDeviceEncryptionStateToUpdate">The ManagedDeviceEncryptionState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> PutAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceEncryptionState using PUT and returns a <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceEncryptionStateToUpdate">The ManagedDeviceEncryptionState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> PutResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

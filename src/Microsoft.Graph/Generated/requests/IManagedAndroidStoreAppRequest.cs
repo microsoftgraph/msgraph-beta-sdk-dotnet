@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ManagedAndroidStoreApp>> UpdateResponseAsync(ManagedAndroidStoreApp managedAndroidStoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ManagedAndroidStoreApp using PUT.
+        /// </summary>
+        /// <param name="managedAndroidStoreAppToUpdate">The ManagedAndroidStoreApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagedAndroidStoreApp> PutAsync(ManagedAndroidStoreApp managedAndroidStoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ManagedAndroidStoreApp using PUT and returns a <see cref="GraphResponse{ManagedAndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="managedAndroidStoreAppToUpdate">The ManagedAndroidStoreApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagedAndroidStoreApp}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAndroidStoreApp>> PutResponseAsync(ManagedAndroidStoreApp managedAndroidStoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

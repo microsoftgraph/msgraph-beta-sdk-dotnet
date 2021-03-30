@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AdminConsentRequestPolicy>> UpdateResponseAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AdminConsentRequestPolicy using PUT.
+        /// </summary>
+        /// <param name="adminConsentRequestPolicyToUpdate">The AdminConsentRequestPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AdminConsentRequestPolicy> PutAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AdminConsentRequestPolicy using PUT and returns a <see cref="GraphResponse{AdminConsentRequestPolicy}"/> object.
+        /// </summary>
+        /// <param name="adminConsentRequestPolicyToUpdate">The AdminConsentRequestPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AdminConsentRequestPolicy}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdminConsentRequestPolicy>> PutResponseAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

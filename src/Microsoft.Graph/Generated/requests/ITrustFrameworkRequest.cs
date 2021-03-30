@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<TrustFramework>> UpdateResponseAsync(TrustFramework trustFrameworkToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified TrustFramework using PUT.
+        /// </summary>
+        /// <param name="trustFrameworkToUpdate">The TrustFramework object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TrustFramework> PutAsync(TrustFramework trustFrameworkToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TrustFramework using PUT and returns a <see cref="GraphResponse{TrustFramework}"/> object.
+        /// </summary>
+        /// <param name="trustFrameworkToUpdate">The TrustFramework object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TrustFramework}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFramework>> PutResponseAsync(TrustFramework trustFrameworkToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

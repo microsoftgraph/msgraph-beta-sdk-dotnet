@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WebAccount>> UpdateResponseAsync(WebAccount webAccountToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WebAccount using PUT.
+        /// </summary>
+        /// <param name="webAccountToUpdate">The WebAccount object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WebAccount> PutAsync(WebAccount webAccountToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WebAccount using PUT and returns a <see cref="GraphResponse{WebAccount}"/> object.
+        /// </summary>
+        /// <param name="webAccountToUpdate">The WebAccount object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WebAccount}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WebAccount>> PutResponseAsync(WebAccount webAccountToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

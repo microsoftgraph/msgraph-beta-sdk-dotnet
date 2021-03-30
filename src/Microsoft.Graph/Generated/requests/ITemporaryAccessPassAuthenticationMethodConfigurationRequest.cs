@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<TemporaryAccessPassAuthenticationMethodConfiguration>> UpdateResponseAsync(TemporaryAccessPassAuthenticationMethodConfiguration temporaryAccessPassAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified TemporaryAccessPassAuthenticationMethodConfiguration using PUT.
+        /// </summary>
+        /// <param name="temporaryAccessPassAuthenticationMethodConfigurationToUpdate">The TemporaryAccessPassAuthenticationMethodConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethodConfiguration> PutAsync(TemporaryAccessPassAuthenticationMethodConfiguration temporaryAccessPassAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TemporaryAccessPassAuthenticationMethodConfiguration using PUT and returns a <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethodConfiguration}"/> object.
+        /// </summary>
+        /// <param name="temporaryAccessPassAuthenticationMethodConfigurationToUpdate">The TemporaryAccessPassAuthenticationMethodConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethodConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TemporaryAccessPassAuthenticationMethodConfiguration>> PutResponseAsync(TemporaryAccessPassAuthenticationMethodConfiguration temporaryAccessPassAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

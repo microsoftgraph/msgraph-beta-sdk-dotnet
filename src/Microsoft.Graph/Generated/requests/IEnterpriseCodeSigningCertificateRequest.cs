@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<EnterpriseCodeSigningCertificate>> UpdateResponseAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified EnterpriseCodeSigningCertificate using PUT.
+        /// </summary>
+        /// <param name="enterpriseCodeSigningCertificateToUpdate">The EnterpriseCodeSigningCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EnterpriseCodeSigningCertificate> PutAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EnterpriseCodeSigningCertificate using PUT and returns a <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="enterpriseCodeSigningCertificateToUpdate">The EnterpriseCodeSigningCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnterpriseCodeSigningCertificate>> PutResponseAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

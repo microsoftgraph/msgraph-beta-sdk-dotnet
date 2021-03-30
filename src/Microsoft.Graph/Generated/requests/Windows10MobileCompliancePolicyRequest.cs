@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Windows10MobileCompliancePolicy using PUT.
+        /// </summary>
+        /// <param name="windows10MobileCompliancePolicyToUpdate">The Windows10MobileCompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Windows10MobileCompliancePolicy> PutAsync(Windows10MobileCompliancePolicy windows10MobileCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Windows10MobileCompliancePolicy>(windows10MobileCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10MobileCompliancePolicy using PUT and returns a <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows10MobileCompliancePolicyToUpdate">The Windows10MobileCompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10MobileCompliancePolicy>> PutResponseAsync(Windows10MobileCompliancePolicy windows10MobileCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Windows10MobileCompliancePolicy>(windows10MobileCompliancePolicyToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified LocalizedNotificationMessage using PUT.
+        /// </summary>
+        /// <param name="localizedNotificationMessageToUpdate">The LocalizedNotificationMessage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<LocalizedNotificationMessage> PutAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<LocalizedNotificationMessage>(localizedNotificationMessageToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified LocalizedNotificationMessage using PUT and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
+        /// </summary>
+        /// <param name="localizedNotificationMessageToUpdate">The LocalizedNotificationMessage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{LocalizedNotificationMessage}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> PutResponseAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<LocalizedNotificationMessage>(localizedNotificationMessageToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

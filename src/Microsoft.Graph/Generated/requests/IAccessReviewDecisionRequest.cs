@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AccessReviewDecision>> UpdateResponseAsync(AccessReviewDecision accessReviewDecisionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AccessReviewDecision using PUT.
+        /// </summary>
+        /// <param name="accessReviewDecisionToUpdate">The AccessReviewDecision object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AccessReviewDecision> PutAsync(AccessReviewDecision accessReviewDecisionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AccessReviewDecision using PUT and returns a <see cref="GraphResponse{AccessReviewDecision}"/> object.
+        /// </summary>
+        /// <param name="accessReviewDecisionToUpdate">The AccessReviewDecision object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AccessReviewDecision}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewDecision>> PutResponseAsync(AccessReviewDecision accessReviewDecisionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

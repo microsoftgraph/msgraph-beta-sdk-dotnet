@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessContainedApp>> UpdateResponseAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MicrosoftStoreForBusinessContainedApp using PUT.
+        /// </summary>
+        /// <param name="microsoftStoreForBusinessContainedAppToUpdate">The MicrosoftStoreForBusinessContainedApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MicrosoftStoreForBusinessContainedApp> PutAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MicrosoftStoreForBusinessContainedApp using PUT and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object.
+        /// </summary>
+        /// <param name="microsoftStoreForBusinessContainedAppToUpdate">The MicrosoftStoreForBusinessContainedApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessContainedApp>> PutResponseAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MailboxUsageDetail using PUT.
+        /// </summary>
+        /// <param name="mailboxUsageDetailToUpdate">The MailboxUsageDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MailboxUsageDetail> PutAsync(MailboxUsageDetail mailboxUsageDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MailboxUsageDetail>(mailboxUsageDetailToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MailboxUsageDetail using PUT and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="mailboxUsageDetailToUpdate">The MailboxUsageDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MailboxUsageDetail}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> PutResponseAsync(MailboxUsageDetail mailboxUsageDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MailboxUsageDetail>(mailboxUsageDetailToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified UserExperienceAnalyticsScoreHistory using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsScoreHistoryToUpdate">The UserExperienceAnalyticsScoreHistory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsScoreHistory> PutAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserExperienceAnalyticsScoreHistory>(userExperienceAnalyticsScoreHistoryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsScoreHistory using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsScoreHistoryToUpdate">The UserExperienceAnalyticsScoreHistory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsScoreHistory>> PutResponseAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsScoreHistory>(userExperienceAnalyticsScoreHistoryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

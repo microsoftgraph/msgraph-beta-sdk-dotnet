@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> UpdateResponseAsync(DeviceManagementReports deviceManagementReportsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementReports using PUT.
+        /// </summary>
+        /// <param name="deviceManagementReportsToUpdate">The DeviceManagementReports object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementReports> PutAsync(DeviceManagementReports deviceManagementReportsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReports using PUT and returns a <see cref="GraphResponse{DeviceManagementReports}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReportsToUpdate">The DeviceManagementReports object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementReports}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> PutResponseAsync(DeviceManagementReports deviceManagementReportsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

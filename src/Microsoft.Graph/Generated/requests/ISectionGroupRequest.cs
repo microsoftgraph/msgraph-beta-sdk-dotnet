@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SectionGroup>> UpdateResponseAsync(SectionGroup sectionGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SectionGroup using PUT.
+        /// </summary>
+        /// <param name="sectionGroupToUpdate">The SectionGroup object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SectionGroup> PutAsync(SectionGroup sectionGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SectionGroup using PUT and returns a <see cref="GraphResponse{SectionGroup}"/> object.
+        /// </summary>
+        /// <param name="sectionGroupToUpdate">The SectionGroup object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SectionGroup}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SectionGroup>> PutResponseAsync(SectionGroup sectionGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

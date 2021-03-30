@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MacOSCustomAppConfiguration>> UpdateResponseAsync(MacOSCustomAppConfiguration macOSCustomAppConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MacOSCustomAppConfiguration using PUT.
+        /// </summary>
+        /// <param name="macOSCustomAppConfigurationToUpdate">The MacOSCustomAppConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MacOSCustomAppConfiguration> PutAsync(MacOSCustomAppConfiguration macOSCustomAppConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MacOSCustomAppConfiguration using PUT and returns a <see cref="GraphResponse{MacOSCustomAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSCustomAppConfigurationToUpdate">The MacOSCustomAppConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MacOSCustomAppConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCustomAppConfiguration>> PutResponseAsync(MacOSCustomAppConfiguration macOSCustomAppConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

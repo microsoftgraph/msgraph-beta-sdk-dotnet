@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AuditLogRoot>> UpdateResponseAsync(AuditLogRoot auditLogRootToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AuditLogRoot using PUT.
+        /// </summary>
+        /// <param name="auditLogRootToUpdate">The AuditLogRoot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AuditLogRoot> PutAsync(AuditLogRoot auditLogRootToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AuditLogRoot using PUT and returns a <see cref="GraphResponse{AuditLogRoot}"/> object.
+        /// </summary>
+        /// <param name="auditLogRootToUpdate">The AuditLogRoot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AuditLogRoot}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuditLogRoot>> PutResponseAsync(AuditLogRoot auditLogRootToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

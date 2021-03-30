@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<TimeOff>> UpdateResponseAsync(TimeOff timeOffToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified TimeOff using PUT.
+        /// </summary>
+        /// <param name="timeOffToUpdate">The TimeOff object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TimeOff> PutAsync(TimeOff timeOffToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TimeOff using PUT and returns a <see cref="GraphResponse{TimeOff}"/> object.
+        /// </summary>
+        /// <param name="timeOffToUpdate">The TimeOff object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TimeOff}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeOff>> PutResponseAsync(TimeOff timeOffToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

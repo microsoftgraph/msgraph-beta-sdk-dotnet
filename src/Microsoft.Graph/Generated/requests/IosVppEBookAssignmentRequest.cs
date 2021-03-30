@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified IosVppEBookAssignment using PUT.
+        /// </summary>
+        /// <param name="iosVppEBookAssignmentToUpdate">The IosVppEBookAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosVppEBookAssignment> PutAsync(IosVppEBookAssignment iosVppEBookAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosVppEBookAssignment>(iosVppEBookAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosVppEBookAssignment using PUT and returns a <see cref="GraphResponse{IosVppEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookAssignmentToUpdate">The IosVppEBookAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosVppEBookAssignment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> PutResponseAsync(IosVppEBookAssignment iosVppEBookAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosVppEBookAssignment>(iosVppEBookAssignmentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

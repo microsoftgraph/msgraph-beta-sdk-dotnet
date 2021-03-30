@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityCounts>> UpdateResponseAsync(YammerGroupsActivityCounts yammerGroupsActivityCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified YammerGroupsActivityCounts using PUT.
+        /// </summary>
+        /// <param name="yammerGroupsActivityCountsToUpdate">The YammerGroupsActivityCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<YammerGroupsActivityCounts> PutAsync(YammerGroupsActivityCounts yammerGroupsActivityCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified YammerGroupsActivityCounts using PUT and returns a <see cref="GraphResponse{YammerGroupsActivityCounts}"/> object.
+        /// </summary>
+        /// <param name="yammerGroupsActivityCountsToUpdate">The YammerGroupsActivityCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{YammerGroupsActivityCounts}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityCounts>> PutResponseAsync(YammerGroupsActivityCounts yammerGroupsActivityCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

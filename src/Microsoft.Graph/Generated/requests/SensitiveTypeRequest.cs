@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified SensitiveType using PUT.
+        /// </summary>
+        /// <param name="sensitiveTypeToUpdate">The SensitiveType object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SensitiveType> PutAsync(SensitiveType sensitiveTypeToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SensitiveType>(sensitiveTypeToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SensitiveType using PUT and returns a <see cref="GraphResponse{SensitiveType}"/> object.
+        /// </summary>
+        /// <param name="sensitiveTypeToUpdate">The SensitiveType object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SensitiveType}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SensitiveType>> PutResponseAsync(SensitiveType sensitiveTypeToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SensitiveType>(sensitiveTypeToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

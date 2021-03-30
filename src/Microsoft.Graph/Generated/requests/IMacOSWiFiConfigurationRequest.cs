@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MacOSWiFiConfiguration>> UpdateResponseAsync(MacOSWiFiConfiguration macOSWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MacOSWiFiConfiguration using PUT.
+        /// </summary>
+        /// <param name="macOSWiFiConfigurationToUpdate">The MacOSWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MacOSWiFiConfiguration> PutAsync(MacOSWiFiConfiguration macOSWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MacOSWiFiConfiguration using PUT and returns a <see cref="GraphResponse{MacOSWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSWiFiConfigurationToUpdate">The MacOSWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MacOSWiFiConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSWiFiConfiguration>> PutResponseAsync(MacOSWiFiConfiguration macOSWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

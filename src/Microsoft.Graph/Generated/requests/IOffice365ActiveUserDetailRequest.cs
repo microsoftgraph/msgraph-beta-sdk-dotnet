@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Office365ActiveUserDetail>> UpdateResponseAsync(Office365ActiveUserDetail office365ActiveUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Office365ActiveUserDetail using PUT.
+        /// </summary>
+        /// <param name="office365ActiveUserDetailToUpdate">The Office365ActiveUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Office365ActiveUserDetail> PutAsync(Office365ActiveUserDetail office365ActiveUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Office365ActiveUserDetail using PUT and returns a <see cref="GraphResponse{Office365ActiveUserDetail}"/> object.
+        /// </summary>
+        /// <param name="office365ActiveUserDetailToUpdate">The Office365ActiveUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Office365ActiveUserDetail}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365ActiveUserDetail>> PutResponseAsync(Office365ActiveUserDetail office365ActiveUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

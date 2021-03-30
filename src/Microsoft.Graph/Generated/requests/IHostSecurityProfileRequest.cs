@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<HostSecurityProfile>> UpdateResponseAsync(HostSecurityProfile hostSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified HostSecurityProfile using PUT.
+        /// </summary>
+        /// <param name="hostSecurityProfileToUpdate">The HostSecurityProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<HostSecurityProfile> PutAsync(HostSecurityProfile hostSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified HostSecurityProfile using PUT and returns a <see cref="GraphResponse{HostSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="hostSecurityProfileToUpdate">The HostSecurityProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{HostSecurityProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<HostSecurityProfile>> PutResponseAsync(HostSecurityProfile hostSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

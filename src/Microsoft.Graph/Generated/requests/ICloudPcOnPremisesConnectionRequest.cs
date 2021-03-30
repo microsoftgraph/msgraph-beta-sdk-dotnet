@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<CloudPcOnPremisesConnection>> UpdateResponseAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified CloudPcOnPremisesConnection using PUT.
+        /// </summary>
+        /// <param name="cloudPcOnPremisesConnectionToUpdate">The CloudPcOnPremisesConnection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<CloudPcOnPremisesConnection> PutAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CloudPcOnPremisesConnection using PUT and returns a <see cref="GraphResponse{CloudPcOnPremisesConnection}"/> object.
+        /// </summary>
+        /// <param name="cloudPcOnPremisesConnectionToUpdate">The CloudPcOnPremisesConnection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{CloudPcOnPremisesConnection}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcOnPremisesConnection>> PutResponseAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

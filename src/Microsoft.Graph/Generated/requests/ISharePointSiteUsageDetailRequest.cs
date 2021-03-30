@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageDetail>> UpdateResponseAsync(SharePointSiteUsageDetail sharePointSiteUsageDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SharePointSiteUsageDetail using PUT.
+        /// </summary>
+        /// <param name="sharePointSiteUsageDetailToUpdate">The SharePointSiteUsageDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SharePointSiteUsageDetail> PutAsync(SharePointSiteUsageDetail sharePointSiteUsageDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SharePointSiteUsageDetail using PUT and returns a <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="sharePointSiteUsageDetailToUpdate">The SharePointSiteUsageDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SharePointSiteUsageDetail}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageDetail>> PutResponseAsync(SharePointSiteUsageDetail sharePointSiteUsageDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

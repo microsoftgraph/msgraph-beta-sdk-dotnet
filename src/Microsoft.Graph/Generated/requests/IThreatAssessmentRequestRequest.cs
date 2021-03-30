@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> UpdateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ThreatAssessmentRequestObject using PUT.
+        /// </summary>
+        /// <param name="threatAssessmentRequestObjectToUpdate">The ThreatAssessmentRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ThreatAssessmentRequestObject> PutAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ThreatAssessmentRequestObject using PUT and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="threatAssessmentRequestObjectToUpdate">The ThreatAssessmentRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> PutResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

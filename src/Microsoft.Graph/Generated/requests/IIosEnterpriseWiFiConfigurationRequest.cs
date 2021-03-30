@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<IosEnterpriseWiFiConfiguration>> UpdateResponseAsync(IosEnterpriseWiFiConfiguration iosEnterpriseWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified IosEnterpriseWiFiConfiguration using PUT.
+        /// </summary>
+        /// <param name="iosEnterpriseWiFiConfigurationToUpdate">The IosEnterpriseWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IosEnterpriseWiFiConfiguration> PutAsync(IosEnterpriseWiFiConfiguration iosEnterpriseWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified IosEnterpriseWiFiConfiguration using PUT and returns a <see cref="GraphResponse{IosEnterpriseWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosEnterpriseWiFiConfigurationToUpdate">The IosEnterpriseWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IosEnterpriseWiFiConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosEnterpriseWiFiConfiguration>> PutResponseAsync(IosEnterpriseWiFiConfiguration iosEnterpriseWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> UpdateResponseAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Windows81SCEPCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="windows81SCEPCertificateProfileToUpdate">The Windows81SCEPCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> PutAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Windows81SCEPCertificateProfile using PUT and returns a <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="windows81SCEPCertificateProfileToUpdate">The Windows81SCEPCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> PutResponseAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

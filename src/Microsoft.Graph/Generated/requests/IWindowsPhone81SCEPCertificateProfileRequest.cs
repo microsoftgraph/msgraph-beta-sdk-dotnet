@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsPhone81SCEPCertificateProfile>> UpdateResponseAsync(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsPhone81SCEPCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="windowsPhone81SCEPCertificateProfileToUpdate">The WindowsPhone81SCEPCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsPhone81SCEPCertificateProfile> PutAsync(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsPhone81SCEPCertificateProfile using PUT and returns a <see cref="GraphResponse{WindowsPhone81SCEPCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81SCEPCertificateProfileToUpdate">The WindowsPhone81SCEPCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsPhone81SCEPCertificateProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81SCEPCertificateProfile>> PutResponseAsync(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

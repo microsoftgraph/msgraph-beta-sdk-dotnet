@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<PermissionGrantConditionSet>> UpdateResponseAsync(PermissionGrantConditionSet permissionGrantConditionSetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified PermissionGrantConditionSet using PUT.
+        /// </summary>
+        /// <param name="permissionGrantConditionSetToUpdate">The PermissionGrantConditionSet object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<PermissionGrantConditionSet> PutAsync(PermissionGrantConditionSet permissionGrantConditionSetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified PermissionGrantConditionSet using PUT and returns a <see cref="GraphResponse{PermissionGrantConditionSet}"/> object.
+        /// </summary>
+        /// <param name="permissionGrantConditionSetToUpdate">The PermissionGrantConditionSet object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{PermissionGrantConditionSet}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantConditionSet>> PutResponseAsync(PermissionGrantConditionSet permissionGrantConditionSetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

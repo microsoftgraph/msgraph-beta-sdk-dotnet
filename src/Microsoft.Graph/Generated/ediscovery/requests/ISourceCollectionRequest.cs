@@ -83,6 +83,22 @@ namespace Microsoft.Graph.Ediscovery
         System.Threading.Tasks.Task<GraphResponse<SourceCollection>> UpdateResponseAsync(SourceCollection sourceCollectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SourceCollection using PUT.
+        /// </summary>
+        /// <param name="sourceCollectionToUpdate">The SourceCollection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SourceCollection> PutAsync(SourceCollection sourceCollectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SourceCollection using PUT and returns a <see cref="GraphResponse{SourceCollection}"/> object.
+        /// </summary>
+        /// <param name="sourceCollectionToUpdate">The SourceCollection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SourceCollection}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SourceCollection>> PutResponseAsync(SourceCollection sourceCollectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

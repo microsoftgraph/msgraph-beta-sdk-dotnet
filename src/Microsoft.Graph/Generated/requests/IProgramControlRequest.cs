@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ProgramControl>> UpdateResponseAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ProgramControl using PUT.
+        /// </summary>
+        /// <param name="programControlToUpdate">The ProgramControl object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ProgramControl> PutAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ProgramControl using PUT and returns a <see cref="GraphResponse{ProgramControl}"/> object.
+        /// </summary>
+        /// <param name="programControlToUpdate">The ProgramControl object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ProgramControl}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> PutResponseAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph.Ediscovery
         System.Threading.Tasks.Task<GraphResponse<UnifiedGroupSource>> UpdateResponseAsync(UnifiedGroupSource unifiedGroupSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified UnifiedGroupSource using PUT.
+        /// </summary>
+        /// <param name="unifiedGroupSourceToUpdate">The UnifiedGroupSource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UnifiedGroupSource> PutAsync(UnifiedGroupSource unifiedGroupSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UnifiedGroupSource using PUT and returns a <see cref="GraphResponse{UnifiedGroupSource}"/> object.
+        /// </summary>
+        /// <param name="unifiedGroupSourceToUpdate">The UnifiedGroupSource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UnifiedGroupSource}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedGroupSource>> PutResponseAsync(UnifiedGroupSource unifiedGroupSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

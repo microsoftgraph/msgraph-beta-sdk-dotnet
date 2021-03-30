@@ -83,6 +83,22 @@ namespace Microsoft.Graph.Ediscovery
         System.Threading.Tasks.Task<GraphResponse<Case>> UpdateResponseAsync(Case caseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Case using PUT.
+        /// </summary>
+        /// <param name="caseToUpdate">The Case object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Case> PutAsync(Case caseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Case using PUT and returns a <see cref="GraphResponse{Case}"/> object.
+        /// </summary>
+        /// <param name="caseToUpdate">The Case object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Case}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Case>> PutResponseAsync(Case caseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DocumentComment>> UpdateResponseAsync(DocumentComment documentCommentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DocumentComment using PUT.
+        /// </summary>
+        /// <param name="documentCommentToUpdate">The DocumentComment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DocumentComment> PutAsync(DocumentComment documentCommentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DocumentComment using PUT and returns a <see cref="GraphResponse{DocumentComment}"/> object.
+        /// </summary>
+        /// <param name="documentCommentToUpdate">The DocumentComment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DocumentComment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DocumentComment>> PutResponseAsync(DocumentComment documentCommentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

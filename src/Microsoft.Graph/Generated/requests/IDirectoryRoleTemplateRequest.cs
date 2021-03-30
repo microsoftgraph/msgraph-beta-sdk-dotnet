@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> UpdateResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DirectoryRoleTemplate using PUT.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToUpdate">The DirectoryRoleTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DirectoryRoleTemplate> PutAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DirectoryRoleTemplate using PUT and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToUpdate">The DirectoryRoleTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DirectoryRoleTemplate}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> PutResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

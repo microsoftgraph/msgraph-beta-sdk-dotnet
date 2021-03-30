@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> UpdateResponseAsync(ExactMatchSession exactMatchSessionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ExactMatchSession using PUT.
+        /// </summary>
+        /// <param name="exactMatchSessionToUpdate">The ExactMatchSession object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ExactMatchSession> PutAsync(ExactMatchSession exactMatchSessionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ExactMatchSession using PUT and returns a <see cref="GraphResponse{ExactMatchSession}"/> object.
+        /// </summary>
+        /// <param name="exactMatchSessionToUpdate">The ExactMatchSession object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ExactMatchSession}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> PutResponseAsync(ExactMatchSession exactMatchSessionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

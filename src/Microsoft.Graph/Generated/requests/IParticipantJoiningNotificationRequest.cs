@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> UpdateResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ParticipantJoiningNotification using PUT.
+        /// </summary>
+        /// <param name="participantJoiningNotificationToUpdate">The ParticipantJoiningNotification object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ParticipantJoiningNotification> PutAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ParticipantJoiningNotification using PUT and returns a <see cref="GraphResponse{ParticipantJoiningNotification}"/> object.
+        /// </summary>
+        /// <param name="participantJoiningNotificationToUpdate">The ParticipantJoiningNotification object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ParticipantJoiningNotification}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> PutResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

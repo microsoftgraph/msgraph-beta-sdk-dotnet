@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> UpdateResponseAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified LanguageProficiency using PUT.
+        /// </summary>
+        /// <param name="languageProficiencyToUpdate">The LanguageProficiency object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<LanguageProficiency> PutAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified LanguageProficiency using PUT and returns a <see cref="GraphResponse{LanguageProficiency}"/> object.
+        /// </summary>
+        /// <param name="languageProficiencyToUpdate">The LanguageProficiency object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{LanguageProficiency}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> PutResponseAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

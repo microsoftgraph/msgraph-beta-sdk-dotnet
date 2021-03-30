@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified AndroidDeviceOwnerVpnConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidDeviceOwnerVpnConfigurationToUpdate">The AndroidDeviceOwnerVpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerVpnConfiguration> PutAsync(AndroidDeviceOwnerVpnConfiguration androidDeviceOwnerVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidDeviceOwnerVpnConfiguration>(androidDeviceOwnerVpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerVpnConfiguration using PUT and returns a <see cref="GraphResponse{AndroidDeviceOwnerVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerVpnConfigurationToUpdate">The AndroidDeviceOwnerVpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidDeviceOwnerVpnConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerVpnConfiguration>> PutResponseAsync(AndroidDeviceOwnerVpnConfiguration androidDeviceOwnerVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerVpnConfiguration>(androidDeviceOwnerVpnConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

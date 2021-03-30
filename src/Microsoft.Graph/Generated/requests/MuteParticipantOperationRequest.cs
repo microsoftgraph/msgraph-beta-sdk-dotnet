@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MuteParticipantOperation using PUT.
+        /// </summary>
+        /// <param name="muteParticipantOperationToUpdate">The MuteParticipantOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MuteParticipantOperation> PutAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MuteParticipantOperation>(muteParticipantOperationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MuteParticipantOperation using PUT and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="muteParticipantOperationToUpdate">The MuteParticipantOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MuteParticipantOperation}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> PutResponseAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MuteParticipantOperation>(muteParticipantOperationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<IosImportedPFXCertificateProfile>> UpdateResponseAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified IosImportedPFXCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="iosImportedPFXCertificateProfileToUpdate">The IosImportedPFXCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> PutAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified IosImportedPFXCertificateProfile using PUT and returns a <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosImportedPFXCertificateProfileToUpdate">The IosImportedPFXCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosImportedPFXCertificateProfile>> PutResponseAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

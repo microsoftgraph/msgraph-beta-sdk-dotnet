@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyGroupAssignment>> UpdateResponseAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceCompliancePolicyGroupAssignment using PUT.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyGroupAssignmentToUpdate">The DeviceCompliancePolicyGroupAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> PutAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceCompliancePolicyGroupAssignment using PUT and returns a <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyGroupAssignmentToUpdate">The DeviceCompliancePolicyGroupAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyGroupAssignment>> PutResponseAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

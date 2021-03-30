@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> UpdateResponseAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified UserExperienceAnalyticsDeviceStartupProcessPerformance using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate">The UserExperienceAnalyticsDeviceStartupProcessPerformance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> PutAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsDeviceStartupProcessPerformance using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate">The UserExperienceAnalyticsDeviceStartupProcessPerformance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> PutResponseAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

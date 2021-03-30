@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified TemporaryAccessPassAuthenticationMethodConfiguration using PUT.
+        /// </summary>
+        /// <param name="temporaryAccessPassAuthenticationMethodConfigurationToUpdate">The TemporaryAccessPassAuthenticationMethodConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethodConfiguration> PutAsync(TemporaryAccessPassAuthenticationMethodConfiguration temporaryAccessPassAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<TemporaryAccessPassAuthenticationMethodConfiguration>(temporaryAccessPassAuthenticationMethodConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TemporaryAccessPassAuthenticationMethodConfiguration using PUT and returns a <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethodConfiguration}"/> object.
+        /// </summary>
+        /// <param name="temporaryAccessPassAuthenticationMethodConfigurationToUpdate">The TemporaryAccessPassAuthenticationMethodConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethodConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TemporaryAccessPassAuthenticationMethodConfiguration>> PutResponseAsync(TemporaryAccessPassAuthenticationMethodConfiguration temporaryAccessPassAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<TemporaryAccessPassAuthenticationMethodConfiguration>(temporaryAccessPassAuthenticationMethodConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

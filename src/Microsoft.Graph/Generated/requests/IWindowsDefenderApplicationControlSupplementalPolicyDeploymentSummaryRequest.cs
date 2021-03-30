@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>> UpdateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary using PUT.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary> PutAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary using PUT and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>> PutResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

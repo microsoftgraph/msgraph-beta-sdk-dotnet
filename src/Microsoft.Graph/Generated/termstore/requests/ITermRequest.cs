@@ -83,6 +83,22 @@ namespace Microsoft.Graph.TermStore
         System.Threading.Tasks.Task<GraphResponse<Term>> UpdateResponseAsync(Term termToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Term using PUT.
+        /// </summary>
+        /// <param name="termToUpdate">The Term object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Term> PutAsync(Term termToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Term using PUT and returns a <see cref="GraphResponse{Term}"/> object.
+        /// </summary>
+        /// <param name="termToUpdate">The Term object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Term}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Term>> PutResponseAsync(Term termToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

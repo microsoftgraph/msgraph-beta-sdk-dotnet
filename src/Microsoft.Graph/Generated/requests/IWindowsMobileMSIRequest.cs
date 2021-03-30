@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> UpdateResponseAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsMobileMSI using PUT.
+        /// </summary>
+        /// <param name="windowsMobileMSIToUpdate">The WindowsMobileMSI object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsMobileMSI> PutAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsMobileMSI using PUT and returns a <see cref="GraphResponse{WindowsMobileMSI}"/> object.
+        /// </summary>
+        /// <param name="windowsMobileMSIToUpdate">The WindowsMobileMSI object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsMobileMSI}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> PutResponseAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

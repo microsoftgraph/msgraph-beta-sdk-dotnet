@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> UpdateResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceAndAppManagementAssignmentFilter using PUT.
+        /// </summary>
+        /// <param name="deviceAndAppManagementAssignmentFilterToUpdate">The DeviceAndAppManagementAssignmentFilter object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> PutAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceAndAppManagementAssignmentFilter using PUT and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementAssignmentFilterToUpdate">The DeviceAndAppManagementAssignmentFilter object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> PutResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

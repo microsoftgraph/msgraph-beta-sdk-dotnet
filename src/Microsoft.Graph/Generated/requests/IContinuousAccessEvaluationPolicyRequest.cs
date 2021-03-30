@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ContinuousAccessEvaluationPolicy>> UpdateResponseAsync(ContinuousAccessEvaluationPolicy continuousAccessEvaluationPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ContinuousAccessEvaluationPolicy using PUT.
+        /// </summary>
+        /// <param name="continuousAccessEvaluationPolicyToUpdate">The ContinuousAccessEvaluationPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> PutAsync(ContinuousAccessEvaluationPolicy continuousAccessEvaluationPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ContinuousAccessEvaluationPolicy using PUT and returns a <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> object.
+        /// </summary>
+        /// <param name="continuousAccessEvaluationPolicyToUpdate">The ContinuousAccessEvaluationPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContinuousAccessEvaluationPolicy>> PutResponseAsync(ContinuousAccessEvaluationPolicy continuousAccessEvaluationPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

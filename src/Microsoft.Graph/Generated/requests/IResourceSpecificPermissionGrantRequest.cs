@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> UpdateResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrantToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ResourceSpecificPermissionGrant using PUT.
+        /// </summary>
+        /// <param name="resourceSpecificPermissionGrantToUpdate">The ResourceSpecificPermissionGrant object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ResourceSpecificPermissionGrant> PutAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrantToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ResourceSpecificPermissionGrant using PUT and returns a <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="resourceSpecificPermissionGrantToUpdate">The ResourceSpecificPermissionGrant object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> PutResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrantToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<OutlookTask>> UpdateResponseAsync(OutlookTask outlookTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified OutlookTask using PUT.
+        /// </summary>
+        /// <param name="outlookTaskToUpdate">The OutlookTask object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<OutlookTask> PutAsync(OutlookTask outlookTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified OutlookTask using PUT and returns a <see cref="GraphResponse{OutlookTask}"/> object.
+        /// </summary>
+        /// <param name="outlookTaskToUpdate">The OutlookTask object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{OutlookTask}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookTask>> PutResponseAsync(OutlookTask outlookTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

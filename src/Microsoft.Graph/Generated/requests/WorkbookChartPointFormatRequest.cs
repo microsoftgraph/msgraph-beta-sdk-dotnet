@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WorkbookChartPointFormat using PUT.
+        /// </summary>
+        /// <param name="workbookChartPointFormatToUpdate">The WorkbookChartPointFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WorkbookChartPointFormat> PutAsync(WorkbookChartPointFormat workbookChartPointFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WorkbookChartPointFormat>(workbookChartPointFormatToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookChartPointFormat using PUT and returns a <see cref="GraphResponse{WorkbookChartPointFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartPointFormatToUpdate">The WorkbookChartPointFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WorkbookChartPointFormat}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartPointFormat>> PutResponseAsync(WorkbookChartPointFormat workbookChartPointFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WorkbookChartPointFormat>(workbookChartPointFormatToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

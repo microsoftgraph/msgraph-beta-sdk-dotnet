@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified SecurityConfigurationTask using PUT.
+        /// </summary>
+        /// <param name="securityConfigurationTaskToUpdate">The SecurityConfigurationTask object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SecurityConfigurationTask> PutAsync(SecurityConfigurationTask securityConfigurationTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SecurityConfigurationTask>(securityConfigurationTaskToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SecurityConfigurationTask using PUT and returns a <see cref="GraphResponse{SecurityConfigurationTask}"/> object.
+        /// </summary>
+        /// <param name="securityConfigurationTaskToUpdate">The SecurityConfigurationTask object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SecurityConfigurationTask}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityConfigurationTask>> PutResponseAsync(SecurityConfigurationTask securityConfigurationTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SecurityConfigurationTask>(securityConfigurationTaskToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

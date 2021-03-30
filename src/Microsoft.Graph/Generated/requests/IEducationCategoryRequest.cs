@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<EducationCategory>> UpdateResponseAsync(EducationCategory educationCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified EducationCategory using PUT.
+        /// </summary>
+        /// <param name="educationCategoryToUpdate">The EducationCategory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EducationCategory> PutAsync(EducationCategory educationCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EducationCategory using PUT and returns a <see cref="GraphResponse{EducationCategory}"/> object.
+        /// </summary>
+        /// <param name="educationCategoryToUpdate">The EducationCategory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EducationCategory}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationCategory>> PutResponseAsync(EducationCategory educationCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

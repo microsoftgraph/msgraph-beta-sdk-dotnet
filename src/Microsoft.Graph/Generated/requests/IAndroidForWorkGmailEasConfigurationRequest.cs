@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGmailEasConfiguration>> UpdateResponseAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AndroidForWorkGmailEasConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidForWorkGmailEasConfigurationToUpdate">The AndroidForWorkGmailEasConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidForWorkGmailEasConfiguration> PutAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkGmailEasConfiguration using PUT and returns a <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkGmailEasConfigurationToUpdate">The AndroidForWorkGmailEasConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGmailEasConfiguration>> PutResponseAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

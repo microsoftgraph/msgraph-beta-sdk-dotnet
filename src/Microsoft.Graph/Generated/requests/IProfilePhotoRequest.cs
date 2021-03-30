@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> UpdateResponseAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ProfilePhoto using PUT.
+        /// </summary>
+        /// <param name="profilePhotoToUpdate">The ProfilePhoto object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ProfilePhoto> PutAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ProfilePhoto using PUT and returns a <see cref="GraphResponse{ProfilePhoto}"/> object.
+        /// </summary>
+        /// <param name="profilePhotoToUpdate">The ProfilePhoto object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ProfilePhoto}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> PutResponseAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

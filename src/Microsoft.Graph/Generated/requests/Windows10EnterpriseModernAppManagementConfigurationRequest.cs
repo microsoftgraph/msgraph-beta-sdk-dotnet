@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Windows10EnterpriseModernAppManagementConfiguration using PUT.
+        /// </summary>
+        /// <param name="windows10EnterpriseModernAppManagementConfigurationToUpdate">The Windows10EnterpriseModernAppManagementConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> PutAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Windows10EnterpriseModernAppManagementConfiguration>(windows10EnterpriseModernAppManagementConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10EnterpriseModernAppManagementConfiguration using PUT and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EnterpriseModernAppManagementConfigurationToUpdate">The Windows10EnterpriseModernAppManagementConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> PutResponseAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Windows10EnterpriseModernAppManagementConfiguration>(windows10EnterpriseModernAppManagementConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

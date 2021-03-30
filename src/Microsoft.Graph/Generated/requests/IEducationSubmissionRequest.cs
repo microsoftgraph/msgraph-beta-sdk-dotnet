@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> UpdateResponseAsync(EducationSubmission educationSubmissionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified EducationSubmission using PUT.
+        /// </summary>
+        /// <param name="educationSubmissionToUpdate">The EducationSubmission object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EducationSubmission> PutAsync(EducationSubmission educationSubmissionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EducationSubmission using PUT and returns a <see cref="GraphResponse{EducationSubmission}"/> object.
+        /// </summary>
+        /// <param name="educationSubmissionToUpdate">The EducationSubmission object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EducationSubmission}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> PutResponseAsync(EducationSubmission educationSubmissionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

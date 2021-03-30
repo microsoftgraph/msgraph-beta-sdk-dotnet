@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> UpdateResponseAsync(ColumnDefinition columnDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ColumnDefinition using PUT.
+        /// </summary>
+        /// <param name="columnDefinitionToUpdate">The ColumnDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ColumnDefinition> PutAsync(ColumnDefinition columnDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ColumnDefinition using PUT and returns a <see cref="GraphResponse{ColumnDefinition}"/> object.
+        /// </summary>
+        /// <param name="columnDefinitionToUpdate">The ColumnDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ColumnDefinition}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> PutResponseAsync(ColumnDefinition columnDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

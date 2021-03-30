@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MailSearchFolder using PUT.
+        /// </summary>
+        /// <param name="mailSearchFolderToUpdate">The MailSearchFolder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MailSearchFolder> PutAsync(MailSearchFolder mailSearchFolderToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MailSearchFolder>(mailSearchFolderToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MailSearchFolder using PUT and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="mailSearchFolderToUpdate">The MailSearchFolder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MailSearchFolder}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> PutResponseAsync(MailSearchFolder mailSearchFolderToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MailSearchFolder>(mailSearchFolderToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

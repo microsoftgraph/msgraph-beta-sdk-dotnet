@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Trending>> UpdateResponseAsync(Trending trendingToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Trending using PUT.
+        /// </summary>
+        /// <param name="trendingToUpdate">The Trending object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Trending> PutAsync(Trending trendingToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Trending using PUT and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="trendingToUpdate">The Trending object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Trending}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Trending>> PutResponseAsync(Trending trendingToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

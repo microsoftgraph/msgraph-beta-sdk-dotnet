@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SecureScore>> UpdateResponseAsync(SecureScore secureScoreToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SecureScore using PUT.
+        /// </summary>
+        /// <param name="secureScoreToUpdate">The SecureScore object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SecureScore> PutAsync(SecureScore secureScoreToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SecureScore using PUT and returns a <see cref="GraphResponse{SecureScore}"/> object.
+        /// </summary>
+        /// <param name="secureScoreToUpdate">The SecureScore object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SecureScore}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> PutResponseAsync(SecureScore secureScoreToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

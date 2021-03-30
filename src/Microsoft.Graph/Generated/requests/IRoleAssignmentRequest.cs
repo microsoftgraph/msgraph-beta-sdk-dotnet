@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> UpdateResponseAsync(RoleAssignment roleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified RoleAssignment using PUT.
+        /// </summary>
+        /// <param name="roleAssignmentToUpdate">The RoleAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<RoleAssignment> PutAsync(RoleAssignment roleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified RoleAssignment using PUT and returns a <see cref="GraphResponse{RoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="roleAssignmentToUpdate">The RoleAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{RoleAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> PutResponseAsync(RoleAssignment roleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

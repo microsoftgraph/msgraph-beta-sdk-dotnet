@@ -83,6 +83,22 @@ namespace Microsoft.Graph.Ediscovery
         System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> UpdateResponseAsync(NoncustodialDataSource noncustodialDataSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified NoncustodialDataSource using PUT.
+        /// </summary>
+        /// <param name="noncustodialDataSourceToUpdate">The NoncustodialDataSource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<NoncustodialDataSource> PutAsync(NoncustodialDataSource noncustodialDataSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified NoncustodialDataSource using PUT and returns a <see cref="GraphResponse{NoncustodialDataSource}"/> object.
+        /// </summary>
+        /// <param name="noncustodialDataSourceToUpdate">The NoncustodialDataSource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{NoncustodialDataSource}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> PutResponseAsync(NoncustodialDataSource noncustodialDataSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

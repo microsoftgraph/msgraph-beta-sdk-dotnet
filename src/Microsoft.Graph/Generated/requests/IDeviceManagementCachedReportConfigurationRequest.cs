@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> UpdateResponseAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementCachedReportConfiguration using PUT.
+        /// </summary>
+        /// <param name="deviceManagementCachedReportConfigurationToUpdate">The DeviceManagementCachedReportConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> PutAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementCachedReportConfiguration using PUT and returns a <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementCachedReportConfigurationToUpdate">The DeviceManagementCachedReportConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> PutResponseAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

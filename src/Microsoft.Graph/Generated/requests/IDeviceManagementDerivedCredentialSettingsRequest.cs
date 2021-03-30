@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> UpdateResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementDerivedCredentialSettings using PUT.
+        /// </summary>
+        /// <param name="deviceManagementDerivedCredentialSettingsToUpdate">The DeviceManagementDerivedCredentialSettings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> PutAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementDerivedCredentialSettings using PUT and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementDerivedCredentialSettingsToUpdate">The DeviceManagementDerivedCredentialSettings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> PutResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

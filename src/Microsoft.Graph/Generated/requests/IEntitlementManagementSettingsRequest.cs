@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<EntitlementManagementSettings>> UpdateResponseAsync(EntitlementManagementSettings entitlementManagementSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified EntitlementManagementSettings using PUT.
+        /// </summary>
+        /// <param name="entitlementManagementSettingsToUpdate">The EntitlementManagementSettings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EntitlementManagementSettings> PutAsync(EntitlementManagementSettings entitlementManagementSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EntitlementManagementSettings using PUT and returns a <see cref="GraphResponse{EntitlementManagementSettings}"/> object.
+        /// </summary>
+        /// <param name="entitlementManagementSettingsToUpdate">The EntitlementManagementSettings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EntitlementManagementSettings}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EntitlementManagementSettings>> PutResponseAsync(EntitlementManagementSettings entitlementManagementSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

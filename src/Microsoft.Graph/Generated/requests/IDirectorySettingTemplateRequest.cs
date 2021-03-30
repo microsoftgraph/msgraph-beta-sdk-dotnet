@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> UpdateResponseAsync(DirectorySettingTemplate directorySettingTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DirectorySettingTemplate using PUT.
+        /// </summary>
+        /// <param name="directorySettingTemplateToUpdate">The DirectorySettingTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DirectorySettingTemplate> PutAsync(DirectorySettingTemplate directorySettingTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DirectorySettingTemplate using PUT and returns a <see cref="GraphResponse{DirectorySettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="directorySettingTemplateToUpdate">The DirectorySettingTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DirectorySettingTemplate}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> PutResponseAsync(DirectorySettingTemplate directorySettingTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

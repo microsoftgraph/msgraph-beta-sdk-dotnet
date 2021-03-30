@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MailboxUsageQuotaStatusMailboxCounts using PUT.
+        /// </summary>
+        /// <param name="mailboxUsageQuotaStatusMailboxCountsToUpdate">The MailboxUsageQuotaStatusMailboxCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MailboxUsageQuotaStatusMailboxCounts> PutAsync(MailboxUsageQuotaStatusMailboxCounts mailboxUsageQuotaStatusMailboxCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MailboxUsageQuotaStatusMailboxCounts>(mailboxUsageQuotaStatusMailboxCountsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MailboxUsageQuotaStatusMailboxCounts using PUT and returns a <see cref="GraphResponse{MailboxUsageQuotaStatusMailboxCounts}"/> object.
+        /// </summary>
+        /// <param name="mailboxUsageQuotaStatusMailboxCountsToUpdate">The MailboxUsageQuotaStatusMailboxCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MailboxUsageQuotaStatusMailboxCounts}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailboxUsageQuotaStatusMailboxCounts>> PutResponseAsync(MailboxUsageQuotaStatusMailboxCounts mailboxUsageQuotaStatusMailboxCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MailboxUsageQuotaStatusMailboxCounts>(mailboxUsageQuotaStatusMailboxCountsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

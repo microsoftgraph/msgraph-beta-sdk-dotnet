@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueBoolean>> UpdateResponseAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified GroupPolicyPresentationValueBoolean using PUT.
+        /// </summary>
+        /// <param name="groupPolicyPresentationValueBooleanToUpdate">The GroupPolicyPresentationValueBoolean object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<GroupPolicyPresentationValueBoolean> PutAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationValueBoolean using PUT and returns a <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationValueBooleanToUpdate">The GroupPolicyPresentationValueBoolean object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueBoolean>> PutResponseAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

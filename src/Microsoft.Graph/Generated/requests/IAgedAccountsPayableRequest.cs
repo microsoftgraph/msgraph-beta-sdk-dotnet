@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AgedAccountsPayable>> UpdateResponseAsync(AgedAccountsPayable agedAccountsPayableToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AgedAccountsPayable using PUT.
+        /// </summary>
+        /// <param name="agedAccountsPayableToUpdate">The AgedAccountsPayable object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AgedAccountsPayable> PutAsync(AgedAccountsPayable agedAccountsPayableToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AgedAccountsPayable using PUT and returns a <see cref="GraphResponse{AgedAccountsPayable}"/> object.
+        /// </summary>
+        /// <param name="agedAccountsPayableToUpdate">The AgedAccountsPayable object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AgedAccountsPayable}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgedAccountsPayable>> PutResponseAsync(AgedAccountsPayable agedAccountsPayableToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

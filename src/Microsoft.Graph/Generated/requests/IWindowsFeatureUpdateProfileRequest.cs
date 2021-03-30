@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfile>> UpdateResponseAsync(WindowsFeatureUpdateProfile windowsFeatureUpdateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsFeatureUpdateProfile using PUT.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateProfileToUpdate">The WindowsFeatureUpdateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsFeatureUpdateProfile> PutAsync(WindowsFeatureUpdateProfile windowsFeatureUpdateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsFeatureUpdateProfile using PUT and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfile}"/> object.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateProfileToUpdate">The WindowsFeatureUpdateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsFeatureUpdateProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfile>> PutResponseAsync(WindowsFeatureUpdateProfile windowsFeatureUpdateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

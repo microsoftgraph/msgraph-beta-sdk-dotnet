@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> UpdateResponseAsync(CalendarPermission calendarPermissionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified CalendarPermission using PUT.
+        /// </summary>
+        /// <param name="calendarPermissionToUpdate">The CalendarPermission object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<CalendarPermission> PutAsync(CalendarPermission calendarPermissionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CalendarPermission using PUT and returns a <see cref="GraphResponse{CalendarPermission}"/> object.
+        /// </summary>
+        /// <param name="calendarPermissionToUpdate">The CalendarPermission object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{CalendarPermission}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> PutResponseAsync(CalendarPermission calendarPermissionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

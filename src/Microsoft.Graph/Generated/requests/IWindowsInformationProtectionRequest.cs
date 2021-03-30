@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> UpdateResponseAsync(WindowsInformationProtection windowsInformationProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsInformationProtection using PUT.
+        /// </summary>
+        /// <param name="windowsInformationProtectionToUpdate">The WindowsInformationProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsInformationProtection> PutAsync(WindowsInformationProtection windowsInformationProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsInformationProtection using PUT and returns a <see cref="GraphResponse{WindowsInformationProtection}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionToUpdate">The WindowsInformationProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsInformationProtection}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> PutResponseAsync(WindowsInformationProtection windowsInformationProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

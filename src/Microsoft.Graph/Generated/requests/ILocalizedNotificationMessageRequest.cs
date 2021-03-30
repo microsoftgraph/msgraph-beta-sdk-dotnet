@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> UpdateResponseAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified LocalizedNotificationMessage using PUT.
+        /// </summary>
+        /// <param name="localizedNotificationMessageToUpdate">The LocalizedNotificationMessage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<LocalizedNotificationMessage> PutAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified LocalizedNotificationMessage using PUT and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
+        /// </summary>
+        /// <param name="localizedNotificationMessageToUpdate">The LocalizedNotificationMessage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{LocalizedNotificationMessage}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> PutResponseAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

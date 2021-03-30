@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MessageRule>> UpdateResponseAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MessageRule using PUT.
+        /// </summary>
+        /// <param name="messageRuleToUpdate">The MessageRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MessageRule> PutAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MessageRule using PUT and returns a <see cref="GraphResponse{MessageRule}"/> object.
+        /// </summary>
+        /// <param name="messageRuleToUpdate">The MessageRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MessageRule}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MessageRule>> PutResponseAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

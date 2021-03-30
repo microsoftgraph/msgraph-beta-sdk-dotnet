@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> UpdateResponseAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified IosikEv2VpnConfiguration using PUT.
+        /// </summary>
+        /// <param name="iosikEv2VpnConfigurationToUpdate">The IosikEv2VpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IosikEv2VpnConfiguration> PutAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified IosikEv2VpnConfiguration using PUT and returns a <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosikEv2VpnConfigurationToUpdate">The IosikEv2VpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> PutResponseAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

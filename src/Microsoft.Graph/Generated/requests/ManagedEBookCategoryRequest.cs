@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified ManagedEBookCategory using PUT.
+        /// </summary>
+        /// <param name="managedEBookCategoryToUpdate">The ManagedEBookCategory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ManagedEBookCategory> PutAsync(ManagedEBookCategory managedEBookCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ManagedEBookCategory>(managedEBookCategoryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedEBookCategory using PUT and returns a <see cref="GraphResponse{ManagedEBookCategory}"/> object.
+        /// </summary>
+        /// <param name="managedEBookCategoryToUpdate">The ManagedEBookCategory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ManagedEBookCategory}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookCategory>> PutResponseAsync(ManagedEBookCategory managedEBookCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ManagedEBookCategory>(managedEBookCategoryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

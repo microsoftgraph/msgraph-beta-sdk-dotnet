@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> UpdateResponseAsync(ManagedIOSStoreApp managedIOSStoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ManagedIOSStoreApp using PUT.
+        /// </summary>
+        /// <param name="managedIOSStoreAppToUpdate">The ManagedIOSStoreApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagedIOSStoreApp> PutAsync(ManagedIOSStoreApp managedIOSStoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ManagedIOSStoreApp using PUT and returns a <see cref="GraphResponse{ManagedIOSStoreApp}"/> object.
+        /// </summary>
+        /// <param name="managedIOSStoreAppToUpdate">The ManagedIOSStoreApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagedIOSStoreApp}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> PutResponseAsync(ManagedIOSStoreApp managedIOSStoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

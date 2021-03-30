@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfiguration>> UpdateResponseAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Windows10GeneralConfiguration using PUT.
+        /// </summary>
+        /// <param name="windows10GeneralConfigurationToUpdate">The Windows10GeneralConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Windows10GeneralConfiguration> PutAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Windows10GeneralConfiguration using PUT and returns a <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10GeneralConfigurationToUpdate">The Windows10GeneralConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Windows10GeneralConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfiguration>> PutResponseAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

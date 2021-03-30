@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<OneDriveUsageFileCounts>> UpdateResponseAsync(OneDriveUsageFileCounts oneDriveUsageFileCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified OneDriveUsageFileCounts using PUT.
+        /// </summary>
+        /// <param name="oneDriveUsageFileCountsToUpdate">The OneDriveUsageFileCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<OneDriveUsageFileCounts> PutAsync(OneDriveUsageFileCounts oneDriveUsageFileCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified OneDriveUsageFileCounts using PUT and returns a <see cref="GraphResponse{OneDriveUsageFileCounts}"/> object.
+        /// </summary>
+        /// <param name="oneDriveUsageFileCountsToUpdate">The OneDriveUsageFileCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{OneDriveUsageFileCounts}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OneDriveUsageFileCounts>> PutResponseAsync(OneDriveUsageFileCounts oneDriveUsageFileCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

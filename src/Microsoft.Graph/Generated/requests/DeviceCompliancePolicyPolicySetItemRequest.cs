@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified DeviceCompliancePolicyPolicySetItem using PUT.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyPolicySetItemToUpdate">The DeviceCompliancePolicyPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceCompliancePolicyPolicySetItem> PutAsync(DeviceCompliancePolicyPolicySetItem deviceCompliancePolicyPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceCompliancePolicyPolicySetItem>(deviceCompliancePolicyPolicySetItemToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceCompliancePolicyPolicySetItem using PUT and returns a <see cref="GraphResponse{DeviceCompliancePolicyPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyPolicySetItemToUpdate">The DeviceCompliancePolicyPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceCompliancePolicyPolicySetItem}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyPolicySetItem>> PutResponseAsync(DeviceCompliancePolicyPolicySetItem deviceCompliancePolicyPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceCompliancePolicyPolicySetItem>(deviceCompliancePolicyPolicySetItemToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

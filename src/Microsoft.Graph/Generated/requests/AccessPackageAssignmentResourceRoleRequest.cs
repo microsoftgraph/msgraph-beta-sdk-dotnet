@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified AccessPackageAssignmentResourceRole using PUT.
+        /// </summary>
+        /// <param name="accessPackageAssignmentResourceRoleToUpdate">The AccessPackageAssignmentResourceRole object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> PutAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AccessPackageAssignmentResourceRole>(accessPackageAssignmentResourceRoleToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AccessPackageAssignmentResourceRole using PUT and returns a <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object.
+        /// </summary>
+        /// <param name="accessPackageAssignmentResourceRoleToUpdate">The AccessPackageAssignmentResourceRole object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> PutResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AccessPackageAssignmentResourceRole>(accessPackageAssignmentResourceRoleToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

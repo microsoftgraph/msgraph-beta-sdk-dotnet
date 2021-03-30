@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SalesCreditMemo>> UpdateResponseAsync(SalesCreditMemo salesCreditMemoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SalesCreditMemo using PUT.
+        /// </summary>
+        /// <param name="salesCreditMemoToUpdate">The SalesCreditMemo object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SalesCreditMemo> PutAsync(SalesCreditMemo salesCreditMemoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SalesCreditMemo using PUT and returns a <see cref="GraphResponse{SalesCreditMemo}"/> object.
+        /// </summary>
+        /// <param name="salesCreditMemoToUpdate">The SalesCreditMemo object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SalesCreditMemo}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SalesCreditMemo>> PutResponseAsync(SalesCreditMemo salesCreditMemoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

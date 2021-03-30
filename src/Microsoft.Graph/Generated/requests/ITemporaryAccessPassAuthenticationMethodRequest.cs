@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<TemporaryAccessPassAuthenticationMethod>> UpdateResponseAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified TemporaryAccessPassAuthenticationMethod using PUT.
+        /// </summary>
+        /// <param name="temporaryAccessPassAuthenticationMethodToUpdate">The TemporaryAccessPassAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethod> PutAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TemporaryAccessPassAuthenticationMethod using PUT and returns a <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="temporaryAccessPassAuthenticationMethodToUpdate">The TemporaryAccessPassAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethod}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TemporaryAccessPassAuthenticationMethod>> PutResponseAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

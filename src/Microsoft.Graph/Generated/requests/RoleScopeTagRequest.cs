@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified RoleScopeTag using PUT.
+        /// </summary>
+        /// <param name="roleScopeTagToUpdate">The RoleScopeTag object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<RoleScopeTag> PutAsync(RoleScopeTag roleScopeTagToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<RoleScopeTag>(roleScopeTagToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RoleScopeTag using PUT and returns a <see cref="GraphResponse{RoleScopeTag}"/> object.
+        /// </summary>
+        /// <param name="roleScopeTagToUpdate">The RoleScopeTag object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{RoleScopeTag}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> PutResponseAsync(RoleScopeTag roleScopeTagToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<RoleScopeTag>(roleScopeTagToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MacOSWiredNetworkConfiguration>> UpdateResponseAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MacOSWiredNetworkConfiguration using PUT.
+        /// </summary>
+        /// <param name="macOSWiredNetworkConfigurationToUpdate">The MacOSWiredNetworkConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MacOSWiredNetworkConfiguration> PutAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MacOSWiredNetworkConfiguration using PUT and returns a <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSWiredNetworkConfigurationToUpdate">The MacOSWiredNetworkConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSWiredNetworkConfiguration>> PutResponseAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

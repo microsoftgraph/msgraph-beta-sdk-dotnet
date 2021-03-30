@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified SensitivityLabel using PUT.
+        /// </summary>
+        /// <param name="sensitivityLabelToUpdate">The SensitivityLabel object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SensitivityLabel> PutAsync(SensitivityLabel sensitivityLabelToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SensitivityLabel>(sensitivityLabelToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SensitivityLabel using PUT and returns a <see cref="GraphResponse{SensitivityLabel}"/> object.
+        /// </summary>
+        /// <param name="sensitivityLabelToUpdate">The SensitivityLabel object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SensitivityLabel}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> PutResponseAsync(SensitivityLabel sensitivityLabelToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SensitivityLabel>(sensitivityLabelToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

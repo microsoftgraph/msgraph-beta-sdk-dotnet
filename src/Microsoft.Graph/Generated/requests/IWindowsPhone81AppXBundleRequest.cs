@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> UpdateResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsPhone81AppXBundle using PUT.
+        /// </summary>
+        /// <param name="windowsPhone81AppXBundleToUpdate">The WindowsPhone81AppXBundle object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsPhone81AppXBundle> PutAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsPhone81AppXBundle using PUT and returns a <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81AppXBundleToUpdate">The WindowsPhone81AppXBundle object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> PutResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

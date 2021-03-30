@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ItemInsights>> UpdateResponseAsync(ItemInsights itemInsightsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ItemInsights using PUT.
+        /// </summary>
+        /// <param name="itemInsightsToUpdate">The ItemInsights object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ItemInsights> PutAsync(ItemInsights itemInsightsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ItemInsights using PUT and returns a <see cref="GraphResponse{ItemInsights}"/> object.
+        /// </summary>
+        /// <param name="itemInsightsToUpdate">The ItemInsights object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ItemInsights}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemInsights>> PutResponseAsync(ItemInsights itemInsightsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

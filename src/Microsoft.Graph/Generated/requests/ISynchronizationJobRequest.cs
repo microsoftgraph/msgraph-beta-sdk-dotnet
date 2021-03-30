@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SynchronizationJob>> UpdateResponseAsync(SynchronizationJob synchronizationJobToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SynchronizationJob using PUT.
+        /// </summary>
+        /// <param name="synchronizationJobToUpdate">The SynchronizationJob object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SynchronizationJob> PutAsync(SynchronizationJob synchronizationJobToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SynchronizationJob using PUT and returns a <see cref="GraphResponse{SynchronizationJob}"/> object.
+        /// </summary>
+        /// <param name="synchronizationJobToUpdate">The SynchronizationJob object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SynchronizationJob}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SynchronizationJob>> PutResponseAsync(SynchronizationJob synchronizationJobToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

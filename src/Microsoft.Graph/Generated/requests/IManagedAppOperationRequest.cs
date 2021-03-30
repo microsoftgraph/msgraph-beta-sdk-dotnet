@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> UpdateResponseAsync(ManagedAppOperation managedAppOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ManagedAppOperation using PUT.
+        /// </summary>
+        /// <param name="managedAppOperationToUpdate">The ManagedAppOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagedAppOperation> PutAsync(ManagedAppOperation managedAppOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ManagedAppOperation using PUT and returns a <see cref="GraphResponse{ManagedAppOperation}"/> object.
+        /// </summary>
+        /// <param name="managedAppOperationToUpdate">The ManagedAppOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagedAppOperation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> PutResponseAsync(ManagedAppOperation managedAppOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabels>> UpdateResponseAsync(WorkbookChartDataLabels workbookChartDataLabelsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WorkbookChartDataLabels using PUT.
+        /// </summary>
+        /// <param name="workbookChartDataLabelsToUpdate">The WorkbookChartDataLabels object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkbookChartDataLabels> PutAsync(WorkbookChartDataLabels workbookChartDataLabelsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WorkbookChartDataLabels using PUT and returns a <see cref="GraphResponse{WorkbookChartDataLabels}"/> object.
+        /// </summary>
+        /// <param name="workbookChartDataLabelsToUpdate">The WorkbookChartDataLabels object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkbookChartDataLabels}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabels>> PutResponseAsync(WorkbookChartDataLabels workbookChartDataLabelsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified IosikEv2VpnConfiguration using PUT.
+        /// </summary>
+        /// <param name="iosikEv2VpnConfigurationToUpdate">The IosikEv2VpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosikEv2VpnConfiguration> PutAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosikEv2VpnConfiguration>(iosikEv2VpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosikEv2VpnConfiguration using PUT and returns a <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosikEv2VpnConfigurationToUpdate">The IosikEv2VpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosikEv2VpnConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> PutResponseAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosikEv2VpnConfiguration>(iosikEv2VpnConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>
