@@ -74,6 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets principal.
+        /// Every decision item in an access review represents a principal's access to a resource. This property represents details of the principal. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is 'Bob' and the resource is 'Sales'. Principals can be of two types - userIdentity and servicePrincipalIdentity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principal", Required = Newtonsoft.Json.Required.Default)]
         public Identity Principal { get; set; }
@@ -93,6 +94,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource.
+        /// Every decision item in an access review represents a principal's access to a resource. This property represents details of the resource. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is Bob and the resource is 'Sales'. Resources can be of multiple types. See accessReviewInstanceDecisionItemResource
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
         public AccessReviewInstanceDecisionItemResource Resource { get; set; }
