@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified DataSharingConsent using PUT.
+        /// </summary>
+        /// <param name="dataSharingConsentToUpdate">The DataSharingConsent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DataSharingConsent> PutAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DataSharingConsent>(dataSharingConsentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DataSharingConsent using PUT and returns a <see cref="GraphResponse{DataSharingConsent}"/> object.
+        /// </summary>
+        /// <param name="dataSharingConsentToUpdate">The DataSharingConsent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DataSharingConsent}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> PutResponseAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DataSharingConsent>(dataSharingConsentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

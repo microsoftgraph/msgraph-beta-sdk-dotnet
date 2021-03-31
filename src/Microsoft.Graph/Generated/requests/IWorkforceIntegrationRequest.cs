@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> UpdateResponseAsync(WorkforceIntegration workforceIntegrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WorkforceIntegration using PUT.
+        /// </summary>
+        /// <param name="workforceIntegrationToUpdate">The WorkforceIntegration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkforceIntegration> PutAsync(WorkforceIntegration workforceIntegrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WorkforceIntegration using PUT and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object.
+        /// </summary>
+        /// <param name="workforceIntegrationToUpdate">The WorkforceIntegration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkforceIntegration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> PutResponseAsync(WorkforceIntegration workforceIntegrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

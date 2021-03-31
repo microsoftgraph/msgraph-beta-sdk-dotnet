@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SharedInsight>> UpdateResponseAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SharedInsight using PUT.
+        /// </summary>
+        /// <param name="sharedInsightToUpdate">The SharedInsight object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SharedInsight> PutAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SharedInsight using PUT and returns a <see cref="GraphResponse{SharedInsight}"/> object.
+        /// </summary>
+        /// <param name="sharedInsightToUpdate">The SharedInsight object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SharedInsight}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> PutResponseAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

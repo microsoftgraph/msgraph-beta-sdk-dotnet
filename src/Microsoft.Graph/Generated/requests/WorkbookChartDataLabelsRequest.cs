@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WorkbookChartDataLabels using PUT.
+        /// </summary>
+        /// <param name="workbookChartDataLabelsToUpdate">The WorkbookChartDataLabels object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WorkbookChartDataLabels> PutAsync(WorkbookChartDataLabels workbookChartDataLabelsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WorkbookChartDataLabels>(workbookChartDataLabelsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookChartDataLabels using PUT and returns a <see cref="GraphResponse{WorkbookChartDataLabels}"/> object.
+        /// </summary>
+        /// <param name="workbookChartDataLabelsToUpdate">The WorkbookChartDataLabels object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WorkbookChartDataLabels}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabels>> PutResponseAsync(WorkbookChartDataLabels workbookChartDataLabelsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WorkbookChartDataLabels>(workbookChartDataLabelsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

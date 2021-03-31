@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementCollectionSettingDefinition>> UpdateResponseAsync(DeviceManagementCollectionSettingDefinition deviceManagementCollectionSettingDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementCollectionSettingDefinition using PUT.
+        /// </summary>
+        /// <param name="deviceManagementCollectionSettingDefinitionToUpdate">The DeviceManagementCollectionSettingDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementCollectionSettingDefinition> PutAsync(DeviceManagementCollectionSettingDefinition deviceManagementCollectionSettingDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementCollectionSettingDefinition using PUT and returns a <see cref="GraphResponse{DeviceManagementCollectionSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementCollectionSettingDefinitionToUpdate">The DeviceManagementCollectionSettingDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementCollectionSettingDefinition}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCollectionSettingDefinition>> PutResponseAsync(DeviceManagementCollectionSettingDefinition deviceManagementCollectionSettingDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

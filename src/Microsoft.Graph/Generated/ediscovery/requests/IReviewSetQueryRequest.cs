@@ -83,6 +83,22 @@ namespace Microsoft.Graph.Ediscovery
         System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> UpdateResponseAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ReviewSetQuery using PUT.
+        /// </summary>
+        /// <param name="reviewSetQueryToUpdate">The ReviewSetQuery object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ReviewSetQuery> PutAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ReviewSetQuery using PUT and returns a <see cref="GraphResponse{ReviewSetQuery}"/> object.
+        /// </summary>
+        /// <param name="reviewSetQueryToUpdate">The ReviewSetQuery object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ReviewSetQuery}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> PutResponseAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

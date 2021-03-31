@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified SecurityBaselineState using PUT.
+        /// </summary>
+        /// <param name="securityBaselineStateToUpdate">The SecurityBaselineState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SecurityBaselineState> PutAsync(SecurityBaselineState securityBaselineStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SecurityBaselineState>(securityBaselineStateToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SecurityBaselineState using PUT and returns a <see cref="GraphResponse{SecurityBaselineState}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineStateToUpdate">The SecurityBaselineState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SecurityBaselineState}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineState>> PutResponseAsync(SecurityBaselineState securityBaselineStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SecurityBaselineState>(securityBaselineStateToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

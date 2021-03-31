@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStatus>> UpdateResponseAsync(DeviceConfigurationDeviceStatus deviceConfigurationDeviceStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceConfigurationDeviceStatus using PUT.
+        /// </summary>
+        /// <param name="deviceConfigurationDeviceStatusToUpdate">The DeviceConfigurationDeviceStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceConfigurationDeviceStatus> PutAsync(DeviceConfigurationDeviceStatus deviceConfigurationDeviceStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationDeviceStatus using PUT and returns a <see cref="GraphResponse{DeviceConfigurationDeviceStatus}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationDeviceStatusToUpdate">The DeviceConfigurationDeviceStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceConfigurationDeviceStatus}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStatus>> PutResponseAsync(DeviceConfigurationDeviceStatus deviceConfigurationDeviceStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

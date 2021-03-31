@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfileAssignment>> UpdateResponseAsync(IntuneBrandingProfileAssignment intuneBrandingProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified IntuneBrandingProfileAssignment using PUT.
+        /// </summary>
+        /// <param name="intuneBrandingProfileAssignmentToUpdate">The IntuneBrandingProfileAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IntuneBrandingProfileAssignment> PutAsync(IntuneBrandingProfileAssignment intuneBrandingProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified IntuneBrandingProfileAssignment using PUT and returns a <see cref="GraphResponse{IntuneBrandingProfileAssignment}"/> object.
+        /// </summary>
+        /// <param name="intuneBrandingProfileAssignmentToUpdate">The IntuneBrandingProfileAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IntuneBrandingProfileAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfileAssignment>> PutResponseAsync(IntuneBrandingProfileAssignment intuneBrandingProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

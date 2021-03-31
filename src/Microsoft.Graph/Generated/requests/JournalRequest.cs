@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Journal using PUT.
+        /// </summary>
+        /// <param name="journalToUpdate">The Journal object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Journal> PutAsync(Journal journalToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Journal>(journalToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Journal using PUT and returns a <see cref="GraphResponse{Journal}"/> object.
+        /// </summary>
+        /// <param name="journalToUpdate">The Journal object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Journal}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Journal>> PutResponseAsync(Journal journalToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Journal>(journalToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

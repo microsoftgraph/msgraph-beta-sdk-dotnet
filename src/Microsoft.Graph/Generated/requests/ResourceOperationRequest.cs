@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified ResourceOperation using PUT.
+        /// </summary>
+        /// <param name="resourceOperationToUpdate">The ResourceOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ResourceOperation> PutAsync(ResourceOperation resourceOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ResourceOperation>(resourceOperationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ResourceOperation using PUT and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
+        /// </summary>
+        /// <param name="resourceOperationToUpdate">The ResourceOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ResourceOperation}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> PutResponseAsync(ResourceOperation resourceOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ResourceOperation>(resourceOperationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

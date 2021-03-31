@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> UpdateResponseAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceAndAppManagementRoleAssignment using PUT.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleAssignmentToUpdate">The DeviceAndAppManagementRoleAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceAndAppManagementRoleAssignment> PutAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceAndAppManagementRoleAssignment using PUT and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleAssignmentToUpdate">The DeviceAndAppManagementRoleAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> PutResponseAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

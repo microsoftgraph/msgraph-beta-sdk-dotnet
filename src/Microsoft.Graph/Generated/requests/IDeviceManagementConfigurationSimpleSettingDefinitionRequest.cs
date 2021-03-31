@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSimpleSettingDefinition>> UpdateResponseAsync(DeviceManagementConfigurationSimpleSettingDefinition deviceManagementConfigurationSimpleSettingDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementConfigurationSimpleSettingDefinition using PUT.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSimpleSettingDefinitionToUpdate">The DeviceManagementConfigurationSimpleSettingDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementConfigurationSimpleSettingDefinition> PutAsync(DeviceManagementConfigurationSimpleSettingDefinition deviceManagementConfigurationSimpleSettingDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationSimpleSettingDefinition using PUT and returns a <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSimpleSettingDefinitionToUpdate">The DeviceManagementConfigurationSimpleSettingDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingDefinition}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSimpleSettingDefinition>> PutResponseAsync(DeviceManagementConfigurationSimpleSettingDefinition deviceManagementConfigurationSimpleSettingDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

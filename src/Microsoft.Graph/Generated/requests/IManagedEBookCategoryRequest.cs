@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ManagedEBookCategory>> UpdateResponseAsync(ManagedEBookCategory managedEBookCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ManagedEBookCategory using PUT.
+        /// </summary>
+        /// <param name="managedEBookCategoryToUpdate">The ManagedEBookCategory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagedEBookCategory> PutAsync(ManagedEBookCategory managedEBookCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ManagedEBookCategory using PUT and returns a <see cref="GraphResponse{ManagedEBookCategory}"/> object.
+        /// </summary>
+        /// <param name="managedEBookCategoryToUpdate">The ManagedEBookCategory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagedEBookCategory}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBookCategory>> PutResponseAsync(ManagedEBookCategory managedEBookCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<TeamsApp>> UpdateResponseAsync(TeamsApp teamsAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified TeamsApp using PUT.
+        /// </summary>
+        /// <param name="teamsAppToUpdate">The TeamsApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TeamsApp> PutAsync(TeamsApp teamsAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TeamsApp using PUT and returns a <see cref="GraphResponse{TeamsApp}"/> object.
+        /// </summary>
+        /// <param name="teamsAppToUpdate">The TeamsApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TeamsApp}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsApp>> PutResponseAsync(TeamsApp teamsAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

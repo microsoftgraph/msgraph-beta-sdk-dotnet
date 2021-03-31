@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<FocusActivityStatistics>> UpdateResponseAsync(FocusActivityStatistics focusActivityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified FocusActivityStatistics using PUT.
+        /// </summary>
+        /// <param name="focusActivityStatisticsToUpdate">The FocusActivityStatistics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<FocusActivityStatistics> PutAsync(FocusActivityStatistics focusActivityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified FocusActivityStatistics using PUT and returns a <see cref="GraphResponse{FocusActivityStatistics}"/> object.
+        /// </summary>
+        /// <param name="focusActivityStatisticsToUpdate">The FocusActivityStatistics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{FocusActivityStatistics}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FocusActivityStatistics>> PutResponseAsync(FocusActivityStatistics focusActivityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

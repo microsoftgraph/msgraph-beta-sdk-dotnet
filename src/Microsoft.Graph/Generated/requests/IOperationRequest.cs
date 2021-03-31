@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Operation>> UpdateResponseAsync(Operation operationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Operation using PUT.
+        /// </summary>
+        /// <param name="operationToUpdate">The Operation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Operation> PutAsync(Operation operationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Operation using PUT and returns a <see cref="GraphResponse{Operation}"/> object.
+        /// </summary>
+        /// <param name="operationToUpdate">The Operation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Operation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Operation>> PutResponseAsync(Operation operationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScript>> UpdateResponseAsync(DeviceComplianceScript deviceComplianceScriptToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceComplianceScript using PUT.
+        /// </summary>
+        /// <param name="deviceComplianceScriptToUpdate">The DeviceComplianceScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceComplianceScript> PutAsync(DeviceComplianceScript deviceComplianceScriptToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceScript using PUT and returns a <see cref="GraphResponse{DeviceComplianceScript}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScriptToUpdate">The DeviceComplianceScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceComplianceScript}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScript>> PutResponseAsync(DeviceComplianceScript deviceComplianceScriptToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

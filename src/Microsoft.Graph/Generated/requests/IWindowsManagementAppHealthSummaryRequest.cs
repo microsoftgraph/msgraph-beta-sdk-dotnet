@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> UpdateResponseAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsManagementAppHealthSummary using PUT.
+        /// </summary>
+        /// <param name="windowsManagementAppHealthSummaryToUpdate">The WindowsManagementAppHealthSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> PutAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsManagementAppHealthSummary using PUT and returns a <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsManagementAppHealthSummaryToUpdate">The WindowsManagementAppHealthSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> PutResponseAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

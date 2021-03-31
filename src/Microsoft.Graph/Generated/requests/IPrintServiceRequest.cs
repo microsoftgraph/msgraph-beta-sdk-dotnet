@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<PrintService>> UpdateResponseAsync(PrintService printServiceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified PrintService using PUT.
+        /// </summary>
+        /// <param name="printServiceToUpdate">The PrintService object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<PrintService> PutAsync(PrintService printServiceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified PrintService using PUT and returns a <see cref="GraphResponse{PrintService}"/> object.
+        /// </summary>
+        /// <param name="printServiceToUpdate">The PrintService object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{PrintService}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintService>> PutResponseAsync(PrintService printServiceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

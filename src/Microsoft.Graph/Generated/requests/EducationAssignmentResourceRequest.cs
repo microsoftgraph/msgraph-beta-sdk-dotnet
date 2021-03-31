@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified EducationAssignmentResource using PUT.
+        /// </summary>
+        /// <param name="educationAssignmentResourceToUpdate">The EducationAssignmentResource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<EducationAssignmentResource> PutAsync(EducationAssignmentResource educationAssignmentResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<EducationAssignmentResource>(educationAssignmentResourceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EducationAssignmentResource using PUT and returns a <see cref="GraphResponse{EducationAssignmentResource}"/> object.
+        /// </summary>
+        /// <param name="educationAssignmentResourceToUpdate">The EducationAssignmentResource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{EducationAssignmentResource}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationAssignmentResource>> PutResponseAsync(EducationAssignmentResource educationAssignmentResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<EducationAssignmentResource>(educationAssignmentResourceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified AdminConsentRequestPolicy using PUT.
+        /// </summary>
+        /// <param name="adminConsentRequestPolicyToUpdate">The AdminConsentRequestPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AdminConsentRequestPolicy> PutAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AdminConsentRequestPolicy>(adminConsentRequestPolicyToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AdminConsentRequestPolicy using PUT and returns a <see cref="GraphResponse{AdminConsentRequestPolicy}"/> object.
+        /// </summary>
+        /// <param name="adminConsentRequestPolicyToUpdate">The AdminConsentRequestPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AdminConsentRequestPolicy}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdminConsentRequestPolicy>> PutResponseAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AdminConsentRequestPolicy>(adminConsentRequestPolicyToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

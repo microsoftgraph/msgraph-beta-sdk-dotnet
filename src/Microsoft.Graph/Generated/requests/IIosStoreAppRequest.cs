@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> UpdateResponseAsync(IosStoreApp iosStoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified IosStoreApp using PUT.
+        /// </summary>
+        /// <param name="iosStoreAppToUpdate">The IosStoreApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IosStoreApp> PutAsync(IosStoreApp iosStoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified IosStoreApp using PUT and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="iosStoreAppToUpdate">The IosStoreApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IosStoreApp}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> PutResponseAsync(IosStoreApp iosStoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

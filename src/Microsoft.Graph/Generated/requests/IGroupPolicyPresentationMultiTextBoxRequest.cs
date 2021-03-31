@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationMultiTextBox>> UpdateResponseAsync(GroupPolicyPresentationMultiTextBox groupPolicyPresentationMultiTextBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified GroupPolicyPresentationMultiTextBox using PUT.
+        /// </summary>
+        /// <param name="groupPolicyPresentationMultiTextBoxToUpdate">The GroupPolicyPresentationMultiTextBox object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<GroupPolicyPresentationMultiTextBox> PutAsync(GroupPolicyPresentationMultiTextBox groupPolicyPresentationMultiTextBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationMultiTextBox using PUT and returns a <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationMultiTextBoxToUpdate">The GroupPolicyPresentationMultiTextBox object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationMultiTextBox>> PutResponseAsync(GroupPolicyPresentationMultiTextBox groupPolicyPresentationMultiTextBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlow>> UpdateResponseAsync(B2cIdentityUserFlow b2cIdentityUserFlowToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified B2cIdentityUserFlow using PUT.
+        /// </summary>
+        /// <param name="b2cIdentityUserFlowToUpdate">The B2cIdentityUserFlow object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<B2cIdentityUserFlow> PutAsync(B2cIdentityUserFlow b2cIdentityUserFlowToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified B2cIdentityUserFlow using PUT and returns a <see cref="GraphResponse{B2cIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <param name="b2cIdentityUserFlowToUpdate">The B2cIdentityUserFlow object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{B2cIdentityUserFlow}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlow>> PutResponseAsync(B2cIdentityUserFlow b2cIdentityUserFlowToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph.Ediscovery
         System.Threading.Tasks.Task<GraphResponse<Ediscoveryroot>> UpdateResponseAsync(Ediscoveryroot ediscoveryrootToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Ediscoveryroot using PUT.
+        /// </summary>
+        /// <param name="ediscoveryrootToUpdate">The Ediscoveryroot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Ediscoveryroot> PutAsync(Ediscoveryroot ediscoveryrootToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Ediscoveryroot using PUT and returns a <see cref="GraphResponse{Ediscoveryroot}"/> object.
+        /// </summary>
+        /// <param name="ediscoveryrootToUpdate">The Ediscoveryroot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Ediscoveryroot}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Ediscoveryroot>> PutResponseAsync(Ediscoveryroot ediscoveryrootToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

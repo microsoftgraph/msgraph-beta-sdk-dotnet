@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> UpdateResponseAsync(Windows81CompliancePolicy windows81CompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Windows81CompliancePolicy using PUT.
+        /// </summary>
+        /// <param name="windows81CompliancePolicyToUpdate">The Windows81CompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Windows81CompliancePolicy> PutAsync(Windows81CompliancePolicy windows81CompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Windows81CompliancePolicy using PUT and returns a <see cref="GraphResponse{Windows81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows81CompliancePolicyToUpdate">The Windows81CompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Windows81CompliancePolicy}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> PutResponseAsync(Windows81CompliancePolicy windows81CompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

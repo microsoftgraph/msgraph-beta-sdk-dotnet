@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignment>> UpdateResponseAsync(AccessPackageAssignment accessPackageAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AccessPackageAssignment using PUT.
+        /// </summary>
+        /// <param name="accessPackageAssignmentToUpdate">The AccessPackageAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AccessPackageAssignment> PutAsync(AccessPackageAssignment accessPackageAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AccessPackageAssignment using PUT and returns a <see cref="GraphResponse{AccessPackageAssignment}"/> object.
+        /// </summary>
+        /// <param name="accessPackageAssignmentToUpdate">The AccessPackageAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AccessPackageAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignment>> PutResponseAsync(AccessPackageAssignment accessPackageAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

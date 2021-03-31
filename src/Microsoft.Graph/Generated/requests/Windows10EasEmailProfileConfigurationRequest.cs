@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Windows10EasEmailProfileConfiguration using PUT.
+        /// </summary>
+        /// <param name="windows10EasEmailProfileConfigurationToUpdate">The Windows10EasEmailProfileConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Windows10EasEmailProfileConfiguration> PutAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Windows10EasEmailProfileConfiguration>(windows10EasEmailProfileConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10EasEmailProfileConfiguration using PUT and returns a <see cref="GraphResponse{Windows10EasEmailProfileConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EasEmailProfileConfigurationToUpdate">The Windows10EasEmailProfileConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Windows10EasEmailProfileConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10EasEmailProfileConfiguration>> PutResponseAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Windows10EasEmailProfileConfiguration>(windows10EasEmailProfileConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

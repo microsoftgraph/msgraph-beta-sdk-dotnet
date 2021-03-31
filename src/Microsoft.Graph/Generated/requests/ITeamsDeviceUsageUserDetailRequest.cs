@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> UpdateResponseAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified TeamsDeviceUsageUserDetail using PUT.
+        /// </summary>
+        /// <param name="teamsDeviceUsageUserDetailToUpdate">The TeamsDeviceUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> PutAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TeamsDeviceUsageUserDetail using PUT and returns a <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="teamsDeviceUsageUserDetailToUpdate">The TeamsDeviceUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> PutResponseAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

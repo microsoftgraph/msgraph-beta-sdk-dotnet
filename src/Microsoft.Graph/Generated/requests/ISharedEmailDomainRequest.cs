@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SharedEmailDomain>> UpdateResponseAsync(SharedEmailDomain sharedEmailDomainToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SharedEmailDomain using PUT.
+        /// </summary>
+        /// <param name="sharedEmailDomainToUpdate">The SharedEmailDomain object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SharedEmailDomain> PutAsync(SharedEmailDomain sharedEmailDomainToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SharedEmailDomain using PUT and returns a <see cref="GraphResponse{SharedEmailDomain}"/> object.
+        /// </summary>
+        /// <param name="sharedEmailDomainToUpdate">The SharedEmailDomain object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SharedEmailDomain}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedEmailDomain>> PutResponseAsync(SharedEmailDomain sharedEmailDomainToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

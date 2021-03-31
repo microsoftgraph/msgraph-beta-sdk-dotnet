@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> UpdateResponseAsync(IpNamedLocation ipNamedLocationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified IpNamedLocation using PUT.
+        /// </summary>
+        /// <param name="ipNamedLocationToUpdate">The IpNamedLocation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IpNamedLocation> PutAsync(IpNamedLocation ipNamedLocationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified IpNamedLocation using PUT and returns a <see cref="GraphResponse{IpNamedLocation}"/> object.
+        /// </summary>
+        /// <param name="ipNamedLocationToUpdate">The IpNamedLocation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IpNamedLocation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> PutResponseAsync(IpNamedLocation ipNamedLocationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

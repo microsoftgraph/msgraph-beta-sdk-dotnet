@@ -83,6 +83,22 @@ namespace Microsoft.Graph.Ediscovery
         System.Threading.Tasks.Task<GraphResponse<Tag>> UpdateResponseAsync(Tag tagToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Tag using PUT.
+        /// </summary>
+        /// <param name="tagToUpdate">The Tag object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Tag> PutAsync(Tag tagToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Tag using PUT and returns a <see cref="GraphResponse{Tag}"/> object.
+        /// </summary>
+        /// <param name="tagToUpdate">The Tag object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Tag}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Tag>> PutResponseAsync(Tag tagToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

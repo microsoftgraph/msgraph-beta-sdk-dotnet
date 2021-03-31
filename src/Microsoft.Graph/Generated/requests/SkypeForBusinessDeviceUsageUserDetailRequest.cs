@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified SkypeForBusinessDeviceUsageUserDetail using PUT.
+        /// </summary>
+        /// <param name="skypeForBusinessDeviceUsageUserDetailToUpdate">The SkypeForBusinessDeviceUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> PutAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SkypeForBusinessDeviceUsageUserDetail>(skypeForBusinessDeviceUsageUserDetailToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessDeviceUsageUserDetail using PUT and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessDeviceUsageUserDetailToUpdate">The SkypeForBusinessDeviceUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> PutResponseAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SkypeForBusinessDeviceUsageUserDetail>(skypeForBusinessDeviceUsageUserDetailToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MacOSPkcsCertificateProfile>> UpdateResponseAsync(MacOSPkcsCertificateProfile macOSPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MacOSPkcsCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="macOSPkcsCertificateProfileToUpdate">The MacOSPkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MacOSPkcsCertificateProfile> PutAsync(MacOSPkcsCertificateProfile macOSPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MacOSPkcsCertificateProfile using PUT and returns a <see cref="GraphResponse{MacOSPkcsCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="macOSPkcsCertificateProfileToUpdate">The MacOSPkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MacOSPkcsCertificateProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSPkcsCertificateProfile>> PutResponseAsync(MacOSPkcsCertificateProfile macOSPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

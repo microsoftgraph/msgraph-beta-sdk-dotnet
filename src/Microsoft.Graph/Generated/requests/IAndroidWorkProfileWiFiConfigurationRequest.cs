@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> UpdateResponseAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AndroidWorkProfileWiFiConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidWorkProfileWiFiConfigurationToUpdate">The AndroidWorkProfileWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidWorkProfileWiFiConfiguration> PutAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileWiFiConfiguration using PUT and returns a <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileWiFiConfigurationToUpdate">The AndroidWorkProfileWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> PutResponseAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

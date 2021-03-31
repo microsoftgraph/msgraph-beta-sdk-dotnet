@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfileAssignment>> UpdateResponseAsync(WindowsQualityUpdateProfileAssignment windowsQualityUpdateProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsQualityUpdateProfileAssignment using PUT.
+        /// </summary>
+        /// <param name="windowsQualityUpdateProfileAssignmentToUpdate">The WindowsQualityUpdateProfileAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsQualityUpdateProfileAssignment> PutAsync(WindowsQualityUpdateProfileAssignment windowsQualityUpdateProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsQualityUpdateProfileAssignment using PUT and returns a <see cref="GraphResponse{WindowsQualityUpdateProfileAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsQualityUpdateProfileAssignmentToUpdate">The WindowsQualityUpdateProfileAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsQualityUpdateProfileAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfileAssignment>> PutResponseAsync(WindowsQualityUpdateProfileAssignment windowsQualityUpdateProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

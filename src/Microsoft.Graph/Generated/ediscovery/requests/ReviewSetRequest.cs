@@ -140,6 +140,34 @@ namespace Microsoft.Graph.Ediscovery
         }
 
         /// <summary>
+        /// Updates the specified ReviewSet using PUT.
+        /// </summary>
+        /// <param name="reviewSetToUpdate">The ReviewSet object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ReviewSet> PutAsync(ReviewSet reviewSetToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ReviewSet>(reviewSetToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ReviewSet using PUT and returns a <see cref="GraphResponse{ReviewSet}"/> object.
+        /// </summary>
+        /// <param name="reviewSetToUpdate">The ReviewSet object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ReviewSet}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReviewSet>> PutResponseAsync(ReviewSet reviewSetToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ReviewSet>(reviewSetToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

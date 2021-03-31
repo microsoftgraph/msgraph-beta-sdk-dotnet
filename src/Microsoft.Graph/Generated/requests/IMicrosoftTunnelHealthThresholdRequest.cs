@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> UpdateResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MicrosoftTunnelHealthThreshold using PUT.
+        /// </summary>
+        /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> PutAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelHealthThreshold using PUT and returns a <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> PutResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

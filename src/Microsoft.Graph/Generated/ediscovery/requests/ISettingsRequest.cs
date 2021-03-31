@@ -83,6 +83,22 @@ namespace Microsoft.Graph.Ediscovery
         System.Threading.Tasks.Task<GraphResponse<Settings>> UpdateResponseAsync(Settings settingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Settings using PUT.
+        /// </summary>
+        /// <param name="settingsToUpdate">The Settings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Settings> PutAsync(Settings settingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Settings using PUT and returns a <see cref="GraphResponse{Settings}"/> object.
+        /// </summary>
+        /// <param name="settingsToUpdate">The Settings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Settings}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Settings>> PutResponseAsync(Settings settingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

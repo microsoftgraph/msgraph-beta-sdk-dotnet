@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptDeviceState>> UpdateResponseAsync(DeviceHealthScriptDeviceState deviceHealthScriptDeviceStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceHealthScriptDeviceState using PUT.
+        /// </summary>
+        /// <param name="deviceHealthScriptDeviceStateToUpdate">The DeviceHealthScriptDeviceState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceHealthScriptDeviceState> PutAsync(DeviceHealthScriptDeviceState deviceHealthScriptDeviceStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceHealthScriptDeviceState using PUT and returns a <see cref="GraphResponse{DeviceHealthScriptDeviceState}"/> object.
+        /// </summary>
+        /// <param name="deviceHealthScriptDeviceStateToUpdate">The DeviceHealthScriptDeviceState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceHealthScriptDeviceState}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptDeviceState>> PutResponseAsync(DeviceHealthScriptDeviceState deviceHealthScriptDeviceStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

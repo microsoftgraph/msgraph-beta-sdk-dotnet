@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> UpdateResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SoftwareUpdateStatusSummary using PUT.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> PutAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SoftwareUpdateStatusSummary using PUT and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> PutResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

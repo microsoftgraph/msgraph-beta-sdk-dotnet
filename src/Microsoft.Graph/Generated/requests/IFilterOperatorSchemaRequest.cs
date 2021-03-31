@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> UpdateResponseAsync(FilterOperatorSchema filterOperatorSchemaToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified FilterOperatorSchema using PUT.
+        /// </summary>
+        /// <param name="filterOperatorSchemaToUpdate">The FilterOperatorSchema object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<FilterOperatorSchema> PutAsync(FilterOperatorSchema filterOperatorSchemaToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified FilterOperatorSchema using PUT and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object.
+        /// </summary>
+        /// <param name="filterOperatorSchemaToUpdate">The FilterOperatorSchema object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{FilterOperatorSchema}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> PutResponseAsync(FilterOperatorSchema filterOperatorSchemaToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

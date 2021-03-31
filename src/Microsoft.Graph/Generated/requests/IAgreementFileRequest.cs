@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AgreementFile>> UpdateResponseAsync(AgreementFile agreementFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AgreementFile using PUT.
+        /// </summary>
+        /// <param name="agreementFileToUpdate">The AgreementFile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AgreementFile> PutAsync(AgreementFile agreementFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AgreementFile using PUT and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <param name="agreementFileToUpdate">The AgreementFile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AgreementFile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFile>> PutResponseAsync(AgreementFile agreementFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

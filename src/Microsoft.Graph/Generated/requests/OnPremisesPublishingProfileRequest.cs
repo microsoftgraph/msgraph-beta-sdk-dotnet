@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified OnPremisesPublishingProfile using PUT.
+        /// </summary>
+        /// <param name="onPremisesPublishingProfileToUpdate">The OnPremisesPublishingProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<OnPremisesPublishingProfile> PutAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<OnPremisesPublishingProfile>(onPremisesPublishingProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OnPremisesPublishingProfile using PUT and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <param name="onPremisesPublishingProfileToUpdate">The OnPremisesPublishingProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{OnPremisesPublishingProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> PutResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<OnPremisesPublishingProfile>(onPremisesPublishingProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

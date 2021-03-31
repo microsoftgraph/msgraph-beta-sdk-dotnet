@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsPhone81TrustedRootCertificate>> UpdateResponseAsync(WindowsPhone81TrustedRootCertificate windowsPhone81TrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsPhone81TrustedRootCertificate using PUT.
+        /// </summary>
+        /// <param name="windowsPhone81TrustedRootCertificateToUpdate">The WindowsPhone81TrustedRootCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsPhone81TrustedRootCertificate> PutAsync(WindowsPhone81TrustedRootCertificate windowsPhone81TrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsPhone81TrustedRootCertificate using PUT and returns a <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81TrustedRootCertificateToUpdate">The WindowsPhone81TrustedRootCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81TrustedRootCertificate>> PutResponseAsync(WindowsPhone81TrustedRootCertificate windowsPhone81TrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

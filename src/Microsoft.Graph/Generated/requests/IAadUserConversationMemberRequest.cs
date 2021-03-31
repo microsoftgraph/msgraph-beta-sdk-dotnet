@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> UpdateResponseAsync(AadUserConversationMember aadUserConversationMemberToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AadUserConversationMember using PUT.
+        /// </summary>
+        /// <param name="aadUserConversationMemberToUpdate">The AadUserConversationMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AadUserConversationMember> PutAsync(AadUserConversationMember aadUserConversationMemberToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AadUserConversationMember using PUT and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <param name="aadUserConversationMemberToUpdate">The AadUserConversationMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AadUserConversationMember}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> PutResponseAsync(AadUserConversationMember aadUserConversationMemberToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

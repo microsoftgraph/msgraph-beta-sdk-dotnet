@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> UpdateResponseAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MuteParticipantOperation using PUT.
+        /// </summary>
+        /// <param name="muteParticipantOperationToUpdate">The MuteParticipantOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MuteParticipantOperation> PutAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MuteParticipantOperation using PUT and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="muteParticipantOperationToUpdate">The MuteParticipantOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MuteParticipantOperation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> PutResponseAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

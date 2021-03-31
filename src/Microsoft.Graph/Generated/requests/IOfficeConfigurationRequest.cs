@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<OfficeConfiguration>> UpdateResponseAsync(OfficeConfiguration officeConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified OfficeConfiguration using PUT.
+        /// </summary>
+        /// <param name="officeConfigurationToUpdate">The OfficeConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<OfficeConfiguration> PutAsync(OfficeConfiguration officeConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified OfficeConfiguration using PUT and returns a <see cref="GraphResponse{OfficeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="officeConfigurationToUpdate">The OfficeConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{OfficeConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeConfiguration>> PutResponseAsync(OfficeConfiguration officeConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

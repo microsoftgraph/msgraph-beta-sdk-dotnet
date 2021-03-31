@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified SharePointSiteUsageSiteCounts using PUT.
+        /// </summary>
+        /// <param name="sharePointSiteUsageSiteCountsToUpdate">The SharePointSiteUsageSiteCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> PutAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SharePointSiteUsageSiteCounts>(sharePointSiteUsageSiteCountsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SharePointSiteUsageSiteCounts using PUT and returns a <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object.
+        /// </summary>
+        /// <param name="sharePointSiteUsageSiteCountsToUpdate">The SharePointSiteUsageSiteCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageSiteCounts>> PutResponseAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SharePointSiteUsageSiteCounts>(sharePointSiteUsageSiteCountsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

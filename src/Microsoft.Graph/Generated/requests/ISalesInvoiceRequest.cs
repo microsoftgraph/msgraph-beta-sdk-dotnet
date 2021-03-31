@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SalesInvoice>> UpdateResponseAsync(SalesInvoice salesInvoiceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SalesInvoice using PUT.
+        /// </summary>
+        /// <param name="salesInvoiceToUpdate">The SalesInvoice object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SalesInvoice> PutAsync(SalesInvoice salesInvoiceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SalesInvoice using PUT and returns a <see cref="GraphResponse{SalesInvoice}"/> object.
+        /// </summary>
+        /// <param name="salesInvoiceToUpdate">The SalesInvoice object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SalesInvoice}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SalesInvoice>> PutResponseAsync(SalesInvoice salesInvoiceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

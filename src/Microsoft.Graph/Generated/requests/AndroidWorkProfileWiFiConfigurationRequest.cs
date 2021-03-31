@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified AndroidWorkProfileWiFiConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidWorkProfileWiFiConfigurationToUpdate">The AndroidWorkProfileWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidWorkProfileWiFiConfiguration> PutAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidWorkProfileWiFiConfiguration>(androidWorkProfileWiFiConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileWiFiConfiguration using PUT and returns a <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileWiFiConfigurationToUpdate">The AndroidWorkProfileWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> PutResponseAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidWorkProfileWiFiConfiguration>(androidWorkProfileWiFiConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

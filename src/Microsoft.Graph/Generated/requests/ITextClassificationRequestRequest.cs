@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> UpdateResponseAsync(TextClassificationRequestObject textClassificationRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified TextClassificationRequestObject using PUT.
+        /// </summary>
+        /// <param name="textClassificationRequestObjectToUpdate">The TextClassificationRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TextClassificationRequestObject> PutAsync(TextClassificationRequestObject textClassificationRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TextClassificationRequestObject using PUT and returns a <see cref="GraphResponse{TextClassificationRequestObject}"/> object.
+        /// </summary>
+        /// <param name="textClassificationRequestObjectToUpdate">The TextClassificationRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TextClassificationRequestObject}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> PutResponseAsync(TextClassificationRequestObject textClassificationRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

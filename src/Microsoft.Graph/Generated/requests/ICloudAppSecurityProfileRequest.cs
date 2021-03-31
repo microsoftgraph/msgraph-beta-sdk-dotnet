@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> UpdateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified CloudAppSecurityProfile using PUT.
+        /// </summary>
+        /// <param name="cloudAppSecurityProfileToUpdate">The CloudAppSecurityProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<CloudAppSecurityProfile> PutAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CloudAppSecurityProfile using PUT and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="cloudAppSecurityProfileToUpdate">The CloudAppSecurityProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{CloudAppSecurityProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> PutResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

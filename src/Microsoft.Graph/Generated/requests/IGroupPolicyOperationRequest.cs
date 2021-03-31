@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<GroupPolicyOperation>> UpdateResponseAsync(GroupPolicyOperation groupPolicyOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified GroupPolicyOperation using PUT.
+        /// </summary>
+        /// <param name="groupPolicyOperationToUpdate">The GroupPolicyOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<GroupPolicyOperation> PutAsync(GroupPolicyOperation groupPolicyOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicyOperation using PUT and returns a <see cref="GraphResponse{GroupPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyOperationToUpdate">The GroupPolicyOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{GroupPolicyOperation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyOperation>> PutResponseAsync(GroupPolicyOperation groupPolicyOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

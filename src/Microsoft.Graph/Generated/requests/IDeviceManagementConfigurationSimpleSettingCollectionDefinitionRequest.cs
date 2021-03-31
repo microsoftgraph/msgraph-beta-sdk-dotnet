@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSimpleSettingCollectionDefinition>> UpdateResponseAsync(DeviceManagementConfigurationSimpleSettingCollectionDefinition deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementConfigurationSimpleSettingCollectionDefinition using PUT.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate">The DeviceManagementConfigurationSimpleSettingCollectionDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementConfigurationSimpleSettingCollectionDefinition> PutAsync(DeviceManagementConfigurationSimpleSettingCollectionDefinition deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationSimpleSettingCollectionDefinition using PUT and returns a <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate">The DeviceManagementConfigurationSimpleSettingCollectionDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSimpleSettingCollectionDefinition>> PutResponseAsync(DeviceManagementConfigurationSimpleSettingCollectionDefinition deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

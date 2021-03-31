@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MicrosoftTunnelHealthThreshold using PUT.
+        /// </summary>
+        /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> PutAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MicrosoftTunnelHealthThreshold>(microsoftTunnelHealthThresholdToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelHealthThreshold using PUT and returns a <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> PutResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MicrosoftTunnelHealthThreshold>(microsoftTunnelHealthThresholdToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

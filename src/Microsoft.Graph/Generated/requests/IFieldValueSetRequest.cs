@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> UpdateResponseAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified FieldValueSet using PUT.
+        /// </summary>
+        /// <param name="fieldValueSetToUpdate">The FieldValueSet object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<FieldValueSet> PutAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified FieldValueSet using PUT and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
+        /// </summary>
+        /// <param name="fieldValueSetToUpdate">The FieldValueSet object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{FieldValueSet}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> PutResponseAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

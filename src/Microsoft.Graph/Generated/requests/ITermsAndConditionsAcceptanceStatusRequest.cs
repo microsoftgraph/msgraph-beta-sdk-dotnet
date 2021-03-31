@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> UpdateResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified TermsAndConditionsAcceptanceStatus using PUT.
+        /// </summary>
+        /// <param name="termsAndConditionsAcceptanceStatusToUpdate">The TermsAndConditionsAcceptanceStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> PutAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TermsAndConditionsAcceptanceStatus using PUT and returns a <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsAcceptanceStatusToUpdate">The TermsAndConditionsAcceptanceStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> PutResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

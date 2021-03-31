@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> UpdateResponseAsync(ApprovalStep approvalStepToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ApprovalStep using PUT.
+        /// </summary>
+        /// <param name="approvalStepToUpdate">The ApprovalStep object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ApprovalStep> PutAsync(ApprovalStep approvalStepToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ApprovalStep using PUT and returns a <see cref="GraphResponse{ApprovalStep}"/> object.
+        /// </summary>
+        /// <param name="approvalStepToUpdate">The ApprovalStep object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ApprovalStep}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> PutResponseAsync(ApprovalStep approvalStepToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

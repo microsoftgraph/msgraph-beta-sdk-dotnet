@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> UpdateResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsUniversalAppXContainedApp using PUT.
+        /// </summary>
+        /// <param name="windowsUniversalAppXContainedAppToUpdate">The WindowsUniversalAppXContainedApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> PutAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsUniversalAppXContainedApp using PUT and returns a <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object.
+        /// </summary>
+        /// <param name="windowsUniversalAppXContainedAppToUpdate">The WindowsUniversalAppXContainedApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> PutResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

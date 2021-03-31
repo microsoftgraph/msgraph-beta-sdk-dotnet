@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified InferenceClassificationOverride using PUT.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToUpdate">The InferenceClassificationOverride object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<InferenceClassificationOverride> PutAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<InferenceClassificationOverride>(inferenceClassificationOverrideToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified InferenceClassificationOverride using PUT and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToUpdate">The InferenceClassificationOverride object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{InferenceClassificationOverride}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> PutResponseAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<InferenceClassificationOverride>(inferenceClassificationOverrideToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

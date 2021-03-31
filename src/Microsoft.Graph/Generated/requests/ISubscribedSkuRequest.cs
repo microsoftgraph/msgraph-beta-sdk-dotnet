@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> UpdateResponseAsync(SubscribedSku subscribedSkuToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SubscribedSku using PUT.
+        /// </summary>
+        /// <param name="subscribedSkuToUpdate">The SubscribedSku object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SubscribedSku> PutAsync(SubscribedSku subscribedSkuToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SubscribedSku using PUT and returns a <see cref="GraphResponse{SubscribedSku}"/> object.
+        /// </summary>
+        /// <param name="subscribedSkuToUpdate">The SubscribedSku object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SubscribedSku}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> PutResponseAsync(SubscribedSku subscribedSkuToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

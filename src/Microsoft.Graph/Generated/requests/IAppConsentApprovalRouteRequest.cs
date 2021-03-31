@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AppConsentApprovalRoute>> UpdateResponseAsync(AppConsentApprovalRoute appConsentApprovalRouteToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AppConsentApprovalRoute using PUT.
+        /// </summary>
+        /// <param name="appConsentApprovalRouteToUpdate">The AppConsentApprovalRoute object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AppConsentApprovalRoute> PutAsync(AppConsentApprovalRoute appConsentApprovalRouteToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AppConsentApprovalRoute using PUT and returns a <see cref="GraphResponse{AppConsentApprovalRoute}"/> object.
+        /// </summary>
+        /// <param name="appConsentApprovalRouteToUpdate">The AppConsentApprovalRoute object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AppConsentApprovalRoute}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppConsentApprovalRoute>> PutResponseAsync(AppConsentApprovalRoute appConsentApprovalRouteToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

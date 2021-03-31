@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MacOSSoftwareUpdateStateSummary using PUT.
+        /// </summary>
+        /// <param name="macOSSoftwareUpdateStateSummaryToUpdate">The MacOSSoftwareUpdateStateSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MacOSSoftwareUpdateStateSummary> PutAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MacOSSoftwareUpdateStateSummary>(macOSSoftwareUpdateStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MacOSSoftwareUpdateStateSummary using PUT and returns a <see cref="GraphResponse{MacOSSoftwareUpdateStateSummary}"/> object.
+        /// </summary>
+        /// <param name="macOSSoftwareUpdateStateSummaryToUpdate">The MacOSSoftwareUpdateStateSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MacOSSoftwareUpdateStateSummary}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateStateSummary>> PutResponseAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MacOSSoftwareUpdateStateSummary>(macOSSoftwareUpdateStateSummaryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

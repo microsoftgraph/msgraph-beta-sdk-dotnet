@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<PersonAnnualEvent>> UpdateResponseAsync(PersonAnnualEvent personAnnualEventToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified PersonAnnualEvent using PUT.
+        /// </summary>
+        /// <param name="personAnnualEventToUpdate">The PersonAnnualEvent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<PersonAnnualEvent> PutAsync(PersonAnnualEvent personAnnualEventToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified PersonAnnualEvent using PUT and returns a <see cref="GraphResponse{PersonAnnualEvent}"/> object.
+        /// </summary>
+        /// <param name="personAnnualEventToUpdate">The PersonAnnualEvent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{PersonAnnualEvent}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonAnnualEvent>> PutResponseAsync(PersonAnnualEvent personAnnualEventToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

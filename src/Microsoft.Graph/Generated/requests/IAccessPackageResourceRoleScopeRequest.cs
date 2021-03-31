@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRoleScope>> UpdateResponseAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AccessPackageResourceRoleScope using PUT.
+        /// </summary>
+        /// <param name="accessPackageResourceRoleScopeToUpdate">The AccessPackageResourceRoleScope object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AccessPackageResourceRoleScope> PutAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AccessPackageResourceRoleScope using PUT and returns a <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object.
+        /// </summary>
+        /// <param name="accessPackageResourceRoleScopeToUpdate">The AccessPackageResourceRoleScope object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRoleScope>> PutResponseAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

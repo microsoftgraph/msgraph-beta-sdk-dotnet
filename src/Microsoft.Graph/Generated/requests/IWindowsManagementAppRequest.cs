@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsManagementApp>> UpdateResponseAsync(WindowsManagementApp windowsManagementAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsManagementApp using PUT.
+        /// </summary>
+        /// <param name="windowsManagementAppToUpdate">The WindowsManagementApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsManagementApp> PutAsync(WindowsManagementApp windowsManagementAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsManagementApp using PUT and returns a <see cref="GraphResponse{WindowsManagementApp}"/> object.
+        /// </summary>
+        /// <param name="windowsManagementAppToUpdate">The WindowsManagementApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsManagementApp}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementApp>> PutResponseAsync(WindowsManagementApp windowsManagementAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

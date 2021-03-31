@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> UpdateResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified PlannerBucketTaskBoardTaskFormat using PUT.
+        /// </summary>
+        /// <param name="plannerBucketTaskBoardTaskFormatToUpdate">The PlannerBucketTaskBoardTaskFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> PutAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified PlannerBucketTaskBoardTaskFormat using PUT and returns a <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerBucketTaskBoardTaskFormatToUpdate">The PlannerBucketTaskBoardTaskFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> PutResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

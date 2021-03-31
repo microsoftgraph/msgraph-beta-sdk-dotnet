@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRequestObject>> UpdateResponseAsync(AccessPackageResourceRequestObject accessPackageResourceRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AccessPackageResourceRequestObject using PUT.
+        /// </summary>
+        /// <param name="accessPackageResourceRequestObjectToUpdate">The AccessPackageResourceRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AccessPackageResourceRequestObject> PutAsync(AccessPackageResourceRequestObject accessPackageResourceRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AccessPackageResourceRequestObject using PUT and returns a <see cref="GraphResponse{AccessPackageResourceRequestObject}"/> object.
+        /// </summary>
+        /// <param name="accessPackageResourceRequestObjectToUpdate">The AccessPackageResourceRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AccessPackageResourceRequestObject}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRequestObject>> PutResponseAsync(AccessPackageResourceRequestObject accessPackageResourceRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

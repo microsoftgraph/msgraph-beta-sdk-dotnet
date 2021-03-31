@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingDefinition>> UpdateResponseAsync(DeviceManagementComplexSettingDefinition deviceManagementComplexSettingDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementComplexSettingDefinition using PUT.
+        /// </summary>
+        /// <param name="deviceManagementComplexSettingDefinitionToUpdate">The DeviceManagementComplexSettingDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementComplexSettingDefinition> PutAsync(DeviceManagementComplexSettingDefinition deviceManagementComplexSettingDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementComplexSettingDefinition using PUT and returns a <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementComplexSettingDefinitionToUpdate">The DeviceManagementComplexSettingDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingDefinition>> PutResponseAsync(DeviceManagementComplexSettingDefinition deviceManagementComplexSettingDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

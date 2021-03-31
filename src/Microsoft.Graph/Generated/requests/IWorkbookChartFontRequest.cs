@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WorkbookChartFont>> UpdateResponseAsync(WorkbookChartFont workbookChartFontToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WorkbookChartFont using PUT.
+        /// </summary>
+        /// <param name="workbookChartFontToUpdate">The WorkbookChartFont object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkbookChartFont> PutAsync(WorkbookChartFont workbookChartFontToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WorkbookChartFont using PUT and returns a <see cref="GraphResponse{WorkbookChartFont}"/> object.
+        /// </summary>
+        /// <param name="workbookChartFontToUpdate">The WorkbookChartFont object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkbookChartFont}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFont>> PutResponseAsync(WorkbookChartFont workbookChartFontToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

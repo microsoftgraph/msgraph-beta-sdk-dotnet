@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> UpdateResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceCompliancePolicySettingStateSummary using PUT.
+        /// </summary>
+        /// <param name="deviceCompliancePolicySettingStateSummaryToUpdate">The DeviceCompliancePolicySettingStateSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> PutAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceCompliancePolicySettingStateSummary using PUT and returns a <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicySettingStateSummaryToUpdate">The DeviceCompliancePolicySettingStateSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> PutResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

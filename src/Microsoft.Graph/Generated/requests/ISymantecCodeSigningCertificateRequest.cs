@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SymantecCodeSigningCertificate>> UpdateResponseAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SymantecCodeSigningCertificate using PUT.
+        /// </summary>
+        /// <param name="symantecCodeSigningCertificateToUpdate">The SymantecCodeSigningCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SymantecCodeSigningCertificate> PutAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SymantecCodeSigningCertificate using PUT and returns a <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="symantecCodeSigningCertificateToUpdate">The SymantecCodeSigningCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SymantecCodeSigningCertificate>> PutResponseAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

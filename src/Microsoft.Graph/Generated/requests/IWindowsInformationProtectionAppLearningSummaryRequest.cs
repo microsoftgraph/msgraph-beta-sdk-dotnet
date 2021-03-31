@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> UpdateResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsInformationProtectionAppLearningSummary using PUT.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLearningSummaryToUpdate">The WindowsInformationProtectionAppLearningSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> PutAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsInformationProtectionAppLearningSummary using PUT and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLearningSummaryToUpdate">The WindowsInformationProtectionAppLearningSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> PutResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

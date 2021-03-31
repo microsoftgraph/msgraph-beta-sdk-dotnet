@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeriesFormat>> UpdateResponseAsync(WorkbookChartSeriesFormat workbookChartSeriesFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WorkbookChartSeriesFormat using PUT.
+        /// </summary>
+        /// <param name="workbookChartSeriesFormatToUpdate">The WorkbookChartSeriesFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkbookChartSeriesFormat> PutAsync(WorkbookChartSeriesFormat workbookChartSeriesFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WorkbookChartSeriesFormat using PUT and returns a <see cref="GraphResponse{WorkbookChartSeriesFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartSeriesFormatToUpdate">The WorkbookChartSeriesFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkbookChartSeriesFormat}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeriesFormat>> PutResponseAsync(WorkbookChartSeriesFormat workbookChartSeriesFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

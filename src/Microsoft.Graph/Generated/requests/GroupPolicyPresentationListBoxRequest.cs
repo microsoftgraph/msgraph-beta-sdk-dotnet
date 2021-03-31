@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified GroupPolicyPresentationListBox using PUT.
+        /// </summary>
+        /// <param name="groupPolicyPresentationListBoxToUpdate">The GroupPolicyPresentationListBox object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationListBox> PutAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<GroupPolicyPresentationListBox>(groupPolicyPresentationListBoxToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationListBox using PUT and returns a <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationListBoxToUpdate">The GroupPolicyPresentationListBox object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{GroupPolicyPresentationListBox}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationListBox>> PutResponseAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<GroupPolicyPresentationListBox>(groupPolicyPresentationListBoxToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

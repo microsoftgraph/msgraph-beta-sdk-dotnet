@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified PlannerPlanDetails using PUT.
+        /// </summary>
+        /// <param name="plannerPlanDetailsToUpdate">The PlannerPlanDetails object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PlannerPlanDetails> PutAsync(PlannerPlanDetails plannerPlanDetailsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PlannerPlanDetails>(plannerPlanDetailsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerPlanDetails using PUT and returns a <see cref="GraphResponse{PlannerPlanDetails}"/> object.
+        /// </summary>
+        /// <param name="plannerPlanDetailsToUpdate">The PlannerPlanDetails object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PlannerPlanDetails}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerPlanDetails>> PutResponseAsync(PlannerPlanDetails plannerPlanDetailsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PlannerPlanDetails>(plannerPlanDetailsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

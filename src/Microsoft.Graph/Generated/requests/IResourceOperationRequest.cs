@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> UpdateResponseAsync(ResourceOperation resourceOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ResourceOperation using PUT.
+        /// </summary>
+        /// <param name="resourceOperationToUpdate">The ResourceOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ResourceOperation> PutAsync(ResourceOperation resourceOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ResourceOperation using PUT and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
+        /// </summary>
+        /// <param name="resourceOperationToUpdate">The ResourceOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ResourceOperation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> PutResponseAsync(ResourceOperation resourceOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

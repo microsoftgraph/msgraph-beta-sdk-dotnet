@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Office365ActiveUserDetail using PUT.
+        /// </summary>
+        /// <param name="office365ActiveUserDetailToUpdate">The Office365ActiveUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Office365ActiveUserDetail> PutAsync(Office365ActiveUserDetail office365ActiveUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Office365ActiveUserDetail>(office365ActiveUserDetailToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Office365ActiveUserDetail using PUT and returns a <see cref="GraphResponse{Office365ActiveUserDetail}"/> object.
+        /// </summary>
+        /// <param name="office365ActiveUserDetailToUpdate">The Office365ActiveUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Office365ActiveUserDetail}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Office365ActiveUserDetail>> PutResponseAsync(Office365ActiveUserDetail office365ActiveUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Office365ActiveUserDetail>(office365ActiveUserDetailToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

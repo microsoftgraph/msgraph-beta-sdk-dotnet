@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WorkbookChartAreaFormat>> UpdateResponseAsync(WorkbookChartAreaFormat workbookChartAreaFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WorkbookChartAreaFormat using PUT.
+        /// </summary>
+        /// <param name="workbookChartAreaFormatToUpdate">The WorkbookChartAreaFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkbookChartAreaFormat> PutAsync(WorkbookChartAreaFormat workbookChartAreaFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WorkbookChartAreaFormat using PUT and returns a <see cref="GraphResponse{WorkbookChartAreaFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAreaFormatToUpdate">The WorkbookChartAreaFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkbookChartAreaFormat}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAreaFormat>> PutResponseAsync(WorkbookChartAreaFormat workbookChartAreaFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

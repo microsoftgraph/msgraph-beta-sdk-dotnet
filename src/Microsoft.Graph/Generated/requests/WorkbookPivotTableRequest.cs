@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WorkbookPivotTable using PUT.
+        /// </summary>
+        /// <param name="workbookPivotTableToUpdate">The WorkbookPivotTable object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WorkbookPivotTable> PutAsync(WorkbookPivotTable workbookPivotTableToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WorkbookPivotTable>(workbookPivotTableToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookPivotTable using PUT and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
+        /// </summary>
+        /// <param name="workbookPivotTableToUpdate">The WorkbookPivotTable object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WorkbookPivotTable}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> PutResponseAsync(WorkbookPivotTable workbookPivotTableToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WorkbookPivotTable>(workbookPivotTableToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

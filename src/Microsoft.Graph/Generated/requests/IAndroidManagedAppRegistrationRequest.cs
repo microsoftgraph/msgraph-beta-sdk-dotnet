@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppRegistration>> UpdateResponseAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AndroidManagedAppRegistration using PUT.
+        /// </summary>
+        /// <param name="androidManagedAppRegistrationToUpdate">The AndroidManagedAppRegistration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidManagedAppRegistration> PutAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AndroidManagedAppRegistration using PUT and returns a <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="androidManagedAppRegistrationToUpdate">The AndroidManagedAppRegistration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidManagedAppRegistration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppRegistration>> PutResponseAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

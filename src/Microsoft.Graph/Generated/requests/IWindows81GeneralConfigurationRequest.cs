@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Windows81GeneralConfiguration>> UpdateResponseAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Windows81GeneralConfiguration using PUT.
+        /// </summary>
+        /// <param name="windows81GeneralConfigurationToUpdate">The Windows81GeneralConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Windows81GeneralConfiguration> PutAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Windows81GeneralConfiguration using PUT and returns a <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows81GeneralConfigurationToUpdate">The Windows81GeneralConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Windows81GeneralConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows81GeneralConfiguration>> PutResponseAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

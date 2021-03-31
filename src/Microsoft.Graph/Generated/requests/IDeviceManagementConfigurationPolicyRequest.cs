@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicy>> UpdateResponseAsync(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementConfigurationPolicy using PUT.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationPolicyToUpdate">The DeviceManagementConfigurationPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicy> PutAsync(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationPolicy using PUT and returns a <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationPolicyToUpdate">The DeviceManagementConfigurationPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicy>> PutResponseAsync(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MdmWindowsInformationProtectionPolicy using PUT.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyToUpdate">The MdmWindowsInformationProtectionPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> PutAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MdmWindowsInformationProtectionPolicy>(mdmWindowsInformationProtectionPolicyToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MdmWindowsInformationProtectionPolicy using PUT and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyToUpdate">The MdmWindowsInformationProtectionPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> PutResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MdmWindowsInformationProtectionPolicy>(mdmWindowsInformationProtectionPolicyToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified UserAnalytics using PUT.
+        /// </summary>
+        /// <param name="userAnalyticsToUpdate">The UserAnalytics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserAnalytics> PutAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserAnalytics>(userAnalyticsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserAnalytics using PUT and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
+        /// </summary>
+        /// <param name="userAnalyticsToUpdate">The UserAnalytics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserAnalytics}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> PutResponseAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserAnalytics>(userAnalyticsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

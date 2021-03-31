@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MacOSWiredNetworkConfiguration using PUT.
+        /// </summary>
+        /// <param name="macOSWiredNetworkConfigurationToUpdate">The MacOSWiredNetworkConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MacOSWiredNetworkConfiguration> PutAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MacOSWiredNetworkConfiguration>(macOSWiredNetworkConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MacOSWiredNetworkConfiguration using PUT and returns a <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSWiredNetworkConfigurationToUpdate">The MacOSWiredNetworkConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSWiredNetworkConfiguration>> PutResponseAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MacOSWiredNetworkConfiguration>(macOSWiredNetworkConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> UpdateResponseAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified GroupPolicyPresentationValueDecimal using PUT.
+        /// </summary>
+        /// <param name="groupPolicyPresentationValueDecimalToUpdate">The GroupPolicyPresentationValueDecimal object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> PutAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationValueDecimal using PUT and returns a <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationValueDecimalToUpdate">The GroupPolicyPresentationValueDecimal object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> PutResponseAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

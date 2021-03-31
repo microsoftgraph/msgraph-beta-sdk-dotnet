@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> UpdateResponseAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MailboxUsageStorage using PUT.
+        /// </summary>
+        /// <param name="mailboxUsageStorageToUpdate">The MailboxUsageStorage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MailboxUsageStorage> PutAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MailboxUsageStorage using PUT and returns a <see cref="GraphResponse{MailboxUsageStorage}"/> object.
+        /// </summary>
+        /// <param name="mailboxUsageStorageToUpdate">The MailboxUsageStorage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MailboxUsageStorage}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> PutResponseAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

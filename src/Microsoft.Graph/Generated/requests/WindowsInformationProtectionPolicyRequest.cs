@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WindowsInformationProtectionPolicy using PUT.
+        /// </summary>
+        /// <param name="windowsInformationProtectionPolicyToUpdate">The WindowsInformationProtectionPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsInformationProtectionPolicy> PutAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsInformationProtectionPolicy>(windowsInformationProtectionPolicyToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsInformationProtectionPolicy using PUT and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionPolicyToUpdate">The WindowsInformationProtectionPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> PutResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsInformationProtectionPolicy>(windowsInformationProtectionPolicyToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Room>> UpdateResponseAsync(Room roomToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Room using PUT.
+        /// </summary>
+        /// <param name="roomToUpdate">The Room object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Room> PutAsync(Room roomToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Room using PUT and returns a <see cref="GraphResponse{Room}"/> object.
+        /// </summary>
+        /// <param name="roomToUpdate">The Room object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Room}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Room>> PutResponseAsync(Room roomToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

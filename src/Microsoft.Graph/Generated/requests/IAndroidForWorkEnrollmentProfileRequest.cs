@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AndroidForWorkEnrollmentProfile>> UpdateResponseAsync(AndroidForWorkEnrollmentProfile androidForWorkEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified AndroidForWorkEnrollmentProfile using PUT.
+        /// </summary>
+        /// <param name="androidForWorkEnrollmentProfileToUpdate">The AndroidForWorkEnrollmentProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidForWorkEnrollmentProfile> PutAsync(AndroidForWorkEnrollmentProfile androidForWorkEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkEnrollmentProfile using PUT and returns a <see cref="GraphResponse{AndroidForWorkEnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkEnrollmentProfileToUpdate">The AndroidForWorkEnrollmentProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidForWorkEnrollmentProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkEnrollmentProfile>> PutResponseAsync(AndroidForWorkEnrollmentProfile androidForWorkEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> UpdateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementExchangeOnPremisesPolicy using PUT.
+        /// </summary>
+        /// <param name="deviceManagementExchangeOnPremisesPolicyToUpdate">The DeviceManagementExchangeOnPremisesPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> PutAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementExchangeOnPremisesPolicy using PUT and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementExchangeOnPremisesPolicyToUpdate">The DeviceManagementExchangeOnPremisesPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> PutResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

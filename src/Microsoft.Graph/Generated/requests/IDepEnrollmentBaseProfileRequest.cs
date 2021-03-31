@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DepEnrollmentBaseProfile>> UpdateResponseAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DepEnrollmentBaseProfile using PUT.
+        /// </summary>
+        /// <param name="depEnrollmentBaseProfileToUpdate">The DepEnrollmentBaseProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DepEnrollmentBaseProfile> PutAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DepEnrollmentBaseProfile using PUT and returns a <see cref="GraphResponse{DepEnrollmentBaseProfile}"/> object.
+        /// </summary>
+        /// <param name="depEnrollmentBaseProfileToUpdate">The DepEnrollmentBaseProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DepEnrollmentBaseProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DepEnrollmentBaseProfile>> PutResponseAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

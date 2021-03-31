@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified ExternalGroupMember using PUT.
+        /// </summary>
+        /// <param name="externalGroupMemberToUpdate">The ExternalGroupMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ExternalGroupMember> PutAsync(ExternalGroupMember externalGroupMemberToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ExternalGroupMember>(externalGroupMemberToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ExternalGroupMember using PUT and returns a <see cref="GraphResponse{ExternalGroupMember}"/> object.
+        /// </summary>
+        /// <param name="externalGroupMemberToUpdate">The ExternalGroupMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ExternalGroupMember}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalGroupMember>> PutResponseAsync(ExternalGroupMember externalGroupMemberToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ExternalGroupMember>(externalGroupMemberToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

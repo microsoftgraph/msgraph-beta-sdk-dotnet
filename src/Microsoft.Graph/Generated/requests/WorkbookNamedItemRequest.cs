@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WorkbookNamedItem using PUT.
+        /// </summary>
+        /// <param name="workbookNamedItemToUpdate">The WorkbookNamedItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WorkbookNamedItem> PutAsync(WorkbookNamedItem workbookNamedItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WorkbookNamedItem>(workbookNamedItemToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookNamedItem using PUT and returns a <see cref="GraphResponse{WorkbookNamedItem}"/> object.
+        /// </summary>
+        /// <param name="workbookNamedItemToUpdate">The WorkbookNamedItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WorkbookNamedItem}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookNamedItem>> PutResponseAsync(WorkbookNamedItem workbookNamedItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WorkbookNamedItem>(workbookNamedItemToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

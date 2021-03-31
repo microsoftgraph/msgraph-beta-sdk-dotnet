@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified DeviceManagementAbstractComplexSettingInstance using PUT.
+        /// </summary>
+        /// <param name="deviceManagementAbstractComplexSettingInstanceToUpdate">The DeviceManagementAbstractComplexSettingInstance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> PutAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceManagementAbstractComplexSettingInstance>(deviceManagementAbstractComplexSettingInstanceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementAbstractComplexSettingInstance using PUT and returns a <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAbstractComplexSettingInstanceToUpdate">The DeviceManagementAbstractComplexSettingInstance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingInstance>> PutResponseAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceManagementAbstractComplexSettingInstance>(deviceManagementAbstractComplexSettingInstanceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

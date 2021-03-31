@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> UpdateResponseAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsFeatureUpdateCatalogItem using PUT.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateCatalogItemToUpdate">The WindowsFeatureUpdateCatalogItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> PutAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsFeatureUpdateCatalogItem using PUT and returns a <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateCatalogItemToUpdate">The WindowsFeatureUpdateCatalogItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> PutResponseAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

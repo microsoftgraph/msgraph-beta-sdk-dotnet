@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<IdentityBuiltInUserFlowAttribute>> UpdateResponseAsync(IdentityBuiltInUserFlowAttribute identityBuiltInUserFlowAttributeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified IdentityBuiltInUserFlowAttribute using PUT.
+        /// </summary>
+        /// <param name="identityBuiltInUserFlowAttributeToUpdate">The IdentityBuiltInUserFlowAttribute object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IdentityBuiltInUserFlowAttribute> PutAsync(IdentityBuiltInUserFlowAttribute identityBuiltInUserFlowAttributeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified IdentityBuiltInUserFlowAttribute using PUT and returns a <see cref="GraphResponse{IdentityBuiltInUserFlowAttribute}"/> object.
+        /// </summary>
+        /// <param name="identityBuiltInUserFlowAttributeToUpdate">The IdentityBuiltInUserFlowAttribute object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IdentityBuiltInUserFlowAttribute}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityBuiltInUserFlowAttribute>> PutResponseAsync(IdentityBuiltInUserFlowAttribute identityBuiltInUserFlowAttributeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

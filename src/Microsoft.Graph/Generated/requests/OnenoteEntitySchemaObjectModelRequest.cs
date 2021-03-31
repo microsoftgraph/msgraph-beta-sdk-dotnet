@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified OnenoteEntitySchemaObjectModel using PUT.
+        /// </summary>
+        /// <param name="onenoteEntitySchemaObjectModelToUpdate">The OnenoteEntitySchemaObjectModel object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> PutAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<OnenoteEntitySchemaObjectModel>(onenoteEntitySchemaObjectModelToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OnenoteEntitySchemaObjectModel using PUT and returns a <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntitySchemaObjectModelToUpdate">The OnenoteEntitySchemaObjectModel object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteEntitySchemaObjectModel>> PutResponseAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<OnenoteEntitySchemaObjectModel>(onenoteEntitySchemaObjectModelToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

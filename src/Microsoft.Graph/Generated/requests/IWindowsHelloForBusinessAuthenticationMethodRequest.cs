@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> UpdateResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified WindowsHelloForBusinessAuthenticationMethod using PUT.
+        /// </summary>
+        /// <param name="windowsHelloForBusinessAuthenticationMethodToUpdate">The WindowsHelloForBusinessAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> PutAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsHelloForBusinessAuthenticationMethod using PUT and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="windowsHelloForBusinessAuthenticationMethodToUpdate">The WindowsHelloForBusinessAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> PutResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

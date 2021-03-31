@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<DeviceManagementBooleanSettingInstance>> UpdateResponseAsync(DeviceManagementBooleanSettingInstance deviceManagementBooleanSettingInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified DeviceManagementBooleanSettingInstance using PUT.
+        /// </summary>
+        /// <param name="deviceManagementBooleanSettingInstanceToUpdate">The DeviceManagementBooleanSettingInstance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementBooleanSettingInstance> PutAsync(DeviceManagementBooleanSettingInstance deviceManagementBooleanSettingInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementBooleanSettingInstance using PUT and returns a <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementBooleanSettingInstanceToUpdate">The DeviceManagementBooleanSettingInstance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementBooleanSettingInstance>> PutResponseAsync(DeviceManagementBooleanSettingInstance deviceManagementBooleanSettingInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

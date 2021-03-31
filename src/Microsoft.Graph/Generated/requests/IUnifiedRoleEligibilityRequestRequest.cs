@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityRequestObject>> UpdateResponseAsync(UnifiedRoleEligibilityRequestObject unifiedRoleEligibilityRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified UnifiedRoleEligibilityRequestObject using PUT.
+        /// </summary>
+        /// <param name="unifiedRoleEligibilityRequestObjectToUpdate">The UnifiedRoleEligibilityRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UnifiedRoleEligibilityRequestObject> PutAsync(UnifiedRoleEligibilityRequestObject unifiedRoleEligibilityRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleEligibilityRequestObject using PUT and returns a <see cref="GraphResponse{UnifiedRoleEligibilityRequestObject}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleEligibilityRequestObjectToUpdate">The UnifiedRoleEligibilityRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UnifiedRoleEligibilityRequestObject}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityRequestObject>> PutResponseAsync(UnifiedRoleEligibilityRequestObject unifiedRoleEligibilityRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

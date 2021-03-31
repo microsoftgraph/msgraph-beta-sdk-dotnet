@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<GovernanceSubject>> UpdateResponseAsync(GovernanceSubject governanceSubjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified GovernanceSubject using PUT.
+        /// </summary>
+        /// <param name="governanceSubjectToUpdate">The GovernanceSubject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<GovernanceSubject> PutAsync(GovernanceSubject governanceSubjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GovernanceSubject using PUT and returns a <see cref="GraphResponse{GovernanceSubject}"/> object.
+        /// </summary>
+        /// <param name="governanceSubjectToUpdate">The GovernanceSubject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{GovernanceSubject}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceSubject>> PutResponseAsync(GovernanceSubject governanceSubjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

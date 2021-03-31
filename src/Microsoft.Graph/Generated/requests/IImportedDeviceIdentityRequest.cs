@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> UpdateResponseAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ImportedDeviceIdentity using PUT.
+        /// </summary>
+        /// <param name="importedDeviceIdentityToUpdate">The ImportedDeviceIdentity object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ImportedDeviceIdentity> PutAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ImportedDeviceIdentity using PUT and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object.
+        /// </summary>
+        /// <param name="importedDeviceIdentityToUpdate">The ImportedDeviceIdentity object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ImportedDeviceIdentity}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> PutResponseAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

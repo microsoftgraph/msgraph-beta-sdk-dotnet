@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Journal>> UpdateResponseAsync(Journal journalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Journal using PUT.
+        /// </summary>
+        /// <param name="journalToUpdate">The Journal object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Journal> PutAsync(Journal journalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Journal using PUT and returns a <see cref="GraphResponse{Journal}"/> object.
+        /// </summary>
+        /// <param name="journalToUpdate">The Journal object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Journal}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Journal>> PutResponseAsync(Journal journalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

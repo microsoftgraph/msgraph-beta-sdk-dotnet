@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> UpdateResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MacOSCompliancePolicy using PUT.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToUpdate">The MacOSCompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MacOSCompliancePolicy> PutAsync(MacOSCompliancePolicy macOSCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MacOSCompliancePolicy using PUT and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToUpdate">The MacOSCompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MacOSCompliancePolicy}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> PutResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

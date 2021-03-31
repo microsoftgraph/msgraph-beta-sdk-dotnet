@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> UpdateResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified UnsupportedDeviceConfiguration using PUT.
+        /// </summary>
+        /// <param name="unsupportedDeviceConfigurationToUpdate">The UnsupportedDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> PutAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UnsupportedDeviceConfiguration using PUT and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="unsupportedDeviceConfigurationToUpdate">The UnsupportedDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> PutResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

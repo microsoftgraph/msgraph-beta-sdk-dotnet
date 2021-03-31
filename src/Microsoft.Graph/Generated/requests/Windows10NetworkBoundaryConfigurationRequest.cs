@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Windows10NetworkBoundaryConfiguration using PUT.
+        /// </summary>
+        /// <param name="windows10NetworkBoundaryConfigurationToUpdate">The Windows10NetworkBoundaryConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Windows10NetworkBoundaryConfiguration> PutAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Windows10NetworkBoundaryConfiguration>(windows10NetworkBoundaryConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10NetworkBoundaryConfiguration using PUT and returns a <see cref="GraphResponse{Windows10NetworkBoundaryConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10NetworkBoundaryConfigurationToUpdate">The Windows10NetworkBoundaryConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Windows10NetworkBoundaryConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10NetworkBoundaryConfiguration>> PutResponseAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Windows10NetworkBoundaryConfiguration>(windows10NetworkBoundaryConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

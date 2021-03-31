@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityFileCounts>> UpdateResponseAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Office365GroupsActivityFileCounts using PUT.
+        /// </summary>
+        /// <param name="office365GroupsActivityFileCountsToUpdate">The Office365GroupsActivityFileCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> PutAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Office365GroupsActivityFileCounts using PUT and returns a <see cref="GraphResponse{Office365GroupsActivityFileCounts}"/> object.
+        /// </summary>
+        /// <param name="office365GroupsActivityFileCountsToUpdate">The Office365GroupsActivityFileCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Office365GroupsActivityFileCounts}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityFileCounts>> PutResponseAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

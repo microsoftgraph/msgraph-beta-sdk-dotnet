@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> UpdateResponseAsync(OnPremisesAgent onPremisesAgentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified OnPremisesAgent using PUT.
+        /// </summary>
+        /// <param name="onPremisesAgentToUpdate">The OnPremisesAgent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<OnPremisesAgent> PutAsync(OnPremisesAgent onPremisesAgentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified OnPremisesAgent using PUT and returns a <see cref="GraphResponse{OnPremisesAgent}"/> object.
+        /// </summary>
+        /// <param name="onPremisesAgentToUpdate">The OnPremisesAgent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{OnPremisesAgent}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> PutResponseAsync(OnPremisesAgent onPremisesAgentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

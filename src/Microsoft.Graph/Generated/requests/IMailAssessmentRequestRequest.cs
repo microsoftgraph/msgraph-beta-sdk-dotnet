@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<MailAssessmentRequestObject>> UpdateResponseAsync(MailAssessmentRequestObject mailAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified MailAssessmentRequestObject using PUT.
+        /// </summary>
+        /// <param name="mailAssessmentRequestObjectToUpdate">The MailAssessmentRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MailAssessmentRequestObject> PutAsync(MailAssessmentRequestObject mailAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MailAssessmentRequestObject using PUT and returns a <see cref="GraphResponse{MailAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="mailAssessmentRequestObjectToUpdate">The MailAssessmentRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MailAssessmentRequestObject}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailAssessmentRequestObject>> PutResponseAsync(MailAssessmentRequestObject mailAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

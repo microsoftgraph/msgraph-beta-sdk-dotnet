@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified DriveItemVersion using PUT.
+        /// </summary>
+        /// <param name="driveItemVersionToUpdate">The DriveItemVersion object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DriveItemVersion> PutAsync(DriveItemVersion driveItemVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DriveItemVersion>(driveItemVersionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DriveItemVersion using PUT and returns a <see cref="GraphResponse{DriveItemVersion}"/> object.
+        /// </summary>
+        /// <param name="driveItemVersionToUpdate">The DriveItemVersion object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DriveItemVersion}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItemVersion>> PutResponseAsync(DriveItemVersion driveItemVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DriveItemVersion>(driveItemVersionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

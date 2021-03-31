@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> UpdateResponseAsync(ManagedMobileLobApp managedMobileLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ManagedMobileLobApp using PUT.
+        /// </summary>
+        /// <param name="managedMobileLobAppToUpdate">The ManagedMobileLobApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagedMobileLobApp> PutAsync(ManagedMobileLobApp managedMobileLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ManagedMobileLobApp using PUT and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedMobileLobAppToUpdate">The ManagedMobileLobApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagedMobileLobApp}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> PutResponseAsync(ManagedMobileLobApp managedMobileLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

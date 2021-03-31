@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> UpdateResponseAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified Windows10PkcsCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="windows10PkcsCertificateProfileToUpdate">The Windows10PkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> PutAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified Windows10PkcsCertificateProfile using PUT and returns a <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="windows10PkcsCertificateProfileToUpdate">The Windows10PkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> PutResponseAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

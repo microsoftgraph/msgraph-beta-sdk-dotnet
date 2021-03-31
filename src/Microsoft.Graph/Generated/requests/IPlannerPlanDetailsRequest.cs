@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<PlannerPlanDetails>> UpdateResponseAsync(PlannerPlanDetails plannerPlanDetailsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified PlannerPlanDetails using PUT.
+        /// </summary>
+        /// <param name="plannerPlanDetailsToUpdate">The PlannerPlanDetails object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<PlannerPlanDetails> PutAsync(PlannerPlanDetails plannerPlanDetailsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified PlannerPlanDetails using PUT and returns a <see cref="GraphResponse{PlannerPlanDetails}"/> object.
+        /// </summary>
+        /// <param name="plannerPlanDetailsToUpdate">The PlannerPlanDetails object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{PlannerPlanDetails}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerPlanDetails>> PutResponseAsync(PlannerPlanDetails plannerPlanDetailsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

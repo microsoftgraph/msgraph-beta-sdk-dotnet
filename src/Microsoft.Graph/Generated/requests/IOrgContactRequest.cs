@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<OrgContact>> UpdateResponseAsync(OrgContact orgContactToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified OrgContact using PUT.
+        /// </summary>
+        /// <param name="orgContactToUpdate">The OrgContact object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<OrgContact> PutAsync(OrgContact orgContactToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified OrgContact using PUT and returns a <see cref="GraphResponse{OrgContact}"/> object.
+        /// </summary>
+        /// <param name="orgContactToUpdate">The OrgContact object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{OrgContact}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrgContact>> PutResponseAsync(OrgContact orgContactToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

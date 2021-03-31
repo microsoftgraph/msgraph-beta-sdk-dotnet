@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ScheduleChangeRequestObject>> UpdateResponseAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ScheduleChangeRequestObject using PUT.
+        /// </summary>
+        /// <param name="scheduleChangeRequestObjectToUpdate">The ScheduleChangeRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ScheduleChangeRequestObject> PutAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ScheduleChangeRequestObject using PUT and returns a <see cref="GraphResponse{ScheduleChangeRequestObject}"/> object.
+        /// </summary>
+        /// <param name="scheduleChangeRequestObjectToUpdate">The ScheduleChangeRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ScheduleChangeRequestObject}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScheduleChangeRequestObject>> PutResponseAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

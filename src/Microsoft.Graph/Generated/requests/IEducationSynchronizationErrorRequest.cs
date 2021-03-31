@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> UpdateResponseAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified EducationSynchronizationError using PUT.
+        /// </summary>
+        /// <param name="educationSynchronizationErrorToUpdate">The EducationSynchronizationError object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EducationSynchronizationError> PutAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EducationSynchronizationError using PUT and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
+        /// </summary>
+        /// <param name="educationSynchronizationErrorToUpdate">The EducationSynchronizationError object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EducationSynchronizationError}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> PutResponseAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

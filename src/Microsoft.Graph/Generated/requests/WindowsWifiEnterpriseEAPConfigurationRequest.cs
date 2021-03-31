@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WindowsWifiEnterpriseEAPConfiguration using PUT.
+        /// </summary>
+        /// <param name="windowsWifiEnterpriseEAPConfigurationToUpdate">The WindowsWifiEnterpriseEAPConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> PutAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsWifiEnterpriseEAPConfiguration>(windowsWifiEnterpriseEAPConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsWifiEnterpriseEAPConfiguration using PUT and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsWifiEnterpriseEAPConfigurationToUpdate">The WindowsWifiEnterpriseEAPConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> PutResponseAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsWifiEnterpriseEAPConfiguration>(windowsWifiEnterpriseEAPConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

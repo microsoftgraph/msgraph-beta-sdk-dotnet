@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> UpdateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified PrivilegedOperationEvent using PUT.
+        /// </summary>
+        /// <param name="privilegedOperationEventToUpdate">The PrivilegedOperationEvent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<PrivilegedOperationEvent> PutAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified PrivilegedOperationEvent using PUT and returns a <see cref="GraphResponse{PrivilegedOperationEvent}"/> object.
+        /// </summary>
+        /// <param name="privilegedOperationEventToUpdate">The PrivilegedOperationEvent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{PrivilegedOperationEvent}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> PutResponseAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

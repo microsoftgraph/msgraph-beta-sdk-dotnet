@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem using PUT.
+        /// </summary>
+        /// <param name="windows10EnrollmentCompletionPageConfigurationPolicySetItemToUpdate">The Windows10EnrollmentCompletionPageConfigurationPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Windows10EnrollmentCompletionPageConfigurationPolicySetItem> PutAsync(Windows10EnrollmentCompletionPageConfigurationPolicySetItem windows10EnrollmentCompletionPageConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Windows10EnrollmentCompletionPageConfigurationPolicySetItem>(windows10EnrollmentCompletionPageConfigurationPolicySetItemToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem using PUT and returns a <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="windows10EnrollmentCompletionPageConfigurationPolicySetItemToUpdate">The Windows10EnrollmentCompletionPageConfigurationPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10EnrollmentCompletionPageConfigurationPolicySetItem>> PutResponseAsync(Windows10EnrollmentCompletionPageConfigurationPolicySetItem windows10EnrollmentCompletionPageConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Windows10EnrollmentCompletionPageConfigurationPolicySetItem>(windows10EnrollmentCompletionPageConfigurationPolicySetItemToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

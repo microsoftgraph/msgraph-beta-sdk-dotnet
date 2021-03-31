@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyRule>> UpdateResponseAsync(UnifiedRoleManagementPolicyRule unifiedRoleManagementPolicyRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified UnifiedRoleManagementPolicyRule using PUT.
+        /// </summary>
+        /// <param name="unifiedRoleManagementPolicyRuleToUpdate">The UnifiedRoleManagementPolicyRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyRule> PutAsync(UnifiedRoleManagementPolicyRule unifiedRoleManagementPolicyRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleManagementPolicyRule using PUT and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyRule}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleManagementPolicyRuleToUpdate">The UnifiedRoleManagementPolicyRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UnifiedRoleManagementPolicyRule}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyRule>> PutResponseAsync(UnifiedRoleManagementPolicyRule unifiedRoleManagementPolicyRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -140,6 +140,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified ImportedAppleDeviceIdentityResult using PUT.
+        /// </summary>
+        /// <param name="importedAppleDeviceIdentityResultToUpdate">The ImportedAppleDeviceIdentityResult object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ImportedAppleDeviceIdentityResult> PutAsync(ImportedAppleDeviceIdentityResult importedAppleDeviceIdentityResultToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ImportedAppleDeviceIdentityResult>(importedAppleDeviceIdentityResultToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ImportedAppleDeviceIdentityResult using PUT and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentityResult}"/> object.
+        /// </summary>
+        /// <param name="importedAppleDeviceIdentityResultToUpdate">The ImportedAppleDeviceIdentityResult object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ImportedAppleDeviceIdentityResult}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentityResult>> PutResponseAsync(ImportedAppleDeviceIdentityResult importedAppleDeviceIdentityResultToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ImportedAppleDeviceIdentityResult>(importedAppleDeviceIdentityResultToUpdate, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ItemPatent>> UpdateResponseAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified ItemPatent using PUT.
+        /// </summary>
+        /// <param name="itemPatentToUpdate">The ItemPatent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ItemPatent> PutAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ItemPatent using PUT and returns a <see cref="GraphResponse{ItemPatent}"/> object.
+        /// </summary>
+        /// <param name="itemPatentToUpdate">The ItemPatent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ItemPatent}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPatent>> PutResponseAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

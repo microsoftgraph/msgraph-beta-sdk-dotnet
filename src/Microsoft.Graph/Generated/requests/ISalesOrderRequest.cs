@@ -83,6 +83,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<SalesOrder>> UpdateResponseAsync(SalesOrder salesOrderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Updates the specified SalesOrder using PUT.
+        /// </summary>
+        /// <param name="salesOrderToUpdate">The SalesOrder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SalesOrder> PutAsync(SalesOrder salesOrderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SalesOrder using PUT and returns a <see cref="GraphResponse{SalesOrder}"/> object.
+        /// </summary>
+        /// <param name="salesOrderToUpdate">The SalesOrder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SalesOrder}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SalesOrder>> PutResponseAsync(SalesOrder salesOrderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>
