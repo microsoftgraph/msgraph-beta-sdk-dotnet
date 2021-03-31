@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets inviteUri.
+        /// URI to receive new incoming call notification.
         /// </summary>
         [JsonPropertyName("inviteUri")]
         public string InviteUri { get; set; }

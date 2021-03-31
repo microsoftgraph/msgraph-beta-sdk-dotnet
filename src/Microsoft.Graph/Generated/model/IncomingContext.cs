@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets observedParticipantId.
-        /// The id of the participant that is under observation. Read-only.
+        /// The ID of the participant that is under observation. Read-only.
         /// </summary>
         [JsonPropertyName("observedParticipantId")]
         public string ObservedParticipantId { get; set; }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sourceParticipantId.
-        /// The id of the participant that triggered the incoming call. Read-only.
+        /// The ID of the participant that triggered the incoming call. Read-only.
         /// </summary>
         [JsonPropertyName("sourceParticipantId")]
         public string SourceParticipantId { get; set; }

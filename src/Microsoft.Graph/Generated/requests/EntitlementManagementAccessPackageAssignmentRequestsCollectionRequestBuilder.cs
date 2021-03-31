@@ -61,14 +61,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AccessPackageAssignmentRequestMy.
+        /// Gets the request builder for AccessPackageAssignmentRequestFilterByCurrentUser.
         /// </summary>
-        /// <returns>The <see cref="IAccessPackageAssignmentRequestMyRequestBuilder"/>.</returns>
-        public IAccessPackageAssignmentRequestMyRequestBuilder My()
+        /// <returns>The <see cref="IAccessPackageAssignmentRequestFilterByCurrentUserRequestBuilder"/>.</returns>
+        public IAccessPackageAssignmentRequestFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            AccessPackageAssignmentRequestFilterByCurrentUserOptions on)
         {
-            return new AccessPackageAssignmentRequestMyRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.My"),
-                this.Client);
+            return new AccessPackageAssignmentRequestFilterByCurrentUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.filterByCurrentUser"),
+                this.Client,
+                on);
         }
     }
 }

@@ -62,6 +62,16 @@ namespace Microsoft.Graph
         IAccessReviewInstanceApplyDecisionsRequestBuilder ApplyDecisions();
 
         /// <summary>
+        /// Gets the request builder for AccessReviewInstanceBatchRecordDecisions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceBatchRecordDecisionsRequestBuilder"/>.</returns>
+        IAccessReviewInstanceBatchRecordDecisionsRequestBuilder BatchRecordDecisions(
+            string decision = null,
+            string justification = null,
+            string principalId = null,
+            string resourceId = null);
+
+        /// <summary>
         /// Gets the request builder for AccessReviewInstanceResetDecisions.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewInstanceResetDecisionsRequestBuilder"/>.</returns>

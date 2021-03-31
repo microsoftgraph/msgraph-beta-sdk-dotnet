@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets AdditionalData.
         /// </summary>
         [JsonPropertyName("additionalData")]
-        public DataCollectionScope? AdditionalData { get; set; }
+        public AdditionalDataOptions? AdditionalData { get; set; }
     
     }
 }

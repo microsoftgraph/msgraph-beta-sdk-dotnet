@@ -149,7 +149,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app store blocked.
-        /// Indicates whether or not to block the user from using the App Store. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from using the App Store.
         /// </summary>
         [JsonPropertyName("appStoreBlocked")]
         public bool? AppStoreBlocked { get; set; }
@@ -212,7 +212,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets camera blocked.
-        /// Indicates whether or not to block the user from accessing the camera of the device. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from accessing the camera of the device.
         /// </summary>
         [JsonPropertyName("cameraBlocked")]
         public bool? CameraBlocked { get; set; }
@@ -429,7 +429,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enterprise app block trust modification.
-        /// [Deprecated] Configuring this setting and setting the value to 'true' has no effect on the device.
+        /// Indicates whether or not to block the user from modifying the enterprise app trust settings.
         /// </summary>
         [JsonPropertyName("enterpriseAppBlockTrustModification")]
         public bool? EnterpriseAppBlockTrustModification { get; set; }
@@ -457,7 +457,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets face time blocked.
-        /// Indicates whether or not to block the user from using FaceTime. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from using FaceTime.
         /// </summary>
         [JsonPropertyName("faceTimeBlocked")]
         public bool? FaceTimeBlocked { get; set; }
@@ -485,7 +485,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets find my friends blocked.
-        /// Indicates whether or not to block changes to Find My Friends when the device is in supervised mode.
+        /// Indicates whether or not to block Find My Friends when the device is in supervised mode.
         /// </summary>
         [JsonPropertyName("findMyFriendsBlocked")]
         public bool? FindMyFriendsBlocked { get; set; }
@@ -506,14 +506,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets gaming block game center friends.
-        /// Indicates whether or not to block the user from having friends in Game Center. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from having friends in Game Center.
         /// </summary>
         [JsonPropertyName("gamingBlockGameCenterFriends")]
         public bool? GamingBlockGameCenterFriends { get; set; }
     
         /// <summary>
         /// Gets or sets gaming block multiplayer.
-        /// Indicates whether or not to block the user from using multiplayer gaming. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from using multiplayer gaming.
         /// </summary>
         [JsonPropertyName("gamingBlockMultiplayer")]
         public bool? GamingBlockMultiplayer { get; set; }
@@ -548,14 +548,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets i cloud block backup.
-        /// Indicates whether or not to block iCloud backup. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block iCloud backup.
         /// </summary>
         [JsonPropertyName("iCloudBlockBackup")]
         public bool? ICloudBlockBackup { get; set; }
     
         /// <summary>
         /// Gets or sets i cloud block document sync.
-        /// Indicates whether or not to block iCloud document sync. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block iCloud document sync.
         /// </summary>
         [JsonPropertyName("iCloudBlockDocumentSync")]
         public bool? ICloudBlockDocumentSync { get; set; }
@@ -604,7 +604,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets i tunes block explicit content.
-        /// Indicates whether or not to block the user from accessing explicit content in iTunes and the App Store. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from accessing explicit content in iTunes and the App Store.
         /// </summary>
         [JsonPropertyName("iTunesBlockExplicitContent")]
         public bool? ITunesBlockExplicitContent { get; set; }
@@ -681,7 +681,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode allow auto lock.
-        /// Indicates whether or not to allow device auto lock while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockAutoLock instead.
+        /// Indicates whether or not to allow device auto lock while in kiosk mode.
         /// </summary>
         [JsonPropertyName("kioskModeAllowAutoLock")]
         public bool? KioskModeAllowAutoLock { get; set; }
@@ -695,28 +695,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode allow ringer switch.
-        /// Indicates whether or not to allow use of the ringer switch while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockRingerSwitch instead.
+        /// Indicates whether or not to allow use of the ringer switch while in kiosk mode.
         /// </summary>
         [JsonPropertyName("kioskModeAllowRingerSwitch")]
         public bool? KioskModeAllowRingerSwitch { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode allow screen rotation.
-        /// Indicates whether or not to allow screen rotation while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockScreenRotation instead.
+        /// Indicates whether or not to allow screen rotation while in kiosk mode.
         /// </summary>
         [JsonPropertyName("kioskModeAllowScreenRotation")]
         public bool? KioskModeAllowScreenRotation { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode allow sleep button.
-        /// Indicates whether or not to allow use of the sleep button while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockSleepButton instead.
+        /// Indicates whether or not to allow use of the sleep button while in kiosk mode.
         /// </summary>
         [JsonPropertyName("kioskModeAllowSleepButton")]
         public bool? KioskModeAllowSleepButton { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode allow touchscreen.
-        /// Indicates whether or not to allow use of the touchscreen while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockTouchscreen instead.
+        /// Indicates whether or not to allow use of the touchscreen while in kiosk mode.
         /// </summary>
         [JsonPropertyName("kioskModeAllowTouchscreen")]
         public bool? KioskModeAllowTouchscreen { get; set; }
@@ -737,7 +737,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode allow volume buttons.
-        /// Indicates whether or not to allow use of the volume buttons while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockVolumeButtons instead.
+        /// Indicates whether or not to allow use of the volume buttons while in kiosk mode.
         /// </summary>
         [JsonPropertyName("kioskModeAllowVolumeButtons")]
         public bool? KioskModeAllowVolumeButtons { get; set; }
@@ -1066,7 +1066,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets passcode sign in failure count before wipe.
-        /// Number of sign in failures allowed before wiping the device. Valid values 2 to 11
+        /// Number of sign in failures allowed before wiping the device. Valid values 4 to 11
         /// </summary>
         [JsonPropertyName("passcodeSignInFailureCountBeforeWipe")]
         public Int32? PasscodeSignInFailureCountBeforeWipe { get; set; }
@@ -1122,14 +1122,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets safari block autofill.
-        /// Indicates whether or not to block the user from using Auto fill in Safari. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from using Auto fill in Safari.
         /// </summary>
         [JsonPropertyName("safariBlockAutofill")]
         public bool? SafariBlockAutofill { get; set; }
     
         /// <summary>
         /// Gets or sets safari blocked.
-        /// Indicates whether or not to block the user from using Safari. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from using Safari.
         /// </summary>
         [JsonPropertyName("safariBlocked")]
         public bool? SafariBlocked { get; set; }

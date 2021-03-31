@@ -1009,6 +1009,64 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetWindowsQualityUpdateAlertSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsQualityUpdateAlertSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetWindowsQualityUpdateAlertSummaryReportRequestBuilder GetWindowsQualityUpdateAlertSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetWindowsQualityUpdateAlertSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getWindowsQualityUpdateAlertSummaryReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetWindowsUpdateAlertsPerPolicyPerDeviceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder"/>.</returns>

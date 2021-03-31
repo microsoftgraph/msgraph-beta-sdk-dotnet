@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets profileIdentifier.
-        /// The the profile identifier.
+        /// The profile identifier.
         /// </summary>
         [JsonPropertyName("profileIdentifier")]
         public string ProfileIdentifier { get; set; }

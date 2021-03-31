@@ -21,20 +21,20 @@ namespace Microsoft.Graph
     public partial interface IGraphServiceConnectionsCollectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Adds the specified ExternalConnection to the collection via POST.
+        /// Adds the specified Microsoft.Graph.ExternalConnectors.ExternalConnection to the collection via POST.
         /// </summary>
-        /// <param name="externalConnection">The ExternalConnection to add.</param>
+        /// <param name="externalConnection">The Microsoft.Graph.ExternalConnectors.ExternalConnection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ExternalConnection.</returns>
-        System.Threading.Tasks.Task<ExternalConnection> AddAsync(ExternalConnection externalConnection, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>The created Microsoft.Graph.ExternalConnectors.ExternalConnection.</returns>
+        System.Threading.Tasks.Task<Microsoft.Graph.ExternalConnectors.ExternalConnection> AddAsync(Microsoft.Graph.ExternalConnectors.ExternalConnection externalConnection, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Adds the specified ExternalConnection to the collection via POST and returns a <see cref="GraphResponse{ExternalConnection}"/> object of the request.
+        /// Adds the specified Microsoft.Graph.ExternalConnectors.ExternalConnection to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.ExternalConnectors.ExternalConnection}"/> object of the request.
         /// </summary>
-        /// <param name="externalConnection">The ExternalConnection to add.</param>
+        /// <param name="externalConnection">The Microsoft.Graph.ExternalConnectors.ExternalConnection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{ExternalConnection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> AddResponseAsync(ExternalConnection externalConnection, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>The <see cref="GraphResponse{Microsoft.Graph.ExternalConnectors.ExternalConnection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Microsoft.Graph.ExternalConnectors.ExternalConnection>> AddResponseAsync(Microsoft.Graph.ExternalConnectors.ExternalConnection externalConnection, CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IGraphServiceConnectionsCollectionRequest Expand(Expression<Func<ExternalConnection, object>> expandExpression);
+        IGraphServiceConnectionsCollectionRequest Expand(Expression<Func<Microsoft.Graph.ExternalConnectors.ExternalConnection, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -77,7 +77,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IGraphServiceConnectionsCollectionRequest Select(Expression<Func<ExternalConnection, object>> selectExpression);
+        IGraphServiceConnectionsCollectionRequest Select(Expression<Func<Microsoft.Graph.ExternalConnectors.ExternalConnection, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

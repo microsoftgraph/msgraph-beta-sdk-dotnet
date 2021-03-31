@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         IGraphServiceConnectionsCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IExternalConnectionRequestBuilder"/> for the specified ExternalConnection.
+        /// Gets an <see cref="Microsoft.Graph.ExternalConnectors.IExternalConnectionRequestBuilder"/> for the specified Microsoft.Graph.ExternalConnectors.ExternalConnection.
         /// </summary>
-        /// <param name="id">The ID for the ExternalConnection.</param>
-        /// <returns>The <see cref="IExternalConnectionRequestBuilder"/>.</returns>
-        IExternalConnectionRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the Microsoft.Graph.ExternalConnectors.ExternalConnection.</param>
+        /// <returns>The <see cref="Microsoft.Graph.ExternalConnectors.IExternalConnectionRequestBuilder"/>.</returns>
+        Microsoft.Graph.ExternalConnectors.IExternalConnectionRequestBuilder this[string id] { get; }
 
         
     }

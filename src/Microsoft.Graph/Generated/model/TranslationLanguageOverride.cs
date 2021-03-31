@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets languageTag.
+        /// The language to apply the override.Returned by default. Not nullable.
         /// </summary>
         [JsonPropertyName("languageTag")]
         public string LanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets translationBehavior.
+        /// The translation override behavior for the language, if any.Returned by default. Not nullable.
         /// </summary>
         [JsonPropertyName("translationBehavior")]
         public TranslationBehavior? TranslationBehavior { get; set; }

@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expiration date time.
-        /// This is only used when the requestType is 'Activate', and it indicates the expiration time for the role activation.
+        /// This is only used when the requestType is Activate, and it indicates the expiration time for the role activation.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request type.
-        /// The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlersNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue), AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review), AccessReview_Update (update an Access Review), and AccessReview_Delete (delete an Access Review).
+        /// The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlertsNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue),  AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review) , AccessReview_Update (update an Access Review), AccessReview_Delete (delete an Access Review).
         /// </summary>
         [JsonPropertyName("requestType")]
         public string RequestType { get; set; }

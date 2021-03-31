@@ -30,12 +30,14 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets included sources.
+        /// Specifies which sources are included in this group. Possible values are: mailbox, site.
         /// </summary>
         [JsonPropertyName("includedSources")]
         public SourceType? IncludedSources { get; set; }
     
         /// <summary>
         /// Gets or sets group.
+        /// The group associated with the unifiedGroupSource.
         /// </summary>
         [JsonPropertyName("group")]
         public Microsoft.Graph.Group Group { get; set; }

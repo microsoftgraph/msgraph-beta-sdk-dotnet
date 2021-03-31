@@ -40,7 +40,7 @@ namespace Microsoft.Graph
         /// The source of identity. Possible values are azureActiveDirectory or external.
         /// </summary>
         [JsonPropertyName("identitySource")]
-        public string IdentitySource { get; set; }
+        public IdentitySourceType? IdentitySource { get; set; }
     
         /// <summary>
         /// Gets or sets type.

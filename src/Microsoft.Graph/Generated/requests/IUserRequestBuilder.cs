@@ -86,6 +86,12 @@ namespace Microsoft.Graph
         IUserMemberOfCollectionWithReferencesRequestBuilder MemberOf { get; }
 
         /// <summary>
+        /// Gets the request builder for Oauth2PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="IUserOauth2PermissionGrantsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserOauth2PermissionGrantsCollectionWithReferencesRequestBuilder Oauth2PermissionGrants { get; }
+
+        /// <summary>
         /// Gets the request builder for OwnedDevices.
         /// </summary>
         /// <returns>The <see cref="IUserOwnedDevicesCollectionWithReferencesRequestBuilder"/>.</returns>

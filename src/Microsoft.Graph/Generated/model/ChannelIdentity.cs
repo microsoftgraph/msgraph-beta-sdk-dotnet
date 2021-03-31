@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets channelId.
+        /// The identity of the channel in which the message was posted.
         /// </summary>
         [JsonPropertyName("channelId")]
         public string ChannelId { get; set; }
     
         /// <summary>
         /// Gets or sets teamId.
+        /// The identity of the team in which the message was posted.
         /// </summary>
         [JsonPropertyName("teamId")]
         public string TeamId { get; set; }

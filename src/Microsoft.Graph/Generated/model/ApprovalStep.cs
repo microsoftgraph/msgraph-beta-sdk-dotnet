@@ -29,34 +29,53 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets assigned to me.
+        /// Indicates whether the step is assigned to the calling user to review. Read-only.
+        /// </summary>
+        [JsonPropertyName("assignedToMe")]
+        public bool? AssignedToMe { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
+        /// The label provided by the policy creator to identify an approval step. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets justification.
+        /// The justification associated with the approval step decision.
         /// </summary>
         [JsonPropertyName("justification")]
         public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed by.
+        /// The identifier of the reviewer. Read-only.
         /// </summary>
         [JsonPropertyName("reviewedBy")]
         public Identity ReviewedBy { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed date time.
+        /// The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("reviewedDateTime")]
         public DateTimeOffset? ReviewedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets review result.
+        /// The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
         /// </summary>
         [JsonPropertyName("reviewResult")]
         public string ReviewResult { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
+        /// </summary>
+        [JsonPropertyName("status")]
+        public string Status { get; set; }
     
     }
 }

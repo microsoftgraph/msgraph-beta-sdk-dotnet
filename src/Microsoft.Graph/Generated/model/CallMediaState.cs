@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets audio.
-        /// The audio media state. Possible values are: active, inactive.
+        /// The audio media state. Possible values are: active, inactive, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("audio")]
         public MediaState? Audio { get; set; }

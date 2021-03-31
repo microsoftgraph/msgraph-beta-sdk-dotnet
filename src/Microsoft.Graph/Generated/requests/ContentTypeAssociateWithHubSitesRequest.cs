@@ -43,11 +43,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<ContentType> PostAsync(
+        public System.Threading.Tasks.Task PostAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.POST;
-            return this.SendAsync<ContentType>(this.RequestBody, cancellationToken);
+            return this.SendAsync(this.RequestBody, cancellationToken);
         }
 
         /// <summary>
@@ -55,10 +55,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ContentType>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<ContentType>(this.RequestBody, cancellationToken);
+            return this.SendAsyncWithGraphResponse(this.RequestBody, cancellationToken);
         }
 
 

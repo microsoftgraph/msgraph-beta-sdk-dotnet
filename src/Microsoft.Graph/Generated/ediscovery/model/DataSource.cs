@@ -31,18 +31,21 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets created by.
+        /// The user who created the dataSource.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public Microsoft.Graph.IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time the dataSource was created.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name of the dataSource. This will be the name of the SharePoint site.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

@@ -140,6 +140,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("version")]
         public string Version { get; set; }
     
+        /// <summary>
+        /// Gets or sets visibility.
+        /// Setting visibility scope to UX. Possible values are: none, settingsCatalog, template.
+        /// </summary>
+        [JsonPropertyName("visibility")]
+        public DeviceManagementConfigurationSettingVisibility? Visibility { get; set; }
+    
     }
 }
 

@@ -30,12 +30,14 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets review set.
+        /// The review set to which items matching the source collection query are added to.
         /// </summary>
         [JsonPropertyName("reviewSet")]
         public ReviewSet ReviewSet { get; set; }
     
         /// <summary>
         /// Gets or sets source collection.
+        /// The sourceCollection that items are being added from.
         /// </summary>
         [JsonPropertyName("sourceCollection")]
         public SourceCollection SourceCollection { get; set; }

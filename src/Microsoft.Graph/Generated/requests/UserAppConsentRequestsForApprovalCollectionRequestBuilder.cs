@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for AppConsentRequestFilterByCurrentUser.
+        /// </summary>
+        /// <returns>The <see cref="IAppConsentRequestFilterByCurrentUserRequestBuilder"/>.</returns>
+        public IAppConsentRequestFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            ConsentRequestFilterByCurrentUserOptions on)
+        {
+            return new AppConsentRequestFilterByCurrentUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.filterByCurrentUser"),
+                this.Client,
+                on);
+        }
     }
 }

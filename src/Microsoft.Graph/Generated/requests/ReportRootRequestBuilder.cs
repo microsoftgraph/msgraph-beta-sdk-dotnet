@@ -1272,6 +1272,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsDeviceUsageDistributionTotalUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageDistributionTotalUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsDeviceUsageDistributionTotalUserCountsRequestBuilder GetTeamsDeviceUsageDistributionTotalUserCounts(
+            string period)
+        {
+            return new ReportRootGetTeamsDeviceUsageDistributionTotalUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsDeviceUsageDistributionTotalUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetTeamsDeviceUsageDistributionUserCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder"/>.</returns>
@@ -1280,6 +1293,19 @@ namespace Microsoft.Graph
         {
             return new ReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsDeviceUsageDistributionUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsDeviceUsageTotalUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageTotalUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsDeviceUsageTotalUserCountsRequestBuilder GetTeamsDeviceUsageTotalUserCounts(
+            string period)
+        {
+            return new ReportRootGetTeamsDeviceUsageTotalUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsDeviceUsageTotalUserCounts"),
                 this.Client,
                 period);
         }
@@ -1332,6 +1358,58 @@ namespace Microsoft.Graph
         {
             return new ReportRootGetTeamsUserActivityCountsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityDistributionTotalUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityDistributionTotalUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsUserActivityDistributionTotalUserCountsRequestBuilder GetTeamsUserActivityDistributionTotalUserCounts(
+            string period)
+        {
+            return new ReportRootGetTeamsUserActivityDistributionTotalUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityDistributionTotalUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityDistributionUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityDistributionUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsUserActivityDistributionUserCountsRequestBuilder GetTeamsUserActivityDistributionUserCounts(
+            string period)
+        {
+            return new ReportRootGetTeamsUserActivityDistributionUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityDistributionUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityTotalCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityTotalCountsRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsUserActivityTotalCountsRequestBuilder GetTeamsUserActivityTotalCounts(
+            string period)
+        {
+            return new ReportRootGetTeamsUserActivityTotalCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityTotalCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityTotalUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityTotalUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsUserActivityTotalUserCountsRequestBuilder GetTeamsUserActivityTotalUserCounts(
+            string period)
+        {
+            return new ReportRootGetTeamsUserActivityTotalUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityTotalUserCounts"),
                 this.Client,
                 period);
         }

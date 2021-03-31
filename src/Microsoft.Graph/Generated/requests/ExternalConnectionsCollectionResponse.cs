@@ -14,7 +14,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ExternalConnectionsCollectionResponse.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<ExternalConnectionsCollectionResponse>))]
     public class ExternalConnectionsCollectionResponse
     {
         /// <summary>

@@ -67,5 +67,21 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IInformationProtectionThreatAssessmentRequestsCollectionRequestBuilder"/>.</returns>
         IInformationProtectionThreatAssessmentRequestsCollectionRequestBuilder ThreatAssessmentRequests { get; }
     
+        /// <summary>
+        /// Gets the request builder for InformationProtectionDecryptBuffer.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionDecryptBufferRequestBuilder"/>.</returns>
+        IInformationProtectionDecryptBufferRequestBuilder DecryptBuffer(
+            byte[] encryptedBuffer,
+            byte[] publishingLicense);
+
+        /// <summary>
+        /// Gets the request builder for InformationProtectionEncryptBuffer.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionEncryptBufferRequestBuilder"/>.</returns>
+        IInformationProtectionEncryptBufferRequestBuilder EncryptBuffer(
+            byte[] buffer,
+            Guid labelId);
+    
     }
 }

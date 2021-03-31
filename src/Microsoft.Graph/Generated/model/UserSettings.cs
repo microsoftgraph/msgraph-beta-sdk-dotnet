@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public bool? ContributionToContentDiscoveryDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets item insights.
+        /// </summary>
+        [JsonPropertyName("itemInsights")]
+        public UserInsightsSettings ItemInsights { get; set; }
+    
+        /// <summary>
         /// Gets or sets regional and language settings.
         /// The user's preferences for languages, regional locale and date/time formatting.
         /// </summary>

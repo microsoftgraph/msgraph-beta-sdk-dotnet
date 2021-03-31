@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets auth method.
-        /// Represents the authentication method that the user used. Possible values are: email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and  alternateMobileCall (only supported for registration).
+        /// Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("authMethod")]
         public UsageAuthMethod? AuthMethod { get; set; }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets feature.
-        /// Defines the feature to report. Possible values are: registration and reset.
+        /// Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("feature")]
         public FeatureType? Feature { get; set; }

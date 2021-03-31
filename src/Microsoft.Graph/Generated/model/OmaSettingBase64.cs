@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets fileName.
-        /// File name associated with the Value property (.cer
+        /// File name associated with the Value property (.cer | .crt | .p7b | .bin).
         /// </summary>
         [JsonPropertyName("fileName")]
         public string FileName { get; set; }

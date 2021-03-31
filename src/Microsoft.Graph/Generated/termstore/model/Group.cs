@@ -50,6 +50,12 @@ namespace Microsoft.Graph.TermStore
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets parent site id.
+        /// </summary>
+        [JsonPropertyName("parentSiteId")]
+        public string ParentSiteId { get; set; }
+    
+        /// <summary>
         /// Gets or sets scope.
         /// Returns type of group. Possible values are 'global', 'system' and 'siteCollection'.
         /// </summary>

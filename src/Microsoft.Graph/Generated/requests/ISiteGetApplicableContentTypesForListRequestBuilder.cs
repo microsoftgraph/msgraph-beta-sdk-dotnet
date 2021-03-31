@@ -66,13 +66,13 @@ namespace Microsoft.Graph
         IContentTypeUnpublishRequestBuilder Unpublish();
         /// <summary>
         /// Gets the request builder for Base.
-        /// 
+        /// Parent contentType from which this content type is derived.
         /// </summary>
         /// <returns>The <see cref="IContentTypeRequestBuilder"/>.</returns>
         IContentTypeRequestBuilder Base  { get; }
         /// <summary>
         /// Gets the request builder for BaseTypes.
-        /// 
+        /// The collection of content types that are ancestors of this content type.
         /// </summary>
         /// <returns>The <see cref="IContentTypeRequestBuilder"/>.</returns>
         IContentTypeRequestBuilder BaseTypes  { get; }
@@ -84,13 +84,13 @@ namespace Microsoft.Graph
         IColumnLinkRequestBuilder ColumnLinks  { get; }
         /// <summary>
         /// Gets the request builder for ColumnPositions.
-        /// 
+        /// Column order information in a content type.
         /// </summary>
         /// <returns>The <see cref="IColumnDefinitionRequestBuilder"/>.</returns>
         IColumnDefinitionRequestBuilder ColumnPositions  { get; }
         /// <summary>
         /// Gets the request builder for Columns.
-        /// 
+        /// The collection of column definitions for this contentType.
         /// </summary>
         /// <returns>The <see cref="IColumnDefinitionRequestBuilder"/>.</returns>
         IColumnDefinitionRequestBuilder Columns  { get; }

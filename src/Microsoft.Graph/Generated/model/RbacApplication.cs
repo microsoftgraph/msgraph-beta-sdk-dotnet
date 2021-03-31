@@ -47,6 +47,12 @@ namespace Microsoft.Graph
         public IRbacApplicationRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
     
         /// <summary>
+        /// Gets or sets role assignment approvals.
+        /// </summary>
+        [JsonPropertyName("roleAssignmentApprovals")]
+        public IRbacApplicationRoleAssignmentApprovalsCollectionPage RoleAssignmentApprovals { get; set; }
+    
+        /// <summary>
         /// Gets or sets role assignment requests.
         /// </summary>
         [JsonPropertyName("roleAssignmentRequests")]

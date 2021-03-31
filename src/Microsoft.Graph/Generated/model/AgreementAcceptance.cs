@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets agreement file id.
-        /// ID of the agreement file accepted by the user.
+        /// The identifier of the agreement file accepted by the user.
         /// </summary>
         [JsonPropertyName("agreementFileId")]
         public string AgreementFileId { get; set; }
     
         /// <summary>
         /// Gets or sets agreement id.
-        /// ID of the agreement.
+        /// The identifier of the agreement.
         /// </summary>
         [JsonPropertyName("agreementId")]
         public string AgreementId { get; set; }
@@ -58,14 +58,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device ostype.
-        /// The operating system used for accepting the agreement.
+        /// The operating system used to accept the agreement.
         /// </summary>
         [JsonPropertyName("deviceOSType")]
         public string DeviceOSType { get; set; }
     
         /// <summary>
         /// Gets or sets device osversion.
-        /// The operating system version of the device used for accepting the agreement.
+        /// The operating system version of the device used to accept the agreement.
         /// </summary>
         [JsonPropertyName("deviceOSVersion")]
         public string DeviceOSVersion { get; set; }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
-        /// Possible values are: accepted, declined.
+        /// The state of the agreement acceptance. Possible values are: accepted, declined.
         /// </summary>
         [JsonPropertyName("state")]
         public AgreementAcceptanceState? State { get; set; }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user id.
-        /// ID of the user who accepted the agreement.
+        /// The identifier of the user who accepted the agreement.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

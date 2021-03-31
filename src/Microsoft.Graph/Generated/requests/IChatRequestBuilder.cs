@@ -65,8 +65,7 @@ namespace Microsoft.Graph
             Int64? chainId = null,
             ItemBody previewText = null,
             IEnumerable<KeyValuePair> templateParameters = null,
-            TeamworkNotificationRecipient recipient = null,
-            string teamsAppId = null);
+            TeamworkNotificationRecipient recipient = null);
     
     }
 }

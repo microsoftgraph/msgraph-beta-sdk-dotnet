@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets auth method.
-        /// Represents the authentication method that the user used. Possible values are: email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and alternateMobileCall (supported only in registration).
+        /// Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
         /// </summary>
         [JsonPropertyName("authMethod")]
         public UsageAuthMethod? AuthMethod { get; set; }
     
         /// <summary>
         /// Gets or sets event date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("eventDateTime")]
         public DateTimeOffset? EventDateTime { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets feature.
-        /// Possible values are: registration and reset.
+        /// Possible values are: registration, reset, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("feature")]
         public FeatureType? Feature { get; set; }

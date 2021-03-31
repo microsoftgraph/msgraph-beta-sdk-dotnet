@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets bundleID.
-        /// BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.
+        /// BundleID of app
         /// </summary>
         [JsonPropertyName("bundleID")]
         public string BundleID { get; set; }

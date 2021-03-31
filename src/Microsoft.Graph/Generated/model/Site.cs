@@ -99,6 +99,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external columns.
+        /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
         /// </summary>
         [JsonPropertyName("externalColumns")]
         public ISiteExternalColumnsCollectionWithReferencesPage ExternalColumns { get; set; }
@@ -137,6 +138,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("sites")]
         public ISiteSitesCollectionPage Sites { get; set; }
+    
+        /// <summary>
+        /// Gets or sets term store.
+        /// </summary>
+        [JsonPropertyName("termStore")]
+        public Microsoft.Graph.TermStore.Store TermStore { get; set; }
     
         /// <summary>
         /// Gets or sets onenote.

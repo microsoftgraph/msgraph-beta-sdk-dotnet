@@ -30,6 +30,7 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets site.
+        /// The SharePoint site associated with the siteSource.
         /// </summary>
         [JsonPropertyName("site")]
         public Microsoft.Graph.Site Site { get; set; }

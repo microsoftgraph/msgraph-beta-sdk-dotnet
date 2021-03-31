@@ -471,7 +471,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets defender system scan schedule.
-        /// Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
+        /// Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday.
         /// </summary>
         [JsonPropertyName("defenderSystemScanSchedule")]
         public WeeklySchedule? DefenderSystemScanSchedule { get; set; }
@@ -1591,7 +1591,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets smart screen enable app install control.
-        /// This property will be deprecated in July 2019 and will be replaced by property SmartScreenAppInstallControl. Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
+        /// Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
         /// </summary>
         [JsonPropertyName("smartScreenEnableAppInstallControl")]
         public bool? SmartScreenEnableAppInstallControl { get; set; }

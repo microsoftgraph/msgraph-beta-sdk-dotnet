@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The name of the scope.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

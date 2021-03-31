@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The value is always 'Continuous Access Evaluation'. Read-only.
+        /// The value is always Continuous Access Evaluation. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets assigned labels.
-        /// The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
+        /// The list of sensitivity label pairs (label ID, label name) associated with an Microsoft 365 group. Returned only on $select. Read-only.
         /// </summary>
         [JsonPropertyName("assignedLabels")]
         public IEnumerable<AssignedLabel> AssignedLabels { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only.
+        /// Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expiration date time.
-        /// Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only.
+        /// Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
@@ -93,7 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets has members with license errors.
-        /// Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).
+        /// Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example.
         /// </summary>
         [JsonPropertyName("hasMembersWithLicenseErrors")]
         public bool? HasMembersWithLicenseErrors { get; set; }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets license processing state.
-        /// Indicates status of the group license assignment to all members of the group. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.
+        /// Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
         /// </summary>
         [JsonPropertyName("licenseProcessingState")]
         public LicenseProcessingState LicenseProcessingState { get; set; }
@@ -155,7 +155,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets membership rule processing state.
-        /// Indicates whether the dynamic membership processing is on or paused. Possible values are 'On' or 'Paused'. Returned by default.
+        /// Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default.
         /// </summary>
         [JsonPropertyName("membershipRuleProcessingState")]
         public string MembershipRuleProcessingState { get; set; }
@@ -169,7 +169,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only. Supports $filter.
+        /// Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter.
         /// </summary>
         [JsonPropertyName("onPremisesLastSyncDateTime")]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
@@ -218,21 +218,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred language.
-        /// The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
+        /// The preferred language for an Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
         /// </summary>
         [JsonPropertyName("preferredLanguage")]
         public string PreferredLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets proxy addresses.
-        /// Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter.
+        /// Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter.
         /// </summary>
         [JsonPropertyName("proxyAddresses")]
         public IEnumerable<string> ProxyAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets renewed date time.
-        /// Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only.
+        /// Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         /// </summary>
         [JsonPropertyName("renewedDateTime")]
         public DateTimeOffset? RenewedDateTime { get; set; }
@@ -267,7 +267,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets theme.
-        /// Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
+        /// Specifies an Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
         /// </summary>
         [JsonPropertyName("theme")]
         public string Theme { get; set; }
@@ -287,28 +287,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allow external senders.
-        /// Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select.
+        /// Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("allowExternalSenders")]
         public bool? AllowExternalSenders { get; set; }
     
         /// <summary>
         /// Gets or sets auto subscribe new members.
-        /// Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select.
+        /// Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("autoSubscribeNewMembers")]
         public bool? AutoSubscribeNewMembers { get; set; }
     
         /// <summary>
         /// Gets or sets hide from address lists.
-        /// True if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select.
+        /// True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("hideFromAddressLists")]
         public bool? HideFromAddressLists { get; set; }
     
         /// <summary>
         /// Gets or sets hide from outlook clients.
-        /// True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select.
+        /// True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("hideFromOutlookClients")]
         public bool? HideFromOutlookClients { get; set; }
@@ -321,7 +321,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is subscribed by mail.
-        /// Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select.
+        /// Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("isSubscribedByMail")]
         public bool? IsSubscribedByMail { get; set; }
@@ -335,7 +335,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets unseen count.
-        /// Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select.
+        /// Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("unseenCount")]
         public Int32? UnseenCount { get; set; }
@@ -369,7 +369,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created on behalf of.
-        /// The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
         /// </summary>
         [JsonPropertyName("createdOnBehalfOf")]
         public DirectoryObject CreatedOnBehalfOf { get; set; }
@@ -383,14 +383,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets member of.
-        /// Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
+        /// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IGroupMemberOfCollectionWithReferencesPage MemberOf { get; set; }
     
         /// <summary>
         /// Gets or sets members.
-        /// Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.
+        /// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable.
         /// </summary>
         [JsonPropertyName("members")]
         public IGroupMembersCollectionWithReferencesPage Members { get; set; }
@@ -404,7 +404,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.
+        /// The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable.
         /// </summary>
         [JsonPropertyName("owners")]
         public IGroupOwnersCollectionWithReferencesPage Owners { get; set; }
@@ -417,7 +417,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets settings.
-        /// Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("settings")]
         public IGroupSettingsCollectionPage Settings { get; set; }
@@ -464,7 +464,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets events.
-        /// The group's events.
+        /// The group's calendar events.
         /// </summary>
         [JsonPropertyName("events")]
         public IGroupEventsCollectionPage Events { get; set; }
@@ -520,7 +520,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets planner.
-        /// Selective Planner services available to the group. Read-only. Nullable.
+        /// Entry-point to Planner resource that might exist for a Unified Group.
         /// </summary>
         [JsonPropertyName("planner")]
         public PlannerGroup Planner { get; set; }
@@ -534,7 +534,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets photo.
-        /// The group's profile photo.
+        /// The group's profile photo
         /// </summary>
         [JsonPropertyName("photo")]
         public ProfilePhoto Photo { get; set; }

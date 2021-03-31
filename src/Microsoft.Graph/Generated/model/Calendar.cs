@@ -44,21 +44,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets can edit.
-        /// True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.
+        /// true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
         /// </summary>
         [JsonPropertyName("canEdit")]
         public bool? CanEdit { get; set; }
     
         /// <summary>
         /// Gets or sets can share.
-        /// True if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.
+        /// true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
         /// </summary>
         [JsonPropertyName("canShare")]
         public bool? CanShare { get; set; }
     
         /// <summary>
         /// Gets or sets can view private items.
-        /// True if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.
+        /// true if the user can read calendar items that have been marked private, false otherwise.
         /// </summary>
         [JsonPropertyName("canViewPrivateItems")]
         public bool? CanViewPrivateItems { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets color.
-        /// Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: LightBlue=0, LightGreen=1, LightOrange=2, LightGray=3, LightYellow=4, LightTeal=5, LightPink=6, LightBrown=7, LightRed=8, MaxColor=9, Auto=-1
+        /// Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: auto, lightBlue, lightGreen, lightOrange, lightGray, lightYellow, lightTeal, lightPink, lightBrown, lightRed, maxColor.
         /// </summary>
         [JsonPropertyName("color")]
         public CalendarColor? Color { get; set; }
@@ -86,14 +86,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hex color.
-        /// The calendar color, expressed in a hex color code of three hexidecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
+        /// The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.
         /// </summary>
         [JsonPropertyName("hexColor")]
         public string HexColor { get; set; }
     
         /// <summary>
         /// Gets or sets is default calendar.
-        /// True if this is the default calendar where new events are created by default, false otherwise.
+        /// true if this is the default calendar where new events are created by default, false otherwise.
         /// </summary>
         [JsonPropertyName("isDefaultCalendar")]
         public bool? IsDefaultCalendar { get; set; }
@@ -107,14 +107,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is shared.
-        /// True if the user has shared the calendar with other users, false otherwise. Since only the user who created the calendar can share it, isShared and isSharedWithMe cannot be true for the same user. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.
+        /// true if the user has shared the calendar with other users, false otherwise. Since only the user who created the calendar can share it, isShared and isSharedWithMe cannot be true for the same user. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.
         /// </summary>
         [JsonPropertyName("isShared")]
         public bool? IsShared { get; set; }
     
         /// <summary>
         /// Gets or sets is shared with me.
-        /// True if the user has been shared this calendar, false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.
+        /// true if the user has been shared this calendar, false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.
         /// </summary>
         [JsonPropertyName("isSharedWithMe")]
         public bool? IsSharedWithMe { get; set; }
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owner.
-        /// If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user. Read-only.
+        /// If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
         /// </summary>
         [JsonPropertyName("owner")]
         public EmailAddress Owner { get; set; }

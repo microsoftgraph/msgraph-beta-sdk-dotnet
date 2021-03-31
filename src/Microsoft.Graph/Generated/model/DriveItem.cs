@@ -98,6 +98,12 @@ namespace Microsoft.Graph
         public GeoCoordinates Location { get; set; }
     
         /// <summary>
+        /// Gets or sets media.
+        /// </summary>
+        [JsonPropertyName("media")]
+        public Media Media { get; set; }
+    
+        /// <summary>
         /// Gets or sets package.
         /// If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
         /// </summary>
@@ -106,7 +112,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets pending operations.
-        /// If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+        /// If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
         /// </summary>
         [JsonPropertyName("pendingOperations")]
         public PendingOperations PendingOperations { get; set; }
@@ -166,6 +172,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("size")]
         public Int64? Size { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source.
+        /// </summary>
+        [JsonPropertyName("source")]
+        public DriveItemSource Source { get; set; }
     
         /// <summary>
         /// Gets or sets special folder.

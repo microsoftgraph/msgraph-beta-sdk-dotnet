@@ -939,6 +939,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsNotAutopilotReadyDevice.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionRequestBuilder UserExperienceAnalyticsNotAutopilotReadyDevice
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsNotAutopilotReadyDevice"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsOverview.
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsOverviewRequestBuilder"/>.</returns>
@@ -1643,6 +1655,17 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getComanagementEligibleDevicesSummary"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices()
+        {
+            return new DeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices"),
                 this.Client);
         }
 

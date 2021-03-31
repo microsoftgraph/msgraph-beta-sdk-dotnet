@@ -28,11 +28,25 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets query.
+        /// The query specifying who will be the reviewer. See table for examples.
+        /// </summary>
+        [JsonPropertyName("query")]
+        public string Query { get; set; }
+    
+        /// <summary>
         /// Gets or sets queryRoot.
-        /// In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.
+        /// The type of query. Examples include MicrosoftGraph and ARM.
         /// </summary>
         [JsonPropertyName("queryRoot")]
         public string QueryRoot { get; set; }
+    
+        /// <summary>
+        /// Gets or sets queryType.
+        /// In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.
+        /// </summary>
+        [JsonPropertyName("queryType")]
+        public string QueryType { get; set; }
     
     }
 }

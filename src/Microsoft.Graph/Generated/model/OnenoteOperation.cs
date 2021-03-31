@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets percent complete.
-        /// The operation percent complete if the operation is still in running status
+        /// The operation percent complete if the operation is still in running status.
         /// </summary>
         [JsonPropertyName("percentComplete")]
         public string PercentComplete { get; set; }

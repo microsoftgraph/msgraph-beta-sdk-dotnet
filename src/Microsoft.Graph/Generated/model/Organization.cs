@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets business phones.
-        /// Telephone number for the organization. Note: Although this is a string collection, only one number can be set for this property.
+        /// Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
         /// </summary>
         [JsonPropertyName("businessPhones")]
         public IEnumerable<string> BusinessPhones { get; set; }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -100,14 +100,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// The time and date at which the tenant was last synced with the on-premise directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// The time and date at which the tenant was last synced with the on-premise directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("onPremisesLastSyncDateTime")]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
-        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default).
+        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
         /// </summary>
         [JsonPropertyName("onPremisesSyncEnabled")]
         public bool? OnPremisesSyncEnabled { get; set; }
@@ -121,7 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred language.
-        /// The preferred language for the organization. Should follow ISO 639-1 Code; for example 'en'.
+        /// The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
         /// </summary>
         [JsonPropertyName("preferredLanguage")]
         public string PreferredLanguage { get; set; }
@@ -202,14 +202,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate based auth configuration.
-        /// Navigation property to manage  certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+        /// Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
         /// </summary>
         [JsonPropertyName("certificateBasedAuthConfiguration")]
         public IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage CertificateBasedAuthConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
-        /// The collection of open extensions defined for the organization resource. Nullable.
+        /// The collection of open extensions defined for the organization. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("extensions")]
         public IOrganizationExtensionsCollectionPage Extensions { get; set; }

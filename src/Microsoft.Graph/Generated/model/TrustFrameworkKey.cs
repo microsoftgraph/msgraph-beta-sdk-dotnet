@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kty.
-        /// The 'kty' (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
+        /// The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
         /// </summary>
         [JsonPropertyName("kty")]
         public string Kty { get; set; }
@@ -121,21 +121,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets use.
-        /// The 'use' (public key use) parameter identifies the intended use of the public key.  The 'use' parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are    1. 'sig' (signature)    2.  'enc' (encryption)
+        /// The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
         /// </summary>
         [JsonPropertyName("use")]
         public string Use { get; set; }
     
         /// <summary>
         /// Gets or sets x5c.
-        /// The 'x5c' (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
+        /// The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
         /// </summary>
         [JsonPropertyName("x5c")]
         public IEnumerable<string> X5c { get; set; }
     
         /// <summary>
         /// Gets or sets x5t.
-        /// The 'x5t' (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
+        /// The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
         /// </summary>
         [JsonPropertyName("x5t")]
         public string X5t { get; set; }

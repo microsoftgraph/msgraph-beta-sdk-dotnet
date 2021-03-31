@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets app role id.
-        /// The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.
+        /// The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
         /// </summary>
         [JsonPropertyName("appRoleId")]
         public Guid? AppRoleId { get; set; }
     
         /// <summary>
         /// Gets or sets creation timestamp.
-        /// The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only. Does not support $filter.
+        /// The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("creationTimestamp")]
         public DateTimeOffset? CreationTimestamp { get; set; }
@@ -51,21 +51,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets principal id.
-        /// The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.
+        /// The unique identifier (id) for the user, group or service principal being granted the app role. Required on create.
         /// </summary>
         [JsonPropertyName("principalId")]
         public Guid? PrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets principal type.
-        /// The type of the assigned principal. This can either be 'User', 'Group' or 'ServicePrincipal'. Read-only. Does not support $filter.
+        /// The type of the assigned principal. This can either be User, Group or ServicePrincipal. Read-only.
         /// </summary>
         [JsonPropertyName("principalType")]
         public string PrincipalType { get; set; }
     
         /// <summary>
         /// Gets or sets resource display name.
-        /// The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+        /// The display name of the resource app's service principal to which the assignment is made.
         /// </summary>
         [JsonPropertyName("resourceDisplayName")]
         public string ResourceDisplayName { get; set; }

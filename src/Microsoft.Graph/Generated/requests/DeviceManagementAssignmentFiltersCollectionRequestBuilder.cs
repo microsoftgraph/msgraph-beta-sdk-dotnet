@@ -61,6 +61,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceAndAppManagementAssignmentFilterEnable.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterEnableRequestBuilder"/>.</returns>
+        public IDeviceAndAppManagementAssignmentFilterEnableRequestBuilder Enable(
+            bool enable)
+        {
+            return new DeviceAndAppManagementAssignmentFilterEnableRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.enable"),
+                this.Client,
+                enable);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceAndAppManagementAssignmentFilterValidateFilter.
         /// </summary>
         /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterValidateFilterRequestBuilder"/>.</returns>
@@ -71,6 +84,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.validateFilter"),
                 this.Client,
                 deviceAndAppManagementAssignmentFilter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceAndAppManagementAssignmentFilterGetState.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterGetStateRequestBuilder"/>.</returns>
+        public IDeviceAndAppManagementAssignmentFilterGetStateRequestBuilder GetState()
+        {
+            return new DeviceAndAppManagementAssignmentFilterGetStateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getState"),
+                this.Client);
         }
     }
 }

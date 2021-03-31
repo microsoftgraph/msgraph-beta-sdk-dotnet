@@ -122,5 +122,35 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for InformationProtectionDecryptBuffer.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionDecryptBufferRequestBuilder"/>.</returns>
+        public IInformationProtectionDecryptBufferRequestBuilder DecryptBuffer(
+            byte[] encryptedBuffer,
+            byte[] publishingLicense)
+        {
+            return new InformationProtectionDecryptBufferRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.decryptBuffer"),
+                this.Client,
+                encryptedBuffer,
+                publishingLicense);
+        }
+
+        /// <summary>
+        /// Gets the request builder for InformationProtectionEncryptBuffer.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionEncryptBufferRequestBuilder"/>.</returns>
+        public IInformationProtectionEncryptBufferRequestBuilder EncryptBuffer(
+            byte[] buffer,
+            Guid labelId)
+        {
+            return new InformationProtectionEncryptBufferRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.encryptBuffer"),
+                this.Client,
+                buffer,
+                labelId);
+        }
+    
     }
 }

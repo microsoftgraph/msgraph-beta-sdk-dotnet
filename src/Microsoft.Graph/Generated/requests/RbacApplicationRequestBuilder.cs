@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for RoleAssignmentApprovals.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleAssignmentApprovalsCollectionRequestBuilder"/>.</returns>
+        public IRbacApplicationRoleAssignmentApprovalsCollectionRequestBuilder RoleAssignmentApprovals
+        {
+            get
+            {
+                return new RbacApplicationRoleAssignmentApprovalsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleAssignmentApprovals"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RoleAssignmentRequests.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationRoleAssignmentRequestsCollectionRequestBuilder"/>.</returns>

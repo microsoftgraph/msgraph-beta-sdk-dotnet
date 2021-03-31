@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets authentication type.
-        /// Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication.Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This propert is read-only and is not nullable.
+        /// Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
         /// </summary>
         [JsonPropertyName("authenticationType")]
         public string AuthenticationType { get; set; }
@@ -51,28 +51,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is default.
-        /// True if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
+        /// true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
         /// </summary>
         [JsonPropertyName("isDefault")]
         public bool? IsDefault { get; set; }
     
         /// <summary>
         /// Gets or sets is initial.
-        /// True if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
+        /// true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
         /// </summary>
         [JsonPropertyName("isInitial")]
         public bool? IsInitial { get; set; }
     
         /// <summary>
         /// Gets or sets is root.
-        /// True if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+        /// true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
         /// </summary>
         [JsonPropertyName("isRoot")]
         public bool? IsRoot { get; set; }
     
         /// <summary>
         /// Gets or sets is verified.
-        /// True if the domain has completed domain ownership verification. Not nullable
+        /// true if the domain has completed domain ownership verification. Not nullable
         /// </summary>
         [JsonPropertyName("isVerified")]
         public bool? IsVerified { get; set; }
@@ -100,7 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets supported services.
-        /// The capabilities assigned to the domain.Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, YammerNot nullable
+        /// The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
         /// </summary>
         [JsonPropertyName("supportedServices")]
         public IEnumerable<string> SupportedServices { get; set; }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service configuration records.
-        /// DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.Read-only, Nullable
+        /// DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable
         /// </summary>
         [JsonPropertyName("serviceConfigurationRecords")]
         public IDomainServiceConfigurationRecordsCollectionPage ServiceConfigurationRecords { get; set; }
@@ -127,7 +127,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets verification dns records.
-        /// DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.Read-only, Nullable
+        /// DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
         /// </summary>
         [JsonPropertyName("verificationDnsRecords")]
         public IDomainVerificationDnsRecordsCollectionPage VerificationDnsRecords { get; set; }

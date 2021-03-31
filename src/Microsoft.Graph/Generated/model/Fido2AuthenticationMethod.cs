@@ -51,6 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The timestamp when this key was registered to the user.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }

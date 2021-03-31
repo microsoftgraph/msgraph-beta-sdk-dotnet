@@ -121,7 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subscription state.
-        /// Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+        /// Tenant mobile device management subscription state. The possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
         /// </summary>
         [JsonPropertyName("subscriptionState")]
         public DeviceManagementSubscriptionState? SubscriptionState { get; set; }
@@ -656,6 +656,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsMetricHistory")]
         public IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionPage UserExperienceAnalyticsMetricHistory { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics not autopilot ready device.
+        /// User experience analytics devices not Windows Autopilot ready.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsNotAutopilotReadyDevice")]
+        public IDeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionPage UserExperienceAnalyticsNotAutopilotReadyDevice { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics overview.

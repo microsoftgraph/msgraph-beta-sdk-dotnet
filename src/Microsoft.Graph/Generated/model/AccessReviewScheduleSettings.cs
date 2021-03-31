@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recurrence.
-        /// Detailed settings for recurrence. Using standard Outlook recurrence object.
+        /// Detailed settings for recurrence. Using standard Outlook recurrence object. Note that dayOfMonth is not supported - use property startDate on recurrenceRange to determine the day the review will start on.
         /// </summary>
         [JsonPropertyName("recurrence")]
         public PatternedRecurrence Recurrence { get; set; }

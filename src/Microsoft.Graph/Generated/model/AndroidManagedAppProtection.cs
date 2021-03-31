@@ -58,14 +58,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app action if android safety net apps verification failed.
-        /// Defines a managed app behavior, either warn or block, if the specified Android App Verification requirement fails. Possible values are: block, wipe, warn.
+        /// Defines a managed app behavior, either warn or block, if the specified Android App Verification requirment fails. Possible values are: block, wipe, warn.
         /// </summary>
         [JsonPropertyName("appActionIfAndroidSafetyNetAppsVerificationFailed")]
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetAppsVerificationFailed { get; set; }
     
         /// <summary>
         /// Gets or sets app action if android safety net device attestation failed.
-        /// Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirement fails. Possible values are: block, wipe, warn.
+        /// Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirment fails. Possible values are: block, wipe, warn.
         /// </summary>
         [JsonPropertyName("appActionIfAndroidSafetyNetDeviceAttestationFailed")]
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetDeviceAttestationFailed { get; set; }
@@ -100,14 +100,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom browser display name.
-        /// Friendly name of the preferred custom browser to open weblink on Android.
+        /// Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
         /// </summary>
         [JsonPropertyName("customBrowserDisplayName")]
         public string CustomBrowserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets custom browser package id.
-        /// Unique identifier of a custom browser to open weblink on Android.
+        /// Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
         /// </summary>
         [JsonPropertyName("customBrowserPackageId")]
         public string CustomBrowserPackageId { get; set; }

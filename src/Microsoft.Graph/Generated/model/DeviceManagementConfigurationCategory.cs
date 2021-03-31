@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets setting usage.
-        /// Indicates that the category contains settings that are used for Compliance or Configuration.
+        /// Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration.
         /// </summary>
         [JsonPropertyName("settingUsage")]
         public DeviceManagementConfigurationSettingUsage? SettingUsage { get; set; }

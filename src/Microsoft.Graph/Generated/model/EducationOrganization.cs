@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external source.
-        /// Where this user was created from. Possible values are: sis, lms, or manual.
+        /// Source where this organization was created from. The possible values are: sis, manual, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("externalSource")]
         public EducationExternalSource? ExternalSource { get; set; }

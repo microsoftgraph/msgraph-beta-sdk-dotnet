@@ -1184,11 +1184,11 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceExternal request builder.
         /// </summary>
-        public IExternalRequestBuilder External
+        public Microsoft.Graph.ExternalConnectors.IExternalRequestBuilder External
         {
             get
             {
-                return new ExternalRequestBuilder(this.BaseUrl + "/external", this);
+                return new Microsoft.Graph.ExternalConnectors.ExternalRequestBuilder(this.BaseUrl + "/external", this);
             }
         }
     

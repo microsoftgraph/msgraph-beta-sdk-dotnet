@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type External Connection.
     /// </summary>
+    [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
     public partial class ExternalConnection : Entity
     {
     
@@ -59,6 +60,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets groups.
         /// </summary>
+        [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonPropertyName("groups")]
         public IExternalConnectionGroupsCollectionPage Groups { get; set; }
     
@@ -66,6 +68,7 @@ namespace Microsoft.Graph
         /// Gets or sets items.
         /// Read-only. Nullable.
         /// </summary>
+        [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonPropertyName("items")]
         public IExternalConnectionItemsCollectionPage Items { get; set; }
     
@@ -73,6 +76,7 @@ namespace Microsoft.Graph
         /// Gets or sets operations.
         /// Read-only. Nullable.
         /// </summary>
+        [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonPropertyName("operations")]
         public IExternalConnectionOperationsCollectionPage Operations { get; set; }
     
@@ -80,6 +84,7 @@ namespace Microsoft.Graph
         /// Gets or sets schema.
         /// Read-only. Nullable.
         /// </summary>
+        [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonPropertyName("schema")]
         public Schema Schema { get; set; }
     

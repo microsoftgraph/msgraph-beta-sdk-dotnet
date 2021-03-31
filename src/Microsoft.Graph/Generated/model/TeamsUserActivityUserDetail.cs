@@ -29,10 +29,28 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets ad hoc meetings attended count.
+        /// </summary>
+        [JsonPropertyName("adHocMeetingsAttendedCount")]
+        public Int64? AdHocMeetingsAttendedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ad hoc meetings organized count.
+        /// </summary>
+        [JsonPropertyName("adHocMeetingsOrganizedCount")]
+        public Int64? AdHocMeetingsOrganizedCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets assigned products.
         /// </summary>
         [JsonPropertyName("assignedProducts")]
         public IEnumerable<string> AssignedProducts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets audio duration.
+        /// </summary>
+        [JsonPropertyName("audioDuration")]
+        public Duration AudioDuration { get; set; }
     
         /// <summary>
         /// Gets or sets call count.
@@ -59,6 +77,12 @@ namespace Microsoft.Graph
         public bool? IsDeleted { get; set; }
     
         /// <summary>
+        /// Gets or sets is licensed.
+        /// </summary>
+        [JsonPropertyName("isLicensed")]
+        public bool? IsLicensed { get; set; }
+    
+        /// <summary>
         /// Gets or sets last activity date.
         /// </summary>
         [JsonPropertyName("lastActivityDate")]
@@ -69,6 +93,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("meetingCount")]
         public Int64? MeetingCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets meetings attended count.
+        /// </summary>
+        [JsonPropertyName("meetingsAttendedCount")]
+        public Int64? MeetingsAttendedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets meetings organized count.
+        /// </summary>
+        [JsonPropertyName("meetingsOrganizedCount")]
+        public Int64? MeetingsOrganizedCount { get; set; }
     
         /// <summary>
         /// Gets or sets private chat message count.
@@ -89,6 +125,36 @@ namespace Microsoft.Graph
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
+        /// Gets or sets scheduled one time meetings attended count.
+        /// </summary>
+        [JsonPropertyName("scheduledOneTimeMeetingsAttendedCount")]
+        public Int64? ScheduledOneTimeMeetingsAttendedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduled one time meetings organized count.
+        /// </summary>
+        [JsonPropertyName("scheduledOneTimeMeetingsOrganizedCount")]
+        public Int64? ScheduledOneTimeMeetingsOrganizedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduled recurring meetings attended count.
+        /// </summary>
+        [JsonPropertyName("scheduledRecurringMeetingsAttendedCount")]
+        public Int64? ScheduledRecurringMeetingsAttendedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduled recurring meetings organized count.
+        /// </summary>
+        [JsonPropertyName("scheduledRecurringMeetingsOrganizedCount")]
+        public Int64? ScheduledRecurringMeetingsOrganizedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets screen share duration.
+        /// </summary>
+        [JsonPropertyName("screenShareDuration")]
+        public Duration ScreenShareDuration { get; set; }
+    
+        /// <summary>
         /// Gets or sets team chat message count.
         /// </summary>
         [JsonPropertyName("teamChatMessageCount")]
@@ -99,6 +165,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets video duration.
+        /// </summary>
+        [JsonPropertyName("videoDuration")]
+        public Duration VideoDuration { get; set; }
     
     }
 }
