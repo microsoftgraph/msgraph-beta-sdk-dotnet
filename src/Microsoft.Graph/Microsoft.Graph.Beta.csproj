@@ -28,6 +28,7 @@
 - Added GraphServiceClient constructor that accepts TokenCredential instance
 - [Breaking change] Bump minimun .NetFramework version to 4.6.2 from 4.6.1
 - Add source link to the nuget package.
+- Uses snupkg as symbol file.
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
     <VersionPrefix>4.0.0</VersionPrefix>
