@@ -84,7 +84,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teams app id.
-        /// The id from the Teams App manifest.
+        /// The ID from the Teams app manifest.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsAppId", Required = Newtonsoft.Json.Required.Default)]
         public string TeamsAppId { get; set; }
@@ -98,7 +98,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets bot.
-        /// The details of the bot specified in the Teams App manifest.
+        /// The details of the bot specified in the Teams app manifest.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bot", Required = Newtonsoft.Json.Required.Default)]
         public TeamworkBot Bot { get; set; }

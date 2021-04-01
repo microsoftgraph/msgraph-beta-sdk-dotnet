@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets inactiveDuration.
+        /// Defines the length of the duration period of inactivity. Inactivity is based on the last sign in date of the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inactiveDuration", Required = Newtonsoft.Json.Required.Default)]
         public Duration InactiveDuration { get; set; }

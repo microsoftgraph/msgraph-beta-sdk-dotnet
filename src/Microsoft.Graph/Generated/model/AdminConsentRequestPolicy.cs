@@ -60,10 +60,10 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reviewers.
-        /// Required.
+        /// The list of reviewers for the admin consent. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AccessReviewScope> Reviewers { get; set; }
+        public IEnumerable<AccessReviewReviewerScope> Reviewers { get; set; }
     
         /// <summary>
         /// Gets or sets version.
