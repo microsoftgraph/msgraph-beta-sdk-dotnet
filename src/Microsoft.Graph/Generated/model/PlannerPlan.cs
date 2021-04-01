@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -73,21 +73,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets buckets.
-        /// Collection of buckets in the plan. Read-only. Nullable.
+        /// Read-only. Nullable. Collection of buckets in the plan.
         /// </summary>
         [JsonPropertyName("buckets")]
         public IPlannerPlanBucketsCollectionPage Buckets { get; set; }
     
         /// <summary>
         /// Gets or sets details.
-        /// Additional details about the plan. Read-only. Nullable.
+        /// Read-only. Nullable. Additional details about the plan.
         /// </summary>
         [JsonPropertyName("details")]
         public PlannerPlanDetails Details { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
-        /// Collection of tasks in the plan. Read-only. Nullable.
+        /// Read-only. Nullable. Collection of tasks in the plan.
         /// </summary>
         [JsonPropertyName("tasks")]
         public IPlannerPlanTasksCollectionPage Tasks { get; set; }

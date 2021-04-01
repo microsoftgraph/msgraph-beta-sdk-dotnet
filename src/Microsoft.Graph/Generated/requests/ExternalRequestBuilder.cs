@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ExternalRequestBuilder.
     /// </summary>
-    public partial class ExternalRequestBuilder : BaseRequestBuilder, IExternalRequestBuilder
+    public partial class ExternalRequestBuilder : EntityRequestBuilder, IExternalRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public IExternalRequest Request()
+        public new IExternalRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public IExternalRequest Request(IEnumerable<Option> options)
+        public new IExternalRequest Request(IEnumerable<Option> options)
         {
             return new ExternalRequest(this.RequestUrl, this.Client, options);
         }

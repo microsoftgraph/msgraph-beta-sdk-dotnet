@@ -61,6 +61,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AccessPackageFilterByCurrentUser.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageFilterByCurrentUserRequestBuilder"/>.</returns>
+        public IAccessPackageFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            AccessPackageFilterByCurrentUserOptions on)
+        {
+            return new AccessPackageFilterByCurrentUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.filterByCurrentUser"),
+                this.Client,
+                on);
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageSearch.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageSearchRequestBuilder"/>.</returns>

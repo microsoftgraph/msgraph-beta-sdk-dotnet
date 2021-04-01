@@ -37,9 +37,10 @@ namespace Microsoft.Graph
         IAccessPackageAssignmentRequestRequestBuilder this[string id] { get; }
 
         /// <summary>
-        /// Gets the request builder for AccessPackageAssignmentRequestMy.
+        /// Gets the request builder for AccessPackageAssignmentRequestFilterByCurrentUser.
         /// </summary>
-        /// <returns>The <see cref="IAccessPackageAssignmentRequestMyRequestBuilder"/>.</returns>
-        IAccessPackageAssignmentRequestMyRequestBuilder My();
+        /// <returns>The <see cref="IAccessPackageAssignmentRequestFilterByCurrentUserRequestBuilder"/>.</returns>
+        IAccessPackageAssignmentRequestFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            AccessPackageAssignmentRequestFilterByCurrentUserOptions on);
     }
 }

@@ -29,16 +29,28 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets allowed tenant ids.
+        /// </summary>
+        [JsonPropertyName("allowedTenantIds")]
+        public IEnumerable<string> AllowedTenantIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonPropertyName("displayName")]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets external private link id.
         /// </summary>
         [JsonPropertyName("externalPrivateLinkId")]
         public string ExternalPrivateLinkId { get; set; }
     
         /// <summary>
-        /// Gets or sets tenant approvals.
+        /// Gets or sets private endpoint connections.
         /// </summary>
-        [JsonPropertyName("tenantApprovals")]
-        public IEnumerable<TenantApprovals> TenantApprovals { get; set; }
+        [JsonPropertyName("privateEndpointConnections")]
+        public IPrivateLinkResourcePolicyPrivateEndpointConnectionsCollectionPage PrivateEndpointConnections { get; set; }
     
     }
 }

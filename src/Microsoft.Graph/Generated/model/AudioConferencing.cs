@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets conferenceId.
+        /// The conference id of the online meeting.
         /// </summary>
         [JsonPropertyName("conferenceId")]
         public string ConferenceId { get; set; }

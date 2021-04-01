@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Upload status. Possible values are: noUpload, pending, complete, error.
+        /// Upload status.
         /// </summary>
         [JsonPropertyName("status")]
         public ImportedWindowsAutopilotDeviceIdentityUploadStatus? Status { get; set; }

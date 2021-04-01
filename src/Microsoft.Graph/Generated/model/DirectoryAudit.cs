@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets activity date time.
-        /// Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("activityDateTime")]
         public DateTimeOffset? ActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets activity display name.
-        /// Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure Ad activity list.
+        /// Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
         /// </summary>
         [JsonPropertyName("activityDisplayName")]
         public string ActivityDisplayName { get; set; }
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets result reason.
-        /// Indicates the reason for failure if the result is 'Failure' or 'timeout'.
+        /// Indicates the reason for failure if the result is failure or timeout.
         /// </summary>
         [JsonPropertyName("resultReason")]
         public string ResultReason { get; set; }

@@ -84,6 +84,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("resourcePerformanceMetrics")]
         public UserExperienceAnalyticsCategory ResourcePerformanceMetrics { get; set; }
     
+        /// <summary>
+        /// Gets or sets work from anywhere metrics.
+        /// The user experience analytics work from anywhere metrics.
+        /// </summary>
+        [JsonPropertyName("workFromAnywhereMetrics")]
+        public UserExperienceAnalyticsCategory WorkFromAnywhereMetrics { get; set; }
+    
     }
 }
 

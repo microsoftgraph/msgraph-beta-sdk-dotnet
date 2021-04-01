@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets reason.
+        /// The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
         /// </summary>
         [JsonPropertyName("reason")]
         public string Reason { get; set; }
     
         /// <summary>
         /// Gets or sets approval.
+        /// Approval decisions associated with a request.
         /// </summary>
         [JsonPropertyName("approval")]
         public Approval Approval { get; set; }

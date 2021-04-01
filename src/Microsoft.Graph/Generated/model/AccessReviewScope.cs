@@ -29,20 +29,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets query.
-        /// The query specifying what will be reviewed. See table for examples.
-        /// </summary>
-        [JsonPropertyName("query")]
-        public string Query { get; set; }
-    
-        /// <summary>
-        /// Gets or sets queryType.
-        /// The type of query. Examples include MicrosoftGraph and ARM.
-        /// </summary>
-        [JsonPropertyName("queryType")]
-        public string QueryType { get; set; }
-    
-        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

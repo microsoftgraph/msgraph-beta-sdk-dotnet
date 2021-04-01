@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets reason.
+        /// The rejection reason. Possible values are None, Busy, and Forbidden.
         /// </summary>
         [JsonPropertyName("reason")]
         public RejectReason? Reason { get; set; }

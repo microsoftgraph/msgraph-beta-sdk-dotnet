@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets excludePlatforms.
-        /// Possible values are: android, iOS, windows, windowsPhone, macOS.
+        /// Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("excludePlatforms")]
         public IEnumerable<ConditionalAccessDevicePlatform> ExcludePlatforms { get; set; }
     
         /// <summary>
         /// Gets or sets includePlatforms.
-        /// Possible values are: android, iOS, windows, windowsPhone, macOS, all.
+        /// Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("includePlatforms")]
         public IEnumerable<ConditionalAccessDevicePlatform> IncludePlatforms { get; set; }

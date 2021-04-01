@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets auth methods.
-        /// Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and alternateMobilePhone (supported only in registration).
+        /// Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
         /// </summary>
         [JsonPropertyName("authMethods")]
         public IEnumerable<RegistrationAuthMethod> AuthMethods { get; set; }
@@ -44,14 +44,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is enabled.
-        /// Indiciates whether the user enabled to perform self-service password reset.
+        /// Indicates whether the user enabled to perform self-service password reset.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets is mfa registered.
-        /// Indiciates whether the user is registered for MFA.
+        /// Indicates whether the user is registered for MFA.
         /// </summary>
         [JsonPropertyName("isMfaRegistered")]
         public bool? IsMfaRegistered { get; set; }

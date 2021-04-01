@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target.
-        /// Represents an assignment to managed devices in the tenant
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

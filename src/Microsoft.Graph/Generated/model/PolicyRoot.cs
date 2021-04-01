@@ -96,6 +96,12 @@ namespace Microsoft.Graph
         public IPolicyRootTokenLifetimePoliciesCollectionPage TokenLifetimePolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets feature rollout policies.
+        /// </summary>
+        [JsonPropertyName("featureRolloutPolicies")]
+        public IPolicyRootFeatureRolloutPoliciesCollectionPage FeatureRolloutPolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets admin consent request policy.
         /// </summary>
         [JsonPropertyName("adminConsentRequestPolicy")]

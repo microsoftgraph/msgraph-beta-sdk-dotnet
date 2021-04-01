@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         public bool? IsDeleted { get; set; }
     
         /// <summary>
+        /// Gets or sets is licensed.
+        /// </summary>
+        [JsonPropertyName("isLicensed")]
+        public bool? IsLicensed { get; set; }
+    
+        /// <summary>
         /// Gets or sets last activity date.
         /// </summary>
         [JsonPropertyName("lastActivityDate")]
@@ -65,10 +71,22 @@ namespace Microsoft.Graph
         public bool? UsedAndroidPhone { get; set; }
     
         /// <summary>
+        /// Gets or sets used chrome os.
+        /// </summary>
+        [JsonPropertyName("usedChromeOS")]
+        public bool? UsedChromeOS { get; set; }
+    
+        /// <summary>
         /// Gets or sets usedi os.
         /// </summary>
         [JsonPropertyName("usediOS")]
         public bool? UsediOS { get; set; }
+    
+        /// <summary>
+        /// Gets or sets used linux.
+        /// </summary>
+        [JsonPropertyName("usedLinux")]
+        public bool? UsedLinux { get; set; }
     
         /// <summary>
         /// Gets or sets used mac.

@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets printer.
+        /// The created printer entity. Read-only.
         /// </summary>
         [JsonPropertyName("printer")]
         public Printer Printer { get; set; }

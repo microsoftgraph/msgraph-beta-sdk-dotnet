@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets associated hubs urls.
+        /// List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
         /// </summary>
         [JsonPropertyName("associatedHubsUrls")]
         public IEnumerable<string> AssociatedHubsUrls { get; set; }
@@ -43,12 +44,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets document set.
+        /// Document Set metadata.
         /// </summary>
         [JsonPropertyName("documentSet")]
         public DocumentSet DocumentSet { get; set; }
     
         /// <summary>
         /// Gets or sets document template.
+        /// Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.
         /// </summary>
         [JsonPropertyName("documentTemplate")]
         public DocumentSetContent DocumentTemplate { get; set; }
@@ -76,6 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is built in.
+        /// Specifies if a content type is a built-in content type.
         /// </summary>
         [JsonPropertyName("isBuiltIn")]
         public bool? IsBuiltIn { get; set; }
@@ -103,6 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets propagate changes.
+        /// If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
         /// </summary>
         [JsonPropertyName("propagateChanges")]
         public bool? PropagateChanges { get; set; }
@@ -123,12 +128,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets base.
+        /// Parent contentType from which this content type is derived.
         /// </summary>
         [JsonPropertyName("base")]
         public ContentType Base { get; set; }
     
         /// <summary>
         /// Gets or sets base types.
+        /// The collection of content types that are ancestors of this content type.
         /// </summary>
         [JsonPropertyName("baseTypes")]
         public IContentTypeBaseTypesCollectionWithReferencesPage BaseTypes { get; set; }
@@ -142,12 +149,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets column positions.
+        /// Column order information in a content type.
         /// </summary>
         [JsonPropertyName("columnPositions")]
         public IContentTypeColumnPositionsCollectionWithReferencesPage ColumnPositions { get; set; }
     
         /// <summary>
         /// Gets or sets columns.
+        /// The collection of column definitions for this contentType.
         /// </summary>
         [JsonPropertyName("columns")]
         public IContentTypeColumnsCollectionPage Columns { get; set; }

@@ -35,10 +35,22 @@ namespace Microsoft.Graph
         public Int64? AndroidPhone { get; set; }
     
         /// <summary>
+        /// Gets or sets chrome os.
+        /// </summary>
+        [JsonPropertyName("chromeOS")]
+        public Int64? ChromeOS { get; set; }
+    
+        /// <summary>
         /// Gets or sets ios.
         /// </summary>
         [JsonPropertyName("ios")]
         public Int64? Ios { get; set; }
+    
+        /// <summary>
+        /// Gets or sets linux.
+        /// </summary>
+        [JsonPropertyName("linux")]
+        public Int64? Linux { get; set; }
     
         /// <summary>
         /// Gets or sets mac.

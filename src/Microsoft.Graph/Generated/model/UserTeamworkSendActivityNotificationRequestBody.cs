@@ -50,11 +50,5 @@ namespace Microsoft.Graph
         [JsonPropertyName("templateParameters")]
         public IEnumerable<KeyValuePair> TemplateParameters { get; set; }
     
-        /// <summary>
-        /// Gets or sets TeamsAppId.
-        /// </summary>
-        [JsonPropertyName("teamsAppId")]
-        public string TeamsAppId { get; set; }
-    
     }
 }

@@ -37,10 +37,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets azure active directory device id.
-        /// AAD Device ID
+        /// AAD Device ID - to be deprecated
         /// </summary>
         [JsonPropertyName("azureActiveDirectoryDeviceId")]
         public string AzureActiveDirectoryDeviceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets azure ad device id.
+        /// AAD Device ID
+        /// </summary>
+        [JsonPropertyName("azureAdDeviceId")]
+        public string AzureAdDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets deployment profile assigned date time.
@@ -111,13 +118,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("model")]
         public string Model { get; set; }
-    
-        /// <summary>
-        /// Gets or sets order identifier.
-        /// Order Identifier of the Windows autopilot device - Deprecated
-        /// </summary>
-        [JsonPropertyName("orderIdentifier")]
-        public string OrderIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets product key.

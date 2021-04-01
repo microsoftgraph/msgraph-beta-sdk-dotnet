@@ -100,7 +100,7 @@ namespace Microsoft.Graph
         IDriveRequestBuilder Drives  { get; }
         /// <summary>
         /// Gets the request builder for ExternalColumns.
-        /// 
+        /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
         /// </summary>
         /// <returns>The <see cref="IColumnDefinitionRequestBuilder"/>.</returns>
         IColumnDefinitionRequestBuilder ExternalColumns  { get; }
@@ -140,5 +140,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISiteRequestBuilder"/>.</returns>
         ISiteRequestBuilder Sites  { get; }
+        /// <summary>
+        /// Gets the request builder for TermStore.
+        /// 
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.TermStore.IStoreRequestBuilder"/>.</returns>
+        Microsoft.Graph.TermStore.IStoreRequestBuilder TermStore  { get; }
     }
 }

@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IExternalConnectionRequestBuilder"/> for the specified GraphServiceExternalConnection.
+        /// Gets an <see cref="Microsoft.Graph.ExternalConnectors.IExternalConnectionRequestBuilder"/> for the specified GraphServiceMicrosoft.Graph.ExternalConnectors.ExternalConnection.
         /// </summary>
-        /// <param name="id">The ID for the GraphServiceExternalConnection.</param>
-        /// <returns>The <see cref="IExternalConnectionRequestBuilder"/>.</returns>
-        public IExternalConnectionRequestBuilder this[string id]
+        /// <param name="id">The ID for the GraphServiceMicrosoft.Graph.ExternalConnectors.ExternalConnection.</param>
+        /// <returns>The <see cref="Microsoft.Graph.ExternalConnectors.IExternalConnectionRequestBuilder"/>.</returns>
+        public Microsoft.Graph.ExternalConnectors.IExternalConnectionRequestBuilder this[string id]
         {
             get
             {
-                return new ExternalConnectionRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new Microsoft.Graph.ExternalConnectors.ExternalConnectionRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

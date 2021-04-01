@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets ranges.
-        /// Collection of ip ranges
+        /// Collection of Internet protocol address ranges
         /// </summary>
         [JsonPropertyName("ranges")]
         public IEnumerable<IpRange> Ranges { get; set; }

@@ -109,6 +109,18 @@ namespace Microsoft.Graph
                 return new UserExperienceAnalyticsCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("resourcePerformanceMetrics"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for WorkFromAnywhereMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder WorkFromAnywhereMetrics
+        {
+            get
+            {
+                return new UserExperienceAnalyticsCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("workFromAnywhereMetrics"), this.Client);
+            }
+        }
     
     }
 }

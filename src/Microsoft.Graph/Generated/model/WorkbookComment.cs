@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets content.
-        /// The content of the comment.
+        /// The content of comment.
         /// </summary>
         [JsonPropertyName("content")]
         public string Content { get; set; }

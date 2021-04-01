@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IUserSettingsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for ItemInsights.
+        /// </summary>
+        /// <returns>The <see cref="IUserInsightsSettingsRequestBuilder"/>.</returns>
+        IUserInsightsSettingsRequestBuilder ItemInsights { get; }
+
+        /// <summary>
         /// Gets the request builder for RegionalAndLanguageSettings.
         /// </summary>
         /// <returns>The <see cref="IRegionalAndLanguageSettingsRequestBuilder"/>.</returns>

@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets allowed installation scopes.
+        /// </summary>
+        [JsonPropertyName("allowedInstallationScopes")]
+        public TeamsAppInstallationScopes? AllowedInstallationScopes { get; set; }
+    
+        /// <summary>
         /// Gets or sets azure adapp id.
         /// The WebApplicationInfo.id from the Teams App manifest.
         /// </summary>
@@ -43,6 +49,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
+        /// Verbose description of the application.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
@@ -75,7 +82,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teams app id.
-        /// The id from the Teams App manifest.
+        /// The ID from the Teams app manifest.
         /// </summary>
         [JsonPropertyName("teamsAppId")]
         public string TeamsAppId { get; set; }
@@ -89,7 +96,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets bot.
-        /// The details of the bot specified in the Teams App manifest.
+        /// The details of the bot specified in the Teams app manifest.
         /// </summary>
         [JsonPropertyName("bot")]
         public TeamworkBot Bot { get; set; }

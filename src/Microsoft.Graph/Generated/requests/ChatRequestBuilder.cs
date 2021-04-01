@@ -108,8 +108,7 @@ namespace Microsoft.Graph
             Int64? chainId = null,
             ItemBody previewText = null,
             IEnumerable<KeyValuePair> templateParameters = null,
-            TeamworkNotificationRecipient recipient = null,
-            string teamsAppId = null)
+            TeamworkNotificationRecipient recipient = null)
         {
             return new ChatSendActivityNotificationRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.sendActivityNotification"),
@@ -119,8 +118,7 @@ namespace Microsoft.Graph
                 chainId,
                 previewText,
                 templateParameters,
-                recipient,
-                teamsAppId);
+                recipient);
         }
     
     }

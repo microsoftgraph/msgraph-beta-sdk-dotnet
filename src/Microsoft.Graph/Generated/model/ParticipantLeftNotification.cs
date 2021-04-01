@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets participant id.
+        /// ID of the participant under the policy who has left the meeting.
         /// </summary>
         [JsonPropertyName("participantId")]
         public string ParticipantId { get; set; }

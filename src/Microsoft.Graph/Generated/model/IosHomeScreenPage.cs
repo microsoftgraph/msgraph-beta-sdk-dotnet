@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets icons.
-        /// A list of apps, folders, and web clips to appear on a page. This collection can contain a maximum of 500 elements.
+        /// A list of apps and folders to appear on a page. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonPropertyName("icons")]
         public IEnumerable<IosHomeScreenItem> Icons { get; set; }

@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isPicture.
+        /// Specifies whether the display format used for URL columns is an image or a hyperlink.
         /// </summary>
         [JsonPropertyName("isPicture")]
         public bool? IsPicture { get; set; }

@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets feature.
-        /// Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, unknownFutureValue.
+        /// Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, emailAsAlternateId, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("feature")]
         public StagedFeatureName? Feature { get; set; }

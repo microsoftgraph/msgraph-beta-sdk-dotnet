@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets supported single sign on modes.
-        /// The list of single sign-on modes supported by this application. The supported values are password, saml, external, and oidc.
+        /// The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
         /// </summary>
         [JsonPropertyName("supportedSingleSignOnModes")]
         public IEnumerable<string> SupportedSingleSignOnModes { get; set; }

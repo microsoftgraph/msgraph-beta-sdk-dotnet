@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app id.
-        /// The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
+        /// The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The date and time the application was registered. Read-only.
+        /// The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -77,21 +77,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets group membership claims.
-        /// Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values:NoneSecurityGroup: For security groups and Azure AD rolesAll: This gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of.
+        /// Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
         /// </summary>
         [JsonPropertyName("groupMembershipClaims")]
         public string GroupMembershipClaims { get; set; }
     
         /// <summary>
         /// Gets or sets identifier uris.
-        /// The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information, see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.
+        /// The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.
         /// </summary>
         [JsonPropertyName("identifierUris")]
         public IEnumerable<string> IdentifierUris { get; set; }
     
         /// <summary>
         /// Gets or sets info.
-        /// Basic profile information of the application, such as it's marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more information, see How to: Add Terms of service and privacy statement for registered Azure AD apps.
+        /// Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps.
         /// </summary>
         [JsonPropertyName("info")]
         public InformationalUrl Info { get; set; }
@@ -104,7 +104,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is fallback public client.
-        /// Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
+        /// Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
         /// </summary>
         [JsonPropertyName("isFallbackPublicClient")]
         public bool? IsFallbackPublicClient { get; set; }
@@ -125,6 +125,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notes.
+        /// Notes relevant for the management of the application.
         /// </summary>
         [JsonPropertyName("notes")]
         public string Notes { get; set; }
@@ -159,7 +160,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets publisher domain.
-        /// The verified publisher domain for the application. Read-only.
+        /// The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain.
         /// </summary>
         [JsonPropertyName("publisherDomain")]
         public string PublisherDomain { get; set; }
@@ -173,7 +174,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sign in audience.
-        /// Specifies the Microsoft accounts that are supported for the current application. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+        /// Specifies the Microsoft accounts that are supported for the current application. Supported values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, PersonalMicrosoftAccount. See more in the table below.
         /// </summary>
         [JsonPropertyName("signInAudience")]
         public string SignInAudience { get; set; }

@@ -30,42 +30,49 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets child selectability.
+        /// Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
         /// </summary>
         [JsonPropertyName("childSelectability")]
         public ChildSelectability? ChildSelectability { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// The user who created the tag.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public Microsoft.Graph.IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The description for the tag.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Display name of the tag.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The date and time the tag was last modified.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets child tags.
+        /// Returns the tags that are a child of a tag.
         /// </summary>
         [JsonPropertyName("childTags")]
         public ITagChildTagsCollectionWithReferencesPage ChildTags { get; set; }
     
         /// <summary>
         /// Gets or sets parent.
+        /// Returns the parent tag of the specified tag.
         /// </summary>
         [JsonPropertyName("parent")]
         public Tag Parent { get; set; }

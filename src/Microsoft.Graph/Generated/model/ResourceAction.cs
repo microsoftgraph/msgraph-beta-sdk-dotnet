@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notAllowedResourceActions.
-        /// Not Allowed Actions.
+        /// Not Allowed Actions
         /// </summary>
         [JsonPropertyName("notAllowedResourceActions")]
         public IEnumerable<string> NotAllowedResourceActions { get; set; }

@@ -58,6 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content approval status.
+        /// This column stores content approval status.
         /// </summary>
         [JsonPropertyName("contentApprovalStatus")]
         public ContentApprovalStatusColumn ContentApprovalStatus { get; set; }
@@ -120,6 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hyperlink or picture.
+        /// This column stores hyperlink or picture values.
         /// </summary>
         [JsonPropertyName("hyperlinkOrPicture")]
         public HyperlinkOrPictureColumn HyperlinkOrPicture { get; set; }
@@ -133,18 +135,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is deletable.
+        /// Indicates whether this column can be deleted.
         /// </summary>
         [JsonPropertyName("isDeletable")]
         public bool? IsDeletable { get; set; }
     
         /// <summary>
         /// Gets or sets is reorderable.
+        /// Indicates whether values in the column can be reordered. Read-only.
         /// </summary>
         [JsonPropertyName("isReorderable")]
         public bool? IsReorderable { get; set; }
     
         /// <summary>
         /// Gets or sets is sealed.
+        /// Specifies whether column can be changed.
         /// </summary>
         [JsonPropertyName("isSealed")]
         public bool? IsSealed { get; set; }
@@ -179,6 +184,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets propagate changes.
+        /// If 'True' changes to this column will be propagated to lists that implement the column.
         /// </summary>
         [JsonPropertyName("propagateChanges")]
         public bool? PropagateChanges { get; set; }
@@ -199,6 +205,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets term.
+        /// This column stores taxonomy terms.
         /// </summary>
         [JsonPropertyName("term")]
         public TermColumn Term { get; set; }
@@ -212,24 +219,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets thumbnail.
+        /// This column stores thumbnail values.
         /// </summary>
         [JsonPropertyName("thumbnail")]
         public ThumbnailColumn Thumbnail { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// For site columns, the type of column. Read-only
         /// </summary>
         [JsonPropertyName("type")]
         public ColumnTypes? Type { get; set; }
     
         /// <summary>
         /// Gets or sets validation.
+        /// This column stores validation formula and message for the column.
         /// </summary>
         [JsonPropertyName("validation")]
         public ColumnValidation Validation { get; set; }
     
         /// <summary>
         /// Gets or sets source column.
+        /// The source column for content type column.
         /// </summary>
         [JsonPropertyName("sourceColumn")]
         public ColumnDefinition SourceColumn { get; set; }

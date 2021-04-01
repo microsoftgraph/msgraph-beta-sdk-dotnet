@@ -30,30 +30,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowedContentTypes.
+        /// Content types allowed in document set.
         /// </summary>
         [JsonPropertyName("allowedContentTypes")]
         public IEnumerable<ContentTypeInfo> AllowedContentTypes { get; set; }
     
         /// <summary>
         /// Gets or sets defaultContents.
+        /// Default contents of document set.
         /// </summary>
         [JsonPropertyName("defaultContents")]
         public IEnumerable<DocumentSetContent> DefaultContents { get; set; }
     
         /// <summary>
         /// Gets or sets propagateWelcomePageChanges.
+        /// Specifies whether to push welcome page changes to inherited content types.
         /// </summary>
         [JsonPropertyName("propagateWelcomePageChanges")]
         public bool? PropagateWelcomePageChanges { get; set; }
     
         /// <summary>
         /// Gets or sets shouldPrefixNameToFile.
+        /// Add the name of the Document Set to each file name.
         /// </summary>
         [JsonPropertyName("shouldPrefixNameToFile")]
         public bool? ShouldPrefixNameToFile { get; set; }
     
         /// <summary>
         /// Gets or sets welcomePageUrl.
+        /// Welcome page absolute URL.
         /// </summary>
         [JsonPropertyName("welcomePageUrl")]
         public string WelcomePageUrl { get; set; }

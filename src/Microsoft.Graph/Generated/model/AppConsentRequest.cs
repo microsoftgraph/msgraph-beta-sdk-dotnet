@@ -30,30 +30,35 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets app display name.
+        /// The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
         /// </summary>
         [JsonPropertyName("appDisplayName")]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets app id.
+        /// The identifier of the application. Required. Supports $filter (eq only) and $orderby.
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets consent type.
+        /// The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
         /// </summary>
         [JsonPropertyName("consentType")]
         public string ConsentType { get; set; }
     
         /// <summary>
         /// Gets or sets pending scopes.
+        /// A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
         /// </summary>
         [JsonPropertyName("pendingScopes")]
         public IEnumerable<AppConsentRequestScope> PendingScopes { get; set; }
     
         /// <summary>
         /// Gets or sets user consent requests.
+        /// A list of pending user consent requests.
         /// </summary>
         [JsonPropertyName("userConsentRequests")]
         public IAppConsentRequestUserConsentRequestsCollectionPage UserConsentRequests { get; set; }

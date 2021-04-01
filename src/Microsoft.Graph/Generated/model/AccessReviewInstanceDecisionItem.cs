@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets applied date time.
-        /// The DateTime when the approval decision was applied.
+        /// The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("appliedDateTime")]
         public DateTimeOffset? AppliedDateTime { get; set; }
@@ -71,11 +71,37 @@ namespace Microsoft.Graph
         public string Justification { get; set; }
     
         /// <summary>
+        /// Gets or sets principal.
+        /// Every decision item in an access review represents a principal's access to a resource. This property represents details of the principal. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is 'Bob' and the resource is 'Sales'. Principals can be of two types - userIdentity and servicePrincipalIdentity.
+        /// </summary>
+        [JsonPropertyName("principal")]
+        public Identity Principal { get; set; }
+    
+        /// <summary>
+        /// Gets or sets principal link.
+        /// </summary>
+        [JsonPropertyName("principalLink")]
+        public string PrincipalLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets recommendation.
         /// A system-generated recommendation for the approval decision. Possible values: Approve, Deny, or NotAvailable.
         /// </summary>
         [JsonPropertyName("recommendation")]
         public string Recommendation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource.
+        /// Every decision item in an access review represents a principal's access to a resource. This property represents details of the resource. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is Bob and the resource is 'Sales'. Resources can be of multiple types. See accessReviewInstanceDecisionItemResource
+        /// </summary>
+        [JsonPropertyName("resource")]
+        public AccessReviewInstanceDecisionItemResource Resource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource link.
+        /// </summary>
+        [JsonPropertyName("resourceLink")]
+        public string ResourceLink { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed by.
@@ -86,7 +112,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reviewed date time.
-        /// The DateTime when the review occurred.
+        /// The timestamp when the review occurred.
         /// </summary>
         [JsonPropertyName("reviewedDateTime")]
         public DateTimeOffset? ReviewedDateTime { get; set; }

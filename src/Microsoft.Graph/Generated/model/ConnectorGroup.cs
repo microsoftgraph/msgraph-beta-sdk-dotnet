@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets connector group type.
-        /// Indicates the type of hybrid agent. This pre-set by the system. Read-only.
+        /// Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
         /// </summary>
         [JsonPropertyName("connectorGroupType")]
         public ConnectorGroupType? ConnectorGroupType { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets region.
-        /// The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The regions available include: North America, Europe, Australia, Asia, and India. Possible values are: nam, eur, aus, asia, ind.
+        /// The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("region")]
         public ConnectorGroupRegion? Region { get; set; }

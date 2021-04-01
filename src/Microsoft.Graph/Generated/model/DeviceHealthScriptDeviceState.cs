@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last sync date time.
-        /// The last time that Intune Management Extension synced with Intune
+        /// The last time that Intune Managment Extension synced with Intune
         /// </summary>
         [JsonPropertyName("lastSyncDateTime")]
         public DateTimeOffset? LastSyncDateTime { get; set; }

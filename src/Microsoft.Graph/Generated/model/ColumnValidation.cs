@@ -30,18 +30,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets defaultLanguage.
+        /// Default BCP 47 language tag for the description.
         /// </summary>
         [JsonPropertyName("defaultLanguage")]
         public string DefaultLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets descriptions.
+        /// Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
         /// </summary>
         [JsonPropertyName("descriptions")]
         public IEnumerable<DisplayNameLocalization> Descriptions { get; set; }
     
         /// <summary>
         /// Gets or sets formula.
+        /// The formula to validate column value. For examples, see Examples of common formulas in lists
         /// </summary>
         [JsonPropertyName("formula")]
         public string Formula { get; set; }

@@ -86,14 +86,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets steadyStateFirstAchievedTime.
-        /// The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("steadyStateFirstAchievedTime")]
         public DateTimeOffset? SteadyStateFirstAchievedTime { get; set; }
     
         /// <summary>
         /// Gets or sets steadyStateLastAchievedTime.
-        /// The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("steadyStateLastAchievedTime")]
         public DateTimeOffset? SteadyStateLastAchievedTime { get; set; }

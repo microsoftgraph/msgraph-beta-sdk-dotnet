@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets account enabled.
-        /// true if the account is enabled; otherwise, false. default is true.
+        /// true if the account is enabled; otherwise, false. Required.
         /// </summary>
         [JsonPropertyName("accountEnabled")]
         public bool? AccountEnabled { get; set; }
@@ -44,14 +44,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets approximate last sign in date time.
-        /// The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("approximateLastSignInDateTime")]
         public DateTimeOffset? ApproximateLastSignInDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets compliance expiration date time.
-        /// The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("complianceExpirationDateTime")]
         public DateTimeOffset? ComplianceExpirationDateTime { get; set; }
@@ -127,6 +127,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hostnames.
+        /// List of hostNames for the device.
         /// </summary>
         [JsonPropertyName("hostnames")]
         public IEnumerable<string> Hostnames { get; set; }
@@ -161,7 +162,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' Read-only.
+        /// The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only.
         /// </summary>
         [JsonPropertyName("onPremisesLastSyncDateTime")]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
@@ -182,7 +183,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operating system version.
-        /// Operating system version of the device. Required.
+        /// The version of the operating system on the device. Required.
         /// </summary>
         [JsonPropertyName("operatingSystemVersion")]
         public string OperatingSystemVersion { get; set; }
@@ -196,14 +197,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets profile type.
-        /// The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
+        /// The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
         /// </summary>
         [JsonPropertyName("profileType")]
         public string ProfileType { get; set; }
     
         /// <summary>
         /// Gets or sets registration date time.
-        /// Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("registrationDateTime")]
         public DateTimeOffset? RegistrationDateTime { get; set; }
@@ -217,13 +218,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets trust type.
-        /// Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory
+        /// Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
         /// </summary>
         [JsonPropertyName("trustType")]
         public string TrustType { get; set; }
     
         /// <summary>
         /// Gets or sets kind.
+        /// Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
         [JsonPropertyName("kind")]
         public string Kind { get; set; }
@@ -244,18 +246,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets name.
+        /// Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
+        /// Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
         [JsonPropertyName("platform")]
         public string Platform { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
         [JsonPropertyName("status")]
         public string Status { get; set; }

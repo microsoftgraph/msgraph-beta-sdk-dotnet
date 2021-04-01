@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets user principal name.
+        /// The UPN of the user represented by these statistics.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }

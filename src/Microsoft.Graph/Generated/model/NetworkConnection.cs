@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets applicationName.
-        /// Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
+        /// Name of the application managing the network connection (for example, Facebook or SMTP).
         /// </summary>
         [JsonPropertyName("applicationName")]
         public string ApplicationName { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets domainRegisteredDateTime.
-        /// Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("domainRegisteredDateTime")]
         public DateTimeOffset? DomainRegisteredDateTime { get; set; }

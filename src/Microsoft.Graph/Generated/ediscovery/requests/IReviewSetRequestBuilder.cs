@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="IReviewSetAddToReviewSetRequestBuilder"/>.</returns>
         IReviewSetAddToReviewSetRequestBuilder AddToReviewSet(
             SourceCollection sourceCollection = null,
-            DataCollectionScope? additionalData = null);
+            AdditionalDataOptions? additionalData = null);
 
         /// <summary>
         /// Gets the request builder for ReviewSetExport.

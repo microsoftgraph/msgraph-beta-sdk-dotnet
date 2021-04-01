@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Chat Message Hosted Content.
     /// </summary>
-    public partial class ChatMessageHostedContent : Entity
+    public partial class ChatMessageHostedContent : TeamworkHostedContent
     {
     
 		///<summary>
@@ -28,20 +28,6 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.chatMessageHostedContent";
         }
 	
-        /// <summary>
-        /// Gets or sets content bytes.
-        /// Write-only. When posting new chat message hosted content, represents the bytes of the payload. These are represented as a base64Encoded string.
-        /// </summary>
-        [JsonPropertyName("contentBytes")]
-        public byte[] ContentBytes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets content type.
-        /// Write-only. When posting new chat message hosted content, represents the type of content, such as image/png.
-        /// </summary>
-        [JsonPropertyName("contentType")]
-        public string ContentType { get; set; }
-    
     }
 }
 

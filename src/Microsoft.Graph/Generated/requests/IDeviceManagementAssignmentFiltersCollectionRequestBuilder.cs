@@ -37,10 +37,23 @@ namespace Microsoft.Graph
         IDeviceAndAppManagementAssignmentFilterRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for DeviceAndAppManagementAssignmentFilterEnable.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterEnableRequestBuilder"/>.</returns>
+        IDeviceAndAppManagementAssignmentFilterEnableRequestBuilder Enable(
+            bool enable);
+
+        /// <summary>
         /// Gets the request builder for DeviceAndAppManagementAssignmentFilterValidateFilter.
         /// </summary>
         /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterValidateFilterRequestBuilder"/>.</returns>
         IDeviceAndAppManagementAssignmentFilterValidateFilterRequestBuilder ValidateFilter(
             DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceAndAppManagementAssignmentFilterGetState.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterGetStateRequestBuilder"/>.</returns>
+        IDeviceAndAppManagementAssignmentFilterGetStateRequestBuilder GetState();
     }
 }

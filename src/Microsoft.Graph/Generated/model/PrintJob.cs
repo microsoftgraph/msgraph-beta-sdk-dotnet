@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created by.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public UserIdentity CreatedBy { get; set; }

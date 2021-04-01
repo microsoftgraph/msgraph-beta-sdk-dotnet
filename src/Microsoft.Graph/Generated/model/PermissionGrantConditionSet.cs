@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets client application ids.
-        /// A list of appId values for the client applications to match with, or a list with the single value 'all' to match any client application. Default is the single value 'all'.
+        /// A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
         /// </summary>
         [JsonPropertyName("clientApplicationIds")]
         public IEnumerable<string> ClientApplicationIds { get; set; }
     
         /// <summary>
         /// Gets or sets client application publisher ids.
-        /// A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value 'all' to match with client apps from any publisher. Default is the single value 'all'.
+        /// A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
         /// </summary>
         [JsonPropertyName("clientApplicationPublisherIds")]
         public IEnumerable<string> ClientApplicationPublisherIds { get; set; }
@@ -51,28 +51,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets client application tenant ids.
-        /// A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value 'all' to match with client apps registered in any tenant. Default is the single value 'all'.
+        /// A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
         /// </summary>
         [JsonPropertyName("clientApplicationTenantIds")]
         public IEnumerable<string> ClientApplicationTenantIds { get; set; }
     
         /// <summary>
         /// Gets or sets permission classification.
-        /// The permission classification for the permission being granted, or 'all' to match with any permission classification (including permissions which are not classified). Default is all.
+        /// The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
         /// </summary>
         [JsonPropertyName("permissionClassification")]
         public string PermissionClassification { get; set; }
     
         /// <summary>
         /// Gets or sets permissions.
-        /// The list of id values for the specific permissions to match with, or a list with the single value 'all' to match with any permission. The id of delegated permissions can be found in the publishedPermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value 'all'.
+        /// The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
         /// </summary>
         [JsonPropertyName("permissions")]
         public IEnumerable<string> Permissions { get; set; }
     
         /// <summary>
         /// Gets or sets permission type.
-        /// The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles) or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
+        /// The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
         /// </summary>
         [JsonPropertyName("permissionType")]
         public PermissionType? PermissionType { get; set; }

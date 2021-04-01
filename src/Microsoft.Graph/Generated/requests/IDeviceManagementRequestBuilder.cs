@@ -476,6 +476,12 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequestBuilder UserExperienceAnalyticsMetricHistory { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsNotAutopilotReadyDevice.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionRequestBuilder UserExperienceAnalyticsNotAutopilotReadyDevice { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsOverview.
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsOverviewRequestBuilder"/>.</returns>
@@ -833,6 +839,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder"/>.</returns>
         IDeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder GetComanagementEligibleDevicesSummary();
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices();
 
         /// <summary>
         /// Gets the request builder for DeviceManagementGetSuggestedEnrollmentLimit.

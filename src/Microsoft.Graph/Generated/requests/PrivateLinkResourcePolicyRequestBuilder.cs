@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new PrivateLinkResourcePolicyRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for PrivateEndpointConnections.
+        /// </summary>
+        /// <returns>The <see cref="IPrivateLinkResourcePolicyPrivateEndpointConnectionsCollectionRequestBuilder"/>.</returns>
+        public IPrivateLinkResourcePolicyPrivateEndpointConnectionsCollectionRequestBuilder PrivateEndpointConnections
+        {
+            get
+            {
+                return new PrivateLinkResourcePolicyPrivateEndpointConnectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("privateEndpointConnections"), this.Client);
+            }
+        }
+    
     }
 }

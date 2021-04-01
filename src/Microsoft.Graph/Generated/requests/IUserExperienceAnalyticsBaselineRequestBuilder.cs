@@ -60,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
         IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder ResourcePerformanceMetrics { get; }
+
+        /// <summary>
+        /// Gets the request builder for WorkFromAnywhereMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder WorkFromAnywhereMetrics { get; }
     
     }
 }

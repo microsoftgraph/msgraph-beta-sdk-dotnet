@@ -30,12 +30,14 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets email.
+        /// Email address of the user's mailbox.
         /// </summary>
         [JsonPropertyName("email")]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets included sources.
+        /// Specifies which sources are included in this group. Possible values are: mailbox, site.
         /// </summary>
         [JsonPropertyName("includedSources")]
         public SourceType? IncludedSources { get; set; }

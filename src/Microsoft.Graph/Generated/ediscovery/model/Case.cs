@@ -30,54 +30,63 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets closed by.
+        /// The user who closed the case.
         /// </summary>
         [JsonPropertyName("closedBy")]
         public Microsoft.Graph.IdentitySet ClosedBy { get; set; }
     
         /// <summary>
         /// Gets or sets closed date time.
+        /// The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("closedDateTime")]
         public DateTimeOffset? ClosedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The case description.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The case name.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
+        /// The external case number for customer reference.
         /// </summary>
         [JsonPropertyName("externalId")]
         public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// The last user who modified the entity.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public Microsoft.Graph.IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
         /// </summary>
         [JsonPropertyName("status")]
         public CaseStatus? Status { get; set; }
@@ -120,12 +129,14 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets source collections.
+        /// Returns a list of sourceCollection objects associated with this case.
         /// </summary>
         [JsonPropertyName("sourceCollections")]
         public ICaseSourceCollectionsCollectionPage SourceCollections { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
+        /// Returns a list of tag objects associated to this case.
         /// </summary>
         [JsonPropertyName("tags")]
         public ICaseTagsCollectionPage Tags { get; set; }

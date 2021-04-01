@@ -45,6 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operations.
+        /// The list of print long running operations.
         /// </summary>
         [JsonPropertyName("operations")]
         public IPrintOperationsCollectionPage Operations { get; set; }
@@ -84,6 +85,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets task definitions.
+        /// List of abstract definition for a task that can be triggered when various events occur within Universal Print.
         /// </summary>
         [JsonPropertyName("taskDefinitions")]
         public IPrintTaskDefinitionsCollectionPage TaskDefinitions { get; set; }

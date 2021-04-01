@@ -244,6 +244,28 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PrivateLinkResourcePolicy privateLinkResourcePolicyToInitialize)
         {
 
+            if (privateLinkResourcePolicyToInitialize != null && privateLinkResourcePolicyToInitialize.AdditionalData != null)
+            {
+
+                if (privateLinkResourcePolicyToInitialize.PrivateEndpointConnections != null && privateLinkResourcePolicyToInitialize.PrivateEndpointConnections.CurrentPage != null)
+                {
+                    privateLinkResourcePolicyToInitialize.PrivateEndpointConnections.AdditionalData = privateLinkResourcePolicyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    privateLinkResourcePolicyToInitialize.AdditionalData.TryGetValue("privateEndpointConnections@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        privateLinkResourcePolicyToInitialize.PrivateEndpointConnections.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }

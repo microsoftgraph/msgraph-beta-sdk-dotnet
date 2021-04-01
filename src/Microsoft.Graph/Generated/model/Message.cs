@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets body preview.
-        /// The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+        /// The first 255 characters of the message body. It is in text format.
         /// </summary>
         [JsonPropertyName("bodyPreview")]
         public string BodyPreview { get; set; }
@@ -93,7 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets importance.
-        /// The importance of the message: Low, Normal, High.
+        /// The importance of the message. The possible values are: low, normal, and high.
         /// </summary>
         [JsonPropertyName("importance")]
         public Importance? Importance { get; set; }
@@ -162,7 +162,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets received date time.
-        /// The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("receivedDateTime")]
         public DateTimeOffset? ReceivedDateTime { get; set; }
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sent date time.
-        /// The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("sentDateTime")]
         public DateTimeOffset? SentDateTime { get; set; }

@@ -30,7 +30,7 @@ namespace Microsoft.Graph.CallRecords
 	
         /// <summary>
         /// Gets or sets end date time.
-        /// UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets start date time.
-        /// UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets version.
-        /// Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+        /// Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
         /// </summary>
         [JsonPropertyName("version")]
         public Int64? Version { get; set; }

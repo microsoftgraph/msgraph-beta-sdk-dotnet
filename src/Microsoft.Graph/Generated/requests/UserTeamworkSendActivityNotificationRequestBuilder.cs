@@ -28,7 +28,6 @@ namespace Microsoft.Graph
         /// <param name="chainId">A chainId parameter for the OData method call.</param>
         /// <param name="previewText">A previewText parameter for the OData method call.</param>
         /// <param name="templateParameters">A templateParameters parameter for the OData method call.</param>
-        /// <param name="teamsAppId">A teamsAppId parameter for the OData method call.</param>
         public UserTeamworkSendActivityNotificationRequestBuilder(
             string requestUrl,
             IBaseClient client,
@@ -36,8 +35,7 @@ namespace Microsoft.Graph
             string activityType,
             Int64? chainId,
             ItemBody previewText,
-            IEnumerable<KeyValuePair> templateParameters,
-            string teamsAppId)
+            IEnumerable<KeyValuePair> templateParameters)
             : base(requestUrl, client)
         {
             this.SetParameter("topic", topic, true);
@@ -45,7 +43,6 @@ namespace Microsoft.Graph
             this.SetParameter("chainId", chainId, true);
             this.SetParameter("previewText", previewText, true);
             this.SetParameter("templateParameters", templateParameters, true);
-            this.SetParameter("teamsAppId", teamsAppId, true);
         }
 
         /// <summary>
@@ -81,11 +78,6 @@ namespace Microsoft.Graph
             if (this.HasParameter("templateParameters"))
             {
                 request.RequestBody.TemplateParameters = this.GetParameter<IEnumerable<KeyValuePair>>("templateParameters");
-            }
-
-            if (this.HasParameter("teamsAppId"))
-            {
-                request.RequestBody.TeamsAppId = this.GetParameter<string>("teamsAppId");
             }
 
             return request;

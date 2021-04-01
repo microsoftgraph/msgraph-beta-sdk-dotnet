@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets recipient action date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("recipientActionDateTime")]
         public DateTimeOffset? RecipientActionDateTime { get; set; }
@@ -44,14 +44,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recipient user id.
-        /// User id of the recipient of the offer shift request.
+        /// User ID of the recipient of the offer shift request.
         /// </summary>
         [JsonPropertyName("recipientUserId")]
         public string RecipientUserId { get; set; }
     
         /// <summary>
         /// Gets or sets sender shift id.
-        /// User id of the sender of the offer shift request.
+        /// User ID of the sender of the offer shift request.
         /// </summary>
         [JsonPropertyName("senderShiftId")]
         public string SenderShiftId { get; set; }

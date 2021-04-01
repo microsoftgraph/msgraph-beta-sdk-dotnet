@@ -108,6 +108,25 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AccessReviewInstanceBatchRecordDecisions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceBatchRecordDecisionsRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceBatchRecordDecisionsRequestBuilder BatchRecordDecisions(
+            string decision = null,
+            string justification = null,
+            string principalId = null,
+            string resourceId = null)
+        {
+            return new AccessReviewInstanceBatchRecordDecisionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.batchRecordDecisions"),
+                this.Client,
+                decision,
+                justification,
+                principalId,
+                resourceId);
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessReviewInstanceResetDecisions.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewInstanceResetDecisionsRequestBuilder"/>.</returns>

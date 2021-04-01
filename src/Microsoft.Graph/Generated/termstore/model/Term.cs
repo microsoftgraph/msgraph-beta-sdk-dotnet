@@ -44,6 +44,7 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets labels.
+        /// Label metadata for a term
         /// </summary>
         [JsonPropertyName("labels")]
         public IEnumerable<LocalizedLabel> Labels { get; set; }

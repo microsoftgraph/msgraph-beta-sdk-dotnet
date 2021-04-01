@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IPrivateLinkResourcePolicyRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for PrivateEndpointConnections.
+        /// </summary>
+        /// <returns>The <see cref="IPrivateLinkResourcePolicyPrivateEndpointConnectionsCollectionRequestBuilder"/>.</returns>
+        IPrivateLinkResourcePolicyPrivateEndpointConnectionsCollectionRequestBuilder PrivateEndpointConnections { get; }
+    
     }
 }

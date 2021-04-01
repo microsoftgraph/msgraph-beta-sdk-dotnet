@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         IAccessPackageRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for AccessPackageFilterByCurrentUser.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageFilterByCurrentUserRequestBuilder"/>.</returns>
+        IAccessPackageFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            AccessPackageFilterByCurrentUserOptions on);
+
+        /// <summary>
         /// Gets the request builder for AccessPackageSearch.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageSearchRequestBuilder"/>.</returns>
