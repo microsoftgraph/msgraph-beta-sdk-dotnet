@@ -27,6 +27,8 @@
 - [Breaking change] Removed IGraphServiceClient interface
 - Added GraphServiceClient constructor that accepts TokenCredential instance
 - [Breaking change] Bump minimun .NetFramework version to 4.6.2 from 4.6.1
+- Add source link to the nuget package.
+- Uses snupkg as symbol file.
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
     <VersionPrefix>4.0.0</VersionPrefix>
@@ -36,16 +38,24 @@
     <!-- $(Prerelease).$(BUILD_BUILDID) -->
     <!-- <VersionSuffix Condition=" '$(Prerelease)' != '' ">$(Prerelease)</VersionSuffix> -->
     <VersionSuffix>preview.2</VersionSuffix>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
     <DocumentationFile>bin\Release\Microsoft.Graph.Beta.xml</DocumentationFile>
     <NoWarn>1701;1702;1705;1591</NoWarn>
   </PropertyGroup>
+  <!-- https://github.com/clairernovotny/DeterministicBuilds#deterministic-builds -->
+  <PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
   <ItemGroup>
     <None Include=".\..\..\LICENSE.txt" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Core" Version="2.0.0-preview.8" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="2.0.0-preview.9" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
     <Reference Include="System" />

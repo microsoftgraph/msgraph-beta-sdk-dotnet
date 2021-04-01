@@ -17,7 +17,7 @@ The Microsoft Graph Beta .NET Client Library targets .NetStandard 1.1 and .Net F
 To install the client library via NuGet:
 
 * Search for `Microsoft.Graph.Beta` in the NuGet Library, or
-* Type `Install-Package Microsoft.Graph.Beta` into the Package Manager Console.
+* Type `Install-Package Microsoft.Graph.Beta -PreRelease` into the Package Manager Console.
 
 ## Using the beta client along with the v1.0 library
 
