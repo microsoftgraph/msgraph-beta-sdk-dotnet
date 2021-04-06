@@ -142,7 +142,7 @@ namespace Microsoft.Graph
         ISiteRequestBuilder Sites  { get; }
         /// <summary>
         /// Gets the request builder for TermStore.
-        /// 
+        /// The termStore under this site.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.TermStore.IStoreRequestBuilder"/>.</returns>
         Microsoft.Graph.TermStore.IStoreRequestBuilder TermStore  { get; }

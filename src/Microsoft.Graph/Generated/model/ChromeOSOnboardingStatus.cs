@@ -8,33 +8,37 @@
 // Template Source: EnumType.cs.tt
 
 
-namespace Microsoft.Graph.Ediscovery
+namespace Microsoft.Graph
 {
     using System;
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The enum TenantSources.
+    /// The enum ChromeOSOnboardingStatus.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.EnumConverter))]
-	[System.Flags]
-    public enum TenantSources
+    [JsonConverter(typeof(EnumConverter))]
+    public enum ChromeOSOnboardingStatus
     {
     
         /// <summary>
-        /// All Mailboxes
+        /// Unknown
         /// </summary>
-        AllMailboxes = 1,
+        Unknown = 0,
 	
         /// <summary>
-        /// All Sites
+        /// Inprogress
         /// </summary>
-        AllSites = 2,
+        Inprogress = 1,
 	
         /// <summary>
-        /// Unknown Future Value
+        /// Onboarded
         /// </summary>
-        UnknownFutureValue = 4,
+        Onboarded = 2,
+	
+        /// <summary>
+        /// Failed
+        /// </summary>
+        Failed = 3,
 	
     }
 }
