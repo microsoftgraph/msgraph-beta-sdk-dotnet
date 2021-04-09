@@ -86,6 +86,12 @@ namespace Microsoft.Graph
         IDeviceManagementAssignmentFiltersCollectionRequestBuilder AssignmentFilters { get; }
 
         /// <summary>
+        /// Gets the request builder for ChromeOSOnboardingSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementChromeOSOnboardingSettingsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementChromeOSOnboardingSettingsCollectionRequestBuilder ChromeOSOnboardingSettings { get; }
+
+        /// <summary>
         /// Gets the request builder for TermsAndConditions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTermsAndConditionsCollectionRequestBuilder"/>.</returns>

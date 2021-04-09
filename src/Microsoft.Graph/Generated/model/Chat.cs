@@ -80,6 +80,13 @@ namespace Microsoft.Graph
         public IChatMessagesCollectionPage Messages { get; set; }
     
         /// <summary>
+        /// Gets or sets permission grants.
+        /// A collection of permissions granted to apps for the chat.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionGrants", Required = Newtonsoft.Json.Required.Default)]
+        public IChatPermissionGrantsCollectionPage PermissionGrants { get; set; }
+    
+        /// <summary>
         /// Gets or sets tabs.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tabs", Required = Newtonsoft.Json.Required.Default)]

@@ -143,6 +143,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets term store.
+        /// The termStore under this site.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termStore", Required = Newtonsoft.Json.Required.Default)]
         public Microsoft.Graph.TermStore.Store TermStore { get; set; }

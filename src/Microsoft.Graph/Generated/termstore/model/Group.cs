@@ -53,6 +53,7 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets parent site id.
+        /// Id of the parent site of this group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentSiteId", Required = Newtonsoft.Json.Required.Default)]
         public string ParentSiteId { get; set; }

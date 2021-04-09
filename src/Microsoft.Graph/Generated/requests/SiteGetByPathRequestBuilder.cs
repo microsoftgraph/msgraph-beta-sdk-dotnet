@@ -273,7 +273,7 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for TermStore.
-        /// 
+        /// The termStore under this site.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.TermStore.IStoreRequestBuilder"/>.</returns>
         public Microsoft.Graph.TermStore.IStoreRequestBuilder TermStore
