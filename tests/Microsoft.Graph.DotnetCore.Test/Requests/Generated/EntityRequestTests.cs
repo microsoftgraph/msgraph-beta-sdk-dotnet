@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -45,7 +46,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
-                        { "children@odata.nextLink", requestUrl + "/next" }
+                        { "children@odata.nextLink", JsonDocument.Parse(string.Format("\"{0}\"", requestUrl + "/next")).RootElement }
                     },
                     Children = expectedChildrenPage,
                 };
