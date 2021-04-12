@@ -256,11 +256,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             dataClassificationServiceToInitialize.ExactMatchDataStores.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -274,11 +274,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             dataClassificationServiceToInitialize.ClassifyFile.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -292,11 +292,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             dataClassificationServiceToInitialize.ClassifyFileJobs.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -310,11 +310,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             dataClassificationServiceToInitialize.ClassifyText.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -328,11 +328,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             dataClassificationServiceToInitialize.ClassifyTextJobs.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -346,11 +346,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -364,11 +364,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             dataClassificationServiceToInitialize.EvaluateLabelJobs.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -382,11 +382,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             dataClassificationServiceToInitialize.Jobs.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -400,11 +400,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             dataClassificationServiceToInitialize.SensitiveTypes.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -418,11 +418,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             dataClassificationServiceToInitialize.SensitivityLabels.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -436,11 +436,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             dataClassificationServiceToInitialize.ExactMatchUploadAgents.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }

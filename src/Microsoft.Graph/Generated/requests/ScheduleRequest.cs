@@ -256,11 +256,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             scheduleToInitialize.OfferShiftRequests.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -274,11 +274,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             scheduleToInitialize.OpenShiftChangeRequests.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -292,11 +292,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             scheduleToInitialize.OpenShifts.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -310,11 +310,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             scheduleToInitialize.SchedulingGroups.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -328,11 +328,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             scheduleToInitialize.Shifts.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -346,11 +346,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             scheduleToInitialize.SwapShiftsChangeRequests.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -364,11 +364,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             scheduleToInitialize.TimeCards.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -382,11 +382,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             scheduleToInitialize.TimeOffReasons.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -400,11 +400,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             scheduleToInitialize.TimeOffRequests.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -418,11 +418,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             scheduleToInitialize.TimesOff.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }

@@ -256,11 +256,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             privilegedAccessToInitialize.Resources.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -274,11 +274,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             privilegedAccessToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -292,11 +292,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             privilegedAccessToInitialize.RoleAssignments.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -310,11 +310,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             privilegedAccessToInitialize.RoleDefinitions.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -328,11 +328,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             privilegedAccessToInitialize.RoleSettings.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }

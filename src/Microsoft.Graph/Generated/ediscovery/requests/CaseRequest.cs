@@ -256,11 +256,11 @@ namespace Microsoft.Graph.Ediscovery
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             caseToInitialize.Custodians.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -274,11 +274,11 @@ namespace Microsoft.Graph.Ediscovery
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             caseToInitialize.LegalHolds.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -292,11 +292,11 @@ namespace Microsoft.Graph.Ediscovery
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             caseToInitialize.NoncustodialDataSources.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -310,11 +310,11 @@ namespace Microsoft.Graph.Ediscovery
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             caseToInitialize.Operations.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -328,11 +328,11 @@ namespace Microsoft.Graph.Ediscovery
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             caseToInitialize.ReviewSets.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -346,11 +346,11 @@ namespace Microsoft.Graph.Ediscovery
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             caseToInitialize.SourceCollections.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -364,11 +364,11 @@ namespace Microsoft.Graph.Ediscovery
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             caseToInitialize.Tags.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }

@@ -256,11 +256,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             printerToInitialize.Connectors.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -274,11 +274,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             printerToInitialize.Shares.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
@@ -292,11 +292,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             printerToInitialize.TaskTriggers.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }

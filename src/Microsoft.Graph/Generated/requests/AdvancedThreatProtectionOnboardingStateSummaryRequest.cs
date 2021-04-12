@@ -256,11 +256,11 @@ namespace Microsoft.Graph
                         // Ensure it is a non empty JsonElement string
                         if (nextPageLink is System.Text.Json.JsonElement element
                             && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.ToString()))
+                            && !string.IsNullOrEmpty(element.GetString()))
                         {
                             advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.InitializeNextPageRequest(
                                 this.Client,
-                                element.ToString());
+                                element.GetString());
                         }
                     }
                 }
