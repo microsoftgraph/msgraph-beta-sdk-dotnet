@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     bookingBusinessToInitialize.Appointments.AdditionalData = bookingBusinessToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("appointments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(bookingBusinessToInitialize.AdditionalData.TryGetValue("appointments@odata.nextLink", out var nextPageLink))
                     {
-                        bookingBusinessToInitialize.Appointments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            bookingBusinessToInitialize.Appointments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     bookingBusinessToInitialize.CalendarView.AdditionalData = bookingBusinessToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(bookingBusinessToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out var nextPageLink))
                     {
-                        bookingBusinessToInitialize.CalendarView.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            bookingBusinessToInitialize.CalendarView.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     bookingBusinessToInitialize.Customers.AdditionalData = bookingBusinessToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("customers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(bookingBusinessToInitialize.AdditionalData.TryGetValue("customers@odata.nextLink", out var nextPageLink))
                     {
-                        bookingBusinessToInitialize.Customers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            bookingBusinessToInitialize.Customers.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     bookingBusinessToInitialize.Services.AdditionalData = bookingBusinessToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("services@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(bookingBusinessToInitialize.AdditionalData.TryGetValue("services@odata.nextLink", out var nextPageLink))
                     {
-                        bookingBusinessToInitialize.Services.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            bookingBusinessToInitialize.Services.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     bookingBusinessToInitialize.StaffMembers.AdditionalData = bookingBusinessToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("staffMembers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(bookingBusinessToInitialize.AdditionalData.TryGetValue("staffMembers@odata.nextLink", out var nextPageLink))
                     {
-                        bookingBusinessToInitialize.StaffMembers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            bookingBusinessToInitialize.StaffMembers.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

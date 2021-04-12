@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     dataClassificationServiceToInitialize.ExactMatchDataStores.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("exactMatchDataStores@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("exactMatchDataStores@odata.nextLink", out var nextPageLink))
                     {
-                        dataClassificationServiceToInitialize.ExactMatchDataStores.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dataClassificationServiceToInitialize.ExactMatchDataStores.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     dataClassificationServiceToInitialize.ClassifyFile.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyFile@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyFile@odata.nextLink", out var nextPageLink))
                     {
-                        dataClassificationServiceToInitialize.ClassifyFile.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dataClassificationServiceToInitialize.ClassifyFile.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     dataClassificationServiceToInitialize.ClassifyFileJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyFileJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyFileJobs@odata.nextLink", out var nextPageLink))
                     {
-                        dataClassificationServiceToInitialize.ClassifyFileJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dataClassificationServiceToInitialize.ClassifyFileJobs.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     dataClassificationServiceToInitialize.ClassifyText.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyText@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyText@odata.nextLink", out var nextPageLink))
                     {
-                        dataClassificationServiceToInitialize.ClassifyText.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dataClassificationServiceToInitialize.ClassifyText.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     dataClassificationServiceToInitialize.ClassifyTextJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyTextJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyTextJobs@odata.nextLink", out var nextPageLink))
                     {
-                        dataClassificationServiceToInitialize.ClassifyTextJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dataClassificationServiceToInitialize.ClassifyTextJobs.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph
                 {
                     dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("evaluateDlpPoliciesJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("evaluateDlpPoliciesJobs@odata.nextLink", out var nextPageLink))
                     {
-                        dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -347,15 +359,17 @@ namespace Microsoft.Graph
                 {
                     dataClassificationServiceToInitialize.EvaluateLabelJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("evaluateLabelJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("evaluateLabelJobs@odata.nextLink", out var nextPageLink))
                     {
-                        dataClassificationServiceToInitialize.EvaluateLabelJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dataClassificationServiceToInitialize.EvaluateLabelJobs.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -363,15 +377,17 @@ namespace Microsoft.Graph
                 {
                     dataClassificationServiceToInitialize.Jobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out var nextPageLink))
                     {
-                        dataClassificationServiceToInitialize.Jobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dataClassificationServiceToInitialize.Jobs.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -379,15 +395,17 @@ namespace Microsoft.Graph
                 {
                     dataClassificationServiceToInitialize.SensitiveTypes.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("sensitiveTypes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("sensitiveTypes@odata.nextLink", out var nextPageLink))
                     {
-                        dataClassificationServiceToInitialize.SensitiveTypes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dataClassificationServiceToInitialize.SensitiveTypes.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -395,15 +413,17 @@ namespace Microsoft.Graph
                 {
                     dataClassificationServiceToInitialize.SensitivityLabels.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("sensitivityLabels@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("sensitivityLabels@odata.nextLink", out var nextPageLink))
                     {
-                        dataClassificationServiceToInitialize.SensitivityLabels.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dataClassificationServiceToInitialize.SensitivityLabels.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -411,15 +431,17 @@ namespace Microsoft.Graph
                 {
                     dataClassificationServiceToInitialize.ExactMatchUploadAgents.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("exactMatchUploadAgents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("exactMatchUploadAgents@odata.nextLink", out var nextPageLink))
                     {
-                        dataClassificationServiceToInitialize.ExactMatchUploadAgents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dataClassificationServiceToInitialize.ExactMatchUploadAgents.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

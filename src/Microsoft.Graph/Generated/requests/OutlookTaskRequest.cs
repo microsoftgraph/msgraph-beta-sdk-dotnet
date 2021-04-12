@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     outlookTaskToInitialize.Attachments.AdditionalData = outlookTaskToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    outlookTaskToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(outlookTaskToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out var nextPageLink))
                     {
-                        outlookTaskToInitialize.Attachments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            outlookTaskToInitialize.Attachments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     outlookTaskToInitialize.MultiValueExtendedProperties.AdditionalData = outlookTaskToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    outlookTaskToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(outlookTaskToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out var nextPageLink))
                     {
-                        outlookTaskToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            outlookTaskToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     outlookTaskToInitialize.SingleValueExtendedProperties.AdditionalData = outlookTaskToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    outlookTaskToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(outlookTaskToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out var nextPageLink))
                     {
-                        outlookTaskToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            outlookTaskToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

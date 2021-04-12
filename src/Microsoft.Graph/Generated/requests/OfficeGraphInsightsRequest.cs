@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     officeGraphInsightsToInitialize.Shared.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    officeGraphInsightsToInitialize.AdditionalData.TryGetValue("shared@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(officeGraphInsightsToInitialize.AdditionalData.TryGetValue("shared@odata.nextLink", out var nextPageLink))
                     {
-                        officeGraphInsightsToInitialize.Shared.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            officeGraphInsightsToInitialize.Shared.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     officeGraphInsightsToInitialize.Trending.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    officeGraphInsightsToInitialize.AdditionalData.TryGetValue("trending@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(officeGraphInsightsToInitialize.AdditionalData.TryGetValue("trending@odata.nextLink", out var nextPageLink))
                     {
-                        officeGraphInsightsToInitialize.Trending.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            officeGraphInsightsToInitialize.Trending.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     officeGraphInsightsToInitialize.Used.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    officeGraphInsightsToInitialize.AdditionalData.TryGetValue("used@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(officeGraphInsightsToInitialize.AdditionalData.TryGetValue("used@odata.nextLink", out var nextPageLink))
                     {
-                        officeGraphInsightsToInitialize.Used.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            officeGraphInsightsToInitialize.Used.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

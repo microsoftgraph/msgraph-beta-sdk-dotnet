@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     calendarToInitialize.CalendarPermissions.AdditionalData = calendarToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("calendarPermissions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(calendarToInitialize.AdditionalData.TryGetValue("calendarPermissions@odata.nextLink", out var nextPageLink))
                     {
-                        calendarToInitialize.CalendarPermissions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            calendarToInitialize.CalendarPermissions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     calendarToInitialize.CalendarView.AdditionalData = calendarToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(calendarToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out var nextPageLink))
                     {
-                        calendarToInitialize.CalendarView.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            calendarToInitialize.CalendarView.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     calendarToInitialize.Events.AdditionalData = calendarToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("events@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(calendarToInitialize.AdditionalData.TryGetValue("events@odata.nextLink", out var nextPageLink))
                     {
-                        calendarToInitialize.Events.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            calendarToInitialize.Events.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     calendarToInitialize.MultiValueExtendedProperties.AdditionalData = calendarToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(calendarToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out var nextPageLink))
                     {
-                        calendarToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            calendarToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     calendarToInitialize.SingleValueExtendedProperties.AdditionalData = calendarToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(calendarToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out var nextPageLink))
                     {
-                        calendarToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            calendarToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

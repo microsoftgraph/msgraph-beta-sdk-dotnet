@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     orgContactToInitialize.DirectReports.AdditionalData = orgContactToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    orgContactToInitialize.AdditionalData.TryGetValue("directReports@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(orgContactToInitialize.AdditionalData.TryGetValue("directReports@odata.nextLink", out var nextPageLink))
                     {
-                        orgContactToInitialize.DirectReports.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            orgContactToInitialize.DirectReports.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     orgContactToInitialize.MemberOf.AdditionalData = orgContactToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    orgContactToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(orgContactToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out var nextPageLink))
                     {
-                        orgContactToInitialize.MemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            orgContactToInitialize.MemberOf.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     orgContactToInitialize.TransitiveMemberOf.AdditionalData = orgContactToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    orgContactToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(orgContactToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out var nextPageLink))
                     {
-                        orgContactToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            orgContactToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

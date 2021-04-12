@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     workbookTableToInitialize.Columns.AdditionalData = workbookTableToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookTableToInitialize.AdditionalData.TryGetValue("columns@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookTableToInitialize.AdditionalData.TryGetValue("columns@odata.nextLink", out var nextPageLink))
                     {
-                        workbookTableToInitialize.Columns.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookTableToInitialize.Columns.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     workbookTableToInitialize.Rows.AdditionalData = workbookTableToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookTableToInitialize.AdditionalData.TryGetValue("rows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookTableToInitialize.AdditionalData.TryGetValue("rows@odata.nextLink", out var nextPageLink))
                     {
-                        workbookTableToInitialize.Rows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookTableToInitialize.Rows.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

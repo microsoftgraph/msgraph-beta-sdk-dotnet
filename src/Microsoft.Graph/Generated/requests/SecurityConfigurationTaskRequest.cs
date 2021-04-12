@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     securityConfigurationTaskToInitialize.ManagedDevices.AdditionalData = securityConfigurationTaskToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityConfigurationTaskToInitialize.AdditionalData.TryGetValue("managedDevices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityConfigurationTaskToInitialize.AdditionalData.TryGetValue("managedDevices@odata.nextLink", out var nextPageLink))
                     {
-                        securityConfigurationTaskToInitialize.ManagedDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityConfigurationTaskToInitialize.ManagedDevices.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

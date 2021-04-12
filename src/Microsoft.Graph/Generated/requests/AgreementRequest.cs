@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     agreementToInitialize.Acceptances.AdditionalData = agreementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    agreementToInitialize.AdditionalData.TryGetValue("acceptances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(agreementToInitialize.AdditionalData.TryGetValue("acceptances@odata.nextLink", out var nextPageLink))
                     {
-                        agreementToInitialize.Acceptances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            agreementToInitialize.Acceptances.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     agreementToInitialize.Files.AdditionalData = agreementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    agreementToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(agreementToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out var nextPageLink))
                     {
-                        agreementToInitialize.Files.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            agreementToInitialize.Files.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

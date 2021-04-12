@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests.AdditionalData = accessPackageAssignmentToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessPackageAssignmentToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessPackageAssignmentToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentRequests@odata.nextLink", out var nextPageLink))
                     {
-                        accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles.AdditionalData = accessPackageAssignmentToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessPackageAssignmentToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentResourceRoles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessPackageAssignmentToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentResourceRoles@odata.nextLink", out var nextPageLink))
                     {
-                        accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

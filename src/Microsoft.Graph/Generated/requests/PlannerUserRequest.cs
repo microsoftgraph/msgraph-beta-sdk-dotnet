@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     plannerUserToInitialize.All.AdditionalData = plannerUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    plannerUserToInitialize.AdditionalData.TryGetValue("all@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(plannerUserToInitialize.AdditionalData.TryGetValue("all@odata.nextLink", out var nextPageLink))
                     {
-                        plannerUserToInitialize.All.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            plannerUserToInitialize.All.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     plannerUserToInitialize.FavoritePlans.AdditionalData = plannerUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    plannerUserToInitialize.AdditionalData.TryGetValue("favoritePlans@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(plannerUserToInitialize.AdditionalData.TryGetValue("favoritePlans@odata.nextLink", out var nextPageLink))
                     {
-                        plannerUserToInitialize.FavoritePlans.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            plannerUserToInitialize.FavoritePlans.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     plannerUserToInitialize.Plans.AdditionalData = plannerUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    plannerUserToInitialize.AdditionalData.TryGetValue("plans@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(plannerUserToInitialize.AdditionalData.TryGetValue("plans@odata.nextLink", out var nextPageLink))
                     {
-                        plannerUserToInitialize.Plans.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            plannerUserToInitialize.Plans.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     plannerUserToInitialize.RecentPlans.AdditionalData = plannerUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    plannerUserToInitialize.AdditionalData.TryGetValue("recentPlans@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(plannerUserToInitialize.AdditionalData.TryGetValue("recentPlans@odata.nextLink", out var nextPageLink))
                     {
-                        plannerUserToInitialize.RecentPlans.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            plannerUserToInitialize.RecentPlans.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     plannerUserToInitialize.RosterPlans.AdditionalData = plannerUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    plannerUserToInitialize.AdditionalData.TryGetValue("rosterPlans@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(plannerUserToInitialize.AdditionalData.TryGetValue("rosterPlans@odata.nextLink", out var nextPageLink))
                     {
-                        plannerUserToInitialize.RosterPlans.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            plannerUserToInitialize.RosterPlans.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph
                 {
                     plannerUserToInitialize.Tasks.AdditionalData = plannerUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    plannerUserToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(plannerUserToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out var nextPageLink))
                     {
-                        plannerUserToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            plannerUserToInitialize.Tasks.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

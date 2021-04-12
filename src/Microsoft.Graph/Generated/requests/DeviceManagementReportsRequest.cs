@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     deviceManagementReportsToInitialize.CachedReportConfigurations.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceManagementReportsToInitialize.AdditionalData.TryGetValue("cachedReportConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceManagementReportsToInitialize.AdditionalData.TryGetValue("cachedReportConfigurations@odata.nextLink", out var nextPageLink))
                     {
-                        deviceManagementReportsToInitialize.CachedReportConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceManagementReportsToInitialize.CachedReportConfigurations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     deviceManagementReportsToInitialize.ExportJobs.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceManagementReportsToInitialize.AdditionalData.TryGetValue("exportJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceManagementReportsToInitialize.AdditionalData.TryGetValue("exportJobs@odata.nextLink", out var nextPageLink))
                     {
-                        deviceManagementReportsToInitialize.ExportJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceManagementReportsToInitialize.ExportJobs.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     deviceManagementReportsToInitialize.ReportSchedules.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceManagementReportsToInitialize.AdditionalData.TryGetValue("reportSchedules@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceManagementReportsToInitialize.AdditionalData.TryGetValue("reportSchedules@odata.nextLink", out var nextPageLink))
                     {
-                        deviceManagementReportsToInitialize.ReportSchedules.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceManagementReportsToInitialize.ReportSchedules.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

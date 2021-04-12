@@ -251,15 +251,17 @@ namespace Microsoft.Graph.TermStore
                 {
                     setToInitialize.Children.AdditionalData = setToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    setToInitialize.AdditionalData.TryGetValue("children@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(setToInitialize.AdditionalData.TryGetValue("children@odata.nextLink", out var nextPageLink))
                     {
-                        setToInitialize.Children.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            setToInitialize.Children.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph.TermStore
                 {
                     setToInitialize.Relations.AdditionalData = setToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    setToInitialize.AdditionalData.TryGetValue("relations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(setToInitialize.AdditionalData.TryGetValue("relations@odata.nextLink", out var nextPageLink))
                     {
-                        setToInitialize.Relations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            setToInitialize.Relations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph.TermStore
                 {
                     setToInitialize.Terms.AdditionalData = setToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    setToInitialize.AdditionalData.TryGetValue("terms@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(setToInitialize.AdditionalData.TryGetValue("terms@odata.nextLink", out var nextPageLink))
                     {
-                        setToInitialize.Terms.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            setToInitialize.Terms.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

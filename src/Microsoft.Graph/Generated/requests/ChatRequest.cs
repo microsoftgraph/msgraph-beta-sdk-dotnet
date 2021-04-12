@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     chatToInitialize.InstalledApps.AdditionalData = chatToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    chatToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(chatToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out var nextPageLink))
                     {
-                        chatToInitialize.InstalledApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            chatToInitialize.InstalledApps.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     chatToInitialize.Members.AdditionalData = chatToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    chatToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(chatToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
                     {
-                        chatToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            chatToInitialize.Members.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     chatToInitialize.Messages.AdditionalData = chatToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    chatToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(chatToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out var nextPageLink))
                     {
-                        chatToInitialize.Messages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            chatToInitialize.Messages.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     chatToInitialize.Tabs.AdditionalData = chatToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    chatToInitialize.AdditionalData.TryGetValue("tabs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(chatToInitialize.AdditionalData.TryGetValue("tabs@odata.nextLink", out var nextPageLink))
                     {
-                        chatToInitialize.Tabs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            chatToInitialize.Tabs.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

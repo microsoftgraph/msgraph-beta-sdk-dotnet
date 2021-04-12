@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     threatAssessmentRequestObjectToInitialize.Results.AdditionalData = threatAssessmentRequestObjectToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    threatAssessmentRequestObjectToInitialize.AdditionalData.TryGetValue("results@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(threatAssessmentRequestObjectToInitialize.AdditionalData.TryGetValue("results@odata.nextLink", out var nextPageLink))
                     {
-                        threatAssessmentRequestObjectToInitialize.Results.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            threatAssessmentRequestObjectToInitialize.Results.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

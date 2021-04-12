@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     unifiedRoleAssignmentMultipleToInitialize.AppScopes.AdditionalData = unifiedRoleAssignmentMultipleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("appScopes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("appScopes@odata.nextLink", out var nextPageLink))
                     {
-                        unifiedRoleAssignmentMultipleToInitialize.AppScopes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            unifiedRoleAssignmentMultipleToInitialize.AppScopes.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     unifiedRoleAssignmentMultipleToInitialize.DirectoryScopes.AdditionalData = unifiedRoleAssignmentMultipleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("directoryScopes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("directoryScopes@odata.nextLink", out var nextPageLink))
                     {
-                        unifiedRoleAssignmentMultipleToInitialize.DirectoryScopes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            unifiedRoleAssignmentMultipleToInitialize.DirectoryScopes.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     unifiedRoleAssignmentMultipleToInitialize.Principals.AdditionalData = unifiedRoleAssignmentMultipleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("principals@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("principals@odata.nextLink", out var nextPageLink))
                     {
-                        unifiedRoleAssignmentMultipleToInitialize.Principals.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            unifiedRoleAssignmentMultipleToInitialize.Principals.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

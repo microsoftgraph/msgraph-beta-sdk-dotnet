@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     deviceManagementCollectionSettingInstanceToInitialize.Value.AdditionalData = deviceManagementCollectionSettingInstanceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceManagementCollectionSettingInstanceToInitialize.AdditionalData.TryGetValue("value@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceManagementCollectionSettingInstanceToInitialize.AdditionalData.TryGetValue("value@odata.nextLink", out var nextPageLink))
                     {
-                        deviceManagementCollectionSettingInstanceToInitialize.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceManagementCollectionSettingInstanceToInitialize.Value.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

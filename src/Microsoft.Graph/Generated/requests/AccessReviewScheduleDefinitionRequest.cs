@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     accessReviewScheduleDefinitionToInitialize.Instances.AdditionalData = accessReviewScheduleDefinitionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessReviewScheduleDefinitionToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessReviewScheduleDefinitionToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out var nextPageLink))
                     {
-                        accessReviewScheduleDefinitionToInitialize.Instances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessReviewScheduleDefinitionToInitialize.Instances.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

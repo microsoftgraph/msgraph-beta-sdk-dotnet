@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     depOnboardingSettingToInitialize.EnrollmentProfiles.AdditionalData = depOnboardingSettingToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    depOnboardingSettingToInitialize.AdditionalData.TryGetValue("enrollmentProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(depOnboardingSettingToInitialize.AdditionalData.TryGetValue("enrollmentProfiles@odata.nextLink", out var nextPageLink))
                     {
-                        depOnboardingSettingToInitialize.EnrollmentProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            depOnboardingSettingToInitialize.EnrollmentProfiles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities.AdditionalData = depOnboardingSettingToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    depOnboardingSettingToInitialize.AdditionalData.TryGetValue("importedAppleDeviceIdentities@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(depOnboardingSettingToInitialize.AdditionalData.TryGetValue("importedAppleDeviceIdentities@odata.nextLink", out var nextPageLink))
                     {
-                        depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

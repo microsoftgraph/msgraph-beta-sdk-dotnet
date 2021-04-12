@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     onenoteSectionToInitialize.Pages.AdditionalData = onenoteSectionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    onenoteSectionToInitialize.AdditionalData.TryGetValue("pages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(onenoteSectionToInitialize.AdditionalData.TryGetValue("pages@odata.nextLink", out var nextPageLink))
                     {
-                        onenoteSectionToInitialize.Pages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            onenoteSectionToInitialize.Pages.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     deviceCompliancePolicyToInitialize.Assignments.AdditionalData = deviceCompliancePolicyToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        deviceCompliancePolicyToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceCompliancePolicyToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     deviceCompliancePolicyToInitialize.DeviceSettingStateSummaries.AdditionalData = deviceCompliancePolicyToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("deviceSettingStateSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("deviceSettingStateSummaries@odata.nextLink", out var nextPageLink))
                     {
-                        deviceCompliancePolicyToInitialize.DeviceSettingStateSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceCompliancePolicyToInitialize.DeviceSettingStateSummaries.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     deviceCompliancePolicyToInitialize.DeviceStatuses.AdditionalData = deviceCompliancePolicyToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out var nextPageLink))
                     {
-                        deviceCompliancePolicyToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceCompliancePolicyToInitialize.DeviceStatuses.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     deviceCompliancePolicyToInitialize.ScheduledActionsForRule.AdditionalData = deviceCompliancePolicyToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("scheduledActionsForRule@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("scheduledActionsForRule@odata.nextLink", out var nextPageLink))
                     {
-                        deviceCompliancePolicyToInitialize.ScheduledActionsForRule.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceCompliancePolicyToInitialize.ScheduledActionsForRule.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     deviceCompliancePolicyToInitialize.UserStatuses.AdditionalData = deviceCompliancePolicyToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out var nextPageLink))
                     {
-                        deviceCompliancePolicyToInitialize.UserStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceCompliancePolicyToInitialize.UserStatuses.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

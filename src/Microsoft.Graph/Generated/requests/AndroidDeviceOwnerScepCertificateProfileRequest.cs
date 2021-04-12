@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     androidDeviceOwnerScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = androidDeviceOwnerScepCertificateProfileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    androidDeviceOwnerScepCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(androidDeviceOwnerScepCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out var nextPageLink))
                     {
-                        androidDeviceOwnerScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            androidDeviceOwnerScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

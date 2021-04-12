@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     iosVppAppToInitialize.AssignedLicenses.AdditionalData = iosVppAppToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    iosVppAppToInitialize.AdditionalData.TryGetValue("assignedLicenses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(iosVppAppToInitialize.AdditionalData.TryGetValue("assignedLicenses@odata.nextLink", out var nextPageLink))
                     {
-                        iosVppAppToInitialize.AssignedLicenses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            iosVppAppToInitialize.AssignedLicenses.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

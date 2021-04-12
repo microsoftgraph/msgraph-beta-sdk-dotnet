@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     directoryToInitialize.AdministrativeUnits.AdditionalData = directoryToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    directoryToInitialize.AdditionalData.TryGetValue("administrativeUnits@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(directoryToInitialize.AdditionalData.TryGetValue("administrativeUnits@odata.nextLink", out var nextPageLink))
                     {
-                        directoryToInitialize.AdministrativeUnits.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            directoryToInitialize.AdministrativeUnits.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     directoryToInitialize.DeletedItems.AdditionalData = directoryToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    directoryToInitialize.AdditionalData.TryGetValue("deletedItems@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(directoryToInitialize.AdditionalData.TryGetValue("deletedItems@odata.nextLink", out var nextPageLink))
                     {
-                        directoryToInitialize.DeletedItems.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            directoryToInitialize.DeletedItems.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     directoryToInitialize.SharedEmailDomains.AdditionalData = directoryToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    directoryToInitialize.AdditionalData.TryGetValue("sharedEmailDomains@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(directoryToInitialize.AdditionalData.TryGetValue("sharedEmailDomains@odata.nextLink", out var nextPageLink))
                     {
-                        directoryToInitialize.SharedEmailDomains.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            directoryToInitialize.SharedEmailDomains.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     directoryToInitialize.FeatureRolloutPolicies.AdditionalData = directoryToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    directoryToInitialize.AdditionalData.TryGetValue("featureRolloutPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(directoryToInitialize.AdditionalData.TryGetValue("featureRolloutPolicies@odata.nextLink", out var nextPageLink))
                     {
-                        directoryToInitialize.FeatureRolloutPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            directoryToInitialize.FeatureRolloutPolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

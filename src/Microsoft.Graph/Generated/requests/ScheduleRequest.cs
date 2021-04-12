@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     scheduleToInitialize.OfferShiftRequests.AdditionalData = scheduleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("offerShiftRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(scheduleToInitialize.AdditionalData.TryGetValue("offerShiftRequests@odata.nextLink", out var nextPageLink))
                     {
-                        scheduleToInitialize.OfferShiftRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            scheduleToInitialize.OfferShiftRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     scheduleToInitialize.OpenShiftChangeRequests.AdditionalData = scheduleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("openShiftChangeRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(scheduleToInitialize.AdditionalData.TryGetValue("openShiftChangeRequests@odata.nextLink", out var nextPageLink))
                     {
-                        scheduleToInitialize.OpenShiftChangeRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            scheduleToInitialize.OpenShiftChangeRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     scheduleToInitialize.OpenShifts.AdditionalData = scheduleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("openShifts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(scheduleToInitialize.AdditionalData.TryGetValue("openShifts@odata.nextLink", out var nextPageLink))
                     {
-                        scheduleToInitialize.OpenShifts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            scheduleToInitialize.OpenShifts.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     scheduleToInitialize.SchedulingGroups.AdditionalData = scheduleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("schedulingGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(scheduleToInitialize.AdditionalData.TryGetValue("schedulingGroups@odata.nextLink", out var nextPageLink))
                     {
-                        scheduleToInitialize.SchedulingGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            scheduleToInitialize.SchedulingGroups.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     scheduleToInitialize.Shifts.AdditionalData = scheduleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("shifts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(scheduleToInitialize.AdditionalData.TryGetValue("shifts@odata.nextLink", out var nextPageLink))
                     {
-                        scheduleToInitialize.Shifts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            scheduleToInitialize.Shifts.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph
                 {
                     scheduleToInitialize.SwapShiftsChangeRequests.AdditionalData = scheduleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("swapShiftsChangeRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(scheduleToInitialize.AdditionalData.TryGetValue("swapShiftsChangeRequests@odata.nextLink", out var nextPageLink))
                     {
-                        scheduleToInitialize.SwapShiftsChangeRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            scheduleToInitialize.SwapShiftsChangeRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -347,15 +359,17 @@ namespace Microsoft.Graph
                 {
                     scheduleToInitialize.TimeCards.AdditionalData = scheduleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("timeCards@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(scheduleToInitialize.AdditionalData.TryGetValue("timeCards@odata.nextLink", out var nextPageLink))
                     {
-                        scheduleToInitialize.TimeCards.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            scheduleToInitialize.TimeCards.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -363,15 +377,17 @@ namespace Microsoft.Graph
                 {
                     scheduleToInitialize.TimeOffReasons.AdditionalData = scheduleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("timeOffReasons@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(scheduleToInitialize.AdditionalData.TryGetValue("timeOffReasons@odata.nextLink", out var nextPageLink))
                     {
-                        scheduleToInitialize.TimeOffReasons.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            scheduleToInitialize.TimeOffReasons.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -379,15 +395,17 @@ namespace Microsoft.Graph
                 {
                     scheduleToInitialize.TimeOffRequests.AdditionalData = scheduleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("timeOffRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(scheduleToInitialize.AdditionalData.TryGetValue("timeOffRequests@odata.nextLink", out var nextPageLink))
                     {
-                        scheduleToInitialize.TimeOffRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            scheduleToInitialize.TimeOffRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -395,15 +413,17 @@ namespace Microsoft.Graph
                 {
                     scheduleToInitialize.TimesOff.AdditionalData = scheduleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("timesOff@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(scheduleToInitialize.AdditionalData.TryGetValue("timesOff@odata.nextLink", out var nextPageLink))
                     {
-                        scheduleToInitialize.TimesOff.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            scheduleToInitialize.TimesOff.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

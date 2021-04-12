@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     userExperienceAnalyticsCategoryToInitialize.MetricValues.AdditionalData = userExperienceAnalyticsCategoryToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    userExperienceAnalyticsCategoryToInitialize.AdditionalData.TryGetValue("metricValues@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(userExperienceAnalyticsCategoryToInitialize.AdditionalData.TryGetValue("metricValues@odata.nextLink", out var nextPageLink))
                     {
-                        userExperienceAnalyticsCategoryToInitialize.MetricValues.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            userExperienceAnalyticsCategoryToInitialize.MetricValues.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

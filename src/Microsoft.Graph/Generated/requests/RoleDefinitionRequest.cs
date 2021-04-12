@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     roleDefinitionToInitialize.RoleAssignments.AdditionalData = roleDefinitionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    roleDefinitionToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(roleDefinitionToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out var nextPageLink))
                     {
-                        roleDefinitionToInitialize.RoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            roleDefinitionToInitialize.RoleAssignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

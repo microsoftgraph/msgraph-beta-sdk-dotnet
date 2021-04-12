@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     windowsInformationProtectionToInitialize.Assignments.AdditionalData = windowsInformationProtectionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        windowsInformationProtectionToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsInformationProtectionToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     windowsInformationProtectionToInitialize.ExemptAppLockerFiles.AdditionalData = windowsInformationProtectionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("exemptAppLockerFiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("exemptAppLockerFiles@odata.nextLink", out var nextPageLink))
                     {
-                        windowsInformationProtectionToInitialize.ExemptAppLockerFiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsInformationProtectionToInitialize.ExemptAppLockerFiles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.AdditionalData = windowsInformationProtectionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("protectedAppLockerFiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("protectedAppLockerFiles@odata.nextLink", out var nextPageLink))
                     {
-                        windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

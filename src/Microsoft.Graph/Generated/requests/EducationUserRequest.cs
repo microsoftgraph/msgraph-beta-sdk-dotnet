@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     educationUserToInitialize.Assignments.AdditionalData = educationUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(educationUserToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        educationUserToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            educationUserToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     educationUserToInitialize.Rubrics.AdditionalData = educationUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("rubrics@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(educationUserToInitialize.AdditionalData.TryGetValue("rubrics@odata.nextLink", out var nextPageLink))
                     {
-                        educationUserToInitialize.Rubrics.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            educationUserToInitialize.Rubrics.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     educationUserToInitialize.Classes.AdditionalData = educationUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("classes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(educationUserToInitialize.AdditionalData.TryGetValue("classes@odata.nextLink", out var nextPageLink))
                     {
-                        educationUserToInitialize.Classes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            educationUserToInitialize.Classes.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     educationUserToInitialize.Schools.AdditionalData = educationUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(educationUserToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out var nextPageLink))
                     {
-                        educationUserToInitialize.Schools.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            educationUserToInitialize.Schools.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     educationUserToInitialize.TaughtClasses.AdditionalData = educationUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("taughtClasses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(educationUserToInitialize.AdditionalData.TryGetValue("taughtClasses@odata.nextLink", out var nextPageLink))
                     {
-                        educationUserToInitialize.TaughtClasses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            educationUserToInitialize.TaughtClasses.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

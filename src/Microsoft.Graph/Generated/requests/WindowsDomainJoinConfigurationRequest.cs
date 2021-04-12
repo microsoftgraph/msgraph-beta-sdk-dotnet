@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     windowsDomainJoinConfigurationToInitialize.NetworkAccessConfigurations.AdditionalData = windowsDomainJoinConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsDomainJoinConfigurationToInitialize.AdditionalData.TryGetValue("networkAccessConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsDomainJoinConfigurationToInitialize.AdditionalData.TryGetValue("networkAccessConfigurations@odata.nextLink", out var nextPageLink))
                     {
-                        windowsDomainJoinConfigurationToInitialize.NetworkAccessConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsDomainJoinConfigurationToInitialize.NetworkAccessConfigurations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

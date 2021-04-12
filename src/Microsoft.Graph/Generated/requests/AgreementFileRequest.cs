@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     agreementFileToInitialize.Localizations.AdditionalData = agreementFileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    agreementFileToInitialize.AdditionalData.TryGetValue("localizations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(agreementFileToInitialize.AdditionalData.TryGetValue("localizations@odata.nextLink", out var nextPageLink))
                     {
-                        agreementFileToInitialize.Localizations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            agreementFileToInitialize.Localizations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

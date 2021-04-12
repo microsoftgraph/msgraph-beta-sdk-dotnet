@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     groupPolicyCategoryToInitialize.Children.AdditionalData = groupPolicyCategoryToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupPolicyCategoryToInitialize.AdditionalData.TryGetValue("children@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupPolicyCategoryToInitialize.AdditionalData.TryGetValue("children@odata.nextLink", out var nextPageLink))
                     {
-                        groupPolicyCategoryToInitialize.Children.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupPolicyCategoryToInitialize.Children.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     groupPolicyCategoryToInitialize.Definitions.AdditionalData = groupPolicyCategoryToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupPolicyCategoryToInitialize.AdditionalData.TryGetValue("definitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupPolicyCategoryToInitialize.AdditionalData.TryGetValue("definitions@odata.nextLink", out var nextPageLink))
                     {
-                        groupPolicyCategoryToInitialize.Definitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupPolicyCategoryToInitialize.Definitions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

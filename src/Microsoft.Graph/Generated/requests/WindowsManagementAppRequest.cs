@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     windowsManagementAppToInitialize.HealthStates.AdditionalData = windowsManagementAppToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsManagementAppToInitialize.AdditionalData.TryGetValue("healthStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsManagementAppToInitialize.AdditionalData.TryGetValue("healthStates@odata.nextLink", out var nextPageLink))
                     {
-                        windowsManagementAppToInitialize.HealthStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsManagementAppToInitialize.HealthStates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

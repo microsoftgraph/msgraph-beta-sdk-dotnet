@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     workbookWorksheetToInitialize.Charts.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("charts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookWorksheetToInitialize.AdditionalData.TryGetValue("charts@odata.nextLink", out var nextPageLink))
                     {
-                        workbookWorksheetToInitialize.Charts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookWorksheetToInitialize.Charts.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     workbookWorksheetToInitialize.Names.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("names@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookWorksheetToInitialize.AdditionalData.TryGetValue("names@odata.nextLink", out var nextPageLink))
                     {
-                        workbookWorksheetToInitialize.Names.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookWorksheetToInitialize.Names.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     workbookWorksheetToInitialize.PivotTables.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("pivotTables@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookWorksheetToInitialize.AdditionalData.TryGetValue("pivotTables@odata.nextLink", out var nextPageLink))
                     {
-                        workbookWorksheetToInitialize.PivotTables.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookWorksheetToInitialize.PivotTables.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     workbookWorksheetToInitialize.Tables.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("tables@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookWorksheetToInitialize.AdditionalData.TryGetValue("tables@odata.nextLink", out var nextPageLink))
                     {
-                        workbookWorksheetToInitialize.Tables.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookWorksheetToInitialize.Tables.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

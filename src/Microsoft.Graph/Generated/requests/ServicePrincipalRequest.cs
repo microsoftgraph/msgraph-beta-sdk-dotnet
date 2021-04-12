@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.AppRoleAssignedTo.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("appRoleAssignedTo@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("appRoleAssignedTo@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.AppRoleAssignedTo.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.AppRoleAssignedTo.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.AppRoleAssignments.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("appRoleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("appRoleAssignments@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.AppRoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.AppRoleAssignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.ClaimsMappingPolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("claimsMappingPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("claimsMappingPolicies@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.ClaimsMappingPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.ClaimsMappingPolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.CreatedObjects.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("createdObjects@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("createdObjects@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.CreatedObjects.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.CreatedObjects.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.DelegatedPermissionClassifications.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("delegatedPermissionClassifications@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("delegatedPermissionClassifications@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.DelegatedPermissionClassifications.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.DelegatedPermissionClassifications.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.Endpoints.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("endpoints@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("endpoints@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.Endpoints.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.Endpoints.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -347,15 +359,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.HomeRealmDiscoveryPolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("homeRealmDiscoveryPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("homeRealmDiscoveryPolicies@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -363,15 +377,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.LicenseDetails.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("licenseDetails@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("licenseDetails@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.LicenseDetails.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.LicenseDetails.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -379,15 +395,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.MemberOf.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.MemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.MemberOf.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -395,15 +413,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.Oauth2PermissionGrants.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("oauth2PermissionGrants@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("oauth2PermissionGrants@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.Oauth2PermissionGrants.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.Oauth2PermissionGrants.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -411,15 +431,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.OwnedObjects.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("ownedObjects@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("ownedObjects@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.OwnedObjects.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.OwnedObjects.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -427,15 +449,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.Owners.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.Owners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.Owners.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -443,15 +467,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.TokenIssuancePolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("tokenIssuancePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("tokenIssuancePolicies@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -459,15 +485,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.TokenLifetimePolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("tokenLifetimePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("tokenLifetimePolicies@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -475,15 +503,17 @@ namespace Microsoft.Graph
                 {
                     servicePrincipalToInitialize.TransitiveMemberOf.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out var nextPageLink))
                     {
-                        servicePrincipalToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            servicePrincipalToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

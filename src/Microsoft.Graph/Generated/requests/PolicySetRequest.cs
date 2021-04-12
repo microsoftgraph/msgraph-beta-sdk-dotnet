@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     policySetToInitialize.Assignments.AdditionalData = policySetToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    policySetToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(policySetToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        policySetToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            policySetToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     policySetToInitialize.Items.AdditionalData = policySetToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    policySetToInitialize.AdditionalData.TryGetValue("items@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(policySetToInitialize.AdditionalData.TryGetValue("items@odata.nextLink", out var nextPageLink))
                     {
-                        policySetToInitialize.Items.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            policySetToInitialize.Items.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

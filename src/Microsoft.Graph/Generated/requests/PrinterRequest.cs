@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     printerToInitialize.Connectors.AdditionalData = printerToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    printerToInitialize.AdditionalData.TryGetValue("connectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(printerToInitialize.AdditionalData.TryGetValue("connectors@odata.nextLink", out var nextPageLink))
                     {
-                        printerToInitialize.Connectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            printerToInitialize.Connectors.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     printerToInitialize.Shares.AdditionalData = printerToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    printerToInitialize.AdditionalData.TryGetValue("shares@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(printerToInitialize.AdditionalData.TryGetValue("shares@odata.nextLink", out var nextPageLink))
                     {
-                        printerToInitialize.Shares.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            printerToInitialize.Shares.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     printerToInitialize.TaskTriggers.AdditionalData = printerToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    printerToInitialize.AdditionalData.TryGetValue("taskTriggers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(printerToInitialize.AdditionalData.TryGetValue("taskTriggers@odata.nextLink", out var nextPageLink))
                     {
-                        printerToInitialize.TaskTriggers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            printerToInitialize.TaskTriggers.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

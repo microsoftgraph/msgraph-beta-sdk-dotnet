@@ -251,15 +251,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     sourceCollectionToInitialize.AdditionalSources.AdditionalData = sourceCollectionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    sourceCollectionToInitialize.AdditionalData.TryGetValue("additionalSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(sourceCollectionToInitialize.AdditionalData.TryGetValue("additionalSources@odata.nextLink", out var nextPageLink))
                     {
-                        sourceCollectionToInitialize.AdditionalSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            sourceCollectionToInitialize.AdditionalSources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     sourceCollectionToInitialize.CustodianSources.AdditionalData = sourceCollectionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    sourceCollectionToInitialize.AdditionalData.TryGetValue("custodianSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(sourceCollectionToInitialize.AdditionalData.TryGetValue("custodianSources@odata.nextLink", out var nextPageLink))
                     {
-                        sourceCollectionToInitialize.CustodianSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            sourceCollectionToInitialize.CustodianSources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     sourceCollectionToInitialize.NoncustodialSources.AdditionalData = sourceCollectionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    sourceCollectionToInitialize.AdditionalData.TryGetValue("noncustodialSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(sourceCollectionToInitialize.AdditionalData.TryGetValue("noncustodialSources@odata.nextLink", out var nextPageLink))
                     {
-                        sourceCollectionToInitialize.NoncustodialSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            sourceCollectionToInitialize.NoncustodialSources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

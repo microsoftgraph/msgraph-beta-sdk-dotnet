@@ -47,18 +47,18 @@ namespace Microsoft.Graph
             {
                 if (response.AdditionalData != null)
                 {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(response.AdditionalData.TryGetValue("@odata.nextLink", out var nextPageLink))
                     {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            response.Value.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
-
                     // Copy the additional data collection to the page itself so that information is not lost
                     response.Value.AdditionalData = response.AdditionalData;
                 }

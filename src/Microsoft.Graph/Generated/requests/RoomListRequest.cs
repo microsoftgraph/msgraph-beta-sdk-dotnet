@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     roomListToInitialize.Rooms.AdditionalData = roomListToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    roomListToInitialize.AdditionalData.TryGetValue("rooms@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(roomListToInitialize.AdditionalData.TryGetValue("rooms@odata.nextLink", out var nextPageLink))
                     {
-                        roomListToInitialize.Rooms.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            roomListToInitialize.Rooms.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

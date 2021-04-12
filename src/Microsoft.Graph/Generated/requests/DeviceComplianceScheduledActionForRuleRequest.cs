@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.AdditionalData = deviceComplianceScheduledActionForRuleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceComplianceScheduledActionForRuleToInitialize.AdditionalData.TryGetValue("scheduledActionConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceComplianceScheduledActionForRuleToInitialize.AdditionalData.TryGetValue("scheduledActionConfigurations@odata.nextLink", out var nextPageLink))
                     {
-                        deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

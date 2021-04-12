@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     unifiedRbacResourceNamespaceToInitialize.ResourceActions.AdditionalData = unifiedRbacResourceNamespaceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    unifiedRbacResourceNamespaceToInitialize.AdditionalData.TryGetValue("resourceActions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(unifiedRbacResourceNamespaceToInitialize.AdditionalData.TryGetValue("resourceActions@odata.nextLink", out var nextPageLink))
                     {
-                        unifiedRbacResourceNamespaceToInitialize.ResourceActions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            unifiedRbacResourceNamespaceToInitialize.ResourceActions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

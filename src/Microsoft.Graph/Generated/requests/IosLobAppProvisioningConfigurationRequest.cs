@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     iosLobAppProvisioningConfigurationToInitialize.Assignments.AdditionalData = iosLobAppProvisioningConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        iosLobAppProvisioningConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            iosLobAppProvisioningConfigurationToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     iosLobAppProvisioningConfigurationToInitialize.DeviceStatuses.AdditionalData = iosLobAppProvisioningConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out var nextPageLink))
                     {
-                        iosLobAppProvisioningConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            iosLobAppProvisioningConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.AdditionalData = iosLobAppProvisioningConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out var nextPageLink))
                     {
-                        iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     iosLobAppProvisioningConfigurationToInitialize.UserStatuses.AdditionalData = iosLobAppProvisioningConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out var nextPageLink))
                     {
-                        iosLobAppProvisioningConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            iosLobAppProvisioningConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     educationSubmissionToInitialize.Outcomes.AdditionalData = educationSubmissionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    educationSubmissionToInitialize.AdditionalData.TryGetValue("outcomes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(educationSubmissionToInitialize.AdditionalData.TryGetValue("outcomes@odata.nextLink", out var nextPageLink))
                     {
-                        educationSubmissionToInitialize.Outcomes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            educationSubmissionToInitialize.Outcomes.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     educationSubmissionToInitialize.Resources.AdditionalData = educationSubmissionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    educationSubmissionToInitialize.AdditionalData.TryGetValue("resources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(educationSubmissionToInitialize.AdditionalData.TryGetValue("resources@odata.nextLink", out var nextPageLink))
                     {
-                        educationSubmissionToInitialize.Resources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            educationSubmissionToInitialize.Resources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     educationSubmissionToInitialize.SubmittedResources.AdditionalData = educationSubmissionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    educationSubmissionToInitialize.AdditionalData.TryGetValue("submittedResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(educationSubmissionToInitialize.AdditionalData.TryGetValue("submittedResources@odata.nextLink", out var nextPageLink))
                     {
-                        educationSubmissionToInitialize.SubmittedResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            educationSubmissionToInitialize.SubmittedResources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

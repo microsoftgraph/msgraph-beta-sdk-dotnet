@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     accessReviewToInitialize.Decisions.AdditionalData = accessReviewToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("decisions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessReviewToInitialize.AdditionalData.TryGetValue("decisions@odata.nextLink", out var nextPageLink))
                     {
-                        accessReviewToInitialize.Decisions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessReviewToInitialize.Decisions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     accessReviewToInitialize.Instances.AdditionalData = accessReviewToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessReviewToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out var nextPageLink))
                     {
-                        accessReviewToInitialize.Instances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessReviewToInitialize.Instances.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     accessReviewToInitialize.MyDecisions.AdditionalData = accessReviewToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("myDecisions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessReviewToInitialize.AdditionalData.TryGetValue("myDecisions@odata.nextLink", out var nextPageLink))
                     {
-                        accessReviewToInitialize.MyDecisions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessReviewToInitialize.MyDecisions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     accessReviewToInitialize.Reviewers.AdditionalData = accessReviewToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("reviewers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessReviewToInitialize.AdditionalData.TryGetValue("reviewers@odata.nextLink", out var nextPageLink))
                     {
-                        accessReviewToInitialize.Reviewers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessReviewToInitialize.Reviewers.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     termsOfUseContainerToInitialize.AgreementAcceptances.AdditionalData = termsOfUseContainerToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    termsOfUseContainerToInitialize.AdditionalData.TryGetValue("agreementAcceptances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(termsOfUseContainerToInitialize.AdditionalData.TryGetValue("agreementAcceptances@odata.nextLink", out var nextPageLink))
                     {
-                        termsOfUseContainerToInitialize.AgreementAcceptances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            termsOfUseContainerToInitialize.AgreementAcceptances.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     termsOfUseContainerToInitialize.Agreements.AdditionalData = termsOfUseContainerToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    termsOfUseContainerToInitialize.AdditionalData.TryGetValue("agreements@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(termsOfUseContainerToInitialize.AdditionalData.TryGetValue("agreements@odata.nextLink", out var nextPageLink))
                     {
-                        termsOfUseContainerToInitialize.Agreements.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            termsOfUseContainerToInitialize.Agreements.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

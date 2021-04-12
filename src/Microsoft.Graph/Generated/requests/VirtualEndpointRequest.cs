@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     virtualEndpointToInitialize.CloudPCs.AdditionalData = virtualEndpointToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("cloudPCs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(virtualEndpointToInitialize.AdditionalData.TryGetValue("cloudPCs@odata.nextLink", out var nextPageLink))
                     {
-                        virtualEndpointToInitialize.CloudPCs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            virtualEndpointToInitialize.CloudPCs.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     virtualEndpointToInitialize.DeviceImages.AdditionalData = virtualEndpointToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("deviceImages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(virtualEndpointToInitialize.AdditionalData.TryGetValue("deviceImages@odata.nextLink", out var nextPageLink))
                     {
-                        virtualEndpointToInitialize.DeviceImages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            virtualEndpointToInitialize.DeviceImages.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     virtualEndpointToInitialize.OnPremisesConnections.AdditionalData = virtualEndpointToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("onPremisesConnections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(virtualEndpointToInitialize.AdditionalData.TryGetValue("onPremisesConnections@odata.nextLink", out var nextPageLink))
                     {
-                        virtualEndpointToInitialize.OnPremisesConnections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            virtualEndpointToInitialize.OnPremisesConnections.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     virtualEndpointToInitialize.ProvisioningPolicies.AdditionalData = virtualEndpointToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("provisioningPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(virtualEndpointToInitialize.AdditionalData.TryGetValue("provisioningPolicies@odata.nextLink", out var nextPageLink))
                     {
-                        virtualEndpointToInitialize.ProvisioningPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            virtualEndpointToInitialize.ProvisioningPolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

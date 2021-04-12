@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     todoTaskToInitialize.Extensions.AdditionalData = todoTaskToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    todoTaskToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(todoTaskToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out var nextPageLink))
                     {
-                        todoTaskToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            todoTaskToInitialize.Extensions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     todoTaskToInitialize.LinkedResources.AdditionalData = todoTaskToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    todoTaskToInitialize.AdditionalData.TryGetValue("linkedResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(todoTaskToInitialize.AdditionalData.TryGetValue("linkedResources@odata.nextLink", out var nextPageLink))
                     {
-                        todoTaskToInitialize.LinkedResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            todoTaskToInitialize.LinkedResources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

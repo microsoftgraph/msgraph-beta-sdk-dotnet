@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     accessPackageCatalogToInitialize.AccessPackageResourceRoles.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoles@odata.nextLink", out var nextPageLink))
                     {
-                        accessPackageCatalogToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessPackageCatalogToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     accessPackageCatalogToInitialize.AccessPackageResources.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackageResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackageResources@odata.nextLink", out var nextPageLink))
                     {
-                        accessPackageCatalogToInitialize.AccessPackageResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessPackageCatalogToInitialize.AccessPackageResources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     accessPackageCatalogToInitialize.AccessPackageResourceScopes.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackageResourceScopes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackageResourceScopes@odata.nextLink", out var nextPageLink))
                     {
-                        accessPackageCatalogToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessPackageCatalogToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     accessPackageCatalogToInitialize.AccessPackages.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackages@odata.nextLink", out var nextPageLink))
                     {
-                        accessPackageCatalogToInitialize.AccessPackages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessPackageCatalogToInitialize.AccessPackages.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

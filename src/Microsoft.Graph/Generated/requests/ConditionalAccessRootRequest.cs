@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     conditionalAccessRootToInitialize.AuthenticationContextClassReferences.AdditionalData = conditionalAccessRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    conditionalAccessRootToInitialize.AdditionalData.TryGetValue("authenticationContextClassReferences@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(conditionalAccessRootToInitialize.AdditionalData.TryGetValue("authenticationContextClassReferences@odata.nextLink", out var nextPageLink))
                     {
-                        conditionalAccessRootToInitialize.AuthenticationContextClassReferences.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            conditionalAccessRootToInitialize.AuthenticationContextClassReferences.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     conditionalAccessRootToInitialize.NamedLocations.AdditionalData = conditionalAccessRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    conditionalAccessRootToInitialize.AdditionalData.TryGetValue("namedLocations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(conditionalAccessRootToInitialize.AdditionalData.TryGetValue("namedLocations@odata.nextLink", out var nextPageLink))
                     {
-                        conditionalAccessRootToInitialize.NamedLocations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            conditionalAccessRootToInitialize.NamedLocations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     conditionalAccessRootToInitialize.Policies.AdditionalData = conditionalAccessRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    conditionalAccessRootToInitialize.AdditionalData.TryGetValue("policies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(conditionalAccessRootToInitialize.AdditionalData.TryGetValue("policies@odata.nextLink", out var nextPageLink))
                     {
-                        conditionalAccessRootToInitialize.Policies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            conditionalAccessRootToInitialize.Policies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

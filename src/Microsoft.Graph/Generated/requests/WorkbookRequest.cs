@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     workbookToInitialize.Comments.AdditionalData = workbookToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("comments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookToInitialize.AdditionalData.TryGetValue("comments@odata.nextLink", out var nextPageLink))
                     {
-                        workbookToInitialize.Comments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookToInitialize.Comments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     workbookToInitialize.Names.AdditionalData = workbookToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("names@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookToInitialize.AdditionalData.TryGetValue("names@odata.nextLink", out var nextPageLink))
                     {
-                        workbookToInitialize.Names.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookToInitialize.Names.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     workbookToInitialize.Operations.AdditionalData = workbookToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
                     {
-                        workbookToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookToInitialize.Operations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     workbookToInitialize.Tables.AdditionalData = workbookToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("tables@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookToInitialize.AdditionalData.TryGetValue("tables@odata.nextLink", out var nextPageLink))
                     {
-                        workbookToInitialize.Tables.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookToInitialize.Tables.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     workbookToInitialize.Worksheets.AdditionalData = workbookToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("worksheets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookToInitialize.AdditionalData.TryGetValue("worksheets@odata.nextLink", out var nextPageLink))
                     {
-                        workbookToInitialize.Worksheets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookToInitialize.Worksheets.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

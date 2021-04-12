@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     smsAuthenticationMethodConfigurationToInitialize.IncludeTargets.AdditionalData = smsAuthenticationMethodConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    smsAuthenticationMethodConfigurationToInitialize.AdditionalData.TryGetValue("includeTargets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(smsAuthenticationMethodConfigurationToInitialize.AdditionalData.TryGetValue("includeTargets@odata.nextLink", out var nextPageLink))
                     {
-                        smsAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            smsAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

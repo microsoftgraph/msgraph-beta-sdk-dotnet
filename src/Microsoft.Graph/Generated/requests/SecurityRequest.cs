@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.Alerts.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("alerts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("alerts@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.Alerts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.Alerts.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.CloudAppSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("cloudAppSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("cloudAppSecurityProfiles@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.CloudAppSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.CloudAppSecurityProfiles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.DomainSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("domainSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("domainSecurityProfiles@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.DomainSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.DomainSecurityProfiles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.FileSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("fileSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("fileSecurityProfiles@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.FileSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.FileSecurityProfiles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.HostSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("hostSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("hostSecurityProfiles@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.HostSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.HostSecurityProfiles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.IpSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("ipSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("ipSecurityProfiles@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.IpSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.IpSecurityProfiles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -347,15 +359,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.ProviderTenantSettings.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("providerTenantSettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("providerTenantSettings@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.ProviderTenantSettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.ProviderTenantSettings.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -363,15 +377,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.SecureScoreControlProfiles.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("secureScoreControlProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("secureScoreControlProfiles@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.SecureScoreControlProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.SecureScoreControlProfiles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -379,15 +395,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.SecureScores.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("secureScores@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("secureScores@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.SecureScores.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.SecureScores.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -395,15 +413,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.SecurityActions.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("securityActions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("securityActions@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.SecurityActions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.SecurityActions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -411,15 +431,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.TiIndicators.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("tiIndicators@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("tiIndicators@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.TiIndicators.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.TiIndicators.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -427,15 +449,17 @@ namespace Microsoft.Graph
                 {
                     securityToInitialize.UserSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("userSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityToInitialize.AdditionalData.TryGetValue("userSecurityProfiles@odata.nextLink", out var nextPageLink))
                     {
-                        securityToInitialize.UserSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityToInitialize.UserSecurityProfiles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

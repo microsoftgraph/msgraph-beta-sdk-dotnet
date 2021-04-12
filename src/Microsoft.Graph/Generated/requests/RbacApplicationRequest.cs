@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationToInitialize.ResourceNamespaces.AdditionalData = rbacApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("resourceNamespaces@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("resourceNamespaces@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationToInitialize.ResourceNamespaces.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationToInitialize.ResourceNamespaces.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationToInitialize.RoleAssignments.AdditionalData = rbacApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationToInitialize.RoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationToInitialize.RoleAssignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationToInitialize.RoleDefinitions.AdditionalData = rbacApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationToInitialize.RoleDefinitions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationToInitialize.RoleAssignmentApprovals.AdditionalData = rbacApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentApprovals@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentApprovals@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationToInitialize.RoleAssignmentApprovals.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationToInitialize.RoleAssignmentApprovals.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationToInitialize.RoleAssignmentRequests.AdditionalData = rbacApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentRequests@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationToInitialize.RoleAssignmentScheduleInstances.AdditionalData = rbacApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentScheduleInstances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentScheduleInstances@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationToInitialize.RoleAssignmentScheduleInstances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationToInitialize.RoleAssignmentScheduleInstances.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -347,15 +359,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationToInitialize.RoleAssignmentSchedules.AdditionalData = rbacApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentSchedules@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentSchedules@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationToInitialize.RoleAssignmentSchedules.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationToInitialize.RoleAssignmentSchedules.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -363,15 +377,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationToInitialize.RoleEligibilityRequests.AdditionalData = rbacApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilityRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilityRequests@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationToInitialize.RoleEligibilityRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationToInitialize.RoleEligibilityRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -379,15 +395,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationToInitialize.RoleEligibilityScheduleInstances.AdditionalData = rbacApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilityScheduleInstances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilityScheduleInstances@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationToInitialize.RoleEligibilityScheduleInstances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationToInitialize.RoleEligibilityScheduleInstances.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -395,15 +413,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationToInitialize.RoleEligibilitySchedules.AdditionalData = rbacApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilitySchedules@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilitySchedules@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationToInitialize.RoleEligibilitySchedules.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationToInitialize.RoleEligibilitySchedules.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

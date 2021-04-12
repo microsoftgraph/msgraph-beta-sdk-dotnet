@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     groupPolicyUploadedDefinitionFileToInitialize.GroupPolicyOperations.AdditionalData = groupPolicyUploadedDefinitionFileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupPolicyUploadedDefinitionFileToInitialize.AdditionalData.TryGetValue("groupPolicyOperations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupPolicyUploadedDefinitionFileToInitialize.AdditionalData.TryGetValue("groupPolicyOperations@odata.nextLink", out var nextPageLink))
                     {
-                        groupPolicyUploadedDefinitionFileToInitialize.GroupPolicyOperations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupPolicyUploadedDefinitionFileToInitialize.GroupPolicyOperations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

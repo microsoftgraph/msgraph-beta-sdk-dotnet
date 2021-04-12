@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     plannerPlanToInitialize.Buckets.AdditionalData = plannerPlanToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    plannerPlanToInitialize.AdditionalData.TryGetValue("buckets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(plannerPlanToInitialize.AdditionalData.TryGetValue("buckets@odata.nextLink", out var nextPageLink))
                     {
-                        plannerPlanToInitialize.Buckets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            plannerPlanToInitialize.Buckets.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     plannerPlanToInitialize.Tasks.AdditionalData = plannerPlanToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    plannerPlanToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(plannerPlanToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out var nextPageLink))
                     {
-                        plannerPlanToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            plannerPlanToInitialize.Tasks.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

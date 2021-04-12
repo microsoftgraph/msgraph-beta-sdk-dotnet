@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     governanceResourceToInitialize.RoleAssignmentRequests.AdditionalData = governanceResourceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    governanceResourceToInitialize.AdditionalData.TryGetValue("roleAssignmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(governanceResourceToInitialize.AdditionalData.TryGetValue("roleAssignmentRequests@odata.nextLink", out var nextPageLink))
                     {
-                        governanceResourceToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            governanceResourceToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     governanceResourceToInitialize.RoleAssignments.AdditionalData = governanceResourceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    governanceResourceToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(governanceResourceToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out var nextPageLink))
                     {
-                        governanceResourceToInitialize.RoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            governanceResourceToInitialize.RoleAssignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     governanceResourceToInitialize.RoleDefinitions.AdditionalData = governanceResourceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    governanceResourceToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(governanceResourceToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out var nextPageLink))
                     {
-                        governanceResourceToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            governanceResourceToInitialize.RoleDefinitions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     governanceResourceToInitialize.RoleSettings.AdditionalData = governanceResourceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    governanceResourceToInitialize.AdditionalData.TryGetValue("roleSettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(governanceResourceToInitialize.AdditionalData.TryGetValue("roleSettings@odata.nextLink", out var nextPageLink))
                     {
-                        governanceResourceToInitialize.RoleSettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            governanceResourceToInitialize.RoleSettings.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

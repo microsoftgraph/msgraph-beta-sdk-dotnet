@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     macOSSoftwareUpdateCategorySummaryToInitialize.UpdateStateSummaries.AdditionalData = macOSSoftwareUpdateCategorySummaryToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    macOSSoftwareUpdateCategorySummaryToInitialize.AdditionalData.TryGetValue("updateStateSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(macOSSoftwareUpdateCategorySummaryToInitialize.AdditionalData.TryGetValue("updateStateSummaries@odata.nextLink", out var nextPageLink))
                     {
-                        macOSSoftwareUpdateCategorySummaryToInitialize.UpdateStateSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            macOSSoftwareUpdateCategorySummaryToInitialize.UpdateStateSummaries.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

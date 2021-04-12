@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     auditLogRootToInitialize.DirectoryAudits.AdditionalData = auditLogRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    auditLogRootToInitialize.AdditionalData.TryGetValue("directoryAudits@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(auditLogRootToInitialize.AdditionalData.TryGetValue("directoryAudits@odata.nextLink", out var nextPageLink))
                     {
-                        auditLogRootToInitialize.DirectoryAudits.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            auditLogRootToInitialize.DirectoryAudits.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     auditLogRootToInitialize.DirectoryProvisioning.AdditionalData = auditLogRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    auditLogRootToInitialize.AdditionalData.TryGetValue("directoryProvisioning@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(auditLogRootToInitialize.AdditionalData.TryGetValue("directoryProvisioning@odata.nextLink", out var nextPageLink))
                     {
-                        auditLogRootToInitialize.DirectoryProvisioning.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            auditLogRootToInitialize.DirectoryProvisioning.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     auditLogRootToInitialize.Provisioning.AdditionalData = auditLogRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    auditLogRootToInitialize.AdditionalData.TryGetValue("provisioning@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(auditLogRootToInitialize.AdditionalData.TryGetValue("provisioning@odata.nextLink", out var nextPageLink))
                     {
-                        auditLogRootToInitialize.Provisioning.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            auditLogRootToInitialize.Provisioning.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     auditLogRootToInitialize.RestrictedSignIns.AdditionalData = auditLogRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    auditLogRootToInitialize.AdditionalData.TryGetValue("restrictedSignIns@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(auditLogRootToInitialize.AdditionalData.TryGetValue("restrictedSignIns@odata.nextLink", out var nextPageLink))
                     {
-                        auditLogRootToInitialize.RestrictedSignIns.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            auditLogRootToInitialize.RestrictedSignIns.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     auditLogRootToInitialize.SignIns.AdditionalData = auditLogRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    auditLogRootToInitialize.AdditionalData.TryGetValue("signIns@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(auditLogRootToInitialize.AdditionalData.TryGetValue("signIns@odata.nextLink", out var nextPageLink))
                     {
-                        auditLogRootToInitialize.SignIns.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            auditLogRootToInitialize.SignIns.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

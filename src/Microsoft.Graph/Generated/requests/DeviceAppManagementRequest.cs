@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.ManagedEBookCategories.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedEBookCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedEBookCategories@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.ManagedEBookCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.ManagedEBookCategories.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("enterpriseCodeSigningCertificates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("enterpriseCodeSigningCertificates@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("iosLobAppProvisioningConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("iosLobAppProvisioningConfigurations@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.MobileAppCategories.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileAppCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileAppCategories@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.MobileAppCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.MobileAppCategories.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.MobileAppConfigurations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileAppConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileAppConfigurations@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.MobileAppConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.MobileAppConfigurations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.MobileApps.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileApps@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.MobileApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.MobileApps.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -347,15 +359,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.ManagedEBooks.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedEBooks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedEBooks@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.ManagedEBooks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.ManagedEBooks.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -363,15 +377,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.PolicySets.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("policySets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("policySets@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.PolicySets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.PolicySets.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -379,15 +395,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.SideLoadingKeys.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("sideLoadingKeys@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("sideLoadingKeys@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.SideLoadingKeys.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.SideLoadingKeys.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -395,15 +413,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.VppTokens.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("vppTokens@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("vppTokens@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.VppTokens.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.VppTokens.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -411,15 +431,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.AndroidManagedAppProtections.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("androidManagedAppProtections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("androidManagedAppProtections@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.AndroidManagedAppProtections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.AndroidManagedAppProtections.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -427,15 +449,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.DefaultManagedAppProtections.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("defaultManagedAppProtections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("defaultManagedAppProtections@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.DefaultManagedAppProtections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.DefaultManagedAppProtections.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -443,15 +467,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.IosManagedAppProtections.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("iosManagedAppProtections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("iosManagedAppProtections@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.IosManagedAppProtections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.IosManagedAppProtections.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -459,15 +485,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.ManagedAppPolicies.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppPolicies@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.ManagedAppPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.ManagedAppPolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -475,15 +503,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.ManagedAppRegistrations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppRegistrations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppRegistrations@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.ManagedAppRegistrations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.ManagedAppRegistrations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -491,15 +521,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.ManagedAppStatuses.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppStatuses@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.ManagedAppStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.ManagedAppStatuses.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -507,15 +539,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mdmWindowsInformationProtectionPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("mdmWindowsInformationProtectionPolicies@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -523,15 +557,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.TargetedManagedAppConfigurations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("targetedManagedAppConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("targetedManagedAppConfigurations@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.TargetedManagedAppConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.TargetedManagedAppConfigurations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -539,15 +575,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionDeviceRegistrations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionDeviceRegistrations@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -555,15 +593,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.WindowsInformationProtectionPolicies.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionPolicies@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.WindowsInformationProtectionPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.WindowsInformationProtectionPolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -571,15 +611,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionWipeActions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionWipeActions@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -587,15 +629,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.DeviceAppManagementTasks.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("deviceAppManagementTasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("deviceAppManagementTasks@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.DeviceAppManagementTasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.DeviceAppManagementTasks.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -603,15 +647,17 @@ namespace Microsoft.Graph
                 {
                     deviceAppManagementToInitialize.WdacSupplementalPolicies.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("wdacSupplementalPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAppManagementToInitialize.AdditionalData.TryGetValue("wdacSupplementalPolicies@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAppManagementToInitialize.WdacSupplementalPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAppManagementToInitialize.WdacSupplementalPolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

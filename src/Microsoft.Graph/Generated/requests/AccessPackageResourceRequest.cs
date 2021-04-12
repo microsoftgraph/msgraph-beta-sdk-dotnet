@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     accessPackageResourceToInitialize.AccessPackageResourceRoles.AdditionalData = accessPackageResourceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessPackageResourceToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessPackageResourceToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoles@odata.nextLink", out var nextPageLink))
                     {
-                        accessPackageResourceToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessPackageResourceToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     accessPackageResourceToInitialize.AccessPackageResourceScopes.AdditionalData = accessPackageResourceToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessPackageResourceToInitialize.AdditionalData.TryGetValue("accessPackageResourceScopes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessPackageResourceToInitialize.AdditionalData.TryGetValue("accessPackageResourceScopes@odata.nextLink", out var nextPageLink))
                     {
-                        accessPackageResourceToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessPackageResourceToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

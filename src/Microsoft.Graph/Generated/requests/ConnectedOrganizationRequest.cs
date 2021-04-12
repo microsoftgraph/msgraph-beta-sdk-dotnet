@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     connectedOrganizationToInitialize.ExternalSponsors.AdditionalData = connectedOrganizationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    connectedOrganizationToInitialize.AdditionalData.TryGetValue("externalSponsors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(connectedOrganizationToInitialize.AdditionalData.TryGetValue("externalSponsors@odata.nextLink", out var nextPageLink))
                     {
-                        connectedOrganizationToInitialize.ExternalSponsors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            connectedOrganizationToInitialize.ExternalSponsors.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     connectedOrganizationToInitialize.InternalSponsors.AdditionalData = connectedOrganizationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    connectedOrganizationToInitialize.AdditionalData.TryGetValue("internalSponsors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(connectedOrganizationToInitialize.AdditionalData.TryGetValue("internalSponsors@odata.nextLink", out var nextPageLink))
                     {
-                        connectedOrganizationToInitialize.InternalSponsors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            connectedOrganizationToInitialize.InternalSponsors.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

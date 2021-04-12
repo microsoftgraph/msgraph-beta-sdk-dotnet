@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     managedMobileLobAppToInitialize.ContentVersions.AdditionalData = managedMobileLobAppToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    managedMobileLobAppToInitialize.AdditionalData.TryGetValue("contentVersions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(managedMobileLobAppToInitialize.AdditionalData.TryGetValue("contentVersions@odata.nextLink", out var nextPageLink))
                     {
-                        managedMobileLobAppToInitialize.ContentVersions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            managedMobileLobAppToInitialize.ContentVersions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests.AdditionalData = mobileAppTroubleshootingEventToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    mobileAppTroubleshootingEventToInitialize.AdditionalData.TryGetValue("appLogCollectionRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(mobileAppTroubleshootingEventToInitialize.AdditionalData.TryGetValue("appLogCollectionRequests@odata.nextLink", out var nextPageLink))
                     {
-                        mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

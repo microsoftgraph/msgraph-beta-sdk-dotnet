@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     notebookToInitialize.SectionGroups.AdditionalData = notebookToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    notebookToInitialize.AdditionalData.TryGetValue("sectionGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(notebookToInitialize.AdditionalData.TryGetValue("sectionGroups@odata.nextLink", out var nextPageLink))
                     {
-                        notebookToInitialize.SectionGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            notebookToInitialize.SectionGroups.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     notebookToInitialize.Sections.AdditionalData = notebookToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    notebookToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(notebookToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out var nextPageLink))
                     {
-                        notebookToInitialize.Sections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            notebookToInitialize.Sections.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

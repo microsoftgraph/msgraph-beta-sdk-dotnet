@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     managedDeviceMobileAppConfigurationToInitialize.Assignments.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        managedDeviceMobileAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            managedDeviceMobileAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out var nextPageLink))
                     {
-                        managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     managedDeviceMobileAppConfigurationToInitialize.UserStatuses.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out var nextPageLink))
                     {
-                        managedDeviceMobileAppConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            managedDeviceMobileAppConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

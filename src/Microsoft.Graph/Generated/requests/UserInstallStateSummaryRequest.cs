@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     userInstallStateSummaryToInitialize.DeviceStates.AdditionalData = userInstallStateSummaryToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    userInstallStateSummaryToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(userInstallStateSummaryToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out var nextPageLink))
                     {
-                        userInstallStateSummaryToInitialize.DeviceStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            userInstallStateSummaryToInitialize.DeviceStates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     dimensionToInitialize.DimensionValues.AdditionalData = dimensionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    dimensionToInitialize.AdditionalData.TryGetValue("dimensionValues@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(dimensionToInitialize.AdditionalData.TryGetValue("dimensionValues@odata.nextLink", out var nextPageLink))
                     {
-                        dimensionToInitialize.DimensionValues.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            dimensionToInitialize.DimensionValues.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

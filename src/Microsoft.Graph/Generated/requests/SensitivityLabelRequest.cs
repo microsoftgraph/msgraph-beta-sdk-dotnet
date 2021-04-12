@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     sensitivityLabelToInitialize.Sublabels.AdditionalData = sensitivityLabelToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    sensitivityLabelToInitialize.AdditionalData.TryGetValue("sublabels@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(sensitivityLabelToInitialize.AdditionalData.TryGetValue("sublabels@odata.nextLink", out var nextPageLink))
                     {
-                        sensitivityLabelToInitialize.Sublabels.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            sensitivityLabelToInitialize.Sublabels.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

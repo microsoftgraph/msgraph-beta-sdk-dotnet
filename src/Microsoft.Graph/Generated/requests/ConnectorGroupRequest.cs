@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     connectorGroupToInitialize.Applications.AdditionalData = connectorGroupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    connectorGroupToInitialize.AdditionalData.TryGetValue("applications@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(connectorGroupToInitialize.AdditionalData.TryGetValue("applications@odata.nextLink", out var nextPageLink))
                     {
-                        connectorGroupToInitialize.Applications.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            connectorGroupToInitialize.Applications.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     connectorGroupToInitialize.Members.AdditionalData = connectorGroupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    connectorGroupToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(connectorGroupToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
                     {
-                        connectorGroupToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            connectorGroupToInitialize.Members.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

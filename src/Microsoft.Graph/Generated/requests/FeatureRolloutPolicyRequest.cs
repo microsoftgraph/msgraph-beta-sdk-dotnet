@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     featureRolloutPolicyToInitialize.AppliesTo.AdditionalData = featureRolloutPolicyToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    featureRolloutPolicyToInitialize.AdditionalData.TryGetValue("appliesTo@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(featureRolloutPolicyToInitialize.AdditionalData.TryGetValue("appliesTo@odata.nextLink", out var nextPageLink))
                     {
-                        featureRolloutPolicyToInitialize.AppliesTo.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            featureRolloutPolicyToInitialize.AppliesTo.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

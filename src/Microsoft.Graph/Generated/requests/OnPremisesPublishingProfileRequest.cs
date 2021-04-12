@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     onPremisesPublishingProfileToInitialize.AgentGroups.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("agentGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("agentGroups@odata.nextLink", out var nextPageLink))
                     {
-                        onPremisesPublishingProfileToInitialize.AgentGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            onPremisesPublishingProfileToInitialize.AgentGroups.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     onPremisesPublishingProfileToInitialize.Agents.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("agents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("agents@odata.nextLink", out var nextPageLink))
                     {
-                        onPremisesPublishingProfileToInitialize.Agents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            onPremisesPublishingProfileToInitialize.Agents.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     onPremisesPublishingProfileToInitialize.ConnectorGroups.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("connectorGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("connectorGroups@odata.nextLink", out var nextPageLink))
                     {
-                        onPremisesPublishingProfileToInitialize.ConnectorGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            onPremisesPublishingProfileToInitialize.ConnectorGroups.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     onPremisesPublishingProfileToInitialize.Connectors.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("connectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("connectors@odata.nextLink", out var nextPageLink))
                     {
-                        onPremisesPublishingProfileToInitialize.Connectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            onPremisesPublishingProfileToInitialize.Connectors.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     onPremisesPublishingProfileToInitialize.PublishedResources.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("publishedResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("publishedResources@odata.nextLink", out var nextPageLink))
                     {
-                        onPremisesPublishingProfileToInitialize.PublishedResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            onPremisesPublishingProfileToInitialize.PublishedResources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

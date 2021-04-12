@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     permissionGrantPolicyToInitialize.Excludes.AdditionalData = permissionGrantPolicyToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    permissionGrantPolicyToInitialize.AdditionalData.TryGetValue("excludes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(permissionGrantPolicyToInitialize.AdditionalData.TryGetValue("excludes@odata.nextLink", out var nextPageLink))
                     {
-                        permissionGrantPolicyToInitialize.Excludes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            permissionGrantPolicyToInitialize.Excludes.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     permissionGrantPolicyToInitialize.Includes.AdditionalData = permissionGrantPolicyToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    permissionGrantPolicyToInitialize.AdditionalData.TryGetValue("includes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(permissionGrantPolicyToInitialize.AdditionalData.TryGetValue("includes@odata.nextLink", out var nextPageLink))
                     {
-                        permissionGrantPolicyToInitialize.Includes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            permissionGrantPolicyToInitialize.Includes.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

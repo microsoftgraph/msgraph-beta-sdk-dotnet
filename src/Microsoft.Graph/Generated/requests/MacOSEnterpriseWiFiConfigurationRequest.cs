@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.AdditionalData = macOSEnterpriseWiFiConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    macOSEnterpriseWiFiConfigurationToInitialize.AdditionalData.TryGetValue("rootCertificatesForServerValidation@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(macOSEnterpriseWiFiConfigurationToInitialize.AdditionalData.TryGetValue("rootCertificatesForServerValidation@odata.nextLink", out var nextPageLink))
                     {
-                        macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = windows10PkcsCertificateProfileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windows10PkcsCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windows10PkcsCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out var nextPageLink))
                     {
-                        windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     directoryRoleToInitialize.Members.AdditionalData = directoryRoleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    directoryRoleToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(directoryRoleToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
                     {
-                        directoryRoleToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            directoryRoleToInitialize.Members.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     directoryRoleToInitialize.ScopedMembers.AdditionalData = directoryRoleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    directoryRoleToInitialize.AdditionalData.TryGetValue("scopedMembers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(directoryRoleToInitialize.AdditionalData.TryGetValue("scopedMembers@odata.nextLink", out var nextPageLink))
                     {
-                        directoryRoleToInitialize.ScopedMembers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            directoryRoleToInitialize.ScopedMembers.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

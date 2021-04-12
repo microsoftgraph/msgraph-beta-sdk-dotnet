@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     plannerRosterToInitialize.Members.AdditionalData = plannerRosterToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    plannerRosterToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(plannerRosterToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
                     {
-                        plannerRosterToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            plannerRosterToInitialize.Members.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     plannerRosterToInitialize.Plans.AdditionalData = plannerRosterToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    plannerRosterToInitialize.AdditionalData.TryGetValue("plans@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(plannerRosterToInitialize.AdditionalData.TryGetValue("plans@odata.nextLink", out var nextPageLink))
                     {
-                        plannerRosterToInitialize.Plans.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            plannerRosterToInitialize.Plans.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     workbookChartSeriesToInitialize.Points.AdditionalData = workbookChartSeriesToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    workbookChartSeriesToInitialize.AdditionalData.TryGetValue("points@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(workbookChartSeriesToInitialize.AdditionalData.TryGetValue("points@odata.nextLink", out var nextPageLink))
                     {
-                        workbookChartSeriesToInitialize.Points.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            workbookChartSeriesToInitialize.Points.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     embeddedSIMActivationCodePoolToInitialize.Assignments.AdditionalData = embeddedSIMActivationCodePoolToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    embeddedSIMActivationCodePoolToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(embeddedSIMActivationCodePoolToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        embeddedSIMActivationCodePoolToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            embeddedSIMActivationCodePoolToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     embeddedSIMActivationCodePoolToInitialize.DeviceStates.AdditionalData = embeddedSIMActivationCodePoolToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    embeddedSIMActivationCodePoolToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(embeddedSIMActivationCodePoolToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out var nextPageLink))
                     {
-                        embeddedSIMActivationCodePoolToInitialize.DeviceStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            embeddedSIMActivationCodePoolToInitialize.DeviceStates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.AdditionalData = securityBaselineTemplateToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityBaselineTemplateToInitialize.AdditionalData.TryGetValue("categoryDeviceStateSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityBaselineTemplateToInitialize.AdditionalData.TryGetValue("categoryDeviceStateSummaries@odata.nextLink", out var nextPageLink))
                     {
-                        securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     securityBaselineTemplateToInitialize.DeviceStates.AdditionalData = securityBaselineTemplateToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    securityBaselineTemplateToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(securityBaselineTemplateToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out var nextPageLink))
                     {
-                        securityBaselineTemplateToInitialize.DeviceStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            securityBaselineTemplateToInitialize.DeviceStates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

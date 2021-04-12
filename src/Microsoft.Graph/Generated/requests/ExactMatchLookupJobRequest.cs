@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     exactMatchLookupJobToInitialize.MatchingRows.AdditionalData = exactMatchLookupJobToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    exactMatchLookupJobToInitialize.AdditionalData.TryGetValue("matchingRows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(exactMatchLookupJobToInitialize.AdditionalData.TryGetValue("matchingRows@odata.nextLink", out var nextPageLink))
                     {
-                        exactMatchLookupJobToInitialize.MatchingRows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            exactMatchLookupJobToInitialize.MatchingRows.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

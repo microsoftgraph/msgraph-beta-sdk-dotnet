@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     reportRootToInitialize.ApplicationSignInDetailedSummary.AdditionalData = reportRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("applicationSignInDetailedSummary@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(reportRootToInitialize.AdditionalData.TryGetValue("applicationSignInDetailedSummary@odata.nextLink", out var nextPageLink))
                     {
-                        reportRootToInitialize.ApplicationSignInDetailedSummary.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            reportRootToInitialize.ApplicationSignInDetailedSummary.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     reportRootToInitialize.CredentialUserRegistrationDetails.AdditionalData = reportRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("credentialUserRegistrationDetails@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(reportRootToInitialize.AdditionalData.TryGetValue("credentialUserRegistrationDetails@odata.nextLink", out var nextPageLink))
                     {
-                        reportRootToInitialize.CredentialUserRegistrationDetails.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            reportRootToInitialize.CredentialUserRegistrationDetails.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     reportRootToInitialize.UserCredentialUsageDetails.AdditionalData = reportRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("userCredentialUsageDetails@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(reportRootToInitialize.AdditionalData.TryGetValue("userCredentialUsageDetails@odata.nextLink", out var nextPageLink))
                     {
-                        reportRootToInitialize.UserCredentialUsageDetails.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            reportRootToInitialize.UserCredentialUsageDetails.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     reportRootToInitialize.DailyPrintUsageByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageByPrinter@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageByPrinter@odata.nextLink", out var nextPageLink))
                     {
-                        reportRootToInitialize.DailyPrintUsageByPrinter.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            reportRootToInitialize.DailyPrintUsageByPrinter.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     reportRootToInitialize.DailyPrintUsageByUser.AdditionalData = reportRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageByUser@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageByUser@odata.nextLink", out var nextPageLink))
                     {
-                        reportRootToInitialize.DailyPrintUsageByUser.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            reportRootToInitialize.DailyPrintUsageByUser.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph
                 {
                     reportRootToInitialize.DailyPrintUsageSummariesByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageSummariesByPrinter@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageSummariesByPrinter@odata.nextLink", out var nextPageLink))
                     {
-                        reportRootToInitialize.DailyPrintUsageSummariesByPrinter.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            reportRootToInitialize.DailyPrintUsageSummariesByPrinter.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -347,15 +359,17 @@ namespace Microsoft.Graph
                 {
                     reportRootToInitialize.DailyPrintUsageSummariesByUser.AdditionalData = reportRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageSummariesByUser@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageSummariesByUser@odata.nextLink", out var nextPageLink))
                     {
-                        reportRootToInitialize.DailyPrintUsageSummariesByUser.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            reportRootToInitialize.DailyPrintUsageSummariesByUser.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -363,15 +377,17 @@ namespace Microsoft.Graph
                 {
                     reportRootToInitialize.MonthlyPrintUsageByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageByPrinter@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageByPrinter@odata.nextLink", out var nextPageLink))
                     {
-                        reportRootToInitialize.MonthlyPrintUsageByPrinter.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            reportRootToInitialize.MonthlyPrintUsageByPrinter.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -379,15 +395,17 @@ namespace Microsoft.Graph
                 {
                     reportRootToInitialize.MonthlyPrintUsageByUser.AdditionalData = reportRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageByUser@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageByUser@odata.nextLink", out var nextPageLink))
                     {
-                        reportRootToInitialize.MonthlyPrintUsageByUser.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            reportRootToInitialize.MonthlyPrintUsageByUser.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -395,15 +413,17 @@ namespace Microsoft.Graph
                 {
                     reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageSummariesByPrinter@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageSummariesByPrinter@odata.nextLink", out var nextPageLink))
                     {
-                        reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -411,15 +431,17 @@ namespace Microsoft.Graph
                 {
                     reportRootToInitialize.MonthlyPrintUsageSummariesByUser.AdditionalData = reportRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageSummariesByUser@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageSummariesByUser@odata.nextLink", out var nextPageLink))
                     {
-                        reportRootToInitialize.MonthlyPrintUsageSummariesByUser.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            reportRootToInitialize.MonthlyPrintUsageSummariesByUser.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

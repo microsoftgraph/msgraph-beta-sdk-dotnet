@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     userTeamworkToInitialize.InstalledApps.AdditionalData = userTeamworkToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    userTeamworkToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(userTeamworkToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out var nextPageLink))
                     {
-                        userTeamworkToInitialize.InstalledApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            userTeamworkToInitialize.InstalledApps.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

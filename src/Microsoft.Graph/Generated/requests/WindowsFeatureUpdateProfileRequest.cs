@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     windowsFeatureUpdateProfileToInitialize.Assignments.AdditionalData = windowsFeatureUpdateProfileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsFeatureUpdateProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsFeatureUpdateProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        windowsFeatureUpdateProfileToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsFeatureUpdateProfileToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates.AdditionalData = windowsFeatureUpdateProfileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsFeatureUpdateProfileToInitialize.AdditionalData.TryGetValue("deviceUpdateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsFeatureUpdateProfileToInitialize.AdditionalData.TryGetValue("deviceUpdateStates@odata.nextLink", out var nextPageLink))
                     {
-                        windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

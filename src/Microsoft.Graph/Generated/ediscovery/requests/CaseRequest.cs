@@ -251,15 +251,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     caseToInitialize.Custodians.AdditionalData = caseToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("custodians@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(caseToInitialize.AdditionalData.TryGetValue("custodians@odata.nextLink", out var nextPageLink))
                     {
-                        caseToInitialize.Custodians.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            caseToInitialize.Custodians.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     caseToInitialize.LegalHolds.AdditionalData = caseToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("legalHolds@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(caseToInitialize.AdditionalData.TryGetValue("legalHolds@odata.nextLink", out var nextPageLink))
                     {
-                        caseToInitialize.LegalHolds.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            caseToInitialize.LegalHolds.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     caseToInitialize.NoncustodialDataSources.AdditionalData = caseToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("noncustodialDataSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(caseToInitialize.AdditionalData.TryGetValue("noncustodialDataSources@odata.nextLink", out var nextPageLink))
                     {
-                        caseToInitialize.NoncustodialDataSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            caseToInitialize.NoncustodialDataSources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     caseToInitialize.Operations.AdditionalData = caseToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(caseToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
                     {
-                        caseToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            caseToInitialize.Operations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     caseToInitialize.ReviewSets.AdditionalData = caseToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("reviewSets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(caseToInitialize.AdditionalData.TryGetValue("reviewSets@odata.nextLink", out var nextPageLink))
                     {
-                        caseToInitialize.ReviewSets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            caseToInitialize.ReviewSets.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     caseToInitialize.SourceCollections.AdditionalData = caseToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("sourceCollections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(caseToInitialize.AdditionalData.TryGetValue("sourceCollections@odata.nextLink", out var nextPageLink))
                     {
-                        caseToInitialize.SourceCollections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            caseToInitialize.SourceCollections.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -347,15 +359,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     caseToInitialize.Tags.AdditionalData = caseToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("tags@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(caseToInitialize.AdditionalData.TryGetValue("tags@odata.nextLink", out var nextPageLink))
                     {
-                        caseToInitialize.Tags.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            caseToInitialize.Tags.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

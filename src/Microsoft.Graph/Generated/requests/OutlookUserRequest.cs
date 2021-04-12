@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     outlookUserToInitialize.MasterCategories.AdditionalData = outlookUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    outlookUserToInitialize.AdditionalData.TryGetValue("masterCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(outlookUserToInitialize.AdditionalData.TryGetValue("masterCategories@odata.nextLink", out var nextPageLink))
                     {
-                        outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     outlookUserToInitialize.TaskFolders.AdditionalData = outlookUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    outlookUserToInitialize.AdditionalData.TryGetValue("taskFolders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(outlookUserToInitialize.AdditionalData.TryGetValue("taskFolders@odata.nextLink", out var nextPageLink))
                     {
-                        outlookUserToInitialize.TaskFolders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            outlookUserToInitialize.TaskFolders.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     outlookUserToInitialize.TaskGroups.AdditionalData = outlookUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    outlookUserToInitialize.AdditionalData.TryGetValue("taskGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(outlookUserToInitialize.AdditionalData.TryGetValue("taskGroups@odata.nextLink", out var nextPageLink))
                     {
-                        outlookUserToInitialize.TaskGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            outlookUserToInitialize.TaskGroups.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     outlookUserToInitialize.Tasks.AdditionalData = outlookUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    outlookUserToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(outlookUserToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out var nextPageLink))
                     {
-                        outlookUserToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            outlookUserToInitialize.Tasks.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

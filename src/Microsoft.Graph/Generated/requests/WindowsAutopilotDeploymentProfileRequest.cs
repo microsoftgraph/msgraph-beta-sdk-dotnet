@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     windowsAutopilotDeploymentProfileToInitialize.AssignedDevices.AdditionalData = windowsAutopilotDeploymentProfileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsAutopilotDeploymentProfileToInitialize.AdditionalData.TryGetValue("assignedDevices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsAutopilotDeploymentProfileToInitialize.AdditionalData.TryGetValue("assignedDevices@odata.nextLink", out var nextPageLink))
                     {
-                        windowsAutopilotDeploymentProfileToInitialize.AssignedDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsAutopilotDeploymentProfileToInitialize.AssignedDevices.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     windowsAutopilotDeploymentProfileToInitialize.Assignments.AdditionalData = windowsAutopilotDeploymentProfileToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsAutopilotDeploymentProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsAutopilotDeploymentProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        windowsAutopilotDeploymentProfileToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsAutopilotDeploymentProfileToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

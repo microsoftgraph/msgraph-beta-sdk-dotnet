@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom.AdditionalData = unifiedRoleDefinitionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    unifiedRoleDefinitionToInitialize.AdditionalData.TryGetValue("inheritsPermissionsFrom@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(unifiedRoleDefinitionToInitialize.AdditionalData.TryGetValue("inheritsPermissionsFrom@odata.nextLink", out var nextPageLink))
                     {
-                        unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

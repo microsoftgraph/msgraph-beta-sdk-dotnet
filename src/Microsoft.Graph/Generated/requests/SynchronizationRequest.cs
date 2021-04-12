@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     synchronizationToInitialize.Jobs.AdditionalData = synchronizationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    synchronizationToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(synchronizationToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out var nextPageLink))
                     {
-                        synchronizationToInitialize.Jobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            synchronizationToInitialize.Jobs.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     synchronizationToInitialize.Templates.AdditionalData = synchronizationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    synchronizationToInitialize.AdditionalData.TryGetValue("templates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(synchronizationToInitialize.AdditionalData.TryGetValue("templates@odata.nextLink", out var nextPageLink))
                     {
-                        synchronizationToInitialize.Templates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            synchronizationToInitialize.Templates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

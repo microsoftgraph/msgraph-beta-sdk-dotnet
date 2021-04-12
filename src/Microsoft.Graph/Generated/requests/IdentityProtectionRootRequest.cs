@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     identityProtectionRootToInitialize.RiskDetections.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    identityProtectionRootToInitialize.AdditionalData.TryGetValue("riskDetections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(identityProtectionRootToInitialize.AdditionalData.TryGetValue("riskDetections@odata.nextLink", out var nextPageLink))
                     {
-                        identityProtectionRootToInitialize.RiskDetections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            identityProtectionRootToInitialize.RiskDetections.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     identityProtectionRootToInitialize.RiskyUsers.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    identityProtectionRootToInitialize.AdditionalData.TryGetValue("riskyUsers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(identityProtectionRootToInitialize.AdditionalData.TryGetValue("riskyUsers@odata.nextLink", out var nextPageLink))
                     {
-                        identityProtectionRootToInitialize.RiskyUsers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            identityProtectionRootToInitialize.RiskyUsers.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

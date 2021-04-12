@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationMultipleToInitialize.ResourceNamespaces.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("resourceNamespaces@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("resourceNamespaces@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationMultipleToInitialize.ResourceNamespaces.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationMultipleToInitialize.ResourceNamespaces.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationMultipleToInitialize.RoleAssignments.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationMultipleToInitialize.RoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationMultipleToInitialize.RoleAssignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     rbacApplicationMultipleToInitialize.RoleDefinitions.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out var nextPageLink))
                     {
-                        rbacApplicationMultipleToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            rbacApplicationMultipleToInitialize.RoleDefinitions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

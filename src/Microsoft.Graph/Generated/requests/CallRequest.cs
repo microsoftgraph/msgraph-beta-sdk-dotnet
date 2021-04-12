@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     callToInitialize.AudioRoutingGroups.AdditionalData = callToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    callToInitialize.AdditionalData.TryGetValue("audioRoutingGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(callToInitialize.AdditionalData.TryGetValue("audioRoutingGroups@odata.nextLink", out var nextPageLink))
                     {
-                        callToInitialize.AudioRoutingGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            callToInitialize.AudioRoutingGroups.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     callToInitialize.Operations.AdditionalData = callToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    callToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(callToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
                     {
-                        callToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            callToInitialize.Operations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     callToInitialize.Participants.AdditionalData = callToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    callToInitialize.AdditionalData.TryGetValue("participants@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(callToInitialize.AdditionalData.TryGetValue("participants@odata.nextLink", out var nextPageLink))
                     {
-                        callToInitialize.Participants.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            callToInitialize.Participants.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

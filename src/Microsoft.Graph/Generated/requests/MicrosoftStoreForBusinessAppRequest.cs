@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     microsoftStoreForBusinessAppToInitialize.ContainedApps.AdditionalData = microsoftStoreForBusinessAppToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    microsoftStoreForBusinessAppToInitialize.AdditionalData.TryGetValue("containedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(microsoftStoreForBusinessAppToInitialize.AdditionalData.TryGetValue("containedApps@odata.nextLink", out var nextPageLink))
                     {
-                        microsoftStoreForBusinessAppToInitialize.ContainedApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            microsoftStoreForBusinessAppToInitialize.ContainedApps.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

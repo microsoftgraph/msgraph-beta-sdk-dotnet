@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     windowsProtectionStateToInitialize.DetectedMalwareState.AdditionalData = windowsProtectionStateToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsProtectionStateToInitialize.AdditionalData.TryGetValue("detectedMalwareState@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsProtectionStateToInitialize.AdditionalData.TryGetValue("detectedMalwareState@odata.nextLink", out var nextPageLink))
                     {
-                        windowsProtectionStateToInitialize.DetectedMalwareState.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsProtectionStateToInitialize.DetectedMalwareState.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     bitlockerToInitialize.RecoveryKeys.AdditionalData = bitlockerToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    bitlockerToInitialize.AdditionalData.TryGetValue("recoveryKeys@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(bitlockerToInitialize.AdditionalData.TryGetValue("recoveryKeys@odata.nextLink", out var nextPageLink))
                     {
-                        bitlockerToInitialize.RecoveryKeys.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            bitlockerToInitialize.RecoveryKeys.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

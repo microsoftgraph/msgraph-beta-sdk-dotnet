@@ -251,15 +251,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     legalHoldToInitialize.SiteSources.AdditionalData = legalHoldToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    legalHoldToInitialize.AdditionalData.TryGetValue("siteSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(legalHoldToInitialize.AdditionalData.TryGetValue("siteSources@odata.nextLink", out var nextPageLink))
                     {
-                        legalHoldToInitialize.SiteSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            legalHoldToInitialize.SiteSources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     legalHoldToInitialize.UnifiedGroupSources.AdditionalData = legalHoldToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    legalHoldToInitialize.AdditionalData.TryGetValue("unifiedGroupSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(legalHoldToInitialize.AdditionalData.TryGetValue("unifiedGroupSources@odata.nextLink", out var nextPageLink))
                     {
-                        legalHoldToInitialize.UnifiedGroupSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            legalHoldToInitialize.UnifiedGroupSources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     legalHoldToInitialize.UserSources.AdditionalData = legalHoldToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    legalHoldToInitialize.AdditionalData.TryGetValue("userSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(legalHoldToInitialize.AdditionalData.TryGetValue("userSources@odata.nextLink", out var nextPageLink))
                     {
-                        legalHoldToInitialize.UserSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            legalHoldToInitialize.UserSources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

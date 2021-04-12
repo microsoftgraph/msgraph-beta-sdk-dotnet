@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     identityContainerToInitialize.ApiConnectors.AdditionalData = identityContainerToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    identityContainerToInitialize.AdditionalData.TryGetValue("apiConnectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(identityContainerToInitialize.AdditionalData.TryGetValue("apiConnectors@odata.nextLink", out var nextPageLink))
                     {
-                        identityContainerToInitialize.ApiConnectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            identityContainerToInitialize.ApiConnectors.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     identityContainerToInitialize.B2cUserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    identityContainerToInitialize.AdditionalData.TryGetValue("b2cUserFlows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(identityContainerToInitialize.AdditionalData.TryGetValue("b2cUserFlows@odata.nextLink", out var nextPageLink))
                     {
-                        identityContainerToInitialize.B2cUserFlows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            identityContainerToInitialize.B2cUserFlows.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     identityContainerToInitialize.B2xUserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    identityContainerToInitialize.AdditionalData.TryGetValue("b2xUserFlows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(identityContainerToInitialize.AdditionalData.TryGetValue("b2xUserFlows@odata.nextLink", out var nextPageLink))
                     {
-                        identityContainerToInitialize.B2xUserFlows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            identityContainerToInitialize.B2xUserFlows.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     identityContainerToInitialize.UserFlowAttributes.AdditionalData = identityContainerToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    identityContainerToInitialize.AdditionalData.TryGetValue("userFlowAttributes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(identityContainerToInitialize.AdditionalData.TryGetValue("userFlowAttributes@odata.nextLink", out var nextPageLink))
                     {
-                        identityContainerToInitialize.UserFlowAttributes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            identityContainerToInitialize.UserFlowAttributes.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     identityContainerToInitialize.UserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    identityContainerToInitialize.AdditionalData.TryGetValue("userFlows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(identityContainerToInitialize.AdditionalData.TryGetValue("userFlows@odata.nextLink", out var nextPageLink))
                     {
-                        identityContainerToInitialize.UserFlows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            identityContainerToInitialize.UserFlows.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

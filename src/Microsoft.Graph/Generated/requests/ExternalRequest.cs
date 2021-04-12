@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     externalToInitialize.Connections.AdditionalData = externalToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    externalToInitialize.AdditionalData.TryGetValue("connections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(externalToInitialize.AdditionalData.TryGetValue("connections@odata.nextLink", out var nextPageLink))
                     {
-                        externalToInitialize.Connections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            externalToInitialize.Connections.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     commsApplicationToInitialize.Calls.AdditionalData = commsApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    commsApplicationToInitialize.AdditionalData.TryGetValue("calls@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(commsApplicationToInitialize.AdditionalData.TryGetValue("calls@odata.nextLink", out var nextPageLink))
                     {
-                        commsApplicationToInitialize.Calls.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            commsApplicationToInitialize.Calls.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     commsApplicationToInitialize.OnlineMeetings.AdditionalData = commsApplicationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    commsApplicationToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(commsApplicationToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out var nextPageLink))
                     {
-                        commsApplicationToInitialize.OnlineMeetings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            commsApplicationToInitialize.OnlineMeetings.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

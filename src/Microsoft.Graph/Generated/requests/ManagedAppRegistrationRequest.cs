@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     managedAppRegistrationToInitialize.AppliedPolicies.AdditionalData = managedAppRegistrationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    managedAppRegistrationToInitialize.AdditionalData.TryGetValue("appliedPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(managedAppRegistrationToInitialize.AdditionalData.TryGetValue("appliedPolicies@odata.nextLink", out var nextPageLink))
                     {
-                        managedAppRegistrationToInitialize.AppliedPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            managedAppRegistrationToInitialize.AppliedPolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     managedAppRegistrationToInitialize.IntendedPolicies.AdditionalData = managedAppRegistrationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    managedAppRegistrationToInitialize.AdditionalData.TryGetValue("intendedPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(managedAppRegistrationToInitialize.AdditionalData.TryGetValue("intendedPolicies@odata.nextLink", out var nextPageLink))
                     {
-                        managedAppRegistrationToInitialize.IntendedPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            managedAppRegistrationToInitialize.IntendedPolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     managedAppRegistrationToInitialize.Operations.AdditionalData = managedAppRegistrationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    managedAppRegistrationToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(managedAppRegistrationToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
                     {
-                        managedAppRegistrationToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            managedAppRegistrationToInitialize.Operations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

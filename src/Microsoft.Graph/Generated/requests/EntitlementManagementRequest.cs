@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.AccessPackageAssignmentApprovals.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentApprovals@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentApprovals@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.AccessPackageAssignmentApprovals.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.AccessPackageAssignmentApprovals.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.AccessPackageAssignmentPolicies.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentPolicies@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.AccessPackageAssignmentPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.AccessPackageAssignmentPolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.AccessPackageAssignmentRequests.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentRequests@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentResourceRoles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentResourceRoles@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.AccessPackageAssignments.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignments@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.AccessPackageAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.AccessPackageAssignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.AccessPackageCatalogs.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageCatalogs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageCatalogs@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.AccessPackageCatalogs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.AccessPackageCatalogs.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -347,15 +359,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.AccessPackageResourceEnvironments.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceEnvironments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceEnvironments@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.AccessPackageResourceEnvironments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.AccessPackageResourceEnvironments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -363,15 +377,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.AccessPackageResourceRequests.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceRequests@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.AccessPackageResourceRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.AccessPackageResourceRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -379,15 +395,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.AccessPackageResourceRoleScopes.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoleScopes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoleScopes@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.AccessPackageResourceRoleScopes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.AccessPackageResourceRoleScopes.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -395,15 +413,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.AccessPackageResources.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResources@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.AccessPackageResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.AccessPackageResources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -411,15 +431,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.AccessPackages.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackages@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.AccessPackages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.AccessPackages.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -427,15 +449,17 @@ namespace Microsoft.Graph
                 {
                     entitlementManagementToInitialize.ConnectedOrganizations.AdditionalData = entitlementManagementToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("connectedOrganizations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("connectedOrganizations@odata.nextLink", out var nextPageLink))
                     {
-                        entitlementManagementToInitialize.ConnectedOrganizations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            entitlementManagementToInitialize.ConnectedOrganizations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

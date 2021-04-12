@@ -251,15 +251,17 @@ namespace Microsoft.Graph.Ediscovery
                 {
                     tagToInitialize.ChildTags.AdditionalData = tagToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    tagToInitialize.AdditionalData.TryGetValue("childTags@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(tagToInitialize.AdditionalData.TryGetValue("childTags@odata.nextLink", out var nextPageLink))
                     {
-                        tagToInitialize.ChildTags.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            tagToInitialize.ChildTags.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

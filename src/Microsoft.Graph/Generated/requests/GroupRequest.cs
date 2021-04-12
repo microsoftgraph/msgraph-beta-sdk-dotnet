@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.AppRoleAssignments.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("appRoleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("appRoleAssignments@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.AppRoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.AppRoleAssignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.Endpoints.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("endpoints@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("endpoints@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.Endpoints.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.Endpoints.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.MemberOf.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.MemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.MemberOf.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.Members.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.Members.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.MembersWithLicenseErrors.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("membersWithLicenseErrors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("membersWithLicenseErrors@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.MembersWithLicenseErrors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.MembersWithLicenseErrors.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.Owners.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.Owners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.Owners.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -347,15 +359,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.PermissionGrants.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("permissionGrants@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("permissionGrants@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.PermissionGrants.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.PermissionGrants.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -363,15 +377,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.Settings.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.Settings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.Settings.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -379,15 +395,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.TransitiveMemberOf.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -395,15 +413,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.TransitiveMembers.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("transitiveMembers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("transitiveMembers@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.TransitiveMembers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.TransitiveMembers.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -411,15 +431,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.AcceptedSenders.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("acceptedSenders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("acceptedSenders@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.AcceptedSenders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.AcceptedSenders.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -427,15 +449,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.CalendarView.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.CalendarView.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.CalendarView.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -443,15 +467,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.Conversations.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("conversations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("conversations@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.Conversations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.Conversations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -459,15 +485,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.Events.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("events@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("events@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.Events.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.Events.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -475,15 +503,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.RejectedSenders.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("rejectedSenders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("rejectedSenders@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.RejectedSenders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.RejectedSenders.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -491,15 +521,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.Threads.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("threads@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("threads@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.Threads.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.Threads.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -507,15 +539,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.Drives.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("drives@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("drives@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.Drives.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.Drives.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -523,15 +557,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.Sites.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("sites@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("sites@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.Sites.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.Sites.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -539,15 +575,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.Extensions.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.Extensions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -555,15 +593,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.GroupLifecyclePolicies.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("groupLifecyclePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("groupLifecyclePolicies@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.GroupLifecyclePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.GroupLifecyclePolicies.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -571,15 +611,17 @@ namespace Microsoft.Graph
                 {
                     groupToInitialize.Photos.AdditionalData = groupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("photos@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupToInitialize.AdditionalData.TryGetValue("photos@odata.nextLink", out var nextPageLink))
                     {
-                        groupToInitialize.Photos.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupToInitialize.Photos.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

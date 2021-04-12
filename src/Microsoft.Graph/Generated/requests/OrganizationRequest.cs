@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     organizationToInitialize.CertificateBasedAuthConfiguration.AdditionalData = organizationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    organizationToInitialize.AdditionalData.TryGetValue("certificateBasedAuthConfiguration@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(organizationToInitialize.AdditionalData.TryGetValue("certificateBasedAuthConfiguration@odata.nextLink", out var nextPageLink))
                     {
-                        organizationToInitialize.CertificateBasedAuthConfiguration.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            organizationToInitialize.CertificateBasedAuthConfiguration.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     organizationToInitialize.Extensions.AdditionalData = organizationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    organizationToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(organizationToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out var nextPageLink))
                     {
-                        organizationToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            organizationToInitialize.Extensions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

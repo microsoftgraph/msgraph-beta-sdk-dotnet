@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     b2cIdentityUserFlowToInitialize.IdentityProviders.AdditionalData = b2cIdentityUserFlowToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    b2cIdentityUserFlowToInitialize.AdditionalData.TryGetValue("identityProviders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(b2cIdentityUserFlowToInitialize.AdditionalData.TryGetValue("identityProviders@odata.nextLink", out var nextPageLink))
                     {
-                        b2cIdentityUserFlowToInitialize.IdentityProviders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            b2cIdentityUserFlowToInitialize.IdentityProviders.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     b2cIdentityUserFlowToInitialize.Languages.AdditionalData = b2cIdentityUserFlowToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    b2cIdentityUserFlowToInitialize.AdditionalData.TryGetValue("languages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(b2cIdentityUserFlowToInitialize.AdditionalData.TryGetValue("languages@odata.nextLink", out var nextPageLink))
                     {
-                        b2cIdentityUserFlowToInitialize.Languages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            b2cIdentityUserFlowToInitialize.Languages.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     b2cIdentityUserFlowToInitialize.UserAttributeAssignments.AdditionalData = b2cIdentityUserFlowToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    b2cIdentityUserFlowToInitialize.AdditionalData.TryGetValue("userAttributeAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(b2cIdentityUserFlowToInitialize.AdditionalData.TryGetValue("userAttributeAssignments@odata.nextLink", out var nextPageLink))
                     {
-                        b2cIdentityUserFlowToInitialize.UserAttributeAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            b2cIdentityUserFlowToInitialize.UserAttributeAssignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

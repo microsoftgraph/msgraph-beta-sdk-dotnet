@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     groupPolicyConfigurationToInitialize.Assignments.AdditionalData = groupPolicyConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupPolicyConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupPolicyConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        groupPolicyConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupPolicyConfigurationToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     groupPolicyConfigurationToInitialize.DefinitionValues.AdditionalData = groupPolicyConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    groupPolicyConfigurationToInitialize.AdditionalData.TryGetValue("definitionValues@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(groupPolicyConfigurationToInitialize.AdditionalData.TryGetValue("definitionValues@odata.nextLink", out var nextPageLink))
                     {
-                        groupPolicyConfigurationToInitialize.DefinitionValues.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            groupPolicyConfigurationToInitialize.DefinitionValues.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

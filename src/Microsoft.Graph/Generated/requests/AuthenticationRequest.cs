@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     authenticationToInitialize.EmailMethods.AdditionalData = authenticationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("emailMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(authenticationToInitialize.AdditionalData.TryGetValue("emailMethods@odata.nextLink", out var nextPageLink))
                     {
-                        authenticationToInitialize.EmailMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            authenticationToInitialize.EmailMethods.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     authenticationToInitialize.Fido2Methods.AdditionalData = authenticationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("fido2Methods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(authenticationToInitialize.AdditionalData.TryGetValue("fido2Methods@odata.nextLink", out var nextPageLink))
                     {
-                        authenticationToInitialize.Fido2Methods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            authenticationToInitialize.Fido2Methods.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     authenticationToInitialize.Methods.AdditionalData = authenticationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("methods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(authenticationToInitialize.AdditionalData.TryGetValue("methods@odata.nextLink", out var nextPageLink))
                     {
-                        authenticationToInitialize.Methods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            authenticationToInitialize.Methods.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     authenticationToInitialize.MicrosoftAuthenticatorMethods.AdditionalData = authenticationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("microsoftAuthenticatorMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(authenticationToInitialize.AdditionalData.TryGetValue("microsoftAuthenticatorMethods@odata.nextLink", out var nextPageLink))
                     {
-                        authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -315,15 +323,17 @@ namespace Microsoft.Graph
                 {
                     authenticationToInitialize.Operations.AdditionalData = authenticationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(authenticationToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
                     {
-                        authenticationToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            authenticationToInitialize.Operations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -331,15 +341,17 @@ namespace Microsoft.Graph
                 {
                     authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods.AdditionalData = authenticationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("passwordlessMicrosoftAuthenticatorMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(authenticationToInitialize.AdditionalData.TryGetValue("passwordlessMicrosoftAuthenticatorMethods@odata.nextLink", out var nextPageLink))
                     {
-                        authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -347,15 +359,17 @@ namespace Microsoft.Graph
                 {
                     authenticationToInitialize.PasswordMethods.AdditionalData = authenticationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("passwordMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(authenticationToInitialize.AdditionalData.TryGetValue("passwordMethods@odata.nextLink", out var nextPageLink))
                     {
-                        authenticationToInitialize.PasswordMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            authenticationToInitialize.PasswordMethods.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -363,15 +377,17 @@ namespace Microsoft.Graph
                 {
                     authenticationToInitialize.PhoneMethods.AdditionalData = authenticationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("phoneMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(authenticationToInitialize.AdditionalData.TryGetValue("phoneMethods@odata.nextLink", out var nextPageLink))
                     {
-                        authenticationToInitialize.PhoneMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            authenticationToInitialize.PhoneMethods.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -379,15 +395,17 @@ namespace Microsoft.Graph
                 {
                     authenticationToInitialize.TemporaryAccessPassMethods.AdditionalData = authenticationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("temporaryAccessPassMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(authenticationToInitialize.AdditionalData.TryGetValue("temporaryAccessPassMethods@odata.nextLink", out var nextPageLink))
                     {
-                        authenticationToInitialize.TemporaryAccessPassMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            authenticationToInitialize.TemporaryAccessPassMethods.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -395,15 +413,17 @@ namespace Microsoft.Graph
                 {
                     authenticationToInitialize.WindowsHelloForBusinessMethods.AdditionalData = authenticationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("windowsHelloForBusinessMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(authenticationToInitialize.AdditionalData.TryGetValue("windowsHelloForBusinessMethods@odata.nextLink", out var nextPageLink))
                     {
-                        authenticationToInitialize.WindowsHelloForBusinessMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            authenticationToInitialize.WindowsHelloForBusinessMethods.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

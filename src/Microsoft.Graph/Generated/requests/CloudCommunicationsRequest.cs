@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     cloudCommunicationsToInitialize.Calls.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("calls@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(cloudCommunicationsToInitialize.AdditionalData.TryGetValue("calls@odata.nextLink", out var nextPageLink))
                     {
-                        cloudCommunicationsToInitialize.Calls.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            cloudCommunicationsToInitialize.Calls.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     cloudCommunicationsToInitialize.CallRecords.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("callRecords@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(cloudCommunicationsToInitialize.AdditionalData.TryGetValue("callRecords@odata.nextLink", out var nextPageLink))
                     {
-                        cloudCommunicationsToInitialize.CallRecords.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            cloudCommunicationsToInitialize.CallRecords.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     cloudCommunicationsToInitialize.OnlineMeetings.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(cloudCommunicationsToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out var nextPageLink))
                     {
-                        cloudCommunicationsToInitialize.OnlineMeetings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            cloudCommunicationsToInitialize.OnlineMeetings.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     cloudCommunicationsToInitialize.Presences.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("presences@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(cloudCommunicationsToInitialize.AdditionalData.TryGetValue("presences@odata.nextLink", out var nextPageLink))
                     {
-                        cloudCommunicationsToInitialize.Presences.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            cloudCommunicationsToInitialize.Presences.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

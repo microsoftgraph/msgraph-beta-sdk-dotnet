@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.AdditionalData = windowsUpdateForBusinessConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsUpdateForBusinessConfigurationToInitialize.AdditionalData.TryGetValue("deviceUpdateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsUpdateForBusinessConfigurationToInitialize.AdditionalData.TryGetValue("deviceUpdateStates@odata.nextLink", out var nextPageLink))
                     {
-                        windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     userFlowLanguageConfigurationToInitialize.DefaultPages.AdditionalData = userFlowLanguageConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    userFlowLanguageConfigurationToInitialize.AdditionalData.TryGetValue("defaultPages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(userFlowLanguageConfigurationToInitialize.AdditionalData.TryGetValue("defaultPages@odata.nextLink", out var nextPageLink))
                     {
-                        userFlowLanguageConfigurationToInitialize.DefaultPages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            userFlowLanguageConfigurationToInitialize.DefaultPages.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     userFlowLanguageConfigurationToInitialize.OverridesPages.AdditionalData = userFlowLanguageConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    userFlowLanguageConfigurationToInitialize.AdditionalData.TryGetValue("overridesPages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(userFlowLanguageConfigurationToInitialize.AdditionalData.TryGetValue("overridesPages@odata.nextLink", out var nextPageLink))
                     {
-                        userFlowLanguageConfigurationToInitialize.OverridesPages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            userFlowLanguageConfigurationToInitialize.OverridesPages.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

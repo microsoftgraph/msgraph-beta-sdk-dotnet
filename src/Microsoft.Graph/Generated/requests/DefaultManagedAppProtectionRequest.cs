@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     defaultManagedAppProtectionToInitialize.Apps.AdditionalData = defaultManagedAppProtectionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    defaultManagedAppProtectionToInitialize.AdditionalData.TryGetValue("apps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(defaultManagedAppProtectionToInitialize.AdditionalData.TryGetValue("apps@odata.nextLink", out var nextPageLink))
                     {
-                        defaultManagedAppProtectionToInitialize.Apps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            defaultManagedAppProtectionToInitialize.Apps.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     deviceAndAppManagementRoleAssignmentToInitialize.RoleScopeTags.AdditionalData = deviceAndAppManagementRoleAssignmentToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceAndAppManagementRoleAssignmentToInitialize.AdditionalData.TryGetValue("roleScopeTags@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceAndAppManagementRoleAssignmentToInitialize.AdditionalData.TryGetValue("roleScopeTags@odata.nextLink", out var nextPageLink))
                     {
-                        deviceAndAppManagementRoleAssignmentToInitialize.RoleScopeTags.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceAndAppManagementRoleAssignmentToInitialize.RoleScopeTags.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

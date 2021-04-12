@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     deviceManagementTemplateSettingCategoryToInitialize.RecommendedSettings.AdditionalData = deviceManagementTemplateSettingCategoryToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceManagementTemplateSettingCategoryToInitialize.AdditionalData.TryGetValue("recommendedSettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceManagementTemplateSettingCategoryToInitialize.AdditionalData.TryGetValue("recommendedSettings@odata.nextLink", out var nextPageLink))
                     {
-                        deviceManagementTemplateSettingCategoryToInitialize.RecommendedSettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceManagementTemplateSettingCategoryToInitialize.RecommendedSettings.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

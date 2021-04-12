@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     printerShareToInitialize.AllowedGroups.AdditionalData = printerShareToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    printerShareToInitialize.AdditionalData.TryGetValue("allowedGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(printerShareToInitialize.AdditionalData.TryGetValue("allowedGroups@odata.nextLink", out var nextPageLink))
                     {
-                        printerShareToInitialize.AllowedGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            printerShareToInitialize.AllowedGroups.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     printerShareToInitialize.AllowedUsers.AdditionalData = printerShareToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    printerShareToInitialize.AdditionalData.TryGetValue("allowedUsers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(printerShareToInitialize.AdditionalData.TryGetValue("allowedUsers@odata.nextLink", out var nextPageLink))
                     {
-                        printerShareToInitialize.AllowedUsers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            printerShareToInitialize.AllowedUsers.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

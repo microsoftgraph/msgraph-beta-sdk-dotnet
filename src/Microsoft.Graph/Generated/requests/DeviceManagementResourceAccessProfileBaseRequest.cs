@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     deviceManagementResourceAccessProfileBaseToInitialize.Assignments.AdditionalData = deviceManagementResourceAccessProfileBaseToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceManagementResourceAccessProfileBaseToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceManagementResourceAccessProfileBaseToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        deviceManagementResourceAccessProfileBaseToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceManagementResourceAccessProfileBaseToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

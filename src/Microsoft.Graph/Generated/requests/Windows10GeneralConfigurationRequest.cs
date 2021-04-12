@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     windows10GeneralConfigurationToInitialize.PrivacyAccessControls.AdditionalData = windows10GeneralConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windows10GeneralConfigurationToInitialize.AdditionalData.TryGetValue("privacyAccessControls@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windows10GeneralConfigurationToInitialize.AdditionalData.TryGetValue("privacyAccessControls@odata.nextLink", out var nextPageLink))
                     {
-                        windows10GeneralConfigurationToInitialize.PrivacyAccessControls.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windows10GeneralConfigurationToInitialize.PrivacyAccessControls.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

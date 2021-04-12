@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     onPremisesAgentGroupToInitialize.Agents.AdditionalData = onPremisesAgentGroupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    onPremisesAgentGroupToInitialize.AdditionalData.TryGetValue("agents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(onPremisesAgentGroupToInitialize.AdditionalData.TryGetValue("agents@odata.nextLink", out var nextPageLink))
                     {
-                        onPremisesAgentGroupToInitialize.Agents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            onPremisesAgentGroupToInitialize.Agents.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     onPremisesAgentGroupToInitialize.PublishedResources.AdditionalData = onPremisesAgentGroupToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    onPremisesAgentGroupToInitialize.AdditionalData.TryGetValue("publishedResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(onPremisesAgentGroupToInitialize.AdditionalData.TryGetValue("publishedResources@odata.nextLink", out var nextPageLink))
                     {
-                        onPremisesAgentGroupToInitialize.PublishedResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            onPremisesAgentGroupToInitialize.PublishedResources.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

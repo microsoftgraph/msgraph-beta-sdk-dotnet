@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     deviceManagementAutopilotEventToInitialize.PolicyStatusDetails.AdditionalData = deviceManagementAutopilotEventToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceManagementAutopilotEventToInitialize.AdditionalData.TryGetValue("policyStatusDetails@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceManagementAutopilotEventToInitialize.AdditionalData.TryGetValue("policyStatusDetails@odata.nextLink", out var nextPageLink))
                     {
-                        deviceManagementAutopilotEventToInitialize.PolicyStatusDetails.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceManagementAutopilotEventToInitialize.PolicyStatusDetails.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

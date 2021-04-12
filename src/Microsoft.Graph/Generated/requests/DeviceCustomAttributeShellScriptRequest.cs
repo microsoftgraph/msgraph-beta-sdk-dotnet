@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     deviceCustomAttributeShellScriptToInitialize.Assignments.AdditionalData = deviceCustomAttributeShellScriptToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        deviceCustomAttributeShellScriptToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceCustomAttributeShellScriptToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     deviceCustomAttributeShellScriptToInitialize.DeviceRunStates.AdditionalData = deviceCustomAttributeShellScriptToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("deviceRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("deviceRunStates@odata.nextLink", out var nextPageLink))
                     {
-                        deviceCustomAttributeShellScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceCustomAttributeShellScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     deviceCustomAttributeShellScriptToInitialize.GroupAssignments.AdditionalData = deviceCustomAttributeShellScriptToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out var nextPageLink))
                     {
-                        deviceCustomAttributeShellScriptToInitialize.GroupAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceCustomAttributeShellScriptToInitialize.GroupAssignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     deviceCustomAttributeShellScriptToInitialize.UserRunStates.AdditionalData = deviceCustomAttributeShellScriptToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("userRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("userRunStates@odata.nextLink", out var nextPageLink))
                     {
-                        deviceCustomAttributeShellScriptToInitialize.UserRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            deviceCustomAttributeShellScriptToInitialize.UserRunStates.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

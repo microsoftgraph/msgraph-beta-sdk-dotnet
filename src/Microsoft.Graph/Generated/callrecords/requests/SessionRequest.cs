@@ -251,15 +251,17 @@ namespace Microsoft.Graph.CallRecords
                 {
                     sessionToInitialize.Segments.AdditionalData = sessionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    sessionToInitialize.AdditionalData.TryGetValue("segments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(sessionToInitialize.AdditionalData.TryGetValue("segments@odata.nextLink", out var nextPageLink))
                     {
-                        sessionToInitialize.Segments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            sessionToInitialize.Segments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

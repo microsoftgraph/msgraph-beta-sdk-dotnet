@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     microsoftTunnelSiteToInitialize.MicrosoftTunnelServers.AdditionalData = microsoftTunnelSiteToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    microsoftTunnelSiteToInitialize.AdditionalData.TryGetValue("microsoftTunnelServers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(microsoftTunnelSiteToInitialize.AdditionalData.TryGetValue("microsoftTunnelServers@odata.nextLink", out var nextPageLink))
                     {
-                        microsoftTunnelSiteToInitialize.MicrosoftTunnelServers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            microsoftTunnelSiteToInitialize.MicrosoftTunnelServers.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

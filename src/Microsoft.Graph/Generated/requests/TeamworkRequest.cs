@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     teamworkToInitialize.WorkforceIntegrations.AdditionalData = teamworkToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    teamworkToInitialize.AdditionalData.TryGetValue("workforceIntegrations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(teamworkToInitialize.AdditionalData.TryGetValue("workforceIntegrations@odata.nextLink", out var nextPageLink))
                     {
-                        teamworkToInitialize.WorkforceIntegrations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            teamworkToInitialize.WorkforceIntegrations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

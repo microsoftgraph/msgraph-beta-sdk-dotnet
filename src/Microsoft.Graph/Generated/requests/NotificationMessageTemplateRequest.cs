@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     notificationMessageTemplateToInitialize.LocalizedNotificationMessages.AdditionalData = notificationMessageTemplateToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    notificationMessageTemplateToInitialize.AdditionalData.TryGetValue("localizedNotificationMessages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(notificationMessageTemplateToInitialize.AdditionalData.TryGetValue("localizedNotificationMessages@odata.nextLink", out var nextPageLink))
                     {
-                        notificationMessageTemplateToInitialize.LocalizedNotificationMessages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            notificationMessageTemplateToInitialize.LocalizedNotificationMessages.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

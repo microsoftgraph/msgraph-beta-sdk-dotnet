@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     targetedManagedAppConfigurationToInitialize.Apps.AdditionalData = targetedManagedAppConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    targetedManagedAppConfigurationToInitialize.AdditionalData.TryGetValue("apps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(targetedManagedAppConfigurationToInitialize.AdditionalData.TryGetValue("apps@odata.nextLink", out var nextPageLink))
                     {
-                        targetedManagedAppConfigurationToInitialize.Apps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            targetedManagedAppConfigurationToInitialize.Apps.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     targetedManagedAppConfigurationToInitialize.Assignments.AdditionalData = targetedManagedAppConfigurationToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    targetedManagedAppConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(targetedManagedAppConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
                     {
-                        targetedManagedAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            targetedManagedAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     accessReviewSetToInitialize.Definitions.AdditionalData = accessReviewSetToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    accessReviewSetToInitialize.AdditionalData.TryGetValue("definitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(accessReviewSetToInitialize.AdditionalData.TryGetValue("definitions@odata.nextLink", out var nextPageLink))
                     {
-                        accessReviewSetToInitialize.Definitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            accessReviewSetToInitialize.Definitions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

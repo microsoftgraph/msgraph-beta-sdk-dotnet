@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     windowsUniversalAppXToInitialize.CommittedContainedApps.AdditionalData = windowsUniversalAppXToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    windowsUniversalAppXToInitialize.AdditionalData.TryGetValue("committedContainedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(windowsUniversalAppXToInitialize.AdditionalData.TryGetValue("committedContainedApps@odata.nextLink", out var nextPageLink))
                     {
-                        windowsUniversalAppXToInitialize.CommittedContainedApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            windowsUniversalAppXToInitialize.CommittedContainedApps.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     domainToInitialize.DomainNameReferences.AdditionalData = domainToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    domainToInitialize.AdditionalData.TryGetValue("domainNameReferences@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(domainToInitialize.AdditionalData.TryGetValue("domainNameReferences@odata.nextLink", out var nextPageLink))
                     {
-                        domainToInitialize.DomainNameReferences.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            domainToInitialize.DomainNameReferences.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -267,15 +269,17 @@ namespace Microsoft.Graph
                 {
                     domainToInitialize.ServiceConfigurationRecords.AdditionalData = domainToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    domainToInitialize.AdditionalData.TryGetValue("serviceConfigurationRecords@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(domainToInitialize.AdditionalData.TryGetValue("serviceConfigurationRecords@odata.nextLink", out var nextPageLink))
                     {
-                        domainToInitialize.ServiceConfigurationRecords.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            domainToInitialize.ServiceConfigurationRecords.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -283,15 +287,17 @@ namespace Microsoft.Graph
                 {
                     domainToInitialize.SharedEmailDomainInvitations.AdditionalData = domainToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    domainToInitialize.AdditionalData.TryGetValue("sharedEmailDomainInvitations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(domainToInitialize.AdditionalData.TryGetValue("sharedEmailDomainInvitations@odata.nextLink", out var nextPageLink))
                     {
-                        domainToInitialize.SharedEmailDomainInvitations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            domainToInitialize.SharedEmailDomainInvitations.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
@@ -299,15 +305,17 @@ namespace Microsoft.Graph
                 {
                     domainToInitialize.VerificationDnsRecords.AdditionalData = domainToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    domainToInitialize.AdditionalData.TryGetValue("verificationDnsRecords@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(domainToInitialize.AdditionalData.TryGetValue("verificationDnsRecords@odata.nextLink", out var nextPageLink))
                     {
-                        domainToInitialize.VerificationDnsRecords.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            domainToInitialize.VerificationDnsRecords.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
