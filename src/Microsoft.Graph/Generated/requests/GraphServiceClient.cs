@@ -64,9 +64,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="httpClient">The <see cref="HttpClient"/> to use for making requests to Microsoft Graph. Use the <see cref="GraphClientFactory"/>
         /// to get a pre-configured HttpClient that is optimized for use with the Microsoft Graph service API. </param>
+        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/beta".</param>
         public GraphServiceClient(
-            HttpClient httpClient)
-            : base("https://graph.microsoft.com/beta", httpClient)
+            HttpClient httpClient,
+            string baseUrl = "https://graph.microsoft.com/beta")
+            : base(baseUrl, httpClient)
         {
         }
     
