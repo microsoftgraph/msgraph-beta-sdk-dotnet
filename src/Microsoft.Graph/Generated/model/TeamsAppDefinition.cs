@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets allowed installation scopes.
+        /// A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedInstallationScopes", Required = Newtonsoft.Json.Required.Default)]
         public TeamsAppInstallationScopes? AllowedInstallationScopes { get; set; }
@@ -98,10 +99,22 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets bot.
-        /// The details of the bot specified in the Teams App manifest.
+        /// The details of the bot specified in the Teams app manifest.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bot", Required = Newtonsoft.Json.Required.Default)]
         public TeamworkBot Bot { get; set; }
+    
+        /// <summary>
+        /// Gets or sets color icon.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colorIcon", Required = Newtonsoft.Json.Required.Default)]
+        public TeamsAppIcon ColorIcon { get; set; }
+    
+        /// <summary>
+        /// Gets or sets outline icon.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlineIcon", Required = Newtonsoft.Json.Required.Default)]
+        public TeamsAppIcon OutlineIcon { get; set; }
     
     }
 }

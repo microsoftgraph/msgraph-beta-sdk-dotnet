@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Exact Match Data Store.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class ExactMatchDataStore : Entity
+    public partial class ExactMatchDataStore : ExactMatchDataStoreBase
     {
     
 		///<summary>
@@ -30,30 +30,6 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.exactMatchDataStore";
         }
 	
-        /// <summary>
-        /// Gets or sets columns.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "columns", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ExactDataMatchStoreColumn> Columns { get; set; }
-    
-        /// <summary>
-        /// Gets or sets data last updated date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataLastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? DataLastUpdatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
         /// <summary>
         /// Gets or sets sessions.
         /// </summary>

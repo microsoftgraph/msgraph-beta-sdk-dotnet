@@ -123,7 +123,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets message type.
-        /// The type of chat message. The possible values are: message.
+        /// The type of chat message. The possible value is: message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageType", Required = Newtonsoft.Json.Required.Default)]
         public ChatMessageType? MessageType { get; set; }
@@ -172,7 +172,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hosted contents.
-        /// Content in a message hosted by Microsoft Teams e.g. images, code snippets etc.
+        /// Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostedContents", Required = Newtonsoft.Json.Required.Default)]
         public IChatMessageHostedContentsCollectionPage HostedContents { get; set; }
