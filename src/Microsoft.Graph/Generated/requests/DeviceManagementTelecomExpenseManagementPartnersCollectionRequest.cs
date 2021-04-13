@@ -71,24 +71,7 @@ namespace Microsoft.Graph
             var response = await this.SendAsync<DeviceManagementTelecomExpenseManagementPartnersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    if(response.AdditionalData.TryGetValue("@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            response.Value.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.InitializeCollectionProperties(this.Client);
                 return response.Value;
             }
 

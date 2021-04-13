@@ -43,24 +43,7 @@ namespace Microsoft.Graph
             var response = await this.SendAsync<ReportRootGetOffice365ActiveUserCountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    response.Value.AdditionalData = response.AdditionalData;
-
-                    if(response.AdditionalData.TryGetValue("@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            response.Value.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
-                }
-
+                response.InitializeCollectionProperties(this.Client);
                 return response.Value;
             }
 
@@ -92,24 +75,7 @@ namespace Microsoft.Graph
             var response = await this.SendAsync<ReportRootGetOffice365ActiveUserCountsCollectionResponse>(office365activeusercounts, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    response.Value.AdditionalData = response.AdditionalData;
-
-                    if(response.AdditionalData.TryGetValue("@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            response.Value.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
-                }
-
+                response.InitializeCollectionProperties(this.Client);
                 return response.Value;
             }
 
@@ -141,24 +107,7 @@ namespace Microsoft.Graph
             var response = await this.SendAsync<ReportRootGetOffice365ActiveUserCountsCollectionResponse>(office365activeusercounts, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    response.Value.AdditionalData = response.AdditionalData;
-
-                    if(response.AdditionalData.TryGetValue("@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            response.Value.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
-                }
-
+                response.InitializeCollectionProperties(this.Client);
                 return response.Value;
             }
 
