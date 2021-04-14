@@ -71,7 +71,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var calendarsCollectionResponse = new UserCalendarsCollectionResponse
                 {
                     Value = calendarsCollectionPage,
-                    AdditionalData = new Dictionary<string, object> { { "@odata.nextLink", nextPageRequestUrlElement } },
+                    NextLink = nextPageRequestUrl
                 };
 
                 this.serializer.Setup(

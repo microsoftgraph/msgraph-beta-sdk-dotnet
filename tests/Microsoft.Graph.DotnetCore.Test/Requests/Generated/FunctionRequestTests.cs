@@ -162,7 +162,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var userReminderViewCollectionResponse = new UserReminderViewCollectionResponse
                 {
                     Value = userReminderViewCollectionPage,
-                    AdditionalData = new Dictionary<string, object> { { "@odata.nextLink", nextPageRequestUrlElement } },
+                    NextLink = nextPageRequestUrl
                 };
 
                 this.serializer.Setup(

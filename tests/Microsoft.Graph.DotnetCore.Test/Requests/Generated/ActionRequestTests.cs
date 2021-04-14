@@ -183,7 +183,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var checkMemberGroupsCollectionResponse = new DirectoryObjectCheckMemberGroupsCollectionResponse
                 {
                     Value = checkMemberGroupsCollectionPage,
-                    AdditionalData = new Dictionary<string, object> { { "@odata.nextLink", nextPageRequestUrlElement } },
+                    NextLink = nextPageRequestUrl
                 };
                 
                 this.serializer.Setup(
