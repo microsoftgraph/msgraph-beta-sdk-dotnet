@@ -41,9 +41,10 @@ namespace Microsoft.Graph
         {
             this.Method = HttpMethods.POST;
             var response = await this.SendAsync<EducationSynchronizationProfileStartCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                response.InitializeCollectionProperties(this.Client);
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 

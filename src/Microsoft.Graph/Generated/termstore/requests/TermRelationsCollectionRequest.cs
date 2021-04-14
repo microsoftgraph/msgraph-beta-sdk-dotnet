@@ -69,9 +69,10 @@ namespace Microsoft.Graph.TermStore
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<TermRelationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                response.InitializeCollectionProperties(this.Client);
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
