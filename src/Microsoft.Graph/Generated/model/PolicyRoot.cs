@@ -80,12 +80,6 @@ namespace Microsoft.Graph
         public IPolicyRootPermissionGrantPoliciesCollectionPage PermissionGrantPolicies { get; set; }
     
         /// <summary>
-        /// Gets or sets private link resource policies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privateLinkResourcePolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IPolicyRootPrivateLinkResourcePoliciesCollectionPage PrivateLinkResourcePolicies { get; set; }
-    
-        /// <summary>
         /// Gets or sets token issuance policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuancePolicies", Required = Newtonsoft.Json.Required.Default)]

@@ -314,22 +314,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (policyRootToInitialize.PrivateLinkResourcePolicies != null && policyRootToInitialize.PrivateLinkResourcePolicies.CurrentPage != null)
-                {
-                    policyRootToInitialize.PrivateLinkResourcePolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("privateLinkResourcePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.PrivateLinkResourcePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (policyRootToInitialize.TokenIssuancePolicies != null && policyRootToInitialize.TokenIssuancePolicies.CurrentPage != null)
                 {
                     policyRootToInitialize.TokenIssuancePolicies.AdditionalData = policyRootToInitialize.AdditionalData;

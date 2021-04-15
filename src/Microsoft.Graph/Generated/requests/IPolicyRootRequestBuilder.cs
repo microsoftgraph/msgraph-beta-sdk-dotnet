@@ -80,12 +80,6 @@ namespace Microsoft.Graph
         IPolicyRootPermissionGrantPoliciesCollectionRequestBuilder PermissionGrantPolicies { get; }
 
         /// <summary>
-        /// Gets the request builder for PrivateLinkResourcePolicies.
-        /// </summary>
-        /// <returns>The <see cref="IPolicyRootPrivateLinkResourcePoliciesCollectionRequestBuilder"/>.</returns>
-        IPolicyRootPrivateLinkResourcePoliciesCollectionRequestBuilder PrivateLinkResourcePolicies { get; }
-
-        /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootTokenIssuancePoliciesCollectionRequestBuilder"/>.</returns>

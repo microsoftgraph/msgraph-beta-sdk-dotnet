@@ -147,18 +147,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for PrivateLinkResourcePolicies.
-        /// </summary>
-        /// <returns>The <see cref="IPolicyRootPrivateLinkResourcePoliciesCollectionRequestBuilder"/>.</returns>
-        public IPolicyRootPrivateLinkResourcePoliciesCollectionRequestBuilder PrivateLinkResourcePolicies
-        {
-            get
-            {
-                return new PolicyRootPrivateLinkResourcePoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("privateLinkResourcePolicies"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootTokenIssuancePoliciesCollectionRequestBuilder"/>.</returns>

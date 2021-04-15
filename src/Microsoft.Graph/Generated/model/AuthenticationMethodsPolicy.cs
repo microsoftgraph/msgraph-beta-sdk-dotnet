@@ -61,6 +61,12 @@ namespace Microsoft.Graph
         public Int32? ReconfirmationInDays { get; set; }
     
         /// <summary>
+        /// Gets or sets registration enforcement.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registrationEnforcement", Required = Newtonsoft.Json.Required.Default)]
+        public RegistrationEnforcement RegistrationEnforcement { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication method configurations.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethodConfigurations", Required = Newtonsoft.Json.Required.Default)]
