@@ -244,61 +244,25 @@ namespace Microsoft.Graph.ExternalConnectors
         private void InitializeCollectionProperties(ExternalConnection externalConnectionToInitialize)
         {
 
-            if (externalConnectionToInitialize != null && externalConnectionToInitialize.AdditionalData != null)
+            if (externalConnectionToInitialize != null)
             {
-
                 if (externalConnectionToInitialize.Groups != null && externalConnectionToInitialize.Groups.CurrentPage != null)
                 {
+                    externalConnectionToInitialize.Groups.InitializeNextPageRequest(this.Client, externalConnectionToInitialize.GroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     externalConnectionToInitialize.Groups.AdditionalData = externalConnectionToInitialize.AdditionalData;
-
-                    if(externalConnectionToInitialize.AdditionalData.TryGetValue("groups@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            externalConnectionToInitialize.Groups.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (externalConnectionToInitialize.Items != null && externalConnectionToInitialize.Items.CurrentPage != null)
                 {
+                    externalConnectionToInitialize.Items.InitializeNextPageRequest(this.Client, externalConnectionToInitialize.ItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     externalConnectionToInitialize.Items.AdditionalData = externalConnectionToInitialize.AdditionalData;
-
-                    if(externalConnectionToInitialize.AdditionalData.TryGetValue("items@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            externalConnectionToInitialize.Items.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (externalConnectionToInitialize.Operations != null && externalConnectionToInitialize.Operations.CurrentPage != null)
                 {
+                    externalConnectionToInitialize.Operations.InitializeNextPageRequest(this.Client, externalConnectionToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     externalConnectionToInitialize.Operations.AdditionalData = externalConnectionToInitialize.AdditionalData;
-
-                    if(externalConnectionToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            externalConnectionToInitialize.Operations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

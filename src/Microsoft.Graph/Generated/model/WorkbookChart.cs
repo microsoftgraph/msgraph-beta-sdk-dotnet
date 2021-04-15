@@ -97,6 +97,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("series")]
         public IWorkbookChartSeriesCollectionPage Series { get; set; }
+
+        /// <summary>
+        /// Gets or sets seriesNextLink.
+        /// </summary>
+        [JsonPropertyName("series@odata.nextLink")]
+        public string SeriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets title.

@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("childFolders")]
         public IContactFolderChildFoldersCollectionPage ChildFolders { get; set; }
+
+        /// <summary>
+        /// Gets or sets childFoldersNextLink.
+        /// </summary>
+        [JsonPropertyName("childFolders@odata.nextLink")]
+        public string ChildFoldersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets contacts.
@@ -62,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("contacts")]
         public IContactFolderContactsCollectionPage Contacts { get; set; }
+
+        /// <summary>
+        /// Gets or sets contactsNextLink.
+        /// </summary>
+        [JsonPropertyName("contacts@odata.nextLink")]
+        public string ContactsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
@@ -69,6 +81,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("multiValueExtendedProperties")]
         public IContactFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets multiValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("multiValueExtendedProperties@odata.nextLink")]
+        public string MultiValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
@@ -76,6 +94,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("singleValueExtendedProperties")]
         public IContactFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets singleValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("singleValueExtendedProperties@odata.nextLink")]
+        public string SingleValueExtendedPropertiesNextLink { get; set; }
     
     }
 }

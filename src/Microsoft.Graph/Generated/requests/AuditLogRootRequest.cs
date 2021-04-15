@@ -244,97 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AuditLogRoot auditLogRootToInitialize)
         {
 
-            if (auditLogRootToInitialize != null && auditLogRootToInitialize.AdditionalData != null)
+            if (auditLogRootToInitialize != null)
             {
-
                 if (auditLogRootToInitialize.DirectoryAudits != null && auditLogRootToInitialize.DirectoryAudits.CurrentPage != null)
                 {
+                    auditLogRootToInitialize.DirectoryAudits.InitializeNextPageRequest(this.Client, auditLogRootToInitialize.DirectoryAuditsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     auditLogRootToInitialize.DirectoryAudits.AdditionalData = auditLogRootToInitialize.AdditionalData;
-
-                    if(auditLogRootToInitialize.AdditionalData.TryGetValue("directoryAudits@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            auditLogRootToInitialize.DirectoryAudits.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (auditLogRootToInitialize.DirectoryProvisioning != null && auditLogRootToInitialize.DirectoryProvisioning.CurrentPage != null)
                 {
+                    auditLogRootToInitialize.DirectoryProvisioning.InitializeNextPageRequest(this.Client, auditLogRootToInitialize.DirectoryProvisioningNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     auditLogRootToInitialize.DirectoryProvisioning.AdditionalData = auditLogRootToInitialize.AdditionalData;
-
-                    if(auditLogRootToInitialize.AdditionalData.TryGetValue("directoryProvisioning@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            auditLogRootToInitialize.DirectoryProvisioning.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (auditLogRootToInitialize.Provisioning != null && auditLogRootToInitialize.Provisioning.CurrentPage != null)
                 {
+                    auditLogRootToInitialize.Provisioning.InitializeNextPageRequest(this.Client, auditLogRootToInitialize.ProvisioningNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     auditLogRootToInitialize.Provisioning.AdditionalData = auditLogRootToInitialize.AdditionalData;
-
-                    if(auditLogRootToInitialize.AdditionalData.TryGetValue("provisioning@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            auditLogRootToInitialize.Provisioning.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (auditLogRootToInitialize.RestrictedSignIns != null && auditLogRootToInitialize.RestrictedSignIns.CurrentPage != null)
                 {
+                    auditLogRootToInitialize.RestrictedSignIns.InitializeNextPageRequest(this.Client, auditLogRootToInitialize.RestrictedSignInsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     auditLogRootToInitialize.RestrictedSignIns.AdditionalData = auditLogRootToInitialize.AdditionalData;
-
-                    if(auditLogRootToInitialize.AdditionalData.TryGetValue("restrictedSignIns@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            auditLogRootToInitialize.RestrictedSignIns.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (auditLogRootToInitialize.SignIns != null && auditLogRootToInitialize.SignIns.CurrentPage != null)
                 {
+                    auditLogRootToInitialize.SignIns.InitializeNextPageRequest(this.Client, auditLogRootToInitialize.SignInsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     auditLogRootToInitialize.SignIns.AdditionalData = auditLogRootToInitialize.AdditionalData;
-
-                    if(auditLogRootToInitialize.AdditionalData.TryGetValue("signIns@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            auditLogRootToInitialize.SignIns.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

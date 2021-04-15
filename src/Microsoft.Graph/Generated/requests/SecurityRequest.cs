@@ -244,223 +244,79 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Security securityToInitialize)
         {
 
-            if (securityToInitialize != null && securityToInitialize.AdditionalData != null)
+            if (securityToInitialize != null)
             {
-
                 if (securityToInitialize.Alerts != null && securityToInitialize.Alerts.CurrentPage != null)
                 {
+                    securityToInitialize.Alerts.InitializeNextPageRequest(this.Client, securityToInitialize.AlertsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.Alerts.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("alerts@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.Alerts.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.CloudAppSecurityProfiles != null && securityToInitialize.CloudAppSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.CloudAppSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.CloudAppSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.CloudAppSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("cloudAppSecurityProfiles@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.CloudAppSecurityProfiles.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.DomainSecurityProfiles != null && securityToInitialize.DomainSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.DomainSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.DomainSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.DomainSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("domainSecurityProfiles@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.DomainSecurityProfiles.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.FileSecurityProfiles != null && securityToInitialize.FileSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.FileSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.FileSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.FileSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("fileSecurityProfiles@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.FileSecurityProfiles.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.HostSecurityProfiles != null && securityToInitialize.HostSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.HostSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.HostSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.HostSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("hostSecurityProfiles@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.HostSecurityProfiles.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.IpSecurityProfiles != null && securityToInitialize.IpSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.IpSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.IpSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.IpSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("ipSecurityProfiles@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.IpSecurityProfiles.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.ProviderTenantSettings != null && securityToInitialize.ProviderTenantSettings.CurrentPage != null)
                 {
+                    securityToInitialize.ProviderTenantSettings.InitializeNextPageRequest(this.Client, securityToInitialize.ProviderTenantSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.ProviderTenantSettings.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("providerTenantSettings@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.ProviderTenantSettings.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.SecureScoreControlProfiles != null && securityToInitialize.SecureScoreControlProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.SecureScoreControlProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.SecureScoreControlProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.SecureScoreControlProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("secureScoreControlProfiles@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.SecureScoreControlProfiles.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.SecureScores != null && securityToInitialize.SecureScores.CurrentPage != null)
                 {
+                    securityToInitialize.SecureScores.InitializeNextPageRequest(this.Client, securityToInitialize.SecureScoresNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.SecureScores.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("secureScores@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.SecureScores.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.SecurityActions != null && securityToInitialize.SecurityActions.CurrentPage != null)
                 {
+                    securityToInitialize.SecurityActions.InitializeNextPageRequest(this.Client, securityToInitialize.SecurityActionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.SecurityActions.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("securityActions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.SecurityActions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.TiIndicators != null && securityToInitialize.TiIndicators.CurrentPage != null)
                 {
+                    securityToInitialize.TiIndicators.InitializeNextPageRequest(this.Client, securityToInitialize.TiIndicatorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.TiIndicators.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("tiIndicators@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.TiIndicators.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.UserSecurityProfiles != null && securityToInitialize.UserSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.UserSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.UserSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.UserSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("userSecurityProfiles@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.UserSecurityProfiles.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

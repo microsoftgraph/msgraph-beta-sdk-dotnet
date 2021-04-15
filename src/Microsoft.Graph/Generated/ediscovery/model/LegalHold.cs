@@ -104,12 +104,24 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         [JsonPropertyName("siteSources")]
         public ILegalHoldSiteSourcesCollectionPage SiteSources { get; set; }
+
+        /// <summary>
+        /// Gets or sets siteSourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("siteSources@odata.nextLink")]
+        public string SiteSourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets unified group sources.
         /// </summary>
         [JsonPropertyName("unifiedGroupSources")]
         public ILegalHoldUnifiedGroupSourcesCollectionPage UnifiedGroupSources { get; set; }
+
+        /// <summary>
+        /// Gets or sets unifiedGroupSourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("unifiedGroupSources@odata.nextLink")]
+        public string UnifiedGroupSourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user sources.
@@ -117,6 +129,12 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         [JsonPropertyName("userSources")]
         public ILegalHoldUserSourcesCollectionPage UserSources { get; set; }
+
+        /// <summary>
+        /// Gets or sets userSourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("userSources@odata.nextLink")]
+        public string UserSourcesNextLink { get; set; }
     
     }
 }

@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("categorySummaries")]
         public IMacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionPage CategorySummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets categorySummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("categorySummaries@odata.nextLink")]
+        public string CategorySummariesNextLink { get; set; }
     
     }
 }

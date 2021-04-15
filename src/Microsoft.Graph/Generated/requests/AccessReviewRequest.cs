@@ -244,79 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessReview accessReviewToInitialize)
         {
 
-            if (accessReviewToInitialize != null && accessReviewToInitialize.AdditionalData != null)
+            if (accessReviewToInitialize != null)
             {
-
                 if (accessReviewToInitialize.Decisions != null && accessReviewToInitialize.Decisions.CurrentPage != null)
                 {
+                    accessReviewToInitialize.Decisions.InitializeNextPageRequest(this.Client, accessReviewToInitialize.DecisionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.Decisions.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    if(accessReviewToInitialize.AdditionalData.TryGetValue("decisions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            accessReviewToInitialize.Decisions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (accessReviewToInitialize.Instances != null && accessReviewToInitialize.Instances.CurrentPage != null)
                 {
+                    accessReviewToInitialize.Instances.InitializeNextPageRequest(this.Client, accessReviewToInitialize.InstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.Instances.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    if(accessReviewToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            accessReviewToInitialize.Instances.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (accessReviewToInitialize.MyDecisions != null && accessReviewToInitialize.MyDecisions.CurrentPage != null)
                 {
+                    accessReviewToInitialize.MyDecisions.InitializeNextPageRequest(this.Client, accessReviewToInitialize.MyDecisionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.MyDecisions.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    if(accessReviewToInitialize.AdditionalData.TryGetValue("myDecisions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            accessReviewToInitialize.MyDecisions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (accessReviewToInitialize.Reviewers != null && accessReviewToInitialize.Reviewers.CurrentPage != null)
                 {
+                    accessReviewToInitialize.Reviewers.InitializeNextPageRequest(this.Client, accessReviewToInitialize.ReviewersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.Reviewers.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    if(accessReviewToInitialize.AdditionalData.TryGetValue("reviewers@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            accessReviewToInitialize.Reviewers.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

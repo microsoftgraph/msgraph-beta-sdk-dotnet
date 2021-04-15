@@ -77,6 +77,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("buckets")]
         public IPlannerPlanBucketsCollectionPage Buckets { get; set; }
+
+        /// <summary>
+        /// Gets or sets bucketsNextLink.
+        /// </summary>
+        [JsonPropertyName("buckets@odata.nextLink")]
+        public string BucketsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets details.
@@ -91,6 +97,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tasks")]
         public IPlannerPlanTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

@@ -110,6 +110,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentRequests")]
         public IAccessPackageAssignmentAccessPackageAssignmentRequestsCollectionPage AccessPackageAssignmentRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentRequests@odata.nextLink")]
+        public string AccessPackageAssignmentRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment resource roles.
@@ -117,6 +123,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentResourceRoles")]
         public IAccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionPage AccessPackageAssignmentResourceRoles { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentResourceRolesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentResourceRoles@odata.nextLink")]
+        public string AccessPackageAssignmentResourceRolesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets target.

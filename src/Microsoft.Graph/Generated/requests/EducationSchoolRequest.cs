@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EducationSchool educationSchoolToInitialize)
         {
 
-            if (educationSchoolToInitialize != null && educationSchoolToInitialize.AdditionalData != null)
+            if (educationSchoolToInitialize != null)
             {
-
                 if (educationSchoolToInitialize.Classes != null && educationSchoolToInitialize.Classes.CurrentPage != null)
                 {
+                    educationSchoolToInitialize.Classes.InitializeNextPageRequest(this.Client, educationSchoolToInitialize.ClassesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationSchoolToInitialize.Classes.AdditionalData = educationSchoolToInitialize.AdditionalData;
-
-                    if(educationSchoolToInitialize.AdditionalData.TryGetValue("classes@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            educationSchoolToInitialize.Classes.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (educationSchoolToInitialize.Users != null && educationSchoolToInitialize.Users.CurrentPage != null)
                 {
+                    educationSchoolToInitialize.Users.InitializeNextPageRequest(this.Client, educationSchoolToInitialize.UsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationSchoolToInitialize.Users.AdditionalData = educationSchoolToInitialize.AdditionalData;
-
-                    if(educationSchoolToInitialize.AdditionalData.TryGetValue("users@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            educationSchoolToInitialize.Users.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

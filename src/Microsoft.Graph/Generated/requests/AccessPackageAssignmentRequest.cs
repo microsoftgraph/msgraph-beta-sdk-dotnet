@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessPackageAssignment accessPackageAssignmentToInitialize)
         {
 
-            if (accessPackageAssignmentToInitialize != null && accessPackageAssignmentToInitialize.AdditionalData != null)
+            if (accessPackageAssignmentToInitialize != null)
             {
-
                 if (accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests != null && accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests.CurrentPage != null)
                 {
+                    accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(this.Client, accessPackageAssignmentToInitialize.AccessPackageAssignmentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests.AdditionalData = accessPackageAssignmentToInitialize.AdditionalData;
-
-                    if(accessPackageAssignmentToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentRequests@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles != null && accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles.CurrentPage != null)
                 {
+                    accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(this.Client, accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRolesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles.AdditionalData = accessPackageAssignmentToInitialize.AdditionalData;
-
-                    if(accessPackageAssignmentToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentResourceRoles@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

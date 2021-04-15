@@ -57,210 +57,420 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accounts")]
         public ICompanyAccountsCollectionPage Accounts { get; set; }
+
+        /// <summary>
+        /// Gets or sets accountsNextLink.
+        /// </summary>
+        [JsonPropertyName("accounts@odata.nextLink")]
+        public string AccountsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets aged accounts payable.
         /// </summary>
         [JsonPropertyName("agedAccountsPayable")]
         public ICompanyAgedAccountsPayableCollectionPage AgedAccountsPayable { get; set; }
+
+        /// <summary>
+        /// Gets or sets agedAccountsPayableNextLink.
+        /// </summary>
+        [JsonPropertyName("agedAccountsPayable@odata.nextLink")]
+        public string AgedAccountsPayableNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets aged accounts receivable.
         /// </summary>
         [JsonPropertyName("agedAccountsReceivable")]
         public ICompanyAgedAccountsReceivableCollectionPage AgedAccountsReceivable { get; set; }
+
+        /// <summary>
+        /// Gets or sets agedAccountsReceivableNextLink.
+        /// </summary>
+        [JsonPropertyName("agedAccountsReceivable@odata.nextLink")]
+        public string AgedAccountsReceivableNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets company information.
         /// </summary>
         [JsonPropertyName("companyInformation")]
         public ICompanyCompanyInformationCollectionPage CompanyInformation { get; set; }
+
+        /// <summary>
+        /// Gets or sets companyInformationNextLink.
+        /// </summary>
+        [JsonPropertyName("companyInformation@odata.nextLink")]
+        public string CompanyInformationNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets countries regions.
         /// </summary>
         [JsonPropertyName("countriesRegions")]
         public ICompanyCountriesRegionsCollectionPage CountriesRegions { get; set; }
+
+        /// <summary>
+        /// Gets or sets countriesRegionsNextLink.
+        /// </summary>
+        [JsonPropertyName("countriesRegions@odata.nextLink")]
+        public string CountriesRegionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets currencies.
         /// </summary>
         [JsonPropertyName("currencies")]
         public ICompanyCurrenciesCollectionPage Currencies { get; set; }
+
+        /// <summary>
+        /// Gets or sets currenciesNextLink.
+        /// </summary>
+        [JsonPropertyName("currencies@odata.nextLink")]
+        public string CurrenciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets customer payment journals.
         /// </summary>
         [JsonPropertyName("customerPaymentJournals")]
         public ICompanyCustomerPaymentJournalsCollectionPage CustomerPaymentJournals { get; set; }
+
+        /// <summary>
+        /// Gets or sets customerPaymentJournalsNextLink.
+        /// </summary>
+        [JsonPropertyName("customerPaymentJournals@odata.nextLink")]
+        public string CustomerPaymentJournalsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets customer payments.
         /// </summary>
         [JsonPropertyName("customerPayments")]
         public ICompanyCustomerPaymentsCollectionPage CustomerPayments { get; set; }
+
+        /// <summary>
+        /// Gets or sets customerPaymentsNextLink.
+        /// </summary>
+        [JsonPropertyName("customerPayments@odata.nextLink")]
+        public string CustomerPaymentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets customers.
         /// </summary>
         [JsonPropertyName("customers")]
         public ICompanyCustomersCollectionPage Customers { get; set; }
+
+        /// <summary>
+        /// Gets or sets customersNextLink.
+        /// </summary>
+        [JsonPropertyName("customers@odata.nextLink")]
+        public string CustomersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets dimensions.
         /// </summary>
         [JsonPropertyName("dimensions")]
         public ICompanyDimensionsCollectionPage Dimensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets dimensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("dimensions@odata.nextLink")]
+        public string DimensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets dimension values.
         /// </summary>
         [JsonPropertyName("dimensionValues")]
         public ICompanyDimensionValuesCollectionPage DimensionValues { get; set; }
+
+        /// <summary>
+        /// Gets or sets dimensionValuesNextLink.
+        /// </summary>
+        [JsonPropertyName("dimensionValues@odata.nextLink")]
+        public string DimensionValuesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets employees.
         /// </summary>
         [JsonPropertyName("employees")]
         public ICompanyEmployeesCollectionPage Employees { get; set; }
+
+        /// <summary>
+        /// Gets or sets employeesNextLink.
+        /// </summary>
+        [JsonPropertyName("employees@odata.nextLink")]
+        public string EmployeesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets general ledger entries.
         /// </summary>
         [JsonPropertyName("generalLedgerEntries")]
         public ICompanyGeneralLedgerEntriesCollectionPage GeneralLedgerEntries { get; set; }
+
+        /// <summary>
+        /// Gets or sets generalLedgerEntriesNextLink.
+        /// </summary>
+        [JsonPropertyName("generalLedgerEntries@odata.nextLink")]
+        public string GeneralLedgerEntriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets item categories.
         /// </summary>
         [JsonPropertyName("itemCategories")]
         public ICompanyItemCategoriesCollectionPage ItemCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("itemCategories@odata.nextLink")]
+        public string ItemCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets items.
         /// </summary>
         [JsonPropertyName("items")]
         public ICompanyItemsCollectionPage Items { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemsNextLink.
+        /// </summary>
+        [JsonPropertyName("items@odata.nextLink")]
+        public string ItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets journal lines.
         /// </summary>
         [JsonPropertyName("journalLines")]
         public ICompanyJournalLinesCollectionPage JournalLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets journalLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("journalLines@odata.nextLink")]
+        public string JournalLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets journals.
         /// </summary>
         [JsonPropertyName("journals")]
         public ICompanyJournalsCollectionPage Journals { get; set; }
+
+        /// <summary>
+        /// Gets or sets journalsNextLink.
+        /// </summary>
+        [JsonPropertyName("journals@odata.nextLink")]
+        public string JournalsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets payment methods.
         /// </summary>
         [JsonPropertyName("paymentMethods")]
         public ICompanyPaymentMethodsCollectionPage PaymentMethods { get; set; }
+
+        /// <summary>
+        /// Gets or sets paymentMethodsNextLink.
+        /// </summary>
+        [JsonPropertyName("paymentMethods@odata.nextLink")]
+        public string PaymentMethodsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets payment terms.
         /// </summary>
         [JsonPropertyName("paymentTerms")]
         public ICompanyPaymentTermsCollectionPage PaymentTerms { get; set; }
+
+        /// <summary>
+        /// Gets or sets paymentTermsNextLink.
+        /// </summary>
+        [JsonPropertyName("paymentTerms@odata.nextLink")]
+        public string PaymentTermsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets picture.
         /// </summary>
         [JsonPropertyName("picture")]
         public ICompanyPictureCollectionPage Picture { get; set; }
+
+        /// <summary>
+        /// Gets or sets pictureNextLink.
+        /// </summary>
+        [JsonPropertyName("picture@odata.nextLink")]
+        public string PictureNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets purchase invoice lines.
         /// </summary>
         [JsonPropertyName("purchaseInvoiceLines")]
         public ICompanyPurchaseInvoiceLinesCollectionPage PurchaseInvoiceLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets purchaseInvoiceLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("purchaseInvoiceLines@odata.nextLink")]
+        public string PurchaseInvoiceLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets purchase invoices.
         /// </summary>
         [JsonPropertyName("purchaseInvoices")]
         public ICompanyPurchaseInvoicesCollectionPage PurchaseInvoices { get; set; }
+
+        /// <summary>
+        /// Gets or sets purchaseInvoicesNextLink.
+        /// </summary>
+        [JsonPropertyName("purchaseInvoices@odata.nextLink")]
+        public string PurchaseInvoicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales credit memo lines.
         /// </summary>
         [JsonPropertyName("salesCreditMemoLines")]
         public ICompanySalesCreditMemoLinesCollectionPage SalesCreditMemoLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesCreditMemoLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesCreditMemoLines@odata.nextLink")]
+        public string SalesCreditMemoLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales credit memos.
         /// </summary>
         [JsonPropertyName("salesCreditMemos")]
         public ICompanySalesCreditMemosCollectionPage SalesCreditMemos { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesCreditMemosNextLink.
+        /// </summary>
+        [JsonPropertyName("salesCreditMemos@odata.nextLink")]
+        public string SalesCreditMemosNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales invoice lines.
         /// </summary>
         [JsonPropertyName("salesInvoiceLines")]
         public ICompanySalesInvoiceLinesCollectionPage SalesInvoiceLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesInvoiceLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesInvoiceLines@odata.nextLink")]
+        public string SalesInvoiceLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales invoices.
         /// </summary>
         [JsonPropertyName("salesInvoices")]
         public ICompanySalesInvoicesCollectionPage SalesInvoices { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesInvoicesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesInvoices@odata.nextLink")]
+        public string SalesInvoicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales order lines.
         /// </summary>
         [JsonPropertyName("salesOrderLines")]
         public ICompanySalesOrderLinesCollectionPage SalesOrderLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesOrderLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesOrderLines@odata.nextLink")]
+        public string SalesOrderLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales orders.
         /// </summary>
         [JsonPropertyName("salesOrders")]
         public ICompanySalesOrdersCollectionPage SalesOrders { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesOrdersNextLink.
+        /// </summary>
+        [JsonPropertyName("salesOrders@odata.nextLink")]
+        public string SalesOrdersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales quote lines.
         /// </summary>
         [JsonPropertyName("salesQuoteLines")]
         public ICompanySalesQuoteLinesCollectionPage SalesQuoteLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesQuoteLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesQuoteLines@odata.nextLink")]
+        public string SalesQuoteLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales quotes.
         /// </summary>
         [JsonPropertyName("salesQuotes")]
         public ICompanySalesQuotesCollectionPage SalesQuotes { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesQuotesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesQuotes@odata.nextLink")]
+        public string SalesQuotesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets shipment methods.
         /// </summary>
         [JsonPropertyName("shipmentMethods")]
         public ICompanyShipmentMethodsCollectionPage ShipmentMethods { get; set; }
+
+        /// <summary>
+        /// Gets or sets shipmentMethodsNextLink.
+        /// </summary>
+        [JsonPropertyName("shipmentMethods@odata.nextLink")]
+        public string ShipmentMethodsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tax areas.
         /// </summary>
         [JsonPropertyName("taxAreas")]
         public ICompanyTaxAreasCollectionPage TaxAreas { get; set; }
+
+        /// <summary>
+        /// Gets or sets taxAreasNextLink.
+        /// </summary>
+        [JsonPropertyName("taxAreas@odata.nextLink")]
+        public string TaxAreasNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tax groups.
         /// </summary>
         [JsonPropertyName("taxGroups")]
         public ICompanyTaxGroupsCollectionPage TaxGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets taxGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("taxGroups@odata.nextLink")]
+        public string TaxGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets units of measure.
         /// </summary>
         [JsonPropertyName("unitsOfMeasure")]
         public ICompanyUnitsOfMeasureCollectionPage UnitsOfMeasure { get; set; }
+
+        /// <summary>
+        /// Gets or sets unitsOfMeasureNextLink.
+        /// </summary>
+        [JsonPropertyName("unitsOfMeasure@odata.nextLink")]
+        public string UnitsOfMeasureNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets vendors.
         /// </summary>
         [JsonPropertyName("vendors")]
         public ICompanyVendorsCollectionPage Vendors { get; set; }
+
+        /// <summary>
+        /// Gets or sets vendorsNextLink.
+        /// </summary>
+        [JsonPropertyName("vendors@odata.nextLink")]
+        public string VendorsNextLink { get; set; }
     
     }
 }

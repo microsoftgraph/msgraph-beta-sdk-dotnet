@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OfficeGraphInsights officeGraphInsightsToInitialize)
         {
 
-            if (officeGraphInsightsToInitialize != null && officeGraphInsightsToInitialize.AdditionalData != null)
+            if (officeGraphInsightsToInitialize != null)
             {
-
                 if (officeGraphInsightsToInitialize.Shared != null && officeGraphInsightsToInitialize.Shared.CurrentPage != null)
                 {
+                    officeGraphInsightsToInitialize.Shared.InitializeNextPageRequest(this.Client, officeGraphInsightsToInitialize.SharedNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     officeGraphInsightsToInitialize.Shared.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
-
-                    if(officeGraphInsightsToInitialize.AdditionalData.TryGetValue("shared@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            officeGraphInsightsToInitialize.Shared.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (officeGraphInsightsToInitialize.Trending != null && officeGraphInsightsToInitialize.Trending.CurrentPage != null)
                 {
+                    officeGraphInsightsToInitialize.Trending.InitializeNextPageRequest(this.Client, officeGraphInsightsToInitialize.TrendingNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     officeGraphInsightsToInitialize.Trending.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
-
-                    if(officeGraphInsightsToInitialize.AdditionalData.TryGetValue("trending@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            officeGraphInsightsToInitialize.Trending.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (officeGraphInsightsToInitialize.Used != null && officeGraphInsightsToInitialize.Used.CurrentPage != null)
                 {
+                    officeGraphInsightsToInitialize.Used.InitializeNextPageRequest(this.Client, officeGraphInsightsToInitialize.UsedNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     officeGraphInsightsToInitialize.Used.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
-
-                    if(officeGraphInsightsToInitialize.AdditionalData.TryGetValue("used@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            officeGraphInsightsToInitialize.Used.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,79 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IosLobAppProvisioningConfiguration iosLobAppProvisioningConfigurationToInitialize)
         {
 
-            if (iosLobAppProvisioningConfigurationToInitialize != null && iosLobAppProvisioningConfigurationToInitialize.AdditionalData != null)
+            if (iosLobAppProvisioningConfigurationToInitialize != null)
             {
-
                 if (iosLobAppProvisioningConfigurationToInitialize.Assignments != null && iosLobAppProvisioningConfigurationToInitialize.Assignments.CurrentPage != null)
                 {
+                    iosLobAppProvisioningConfigurationToInitialize.Assignments.InitializeNextPageRequest(this.Client, iosLobAppProvisioningConfigurationToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosLobAppProvisioningConfigurationToInitialize.Assignments.AdditionalData = iosLobAppProvisioningConfigurationToInitialize.AdditionalData;
-
-                    if(iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            iosLobAppProvisioningConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (iosLobAppProvisioningConfigurationToInitialize.DeviceStatuses != null && iosLobAppProvisioningConfigurationToInitialize.DeviceStatuses.CurrentPage != null)
                 {
+                    iosLobAppProvisioningConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, iosLobAppProvisioningConfigurationToInitialize.DeviceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosLobAppProvisioningConfigurationToInitialize.DeviceStatuses.AdditionalData = iosLobAppProvisioningConfigurationToInitialize.AdditionalData;
-
-                    if(iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            iosLobAppProvisioningConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (iosLobAppProvisioningConfigurationToInitialize.GroupAssignments != null && iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.CurrentPage != null)
                 {
+                    iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.InitializeNextPageRequest(this.Client, iosLobAppProvisioningConfigurationToInitialize.GroupAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.AdditionalData = iosLobAppProvisioningConfigurationToInitialize.AdditionalData;
-
-                    if(iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (iosLobAppProvisioningConfigurationToInitialize.UserStatuses != null && iosLobAppProvisioningConfigurationToInitialize.UserStatuses.CurrentPage != null)
                 {
+                    iosLobAppProvisioningConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(this.Client, iosLobAppProvisioningConfigurationToInitialize.UserStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosLobAppProvisioningConfigurationToInitialize.UserStatuses.AdditionalData = iosLobAppProvisioningConfigurationToInitialize.AdditionalData;
-
-                    if(iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            iosLobAppProvisioningConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

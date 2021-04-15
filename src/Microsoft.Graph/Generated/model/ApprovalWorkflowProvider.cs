@@ -39,18 +39,36 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("businessFlows")]
         public IApprovalWorkflowProviderBusinessFlowsCollectionPage BusinessFlows { get; set; }
+
+        /// <summary>
+        /// Gets or sets businessFlowsNextLink.
+        /// </summary>
+        [JsonPropertyName("businessFlows@odata.nextLink")]
+        public string BusinessFlowsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets business flows with requests awaiting my decision.
         /// </summary>
         [JsonPropertyName("businessFlowsWithRequestsAwaitingMyDecision")]
         public IApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionPage BusinessFlowsWithRequestsAwaitingMyDecision { get; set; }
+
+        /// <summary>
+        /// Gets or sets businessFlowsWithRequestsAwaitingMyDecisionNextLink.
+        /// </summary>
+        [JsonPropertyName("businessFlowsWithRequestsAwaitingMyDecision@odata.nextLink")]
+        public string BusinessFlowsWithRequestsAwaitingMyDecisionNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets policy templates.
         /// </summary>
         [JsonPropertyName("policyTemplates")]
         public IApprovalWorkflowProviderPolicyTemplatesCollectionPage PolicyTemplates { get; set; }
+
+        /// <summary>
+        /// Gets or sets policyTemplatesNextLink.
+        /// </summary>
+        [JsonPropertyName("policyTemplates@odata.nextLink")]
+        public string PolicyTemplatesNextLink { get; set; }
     
     }
 }

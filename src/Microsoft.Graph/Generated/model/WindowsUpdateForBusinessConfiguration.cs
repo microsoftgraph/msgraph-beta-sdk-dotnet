@@ -279,6 +279,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceUpdateStates")]
         public IWindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionPage DeviceUpdateStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceUpdateStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceUpdateStates@odata.nextLink")]
+        public string DeviceUpdateStatesNextLink { get; set; }
     
     }
 }

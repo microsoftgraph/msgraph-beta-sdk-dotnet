@@ -244,97 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PrivilegedAccess privilegedAccessToInitialize)
         {
 
-            if (privilegedAccessToInitialize != null && privilegedAccessToInitialize.AdditionalData != null)
+            if (privilegedAccessToInitialize != null)
             {
-
                 if (privilegedAccessToInitialize.Resources != null && privilegedAccessToInitialize.Resources.CurrentPage != null)
                 {
+                    privilegedAccessToInitialize.Resources.InitializeNextPageRequest(this.Client, privilegedAccessToInitialize.ResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     privilegedAccessToInitialize.Resources.AdditionalData = privilegedAccessToInitialize.AdditionalData;
-
-                    if(privilegedAccessToInitialize.AdditionalData.TryGetValue("resources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            privilegedAccessToInitialize.Resources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (privilegedAccessToInitialize.RoleAssignmentRequests != null && privilegedAccessToInitialize.RoleAssignmentRequests.CurrentPage != null)
                 {
+                    privilegedAccessToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(this.Client, privilegedAccessToInitialize.RoleAssignmentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     privilegedAccessToInitialize.RoleAssignmentRequests.AdditionalData = privilegedAccessToInitialize.AdditionalData;
-
-                    if(privilegedAccessToInitialize.AdditionalData.TryGetValue("roleAssignmentRequests@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            privilegedAccessToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (privilegedAccessToInitialize.RoleAssignments != null && privilegedAccessToInitialize.RoleAssignments.CurrentPage != null)
                 {
+                    privilegedAccessToInitialize.RoleAssignments.InitializeNextPageRequest(this.Client, privilegedAccessToInitialize.RoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     privilegedAccessToInitialize.RoleAssignments.AdditionalData = privilegedAccessToInitialize.AdditionalData;
-
-                    if(privilegedAccessToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            privilegedAccessToInitialize.RoleAssignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (privilegedAccessToInitialize.RoleDefinitions != null && privilegedAccessToInitialize.RoleDefinitions.CurrentPage != null)
                 {
+                    privilegedAccessToInitialize.RoleDefinitions.InitializeNextPageRequest(this.Client, privilegedAccessToInitialize.RoleDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     privilegedAccessToInitialize.RoleDefinitions.AdditionalData = privilegedAccessToInitialize.AdditionalData;
-
-                    if(privilegedAccessToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            privilegedAccessToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (privilegedAccessToInitialize.RoleSettings != null && privilegedAccessToInitialize.RoleSettings.CurrentPage != null)
                 {
+                    privilegedAccessToInitialize.RoleSettings.InitializeNextPageRequest(this.Client, privilegedAccessToInitialize.RoleSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     privilegedAccessToInitialize.RoleSettings.AdditionalData = privilegedAccessToInitialize.AdditionalData;
-
-                    if(privilegedAccessToInitialize.AdditionalData.TryGetValue("roleSettings@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            privilegedAccessToInitialize.RoleSettings.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

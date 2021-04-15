@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IConnectorMemberOfCollectionPage MemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets memberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("memberOf@odata.nextLink")]
+        public string MemberOfNextLink { get; set; }
     
     }
 }

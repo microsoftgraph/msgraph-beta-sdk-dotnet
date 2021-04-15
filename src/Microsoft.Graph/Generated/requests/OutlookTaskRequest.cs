@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OutlookTask outlookTaskToInitialize)
         {
 
-            if (outlookTaskToInitialize != null && outlookTaskToInitialize.AdditionalData != null)
+            if (outlookTaskToInitialize != null)
             {
-
                 if (outlookTaskToInitialize.Attachments != null && outlookTaskToInitialize.Attachments.CurrentPage != null)
                 {
+                    outlookTaskToInitialize.Attachments.InitializeNextPageRequest(this.Client, outlookTaskToInitialize.AttachmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookTaskToInitialize.Attachments.AdditionalData = outlookTaskToInitialize.AdditionalData;
-
-                    if(outlookTaskToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            outlookTaskToInitialize.Attachments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (outlookTaskToInitialize.MultiValueExtendedProperties != null && outlookTaskToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    outlookTaskToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, outlookTaskToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookTaskToInitialize.MultiValueExtendedProperties.AdditionalData = outlookTaskToInitialize.AdditionalData;
-
-                    if(outlookTaskToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            outlookTaskToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (outlookTaskToInitialize.SingleValueExtendedProperties != null && outlookTaskToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    outlookTaskToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, outlookTaskToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookTaskToInitialize.SingleValueExtendedProperties.AdditionalData = outlookTaskToInitialize.AdditionalData;
-
-                    if(outlookTaskToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            outlookTaskToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

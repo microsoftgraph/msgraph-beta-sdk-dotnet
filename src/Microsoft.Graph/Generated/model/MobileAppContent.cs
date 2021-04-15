@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("containedApps")]
         public IMobileAppContentContainedAppsCollectionPage ContainedApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets containedAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("containedApps@odata.nextLink")]
+        public string ContainedAppsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets files.
@@ -41,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("files")]
         public IMobileAppContentFilesCollectionPage Files { get; set; }
+
+        /// <summary>
+        /// Gets or sets filesNextLink.
+        /// </summary>
+        [JsonPropertyName("files@odata.nextLink")]
+        public string FilesNextLink { get; set; }
     
     }
 }

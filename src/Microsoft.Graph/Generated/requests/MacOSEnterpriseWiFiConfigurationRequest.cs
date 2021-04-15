@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MacOSEnterpriseWiFiConfiguration macOSEnterpriseWiFiConfigurationToInitialize)
         {
 
-            if (macOSEnterpriseWiFiConfigurationToInitialize != null && macOSEnterpriseWiFiConfigurationToInitialize.AdditionalData != null)
+            if (macOSEnterpriseWiFiConfigurationToInitialize != null)
             {
-
                 if (macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation != null && macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.CurrentPage != null)
                 {
+                    macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(this.Client, macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.AdditionalData = macOSEnterpriseWiFiConfigurationToInitialize.AdditionalData;
-
-                    if(macOSEnterpriseWiFiConfigurationToInitialize.AdditionalData.TryGetValue("rootCertificatesForServerValidation@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

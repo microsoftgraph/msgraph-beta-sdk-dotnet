@@ -34,12 +34,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("calls")]
         public ICommsApplicationCallsCollectionPage Calls { get; set; }
+
+        /// <summary>
+        /// Gets or sets callsNextLink.
+        /// </summary>
+        [JsonPropertyName("calls@odata.nextLink")]
+        public string CallsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets online meetings.
         /// </summary>
         [JsonPropertyName("onlineMeetings")]
         public ICommsApplicationOnlineMeetingsCollectionPage OnlineMeetings { get; set; }
+
+        /// <summary>
+        /// Gets or sets onlineMeetingsNextLink.
+        /// </summary>
+        [JsonPropertyName("onlineMeetings@odata.nextLink")]
+        public string OnlineMeetingsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

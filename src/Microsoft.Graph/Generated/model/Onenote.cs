@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("notebooks")]
         public IOnenoteNotebooksCollectionPage Notebooks { get; set; }
+
+        /// <summary>
+        /// Gets or sets notebooksNextLink.
+        /// </summary>
+        [JsonPropertyName("notebooks@odata.nextLink")]
+        public string NotebooksNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
@@ -41,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("operations")]
         public IOnenoteOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets pages.
@@ -48,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("pages")]
         public IOnenotePagesCollectionPage Pages { get; set; }
+
+        /// <summary>
+        /// Gets or sets pagesNextLink.
+        /// </summary>
+        [JsonPropertyName("pages@odata.nextLink")]
+        public string PagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets resources.
@@ -55,6 +73,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("resources")]
         public IOnenoteResourcesCollectionPage Resources { get; set; }
+
+        /// <summary>
+        /// Gets or sets resourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("resources@odata.nextLink")]
+        public string ResourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets section groups.
@@ -62,6 +86,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("sectionGroups")]
         public IOnenoteSectionGroupsCollectionPage SectionGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets sectionGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("sectionGroups@odata.nextLink")]
+        public string SectionGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sections.
@@ -69,6 +99,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("sections")]
         public IOnenoteSectionsCollectionPage Sections { get; set; }
+
+        /// <summary>
+        /// Gets or sets sectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("sections@odata.nextLink")]
+        public string SectionsNextLink { get; set; }
     
     }
 }

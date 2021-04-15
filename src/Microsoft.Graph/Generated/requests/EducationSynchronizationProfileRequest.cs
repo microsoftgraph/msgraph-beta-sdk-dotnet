@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EducationSynchronizationProfile educationSynchronizationProfileToInitialize)
         {
 
-            if (educationSynchronizationProfileToInitialize != null && educationSynchronizationProfileToInitialize.AdditionalData != null)
+            if (educationSynchronizationProfileToInitialize != null)
             {
-
                 if (educationSynchronizationProfileToInitialize.Errors != null && educationSynchronizationProfileToInitialize.Errors.CurrentPage != null)
                 {
+                    educationSynchronizationProfileToInitialize.Errors.InitializeNextPageRequest(this.Client, educationSynchronizationProfileToInitialize.ErrorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationSynchronizationProfileToInitialize.Errors.AdditionalData = educationSynchronizationProfileToInitialize.AdditionalData;
-
-                    if(educationSynchronizationProfileToInitialize.AdditionalData.TryGetValue("errors@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            educationSynchronizationProfileToInitialize.Errors.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

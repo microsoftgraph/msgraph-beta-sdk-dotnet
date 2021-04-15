@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Channel channelToInitialize)
         {
 
-            if (channelToInitialize != null && channelToInitialize.AdditionalData != null)
+            if (channelToInitialize != null)
             {
-
                 if (channelToInitialize.Members != null && channelToInitialize.Members.CurrentPage != null)
                 {
+                    channelToInitialize.Members.InitializeNextPageRequest(this.Client, channelToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     channelToInitialize.Members.AdditionalData = channelToInitialize.AdditionalData;
-
-                    if(channelToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            channelToInitialize.Members.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (channelToInitialize.Messages != null && channelToInitialize.Messages.CurrentPage != null)
                 {
+                    channelToInitialize.Messages.InitializeNextPageRequest(this.Client, channelToInitialize.MessagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     channelToInitialize.Messages.AdditionalData = channelToInitialize.AdditionalData;
-
-                    if(channelToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            channelToInitialize.Messages.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (channelToInitialize.Tabs != null && channelToInitialize.Tabs.CurrentPage != null)
                 {
+                    channelToInitialize.Tabs.InitializeNextPageRequest(this.Client, channelToInitialize.TabsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     channelToInitialize.Tabs.AdditionalData = channelToInitialize.AdditionalData;
-
-                    if(channelToInitialize.AdditionalData.TryGetValue("tabs@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            channelToInitialize.Tabs.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

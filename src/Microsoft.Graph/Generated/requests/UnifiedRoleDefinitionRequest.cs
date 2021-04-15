@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UnifiedRoleDefinition unifiedRoleDefinitionToInitialize)
         {
 
-            if (unifiedRoleDefinitionToInitialize != null && unifiedRoleDefinitionToInitialize.AdditionalData != null)
+            if (unifiedRoleDefinitionToInitialize != null)
             {
-
                 if (unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom != null && unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom.CurrentPage != null)
                 {
+                    unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom.InitializeNextPageRequest(this.Client, unifiedRoleDefinitionToInitialize.InheritsPermissionsFromNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom.AdditionalData = unifiedRoleDefinitionToInitialize.AdditionalData;
-
-                    if(unifiedRoleDefinitionToInitialize.AdditionalData.TryGetValue("inheritsPermissionsFrom@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

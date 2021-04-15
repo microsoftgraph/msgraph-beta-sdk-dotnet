@@ -244,115 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Team teamToInitialize)
         {
 
-            if (teamToInitialize != null && teamToInitialize.AdditionalData != null)
+            if (teamToInitialize != null)
             {
-
                 if (teamToInitialize.Channels != null && teamToInitialize.Channels.CurrentPage != null)
                 {
+                    teamToInitialize.Channels.InitializeNextPageRequest(this.Client, teamToInitialize.ChannelsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Channels.AdditionalData = teamToInitialize.AdditionalData;
-
-                    if(teamToInitialize.AdditionalData.TryGetValue("channels@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            teamToInitialize.Channels.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (teamToInitialize.InstalledApps != null && teamToInitialize.InstalledApps.CurrentPage != null)
                 {
+                    teamToInitialize.InstalledApps.InitializeNextPageRequest(this.Client, teamToInitialize.InstalledAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.InstalledApps.AdditionalData = teamToInitialize.AdditionalData;
-
-                    if(teamToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            teamToInitialize.InstalledApps.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (teamToInitialize.Members != null && teamToInitialize.Members.CurrentPage != null)
                 {
+                    teamToInitialize.Members.InitializeNextPageRequest(this.Client, teamToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Members.AdditionalData = teamToInitialize.AdditionalData;
-
-                    if(teamToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            teamToInitialize.Members.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (teamToInitialize.Operations != null && teamToInitialize.Operations.CurrentPage != null)
                 {
+                    teamToInitialize.Operations.InitializeNextPageRequest(this.Client, teamToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Operations.AdditionalData = teamToInitialize.AdditionalData;
-
-                    if(teamToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            teamToInitialize.Operations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (teamToInitialize.Owners != null && teamToInitialize.Owners.CurrentPage != null)
                 {
+                    teamToInitialize.Owners.InitializeNextPageRequest(this.Client, teamToInitialize.OwnersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Owners.AdditionalData = teamToInitialize.AdditionalData;
-
-                    if(teamToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            teamToInitialize.Owners.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (teamToInitialize.Tags != null && teamToInitialize.Tags.CurrentPage != null)
                 {
+                    teamToInitialize.Tags.InitializeNextPageRequest(this.Client, teamToInitialize.TagsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Tags.AdditionalData = teamToInitialize.AdditionalData;
-
-                    if(teamToInitialize.AdditionalData.TryGetValue("tags@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            teamToInitialize.Tags.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

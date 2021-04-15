@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TodoTask todoTaskToInitialize)
         {
 
-            if (todoTaskToInitialize != null && todoTaskToInitialize.AdditionalData != null)
+            if (todoTaskToInitialize != null)
             {
-
                 if (todoTaskToInitialize.Extensions != null && todoTaskToInitialize.Extensions.CurrentPage != null)
                 {
+                    todoTaskToInitialize.Extensions.InitializeNextPageRequest(this.Client, todoTaskToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     todoTaskToInitialize.Extensions.AdditionalData = todoTaskToInitialize.AdditionalData;
-
-                    if(todoTaskToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            todoTaskToInitialize.Extensions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (todoTaskToInitialize.LinkedResources != null && todoTaskToInitialize.LinkedResources.CurrentPage != null)
                 {
+                    todoTaskToInitialize.LinkedResources.InitializeNextPageRequest(this.Client, todoTaskToInitialize.LinkedResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     todoTaskToInitialize.LinkedResources.AdditionalData = todoTaskToInitialize.AdditionalData;
-
-                    if(todoTaskToInitialize.AdditionalData.TryGetValue("linkedResources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            todoTaskToInitialize.LinkedResources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

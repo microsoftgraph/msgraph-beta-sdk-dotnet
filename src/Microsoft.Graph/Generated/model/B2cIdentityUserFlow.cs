@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("identityProviders")]
         public IB2cIdentityUserFlowIdentityProvidersCollectionWithReferencesPage IdentityProviders { get; set; }
+
+        /// <summary>
+        /// Gets or sets identityProvidersNextLink.
+        /// </summary>
+        [JsonPropertyName("identityProviders@odata.nextLink")]
+        public string IdentityProvidersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets languages.
@@ -62,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("languages")]
         public IB2cIdentityUserFlowLanguagesCollectionPage Languages { get; set; }
+
+        /// <summary>
+        /// Gets or sets languagesNextLink.
+        /// </summary>
+        [JsonPropertyName("languages@odata.nextLink")]
+        public string LanguagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user attribute assignments.
@@ -69,6 +81,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userAttributeAssignments")]
         public IB2cIdentityUserFlowUserAttributeAssignmentsCollectionPage UserAttributeAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets userAttributeAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("userAttributeAssignments@odata.nextLink")]
+        public string UserAttributeAssignmentsNextLink { get; set; }
     
     }
 }

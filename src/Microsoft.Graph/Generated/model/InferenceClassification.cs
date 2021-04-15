@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("overrides")]
         public IInferenceClassificationOverridesCollectionPage Overrides { get; set; }
+
+        /// <summary>
+        /// Gets or sets overridesNextLink.
+        /// </summary>
+        [JsonPropertyName("overrides@odata.nextLink")]
+        public string OverridesNextLink { get; set; }
     
     }
 }

@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OfficeClientConfiguration officeClientConfigurationToInitialize)
         {
 
-            if (officeClientConfigurationToInitialize != null && officeClientConfigurationToInitialize.AdditionalData != null)
+            if (officeClientConfigurationToInitialize != null)
             {
-
                 if (officeClientConfigurationToInitialize.Assignments != null && officeClientConfigurationToInitialize.Assignments.CurrentPage != null)
                 {
+                    officeClientConfigurationToInitialize.Assignments.InitializeNextPageRequest(this.Client, officeClientConfigurationToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     officeClientConfigurationToInitialize.Assignments.AdditionalData = officeClientConfigurationToInitialize.AdditionalData;
-
-                    if(officeClientConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            officeClientConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

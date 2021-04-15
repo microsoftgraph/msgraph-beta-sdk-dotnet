@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TermsAndConditions termsAndConditionsToInitialize)
         {
 
-            if (termsAndConditionsToInitialize != null && termsAndConditionsToInitialize.AdditionalData != null)
+            if (termsAndConditionsToInitialize != null)
             {
-
                 if (termsAndConditionsToInitialize.AcceptanceStatuses != null && termsAndConditionsToInitialize.AcceptanceStatuses.CurrentPage != null)
                 {
+                    termsAndConditionsToInitialize.AcceptanceStatuses.InitializeNextPageRequest(this.Client, termsAndConditionsToInitialize.AcceptanceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     termsAndConditionsToInitialize.AcceptanceStatuses.AdditionalData = termsAndConditionsToInitialize.AdditionalData;
-
-                    if(termsAndConditionsToInitialize.AdditionalData.TryGetValue("acceptanceStatuses@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            termsAndConditionsToInitialize.AcceptanceStatuses.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (termsAndConditionsToInitialize.Assignments != null && termsAndConditionsToInitialize.Assignments.CurrentPage != null)
                 {
+                    termsAndConditionsToInitialize.Assignments.InitializeNextPageRequest(this.Client, termsAndConditionsToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     termsAndConditionsToInitialize.Assignments.AdditionalData = termsAndConditionsToInitialize.AdditionalData;
-
-                    if(termsAndConditionsToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            termsAndConditionsToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (termsAndConditionsToInitialize.GroupAssignments != null && termsAndConditionsToInitialize.GroupAssignments.CurrentPage != null)
                 {
+                    termsAndConditionsToInitialize.GroupAssignments.InitializeNextPageRequest(this.Client, termsAndConditionsToInitialize.GroupAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     termsAndConditionsToInitialize.GroupAssignments.AdditionalData = termsAndConditionsToInitialize.AdditionalData;
-
-                    if(termsAndConditionsToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            termsAndConditionsToInitialize.GroupAssignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

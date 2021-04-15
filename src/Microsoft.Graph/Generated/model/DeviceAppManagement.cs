@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedEBookCategories")]
         public IDeviceAppManagementManagedEBookCategoriesCollectionPage ManagedEBookCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedEBookCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedEBookCategories@odata.nextLink")]
+        public string ManagedEBookCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets enterprise code signing certificates.
@@ -76,6 +82,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("enterpriseCodeSigningCertificates")]
         public IDeviceAppManagementEnterpriseCodeSigningCertificatesCollectionPage EnterpriseCodeSigningCertificates { get; set; }
+
+        /// <summary>
+        /// Gets or sets enterpriseCodeSigningCertificatesNextLink.
+        /// </summary>
+        [JsonPropertyName("enterpriseCodeSigningCertificates@odata.nextLink")]
+        public string EnterpriseCodeSigningCertificatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets ios lob app provisioning configurations.
@@ -83,6 +95,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("iosLobAppProvisioningConfigurations")]
         public IDeviceAppManagementIosLobAppProvisioningConfigurationsCollectionPage IosLobAppProvisioningConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets iosLobAppProvisioningConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("iosLobAppProvisioningConfigurations@odata.nextLink")]
+        public string IosLobAppProvisioningConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mobile app categories.
@@ -90,6 +108,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("mobileAppCategories")]
         public IDeviceAppManagementMobileAppCategoriesCollectionPage MobileAppCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileAppCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileAppCategories@odata.nextLink")]
+        public string MobileAppCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mobile app configurations.
@@ -97,6 +121,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("mobileAppConfigurations")]
         public IDeviceAppManagementMobileAppConfigurationsCollectionPage MobileAppConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileAppConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileAppConfigurations@odata.nextLink")]
+        public string MobileAppConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mobile apps.
@@ -104,6 +134,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("mobileApps")]
         public IDeviceAppManagementMobileAppsCollectionPage MobileApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileApps@odata.nextLink")]
+        public string MobileAppsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets symantec code signing certificate.
@@ -118,6 +154,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedEBooks")]
         public IDeviceAppManagementManagedEBooksCollectionPage ManagedEBooks { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedEBooksNextLink.
+        /// </summary>
+        [JsonPropertyName("managedEBooks@odata.nextLink")]
+        public string ManagedEBooksNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets policy sets.
@@ -125,6 +167,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("policySets")]
         public IDeviceAppManagementPolicySetsCollectionPage PolicySets { get; set; }
+
+        /// <summary>
+        /// Gets or sets policySetsNextLink.
+        /// </summary>
+        [JsonPropertyName("policySets@odata.nextLink")]
+        public string PolicySetsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets side loading keys.
@@ -132,6 +180,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("sideLoadingKeys")]
         public IDeviceAppManagementSideLoadingKeysCollectionPage SideLoadingKeys { get; set; }
+
+        /// <summary>
+        /// Gets or sets sideLoadingKeysNextLink.
+        /// </summary>
+        [JsonPropertyName("sideLoadingKeys@odata.nextLink")]
+        public string SideLoadingKeysNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets vpp tokens.
@@ -139,6 +193,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("vppTokens")]
         public IDeviceAppManagementVppTokensCollectionPage VppTokens { get; set; }
+
+        /// <summary>
+        /// Gets or sets vppTokensNextLink.
+        /// </summary>
+        [JsonPropertyName("vppTokens@odata.nextLink")]
+        public string VppTokensNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows management app.
@@ -153,6 +213,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("androidManagedAppProtections")]
         public IDeviceAppManagementAndroidManagedAppProtectionsCollectionPage AndroidManagedAppProtections { get; set; }
+
+        /// <summary>
+        /// Gets or sets androidManagedAppProtectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("androidManagedAppProtections@odata.nextLink")]
+        public string AndroidManagedAppProtectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets default managed app protections.
@@ -160,6 +226,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("defaultManagedAppProtections")]
         public IDeviceAppManagementDefaultManagedAppProtectionsCollectionPage DefaultManagedAppProtections { get; set; }
+
+        /// <summary>
+        /// Gets or sets defaultManagedAppProtectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("defaultManagedAppProtections@odata.nextLink")]
+        public string DefaultManagedAppProtectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets ios managed app protections.
@@ -167,6 +239,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("iosManagedAppProtections")]
         public IDeviceAppManagementIosManagedAppProtectionsCollectionPage IosManagedAppProtections { get; set; }
+
+        /// <summary>
+        /// Gets or sets iosManagedAppProtectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("iosManagedAppProtections@odata.nextLink")]
+        public string IosManagedAppProtectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed app policies.
@@ -174,6 +252,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedAppPolicies")]
         public IDeviceAppManagementManagedAppPoliciesCollectionPage ManagedAppPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedAppPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedAppPolicies@odata.nextLink")]
+        public string ManagedAppPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed app registrations.
@@ -181,6 +265,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedAppRegistrations")]
         public IDeviceAppManagementManagedAppRegistrationsCollectionPage ManagedAppRegistrations { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedAppRegistrationsNextLink.
+        /// </summary>
+        [JsonPropertyName("managedAppRegistrations@odata.nextLink")]
+        public string ManagedAppRegistrationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed app statuses.
@@ -188,6 +278,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedAppStatuses")]
         public IDeviceAppManagementManagedAppStatusesCollectionPage ManagedAppStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedAppStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedAppStatuses@odata.nextLink")]
+        public string ManagedAppStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mdm windows information protection policies.
@@ -195,6 +291,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("mdmWindowsInformationProtectionPolicies")]
         public IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionPage MdmWindowsInformationProtectionPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets mdmWindowsInformationProtectionPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("mdmWindowsInformationProtectionPolicies@odata.nextLink")]
+        public string MdmWindowsInformationProtectionPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets targeted managed app configurations.
@@ -202,6 +304,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("targetedManagedAppConfigurations")]
         public IDeviceAppManagementTargetedManagedAppConfigurationsCollectionPage TargetedManagedAppConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets targetedManagedAppConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("targetedManagedAppConfigurations@odata.nextLink")]
+        public string TargetedManagedAppConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection device registrations.
@@ -209,6 +317,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsInformationProtectionDeviceRegistrations")]
         public IDeviceAppManagementWindowsInformationProtectionDeviceRegistrationsCollectionPage WindowsInformationProtectionDeviceRegistrations { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsInformationProtectionDeviceRegistrationsNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsInformationProtectionDeviceRegistrations@odata.nextLink")]
+        public string WindowsInformationProtectionDeviceRegistrationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection policies.
@@ -216,6 +330,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsInformationProtectionPolicies")]
         public IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionPage WindowsInformationProtectionPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsInformationProtectionPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsInformationProtectionPolicies@odata.nextLink")]
+        public string WindowsInformationProtectionPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection wipe actions.
@@ -223,6 +343,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsInformationProtectionWipeActions")]
         public IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionPage WindowsInformationProtectionWipeActions { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsInformationProtectionWipeActionsNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsInformationProtectionWipeActions@odata.nextLink")]
+        public string WindowsInformationProtectionWipeActionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device app management tasks.
@@ -230,6 +356,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceAppManagementTasks")]
         public IDeviceAppManagementDeviceAppManagementTasksCollectionPage DeviceAppManagementTasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceAppManagementTasksNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceAppManagementTasks@odata.nextLink")]
+        public string DeviceAppManagementTasksNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets wdac supplemental policies.
@@ -237,6 +369,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("wdacSupplementalPolicies")]
         public IDeviceAppManagementWdacSupplementalPoliciesCollectionPage WdacSupplementalPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets wdacSupplementalPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("wdacSupplementalPolicies@odata.nextLink")]
+        public string WdacSupplementalPoliciesNextLink { get; set; }
     
     }
 }

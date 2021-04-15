@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("installedApps")]
         public IChatInstalledAppsCollectionPage InstalledApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets installedAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("installedApps@odata.nextLink")]
+        public string InstalledAppsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets members.
@@ -69,6 +75,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("members")]
         public IChatMembersCollectionPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets messages.
@@ -76,12 +88,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("messages")]
         public IChatMessagesCollectionPage Messages { get; set; }
+
+        /// <summary>
+        /// Gets or sets messagesNextLink.
+        /// </summary>
+        [JsonPropertyName("messages@odata.nextLink")]
+        public string MessagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tabs.
         /// </summary>
         [JsonPropertyName("tabs")]
         public IChatTabsCollectionPage Tabs { get; set; }
+
+        /// <summary>
+        /// Gets or sets tabsNextLink.
+        /// </summary>
+        [JsonPropertyName("tabs@odata.nextLink")]
+        public string TabsNextLink { get; set; }
     
     }
 }

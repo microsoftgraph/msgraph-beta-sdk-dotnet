@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(FeatureRolloutPolicy featureRolloutPolicyToInitialize)
         {
 
-            if (featureRolloutPolicyToInitialize != null && featureRolloutPolicyToInitialize.AdditionalData != null)
+            if (featureRolloutPolicyToInitialize != null)
             {
-
                 if (featureRolloutPolicyToInitialize.AppliesTo != null && featureRolloutPolicyToInitialize.AppliesTo.CurrentPage != null)
                 {
+                    featureRolloutPolicyToInitialize.AppliesTo.InitializeNextPageRequest(this.Client, featureRolloutPolicyToInitialize.AppliesToNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     featureRolloutPolicyToInitialize.AppliesTo.AdditionalData = featureRolloutPolicyToInitialize.AdditionalData;
-
-                    if(featureRolloutPolicyToInitialize.AdditionalData.TryGetValue("appliesTo@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            featureRolloutPolicyToInitialize.AppliesTo.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

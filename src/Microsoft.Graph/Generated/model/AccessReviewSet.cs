@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("definitions")]
         public IAccessReviewSetDefinitionsCollectionPage Definitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets definitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("definitions@odata.nextLink")]
+        public string DefinitionsNextLink { get; set; }
     
     }
 }

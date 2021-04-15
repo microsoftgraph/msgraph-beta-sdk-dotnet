@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Contact contactToInitialize)
         {
 
-            if (contactToInitialize != null && contactToInitialize.AdditionalData != null)
+            if (contactToInitialize != null)
             {
-
                 if (contactToInitialize.Extensions != null && contactToInitialize.Extensions.CurrentPage != null)
                 {
+                    contactToInitialize.Extensions.InitializeNextPageRequest(this.Client, contactToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactToInitialize.Extensions.AdditionalData = contactToInitialize.AdditionalData;
-
-                    if(contactToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            contactToInitialize.Extensions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (contactToInitialize.MultiValueExtendedProperties != null && contactToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    contactToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, contactToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactToInitialize.MultiValueExtendedProperties.AdditionalData = contactToInitialize.AdditionalData;
-
-                    if(contactToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            contactToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (contactToInitialize.SingleValueExtendedProperties != null && contactToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    contactToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, contactToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactToInitialize.SingleValueExtendedProperties.AdditionalData = contactToInitialize.AdditionalData;
-
-                    if(contactToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            contactToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("shared")]
         public IOfficeGraphInsightsSharedCollectionPage Shared { get; set; }
+
+        /// <summary>
+        /// Gets or sets sharedNextLink.
+        /// </summary>
+        [JsonPropertyName("shared@odata.nextLink")]
+        public string SharedNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets trending.
@@ -41,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("trending")]
         public IOfficeGraphInsightsTrendingCollectionPage Trending { get; set; }
+
+        /// <summary>
+        /// Gets or sets trendingNextLink.
+        /// </summary>
+        [JsonPropertyName("trending@odata.nextLink")]
+        public string TrendingNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets used.
@@ -48,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("used")]
         public IOfficeGraphInsightsUsedCollectionPage Used { get; set; }
+
+        /// <summary>
+        /// Gets or sets usedNextLink.
+        /// </summary>
+        [JsonPropertyName("used@odata.nextLink")]
+        public string UsedNextLink { get; set; }
     
     }
 }

@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PrivateLinkResourcePolicy privateLinkResourcePolicyToInitialize)
         {
 
-            if (privateLinkResourcePolicyToInitialize != null && privateLinkResourcePolicyToInitialize.AdditionalData != null)
+            if (privateLinkResourcePolicyToInitialize != null)
             {
-
                 if (privateLinkResourcePolicyToInitialize.PrivateEndpointConnections != null && privateLinkResourcePolicyToInitialize.PrivateEndpointConnections.CurrentPage != null)
                 {
+                    privateLinkResourcePolicyToInitialize.PrivateEndpointConnections.InitializeNextPageRequest(this.Client, privateLinkResourcePolicyToInitialize.PrivateEndpointConnectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     privateLinkResourcePolicyToInitialize.PrivateEndpointConnections.AdditionalData = privateLinkResourcePolicyToInitialize.AdditionalData;
-
-                    if(privateLinkResourcePolicyToInitialize.AdditionalData.TryGetValue("privateEndpointConnections@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            privateLinkResourcePolicyToInitialize.PrivateEndpointConnections.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

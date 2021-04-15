@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Dimension dimensionToInitialize)
         {
 
-            if (dimensionToInitialize != null && dimensionToInitialize.AdditionalData != null)
+            if (dimensionToInitialize != null)
             {
-
                 if (dimensionToInitialize.DimensionValues != null && dimensionToInitialize.DimensionValues.CurrentPage != null)
                 {
+                    dimensionToInitialize.DimensionValues.InitializeNextPageRequest(this.Client, dimensionToInitialize.DimensionValuesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dimensionToInitialize.DimensionValues.AdditionalData = dimensionToInitialize.AdditionalData;
-
-                    if(dimensionToInitialize.AdditionalData.TryGetValue("dimensionValues@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dimensionToInitialize.DimensionValues.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

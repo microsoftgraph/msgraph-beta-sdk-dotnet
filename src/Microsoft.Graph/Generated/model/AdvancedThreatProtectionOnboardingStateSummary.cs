@@ -90,6 +90,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("advancedThreatProtectionOnboardingDeviceSettingStates")]
         public IAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionPage AdvancedThreatProtectionOnboardingDeviceSettingStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets advancedThreatProtectionOnboardingDeviceSettingStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("advancedThreatProtectionOnboardingDeviceSettingStates@odata.nextLink")]
+        public string AdvancedThreatProtectionOnboardingDeviceSettingStatesNextLink { get; set; }
     
     }
 }

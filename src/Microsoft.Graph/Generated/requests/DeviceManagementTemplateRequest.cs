@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementTemplate deviceManagementTemplateToInitialize)
         {
 
-            if (deviceManagementTemplateToInitialize != null && deviceManagementTemplateToInitialize.AdditionalData != null)
+            if (deviceManagementTemplateToInitialize != null)
             {
-
                 if (deviceManagementTemplateToInitialize.Categories != null && deviceManagementTemplateToInitialize.Categories.CurrentPage != null)
                 {
+                    deviceManagementTemplateToInitialize.Categories.InitializeNextPageRequest(this.Client, deviceManagementTemplateToInitialize.CategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementTemplateToInitialize.Categories.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
-
-                    if(deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceManagementTemplateToInitialize.Categories.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (deviceManagementTemplateToInitialize.MigratableTo != null && deviceManagementTemplateToInitialize.MigratableTo.CurrentPage != null)
                 {
+                    deviceManagementTemplateToInitialize.MigratableTo.InitializeNextPageRequest(this.Client, deviceManagementTemplateToInitialize.MigratableToNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementTemplateToInitialize.MigratableTo.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
-
-                    if(deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("migratableTo@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceManagementTemplateToInitialize.MigratableTo.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (deviceManagementTemplateToInitialize.Settings != null && deviceManagementTemplateToInitialize.Settings.CurrentPage != null)
                 {
+                    deviceManagementTemplateToInitialize.Settings.InitializeNextPageRequest(this.Client, deviceManagementTemplateToInitialize.SettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementTemplateToInitialize.Settings.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
-
-                    if(deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceManagementTemplateToInitialize.Settings.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UnifiedRoleManagementPolicy unifiedRoleManagementPolicyToInitialize)
         {
 
-            if (unifiedRoleManagementPolicyToInitialize != null && unifiedRoleManagementPolicyToInitialize.AdditionalData != null)
+            if (unifiedRoleManagementPolicyToInitialize != null)
             {
-
                 if (unifiedRoleManagementPolicyToInitialize.EffectiveRules != null && unifiedRoleManagementPolicyToInitialize.EffectiveRules.CurrentPage != null)
                 {
+                    unifiedRoleManagementPolicyToInitialize.EffectiveRules.InitializeNextPageRequest(this.Client, unifiedRoleManagementPolicyToInitialize.EffectiveRulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     unifiedRoleManagementPolicyToInitialize.EffectiveRules.AdditionalData = unifiedRoleManagementPolicyToInitialize.AdditionalData;
-
-                    if(unifiedRoleManagementPolicyToInitialize.AdditionalData.TryGetValue("effectiveRules@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            unifiedRoleManagementPolicyToInitialize.EffectiveRules.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (unifiedRoleManagementPolicyToInitialize.Rules != null && unifiedRoleManagementPolicyToInitialize.Rules.CurrentPage != null)
                 {
+                    unifiedRoleManagementPolicyToInitialize.Rules.InitializeNextPageRequest(this.Client, unifiedRoleManagementPolicyToInitialize.RulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     unifiedRoleManagementPolicyToInitialize.Rules.AdditionalData = unifiedRoleManagementPolicyToInitialize.AdditionalData;
-
-                    if(unifiedRoleManagementPolicyToInitialize.AdditionalData.TryGetValue("rules@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            unifiedRoleManagementPolicyToInitialize.Rules.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

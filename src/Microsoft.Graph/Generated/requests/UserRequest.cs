@@ -244,781 +244,265 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(User userToInitialize)
         {
 
-            if (userToInitialize != null && userToInitialize.AdditionalData != null)
+            if (userToInitialize != null)
             {
-
                 if (userToInitialize.UsageRights != null && userToInitialize.UsageRights.CurrentPage != null)
                 {
+                    userToInitialize.UsageRights.InitializeNextPageRequest(this.Client, userToInitialize.UsageRightsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.UsageRights.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("usageRights@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.UsageRights.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.AppRoleAssignments != null && userToInitialize.AppRoleAssignments.CurrentPage != null)
                 {
+                    userToInitialize.AppRoleAssignments.InitializeNextPageRequest(this.Client, userToInitialize.AppRoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.AppRoleAssignments.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("appRoleAssignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.AppRoleAssignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.CreatedObjects != null && userToInitialize.CreatedObjects.CurrentPage != null)
                 {
+                    userToInitialize.CreatedObjects.InitializeNextPageRequest(this.Client, userToInitialize.CreatedObjectsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.CreatedObjects.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("createdObjects@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.CreatedObjects.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.DirectReports != null && userToInitialize.DirectReports.CurrentPage != null)
                 {
+                    userToInitialize.DirectReports.InitializeNextPageRequest(this.Client, userToInitialize.DirectReportsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.DirectReports.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("directReports@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.DirectReports.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.LicenseDetails != null && userToInitialize.LicenseDetails.CurrentPage != null)
                 {
+                    userToInitialize.LicenseDetails.InitializeNextPageRequest(this.Client, userToInitialize.LicenseDetailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.LicenseDetails.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("licenseDetails@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.LicenseDetails.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.MemberOf != null && userToInitialize.MemberOf.CurrentPage != null)
                 {
+                    userToInitialize.MemberOf.InitializeNextPageRequest(this.Client, userToInitialize.MemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.MemberOf.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.MemberOf.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Oauth2PermissionGrants != null && userToInitialize.Oauth2PermissionGrants.CurrentPage != null)
                 {
+                    userToInitialize.Oauth2PermissionGrants.InitializeNextPageRequest(this.Client, userToInitialize.Oauth2PermissionGrantsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Oauth2PermissionGrants.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("oauth2PermissionGrants@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Oauth2PermissionGrants.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.OwnedDevices != null && userToInitialize.OwnedDevices.CurrentPage != null)
                 {
+                    userToInitialize.OwnedDevices.InitializeNextPageRequest(this.Client, userToInitialize.OwnedDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.OwnedDevices.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("ownedDevices@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.OwnedDevices.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.OwnedObjects != null && userToInitialize.OwnedObjects.CurrentPage != null)
                 {
+                    userToInitialize.OwnedObjects.InitializeNextPageRequest(this.Client, userToInitialize.OwnedObjectsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.OwnedObjects.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("ownedObjects@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.OwnedObjects.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.RegisteredDevices != null && userToInitialize.RegisteredDevices.CurrentPage != null)
                 {
+                    userToInitialize.RegisteredDevices.InitializeNextPageRequest(this.Client, userToInitialize.RegisteredDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.RegisteredDevices.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("registeredDevices@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.RegisteredDevices.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.ScopedRoleMemberOf != null && userToInitialize.ScopedRoleMemberOf.CurrentPage != null)
                 {
+                    userToInitialize.ScopedRoleMemberOf.InitializeNextPageRequest(this.Client, userToInitialize.ScopedRoleMemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.ScopedRoleMemberOf.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("scopedRoleMemberOf@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.ScopedRoleMemberOf.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.TransitiveMemberOf != null && userToInitialize.TransitiveMemberOf.CurrentPage != null)
                 {
+                    userToInitialize.TransitiveMemberOf.InitializeNextPageRequest(this.Client, userToInitialize.TransitiveMemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.TransitiveMemberOf.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.CalendarGroups != null && userToInitialize.CalendarGroups.CurrentPage != null)
                 {
+                    userToInitialize.CalendarGroups.InitializeNextPageRequest(this.Client, userToInitialize.CalendarGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.CalendarGroups.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("calendarGroups@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.CalendarGroups.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Calendars != null && userToInitialize.Calendars.CurrentPage != null)
                 {
+                    userToInitialize.Calendars.InitializeNextPageRequest(this.Client, userToInitialize.CalendarsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Calendars.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("calendars@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Calendars.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.CalendarView != null && userToInitialize.CalendarView.CurrentPage != null)
                 {
+                    userToInitialize.CalendarView.InitializeNextPageRequest(this.Client, userToInitialize.CalendarViewNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.CalendarView.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.CalendarView.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.ContactFolders != null && userToInitialize.ContactFolders.CurrentPage != null)
                 {
+                    userToInitialize.ContactFolders.InitializeNextPageRequest(this.Client, userToInitialize.ContactFoldersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.ContactFolders.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("contactFolders@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.ContactFolders.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Contacts != null && userToInitialize.Contacts.CurrentPage != null)
                 {
+                    userToInitialize.Contacts.InitializeNextPageRequest(this.Client, userToInitialize.ContactsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Contacts.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("contacts@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Contacts.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Events != null && userToInitialize.Events.CurrentPage != null)
                 {
+                    userToInitialize.Events.InitializeNextPageRequest(this.Client, userToInitialize.EventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Events.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("events@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Events.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.JoinedGroups != null && userToInitialize.JoinedGroups.CurrentPage != null)
                 {
+                    userToInitialize.JoinedGroups.InitializeNextPageRequest(this.Client, userToInitialize.JoinedGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.JoinedGroups.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("joinedGroups@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.JoinedGroups.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.MailFolders != null && userToInitialize.MailFolders.CurrentPage != null)
                 {
+                    userToInitialize.MailFolders.InitializeNextPageRequest(this.Client, userToInitialize.MailFoldersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.MailFolders.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("mailFolders@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.MailFolders.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Messages != null && userToInitialize.Messages.CurrentPage != null)
                 {
+                    userToInitialize.Messages.InitializeNextPageRequest(this.Client, userToInitialize.MessagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Messages.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Messages.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.People != null && userToInitialize.People.CurrentPage != null)
                 {
+                    userToInitialize.People.InitializeNextPageRequest(this.Client, userToInitialize.PeopleNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.People.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("people@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.People.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Drives != null && userToInitialize.Drives.CurrentPage != null)
                 {
+                    userToInitialize.Drives.InitializeNextPageRequest(this.Client, userToInitialize.DrivesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Drives.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("drives@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Drives.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.FollowedSites != null && userToInitialize.FollowedSites.CurrentPage != null)
                 {
+                    userToInitialize.FollowedSites.InitializeNextPageRequest(this.Client, userToInitialize.FollowedSitesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.FollowedSites.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("followedSites@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.FollowedSites.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Extensions != null && userToInitialize.Extensions.CurrentPage != null)
                 {
+                    userToInitialize.Extensions.InitializeNextPageRequest(this.Client, userToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Extensions.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Extensions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.AppConsentRequestsForApproval != null && userToInitialize.AppConsentRequestsForApproval.CurrentPage != null)
                 {
+                    userToInitialize.AppConsentRequestsForApproval.InitializeNextPageRequest(this.Client, userToInitialize.AppConsentRequestsForApprovalNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.AppConsentRequestsForApproval.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("appConsentRequestsForApproval@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.AppConsentRequestsForApproval.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Approvals != null && userToInitialize.Approvals.CurrentPage != null)
                 {
+                    userToInitialize.Approvals.InitializeNextPageRequest(this.Client, userToInitialize.ApprovalsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Approvals.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("approvals@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Approvals.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.PendingAccessReviewInstances != null && userToInitialize.PendingAccessReviewInstances.CurrentPage != null)
                 {
+                    userToInitialize.PendingAccessReviewInstances.InitializeNextPageRequest(this.Client, userToInitialize.PendingAccessReviewInstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.PendingAccessReviewInstances.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("pendingAccessReviewInstances@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.PendingAccessReviewInstances.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.AgreementAcceptances != null && userToInitialize.AgreementAcceptances.CurrentPage != null)
                 {
+                    userToInitialize.AgreementAcceptances.InitializeNextPageRequest(this.Client, userToInitialize.AgreementAcceptancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.AgreementAcceptances.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("agreementAcceptances@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.AgreementAcceptances.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.DeviceEnrollmentConfigurations != null && userToInitialize.DeviceEnrollmentConfigurations.CurrentPage != null)
                 {
+                    userToInitialize.DeviceEnrollmentConfigurations.InitializeNextPageRequest(this.Client, userToInitialize.DeviceEnrollmentConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.DeviceEnrollmentConfigurations.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("deviceEnrollmentConfigurations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.DeviceEnrollmentConfigurations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.ManagedDevices != null && userToInitialize.ManagedDevices.CurrentPage != null)
                 {
+                    userToInitialize.ManagedDevices.InitializeNextPageRequest(this.Client, userToInitialize.ManagedDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.ManagedDevices.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("managedDevices@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.ManagedDevices.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.ManagedAppRegistrations != null && userToInitialize.ManagedAppRegistrations.CurrentPage != null)
                 {
+                    userToInitialize.ManagedAppRegistrations.InitializeNextPageRequest(this.Client, userToInitialize.ManagedAppRegistrationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.ManagedAppRegistrations.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("managedAppRegistrations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.ManagedAppRegistrations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.WindowsInformationProtectionDeviceRegistrations != null && userToInitialize.WindowsInformationProtectionDeviceRegistrations.CurrentPage != null)
                 {
+                    userToInitialize.WindowsInformationProtectionDeviceRegistrations.InitializeNextPageRequest(this.Client, userToInitialize.WindowsInformationProtectionDeviceRegistrationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.WindowsInformationProtectionDeviceRegistrations.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionDeviceRegistrations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.WindowsInformationProtectionDeviceRegistrations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.DeviceManagementTroubleshootingEvents != null && userToInitialize.DeviceManagementTroubleshootingEvents.CurrentPage != null)
                 {
+                    userToInitialize.DeviceManagementTroubleshootingEvents.InitializeNextPageRequest(this.Client, userToInitialize.DeviceManagementTroubleshootingEventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.DeviceManagementTroubleshootingEvents.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("deviceManagementTroubleshootingEvents@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.DeviceManagementTroubleshootingEvents.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.MobileAppIntentAndStates != null && userToInitialize.MobileAppIntentAndStates.CurrentPage != null)
                 {
+                    userToInitialize.MobileAppIntentAndStates.InitializeNextPageRequest(this.Client, userToInitialize.MobileAppIntentAndStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.MobileAppIntentAndStates.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("mobileAppIntentAndStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.MobileAppIntentAndStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.MobileAppTroubleshootingEvents != null && userToInitialize.MobileAppTroubleshootingEvents.CurrentPage != null)
                 {
+                    userToInitialize.MobileAppTroubleshootingEvents.InitializeNextPageRequest(this.Client, userToInitialize.MobileAppTroubleshootingEventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.MobileAppTroubleshootingEvents.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("mobileAppTroubleshootingEvents@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.MobileAppTroubleshootingEvents.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Notifications != null && userToInitialize.Notifications.CurrentPage != null)
                 {
+                    userToInitialize.Notifications.InitializeNextPageRequest(this.Client, userToInitialize.NotificationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Notifications.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("notifications@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Notifications.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Photos != null && userToInitialize.Photos.CurrentPage != null)
                 {
+                    userToInitialize.Photos.InitializeNextPageRequest(this.Client, userToInitialize.PhotosNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Photos.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("photos@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Photos.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Activities != null && userToInitialize.Activities.CurrentPage != null)
                 {
+                    userToInitialize.Activities.InitializeNextPageRequest(this.Client, userToInitialize.ActivitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Activities.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("activities@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Activities.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Devices != null && userToInitialize.Devices.CurrentPage != null)
                 {
+                    userToInitialize.Devices.InitializeNextPageRequest(this.Client, userToInitialize.DevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Devices.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("devices@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Devices.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.OnlineMeetings != null && userToInitialize.OnlineMeetings.CurrentPage != null)
                 {
+                    userToInitialize.OnlineMeetings.InitializeNextPageRequest(this.Client, userToInitialize.OnlineMeetingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.OnlineMeetings.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.OnlineMeetings.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.Chats != null && userToInitialize.Chats.CurrentPage != null)
                 {
+                    userToInitialize.Chats.InitializeNextPageRequest(this.Client, userToInitialize.ChatsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.Chats.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("chats@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.Chats.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userToInitialize.JoinedTeams != null && userToInitialize.JoinedTeams.CurrentPage != null)
                 {
+                    userToInitialize.JoinedTeams.InitializeNextPageRequest(this.Client, userToInitialize.JoinedTeamsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.JoinedTeams.AdditionalData = userToInitialize.AdditionalData;
-
-                    if(userToInitialize.AdditionalData.TryGetValue("joinedTeams@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userToInitialize.JoinedTeams.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

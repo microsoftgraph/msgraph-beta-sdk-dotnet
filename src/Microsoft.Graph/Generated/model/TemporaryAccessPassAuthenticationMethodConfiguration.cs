@@ -63,6 +63,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("includeTargets")]
         public ITemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionPage IncludeTargets { get; set; }
+
+        /// <summary>
+        /// Gets or sets includeTargetsNextLink.
+        /// </summary>
+        [JsonPropertyName("includeTargets@odata.nextLink")]
+        public string IncludeTargetsNextLink { get; set; }
     
     }
 }

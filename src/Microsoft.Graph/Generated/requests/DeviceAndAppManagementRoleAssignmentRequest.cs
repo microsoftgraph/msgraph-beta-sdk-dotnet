@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToInitialize)
         {
 
-            if (deviceAndAppManagementRoleAssignmentToInitialize != null && deviceAndAppManagementRoleAssignmentToInitialize.AdditionalData != null)
+            if (deviceAndAppManagementRoleAssignmentToInitialize != null)
             {
-
                 if (deviceAndAppManagementRoleAssignmentToInitialize.RoleScopeTags != null && deviceAndAppManagementRoleAssignmentToInitialize.RoleScopeTags.CurrentPage != null)
                 {
+                    deviceAndAppManagementRoleAssignmentToInitialize.RoleScopeTags.InitializeNextPageRequest(this.Client, deviceAndAppManagementRoleAssignmentToInitialize.RoleScopeTagsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAndAppManagementRoleAssignmentToInitialize.RoleScopeTags.AdditionalData = deviceAndAppManagementRoleAssignmentToInitialize.AdditionalData;
-
-                    if(deviceAndAppManagementRoleAssignmentToInitialize.AdditionalData.TryGetValue("roleScopeTags@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceAndAppManagementRoleAssignmentToInitialize.RoleScopeTags.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

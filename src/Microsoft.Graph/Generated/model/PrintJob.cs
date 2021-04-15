@@ -83,6 +83,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("documents")]
         public IPrintJobDocumentsCollectionPage Documents { get; set; }
+
+        /// <summary>
+        /// Gets or sets documentsNextLink.
+        /// </summary>
+        [JsonPropertyName("documents@odata.nextLink")]
+        public string DocumentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
@@ -90,6 +96,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tasks")]
         public IPrintJobTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

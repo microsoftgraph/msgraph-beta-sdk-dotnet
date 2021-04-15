@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SalesInvoice salesInvoiceToInitialize)
         {
 
-            if (salesInvoiceToInitialize != null && salesInvoiceToInitialize.AdditionalData != null)
+            if (salesInvoiceToInitialize != null)
             {
-
                 if (salesInvoiceToInitialize.SalesInvoiceLines != null && salesInvoiceToInitialize.SalesInvoiceLines.CurrentPage != null)
                 {
+                    salesInvoiceToInitialize.SalesInvoiceLines.InitializeNextPageRequest(this.Client, salesInvoiceToInitialize.SalesInvoiceLinesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     salesInvoiceToInitialize.SalesInvoiceLines.AdditionalData = salesInvoiceToInitialize.AdditionalData;
-
-                    if(salesInvoiceToInitialize.AdditionalData.TryGetValue("salesInvoiceLines@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            salesInvoiceToInitialize.SalesInvoiceLines.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

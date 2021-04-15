@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AdministrativeUnit administrativeUnitToInitialize)
         {
 
-            if (administrativeUnitToInitialize != null && administrativeUnitToInitialize.AdditionalData != null)
+            if (administrativeUnitToInitialize != null)
             {
-
                 if (administrativeUnitToInitialize.Members != null && administrativeUnitToInitialize.Members.CurrentPage != null)
                 {
+                    administrativeUnitToInitialize.Members.InitializeNextPageRequest(this.Client, administrativeUnitToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     administrativeUnitToInitialize.Members.AdditionalData = administrativeUnitToInitialize.AdditionalData;
-
-                    if(administrativeUnitToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            administrativeUnitToInitialize.Members.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (administrativeUnitToInitialize.ScopedRoleMembers != null && administrativeUnitToInitialize.ScopedRoleMembers.CurrentPage != null)
                 {
+                    administrativeUnitToInitialize.ScopedRoleMembers.InitializeNextPageRequest(this.Client, administrativeUnitToInitialize.ScopedRoleMembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     administrativeUnitToInitialize.ScopedRoleMembers.AdditionalData = administrativeUnitToInitialize.AdditionalData;
-
-                    if(administrativeUnitToInitialize.AdditionalData.TryGetValue("scopedRoleMembers@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            administrativeUnitToInitialize.ScopedRoleMembers.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (administrativeUnitToInitialize.Extensions != null && administrativeUnitToInitialize.Extensions.CurrentPage != null)
                 {
+                    administrativeUnitToInitialize.Extensions.InitializeNextPageRequest(this.Client, administrativeUnitToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     administrativeUnitToInitialize.Extensions.AdditionalData = administrativeUnitToInitialize.AdditionalData;
-
-                    if(administrativeUnitToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            administrativeUnitToInitialize.Extensions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

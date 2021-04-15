@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MacOsVppApp macOsVppAppToInitialize)
         {
 
-            if (macOsVppAppToInitialize != null && macOsVppAppToInitialize.AdditionalData != null)
+            if (macOsVppAppToInitialize != null)
             {
-
                 if (macOsVppAppToInitialize.AssignedLicenses != null && macOsVppAppToInitialize.AssignedLicenses.CurrentPage != null)
                 {
+                    macOsVppAppToInitialize.AssignedLicenses.InitializeNextPageRequest(this.Client, macOsVppAppToInitialize.AssignedLicensesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     macOsVppAppToInitialize.AssignedLicenses.AdditionalData = macOsVppAppToInitialize.AdditionalData;
-
-                    if(macOsVppAppToInitialize.AdditionalData.TryGetValue("assignedLicenses@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            macOsVppAppToInitialize.AssignedLicenses.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

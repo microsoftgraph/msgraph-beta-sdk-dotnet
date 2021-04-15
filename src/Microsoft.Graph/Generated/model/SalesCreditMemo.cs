@@ -219,6 +219,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("salesCreditMemoLines")]
         public ISalesCreditMemoSalesCreditMemoLinesCollectionPage SalesCreditMemoLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesCreditMemoLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesCreditMemoLines@odata.nextLink")]
+        public string SalesCreditMemoLinesNextLink { get; set; }
     
     }
 }

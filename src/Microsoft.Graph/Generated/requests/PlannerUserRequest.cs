@@ -244,115 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PlannerUser plannerUserToInitialize)
         {
 
-            if (plannerUserToInitialize != null && plannerUserToInitialize.AdditionalData != null)
+            if (plannerUserToInitialize != null)
             {
-
                 if (plannerUserToInitialize.All != null && plannerUserToInitialize.All.CurrentPage != null)
                 {
+                    plannerUserToInitialize.All.InitializeNextPageRequest(this.Client, plannerUserToInitialize.AllNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerUserToInitialize.All.AdditionalData = plannerUserToInitialize.AdditionalData;
-
-                    if(plannerUserToInitialize.AdditionalData.TryGetValue("all@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            plannerUserToInitialize.All.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (plannerUserToInitialize.FavoritePlans != null && plannerUserToInitialize.FavoritePlans.CurrentPage != null)
                 {
+                    plannerUserToInitialize.FavoritePlans.InitializeNextPageRequest(this.Client, plannerUserToInitialize.FavoritePlansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerUserToInitialize.FavoritePlans.AdditionalData = plannerUserToInitialize.AdditionalData;
-
-                    if(plannerUserToInitialize.AdditionalData.TryGetValue("favoritePlans@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            plannerUserToInitialize.FavoritePlans.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (plannerUserToInitialize.Plans != null && plannerUserToInitialize.Plans.CurrentPage != null)
                 {
+                    plannerUserToInitialize.Plans.InitializeNextPageRequest(this.Client, plannerUserToInitialize.PlansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerUserToInitialize.Plans.AdditionalData = plannerUserToInitialize.AdditionalData;
-
-                    if(plannerUserToInitialize.AdditionalData.TryGetValue("plans@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            plannerUserToInitialize.Plans.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (plannerUserToInitialize.RecentPlans != null && plannerUserToInitialize.RecentPlans.CurrentPage != null)
                 {
+                    plannerUserToInitialize.RecentPlans.InitializeNextPageRequest(this.Client, plannerUserToInitialize.RecentPlansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerUserToInitialize.RecentPlans.AdditionalData = plannerUserToInitialize.AdditionalData;
-
-                    if(plannerUserToInitialize.AdditionalData.TryGetValue("recentPlans@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            plannerUserToInitialize.RecentPlans.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (plannerUserToInitialize.RosterPlans != null && plannerUserToInitialize.RosterPlans.CurrentPage != null)
                 {
+                    plannerUserToInitialize.RosterPlans.InitializeNextPageRequest(this.Client, plannerUserToInitialize.RosterPlansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerUserToInitialize.RosterPlans.AdditionalData = plannerUserToInitialize.AdditionalData;
-
-                    if(plannerUserToInitialize.AdditionalData.TryGetValue("rosterPlans@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            plannerUserToInitialize.RosterPlans.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (plannerUserToInitialize.Tasks != null && plannerUserToInitialize.Tasks.CurrentPage != null)
                 {
+                    plannerUserToInitialize.Tasks.InitializeNextPageRequest(this.Client, plannerUserToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerUserToInitialize.Tasks.AdditionalData = plannerUserToInitialize.AdditionalData;
-
-                    if(plannerUserToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            plannerUserToInitialize.Tasks.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

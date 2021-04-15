@@ -108,18 +108,36 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("offerShiftRequests")]
         public IScheduleOfferShiftRequestsCollectionPage OfferShiftRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets offerShiftRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("offerShiftRequests@odata.nextLink")]
+        public string OfferShiftRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets open shift change requests.
         /// </summary>
         [JsonPropertyName("openShiftChangeRequests")]
         public IScheduleOpenShiftChangeRequestsCollectionPage OpenShiftChangeRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets openShiftChangeRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("openShiftChangeRequests@odata.nextLink")]
+        public string OpenShiftChangeRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets open shifts.
         /// </summary>
         [JsonPropertyName("openShifts")]
         public IScheduleOpenShiftsCollectionPage OpenShifts { get; set; }
+
+        /// <summary>
+        /// Gets or sets openShiftsNextLink.
+        /// </summary>
+        [JsonPropertyName("openShifts@odata.nextLink")]
+        public string OpenShiftsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets scheduling groups.
@@ -127,6 +145,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("schedulingGroups")]
         public IScheduleSchedulingGroupsCollectionPage SchedulingGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets schedulingGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("schedulingGroups@odata.nextLink")]
+        public string SchedulingGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets shifts.
@@ -134,18 +158,36 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("shifts")]
         public IScheduleShiftsCollectionPage Shifts { get; set; }
+
+        /// <summary>
+        /// Gets or sets shiftsNextLink.
+        /// </summary>
+        [JsonPropertyName("shifts@odata.nextLink")]
+        public string ShiftsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets swap shifts change requests.
         /// </summary>
         [JsonPropertyName("swapShiftsChangeRequests")]
         public IScheduleSwapShiftsChangeRequestsCollectionPage SwapShiftsChangeRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets swapShiftsChangeRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("swapShiftsChangeRequests@odata.nextLink")]
+        public string SwapShiftsChangeRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets time cards.
         /// </summary>
         [JsonPropertyName("timeCards")]
         public IScheduleTimeCardsCollectionPage TimeCards { get; set; }
+
+        /// <summary>
+        /// Gets or sets timeCardsNextLink.
+        /// </summary>
+        [JsonPropertyName("timeCards@odata.nextLink")]
+        public string TimeCardsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets time off reasons.
@@ -153,12 +195,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("timeOffReasons")]
         public IScheduleTimeOffReasonsCollectionPage TimeOffReasons { get; set; }
+
+        /// <summary>
+        /// Gets or sets timeOffReasonsNextLink.
+        /// </summary>
+        [JsonPropertyName("timeOffReasons@odata.nextLink")]
+        public string TimeOffReasonsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets time off requests.
         /// </summary>
         [JsonPropertyName("timeOffRequests")]
         public IScheduleTimeOffRequestsCollectionPage TimeOffRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets timeOffRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("timeOffRequests@odata.nextLink")]
+        public string TimeOffRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets times off.
@@ -166,6 +220,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("timesOff")]
         public IScheduleTimesOffCollectionPage TimesOff { get; set; }
+
+        /// <summary>
+        /// Gets or sets timesOffNextLink.
+        /// </summary>
+        [JsonPropertyName("timesOff@odata.nextLink")]
+        public string TimesOffNextLink { get; set; }
     
     }
 }

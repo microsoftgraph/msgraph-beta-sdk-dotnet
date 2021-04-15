@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("activities")]
         public IListActivitiesCollectionPage Activities { get; set; }
+
+        /// <summary>
+        /// Gets or sets activitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("activities@odata.nextLink")]
+        public string ActivitiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets columns.
@@ -69,6 +75,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("columns")]
         public IListColumnsCollectionPage Columns { get; set; }
+
+        /// <summary>
+        /// Gets or sets columnsNextLink.
+        /// </summary>
+        [JsonPropertyName("columns@odata.nextLink")]
+        public string ColumnsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets content types.
@@ -76,6 +88,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("contentTypes")]
         public IListContentTypesCollectionPage ContentTypes { get; set; }
+
+        /// <summary>
+        /// Gets or sets contentTypesNextLink.
+        /// </summary>
+        [JsonPropertyName("contentTypes@odata.nextLink")]
+        public string ContentTypesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets drive.
@@ -90,6 +108,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("items")]
         public IListItemsCollectionPage Items { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemsNextLink.
+        /// </summary>
+        [JsonPropertyName("items@odata.nextLink")]
+        public string ItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets subscriptions.
@@ -97,6 +121,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("subscriptions")]
         public IListSubscriptionsCollectionPage Subscriptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets subscriptionsNextLink.
+        /// </summary>
+        [JsonPropertyName("subscriptions@odata.nextLink")]
+        public string SubscriptionsNextLink { get; set; }
     
     }
 }

@@ -132,6 +132,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("directReports")]
         public IOrgContactDirectReportsCollectionWithReferencesPage DirectReports { get; set; }
+
+        /// <summary>
+        /// Gets or sets directReportsNextLink.
+        /// </summary>
+        [JsonPropertyName("directReports@odata.nextLink")]
+        public string DirectReportsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets manager.
@@ -146,12 +152,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IOrgContactMemberOfCollectionWithReferencesPage MemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets memberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("memberOf@odata.nextLink")]
+        public string MemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets transitive member of.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf")]
         public IOrgContactTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets transitiveMemberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("transitiveMemberOf@odata.nextLink")]
+        public string TransitiveMemberOfNextLink { get; set; }
     
     }
 }

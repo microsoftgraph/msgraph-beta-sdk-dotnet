@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ConversationThread conversationThreadToInitialize)
         {
 
-            if (conversationThreadToInitialize != null && conversationThreadToInitialize.AdditionalData != null)
+            if (conversationThreadToInitialize != null)
             {
-
                 if (conversationThreadToInitialize.Posts != null && conversationThreadToInitialize.Posts.CurrentPage != null)
                 {
+                    conversationThreadToInitialize.Posts.InitializeNextPageRequest(this.Client, conversationThreadToInitialize.PostsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     conversationThreadToInitialize.Posts.AdditionalData = conversationThreadToInitialize.AdditionalData;
-
-                    if(conversationThreadToInitialize.AdditionalData.TryGetValue("posts@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            conversationThreadToInitialize.Posts.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

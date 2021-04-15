@@ -119,6 +119,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignedDevices")]
         public IWindowsAutopilotDeploymentProfileAssignedDevicesCollectionPage AssignedDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignedDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("assignedDevices@odata.nextLink")]
+        public string AssignedDevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
@@ -126,6 +132,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IWindowsAutopilotDeploymentProfileAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
     }
 }

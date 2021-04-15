@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SecurityConfigurationTask securityConfigurationTaskToInitialize)
         {
 
-            if (securityConfigurationTaskToInitialize != null && securityConfigurationTaskToInitialize.AdditionalData != null)
+            if (securityConfigurationTaskToInitialize != null)
             {
-
                 if (securityConfigurationTaskToInitialize.ManagedDevices != null && securityConfigurationTaskToInitialize.ManagedDevices.CurrentPage != null)
                 {
+                    securityConfigurationTaskToInitialize.ManagedDevices.InitializeNextPageRequest(this.Client, securityConfigurationTaskToInitialize.ManagedDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityConfigurationTaskToInitialize.ManagedDevices.AdditionalData = securityConfigurationTaskToInitialize.AdditionalData;
-
-                    if(securityConfigurationTaskToInitialize.AdditionalData.TryGetValue("managedDevices@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityConfigurationTaskToInitialize.ManagedDevices.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

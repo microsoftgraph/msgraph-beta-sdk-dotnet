@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ImportedWindowsAutopilotDeviceIdentityUpload importedWindowsAutopilotDeviceIdentityUploadToInitialize)
         {
 
-            if (importedWindowsAutopilotDeviceIdentityUploadToInitialize != null && importedWindowsAutopilotDeviceIdentityUploadToInitialize.AdditionalData != null)
+            if (importedWindowsAutopilotDeviceIdentityUploadToInitialize != null)
             {
-
                 if (importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentities != null && importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentities.CurrentPage != null)
                 {
+                    importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentities.InitializeNextPageRequest(this.Client, importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentities.AdditionalData = importedWindowsAutopilotDeviceIdentityUploadToInitialize.AdditionalData;
-
-                    if(importedWindowsAutopilotDeviceIdentityUploadToInitialize.AdditionalData.TryGetValue("deviceIdentities@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentities.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,97 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IdentityContainer identityContainerToInitialize)
         {
 
-            if (identityContainerToInitialize != null && identityContainerToInitialize.AdditionalData != null)
+            if (identityContainerToInitialize != null)
             {
-
                 if (identityContainerToInitialize.ApiConnectors != null && identityContainerToInitialize.ApiConnectors.CurrentPage != null)
                 {
+                    identityContainerToInitialize.ApiConnectors.InitializeNextPageRequest(this.Client, identityContainerToInitialize.ApiConnectorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.ApiConnectors.AdditionalData = identityContainerToInitialize.AdditionalData;
-
-                    if(identityContainerToInitialize.AdditionalData.TryGetValue("apiConnectors@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            identityContainerToInitialize.ApiConnectors.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (identityContainerToInitialize.B2cUserFlows != null && identityContainerToInitialize.B2cUserFlows.CurrentPage != null)
                 {
+                    identityContainerToInitialize.B2cUserFlows.InitializeNextPageRequest(this.Client, identityContainerToInitialize.B2cUserFlowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.B2cUserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
-
-                    if(identityContainerToInitialize.AdditionalData.TryGetValue("b2cUserFlows@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            identityContainerToInitialize.B2cUserFlows.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (identityContainerToInitialize.B2xUserFlows != null && identityContainerToInitialize.B2xUserFlows.CurrentPage != null)
                 {
+                    identityContainerToInitialize.B2xUserFlows.InitializeNextPageRequest(this.Client, identityContainerToInitialize.B2xUserFlowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.B2xUserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
-
-                    if(identityContainerToInitialize.AdditionalData.TryGetValue("b2xUserFlows@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            identityContainerToInitialize.B2xUserFlows.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (identityContainerToInitialize.UserFlowAttributes != null && identityContainerToInitialize.UserFlowAttributes.CurrentPage != null)
                 {
+                    identityContainerToInitialize.UserFlowAttributes.InitializeNextPageRequest(this.Client, identityContainerToInitialize.UserFlowAttributesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.UserFlowAttributes.AdditionalData = identityContainerToInitialize.AdditionalData;
-
-                    if(identityContainerToInitialize.AdditionalData.TryGetValue("userFlowAttributes@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            identityContainerToInitialize.UserFlowAttributes.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (identityContainerToInitialize.UserFlows != null && identityContainerToInitialize.UserFlows.CurrentPage != null)
                 {
+                    identityContainerToInitialize.UserFlows.InitializeNextPageRequest(this.Client, identityContainerToInitialize.UserFlowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.UserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
-
-                    if(identityContainerToInitialize.AdditionalData.TryGetValue("userFlows@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            identityContainerToInitialize.UserFlows.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -83,6 +83,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("errors")]
         public IEducationSynchronizationProfileErrorsCollectionPage Errors { get; set; }
+
+        /// <summary>
+        /// Gets or sets errorsNextLink.
+        /// </summary>
+        [JsonPropertyName("errors@odata.nextLink")]
+        public string ErrorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets profile status.

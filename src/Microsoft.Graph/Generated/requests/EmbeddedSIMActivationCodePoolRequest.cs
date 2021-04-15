@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToInitialize)
         {
 
-            if (embeddedSIMActivationCodePoolToInitialize != null && embeddedSIMActivationCodePoolToInitialize.AdditionalData != null)
+            if (embeddedSIMActivationCodePoolToInitialize != null)
             {
-
                 if (embeddedSIMActivationCodePoolToInitialize.Assignments != null && embeddedSIMActivationCodePoolToInitialize.Assignments.CurrentPage != null)
                 {
+                    embeddedSIMActivationCodePoolToInitialize.Assignments.InitializeNextPageRequest(this.Client, embeddedSIMActivationCodePoolToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     embeddedSIMActivationCodePoolToInitialize.Assignments.AdditionalData = embeddedSIMActivationCodePoolToInitialize.AdditionalData;
-
-                    if(embeddedSIMActivationCodePoolToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            embeddedSIMActivationCodePoolToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (embeddedSIMActivationCodePoolToInitialize.DeviceStates != null && embeddedSIMActivationCodePoolToInitialize.DeviceStates.CurrentPage != null)
                 {
+                    embeddedSIMActivationCodePoolToInitialize.DeviceStates.InitializeNextPageRequest(this.Client, embeddedSIMActivationCodePoolToInitialize.DeviceStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     embeddedSIMActivationCodePoolToInitialize.DeviceStates.AdditionalData = embeddedSIMActivationCodePoolToInitialize.AdditionalData;
-
-                    if(embeddedSIMActivationCodePoolToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            embeddedSIMActivationCodePoolToInitialize.DeviceStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

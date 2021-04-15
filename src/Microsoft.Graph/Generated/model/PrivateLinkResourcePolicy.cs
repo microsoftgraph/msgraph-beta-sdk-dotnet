@@ -51,6 +51,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("privateEndpointConnections")]
         public IPrivateLinkResourcePolicyPrivateEndpointConnectionsCollectionPage PrivateEndpointConnections { get; set; }
+
+        /// <summary>
+        /// Gets or sets privateEndpointConnectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("privateEndpointConnections@odata.nextLink")]
+        public string PrivateEndpointConnectionsNextLink { get; set; }
     
     }
 }

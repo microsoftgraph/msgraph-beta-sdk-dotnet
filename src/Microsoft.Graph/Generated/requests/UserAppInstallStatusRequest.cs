@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserAppInstallStatus userAppInstallStatusToInitialize)
         {
 
-            if (userAppInstallStatusToInitialize != null && userAppInstallStatusToInitialize.AdditionalData != null)
+            if (userAppInstallStatusToInitialize != null)
             {
-
                 if (userAppInstallStatusToInitialize.DeviceStatuses != null && userAppInstallStatusToInitialize.DeviceStatuses.CurrentPage != null)
                 {
+                    userAppInstallStatusToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, userAppInstallStatusToInitialize.DeviceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userAppInstallStatusToInitialize.DeviceStatuses.AdditionalData = userAppInstallStatusToInitialize.AdditionalData;
-
-                    if(userAppInstallStatusToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userAppInstallStatusToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

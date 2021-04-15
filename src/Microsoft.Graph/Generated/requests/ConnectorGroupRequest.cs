@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ConnectorGroup connectorGroupToInitialize)
         {
 
-            if (connectorGroupToInitialize != null && connectorGroupToInitialize.AdditionalData != null)
+            if (connectorGroupToInitialize != null)
             {
-
                 if (connectorGroupToInitialize.Applications != null && connectorGroupToInitialize.Applications.CurrentPage != null)
                 {
+                    connectorGroupToInitialize.Applications.InitializeNextPageRequest(this.Client, connectorGroupToInitialize.ApplicationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     connectorGroupToInitialize.Applications.AdditionalData = connectorGroupToInitialize.AdditionalData;
-
-                    if(connectorGroupToInitialize.AdditionalData.TryGetValue("applications@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            connectorGroupToInitialize.Applications.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (connectorGroupToInitialize.Members != null && connectorGroupToInitialize.Members.CurrentPage != null)
                 {
+                    connectorGroupToInitialize.Members.InitializeNextPageRequest(this.Client, connectorGroupToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     connectorGroupToInitialize.Members.AdditionalData = connectorGroupToInitialize.AdditionalData;
-
-                    if(connectorGroupToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            connectorGroupToInitialize.Members.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

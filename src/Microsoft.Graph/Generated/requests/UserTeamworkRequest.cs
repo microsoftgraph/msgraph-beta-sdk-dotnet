@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserTeamwork userTeamworkToInitialize)
         {
 
-            if (userTeamworkToInitialize != null && userTeamworkToInitialize.AdditionalData != null)
+            if (userTeamworkToInitialize != null)
             {
-
                 if (userTeamworkToInitialize.InstalledApps != null && userTeamworkToInitialize.InstalledApps.CurrentPage != null)
                 {
+                    userTeamworkToInitialize.InstalledApps.InitializeNextPageRequest(this.Client, userTeamworkToInitialize.InstalledAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userTeamworkToInitialize.InstalledApps.AdditionalData = userTeamworkToInitialize.AdditionalData;
-
-                    if(userTeamworkToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userTeamworkToInitialize.InstalledApps.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

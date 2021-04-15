@@ -97,6 +97,12 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         [JsonPropertyName("sessions")]
         public ICallRecordSessionsCollectionPage Sessions { get; set; }
+
+        /// <summary>
+        /// Gets or sets sessionsNextLink.
+        /// </summary>
+        [JsonPropertyName("sessions@odata.nextLink")]
+        public string SessionsNextLink { get; set; }
     
     }
 }

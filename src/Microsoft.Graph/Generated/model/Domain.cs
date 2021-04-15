@@ -111,6 +111,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("domainNameReferences")]
         public IDomainDomainNameReferencesCollectionWithReferencesPage DomainNameReferences { get; set; }
+
+        /// <summary>
+        /// Gets or sets domainNameReferencesNextLink.
+        /// </summary>
+        [JsonPropertyName("domainNameReferences@odata.nextLink")]
+        public string DomainNameReferencesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets service configuration records.
@@ -118,12 +124,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("serviceConfigurationRecords")]
         public IDomainServiceConfigurationRecordsCollectionPage ServiceConfigurationRecords { get; set; }
+
+        /// <summary>
+        /// Gets or sets serviceConfigurationRecordsNextLink.
+        /// </summary>
+        [JsonPropertyName("serviceConfigurationRecords@odata.nextLink")]
+        public string ServiceConfigurationRecordsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets shared email domain invitations.
         /// </summary>
         [JsonPropertyName("sharedEmailDomainInvitations")]
         public IDomainSharedEmailDomainInvitationsCollectionPage SharedEmailDomainInvitations { get; set; }
+
+        /// <summary>
+        /// Gets or sets sharedEmailDomainInvitationsNextLink.
+        /// </summary>
+        [JsonPropertyName("sharedEmailDomainInvitations@odata.nextLink")]
+        public string SharedEmailDomainInvitationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets verification dns records.
@@ -131,6 +149,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("verificationDnsRecords")]
         public IDomainVerificationDnsRecordsCollectionPage VerificationDnsRecords { get; set; }
+
+        /// <summary>
+        /// Gets or sets verificationDnsRecordsNextLink.
+        /// </summary>
+        [JsonPropertyName("verificationDnsRecords@odata.nextLink")]
+        public string VerificationDnsRecordsNextLink { get; set; }
     
     }
 }

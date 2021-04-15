@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfileToInitialize)
         {
 
-            if (windowsAutopilotDeploymentProfileToInitialize != null && windowsAutopilotDeploymentProfileToInitialize.AdditionalData != null)
+            if (windowsAutopilotDeploymentProfileToInitialize != null)
             {
-
                 if (windowsAutopilotDeploymentProfileToInitialize.AssignedDevices != null && windowsAutopilotDeploymentProfileToInitialize.AssignedDevices.CurrentPage != null)
                 {
+                    windowsAutopilotDeploymentProfileToInitialize.AssignedDevices.InitializeNextPageRequest(this.Client, windowsAutopilotDeploymentProfileToInitialize.AssignedDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsAutopilotDeploymentProfileToInitialize.AssignedDevices.AdditionalData = windowsAutopilotDeploymentProfileToInitialize.AdditionalData;
-
-                    if(windowsAutopilotDeploymentProfileToInitialize.AdditionalData.TryGetValue("assignedDevices@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windowsAutopilotDeploymentProfileToInitialize.AssignedDevices.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (windowsAutopilotDeploymentProfileToInitialize.Assignments != null && windowsAutopilotDeploymentProfileToInitialize.Assignments.CurrentPage != null)
                 {
+                    windowsAutopilotDeploymentProfileToInitialize.Assignments.InitializeNextPageRequest(this.Client, windowsAutopilotDeploymentProfileToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsAutopilotDeploymentProfileToInitialize.Assignments.AdditionalData = windowsAutopilotDeploymentProfileToInitialize.AdditionalData;
-
-                    if(windowsAutopilotDeploymentProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windowsAutopilotDeploymentProfileToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

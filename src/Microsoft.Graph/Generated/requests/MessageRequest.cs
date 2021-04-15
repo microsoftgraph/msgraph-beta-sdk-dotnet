@@ -244,97 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Message messageToInitialize)
         {
 
-            if (messageToInitialize != null && messageToInitialize.AdditionalData != null)
+            if (messageToInitialize != null)
             {
-
                 if (messageToInitialize.Attachments != null && messageToInitialize.Attachments.CurrentPage != null)
                 {
+                    messageToInitialize.Attachments.InitializeNextPageRequest(this.Client, messageToInitialize.AttachmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     messageToInitialize.Attachments.AdditionalData = messageToInitialize.AdditionalData;
-
-                    if(messageToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            messageToInitialize.Attachments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (messageToInitialize.Extensions != null && messageToInitialize.Extensions.CurrentPage != null)
                 {
+                    messageToInitialize.Extensions.InitializeNextPageRequest(this.Client, messageToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     messageToInitialize.Extensions.AdditionalData = messageToInitialize.AdditionalData;
-
-                    if(messageToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            messageToInitialize.Extensions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (messageToInitialize.Mentions != null && messageToInitialize.Mentions.CurrentPage != null)
                 {
+                    messageToInitialize.Mentions.InitializeNextPageRequest(this.Client, messageToInitialize.MentionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     messageToInitialize.Mentions.AdditionalData = messageToInitialize.AdditionalData;
-
-                    if(messageToInitialize.AdditionalData.TryGetValue("mentions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            messageToInitialize.Mentions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (messageToInitialize.MultiValueExtendedProperties != null && messageToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    messageToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, messageToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     messageToInitialize.MultiValueExtendedProperties.AdditionalData = messageToInitialize.AdditionalData;
-
-                    if(messageToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            messageToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (messageToInitialize.SingleValueExtendedProperties != null && messageToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    messageToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, messageToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     messageToInitialize.SingleValueExtendedProperties.AdditionalData = messageToInitialize.AdditionalData;
-
-                    if(messageToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            messageToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("controls")]
         public IProgramControlsCollectionPage Controls { get; set; }
+
+        /// <summary>
+        /// Gets or sets controlsNextLink.
+        /// </summary>
+        [JsonPropertyName("controls@odata.nextLink")]
+        public string ControlsNextLink { get; set; }
     
     }
 }

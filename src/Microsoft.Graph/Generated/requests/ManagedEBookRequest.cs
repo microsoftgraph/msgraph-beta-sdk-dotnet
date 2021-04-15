@@ -244,79 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedEBook managedEBookToInitialize)
         {
 
-            if (managedEBookToInitialize != null && managedEBookToInitialize.AdditionalData != null)
+            if (managedEBookToInitialize != null)
             {
-
                 if (managedEBookToInitialize.Assignments != null && managedEBookToInitialize.Assignments.CurrentPage != null)
                 {
+                    managedEBookToInitialize.Assignments.InitializeNextPageRequest(this.Client, managedEBookToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedEBookToInitialize.Assignments.AdditionalData = managedEBookToInitialize.AdditionalData;
-
-                    if(managedEBookToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            managedEBookToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (managedEBookToInitialize.Categories != null && managedEBookToInitialize.Categories.CurrentPage != null)
                 {
+                    managedEBookToInitialize.Categories.InitializeNextPageRequest(this.Client, managedEBookToInitialize.CategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedEBookToInitialize.Categories.AdditionalData = managedEBookToInitialize.AdditionalData;
-
-                    if(managedEBookToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            managedEBookToInitialize.Categories.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (managedEBookToInitialize.DeviceStates != null && managedEBookToInitialize.DeviceStates.CurrentPage != null)
                 {
+                    managedEBookToInitialize.DeviceStates.InitializeNextPageRequest(this.Client, managedEBookToInitialize.DeviceStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedEBookToInitialize.DeviceStates.AdditionalData = managedEBookToInitialize.AdditionalData;
-
-                    if(managedEBookToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            managedEBookToInitialize.DeviceStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (managedEBookToInitialize.UserStateSummary != null && managedEBookToInitialize.UserStateSummary.CurrentPage != null)
                 {
+                    managedEBookToInitialize.UserStateSummary.InitializeNextPageRequest(this.Client, managedEBookToInitialize.UserStateSummaryNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedEBookToInitialize.UserStateSummary.AdditionalData = managedEBookToInitialize.AdditionalData;
-
-                    if(managedEBookToInitialize.AdditionalData.TryGetValue("userStateSummary@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            managedEBookToInitialize.UserStateSummary.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

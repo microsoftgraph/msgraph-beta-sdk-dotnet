@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TrustFramework trustFrameworkToInitialize)
         {
 
-            if (trustFrameworkToInitialize != null && trustFrameworkToInitialize.AdditionalData != null)
+            if (trustFrameworkToInitialize != null)
             {
-
                 if (trustFrameworkToInitialize.KeySets != null && trustFrameworkToInitialize.KeySets.CurrentPage != null)
                 {
+                    trustFrameworkToInitialize.KeySets.InitializeNextPageRequest(this.Client, trustFrameworkToInitialize.KeySetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     trustFrameworkToInitialize.KeySets.AdditionalData = trustFrameworkToInitialize.AdditionalData;
-
-                    if(trustFrameworkToInitialize.AdditionalData.TryGetValue("keySets@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            trustFrameworkToInitialize.KeySets.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (trustFrameworkToInitialize.Policies != null && trustFrameworkToInitialize.Policies.CurrentPage != null)
                 {
+                    trustFrameworkToInitialize.Policies.InitializeNextPageRequest(this.Client, trustFrameworkToInitialize.PoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     trustFrameworkToInitialize.Policies.AdditionalData = trustFrameworkToInitialize.AdditionalData;
-
-                    if(trustFrameworkToInitialize.AdditionalData.TryGetValue("policies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            trustFrameworkToInitialize.Policies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

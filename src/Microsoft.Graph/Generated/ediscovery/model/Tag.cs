@@ -69,6 +69,12 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         [JsonPropertyName("childTags")]
         public ITagChildTagsCollectionWithReferencesPage ChildTags { get; set; }
+
+        /// <summary>
+        /// Gets or sets childTagsNextLink.
+        /// </summary>
+        [JsonPropertyName("childTags@odata.nextLink")]
+        public string ChildTagsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets parent.

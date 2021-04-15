@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsDefenderApplicationControlSupplementalPolicy windowsDefenderApplicationControlSupplementalPolicyToInitialize)
         {
 
-            if (windowsDefenderApplicationControlSupplementalPolicyToInitialize != null && windowsDefenderApplicationControlSupplementalPolicyToInitialize.AdditionalData != null)
+            if (windowsDefenderApplicationControlSupplementalPolicyToInitialize != null)
             {
-
                 if (windowsDefenderApplicationControlSupplementalPolicyToInitialize.Assignments != null && windowsDefenderApplicationControlSupplementalPolicyToInitialize.Assignments.CurrentPage != null)
                 {
+                    windowsDefenderApplicationControlSupplementalPolicyToInitialize.Assignments.InitializeNextPageRequest(this.Client, windowsDefenderApplicationControlSupplementalPolicyToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsDefenderApplicationControlSupplementalPolicyToInitialize.Assignments.AdditionalData = windowsDefenderApplicationControlSupplementalPolicyToInitialize.AdditionalData;
-
-                    if(windowsDefenderApplicationControlSupplementalPolicyToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windowsDefenderApplicationControlSupplementalPolicyToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatuses != null && windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatuses.CurrentPage != null)
                 {
+                    windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatuses.AdditionalData = windowsDefenderApplicationControlSupplementalPolicyToInitialize.AdditionalData;
-
-                    if(windowsDefenderApplicationControlSupplementalPolicyToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

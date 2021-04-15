@@ -34,12 +34,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("keySets")]
         public ITrustFrameworkKeySetsCollectionPage KeySets { get; set; }
+
+        /// <summary>
+        /// Gets or sets keySetsNextLink.
+        /// </summary>
+        [JsonPropertyName("keySets@odata.nextLink")]
+        public string KeySetsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets policies.
         /// </summary>
         [JsonPropertyName("policies")]
         public ITrustFrameworkPoliciesCollectionPage Policies { get; set; }
+
+        /// <summary>
+        /// Gets or sets policiesNextLink.
+        /// </summary>
+        [JsonPropertyName("policies@odata.nextLink")]
+        public string PoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

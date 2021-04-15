@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize)
         {
 
-            if (microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize != null && microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.AdditionalData != null)
+            if (microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize != null)
             {
-
                 if (microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargets != null && microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargets.CurrentPage != null)
                 {
+                    microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(this.Client, microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargets.AdditionalData = microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.AdditionalData;
-
-                    if(microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.AdditionalData.TryGetValue("includeTargets@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

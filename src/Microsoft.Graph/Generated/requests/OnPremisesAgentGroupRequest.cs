@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OnPremisesAgentGroup onPremisesAgentGroupToInitialize)
         {
 
-            if (onPremisesAgentGroupToInitialize != null && onPremisesAgentGroupToInitialize.AdditionalData != null)
+            if (onPremisesAgentGroupToInitialize != null)
             {
-
                 if (onPremisesAgentGroupToInitialize.Agents != null && onPremisesAgentGroupToInitialize.Agents.CurrentPage != null)
                 {
+                    onPremisesAgentGroupToInitialize.Agents.InitializeNextPageRequest(this.Client, onPremisesAgentGroupToInitialize.AgentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesAgentGroupToInitialize.Agents.AdditionalData = onPremisesAgentGroupToInitialize.AdditionalData;
-
-                    if(onPremisesAgentGroupToInitialize.AdditionalData.TryGetValue("agents@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            onPremisesAgentGroupToInitialize.Agents.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (onPremisesAgentGroupToInitialize.PublishedResources != null && onPremisesAgentGroupToInitialize.PublishedResources.CurrentPage != null)
                 {
+                    onPremisesAgentGroupToInitialize.PublishedResources.InitializeNextPageRequest(this.Client, onPremisesAgentGroupToInitialize.PublishedResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesAgentGroupToInitialize.PublishedResources.AdditionalData = onPremisesAgentGroupToInitialize.AdditionalData;
-
-                    if(onPremisesAgentGroupToInitialize.AdditionalData.TryGetValue("publishedResources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            onPremisesAgentGroupToInitialize.PublishedResources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

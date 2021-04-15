@@ -83,6 +83,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("roleAssignments")]
         public IRoleDefinitionRoleAssignmentsCollectionPage RoleAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleAssignments@odata.nextLink")]
+        public string RoleAssignmentsNextLink { get; set; }
     
     }
 }

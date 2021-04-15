@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("apps")]
         public ITargetedManagedAppConfigurationAppsCollectionPage Apps { get; set; }
+
+        /// <summary>
+        /// Gets or sets appsNextLink.
+        /// </summary>
+        [JsonPropertyName("apps@odata.nextLink")]
+        public string AppsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
@@ -55,6 +61,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public ITargetedManagedAppConfigurationAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets deployment summary.

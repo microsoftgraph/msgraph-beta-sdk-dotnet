@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessReviewSet accessReviewSetToInitialize)
         {
 
-            if (accessReviewSetToInitialize != null && accessReviewSetToInitialize.AdditionalData != null)
+            if (accessReviewSetToInitialize != null)
             {
-
                 if (accessReviewSetToInitialize.Definitions != null && accessReviewSetToInitialize.Definitions.CurrentPage != null)
                 {
+                    accessReviewSetToInitialize.Definitions.InitializeNextPageRequest(this.Client, accessReviewSetToInitialize.DefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewSetToInitialize.Definitions.AdditionalData = accessReviewSetToInitialize.AdditionalData;
-
-                    if(accessReviewSetToInitialize.AdditionalData.TryGetValue("definitions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            accessReviewSetToInitialize.Definitions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

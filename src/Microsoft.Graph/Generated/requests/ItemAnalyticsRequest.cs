@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ItemAnalytics itemAnalyticsToInitialize)
         {
 
-            if (itemAnalyticsToInitialize != null && itemAnalyticsToInitialize.AdditionalData != null)
+            if (itemAnalyticsToInitialize != null)
             {
-
                 if (itemAnalyticsToInitialize.ItemActivityStats != null && itemAnalyticsToInitialize.ItemActivityStats.CurrentPage != null)
                 {
+                    itemAnalyticsToInitialize.ItemActivityStats.InitializeNextPageRequest(this.Client, itemAnalyticsToInitialize.ItemActivityStatsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     itemAnalyticsToInitialize.ItemActivityStats.AdditionalData = itemAnalyticsToInitialize.AdditionalData;
-
-                    if(itemAnalyticsToInitialize.AdditionalData.TryGetValue("itemActivityStats@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            itemAnalyticsToInitialize.ItemActivityStats.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

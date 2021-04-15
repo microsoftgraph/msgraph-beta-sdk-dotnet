@@ -40,72 +40,144 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("alerts")]
         public ISecurityAlertsCollectionPage Alerts { get; set; }
+
+        /// <summary>
+        /// Gets or sets alertsNextLink.
+        /// </summary>
+        [JsonPropertyName("alerts@odata.nextLink")]
+        public string AlertsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets cloud app security profiles.
         /// </summary>
         [JsonPropertyName("cloudAppSecurityProfiles")]
         public ISecurityCloudAppSecurityProfilesCollectionPage CloudAppSecurityProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets cloudAppSecurityProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("cloudAppSecurityProfiles@odata.nextLink")]
+        public string CloudAppSecurityProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets domain security profiles.
         /// </summary>
         [JsonPropertyName("domainSecurityProfiles")]
         public ISecurityDomainSecurityProfilesCollectionPage DomainSecurityProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets domainSecurityProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("domainSecurityProfiles@odata.nextLink")]
+        public string DomainSecurityProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets file security profiles.
         /// </summary>
         [JsonPropertyName("fileSecurityProfiles")]
         public ISecurityFileSecurityProfilesCollectionPage FileSecurityProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets fileSecurityProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("fileSecurityProfiles@odata.nextLink")]
+        public string FileSecurityProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets host security profiles.
         /// </summary>
         [JsonPropertyName("hostSecurityProfiles")]
         public ISecurityHostSecurityProfilesCollectionPage HostSecurityProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets hostSecurityProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("hostSecurityProfiles@odata.nextLink")]
+        public string HostSecurityProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets ip security profiles.
         /// </summary>
         [JsonPropertyName("ipSecurityProfiles")]
         public ISecurityIpSecurityProfilesCollectionPage IpSecurityProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets ipSecurityProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("ipSecurityProfiles@odata.nextLink")]
+        public string IpSecurityProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets provider tenant settings.
         /// </summary>
         [JsonPropertyName("providerTenantSettings")]
         public ISecurityProviderTenantSettingsCollectionPage ProviderTenantSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets providerTenantSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("providerTenantSettings@odata.nextLink")]
+        public string ProviderTenantSettingsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets secure score control profiles.
         /// </summary>
         [JsonPropertyName("secureScoreControlProfiles")]
         public ISecuritySecureScoreControlProfilesCollectionPage SecureScoreControlProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets secureScoreControlProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("secureScoreControlProfiles@odata.nextLink")]
+        public string SecureScoreControlProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets secure scores.
         /// </summary>
         [JsonPropertyName("secureScores")]
         public ISecuritySecureScoresCollectionPage SecureScores { get; set; }
+
+        /// <summary>
+        /// Gets or sets secureScoresNextLink.
+        /// </summary>
+        [JsonPropertyName("secureScores@odata.nextLink")]
+        public string SecureScoresNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets security actions.
         /// </summary>
         [JsonPropertyName("securityActions")]
         public ISecuritySecurityActionsCollectionPage SecurityActions { get; set; }
+
+        /// <summary>
+        /// Gets or sets securityActionsNextLink.
+        /// </summary>
+        [JsonPropertyName("securityActions@odata.nextLink")]
+        public string SecurityActionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets ti indicators.
         /// </summary>
         [JsonPropertyName("tiIndicators")]
         public ISecurityTiIndicatorsCollectionPage TiIndicators { get; set; }
+
+        /// <summary>
+        /// Gets or sets tiIndicatorsNextLink.
+        /// </summary>
+        [JsonPropertyName("tiIndicators@odata.nextLink")]
+        public string TiIndicatorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user security profiles.
         /// </summary>
         [JsonPropertyName("userSecurityProfiles")]
         public ISecurityUserSecurityProfilesCollectionPage UserSecurityProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets userSecurityProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("userSecurityProfiles@odata.nextLink")]
+        public string UserSecurityProfilesNextLink { get; set; }
     
     }
 }

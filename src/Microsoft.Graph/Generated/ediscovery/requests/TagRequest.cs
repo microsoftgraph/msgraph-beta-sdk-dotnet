@@ -244,25 +244,13 @@ namespace Microsoft.Graph.Ediscovery
         private void InitializeCollectionProperties(Tag tagToInitialize)
         {
 
-            if (tagToInitialize != null && tagToInitialize.AdditionalData != null)
+            if (tagToInitialize != null)
             {
-
                 if (tagToInitialize.ChildTags != null && tagToInitialize.ChildTags.CurrentPage != null)
                 {
+                    tagToInitialize.ChildTags.InitializeNextPageRequest(this.Client, tagToInitialize.ChildTagsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     tagToInitialize.ChildTags.AdditionalData = tagToInitialize.AdditionalData;
-
-                    if(tagToInitialize.AdditionalData.TryGetValue("childTags@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            tagToInitialize.ChildTags.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

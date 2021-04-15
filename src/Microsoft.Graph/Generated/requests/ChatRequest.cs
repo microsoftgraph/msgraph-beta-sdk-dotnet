@@ -244,79 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Chat chatToInitialize)
         {
 
-            if (chatToInitialize != null && chatToInitialize.AdditionalData != null)
+            if (chatToInitialize != null)
             {
-
                 if (chatToInitialize.InstalledApps != null && chatToInitialize.InstalledApps.CurrentPage != null)
                 {
+                    chatToInitialize.InstalledApps.InitializeNextPageRequest(this.Client, chatToInitialize.InstalledAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     chatToInitialize.InstalledApps.AdditionalData = chatToInitialize.AdditionalData;
-
-                    if(chatToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            chatToInitialize.InstalledApps.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (chatToInitialize.Members != null && chatToInitialize.Members.CurrentPage != null)
                 {
+                    chatToInitialize.Members.InitializeNextPageRequest(this.Client, chatToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     chatToInitialize.Members.AdditionalData = chatToInitialize.AdditionalData;
-
-                    if(chatToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            chatToInitialize.Members.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (chatToInitialize.Messages != null && chatToInitialize.Messages.CurrentPage != null)
                 {
+                    chatToInitialize.Messages.InitializeNextPageRequest(this.Client, chatToInitialize.MessagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     chatToInitialize.Messages.AdditionalData = chatToInitialize.AdditionalData;
-
-                    if(chatToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            chatToInitialize.Messages.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (chatToInitialize.Tabs != null && chatToInitialize.Tabs.CurrentPage != null)
                 {
+                    chatToInitialize.Tabs.InitializeNextPageRequest(this.Client, chatToInitialize.TabsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     chatToInitialize.Tabs.AdditionalData = chatToInitialize.AdditionalData;
-
-                    if(chatToInitialize.AdditionalData.TryGetValue("tabs@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            chatToInitialize.Tabs.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

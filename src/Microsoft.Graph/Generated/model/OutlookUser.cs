@@ -34,24 +34,48 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("masterCategories")]
         public IOutlookUserMasterCategoriesCollectionPage MasterCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets masterCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("masterCategories@odata.nextLink")]
+        public string MasterCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets task folders.
         /// </summary>
         [JsonPropertyName("taskFolders")]
         public IOutlookUserTaskFoldersCollectionPage TaskFolders { get; set; }
+
+        /// <summary>
+        /// Gets or sets taskFoldersNextLink.
+        /// </summary>
+        [JsonPropertyName("taskFolders@odata.nextLink")]
+        public string TaskFoldersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets task groups.
         /// </summary>
         [JsonPropertyName("taskGroups")]
         public IOutlookUserTaskGroupsCollectionPage TaskGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets taskGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("taskGroups@odata.nextLink")]
+        public string TaskGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
         /// </summary>
         [JsonPropertyName("tasks")]
         public IOutlookUserTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

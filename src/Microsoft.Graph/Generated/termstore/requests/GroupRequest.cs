@@ -244,25 +244,13 @@ namespace Microsoft.Graph.TermStore
         private void InitializeCollectionProperties(Group groupToInitialize)
         {
 
-            if (groupToInitialize != null && groupToInitialize.AdditionalData != null)
+            if (groupToInitialize != null)
             {
-
                 if (groupToInitialize.Sets != null && groupToInitialize.Sets.CurrentPage != null)
                 {
+                    groupToInitialize.Sets.InitializeNextPageRequest(this.Client, groupToInitialize.SetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Sets.AdditionalData = groupToInitialize.AdditionalData;
-
-                    if(groupToInitialize.AdditionalData.TryGetValue("sets@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            groupToInitialize.Sets.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,43 +244,19 @@ namespace Microsoft.Graph.TermStore
         private void InitializeCollectionProperties(Store storeToInitialize)
         {
 
-            if (storeToInitialize != null && storeToInitialize.AdditionalData != null)
+            if (storeToInitialize != null)
             {
-
                 if (storeToInitialize.Groups != null && storeToInitialize.Groups.CurrentPage != null)
                 {
+                    storeToInitialize.Groups.InitializeNextPageRequest(this.Client, storeToInitialize.GroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     storeToInitialize.Groups.AdditionalData = storeToInitialize.AdditionalData;
-
-                    if(storeToInitialize.AdditionalData.TryGetValue("groups@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            storeToInitialize.Groups.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (storeToInitialize.Sets != null && storeToInitialize.Sets.CurrentPage != null)
                 {
+                    storeToInitialize.Sets.InitializeNextPageRequest(this.Client, storeToInitialize.SetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     storeToInitialize.Sets.AdditionalData = storeToInitialize.AdditionalData;
-
-                    if(storeToInitialize.AdditionalData.TryGetValue("sets@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            storeToInitialize.Sets.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

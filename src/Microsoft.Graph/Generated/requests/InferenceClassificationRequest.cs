@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(InferenceClassification inferenceClassificationToInitialize)
         {
 
-            if (inferenceClassificationToInitialize != null && inferenceClassificationToInitialize.AdditionalData != null)
+            if (inferenceClassificationToInitialize != null)
             {
-
                 if (inferenceClassificationToInitialize.Overrides != null && inferenceClassificationToInitialize.Overrides.CurrentPage != null)
                 {
+                    inferenceClassificationToInitialize.Overrides.InitializeNextPageRequest(this.Client, inferenceClassificationToInitialize.OverridesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     inferenceClassificationToInitialize.Overrides.AdditionalData = inferenceClassificationToInitialize.AdditionalData;
-
-                    if(inferenceClassificationToInitialize.AdditionalData.TryGetValue("overrides@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            inferenceClassificationToInitialize.Overrides.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

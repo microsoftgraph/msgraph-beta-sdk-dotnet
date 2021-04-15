@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("rootCertificatesForServerValidation")]
         public IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage RootCertificatesForServerValidation { get; set; }
+
+        /// <summary>
+        /// Gets or sets rootCertificatesForServerValidationNextLink.
+        /// </summary>
+        [JsonPropertyName("rootCertificatesForServerValidation@odata.nextLink")]
+        public string RootCertificatesForServerValidationNextLink { get; set; }
     
     }
 }

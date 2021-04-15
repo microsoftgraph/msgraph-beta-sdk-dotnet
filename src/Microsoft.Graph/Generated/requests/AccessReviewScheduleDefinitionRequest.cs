@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessReviewScheduleDefinition accessReviewScheduleDefinitionToInitialize)
         {
 
-            if (accessReviewScheduleDefinitionToInitialize != null && accessReviewScheduleDefinitionToInitialize.AdditionalData != null)
+            if (accessReviewScheduleDefinitionToInitialize != null)
             {
-
                 if (accessReviewScheduleDefinitionToInitialize.Instances != null && accessReviewScheduleDefinitionToInitialize.Instances.CurrentPage != null)
                 {
+                    accessReviewScheduleDefinitionToInitialize.Instances.InitializeNextPageRequest(this.Client, accessReviewScheduleDefinitionToInitialize.InstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewScheduleDefinitionToInitialize.Instances.AdditionalData = accessReviewScheduleDefinitionToInitialize.AdditionalData;
-
-                    if(accessReviewScheduleDefinitionToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            accessReviewScheduleDefinitionToInitialize.Instances.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

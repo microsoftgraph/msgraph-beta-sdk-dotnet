@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PrintJob printJobToInitialize)
         {
 
-            if (printJobToInitialize != null && printJobToInitialize.AdditionalData != null)
+            if (printJobToInitialize != null)
             {
-
                 if (printJobToInitialize.Documents != null && printJobToInitialize.Documents.CurrentPage != null)
                 {
+                    printJobToInitialize.Documents.InitializeNextPageRequest(this.Client, printJobToInitialize.DocumentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printJobToInitialize.Documents.AdditionalData = printJobToInitialize.AdditionalData;
-
-                    if(printJobToInitialize.AdditionalData.TryGetValue("documents@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printJobToInitialize.Documents.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (printJobToInitialize.Tasks != null && printJobToInitialize.Tasks.CurrentPage != null)
                 {
+                    printJobToInitialize.Tasks.InitializeNextPageRequest(this.Client, printJobToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printJobToInitialize.Tasks.AdditionalData = printJobToInitialize.AdditionalData;
-
-                    if(printJobToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printJobToInitialize.Tasks.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

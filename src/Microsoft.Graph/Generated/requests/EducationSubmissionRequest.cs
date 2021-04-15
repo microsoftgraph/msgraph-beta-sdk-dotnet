@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EducationSubmission educationSubmissionToInitialize)
         {
 
-            if (educationSubmissionToInitialize != null && educationSubmissionToInitialize.AdditionalData != null)
+            if (educationSubmissionToInitialize != null)
             {
-
                 if (educationSubmissionToInitialize.Outcomes != null && educationSubmissionToInitialize.Outcomes.CurrentPage != null)
                 {
+                    educationSubmissionToInitialize.Outcomes.InitializeNextPageRequest(this.Client, educationSubmissionToInitialize.OutcomesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationSubmissionToInitialize.Outcomes.AdditionalData = educationSubmissionToInitialize.AdditionalData;
-
-                    if(educationSubmissionToInitialize.AdditionalData.TryGetValue("outcomes@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            educationSubmissionToInitialize.Outcomes.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (educationSubmissionToInitialize.Resources != null && educationSubmissionToInitialize.Resources.CurrentPage != null)
                 {
+                    educationSubmissionToInitialize.Resources.InitializeNextPageRequest(this.Client, educationSubmissionToInitialize.ResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationSubmissionToInitialize.Resources.AdditionalData = educationSubmissionToInitialize.AdditionalData;
-
-                    if(educationSubmissionToInitialize.AdditionalData.TryGetValue("resources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            educationSubmissionToInitialize.Resources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (educationSubmissionToInitialize.SubmittedResources != null && educationSubmissionToInitialize.SubmittedResources.CurrentPage != null)
                 {
+                    educationSubmissionToInitialize.SubmittedResources.InitializeNextPageRequest(this.Client, educationSubmissionToInitialize.SubmittedResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationSubmissionToInitialize.SubmittedResources.AdditionalData = educationSubmissionToInitialize.AdditionalData;
-
-                    if(educationSubmissionToInitialize.AdditionalData.TryGetValue("submittedResources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            educationSubmissionToInitialize.SubmittedResources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

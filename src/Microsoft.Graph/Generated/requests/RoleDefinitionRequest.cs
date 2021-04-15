@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(RoleDefinition roleDefinitionToInitialize)
         {
 
-            if (roleDefinitionToInitialize != null && roleDefinitionToInitialize.AdditionalData != null)
+            if (roleDefinitionToInitialize != null)
             {
-
                 if (roleDefinitionToInitialize.RoleAssignments != null && roleDefinitionToInitialize.RoleAssignments.CurrentPage != null)
                 {
+                    roleDefinitionToInitialize.RoleAssignments.InitializeNextPageRequest(this.Client, roleDefinitionToInitialize.RoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     roleDefinitionToInitialize.RoleAssignments.AdditionalData = roleDefinitionToInitialize.AdditionalData;
-
-                    if(roleDefinitionToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            roleDefinitionToInitialize.RoleAssignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

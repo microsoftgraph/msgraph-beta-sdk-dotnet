@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ExactMatchDataStore exactMatchDataStoreToInitialize)
         {
 
-            if (exactMatchDataStoreToInitialize != null && exactMatchDataStoreToInitialize.AdditionalData != null)
+            if (exactMatchDataStoreToInitialize != null)
             {
-
                 if (exactMatchDataStoreToInitialize.Sessions != null && exactMatchDataStoreToInitialize.Sessions.CurrentPage != null)
                 {
+                    exactMatchDataStoreToInitialize.Sessions.InitializeNextPageRequest(this.Client, exactMatchDataStoreToInitialize.SessionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     exactMatchDataStoreToInitialize.Sessions.AdditionalData = exactMatchDataStoreToInitialize.AdditionalData;
-
-                    if(exactMatchDataStoreToInitialize.AdditionalData.TryGetValue("sessions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            exactMatchDataStoreToInitialize.Sessions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

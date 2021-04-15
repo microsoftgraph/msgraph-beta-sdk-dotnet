@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("customerPayments")]
         public ICustomerPaymentJournalCustomerPaymentsCollectionPage CustomerPayments { get; set; }
+
+        /// <summary>
+        /// Gets or sets customerPaymentsNextLink.
+        /// </summary>
+        [JsonPropertyName("customerPayments@odata.nextLink")]
+        public string CustomerPaymentsNextLink { get; set; }
     
     }
 }

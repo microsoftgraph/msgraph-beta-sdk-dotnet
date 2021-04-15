@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DirectoryRole directoryRoleToInitialize)
         {
 
-            if (directoryRoleToInitialize != null && directoryRoleToInitialize.AdditionalData != null)
+            if (directoryRoleToInitialize != null)
             {
-
                 if (directoryRoleToInitialize.Members != null && directoryRoleToInitialize.Members.CurrentPage != null)
                 {
+                    directoryRoleToInitialize.Members.InitializeNextPageRequest(this.Client, directoryRoleToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     directoryRoleToInitialize.Members.AdditionalData = directoryRoleToInitialize.AdditionalData;
-
-                    if(directoryRoleToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            directoryRoleToInitialize.Members.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (directoryRoleToInitialize.ScopedMembers != null && directoryRoleToInitialize.ScopedMembers.CurrentPage != null)
                 {
+                    directoryRoleToInitialize.ScopedMembers.InitializeNextPageRequest(this.Client, directoryRoleToInitialize.ScopedMembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     directoryRoleToInitialize.ScopedMembers.AdditionalData = directoryRoleToInitialize.AdditionalData;
-
-                    if(directoryRoleToInitialize.AdditionalData.TryGetValue("scopedMembers@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            directoryRoleToInitialize.ScopedMembers.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

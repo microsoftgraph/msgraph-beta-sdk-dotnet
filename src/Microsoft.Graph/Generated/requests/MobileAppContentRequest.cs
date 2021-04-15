@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MobileAppContent mobileAppContentToInitialize)
         {
 
-            if (mobileAppContentToInitialize != null && mobileAppContentToInitialize.AdditionalData != null)
+            if (mobileAppContentToInitialize != null)
             {
-
                 if (mobileAppContentToInitialize.ContainedApps != null && mobileAppContentToInitialize.ContainedApps.CurrentPage != null)
                 {
+                    mobileAppContentToInitialize.ContainedApps.InitializeNextPageRequest(this.Client, mobileAppContentToInitialize.ContainedAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppContentToInitialize.ContainedApps.AdditionalData = mobileAppContentToInitialize.AdditionalData;
-
-                    if(mobileAppContentToInitialize.AdditionalData.TryGetValue("containedApps@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mobileAppContentToInitialize.ContainedApps.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (mobileAppContentToInitialize.Files != null && mobileAppContentToInitialize.Files.CurrentPage != null)
                 {
+                    mobileAppContentToInitialize.Files.InitializeNextPageRequest(this.Client, mobileAppContentToInitialize.FilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppContentToInitialize.Files.AdditionalData = mobileAppContentToInitialize.AdditionalData;
-
-                    if(mobileAppContentToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mobileAppContentToInitialize.Files.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -97,6 +97,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("categories")]
         public IDeviceManagementTemplateCategoriesCollectionPage Categories { get; set; }
+
+        /// <summary>
+        /// Gets or sets categoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("categories@odata.nextLink")]
+        public string CategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets migratable to.
@@ -104,6 +110,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("migratableTo")]
         public IDeviceManagementTemplateMigratableToCollectionPage MigratableTo { get; set; }
+
+        /// <summary>
+        /// Gets or sets migratableToNextLink.
+        /// </summary>
+        [JsonPropertyName("migratableTo@odata.nextLink")]
+        public string MigratableToNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
@@ -111,6 +123,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("settings")]
         public IDeviceManagementTemplateSettingsCollectionPage Settings { get; set; }
+
+        /// <summary>
+        /// Gets or sets settingsNextLink.
+        /// </summary>
+        [JsonPropertyName("settings@odata.nextLink")]
+        public string SettingsNextLink { get; set; }
     
     }
 }

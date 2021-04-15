@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToInitialize)
         {
 
-            if (accessPackageResourceEnvironmentToInitialize != null && accessPackageResourceEnvironmentToInitialize.AdditionalData != null)
+            if (accessPackageResourceEnvironmentToInitialize != null)
             {
-
                 if (accessPackageResourceEnvironmentToInitialize.AccessPackageResources != null && accessPackageResourceEnvironmentToInitialize.AccessPackageResources.CurrentPage != null)
                 {
+                    accessPackageResourceEnvironmentToInitialize.AccessPackageResources.InitializeNextPageRequest(this.Client, accessPackageResourceEnvironmentToInitialize.AccessPackageResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageResourceEnvironmentToInitialize.AccessPackageResources.AdditionalData = accessPackageResourceEnvironmentToInitialize.AdditionalData;
-
-                    if(accessPackageResourceEnvironmentToInitialize.AdditionalData.TryGetValue("accessPackageResources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            accessPackageResourceEnvironmentToInitialize.AccessPackageResources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

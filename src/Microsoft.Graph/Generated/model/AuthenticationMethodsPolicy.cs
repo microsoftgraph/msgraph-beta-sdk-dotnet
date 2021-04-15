@@ -63,6 +63,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("authenticationMethodConfigurations")]
         public IAuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionPage AuthenticationMethodConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets authenticationMethodConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("authenticationMethodConfigurations@odata.nextLink")]
+        public string AuthenticationMethodConfigurationsNextLink { get; set; }
     
     }
 }

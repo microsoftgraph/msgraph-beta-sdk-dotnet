@@ -33,24 +33,48 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("calls")]
         public ICloudCommunicationsCallsCollectionPage Calls { get; set; }
+
+        /// <summary>
+        /// Gets or sets callsNextLink.
+        /// </summary>
+        [JsonPropertyName("calls@odata.nextLink")]
+        public string CallsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets call records.
         /// </summary>
         [JsonPropertyName("callRecords")]
         public ICloudCommunicationsCallRecordsCollectionPage CallRecords { get; set; }
+
+        /// <summary>
+        /// Gets or sets callRecordsNextLink.
+        /// </summary>
+        [JsonPropertyName("callRecords@odata.nextLink")]
+        public string CallRecordsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets online meetings.
         /// </summary>
         [JsonPropertyName("onlineMeetings")]
         public ICloudCommunicationsOnlineMeetingsCollectionPage OnlineMeetings { get; set; }
+
+        /// <summary>
+        /// Gets or sets onlineMeetingsNextLink.
+        /// </summary>
+        [JsonPropertyName("onlineMeetings@odata.nextLink")]
+        public string OnlineMeetingsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets presences.
         /// </summary>
         [JsonPropertyName("presences")]
         public ICloudCommunicationsPresencesCollectionPage Presences { get; set; }
+
+        /// <summary>
+        /// Gets or sets presencesNextLink.
+        /// </summary>
+        [JsonPropertyName("presences@odata.nextLink")]
+        public string PresencesNextLink { get; set; }
     
     }
 }

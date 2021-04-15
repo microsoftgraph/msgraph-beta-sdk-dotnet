@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PermissionGrantPolicy permissionGrantPolicyToInitialize)
         {
 
-            if (permissionGrantPolicyToInitialize != null && permissionGrantPolicyToInitialize.AdditionalData != null)
+            if (permissionGrantPolicyToInitialize != null)
             {
-
                 if (permissionGrantPolicyToInitialize.Excludes != null && permissionGrantPolicyToInitialize.Excludes.CurrentPage != null)
                 {
+                    permissionGrantPolicyToInitialize.Excludes.InitializeNextPageRequest(this.Client, permissionGrantPolicyToInitialize.ExcludesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     permissionGrantPolicyToInitialize.Excludes.AdditionalData = permissionGrantPolicyToInitialize.AdditionalData;
-
-                    if(permissionGrantPolicyToInitialize.AdditionalData.TryGetValue("excludes@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            permissionGrantPolicyToInitialize.Excludes.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (permissionGrantPolicyToInitialize.Includes != null && permissionGrantPolicyToInitialize.Includes.CurrentPage != null)
                 {
+                    permissionGrantPolicyToInitialize.Includes.InitializeNextPageRequest(this.Client, permissionGrantPolicyToInitialize.IncludesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     permissionGrantPolicyToInitialize.Includes.AdditionalData = permissionGrantPolicyToInitialize.AdditionalData;
-
-                    if(permissionGrantPolicyToInitialize.AdditionalData.TryGetValue("includes@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            permissionGrantPolicyToInitialize.Includes.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

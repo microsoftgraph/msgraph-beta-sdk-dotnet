@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsPhone81ImportedPFXCertificateProfile windowsPhone81ImportedPFXCertificateProfileToInitialize)
         {
 
-            if (windowsPhone81ImportedPFXCertificateProfileToInitialize != null && windowsPhone81ImportedPFXCertificateProfileToInitialize.AdditionalData != null)
+            if (windowsPhone81ImportedPFXCertificateProfileToInitialize != null)
             {
-
                 if (windowsPhone81ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && windowsPhone81ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    windowsPhone81ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, windowsPhone81ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsPhone81ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = windowsPhone81ImportedPFXCertificateProfileToInitialize.AdditionalData;
-
-                    if(windowsPhone81ImportedPFXCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windowsPhone81ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

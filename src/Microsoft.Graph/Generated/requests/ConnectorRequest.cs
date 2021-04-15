@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Connector connectorToInitialize)
         {
 
-            if (connectorToInitialize != null && connectorToInitialize.AdditionalData != null)
+            if (connectorToInitialize != null)
             {
-
                 if (connectorToInitialize.MemberOf != null && connectorToInitialize.MemberOf.CurrentPage != null)
                 {
+                    connectorToInitialize.MemberOf.InitializeNextPageRequest(this.Client, connectorToInitialize.MemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     connectorToInitialize.MemberOf.AdditionalData = connectorToInitialize.AdditionalData;
-
-                    if(connectorToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            connectorToInitialize.MemberOf.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

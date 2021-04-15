@@ -39,12 +39,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("jobs")]
         public ISynchronizationJobsCollectionPage Jobs { get; set; }
+
+        /// <summary>
+        /// Gets or sets jobsNextLink.
+        /// </summary>
+        [JsonPropertyName("jobs@odata.nextLink")]
+        public string JobsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets templates.
         /// </summary>
         [JsonPropertyName("templates")]
         public ISynchronizationTemplatesCollectionPage Templates { get; set; }
+
+        /// <summary>
+        /// Gets or sets templatesNextLink.
+        /// </summary>
+        [JsonPropertyName("templates@odata.nextLink")]
+        public string TemplatesNextLink { get; set; }
     
     }
 }

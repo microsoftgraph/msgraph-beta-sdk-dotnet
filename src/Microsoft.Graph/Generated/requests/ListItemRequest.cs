@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ListItem listItemToInitialize)
         {
 
-            if (listItemToInitialize != null && listItemToInitialize.AdditionalData != null)
+            if (listItemToInitialize != null)
             {
-
                 if (listItemToInitialize.Activities != null && listItemToInitialize.Activities.CurrentPage != null)
                 {
+                    listItemToInitialize.Activities.InitializeNextPageRequest(this.Client, listItemToInitialize.ActivitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     listItemToInitialize.Activities.AdditionalData = listItemToInitialize.AdditionalData;
-
-                    if(listItemToInitialize.AdditionalData.TryGetValue("activities@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            listItemToInitialize.Activities.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (listItemToInitialize.Versions != null && listItemToInitialize.Versions.CurrentPage != null)
                 {
+                    listItemToInitialize.Versions.InitializeNextPageRequest(this.Client, listItemToInitialize.VersionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     listItemToInitialize.Versions.AdditionalData = listItemToInitialize.AdditionalData;
-
-                    if(listItemToInitialize.AdditionalData.TryGetValue("versions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            listItemToInitialize.Versions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

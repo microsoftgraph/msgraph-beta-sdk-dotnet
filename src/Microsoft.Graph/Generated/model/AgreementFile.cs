@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("localizations")]
         public IAgreementFileLocalizationsCollectionPage Localizations { get; set; }
+
+        /// <summary>
+        /// Gets or sets localizationsNextLink.
+        /// </summary>
+        [JsonPropertyName("localizations@odata.nextLink")]
+        public string LocalizationsNextLink { get; set; }
     
     }
 }

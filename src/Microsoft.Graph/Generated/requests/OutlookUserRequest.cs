@@ -244,79 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OutlookUser outlookUserToInitialize)
         {
 
-            if (outlookUserToInitialize != null && outlookUserToInitialize.AdditionalData != null)
+            if (outlookUserToInitialize != null)
             {
-
                 if (outlookUserToInitialize.MasterCategories != null && outlookUserToInitialize.MasterCategories.CurrentPage != null)
                 {
+                    outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(this.Client, outlookUserToInitialize.MasterCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookUserToInitialize.MasterCategories.AdditionalData = outlookUserToInitialize.AdditionalData;
-
-                    if(outlookUserToInitialize.AdditionalData.TryGetValue("masterCategories@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (outlookUserToInitialize.TaskFolders != null && outlookUserToInitialize.TaskFolders.CurrentPage != null)
                 {
+                    outlookUserToInitialize.TaskFolders.InitializeNextPageRequest(this.Client, outlookUserToInitialize.TaskFoldersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookUserToInitialize.TaskFolders.AdditionalData = outlookUserToInitialize.AdditionalData;
-
-                    if(outlookUserToInitialize.AdditionalData.TryGetValue("taskFolders@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            outlookUserToInitialize.TaskFolders.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (outlookUserToInitialize.TaskGroups != null && outlookUserToInitialize.TaskGroups.CurrentPage != null)
                 {
+                    outlookUserToInitialize.TaskGroups.InitializeNextPageRequest(this.Client, outlookUserToInitialize.TaskGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookUserToInitialize.TaskGroups.AdditionalData = outlookUserToInitialize.AdditionalData;
-
-                    if(outlookUserToInitialize.AdditionalData.TryGetValue("taskGroups@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            outlookUserToInitialize.TaskGroups.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (outlookUserToInitialize.Tasks != null && outlookUserToInitialize.Tasks.CurrentPage != null)
                 {
+                    outlookUserToInitialize.Tasks.InitializeNextPageRequest(this.Client, outlookUserToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookUserToInitialize.Tasks.AdditionalData = outlookUserToInitialize.AdditionalData;
-
-                    if(outlookUserToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            outlookUserToInitialize.Tasks.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

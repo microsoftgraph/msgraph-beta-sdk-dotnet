@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Approval approvalToInitialize)
         {
 
-            if (approvalToInitialize != null && approvalToInitialize.AdditionalData != null)
+            if (approvalToInitialize != null)
             {
-
                 if (approvalToInitialize.Steps != null && approvalToInitialize.Steps.CurrentPage != null)
                 {
+                    approvalToInitialize.Steps.InitializeNextPageRequest(this.Client, approvalToInitialize.StepsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     approvalToInitialize.Steps.AdditionalData = approvalToInitialize.AdditionalData;
-
-                    if(approvalToInitialize.AdditionalData.TryGetValue("steps@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            approvalToInitialize.Steps.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PolicySet policySetToInitialize)
         {
 
-            if (policySetToInitialize != null && policySetToInitialize.AdditionalData != null)
+            if (policySetToInitialize != null)
             {
-
                 if (policySetToInitialize.Assignments != null && policySetToInitialize.Assignments.CurrentPage != null)
                 {
+                    policySetToInitialize.Assignments.InitializeNextPageRequest(this.Client, policySetToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policySetToInitialize.Assignments.AdditionalData = policySetToInitialize.AdditionalData;
-
-                    if(policySetToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            policySetToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (policySetToInitialize.Items != null && policySetToInitialize.Items.CurrentPage != null)
                 {
+                    policySetToInitialize.Items.InitializeNextPageRequest(this.Client, policySetToInitialize.ItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policySetToInitialize.Items.AdditionalData = policySetToInitialize.AdditionalData;
-
-                    if(policySetToInitialize.AdditionalData.TryGetValue("items@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            policySetToInitialize.Items.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

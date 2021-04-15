@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToInitialize)
         {
 
-            if (mobileAppTroubleshootingEventToInitialize != null && mobileAppTroubleshootingEventToInitialize.AdditionalData != null)
+            if (mobileAppTroubleshootingEventToInitialize != null)
             {
-
                 if (mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests != null && mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests.CurrentPage != null)
                 {
+                    mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests.InitializeNextPageRequest(this.Client, mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests.AdditionalData = mobileAppTroubleshootingEventToInitialize.AdditionalData;
-
-                    if(mobileAppTroubleshootingEventToInitialize.AdditionalData.TryGetValue("appLogCollectionRequests@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

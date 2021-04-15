@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToInitialize)
         {
 
-            if (androidDeviceOwnerImportedPFXCertificateProfileToInitialize != null && androidDeviceOwnerImportedPFXCertificateProfileToInitialize.AdditionalData != null)
+            if (androidDeviceOwnerImportedPFXCertificateProfileToInitialize != null)
             {
-
                 if (androidDeviceOwnerImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && androidDeviceOwnerImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    androidDeviceOwnerImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, androidDeviceOwnerImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     androidDeviceOwnerImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = androidDeviceOwnerImportedPFXCertificateProfileToInitialize.AdditionalData;
-
-                    if(androidDeviceOwnerImportedPFXCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            androidDeviceOwnerImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -52,54 +52,108 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("activityBasedTimeoutPolicies")]
         public IPolicyRootActivityBasedTimeoutPoliciesCollectionPage ActivityBasedTimeoutPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets activityBasedTimeoutPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("activityBasedTimeoutPolicies@odata.nextLink")]
+        public string ActivityBasedTimeoutPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets authorization policy.
         /// </summary>
         [JsonPropertyName("authorizationPolicy")]
         public IPolicyRootAuthorizationPolicyCollectionPage AuthorizationPolicy { get; set; }
+
+        /// <summary>
+        /// Gets or sets authorizationPolicyNextLink.
+        /// </summary>
+        [JsonPropertyName("authorizationPolicy@odata.nextLink")]
+        public string AuthorizationPolicyNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets claims mapping policies.
         /// </summary>
         [JsonPropertyName("claimsMappingPolicies")]
         public IPolicyRootClaimsMappingPoliciesCollectionPage ClaimsMappingPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets claimsMappingPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("claimsMappingPolicies@odata.nextLink")]
+        public string ClaimsMappingPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets home realm discovery policies.
         /// </summary>
         [JsonPropertyName("homeRealmDiscoveryPolicies")]
         public IPolicyRootHomeRealmDiscoveryPoliciesCollectionPage HomeRealmDiscoveryPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets homeRealmDiscoveryPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("homeRealmDiscoveryPolicies@odata.nextLink")]
+        public string HomeRealmDiscoveryPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets permission grant policies.
         /// </summary>
         [JsonPropertyName("permissionGrantPolicies")]
         public IPolicyRootPermissionGrantPoliciesCollectionPage PermissionGrantPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets permissionGrantPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("permissionGrantPolicies@odata.nextLink")]
+        public string PermissionGrantPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets private link resource policies.
         /// </summary>
         [JsonPropertyName("privateLinkResourcePolicies")]
         public IPolicyRootPrivateLinkResourcePoliciesCollectionPage PrivateLinkResourcePolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets privateLinkResourcePoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("privateLinkResourcePolicies@odata.nextLink")]
+        public string PrivateLinkResourcePoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets token issuance policies.
         /// </summary>
         [JsonPropertyName("tokenIssuancePolicies")]
         public IPolicyRootTokenIssuancePoliciesCollectionPage TokenIssuancePolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets tokenIssuancePoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("tokenIssuancePolicies@odata.nextLink")]
+        public string TokenIssuancePoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets token lifetime policies.
         /// </summary>
         [JsonPropertyName("tokenLifetimePolicies")]
         public IPolicyRootTokenLifetimePoliciesCollectionPage TokenLifetimePolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets tokenLifetimePoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("tokenLifetimePolicies@odata.nextLink")]
+        public string TokenLifetimePoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets feature rollout policies.
         /// </summary>
         [JsonPropertyName("featureRolloutPolicies")]
         public IPolicyRootFeatureRolloutPoliciesCollectionPage FeatureRolloutPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets featureRolloutPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("featureRolloutPolicies@odata.nextLink")]
+        public string FeatureRolloutPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets admin consent request policy.
@@ -118,6 +172,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("conditionalAccessPolicies")]
         public IPolicyRootConditionalAccessPoliciesCollectionPage ConditionalAccessPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets conditionalAccessPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("conditionalAccessPolicies@odata.nextLink")]
+        public string ConditionalAccessPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets identity security defaults enforcement policy.
@@ -130,12 +190,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("roleManagementPolicies")]
         public IPolicyRootRoleManagementPoliciesCollectionPage RoleManagementPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleManagementPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("roleManagementPolicies@odata.nextLink")]
+        public string RoleManagementPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role management policy assignments.
         /// </summary>
         [JsonPropertyName("roleManagementPolicyAssignments")]
         public IPolicyRootRoleManagementPolicyAssignmentsCollectionPage RoleManagementPolicyAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleManagementPolicyAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleManagementPolicyAssignments@odata.nextLink")]
+        public string RoleManagementPolicyAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

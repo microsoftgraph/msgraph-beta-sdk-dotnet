@@ -244,97 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(BookingBusiness bookingBusinessToInitialize)
         {
 
-            if (bookingBusinessToInitialize != null && bookingBusinessToInitialize.AdditionalData != null)
+            if (bookingBusinessToInitialize != null)
             {
-
                 if (bookingBusinessToInitialize.Appointments != null && bookingBusinessToInitialize.Appointments.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.Appointments.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.AppointmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.Appointments.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    if(bookingBusinessToInitialize.AdditionalData.TryGetValue("appointments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            bookingBusinessToInitialize.Appointments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (bookingBusinessToInitialize.CalendarView != null && bookingBusinessToInitialize.CalendarView.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.CalendarView.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.CalendarViewNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.CalendarView.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    if(bookingBusinessToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            bookingBusinessToInitialize.CalendarView.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (bookingBusinessToInitialize.Customers != null && bookingBusinessToInitialize.Customers.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.Customers.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.CustomersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.Customers.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    if(bookingBusinessToInitialize.AdditionalData.TryGetValue("customers@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            bookingBusinessToInitialize.Customers.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (bookingBusinessToInitialize.Services != null && bookingBusinessToInitialize.Services.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.Services.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.ServicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.Services.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    if(bookingBusinessToInitialize.AdditionalData.TryGetValue("services@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            bookingBusinessToInitialize.Services.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (bookingBusinessToInitialize.StaffMembers != null && bookingBusinessToInitialize.StaffMembers.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.StaffMembers.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.StaffMembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.StaffMembers.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    if(bookingBusinessToInitialize.AdditionalData.TryGetValue("staffMembers@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            bookingBusinessToInitialize.StaffMembers.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

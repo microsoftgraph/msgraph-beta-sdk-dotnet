@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("points")]
         public IWorkbookChartSeriesPointsCollectionPage Points { get; set; }
+
+        /// <summary>
+        /// Gets or sets pointsNextLink.
+        /// </summary>
+        [JsonPropertyName("points@odata.nextLink")]
+        public string PointsNextLink { get; set; }
     
     }
 }

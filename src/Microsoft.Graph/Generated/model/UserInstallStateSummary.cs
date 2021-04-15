@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceStates")]
         public IUserInstallStateSummaryDeviceStatesCollectionPage DeviceStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceStates@odata.nextLink")]
+        public string DeviceStatesNextLink { get; set; }
     
     }
 }

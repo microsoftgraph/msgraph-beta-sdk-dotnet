@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(InformationProtection informationProtectionToInitialize)
         {
 
-            if (informationProtectionToInitialize != null && informationProtectionToInitialize.AdditionalData != null)
+            if (informationProtectionToInitialize != null)
             {
-
                 if (informationProtectionToInitialize.DataLossPreventionPolicies != null && informationProtectionToInitialize.DataLossPreventionPolicies.CurrentPage != null)
                 {
+                    informationProtectionToInitialize.DataLossPreventionPolicies.InitializeNextPageRequest(this.Client, informationProtectionToInitialize.DataLossPreventionPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     informationProtectionToInitialize.DataLossPreventionPolicies.AdditionalData = informationProtectionToInitialize.AdditionalData;
-
-                    if(informationProtectionToInitialize.AdditionalData.TryGetValue("dataLossPreventionPolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            informationProtectionToInitialize.DataLossPreventionPolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (informationProtectionToInitialize.SensitivityLabels != null && informationProtectionToInitialize.SensitivityLabels.CurrentPage != null)
                 {
+                    informationProtectionToInitialize.SensitivityLabels.InitializeNextPageRequest(this.Client, informationProtectionToInitialize.SensitivityLabelsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     informationProtectionToInitialize.SensitivityLabels.AdditionalData = informationProtectionToInitialize.AdditionalData;
-
-                    if(informationProtectionToInitialize.AdditionalData.TryGetValue("sensitivityLabels@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            informationProtectionToInitialize.SensitivityLabels.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (informationProtectionToInitialize.ThreatAssessmentRequests != null && informationProtectionToInitialize.ThreatAssessmentRequests.CurrentPage != null)
                 {
+                    informationProtectionToInitialize.ThreatAssessmentRequests.InitializeNextPageRequest(this.Client, informationProtectionToInitialize.ThreatAssessmentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     informationProtectionToInitialize.ThreatAssessmentRequests.AdditionalData = informationProtectionToInitialize.AdditionalData;
-
-                    if(informationProtectionToInitialize.AdditionalData.TryGetValue("threatAssessmentRequests@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            informationProtectionToInitialize.ThreatAssessmentRequests.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,97 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Workbook workbookToInitialize)
         {
 
-            if (workbookToInitialize != null && workbookToInitialize.AdditionalData != null)
+            if (workbookToInitialize != null)
             {
-
                 if (workbookToInitialize.Comments != null && workbookToInitialize.Comments.CurrentPage != null)
                 {
+                    workbookToInitialize.Comments.InitializeNextPageRequest(this.Client, workbookToInitialize.CommentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Comments.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    if(workbookToInitialize.AdditionalData.TryGetValue("comments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookToInitialize.Comments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (workbookToInitialize.Names != null && workbookToInitialize.Names.CurrentPage != null)
                 {
+                    workbookToInitialize.Names.InitializeNextPageRequest(this.Client, workbookToInitialize.NamesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Names.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    if(workbookToInitialize.AdditionalData.TryGetValue("names@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookToInitialize.Names.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (workbookToInitialize.Operations != null && workbookToInitialize.Operations.CurrentPage != null)
                 {
+                    workbookToInitialize.Operations.InitializeNextPageRequest(this.Client, workbookToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Operations.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    if(workbookToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookToInitialize.Operations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (workbookToInitialize.Tables != null && workbookToInitialize.Tables.CurrentPage != null)
                 {
+                    workbookToInitialize.Tables.InitializeNextPageRequest(this.Client, workbookToInitialize.TablesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Tables.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    if(workbookToInitialize.AdditionalData.TryGetValue("tables@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookToInitialize.Tables.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (workbookToInitialize.Worksheets != null && workbookToInitialize.Worksheets.CurrentPage != null)
                 {
+                    workbookToInitialize.Worksheets.InitializeNextPageRequest(this.Client, workbookToInitialize.WorksheetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Worksheets.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    if(workbookToInitialize.AdditionalData.TryGetValue("worksheets@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookToInitialize.Worksheets.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

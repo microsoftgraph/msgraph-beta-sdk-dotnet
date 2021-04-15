@@ -244,79 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceShellScript deviceShellScriptToInitialize)
         {
 
-            if (deviceShellScriptToInitialize != null && deviceShellScriptToInitialize.AdditionalData != null)
+            if (deviceShellScriptToInitialize != null)
             {
-
                 if (deviceShellScriptToInitialize.Assignments != null && deviceShellScriptToInitialize.Assignments.CurrentPage != null)
                 {
+                    deviceShellScriptToInitialize.Assignments.InitializeNextPageRequest(this.Client, deviceShellScriptToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceShellScriptToInitialize.Assignments.AdditionalData = deviceShellScriptToInitialize.AdditionalData;
-
-                    if(deviceShellScriptToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceShellScriptToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (deviceShellScriptToInitialize.DeviceRunStates != null && deviceShellScriptToInitialize.DeviceRunStates.CurrentPage != null)
                 {
+                    deviceShellScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(this.Client, deviceShellScriptToInitialize.DeviceRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceShellScriptToInitialize.DeviceRunStates.AdditionalData = deviceShellScriptToInitialize.AdditionalData;
-
-                    if(deviceShellScriptToInitialize.AdditionalData.TryGetValue("deviceRunStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceShellScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (deviceShellScriptToInitialize.GroupAssignments != null && deviceShellScriptToInitialize.GroupAssignments.CurrentPage != null)
                 {
+                    deviceShellScriptToInitialize.GroupAssignments.InitializeNextPageRequest(this.Client, deviceShellScriptToInitialize.GroupAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceShellScriptToInitialize.GroupAssignments.AdditionalData = deviceShellScriptToInitialize.AdditionalData;
-
-                    if(deviceShellScriptToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceShellScriptToInitialize.GroupAssignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (deviceShellScriptToInitialize.UserRunStates != null && deviceShellScriptToInitialize.UserRunStates.CurrentPage != null)
                 {
+                    deviceShellScriptToInitialize.UserRunStates.InitializeNextPageRequest(this.Client, deviceShellScriptToInitialize.UserRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceShellScriptToInitialize.UserRunStates.AdditionalData = deviceShellScriptToInitialize.AdditionalData;
-
-                    if(deviceShellScriptToInitialize.AdditionalData.TryGetValue("userRunStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceShellScriptToInitialize.UserRunStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

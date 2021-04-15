@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToInitialize)
         {
 
-            if (unifiedRoleAssignmentMultipleToInitialize != null && unifiedRoleAssignmentMultipleToInitialize.AdditionalData != null)
+            if (unifiedRoleAssignmentMultipleToInitialize != null)
             {
-
                 if (unifiedRoleAssignmentMultipleToInitialize.AppScopes != null && unifiedRoleAssignmentMultipleToInitialize.AppScopes.CurrentPage != null)
                 {
+                    unifiedRoleAssignmentMultipleToInitialize.AppScopes.InitializeNextPageRequest(this.Client, unifiedRoleAssignmentMultipleToInitialize.AppScopesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     unifiedRoleAssignmentMultipleToInitialize.AppScopes.AdditionalData = unifiedRoleAssignmentMultipleToInitialize.AdditionalData;
-
-                    if(unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("appScopes@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            unifiedRoleAssignmentMultipleToInitialize.AppScopes.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (unifiedRoleAssignmentMultipleToInitialize.DirectoryScopes != null && unifiedRoleAssignmentMultipleToInitialize.DirectoryScopes.CurrentPage != null)
                 {
+                    unifiedRoleAssignmentMultipleToInitialize.DirectoryScopes.InitializeNextPageRequest(this.Client, unifiedRoleAssignmentMultipleToInitialize.DirectoryScopesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     unifiedRoleAssignmentMultipleToInitialize.DirectoryScopes.AdditionalData = unifiedRoleAssignmentMultipleToInitialize.AdditionalData;
-
-                    if(unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("directoryScopes@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            unifiedRoleAssignmentMultipleToInitialize.DirectoryScopes.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (unifiedRoleAssignmentMultipleToInitialize.Principals != null && unifiedRoleAssignmentMultipleToInitialize.Principals.CurrentPage != null)
                 {
+                    unifiedRoleAssignmentMultipleToInitialize.Principals.InitializeNextPageRequest(this.Client, unifiedRoleAssignmentMultipleToInitialize.PrincipalsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     unifiedRoleAssignmentMultipleToInitialize.Principals.AdditionalData = unifiedRoleAssignmentMultipleToInitialize.AdditionalData;
-
-                    if(unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("principals@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            unifiedRoleAssignmentMultipleToInitialize.Principals.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

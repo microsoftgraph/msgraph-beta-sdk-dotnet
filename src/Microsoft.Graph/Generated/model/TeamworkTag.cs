@@ -63,6 +63,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("members")]
         public ITeamworkTagMembersCollectionPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
     }
 }

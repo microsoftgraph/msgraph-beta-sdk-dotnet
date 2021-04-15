@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OrgContact orgContactToInitialize)
         {
 
-            if (orgContactToInitialize != null && orgContactToInitialize.AdditionalData != null)
+            if (orgContactToInitialize != null)
             {
-
                 if (orgContactToInitialize.DirectReports != null && orgContactToInitialize.DirectReports.CurrentPage != null)
                 {
+                    orgContactToInitialize.DirectReports.InitializeNextPageRequest(this.Client, orgContactToInitialize.DirectReportsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     orgContactToInitialize.DirectReports.AdditionalData = orgContactToInitialize.AdditionalData;
-
-                    if(orgContactToInitialize.AdditionalData.TryGetValue("directReports@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            orgContactToInitialize.DirectReports.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (orgContactToInitialize.MemberOf != null && orgContactToInitialize.MemberOf.CurrentPage != null)
                 {
+                    orgContactToInitialize.MemberOf.InitializeNextPageRequest(this.Client, orgContactToInitialize.MemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     orgContactToInitialize.MemberOf.AdditionalData = orgContactToInitialize.AdditionalData;
-
-                    if(orgContactToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            orgContactToInitialize.MemberOf.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (orgContactToInitialize.TransitiveMemberOf != null && orgContactToInitialize.TransitiveMemberOf.CurrentPage != null)
                 {
+                    orgContactToInitialize.TransitiveMemberOf.InitializeNextPageRequest(this.Client, orgContactToInitialize.TransitiveMemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     orgContactToInitialize.TransitiveMemberOf.AdditionalData = orgContactToInitialize.AdditionalData;
-
-                    if(orgContactToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            orgContactToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

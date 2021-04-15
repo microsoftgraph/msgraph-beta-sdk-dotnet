@@ -258,6 +258,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("apps")]
         public IAndroidManagedAppProtectionAppsCollectionPage Apps { get; set; }
+
+        /// <summary>
+        /// Gets or sets appsNextLink.
+        /// </summary>
+        [JsonPropertyName("apps@odata.nextLink")]
+        public string AppsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets deployment summary.

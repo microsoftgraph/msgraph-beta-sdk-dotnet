@@ -244,115 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MailFolder mailFolderToInitialize)
         {
 
-            if (mailFolderToInitialize != null && mailFolderToInitialize.AdditionalData != null)
+            if (mailFolderToInitialize != null)
             {
-
                 if (mailFolderToInitialize.ChildFolders != null && mailFolderToInitialize.ChildFolders.CurrentPage != null)
                 {
+                    mailFolderToInitialize.ChildFolders.InitializeNextPageRequest(this.Client, mailFolderToInitialize.ChildFoldersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.ChildFolders.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    if(mailFolderToInitialize.AdditionalData.TryGetValue("childFolders@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mailFolderToInitialize.ChildFolders.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (mailFolderToInitialize.MessageRules != null && mailFolderToInitialize.MessageRules.CurrentPage != null)
                 {
+                    mailFolderToInitialize.MessageRules.InitializeNextPageRequest(this.Client, mailFolderToInitialize.MessageRulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.MessageRules.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    if(mailFolderToInitialize.AdditionalData.TryGetValue("messageRules@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mailFolderToInitialize.MessageRules.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (mailFolderToInitialize.Messages != null && mailFolderToInitialize.Messages.CurrentPage != null)
                 {
+                    mailFolderToInitialize.Messages.InitializeNextPageRequest(this.Client, mailFolderToInitialize.MessagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.Messages.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    if(mailFolderToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mailFolderToInitialize.Messages.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (mailFolderToInitialize.MultiValueExtendedProperties != null && mailFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    mailFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, mailFolderToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.MultiValueExtendedProperties.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    if(mailFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mailFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (mailFolderToInitialize.SingleValueExtendedProperties != null && mailFolderToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    mailFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, mailFolderToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.SingleValueExtendedProperties.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    if(mailFolderToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mailFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (mailFolderToInitialize.UserConfigurations != null && mailFolderToInitialize.UserConfigurations.CurrentPage != null)
                 {
+                    mailFolderToInitialize.UserConfigurations.InitializeNextPageRequest(this.Client, mailFolderToInitialize.UserConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.UserConfigurations.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    if(mailFolderToInitialize.AdditionalData.TryGetValue("userConfigurations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mailFolderToInitialize.UserConfigurations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

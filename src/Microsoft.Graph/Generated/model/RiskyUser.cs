@@ -90,6 +90,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("history")]
         public IRiskyUserHistoryCollectionPage History { get; set; }
+
+        /// <summary>
+        /// Gets or sets historyNextLink.
+        /// </summary>
+        [JsonPropertyName("history@odata.nextLink")]
+        public string HistoryNextLink { get; set; }
     
     }
 }

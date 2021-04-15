@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("recommendedSettings")]
         public IDeviceManagementTemplateSettingCategoryRecommendedSettingsCollectionPage RecommendedSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets recommendedSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("recommendedSettings@odata.nextLink")]
+        public string RecommendedSettingsNextLink { get; set; }
     
     }
 }

@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IdentityProtectionRoot identityProtectionRootToInitialize)
         {
 
-            if (identityProtectionRootToInitialize != null && identityProtectionRootToInitialize.AdditionalData != null)
+            if (identityProtectionRootToInitialize != null)
             {
-
                 if (identityProtectionRootToInitialize.RiskDetections != null && identityProtectionRootToInitialize.RiskDetections.CurrentPage != null)
                 {
+                    identityProtectionRootToInitialize.RiskDetections.InitializeNextPageRequest(this.Client, identityProtectionRootToInitialize.RiskDetectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityProtectionRootToInitialize.RiskDetections.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
-
-                    if(identityProtectionRootToInitialize.AdditionalData.TryGetValue("riskDetections@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            identityProtectionRootToInitialize.RiskDetections.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (identityProtectionRootToInitialize.RiskyUsers != null && identityProtectionRootToInitialize.RiskyUsers.CurrentPage != null)
                 {
+                    identityProtectionRootToInitialize.RiskyUsers.InitializeNextPageRequest(this.Client, identityProtectionRootToInitialize.RiskyUsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityProtectionRootToInitialize.RiskyUsers.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
-
-                    if(identityProtectionRootToInitialize.AdditionalData.TryGetValue("riskyUsers@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            identityProtectionRootToInitialize.RiskyUsers.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(GroupPolicyMigrationReport groupPolicyMigrationReportToInitialize)
         {
 
-            if (groupPolicyMigrationReportToInitialize != null && groupPolicyMigrationReportToInitialize.AdditionalData != null)
+            if (groupPolicyMigrationReportToInitialize != null)
             {
-
                 if (groupPolicyMigrationReportToInitialize.GroupPolicySettingMappings != null && groupPolicyMigrationReportToInitialize.GroupPolicySettingMappings.CurrentPage != null)
                 {
+                    groupPolicyMigrationReportToInitialize.GroupPolicySettingMappings.InitializeNextPageRequest(this.Client, groupPolicyMigrationReportToInitialize.GroupPolicySettingMappingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupPolicyMigrationReportToInitialize.GroupPolicySettingMappings.AdditionalData = groupPolicyMigrationReportToInitialize.AdditionalData;
-
-                    if(groupPolicyMigrationReportToInitialize.AdditionalData.TryGetValue("groupPolicySettingMappings@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            groupPolicyMigrationReportToInitialize.GroupPolicySettingMappings.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (groupPolicyMigrationReportToInitialize.UnsupportedGroupPolicyExtensions != null && groupPolicyMigrationReportToInitialize.UnsupportedGroupPolicyExtensions.CurrentPage != null)
                 {
+                    groupPolicyMigrationReportToInitialize.UnsupportedGroupPolicyExtensions.InitializeNextPageRequest(this.Client, groupPolicyMigrationReportToInitialize.UnsupportedGroupPolicyExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupPolicyMigrationReportToInitialize.UnsupportedGroupPolicyExtensions.AdditionalData = groupPolicyMigrationReportToInitialize.AdditionalData;
-
-                    if(groupPolicyMigrationReportToInitialize.AdditionalData.TryGetValue("unsupportedGroupPolicyExtensions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            groupPolicyMigrationReportToInitialize.UnsupportedGroupPolicyExtensions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

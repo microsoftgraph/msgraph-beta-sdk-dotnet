@@ -83,6 +83,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IWindowsFeatureUpdateProfileAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device update states.
@@ -90,6 +96,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceUpdateStates")]
         public IWindowsFeatureUpdateProfileDeviceUpdateStatesCollectionPage DeviceUpdateStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceUpdateStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceUpdateStates@odata.nextLink")]
+        public string DeviceUpdateStatesNextLink { get; set; }
     
     }
 }

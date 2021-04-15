@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("calendars")]
         public ICalendarGroupCalendarsCollectionPage Calendars { get; set; }
+
+        /// <summary>
+        /// Gets or sets calendarsNextLink.
+        /// </summary>
+        [JsonPropertyName("calendars@odata.nextLink")]
+        public string CalendarsNextLink { get; set; }
     
     }
 }

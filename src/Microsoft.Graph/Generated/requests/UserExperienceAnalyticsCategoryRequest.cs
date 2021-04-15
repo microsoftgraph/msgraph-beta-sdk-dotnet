@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToInitialize)
         {
 
-            if (userExperienceAnalyticsCategoryToInitialize != null && userExperienceAnalyticsCategoryToInitialize.AdditionalData != null)
+            if (userExperienceAnalyticsCategoryToInitialize != null)
             {
-
                 if (userExperienceAnalyticsCategoryToInitialize.MetricValues != null && userExperienceAnalyticsCategoryToInitialize.MetricValues.CurrentPage != null)
                 {
+                    userExperienceAnalyticsCategoryToInitialize.MetricValues.InitializeNextPageRequest(this.Client, userExperienceAnalyticsCategoryToInitialize.MetricValuesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userExperienceAnalyticsCategoryToInitialize.MetricValues.AdditionalData = userExperienceAnalyticsCategoryToInitialize.AdditionalData;
-
-                    if(userExperienceAnalyticsCategoryToInitialize.AdditionalData.TryGetValue("metricValues@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userExperienceAnalyticsCategoryToInitialize.MetricValues.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

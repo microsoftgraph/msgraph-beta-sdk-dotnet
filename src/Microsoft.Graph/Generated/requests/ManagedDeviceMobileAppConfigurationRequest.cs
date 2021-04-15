@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToInitialize)
         {
 
-            if (managedDeviceMobileAppConfigurationToInitialize != null && managedDeviceMobileAppConfigurationToInitialize.AdditionalData != null)
+            if (managedDeviceMobileAppConfigurationToInitialize != null)
             {
-
                 if (managedDeviceMobileAppConfigurationToInitialize.Assignments != null && managedDeviceMobileAppConfigurationToInitialize.Assignments.CurrentPage != null)
                 {
+                    managedDeviceMobileAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(this.Client, managedDeviceMobileAppConfigurationToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceMobileAppConfigurationToInitialize.Assignments.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
-
-                    if(managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            managedDeviceMobileAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses != null && managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.CurrentPage != null)
                 {
+                    managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, managedDeviceMobileAppConfigurationToInitialize.DeviceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
-
-                    if(managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (managedDeviceMobileAppConfigurationToInitialize.UserStatuses != null && managedDeviceMobileAppConfigurationToInitialize.UserStatuses.CurrentPage != null)
                 {
+                    managedDeviceMobileAppConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(this.Client, managedDeviceMobileAppConfigurationToInitialize.UserStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceMobileAppConfigurationToInitialize.UserStatuses.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
-
-                    if(managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            managedDeviceMobileAppConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

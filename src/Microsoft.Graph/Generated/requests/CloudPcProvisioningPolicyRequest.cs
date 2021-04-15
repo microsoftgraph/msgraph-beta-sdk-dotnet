@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(CloudPcProvisioningPolicy cloudPcProvisioningPolicyToInitialize)
         {
 
-            if (cloudPcProvisioningPolicyToInitialize != null && cloudPcProvisioningPolicyToInitialize.AdditionalData != null)
+            if (cloudPcProvisioningPolicyToInitialize != null)
             {
-
                 if (cloudPcProvisioningPolicyToInitialize.Assignments != null && cloudPcProvisioningPolicyToInitialize.Assignments.CurrentPage != null)
                 {
+                    cloudPcProvisioningPolicyToInitialize.Assignments.InitializeNextPageRequest(this.Client, cloudPcProvisioningPolicyToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudPcProvisioningPolicyToInitialize.Assignments.AdditionalData = cloudPcProvisioningPolicyToInitialize.AdditionalData;
-
-                    if(cloudPcProvisioningPolicyToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            cloudPcProvisioningPolicyToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

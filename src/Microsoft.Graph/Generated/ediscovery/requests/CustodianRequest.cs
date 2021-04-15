@@ -244,61 +244,25 @@ namespace Microsoft.Graph.Ediscovery
         private void InitializeCollectionProperties(Custodian custodianToInitialize)
         {
 
-            if (custodianToInitialize != null && custodianToInitialize.AdditionalData != null)
+            if (custodianToInitialize != null)
             {
-
                 if (custodianToInitialize.SiteSources != null && custodianToInitialize.SiteSources.CurrentPage != null)
                 {
+                    custodianToInitialize.SiteSources.InitializeNextPageRequest(this.Client, custodianToInitialize.SiteSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     custodianToInitialize.SiteSources.AdditionalData = custodianToInitialize.AdditionalData;
-
-                    if(custodianToInitialize.AdditionalData.TryGetValue("siteSources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            custodianToInitialize.SiteSources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (custodianToInitialize.UnifiedGroupSources != null && custodianToInitialize.UnifiedGroupSources.CurrentPage != null)
                 {
+                    custodianToInitialize.UnifiedGroupSources.InitializeNextPageRequest(this.Client, custodianToInitialize.UnifiedGroupSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     custodianToInitialize.UnifiedGroupSources.AdditionalData = custodianToInitialize.AdditionalData;
-
-                    if(custodianToInitialize.AdditionalData.TryGetValue("unifiedGroupSources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            custodianToInitialize.UnifiedGroupSources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (custodianToInitialize.UserSources != null && custodianToInitialize.UserSources.CurrentPage != null)
                 {
+                    custodianToInitialize.UserSources.InitializeNextPageRequest(this.Client, custodianToInitialize.UserSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     custodianToInitialize.UserSources.AdditionalData = custodianToInitialize.AdditionalData;
-
-                    if(custodianToInitialize.AdditionalData.TryGetValue("userSources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            custodianToInitialize.UserSources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

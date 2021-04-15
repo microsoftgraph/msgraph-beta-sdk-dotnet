@@ -244,205 +244,73 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DataClassificationService dataClassificationServiceToInitialize)
         {
 
-            if (dataClassificationServiceToInitialize != null && dataClassificationServiceToInitialize.AdditionalData != null)
+            if (dataClassificationServiceToInitialize != null)
             {
-
                 if (dataClassificationServiceToInitialize.ExactMatchDataStores != null && dataClassificationServiceToInitialize.ExactMatchDataStores.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ExactMatchDataStores.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ExactMatchDataStoresNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ExactMatchDataStores.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("exactMatchDataStores@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dataClassificationServiceToInitialize.ExactMatchDataStores.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.ClassifyFile != null && dataClassificationServiceToInitialize.ClassifyFile.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ClassifyFile.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ClassifyFileNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ClassifyFile.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyFile@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dataClassificationServiceToInitialize.ClassifyFile.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.ClassifyFileJobs != null && dataClassificationServiceToInitialize.ClassifyFileJobs.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ClassifyFileJobs.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ClassifyFileJobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ClassifyFileJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyFileJobs@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dataClassificationServiceToInitialize.ClassifyFileJobs.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.ClassifyText != null && dataClassificationServiceToInitialize.ClassifyText.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ClassifyText.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ClassifyTextNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ClassifyText.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyText@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dataClassificationServiceToInitialize.ClassifyText.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.ClassifyTextJobs != null && dataClassificationServiceToInitialize.ClassifyTextJobs.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ClassifyTextJobs.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ClassifyTextJobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ClassifyTextJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyTextJobs@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dataClassificationServiceToInitialize.ClassifyTextJobs.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs != null && dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("evaluateDlpPoliciesJobs@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.EvaluateLabelJobs != null && dataClassificationServiceToInitialize.EvaluateLabelJobs.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.EvaluateLabelJobs.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.EvaluateLabelJobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.EvaluateLabelJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("evaluateLabelJobs@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dataClassificationServiceToInitialize.EvaluateLabelJobs.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.Jobs != null && dataClassificationServiceToInitialize.Jobs.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.Jobs.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.JobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.Jobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dataClassificationServiceToInitialize.Jobs.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.SensitiveTypes != null && dataClassificationServiceToInitialize.SensitiveTypes.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.SensitiveTypes.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.SensitiveTypesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.SensitiveTypes.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("sensitiveTypes@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dataClassificationServiceToInitialize.SensitiveTypes.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.SensitivityLabels != null && dataClassificationServiceToInitialize.SensitivityLabels.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.SensitivityLabels.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.SensitivityLabelsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.SensitivityLabels.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("sensitivityLabels@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dataClassificationServiceToInitialize.SensitivityLabels.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.ExactMatchUploadAgents != null && dataClassificationServiceToInitialize.ExactMatchUploadAgents.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ExactMatchUploadAgents.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ExactMatchUploadAgentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ExactMatchUploadAgents.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    if(dataClassificationServiceToInitialize.AdditionalData.TryGetValue("exactMatchUploadAgents@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            dataClassificationServiceToInitialize.ExactMatchUploadAgents.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

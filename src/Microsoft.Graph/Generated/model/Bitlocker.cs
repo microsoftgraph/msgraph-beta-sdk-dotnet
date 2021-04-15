@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("recoveryKeys")]
         public IBitlockerRecoveryKeysCollectionPage RecoveryKeys { get; set; }
+
+        /// <summary>
+        /// Gets or sets recoveryKeysNextLink.
+        /// </summary>
+        [JsonPropertyName("recoveryKeys@odata.nextLink")]
+        public string RecoveryKeysNextLink { get; set; }
     
     }
 }

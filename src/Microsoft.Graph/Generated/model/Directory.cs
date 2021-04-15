@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("administrativeUnits")]
         public IDirectoryAdministrativeUnitsCollectionPage AdministrativeUnits { get; set; }
+
+        /// <summary>
+        /// Gets or sets administrativeUnitsNextLink.
+        /// </summary>
+        [JsonPropertyName("administrativeUnits@odata.nextLink")]
+        public string AdministrativeUnitsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets deleted items.
@@ -40,12 +46,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deletedItems")]
         public IDirectoryDeletedItemsCollectionPage DeletedItems { get; set; }
+
+        /// <summary>
+        /// Gets or sets deletedItemsNextLink.
+        /// </summary>
+        [JsonPropertyName("deletedItems@odata.nextLink")]
+        public string DeletedItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets shared email domains.
         /// </summary>
         [JsonPropertyName("sharedEmailDomains")]
         public IDirectorySharedEmailDomainsCollectionPage SharedEmailDomains { get; set; }
+
+        /// <summary>
+        /// Gets or sets sharedEmailDomainsNextLink.
+        /// </summary>
+        [JsonPropertyName("sharedEmailDomains@odata.nextLink")]
+        public string SharedEmailDomainsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets feature rollout policies.
@@ -54,6 +72,12 @@ namespace Microsoft.Graph
         [Obsolete("Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies.")]
         [JsonPropertyName("featureRolloutPolicies")]
         public IDirectoryFeatureRolloutPoliciesCollectionPage FeatureRolloutPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets featureRolloutPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("featureRolloutPolicies@odata.nextLink")]
+        public string FeatureRolloutPoliciesNextLink { get; set; }
     
     }
 }

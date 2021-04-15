@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Financials financialsToInitialize)
         {
 
-            if (financialsToInitialize != null && financialsToInitialize.AdditionalData != null)
+            if (financialsToInitialize != null)
             {
-
                 if (financialsToInitialize.Companies != null && financialsToInitialize.Companies.CurrentPage != null)
                 {
+                    financialsToInitialize.Companies.InitializeNextPageRequest(this.Client, financialsToInitialize.CompaniesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     financialsToInitialize.Companies.AdditionalData = financialsToInitialize.AdditionalData;
-
-                    if(financialsToInitialize.AdditionalData.TryGetValue("companies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            financialsToInitialize.Companies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

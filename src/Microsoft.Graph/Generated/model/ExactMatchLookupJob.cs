@@ -39,6 +39,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("matchingRows")]
         public IExactMatchLookupJobMatchingRowsCollectionPage MatchingRows { get; set; }
+
+        /// <summary>
+        /// Gets or sets matchingRowsNextLink.
+        /// </summary>
+        [JsonPropertyName("matchingRows@odata.nextLink")]
+        public string MatchingRowsNextLink { get; set; }
     
     }
 }

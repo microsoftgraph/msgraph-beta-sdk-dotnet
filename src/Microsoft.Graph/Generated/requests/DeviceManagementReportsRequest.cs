@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementReports deviceManagementReportsToInitialize)
         {
 
-            if (deviceManagementReportsToInitialize != null && deviceManagementReportsToInitialize.AdditionalData != null)
+            if (deviceManagementReportsToInitialize != null)
             {
-
                 if (deviceManagementReportsToInitialize.CachedReportConfigurations != null && deviceManagementReportsToInitialize.CachedReportConfigurations.CurrentPage != null)
                 {
+                    deviceManagementReportsToInitialize.CachedReportConfigurations.InitializeNextPageRequest(this.Client, deviceManagementReportsToInitialize.CachedReportConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementReportsToInitialize.CachedReportConfigurations.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
-
-                    if(deviceManagementReportsToInitialize.AdditionalData.TryGetValue("cachedReportConfigurations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceManagementReportsToInitialize.CachedReportConfigurations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (deviceManagementReportsToInitialize.ExportJobs != null && deviceManagementReportsToInitialize.ExportJobs.CurrentPage != null)
                 {
+                    deviceManagementReportsToInitialize.ExportJobs.InitializeNextPageRequest(this.Client, deviceManagementReportsToInitialize.ExportJobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementReportsToInitialize.ExportJobs.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
-
-                    if(deviceManagementReportsToInitialize.AdditionalData.TryGetValue("exportJobs@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceManagementReportsToInitialize.ExportJobs.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (deviceManagementReportsToInitialize.ReportSchedules != null && deviceManagementReportsToInitialize.ReportSchedules.CurrentPage != null)
                 {
+                    deviceManagementReportsToInitialize.ReportSchedules.InitializeNextPageRequest(this.Client, deviceManagementReportsToInitialize.ReportSchedulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementReportsToInitialize.ReportSchedules.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
-
-                    if(deviceManagementReportsToInitialize.AdditionalData.TryGetValue("reportSchedules@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceManagementReportsToInitialize.ReportSchedules.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

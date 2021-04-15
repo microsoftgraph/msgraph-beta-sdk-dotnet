@@ -244,97 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MobileApp mobileAppToInitialize)
         {
 
-            if (mobileAppToInitialize != null && mobileAppToInitialize.AdditionalData != null)
+            if (mobileAppToInitialize != null)
             {
-
                 if (mobileAppToInitialize.Assignments != null && mobileAppToInitialize.Assignments.CurrentPage != null)
                 {
+                    mobileAppToInitialize.Assignments.InitializeNextPageRequest(this.Client, mobileAppToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.Assignments.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    if(mobileAppToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mobileAppToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (mobileAppToInitialize.Categories != null && mobileAppToInitialize.Categories.CurrentPage != null)
                 {
+                    mobileAppToInitialize.Categories.InitializeNextPageRequest(this.Client, mobileAppToInitialize.CategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.Categories.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    if(mobileAppToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mobileAppToInitialize.Categories.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (mobileAppToInitialize.DeviceStatuses != null && mobileAppToInitialize.DeviceStatuses.CurrentPage != null)
                 {
+                    mobileAppToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, mobileAppToInitialize.DeviceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.DeviceStatuses.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    if(mobileAppToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mobileAppToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (mobileAppToInitialize.Relationships != null && mobileAppToInitialize.Relationships.CurrentPage != null)
                 {
+                    mobileAppToInitialize.Relationships.InitializeNextPageRequest(this.Client, mobileAppToInitialize.RelationshipsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.Relationships.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    if(mobileAppToInitialize.AdditionalData.TryGetValue("relationships@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mobileAppToInitialize.Relationships.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (mobileAppToInitialize.UserStatuses != null && mobileAppToInitialize.UserStatuses.CurrentPage != null)
                 {
+                    mobileAppToInitialize.UserStatuses.InitializeNextPageRequest(this.Client, mobileAppToInitialize.UserStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.UserStatuses.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    if(mobileAppToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            mobileAppToInitialize.UserStatuses.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

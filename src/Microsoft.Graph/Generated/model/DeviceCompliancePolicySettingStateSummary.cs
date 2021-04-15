@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceComplianceSettingStates")]
         public IDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionPage DeviceComplianceSettingStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceComplianceSettingStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceComplianceSettingStates@odata.nextLink")]
+        public string DeviceComplianceSettingStatesNextLink { get; set; }
     
     }
 }

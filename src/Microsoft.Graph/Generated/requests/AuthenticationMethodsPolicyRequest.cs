@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AuthenticationMethodsPolicy authenticationMethodsPolicyToInitialize)
         {
 
-            if (authenticationMethodsPolicyToInitialize != null && authenticationMethodsPolicyToInitialize.AdditionalData != null)
+            if (authenticationMethodsPolicyToInitialize != null)
             {
-
                 if (authenticationMethodsPolicyToInitialize.AuthenticationMethodConfigurations != null && authenticationMethodsPolicyToInitialize.AuthenticationMethodConfigurations.CurrentPage != null)
                 {
+                    authenticationMethodsPolicyToInitialize.AuthenticationMethodConfigurations.InitializeNextPageRequest(this.Client, authenticationMethodsPolicyToInitialize.AuthenticationMethodConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationMethodsPolicyToInitialize.AuthenticationMethodConfigurations.AdditionalData = authenticationMethodsPolicyToInitialize.AdditionalData;
-
-                    if(authenticationMethodsPolicyToInitialize.AdditionalData.TryGetValue("authenticationMethodConfigurations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            authenticationMethodsPolicyToInitialize.AuthenticationMethodConfigurations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

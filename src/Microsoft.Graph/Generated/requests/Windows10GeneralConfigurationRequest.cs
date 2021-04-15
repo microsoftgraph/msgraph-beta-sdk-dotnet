@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Windows10GeneralConfiguration windows10GeneralConfigurationToInitialize)
         {
 
-            if (windows10GeneralConfigurationToInitialize != null && windows10GeneralConfigurationToInitialize.AdditionalData != null)
+            if (windows10GeneralConfigurationToInitialize != null)
             {
-
                 if (windows10GeneralConfigurationToInitialize.PrivacyAccessControls != null && windows10GeneralConfigurationToInitialize.PrivacyAccessControls.CurrentPage != null)
                 {
+                    windows10GeneralConfigurationToInitialize.PrivacyAccessControls.InitializeNextPageRequest(this.Client, windows10GeneralConfigurationToInitialize.PrivacyAccessControlsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windows10GeneralConfigurationToInitialize.PrivacyAccessControls.AdditionalData = windows10GeneralConfigurationToInitialize.AdditionalData;
-
-                    if(windows10GeneralConfigurationToInitialize.AdditionalData.TryGetValue("privacyAccessControls@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windows10GeneralConfigurationToInitialize.PrivacyAccessControls.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

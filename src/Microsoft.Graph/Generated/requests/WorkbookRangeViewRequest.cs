@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WorkbookRangeView workbookRangeViewToInitialize)
         {
 
-            if (workbookRangeViewToInitialize != null && workbookRangeViewToInitialize.AdditionalData != null)
+            if (workbookRangeViewToInitialize != null)
             {
-
                 if (workbookRangeViewToInitialize.Rows != null && workbookRangeViewToInitialize.Rows.CurrentPage != null)
                 {
+                    workbookRangeViewToInitialize.Rows.InitializeNextPageRequest(this.Client, workbookRangeViewToInitialize.RowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookRangeViewToInitialize.Rows.AdditionalData = workbookRangeViewToInitialize.AdditionalData;
-
-                    if(workbookRangeViewToInitialize.AdditionalData.TryGetValue("rows@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookRangeViewToInitialize.Rows.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

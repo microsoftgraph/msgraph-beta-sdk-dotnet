@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Fido2AuthenticationMethodConfiguration fido2AuthenticationMethodConfigurationToInitialize)
         {
 
-            if (fido2AuthenticationMethodConfigurationToInitialize != null && fido2AuthenticationMethodConfigurationToInitialize.AdditionalData != null)
+            if (fido2AuthenticationMethodConfigurationToInitialize != null)
             {
-
                 if (fido2AuthenticationMethodConfigurationToInitialize.IncludeTargets != null && fido2AuthenticationMethodConfigurationToInitialize.IncludeTargets.CurrentPage != null)
                 {
+                    fido2AuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(this.Client, fido2AuthenticationMethodConfigurationToInitialize.IncludeTargetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     fido2AuthenticationMethodConfigurationToInitialize.IncludeTargets.AdditionalData = fido2AuthenticationMethodConfigurationToInitialize.AdditionalData;
-
-                    if(fido2AuthenticationMethodConfigurationToInitialize.AdditionalData.TryGetValue("includeTargets@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            fido2AuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -33,72 +33,144 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentApprovals")]
         public IEntitlementManagementAccessPackageAssignmentApprovalsCollectionPage AccessPackageAssignmentApprovals { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentApprovalsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentApprovals@odata.nextLink")]
+        public string AccessPackageAssignmentApprovalsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment policies.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentPolicies")]
         public IEntitlementManagementAccessPackageAssignmentPoliciesCollectionPage AccessPackageAssignmentPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentPolicies@odata.nextLink")]
+        public string AccessPackageAssignmentPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment requests.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentRequests")]
         public IEntitlementManagementAccessPackageAssignmentRequestsCollectionPage AccessPackageAssignmentRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentRequests@odata.nextLink")]
+        public string AccessPackageAssignmentRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment resource roles.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentResourceRoles")]
         public IEntitlementManagementAccessPackageAssignmentResourceRolesCollectionPage AccessPackageAssignmentResourceRoles { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentResourceRolesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentResourceRoles@odata.nextLink")]
+        public string AccessPackageAssignmentResourceRolesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignments.
         /// </summary>
         [JsonPropertyName("accessPackageAssignments")]
         public IEntitlementManagementAccessPackageAssignmentsCollectionPage AccessPackageAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignments@odata.nextLink")]
+        public string AccessPackageAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package catalogs.
         /// </summary>
         [JsonPropertyName("accessPackageCatalogs")]
         public IEntitlementManagementAccessPackageCatalogsCollectionPage AccessPackageCatalogs { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageCatalogsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageCatalogs@odata.nextLink")]
+        public string AccessPackageCatalogsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource environments.
         /// </summary>
         [JsonPropertyName("accessPackageResourceEnvironments")]
         public IEntitlementManagementAccessPackageResourceEnvironmentsCollectionPage AccessPackageResourceEnvironments { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourceEnvironmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceEnvironments@odata.nextLink")]
+        public string AccessPackageResourceEnvironmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource requests.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRequests")]
         public IEntitlementManagementAccessPackageResourceRequestsCollectionPage AccessPackageResourceRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourceRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceRequests@odata.nextLink")]
+        public string AccessPackageResourceRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource role scopes.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRoleScopes")]
         public IEntitlementManagementAccessPackageResourceRoleScopesCollectionPage AccessPackageResourceRoleScopes { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourceRoleScopesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceRoleScopes@odata.nextLink")]
+        public string AccessPackageResourceRoleScopesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resources.
         /// </summary>
         [JsonPropertyName("accessPackageResources")]
         public IEntitlementManagementAccessPackageResourcesCollectionPage AccessPackageResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResources@odata.nextLink")]
+        public string AccessPackageResourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access packages.
         /// </summary>
         [JsonPropertyName("accessPackages")]
         public IEntitlementManagementAccessPackagesCollectionPage AccessPackages { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackagesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackages@odata.nextLink")]
+        public string AccessPackagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets connected organizations.
         /// </summary>
         [JsonPropertyName("connectedOrganizations")]
         public IEntitlementManagementConnectedOrganizationsCollectionPage ConnectedOrganizations { get; set; }
+
+        /// <summary>
+        /// Gets or sets connectedOrganizationsNextLink.
+        /// </summary>
+        [JsonPropertyName("connectedOrganizations@odata.nextLink")]
+        public string ConnectedOrganizationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets settings.

@@ -244,223 +244,79 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EntitlementManagement entitlementManagementToInitialize)
         {
 
-            if (entitlementManagementToInitialize != null && entitlementManagementToInitialize.AdditionalData != null)
+            if (entitlementManagementToInitialize != null)
             {
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentApprovals != null && entitlementManagementToInitialize.AccessPackageAssignmentApprovals.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentApprovals.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentApprovalsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentApprovals.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentApprovals@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.AccessPackageAssignmentApprovals.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentPolicies != null && entitlementManagementToInitialize.AccessPackageAssignmentPolicies.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentPolicies.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentPolicies.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentPolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.AccessPackageAssignmentPolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentRequests != null && entitlementManagementToInitialize.AccessPackageAssignmentRequests.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentRequests.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentRequests@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles != null && entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentResourceRolesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentResourceRoles@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignments != null && entitlementManagementToInitialize.AccessPackageAssignments.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignments.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignments.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.AccessPackageAssignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageCatalogs != null && entitlementManagementToInitialize.AccessPackageCatalogs.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageCatalogs.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageCatalogsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageCatalogs.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageCatalogs@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.AccessPackageCatalogs.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResourceEnvironments != null && entitlementManagementToInitialize.AccessPackageResourceEnvironments.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResourceEnvironments.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourceEnvironmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResourceEnvironments.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceEnvironments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.AccessPackageResourceEnvironments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResourceRequests != null && entitlementManagementToInitialize.AccessPackageResourceRequests.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResourceRequests.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourceRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResourceRequests.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceRequests@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.AccessPackageResourceRequests.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResourceRoleScopes != null && entitlementManagementToInitialize.AccessPackageResourceRoleScopes.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResourceRoleScopes.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourceRoleScopesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResourceRoleScopes.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoleScopes@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.AccessPackageResourceRoleScopes.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResources != null && entitlementManagementToInitialize.AccessPackageResources.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResources.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResources.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.AccessPackageResources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackages != null && entitlementManagementToInitialize.AccessPackages.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackages.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackages.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackages@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.AccessPackages.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (entitlementManagementToInitialize.ConnectedOrganizations != null && entitlementManagementToInitialize.ConnectedOrganizations.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.ConnectedOrganizations.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.ConnectedOrganizationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.ConnectedOrganizations.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    if(entitlementManagementToInitialize.AdditionalData.TryGetValue("connectedOrganizations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            entitlementManagementToInitialize.ConnectedOrganizations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

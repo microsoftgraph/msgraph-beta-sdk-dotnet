@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicyToInitialize)
         {
 
-            if (deviceManagementConfigurationPolicyToInitialize != null && deviceManagementConfigurationPolicyToInitialize.AdditionalData != null)
+            if (deviceManagementConfigurationPolicyToInitialize != null)
             {
-
                 if (deviceManagementConfigurationPolicyToInitialize.Assignments != null && deviceManagementConfigurationPolicyToInitialize.Assignments.CurrentPage != null)
                 {
+                    deviceManagementConfigurationPolicyToInitialize.Assignments.InitializeNextPageRequest(this.Client, deviceManagementConfigurationPolicyToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementConfigurationPolicyToInitialize.Assignments.AdditionalData = deviceManagementConfigurationPolicyToInitialize.AdditionalData;
-
-                    if(deviceManagementConfigurationPolicyToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceManagementConfigurationPolicyToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (deviceManagementConfigurationPolicyToInitialize.Settings != null && deviceManagementConfigurationPolicyToInitialize.Settings.CurrentPage != null)
                 {
+                    deviceManagementConfigurationPolicyToInitialize.Settings.InitializeNextPageRequest(this.Client, deviceManagementConfigurationPolicyToInitialize.SettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementConfigurationPolicyToInitialize.Settings.AdditionalData = deviceManagementConfigurationPolicyToInitialize.AdditionalData;
-
-                    if(deviceManagementConfigurationPolicyToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceManagementConfigurationPolicyToInitialize.Settings.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

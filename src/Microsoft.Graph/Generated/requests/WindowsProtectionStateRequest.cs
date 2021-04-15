@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsProtectionState windowsProtectionStateToInitialize)
         {
 
-            if (windowsProtectionStateToInitialize != null && windowsProtectionStateToInitialize.AdditionalData != null)
+            if (windowsProtectionStateToInitialize != null)
             {
-
                 if (windowsProtectionStateToInitialize.DetectedMalwareState != null && windowsProtectionStateToInitialize.DetectedMalwareState.CurrentPage != null)
                 {
+                    windowsProtectionStateToInitialize.DetectedMalwareState.InitializeNextPageRequest(this.Client, windowsProtectionStateToInitialize.DetectedMalwareStateNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsProtectionStateToInitialize.DetectedMalwareState.AdditionalData = windowsProtectionStateToInitialize.AdditionalData;
-
-                    if(windowsProtectionStateToInitialize.AdditionalData.TryGetValue("detectedMalwareState@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windowsProtectionStateToInitialize.DetectedMalwareState.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("agentGroups")]
         public IOnPremisesPublishingProfileAgentGroupsCollectionPage AgentGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets agentGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("agentGroups@odata.nextLink")]
+        public string AgentGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets agents.
@@ -55,6 +61,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("agents")]
         public IOnPremisesPublishingProfileAgentsCollectionPage Agents { get; set; }
+
+        /// <summary>
+        /// Gets or sets agentsNextLink.
+        /// </summary>
+        [JsonPropertyName("agents@odata.nextLink")]
+        public string AgentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets connector groups.
@@ -62,6 +74,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("connectorGroups")]
         public IOnPremisesPublishingProfileConnectorGroupsCollectionPage ConnectorGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets connectorGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("connectorGroups@odata.nextLink")]
+        public string ConnectorGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets connectors.
@@ -69,6 +87,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("connectors")]
         public IOnPremisesPublishingProfileConnectorsCollectionPage Connectors { get; set; }
+
+        /// <summary>
+        /// Gets or sets connectorsNextLink.
+        /// </summary>
+        [JsonPropertyName("connectors@odata.nextLink")]
+        public string ConnectorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets published resources.
@@ -76,6 +100,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("publishedResources")]
         public IOnPremisesPublishingProfilePublishedResourcesCollectionPage PublishedResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets publishedResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("publishedResources@odata.nextLink")]
+        public string PublishedResourcesNextLink { get; set; }
     
     }
 }

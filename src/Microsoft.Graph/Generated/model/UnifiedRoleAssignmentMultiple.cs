@@ -81,18 +81,36 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appScopes")]
         public IUnifiedRoleAssignmentMultipleAppScopesCollectionPage AppScopes { get; set; }
+
+        /// <summary>
+        /// Gets or sets appScopesNextLink.
+        /// </summary>
+        [JsonPropertyName("appScopes@odata.nextLink")]
+        public string AppScopesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets directory scopes.
         /// </summary>
         [JsonPropertyName("directoryScopes")]
         public IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage DirectoryScopes { get; set; }
+
+        /// <summary>
+        /// Gets or sets directoryScopesNextLink.
+        /// </summary>
+        [JsonPropertyName("directoryScopes@odata.nextLink")]
+        public string DirectoryScopesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets principals.
         /// </summary>
         [JsonPropertyName("principals")]
         public IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesPage Principals { get; set; }
+
+        /// <summary>
+        /// Gets or sets principalsNextLink.
+        /// </summary>
+        [JsonPropertyName("principals@odata.nextLink")]
+        public string PrincipalsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role definition.

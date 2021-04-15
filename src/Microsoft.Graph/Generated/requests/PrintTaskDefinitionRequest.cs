@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PrintTaskDefinition printTaskDefinitionToInitialize)
         {
 
-            if (printTaskDefinitionToInitialize != null && printTaskDefinitionToInitialize.AdditionalData != null)
+            if (printTaskDefinitionToInitialize != null)
             {
-
                 if (printTaskDefinitionToInitialize.Tasks != null && printTaskDefinitionToInitialize.Tasks.CurrentPage != null)
                 {
+                    printTaskDefinitionToInitialize.Tasks.InitializeNextPageRequest(this.Client, printTaskDefinitionToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printTaskDefinitionToInitialize.Tasks.AdditionalData = printTaskDefinitionToInitialize.AdditionalData;
-
-                    if(printTaskDefinitionToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printTaskDefinitionToInitialize.Tasks.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

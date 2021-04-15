@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("children")]
         public IGroupPolicyCategoryChildrenCollectionWithReferencesPage Children { get; set; }
+
+        /// <summary>
+        /// Gets or sets childrenNextLink.
+        /// </summary>
+        [JsonPropertyName("children@odata.nextLink")]
+        public string ChildrenNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets definition file.
@@ -69,6 +75,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("definitions")]
         public IGroupPolicyCategoryDefinitionsCollectionWithReferencesPage Definitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets definitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("definitions@odata.nextLink")]
+        public string DefinitionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets parent.

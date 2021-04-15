@@ -244,187 +244,67 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(RbacApplication rbacApplicationToInitialize)
         {
 
-            if (rbacApplicationToInitialize != null && rbacApplicationToInitialize.AdditionalData != null)
+            if (rbacApplicationToInitialize != null)
             {
-
                 if (rbacApplicationToInitialize.ResourceNamespaces != null && rbacApplicationToInitialize.ResourceNamespaces.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.ResourceNamespaces.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.ResourceNamespacesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.ResourceNamespaces.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("resourceNamespaces@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.ResourceNamespaces.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleAssignments != null && rbacApplicationToInitialize.RoleAssignments.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleAssignments.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleAssignments.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.RoleAssignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleDefinitions != null && rbacApplicationToInitialize.RoleDefinitions.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleDefinitions.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleDefinitions.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleAssignmentApprovals != null && rbacApplicationToInitialize.RoleAssignmentApprovals.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleAssignmentApprovals.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentApprovalsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleAssignmentApprovals.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentApprovals@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.RoleAssignmentApprovals.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleAssignmentRequests != null && rbacApplicationToInitialize.RoleAssignmentRequests.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleAssignmentRequests.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentRequests@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleAssignmentScheduleInstances != null && rbacApplicationToInitialize.RoleAssignmentScheduleInstances.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleAssignmentScheduleInstances.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentScheduleInstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleAssignmentScheduleInstances.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentScheduleInstances@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.RoleAssignmentScheduleInstances.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleAssignmentSchedules != null && rbacApplicationToInitialize.RoleAssignmentSchedules.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleAssignmentSchedules.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentSchedulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleAssignmentSchedules.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentSchedules@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.RoleAssignmentSchedules.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleEligibilityRequests != null && rbacApplicationToInitialize.RoleEligibilityRequests.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleEligibilityRequests.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleEligibilityRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleEligibilityRequests.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilityRequests@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.RoleEligibilityRequests.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleEligibilityScheduleInstances != null && rbacApplicationToInitialize.RoleEligibilityScheduleInstances.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleEligibilityScheduleInstances.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleEligibilityScheduleInstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleEligibilityScheduleInstances.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilityScheduleInstances@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.RoleEligibilityScheduleInstances.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleEligibilitySchedules != null && rbacApplicationToInitialize.RoleEligibilitySchedules.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleEligibilitySchedules.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleEligibilitySchedulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleEligibilitySchedules.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilitySchedules@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.RoleEligibilitySchedules.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,97 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OnPremisesPublishingProfile onPremisesPublishingProfileToInitialize)
         {
 
-            if (onPremisesPublishingProfileToInitialize != null && onPremisesPublishingProfileToInitialize.AdditionalData != null)
+            if (onPremisesPublishingProfileToInitialize != null)
             {
-
                 if (onPremisesPublishingProfileToInitialize.AgentGroups != null && onPremisesPublishingProfileToInitialize.AgentGroups.CurrentPage != null)
                 {
+                    onPremisesPublishingProfileToInitialize.AgentGroups.InitializeNextPageRequest(this.Client, onPremisesPublishingProfileToInitialize.AgentGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesPublishingProfileToInitialize.AgentGroups.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
-
-                    if(onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("agentGroups@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            onPremisesPublishingProfileToInitialize.AgentGroups.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (onPremisesPublishingProfileToInitialize.Agents != null && onPremisesPublishingProfileToInitialize.Agents.CurrentPage != null)
                 {
+                    onPremisesPublishingProfileToInitialize.Agents.InitializeNextPageRequest(this.Client, onPremisesPublishingProfileToInitialize.AgentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesPublishingProfileToInitialize.Agents.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
-
-                    if(onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("agents@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            onPremisesPublishingProfileToInitialize.Agents.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (onPremisesPublishingProfileToInitialize.ConnectorGroups != null && onPremisesPublishingProfileToInitialize.ConnectorGroups.CurrentPage != null)
                 {
+                    onPremisesPublishingProfileToInitialize.ConnectorGroups.InitializeNextPageRequest(this.Client, onPremisesPublishingProfileToInitialize.ConnectorGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesPublishingProfileToInitialize.ConnectorGroups.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
-
-                    if(onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("connectorGroups@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            onPremisesPublishingProfileToInitialize.ConnectorGroups.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (onPremisesPublishingProfileToInitialize.Connectors != null && onPremisesPublishingProfileToInitialize.Connectors.CurrentPage != null)
                 {
+                    onPremisesPublishingProfileToInitialize.Connectors.InitializeNextPageRequest(this.Client, onPremisesPublishingProfileToInitialize.ConnectorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesPublishingProfileToInitialize.Connectors.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
-
-                    if(onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("connectors@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            onPremisesPublishingProfileToInitialize.Connectors.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (onPremisesPublishingProfileToInitialize.PublishedResources != null && onPremisesPublishingProfileToInitialize.PublishedResources.CurrentPage != null)
                 {
+                    onPremisesPublishingProfileToInitialize.PublishedResources.InitializeNextPageRequest(this.Client, onPremisesPublishingProfileToInitialize.PublishedResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesPublishingProfileToInitialize.PublishedResources.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
-
-                    if(onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("publishedResources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            onPremisesPublishingProfileToInitialize.PublishedResources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

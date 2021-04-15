@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WorkbookTable workbookTableToInitialize)
         {
 
-            if (workbookTableToInitialize != null && workbookTableToInitialize.AdditionalData != null)
+            if (workbookTableToInitialize != null)
             {
-
                 if (workbookTableToInitialize.Columns != null && workbookTableToInitialize.Columns.CurrentPage != null)
                 {
+                    workbookTableToInitialize.Columns.InitializeNextPageRequest(this.Client, workbookTableToInitialize.ColumnsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookTableToInitialize.Columns.AdditionalData = workbookTableToInitialize.AdditionalData;
-
-                    if(workbookTableToInitialize.AdditionalData.TryGetValue("columns@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookTableToInitialize.Columns.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (workbookTableToInitialize.Rows != null && workbookTableToInitialize.Rows.CurrentPage != null)
                 {
+                    workbookTableToInitialize.Rows.InitializeNextPageRequest(this.Client, workbookTableToInitialize.RowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookTableToInitialize.Rows.AdditionalData = workbookTableToInitialize.AdditionalData;
-
-                    if(workbookTableToInitialize.AdditionalData.TryGetValue("rows@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookTableToInitialize.Rows.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

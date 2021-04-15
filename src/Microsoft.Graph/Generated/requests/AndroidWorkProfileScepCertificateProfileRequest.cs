@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AndroidWorkProfileScepCertificateProfile androidWorkProfileScepCertificateProfileToInitialize)
         {
 
-            if (androidWorkProfileScepCertificateProfileToInitialize != null && androidWorkProfileScepCertificateProfileToInitialize.AdditionalData != null)
+            if (androidWorkProfileScepCertificateProfileToInitialize != null)
             {
-
                 if (androidWorkProfileScepCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && androidWorkProfileScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    androidWorkProfileScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, androidWorkProfileScepCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     androidWorkProfileScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = androidWorkProfileScepCertificateProfileToInitialize.AdditionalData;
-
-                    if(androidWorkProfileScepCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            androidWorkProfileScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

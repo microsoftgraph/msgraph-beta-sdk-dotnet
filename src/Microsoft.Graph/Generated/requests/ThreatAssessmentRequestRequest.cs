@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ThreatAssessmentRequestObject threatAssessmentRequestObjectToInitialize)
         {
 
-            if (threatAssessmentRequestObjectToInitialize != null && threatAssessmentRequestObjectToInitialize.AdditionalData != null)
+            if (threatAssessmentRequestObjectToInitialize != null)
             {
-
                 if (threatAssessmentRequestObjectToInitialize.Results != null && threatAssessmentRequestObjectToInitialize.Results.CurrentPage != null)
                 {
+                    threatAssessmentRequestObjectToInitialize.Results.InitializeNextPageRequest(this.Client, threatAssessmentRequestObjectToInitialize.ResultsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     threatAssessmentRequestObjectToInitialize.Results.AdditionalData = threatAssessmentRequestObjectToInitialize.AdditionalData;
-
-                    if(threatAssessmentRequestObjectToInitialize.AdditionalData.TryGetValue("results@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            threatAssessmentRequestObjectToInitialize.Results.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -146,6 +146,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IDeviceHealthScriptAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device run states.
@@ -153,6 +159,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceRunStates")]
         public IDeviceHealthScriptDeviceRunStatesCollectionPage DeviceRunStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceRunStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceRunStates@odata.nextLink")]
+        public string DeviceRunStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets run summary.

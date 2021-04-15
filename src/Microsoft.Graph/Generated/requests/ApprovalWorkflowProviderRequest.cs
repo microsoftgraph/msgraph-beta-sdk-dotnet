@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ApprovalWorkflowProvider approvalWorkflowProviderToInitialize)
         {
 
-            if (approvalWorkflowProviderToInitialize != null && approvalWorkflowProviderToInitialize.AdditionalData != null)
+            if (approvalWorkflowProviderToInitialize != null)
             {
-
                 if (approvalWorkflowProviderToInitialize.BusinessFlows != null && approvalWorkflowProviderToInitialize.BusinessFlows.CurrentPage != null)
                 {
+                    approvalWorkflowProviderToInitialize.BusinessFlows.InitializeNextPageRequest(this.Client, approvalWorkflowProviderToInitialize.BusinessFlowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     approvalWorkflowProviderToInitialize.BusinessFlows.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    if(approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("businessFlows@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            approvalWorkflowProviderToInitialize.BusinessFlows.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision != null && approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.CurrentPage != null)
                 {
+                    approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.InitializeNextPageRequest(this.Client, approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecisionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    if(approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("businessFlowsWithRequestsAwaitingMyDecision@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (approvalWorkflowProviderToInitialize.PolicyTemplates != null && approvalWorkflowProviderToInitialize.PolicyTemplates.CurrentPage != null)
                 {
+                    approvalWorkflowProviderToInitialize.PolicyTemplates.InitializeNextPageRequest(this.Client, approvalWorkflowProviderToInitialize.PolicyTemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     approvalWorkflowProviderToInitialize.PolicyTemplates.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    if(approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("policyTemplates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            approvalWorkflowProviderToInitialize.PolicyTemplates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,205 +244,73 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ReportRoot reportRootToInitialize)
         {
 
-            if (reportRootToInitialize != null && reportRootToInitialize.AdditionalData != null)
+            if (reportRootToInitialize != null)
             {
-
                 if (reportRootToInitialize.ApplicationSignInDetailedSummary != null && reportRootToInitialize.ApplicationSignInDetailedSummary.CurrentPage != null)
                 {
+                    reportRootToInitialize.ApplicationSignInDetailedSummary.InitializeNextPageRequest(this.Client, reportRootToInitialize.ApplicationSignInDetailedSummaryNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.ApplicationSignInDetailedSummary.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    if(reportRootToInitialize.AdditionalData.TryGetValue("applicationSignInDetailedSummary@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            reportRootToInitialize.ApplicationSignInDetailedSummary.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (reportRootToInitialize.CredentialUserRegistrationDetails != null && reportRootToInitialize.CredentialUserRegistrationDetails.CurrentPage != null)
                 {
+                    reportRootToInitialize.CredentialUserRegistrationDetails.InitializeNextPageRequest(this.Client, reportRootToInitialize.CredentialUserRegistrationDetailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.CredentialUserRegistrationDetails.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    if(reportRootToInitialize.AdditionalData.TryGetValue("credentialUserRegistrationDetails@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            reportRootToInitialize.CredentialUserRegistrationDetails.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (reportRootToInitialize.UserCredentialUsageDetails != null && reportRootToInitialize.UserCredentialUsageDetails.CurrentPage != null)
                 {
+                    reportRootToInitialize.UserCredentialUsageDetails.InitializeNextPageRequest(this.Client, reportRootToInitialize.UserCredentialUsageDetailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.UserCredentialUsageDetails.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    if(reportRootToInitialize.AdditionalData.TryGetValue("userCredentialUsageDetails@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            reportRootToInitialize.UserCredentialUsageDetails.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (reportRootToInitialize.DailyPrintUsageByPrinter != null && reportRootToInitialize.DailyPrintUsageByPrinter.CurrentPage != null)
                 {
+                    reportRootToInitialize.DailyPrintUsageByPrinter.InitializeNextPageRequest(this.Client, reportRootToInitialize.DailyPrintUsageByPrinterNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.DailyPrintUsageByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    if(reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageByPrinter@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            reportRootToInitialize.DailyPrintUsageByPrinter.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (reportRootToInitialize.DailyPrintUsageByUser != null && reportRootToInitialize.DailyPrintUsageByUser.CurrentPage != null)
                 {
+                    reportRootToInitialize.DailyPrintUsageByUser.InitializeNextPageRequest(this.Client, reportRootToInitialize.DailyPrintUsageByUserNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.DailyPrintUsageByUser.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    if(reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageByUser@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            reportRootToInitialize.DailyPrintUsageByUser.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (reportRootToInitialize.DailyPrintUsageSummariesByPrinter != null && reportRootToInitialize.DailyPrintUsageSummariesByPrinter.CurrentPage != null)
                 {
+                    reportRootToInitialize.DailyPrintUsageSummariesByPrinter.InitializeNextPageRequest(this.Client, reportRootToInitialize.DailyPrintUsageSummariesByPrinterNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.DailyPrintUsageSummariesByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    if(reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageSummariesByPrinter@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            reportRootToInitialize.DailyPrintUsageSummariesByPrinter.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (reportRootToInitialize.DailyPrintUsageSummariesByUser != null && reportRootToInitialize.DailyPrintUsageSummariesByUser.CurrentPage != null)
                 {
+                    reportRootToInitialize.DailyPrintUsageSummariesByUser.InitializeNextPageRequest(this.Client, reportRootToInitialize.DailyPrintUsageSummariesByUserNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.DailyPrintUsageSummariesByUser.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    if(reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageSummariesByUser@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            reportRootToInitialize.DailyPrintUsageSummariesByUser.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (reportRootToInitialize.MonthlyPrintUsageByPrinter != null && reportRootToInitialize.MonthlyPrintUsageByPrinter.CurrentPage != null)
                 {
+                    reportRootToInitialize.MonthlyPrintUsageByPrinter.InitializeNextPageRequest(this.Client, reportRootToInitialize.MonthlyPrintUsageByPrinterNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.MonthlyPrintUsageByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    if(reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageByPrinter@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            reportRootToInitialize.MonthlyPrintUsageByPrinter.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (reportRootToInitialize.MonthlyPrintUsageByUser != null && reportRootToInitialize.MonthlyPrintUsageByUser.CurrentPage != null)
                 {
+                    reportRootToInitialize.MonthlyPrintUsageByUser.InitializeNextPageRequest(this.Client, reportRootToInitialize.MonthlyPrintUsageByUserNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.MonthlyPrintUsageByUser.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    if(reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageByUser@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            reportRootToInitialize.MonthlyPrintUsageByUser.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter != null && reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter.CurrentPage != null)
                 {
+                    reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter.InitializeNextPageRequest(this.Client, reportRootToInitialize.MonthlyPrintUsageSummariesByPrinterNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    if(reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageSummariesByPrinter@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (reportRootToInitialize.MonthlyPrintUsageSummariesByUser != null && reportRootToInitialize.MonthlyPrintUsageSummariesByUser.CurrentPage != null)
                 {
+                    reportRootToInitialize.MonthlyPrintUsageSummariesByUser.InitializeNextPageRequest(this.Client, reportRootToInitialize.MonthlyPrintUsageSummariesByUserNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.MonthlyPrintUsageSummariesByUser.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    if(reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageSummariesByUser@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            reportRootToInitialize.MonthlyPrintUsageSummariesByUser.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

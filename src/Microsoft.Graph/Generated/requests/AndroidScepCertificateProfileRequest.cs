@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AndroidScepCertificateProfile androidScepCertificateProfileToInitialize)
         {
 
-            if (androidScepCertificateProfileToInitialize != null && androidScepCertificateProfileToInitialize.AdditionalData != null)
+            if (androidScepCertificateProfileToInitialize != null)
             {
-
                 if (androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = androidScepCertificateProfileToInitialize.AdditionalData;
-
-                    if(androidScepCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

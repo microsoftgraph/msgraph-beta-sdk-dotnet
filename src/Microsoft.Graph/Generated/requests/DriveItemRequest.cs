@@ -244,115 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DriveItem driveItemToInitialize)
         {
 
-            if (driveItemToInitialize != null && driveItemToInitialize.AdditionalData != null)
+            if (driveItemToInitialize != null)
             {
-
                 if (driveItemToInitialize.Activities != null && driveItemToInitialize.Activities.CurrentPage != null)
                 {
+                    driveItemToInitialize.Activities.InitializeNextPageRequest(this.Client, driveItemToInitialize.ActivitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveItemToInitialize.Activities.AdditionalData = driveItemToInitialize.AdditionalData;
-
-                    if(driveItemToInitialize.AdditionalData.TryGetValue("activities@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            driveItemToInitialize.Activities.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (driveItemToInitialize.Children != null && driveItemToInitialize.Children.CurrentPage != null)
                 {
+                    driveItemToInitialize.Children.InitializeNextPageRequest(this.Client, driveItemToInitialize.ChildrenNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveItemToInitialize.Children.AdditionalData = driveItemToInitialize.AdditionalData;
-
-                    if(driveItemToInitialize.AdditionalData.TryGetValue("children@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            driveItemToInitialize.Children.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (driveItemToInitialize.Permissions != null && driveItemToInitialize.Permissions.CurrentPage != null)
                 {
+                    driveItemToInitialize.Permissions.InitializeNextPageRequest(this.Client, driveItemToInitialize.PermissionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveItemToInitialize.Permissions.AdditionalData = driveItemToInitialize.AdditionalData;
-
-                    if(driveItemToInitialize.AdditionalData.TryGetValue("permissions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            driveItemToInitialize.Permissions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (driveItemToInitialize.Subscriptions != null && driveItemToInitialize.Subscriptions.CurrentPage != null)
                 {
+                    driveItemToInitialize.Subscriptions.InitializeNextPageRequest(this.Client, driveItemToInitialize.SubscriptionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveItemToInitialize.Subscriptions.AdditionalData = driveItemToInitialize.AdditionalData;
-
-                    if(driveItemToInitialize.AdditionalData.TryGetValue("subscriptions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            driveItemToInitialize.Subscriptions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (driveItemToInitialize.Thumbnails != null && driveItemToInitialize.Thumbnails.CurrentPage != null)
                 {
+                    driveItemToInitialize.Thumbnails.InitializeNextPageRequest(this.Client, driveItemToInitialize.ThumbnailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveItemToInitialize.Thumbnails.AdditionalData = driveItemToInitialize.AdditionalData;
-
-                    if(driveItemToInitialize.AdditionalData.TryGetValue("thumbnails@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            driveItemToInitialize.Thumbnails.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (driveItemToInitialize.Versions != null && driveItemToInitialize.Versions.CurrentPage != null)
                 {
+                    driveItemToInitialize.Versions.InitializeNextPageRequest(this.Client, driveItemToInitialize.VersionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveItemToInitialize.Versions.AdditionalData = driveItemToInitialize.AdditionalData;
-
-                    if(driveItemToInitialize.AdditionalData.TryGetValue("versions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            driveItemToInitialize.Versions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

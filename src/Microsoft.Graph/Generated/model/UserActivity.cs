@@ -125,6 +125,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("historyItems")]
         public IUserActivityHistoryItemsCollectionPage HistoryItems { get; set; }
+
+        /// <summary>
+        /// Gets or sets historyItemsNextLink.
+        /// </summary>
+        [JsonPropertyName("historyItems@odata.nextLink")]
+        public string HistoryItemsNextLink { get; set; }
     
     }
 }

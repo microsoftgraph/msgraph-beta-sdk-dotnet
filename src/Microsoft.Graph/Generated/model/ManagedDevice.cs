@@ -566,6 +566,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceCompliancePolicyStates")]
         public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceCompliancePolicyStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceCompliancePolicyStates@odata.nextLink")]
+        public string DeviceCompliancePolicyStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets assignment filter evaluation status details.
@@ -573,6 +579,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignmentFilterEvaluationStatusDetails")]
         public IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionPage AssignmentFilterEvaluationStatusDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentFilterEvaluationStatusDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignmentFilterEvaluationStatusDetails@odata.nextLink")]
+        public string AssignmentFilterEvaluationStatusDetailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration states.
@@ -580,6 +592,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceConfigurationStates")]
         public IManagedDeviceDeviceConfigurationStatesCollectionPage DeviceConfigurationStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceConfigurationStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceConfigurationStates@odata.nextLink")]
+        public string DeviceConfigurationStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed device mobile app configuration states.
@@ -587,6 +605,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedDeviceMobileAppConfigurationStates")]
         public IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionPage ManagedDeviceMobileAppConfigurationStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedDeviceMobileAppConfigurationStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedDeviceMobileAppConfigurationStates@odata.nextLink")]
+        public string ManagedDeviceMobileAppConfigurationStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets security baseline states.
@@ -594,6 +618,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("securityBaselineStates")]
         public IManagedDeviceSecurityBaselineStatesCollectionPage SecurityBaselineStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets securityBaselineStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("securityBaselineStates@odata.nextLink")]
+        public string SecurityBaselineStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets detected apps.
@@ -601,6 +631,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("detectedApps")]
         public IManagedDeviceDetectedAppsCollectionWithReferencesPage DetectedApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets detectedAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("detectedApps@odata.nextLink")]
+        public string DetectedAppsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device category.
@@ -615,6 +651,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("logCollectionRequests")]
         public IManagedDeviceLogCollectionRequestsCollectionPage LogCollectionRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets logCollectionRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("logCollectionRequests@odata.nextLink")]
+        public string LogCollectionRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets users.
@@ -622,6 +664,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("users")]
         public IManagedDeviceUsersCollectionPage Users { get; set; }
+
+        /// <summary>
+        /// Gets or sets usersNextLink.
+        /// </summary>
+        [JsonPropertyName("users@odata.nextLink")]
+        public string UsersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows protection state.

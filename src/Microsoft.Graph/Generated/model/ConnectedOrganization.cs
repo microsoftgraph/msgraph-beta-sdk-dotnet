@@ -89,6 +89,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("externalSponsors")]
         public IConnectedOrganizationExternalSponsorsCollectionPage ExternalSponsors { get; set; }
+
+        /// <summary>
+        /// Gets or sets externalSponsorsNextLink.
+        /// </summary>
+        [JsonPropertyName("externalSponsors@odata.nextLink")]
+        public string ExternalSponsorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets internal sponsors.
@@ -96,6 +102,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("internalSponsors")]
         public IConnectedOrganizationInternalSponsorsCollectionPage InternalSponsors { get; set; }
+
+        /// <summary>
+        /// Gets or sets internalSponsorsNextLink.
+        /// </summary>
+        [JsonPropertyName("internalSponsors@odata.nextLink")]
+        public string InternalSponsorsNextLink { get; set; }
     
     }
 }

@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(RoomList roomListToInitialize)
         {
 
-            if (roomListToInitialize != null && roomListToInitialize.AdditionalData != null)
+            if (roomListToInitialize != null)
             {
-
                 if (roomListToInitialize.Rooms != null && roomListToInitialize.Rooms.CurrentPage != null)
                 {
+                    roomListToInitialize.Rooms.InitializeNextPageRequest(this.Client, roomListToInitialize.RoomsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     roomListToInitialize.Rooms.AdditionalData = roomListToInitialize.AdditionalData;
-
-                    if(roomListToInitialize.AdditionalData.TryGetValue("rooms@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            roomListToInitialize.Rooms.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

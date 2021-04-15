@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToInitialize)
         {
 
-            if (windowsWifiEnterpriseEAPConfigurationToInitialize != null && windowsWifiEnterpriseEAPConfigurationToInitialize.AdditionalData != null)
+            if (windowsWifiEnterpriseEAPConfigurationToInitialize != null)
             {
-
                 if (windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation != null && windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.CurrentPage != null)
                 {
+                    windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(this.Client, windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.AdditionalData = windowsWifiEnterpriseEAPConfigurationToInitialize.AdditionalData;
-
-                    if(windowsWifiEnterpriseEAPConfigurationToInitialize.AdditionalData.TryGetValue("rootCertificatesForServerValidation@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

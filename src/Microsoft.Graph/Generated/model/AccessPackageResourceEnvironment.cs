@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackageResources")]
         public IAccessPackageResourceEnvironmentAccessPackageResourcesCollectionWithReferencesPage AccessPackageResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResources@odata.nextLink")]
+        public string AccessPackageResourcesNextLink { get; set; }
     
     }
 }

@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(CustomerPaymentJournal customerPaymentJournalToInitialize)
         {
 
-            if (customerPaymentJournalToInitialize != null && customerPaymentJournalToInitialize.AdditionalData != null)
+            if (customerPaymentJournalToInitialize != null)
             {
-
                 if (customerPaymentJournalToInitialize.CustomerPayments != null && customerPaymentJournalToInitialize.CustomerPayments.CurrentPage != null)
                 {
+                    customerPaymentJournalToInitialize.CustomerPayments.InitializeNextPageRequest(this.Client, customerPaymentJournalToInitialize.CustomerPaymentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     customerPaymentJournalToInitialize.CustomerPayments.AdditionalData = customerPaymentJournalToInitialize.AdditionalData;
-
-                    if(customerPaymentJournalToInitialize.AdditionalData.TryGetValue("customerPayments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            customerPaymentJournalToInitialize.CustomerPayments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

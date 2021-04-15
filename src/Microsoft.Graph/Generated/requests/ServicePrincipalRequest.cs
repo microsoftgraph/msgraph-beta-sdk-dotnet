@@ -244,277 +244,97 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ServicePrincipal servicePrincipalToInitialize)
         {
 
-            if (servicePrincipalToInitialize != null && servicePrincipalToInitialize.AdditionalData != null)
+            if (servicePrincipalToInitialize != null)
             {
-
                 if (servicePrincipalToInitialize.AppRoleAssignedTo != null && servicePrincipalToInitialize.AppRoleAssignedTo.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.AppRoleAssignedTo.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.AppRoleAssignedToNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.AppRoleAssignedTo.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("appRoleAssignedTo@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.AppRoleAssignedTo.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.AppRoleAssignments != null && servicePrincipalToInitialize.AppRoleAssignments.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.AppRoleAssignments.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.AppRoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.AppRoleAssignments.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("appRoleAssignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.AppRoleAssignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.ClaimsMappingPolicies != null && servicePrincipalToInitialize.ClaimsMappingPolicies.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.ClaimsMappingPolicies.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.ClaimsMappingPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.ClaimsMappingPolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("claimsMappingPolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.ClaimsMappingPolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.CreatedObjects != null && servicePrincipalToInitialize.CreatedObjects.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.CreatedObjects.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.CreatedObjectsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.CreatedObjects.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("createdObjects@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.CreatedObjects.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.DelegatedPermissionClassifications != null && servicePrincipalToInitialize.DelegatedPermissionClassifications.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.DelegatedPermissionClassifications.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.DelegatedPermissionClassificationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.DelegatedPermissionClassifications.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("delegatedPermissionClassifications@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.DelegatedPermissionClassifications.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.Endpoints != null && servicePrincipalToInitialize.Endpoints.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.Endpoints.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.EndpointsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.Endpoints.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("endpoints@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.Endpoints.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.HomeRealmDiscoveryPolicies != null && servicePrincipalToInitialize.HomeRealmDiscoveryPolicies.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.HomeRealmDiscoveryPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.HomeRealmDiscoveryPolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("homeRealmDiscoveryPolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.LicenseDetails != null && servicePrincipalToInitialize.LicenseDetails.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.LicenseDetails.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.LicenseDetailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.LicenseDetails.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("licenseDetails@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.LicenseDetails.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.MemberOf != null && servicePrincipalToInitialize.MemberOf.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.MemberOf.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.MemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.MemberOf.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.MemberOf.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.Oauth2PermissionGrants != null && servicePrincipalToInitialize.Oauth2PermissionGrants.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.Oauth2PermissionGrants.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.Oauth2PermissionGrantsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.Oauth2PermissionGrants.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("oauth2PermissionGrants@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.Oauth2PermissionGrants.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.OwnedObjects != null && servicePrincipalToInitialize.OwnedObjects.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.OwnedObjects.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.OwnedObjectsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.OwnedObjects.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("ownedObjects@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.OwnedObjects.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.Owners != null && servicePrincipalToInitialize.Owners.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.Owners.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.OwnersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.Owners.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.Owners.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.TokenIssuancePolicies != null && servicePrincipalToInitialize.TokenIssuancePolicies.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.TokenIssuancePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.TokenIssuancePolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("tokenIssuancePolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.TokenLifetimePolicies != null && servicePrincipalToInitialize.TokenLifetimePolicies.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.TokenLifetimePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.TokenLifetimePolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("tokenLifetimePolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (servicePrincipalToInitialize.TransitiveMemberOf != null && servicePrincipalToInitialize.TransitiveMemberOf.CurrentPage != null)
                 {
+                    servicePrincipalToInitialize.TransitiveMemberOf.InitializeNextPageRequest(this.Client, servicePrincipalToInitialize.TransitiveMemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     servicePrincipalToInitialize.TransitiveMemberOf.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    if(servicePrincipalToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            servicePrincipalToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

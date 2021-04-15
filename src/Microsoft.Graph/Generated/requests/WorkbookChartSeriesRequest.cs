@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WorkbookChartSeries workbookChartSeriesToInitialize)
         {
 
-            if (workbookChartSeriesToInitialize != null && workbookChartSeriesToInitialize.AdditionalData != null)
+            if (workbookChartSeriesToInitialize != null)
             {
-
                 if (workbookChartSeriesToInitialize.Points != null && workbookChartSeriesToInitialize.Points.CurrentPage != null)
                 {
+                    workbookChartSeriesToInitialize.Points.InitializeNextPageRequest(this.Client, workbookChartSeriesToInitialize.PointsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookChartSeriesToInitialize.Points.AdditionalData = workbookChartSeriesToInitialize.AdditionalData;
-
-                    if(workbookChartSeriesToInitialize.AdditionalData.TryGetValue("points@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookChartSeriesToInitialize.Points.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

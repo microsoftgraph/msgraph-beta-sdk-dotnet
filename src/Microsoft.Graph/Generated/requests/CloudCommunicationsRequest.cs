@@ -244,79 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(CloudCommunications cloudCommunicationsToInitialize)
         {
 
-            if (cloudCommunicationsToInitialize != null && cloudCommunicationsToInitialize.AdditionalData != null)
+            if (cloudCommunicationsToInitialize != null)
             {
-
                 if (cloudCommunicationsToInitialize.Calls != null && cloudCommunicationsToInitialize.Calls.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.Calls.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.CallsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.Calls.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    if(cloudCommunicationsToInitialize.AdditionalData.TryGetValue("calls@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            cloudCommunicationsToInitialize.Calls.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (cloudCommunicationsToInitialize.CallRecords != null && cloudCommunicationsToInitialize.CallRecords.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.CallRecords.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.CallRecordsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.CallRecords.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    if(cloudCommunicationsToInitialize.AdditionalData.TryGetValue("callRecords@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            cloudCommunicationsToInitialize.CallRecords.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (cloudCommunicationsToInitialize.OnlineMeetings != null && cloudCommunicationsToInitialize.OnlineMeetings.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.OnlineMeetings.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.OnlineMeetingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.OnlineMeetings.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    if(cloudCommunicationsToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            cloudCommunicationsToInitialize.OnlineMeetings.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (cloudCommunicationsToInitialize.Presences != null && cloudCommunicationsToInitialize.Presences.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.Presences.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.PresencesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.Presences.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    if(cloudCommunicationsToInitialize.AdditionalData.TryGetValue("presences@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            cloudCommunicationsToInitialize.Presences.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

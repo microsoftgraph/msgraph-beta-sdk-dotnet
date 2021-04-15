@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToInitialize)
         {
 
-            if (microsoftStoreForBusinessAppToInitialize != null && microsoftStoreForBusinessAppToInitialize.AdditionalData != null)
+            if (microsoftStoreForBusinessAppToInitialize != null)
             {
-
                 if (microsoftStoreForBusinessAppToInitialize.ContainedApps != null && microsoftStoreForBusinessAppToInitialize.ContainedApps.CurrentPage != null)
                 {
+                    microsoftStoreForBusinessAppToInitialize.ContainedApps.InitializeNextPageRequest(this.Client, microsoftStoreForBusinessAppToInitialize.ContainedAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     microsoftStoreForBusinessAppToInitialize.ContainedApps.AdditionalData = microsoftStoreForBusinessAppToInitialize.AdditionalData;
-
-                    if(microsoftStoreForBusinessAppToInitialize.AdditionalData.TryGetValue("containedApps@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            microsoftStoreForBusinessAppToInitialize.ContainedApps.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

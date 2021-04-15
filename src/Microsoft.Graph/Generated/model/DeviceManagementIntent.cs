@@ -76,6 +76,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IDeviceManagementIntentAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets categories.
@@ -83,6 +89,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("categories")]
         public IDeviceManagementIntentCategoriesCollectionPage Categories { get; set; }
+
+        /// <summary>
+        /// Gets or sets categoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("categories@odata.nextLink")]
+        public string CategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device setting state summaries.
@@ -90,6 +102,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceSettingStateSummaries")]
         public IDeviceManagementIntentDeviceSettingStateSummariesCollectionPage DeviceSettingStateSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceSettingStateSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceSettingStateSummaries@odata.nextLink")]
+        public string DeviceSettingStateSummariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device states.
@@ -97,6 +115,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceStates")]
         public IDeviceManagementIntentDeviceStatesCollectionPage DeviceStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceStates@odata.nextLink")]
+        public string DeviceStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device state summary.
@@ -111,6 +135,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("settings")]
         public IDeviceManagementIntentSettingsCollectionPage Settings { get; set; }
+
+        /// <summary>
+        /// Gets or sets settingsNextLink.
+        /// </summary>
+        [JsonPropertyName("settings@odata.nextLink")]
+        public string SettingsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user states.
@@ -118,6 +148,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userStates")]
         public IDeviceManagementIntentUserStatesCollectionPage UserStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets userStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("userStates@odata.nextLink")]
+        public string UserStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user state summary.

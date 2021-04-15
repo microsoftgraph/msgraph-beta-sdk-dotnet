@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("cachedReportConfigurations")]
         public IDeviceManagementReportsCachedReportConfigurationsCollectionPage CachedReportConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets cachedReportConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("cachedReportConfigurations@odata.nextLink")]
+        public string CachedReportConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets export jobs.
@@ -41,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("exportJobs")]
         public IDeviceManagementReportsExportJobsCollectionPage ExportJobs { get; set; }
+
+        /// <summary>
+        /// Gets or sets exportJobsNextLink.
+        /// </summary>
+        [JsonPropertyName("exportJobs@odata.nextLink")]
+        public string ExportJobsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets report schedules.
@@ -48,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("reportSchedules")]
         public IDeviceManagementReportsReportSchedulesCollectionPage ReportSchedules { get; set; }
+
+        /// <summary>
+        /// Gets or sets reportSchedulesNextLink.
+        /// </summary>
+        [JsonPropertyName("reportSchedules@odata.nextLink")]
+        public string ReportSchedulesNextLink { get; set; }
     
     }
 }

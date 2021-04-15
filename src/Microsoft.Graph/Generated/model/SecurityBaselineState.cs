@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("settingStates")]
         public ISecurityBaselineStateSettingStatesCollectionPage SettingStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets settingStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("settingStates@odata.nextLink")]
+        public string SettingStatesNextLink { get; set; }
     
     }
 }

@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MicrosoftTunnelSite microsoftTunnelSiteToInitialize)
         {
 
-            if (microsoftTunnelSiteToInitialize != null && microsoftTunnelSiteToInitialize.AdditionalData != null)
+            if (microsoftTunnelSiteToInitialize != null)
             {
-
                 if (microsoftTunnelSiteToInitialize.MicrosoftTunnelServers != null && microsoftTunnelSiteToInitialize.MicrosoftTunnelServers.CurrentPage != null)
                 {
+                    microsoftTunnelSiteToInitialize.MicrosoftTunnelServers.InitializeNextPageRequest(this.Client, microsoftTunnelSiteToInitialize.MicrosoftTunnelServersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     microsoftTunnelSiteToInitialize.MicrosoftTunnelServers.AdditionalData = microsoftTunnelSiteToInitialize.AdditionalData;
-
-                    if(microsoftTunnelSiteToInitialize.AdditionalData.TryGetValue("microsoftTunnelServers@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            microsoftTunnelSiteToInitialize.MicrosoftTunnelServers.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

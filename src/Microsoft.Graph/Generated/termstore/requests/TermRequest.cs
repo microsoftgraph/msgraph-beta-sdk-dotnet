@@ -244,43 +244,19 @@ namespace Microsoft.Graph.TermStore
         private void InitializeCollectionProperties(Term termToInitialize)
         {
 
-            if (termToInitialize != null && termToInitialize.AdditionalData != null)
+            if (termToInitialize != null)
             {
-
                 if (termToInitialize.Children != null && termToInitialize.Children.CurrentPage != null)
                 {
+                    termToInitialize.Children.InitializeNextPageRequest(this.Client, termToInitialize.ChildrenNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     termToInitialize.Children.AdditionalData = termToInitialize.AdditionalData;
-
-                    if(termToInitialize.AdditionalData.TryGetValue("children@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            termToInitialize.Children.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (termToInitialize.Relations != null && termToInitialize.Relations.CurrentPage != null)
                 {
+                    termToInitialize.Relations.InitializeNextPageRequest(this.Client, termToInitialize.RelationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     termToInitialize.Relations.AdditionalData = termToInitialize.AdditionalData;
-
-                    if(termToInitialize.AdditionalData.TryGetValue("relations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            termToInitialize.Relations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

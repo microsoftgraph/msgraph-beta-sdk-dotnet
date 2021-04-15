@@ -160,6 +160,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("categories")]
         public IEducationAssignmentCategoriesCollectionPage Categories { get; set; }
+
+        /// <summary>
+        /// Gets or sets categoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("categories@odata.nextLink")]
+        public string CategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets resources.
@@ -167,6 +173,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("resources")]
         public IEducationAssignmentResourcesCollectionPage Resources { get; set; }
+
+        /// <summary>
+        /// Gets or sets resourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("resources@odata.nextLink")]
+        public string ResourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets rubric.
@@ -181,6 +193,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("submissions")]
         public IEducationAssignmentSubmissionsCollectionPage Submissions { get; set; }
+
+        /// <summary>
+        /// Gets or sets submissionsNextLink.
+        /// </summary>
+        [JsonPropertyName("submissions@odata.nextLink")]
+        public string SubmissionsNextLink { get; set; }
     
     }
 }

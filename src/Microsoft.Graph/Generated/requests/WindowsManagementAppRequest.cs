@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsManagementApp windowsManagementAppToInitialize)
         {
 
-            if (windowsManagementAppToInitialize != null && windowsManagementAppToInitialize.AdditionalData != null)
+            if (windowsManagementAppToInitialize != null)
             {
-
                 if (windowsManagementAppToInitialize.HealthStates != null && windowsManagementAppToInitialize.HealthStates.CurrentPage != null)
                 {
+                    windowsManagementAppToInitialize.HealthStates.InitializeNextPageRequest(this.Client, windowsManagementAppToInitialize.HealthStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsManagementAppToInitialize.HealthStates.AdditionalData = windowsManagementAppToInitialize.AdditionalData;
-
-                    if(windowsManagementAppToInitialize.AdditionalData.TryGetValue("healthStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windowsManagementAppToInitialize.HealthStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

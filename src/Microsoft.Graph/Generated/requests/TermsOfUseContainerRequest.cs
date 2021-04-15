@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TermsOfUseContainer termsOfUseContainerToInitialize)
         {
 
-            if (termsOfUseContainerToInitialize != null && termsOfUseContainerToInitialize.AdditionalData != null)
+            if (termsOfUseContainerToInitialize != null)
             {
-
                 if (termsOfUseContainerToInitialize.AgreementAcceptances != null && termsOfUseContainerToInitialize.AgreementAcceptances.CurrentPage != null)
                 {
+                    termsOfUseContainerToInitialize.AgreementAcceptances.InitializeNextPageRequest(this.Client, termsOfUseContainerToInitialize.AgreementAcceptancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     termsOfUseContainerToInitialize.AgreementAcceptances.AdditionalData = termsOfUseContainerToInitialize.AdditionalData;
-
-                    if(termsOfUseContainerToInitialize.AdditionalData.TryGetValue("agreementAcceptances@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            termsOfUseContainerToInitialize.AgreementAcceptances.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (termsOfUseContainerToInitialize.Agreements != null && termsOfUseContainerToInitialize.Agreements.CurrentPage != null)
                 {
+                    termsOfUseContainerToInitialize.Agreements.InitializeNextPageRequest(this.Client, termsOfUseContainerToInitialize.AgreementsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     termsOfUseContainerToInitialize.Agreements.AdditionalData = termsOfUseContainerToInitialize.AdditionalData;
-
-                    if(termsOfUseContainerToInitialize.AdditionalData.TryGetValue("agreements@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            termsOfUseContainerToInitialize.Agreements.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

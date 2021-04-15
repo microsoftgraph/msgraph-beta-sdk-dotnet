@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToInitialize)
         {
 
-            if (windows10ImportedPFXCertificateProfileToInitialize != null && windows10ImportedPFXCertificateProfileToInitialize.AdditionalData != null)
+            if (windows10ImportedPFXCertificateProfileToInitialize != null)
             {
-
                 if (windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = windows10ImportedPFXCertificateProfileToInitialize.AdditionalData;
-
-                    if(windows10ImportedPFXCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

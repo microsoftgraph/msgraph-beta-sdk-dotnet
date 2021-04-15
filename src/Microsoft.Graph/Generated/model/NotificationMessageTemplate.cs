@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("localizedNotificationMessages")]
         public INotificationMessageTemplateLocalizedNotificationMessagesCollectionPage LocalizedNotificationMessages { get; set; }
+
+        /// <summary>
+        /// Gets or sets localizedNotificationMessagesNextLink.
+        /// </summary>
+        [JsonPropertyName("localizedNotificationMessages@odata.nextLink")]
+        public string LocalizedNotificationMessagesNextLink { get; set; }
     
     }
 }

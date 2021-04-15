@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appointments")]
         public IBookingBusinessAppointmentsCollectionPage Appointments { get; set; }
+
+        /// <summary>
+        /// Gets or sets appointmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("appointments@odata.nextLink")]
+        public string AppointmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets calendar view.
@@ -111,6 +117,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("calendarView")]
         public IBookingBusinessCalendarViewCollectionPage CalendarView { get; set; }
+
+        /// <summary>
+        /// Gets or sets calendarViewNextLink.
+        /// </summary>
+        [JsonPropertyName("calendarView@odata.nextLink")]
+        public string CalendarViewNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets customers.
@@ -118,6 +130,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("customers")]
         public IBookingBusinessCustomersCollectionPage Customers { get; set; }
+
+        /// <summary>
+        /// Gets or sets customersNextLink.
+        /// </summary>
+        [JsonPropertyName("customers@odata.nextLink")]
+        public string CustomersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets services.
@@ -125,6 +143,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("services")]
         public IBookingBusinessServicesCollectionPage Services { get; set; }
+
+        /// <summary>
+        /// Gets or sets servicesNextLink.
+        /// </summary>
+        [JsonPropertyName("services@odata.nextLink")]
+        public string ServicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets staff members.
@@ -132,6 +156,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("staffMembers")]
         public IBookingBusinessStaffMembersCollectionPage StaffMembers { get; set; }
+
+        /// <summary>
+        /// Gets or sets staffMembersNextLink.
+        /// </summary>
+        [JsonPropertyName("staffMembers@odata.nextLink")]
+        public string StaffMembersNextLink { get; set; }
     
     }
 }

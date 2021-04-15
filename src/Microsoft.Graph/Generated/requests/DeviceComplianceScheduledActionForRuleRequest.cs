@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToInitialize)
         {
 
-            if (deviceComplianceScheduledActionForRuleToInitialize != null && deviceComplianceScheduledActionForRuleToInitialize.AdditionalData != null)
+            if (deviceComplianceScheduledActionForRuleToInitialize != null)
             {
-
                 if (deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations != null && deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.CurrentPage != null)
                 {
+                    deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.InitializeNextPageRequest(this.Client, deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.AdditionalData = deviceComplianceScheduledActionForRuleToInitialize.AdditionalData;
-
-                    if(deviceComplianceScheduledActionForRuleToInitialize.AdditionalData.TryGetValue("scheduledActionConfigurations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PlannerRoster plannerRosterToInitialize)
         {
 
-            if (plannerRosterToInitialize != null && plannerRosterToInitialize.AdditionalData != null)
+            if (plannerRosterToInitialize != null)
             {
-
                 if (plannerRosterToInitialize.Members != null && plannerRosterToInitialize.Members.CurrentPage != null)
                 {
+                    plannerRosterToInitialize.Members.InitializeNextPageRequest(this.Client, plannerRosterToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerRosterToInitialize.Members.AdditionalData = plannerRosterToInitialize.AdditionalData;
-
-                    if(plannerRosterToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            plannerRosterToInitialize.Members.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (plannerRosterToInitialize.Plans != null && plannerRosterToInitialize.Plans.CurrentPage != null)
                 {
+                    plannerRosterToInitialize.Plans.InitializeNextPageRequest(this.Client, plannerRosterToInitialize.PlansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerRosterToInitialize.Plans.AdditionalData = plannerRosterToInitialize.AdditionalData;
-
-                    if(plannerRosterToInitialize.AdditionalData.TryGetValue("plans@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            plannerRosterToInitialize.Plans.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

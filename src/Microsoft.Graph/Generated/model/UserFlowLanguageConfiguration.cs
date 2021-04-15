@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("defaultPages")]
         public IUserFlowLanguageConfigurationDefaultPagesCollectionPage DefaultPages { get; set; }
+
+        /// <summary>
+        /// Gets or sets defaultPagesNextLink.
+        /// </summary>
+        [JsonPropertyName("defaultPages@odata.nextLink")]
+        public string DefaultPagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets overrides pages.
@@ -55,6 +61,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("overridesPages")]
         public IUserFlowLanguageConfigurationOverridesPagesCollectionPage OverridesPages { get; set; }
+
+        /// <summary>
+        /// Gets or sets overridesPagesNextLink.
+        /// </summary>
+        [JsonPropertyName("overridesPages@odata.nextLink")]
+        public string OverridesPagesNextLink { get; set; }
     
     }
 }

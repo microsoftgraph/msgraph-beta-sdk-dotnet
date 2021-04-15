@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(CommsApplication commsApplicationToInitialize)
         {
 
-            if (commsApplicationToInitialize != null && commsApplicationToInitialize.AdditionalData != null)
+            if (commsApplicationToInitialize != null)
             {
-
                 if (commsApplicationToInitialize.Calls != null && commsApplicationToInitialize.Calls.CurrentPage != null)
                 {
+                    commsApplicationToInitialize.Calls.InitializeNextPageRequest(this.Client, commsApplicationToInitialize.CallsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     commsApplicationToInitialize.Calls.AdditionalData = commsApplicationToInitialize.AdditionalData;
-
-                    if(commsApplicationToInitialize.AdditionalData.TryGetValue("calls@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            commsApplicationToInitialize.Calls.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (commsApplicationToInitialize.OnlineMeetings != null && commsApplicationToInitialize.OnlineMeetings.CurrentPage != null)
                 {
+                    commsApplicationToInitialize.OnlineMeetings.InitializeNextPageRequest(this.Client, commsApplicationToInitialize.OnlineMeetingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     commsApplicationToInitialize.OnlineMeetings.AdditionalData = commsApplicationToInitialize.AdditionalData;
-
-                    if(commsApplicationToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            commsApplicationToInitialize.OnlineMeetings.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

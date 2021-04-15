@@ -63,6 +63,12 @@ namespace Microsoft.Graph
         [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonPropertyName("groups")]
         public IExternalConnectionGroupsCollectionPage Groups { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupsNextLink.
+        /// </summary>
+        [JsonPropertyName("groups@odata.nextLink")]
+        public string GroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets items.
@@ -71,6 +77,12 @@ namespace Microsoft.Graph
         [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonPropertyName("items")]
         public IExternalConnectionItemsCollectionPage Items { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemsNextLink.
+        /// </summary>
+        [JsonPropertyName("items@odata.nextLink")]
+        public string ItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
@@ -79,6 +91,12 @@ namespace Microsoft.Graph
         [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
         [JsonPropertyName("operations")]
         public IExternalConnectionOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets schema.

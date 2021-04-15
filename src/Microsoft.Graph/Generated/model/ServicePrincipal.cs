@@ -278,6 +278,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appRoleAssignedTo")]
         public IServicePrincipalAppRoleAssignedToCollectionPage AppRoleAssignedTo { get; set; }
+
+        /// <summary>
+        /// Gets or sets appRoleAssignedToNextLink.
+        /// </summary>
+        [JsonPropertyName("appRoleAssignedTo@odata.nextLink")]
+        public string AppRoleAssignedToNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets app role assignments.
@@ -285,6 +291,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appRoleAssignments")]
         public IServicePrincipalAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets appRoleAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("appRoleAssignments@odata.nextLink")]
+        public string AppRoleAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets claims mapping policies.
@@ -292,6 +304,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("claimsMappingPolicies")]
         public IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesPage ClaimsMappingPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets claimsMappingPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("claimsMappingPolicies@odata.nextLink")]
+        public string ClaimsMappingPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets created objects.
@@ -299,6 +317,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("createdObjects")]
         public IServicePrincipalCreatedObjectsCollectionWithReferencesPage CreatedObjects { get; set; }
+
+        /// <summary>
+        /// Gets or sets createdObjectsNextLink.
+        /// </summary>
+        [JsonPropertyName("createdObjects@odata.nextLink")]
+        public string CreatedObjectsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets delegated permission classifications.
@@ -306,6 +330,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("delegatedPermissionClassifications")]
         public IServicePrincipalDelegatedPermissionClassificationsCollectionPage DelegatedPermissionClassifications { get; set; }
+
+        /// <summary>
+        /// Gets or sets delegatedPermissionClassificationsNextLink.
+        /// </summary>
+        [JsonPropertyName("delegatedPermissionClassifications@odata.nextLink")]
+        public string DelegatedPermissionClassificationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets endpoints.
@@ -313,6 +343,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("endpoints")]
         public IServicePrincipalEndpointsCollectionPage Endpoints { get; set; }
+
+        /// <summary>
+        /// Gets or sets endpointsNextLink.
+        /// </summary>
+        [JsonPropertyName("endpoints@odata.nextLink")]
+        public string EndpointsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets home realm discovery policies.
@@ -320,12 +356,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("homeRealmDiscoveryPolicies")]
         public IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesPage HomeRealmDiscoveryPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets homeRealmDiscoveryPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("homeRealmDiscoveryPolicies@odata.nextLink")]
+        public string HomeRealmDiscoveryPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets license details.
         /// </summary>
         [JsonPropertyName("licenseDetails")]
         public IServicePrincipalLicenseDetailsCollectionPage LicenseDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets licenseDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("licenseDetails@odata.nextLink")]
+        public string LicenseDetailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets member of.
@@ -333,6 +381,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IServicePrincipalMemberOfCollectionWithReferencesPage MemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets memberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("memberOf@odata.nextLink")]
+        public string MemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets oauth2permission grants.
@@ -340,6 +394,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("oauth2PermissionGrants")]
         public IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesPage Oauth2PermissionGrants { get; set; }
+
+        /// <summary>
+        /// Gets or sets oauth2PermissionGrantsNextLink.
+        /// </summary>
+        [JsonPropertyName("oauth2PermissionGrants@odata.nextLink")]
+        public string Oauth2PermissionGrantsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets owned objects.
@@ -347,6 +407,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("ownedObjects")]
         public IServicePrincipalOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
+
+        /// <summary>
+        /// Gets or sets ownedObjectsNextLink.
+        /// </summary>
+        [JsonPropertyName("ownedObjects@odata.nextLink")]
+        public string OwnedObjectsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets owners.
@@ -354,6 +420,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("owners")]
         public IServicePrincipalOwnersCollectionWithReferencesPage Owners { get; set; }
+
+        /// <summary>
+        /// Gets or sets ownersNextLink.
+        /// </summary>
+        [JsonPropertyName("owners@odata.nextLink")]
+        public string OwnersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets token issuance policies.
@@ -361,6 +433,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tokenIssuancePolicies")]
         public IServicePrincipalTokenIssuancePoliciesCollectionWithReferencesPage TokenIssuancePolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets tokenIssuancePoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("tokenIssuancePolicies@odata.nextLink")]
+        public string TokenIssuancePoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets token lifetime policies.
@@ -368,12 +446,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tokenLifetimePolicies")]
         public IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets tokenLifetimePoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("tokenLifetimePolicies@odata.nextLink")]
+        public string TokenLifetimePoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets transitive member of.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf")]
         public IServicePrincipalTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets transitiveMemberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("transitiveMemberOf@odata.nextLink")]
+        public string TransitiveMemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets synchronization.

@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("labels")]
         public IInformationProtectionPolicyLabelsCollectionPage Labels { get; set; }
+
+        /// <summary>
+        /// Gets or sets labelsNextLink.
+        /// </summary>
+        [JsonPropertyName("labels@odata.nextLink")]
+        public string LabelsNextLink { get; set; }
     
     }
 }

@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AgreementFileLocalization agreementFileLocalizationToInitialize)
         {
 
-            if (agreementFileLocalizationToInitialize != null && agreementFileLocalizationToInitialize.AdditionalData != null)
+            if (agreementFileLocalizationToInitialize != null)
             {
-
                 if (agreementFileLocalizationToInitialize.Versions != null && agreementFileLocalizationToInitialize.Versions.CurrentPage != null)
                 {
+                    agreementFileLocalizationToInitialize.Versions.InitializeNextPageRequest(this.Client, agreementFileLocalizationToInitialize.VersionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     agreementFileLocalizationToInitialize.Versions.AdditionalData = agreementFileLocalizationToInitialize.AdditionalData;
-
-                    if(agreementFileLocalizationToInitialize.AdditionalData.TryGetValue("versions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            agreementFileLocalizationToInitialize.Versions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

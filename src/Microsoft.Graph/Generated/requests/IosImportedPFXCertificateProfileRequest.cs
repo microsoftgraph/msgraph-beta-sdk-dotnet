@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToInitialize)
         {
 
-            if (iosImportedPFXCertificateProfileToInitialize != null && iosImportedPFXCertificateProfileToInitialize.AdditionalData != null)
+            if (iosImportedPFXCertificateProfileToInitialize != null)
             {
-
                 if (iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = iosImportedPFXCertificateProfileToInitialize.AdditionalData;
-
-                    if(iosImportedPFXCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

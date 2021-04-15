@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToInitialize)
         {
 
-            if (advancedThreatProtectionOnboardingStateSummaryToInitialize != null && advancedThreatProtectionOnboardingStateSummaryToInitialize.AdditionalData != null)
+            if (advancedThreatProtectionOnboardingStateSummaryToInitialize != null)
             {
-
                 if (advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates != null && advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.CurrentPage != null)
                 {
+                    advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.InitializeNextPageRequest(this.Client, advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.AdditionalData = advancedThreatProtectionOnboardingStateSummaryToInitialize.AdditionalData;
-
-                    if(advancedThreatProtectionOnboardingStateSummaryToInitialize.AdditionalData.TryGetValue("advancedThreatProtectionOnboardingDeviceSettingStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

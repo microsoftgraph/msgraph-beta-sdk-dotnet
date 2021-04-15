@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SensitivityLabel sensitivityLabelToInitialize)
         {
 
-            if (sensitivityLabelToInitialize != null && sensitivityLabelToInitialize.AdditionalData != null)
+            if (sensitivityLabelToInitialize != null)
             {
-
                 if (sensitivityLabelToInitialize.Sublabels != null && sensitivityLabelToInitialize.Sublabels.CurrentPage != null)
                 {
+                    sensitivityLabelToInitialize.Sublabels.InitializeNextPageRequest(this.Client, sensitivityLabelToInitialize.SublabelsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     sensitivityLabelToInitialize.Sublabels.AdditionalData = sensitivityLabelToInitialize.AdditionalData;
-
-                    if(sensitivityLabelToInitialize.AdditionalData.TryGetValue("sublabels@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            sensitivityLabelToInitialize.Sublabels.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TemporaryAccessPassAuthenticationMethodConfiguration temporaryAccessPassAuthenticationMethodConfigurationToInitialize)
         {
 
-            if (temporaryAccessPassAuthenticationMethodConfigurationToInitialize != null && temporaryAccessPassAuthenticationMethodConfigurationToInitialize.AdditionalData != null)
+            if (temporaryAccessPassAuthenticationMethodConfigurationToInitialize != null)
             {
-
                 if (temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargets != null && temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargets.CurrentPage != null)
                 {
+                    temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(this.Client, temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargets.AdditionalData = temporaryAccessPassAuthenticationMethodConfigurationToInitialize.AdditionalData;
-
-                    if(temporaryAccessPassAuthenticationMethodConfigurationToInitialize.AdditionalData.TryGetValue("includeTargets@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

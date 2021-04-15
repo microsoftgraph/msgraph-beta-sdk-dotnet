@@ -69,6 +69,12 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         [JsonPropertyName("children")]
         public ITermChildrenCollectionPage Children { get; set; }
+
+        /// <summary>
+        /// Gets or sets childrenNextLink.
+        /// </summary>
+        [JsonPropertyName("children@odata.nextLink")]
+        public string ChildrenNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets relations.
@@ -76,6 +82,12 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         [JsonPropertyName("relations")]
         public ITermRelationsCollectionPage Relations { get; set; }
+
+        /// <summary>
+        /// Gets or sets relationsNextLink.
+        /// </summary>
+        [JsonPropertyName("relations@odata.nextLink")]
+        public string RelationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets set.

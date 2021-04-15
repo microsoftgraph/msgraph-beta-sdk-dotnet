@@ -244,79 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Domain domainToInitialize)
         {
 
-            if (domainToInitialize != null && domainToInitialize.AdditionalData != null)
+            if (domainToInitialize != null)
             {
-
                 if (domainToInitialize.DomainNameReferences != null && domainToInitialize.DomainNameReferences.CurrentPage != null)
                 {
+                    domainToInitialize.DomainNameReferences.InitializeNextPageRequest(this.Client, domainToInitialize.DomainNameReferencesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     domainToInitialize.DomainNameReferences.AdditionalData = domainToInitialize.AdditionalData;
-
-                    if(domainToInitialize.AdditionalData.TryGetValue("domainNameReferences@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            domainToInitialize.DomainNameReferences.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (domainToInitialize.ServiceConfigurationRecords != null && domainToInitialize.ServiceConfigurationRecords.CurrentPage != null)
                 {
+                    domainToInitialize.ServiceConfigurationRecords.InitializeNextPageRequest(this.Client, domainToInitialize.ServiceConfigurationRecordsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     domainToInitialize.ServiceConfigurationRecords.AdditionalData = domainToInitialize.AdditionalData;
-
-                    if(domainToInitialize.AdditionalData.TryGetValue("serviceConfigurationRecords@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            domainToInitialize.ServiceConfigurationRecords.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (domainToInitialize.SharedEmailDomainInvitations != null && domainToInitialize.SharedEmailDomainInvitations.CurrentPage != null)
                 {
+                    domainToInitialize.SharedEmailDomainInvitations.InitializeNextPageRequest(this.Client, domainToInitialize.SharedEmailDomainInvitationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     domainToInitialize.SharedEmailDomainInvitations.AdditionalData = domainToInitialize.AdditionalData;
-
-                    if(domainToInitialize.AdditionalData.TryGetValue("sharedEmailDomainInvitations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            domainToInitialize.SharedEmailDomainInvitations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (domainToInitialize.VerificationDnsRecords != null && domainToInitialize.VerificationDnsRecords.CurrentPage != null)
                 {
+                    domainToInitialize.VerificationDnsRecords.InitializeNextPageRequest(this.Client, domainToInitialize.VerificationDnsRecordsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     domainToInitialize.VerificationDnsRecords.AdditionalData = domainToInitialize.AdditionalData;
-
-                    if(domainToInitialize.AdditionalData.TryGetValue("verificationDnsRecords@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            domainToInitialize.VerificationDnsRecords.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

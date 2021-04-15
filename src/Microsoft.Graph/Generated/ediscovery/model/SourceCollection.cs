@@ -96,6 +96,12 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         [JsonPropertyName("additionalSources")]
         public ISourceCollectionAdditionalSourcesCollectionPage AdditionalSources { get; set; }
+
+        /// <summary>
+        /// Gets or sets additionalSourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("additionalSources@odata.nextLink")]
+        public string AdditionalSourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets add to review set operation.
@@ -110,6 +116,12 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         [JsonPropertyName("custodianSources")]
         public ISourceCollectionCustodianSourcesCollectionWithReferencesPage CustodianSources { get; set; }
+
+        /// <summary>
+        /// Gets or sets custodianSourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("custodianSources@odata.nextLink")]
+        public string CustodianSourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets last estimate statistics operation.
@@ -123,6 +135,12 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         [JsonPropertyName("noncustodialSources")]
         public ISourceCollectionNoncustodialSourcesCollectionWithReferencesPage NoncustodialSources { get; set; }
+
+        /// <summary>
+        /// Gets or sets noncustodialSourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("noncustodialSources@odata.nextLink")]
+        public string NoncustodialSourcesNextLink { get; set; }
     
     }
 }

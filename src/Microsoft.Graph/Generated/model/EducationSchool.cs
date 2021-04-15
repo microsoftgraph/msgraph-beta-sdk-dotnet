@@ -116,6 +116,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("classes")]
         public IEducationSchoolClassesCollectionWithReferencesPage Classes { get; set; }
+
+        /// <summary>
+        /// Gets or sets classesNextLink.
+        /// </summary>
+        [JsonPropertyName("classes@odata.nextLink")]
+        public string ClassesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets users.
@@ -123,6 +129,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("users")]
         public IEducationSchoolUsersCollectionWithReferencesPage Users { get; set; }
+
+        /// <summary>
+        /// Gets or sets usersNextLink.
+        /// </summary>
+        [JsonPropertyName("users@odata.nextLink")]
+        public string UsersNextLink { get; set; }
     
     }
 }

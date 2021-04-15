@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("columns")]
         public IWorkbookTableColumnsCollectionPage Columns { get; set; }
+
+        /// <summary>
+        /// Gets or sets columnsNextLink.
+        /// </summary>
+        [JsonPropertyName("columns@odata.nextLink")]
+        public string ColumnsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets rows.
@@ -111,6 +117,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("rows")]
         public IWorkbookTableRowsCollectionPage Rows { get; set; }
+
+        /// <summary>
+        /// Gets or sets rowsNextLink.
+        /// </summary>
+        [JsonPropertyName("rows@odata.nextLink")]
+        public string RowsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sort.

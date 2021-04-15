@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Agreement agreementToInitialize)
         {
 
-            if (agreementToInitialize != null && agreementToInitialize.AdditionalData != null)
+            if (agreementToInitialize != null)
             {
-
                 if (agreementToInitialize.Acceptances != null && agreementToInitialize.Acceptances.CurrentPage != null)
                 {
+                    agreementToInitialize.Acceptances.InitializeNextPageRequest(this.Client, agreementToInitialize.AcceptancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     agreementToInitialize.Acceptances.AdditionalData = agreementToInitialize.AdditionalData;
-
-                    if(agreementToInitialize.AdditionalData.TryGetValue("acceptances@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            agreementToInitialize.Acceptances.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (agreementToInitialize.Files != null && agreementToInitialize.Files.CurrentPage != null)
                 {
+                    agreementToInitialize.Files.InitializeNextPageRequest(this.Client, agreementToInitialize.FilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     agreementToInitialize.Files.AdditionalData = agreementToInitialize.AdditionalData;
-
-                    if(agreementToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            agreementToInitialize.Files.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

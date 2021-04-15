@@ -48,6 +48,12 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         [JsonPropertyName("groups")]
         public IStoreGroupsCollectionPage Groups { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupsNextLink.
+        /// </summary>
+        [JsonPropertyName("groups@odata.nextLink")]
+        public string GroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sets.
@@ -55,6 +61,12 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         [JsonPropertyName("sets")]
         public IStoreSetsCollectionPage Sets { get; set; }
+
+        /// <summary>
+        /// Gets or sets setsNextLink.
+        /// </summary>
+        [JsonPropertyName("sets@odata.nextLink")]
+        public string SetsNextLink { get; set; }
     
     }
 }

@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(GroupPolicyConfiguration groupPolicyConfigurationToInitialize)
         {
 
-            if (groupPolicyConfigurationToInitialize != null && groupPolicyConfigurationToInitialize.AdditionalData != null)
+            if (groupPolicyConfigurationToInitialize != null)
             {
-
                 if (groupPolicyConfigurationToInitialize.Assignments != null && groupPolicyConfigurationToInitialize.Assignments.CurrentPage != null)
                 {
+                    groupPolicyConfigurationToInitialize.Assignments.InitializeNextPageRequest(this.Client, groupPolicyConfigurationToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupPolicyConfigurationToInitialize.Assignments.AdditionalData = groupPolicyConfigurationToInitialize.AdditionalData;
-
-                    if(groupPolicyConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            groupPolicyConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (groupPolicyConfigurationToInitialize.DefinitionValues != null && groupPolicyConfigurationToInitialize.DefinitionValues.CurrentPage != null)
                 {
+                    groupPolicyConfigurationToInitialize.DefinitionValues.InitializeNextPageRequest(this.Client, groupPolicyConfigurationToInitialize.DefinitionValuesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupPolicyConfigurationToInitialize.DefinitionValues.AdditionalData = groupPolicyConfigurationToInitialize.AdditionalData;
-
-                    if(groupPolicyConfigurationToInitialize.AdditionalData.TryGetValue("definitionValues@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            groupPolicyConfigurationToInitialize.DefinitionValues.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

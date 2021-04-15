@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("presentations")]
         public IGroupPolicyDefinitionPresentationsCollectionPage Presentations { get; set; }
+
+        /// <summary>
+        /// Gets or sets presentationsNextLink.
+        /// </summary>
+        [JsonPropertyName("presentations@odata.nextLink")]
+        public string PresentationsNextLink { get; set; }
     
     }
 }

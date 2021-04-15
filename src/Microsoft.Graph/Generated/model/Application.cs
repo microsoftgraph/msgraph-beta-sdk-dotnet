@@ -233,12 +233,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("extensionProperties")]
         public IApplicationExtensionPropertiesCollectionPage ExtensionProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("extensionProperties@odata.nextLink")]
+        public string ExtensionPropertiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets home realm discovery policies.
         /// </summary>
         [JsonPropertyName("homeRealmDiscoveryPolicies")]
         public IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesPage HomeRealmDiscoveryPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets homeRealmDiscoveryPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("homeRealmDiscoveryPolicies@odata.nextLink")]
+        public string HomeRealmDiscoveryPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets owners.
@@ -246,12 +258,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("owners")]
         public IApplicationOwnersCollectionWithReferencesPage Owners { get; set; }
+
+        /// <summary>
+        /// Gets or sets ownersNextLink.
+        /// </summary>
+        [JsonPropertyName("owners@odata.nextLink")]
+        public string OwnersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets token issuance policies.
         /// </summary>
         [JsonPropertyName("tokenIssuancePolicies")]
         public IApplicationTokenIssuancePoliciesCollectionWithReferencesPage TokenIssuancePolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets tokenIssuancePoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("tokenIssuancePolicies@odata.nextLink")]
+        public string TokenIssuancePoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets token lifetime policies.
@@ -259,6 +283,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tokenLifetimePolicies")]
         public IApplicationTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets tokenLifetimePoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("tokenLifetimePolicies@odata.nextLink")]
+        public string TokenLifetimePoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets connector group.

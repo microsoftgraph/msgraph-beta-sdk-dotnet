@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementComplexSettingInstance deviceManagementComplexSettingInstanceToInitialize)
         {
 
-            if (deviceManagementComplexSettingInstanceToInitialize != null && deviceManagementComplexSettingInstanceToInitialize.AdditionalData != null)
+            if (deviceManagementComplexSettingInstanceToInitialize != null)
             {
-
                 if (deviceManagementComplexSettingInstanceToInitialize.Value != null && deviceManagementComplexSettingInstanceToInitialize.Value.CurrentPage != null)
                 {
+                    deviceManagementComplexSettingInstanceToInitialize.Value.InitializeNextPageRequest(this.Client, deviceManagementComplexSettingInstanceToInitialize.ValueNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementComplexSettingInstanceToInitialize.Value.AdditionalData = deviceManagementComplexSettingInstanceToInitialize.AdditionalData;
-
-                    if(deviceManagementComplexSettingInstanceToInitialize.AdditionalData.TryGetValue("value@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            deviceManagementComplexSettingInstanceToInitialize.Value.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

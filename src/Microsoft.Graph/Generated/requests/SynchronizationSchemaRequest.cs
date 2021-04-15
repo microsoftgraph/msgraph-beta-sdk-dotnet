@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SynchronizationSchema synchronizationSchemaToInitialize)
         {
 
-            if (synchronizationSchemaToInitialize != null && synchronizationSchemaToInitialize.AdditionalData != null)
+            if (synchronizationSchemaToInitialize != null)
             {
-
                 if (synchronizationSchemaToInitialize.Directories != null && synchronizationSchemaToInitialize.Directories.CurrentPage != null)
                 {
+                    synchronizationSchemaToInitialize.Directories.InitializeNextPageRequest(this.Client, synchronizationSchemaToInitialize.DirectoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     synchronizationSchemaToInitialize.Directories.AdditionalData = synchronizationSchemaToInitialize.AdditionalData;
-
-                    if(synchronizationSchemaToInitialize.AdditionalData.TryGetValue("directories@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            synchronizationSchemaToInitialize.Directories.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

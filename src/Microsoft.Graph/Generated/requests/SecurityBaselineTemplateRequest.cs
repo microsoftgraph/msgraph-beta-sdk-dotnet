@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SecurityBaselineTemplate securityBaselineTemplateToInitialize)
         {
 
-            if (securityBaselineTemplateToInitialize != null && securityBaselineTemplateToInitialize.AdditionalData != null)
+            if (securityBaselineTemplateToInitialize != null)
             {
-
                 if (securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries != null && securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.CurrentPage != null)
                 {
+                    securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.InitializeNextPageRequest(this.Client, securityBaselineTemplateToInitialize.CategoryDeviceStateSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.AdditionalData = securityBaselineTemplateToInitialize.AdditionalData;
-
-                    if(securityBaselineTemplateToInitialize.AdditionalData.TryGetValue("categoryDeviceStateSummaries@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityBaselineTemplateToInitialize.DeviceStates != null && securityBaselineTemplateToInitialize.DeviceStates.CurrentPage != null)
                 {
+                    securityBaselineTemplateToInitialize.DeviceStates.InitializeNextPageRequest(this.Client, securityBaselineTemplateToInitialize.DeviceStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityBaselineTemplateToInitialize.DeviceStates.AdditionalData = securityBaselineTemplateToInitialize.AdditionalData;
-
-                    if(securityBaselineTemplateToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityBaselineTemplateToInitialize.DeviceStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

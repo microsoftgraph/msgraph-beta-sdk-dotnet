@@ -105,6 +105,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("sublabels")]
         public ISensitivityLabelSublabelsCollectionPage Sublabels { get; set; }
+
+        /// <summary>
+        /// Gets or sets sublabelsNextLink.
+        /// </summary>
+        [JsonPropertyName("sublabels@odata.nextLink")]
+        public string SublabelsNextLink { get; set; }
     
     }
 }

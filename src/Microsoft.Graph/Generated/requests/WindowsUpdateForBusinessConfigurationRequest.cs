@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToInitialize)
         {
 
-            if (windowsUpdateForBusinessConfigurationToInitialize != null && windowsUpdateForBusinessConfigurationToInitialize.AdditionalData != null)
+            if (windowsUpdateForBusinessConfigurationToInitialize != null)
             {
-
                 if (windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates != null && windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.CurrentPage != null)
                 {
+                    windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.InitializeNextPageRequest(this.Client, windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.AdditionalData = windowsUpdateForBusinessConfigurationToInitialize.AdditionalData;
-
-                    if(windowsUpdateForBusinessConfigurationToInitialize.AdditionalData.TryGetValue("deviceUpdateStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

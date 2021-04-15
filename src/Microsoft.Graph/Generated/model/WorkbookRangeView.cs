@@ -111,6 +111,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("rows")]
         public IWorkbookRangeViewRowsCollectionPage Rows { get; set; }
+
+        /// <summary>
+        /// Gets or sets rowsNextLink.
+        /// </summary>
+        [JsonPropertyName("rows@odata.nextLink")]
+        public string RowsNextLink { get; set; }
     
     }
 }

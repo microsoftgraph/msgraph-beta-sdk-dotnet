@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsQualityUpdateProfile windowsQualityUpdateProfileToInitialize)
         {
 
-            if (windowsQualityUpdateProfileToInitialize != null && windowsQualityUpdateProfileToInitialize.AdditionalData != null)
+            if (windowsQualityUpdateProfileToInitialize != null)
             {
-
                 if (windowsQualityUpdateProfileToInitialize.Assignments != null && windowsQualityUpdateProfileToInitialize.Assignments.CurrentPage != null)
                 {
+                    windowsQualityUpdateProfileToInitialize.Assignments.InitializeNextPageRequest(this.Client, windowsQualityUpdateProfileToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsQualityUpdateProfileToInitialize.Assignments.AdditionalData = windowsQualityUpdateProfileToInitialize.AdditionalData;
-
-                    if(windowsQualityUpdateProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            windowsQualityUpdateProfileToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

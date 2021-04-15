@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AppConsentRequestObject appConsentRequestObjectToInitialize)
         {
 
-            if (appConsentRequestObjectToInitialize != null && appConsentRequestObjectToInitialize.AdditionalData != null)
+            if (appConsentRequestObjectToInitialize != null)
             {
-
                 if (appConsentRequestObjectToInitialize.UserConsentRequests != null && appConsentRequestObjectToInitialize.UserConsentRequests.CurrentPage != null)
                 {
+                    appConsentRequestObjectToInitialize.UserConsentRequests.InitializeNextPageRequest(this.Client, appConsentRequestObjectToInitialize.UserConsentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     appConsentRequestObjectToInitialize.UserConsentRequests.AdditionalData = appConsentRequestObjectToInitialize.AdditionalData;
-
-                    if(appConsentRequestObjectToInitialize.AdditionalData.TryGetValue("userConsentRequests@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            appConsentRequestObjectToInitialize.UserConsentRequests.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

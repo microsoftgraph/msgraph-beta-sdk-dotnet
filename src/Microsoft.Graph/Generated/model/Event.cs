@@ -298,6 +298,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("attachments")]
         public IEventAttachmentsCollectionPage Attachments { get; set; }
+
+        /// <summary>
+        /// Gets or sets attachmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("attachments@odata.nextLink")]
+        public string AttachmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets calendar.
@@ -311,6 +317,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("exceptionOccurrences")]
         public IEventExceptionOccurrencesCollectionPage ExceptionOccurrences { get; set; }
+
+        /// <summary>
+        /// Gets or sets exceptionOccurrencesNextLink.
+        /// </summary>
+        [JsonPropertyName("exceptionOccurrences@odata.nextLink")]
+        public string ExceptionOccurrencesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
@@ -318,6 +330,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("extensions")]
         public IEventExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets instances.
@@ -325,6 +343,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("instances")]
         public IEventInstancesCollectionPage Instances { get; set; }
+
+        /// <summary>
+        /// Gets or sets instancesNextLink.
+        /// </summary>
+        [JsonPropertyName("instances@odata.nextLink")]
+        public string InstancesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
@@ -332,6 +356,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("multiValueExtendedProperties")]
         public IEventMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets multiValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("multiValueExtendedProperties@odata.nextLink")]
+        public string MultiValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
@@ -339,6 +369,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("singleValueExtendedProperties")]
         public IEventSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets singleValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("singleValueExtendedProperties@odata.nextLink")]
+        public string SingleValueExtendedPropertiesNextLink { get; set; }
     
     }
 }

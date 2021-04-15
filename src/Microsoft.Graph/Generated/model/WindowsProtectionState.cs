@@ -174,6 +174,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("detectedMalwareState")]
         public IWindowsProtectionStateDetectedMalwareStateCollectionPage DetectedMalwareState { get; set; }
+
+        /// <summary>
+        /// Gets or sets detectedMalwareStateNextLink.
+        /// </summary>
+        [JsonPropertyName("detectedMalwareState@odata.nextLink")]
+        public string DetectedMalwareStateNextLink { get; set; }
     
     }
 }

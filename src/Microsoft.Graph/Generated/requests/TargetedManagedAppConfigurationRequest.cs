@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TargetedManagedAppConfiguration targetedManagedAppConfigurationToInitialize)
         {
 
-            if (targetedManagedAppConfigurationToInitialize != null && targetedManagedAppConfigurationToInitialize.AdditionalData != null)
+            if (targetedManagedAppConfigurationToInitialize != null)
             {
-
                 if (targetedManagedAppConfigurationToInitialize.Apps != null && targetedManagedAppConfigurationToInitialize.Apps.CurrentPage != null)
                 {
+                    targetedManagedAppConfigurationToInitialize.Apps.InitializeNextPageRequest(this.Client, targetedManagedAppConfigurationToInitialize.AppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     targetedManagedAppConfigurationToInitialize.Apps.AdditionalData = targetedManagedAppConfigurationToInitialize.AdditionalData;
-
-                    if(targetedManagedAppConfigurationToInitialize.AdditionalData.TryGetValue("apps@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            targetedManagedAppConfigurationToInitialize.Apps.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (targetedManagedAppConfigurationToInitialize.Assignments != null && targetedManagedAppConfigurationToInitialize.Assignments.CurrentPage != null)
                 {
+                    targetedManagedAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(this.Client, targetedManagedAppConfigurationToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     targetedManagedAppConfigurationToInitialize.Assignments.AdditionalData = targetedManagedAppConfigurationToInitialize.AdditionalData;
-
-                    if(targetedManagedAppConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            targetedManagedAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,187 +244,67 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Authentication authenticationToInitialize)
         {
 
-            if (authenticationToInitialize != null && authenticationToInitialize.AdditionalData != null)
+            if (authenticationToInitialize != null)
             {
-
                 if (authenticationToInitialize.EmailMethods != null && authenticationToInitialize.EmailMethods.CurrentPage != null)
                 {
+                    authenticationToInitialize.EmailMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.EmailMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.EmailMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    if(authenticationToInitialize.AdditionalData.TryGetValue("emailMethods@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            authenticationToInitialize.EmailMethods.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (authenticationToInitialize.Fido2Methods != null && authenticationToInitialize.Fido2Methods.CurrentPage != null)
                 {
+                    authenticationToInitialize.Fido2Methods.InitializeNextPageRequest(this.Client, authenticationToInitialize.Fido2MethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.Fido2Methods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    if(authenticationToInitialize.AdditionalData.TryGetValue("fido2Methods@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            authenticationToInitialize.Fido2Methods.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (authenticationToInitialize.Methods != null && authenticationToInitialize.Methods.CurrentPage != null)
                 {
+                    authenticationToInitialize.Methods.InitializeNextPageRequest(this.Client, authenticationToInitialize.MethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.Methods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    if(authenticationToInitialize.AdditionalData.TryGetValue("methods@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            authenticationToInitialize.Methods.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (authenticationToInitialize.MicrosoftAuthenticatorMethods != null && authenticationToInitialize.MicrosoftAuthenticatorMethods.CurrentPage != null)
                 {
+                    authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.MicrosoftAuthenticatorMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.MicrosoftAuthenticatorMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    if(authenticationToInitialize.AdditionalData.TryGetValue("microsoftAuthenticatorMethods@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (authenticationToInitialize.Operations != null && authenticationToInitialize.Operations.CurrentPage != null)
                 {
+                    authenticationToInitialize.Operations.InitializeNextPageRequest(this.Client, authenticationToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.Operations.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    if(authenticationToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            authenticationToInitialize.Operations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods != null && authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods.CurrentPage != null)
                 {
+                    authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    if(authenticationToInitialize.AdditionalData.TryGetValue("passwordlessMicrosoftAuthenticatorMethods@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (authenticationToInitialize.PasswordMethods != null && authenticationToInitialize.PasswordMethods.CurrentPage != null)
                 {
+                    authenticationToInitialize.PasswordMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.PasswordMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.PasswordMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    if(authenticationToInitialize.AdditionalData.TryGetValue("passwordMethods@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            authenticationToInitialize.PasswordMethods.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (authenticationToInitialize.PhoneMethods != null && authenticationToInitialize.PhoneMethods.CurrentPage != null)
                 {
+                    authenticationToInitialize.PhoneMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.PhoneMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.PhoneMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    if(authenticationToInitialize.AdditionalData.TryGetValue("phoneMethods@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            authenticationToInitialize.PhoneMethods.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (authenticationToInitialize.TemporaryAccessPassMethods != null && authenticationToInitialize.TemporaryAccessPassMethods.CurrentPage != null)
                 {
+                    authenticationToInitialize.TemporaryAccessPassMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.TemporaryAccessPassMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.TemporaryAccessPassMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    if(authenticationToInitialize.AdditionalData.TryGetValue("temporaryAccessPassMethods@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            authenticationToInitialize.TemporaryAccessPassMethods.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (authenticationToInitialize.WindowsHelloForBusinessMethods != null && authenticationToInitialize.WindowsHelloForBusinessMethods.CurrentPage != null)
                 {
+                    authenticationToInitialize.WindowsHelloForBusinessMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.WindowsHelloForBusinessMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.WindowsHelloForBusinessMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    if(authenticationToInitialize.AdditionalData.TryGetValue("windowsHelloForBusinessMethods@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            authenticationToInitialize.WindowsHelloForBusinessMethods.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

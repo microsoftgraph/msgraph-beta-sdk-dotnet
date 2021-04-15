@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("buckets")]
         public IPlannerBucketsCollectionPage Buckets { get; set; }
+
+        /// <summary>
+        /// Gets or sets bucketsNextLink.
+        /// </summary>
+        [JsonPropertyName("buckets@odata.nextLink")]
+        public string BucketsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets plans.
@@ -41,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("plans")]
         public IPlannerPlansCollectionPage Plans { get; set; }
+
+        /// <summary>
+        /// Gets or sets plansNextLink.
+        /// </summary>
+        [JsonPropertyName("plans@odata.nextLink")]
+        public string PlansNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets rosters.
@@ -48,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("rosters")]
         public IPlannerRostersCollectionPage Rosters { get; set; }
+
+        /// <summary>
+        /// Gets or sets rostersNextLink.
+        /// </summary>
+        [JsonPropertyName("rosters@odata.nextLink")]
+        public string RostersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
@@ -55,6 +73,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tasks")]
         public IPlannerTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

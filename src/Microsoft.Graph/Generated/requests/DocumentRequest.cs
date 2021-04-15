@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Document documentToInitialize)
         {
 
-            if (documentToInitialize != null && documentToInitialize.AdditionalData != null)
+            if (documentToInitialize != null)
             {
-
                 if (documentToInitialize.Comments != null && documentToInitialize.Comments.CurrentPage != null)
                 {
+                    documentToInitialize.Comments.InitializeNextPageRequest(this.Client, documentToInitialize.CommentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     documentToInitialize.Comments.AdditionalData = documentToInitialize.AdditionalData;
-
-                    if(documentToInitialize.AdditionalData.TryGetValue("comments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            documentToInitialize.Comments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

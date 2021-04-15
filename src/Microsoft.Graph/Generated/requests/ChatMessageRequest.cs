@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ChatMessage chatMessageToInitialize)
         {
 
-            if (chatMessageToInitialize != null && chatMessageToInitialize.AdditionalData != null)
+            if (chatMessageToInitialize != null)
             {
-
                 if (chatMessageToInitialize.HostedContents != null && chatMessageToInitialize.HostedContents.CurrentPage != null)
                 {
+                    chatMessageToInitialize.HostedContents.InitializeNextPageRequest(this.Client, chatMessageToInitialize.HostedContentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     chatMessageToInitialize.HostedContents.AdditionalData = chatMessageToInitialize.AdditionalData;
-
-                    if(chatMessageToInitialize.AdditionalData.TryGetValue("hostedContents@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            chatMessageToInitialize.HostedContents.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (chatMessageToInitialize.Replies != null && chatMessageToInitialize.Replies.CurrentPage != null)
                 {
+                    chatMessageToInitialize.Replies.InitializeNextPageRequest(this.Client, chatMessageToInitialize.RepliesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     chatMessageToInitialize.Replies.AdditionalData = chatMessageToInitialize.AdditionalData;
-
-                    if(chatMessageToInitialize.AdditionalData.TryGetValue("replies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            chatMessageToInitialize.Replies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

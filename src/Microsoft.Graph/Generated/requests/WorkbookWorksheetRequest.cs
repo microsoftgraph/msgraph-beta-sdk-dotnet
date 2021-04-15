@@ -244,79 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WorkbookWorksheet workbookWorksheetToInitialize)
         {
 
-            if (workbookWorksheetToInitialize != null && workbookWorksheetToInitialize.AdditionalData != null)
+            if (workbookWorksheetToInitialize != null)
             {
-
                 if (workbookWorksheetToInitialize.Charts != null && workbookWorksheetToInitialize.Charts.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.Charts.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.ChartsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.Charts.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    if(workbookWorksheetToInitialize.AdditionalData.TryGetValue("charts@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookWorksheetToInitialize.Charts.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (workbookWorksheetToInitialize.Names != null && workbookWorksheetToInitialize.Names.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.Names.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.NamesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.Names.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    if(workbookWorksheetToInitialize.AdditionalData.TryGetValue("names@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookWorksheetToInitialize.Names.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (workbookWorksheetToInitialize.PivotTables != null && workbookWorksheetToInitialize.PivotTables.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.PivotTables.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.PivotTablesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.PivotTables.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    if(workbookWorksheetToInitialize.AdditionalData.TryGetValue("pivotTables@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookWorksheetToInitialize.PivotTables.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (workbookWorksheetToInitialize.Tables != null && workbookWorksheetToInitialize.Tables.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.Tables.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.TablesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.Tables.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    if(workbookWorksheetToInitialize.AdditionalData.TryGetValue("tables@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookWorksheetToInitialize.Tables.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

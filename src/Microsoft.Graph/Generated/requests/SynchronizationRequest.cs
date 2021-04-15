@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Synchronization synchronizationToInitialize)
         {
 
-            if (synchronizationToInitialize != null && synchronizationToInitialize.AdditionalData != null)
+            if (synchronizationToInitialize != null)
             {
-
                 if (synchronizationToInitialize.Jobs != null && synchronizationToInitialize.Jobs.CurrentPage != null)
                 {
+                    synchronizationToInitialize.Jobs.InitializeNextPageRequest(this.Client, synchronizationToInitialize.JobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     synchronizationToInitialize.Jobs.AdditionalData = synchronizationToInitialize.AdditionalData;
-
-                    if(synchronizationToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            synchronizationToInitialize.Jobs.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (synchronizationToInitialize.Templates != null && synchronizationToInitialize.Templates.CurrentPage != null)
                 {
+                    synchronizationToInitialize.Templates.InitializeNextPageRequest(this.Client, synchronizationToInitialize.TemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     synchronizationToInitialize.Templates.AdditionalData = synchronizationToInitialize.AdditionalData;
-
-                    if(synchronizationToInitialize.AdditionalData.TryGetValue("templates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            synchronizationToInitialize.Templates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

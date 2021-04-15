@@ -68,6 +68,12 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         [JsonPropertyName("sets")]
         public IGroupSetsCollectionPage Sets { get; set; }
+
+        /// <summary>
+        /// Gets or sets setsNextLink.
+        /// </summary>
+        [JsonPropertyName("sets@odata.nextLink")]
+        public string SetsNextLink { get; set; }
     
     }
 }

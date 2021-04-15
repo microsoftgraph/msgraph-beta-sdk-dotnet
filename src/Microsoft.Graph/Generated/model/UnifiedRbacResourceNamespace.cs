@@ -39,6 +39,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("resourceActions")]
         public IUnifiedRbacResourceNamespaceResourceActionsCollectionPage ResourceActions { get; set; }
+
+        /// <summary>
+        /// Gets or sets resourceActionsNextLink.
+        /// </summary>
+        [JsonPropertyName("resourceActions@odata.nextLink")]
+        public string ResourceActionsNextLink { get; set; }
     
     }
 }

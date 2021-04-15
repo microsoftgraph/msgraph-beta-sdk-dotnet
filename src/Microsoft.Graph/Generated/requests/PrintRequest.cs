@@ -244,133 +244,49 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Print printToInitialize)
         {
 
-            if (printToInitialize != null && printToInitialize.AdditionalData != null)
+            if (printToInitialize != null)
             {
-
                 if (printToInitialize.Connectors != null && printToInitialize.Connectors.CurrentPage != null)
                 {
+                    printToInitialize.Connectors.InitializeNextPageRequest(this.Client, printToInitialize.ConnectorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printToInitialize.Connectors.AdditionalData = printToInitialize.AdditionalData;
-
-                    if(printToInitialize.AdditionalData.TryGetValue("connectors@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printToInitialize.Connectors.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (printToInitialize.Operations != null && printToInitialize.Operations.CurrentPage != null)
                 {
+                    printToInitialize.Operations.InitializeNextPageRequest(this.Client, printToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printToInitialize.Operations.AdditionalData = printToInitialize.AdditionalData;
-
-                    if(printToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printToInitialize.Operations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (printToInitialize.Printers != null && printToInitialize.Printers.CurrentPage != null)
                 {
+                    printToInitialize.Printers.InitializeNextPageRequest(this.Client, printToInitialize.PrintersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printToInitialize.Printers.AdditionalData = printToInitialize.AdditionalData;
-
-                    if(printToInitialize.AdditionalData.TryGetValue("printers@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printToInitialize.Printers.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (printToInitialize.PrinterShares != null && printToInitialize.PrinterShares.CurrentPage != null)
                 {
+                    printToInitialize.PrinterShares.InitializeNextPageRequest(this.Client, printToInitialize.PrinterSharesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printToInitialize.PrinterShares.AdditionalData = printToInitialize.AdditionalData;
-
-                    if(printToInitialize.AdditionalData.TryGetValue("printerShares@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printToInitialize.PrinterShares.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (printToInitialize.Services != null && printToInitialize.Services.CurrentPage != null)
                 {
+                    printToInitialize.Services.InitializeNextPageRequest(this.Client, printToInitialize.ServicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printToInitialize.Services.AdditionalData = printToInitialize.AdditionalData;
-
-                    if(printToInitialize.AdditionalData.TryGetValue("services@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printToInitialize.Services.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (printToInitialize.Shares != null && printToInitialize.Shares.CurrentPage != null)
                 {
+                    printToInitialize.Shares.InitializeNextPageRequest(this.Client, printToInitialize.SharesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printToInitialize.Shares.AdditionalData = printToInitialize.AdditionalData;
-
-                    if(printToInitialize.AdditionalData.TryGetValue("shares@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printToInitialize.Shares.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (printToInitialize.TaskDefinitions != null && printToInitialize.TaskDefinitions.CurrentPage != null)
                 {
+                    printToInitialize.TaskDefinitions.InitializeNextPageRequest(this.Client, printToInitialize.TaskDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printToInitialize.TaskDefinitions.AdditionalData = printToInitialize.AdditionalData;
-
-                    if(printToInitialize.AdditionalData.TryGetValue("taskDefinitions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printToInitialize.TaskDefinitions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

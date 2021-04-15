@@ -96,6 +96,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackageResourceRoles")]
         public IAccessPackageCatalogAccessPackageResourceRolesCollectionPage AccessPackageResourceRoles { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourceRolesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceRoles@odata.nextLink")]
+        public string AccessPackageResourceRolesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resources.
@@ -103,12 +109,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackageResources")]
         public IAccessPackageCatalogAccessPackageResourcesCollectionPage AccessPackageResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResources@odata.nextLink")]
+        public string AccessPackageResourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource scopes.
         /// </summary>
         [JsonPropertyName("accessPackageResourceScopes")]
         public IAccessPackageCatalogAccessPackageResourceScopesCollectionPage AccessPackageResourceScopes { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourceScopesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceScopes@odata.nextLink")]
+        public string AccessPackageResourceScopesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access packages.
@@ -116,6 +134,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackages")]
         public IAccessPackageCatalogAccessPackagesCollectionPage AccessPackages { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackagesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackages@odata.nextLink")]
+        public string AccessPackagesNextLink { get; set; }
     
     }
 }

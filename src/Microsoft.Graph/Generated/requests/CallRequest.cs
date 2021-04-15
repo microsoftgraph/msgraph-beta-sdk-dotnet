@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Call callToInitialize)
         {
 
-            if (callToInitialize != null && callToInitialize.AdditionalData != null)
+            if (callToInitialize != null)
             {
-
                 if (callToInitialize.AudioRoutingGroups != null && callToInitialize.AudioRoutingGroups.CurrentPage != null)
                 {
+                    callToInitialize.AudioRoutingGroups.InitializeNextPageRequest(this.Client, callToInitialize.AudioRoutingGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     callToInitialize.AudioRoutingGroups.AdditionalData = callToInitialize.AdditionalData;
-
-                    if(callToInitialize.AdditionalData.TryGetValue("audioRoutingGroups@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            callToInitialize.AudioRoutingGroups.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (callToInitialize.Operations != null && callToInitialize.Operations.CurrentPage != null)
                 {
+                    callToInitialize.Operations.InitializeNextPageRequest(this.Client, callToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     callToInitialize.Operations.AdditionalData = callToInitialize.AdditionalData;
-
-                    if(callToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            callToInitialize.Operations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (callToInitialize.Participants != null && callToInitialize.Participants.CurrentPage != null)
                 {
+                    callToInitialize.Participants.InitializeNextPageRequest(this.Client, callToInitialize.ParticipantsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     callToInitialize.Participants.AdditionalData = callToInitialize.AdditionalData;
-
-                    if(callToInitialize.AdditionalData.TryGetValue("participants@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            callToInitialize.Participants.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessPackageResource accessPackageResourceToInitialize)
         {
 
-            if (accessPackageResourceToInitialize != null && accessPackageResourceToInitialize.AdditionalData != null)
+            if (accessPackageResourceToInitialize != null)
             {
-
                 if (accessPackageResourceToInitialize.AccessPackageResourceRoles != null && accessPackageResourceToInitialize.AccessPackageResourceRoles.CurrentPage != null)
                 {
+                    accessPackageResourceToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(this.Client, accessPackageResourceToInitialize.AccessPackageResourceRolesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageResourceToInitialize.AccessPackageResourceRoles.AdditionalData = accessPackageResourceToInitialize.AdditionalData;
-
-                    if(accessPackageResourceToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoles@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            accessPackageResourceToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (accessPackageResourceToInitialize.AccessPackageResourceScopes != null && accessPackageResourceToInitialize.AccessPackageResourceScopes.CurrentPage != null)
                 {
+                    accessPackageResourceToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(this.Client, accessPackageResourceToInitialize.AccessPackageResourceScopesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageResourceToInitialize.AccessPackageResourceScopes.AdditionalData = accessPackageResourceToInitialize.AdditionalData;
-
-                    if(accessPackageResourceToInitialize.AdditionalData.TryGetValue("accessPackageResourceScopes@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            accessPackageResourceToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

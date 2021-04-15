@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("settingDefinitions")]
         public IDeviceManagementSettingCategorySettingDefinitionsCollectionPage SettingDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets settingDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("settingDefinitions@odata.nextLink")]
+        public string SettingDefinitionsNextLink { get; set; }
     
     }
 }

@@ -72,6 +72,7 @@ namespace Microsoft.Graph.CallRecords
             if (response?.Value?.CurrentPage != null)
             {
                 response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
                 response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }

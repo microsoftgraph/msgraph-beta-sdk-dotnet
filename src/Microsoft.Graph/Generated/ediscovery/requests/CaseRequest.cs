@@ -244,133 +244,49 @@ namespace Microsoft.Graph.Ediscovery
         private void InitializeCollectionProperties(Case caseToInitialize)
         {
 
-            if (caseToInitialize != null && caseToInitialize.AdditionalData != null)
+            if (caseToInitialize != null)
             {
-
                 if (caseToInitialize.Custodians != null && caseToInitialize.Custodians.CurrentPage != null)
                 {
+                    caseToInitialize.Custodians.InitializeNextPageRequest(this.Client, caseToInitialize.CustodiansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.Custodians.AdditionalData = caseToInitialize.AdditionalData;
-
-                    if(caseToInitialize.AdditionalData.TryGetValue("custodians@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            caseToInitialize.Custodians.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (caseToInitialize.LegalHolds != null && caseToInitialize.LegalHolds.CurrentPage != null)
                 {
+                    caseToInitialize.LegalHolds.InitializeNextPageRequest(this.Client, caseToInitialize.LegalHoldsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.LegalHolds.AdditionalData = caseToInitialize.AdditionalData;
-
-                    if(caseToInitialize.AdditionalData.TryGetValue("legalHolds@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            caseToInitialize.LegalHolds.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (caseToInitialize.NoncustodialDataSources != null && caseToInitialize.NoncustodialDataSources.CurrentPage != null)
                 {
+                    caseToInitialize.NoncustodialDataSources.InitializeNextPageRequest(this.Client, caseToInitialize.NoncustodialDataSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.NoncustodialDataSources.AdditionalData = caseToInitialize.AdditionalData;
-
-                    if(caseToInitialize.AdditionalData.TryGetValue("noncustodialDataSources@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            caseToInitialize.NoncustodialDataSources.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (caseToInitialize.Operations != null && caseToInitialize.Operations.CurrentPage != null)
                 {
+                    caseToInitialize.Operations.InitializeNextPageRequest(this.Client, caseToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.Operations.AdditionalData = caseToInitialize.AdditionalData;
-
-                    if(caseToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            caseToInitialize.Operations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (caseToInitialize.ReviewSets != null && caseToInitialize.ReviewSets.CurrentPage != null)
                 {
+                    caseToInitialize.ReviewSets.InitializeNextPageRequest(this.Client, caseToInitialize.ReviewSetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.ReviewSets.AdditionalData = caseToInitialize.AdditionalData;
-
-                    if(caseToInitialize.AdditionalData.TryGetValue("reviewSets@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            caseToInitialize.ReviewSets.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (caseToInitialize.SourceCollections != null && caseToInitialize.SourceCollections.CurrentPage != null)
                 {
+                    caseToInitialize.SourceCollections.InitializeNextPageRequest(this.Client, caseToInitialize.SourceCollectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.SourceCollections.AdditionalData = caseToInitialize.AdditionalData;
-
-                    if(caseToInitialize.AdditionalData.TryGetValue("sourceCollections@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            caseToInitialize.SourceCollections.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (caseToInitialize.Tags != null && caseToInitialize.Tags.CurrentPage != null)
                 {
+                    caseToInitialize.Tags.InitializeNextPageRequest(this.Client, caseToInitialize.TagsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.Tags.AdditionalData = caseToInitialize.AdditionalData;
-
-                    if(caseToInitialize.AdditionalData.TryGetValue("tags@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            caseToInitialize.Tags.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

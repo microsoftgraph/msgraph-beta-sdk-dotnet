@@ -33,6 +33,12 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         [JsonPropertyName("cases")]
         public IEdiscoveryrootCasesCollectionPage Cases { get; set; }
+
+        /// <summary>
+        /// Gets or sets casesNextLink.
+        /// </summary>
+        [JsonPropertyName("cases@odata.nextLink")]
+        public string CasesNextLink { get; set; }
     
     }
 }

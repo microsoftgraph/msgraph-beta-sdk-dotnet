@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PrinterShare printerShareToInitialize)
         {
 
-            if (printerShareToInitialize != null && printerShareToInitialize.AdditionalData != null)
+            if (printerShareToInitialize != null)
             {
-
                 if (printerShareToInitialize.AllowedGroups != null && printerShareToInitialize.AllowedGroups.CurrentPage != null)
                 {
+                    printerShareToInitialize.AllowedGroups.InitializeNextPageRequest(this.Client, printerShareToInitialize.AllowedGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printerShareToInitialize.AllowedGroups.AdditionalData = printerShareToInitialize.AdditionalData;
-
-                    if(printerShareToInitialize.AdditionalData.TryGetValue("allowedGroups@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printerShareToInitialize.AllowedGroups.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (printerShareToInitialize.AllowedUsers != null && printerShareToInitialize.AllowedUsers.CurrentPage != null)
                 {
+                    printerShareToInitialize.AllowedUsers.InitializeNextPageRequest(this.Client, printerShareToInitialize.AllowedUsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printerShareToInitialize.AllowedUsers.AdditionalData = printerShareToInitialize.AdditionalData;
-
-                    if(printerShareToInitialize.AdditionalData.TryGetValue("allowedUsers@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            printerShareToInitialize.AllowedUsers.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

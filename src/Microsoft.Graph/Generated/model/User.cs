@@ -556,6 +556,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("usageRights")]
         public IUserUsageRightsCollectionPage UsageRights { get; set; }
+
+        /// <summary>
+        /// Gets or sets usageRightsNextLink.
+        /// </summary>
+        [JsonPropertyName("usageRights@odata.nextLink")]
+        public string UsageRightsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets information protection.
@@ -569,6 +575,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appRoleAssignments")]
         public IUserAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets appRoleAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("appRoleAssignments@odata.nextLink")]
+        public string AppRoleAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets created objects.
@@ -576,6 +588,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("createdObjects")]
         public IUserCreatedObjectsCollectionWithReferencesPage CreatedObjects { get; set; }
+
+        /// <summary>
+        /// Gets or sets createdObjectsNextLink.
+        /// </summary>
+        [JsonPropertyName("createdObjects@odata.nextLink")]
+        public string CreatedObjectsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets direct reports.
@@ -583,6 +601,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("directReports")]
         public IUserDirectReportsCollectionWithReferencesPage DirectReports { get; set; }
+
+        /// <summary>
+        /// Gets or sets directReportsNextLink.
+        /// </summary>
+        [JsonPropertyName("directReports@odata.nextLink")]
+        public string DirectReportsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets license details.
@@ -590,6 +614,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("licenseDetails")]
         public IUserLicenseDetailsCollectionPage LicenseDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets licenseDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("licenseDetails@odata.nextLink")]
+        public string LicenseDetailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets manager.
@@ -604,12 +634,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IUserMemberOfCollectionWithReferencesPage MemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets memberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("memberOf@odata.nextLink")]
+        public string MemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets oauth2permission grants.
         /// </summary>
         [JsonPropertyName("oauth2PermissionGrants")]
         public IUserOauth2PermissionGrantsCollectionWithReferencesPage Oauth2PermissionGrants { get; set; }
+
+        /// <summary>
+        /// Gets or sets oauth2PermissionGrantsNextLink.
+        /// </summary>
+        [JsonPropertyName("oauth2PermissionGrants@odata.nextLink")]
+        public string Oauth2PermissionGrantsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets owned devices.
@@ -617,6 +659,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("ownedDevices")]
         public IUserOwnedDevicesCollectionWithReferencesPage OwnedDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets ownedDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("ownedDevices@odata.nextLink")]
+        public string OwnedDevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets owned objects.
@@ -624,6 +672,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("ownedObjects")]
         public IUserOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
+
+        /// <summary>
+        /// Gets or sets ownedObjectsNextLink.
+        /// </summary>
+        [JsonPropertyName("ownedObjects@odata.nextLink")]
+        public string OwnedObjectsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets registered devices.
@@ -631,6 +685,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("registeredDevices")]
         public IUserRegisteredDevicesCollectionWithReferencesPage RegisteredDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets registeredDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("registeredDevices@odata.nextLink")]
+        public string RegisteredDevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets scoped role member of.
@@ -638,12 +698,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("scopedRoleMemberOf")]
         public IUserScopedRoleMemberOfCollectionPage ScopedRoleMemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets scopedRoleMemberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("scopedRoleMemberOf@odata.nextLink")]
+        public string ScopedRoleMemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets transitive member of.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf")]
         public IUserTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets transitiveMemberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("transitiveMemberOf@odata.nextLink")]
+        public string TransitiveMemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets calendar.
@@ -658,6 +730,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("calendarGroups")]
         public IUserCalendarGroupsCollectionPage CalendarGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets calendarGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("calendarGroups@odata.nextLink")]
+        public string CalendarGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets calendars.
@@ -665,6 +743,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("calendars")]
         public IUserCalendarsCollectionPage Calendars { get; set; }
+
+        /// <summary>
+        /// Gets or sets calendarsNextLink.
+        /// </summary>
+        [JsonPropertyName("calendars@odata.nextLink")]
+        public string CalendarsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets calendar view.
@@ -672,6 +756,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("calendarView")]
         public IUserCalendarViewCollectionPage CalendarView { get; set; }
+
+        /// <summary>
+        /// Gets or sets calendarViewNextLink.
+        /// </summary>
+        [JsonPropertyName("calendarView@odata.nextLink")]
+        public string CalendarViewNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets contact folders.
@@ -679,6 +769,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("contactFolders")]
         public IUserContactFoldersCollectionPage ContactFolders { get; set; }
+
+        /// <summary>
+        /// Gets or sets contactFoldersNextLink.
+        /// </summary>
+        [JsonPropertyName("contactFolders@odata.nextLink")]
+        public string ContactFoldersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets contacts.
@@ -686,6 +782,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("contacts")]
         public IUserContactsCollectionPage Contacts { get; set; }
+
+        /// <summary>
+        /// Gets or sets contactsNextLink.
+        /// </summary>
+        [JsonPropertyName("contacts@odata.nextLink")]
+        public string ContactsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets events.
@@ -693,6 +795,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("events")]
         public IUserEventsCollectionPage Events { get; set; }
+
+        /// <summary>
+        /// Gets or sets eventsNextLink.
+        /// </summary>
+        [JsonPropertyName("events@odata.nextLink")]
+        public string EventsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets inference classification.
@@ -707,6 +815,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("joinedGroups")]
         public IUserJoinedGroupsCollectionPage JoinedGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets joinedGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("joinedGroups@odata.nextLink")]
+        public string JoinedGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mail folders.
@@ -714,6 +828,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("mailFolders")]
         public IUserMailFoldersCollectionPage MailFolders { get; set; }
+
+        /// <summary>
+        /// Gets or sets mailFoldersNextLink.
+        /// </summary>
+        [JsonPropertyName("mailFolders@odata.nextLink")]
+        public string MailFoldersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets messages.
@@ -721,6 +841,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("messages")]
         public IUserMessagesCollectionPage Messages { get; set; }
+
+        /// <summary>
+        /// Gets or sets messagesNextLink.
+        /// </summary>
+        [JsonPropertyName("messages@odata.nextLink")]
+        public string MessagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets outlook.
@@ -735,6 +861,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("people")]
         public IUserPeopleCollectionPage People { get; set; }
+
+        /// <summary>
+        /// Gets or sets peopleNextLink.
+        /// </summary>
+        [JsonPropertyName("people@odata.nextLink")]
+        public string PeopleNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets drive.
@@ -749,12 +881,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("drives")]
         public IUserDrivesCollectionPage Drives { get; set; }
+
+        /// <summary>
+        /// Gets or sets drivesNextLink.
+        /// </summary>
+        [JsonPropertyName("drives@odata.nextLink")]
+        public string DrivesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets followed sites.
         /// </summary>
         [JsonPropertyName("followedSites")]
         public IUserFollowedSitesCollectionWithReferencesPage FollowedSites { get; set; }
+
+        /// <summary>
+        /// Gets or sets followedSitesNextLink.
+        /// </summary>
+        [JsonPropertyName("followedSites@odata.nextLink")]
+        public string FollowedSitesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
@@ -762,18 +906,36 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("extensions")]
         public IUserExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets app consent requests for approval.
         /// </summary>
         [JsonPropertyName("appConsentRequestsForApproval")]
         public IUserAppConsentRequestsForApprovalCollectionPage AppConsentRequestsForApproval { get; set; }
+
+        /// <summary>
+        /// Gets or sets appConsentRequestsForApprovalNextLink.
+        /// </summary>
+        [JsonPropertyName("appConsentRequestsForApproval@odata.nextLink")]
+        public string AppConsentRequestsForApprovalNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets approvals.
         /// </summary>
         [JsonPropertyName("approvals")]
         public IUserApprovalsCollectionPage Approvals { get; set; }
+
+        /// <summary>
+        /// Gets or sets approvalsNextLink.
+        /// </summary>
+        [JsonPropertyName("approvals@odata.nextLink")]
+        public string ApprovalsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets pending access review instances.
@@ -781,6 +943,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("pendingAccessReviewInstances")]
         public IUserPendingAccessReviewInstancesCollectionPage PendingAccessReviewInstances { get; set; }
+
+        /// <summary>
+        /// Gets or sets pendingAccessReviewInstancesNextLink.
+        /// </summary>
+        [JsonPropertyName("pendingAccessReviewInstances@odata.nextLink")]
+        public string PendingAccessReviewInstancesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets agreement acceptances.
@@ -788,6 +956,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("agreementAcceptances")]
         public IUserAgreementAcceptancesCollectionWithReferencesPage AgreementAcceptances { get; set; }
+
+        /// <summary>
+        /// Gets or sets agreementAcceptancesNextLink.
+        /// </summary>
+        [JsonPropertyName("agreementAcceptances@odata.nextLink")]
+        public string AgreementAcceptancesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device enrollment configurations.
@@ -795,6 +969,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceEnrollmentConfigurations")]
         public IUserDeviceEnrollmentConfigurationsCollectionPage DeviceEnrollmentConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceEnrollmentConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceEnrollmentConfigurations@odata.nextLink")]
+        public string DeviceEnrollmentConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed devices.
@@ -802,6 +982,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedDevices")]
         public IUserManagedDevicesCollectionPage ManagedDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedDevices@odata.nextLink")]
+        public string ManagedDevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed app registrations.
@@ -809,6 +995,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedAppRegistrations")]
         public IUserManagedAppRegistrationsCollectionWithReferencesPage ManagedAppRegistrations { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedAppRegistrationsNextLink.
+        /// </summary>
+        [JsonPropertyName("managedAppRegistrations@odata.nextLink")]
+        public string ManagedAppRegistrationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection device registrations.
@@ -816,6 +1008,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsInformationProtectionDeviceRegistrations")]
         public IUserWindowsInformationProtectionDeviceRegistrationsCollectionWithReferencesPage WindowsInformationProtectionDeviceRegistrations { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsInformationProtectionDeviceRegistrationsNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsInformationProtectionDeviceRegistrations@odata.nextLink")]
+        public string WindowsInformationProtectionDeviceRegistrationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device management troubleshooting events.
@@ -823,6 +1021,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceManagementTroubleshootingEvents")]
         public IUserDeviceManagementTroubleshootingEventsCollectionPage DeviceManagementTroubleshootingEvents { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceManagementTroubleshootingEventsNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceManagementTroubleshootingEvents@odata.nextLink")]
+        public string DeviceManagementTroubleshootingEventsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mobile app intent and states.
@@ -830,6 +1034,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("mobileAppIntentAndStates")]
         public IUserMobileAppIntentAndStatesCollectionPage MobileAppIntentAndStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileAppIntentAndStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileAppIntentAndStates@odata.nextLink")]
+        public string MobileAppIntentAndStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mobile app troubleshooting events.
@@ -837,12 +1047,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("mobileAppTroubleshootingEvents")]
         public IUserMobileAppTroubleshootingEventsCollectionPage MobileAppTroubleshootingEvents { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileAppTroubleshootingEventsNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileAppTroubleshootingEvents@odata.nextLink")]
+        public string MobileAppTroubleshootingEventsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets notifications.
         /// </summary>
         [JsonPropertyName("notifications")]
         public IUserNotificationsCollectionPage Notifications { get; set; }
+
+        /// <summary>
+        /// Gets or sets notificationsNextLink.
+        /// </summary>
+        [JsonPropertyName("notifications@odata.nextLink")]
+        public string NotificationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets planner.
@@ -885,6 +1107,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("photos")]
         public IUserPhotosCollectionPage Photos { get; set; }
+
+        /// <summary>
+        /// Gets or sets photosNextLink.
+        /// </summary>
+        [JsonPropertyName("photos@odata.nextLink")]
+        public string PhotosNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets profile.
@@ -899,18 +1127,36 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("activities")]
         public IUserActivitiesCollectionPage Activities { get; set; }
+
+        /// <summary>
+        /// Gets or sets activitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("activities@odata.nextLink")]
+        public string ActivitiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets devices.
         /// </summary>
         [JsonPropertyName("devices")]
         public IUserDevicesCollectionPage Devices { get; set; }
+
+        /// <summary>
+        /// Gets or sets devicesNextLink.
+        /// </summary>
+        [JsonPropertyName("devices@odata.nextLink")]
+        public string DevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets online meetings.
         /// </summary>
         [JsonPropertyName("onlineMeetings")]
         public IUserOnlineMeetingsCollectionPage OnlineMeetings { get; set; }
+
+        /// <summary>
+        /// Gets or sets onlineMeetingsNextLink.
+        /// </summary>
+        [JsonPropertyName("onlineMeetings@odata.nextLink")]
+        public string OnlineMeetingsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets presence.
@@ -929,6 +1175,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("chats")]
         public IUserChatsCollectionPage Chats { get; set; }
+
+        /// <summary>
+        /// Gets or sets chatsNextLink.
+        /// </summary>
+        [JsonPropertyName("chats@odata.nextLink")]
+        public string ChatsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets joined teams.
@@ -936,6 +1188,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("joinedTeams")]
         public IUserJoinedTeamsCollectionWithReferencesPage JoinedTeams { get; set; }
+
+        /// <summary>
+        /// Gets or sets joinedTeamsNextLink.
+        /// </summary>
+        [JsonPropertyName("joinedTeams@odata.nextLink")]
+        public string JoinedTeamsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets teamwork.

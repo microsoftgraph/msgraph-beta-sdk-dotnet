@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SectionGroup sectionGroupToInitialize)
         {
 
-            if (sectionGroupToInitialize != null && sectionGroupToInitialize.AdditionalData != null)
+            if (sectionGroupToInitialize != null)
             {
-
                 if (sectionGroupToInitialize.SectionGroups != null && sectionGroupToInitialize.SectionGroups.CurrentPage != null)
                 {
+                    sectionGroupToInitialize.SectionGroups.InitializeNextPageRequest(this.Client, sectionGroupToInitialize.SectionGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     sectionGroupToInitialize.SectionGroups.AdditionalData = sectionGroupToInitialize.AdditionalData;
-
-                    if(sectionGroupToInitialize.AdditionalData.TryGetValue("sectionGroups@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            sectionGroupToInitialize.SectionGroups.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (sectionGroupToInitialize.Sections != null && sectionGroupToInitialize.Sections.CurrentPage != null)
                 {
+                    sectionGroupToInitialize.Sections.InitializeNextPageRequest(this.Client, sectionGroupToInitialize.SectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     sectionGroupToInitialize.Sections.AdditionalData = sectionGroupToInitialize.AdditionalData;
-
-                    if(sectionGroupToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            sectionGroupToInitialize.Sections.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,115 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Event eventToInitialize)
         {
 
-            if (eventToInitialize != null && eventToInitialize.AdditionalData != null)
+            if (eventToInitialize != null)
             {
-
                 if (eventToInitialize.Attachments != null && eventToInitialize.Attachments.CurrentPage != null)
                 {
+                    eventToInitialize.Attachments.InitializeNextPageRequest(this.Client, eventToInitialize.AttachmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.Attachments.AdditionalData = eventToInitialize.AdditionalData;
-
-                    if(eventToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            eventToInitialize.Attachments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (eventToInitialize.ExceptionOccurrences != null && eventToInitialize.ExceptionOccurrences.CurrentPage != null)
                 {
+                    eventToInitialize.ExceptionOccurrences.InitializeNextPageRequest(this.Client, eventToInitialize.ExceptionOccurrencesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.ExceptionOccurrences.AdditionalData = eventToInitialize.AdditionalData;
-
-                    if(eventToInitialize.AdditionalData.TryGetValue("exceptionOccurrences@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            eventToInitialize.ExceptionOccurrences.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (eventToInitialize.Extensions != null && eventToInitialize.Extensions.CurrentPage != null)
                 {
+                    eventToInitialize.Extensions.InitializeNextPageRequest(this.Client, eventToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.Extensions.AdditionalData = eventToInitialize.AdditionalData;
-
-                    if(eventToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            eventToInitialize.Extensions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (eventToInitialize.Instances != null && eventToInitialize.Instances.CurrentPage != null)
                 {
+                    eventToInitialize.Instances.InitializeNextPageRequest(this.Client, eventToInitialize.InstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.Instances.AdditionalData = eventToInitialize.AdditionalData;
-
-                    if(eventToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            eventToInitialize.Instances.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (eventToInitialize.MultiValueExtendedProperties != null && eventToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    eventToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, eventToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.MultiValueExtendedProperties.AdditionalData = eventToInitialize.AdditionalData;
-
-                    if(eventToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            eventToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (eventToInitialize.SingleValueExtendedProperties != null && eventToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    eventToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, eventToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.SingleValueExtendedProperties.AdditionalData = eventToInitialize.AdditionalData;
-
-                    if(eventToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            eventToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

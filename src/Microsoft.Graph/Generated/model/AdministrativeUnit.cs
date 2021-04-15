@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("members")]
         public IAdministrativeUnitMembersCollectionWithReferencesPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets scoped role members.
@@ -62,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("scopedRoleMembers")]
         public IAdministrativeUnitScopedRoleMembersCollectionPage ScopedRoleMembers { get; set; }
+
+        /// <summary>
+        /// Gets or sets scopedRoleMembersNextLink.
+        /// </summary>
+        [JsonPropertyName("scopedRoleMembers@odata.nextLink")]
+        public string ScopedRoleMembersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
@@ -69,6 +81,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("extensions")]
         public IAdministrativeUnitExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
     }
 }

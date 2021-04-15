@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserFlowLanguageConfiguration userFlowLanguageConfigurationToInitialize)
         {
 
-            if (userFlowLanguageConfigurationToInitialize != null && userFlowLanguageConfigurationToInitialize.AdditionalData != null)
+            if (userFlowLanguageConfigurationToInitialize != null)
             {
-
                 if (userFlowLanguageConfigurationToInitialize.DefaultPages != null && userFlowLanguageConfigurationToInitialize.DefaultPages.CurrentPage != null)
                 {
+                    userFlowLanguageConfigurationToInitialize.DefaultPages.InitializeNextPageRequest(this.Client, userFlowLanguageConfigurationToInitialize.DefaultPagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userFlowLanguageConfigurationToInitialize.DefaultPages.AdditionalData = userFlowLanguageConfigurationToInitialize.AdditionalData;
-
-                    if(userFlowLanguageConfigurationToInitialize.AdditionalData.TryGetValue("defaultPages@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userFlowLanguageConfigurationToInitialize.DefaultPages.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (userFlowLanguageConfigurationToInitialize.OverridesPages != null && userFlowLanguageConfigurationToInitialize.OverridesPages.CurrentPage != null)
                 {
+                    userFlowLanguageConfigurationToInitialize.OverridesPages.InitializeNextPageRequest(this.Client, userFlowLanguageConfigurationToInitialize.OverridesPagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userFlowLanguageConfigurationToInitialize.OverridesPages.AdditionalData = userFlowLanguageConfigurationToInitialize.AdditionalData;
-
-                    if(userFlowLanguageConfigurationToInitialize.AdditionalData.TryGetValue("overridesPages@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            userFlowLanguageConfigurationToInitialize.OverridesPages.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IosScepCertificateProfile iosScepCertificateProfileToInitialize)
         {
 
-            if (iosScepCertificateProfileToInitialize != null && iosScepCertificateProfileToInitialize.AdditionalData != null)
+            if (iosScepCertificateProfileToInitialize != null)
             {
-
                 if (iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = iosScepCertificateProfileToInitialize.AdditionalData;
-
-                    if(iosScepCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

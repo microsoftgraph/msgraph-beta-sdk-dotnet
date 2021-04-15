@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TodoTaskList todoTaskListToInitialize)
         {
 
-            if (todoTaskListToInitialize != null && todoTaskListToInitialize.AdditionalData != null)
+            if (todoTaskListToInitialize != null)
             {
-
                 if (todoTaskListToInitialize.Extensions != null && todoTaskListToInitialize.Extensions.CurrentPage != null)
                 {
+                    todoTaskListToInitialize.Extensions.InitializeNextPageRequest(this.Client, todoTaskListToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     todoTaskListToInitialize.Extensions.AdditionalData = todoTaskListToInitialize.AdditionalData;
-
-                    if(todoTaskListToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            todoTaskListToInitialize.Extensions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (todoTaskListToInitialize.Tasks != null && todoTaskListToInitialize.Tasks.CurrentPage != null)
                 {
+                    todoTaskListToInitialize.Tasks.InitializeNextPageRequest(this.Client, todoTaskListToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     todoTaskListToInitialize.Tasks.AdditionalData = todoTaskListToInitialize.AdditionalData;
-
-                    if(todoTaskListToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            todoTaskListToInitialize.Tasks.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

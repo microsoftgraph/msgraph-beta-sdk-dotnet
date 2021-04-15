@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WorkbookRangeFormat workbookRangeFormatToInitialize)
         {
 
-            if (workbookRangeFormatToInitialize != null && workbookRangeFormatToInitialize.AdditionalData != null)
+            if (workbookRangeFormatToInitialize != null)
             {
-
                 if (workbookRangeFormatToInitialize.Borders != null && workbookRangeFormatToInitialize.Borders.CurrentPage != null)
                 {
+                    workbookRangeFormatToInitialize.Borders.InitializeNextPageRequest(this.Client, workbookRangeFormatToInitialize.BordersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookRangeFormatToInitialize.Borders.AdditionalData = workbookRangeFormatToInitialize.AdditionalData;
-
-                    if(workbookRangeFormatToInitialize.AdditionalData.TryGetValue("borders@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            workbookRangeFormatToInitialize.Borders.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

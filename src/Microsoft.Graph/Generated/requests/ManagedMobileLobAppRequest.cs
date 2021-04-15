@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedMobileLobApp managedMobileLobAppToInitialize)
         {
 
-            if (managedMobileLobAppToInitialize != null && managedMobileLobAppToInitialize.AdditionalData != null)
+            if (managedMobileLobAppToInitialize != null)
             {
-
                 if (managedMobileLobAppToInitialize.ContentVersions != null && managedMobileLobAppToInitialize.ContentVersions.CurrentPage != null)
                 {
+                    managedMobileLobAppToInitialize.ContentVersions.InitializeNextPageRequest(this.Client, managedMobileLobAppToInitialize.ContentVersionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedMobileLobAppToInitialize.ContentVersions.AdditionalData = managedMobileLobAppToInitialize.AdditionalData;
-
-                    if(managedMobileLobAppToInitialize.AdditionalData.TryGetValue("contentVersions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            managedMobileLobAppToInitialize.ContentVersions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

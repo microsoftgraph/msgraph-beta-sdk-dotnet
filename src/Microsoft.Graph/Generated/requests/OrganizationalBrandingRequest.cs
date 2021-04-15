@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OrganizationalBranding organizationalBrandingToInitialize)
         {
 
-            if (organizationalBrandingToInitialize != null && organizationalBrandingToInitialize.AdditionalData != null)
+            if (organizationalBrandingToInitialize != null)
             {
-
                 if (organizationalBrandingToInitialize.Localizations != null && organizationalBrandingToInitialize.Localizations.CurrentPage != null)
                 {
+                    organizationalBrandingToInitialize.Localizations.InitializeNextPageRequest(this.Client, organizationalBrandingToInitialize.LocalizationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     organizationalBrandingToInitialize.Localizations.AdditionalData = organizationalBrandingToInitialize.AdditionalData;
-
-                    if(organizationalBrandingToInitialize.AdditionalData.TryGetValue("localizations@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            organizationalBrandingToInitialize.Localizations.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }
