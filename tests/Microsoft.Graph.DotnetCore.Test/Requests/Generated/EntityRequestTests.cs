@@ -44,10 +44,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 
                 var expectedItemResponse = new DriveItem
                 {
-                    AdditionalData = new Dictionary<string, object>
-                    {
-                        { "children@odata.nextLink", JsonDocument.Parse(string.Format("\"{0}\"", requestUrl + "/next")).RootElement }
-                    },
+                    ChildrenNextLink =  requestUrl + "/next",
                     Children = expectedChildrenPage,
                 };
 
