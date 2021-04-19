@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AppConsentRequestObject appConsentRequestObjectToInitialize)
         {
 
-            if (appConsentRequestObjectToInitialize != null && appConsentRequestObjectToInitialize.AdditionalData != null)
+            if (appConsentRequestObjectToInitialize != null)
             {
-
                 if (appConsentRequestObjectToInitialize.UserConsentRequests != null && appConsentRequestObjectToInitialize.UserConsentRequests.CurrentPage != null)
                 {
+                    appConsentRequestObjectToInitialize.UserConsentRequests.InitializeNextPageRequest(this.Client, appConsentRequestObjectToInitialize.UserConsentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     appConsentRequestObjectToInitialize.UserConsentRequests.AdditionalData = appConsentRequestObjectToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    appConsentRequestObjectToInitialize.AdditionalData.TryGetValue("userConsentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        appConsentRequestObjectToInitialize.UserConsentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

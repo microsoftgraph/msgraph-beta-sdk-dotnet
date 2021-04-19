@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementReports deviceManagementReportsToInitialize)
         {
 
-            if (deviceManagementReportsToInitialize != null && deviceManagementReportsToInitialize.AdditionalData != null)
+            if (deviceManagementReportsToInitialize != null)
             {
-
                 if (deviceManagementReportsToInitialize.CachedReportConfigurations != null && deviceManagementReportsToInitialize.CachedReportConfigurations.CurrentPage != null)
                 {
+                    deviceManagementReportsToInitialize.CachedReportConfigurations.InitializeNextPageRequest(this.Client, deviceManagementReportsToInitialize.CachedReportConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementReportsToInitialize.CachedReportConfigurations.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementReportsToInitialize.AdditionalData.TryGetValue("cachedReportConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementReportsToInitialize.CachedReportConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementReportsToInitialize.ExportJobs != null && deviceManagementReportsToInitialize.ExportJobs.CurrentPage != null)
                 {
+                    deviceManagementReportsToInitialize.ExportJobs.InitializeNextPageRequest(this.Client, deviceManagementReportsToInitialize.ExportJobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementReportsToInitialize.ExportJobs.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementReportsToInitialize.AdditionalData.TryGetValue("exportJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementReportsToInitialize.ExportJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementReportsToInitialize.ReportSchedules != null && deviceManagementReportsToInitialize.ReportSchedules.CurrentPage != null)
                 {
+                    deviceManagementReportsToInitialize.ReportSchedules.InitializeNextPageRequest(this.Client, deviceManagementReportsToInitialize.ReportSchedulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementReportsToInitialize.ReportSchedules.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementReportsToInitialize.AdditionalData.TryGetValue("reportSchedules@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementReportsToInitialize.ReportSchedules.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

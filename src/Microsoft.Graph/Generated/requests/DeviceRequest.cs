@@ -244,119 +244,49 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Device deviceToInitialize)
         {
 
-            if (deviceToInitialize != null && deviceToInitialize.AdditionalData != null)
+            if (deviceToInitialize != null)
             {
-
                 if (deviceToInitialize.UsageRights != null && deviceToInitialize.UsageRights.CurrentPage != null)
                 {
+                    deviceToInitialize.UsageRights.InitializeNextPageRequest(this.Client, deviceToInitialize.UsageRightsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceToInitialize.UsageRights.AdditionalData = deviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceToInitialize.AdditionalData.TryGetValue("usageRights@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceToInitialize.UsageRights.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceToInitialize.MemberOf != null && deviceToInitialize.MemberOf.CurrentPage != null)
                 {
+                    deviceToInitialize.MemberOf.InitializeNextPageRequest(this.Client, deviceToInitialize.MemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceToInitialize.MemberOf.AdditionalData = deviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceToInitialize.MemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceToInitialize.RegisteredOwners != null && deviceToInitialize.RegisteredOwners.CurrentPage != null)
                 {
+                    deviceToInitialize.RegisteredOwners.InitializeNextPageRequest(this.Client, deviceToInitialize.RegisteredOwnersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceToInitialize.RegisteredOwners.AdditionalData = deviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceToInitialize.AdditionalData.TryGetValue("registeredOwners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceToInitialize.RegisteredOwners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceToInitialize.RegisteredUsers != null && deviceToInitialize.RegisteredUsers.CurrentPage != null)
                 {
+                    deviceToInitialize.RegisteredUsers.InitializeNextPageRequest(this.Client, deviceToInitialize.RegisteredUsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceToInitialize.RegisteredUsers.AdditionalData = deviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceToInitialize.AdditionalData.TryGetValue("registeredUsers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceToInitialize.RegisteredUsers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceToInitialize.TransitiveMemberOf != null && deviceToInitialize.TransitiveMemberOf.CurrentPage != null)
                 {
+                    deviceToInitialize.TransitiveMemberOf.InitializeNextPageRequest(this.Client, deviceToInitialize.TransitiveMemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceToInitialize.TransitiveMemberOf.AdditionalData = deviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceToInitialize.Extensions != null && deviceToInitialize.Extensions.CurrentPage != null)
                 {
+                    deviceToInitialize.Extensions.InitializeNextPageRequest(this.Client, deviceToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceToInitialize.Extensions.AdditionalData = deviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceToInitialize.Commands != null && deviceToInitialize.Commands.CurrentPage != null)
                 {
+                    deviceToInitialize.Commands.InitializeNextPageRequest(this.Client, deviceToInitialize.CommandsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceToInitialize.Commands.AdditionalData = deviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceToInitialize.AdditionalData.TryGetValue("commands@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceToInitialize.Commands.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

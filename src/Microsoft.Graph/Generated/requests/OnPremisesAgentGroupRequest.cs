@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OnPremisesAgentGroup onPremisesAgentGroupToInitialize)
         {
 
-            if (onPremisesAgentGroupToInitialize != null && onPremisesAgentGroupToInitialize.AdditionalData != null)
+            if (onPremisesAgentGroupToInitialize != null)
             {
-
                 if (onPremisesAgentGroupToInitialize.Agents != null && onPremisesAgentGroupToInitialize.Agents.CurrentPage != null)
                 {
+                    onPremisesAgentGroupToInitialize.Agents.InitializeNextPageRequest(this.Client, onPremisesAgentGroupToInitialize.AgentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesAgentGroupToInitialize.Agents.AdditionalData = onPremisesAgentGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onPremisesAgentGroupToInitialize.AdditionalData.TryGetValue("agents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onPremisesAgentGroupToInitialize.Agents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onPremisesAgentGroupToInitialize.PublishedResources != null && onPremisesAgentGroupToInitialize.PublishedResources.CurrentPage != null)
                 {
+                    onPremisesAgentGroupToInitialize.PublishedResources.InitializeNextPageRequest(this.Client, onPremisesAgentGroupToInitialize.PublishedResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesAgentGroupToInitialize.PublishedResources.AdditionalData = onPremisesAgentGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onPremisesAgentGroupToInitialize.AdditionalData.TryGetValue("publishedResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onPremisesAgentGroupToInitialize.PublishedResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

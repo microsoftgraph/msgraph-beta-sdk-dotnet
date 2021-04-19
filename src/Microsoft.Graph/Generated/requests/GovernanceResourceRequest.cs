@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(GovernanceResource governanceResourceToInitialize)
         {
 
-            if (governanceResourceToInitialize != null && governanceResourceToInitialize.AdditionalData != null)
+            if (governanceResourceToInitialize != null)
             {
-
                 if (governanceResourceToInitialize.RoleAssignmentRequests != null && governanceResourceToInitialize.RoleAssignmentRequests.CurrentPage != null)
                 {
+                    governanceResourceToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(this.Client, governanceResourceToInitialize.RoleAssignmentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     governanceResourceToInitialize.RoleAssignmentRequests.AdditionalData = governanceResourceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    governanceResourceToInitialize.AdditionalData.TryGetValue("roleAssignmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        governanceResourceToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (governanceResourceToInitialize.RoleAssignments != null && governanceResourceToInitialize.RoleAssignments.CurrentPage != null)
                 {
+                    governanceResourceToInitialize.RoleAssignments.InitializeNextPageRequest(this.Client, governanceResourceToInitialize.RoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     governanceResourceToInitialize.RoleAssignments.AdditionalData = governanceResourceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    governanceResourceToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        governanceResourceToInitialize.RoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (governanceResourceToInitialize.RoleDefinitions != null && governanceResourceToInitialize.RoleDefinitions.CurrentPage != null)
                 {
+                    governanceResourceToInitialize.RoleDefinitions.InitializeNextPageRequest(this.Client, governanceResourceToInitialize.RoleDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     governanceResourceToInitialize.RoleDefinitions.AdditionalData = governanceResourceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    governanceResourceToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        governanceResourceToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (governanceResourceToInitialize.RoleSettings != null && governanceResourceToInitialize.RoleSettings.CurrentPage != null)
                 {
+                    governanceResourceToInitialize.RoleSettings.InitializeNextPageRequest(this.Client, governanceResourceToInitialize.RoleSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     governanceResourceToInitialize.RoleSettings.AdditionalData = governanceResourceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    governanceResourceToInitialize.AdditionalData.TryGetValue("roleSettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        governanceResourceToInitialize.RoleSettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

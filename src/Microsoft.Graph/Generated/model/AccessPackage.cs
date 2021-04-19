@@ -97,6 +97,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentPolicies")]
         public IAccessPackageAccessPackageAssignmentPoliciesCollectionPage AccessPackageAssignmentPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentPolicies@odata.nextLink")]
+        public string AccessPackageAssignmentPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package catalog.
@@ -111,6 +117,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackageResourceRoleScopes")]
         public IAccessPackageAccessPackageResourceRoleScopesCollectionPage AccessPackageResourceRoleScopes { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourceRoleScopesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceRoleScopes@odata.nextLink")]
+        public string AccessPackageResourceRoleScopesNextLink { get; set; }
     
     }
 }

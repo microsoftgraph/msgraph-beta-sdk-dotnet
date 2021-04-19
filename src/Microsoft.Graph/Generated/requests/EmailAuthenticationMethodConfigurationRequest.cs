@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToInitialize)
         {
 
-            if (emailAuthenticationMethodConfigurationToInitialize != null && emailAuthenticationMethodConfigurationToInitialize.AdditionalData != null)
+            if (emailAuthenticationMethodConfigurationToInitialize != null)
             {
-
                 if (emailAuthenticationMethodConfigurationToInitialize.IncludeTargets != null && emailAuthenticationMethodConfigurationToInitialize.IncludeTargets.CurrentPage != null)
                 {
+                    emailAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(this.Client, emailAuthenticationMethodConfigurationToInitialize.IncludeTargetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     emailAuthenticationMethodConfigurationToInitialize.IncludeTargets.AdditionalData = emailAuthenticationMethodConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    emailAuthenticationMethodConfigurationToInitialize.AdditionalData.TryGetValue("includeTargets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        emailAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

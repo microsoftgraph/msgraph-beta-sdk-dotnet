@@ -84,6 +84,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("results")]
         public IThreatAssessmentRequestResultsCollectionPage Results { get; set; }
+
+        /// <summary>
+        /// Gets or sets resultsNextLink.
+        /// </summary>
+        [JsonPropertyName("results@odata.nextLink")]
+        public string ResultsNextLink { get; set; }
     
     }
 }

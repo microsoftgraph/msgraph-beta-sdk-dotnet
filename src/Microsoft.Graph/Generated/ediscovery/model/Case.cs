@@ -96,30 +96,60 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         [JsonPropertyName("custodians")]
         public ICaseCustodiansCollectionPage Custodians { get; set; }
+
+        /// <summary>
+        /// Gets or sets custodiansNextLink.
+        /// </summary>
+        [JsonPropertyName("custodians@odata.nextLink")]
+        public string CustodiansNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets legal holds.
         /// </summary>
         [JsonPropertyName("legalHolds")]
         public ICaseLegalHoldsCollectionPage LegalHolds { get; set; }
+
+        /// <summary>
+        /// Gets or sets legalHoldsNextLink.
+        /// </summary>
+        [JsonPropertyName("legalHolds@odata.nextLink")]
+        public string LegalHoldsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets noncustodial data sources.
         /// </summary>
         [JsonPropertyName("noncustodialDataSources")]
         public ICaseNoncustodialDataSourcesCollectionPage NoncustodialDataSources { get; set; }
+
+        /// <summary>
+        /// Gets or sets noncustodialDataSourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("noncustodialDataSources@odata.nextLink")]
+        public string NoncustodialDataSourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
         /// </summary>
         [JsonPropertyName("operations")]
         public ICaseOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets review sets.
         /// </summary>
         [JsonPropertyName("reviewSets")]
         public ICaseReviewSetsCollectionPage ReviewSets { get; set; }
+
+        /// <summary>
+        /// Gets or sets reviewSetsNextLink.
+        /// </summary>
+        [JsonPropertyName("reviewSets@odata.nextLink")]
+        public string ReviewSetsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
@@ -133,6 +163,12 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         [JsonPropertyName("sourceCollections")]
         public ICaseSourceCollectionsCollectionPage SourceCollections { get; set; }
+
+        /// <summary>
+        /// Gets or sets sourceCollectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("sourceCollections@odata.nextLink")]
+        public string SourceCollectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
@@ -140,6 +176,12 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         [JsonPropertyName("tags")]
         public ICaseTagsCollectionPage Tags { get; set; }
+
+        /// <summary>
+        /// Gets or sets tagsNextLink.
+        /// </summary>
+        [JsonPropertyName("tags@odata.nextLink")]
+        public string TagsNextLink { get; set; }
     
     }
 }

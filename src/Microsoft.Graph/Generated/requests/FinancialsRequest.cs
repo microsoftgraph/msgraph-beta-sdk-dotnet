@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Financials financialsToInitialize)
         {
 
-            if (financialsToInitialize != null && financialsToInitialize.AdditionalData != null)
+            if (financialsToInitialize != null)
             {
-
                 if (financialsToInitialize.Companies != null && financialsToInitialize.Companies.CurrentPage != null)
                 {
+                    financialsToInitialize.Companies.InitializeNextPageRequest(this.Client, financialsToInitialize.CompaniesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     financialsToInitialize.Companies.AdditionalData = financialsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    financialsToInitialize.AdditionalData.TryGetValue("companies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        financialsToInitialize.Companies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

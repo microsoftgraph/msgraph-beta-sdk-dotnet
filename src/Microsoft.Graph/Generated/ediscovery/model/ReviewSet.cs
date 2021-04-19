@@ -55,6 +55,12 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         [JsonPropertyName("queries")]
         public IReviewSetQueriesCollectionPage Queries { get; set; }
+
+        /// <summary>
+        /// Gets or sets queriesNextLink.
+        /// </summary>
+        [JsonPropertyName("queries@odata.nextLink")]
+        public string QueriesNextLink { get; set; }
     
     }
 }

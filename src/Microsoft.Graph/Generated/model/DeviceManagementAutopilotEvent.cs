@@ -216,6 +216,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("policyStatusDetails")]
         public IDeviceManagementAutopilotEventPolicyStatusDetailsCollectionPage PolicyStatusDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets policyStatusDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("policyStatusDetails@odata.nextLink")]
+        public string PolicyStatusDetailsNextLink { get; set; }
     
     }
 }

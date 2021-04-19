@@ -105,6 +105,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IDeviceConfigurationAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device setting state summaries.
@@ -112,6 +118,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceSettingStateSummaries")]
         public IDeviceConfigurationDeviceSettingStateSummariesCollectionPage DeviceSettingStateSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceSettingStateSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceSettingStateSummaries@odata.nextLink")]
+        public string DeviceSettingStateSummariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device statuses.
@@ -119,6 +131,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceStatuses")]
         public IDeviceConfigurationDeviceStatusesCollectionPage DeviceStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceStatuses@odata.nextLink")]
+        public string DeviceStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device status overview.
@@ -133,6 +151,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupAssignments")]
         public IDeviceConfigurationGroupAssignmentsCollectionPage GroupAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("groupAssignments@odata.nextLink")]
+        public string GroupAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user statuses.
@@ -140,6 +164,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userStatuses")]
         public IDeviceConfigurationUserStatusesCollectionPage UserStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets userStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("userStatuses@odata.nextLink")]
+        public string UserStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user status overview.

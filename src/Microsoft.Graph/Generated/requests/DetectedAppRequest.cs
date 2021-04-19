@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DetectedApp detectedAppToInitialize)
         {
 
-            if (detectedAppToInitialize != null && detectedAppToInitialize.AdditionalData != null)
+            if (detectedAppToInitialize != null)
             {
-
                 if (detectedAppToInitialize.ManagedDevices != null && detectedAppToInitialize.ManagedDevices.CurrentPage != null)
                 {
+                    detectedAppToInitialize.ManagedDevices.InitializeNextPageRequest(this.Client, detectedAppToInitialize.ManagedDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     detectedAppToInitialize.ManagedDevices.AdditionalData = detectedAppToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    detectedAppToInitialize.AdditionalData.TryGetValue("managedDevices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        detectedAppToInitialize.ManagedDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

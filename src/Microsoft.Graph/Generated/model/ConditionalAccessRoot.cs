@@ -33,18 +33,36 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("authenticationContextClassReferences")]
         public IConditionalAccessRootAuthenticationContextClassReferencesCollectionPage AuthenticationContextClassReferences { get; set; }
+
+        /// <summary>
+        /// Gets or sets authenticationContextClassReferencesNextLink.
+        /// </summary>
+        [JsonPropertyName("authenticationContextClassReferences@odata.nextLink")]
+        public string AuthenticationContextClassReferencesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets named locations.
         /// </summary>
         [JsonPropertyName("namedLocations")]
         public IConditionalAccessRootNamedLocationsCollectionPage NamedLocations { get; set; }
+
+        /// <summary>
+        /// Gets or sets namedLocationsNextLink.
+        /// </summary>
+        [JsonPropertyName("namedLocations@odata.nextLink")]
+        public string NamedLocationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets policies.
         /// </summary>
         [JsonPropertyName("policies")]
         public IConditionalAccessRootPoliciesCollectionPage Policies { get; set; }
+
+        /// <summary>
+        /// Gets or sets policiesNextLink.
+        /// </summary>
+        [JsonPropertyName("policies@odata.nextLink")]
+        public string PoliciesNextLink { get; set; }
     
     }
 }

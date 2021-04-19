@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToInitialize)
         {
 
-            if (deviceManagementAutopilotEventToInitialize != null && deviceManagementAutopilotEventToInitialize.AdditionalData != null)
+            if (deviceManagementAutopilotEventToInitialize != null)
             {
-
                 if (deviceManagementAutopilotEventToInitialize.PolicyStatusDetails != null && deviceManagementAutopilotEventToInitialize.PolicyStatusDetails.CurrentPage != null)
                 {
+                    deviceManagementAutopilotEventToInitialize.PolicyStatusDetails.InitializeNextPageRequest(this.Client, deviceManagementAutopilotEventToInitialize.PolicyStatusDetailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementAutopilotEventToInitialize.PolicyStatusDetails.AdditionalData = deviceManagementAutopilotEventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementAutopilotEventToInitialize.AdditionalData.TryGetValue("policyStatusDetails@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementAutopilotEventToInitialize.PolicyStatusDetails.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

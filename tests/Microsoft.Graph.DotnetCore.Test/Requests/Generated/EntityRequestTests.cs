@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -43,10 +44,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 
                 var expectedItemResponse = new DriveItem
                 {
-                    AdditionalData = new Dictionary<string, object>
-                    {
-                        { "children@odata.nextLink", requestUrl + "/next" }
-                    },
+                    ChildrenNextLink =  requestUrl + "/next",
                     Children = expectedChildrenPage,
                 };
 

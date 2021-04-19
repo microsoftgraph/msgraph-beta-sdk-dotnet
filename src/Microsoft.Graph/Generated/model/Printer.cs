@@ -68,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("connectors")]
         public IPrinterConnectorsCollectionWithReferencesPage Connectors { get; set; }
+
+        /// <summary>
+        /// Gets or sets connectorsNextLink.
+        /// </summary>
+        [JsonPropertyName("connectors@odata.nextLink")]
+        public string ConnectorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets share.
@@ -81,6 +87,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("shares")]
         public IPrinterSharesCollectionWithReferencesPage Shares { get; set; }
+
+        /// <summary>
+        /// Gets or sets sharesNextLink.
+        /// </summary>
+        [JsonPropertyName("shares@odata.nextLink")]
+        public string SharesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets task triggers.
@@ -88,6 +100,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("taskTriggers")]
         public IPrinterTaskTriggersCollectionPage TaskTriggers { get; set; }
+
+        /// <summary>
+        /// Gets or sets taskTriggersNextLink.
+        /// </summary>
+        [JsonPropertyName("taskTriggers@odata.nextLink")]
+        public string TaskTriggersNextLink { get; set; }
     
     }
 }

@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Notebook notebookToInitialize)
         {
 
-            if (notebookToInitialize != null && notebookToInitialize.AdditionalData != null)
+            if (notebookToInitialize != null)
             {
-
                 if (notebookToInitialize.SectionGroups != null && notebookToInitialize.SectionGroups.CurrentPage != null)
                 {
+                    notebookToInitialize.SectionGroups.InitializeNextPageRequest(this.Client, notebookToInitialize.SectionGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     notebookToInitialize.SectionGroups.AdditionalData = notebookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    notebookToInitialize.AdditionalData.TryGetValue("sectionGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        notebookToInitialize.SectionGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (notebookToInitialize.Sections != null && notebookToInitialize.Sections.CurrentPage != null)
                 {
+                    notebookToInitialize.Sections.InitializeNextPageRequest(this.Client, notebookToInitialize.SectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     notebookToInitialize.Sections.AdditionalData = notebookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    notebookToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        notebookToInitialize.Sections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

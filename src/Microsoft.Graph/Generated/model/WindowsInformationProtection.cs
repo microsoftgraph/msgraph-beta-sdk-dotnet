@@ -189,6 +189,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IWindowsInformationProtectionAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets exempt app locker files.
@@ -196,6 +202,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("exemptAppLockerFiles")]
         public IWindowsInformationProtectionExemptAppLockerFilesCollectionPage ExemptAppLockerFiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets exemptAppLockerFilesNextLink.
+        /// </summary>
+        [JsonPropertyName("exemptAppLockerFiles@odata.nextLink")]
+        public string ExemptAppLockerFilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets protected app locker files.
@@ -203,6 +215,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("protectedAppLockerFiles")]
         public IWindowsInformationProtectionProtectedAppLockerFilesCollectionPage ProtectedAppLockerFiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets protectedAppLockerFilesNextLink.
+        /// </summary>
+        [JsonPropertyName("protectedAppLockerFiles@odata.nextLink")]
+        public string ProtectedAppLockerFilesNextLink { get; set; }
     
     }
 }

@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementScriptUserState deviceManagementScriptUserStateToInitialize)
         {
 
-            if (deviceManagementScriptUserStateToInitialize != null && deviceManagementScriptUserStateToInitialize.AdditionalData != null)
+            if (deviceManagementScriptUserStateToInitialize != null)
             {
-
                 if (deviceManagementScriptUserStateToInitialize.DeviceRunStates != null && deviceManagementScriptUserStateToInitialize.DeviceRunStates.CurrentPage != null)
                 {
+                    deviceManagementScriptUserStateToInitialize.DeviceRunStates.InitializeNextPageRequest(this.Client, deviceManagementScriptUserStateToInitialize.DeviceRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementScriptUserStateToInitialize.DeviceRunStates.AdditionalData = deviceManagementScriptUserStateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementScriptUserStateToInitialize.AdditionalData.TryGetValue("deviceRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementScriptUserStateToInitialize.DeviceRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

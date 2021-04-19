@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagementCondition managementConditionToInitialize)
         {
 
-            if (managementConditionToInitialize != null && managementConditionToInitialize.AdditionalData != null)
+            if (managementConditionToInitialize != null)
             {
-
                 if (managementConditionToInitialize.ManagementConditionStatements != null && managementConditionToInitialize.ManagementConditionStatements.CurrentPage != null)
                 {
+                    managementConditionToInitialize.ManagementConditionStatements.InitializeNextPageRequest(this.Client, managementConditionToInitialize.ManagementConditionStatementsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managementConditionToInitialize.ManagementConditionStatements.AdditionalData = managementConditionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managementConditionToInitialize.AdditionalData.TryGetValue("managementConditionStatements@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managementConditionToInitialize.ManagementConditionStatements.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -270,6 +270,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("usageRights")]
         public IDeviceUsageRightsCollectionPage UsageRights { get; set; }
+
+        /// <summary>
+        /// Gets or sets usageRightsNextLink.
+        /// </summary>
+        [JsonPropertyName("usageRights@odata.nextLink")]
+        public string UsageRightsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets member of.
@@ -277,6 +283,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IDeviceMemberOfCollectionWithReferencesPage MemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets memberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("memberOf@odata.nextLink")]
+        public string MemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets registered owners.
@@ -284,6 +296,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("registeredOwners")]
         public IDeviceRegisteredOwnersCollectionWithReferencesPage RegisteredOwners { get; set; }
+
+        /// <summary>
+        /// Gets or sets registeredOwnersNextLink.
+        /// </summary>
+        [JsonPropertyName("registeredOwners@odata.nextLink")]
+        public string RegisteredOwnersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets registered users.
@@ -291,12 +309,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("registeredUsers")]
         public IDeviceRegisteredUsersCollectionWithReferencesPage RegisteredUsers { get; set; }
+
+        /// <summary>
+        /// Gets or sets registeredUsersNextLink.
+        /// </summary>
+        [JsonPropertyName("registeredUsers@odata.nextLink")]
+        public string RegisteredUsersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets transitive member of.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf")]
         public IDeviceTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets transitiveMemberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("transitiveMemberOf@odata.nextLink")]
+        public string TransitiveMemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
@@ -304,6 +334,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("extensions")]
         public IDeviceExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets commands.
@@ -311,6 +347,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("commands")]
         public IDeviceCommandsCollectionPage Commands { get; set; }
+
+        /// <summary>
+        /// Gets or sets commandsNextLink.
+        /// </summary>
+        [JsonPropertyName("commands@odata.nextLink")]
+        public string CommandsNextLink { get; set; }
     
     }
 }

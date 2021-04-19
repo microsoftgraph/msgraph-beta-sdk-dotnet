@@ -90,6 +90,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("committedContainedApps")]
         public IWindowsUniversalAppXCommittedContainedAppsCollectionPage CommittedContainedApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets committedContainedAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("committedContainedApps@odata.nextLink")]
+        public string CommittedContainedAppsNextLink { get; set; }
     
     }
 }

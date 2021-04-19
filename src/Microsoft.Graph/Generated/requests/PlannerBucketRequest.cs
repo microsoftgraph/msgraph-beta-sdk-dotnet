@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PlannerBucket plannerBucketToInitialize)
         {
 
-            if (plannerBucketToInitialize != null && plannerBucketToInitialize.AdditionalData != null)
+            if (plannerBucketToInitialize != null)
             {
-
                 if (plannerBucketToInitialize.Tasks != null && plannerBucketToInitialize.Tasks.CurrentPage != null)
                 {
+                    plannerBucketToInitialize.Tasks.InitializeNextPageRequest(this.Client, plannerBucketToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerBucketToInitialize.Tasks.AdditionalData = plannerBucketToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    plannerBucketToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        plannerBucketToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

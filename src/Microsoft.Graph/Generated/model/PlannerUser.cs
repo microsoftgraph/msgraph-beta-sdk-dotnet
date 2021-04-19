@@ -47,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("all")]
         public IPlannerUserAllCollectionPage All { get; set; }
+
+        /// <summary>
+        /// Gets or sets allNextLink.
+        /// </summary>
+        [JsonPropertyName("all@odata.nextLink")]
+        public string AllNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets favorite plans.
@@ -54,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("favoritePlans")]
         public IPlannerUserFavoritePlansCollectionWithReferencesPage FavoritePlans { get; set; }
+
+        /// <summary>
+        /// Gets or sets favoritePlansNextLink.
+        /// </summary>
+        [JsonPropertyName("favoritePlans@odata.nextLink")]
+        public string FavoritePlansNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets plans.
@@ -61,6 +73,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("plans")]
         public IPlannerUserPlansCollectionPage Plans { get; set; }
+
+        /// <summary>
+        /// Gets or sets plansNextLink.
+        /// </summary>
+        [JsonPropertyName("plans@odata.nextLink")]
+        public string PlansNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets recent plans.
@@ -68,6 +86,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("recentPlans")]
         public IPlannerUserRecentPlansCollectionWithReferencesPage RecentPlans { get; set; }
+
+        /// <summary>
+        /// Gets or sets recentPlansNextLink.
+        /// </summary>
+        [JsonPropertyName("recentPlans@odata.nextLink")]
+        public string RecentPlansNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets roster plans.
@@ -75,6 +99,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("rosterPlans")]
         public IPlannerUserRosterPlansCollectionWithReferencesPage RosterPlans { get; set; }
+
+        /// <summary>
+        /// Gets or sets rosterPlansNextLink.
+        /// </summary>
+        [JsonPropertyName("rosterPlans@odata.nextLink")]
+        public string RosterPlansNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
@@ -82,6 +112,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tasks")]
         public IPlannerUserTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

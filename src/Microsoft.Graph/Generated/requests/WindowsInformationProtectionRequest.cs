@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsInformationProtection windowsInformationProtectionToInitialize)
         {
 
-            if (windowsInformationProtectionToInitialize != null && windowsInformationProtectionToInitialize.AdditionalData != null)
+            if (windowsInformationProtectionToInitialize != null)
             {
-
                 if (windowsInformationProtectionToInitialize.Assignments != null && windowsInformationProtectionToInitialize.Assignments.CurrentPage != null)
                 {
+                    windowsInformationProtectionToInitialize.Assignments.InitializeNextPageRequest(this.Client, windowsInformationProtectionToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsInformationProtectionToInitialize.Assignments.AdditionalData = windowsInformationProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsInformationProtectionToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (windowsInformationProtectionToInitialize.ExemptAppLockerFiles != null && windowsInformationProtectionToInitialize.ExemptAppLockerFiles.CurrentPage != null)
                 {
+                    windowsInformationProtectionToInitialize.ExemptAppLockerFiles.InitializeNextPageRequest(this.Client, windowsInformationProtectionToInitialize.ExemptAppLockerFilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsInformationProtectionToInitialize.ExemptAppLockerFiles.AdditionalData = windowsInformationProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("exemptAppLockerFiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsInformationProtectionToInitialize.ExemptAppLockerFiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (windowsInformationProtectionToInitialize.ProtectedAppLockerFiles != null && windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.CurrentPage != null)
                 {
+                    windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.InitializeNextPageRequest(this.Client, windowsInformationProtectionToInitialize.ProtectedAppLockerFilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.AdditionalData = windowsInformationProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("protectedAppLockerFiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

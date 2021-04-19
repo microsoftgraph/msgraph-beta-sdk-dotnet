@@ -75,12 +75,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("effectiveRules")]
         public IUnifiedRoleManagementPolicyEffectiveRulesCollectionPage EffectiveRules { get; set; }
+
+        /// <summary>
+        /// Gets or sets effectiveRulesNextLink.
+        /// </summary>
+        [JsonPropertyName("effectiveRules@odata.nextLink")]
+        public string EffectiveRulesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets rules.
         /// </summary>
         [JsonPropertyName("rules")]
         public IUnifiedRoleManagementPolicyRulesCollectionPage Rules { get; set; }
+
+        /// <summary>
+        /// Gets or sets rulesNextLink.
+        /// </summary>
+        [JsonPropertyName("rules@odata.nextLink")]
+        public string RulesNextLink { get; set; }
     
     }
 }

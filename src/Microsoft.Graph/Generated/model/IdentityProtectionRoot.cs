@@ -34,12 +34,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("riskDetections")]
         public IIdentityProtectionRootRiskDetectionsCollectionPage RiskDetections { get; set; }
+
+        /// <summary>
+        /// Gets or sets riskDetectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("riskDetections@odata.nextLink")]
+        public string RiskDetectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets risky users.
         /// </summary>
         [JsonPropertyName("riskyUsers")]
         public IIdentityProtectionRootRiskyUsersCollectionPage RiskyUsers { get; set; }
+
+        /// <summary>
+        /// Gets or sets riskyUsersNextLink.
+        /// </summary>
+        [JsonPropertyName("riskyUsers@odata.nextLink")]
+        public string RiskyUsersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("categoryDeviceStateSummaries")]
         public ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionPage CategoryDeviceStateSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets categoryDeviceStateSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("categoryDeviceStateSummaries@odata.nextLink")]
+        public string CategoryDeviceStateSummariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device states.
@@ -41,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceStates")]
         public ISecurityBaselineTemplateDeviceStatesCollectionPage DeviceStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceStates@odata.nextLink")]
+        public string DeviceStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device state summary.

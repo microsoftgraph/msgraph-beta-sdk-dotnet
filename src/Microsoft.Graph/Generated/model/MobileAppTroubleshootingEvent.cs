@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appLogCollectionRequests")]
         public IMobileAppTroubleshootingEventAppLogCollectionRequestsCollectionPage AppLogCollectionRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets appLogCollectionRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("appLogCollectionRequests@odata.nextLink")]
+        public string AppLogCollectionRequestsNextLink { get; set; }
     
     }
 }

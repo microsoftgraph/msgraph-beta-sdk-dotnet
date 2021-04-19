@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SalesCreditMemo salesCreditMemoToInitialize)
         {
 
-            if (salesCreditMemoToInitialize != null && salesCreditMemoToInitialize.AdditionalData != null)
+            if (salesCreditMemoToInitialize != null)
             {
-
                 if (salesCreditMemoToInitialize.SalesCreditMemoLines != null && salesCreditMemoToInitialize.SalesCreditMemoLines.CurrentPage != null)
                 {
+                    salesCreditMemoToInitialize.SalesCreditMemoLines.InitializeNextPageRequest(this.Client, salesCreditMemoToInitialize.SalesCreditMemoLinesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     salesCreditMemoToInitialize.SalesCreditMemoLines.AdditionalData = salesCreditMemoToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    salesCreditMemoToInitialize.AdditionalData.TryGetValue("salesCreditMemoLines@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        salesCreditMemoToInitialize.SalesCreditMemoLines.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

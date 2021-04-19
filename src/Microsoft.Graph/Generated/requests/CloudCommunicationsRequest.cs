@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(CloudCommunications cloudCommunicationsToInitialize)
         {
 
-            if (cloudCommunicationsToInitialize != null && cloudCommunicationsToInitialize.AdditionalData != null)
+            if (cloudCommunicationsToInitialize != null)
             {
-
                 if (cloudCommunicationsToInitialize.Calls != null && cloudCommunicationsToInitialize.Calls.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.Calls.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.CallsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.Calls.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("calls@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        cloudCommunicationsToInitialize.Calls.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (cloudCommunicationsToInitialize.CallRecords != null && cloudCommunicationsToInitialize.CallRecords.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.CallRecords.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.CallRecordsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.CallRecords.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("callRecords@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        cloudCommunicationsToInitialize.CallRecords.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (cloudCommunicationsToInitialize.OnlineMeetings != null && cloudCommunicationsToInitialize.OnlineMeetings.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.OnlineMeetings.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.OnlineMeetingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.OnlineMeetings.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        cloudCommunicationsToInitialize.OnlineMeetings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (cloudCommunicationsToInitialize.Presences != null && cloudCommunicationsToInitialize.Presences.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.Presences.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.PresencesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.Presences.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("presences@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        cloudCommunicationsToInitialize.Presences.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

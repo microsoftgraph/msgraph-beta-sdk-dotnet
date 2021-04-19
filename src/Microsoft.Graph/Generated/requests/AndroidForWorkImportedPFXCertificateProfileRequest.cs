@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AndroidForWorkImportedPFXCertificateProfile androidForWorkImportedPFXCertificateProfileToInitialize)
         {
 
-            if (androidForWorkImportedPFXCertificateProfileToInitialize != null && androidForWorkImportedPFXCertificateProfileToInitialize.AdditionalData != null)
+            if (androidForWorkImportedPFXCertificateProfileToInitialize != null)
             {
-
                 if (androidForWorkImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && androidForWorkImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    androidForWorkImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, androidForWorkImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     androidForWorkImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = androidForWorkImportedPFXCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    androidForWorkImportedPFXCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        androidForWorkImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

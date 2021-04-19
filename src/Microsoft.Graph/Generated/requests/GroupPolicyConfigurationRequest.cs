@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(GroupPolicyConfiguration groupPolicyConfigurationToInitialize)
         {
 
-            if (groupPolicyConfigurationToInitialize != null && groupPolicyConfigurationToInitialize.AdditionalData != null)
+            if (groupPolicyConfigurationToInitialize != null)
             {
-
                 if (groupPolicyConfigurationToInitialize.Assignments != null && groupPolicyConfigurationToInitialize.Assignments.CurrentPage != null)
                 {
+                    groupPolicyConfigurationToInitialize.Assignments.InitializeNextPageRequest(this.Client, groupPolicyConfigurationToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupPolicyConfigurationToInitialize.Assignments.AdditionalData = groupPolicyConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupPolicyConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupPolicyConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupPolicyConfigurationToInitialize.DefinitionValues != null && groupPolicyConfigurationToInitialize.DefinitionValues.CurrentPage != null)
                 {
+                    groupPolicyConfigurationToInitialize.DefinitionValues.InitializeNextPageRequest(this.Client, groupPolicyConfigurationToInitialize.DefinitionValuesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupPolicyConfigurationToInitialize.DefinitionValues.AdditionalData = groupPolicyConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupPolicyConfigurationToInitialize.AdditionalData.TryGetValue("definitionValues@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupPolicyConfigurationToInitialize.DefinitionValues.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

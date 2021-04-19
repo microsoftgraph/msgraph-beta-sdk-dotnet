@@ -172,12 +172,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("hostedContents")]
         public IChatMessageHostedContentsCollectionPage HostedContents { get; set; }
+
+        /// <summary>
+        /// Gets or sets hostedContentsNextLink.
+        /// </summary>
+        [JsonPropertyName("hostedContents@odata.nextLink")]
+        public string HostedContentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets replies.
         /// </summary>
         [JsonPropertyName("replies")]
         public IChatMessageRepliesCollectionPage Replies { get; set; }
+
+        /// <summary>
+        /// Gets or sets repliesNextLink.
+        /// </summary>
+        [JsonPropertyName("replies@odata.nextLink")]
+        public string RepliesNextLink { get; set; }
     
     }
 }

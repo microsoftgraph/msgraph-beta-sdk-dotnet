@@ -132,6 +132,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("enrollmentProfiles")]
         public IDepOnboardingSettingEnrollmentProfilesCollectionPage EnrollmentProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets enrollmentProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("enrollmentProfiles@odata.nextLink")]
+        public string EnrollmentProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets imported apple device identities.
@@ -139,6 +145,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("importedAppleDeviceIdentities")]
         public IDepOnboardingSettingImportedAppleDeviceIdentitiesCollectionPage ImportedAppleDeviceIdentities { get; set; }
+
+        /// <summary>
+        /// Gets or sets importedAppleDeviceIdentitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("importedAppleDeviceIdentities@odata.nextLink")]
+        public string ImportedAppleDeviceIdentitiesNextLink { get; set; }
     
     }
 }

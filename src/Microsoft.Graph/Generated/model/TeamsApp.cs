@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appDefinitions")]
         public ITeamsAppAppDefinitionsCollectionPage AppDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets appDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("appDefinitions@odata.nextLink")]
+        public string AppDefinitionsNextLink { get; set; }
     
     }
 }

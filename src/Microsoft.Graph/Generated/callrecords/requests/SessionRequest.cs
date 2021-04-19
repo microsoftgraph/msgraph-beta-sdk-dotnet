@@ -244,23 +244,13 @@ namespace Microsoft.Graph.CallRecords
         private void InitializeCollectionProperties(Session sessionToInitialize)
         {
 
-            if (sessionToInitialize != null && sessionToInitialize.AdditionalData != null)
+            if (sessionToInitialize != null)
             {
-
                 if (sessionToInitialize.Segments != null && sessionToInitialize.Segments.CurrentPage != null)
                 {
+                    sessionToInitialize.Segments.InitializeNextPageRequest(this.Client, sessionToInitialize.SegmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     sessionToInitialize.Segments.AdditionalData = sessionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    sessionToInitialize.AdditionalData.TryGetValue("segments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        sessionToInitialize.Segments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

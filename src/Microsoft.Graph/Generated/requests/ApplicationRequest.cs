@@ -244,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Application applicationToInitialize)
         {
 
-            if (applicationToInitialize != null && applicationToInitialize.AdditionalData != null)
+            if (applicationToInitialize != null)
             {
-
                 if (applicationToInitialize.ExtensionProperties != null && applicationToInitialize.ExtensionProperties.CurrentPage != null)
                 {
+                    applicationToInitialize.ExtensionProperties.InitializeNextPageRequest(this.Client, applicationToInitialize.ExtensionPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     applicationToInitialize.ExtensionProperties.AdditionalData = applicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    applicationToInitialize.AdditionalData.TryGetValue("extensionProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        applicationToInitialize.ExtensionProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (applicationToInitialize.HomeRealmDiscoveryPolicies != null && applicationToInitialize.HomeRealmDiscoveryPolicies.CurrentPage != null)
                 {
+                    applicationToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(this.Client, applicationToInitialize.HomeRealmDiscoveryPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     applicationToInitialize.HomeRealmDiscoveryPolicies.AdditionalData = applicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    applicationToInitialize.AdditionalData.TryGetValue("homeRealmDiscoveryPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        applicationToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (applicationToInitialize.Owners != null && applicationToInitialize.Owners.CurrentPage != null)
                 {
+                    applicationToInitialize.Owners.InitializeNextPageRequest(this.Client, applicationToInitialize.OwnersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     applicationToInitialize.Owners.AdditionalData = applicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    applicationToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        applicationToInitialize.Owners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (applicationToInitialize.TokenIssuancePolicies != null && applicationToInitialize.TokenIssuancePolicies.CurrentPage != null)
                 {
+                    applicationToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(this.Client, applicationToInitialize.TokenIssuancePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     applicationToInitialize.TokenIssuancePolicies.AdditionalData = applicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    applicationToInitialize.AdditionalData.TryGetValue("tokenIssuancePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        applicationToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (applicationToInitialize.TokenLifetimePolicies != null && applicationToInitialize.TokenLifetimePolicies.CurrentPage != null)
                 {
+                    applicationToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(this.Client, applicationToInitialize.TokenLifetimePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     applicationToInitialize.TokenLifetimePolicies.AdditionalData = applicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    applicationToInitialize.AdditionalData.TryGetValue("tokenLifetimePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        applicationToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToInitialize)
         {
 
-            if (managedDeviceMobileAppConfigurationToInitialize != null && managedDeviceMobileAppConfigurationToInitialize.AdditionalData != null)
+            if (managedDeviceMobileAppConfigurationToInitialize != null)
             {
-
                 if (managedDeviceMobileAppConfigurationToInitialize.Assignments != null && managedDeviceMobileAppConfigurationToInitialize.Assignments.CurrentPage != null)
                 {
+                    managedDeviceMobileAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(this.Client, managedDeviceMobileAppConfigurationToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceMobileAppConfigurationToInitialize.Assignments.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceMobileAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses != null && managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.CurrentPage != null)
                 {
+                    managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, managedDeviceMobileAppConfigurationToInitialize.DeviceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedDeviceMobileAppConfigurationToInitialize.UserStatuses != null && managedDeviceMobileAppConfigurationToInitialize.UserStatuses.CurrentPage != null)
                 {
+                    managedDeviceMobileAppConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(this.Client, managedDeviceMobileAppConfigurationToInitialize.UserStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceMobileAppConfigurationToInitialize.UserStatuses.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceMobileAppConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WorkbookTable workbookTableToInitialize)
         {
 
-            if (workbookTableToInitialize != null && workbookTableToInitialize.AdditionalData != null)
+            if (workbookTableToInitialize != null)
             {
-
                 if (workbookTableToInitialize.Columns != null && workbookTableToInitialize.Columns.CurrentPage != null)
                 {
+                    workbookTableToInitialize.Columns.InitializeNextPageRequest(this.Client, workbookTableToInitialize.ColumnsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookTableToInitialize.Columns.AdditionalData = workbookTableToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookTableToInitialize.AdditionalData.TryGetValue("columns@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookTableToInitialize.Columns.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookTableToInitialize.Rows != null && workbookTableToInitialize.Rows.CurrentPage != null)
                 {
+                    workbookTableToInitialize.Rows.InitializeNextPageRequest(this.Client, workbookTableToInitialize.RowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookTableToInitialize.Rows.AdditionalData = workbookTableToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookTableToInitialize.AdditionalData.TryGetValue("rows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookTableToInitialize.Rows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

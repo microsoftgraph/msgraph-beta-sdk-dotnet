@@ -244,23 +244,13 @@ namespace Microsoft.Graph.Ediscovery
         private void InitializeCollectionProperties(Ediscoveryroot ediscoveryrootToInitialize)
         {
 
-            if (ediscoveryrootToInitialize != null && ediscoveryrootToInitialize.AdditionalData != null)
+            if (ediscoveryrootToInitialize != null)
             {
-
                 if (ediscoveryrootToInitialize.Cases != null && ediscoveryrootToInitialize.Cases.CurrentPage != null)
                 {
+                    ediscoveryrootToInitialize.Cases.InitializeNextPageRequest(this.Client, ediscoveryrootToInitialize.CasesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     ediscoveryrootToInitialize.Cases.AdditionalData = ediscoveryrootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    ediscoveryrootToInitialize.AdditionalData.TryGetValue("cases@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        ediscoveryrootToInitialize.Cases.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

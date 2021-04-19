@@ -244,103 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MailFolder mailFolderToInitialize)
         {
 
-            if (mailFolderToInitialize != null && mailFolderToInitialize.AdditionalData != null)
+            if (mailFolderToInitialize != null)
             {
-
                 if (mailFolderToInitialize.ChildFolders != null && mailFolderToInitialize.ChildFolders.CurrentPage != null)
                 {
+                    mailFolderToInitialize.ChildFolders.InitializeNextPageRequest(this.Client, mailFolderToInitialize.ChildFoldersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.ChildFolders.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("childFolders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.ChildFolders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mailFolderToInitialize.MessageRules != null && mailFolderToInitialize.MessageRules.CurrentPage != null)
                 {
+                    mailFolderToInitialize.MessageRules.InitializeNextPageRequest(this.Client, mailFolderToInitialize.MessageRulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.MessageRules.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("messageRules@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.MessageRules.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mailFolderToInitialize.Messages != null && mailFolderToInitialize.Messages.CurrentPage != null)
                 {
+                    mailFolderToInitialize.Messages.InitializeNextPageRequest(this.Client, mailFolderToInitialize.MessagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.Messages.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.Messages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mailFolderToInitialize.MultiValueExtendedProperties != null && mailFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    mailFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, mailFolderToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.MultiValueExtendedProperties.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mailFolderToInitialize.SingleValueExtendedProperties != null && mailFolderToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    mailFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, mailFolderToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.SingleValueExtendedProperties.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mailFolderToInitialize.UserConfigurations != null && mailFolderToInitialize.UserConfigurations.CurrentPage != null)
                 {
+                    mailFolderToInitialize.UserConfigurations.InitializeNextPageRequest(this.Client, mailFolderToInitialize.UserConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.UserConfigurations.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("userConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.UserConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

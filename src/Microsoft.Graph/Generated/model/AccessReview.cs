@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("decisions")]
         public IAccessReviewDecisionsCollectionPage Decisions { get; set; }
+
+        /// <summary>
+        /// Gets or sets decisionsNextLink.
+        /// </summary>
+        [JsonPropertyName("decisions@odata.nextLink")]
+        public string DecisionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets instances.
@@ -111,6 +117,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("instances")]
         public IAccessReviewInstancesCollectionPage Instances { get; set; }
+
+        /// <summary>
+        /// Gets or sets instancesNextLink.
+        /// </summary>
+        [JsonPropertyName("instances@odata.nextLink")]
+        public string InstancesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets my decisions.
@@ -118,6 +130,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("myDecisions")]
         public IAccessReviewMyDecisionsCollectionPage MyDecisions { get; set; }
+
+        /// <summary>
+        /// Gets or sets myDecisionsNextLink.
+        /// </summary>
+        [JsonPropertyName("myDecisions@odata.nextLink")]
+        public string MyDecisionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets reviewers.
@@ -125,6 +143,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("reviewers")]
         public IAccessReviewReviewersCollectionPage Reviewers { get; set; }
+
+        /// <summary>
+        /// Gets or sets reviewersNextLink.
+        /// </summary>
+        [JsonPropertyName("reviewers@odata.nextLink")]
+        public string ReviewersNextLink { get; set; }
     
     }
 }

@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ConnectorGroup connectorGroupToInitialize)
         {
 
-            if (connectorGroupToInitialize != null && connectorGroupToInitialize.AdditionalData != null)
+            if (connectorGroupToInitialize != null)
             {
-
                 if (connectorGroupToInitialize.Applications != null && connectorGroupToInitialize.Applications.CurrentPage != null)
                 {
+                    connectorGroupToInitialize.Applications.InitializeNextPageRequest(this.Client, connectorGroupToInitialize.ApplicationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     connectorGroupToInitialize.Applications.AdditionalData = connectorGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    connectorGroupToInitialize.AdditionalData.TryGetValue("applications@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        connectorGroupToInitialize.Applications.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (connectorGroupToInitialize.Members != null && connectorGroupToInitialize.Members.CurrentPage != null)
                 {
+                    connectorGroupToInitialize.Members.InitializeNextPageRequest(this.Client, connectorGroupToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     connectorGroupToInitialize.Members.AdditionalData = connectorGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    connectorGroupToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        connectorGroupToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

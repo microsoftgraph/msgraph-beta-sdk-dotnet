@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedEBook managedEBookToInitialize)
         {
 
-            if (managedEBookToInitialize != null && managedEBookToInitialize.AdditionalData != null)
+            if (managedEBookToInitialize != null)
             {
-
                 if (managedEBookToInitialize.Assignments != null && managedEBookToInitialize.Assignments.CurrentPage != null)
                 {
+                    managedEBookToInitialize.Assignments.InitializeNextPageRequest(this.Client, managedEBookToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedEBookToInitialize.Assignments.AdditionalData = managedEBookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedEBookToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedEBookToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedEBookToInitialize.Categories != null && managedEBookToInitialize.Categories.CurrentPage != null)
                 {
+                    managedEBookToInitialize.Categories.InitializeNextPageRequest(this.Client, managedEBookToInitialize.CategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedEBookToInitialize.Categories.AdditionalData = managedEBookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedEBookToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedEBookToInitialize.Categories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedEBookToInitialize.DeviceStates != null && managedEBookToInitialize.DeviceStates.CurrentPage != null)
                 {
+                    managedEBookToInitialize.DeviceStates.InitializeNextPageRequest(this.Client, managedEBookToInitialize.DeviceStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedEBookToInitialize.DeviceStates.AdditionalData = managedEBookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedEBookToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedEBookToInitialize.DeviceStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedEBookToInitialize.UserStateSummary != null && managedEBookToInitialize.UserStateSummary.CurrentPage != null)
                 {
+                    managedEBookToInitialize.UserStateSummary.InitializeNextPageRequest(this.Client, managedEBookToInitialize.UserStateSummaryNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedEBookToInitialize.UserStateSummary.AdditionalData = managedEBookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedEBookToInitialize.AdditionalData.TryGetValue("userStateSummary@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedEBookToInitialize.UserStateSummary.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

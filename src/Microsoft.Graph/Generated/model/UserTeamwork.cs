@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("installedApps")]
         public IUserTeamworkInstalledAppsCollectionPage InstalledApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets installedAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("installedApps@odata.nextLink")]
+        public string InstalledAppsNextLink { get; set; }
     
     }
 }

@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("applicationSignInDetailedSummary")]
         public IReportRootApplicationSignInDetailedSummaryCollectionPage ApplicationSignInDetailedSummary { get; set; }
+
+        /// <summary>
+        /// Gets or sets applicationSignInDetailedSummaryNextLink.
+        /// </summary>
+        [JsonPropertyName("applicationSignInDetailedSummary@odata.nextLink")]
+        public string ApplicationSignInDetailedSummaryNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets authentication methods.
@@ -45,60 +51,120 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("credentialUserRegistrationDetails")]
         public IReportRootCredentialUserRegistrationDetailsCollectionPage CredentialUserRegistrationDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets credentialUserRegistrationDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("credentialUserRegistrationDetails@odata.nextLink")]
+        public string CredentialUserRegistrationDetailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user credential usage details.
         /// </summary>
         [JsonPropertyName("userCredentialUsageDetails")]
         public IReportRootUserCredentialUsageDetailsCollectionPage UserCredentialUsageDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets userCredentialUsageDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("userCredentialUsageDetails@odata.nextLink")]
+        public string UserCredentialUsageDetailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets daily print usage by printer.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageByPrinter")]
         public IReportRootDailyPrintUsageByPrinterCollectionPage DailyPrintUsageByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByPrinter@odata.nextLink")]
+        public string DailyPrintUsageByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets daily print usage by user.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageByUser")]
         public IReportRootDailyPrintUsageByUserCollectionPage DailyPrintUsageByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByUser@odata.nextLink")]
+        public string DailyPrintUsageByUserNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets daily print usage summaries by printer.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageSummariesByPrinter")]
         public IReportRootDailyPrintUsageSummariesByPrinterCollectionPage DailyPrintUsageSummariesByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageSummariesByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageSummariesByPrinter@odata.nextLink")]
+        public string DailyPrintUsageSummariesByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets daily print usage summaries by user.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageSummariesByUser")]
         public IReportRootDailyPrintUsageSummariesByUserCollectionPage DailyPrintUsageSummariesByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageSummariesByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageSummariesByUser@odata.nextLink")]
+        public string DailyPrintUsageSummariesByUserNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage by printer.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageByPrinter")]
         public IReportRootMonthlyPrintUsageByPrinterCollectionPage MonthlyPrintUsageByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByPrinter@odata.nextLink")]
+        public string MonthlyPrintUsageByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage by user.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageByUser")]
         public IReportRootMonthlyPrintUsageByUserCollectionPage MonthlyPrintUsageByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByUser@odata.nextLink")]
+        public string MonthlyPrintUsageByUserNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage summaries by printer.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageSummariesByPrinter")]
         public IReportRootMonthlyPrintUsageSummariesByPrinterCollectionPage MonthlyPrintUsageSummariesByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageSummariesByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageSummariesByPrinter@odata.nextLink")]
+        public string MonthlyPrintUsageSummariesByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage summaries by user.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageSummariesByUser")]
         public IReportRootMonthlyPrintUsageSummariesByUserCollectionPage MonthlyPrintUsageSummariesByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageSummariesByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageSummariesByUser@odata.nextLink")]
+        public string MonthlyPrintUsageSummariesByUserNextLink { get; set; }
     
     }
 }

@@ -213,6 +213,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("activities")]
         public IDriveItemActivitiesCollectionPage Activities { get; set; }
+
+        /// <summary>
+        /// Gets or sets activitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("activities@odata.nextLink")]
+        public string ActivitiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets analytics.
@@ -227,6 +233,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("children")]
         public IDriveItemChildrenCollectionPage Children { get; set; }
+
+        /// <summary>
+        /// Gets or sets childrenNextLink.
+        /// </summary>
+        [JsonPropertyName("children@odata.nextLink")]
+        public string ChildrenNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets list item.
@@ -241,6 +253,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("permissions")]
         public IDriveItemPermissionsCollectionPage Permissions { get; set; }
+
+        /// <summary>
+        /// Gets or sets permissionsNextLink.
+        /// </summary>
+        [JsonPropertyName("permissions@odata.nextLink")]
+        public string PermissionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets subscriptions.
@@ -248,6 +266,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("subscriptions")]
         public IDriveItemSubscriptionsCollectionPage Subscriptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets subscriptionsNextLink.
+        /// </summary>
+        [JsonPropertyName("subscriptions@odata.nextLink")]
+        public string SubscriptionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets thumbnails.
@@ -255,6 +279,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("thumbnails")]
         public IDriveItemThumbnailsCollectionPage Thumbnails { get; set; }
+
+        /// <summary>
+        /// Gets or sets thumbnailsNextLink.
+        /// </summary>
+        [JsonPropertyName("thumbnails@odata.nextLink")]
+        public string ThumbnailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets versions.
@@ -262,6 +292,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("versions")]
         public IDriveItemVersionsCollectionPage Versions { get; set; }
+
+        /// <summary>
+        /// Gets or sets versionsNextLink.
+        /// </summary>
+        [JsonPropertyName("versions@odata.nextLink")]
+        public string VersionsNextLink { get; set; }
     
     }
 }

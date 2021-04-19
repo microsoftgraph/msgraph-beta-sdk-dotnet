@@ -244,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(BookingBusiness bookingBusinessToInitialize)
         {
 
-            if (bookingBusinessToInitialize != null && bookingBusinessToInitialize.AdditionalData != null)
+            if (bookingBusinessToInitialize != null)
             {
-
                 if (bookingBusinessToInitialize.Appointments != null && bookingBusinessToInitialize.Appointments.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.Appointments.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.AppointmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.Appointments.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("appointments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bookingBusinessToInitialize.Appointments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (bookingBusinessToInitialize.CalendarView != null && bookingBusinessToInitialize.CalendarView.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.CalendarView.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.CalendarViewNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.CalendarView.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bookingBusinessToInitialize.CalendarView.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (bookingBusinessToInitialize.Customers != null && bookingBusinessToInitialize.Customers.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.Customers.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.CustomersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.Customers.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("customers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bookingBusinessToInitialize.Customers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (bookingBusinessToInitialize.Services != null && bookingBusinessToInitialize.Services.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.Services.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.ServicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.Services.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("services@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bookingBusinessToInitialize.Services.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (bookingBusinessToInitialize.StaffMembers != null && bookingBusinessToInitialize.StaffMembers.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.StaffMembers.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.StaffMembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.StaffMembers.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("staffMembers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bookingBusinessToInitialize.StaffMembers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

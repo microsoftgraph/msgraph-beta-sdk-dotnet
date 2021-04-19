@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToInitialize)
         {
 
-            if (deviceComplianceScheduledActionForRuleToInitialize != null && deviceComplianceScheduledActionForRuleToInitialize.AdditionalData != null)
+            if (deviceComplianceScheduledActionForRuleToInitialize != null)
             {
-
                 if (deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations != null && deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.CurrentPage != null)
                 {
+                    deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.InitializeNextPageRequest(this.Client, deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.AdditionalData = deviceComplianceScheduledActionForRuleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceComplianceScheduledActionForRuleToInitialize.AdditionalData.TryGetValue("scheduledActionConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

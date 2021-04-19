@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("workforceIntegrations")]
         public ITeamworkWorkforceIntegrationsCollectionPage WorkforceIntegrations { get; set; }
+
+        /// <summary>
+        /// Gets or sets workforceIntegrationsNextLink.
+        /// </summary>
+        [JsonPropertyName("workforceIntegrations@odata.nextLink")]
+        public string WorkforceIntegrationsNextLink { get; set; }
     
     }
 }

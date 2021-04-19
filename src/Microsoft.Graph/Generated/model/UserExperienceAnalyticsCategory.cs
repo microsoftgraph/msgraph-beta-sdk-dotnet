@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("metricValues")]
         public IUserExperienceAnalyticsCategoryMetricValuesCollectionPage MetricValues { get; set; }
+
+        /// <summary>
+        /// Gets or sets metricValuesNextLink.
+        /// </summary>
+        [JsonPropertyName("metricValues@odata.nextLink")]
+        public string MetricValuesNextLink { get; set; }
     
     }
 }

@@ -34,6 +34,12 @@ namespace Microsoft.Graph.ExternalConnectors
         /// </summary>
         [JsonPropertyName("connections")]
         public IExternalConnectionsCollectionPage Connections { get; set; }
+
+        /// <summary>
+        /// Gets or sets connectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("connections@odata.nextLink")]
+        public string ConnectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("networkAccessConfigurations")]
         public IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage NetworkAccessConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets networkAccessConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("networkAccessConfigurations@odata.nextLink")]
+        public string NetworkAccessConfigurationsNextLink { get; set; }
     
     }
 }

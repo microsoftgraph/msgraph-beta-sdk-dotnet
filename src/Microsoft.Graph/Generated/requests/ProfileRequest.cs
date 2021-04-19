@@ -244,311 +244,121 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Profile profileToInitialize)
         {
 
-            if (profileToInitialize != null && profileToInitialize.AdditionalData != null)
+            if (profileToInitialize != null)
             {
-
                 if (profileToInitialize.Account != null && profileToInitialize.Account.CurrentPage != null)
                 {
+                    profileToInitialize.Account.InitializeNextPageRequest(this.Client, profileToInitialize.AccountNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Account.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("account@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Account.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Addresses != null && profileToInitialize.Addresses.CurrentPage != null)
                 {
+                    profileToInitialize.Addresses.InitializeNextPageRequest(this.Client, profileToInitialize.AddressesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Addresses.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("addresses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Addresses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Anniversaries != null && profileToInitialize.Anniversaries.CurrentPage != null)
                 {
+                    profileToInitialize.Anniversaries.InitializeNextPageRequest(this.Client, profileToInitialize.AnniversariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Anniversaries.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("anniversaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Anniversaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Awards != null && profileToInitialize.Awards.CurrentPage != null)
                 {
+                    profileToInitialize.Awards.InitializeNextPageRequest(this.Client, profileToInitialize.AwardsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Awards.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("awards@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Awards.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Certifications != null && profileToInitialize.Certifications.CurrentPage != null)
                 {
+                    profileToInitialize.Certifications.InitializeNextPageRequest(this.Client, profileToInitialize.CertificationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Certifications.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("certifications@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Certifications.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.EducationalActivities != null && profileToInitialize.EducationalActivities.CurrentPage != null)
                 {
+                    profileToInitialize.EducationalActivities.InitializeNextPageRequest(this.Client, profileToInitialize.EducationalActivitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.EducationalActivities.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("educationalActivities@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.EducationalActivities.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Emails != null && profileToInitialize.Emails.CurrentPage != null)
                 {
+                    profileToInitialize.Emails.InitializeNextPageRequest(this.Client, profileToInitialize.EmailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Emails.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("emails@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Emails.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Interests != null && profileToInitialize.Interests.CurrentPage != null)
                 {
+                    profileToInitialize.Interests.InitializeNextPageRequest(this.Client, profileToInitialize.InterestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Interests.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("interests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Interests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Languages != null && profileToInitialize.Languages.CurrentPage != null)
                 {
+                    profileToInitialize.Languages.InitializeNextPageRequest(this.Client, profileToInitialize.LanguagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Languages.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("languages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Languages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Names != null && profileToInitialize.Names.CurrentPage != null)
                 {
+                    profileToInitialize.Names.InitializeNextPageRequest(this.Client, profileToInitialize.NamesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Names.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("names@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Names.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Notes != null && profileToInitialize.Notes.CurrentPage != null)
                 {
+                    profileToInitialize.Notes.InitializeNextPageRequest(this.Client, profileToInitialize.NotesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Notes.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("notes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Notes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Patents != null && profileToInitialize.Patents.CurrentPage != null)
                 {
+                    profileToInitialize.Patents.InitializeNextPageRequest(this.Client, profileToInitialize.PatentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Patents.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("patents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Patents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Phones != null && profileToInitialize.Phones.CurrentPage != null)
                 {
+                    profileToInitialize.Phones.InitializeNextPageRequest(this.Client, profileToInitialize.PhonesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Phones.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("phones@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Phones.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Positions != null && profileToInitialize.Positions.CurrentPage != null)
                 {
+                    profileToInitialize.Positions.InitializeNextPageRequest(this.Client, profileToInitialize.PositionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Positions.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("positions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Positions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Projects != null && profileToInitialize.Projects.CurrentPage != null)
                 {
+                    profileToInitialize.Projects.InitializeNextPageRequest(this.Client, profileToInitialize.ProjectsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Projects.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("projects@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Projects.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Publications != null && profileToInitialize.Publications.CurrentPage != null)
                 {
+                    profileToInitialize.Publications.InitializeNextPageRequest(this.Client, profileToInitialize.PublicationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Publications.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("publications@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Publications.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Skills != null && profileToInitialize.Skills.CurrentPage != null)
                 {
+                    profileToInitialize.Skills.InitializeNextPageRequest(this.Client, profileToInitialize.SkillsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Skills.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("skills@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Skills.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.WebAccounts != null && profileToInitialize.WebAccounts.CurrentPage != null)
                 {
+                    profileToInitialize.WebAccounts.InitializeNextPageRequest(this.Client, profileToInitialize.WebAccountsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.WebAccounts.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("webAccounts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.WebAccounts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (profileToInitialize.Websites != null && profileToInitialize.Websites.CurrentPage != null)
                 {
+                    profileToInitialize.Websites.InitializeNextPageRequest(this.Client, profileToInitialize.WebsitesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     profileToInitialize.Websites.AdditionalData = profileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("websites@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        profileToInitialize.Websites.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

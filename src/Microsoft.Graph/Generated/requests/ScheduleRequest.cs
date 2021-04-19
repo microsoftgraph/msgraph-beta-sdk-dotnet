@@ -244,167 +244,67 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Schedule scheduleToInitialize)
         {
 
-            if (scheduleToInitialize != null && scheduleToInitialize.AdditionalData != null)
+            if (scheduleToInitialize != null)
             {
-
                 if (scheduleToInitialize.OfferShiftRequests != null && scheduleToInitialize.OfferShiftRequests.CurrentPage != null)
                 {
+                    scheduleToInitialize.OfferShiftRequests.InitializeNextPageRequest(this.Client, scheduleToInitialize.OfferShiftRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     scheduleToInitialize.OfferShiftRequests.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("offerShiftRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.OfferShiftRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (scheduleToInitialize.OpenShiftChangeRequests != null && scheduleToInitialize.OpenShiftChangeRequests.CurrentPage != null)
                 {
+                    scheduleToInitialize.OpenShiftChangeRequests.InitializeNextPageRequest(this.Client, scheduleToInitialize.OpenShiftChangeRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     scheduleToInitialize.OpenShiftChangeRequests.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("openShiftChangeRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.OpenShiftChangeRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (scheduleToInitialize.OpenShifts != null && scheduleToInitialize.OpenShifts.CurrentPage != null)
                 {
+                    scheduleToInitialize.OpenShifts.InitializeNextPageRequest(this.Client, scheduleToInitialize.OpenShiftsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     scheduleToInitialize.OpenShifts.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("openShifts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.OpenShifts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (scheduleToInitialize.SchedulingGroups != null && scheduleToInitialize.SchedulingGroups.CurrentPage != null)
                 {
+                    scheduleToInitialize.SchedulingGroups.InitializeNextPageRequest(this.Client, scheduleToInitialize.SchedulingGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     scheduleToInitialize.SchedulingGroups.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("schedulingGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.SchedulingGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (scheduleToInitialize.Shifts != null && scheduleToInitialize.Shifts.CurrentPage != null)
                 {
+                    scheduleToInitialize.Shifts.InitializeNextPageRequest(this.Client, scheduleToInitialize.ShiftsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     scheduleToInitialize.Shifts.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("shifts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.Shifts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (scheduleToInitialize.SwapShiftsChangeRequests != null && scheduleToInitialize.SwapShiftsChangeRequests.CurrentPage != null)
                 {
+                    scheduleToInitialize.SwapShiftsChangeRequests.InitializeNextPageRequest(this.Client, scheduleToInitialize.SwapShiftsChangeRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     scheduleToInitialize.SwapShiftsChangeRequests.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("swapShiftsChangeRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.SwapShiftsChangeRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (scheduleToInitialize.TimeCards != null && scheduleToInitialize.TimeCards.CurrentPage != null)
                 {
+                    scheduleToInitialize.TimeCards.InitializeNextPageRequest(this.Client, scheduleToInitialize.TimeCardsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     scheduleToInitialize.TimeCards.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("timeCards@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.TimeCards.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (scheduleToInitialize.TimeOffReasons != null && scheduleToInitialize.TimeOffReasons.CurrentPage != null)
                 {
+                    scheduleToInitialize.TimeOffReasons.InitializeNextPageRequest(this.Client, scheduleToInitialize.TimeOffReasonsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     scheduleToInitialize.TimeOffReasons.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("timeOffReasons@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.TimeOffReasons.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (scheduleToInitialize.TimeOffRequests != null && scheduleToInitialize.TimeOffRequests.CurrentPage != null)
                 {
+                    scheduleToInitialize.TimeOffRequests.InitializeNextPageRequest(this.Client, scheduleToInitialize.TimeOffRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     scheduleToInitialize.TimeOffRequests.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("timeOffRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.TimeOffRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (scheduleToInitialize.TimesOff != null && scheduleToInitialize.TimesOff.CurrentPage != null)
                 {
+                    scheduleToInitialize.TimesOff.InitializeNextPageRequest(this.Client, scheduleToInitialize.TimesOffNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     scheduleToInitialize.TimesOff.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("timesOff@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.TimesOff.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

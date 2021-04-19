@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("multiValueExtendedProperties")]
         public IOutlookTaskFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets multiValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("multiValueExtendedProperties@odata.nextLink")]
+        public string MultiValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
@@ -69,6 +75,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("singleValueExtendedProperties")]
         public IOutlookTaskFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets singleValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("singleValueExtendedProperties@odata.nextLink")]
+        public string SingleValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
@@ -76,6 +88,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tasks")]
         public IOutlookTaskFolderTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

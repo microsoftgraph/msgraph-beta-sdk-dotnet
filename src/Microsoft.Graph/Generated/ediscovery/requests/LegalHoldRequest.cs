@@ -244,55 +244,25 @@ namespace Microsoft.Graph.Ediscovery
         private void InitializeCollectionProperties(LegalHold legalHoldToInitialize)
         {
 
-            if (legalHoldToInitialize != null && legalHoldToInitialize.AdditionalData != null)
+            if (legalHoldToInitialize != null)
             {
-
                 if (legalHoldToInitialize.SiteSources != null && legalHoldToInitialize.SiteSources.CurrentPage != null)
                 {
+                    legalHoldToInitialize.SiteSources.InitializeNextPageRequest(this.Client, legalHoldToInitialize.SiteSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     legalHoldToInitialize.SiteSources.AdditionalData = legalHoldToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    legalHoldToInitialize.AdditionalData.TryGetValue("siteSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        legalHoldToInitialize.SiteSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (legalHoldToInitialize.UnifiedGroupSources != null && legalHoldToInitialize.UnifiedGroupSources.CurrentPage != null)
                 {
+                    legalHoldToInitialize.UnifiedGroupSources.InitializeNextPageRequest(this.Client, legalHoldToInitialize.UnifiedGroupSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     legalHoldToInitialize.UnifiedGroupSources.AdditionalData = legalHoldToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    legalHoldToInitialize.AdditionalData.TryGetValue("unifiedGroupSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        legalHoldToInitialize.UnifiedGroupSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (legalHoldToInitialize.UserSources != null && legalHoldToInitialize.UserSources.CurrentPage != null)
                 {
+                    legalHoldToInitialize.UserSources.InitializeNextPageRequest(this.Client, legalHoldToInitialize.UserSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     legalHoldToInitialize.UserSources.AdditionalData = legalHoldToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    legalHoldToInitialize.AdditionalData.TryGetValue("userSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        legalHoldToInitialize.UserSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

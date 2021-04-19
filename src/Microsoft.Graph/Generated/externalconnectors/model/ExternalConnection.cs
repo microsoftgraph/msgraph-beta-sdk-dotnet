@@ -57,18 +57,36 @@ namespace Microsoft.Graph.ExternalConnectors
         /// </summary>
         [JsonPropertyName("groups")]
         public IExternalConnectionGroupsCollectionPage Groups { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupsNextLink.
+        /// </summary>
+        [JsonPropertyName("groups@odata.nextLink")]
+        public string GroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets items.
         /// </summary>
         [JsonPropertyName("items")]
         public IExternalConnectionItemsCollectionPage Items { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemsNextLink.
+        /// </summary>
+        [JsonPropertyName("items@odata.nextLink")]
+        public string ItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
         /// </summary>
         [JsonPropertyName("operations")]
         public IExternalConnectionOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets schema.

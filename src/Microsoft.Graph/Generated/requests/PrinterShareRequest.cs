@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PrinterShare printerShareToInitialize)
         {
 
-            if (printerShareToInitialize != null && printerShareToInitialize.AdditionalData != null)
+            if (printerShareToInitialize != null)
             {
-
                 if (printerShareToInitialize.AllowedGroups != null && printerShareToInitialize.AllowedGroups.CurrentPage != null)
                 {
+                    printerShareToInitialize.AllowedGroups.InitializeNextPageRequest(this.Client, printerShareToInitialize.AllowedGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printerShareToInitialize.AllowedGroups.AdditionalData = printerShareToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printerShareToInitialize.AdditionalData.TryGetValue("allowedGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printerShareToInitialize.AllowedGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (printerShareToInitialize.AllowedUsers != null && printerShareToInitialize.AllowedUsers.CurrentPage != null)
                 {
+                    printerShareToInitialize.AllowedUsers.InitializeNextPageRequest(this.Client, printerShareToInitialize.AllowedUsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printerShareToInitialize.AllowedUsers.AdditionalData = printerShareToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printerShareToInitialize.AdditionalData.TryGetValue("allowedUsers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printerShareToInitialize.AllowedUsers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

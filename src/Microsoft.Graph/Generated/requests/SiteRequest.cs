@@ -244,151 +244,61 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Site siteToInitialize)
         {
 
-            if (siteToInitialize != null && siteToInitialize.AdditionalData != null)
+            if (siteToInitialize != null)
             {
-
                 if (siteToInitialize.Columns != null && siteToInitialize.Columns.CurrentPage != null)
                 {
+                    siteToInitialize.Columns.InitializeNextPageRequest(this.Client, siteToInitialize.ColumnsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Columns.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("columns@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Columns.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.ContentTypes != null && siteToInitialize.ContentTypes.CurrentPage != null)
                 {
+                    siteToInitialize.ContentTypes.InitializeNextPageRequest(this.Client, siteToInitialize.ContentTypesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.ContentTypes.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("contentTypes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.ContentTypes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.Drives != null && siteToInitialize.Drives.CurrentPage != null)
                 {
+                    siteToInitialize.Drives.InitializeNextPageRequest(this.Client, siteToInitialize.DrivesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Drives.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("drives@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Drives.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.ExternalColumns != null && siteToInitialize.ExternalColumns.CurrentPage != null)
                 {
+                    siteToInitialize.ExternalColumns.InitializeNextPageRequest(this.Client, siteToInitialize.ExternalColumnsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.ExternalColumns.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("externalColumns@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.ExternalColumns.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.Items != null && siteToInitialize.Items.CurrentPage != null)
                 {
+                    siteToInitialize.Items.InitializeNextPageRequest(this.Client, siteToInitialize.ItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Items.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("items@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Items.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.Lists != null && siteToInitialize.Lists.CurrentPage != null)
                 {
+                    siteToInitialize.Lists.InitializeNextPageRequest(this.Client, siteToInitialize.ListsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Lists.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("lists@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Lists.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.Pages != null && siteToInitialize.Pages.CurrentPage != null)
                 {
+                    siteToInitialize.Pages.InitializeNextPageRequest(this.Client, siteToInitialize.PagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Pages.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("pages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Pages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.Permissions != null && siteToInitialize.Permissions.CurrentPage != null)
                 {
+                    siteToInitialize.Permissions.InitializeNextPageRequest(this.Client, siteToInitialize.PermissionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Permissions.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("permissions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Permissions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.Sites != null && siteToInitialize.Sites.CurrentPage != null)
                 {
+                    siteToInitialize.Sites.InitializeNextPageRequest(this.Client, siteToInitialize.SitesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Sites.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("sites@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Sites.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

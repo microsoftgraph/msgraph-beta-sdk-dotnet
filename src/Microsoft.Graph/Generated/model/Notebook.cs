@@ -76,6 +76,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("sectionGroups")]
         public INotebookSectionGroupsCollectionPage SectionGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets sectionGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("sectionGroups@odata.nextLink")]
+        public string SectionGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sections.
@@ -83,6 +89,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("sections")]
         public INotebookSectionsCollectionPage Sections { get; set; }
+
+        /// <summary>
+        /// Gets or sets sectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("sections@odata.nextLink")]
+        public string SectionsNextLink { get; set; }
     
     }
 }

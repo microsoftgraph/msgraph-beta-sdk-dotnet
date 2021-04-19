@@ -244,23 +244,13 @@ namespace Microsoft.Graph.ExternalConnectors
         private void InitializeCollectionProperties(ExternalGroup externalGroupToInitialize)
         {
 
-            if (externalGroupToInitialize != null && externalGroupToInitialize.AdditionalData != null)
+            if (externalGroupToInitialize != null)
             {
-
                 if (externalGroupToInitialize.Members != null && externalGroupToInitialize.Members.CurrentPage != null)
                 {
+                    externalGroupToInitialize.Members.InitializeNextPageRequest(this.Client, externalGroupToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     externalGroupToInitialize.Members.AdditionalData = externalGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    externalGroupToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        externalGroupToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

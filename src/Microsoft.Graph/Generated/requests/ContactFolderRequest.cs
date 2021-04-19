@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ContactFolder contactFolderToInitialize)
         {
 
-            if (contactFolderToInitialize != null && contactFolderToInitialize.AdditionalData != null)
+            if (contactFolderToInitialize != null)
             {
-
                 if (contactFolderToInitialize.ChildFolders != null && contactFolderToInitialize.ChildFolders.CurrentPage != null)
                 {
+                    contactFolderToInitialize.ChildFolders.InitializeNextPageRequest(this.Client, contactFolderToInitialize.ChildFoldersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactFolderToInitialize.ChildFolders.AdditionalData = contactFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("childFolders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactFolderToInitialize.ChildFolders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (contactFolderToInitialize.Contacts != null && contactFolderToInitialize.Contacts.CurrentPage != null)
                 {
+                    contactFolderToInitialize.Contacts.InitializeNextPageRequest(this.Client, contactFolderToInitialize.ContactsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactFolderToInitialize.Contacts.AdditionalData = contactFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("contacts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactFolderToInitialize.Contacts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (contactFolderToInitialize.MultiValueExtendedProperties != null && contactFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    contactFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, contactFolderToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactFolderToInitialize.MultiValueExtendedProperties.AdditionalData = contactFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (contactFolderToInitialize.SingleValueExtendedProperties != null && contactFolderToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    contactFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, contactFolderToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactFolderToInitialize.SingleValueExtendedProperties.AdditionalData = contactFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

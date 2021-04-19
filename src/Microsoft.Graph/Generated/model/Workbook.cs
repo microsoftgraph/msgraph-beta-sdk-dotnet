@@ -39,6 +39,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("comments")]
         public IWorkbookCommentsCollectionPage Comments { get; set; }
+
+        /// <summary>
+        /// Gets or sets commentsNextLink.
+        /// </summary>
+        [JsonPropertyName("comments@odata.nextLink")]
+        public string CommentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets functions.
@@ -52,6 +58,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("names")]
         public IWorkbookNamesCollectionPage Names { get; set; }
+
+        /// <summary>
+        /// Gets or sets namesNextLink.
+        /// </summary>
+        [JsonPropertyName("names@odata.nextLink")]
+        public string NamesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
@@ -59,6 +71,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("operations")]
         public IWorkbookOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tables.
@@ -66,6 +84,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tables")]
         public IWorkbookTablesCollectionPage Tables { get; set; }
+
+        /// <summary>
+        /// Gets or sets tablesNextLink.
+        /// </summary>
+        [JsonPropertyName("tables@odata.nextLink")]
+        public string TablesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets worksheets.
@@ -73,6 +97,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("worksheets")]
         public IWorkbookWorksheetsCollectionPage Worksheets { get; set; }
+
+        /// <summary>
+        /// Gets or sets worksheetsNextLink.
+        /// </summary>
+        [JsonPropertyName("worksheets@odata.nextLink")]
+        public string WorksheetsNextLink { get; set; }
     
     }
 }

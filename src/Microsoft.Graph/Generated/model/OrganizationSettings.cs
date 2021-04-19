@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("profileCardProperties")]
         public IOrganizationSettingsProfileCardPropertiesCollectionPage ProfileCardProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets profileCardPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("profileCardProperties@odata.nextLink")]
+        public string ProfileCardPropertiesNextLink { get; set; }
     
     }
 }

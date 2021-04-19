@@ -48,25 +48,11 @@ namespace Microsoft.Graph
         {
             this.Method = HttpMethods.POST;
             var response = await this.SendAsync<MobileAppHasPayloadLinksCollectionResponse>(this.RequestBody, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    response.Value.AdditionalData = response.AdditionalData;
-
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 

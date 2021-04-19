@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(CalendarGroup calendarGroupToInitialize)
         {
 
-            if (calendarGroupToInitialize != null && calendarGroupToInitialize.AdditionalData != null)
+            if (calendarGroupToInitialize != null)
             {
-
                 if (calendarGroupToInitialize.Calendars != null && calendarGroupToInitialize.Calendars.CurrentPage != null)
                 {
+                    calendarGroupToInitialize.Calendars.InitializeNextPageRequest(this.Client, calendarGroupToInitialize.CalendarsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     calendarGroupToInitialize.Calendars.AdditionalData = calendarGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    calendarGroupToInitialize.AdditionalData.TryGetValue("calendars@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        calendarGroupToInitialize.Calendars.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

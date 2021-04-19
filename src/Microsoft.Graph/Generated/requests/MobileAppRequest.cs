@@ -244,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MobileApp mobileAppToInitialize)
         {
 
-            if (mobileAppToInitialize != null && mobileAppToInitialize.AdditionalData != null)
+            if (mobileAppToInitialize != null)
             {
-
                 if (mobileAppToInitialize.Assignments != null && mobileAppToInitialize.Assignments.CurrentPage != null)
                 {
+                    mobileAppToInitialize.Assignments.InitializeNextPageRequest(this.Client, mobileAppToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.Assignments.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mobileAppToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mobileAppToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mobileAppToInitialize.Categories != null && mobileAppToInitialize.Categories.CurrentPage != null)
                 {
+                    mobileAppToInitialize.Categories.InitializeNextPageRequest(this.Client, mobileAppToInitialize.CategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.Categories.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mobileAppToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mobileAppToInitialize.Categories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mobileAppToInitialize.DeviceStatuses != null && mobileAppToInitialize.DeviceStatuses.CurrentPage != null)
                 {
+                    mobileAppToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, mobileAppToInitialize.DeviceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.DeviceStatuses.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mobileAppToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mobileAppToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mobileAppToInitialize.Relationships != null && mobileAppToInitialize.Relationships.CurrentPage != null)
                 {
+                    mobileAppToInitialize.Relationships.InitializeNextPageRequest(this.Client, mobileAppToInitialize.RelationshipsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.Relationships.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mobileAppToInitialize.AdditionalData.TryGetValue("relationships@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mobileAppToInitialize.Relationships.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mobileAppToInitialize.UserStatuses != null && mobileAppToInitialize.UserStatuses.CurrentPage != null)
                 {
+                    mobileAppToInitialize.UserStatuses.InitializeNextPageRequest(this.Client, mobileAppToInitialize.UserStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.UserStatuses.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mobileAppToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mobileAppToInitialize.UserStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

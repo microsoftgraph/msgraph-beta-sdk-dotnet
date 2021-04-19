@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TodoTaskList todoTaskListToInitialize)
         {
 
-            if (todoTaskListToInitialize != null && todoTaskListToInitialize.AdditionalData != null)
+            if (todoTaskListToInitialize != null)
             {
-
                 if (todoTaskListToInitialize.Extensions != null && todoTaskListToInitialize.Extensions.CurrentPage != null)
                 {
+                    todoTaskListToInitialize.Extensions.InitializeNextPageRequest(this.Client, todoTaskListToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     todoTaskListToInitialize.Extensions.AdditionalData = todoTaskListToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    todoTaskListToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        todoTaskListToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (todoTaskListToInitialize.Tasks != null && todoTaskListToInitialize.Tasks.CurrentPage != null)
                 {
+                    todoTaskListToInitialize.Tasks.InitializeNextPageRequest(this.Client, todoTaskListToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     todoTaskListToInitialize.Tasks.AdditionalData = todoTaskListToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    todoTaskListToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        todoTaskListToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

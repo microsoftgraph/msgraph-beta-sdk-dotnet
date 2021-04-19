@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfileToInitialize)
         {
 
-            if (appleUserInitiatedEnrollmentProfileToInitialize != null && appleUserInitiatedEnrollmentProfileToInitialize.AdditionalData != null)
+            if (appleUserInitiatedEnrollmentProfileToInitialize != null)
             {
-
                 if (appleUserInitiatedEnrollmentProfileToInitialize.Assignments != null && appleUserInitiatedEnrollmentProfileToInitialize.Assignments.CurrentPage != null)
                 {
+                    appleUserInitiatedEnrollmentProfileToInitialize.Assignments.InitializeNextPageRequest(this.Client, appleUserInitiatedEnrollmentProfileToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     appleUserInitiatedEnrollmentProfileToInitialize.Assignments.AdditionalData = appleUserInitiatedEnrollmentProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    appleUserInitiatedEnrollmentProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        appleUserInitiatedEnrollmentProfileToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

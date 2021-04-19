@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Planner plannerToInitialize)
         {
 
-            if (plannerToInitialize != null && plannerToInitialize.AdditionalData != null)
+            if (plannerToInitialize != null)
             {
-
                 if (plannerToInitialize.Buckets != null && plannerToInitialize.Buckets.CurrentPage != null)
                 {
+                    plannerToInitialize.Buckets.InitializeNextPageRequest(this.Client, plannerToInitialize.BucketsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerToInitialize.Buckets.AdditionalData = plannerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    plannerToInitialize.AdditionalData.TryGetValue("buckets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        plannerToInitialize.Buckets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (plannerToInitialize.Plans != null && plannerToInitialize.Plans.CurrentPage != null)
                 {
+                    plannerToInitialize.Plans.InitializeNextPageRequest(this.Client, plannerToInitialize.PlansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerToInitialize.Plans.AdditionalData = plannerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    plannerToInitialize.AdditionalData.TryGetValue("plans@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        plannerToInitialize.Plans.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (plannerToInitialize.Rosters != null && plannerToInitialize.Rosters.CurrentPage != null)
                 {
+                    plannerToInitialize.Rosters.InitializeNextPageRequest(this.Client, plannerToInitialize.RostersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerToInitialize.Rosters.AdditionalData = plannerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    plannerToInitialize.AdditionalData.TryGetValue("rosters@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        plannerToInitialize.Rosters.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (plannerToInitialize.Tasks != null && plannerToInitialize.Tasks.CurrentPage != null)
                 {
+                    plannerToInitialize.Tasks.InitializeNextPageRequest(this.Client, plannerToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerToInitialize.Tasks.AdditionalData = plannerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    plannerToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        plannerToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

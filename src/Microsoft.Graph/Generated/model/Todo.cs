@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("lists")]
         public ITodoListsCollectionPage Lists { get; set; }
+
+        /// <summary>
+        /// Gets or sets listsNextLink.
+        /// </summary>
+        [JsonPropertyName("lists@odata.nextLink")]
+        public string ListsNextLink { get; set; }
     
     }
 }

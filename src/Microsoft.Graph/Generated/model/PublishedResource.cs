@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("agentGroups")]
         public IPublishedResourceAgentGroupsCollectionPage AgentGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets agentGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("agentGroups@odata.nextLink")]
+        public string AgentGroupsNextLink { get; set; }
     
     }
 }

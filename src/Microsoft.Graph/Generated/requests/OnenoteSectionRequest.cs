@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OnenoteSection onenoteSectionToInitialize)
         {
 
-            if (onenoteSectionToInitialize != null && onenoteSectionToInitialize.AdditionalData != null)
+            if (onenoteSectionToInitialize != null)
             {
-
                 if (onenoteSectionToInitialize.Pages != null && onenoteSectionToInitialize.Pages.CurrentPage != null)
                 {
+                    onenoteSectionToInitialize.Pages.InitializeNextPageRequest(this.Client, onenoteSectionToInitialize.PagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteSectionToInitialize.Pages.AdditionalData = onenoteSectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteSectionToInitialize.AdditionalData.TryGetValue("pages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteSectionToInitialize.Pages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

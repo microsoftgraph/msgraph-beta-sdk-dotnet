@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("acceptances")]
         public IAgreementAcceptancesCollectionPage Acceptances { get; set; }
+
+        /// <summary>
+        /// Gets or sets acceptancesNextLink.
+        /// </summary>
+        [JsonPropertyName("acceptances@odata.nextLink")]
+        public string AcceptancesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets file.
@@ -83,6 +89,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("files")]
         public IAgreementFilesCollectionPage Files { get; set; }
+
+        /// <summary>
+        /// Gets or sets filesNextLink.
+        /// </summary>
+        [JsonPropertyName("files@odata.nextLink")]
+        public string FilesNextLink { get; set; }
     
     }
 }

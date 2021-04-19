@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(NotificationMessageTemplate notificationMessageTemplateToInitialize)
         {
 
-            if (notificationMessageTemplateToInitialize != null && notificationMessageTemplateToInitialize.AdditionalData != null)
+            if (notificationMessageTemplateToInitialize != null)
             {
-
                 if (notificationMessageTemplateToInitialize.LocalizedNotificationMessages != null && notificationMessageTemplateToInitialize.LocalizedNotificationMessages.CurrentPage != null)
                 {
+                    notificationMessageTemplateToInitialize.LocalizedNotificationMessages.InitializeNextPageRequest(this.Client, notificationMessageTemplateToInitialize.LocalizedNotificationMessagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     notificationMessageTemplateToInitialize.LocalizedNotificationMessages.AdditionalData = notificationMessageTemplateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    notificationMessageTemplateToInitialize.AdditionalData.TryGetValue("localizedNotificationMessages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        notificationMessageTemplateToInitialize.LocalizedNotificationMessages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

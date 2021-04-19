@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PrinterBase printerBaseToInitialize)
         {
 
-            if (printerBaseToInitialize != null && printerBaseToInitialize.AdditionalData != null)
+            if (printerBaseToInitialize != null)
             {
-
                 if (printerBaseToInitialize.Jobs != null && printerBaseToInitialize.Jobs.CurrentPage != null)
                 {
+                    printerBaseToInitialize.Jobs.InitializeNextPageRequest(this.Client, printerBaseToInitialize.JobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printerBaseToInitialize.Jobs.AdditionalData = printerBaseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printerBaseToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printerBaseToInitialize.Jobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

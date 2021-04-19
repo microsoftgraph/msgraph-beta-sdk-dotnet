@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(RbacApplicationMultiple rbacApplicationMultipleToInitialize)
         {
 
-            if (rbacApplicationMultipleToInitialize != null && rbacApplicationMultipleToInitialize.AdditionalData != null)
+            if (rbacApplicationMultipleToInitialize != null)
             {
-
                 if (rbacApplicationMultipleToInitialize.ResourceNamespaces != null && rbacApplicationMultipleToInitialize.ResourceNamespaces.CurrentPage != null)
                 {
+                    rbacApplicationMultipleToInitialize.ResourceNamespaces.InitializeNextPageRequest(this.Client, rbacApplicationMultipleToInitialize.ResourceNamespacesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationMultipleToInitialize.ResourceNamespaces.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("resourceNamespaces@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationMultipleToInitialize.ResourceNamespaces.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationMultipleToInitialize.RoleAssignments != null && rbacApplicationMultipleToInitialize.RoleAssignments.CurrentPage != null)
                 {
+                    rbacApplicationMultipleToInitialize.RoleAssignments.InitializeNextPageRequest(this.Client, rbacApplicationMultipleToInitialize.RoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationMultipleToInitialize.RoleAssignments.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationMultipleToInitialize.RoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationMultipleToInitialize.RoleDefinitions != null && rbacApplicationMultipleToInitialize.RoleDefinitions.CurrentPage != null)
                 {
+                    rbacApplicationMultipleToInitialize.RoleDefinitions.InitializeNextPageRequest(this.Client, rbacApplicationMultipleToInitialize.RoleDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationMultipleToInitialize.RoleDefinitions.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationMultipleToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

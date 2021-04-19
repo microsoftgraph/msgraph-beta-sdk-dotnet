@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OutlookTaskGroup outlookTaskGroupToInitialize)
         {
 
-            if (outlookTaskGroupToInitialize != null && outlookTaskGroupToInitialize.AdditionalData != null)
+            if (outlookTaskGroupToInitialize != null)
             {
-
                 if (outlookTaskGroupToInitialize.TaskFolders != null && outlookTaskGroupToInitialize.TaskFolders.CurrentPage != null)
                 {
+                    outlookTaskGroupToInitialize.TaskFolders.InitializeNextPageRequest(this.Client, outlookTaskGroupToInitialize.TaskFoldersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookTaskGroupToInitialize.TaskFolders.AdditionalData = outlookTaskGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookTaskGroupToInitialize.AdditionalData.TryGetValue("taskFolders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookTaskGroupToInitialize.TaskFolders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

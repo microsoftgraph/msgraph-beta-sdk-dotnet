@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementTemplate deviceManagementTemplateToInitialize)
         {
 
-            if (deviceManagementTemplateToInitialize != null && deviceManagementTemplateToInitialize.AdditionalData != null)
+            if (deviceManagementTemplateToInitialize != null)
             {
-
                 if (deviceManagementTemplateToInitialize.Categories != null && deviceManagementTemplateToInitialize.Categories.CurrentPage != null)
                 {
+                    deviceManagementTemplateToInitialize.Categories.InitializeNextPageRequest(this.Client, deviceManagementTemplateToInitialize.CategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementTemplateToInitialize.Categories.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementTemplateToInitialize.Categories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementTemplateToInitialize.MigratableTo != null && deviceManagementTemplateToInitialize.MigratableTo.CurrentPage != null)
                 {
+                    deviceManagementTemplateToInitialize.MigratableTo.InitializeNextPageRequest(this.Client, deviceManagementTemplateToInitialize.MigratableToNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementTemplateToInitialize.MigratableTo.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("migratableTo@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementTemplateToInitialize.MigratableTo.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementTemplateToInitialize.Settings != null && deviceManagementTemplateToInitialize.Settings.CurrentPage != null)
                 {
+                    deviceManagementTemplateToInitialize.Settings.InitializeNextPageRequest(this.Client, deviceManagementTemplateToInitialize.SettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementTemplateToInitialize.Settings.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementTemplateToInitialize.Settings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

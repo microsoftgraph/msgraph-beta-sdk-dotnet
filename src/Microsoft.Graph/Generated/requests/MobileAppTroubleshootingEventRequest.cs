@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToInitialize)
         {
 
-            if (mobileAppTroubleshootingEventToInitialize != null && mobileAppTroubleshootingEventToInitialize.AdditionalData != null)
+            if (mobileAppTroubleshootingEventToInitialize != null)
             {
-
                 if (mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests != null && mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests.CurrentPage != null)
                 {
+                    mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests.InitializeNextPageRequest(this.Client, mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests.AdditionalData = mobileAppTroubleshootingEventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mobileAppTroubleshootingEventToInitialize.AdditionalData.TryGetValue("appLogCollectionRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mobileAppTroubleshootingEventToInitialize.AppLogCollectionRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,135 +244,55 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedDevice managedDeviceToInitialize)
         {
 
-            if (managedDeviceToInitialize != null && managedDeviceToInitialize.AdditionalData != null)
+            if (managedDeviceToInitialize != null)
             {
-
                 if (managedDeviceToInitialize.DeviceCompliancePolicyStates != null && managedDeviceToInitialize.DeviceCompliancePolicyStates.CurrentPage != null)
                 {
+                    managedDeviceToInitialize.DeviceCompliancePolicyStates.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.DeviceCompliancePolicyStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.DeviceCompliancePolicyStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceToInitialize.AdditionalData.TryGetValue("deviceCompliancePolicyStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceToInitialize.DeviceCompliancePolicyStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails != null && managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails.CurrentPage != null)
                 {
+                    managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceToInitialize.AdditionalData.TryGetValue("assignmentFilterEvaluationStatusDetails@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedDeviceToInitialize.DeviceConfigurationStates != null && managedDeviceToInitialize.DeviceConfigurationStates.CurrentPage != null)
                 {
+                    managedDeviceToInitialize.DeviceConfigurationStates.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.DeviceConfigurationStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.DeviceConfigurationStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceToInitialize.AdditionalData.TryGetValue("deviceConfigurationStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceToInitialize.DeviceConfigurationStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedDeviceToInitialize.ManagedDeviceMobileAppConfigurationStates != null && managedDeviceToInitialize.ManagedDeviceMobileAppConfigurationStates.CurrentPage != null)
                 {
+                    managedDeviceToInitialize.ManagedDeviceMobileAppConfigurationStates.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.ManagedDeviceMobileAppConfigurationStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.ManagedDeviceMobileAppConfigurationStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceToInitialize.AdditionalData.TryGetValue("managedDeviceMobileAppConfigurationStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceToInitialize.ManagedDeviceMobileAppConfigurationStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedDeviceToInitialize.SecurityBaselineStates != null && managedDeviceToInitialize.SecurityBaselineStates.CurrentPage != null)
                 {
+                    managedDeviceToInitialize.SecurityBaselineStates.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.SecurityBaselineStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.SecurityBaselineStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceToInitialize.AdditionalData.TryGetValue("securityBaselineStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceToInitialize.SecurityBaselineStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedDeviceToInitialize.DetectedApps != null && managedDeviceToInitialize.DetectedApps.CurrentPage != null)
                 {
+                    managedDeviceToInitialize.DetectedApps.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.DetectedAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.DetectedApps.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceToInitialize.AdditionalData.TryGetValue("detectedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceToInitialize.DetectedApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedDeviceToInitialize.LogCollectionRequests != null && managedDeviceToInitialize.LogCollectionRequests.CurrentPage != null)
                 {
+                    managedDeviceToInitialize.LogCollectionRequests.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.LogCollectionRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.LogCollectionRequests.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceToInitialize.AdditionalData.TryGetValue("logCollectionRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceToInitialize.LogCollectionRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedDeviceToInitialize.Users != null && managedDeviceToInitialize.Users.CurrentPage != null)
                 {
+                    managedDeviceToInitialize.Users.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.UsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.Users.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceToInitialize.AdditionalData.TryGetValue("users@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceToInitialize.Users.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

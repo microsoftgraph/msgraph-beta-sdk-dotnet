@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedDeviceCertificateStates")]
         public IIosImportedPFXCertificateProfileManagedDeviceCertificateStatesCollectionPage ManagedDeviceCertificateStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedDeviceCertificateStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedDeviceCertificateStates@odata.nextLink")]
+        public string ManagedDeviceCertificateStatesNextLink { get; set; }
     
     }
 }

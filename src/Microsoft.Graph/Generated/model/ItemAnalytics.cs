@@ -39,6 +39,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("itemActivityStats")]
         public IItemAnalyticsItemActivityStatsCollectionPage ItemActivityStats { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemActivityStatsNextLink.
+        /// </summary>
+        [JsonPropertyName("itemActivityStats@odata.nextLink")]
+        public string ItemActivityStatsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets last seven days.

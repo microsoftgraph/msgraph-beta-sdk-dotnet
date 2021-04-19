@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize)
         {
 
-            if (microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize != null && microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.AdditionalData != null)
+            if (microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize != null)
             {
-
                 if (microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargets != null && microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargets.CurrentPage != null)
                 {
+                    microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(this.Client, microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargets.AdditionalData = microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.AdditionalData.TryGetValue("includeTargets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        microsoftAuthenticatorAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

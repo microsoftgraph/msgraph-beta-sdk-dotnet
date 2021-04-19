@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IdentityProtectionRoot identityProtectionRootToInitialize)
         {
 
-            if (identityProtectionRootToInitialize != null && identityProtectionRootToInitialize.AdditionalData != null)
+            if (identityProtectionRootToInitialize != null)
             {
-
                 if (identityProtectionRootToInitialize.RiskDetections != null && identityProtectionRootToInitialize.RiskDetections.CurrentPage != null)
                 {
+                    identityProtectionRootToInitialize.RiskDetections.InitializeNextPageRequest(this.Client, identityProtectionRootToInitialize.RiskDetectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityProtectionRootToInitialize.RiskDetections.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    identityProtectionRootToInitialize.AdditionalData.TryGetValue("riskDetections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        identityProtectionRootToInitialize.RiskDetections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (identityProtectionRootToInitialize.RiskyUsers != null && identityProtectionRootToInitialize.RiskyUsers.CurrentPage != null)
                 {
+                    identityProtectionRootToInitialize.RiskyUsers.InitializeNextPageRequest(this.Client, identityProtectionRootToInitialize.RiskyUsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityProtectionRootToInitialize.RiskyUsers.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    identityProtectionRootToInitialize.AdditionalData.TryGetValue("riskyUsers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        identityProtectionRootToInitialize.RiskyUsers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

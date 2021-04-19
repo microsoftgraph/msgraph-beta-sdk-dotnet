@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IosScepCertificateProfile iosScepCertificateProfileToInitialize)
         {
 
-            if (iosScepCertificateProfileToInitialize != null && iosScepCertificateProfileToInitialize.AdditionalData != null)
+            if (iosScepCertificateProfileToInitialize != null)
             {
-
                 if (iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = iosScepCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    iosScepCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

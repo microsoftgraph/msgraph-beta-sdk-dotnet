@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -141,6 +142,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var methodBaseUrl = string.Format("{0}/me/microsoft.graph.reminderView", this.graphBaseUrl);
                 var requestUrl = string.Format("{0}(startDateTime='now',endDateTime='later')", methodBaseUrl);
                 var nextPageRequestUrl = string.Format("{0}?{1}={2}", requestUrl, nextQueryKey, nextQueryValue);
+                var nextPageRequestUrlElement = JsonDocument.Parse(string.Format("\"{0}\"", nextPageRequestUrl)).RootElement;
 
                 this.httpProvider.Setup(
                     provider => provider.SendAsync(
@@ -160,7 +162,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var userReminderViewCollectionResponse = new UserReminderViewCollectionResponse
                 {
                     Value = userReminderViewCollectionPage,
-                    AdditionalData = new Dictionary<string, object> { { "@odata.nextLink", nextPageRequestUrl } },
+                    NextLink = nextPageRequestUrl
                 };
 
                 this.serializer.Setup(

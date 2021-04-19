@@ -244,103 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Event eventToInitialize)
         {
 
-            if (eventToInitialize != null && eventToInitialize.AdditionalData != null)
+            if (eventToInitialize != null)
             {
-
                 if (eventToInitialize.Attachments != null && eventToInitialize.Attachments.CurrentPage != null)
                 {
+                    eventToInitialize.Attachments.InitializeNextPageRequest(this.Client, eventToInitialize.AttachmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.Attachments.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.Attachments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (eventToInitialize.ExceptionOccurrences != null && eventToInitialize.ExceptionOccurrences.CurrentPage != null)
                 {
+                    eventToInitialize.ExceptionOccurrences.InitializeNextPageRequest(this.Client, eventToInitialize.ExceptionOccurrencesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.ExceptionOccurrences.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("exceptionOccurrences@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.ExceptionOccurrences.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (eventToInitialize.Extensions != null && eventToInitialize.Extensions.CurrentPage != null)
                 {
+                    eventToInitialize.Extensions.InitializeNextPageRequest(this.Client, eventToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.Extensions.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (eventToInitialize.Instances != null && eventToInitialize.Instances.CurrentPage != null)
                 {
+                    eventToInitialize.Instances.InitializeNextPageRequest(this.Client, eventToInitialize.InstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.Instances.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.Instances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (eventToInitialize.MultiValueExtendedProperties != null && eventToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    eventToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, eventToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.MultiValueExtendedProperties.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (eventToInitialize.SingleValueExtendedProperties != null && eventToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    eventToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, eventToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.SingleValueExtendedProperties.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IDeviceManagementConfigurationPolicyAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
@@ -111,6 +117,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("settings")]
         public IDeviceManagementConfigurationPolicySettingsCollectionPage Settings { get; set; }
+
+        /// <summary>
+        /// Gets or sets settingsNextLink.
+        /// </summary>
+        [JsonPropertyName("settings@odata.nextLink")]
+        public string SettingsNextLink { get; set; }
     
     }
 }

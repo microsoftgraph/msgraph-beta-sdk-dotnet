@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("comments")]
         public IPresentationCommentsCollectionPage Comments { get; set; }
+
+        /// <summary>
+        /// Gets or sets commentsNextLink.
+        /// </summary>
+        [JsonPropertyName("comments@odata.nextLink")]
+        public string CommentsNextLink { get; set; }
     
     }
 }

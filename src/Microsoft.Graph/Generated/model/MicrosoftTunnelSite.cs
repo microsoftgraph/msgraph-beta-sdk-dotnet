@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("microsoftTunnelServers")]
         public IMicrosoftTunnelSiteMicrosoftTunnelServersCollectionPage MicrosoftTunnelServers { get; set; }
+
+        /// <summary>
+        /// Gets or sets microsoftTunnelServersNextLink.
+        /// </summary>
+        [JsonPropertyName("microsoftTunnelServers@odata.nextLink")]
+        public string MicrosoftTunnelServersNextLink { get; set; }
     
     }
 }

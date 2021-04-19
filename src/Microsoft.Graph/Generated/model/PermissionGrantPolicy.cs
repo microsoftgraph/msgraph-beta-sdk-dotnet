@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("excludes")]
         public IPermissionGrantPolicyExcludesCollectionPage Excludes { get; set; }
+
+        /// <summary>
+        /// Gets or sets excludesNextLink.
+        /// </summary>
+        [JsonPropertyName("excludes@odata.nextLink")]
+        public string ExcludesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets includes.
@@ -41,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("includes")]
         public IPermissionGrantPolicyIncludesCollectionPage Includes { get; set; }
+
+        /// <summary>
+        /// Gets or sets includesNextLink.
+        /// </summary>
+        [JsonPropertyName("includes@odata.nextLink")]
+        public string IncludesNextLink { get; set; }
     
     }
 }

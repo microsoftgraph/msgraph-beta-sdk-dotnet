@@ -139,6 +139,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("baseTypes")]
         public IContentTypeBaseTypesCollectionWithReferencesPage BaseTypes { get; set; }
+
+        /// <summary>
+        /// Gets or sets baseTypesNextLink.
+        /// </summary>
+        [JsonPropertyName("baseTypes@odata.nextLink")]
+        public string BaseTypesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets column links.
@@ -146,6 +152,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("columnLinks")]
         public IContentTypeColumnLinksCollectionPage ColumnLinks { get; set; }
+
+        /// <summary>
+        /// Gets or sets columnLinksNextLink.
+        /// </summary>
+        [JsonPropertyName("columnLinks@odata.nextLink")]
+        public string ColumnLinksNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets column positions.
@@ -153,6 +165,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("columnPositions")]
         public IContentTypeColumnPositionsCollectionWithReferencesPage ColumnPositions { get; set; }
+
+        /// <summary>
+        /// Gets or sets columnPositionsNextLink.
+        /// </summary>
+        [JsonPropertyName("columnPositions@odata.nextLink")]
+        public string ColumnPositionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets columns.
@@ -160,6 +178,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("columns")]
         public IContentTypeColumnsCollectionPage Columns { get; set; }
+
+        /// <summary>
+        /// Gets or sets columnsNextLink.
+        /// </summary>
+        [JsonPropertyName("columns@odata.nextLink")]
+        public string ColumnsNextLink { get; set; }
     
     }
 }

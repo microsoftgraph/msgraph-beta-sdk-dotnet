@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("pages")]
         public IOnenoteSectionPagesCollectionPage Pages { get; set; }
+
+        /// <summary>
+        /// Gets or sets pagesNextLink.
+        /// </summary>
+        [JsonPropertyName("pages@odata.nextLink")]
+        public string PagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets parent notebook.

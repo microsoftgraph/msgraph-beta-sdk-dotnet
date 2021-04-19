@@ -244,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OnPremisesPublishingProfile onPremisesPublishingProfileToInitialize)
         {
 
-            if (onPremisesPublishingProfileToInitialize != null && onPremisesPublishingProfileToInitialize.AdditionalData != null)
+            if (onPremisesPublishingProfileToInitialize != null)
             {
-
                 if (onPremisesPublishingProfileToInitialize.AgentGroups != null && onPremisesPublishingProfileToInitialize.AgentGroups.CurrentPage != null)
                 {
+                    onPremisesPublishingProfileToInitialize.AgentGroups.InitializeNextPageRequest(this.Client, onPremisesPublishingProfileToInitialize.AgentGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesPublishingProfileToInitialize.AgentGroups.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("agentGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onPremisesPublishingProfileToInitialize.AgentGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onPremisesPublishingProfileToInitialize.Agents != null && onPremisesPublishingProfileToInitialize.Agents.CurrentPage != null)
                 {
+                    onPremisesPublishingProfileToInitialize.Agents.InitializeNextPageRequest(this.Client, onPremisesPublishingProfileToInitialize.AgentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesPublishingProfileToInitialize.Agents.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("agents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onPremisesPublishingProfileToInitialize.Agents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onPremisesPublishingProfileToInitialize.ConnectorGroups != null && onPremisesPublishingProfileToInitialize.ConnectorGroups.CurrentPage != null)
                 {
+                    onPremisesPublishingProfileToInitialize.ConnectorGroups.InitializeNextPageRequest(this.Client, onPremisesPublishingProfileToInitialize.ConnectorGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesPublishingProfileToInitialize.ConnectorGroups.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("connectorGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onPremisesPublishingProfileToInitialize.ConnectorGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onPremisesPublishingProfileToInitialize.Connectors != null && onPremisesPublishingProfileToInitialize.Connectors.CurrentPage != null)
                 {
+                    onPremisesPublishingProfileToInitialize.Connectors.InitializeNextPageRequest(this.Client, onPremisesPublishingProfileToInitialize.ConnectorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesPublishingProfileToInitialize.Connectors.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("connectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onPremisesPublishingProfileToInitialize.Connectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onPremisesPublishingProfileToInitialize.PublishedResources != null && onPremisesPublishingProfileToInitialize.PublishedResources.CurrentPage != null)
                 {
+                    onPremisesPublishingProfileToInitialize.PublishedResources.InitializeNextPageRequest(this.Client, onPremisesPublishingProfileToInitialize.PublishedResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesPublishingProfileToInitialize.PublishedResources.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("publishedResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onPremisesPublishingProfileToInitialize.PublishedResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

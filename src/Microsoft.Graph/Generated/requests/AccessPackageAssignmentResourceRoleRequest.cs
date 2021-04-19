@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToInitialize)
         {
 
-            if (accessPackageAssignmentResourceRoleToInitialize != null && accessPackageAssignmentResourceRoleToInitialize.AdditionalData != null)
+            if (accessPackageAssignmentResourceRoleToInitialize != null)
             {
-
                 if (accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignments != null && accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignments.CurrentPage != null)
                 {
+                    accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignments.InitializeNextPageRequest(this.Client, accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignments.AdditionalData = accessPackageAssignmentResourceRoleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageAssignmentResourceRoleToInitialize.AdditionalData.TryGetValue("accessPackageAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToInitialize)
         {
 
-            if (windowsDomainJoinConfigurationToInitialize != null && windowsDomainJoinConfigurationToInitialize.AdditionalData != null)
+            if (windowsDomainJoinConfigurationToInitialize != null)
             {
-
                 if (windowsDomainJoinConfigurationToInitialize.NetworkAccessConfigurations != null && windowsDomainJoinConfigurationToInitialize.NetworkAccessConfigurations.CurrentPage != null)
                 {
+                    windowsDomainJoinConfigurationToInitialize.NetworkAccessConfigurations.InitializeNextPageRequest(this.Client, windowsDomainJoinConfigurationToInitialize.NetworkAccessConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsDomainJoinConfigurationToInitialize.NetworkAccessConfigurations.AdditionalData = windowsDomainJoinConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsDomainJoinConfigurationToInitialize.AdditionalData.TryGetValue("networkAccessConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsDomainJoinConfigurationToInitialize.NetworkAccessConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

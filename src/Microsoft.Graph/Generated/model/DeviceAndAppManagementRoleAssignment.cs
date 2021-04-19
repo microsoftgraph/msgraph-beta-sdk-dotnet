@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("roleScopeTags")]
         public IDeviceAndAppManagementRoleAssignmentRoleScopeTagsCollectionWithReferencesPage RoleScopeTags { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleScopeTagsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleScopeTags@odata.nextLink")]
+        public string RoleScopeTagsNextLink { get; set; }
     
     }
 }

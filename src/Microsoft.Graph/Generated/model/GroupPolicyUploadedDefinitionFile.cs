@@ -76,6 +76,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupPolicyOperations")]
         public IGroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionPage GroupPolicyOperations { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupPolicyOperationsNextLink.
+        /// </summary>
+        [JsonPropertyName("groupPolicyOperations@odata.nextLink")]
+        public string GroupPolicyOperationsNextLink { get; set; }
     
     }
 }

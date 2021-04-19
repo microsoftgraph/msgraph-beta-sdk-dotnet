@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToInitialize)
         {
 
-            if (advancedThreatProtectionOnboardingStateSummaryToInitialize != null && advancedThreatProtectionOnboardingStateSummaryToInitialize.AdditionalData != null)
+            if (advancedThreatProtectionOnboardingStateSummaryToInitialize != null)
             {
-
                 if (advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates != null && advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.CurrentPage != null)
                 {
+                    advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.InitializeNextPageRequest(this.Client, advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.AdditionalData = advancedThreatProtectionOnboardingStateSummaryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    advancedThreatProtectionOnboardingStateSummaryToInitialize.AdditionalData.TryGetValue("advancedThreatProtectionOnboardingDeviceSettingStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EducationRoot educationRootToInitialize)
         {
 
-            if (educationRootToInitialize != null && educationRootToInitialize.AdditionalData != null)
+            if (educationRootToInitialize != null)
             {
-
                 if (educationRootToInitialize.SynchronizationProfiles != null && educationRootToInitialize.SynchronizationProfiles.CurrentPage != null)
                 {
+                    educationRootToInitialize.SynchronizationProfiles.InitializeNextPageRequest(this.Client, educationRootToInitialize.SynchronizationProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationRootToInitialize.SynchronizationProfiles.AdditionalData = educationRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationRootToInitialize.AdditionalData.TryGetValue("synchronizationProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationRootToInitialize.SynchronizationProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (educationRootToInitialize.Classes != null && educationRootToInitialize.Classes.CurrentPage != null)
                 {
+                    educationRootToInitialize.Classes.InitializeNextPageRequest(this.Client, educationRootToInitialize.ClassesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationRootToInitialize.Classes.AdditionalData = educationRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationRootToInitialize.AdditionalData.TryGetValue("classes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationRootToInitialize.Classes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (educationRootToInitialize.Schools != null && educationRootToInitialize.Schools.CurrentPage != null)
                 {
+                    educationRootToInitialize.Schools.InitializeNextPageRequest(this.Client, educationRootToInitialize.SchoolsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationRootToInitialize.Schools.AdditionalData = educationRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationRootToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationRootToInitialize.Schools.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (educationRootToInitialize.Users != null && educationRootToInitialize.Users.CurrentPage != null)
                 {
+                    educationRootToInitialize.Users.InitializeNextPageRequest(this.Client, educationRootToInitialize.UsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationRootToInitialize.Users.AdditionalData = educationRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationRootToInitialize.AdditionalData.TryGetValue("users@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationRootToInitialize.Users.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessPackageResource accessPackageResourceToInitialize)
         {
 
-            if (accessPackageResourceToInitialize != null && accessPackageResourceToInitialize.AdditionalData != null)
+            if (accessPackageResourceToInitialize != null)
             {
-
                 if (accessPackageResourceToInitialize.AccessPackageResourceRoles != null && accessPackageResourceToInitialize.AccessPackageResourceRoles.CurrentPage != null)
                 {
+                    accessPackageResourceToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(this.Client, accessPackageResourceToInitialize.AccessPackageResourceRolesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageResourceToInitialize.AccessPackageResourceRoles.AdditionalData = accessPackageResourceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageResourceToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageResourceToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessPackageResourceToInitialize.AccessPackageResourceScopes != null && accessPackageResourceToInitialize.AccessPackageResourceScopes.CurrentPage != null)
                 {
+                    accessPackageResourceToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(this.Client, accessPackageResourceToInitialize.AccessPackageResourceScopesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageResourceToInitialize.AccessPackageResourceScopes.AdditionalData = accessPackageResourceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageResourceToInitialize.AdditionalData.TryGetValue("accessPackageResourceScopes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageResourceToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

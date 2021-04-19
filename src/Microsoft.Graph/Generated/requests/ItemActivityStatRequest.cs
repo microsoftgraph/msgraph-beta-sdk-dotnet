@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ItemActivityStat itemActivityStatToInitialize)
         {
 
-            if (itemActivityStatToInitialize != null && itemActivityStatToInitialize.AdditionalData != null)
+            if (itemActivityStatToInitialize != null)
             {
-
                 if (itemActivityStatToInitialize.Activities != null && itemActivityStatToInitialize.Activities.CurrentPage != null)
                 {
+                    itemActivityStatToInitialize.Activities.InitializeNextPageRequest(this.Client, itemActivityStatToInitialize.ActivitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     itemActivityStatToInitialize.Activities.AdditionalData = itemActivityStatToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    itemActivityStatToInitialize.AdditionalData.TryGetValue("activities@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        itemActivityStatToInitialize.Activities.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

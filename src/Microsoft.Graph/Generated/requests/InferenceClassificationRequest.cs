@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(InferenceClassification inferenceClassificationToInitialize)
         {
 
-            if (inferenceClassificationToInitialize != null && inferenceClassificationToInitialize.AdditionalData != null)
+            if (inferenceClassificationToInitialize != null)
             {
-
                 if (inferenceClassificationToInitialize.Overrides != null && inferenceClassificationToInitialize.Overrides.CurrentPage != null)
                 {
+                    inferenceClassificationToInitialize.Overrides.InitializeNextPageRequest(this.Client, inferenceClassificationToInitialize.OverridesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     inferenceClassificationToInitialize.Overrides.AdditionalData = inferenceClassificationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    inferenceClassificationToInitialize.AdditionalData.TryGetValue("overrides@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        inferenceClassificationToInitialize.Overrides.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -33,12 +33,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("agreementAcceptances")]
         public ITermsOfUseContainerAgreementAcceptancesCollectionPage AgreementAcceptances { get; set; }
+
+        /// <summary>
+        /// Gets or sets agreementAcceptancesNextLink.
+        /// </summary>
+        [JsonPropertyName("agreementAcceptances@odata.nextLink")]
+        public string AgreementAcceptancesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets agreements.
         /// </summary>
         [JsonPropertyName("agreements")]
         public ITermsOfUseContainerAgreementsCollectionPage Agreements { get; set; }
+
+        /// <summary>
+        /// Gets or sets agreementsNextLink.
+        /// </summary>
+        [JsonPropertyName("agreements@odata.nextLink")]
+        public string AgreementsNextLink { get; set; }
     
     }
 }

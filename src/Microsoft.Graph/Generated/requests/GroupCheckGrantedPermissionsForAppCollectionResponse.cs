@@ -24,6 +24,12 @@ namespace Microsoft.Graph
         public IGroupCheckGrantedPermissionsForAppCollectionPage Value { get; set; }
         
         /// <summary>
+        /// Gets or sets the nextLink string value.
+        /// </summary>
+        [JsonPropertyName("@odata.nextLink")]
+        public string NextLink { get; set; }
+
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

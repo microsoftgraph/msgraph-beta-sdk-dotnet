@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicyToInitialize)
         {
 
-            if (deviceManagementConfigurationPolicyToInitialize != null && deviceManagementConfigurationPolicyToInitialize.AdditionalData != null)
+            if (deviceManagementConfigurationPolicyToInitialize != null)
             {
-
                 if (deviceManagementConfigurationPolicyToInitialize.Assignments != null && deviceManagementConfigurationPolicyToInitialize.Assignments.CurrentPage != null)
                 {
+                    deviceManagementConfigurationPolicyToInitialize.Assignments.InitializeNextPageRequest(this.Client, deviceManagementConfigurationPolicyToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementConfigurationPolicyToInitialize.Assignments.AdditionalData = deviceManagementConfigurationPolicyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementConfigurationPolicyToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementConfigurationPolicyToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementConfigurationPolicyToInitialize.Settings != null && deviceManagementConfigurationPolicyToInitialize.Settings.CurrentPage != null)
                 {
+                    deviceManagementConfigurationPolicyToInitialize.Settings.InitializeNextPageRequest(this.Client, deviceManagementConfigurationPolicyToInitialize.SettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementConfigurationPolicyToInitialize.Settings.AdditionalData = deviceManagementConfigurationPolicyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementConfigurationPolicyToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementConfigurationPolicyToInitialize.Settings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

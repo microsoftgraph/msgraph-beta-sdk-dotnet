@@ -84,6 +84,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managementConditionStatements")]
         public IManagementConditionManagementConditionStatementsCollectionWithReferencesPage ManagementConditionStatements { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementConditionStatementsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementConditionStatements@odata.nextLink")]
+        public string ManagementConditionStatementsNextLink { get; set; }
     
     }
 }

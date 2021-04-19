@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PlannerPlan plannerPlanToInitialize)
         {
 
-            if (plannerPlanToInitialize != null && plannerPlanToInitialize.AdditionalData != null)
+            if (plannerPlanToInitialize != null)
             {
-
                 if (plannerPlanToInitialize.Buckets != null && plannerPlanToInitialize.Buckets.CurrentPage != null)
                 {
+                    plannerPlanToInitialize.Buckets.InitializeNextPageRequest(this.Client, plannerPlanToInitialize.BucketsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerPlanToInitialize.Buckets.AdditionalData = plannerPlanToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    plannerPlanToInitialize.AdditionalData.TryGetValue("buckets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        plannerPlanToInitialize.Buckets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (plannerPlanToInitialize.Tasks != null && plannerPlanToInitialize.Tasks.CurrentPage != null)
                 {
+                    plannerPlanToInitialize.Tasks.InitializeNextPageRequest(this.Client, plannerPlanToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerPlanToInitialize.Tasks.AdditionalData = plannerPlanToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    plannerPlanToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        plannerPlanToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

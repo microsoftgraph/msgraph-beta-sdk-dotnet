@@ -90,6 +90,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IPolicySetAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets items.
@@ -97,6 +103,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("items")]
         public IPolicySetItemsCollectionPage Items { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemsNextLink.
+        /// </summary>
+        [JsonPropertyName("items@odata.nextLink")]
+        public string ItemsNextLink { get; set; }
     
     }
 }

@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("account")]
         public IProfileAccountCollectionPage Account { get; set; }
+
+        /// <summary>
+        /// Gets or sets accountNextLink.
+        /// </summary>
+        [JsonPropertyName("account@odata.nextLink")]
+        public string AccountNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets addresses.
@@ -40,6 +46,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("addresses")]
         public IProfileAddressesCollectionPage Addresses { get; set; }
+
+        /// <summary>
+        /// Gets or sets addressesNextLink.
+        /// </summary>
+        [JsonPropertyName("addresses@odata.nextLink")]
+        public string AddressesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets anniversaries.
@@ -47,6 +59,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("anniversaries")]
         public IProfileAnniversariesCollectionPage Anniversaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets anniversariesNextLink.
+        /// </summary>
+        [JsonPropertyName("anniversaries@odata.nextLink")]
+        public string AnniversariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets awards.
@@ -54,6 +72,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("awards")]
         public IProfileAwardsCollectionPage Awards { get; set; }
+
+        /// <summary>
+        /// Gets or sets awardsNextLink.
+        /// </summary>
+        [JsonPropertyName("awards@odata.nextLink")]
+        public string AwardsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets certifications.
@@ -61,6 +85,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("certifications")]
         public IProfileCertificationsCollectionPage Certifications { get; set; }
+
+        /// <summary>
+        /// Gets or sets certificationsNextLink.
+        /// </summary>
+        [JsonPropertyName("certifications@odata.nextLink")]
+        public string CertificationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets educational activities.
@@ -68,6 +98,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("educationalActivities")]
         public IProfileEducationalActivitiesCollectionPage EducationalActivities { get; set; }
+
+        /// <summary>
+        /// Gets or sets educationalActivitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("educationalActivities@odata.nextLink")]
+        public string EducationalActivitiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets emails.
@@ -75,6 +111,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("emails")]
         public IProfileEmailsCollectionPage Emails { get; set; }
+
+        /// <summary>
+        /// Gets or sets emailsNextLink.
+        /// </summary>
+        [JsonPropertyName("emails@odata.nextLink")]
+        public string EmailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets interests.
@@ -82,6 +124,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("interests")]
         public IProfileInterestsCollectionPage Interests { get; set; }
+
+        /// <summary>
+        /// Gets or sets interestsNextLink.
+        /// </summary>
+        [JsonPropertyName("interests@odata.nextLink")]
+        public string InterestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets languages.
@@ -89,6 +137,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("languages")]
         public IProfileLanguagesCollectionPage Languages { get; set; }
+
+        /// <summary>
+        /// Gets or sets languagesNextLink.
+        /// </summary>
+        [JsonPropertyName("languages@odata.nextLink")]
+        public string LanguagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets names.
@@ -96,6 +150,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("names")]
         public IProfileNamesCollectionPage Names { get; set; }
+
+        /// <summary>
+        /// Gets or sets namesNextLink.
+        /// </summary>
+        [JsonPropertyName("names@odata.nextLink")]
+        public string NamesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
@@ -103,6 +163,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("notes")]
         public IProfileNotesCollectionPage Notes { get; set; }
+
+        /// <summary>
+        /// Gets or sets notesNextLink.
+        /// </summary>
+        [JsonPropertyName("notes@odata.nextLink")]
+        public string NotesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets patents.
@@ -110,6 +176,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("patents")]
         public IProfilePatentsCollectionPage Patents { get; set; }
+
+        /// <summary>
+        /// Gets or sets patentsNextLink.
+        /// </summary>
+        [JsonPropertyName("patents@odata.nextLink")]
+        public string PatentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets phones.
@@ -117,6 +189,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("phones")]
         public IProfilePhonesCollectionPage Phones { get; set; }
+
+        /// <summary>
+        /// Gets or sets phonesNextLink.
+        /// </summary>
+        [JsonPropertyName("phones@odata.nextLink")]
+        public string PhonesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets positions.
@@ -124,6 +202,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("positions")]
         public IProfilePositionsCollectionPage Positions { get; set; }
+
+        /// <summary>
+        /// Gets or sets positionsNextLink.
+        /// </summary>
+        [JsonPropertyName("positions@odata.nextLink")]
+        public string PositionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets projects.
@@ -131,6 +215,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("projects")]
         public IProfileProjectsCollectionPage Projects { get; set; }
+
+        /// <summary>
+        /// Gets or sets projectsNextLink.
+        /// </summary>
+        [JsonPropertyName("projects@odata.nextLink")]
+        public string ProjectsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets publications.
@@ -138,6 +228,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("publications")]
         public IProfilePublicationsCollectionPage Publications { get; set; }
+
+        /// <summary>
+        /// Gets or sets publicationsNextLink.
+        /// </summary>
+        [JsonPropertyName("publications@odata.nextLink")]
+        public string PublicationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets skills.
@@ -145,6 +241,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("skills")]
         public IProfileSkillsCollectionPage Skills { get; set; }
+
+        /// <summary>
+        /// Gets or sets skillsNextLink.
+        /// </summary>
+        [JsonPropertyName("skills@odata.nextLink")]
+        public string SkillsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets web accounts.
@@ -152,6 +254,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("webAccounts")]
         public IProfileWebAccountsCollectionPage WebAccounts { get; set; }
+
+        /// <summary>
+        /// Gets or sets webAccountsNextLink.
+        /// </summary>
+        [JsonPropertyName("webAccounts@odata.nextLink")]
+        public string WebAccountsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets websites.
@@ -159,6 +267,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("websites")]
         public IProfileWebsitesCollectionPage Websites { get; set; }
+
+        /// <summary>
+        /// Gets or sets websitesNextLink.
+        /// </summary>
+        [JsonPropertyName("websites@odata.nextLink")]
+        public string WebsitesNextLink { get; set; }
     
     }
 }

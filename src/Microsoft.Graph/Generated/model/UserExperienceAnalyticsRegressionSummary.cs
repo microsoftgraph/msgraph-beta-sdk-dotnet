@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("manufacturerRegression")]
         public IUserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionPage ManufacturerRegression { get; set; }
+
+        /// <summary>
+        /// Gets or sets manufacturerRegressionNextLink.
+        /// </summary>
+        [JsonPropertyName("manufacturerRegression@odata.nextLink")]
+        public string ManufacturerRegressionNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets model regression.
@@ -41,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("modelRegression")]
         public IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionPage ModelRegression { get; set; }
+
+        /// <summary>
+        /// Gets or sets modelRegressionNextLink.
+        /// </summary>
+        [JsonPropertyName("modelRegression@odata.nextLink")]
+        public string ModelRegressionNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operating system regression.
@@ -48,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("operatingSystemRegression")]
         public IUserExperienceAnalyticsRegressionSummaryOperatingSystemRegressionCollectionPage OperatingSystemRegression { get; set; }
+
+        /// <summary>
+        /// Gets or sets operatingSystemRegressionNextLink.
+        /// </summary>
+        [JsonPropertyName("operatingSystemRegression@odata.nextLink")]
+        public string OperatingSystemRegressionNextLink { get; set; }
     
     }
 }

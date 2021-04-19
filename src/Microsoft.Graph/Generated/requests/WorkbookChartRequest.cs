@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WorkbookChart workbookChartToInitialize)
         {
 
-            if (workbookChartToInitialize != null && workbookChartToInitialize.AdditionalData != null)
+            if (workbookChartToInitialize != null)
             {
-
                 if (workbookChartToInitialize.Series != null && workbookChartToInitialize.Series.CurrentPage != null)
                 {
+                    workbookChartToInitialize.Series.InitializeNextPageRequest(this.Client, workbookChartToInitialize.SeriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookChartToInitialize.Series.AdditionalData = workbookChartToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookChartToInitialize.AdditionalData.TryGetValue("series@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookChartToInitialize.Series.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

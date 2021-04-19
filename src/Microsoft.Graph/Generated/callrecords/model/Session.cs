@@ -76,6 +76,12 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         [JsonPropertyName("segments")]
         public ISessionSegmentsCollectionPage Segments { get; set; }
+
+        /// <summary>
+        /// Gets or sets segmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("segments@odata.nextLink")]
+        public string SegmentsNextLink { get; set; }
     
     }
 }

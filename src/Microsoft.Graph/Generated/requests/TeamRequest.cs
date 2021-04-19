@@ -244,103 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Team teamToInitialize)
         {
 
-            if (teamToInitialize != null && teamToInitialize.AdditionalData != null)
+            if (teamToInitialize != null)
             {
-
                 if (teamToInitialize.Channels != null && teamToInitialize.Channels.CurrentPage != null)
                 {
+                    teamToInitialize.Channels.InitializeNextPageRequest(this.Client, teamToInitialize.ChannelsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Channels.AdditionalData = teamToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    teamToInitialize.AdditionalData.TryGetValue("channels@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        teamToInitialize.Channels.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (teamToInitialize.InstalledApps != null && teamToInitialize.InstalledApps.CurrentPage != null)
                 {
+                    teamToInitialize.InstalledApps.InitializeNextPageRequest(this.Client, teamToInitialize.InstalledAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.InstalledApps.AdditionalData = teamToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    teamToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        teamToInitialize.InstalledApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (teamToInitialize.Members != null && teamToInitialize.Members.CurrentPage != null)
                 {
+                    teamToInitialize.Members.InitializeNextPageRequest(this.Client, teamToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Members.AdditionalData = teamToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    teamToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        teamToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (teamToInitialize.Operations != null && teamToInitialize.Operations.CurrentPage != null)
                 {
+                    teamToInitialize.Operations.InitializeNextPageRequest(this.Client, teamToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Operations.AdditionalData = teamToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    teamToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        teamToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (teamToInitialize.Owners != null && teamToInitialize.Owners.CurrentPage != null)
                 {
+                    teamToInitialize.Owners.InitializeNextPageRequest(this.Client, teamToInitialize.OwnersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Owners.AdditionalData = teamToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    teamToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        teamToInitialize.Owners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (teamToInitialize.Tags != null && teamToInitialize.Tags.CurrentPage != null)
                 {
+                    teamToInitialize.Tags.InitializeNextPageRequest(this.Client, teamToInitialize.TagsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Tags.AdditionalData = teamToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    teamToInitialize.AdditionalData.TryGetValue("tags@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        teamToInitialize.Tags.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

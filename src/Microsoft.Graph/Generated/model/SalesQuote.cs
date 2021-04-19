@@ -237,6 +237,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("salesQuoteLines")]
         public ISalesQuoteSalesQuoteLinesCollectionPage SalesQuoteLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesQuoteLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesQuoteLines@odata.nextLink")]
+        public string SalesQuoteLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets shipment method.

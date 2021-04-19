@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessPackageCatalog accessPackageCatalogToInitialize)
         {
 
-            if (accessPackageCatalogToInitialize != null && accessPackageCatalogToInitialize.AdditionalData != null)
+            if (accessPackageCatalogToInitialize != null)
             {
-
                 if (accessPackageCatalogToInitialize.AccessPackageResourceRoles != null && accessPackageCatalogToInitialize.AccessPackageResourceRoles.CurrentPage != null)
                 {
+                    accessPackageCatalogToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(this.Client, accessPackageCatalogToInitialize.AccessPackageResourceRolesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageCatalogToInitialize.AccessPackageResourceRoles.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageCatalogToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessPackageCatalogToInitialize.AccessPackageResources != null && accessPackageCatalogToInitialize.AccessPackageResources.CurrentPage != null)
                 {
+                    accessPackageCatalogToInitialize.AccessPackageResources.InitializeNextPageRequest(this.Client, accessPackageCatalogToInitialize.AccessPackageResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageCatalogToInitialize.AccessPackageResources.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackageResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageCatalogToInitialize.AccessPackageResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessPackageCatalogToInitialize.AccessPackageResourceScopes != null && accessPackageCatalogToInitialize.AccessPackageResourceScopes.CurrentPage != null)
                 {
+                    accessPackageCatalogToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(this.Client, accessPackageCatalogToInitialize.AccessPackageResourceScopesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageCatalogToInitialize.AccessPackageResourceScopes.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackageResourceScopes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageCatalogToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessPackageCatalogToInitialize.AccessPackages != null && accessPackageCatalogToInitialize.AccessPackages.CurrentPage != null)
                 {
+                    accessPackageCatalogToInitialize.AccessPackages.InitializeNextPageRequest(this.Client, accessPackageCatalogToInitialize.AccessPackagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageCatalogToInitialize.AccessPackages.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageCatalogToInitialize.AccessPackages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(VirtualEndpoint virtualEndpointToInitialize)
         {
 
-            if (virtualEndpointToInitialize != null && virtualEndpointToInitialize.AdditionalData != null)
+            if (virtualEndpointToInitialize != null)
             {
-
                 if (virtualEndpointToInitialize.CloudPCs != null && virtualEndpointToInitialize.CloudPCs.CurrentPage != null)
                 {
+                    virtualEndpointToInitialize.CloudPCs.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.CloudPCsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.CloudPCs.AdditionalData = virtualEndpointToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("cloudPCs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        virtualEndpointToInitialize.CloudPCs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (virtualEndpointToInitialize.DeviceImages != null && virtualEndpointToInitialize.DeviceImages.CurrentPage != null)
                 {
+                    virtualEndpointToInitialize.DeviceImages.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.DeviceImagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.DeviceImages.AdditionalData = virtualEndpointToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("deviceImages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        virtualEndpointToInitialize.DeviceImages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (virtualEndpointToInitialize.OnPremisesConnections != null && virtualEndpointToInitialize.OnPremisesConnections.CurrentPage != null)
                 {
+                    virtualEndpointToInitialize.OnPremisesConnections.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.OnPremisesConnectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.OnPremisesConnections.AdditionalData = virtualEndpointToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("onPremisesConnections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        virtualEndpointToInitialize.OnPremisesConnections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (virtualEndpointToInitialize.ProvisioningPolicies != null && virtualEndpointToInitialize.ProvisioningPolicies.CurrentPage != null)
                 {
+                    virtualEndpointToInitialize.ProvisioningPolicies.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.ProvisioningPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.ProvisioningPolicies.AdditionalData = virtualEndpointToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("provisioningPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        virtualEndpointToInitialize.ProvisioningPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

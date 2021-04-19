@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("journalLines")]
         public IJournalJournalLinesCollectionPage JournalLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets journalLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("journalLines@odata.nextLink")]
+        public string JournalLinesNextLink { get; set; }
     
     }
 }

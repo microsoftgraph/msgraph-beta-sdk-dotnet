@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessReview accessReviewToInitialize)
         {
 
-            if (accessReviewToInitialize != null && accessReviewToInitialize.AdditionalData != null)
+            if (accessReviewToInitialize != null)
             {
-
                 if (accessReviewToInitialize.Decisions != null && accessReviewToInitialize.Decisions.CurrentPage != null)
                 {
+                    accessReviewToInitialize.Decisions.InitializeNextPageRequest(this.Client, accessReviewToInitialize.DecisionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.Decisions.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("decisions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessReviewToInitialize.Decisions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessReviewToInitialize.Instances != null && accessReviewToInitialize.Instances.CurrentPage != null)
                 {
+                    accessReviewToInitialize.Instances.InitializeNextPageRequest(this.Client, accessReviewToInitialize.InstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.Instances.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessReviewToInitialize.Instances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessReviewToInitialize.MyDecisions != null && accessReviewToInitialize.MyDecisions.CurrentPage != null)
                 {
+                    accessReviewToInitialize.MyDecisions.InitializeNextPageRequest(this.Client, accessReviewToInitialize.MyDecisionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.MyDecisions.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("myDecisions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessReviewToInitialize.MyDecisions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessReviewToInitialize.Reviewers != null && accessReviewToInitialize.Reviewers.CurrentPage != null)
                 {
+                    accessReviewToInitialize.Reviewers.InitializeNextPageRequest(this.Client, accessReviewToInitialize.ReviewersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.Reviewers.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("reviewers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessReviewToInitialize.Reviewers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

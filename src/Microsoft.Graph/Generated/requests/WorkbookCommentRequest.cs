@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WorkbookComment workbookCommentToInitialize)
         {
 
-            if (workbookCommentToInitialize != null && workbookCommentToInitialize.AdditionalData != null)
+            if (workbookCommentToInitialize != null)
             {
-
                 if (workbookCommentToInitialize.Replies != null && workbookCommentToInitialize.Replies.CurrentPage != null)
                 {
+                    workbookCommentToInitialize.Replies.InitializeNextPageRequest(this.Client, workbookCommentToInitialize.RepliesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookCommentToInitialize.Replies.AdditionalData = workbookCommentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookCommentToInitialize.AdditionalData.TryGetValue("replies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookCommentToInitialize.Replies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

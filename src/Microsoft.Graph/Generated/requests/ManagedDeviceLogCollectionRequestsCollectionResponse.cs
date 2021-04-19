@@ -23,6 +23,12 @@ namespace Microsoft.Graph
         public IManagedDeviceLogCollectionRequestsCollectionPage Value { get; set; }
 
         /// <summary>
+        /// Gets or sets the nextLink string value.
+        /// </summary>
+        [JsonPropertyName("@odata.nextLink")]
+        public string NextLink { get; set; }
+
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

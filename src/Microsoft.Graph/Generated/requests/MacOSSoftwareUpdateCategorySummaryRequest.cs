@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MacOSSoftwareUpdateCategorySummary macOSSoftwareUpdateCategorySummaryToInitialize)
         {
 
-            if (macOSSoftwareUpdateCategorySummaryToInitialize != null && macOSSoftwareUpdateCategorySummaryToInitialize.AdditionalData != null)
+            if (macOSSoftwareUpdateCategorySummaryToInitialize != null)
             {
-
                 if (macOSSoftwareUpdateCategorySummaryToInitialize.UpdateStateSummaries != null && macOSSoftwareUpdateCategorySummaryToInitialize.UpdateStateSummaries.CurrentPage != null)
                 {
+                    macOSSoftwareUpdateCategorySummaryToInitialize.UpdateStateSummaries.InitializeNextPageRequest(this.Client, macOSSoftwareUpdateCategorySummaryToInitialize.UpdateStateSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     macOSSoftwareUpdateCategorySummaryToInitialize.UpdateStateSummaries.AdditionalData = macOSSoftwareUpdateCategorySummaryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    macOSSoftwareUpdateCategorySummaryToInitialize.AdditionalData.TryGetValue("updateStateSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        macOSSoftwareUpdateCategorySummaryToInitialize.UpdateStateSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

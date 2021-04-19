@@ -244,119 +244,49 @@ namespace Microsoft.Graph.Ediscovery
         private void InitializeCollectionProperties(Case caseToInitialize)
         {
 
-            if (caseToInitialize != null && caseToInitialize.AdditionalData != null)
+            if (caseToInitialize != null)
             {
-
                 if (caseToInitialize.Custodians != null && caseToInitialize.Custodians.CurrentPage != null)
                 {
+                    caseToInitialize.Custodians.InitializeNextPageRequest(this.Client, caseToInitialize.CustodiansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.Custodians.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("custodians@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.Custodians.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.LegalHolds != null && caseToInitialize.LegalHolds.CurrentPage != null)
                 {
+                    caseToInitialize.LegalHolds.InitializeNextPageRequest(this.Client, caseToInitialize.LegalHoldsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.LegalHolds.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("legalHolds@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.LegalHolds.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.NoncustodialDataSources != null && caseToInitialize.NoncustodialDataSources.CurrentPage != null)
                 {
+                    caseToInitialize.NoncustodialDataSources.InitializeNextPageRequest(this.Client, caseToInitialize.NoncustodialDataSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.NoncustodialDataSources.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("noncustodialDataSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.NoncustodialDataSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.Operations != null && caseToInitialize.Operations.CurrentPage != null)
                 {
+                    caseToInitialize.Operations.InitializeNextPageRequest(this.Client, caseToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.Operations.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.ReviewSets != null && caseToInitialize.ReviewSets.CurrentPage != null)
                 {
+                    caseToInitialize.ReviewSets.InitializeNextPageRequest(this.Client, caseToInitialize.ReviewSetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.ReviewSets.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("reviewSets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.ReviewSets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.SourceCollections != null && caseToInitialize.SourceCollections.CurrentPage != null)
                 {
+                    caseToInitialize.SourceCollections.InitializeNextPageRequest(this.Client, caseToInitialize.SourceCollectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.SourceCollections.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("sourceCollections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.SourceCollections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.Tags != null && caseToInitialize.Tags.CurrentPage != null)
                 {
+                    caseToInitialize.Tags.InitializeNextPageRequest(this.Client, caseToInitialize.TagsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.Tags.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("tags@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.Tags.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

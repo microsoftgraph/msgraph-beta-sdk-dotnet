@@ -244,199 +244,79 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EntitlementManagement entitlementManagementToInitialize)
         {
 
-            if (entitlementManagementToInitialize != null && entitlementManagementToInitialize.AdditionalData != null)
+            if (entitlementManagementToInitialize != null)
             {
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentApprovals != null && entitlementManagementToInitialize.AccessPackageAssignmentApprovals.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentApprovals.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentApprovalsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentApprovals.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentApprovals@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageAssignmentApprovals.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentPolicies != null && entitlementManagementToInitialize.AccessPackageAssignmentPolicies.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentPolicies.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentPolicies.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageAssignmentPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentRequests != null && entitlementManagementToInitialize.AccessPackageAssignmentRequests.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentRequests.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles != null && entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentResourceRolesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentResourceRoles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignments != null && entitlementManagementToInitialize.AccessPackageAssignments.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignments.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignments.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageCatalogs != null && entitlementManagementToInitialize.AccessPackageCatalogs.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageCatalogs.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageCatalogsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageCatalogs.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageCatalogs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageCatalogs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResourceEnvironments != null && entitlementManagementToInitialize.AccessPackageResourceEnvironments.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResourceEnvironments.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourceEnvironmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResourceEnvironments.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceEnvironments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageResourceEnvironments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResourceRequests != null && entitlementManagementToInitialize.AccessPackageResourceRequests.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResourceRequests.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourceRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResourceRequests.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageResourceRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResourceRoleScopes != null && entitlementManagementToInitialize.AccessPackageResourceRoleScopes.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResourceRoleScopes.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourceRoleScopesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResourceRoleScopes.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoleScopes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageResourceRoleScopes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResources != null && entitlementManagementToInitialize.AccessPackageResources.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResources.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResources.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackages != null && entitlementManagementToInitialize.AccessPackages.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackages.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackages.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.ConnectedOrganizations != null && entitlementManagementToInitialize.ConnectedOrganizations.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.ConnectedOrganizations.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.ConnectedOrganizationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.ConnectedOrganizations.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("connectedOrganizations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.ConnectedOrganizations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,567 +244,217 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Company companyToInitialize)
         {
 
-            if (companyToInitialize != null && companyToInitialize.AdditionalData != null)
+            if (companyToInitialize != null)
             {
-
                 if (companyToInitialize.Accounts != null && companyToInitialize.Accounts.CurrentPage != null)
                 {
+                    companyToInitialize.Accounts.InitializeNextPageRequest(this.Client, companyToInitialize.AccountsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.Accounts.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("accounts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.Accounts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.AgedAccountsPayable != null && companyToInitialize.AgedAccountsPayable.CurrentPage != null)
                 {
+                    companyToInitialize.AgedAccountsPayable.InitializeNextPageRequest(this.Client, companyToInitialize.AgedAccountsPayableNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.AgedAccountsPayable.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("agedAccountsPayable@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.AgedAccountsPayable.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.AgedAccountsReceivable != null && companyToInitialize.AgedAccountsReceivable.CurrentPage != null)
                 {
+                    companyToInitialize.AgedAccountsReceivable.InitializeNextPageRequest(this.Client, companyToInitialize.AgedAccountsReceivableNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.AgedAccountsReceivable.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("agedAccountsReceivable@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.AgedAccountsReceivable.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.CompanyInformation != null && companyToInitialize.CompanyInformation.CurrentPage != null)
                 {
+                    companyToInitialize.CompanyInformation.InitializeNextPageRequest(this.Client, companyToInitialize.CompanyInformationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.CompanyInformation.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("companyInformation@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.CompanyInformation.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.CountriesRegions != null && companyToInitialize.CountriesRegions.CurrentPage != null)
                 {
+                    companyToInitialize.CountriesRegions.InitializeNextPageRequest(this.Client, companyToInitialize.CountriesRegionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.CountriesRegions.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("countriesRegions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.CountriesRegions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.Currencies != null && companyToInitialize.Currencies.CurrentPage != null)
                 {
+                    companyToInitialize.Currencies.InitializeNextPageRequest(this.Client, companyToInitialize.CurrenciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.Currencies.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("currencies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.Currencies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.CustomerPaymentJournals != null && companyToInitialize.CustomerPaymentJournals.CurrentPage != null)
                 {
+                    companyToInitialize.CustomerPaymentJournals.InitializeNextPageRequest(this.Client, companyToInitialize.CustomerPaymentJournalsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.CustomerPaymentJournals.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("customerPaymentJournals@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.CustomerPaymentJournals.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.CustomerPayments != null && companyToInitialize.CustomerPayments.CurrentPage != null)
                 {
+                    companyToInitialize.CustomerPayments.InitializeNextPageRequest(this.Client, companyToInitialize.CustomerPaymentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.CustomerPayments.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("customerPayments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.CustomerPayments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.Customers != null && companyToInitialize.Customers.CurrentPage != null)
                 {
+                    companyToInitialize.Customers.InitializeNextPageRequest(this.Client, companyToInitialize.CustomersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.Customers.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("customers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.Customers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.Dimensions != null && companyToInitialize.Dimensions.CurrentPage != null)
                 {
+                    companyToInitialize.Dimensions.InitializeNextPageRequest(this.Client, companyToInitialize.DimensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.Dimensions.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("dimensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.Dimensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.DimensionValues != null && companyToInitialize.DimensionValues.CurrentPage != null)
                 {
+                    companyToInitialize.DimensionValues.InitializeNextPageRequest(this.Client, companyToInitialize.DimensionValuesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.DimensionValues.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("dimensionValues@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.DimensionValues.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.Employees != null && companyToInitialize.Employees.CurrentPage != null)
                 {
+                    companyToInitialize.Employees.InitializeNextPageRequest(this.Client, companyToInitialize.EmployeesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.Employees.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("employees@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.Employees.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.GeneralLedgerEntries != null && companyToInitialize.GeneralLedgerEntries.CurrentPage != null)
                 {
+                    companyToInitialize.GeneralLedgerEntries.InitializeNextPageRequest(this.Client, companyToInitialize.GeneralLedgerEntriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.GeneralLedgerEntries.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("generalLedgerEntries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.GeneralLedgerEntries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.ItemCategories != null && companyToInitialize.ItemCategories.CurrentPage != null)
                 {
+                    companyToInitialize.ItemCategories.InitializeNextPageRequest(this.Client, companyToInitialize.ItemCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.ItemCategories.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("itemCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.ItemCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.Items != null && companyToInitialize.Items.CurrentPage != null)
                 {
+                    companyToInitialize.Items.InitializeNextPageRequest(this.Client, companyToInitialize.ItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.Items.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("items@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.Items.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.JournalLines != null && companyToInitialize.JournalLines.CurrentPage != null)
                 {
+                    companyToInitialize.JournalLines.InitializeNextPageRequest(this.Client, companyToInitialize.JournalLinesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.JournalLines.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("journalLines@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.JournalLines.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.Journals != null && companyToInitialize.Journals.CurrentPage != null)
                 {
+                    companyToInitialize.Journals.InitializeNextPageRequest(this.Client, companyToInitialize.JournalsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.Journals.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("journals@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.Journals.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.PaymentMethods != null && companyToInitialize.PaymentMethods.CurrentPage != null)
                 {
+                    companyToInitialize.PaymentMethods.InitializeNextPageRequest(this.Client, companyToInitialize.PaymentMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.PaymentMethods.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("paymentMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.PaymentMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.PaymentTerms != null && companyToInitialize.PaymentTerms.CurrentPage != null)
                 {
+                    companyToInitialize.PaymentTerms.InitializeNextPageRequest(this.Client, companyToInitialize.PaymentTermsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.PaymentTerms.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("paymentTerms@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.PaymentTerms.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.Picture != null && companyToInitialize.Picture.CurrentPage != null)
                 {
+                    companyToInitialize.Picture.InitializeNextPageRequest(this.Client, companyToInitialize.PictureNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.Picture.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("picture@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.Picture.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.PurchaseInvoiceLines != null && companyToInitialize.PurchaseInvoiceLines.CurrentPage != null)
                 {
+                    companyToInitialize.PurchaseInvoiceLines.InitializeNextPageRequest(this.Client, companyToInitialize.PurchaseInvoiceLinesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.PurchaseInvoiceLines.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("purchaseInvoiceLines@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.PurchaseInvoiceLines.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.PurchaseInvoices != null && companyToInitialize.PurchaseInvoices.CurrentPage != null)
                 {
+                    companyToInitialize.PurchaseInvoices.InitializeNextPageRequest(this.Client, companyToInitialize.PurchaseInvoicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.PurchaseInvoices.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("purchaseInvoices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.PurchaseInvoices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.SalesCreditMemoLines != null && companyToInitialize.SalesCreditMemoLines.CurrentPage != null)
                 {
+                    companyToInitialize.SalesCreditMemoLines.InitializeNextPageRequest(this.Client, companyToInitialize.SalesCreditMemoLinesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.SalesCreditMemoLines.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("salesCreditMemoLines@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.SalesCreditMemoLines.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.SalesCreditMemos != null && companyToInitialize.SalesCreditMemos.CurrentPage != null)
                 {
+                    companyToInitialize.SalesCreditMemos.InitializeNextPageRequest(this.Client, companyToInitialize.SalesCreditMemosNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.SalesCreditMemos.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("salesCreditMemos@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.SalesCreditMemos.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.SalesInvoiceLines != null && companyToInitialize.SalesInvoiceLines.CurrentPage != null)
                 {
+                    companyToInitialize.SalesInvoiceLines.InitializeNextPageRequest(this.Client, companyToInitialize.SalesInvoiceLinesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.SalesInvoiceLines.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("salesInvoiceLines@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.SalesInvoiceLines.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.SalesInvoices != null && companyToInitialize.SalesInvoices.CurrentPage != null)
                 {
+                    companyToInitialize.SalesInvoices.InitializeNextPageRequest(this.Client, companyToInitialize.SalesInvoicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.SalesInvoices.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("salesInvoices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.SalesInvoices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.SalesOrderLines != null && companyToInitialize.SalesOrderLines.CurrentPage != null)
                 {
+                    companyToInitialize.SalesOrderLines.InitializeNextPageRequest(this.Client, companyToInitialize.SalesOrderLinesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.SalesOrderLines.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("salesOrderLines@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.SalesOrderLines.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.SalesOrders != null && companyToInitialize.SalesOrders.CurrentPage != null)
                 {
+                    companyToInitialize.SalesOrders.InitializeNextPageRequest(this.Client, companyToInitialize.SalesOrdersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.SalesOrders.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("salesOrders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.SalesOrders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.SalesQuoteLines != null && companyToInitialize.SalesQuoteLines.CurrentPage != null)
                 {
+                    companyToInitialize.SalesQuoteLines.InitializeNextPageRequest(this.Client, companyToInitialize.SalesQuoteLinesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.SalesQuoteLines.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("salesQuoteLines@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.SalesQuoteLines.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.SalesQuotes != null && companyToInitialize.SalesQuotes.CurrentPage != null)
                 {
+                    companyToInitialize.SalesQuotes.InitializeNextPageRequest(this.Client, companyToInitialize.SalesQuotesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.SalesQuotes.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("salesQuotes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.SalesQuotes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.ShipmentMethods != null && companyToInitialize.ShipmentMethods.CurrentPage != null)
                 {
+                    companyToInitialize.ShipmentMethods.InitializeNextPageRequest(this.Client, companyToInitialize.ShipmentMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.ShipmentMethods.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("shipmentMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.ShipmentMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.TaxAreas != null && companyToInitialize.TaxAreas.CurrentPage != null)
                 {
+                    companyToInitialize.TaxAreas.InitializeNextPageRequest(this.Client, companyToInitialize.TaxAreasNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.TaxAreas.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("taxAreas@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.TaxAreas.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.TaxGroups != null && companyToInitialize.TaxGroups.CurrentPage != null)
                 {
+                    companyToInitialize.TaxGroups.InitializeNextPageRequest(this.Client, companyToInitialize.TaxGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.TaxGroups.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("taxGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.TaxGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.UnitsOfMeasure != null && companyToInitialize.UnitsOfMeasure.CurrentPage != null)
                 {
+                    companyToInitialize.UnitsOfMeasure.InitializeNextPageRequest(this.Client, companyToInitialize.UnitsOfMeasureNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.UnitsOfMeasure.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("unitsOfMeasure@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.UnitsOfMeasure.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (companyToInitialize.Vendors != null && companyToInitialize.Vendors.CurrentPage != null)
                 {
+                    companyToInitialize.Vendors.InitializeNextPageRequest(this.Client, companyToInitialize.VendorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     companyToInitialize.Vendors.AdditionalData = companyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    companyToInitialize.AdditionalData.TryGetValue("vendors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        companyToInitialize.Vendors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

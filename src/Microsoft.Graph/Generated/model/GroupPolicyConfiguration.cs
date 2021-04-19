@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IGroupPolicyConfigurationAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets definition values.
@@ -76,6 +82,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("definitionValues")]
         public IGroupPolicyConfigurationDefinitionValuesCollectionPage DefinitionValues { get; set; }
+
+        /// <summary>
+        /// Gets or sets definitionValuesNextLink.
+        /// </summary>
+        [JsonPropertyName("definitionValues@odata.nextLink")]
+        public string DefinitionValuesNextLink { get; set; }
     
     }
 }

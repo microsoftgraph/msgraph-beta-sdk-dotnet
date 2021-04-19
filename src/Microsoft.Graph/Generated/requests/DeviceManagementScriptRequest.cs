@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementScript deviceManagementScriptToInitialize)
         {
 
-            if (deviceManagementScriptToInitialize != null && deviceManagementScriptToInitialize.AdditionalData != null)
+            if (deviceManagementScriptToInitialize != null)
             {
-
                 if (deviceManagementScriptToInitialize.Assignments != null && deviceManagementScriptToInitialize.Assignments.CurrentPage != null)
                 {
+                    deviceManagementScriptToInitialize.Assignments.InitializeNextPageRequest(this.Client, deviceManagementScriptToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementScriptToInitialize.Assignments.AdditionalData = deviceManagementScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementScriptToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementScriptToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementScriptToInitialize.DeviceRunStates != null && deviceManagementScriptToInitialize.DeviceRunStates.CurrentPage != null)
                 {
+                    deviceManagementScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(this.Client, deviceManagementScriptToInitialize.DeviceRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementScriptToInitialize.DeviceRunStates.AdditionalData = deviceManagementScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementScriptToInitialize.AdditionalData.TryGetValue("deviceRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementScriptToInitialize.GroupAssignments != null && deviceManagementScriptToInitialize.GroupAssignments.CurrentPage != null)
                 {
+                    deviceManagementScriptToInitialize.GroupAssignments.InitializeNextPageRequest(this.Client, deviceManagementScriptToInitialize.GroupAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementScriptToInitialize.GroupAssignments.AdditionalData = deviceManagementScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementScriptToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementScriptToInitialize.GroupAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementScriptToInitialize.UserRunStates != null && deviceManagementScriptToInitialize.UserRunStates.CurrentPage != null)
                 {
+                    deviceManagementScriptToInitialize.UserRunStates.InitializeNextPageRequest(this.Client, deviceManagementScriptToInitialize.UserRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementScriptToInitialize.UserRunStates.AdditionalData = deviceManagementScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementScriptToInitialize.AdditionalData.TryGetValue("userRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementScriptToInitialize.UserRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

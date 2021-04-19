@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Chat chatToInitialize)
         {
 
-            if (chatToInitialize != null && chatToInitialize.AdditionalData != null)
+            if (chatToInitialize != null)
             {
-
                 if (chatToInitialize.InstalledApps != null && chatToInitialize.InstalledApps.CurrentPage != null)
                 {
+                    chatToInitialize.InstalledApps.InitializeNextPageRequest(this.Client, chatToInitialize.InstalledAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     chatToInitialize.InstalledApps.AdditionalData = chatToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    chatToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        chatToInitialize.InstalledApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (chatToInitialize.Members != null && chatToInitialize.Members.CurrentPage != null)
                 {
+                    chatToInitialize.Members.InitializeNextPageRequest(this.Client, chatToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     chatToInitialize.Members.AdditionalData = chatToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    chatToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        chatToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (chatToInitialize.Messages != null && chatToInitialize.Messages.CurrentPage != null)
                 {
+                    chatToInitialize.Messages.InitializeNextPageRequest(this.Client, chatToInitialize.MessagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     chatToInitialize.Messages.AdditionalData = chatToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    chatToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        chatToInitialize.Messages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (chatToInitialize.Tabs != null && chatToInitialize.Tabs.CurrentPage != null)
                 {
+                    chatToInitialize.Tabs.InitializeNextPageRequest(this.Client, chatToInitialize.TabsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     chatToInitialize.Tabs.AdditionalData = chatToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    chatToInitialize.AdditionalData.TryGetValue("tabs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        chatToInitialize.Tabs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

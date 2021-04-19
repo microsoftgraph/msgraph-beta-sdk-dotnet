@@ -34,24 +34,48 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("directoryAudits")]
         public IAuditLogRootDirectoryAuditsCollectionPage DirectoryAudits { get; set; }
+
+        /// <summary>
+        /// Gets or sets directoryAuditsNextLink.
+        /// </summary>
+        [JsonPropertyName("directoryAudits@odata.nextLink")]
+        public string DirectoryAuditsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets directory provisioning.
         /// </summary>
         [JsonPropertyName("directoryProvisioning")]
         public IAuditLogRootDirectoryProvisioningCollectionPage DirectoryProvisioning { get; set; }
+
+        /// <summary>
+        /// Gets or sets directoryProvisioningNextLink.
+        /// </summary>
+        [JsonPropertyName("directoryProvisioning@odata.nextLink")]
+        public string DirectoryProvisioningNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning.
         /// </summary>
         [JsonPropertyName("provisioning")]
         public IAuditLogRootProvisioningCollectionPage Provisioning { get; set; }
+
+        /// <summary>
+        /// Gets or sets provisioningNextLink.
+        /// </summary>
+        [JsonPropertyName("provisioning@odata.nextLink")]
+        public string ProvisioningNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets restricted sign ins.
         /// </summary>
         [JsonPropertyName("restrictedSignIns")]
         public IAuditLogRootRestrictedSignInsCollectionPage RestrictedSignIns { get; set; }
+
+        /// <summary>
+        /// Gets or sets restrictedSignInsNextLink.
+        /// </summary>
+        [JsonPropertyName("restrictedSignIns@odata.nextLink")]
+        public string RestrictedSignInsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sign ins.
@@ -59,6 +83,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("signIns")]
         public IAuditLogRootSignInsCollectionPage SignIns { get; set; }
+
+        /// <summary>
+        /// Gets or sets signInsNextLink.
+        /// </summary>
+        [JsonPropertyName("signIns@odata.nextLink")]
+        public string SignInsNextLink { get; set; }
     
     }
 }

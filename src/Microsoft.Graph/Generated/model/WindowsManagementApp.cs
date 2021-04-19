@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("healthStates")]
         public IWindowsManagementAppHealthStatesCollectionPage HealthStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets healthStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("healthStates@odata.nextLink")]
+        public string HealthStatesNextLink { get; set; }
     
     }
 }

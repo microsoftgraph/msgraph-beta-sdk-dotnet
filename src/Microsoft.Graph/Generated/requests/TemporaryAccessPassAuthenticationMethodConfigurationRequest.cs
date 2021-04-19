@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TemporaryAccessPassAuthenticationMethodConfiguration temporaryAccessPassAuthenticationMethodConfigurationToInitialize)
         {
 
-            if (temporaryAccessPassAuthenticationMethodConfigurationToInitialize != null && temporaryAccessPassAuthenticationMethodConfigurationToInitialize.AdditionalData != null)
+            if (temporaryAccessPassAuthenticationMethodConfigurationToInitialize != null)
             {
-
                 if (temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargets != null && temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargets.CurrentPage != null)
                 {
+                    temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(this.Client, temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargets.AdditionalData = temporaryAccessPassAuthenticationMethodConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    temporaryAccessPassAuthenticationMethodConfigurationToInitialize.AdditionalData.TryGetValue("includeTargets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        temporaryAccessPassAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

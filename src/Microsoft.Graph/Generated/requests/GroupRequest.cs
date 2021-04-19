@@ -244,343 +244,133 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Group groupToInitialize)
         {
 
-            if (groupToInitialize != null && groupToInitialize.AdditionalData != null)
+            if (groupToInitialize != null)
             {
-
                 if (groupToInitialize.AppRoleAssignments != null && groupToInitialize.AppRoleAssignments.CurrentPage != null)
                 {
+                    groupToInitialize.AppRoleAssignments.InitializeNextPageRequest(this.Client, groupToInitialize.AppRoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.AppRoleAssignments.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("appRoleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.AppRoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.Endpoints != null && groupToInitialize.Endpoints.CurrentPage != null)
                 {
+                    groupToInitialize.Endpoints.InitializeNextPageRequest(this.Client, groupToInitialize.EndpointsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Endpoints.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("endpoints@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Endpoints.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.MemberOf != null && groupToInitialize.MemberOf.CurrentPage != null)
                 {
+                    groupToInitialize.MemberOf.InitializeNextPageRequest(this.Client, groupToInitialize.MemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.MemberOf.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.MemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.Members != null && groupToInitialize.Members.CurrentPage != null)
                 {
+                    groupToInitialize.Members.InitializeNextPageRequest(this.Client, groupToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Members.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.MembersWithLicenseErrors != null && groupToInitialize.MembersWithLicenseErrors.CurrentPage != null)
                 {
+                    groupToInitialize.MembersWithLicenseErrors.InitializeNextPageRequest(this.Client, groupToInitialize.MembersWithLicenseErrorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.MembersWithLicenseErrors.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("membersWithLicenseErrors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.MembersWithLicenseErrors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.Owners != null && groupToInitialize.Owners.CurrentPage != null)
                 {
+                    groupToInitialize.Owners.InitializeNextPageRequest(this.Client, groupToInitialize.OwnersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Owners.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Owners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.PermissionGrants != null && groupToInitialize.PermissionGrants.CurrentPage != null)
                 {
+                    groupToInitialize.PermissionGrants.InitializeNextPageRequest(this.Client, groupToInitialize.PermissionGrantsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.PermissionGrants.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("permissionGrants@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.PermissionGrants.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.Settings != null && groupToInitialize.Settings.CurrentPage != null)
                 {
+                    groupToInitialize.Settings.InitializeNextPageRequest(this.Client, groupToInitialize.SettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Settings.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Settings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.TransitiveMemberOf != null && groupToInitialize.TransitiveMemberOf.CurrentPage != null)
                 {
+                    groupToInitialize.TransitiveMemberOf.InitializeNextPageRequest(this.Client, groupToInitialize.TransitiveMemberOfNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.TransitiveMemberOf.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.TransitiveMembers != null && groupToInitialize.TransitiveMembers.CurrentPage != null)
                 {
+                    groupToInitialize.TransitiveMembers.InitializeNextPageRequest(this.Client, groupToInitialize.TransitiveMembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.TransitiveMembers.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("transitiveMembers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.TransitiveMembers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.AcceptedSenders != null && groupToInitialize.AcceptedSenders.CurrentPage != null)
                 {
+                    groupToInitialize.AcceptedSenders.InitializeNextPageRequest(this.Client, groupToInitialize.AcceptedSendersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.AcceptedSenders.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("acceptedSenders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.AcceptedSenders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.CalendarView != null && groupToInitialize.CalendarView.CurrentPage != null)
                 {
+                    groupToInitialize.CalendarView.InitializeNextPageRequest(this.Client, groupToInitialize.CalendarViewNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.CalendarView.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.CalendarView.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.Conversations != null && groupToInitialize.Conversations.CurrentPage != null)
                 {
+                    groupToInitialize.Conversations.InitializeNextPageRequest(this.Client, groupToInitialize.ConversationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Conversations.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("conversations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Conversations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.Events != null && groupToInitialize.Events.CurrentPage != null)
                 {
+                    groupToInitialize.Events.InitializeNextPageRequest(this.Client, groupToInitialize.EventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Events.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("events@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Events.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.RejectedSenders != null && groupToInitialize.RejectedSenders.CurrentPage != null)
                 {
+                    groupToInitialize.RejectedSenders.InitializeNextPageRequest(this.Client, groupToInitialize.RejectedSendersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.RejectedSenders.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("rejectedSenders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.RejectedSenders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.Threads != null && groupToInitialize.Threads.CurrentPage != null)
                 {
+                    groupToInitialize.Threads.InitializeNextPageRequest(this.Client, groupToInitialize.ThreadsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Threads.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("threads@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Threads.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.Drives != null && groupToInitialize.Drives.CurrentPage != null)
                 {
+                    groupToInitialize.Drives.InitializeNextPageRequest(this.Client, groupToInitialize.DrivesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Drives.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("drives@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Drives.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.Sites != null && groupToInitialize.Sites.CurrentPage != null)
                 {
+                    groupToInitialize.Sites.InitializeNextPageRequest(this.Client, groupToInitialize.SitesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Sites.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("sites@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Sites.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.Extensions != null && groupToInitialize.Extensions.CurrentPage != null)
                 {
+                    groupToInitialize.Extensions.InitializeNextPageRequest(this.Client, groupToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Extensions.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.GroupLifecyclePolicies != null && groupToInitialize.GroupLifecyclePolicies.CurrentPage != null)
                 {
+                    groupToInitialize.GroupLifecyclePolicies.InitializeNextPageRequest(this.Client, groupToInitialize.GroupLifecyclePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.GroupLifecyclePolicies.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("groupLifecyclePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.GroupLifecyclePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (groupToInitialize.Photos != null && groupToInitialize.Photos.CurrentPage != null)
                 {
+                    groupToInitialize.Photos.InitializeNextPageRequest(this.Client, groupToInitialize.PhotosNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Photos.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("photos@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Photos.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

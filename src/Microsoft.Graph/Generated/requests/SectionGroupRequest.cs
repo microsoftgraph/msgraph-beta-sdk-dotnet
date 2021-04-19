@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SectionGroup sectionGroupToInitialize)
         {
 
-            if (sectionGroupToInitialize != null && sectionGroupToInitialize.AdditionalData != null)
+            if (sectionGroupToInitialize != null)
             {
-
                 if (sectionGroupToInitialize.SectionGroups != null && sectionGroupToInitialize.SectionGroups.CurrentPage != null)
                 {
+                    sectionGroupToInitialize.SectionGroups.InitializeNextPageRequest(this.Client, sectionGroupToInitialize.SectionGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     sectionGroupToInitialize.SectionGroups.AdditionalData = sectionGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    sectionGroupToInitialize.AdditionalData.TryGetValue("sectionGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        sectionGroupToInitialize.SectionGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (sectionGroupToInitialize.Sections != null && sectionGroupToInitialize.Sections.CurrentPage != null)
                 {
+                    sectionGroupToInitialize.Sections.InitializeNextPageRequest(this.Client, sectionGroupToInitialize.SectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     sectionGroupToInitialize.Sections.AdditionalData = sectionGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    sectionGroupToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        sectionGroupToInitialize.Sections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

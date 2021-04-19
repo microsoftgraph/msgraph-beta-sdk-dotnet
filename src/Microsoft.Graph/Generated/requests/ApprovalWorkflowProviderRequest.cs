@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ApprovalWorkflowProvider approvalWorkflowProviderToInitialize)
         {
 
-            if (approvalWorkflowProviderToInitialize != null && approvalWorkflowProviderToInitialize.AdditionalData != null)
+            if (approvalWorkflowProviderToInitialize != null)
             {
-
                 if (approvalWorkflowProviderToInitialize.BusinessFlows != null && approvalWorkflowProviderToInitialize.BusinessFlows.CurrentPage != null)
                 {
+                    approvalWorkflowProviderToInitialize.BusinessFlows.InitializeNextPageRequest(this.Client, approvalWorkflowProviderToInitialize.BusinessFlowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     approvalWorkflowProviderToInitialize.BusinessFlows.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("businessFlows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalWorkflowProviderToInitialize.BusinessFlows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision != null && approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.CurrentPage != null)
                 {
+                    approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.InitializeNextPageRequest(this.Client, approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecisionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("businessFlowsWithRequestsAwaitingMyDecision@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (approvalWorkflowProviderToInitialize.PolicyTemplates != null && approvalWorkflowProviderToInitialize.PolicyTemplates.CurrentPage != null)
                 {
+                    approvalWorkflowProviderToInitialize.PolicyTemplates.InitializeNextPageRequest(this.Client, approvalWorkflowProviderToInitialize.PolicyTemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     approvalWorkflowProviderToInitialize.PolicyTemplates.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("policyTemplates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalWorkflowProviderToInitialize.PolicyTemplates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

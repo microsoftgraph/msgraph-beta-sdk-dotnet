@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OutlookTaskFolder outlookTaskFolderToInitialize)
         {
 
-            if (outlookTaskFolderToInitialize != null && outlookTaskFolderToInitialize.AdditionalData != null)
+            if (outlookTaskFolderToInitialize != null)
             {
-
                 if (outlookTaskFolderToInitialize.MultiValueExtendedProperties != null && outlookTaskFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    outlookTaskFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, outlookTaskFolderToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookTaskFolderToInitialize.MultiValueExtendedProperties.AdditionalData = outlookTaskFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookTaskFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookTaskFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (outlookTaskFolderToInitialize.SingleValueExtendedProperties != null && outlookTaskFolderToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    outlookTaskFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, outlookTaskFolderToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookTaskFolderToInitialize.SingleValueExtendedProperties.AdditionalData = outlookTaskFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookTaskFolderToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookTaskFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (outlookTaskFolderToInitialize.Tasks != null && outlookTaskFolderToInitialize.Tasks.CurrentPage != null)
                 {
+                    outlookTaskFolderToInitialize.Tasks.InitializeNextPageRequest(this.Client, outlookTaskFolderToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookTaskFolderToInitialize.Tasks.AdditionalData = outlookTaskFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookTaskFolderToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookTaskFolderToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -118,6 +118,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("instances")]
         public IAccessReviewScheduleDefinitionInstancesCollectionPage Instances { get; set; }
+
+        /// <summary>
+        /// Gets or sets instancesNextLink.
+        /// </summary>
+        [JsonPropertyName("instances@odata.nextLink")]
+        public string InstancesNextLink { get; set; }
     
     }
 }

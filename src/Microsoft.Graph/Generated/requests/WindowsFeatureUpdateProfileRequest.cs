@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsFeatureUpdateProfile windowsFeatureUpdateProfileToInitialize)
         {
 
-            if (windowsFeatureUpdateProfileToInitialize != null && windowsFeatureUpdateProfileToInitialize.AdditionalData != null)
+            if (windowsFeatureUpdateProfileToInitialize != null)
             {
-
                 if (windowsFeatureUpdateProfileToInitialize.Assignments != null && windowsFeatureUpdateProfileToInitialize.Assignments.CurrentPage != null)
                 {
+                    windowsFeatureUpdateProfileToInitialize.Assignments.InitializeNextPageRequest(this.Client, windowsFeatureUpdateProfileToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsFeatureUpdateProfileToInitialize.Assignments.AdditionalData = windowsFeatureUpdateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsFeatureUpdateProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsFeatureUpdateProfileToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates != null && windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates.CurrentPage != null)
                 {
+                    windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates.InitializeNextPageRequest(this.Client, windowsFeatureUpdateProfileToInitialize.DeviceUpdateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates.AdditionalData = windowsFeatureUpdateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsFeatureUpdateProfileToInitialize.AdditionalData.TryGetValue("deviceUpdateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

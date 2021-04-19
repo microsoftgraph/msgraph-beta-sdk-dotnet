@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserTeamwork userTeamworkToInitialize)
         {
 
-            if (userTeamworkToInitialize != null && userTeamworkToInitialize.AdditionalData != null)
+            if (userTeamworkToInitialize != null)
             {
-
                 if (userTeamworkToInitialize.InstalledApps != null && userTeamworkToInitialize.InstalledApps.CurrentPage != null)
                 {
+                    userTeamworkToInitialize.InstalledApps.InitializeNextPageRequest(this.Client, userTeamworkToInitialize.InstalledAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userTeamworkToInitialize.InstalledApps.AdditionalData = userTeamworkToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userTeamworkToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userTeamworkToInitialize.InstalledApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

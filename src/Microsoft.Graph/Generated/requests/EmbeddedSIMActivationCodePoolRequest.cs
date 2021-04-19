@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToInitialize)
         {
 
-            if (embeddedSIMActivationCodePoolToInitialize != null && embeddedSIMActivationCodePoolToInitialize.AdditionalData != null)
+            if (embeddedSIMActivationCodePoolToInitialize != null)
             {
-
                 if (embeddedSIMActivationCodePoolToInitialize.Assignments != null && embeddedSIMActivationCodePoolToInitialize.Assignments.CurrentPage != null)
                 {
+                    embeddedSIMActivationCodePoolToInitialize.Assignments.InitializeNextPageRequest(this.Client, embeddedSIMActivationCodePoolToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     embeddedSIMActivationCodePoolToInitialize.Assignments.AdditionalData = embeddedSIMActivationCodePoolToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    embeddedSIMActivationCodePoolToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        embeddedSIMActivationCodePoolToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (embeddedSIMActivationCodePoolToInitialize.DeviceStates != null && embeddedSIMActivationCodePoolToInitialize.DeviceStates.CurrentPage != null)
                 {
+                    embeddedSIMActivationCodePoolToInitialize.DeviceStates.InitializeNextPageRequest(this.Client, embeddedSIMActivationCodePoolToInitialize.DeviceStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     embeddedSIMActivationCodePoolToInitialize.DeviceStates.AdditionalData = embeddedSIMActivationCodePoolToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    embeddedSIMActivationCodePoolToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        embeddedSIMActivationCodePoolToInitialize.DeviceStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedAppRegistration managedAppRegistrationToInitialize)
         {
 
-            if (managedAppRegistrationToInitialize != null && managedAppRegistrationToInitialize.AdditionalData != null)
+            if (managedAppRegistrationToInitialize != null)
             {
-
                 if (managedAppRegistrationToInitialize.AppliedPolicies != null && managedAppRegistrationToInitialize.AppliedPolicies.CurrentPage != null)
                 {
+                    managedAppRegistrationToInitialize.AppliedPolicies.InitializeNextPageRequest(this.Client, managedAppRegistrationToInitialize.AppliedPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedAppRegistrationToInitialize.AppliedPolicies.AdditionalData = managedAppRegistrationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedAppRegistrationToInitialize.AdditionalData.TryGetValue("appliedPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedAppRegistrationToInitialize.AppliedPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedAppRegistrationToInitialize.IntendedPolicies != null && managedAppRegistrationToInitialize.IntendedPolicies.CurrentPage != null)
                 {
+                    managedAppRegistrationToInitialize.IntendedPolicies.InitializeNextPageRequest(this.Client, managedAppRegistrationToInitialize.IntendedPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedAppRegistrationToInitialize.IntendedPolicies.AdditionalData = managedAppRegistrationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedAppRegistrationToInitialize.AdditionalData.TryGetValue("intendedPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedAppRegistrationToInitialize.IntendedPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedAppRegistrationToInitialize.Operations != null && managedAppRegistrationToInitialize.Operations.CurrentPage != null)
                 {
+                    managedAppRegistrationToInitialize.Operations.InitializeNextPageRequest(this.Client, managedAppRegistrationToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedAppRegistrationToInitialize.Operations.AdditionalData = managedAppRegistrationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedAppRegistrationToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedAppRegistrationToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -90,6 +90,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("posts")]
         public IConversationThreadPostsCollectionPage Posts { get; set; }
+
+        /// <summary>
+        /// Gets or sets postsNextLink.
+        /// </summary>
+        [JsonPropertyName("posts@odata.nextLink")]
+        public string PostsNextLink { get; set; }
     
     }
 }

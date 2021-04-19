@@ -244,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IdentityContainer identityContainerToInitialize)
         {
 
-            if (identityContainerToInitialize != null && identityContainerToInitialize.AdditionalData != null)
+            if (identityContainerToInitialize != null)
             {
-
                 if (identityContainerToInitialize.ApiConnectors != null && identityContainerToInitialize.ApiConnectors.CurrentPage != null)
                 {
+                    identityContainerToInitialize.ApiConnectors.InitializeNextPageRequest(this.Client, identityContainerToInitialize.ApiConnectorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.ApiConnectors.AdditionalData = identityContainerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    identityContainerToInitialize.AdditionalData.TryGetValue("apiConnectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        identityContainerToInitialize.ApiConnectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (identityContainerToInitialize.B2cUserFlows != null && identityContainerToInitialize.B2cUserFlows.CurrentPage != null)
                 {
+                    identityContainerToInitialize.B2cUserFlows.InitializeNextPageRequest(this.Client, identityContainerToInitialize.B2cUserFlowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.B2cUserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    identityContainerToInitialize.AdditionalData.TryGetValue("b2cUserFlows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        identityContainerToInitialize.B2cUserFlows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (identityContainerToInitialize.B2xUserFlows != null && identityContainerToInitialize.B2xUserFlows.CurrentPage != null)
                 {
+                    identityContainerToInitialize.B2xUserFlows.InitializeNextPageRequest(this.Client, identityContainerToInitialize.B2xUserFlowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.B2xUserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    identityContainerToInitialize.AdditionalData.TryGetValue("b2xUserFlows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        identityContainerToInitialize.B2xUserFlows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (identityContainerToInitialize.UserFlowAttributes != null && identityContainerToInitialize.UserFlowAttributes.CurrentPage != null)
                 {
+                    identityContainerToInitialize.UserFlowAttributes.InitializeNextPageRequest(this.Client, identityContainerToInitialize.UserFlowAttributesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.UserFlowAttributes.AdditionalData = identityContainerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    identityContainerToInitialize.AdditionalData.TryGetValue("userFlowAttributes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        identityContainerToInitialize.UserFlowAttributes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (identityContainerToInitialize.UserFlows != null && identityContainerToInitialize.UserFlows.CurrentPage != null)
                 {
+                    identityContainerToInitialize.UserFlows.InitializeNextPageRequest(this.Client, identityContainerToInitialize.UserFlowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.UserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    identityContainerToInitialize.AdditionalData.TryGetValue("userFlows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        identityContainerToInitialize.UserFlows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

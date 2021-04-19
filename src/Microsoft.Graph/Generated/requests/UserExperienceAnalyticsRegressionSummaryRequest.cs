@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToInitialize)
         {
 
-            if (userExperienceAnalyticsRegressionSummaryToInitialize != null && userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData != null)
+            if (userExperienceAnalyticsRegressionSummaryToInitialize != null)
             {
-
                 if (userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression != null && userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression.CurrentPage != null)
                 {
+                    userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression.InitializeNextPageRequest(this.Client, userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegressionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression.AdditionalData = userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData.TryGetValue("manufacturerRegression@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression != null && userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.CurrentPage != null)
                 {
+                    userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.InitializeNextPageRequest(this.Client, userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegressionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.AdditionalData = userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData.TryGetValue("modelRegression@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegression != null && userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegression.CurrentPage != null)
                 {
+                    userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegression.InitializeNextPageRequest(this.Client, userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegressionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegression.AdditionalData = userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData.TryGetValue("operatingSystemRegression@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegression.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

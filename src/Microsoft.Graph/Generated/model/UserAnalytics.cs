@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("activityStatistics")]
         public IUserAnalyticsActivityStatisticsCollectionPage ActivityStatistics { get; set; }
+
+        /// <summary>
+        /// Gets or sets activityStatisticsNextLink.
+        /// </summary>
+        [JsonPropertyName("activityStatistics@odata.nextLink")]
+        public string ActivityStatisticsNextLink { get; set; }
     
     }
 }

@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DirectoryRole directoryRoleToInitialize)
         {
 
-            if (directoryRoleToInitialize != null && directoryRoleToInitialize.AdditionalData != null)
+            if (directoryRoleToInitialize != null)
             {
-
                 if (directoryRoleToInitialize.Members != null && directoryRoleToInitialize.Members.CurrentPage != null)
                 {
+                    directoryRoleToInitialize.Members.InitializeNextPageRequest(this.Client, directoryRoleToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     directoryRoleToInitialize.Members.AdditionalData = directoryRoleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    directoryRoleToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        directoryRoleToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (directoryRoleToInitialize.ScopedMembers != null && directoryRoleToInitialize.ScopedMembers.CurrentPage != null)
                 {
+                    directoryRoleToInitialize.ScopedMembers.InitializeNextPageRequest(this.Client, directoryRoleToInitialize.ScopedMembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     directoryRoleToInitialize.ScopedMembers.AdditionalData = directoryRoleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    directoryRoleToInitialize.AdditionalData.TryGetValue("scopedMembers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        directoryRoleToInitialize.ScopedMembers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

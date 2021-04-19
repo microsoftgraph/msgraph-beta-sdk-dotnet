@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("activities")]
         public IListItemActivitiesCollectionPage Activities { get; set; }
+
+        /// <summary>
+        /// Gets or sets activitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("activities@odata.nextLink")]
+        public string ActivitiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets analytics.
@@ -76,6 +82,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("versions")]
         public IListItemVersionsCollectionPage Versions { get; set; }
+
+        /// <summary>
+        /// Gets or sets versionsNextLink.
+        /// </summary>
+        [JsonPropertyName("versions@odata.nextLink")]
+        public string VersionsNextLink { get; set; }
     
     }
 }

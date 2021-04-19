@@ -51,6 +51,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("dimensionValues")]
         public IDimensionDimensionValuesCollectionPage DimensionValues { get; set; }
+
+        /// <summary>
+        /// Gets or sets dimensionValuesNextLink.
+        /// </summary>
+        [JsonPropertyName("dimensionValues@odata.nextLink")]
+        public string DimensionValuesNextLink { get; set; }
     
     }
 }

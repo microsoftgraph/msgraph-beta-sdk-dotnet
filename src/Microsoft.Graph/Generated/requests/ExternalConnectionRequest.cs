@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ExternalConnection externalConnectionToInitialize)
         {
 
-            if (externalConnectionToInitialize != null && externalConnectionToInitialize.AdditionalData != null)
+            if (externalConnectionToInitialize != null)
             {
-
                 if (externalConnectionToInitialize.Groups != null && externalConnectionToInitialize.Groups.CurrentPage != null)
                 {
+                    externalConnectionToInitialize.Groups.InitializeNextPageRequest(this.Client, externalConnectionToInitialize.GroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     externalConnectionToInitialize.Groups.AdditionalData = externalConnectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    externalConnectionToInitialize.AdditionalData.TryGetValue("groups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        externalConnectionToInitialize.Groups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (externalConnectionToInitialize.Items != null && externalConnectionToInitialize.Items.CurrentPage != null)
                 {
+                    externalConnectionToInitialize.Items.InitializeNextPageRequest(this.Client, externalConnectionToInitialize.ItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     externalConnectionToInitialize.Items.AdditionalData = externalConnectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    externalConnectionToInitialize.AdditionalData.TryGetValue("items@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        externalConnectionToInitialize.Items.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (externalConnectionToInitialize.Operations != null && externalConnectionToInitialize.Operations.CurrentPage != null)
                 {
+                    externalConnectionToInitialize.Operations.InitializeNextPageRequest(this.Client, externalConnectionToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     externalConnectionToInitialize.Operations.AdditionalData = externalConnectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    externalConnectionToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        externalConnectionToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

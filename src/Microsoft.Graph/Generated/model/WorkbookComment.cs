@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("replies")]
         public IWorkbookCommentRepliesCollectionPage Replies { get; set; }
+
+        /// <summary>
+        /// Gets or sets repliesNextLink.
+        /// </summary>
+        [JsonPropertyName("replies@odata.nextLink")]
+        public string RepliesNextLink { get; set; }
     
     }
 }

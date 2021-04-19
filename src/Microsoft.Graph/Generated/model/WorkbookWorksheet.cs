@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("charts")]
         public IWorkbookWorksheetChartsCollectionPage Charts { get; set; }
+
+        /// <summary>
+        /// Gets or sets chartsNextLink.
+        /// </summary>
+        [JsonPropertyName("charts@odata.nextLink")]
+        public string ChartsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets names.
@@ -62,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("names")]
         public IWorkbookWorksheetNamesCollectionPage Names { get; set; }
+
+        /// <summary>
+        /// Gets or sets namesNextLink.
+        /// </summary>
+        [JsonPropertyName("names@odata.nextLink")]
+        public string NamesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets pivot tables.
@@ -69,6 +81,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("pivotTables")]
         public IWorkbookWorksheetPivotTablesCollectionPage PivotTables { get; set; }
+
+        /// <summary>
+        /// Gets or sets pivotTablesNextLink.
+        /// </summary>
+        [JsonPropertyName("pivotTables@odata.nextLink")]
+        public string PivotTablesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets protection.
@@ -83,6 +101,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tables")]
         public IWorkbookWorksheetTablesCollectionPage Tables { get; set; }
+
+        /// <summary>
+        /// Gets or sets tablesNextLink.
+        /// </summary>
+        [JsonPropertyName("tables@odata.nextLink")]
+        public string TablesNextLink { get; set; }
     
     }
 }

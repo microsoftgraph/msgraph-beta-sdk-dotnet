@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IEmbeddedSIMActivationCodePoolAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device states.
@@ -76,6 +82,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceStates")]
         public IEmbeddedSIMActivationCodePoolDeviceStatesCollectionPage DeviceStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceStates@odata.nextLink")]
+        public string DeviceStatesNextLink { get; set; }
     
     }
 }

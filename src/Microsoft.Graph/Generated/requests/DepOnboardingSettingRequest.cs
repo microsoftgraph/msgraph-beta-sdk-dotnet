@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DepOnboardingSetting depOnboardingSettingToInitialize)
         {
 
-            if (depOnboardingSettingToInitialize != null && depOnboardingSettingToInitialize.AdditionalData != null)
+            if (depOnboardingSettingToInitialize != null)
             {
-
                 if (depOnboardingSettingToInitialize.EnrollmentProfiles != null && depOnboardingSettingToInitialize.EnrollmentProfiles.CurrentPage != null)
                 {
+                    depOnboardingSettingToInitialize.EnrollmentProfiles.InitializeNextPageRequest(this.Client, depOnboardingSettingToInitialize.EnrollmentProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     depOnboardingSettingToInitialize.EnrollmentProfiles.AdditionalData = depOnboardingSettingToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    depOnboardingSettingToInitialize.AdditionalData.TryGetValue("enrollmentProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        depOnboardingSettingToInitialize.EnrollmentProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities != null && depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities.CurrentPage != null)
                 {
+                    depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities.InitializeNextPageRequest(this.Client, depOnboardingSettingToInitialize.ImportedAppleDeviceIdentitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities.AdditionalData = depOnboardingSettingToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    depOnboardingSettingToInitialize.AdditionalData.TryGetValue("importedAppleDeviceIdentities@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

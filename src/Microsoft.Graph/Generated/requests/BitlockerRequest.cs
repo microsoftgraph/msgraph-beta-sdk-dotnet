@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Bitlocker bitlockerToInitialize)
         {
 
-            if (bitlockerToInitialize != null && bitlockerToInitialize.AdditionalData != null)
+            if (bitlockerToInitialize != null)
             {
-
                 if (bitlockerToInitialize.RecoveryKeys != null && bitlockerToInitialize.RecoveryKeys.CurrentPage != null)
                 {
+                    bitlockerToInitialize.RecoveryKeys.InitializeNextPageRequest(this.Client, bitlockerToInitialize.RecoveryKeysNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bitlockerToInitialize.RecoveryKeys.AdditionalData = bitlockerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bitlockerToInitialize.AdditionalData.TryGetValue("recoveryKeys@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bitlockerToInitialize.RecoveryKeys.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

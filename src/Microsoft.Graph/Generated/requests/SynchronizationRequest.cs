@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Synchronization synchronizationToInitialize)
         {
 
-            if (synchronizationToInitialize != null && synchronizationToInitialize.AdditionalData != null)
+            if (synchronizationToInitialize != null)
             {
-
                 if (synchronizationToInitialize.Jobs != null && synchronizationToInitialize.Jobs.CurrentPage != null)
                 {
+                    synchronizationToInitialize.Jobs.InitializeNextPageRequest(this.Client, synchronizationToInitialize.JobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     synchronizationToInitialize.Jobs.AdditionalData = synchronizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    synchronizationToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        synchronizationToInitialize.Jobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (synchronizationToInitialize.Templates != null && synchronizationToInitialize.Templates.CurrentPage != null)
                 {
+                    synchronizationToInitialize.Templates.InitializeNextPageRequest(this.Client, synchronizationToInitialize.TemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     synchronizationToInitialize.Templates.AdditionalData = synchronizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    synchronizationToInitialize.AdditionalData.TryGetValue("templates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        synchronizationToInitialize.Templates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

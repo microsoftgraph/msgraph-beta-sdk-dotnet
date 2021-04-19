@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceComplianceScript deviceComplianceScriptToInitialize)
         {
 
-            if (deviceComplianceScriptToInitialize != null && deviceComplianceScriptToInitialize.AdditionalData != null)
+            if (deviceComplianceScriptToInitialize != null)
             {
-
                 if (deviceComplianceScriptToInitialize.Assignments != null && deviceComplianceScriptToInitialize.Assignments.CurrentPage != null)
                 {
+                    deviceComplianceScriptToInitialize.Assignments.InitializeNextPageRequest(this.Client, deviceComplianceScriptToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceComplianceScriptToInitialize.Assignments.AdditionalData = deviceComplianceScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceComplianceScriptToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceComplianceScriptToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceComplianceScriptToInitialize.DeviceRunStates != null && deviceComplianceScriptToInitialize.DeviceRunStates.CurrentPage != null)
                 {
+                    deviceComplianceScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(this.Client, deviceComplianceScriptToInitialize.DeviceRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceComplianceScriptToInitialize.DeviceRunStates.AdditionalData = deviceComplianceScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceComplianceScriptToInitialize.AdditionalData.TryGetValue("deviceRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceComplianceScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

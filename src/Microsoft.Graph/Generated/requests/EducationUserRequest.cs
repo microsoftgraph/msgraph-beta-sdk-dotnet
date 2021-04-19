@@ -244,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EducationUser educationUserToInitialize)
         {
 
-            if (educationUserToInitialize != null && educationUserToInitialize.AdditionalData != null)
+            if (educationUserToInitialize != null)
             {
-
                 if (educationUserToInitialize.Assignments != null && educationUserToInitialize.Assignments.CurrentPage != null)
                 {
+                    educationUserToInitialize.Assignments.InitializeNextPageRequest(this.Client, educationUserToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationUserToInitialize.Assignments.AdditionalData = educationUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationUserToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (educationUserToInitialize.Rubrics != null && educationUserToInitialize.Rubrics.CurrentPage != null)
                 {
+                    educationUserToInitialize.Rubrics.InitializeNextPageRequest(this.Client, educationUserToInitialize.RubricsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationUserToInitialize.Rubrics.AdditionalData = educationUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("rubrics@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationUserToInitialize.Rubrics.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (educationUserToInitialize.Classes != null && educationUserToInitialize.Classes.CurrentPage != null)
                 {
+                    educationUserToInitialize.Classes.InitializeNextPageRequest(this.Client, educationUserToInitialize.ClassesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationUserToInitialize.Classes.AdditionalData = educationUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("classes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationUserToInitialize.Classes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (educationUserToInitialize.Schools != null && educationUserToInitialize.Schools.CurrentPage != null)
                 {
+                    educationUserToInitialize.Schools.InitializeNextPageRequest(this.Client, educationUserToInitialize.SchoolsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationUserToInitialize.Schools.AdditionalData = educationUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationUserToInitialize.Schools.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (educationUserToInitialize.TaughtClasses != null && educationUserToInitialize.TaughtClasses.CurrentPage != null)
                 {
+                    educationUserToInitialize.TaughtClasses.InitializeNextPageRequest(this.Client, educationUserToInitialize.TaughtClassesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationUserToInitialize.TaughtClasses.AdditionalData = educationUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("taughtClasses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationUserToInitialize.TaughtClasses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

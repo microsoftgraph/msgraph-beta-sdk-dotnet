@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PurchaseInvoice purchaseInvoiceToInitialize)
         {
 
-            if (purchaseInvoiceToInitialize != null && purchaseInvoiceToInitialize.AdditionalData != null)
+            if (purchaseInvoiceToInitialize != null)
             {
-
                 if (purchaseInvoiceToInitialize.PurchaseInvoiceLines != null && purchaseInvoiceToInitialize.PurchaseInvoiceLines.CurrentPage != null)
                 {
+                    purchaseInvoiceToInitialize.PurchaseInvoiceLines.InitializeNextPageRequest(this.Client, purchaseInvoiceToInitialize.PurchaseInvoiceLinesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     purchaseInvoiceToInitialize.PurchaseInvoiceLines.AdditionalData = purchaseInvoiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    purchaseInvoiceToInitialize.AdditionalData.TryGetValue("purchaseInvoiceLines@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        purchaseInvoiceToInitialize.PurchaseInvoiceLines.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

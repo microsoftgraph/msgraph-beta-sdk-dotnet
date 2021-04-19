@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TeamworkTag teamworkTagToInitialize)
         {
 
-            if (teamworkTagToInitialize != null && teamworkTagToInitialize.AdditionalData != null)
+            if (teamworkTagToInitialize != null)
             {
-
                 if (teamworkTagToInitialize.Members != null && teamworkTagToInitialize.Members.CurrentPage != null)
                 {
+                    teamworkTagToInitialize.Members.InitializeNextPageRequest(this.Client, teamworkTagToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     teamworkTagToInitialize.Members.AdditionalData = teamworkTagToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    teamworkTagToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        teamworkTagToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

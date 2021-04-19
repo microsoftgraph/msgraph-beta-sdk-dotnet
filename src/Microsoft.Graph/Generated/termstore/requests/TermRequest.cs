@@ -244,39 +244,19 @@ namespace Microsoft.Graph.TermStore
         private void InitializeCollectionProperties(Term termToInitialize)
         {
 
-            if (termToInitialize != null && termToInitialize.AdditionalData != null)
+            if (termToInitialize != null)
             {
-
                 if (termToInitialize.Children != null && termToInitialize.Children.CurrentPage != null)
                 {
+                    termToInitialize.Children.InitializeNextPageRequest(this.Client, termToInitialize.ChildrenNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     termToInitialize.Children.AdditionalData = termToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    termToInitialize.AdditionalData.TryGetValue("children@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        termToInitialize.Children.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (termToInitialize.Relations != null && termToInitialize.Relations.CurrentPage != null)
                 {
+                    termToInitialize.Relations.InitializeNextPageRequest(this.Client, termToInitialize.RelationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     termToInitialize.Relations.AdditionalData = termToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    termToInitialize.AdditionalData.TryGetValue("relations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        termToInitialize.Relations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Printer printerToInitialize)
         {
 
-            if (printerToInitialize != null && printerToInitialize.AdditionalData != null)
+            if (printerToInitialize != null)
             {
-
                 if (printerToInitialize.Connectors != null && printerToInitialize.Connectors.CurrentPage != null)
                 {
+                    printerToInitialize.Connectors.InitializeNextPageRequest(this.Client, printerToInitialize.ConnectorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printerToInitialize.Connectors.AdditionalData = printerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printerToInitialize.AdditionalData.TryGetValue("connectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printerToInitialize.Connectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (printerToInitialize.Shares != null && printerToInitialize.Shares.CurrentPage != null)
                 {
+                    printerToInitialize.Shares.InitializeNextPageRequest(this.Client, printerToInitialize.SharesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printerToInitialize.Shares.AdditionalData = printerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printerToInitialize.AdditionalData.TryGetValue("shares@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printerToInitialize.Shares.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (printerToInitialize.TaskTriggers != null && printerToInitialize.TaskTriggers.CurrentPage != null)
                 {
+                    printerToInitialize.TaskTriggers.InitializeNextPageRequest(this.Client, printerToInitialize.TaskTriggersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printerToInitialize.TaskTriggers.AdditionalData = printerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printerToInitialize.AdditionalData.TryGetValue("taskTriggers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printerToInitialize.TaskTriggers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

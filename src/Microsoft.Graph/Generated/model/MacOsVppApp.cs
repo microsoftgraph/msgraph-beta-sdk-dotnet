@@ -111,6 +111,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignedLicenses")]
         public IMacOsVppAppAssignedLicensesCollectionPage AssignedLicenses { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignedLicensesNextLink.
+        /// </summary>
+        [JsonPropertyName("assignedLicenses@odata.nextLink")]
+        public string AssignedLicensesNextLink { get; set; }
     
     }
 }

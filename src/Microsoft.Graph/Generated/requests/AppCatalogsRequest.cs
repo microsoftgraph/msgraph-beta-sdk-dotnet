@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AppCatalogs appCatalogsToInitialize)
         {
 
-            if (appCatalogsToInitialize != null && appCatalogsToInitialize.AdditionalData != null)
+            if (appCatalogsToInitialize != null)
             {
-
                 if (appCatalogsToInitialize.TeamsApps != null && appCatalogsToInitialize.TeamsApps.CurrentPage != null)
                 {
+                    appCatalogsToInitialize.TeamsApps.InitializeNextPageRequest(this.Client, appCatalogsToInitialize.TeamsAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     appCatalogsToInitialize.TeamsApps.AdditionalData = appCatalogsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    appCatalogsToInitialize.AdditionalData.TryGetValue("teamsApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        appCatalogsToInitialize.TeamsApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessPackageAssignment accessPackageAssignmentToInitialize)
         {
 
-            if (accessPackageAssignmentToInitialize != null && accessPackageAssignmentToInitialize.AdditionalData != null)
+            if (accessPackageAssignmentToInitialize != null)
             {
-
                 if (accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests != null && accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests.CurrentPage != null)
                 {
+                    accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(this.Client, accessPackageAssignmentToInitialize.AccessPackageAssignmentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests.AdditionalData = accessPackageAssignmentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageAssignmentToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageAssignmentToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles != null && accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles.CurrentPage != null)
                 {
+                    accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(this.Client, accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRolesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles.AdditionalData = accessPackageAssignmentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageAssignmentToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentResourceRoles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageAssignmentToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

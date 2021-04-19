@@ -111,6 +111,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IDeviceShellScriptAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device run states.
@@ -118,6 +124,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceRunStates")]
         public IDeviceShellScriptDeviceRunStatesCollectionPage DeviceRunStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceRunStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceRunStates@odata.nextLink")]
+        public string DeviceRunStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets group assignments.
@@ -125,6 +137,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupAssignments")]
         public IDeviceShellScriptGroupAssignmentsCollectionPage GroupAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("groupAssignments@odata.nextLink")]
+        public string GroupAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets run summary.
@@ -139,6 +157,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userRunStates")]
         public IDeviceShellScriptUserRunStatesCollectionPage UserRunStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets userRunStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("userRunStates@odata.nextLink")]
+        public string UserRunStatesNextLink { get; set; }
     
     }
 }

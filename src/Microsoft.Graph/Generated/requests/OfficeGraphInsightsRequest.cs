@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OfficeGraphInsights officeGraphInsightsToInitialize)
         {
 
-            if (officeGraphInsightsToInitialize != null && officeGraphInsightsToInitialize.AdditionalData != null)
+            if (officeGraphInsightsToInitialize != null)
             {
-
                 if (officeGraphInsightsToInitialize.Shared != null && officeGraphInsightsToInitialize.Shared.CurrentPage != null)
                 {
+                    officeGraphInsightsToInitialize.Shared.InitializeNextPageRequest(this.Client, officeGraphInsightsToInitialize.SharedNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     officeGraphInsightsToInitialize.Shared.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    officeGraphInsightsToInitialize.AdditionalData.TryGetValue("shared@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        officeGraphInsightsToInitialize.Shared.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (officeGraphInsightsToInitialize.Trending != null && officeGraphInsightsToInitialize.Trending.CurrentPage != null)
                 {
+                    officeGraphInsightsToInitialize.Trending.InitializeNextPageRequest(this.Client, officeGraphInsightsToInitialize.TrendingNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     officeGraphInsightsToInitialize.Trending.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    officeGraphInsightsToInitialize.AdditionalData.TryGetValue("trending@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        officeGraphInsightsToInitialize.Trending.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (officeGraphInsightsToInitialize.Used != null && officeGraphInsightsToInitialize.Used.CurrentPage != null)
                 {
+                    officeGraphInsightsToInitialize.Used.InitializeNextPageRequest(this.Client, officeGraphInsightsToInitialize.UsedNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     officeGraphInsightsToInitialize.Used.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    officeGraphInsightsToInitialize.AdditionalData.TryGetValue("used@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        officeGraphInsightsToInitialize.Used.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

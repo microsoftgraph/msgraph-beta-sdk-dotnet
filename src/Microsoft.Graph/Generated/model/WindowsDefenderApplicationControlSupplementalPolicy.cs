@@ -90,6 +90,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IWindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets deploy summary.
@@ -104,6 +110,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceStatuses")]
         public IWindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionPage DeviceStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceStatuses@odata.nextLink")]
+        public string DeviceStatusesNextLink { get; set; }
     
     }
 }

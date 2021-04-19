@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IosEnterpriseWiFiConfiguration iosEnterpriseWiFiConfigurationToInitialize)
         {
 
-            if (iosEnterpriseWiFiConfigurationToInitialize != null && iosEnterpriseWiFiConfigurationToInitialize.AdditionalData != null)
+            if (iosEnterpriseWiFiConfigurationToInitialize != null)
             {
-
                 if (iosEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation != null && iosEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.CurrentPage != null)
                 {
+                    iosEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(this.Client, iosEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.AdditionalData = iosEnterpriseWiFiConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    iosEnterpriseWiFiConfigurationToInitialize.AdditionalData.TryGetValue("rootCertificatesForServerValidation@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        iosEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

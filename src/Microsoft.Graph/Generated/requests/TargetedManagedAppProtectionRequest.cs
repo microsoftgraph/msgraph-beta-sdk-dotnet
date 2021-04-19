@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TargetedManagedAppProtection targetedManagedAppProtectionToInitialize)
         {
 
-            if (targetedManagedAppProtectionToInitialize != null && targetedManagedAppProtectionToInitialize.AdditionalData != null)
+            if (targetedManagedAppProtectionToInitialize != null)
             {
-
                 if (targetedManagedAppProtectionToInitialize.Assignments != null && targetedManagedAppProtectionToInitialize.Assignments.CurrentPage != null)
                 {
+                    targetedManagedAppProtectionToInitialize.Assignments.InitializeNextPageRequest(this.Client, targetedManagedAppProtectionToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     targetedManagedAppProtectionToInitialize.Assignments.AdditionalData = targetedManagedAppProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    targetedManagedAppProtectionToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        targetedManagedAppProtectionToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

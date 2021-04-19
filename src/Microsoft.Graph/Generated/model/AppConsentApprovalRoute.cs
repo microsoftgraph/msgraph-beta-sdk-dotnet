@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appConsentRequests")]
         public IAppConsentApprovalRouteAppConsentRequestsCollectionPage AppConsentRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets appConsentRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("appConsentRequests@odata.nextLink")]
+        public string AppConsentRequestsNextLink { get; set; }
     
     }
 }

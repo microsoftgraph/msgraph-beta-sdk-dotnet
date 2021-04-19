@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ExactMatchLookupJob exactMatchLookupJobToInitialize)
         {
 
-            if (exactMatchLookupJobToInitialize != null && exactMatchLookupJobToInitialize.AdditionalData != null)
+            if (exactMatchLookupJobToInitialize != null)
             {
-
                 if (exactMatchLookupJobToInitialize.MatchingRows != null && exactMatchLookupJobToInitialize.MatchingRows.CurrentPage != null)
                 {
+                    exactMatchLookupJobToInitialize.MatchingRows.InitializeNextPageRequest(this.Client, exactMatchLookupJobToInitialize.MatchingRowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     exactMatchLookupJobToInitialize.MatchingRows.AdditionalData = exactMatchLookupJobToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    exactMatchLookupJobToInitialize.AdditionalData.TryGetValue("matchingRows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        exactMatchLookupJobToInitialize.MatchingRows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

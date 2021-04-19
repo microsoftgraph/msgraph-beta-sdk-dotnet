@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("companies")]
         public IFinancialsCompaniesCollectionPage Companies { get; set; }
+
+        /// <summary>
+        /// Gets or sets companiesNextLink.
+        /// </summary>
+        [JsonPropertyName("companies@odata.nextLink")]
+        public string CompaniesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

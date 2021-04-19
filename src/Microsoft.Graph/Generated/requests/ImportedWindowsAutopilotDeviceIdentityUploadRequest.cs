@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ImportedWindowsAutopilotDeviceIdentityUpload importedWindowsAutopilotDeviceIdentityUploadToInitialize)
         {
 
-            if (importedWindowsAutopilotDeviceIdentityUploadToInitialize != null && importedWindowsAutopilotDeviceIdentityUploadToInitialize.AdditionalData != null)
+            if (importedWindowsAutopilotDeviceIdentityUploadToInitialize != null)
             {
-
                 if (importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentities != null && importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentities.CurrentPage != null)
                 {
+                    importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentities.InitializeNextPageRequest(this.Client, importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentities.AdditionalData = importedWindowsAutopilotDeviceIdentityUploadToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    importedWindowsAutopilotDeviceIdentityUploadToInitialize.AdditionalData.TryGetValue("deviceIdentities@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        importedWindowsAutopilotDeviceIdentityUploadToInitialize.DeviceIdentities.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

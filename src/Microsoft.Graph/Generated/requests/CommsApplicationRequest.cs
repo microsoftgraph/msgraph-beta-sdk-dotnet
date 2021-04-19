@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(CommsApplication commsApplicationToInitialize)
         {
 
-            if (commsApplicationToInitialize != null && commsApplicationToInitialize.AdditionalData != null)
+            if (commsApplicationToInitialize != null)
             {
-
                 if (commsApplicationToInitialize.Calls != null && commsApplicationToInitialize.Calls.CurrentPage != null)
                 {
+                    commsApplicationToInitialize.Calls.InitializeNextPageRequest(this.Client, commsApplicationToInitialize.CallsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     commsApplicationToInitialize.Calls.AdditionalData = commsApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    commsApplicationToInitialize.AdditionalData.TryGetValue("calls@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        commsApplicationToInitialize.Calls.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (commsApplicationToInitialize.OnlineMeetings != null && commsApplicationToInitialize.OnlineMeetings.CurrentPage != null)
                 {
+                    commsApplicationToInitialize.OnlineMeetings.InitializeNextPageRequest(this.Client, commsApplicationToInitialize.OnlineMeetingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     commsApplicationToInitialize.OnlineMeetings.AdditionalData = commsApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    commsApplicationToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        commsApplicationToInitialize.OnlineMeetings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

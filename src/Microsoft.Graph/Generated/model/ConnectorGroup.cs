@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("applications")]
         public IConnectorGroupApplicationsCollectionWithReferencesPage Applications { get; set; }
+
+        /// <summary>
+        /// Gets or sets applicationsNextLink.
+        /// </summary>
+        [JsonPropertyName("applications@odata.nextLink")]
+        public string ApplicationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets members.
@@ -69,6 +75,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("members")]
         public IConnectorGroupMembersCollectionPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
     }
 }

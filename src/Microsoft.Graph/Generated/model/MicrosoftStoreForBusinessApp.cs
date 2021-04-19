@@ -76,6 +76,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("containedApps")]
         public IMicrosoftStoreForBusinessAppContainedAppsCollectionPage ContainedApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets containedAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("containedApps@odata.nextLink")]
+        public string ContainedAppsNextLink { get; set; }
     
     }
 }

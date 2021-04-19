@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AndroidImportedPFXCertificateProfile androidImportedPFXCertificateProfileToInitialize)
         {
 
-            if (androidImportedPFXCertificateProfileToInitialize != null && androidImportedPFXCertificateProfileToInitialize.AdditionalData != null)
+            if (androidImportedPFXCertificateProfileToInitialize != null)
             {
-
                 if (androidImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && androidImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    androidImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, androidImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     androidImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = androidImportedPFXCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    androidImportedPFXCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        androidImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

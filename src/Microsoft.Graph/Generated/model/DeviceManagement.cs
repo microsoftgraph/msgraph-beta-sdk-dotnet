@@ -146,6 +146,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("androidDeviceOwnerEnrollmentProfiles")]
         public IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionPage AndroidDeviceOwnerEnrollmentProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets androidDeviceOwnerEnrollmentProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("androidDeviceOwnerEnrollmentProfiles@odata.nextLink")]
+        public string AndroidDeviceOwnerEnrollmentProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets virtual endpoint.
@@ -159,6 +165,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("androidForWorkAppConfigurationSchemas")]
         public IDeviceManagementAndroidForWorkAppConfigurationSchemasCollectionPage AndroidForWorkAppConfigurationSchemas { get; set; }
+
+        /// <summary>
+        /// Gets or sets androidForWorkAppConfigurationSchemasNextLink.
+        /// </summary>
+        [JsonPropertyName("androidForWorkAppConfigurationSchemas@odata.nextLink")]
+        public string AndroidForWorkAppConfigurationSchemasNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets android for work enrollment profiles.
@@ -166,6 +178,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("androidForWorkEnrollmentProfiles")]
         public IDeviceManagementAndroidForWorkEnrollmentProfilesCollectionPage AndroidForWorkEnrollmentProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets androidForWorkEnrollmentProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("androidForWorkEnrollmentProfiles@odata.nextLink")]
+        public string AndroidForWorkEnrollmentProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets android for work settings.
@@ -187,6 +205,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("androidManagedStoreAppConfigurationSchemas")]
         public IDeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionPage AndroidManagedStoreAppConfigurationSchemas { get; set; }
+
+        /// <summary>
+        /// Gets or sets androidManagedStoreAppConfigurationSchemasNextLink.
+        /// </summary>
+        [JsonPropertyName("androidManagedStoreAppConfigurationSchemas@odata.nextLink")]
+        public string AndroidManagedStoreAppConfigurationSchemasNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets audit events.
@@ -194,6 +218,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("auditEvents")]
         public IDeviceManagementAuditEventsCollectionPage AuditEvents { get; set; }
+
+        /// <summary>
+        /// Gets or sets auditEventsNextLink.
+        /// </summary>
+        [JsonPropertyName("auditEvents@odata.nextLink")]
+        public string AuditEventsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets assignment filters.
@@ -201,6 +231,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignmentFilters")]
         public IDeviceManagementAssignmentFiltersCollectionPage AssignmentFilters { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentFiltersNextLink.
+        /// </summary>
+        [JsonPropertyName("assignmentFilters@odata.nextLink")]
+        public string AssignmentFiltersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets terms and conditions.
@@ -208,6 +244,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("termsAndConditions")]
         public IDeviceManagementTermsAndConditionsCollectionPage TermsAndConditions { get; set; }
+
+        /// <summary>
+        /// Gets or sets termsAndConditionsNextLink.
+        /// </summary>
+        [JsonPropertyName("termsAndConditions@odata.nextLink")]
+        public string TermsAndConditionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection onboarding state summary.
@@ -222,6 +264,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("cartToClassAssociations")]
         public IDeviceManagementCartToClassAssociationsCollectionPage CartToClassAssociations { get; set; }
+
+        /// <summary>
+        /// Gets or sets cartToClassAssociationsNextLink.
+        /// </summary>
+        [JsonPropertyName("cartToClassAssociations@odata.nextLink")]
+        public string CartToClassAssociationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device compliance policies.
@@ -229,6 +277,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceCompliancePolicies")]
         public IDeviceManagementDeviceCompliancePoliciesCollectionPage DeviceCompliancePolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceCompliancePoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceCompliancePolicies@odata.nextLink")]
+        public string DeviceCompliancePoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device compliance policy device state summary.
@@ -243,6 +297,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceCompliancePolicySettingStateSummaries")]
         public IDeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionPage DeviceCompliancePolicySettingStateSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceCompliancePolicySettingStateSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceCompliancePolicySettingStateSummaries@odata.nextLink")]
+        public string DeviceCompliancePolicySettingStateSummariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration conflict summary.
@@ -250,6 +310,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceConfigurationConflictSummary")]
         public IDeviceManagementDeviceConfigurationConflictSummaryCollectionPage DeviceConfigurationConflictSummary { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceConfigurationConflictSummaryNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceConfigurationConflictSummary@odata.nextLink")]
+        public string DeviceConfigurationConflictSummaryNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration device state summaries.
@@ -264,6 +330,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceConfigurationRestrictedAppsViolations")]
         public IDeviceManagementDeviceConfigurationRestrictedAppsViolationsCollectionPage DeviceConfigurationRestrictedAppsViolations { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceConfigurationRestrictedAppsViolationsNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceConfigurationRestrictedAppsViolations@odata.nextLink")]
+        public string DeviceConfigurationRestrictedAppsViolationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device configurations.
@@ -271,6 +343,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceConfigurations")]
         public IDeviceManagementDeviceConfigurationsCollectionPage DeviceConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceConfigurations@odata.nextLink")]
+        public string DeviceConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device configurations all managed device certificate states.
@@ -278,6 +356,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceConfigurationsAllManagedDeviceCertificateStates")]
         public IDeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionPage DeviceConfigurationsAllManagedDeviceCertificateStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceConfigurationsAllManagedDeviceCertificateStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceConfigurationsAllManagedDeviceCertificateStates@odata.nextLink")]
+        public string DeviceConfigurationsAllManagedDeviceCertificateStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration user state summaries.
@@ -292,6 +376,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("iosUpdateStatuses")]
         public IDeviceManagementIosUpdateStatusesCollectionPage IosUpdateStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets iosUpdateStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("iosUpdateStatuses@odata.nextLink")]
+        public string IosUpdateStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mac ossoftware update account summaries.
@@ -299,6 +389,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("macOSSoftwareUpdateAccountSummaries")]
         public IDeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionPage MacOSSoftwareUpdateAccountSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets macOSSoftwareUpdateAccountSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("macOSSoftwareUpdateAccountSummaries@odata.nextLink")]
+        public string MacOSSoftwareUpdateAccountSummariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed device encryption states.
@@ -306,6 +402,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedDeviceEncryptionStates")]
         public IDeviceManagementManagedDeviceEncryptionStatesCollectionPage ManagedDeviceEncryptionStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedDeviceEncryptionStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedDeviceEncryptionStates@odata.nextLink")]
+        public string ManagedDeviceEncryptionStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets ndes connectors.
@@ -313,6 +415,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("ndesConnectors")]
         public IDeviceManagementNdesConnectorsCollectionPage NdesConnectors { get; set; }
+
+        /// <summary>
+        /// Gets or sets ndesConnectorsNextLink.
+        /// </summary>
+        [JsonPropertyName("ndesConnectors@odata.nextLink")]
+        public string NdesConnectorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets software update status summary.
@@ -327,6 +435,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("configurationCategories")]
         public IDeviceManagementConfigurationCategoriesCollectionPage ConfigurationCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets configurationCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("configurationCategories@odata.nextLink")]
+        public string ConfigurationCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets configuration policies.
@@ -334,6 +448,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("configurationPolicies")]
         public IDeviceManagementConfigurationPoliciesCollectionPage ConfigurationPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets configurationPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("configurationPolicies@odata.nextLink")]
+        public string ConfigurationPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets configuration settings.
@@ -341,6 +461,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("configurationSettings")]
         public IDeviceManagementConfigurationSettingsCollectionPage ConfigurationSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets configurationSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("configurationSettings@odata.nextLink")]
+        public string ConfigurationSettingsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets compliance management partners.
@@ -348,6 +474,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("complianceManagementPartners")]
         public IDeviceManagementComplianceManagementPartnersCollectionPage ComplianceManagementPartners { get; set; }
+
+        /// <summary>
+        /// Gets or sets complianceManagementPartnersNextLink.
+        /// </summary>
+        [JsonPropertyName("complianceManagementPartners@odata.nextLink")]
+        public string ComplianceManagementPartnersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets conditional access settings.
@@ -362,6 +494,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceCategories")]
         public IDeviceManagementDeviceCategoriesCollectionPage DeviceCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceCategories@odata.nextLink")]
+        public string DeviceCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device enrollment configurations.
@@ -369,6 +507,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceEnrollmentConfigurations")]
         public IDeviceManagementDeviceEnrollmentConfigurationsCollectionPage DeviceEnrollmentConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceEnrollmentConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceEnrollmentConfigurations@odata.nextLink")]
+        public string DeviceEnrollmentConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device management partners.
@@ -376,6 +520,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceManagementPartners")]
         public IDeviceManagementDeviceManagementPartnersCollectionPage DeviceManagementPartners { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceManagementPartnersNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceManagementPartners@odata.nextLink")]
+        public string DeviceManagementPartnersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets exchange connectors.
@@ -383,6 +533,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("exchangeConnectors")]
         public IDeviceManagementExchangeConnectorsCollectionPage ExchangeConnectors { get; set; }
+
+        /// <summary>
+        /// Gets or sets exchangeConnectorsNextLink.
+        /// </summary>
+        [JsonPropertyName("exchangeConnectors@odata.nextLink")]
+        public string ExchangeConnectorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets exchange on premises policies.
@@ -390,6 +546,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("exchangeOnPremisesPolicies")]
         public IDeviceManagementExchangeOnPremisesPoliciesCollectionPage ExchangeOnPremisesPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets exchangeOnPremisesPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("exchangeOnPremisesPolicies@odata.nextLink")]
+        public string ExchangeOnPremisesPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets exchange on premises policy.
@@ -404,6 +566,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("mobileThreatDefenseConnectors")]
         public IDeviceManagementMobileThreatDefenseConnectorsCollectionPage MobileThreatDefenseConnectors { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileThreatDefenseConnectorsNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileThreatDefenseConnectors@odata.nextLink")]
+        public string MobileThreatDefenseConnectorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets categories.
@@ -411,6 +579,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("categories")]
         public IDeviceManagementCategoriesCollectionPage Categories { get; set; }
+
+        /// <summary>
+        /// Gets or sets categoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("categories@odata.nextLink")]
+        public string CategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets intents.
@@ -418,6 +592,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("intents")]
         public IDeviceManagementIntentsCollectionPage Intents { get; set; }
+
+        /// <summary>
+        /// Gets or sets intentsNextLink.
+        /// </summary>
+        [JsonPropertyName("intents@odata.nextLink")]
+        public string IntentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets setting definitions.
@@ -425,6 +605,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("settingDefinitions")]
         public IDeviceManagementSettingDefinitionsCollectionPage SettingDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets settingDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("settingDefinitions@odata.nextLink")]
+        public string SettingDefinitionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets templates.
@@ -432,6 +618,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("templates")]
         public IDeviceManagementTemplatesCollectionPage Templates { get; set; }
+
+        /// <summary>
+        /// Gets or sets templatesNextLink.
+        /// </summary>
+        [JsonPropertyName("templates@odata.nextLink")]
+        public string TemplatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets apple push notification certificate.
@@ -446,6 +638,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("comanagedDevices")]
         public IDeviceManagementComanagedDevicesCollectionPage ComanagedDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets comanagedDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("comanagedDevices@odata.nextLink")]
+        public string ComanagedDevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets comanagement eligible devices.
@@ -453,6 +651,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("comanagementEligibleDevices")]
         public IDeviceManagementComanagementEligibleDevicesCollectionPage ComanagementEligibleDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets comanagementEligibleDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("comanagementEligibleDevices@odata.nextLink")]
+        public string ComanagementEligibleDevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets data sharing consents.
@@ -460,6 +664,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("dataSharingConsents")]
         public IDeviceManagementDataSharingConsentsCollectionPage DataSharingConsents { get; set; }
+
+        /// <summary>
+        /// Gets or sets dataSharingConsentsNextLink.
+        /// </summary>
+        [JsonPropertyName("dataSharingConsents@odata.nextLink")]
+        public string DataSharingConsentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets detected apps.
@@ -467,6 +677,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("detectedApps")]
         public IDeviceManagementDetectedAppsCollectionPage DetectedApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets detectedAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("detectedApps@odata.nextLink")]
+        public string DetectedAppsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device compliance scripts.
@@ -474,6 +690,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceComplianceScripts")]
         public IDeviceManagementDeviceComplianceScriptsCollectionPage DeviceComplianceScripts { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceComplianceScriptsNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceComplianceScripts@odata.nextLink")]
+        public string DeviceComplianceScriptsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device custom attribute shell scripts.
@@ -481,6 +703,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceCustomAttributeShellScripts")]
         public IDeviceManagementDeviceCustomAttributeShellScriptsCollectionPage DeviceCustomAttributeShellScripts { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceCustomAttributeShellScriptsNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceCustomAttributeShellScripts@odata.nextLink")]
+        public string DeviceCustomAttributeShellScriptsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device health scripts.
@@ -488,6 +716,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceHealthScripts")]
         public IDeviceManagementDeviceHealthScriptsCollectionPage DeviceHealthScripts { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceHealthScriptsNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceHealthScripts@odata.nextLink")]
+        public string DeviceHealthScriptsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device management scripts.
@@ -495,6 +729,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceManagementScripts")]
         public IDeviceManagementDeviceManagementScriptsCollectionPage DeviceManagementScripts { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceManagementScriptsNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceManagementScripts@odata.nextLink")]
+        public string DeviceManagementScriptsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device shell scripts.
@@ -502,6 +742,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceShellScripts")]
         public IDeviceManagementDeviceShellScriptsCollectionPage DeviceShellScripts { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceShellScriptsNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceShellScripts@odata.nextLink")]
+        public string DeviceShellScriptsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed device overview.
@@ -516,6 +762,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedDevices")]
         public IDeviceManagementManagedDevicesCollectionPage ManagedDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedDevices@odata.nextLink")]
+        public string ManagedDevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mobile app troubleshooting events.
@@ -523,6 +775,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("mobileAppTroubleshootingEvents")]
         public IDeviceManagementMobileAppTroubleshootingEventsCollectionPage MobileAppTroubleshootingEvents { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileAppTroubleshootingEventsNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileAppTroubleshootingEvents@odata.nextLink")]
+        public string MobileAppTroubleshootingEventsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets remote action audits.
@@ -530,6 +788,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("remoteActionAudits")]
         public IDeviceManagementRemoteActionAuditsCollectionPage RemoteActionAudits { get; set; }
+
+        /// <summary>
+        /// Gets or sets remoteActionAuditsNextLink.
+        /// </summary>
+        [JsonPropertyName("remoteActionAudits@odata.nextLink")]
+        public string RemoteActionAuditsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics app health application performance.
@@ -537,6 +801,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformance")]
         public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionPage UserExperienceAnalyticsAppHealthApplicationPerformance { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAppHealthApplicationPerformanceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformance@odata.nextLink")]
+        public string UserExperienceAnalyticsAppHealthApplicationPerformanceNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics app health application performance by app version.
@@ -544,6 +814,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion")]
         public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionPage UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion@odata.nextLink")]
+        public string UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics app health application performance by osversion.
@@ -551,6 +827,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion")]
         public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionPage UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion@odata.nextLink")]
+        public string UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics app health device model performance.
@@ -558,6 +840,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthDeviceModelPerformance")]
         public IDeviceManagementUserExperienceAnalyticsAppHealthDeviceModelPerformanceCollectionPage UserExperienceAnalyticsAppHealthDeviceModelPerformance { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAppHealthDeviceModelPerformanceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAppHealthDeviceModelPerformance@odata.nextLink")]
+        public string UserExperienceAnalyticsAppHealthDeviceModelPerformanceNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics app health device performance.
@@ -565,6 +853,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthDevicePerformance")]
         public IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceCollectionPage UserExperienceAnalyticsAppHealthDevicePerformance { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAppHealthDevicePerformanceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAppHealthDevicePerformance@odata.nextLink")]
+        public string UserExperienceAnalyticsAppHealthDevicePerformanceNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics app health device performance details.
@@ -572,6 +866,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthDevicePerformanceDetails")]
         public IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionPage UserExperienceAnalyticsAppHealthDevicePerformanceDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAppHealthDevicePerformanceDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAppHealthDevicePerformanceDetails@odata.nextLink")]
+        public string UserExperienceAnalyticsAppHealthDevicePerformanceDetailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics app health osversion performance.
@@ -579,6 +879,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthOSVersionPerformance")]
         public IDeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionPage UserExperienceAnalyticsAppHealthOSVersionPerformance { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAppHealthOSVersionPerformanceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAppHealthOSVersionPerformance@odata.nextLink")]
+        public string UserExperienceAnalyticsAppHealthOSVersionPerformanceNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics app health overview.
@@ -593,6 +899,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsBaselines")]
         public IDeviceManagementUserExperienceAnalyticsBaselinesCollectionPage UserExperienceAnalyticsBaselines { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsBaselinesNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBaselines@odata.nextLink")]
+        public string UserExperienceAnalyticsBaselinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics categories.
@@ -600,6 +912,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsCategories")]
         public IDeviceManagementUserExperienceAnalyticsCategoriesCollectionPage UserExperienceAnalyticsCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsCategories@odata.nextLink")]
+        public string UserExperienceAnalyticsCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics device metric history.
@@ -607,6 +925,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDeviceMetricHistory")]
         public IDeviceManagementUserExperienceAnalyticsDeviceMetricHistoryCollectionPage UserExperienceAnalyticsDeviceMetricHistory { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsDeviceMetricHistoryNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceMetricHistory@odata.nextLink")]
+        public string UserExperienceAnalyticsDeviceMetricHistoryNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics device performance.
@@ -614,6 +938,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDevicePerformance")]
         public IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionPage UserExperienceAnalyticsDevicePerformance { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsDevicePerformanceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDevicePerformance@odata.nextLink")]
+        public string UserExperienceAnalyticsDevicePerformanceNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics device startup history.
@@ -621,6 +951,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDeviceStartupHistory")]
         public IDeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionPage UserExperienceAnalyticsDeviceStartupHistory { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsDeviceStartupHistoryNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceStartupHistory@odata.nextLink")]
+        public string UserExperienceAnalyticsDeviceStartupHistoryNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics device startup processes.
@@ -628,6 +964,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDeviceStartupProcesses")]
         public IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessesCollectionPage UserExperienceAnalyticsDeviceStartupProcesses { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsDeviceStartupProcessesNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceStartupProcesses@odata.nextLink")]
+        public string UserExperienceAnalyticsDeviceStartupProcessesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics device startup process performance.
@@ -635,6 +977,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDeviceStartupProcessPerformance")]
         public IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionPage UserExperienceAnalyticsDeviceStartupProcessPerformance { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsDeviceStartupProcessPerformanceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceStartupProcessPerformance@odata.nextLink")]
+        public string UserExperienceAnalyticsDeviceStartupProcessPerformanceNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics devices without cloud identity.
@@ -642,6 +990,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDevicesWithoutCloudIdentity")]
         public IDeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionPage UserExperienceAnalyticsDevicesWithoutCloudIdentity { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsDevicesWithoutCloudIdentityNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDevicesWithoutCloudIdentity@odata.nextLink")]
+        public string UserExperienceAnalyticsDevicesWithoutCloudIdentityNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics impacting process.
@@ -649,6 +1003,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsImpactingProcess")]
         public IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionPage UserExperienceAnalyticsImpactingProcess { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsImpactingProcessNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsImpactingProcess@odata.nextLink")]
+        public string UserExperienceAnalyticsImpactingProcessNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics metric history.
@@ -656,6 +1016,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsMetricHistory")]
         public IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionPage UserExperienceAnalyticsMetricHistory { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsMetricHistoryNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsMetricHistory@odata.nextLink")]
+        public string UserExperienceAnalyticsMetricHistoryNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics not autopilot ready device.
@@ -663,6 +1029,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsNotAutopilotReadyDevice")]
         public IDeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionPage UserExperienceAnalyticsNotAutopilotReadyDevice { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsNotAutopilotReadyDeviceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsNotAutopilotReadyDevice@odata.nextLink")]
+        public string UserExperienceAnalyticsNotAutopilotReadyDeviceNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics overview.
@@ -684,6 +1056,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsRemoteConnection")]
         public IDeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionPage UserExperienceAnalyticsRemoteConnection { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsRemoteConnectionNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsRemoteConnection@odata.nextLink")]
+        public string UserExperienceAnalyticsRemoteConnectionNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics resource performance.
@@ -691,6 +1069,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsResourcePerformance")]
         public IDeviceManagementUserExperienceAnalyticsResourcePerformanceCollectionPage UserExperienceAnalyticsResourcePerformance { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsResourcePerformanceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsResourcePerformance@odata.nextLink")]
+        public string UserExperienceAnalyticsResourcePerformanceNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics score history.
@@ -698,6 +1082,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsScoreHistory")]
         public IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionPage UserExperienceAnalyticsScoreHistory { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsScoreHistoryNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsScoreHistory@odata.nextLink")]
+        public string UserExperienceAnalyticsScoreHistoryNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows malware information.
@@ -705,6 +1095,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsMalwareInformation")]
         public IDeviceManagementWindowsMalwareInformationCollectionPage WindowsMalwareInformation { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsMalwareInformationNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsMalwareInformation@odata.nextLink")]
+        public string WindowsMalwareInformationNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets derived credentials.
@@ -712,6 +1108,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("derivedCredentials")]
         public IDeviceManagementDerivedCredentialsCollectionPage DerivedCredentials { get; set; }
+
+        /// <summary>
+        /// Gets or sets derivedCredentialsNextLink.
+        /// </summary>
+        [JsonPropertyName("derivedCredentials@odata.nextLink")]
+        public string DerivedCredentialsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets resource access profiles.
@@ -719,6 +1121,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("resourceAccessProfiles")]
         public IDeviceManagementResourceAccessProfilesCollectionPage ResourceAccessProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets resourceAccessProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("resourceAccessProfiles@odata.nextLink")]
+        public string ResourceAccessProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets apple user initiated enrollment profiles.
@@ -726,6 +1134,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appleUserInitiatedEnrollmentProfiles")]
         public IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionPage AppleUserInitiatedEnrollmentProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets appleUserInitiatedEnrollmentProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("appleUserInitiatedEnrollmentProfiles@odata.nextLink")]
+        public string AppleUserInitiatedEnrollmentProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets dep onboarding settings.
@@ -733,6 +1147,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("depOnboardingSettings")]
         public IDeviceManagementDepOnboardingSettingsCollectionPage DepOnboardingSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets depOnboardingSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("depOnboardingSettings@odata.nextLink")]
+        public string DepOnboardingSettingsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets imported device identities.
@@ -740,6 +1160,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("importedDeviceIdentities")]
         public IDeviceManagementImportedDeviceIdentitiesCollectionPage ImportedDeviceIdentities { get; set; }
+
+        /// <summary>
+        /// Gets or sets importedDeviceIdentitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("importedDeviceIdentities@odata.nextLink")]
+        public string ImportedDeviceIdentitiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets imported windows autopilot device identities.
@@ -747,6 +1173,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("importedWindowsAutopilotDeviceIdentities")]
         public IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionPage ImportedWindowsAutopilotDeviceIdentities { get; set; }
+
+        /// <summary>
+        /// Gets or sets importedWindowsAutopilotDeviceIdentitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("importedWindowsAutopilotDeviceIdentities@odata.nextLink")]
+        public string ImportedWindowsAutopilotDeviceIdentitiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows autopilot deployment profiles.
@@ -754,6 +1186,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsAutopilotDeploymentProfiles")]
         public IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage WindowsAutopilotDeploymentProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsAutopilotDeploymentProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsAutopilotDeploymentProfiles@odata.nextLink")]
+        public string WindowsAutopilotDeploymentProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows autopilot device identities.
@@ -761,6 +1199,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsAutopilotDeviceIdentities")]
         public IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionPage WindowsAutopilotDeviceIdentities { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsAutopilotDeviceIdentitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsAutopilotDeviceIdentities@odata.nextLink")]
+        public string WindowsAutopilotDeviceIdentitiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows autopilot settings.
@@ -775,6 +1219,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managementConditions")]
         public IDeviceManagementManagementConditionsCollectionPage ManagementConditions { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementConditionsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementConditions@odata.nextLink")]
+        public string ManagementConditionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets management condition statements.
@@ -782,6 +1232,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managementConditionStatements")]
         public IDeviceManagementManagementConditionStatementsCollectionPage ManagementConditionStatements { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementConditionStatementsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementConditionStatements@odata.nextLink")]
+        public string ManagementConditionStatementsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets group policy migration reports.
@@ -789,6 +1245,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupPolicyMigrationReports")]
         public IDeviceManagementGroupPolicyMigrationReportsCollectionPage GroupPolicyMigrationReports { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupPolicyMigrationReportsNextLink.
+        /// </summary>
+        [JsonPropertyName("groupPolicyMigrationReports@odata.nextLink")]
+        public string GroupPolicyMigrationReportsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets group policy object files.
@@ -796,6 +1258,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupPolicyObjectFiles")]
         public IDeviceManagementGroupPolicyObjectFilesCollectionPage GroupPolicyObjectFiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupPolicyObjectFilesNextLink.
+        /// </summary>
+        [JsonPropertyName("groupPolicyObjectFiles@odata.nextLink")]
+        public string GroupPolicyObjectFilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets group policy categories.
@@ -803,6 +1271,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupPolicyCategories")]
         public IDeviceManagementGroupPolicyCategoriesCollectionPage GroupPolicyCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupPolicyCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("groupPolicyCategories@odata.nextLink")]
+        public string GroupPolicyCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets group policy configurations.
@@ -810,6 +1284,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupPolicyConfigurations")]
         public IDeviceManagementGroupPolicyConfigurationsCollectionPage GroupPolicyConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupPolicyConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("groupPolicyConfigurations@odata.nextLink")]
+        public string GroupPolicyConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets group policy definition files.
@@ -817,6 +1297,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupPolicyDefinitionFiles")]
         public IDeviceManagementGroupPolicyDefinitionFilesCollectionPage GroupPolicyDefinitionFiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupPolicyDefinitionFilesNextLink.
+        /// </summary>
+        [JsonPropertyName("groupPolicyDefinitionFiles@odata.nextLink")]
+        public string GroupPolicyDefinitionFilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets group policy definitions.
@@ -824,6 +1310,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupPolicyDefinitions")]
         public IDeviceManagementGroupPolicyDefinitionsCollectionPage GroupPolicyDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupPolicyDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("groupPolicyDefinitions@odata.nextLink")]
+        public string GroupPolicyDefinitionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets group policy uploaded definition files.
@@ -831,6 +1323,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupPolicyUploadedDefinitionFiles")]
         public IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionPage GroupPolicyUploadedDefinitionFiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupPolicyUploadedDefinitionFilesNextLink.
+        /// </summary>
+        [JsonPropertyName("groupPolicyUploadedDefinitionFiles@odata.nextLink")]
+        public string GroupPolicyUploadedDefinitionFilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft tunnel configurations.
@@ -838,6 +1336,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("microsoftTunnelConfigurations")]
         public IDeviceManagementMicrosoftTunnelConfigurationsCollectionPage MicrosoftTunnelConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets microsoftTunnelConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("microsoftTunnelConfigurations@odata.nextLink")]
+        public string MicrosoftTunnelConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft tunnel health thresholds.
@@ -845,6 +1349,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("microsoftTunnelHealthThresholds")]
         public IDeviceManagementMicrosoftTunnelHealthThresholdsCollectionPage MicrosoftTunnelHealthThresholds { get; set; }
+
+        /// <summary>
+        /// Gets or sets microsoftTunnelHealthThresholdsNextLink.
+        /// </summary>
+        [JsonPropertyName("microsoftTunnelHealthThresholds@odata.nextLink")]
+        public string MicrosoftTunnelHealthThresholdsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft tunnel server log collection responses.
@@ -852,6 +1362,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("microsoftTunnelServerLogCollectionResponses")]
         public IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage MicrosoftTunnelServerLogCollectionResponses { get; set; }
+
+        /// <summary>
+        /// Gets or sets microsoftTunnelServerLogCollectionResponsesNextLink.
+        /// </summary>
+        [JsonPropertyName("microsoftTunnelServerLogCollectionResponses@odata.nextLink")]
+        public string MicrosoftTunnelServerLogCollectionResponsesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft tunnel sites.
@@ -859,6 +1375,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("microsoftTunnelSites")]
         public IDeviceManagementMicrosoftTunnelSitesCollectionPage MicrosoftTunnelSites { get; set; }
+
+        /// <summary>
+        /// Gets or sets microsoftTunnelSitesNextLink.
+        /// </summary>
+        [JsonPropertyName("microsoftTunnelSites@odata.nextLink")]
+        public string MicrosoftTunnelSitesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets notification message templates.
@@ -866,6 +1388,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("notificationMessageTemplates")]
         public IDeviceManagementNotificationMessageTemplatesCollectionPage NotificationMessageTemplates { get; set; }
+
+        /// <summary>
+        /// Gets or sets notificationMessageTemplatesNextLink.
+        /// </summary>
+        [JsonPropertyName("notificationMessageTemplates@odata.nextLink")]
+        public string NotificationMessageTemplatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets domain join connectors.
@@ -873,6 +1401,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("domainJoinConnectors")]
         public IDeviceManagementDomainJoinConnectorsCollectionPage DomainJoinConnectors { get; set; }
+
+        /// <summary>
+        /// Gets or sets domainJoinConnectorsNextLink.
+        /// </summary>
+        [JsonPropertyName("domainJoinConnectors@odata.nextLink")]
+        public string DomainJoinConnectorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets config manager collections.
@@ -880,6 +1414,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("configManagerCollections")]
         public IDeviceManagementConfigManagerCollectionsCollectionPage ConfigManagerCollections { get; set; }
+
+        /// <summary>
+        /// Gets or sets configManagerCollectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("configManagerCollections@odata.nextLink")]
+        public string ConfigManagerCollectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets resource operations.
@@ -887,6 +1427,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("resourceOperations")]
         public IDeviceManagementResourceOperationsCollectionPage ResourceOperations { get; set; }
+
+        /// <summary>
+        /// Gets or sets resourceOperationsNextLink.
+        /// </summary>
+        [JsonPropertyName("resourceOperations@odata.nextLink")]
+        public string ResourceOperationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role assignments.
@@ -894,6 +1440,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("roleAssignments")]
         public IDeviceManagementRoleAssignmentsCollectionPage RoleAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleAssignments@odata.nextLink")]
+        public string RoleAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role definitions.
@@ -901,6 +1453,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("roleDefinitions")]
         public IDeviceManagementRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleDefinitions@odata.nextLink")]
+        public string RoleDefinitionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tags.
@@ -908,6 +1466,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("roleScopeTags")]
         public IDeviceManagementRoleScopeTagsCollectionPage RoleScopeTags { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleScopeTagsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleScopeTags@odata.nextLink")]
+        public string RoleScopeTagsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets remote assistance partners.
@@ -915,6 +1479,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("remoteAssistancePartners")]
         public IDeviceManagementRemoteAssistancePartnersCollectionPage RemoteAssistancePartners { get; set; }
+
+        /// <summary>
+        /// Gets or sets remoteAssistancePartnersNextLink.
+        /// </summary>
+        [JsonPropertyName("remoteAssistancePartners@odata.nextLink")]
+        public string RemoteAssistancePartnersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets reports.
@@ -929,6 +1499,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("embeddedSIMActivationCodePools")]
         public IDeviceManagementEmbeddedSIMActivationCodePoolsCollectionPage EmbeddedSIMActivationCodePools { get; set; }
+
+        /// <summary>
+        /// Gets or sets embeddedSIMActivationCodePoolsNextLink.
+        /// </summary>
+        [JsonPropertyName("embeddedSIMActivationCodePools@odata.nextLink")]
+        public string EmbeddedSIMActivationCodePoolsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets telecom expense management partners.
@@ -936,6 +1512,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("telecomExpenseManagementPartners")]
         public IDeviceManagementTelecomExpenseManagementPartnersCollectionPage TelecomExpenseManagementPartners { get; set; }
+
+        /// <summary>
+        /// Gets or sets telecomExpenseManagementPartnersNextLink.
+        /// </summary>
+        [JsonPropertyName("telecomExpenseManagementPartners@odata.nextLink")]
+        public string TelecomExpenseManagementPartnersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets autopilot events.
@@ -943,6 +1525,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("autopilotEvents")]
         public IDeviceManagementAutopilotEventsCollectionPage AutopilotEvents { get; set; }
+
+        /// <summary>
+        /// Gets or sets autopilotEventsNextLink.
+        /// </summary>
+        [JsonPropertyName("autopilotEvents@odata.nextLink")]
+        public string AutopilotEventsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets troubleshooting events.
@@ -950,6 +1538,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("troubleshootingEvents")]
         public IDeviceManagementTroubleshootingEventsCollectionPage TroubleshootingEvents { get; set; }
+
+        /// <summary>
+        /// Gets or sets troubleshootingEventsNextLink.
+        /// </summary>
+        [JsonPropertyName("troubleshootingEvents@odata.nextLink")]
+        public string TroubleshootingEventsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows feature update profiles.
@@ -957,6 +1551,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsFeatureUpdateProfiles")]
         public IDeviceManagementWindowsFeatureUpdateProfilesCollectionPage WindowsFeatureUpdateProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsFeatureUpdateProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsFeatureUpdateProfiles@odata.nextLink")]
+        public string WindowsFeatureUpdateProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows quality update profiles.
@@ -964,6 +1564,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsQualityUpdateProfiles")]
         public IDeviceManagementWindowsQualityUpdateProfilesCollectionPage WindowsQualityUpdateProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsQualityUpdateProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsQualityUpdateProfiles@odata.nextLink")]
+        public string WindowsQualityUpdateProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows update catalog items.
@@ -971,6 +1577,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsUpdateCatalogItems")]
         public IDeviceManagementWindowsUpdateCatalogItemsCollectionPage WindowsUpdateCatalogItems { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsUpdateCatalogItemsNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsUpdateCatalogItems@odata.nextLink")]
+        public string WindowsUpdateCatalogItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets intune branding profiles.
@@ -978,6 +1590,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("intuneBrandingProfiles")]
         public IDeviceManagementIntuneBrandingProfilesCollectionPage IntuneBrandingProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets intuneBrandingProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("intuneBrandingProfiles@odata.nextLink")]
+        public string IntuneBrandingProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection app learning summaries.
@@ -985,6 +1603,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsInformationProtectionAppLearningSummaries")]
         public IDeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionPage WindowsInformationProtectionAppLearningSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsInformationProtectionAppLearningSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsInformationProtectionAppLearningSummaries@odata.nextLink")]
+        public string WindowsInformationProtectionAppLearningSummariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection network learning summaries.
@@ -992,6 +1616,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsInformationProtectionNetworkLearningSummaries")]
         public IDeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionPage WindowsInformationProtectionNetworkLearningSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsInformationProtectionNetworkLearningSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsInformationProtectionNetworkLearningSummaries@odata.nextLink")]
+        public string WindowsInformationProtectionNetworkLearningSummariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user pfx certificates.
@@ -999,6 +1629,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userPfxCertificates")]
         public IDeviceManagementUserPfxCertificatesCollectionPage UserPfxCertificates { get; set; }
+
+        /// <summary>
+        /// Gets or sets userPfxCertificatesNextLink.
+        /// </summary>
+        [JsonPropertyName("userPfxCertificates@odata.nextLink")]
+        public string UserPfxCertificatesNextLink { get; set; }
     
     }
 }

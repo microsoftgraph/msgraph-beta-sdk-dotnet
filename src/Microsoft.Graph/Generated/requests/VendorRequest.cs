@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Vendor vendorToInitialize)
         {
 
-            if (vendorToInitialize != null && vendorToInitialize.AdditionalData != null)
+            if (vendorToInitialize != null)
             {
-
                 if (vendorToInitialize.Picture != null && vendorToInitialize.Picture.CurrentPage != null)
                 {
+                    vendorToInitialize.Picture.InitializeNextPageRequest(this.Client, vendorToInitialize.PictureNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     vendorToInitialize.Picture.AdditionalData = vendorToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    vendorToInitialize.AdditionalData.TryGetValue("picture@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        vendorToInitialize.Picture.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

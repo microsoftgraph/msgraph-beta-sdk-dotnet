@@ -244,55 +244,25 @@ namespace Microsoft.Graph.Ediscovery
         private void InitializeCollectionProperties(SourceCollection sourceCollectionToInitialize)
         {
 
-            if (sourceCollectionToInitialize != null && sourceCollectionToInitialize.AdditionalData != null)
+            if (sourceCollectionToInitialize != null)
             {
-
                 if (sourceCollectionToInitialize.AdditionalSources != null && sourceCollectionToInitialize.AdditionalSources.CurrentPage != null)
                 {
+                    sourceCollectionToInitialize.AdditionalSources.InitializeNextPageRequest(this.Client, sourceCollectionToInitialize.AdditionalSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     sourceCollectionToInitialize.AdditionalSources.AdditionalData = sourceCollectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    sourceCollectionToInitialize.AdditionalData.TryGetValue("additionalSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        sourceCollectionToInitialize.AdditionalSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (sourceCollectionToInitialize.CustodianSources != null && sourceCollectionToInitialize.CustodianSources.CurrentPage != null)
                 {
+                    sourceCollectionToInitialize.CustodianSources.InitializeNextPageRequest(this.Client, sourceCollectionToInitialize.CustodianSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     sourceCollectionToInitialize.CustodianSources.AdditionalData = sourceCollectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    sourceCollectionToInitialize.AdditionalData.TryGetValue("custodianSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        sourceCollectionToInitialize.CustodianSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (sourceCollectionToInitialize.NoncustodialSources != null && sourceCollectionToInitialize.NoncustodialSources.CurrentPage != null)
                 {
+                    sourceCollectionToInitialize.NoncustodialSources.InitializeNextPageRequest(this.Client, sourceCollectionToInitialize.NoncustodialSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     sourceCollectionToInitialize.NoncustodialSources.AdditionalData = sourceCollectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    sourceCollectionToInitialize.AdditionalData.TryGetValue("noncustodialSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        sourceCollectionToInitialize.NoncustodialSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

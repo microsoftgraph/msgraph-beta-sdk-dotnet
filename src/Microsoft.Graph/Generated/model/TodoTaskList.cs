@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("extensions")]
         public ITodoTaskListExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
@@ -69,6 +75,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tasks")]
         public ITodoTaskListTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

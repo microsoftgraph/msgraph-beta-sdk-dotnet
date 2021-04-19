@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfileToInitialize)
         {
 
-            if (windowsAutopilotDeploymentProfileToInitialize != null && windowsAutopilotDeploymentProfileToInitialize.AdditionalData != null)
+            if (windowsAutopilotDeploymentProfileToInitialize != null)
             {
-
                 if (windowsAutopilotDeploymentProfileToInitialize.AssignedDevices != null && windowsAutopilotDeploymentProfileToInitialize.AssignedDevices.CurrentPage != null)
                 {
+                    windowsAutopilotDeploymentProfileToInitialize.AssignedDevices.InitializeNextPageRequest(this.Client, windowsAutopilotDeploymentProfileToInitialize.AssignedDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsAutopilotDeploymentProfileToInitialize.AssignedDevices.AdditionalData = windowsAutopilotDeploymentProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsAutopilotDeploymentProfileToInitialize.AdditionalData.TryGetValue("assignedDevices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsAutopilotDeploymentProfileToInitialize.AssignedDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (windowsAutopilotDeploymentProfileToInitialize.Assignments != null && windowsAutopilotDeploymentProfileToInitialize.Assignments.CurrentPage != null)
                 {
+                    windowsAutopilotDeploymentProfileToInitialize.Assignments.InitializeNextPageRequest(this.Client, windowsAutopilotDeploymentProfileToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsAutopilotDeploymentProfileToInitialize.Assignments.AdditionalData = windowsAutopilotDeploymentProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsAutopilotDeploymentProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsAutopilotDeploymentProfileToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

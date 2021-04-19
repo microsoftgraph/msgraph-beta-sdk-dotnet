@@ -90,6 +90,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("updateStateSummaries")]
         public IMacOSSoftwareUpdateCategorySummaryUpdateStateSummariesCollectionPage UpdateStateSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets updateStateSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("updateStateSummaries@odata.nextLink")]
+        public string UpdateStateSummariesNextLink { get; set; }
     
     }
 }

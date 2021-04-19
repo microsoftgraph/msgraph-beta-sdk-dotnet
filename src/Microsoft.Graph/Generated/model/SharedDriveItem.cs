@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("items")]
         public ISharedDriveItemItemsCollectionPage Items { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemsNextLink.
+        /// </summary>
+        [JsonPropertyName("items@odata.nextLink")]
+        public string ItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets list.

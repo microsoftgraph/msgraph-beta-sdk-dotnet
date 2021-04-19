@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToInitialize)
         {
 
-            if (iosImportedPFXCertificateProfileToInitialize != null && iosImportedPFXCertificateProfileToInitialize.AdditionalData != null)
+            if (iosImportedPFXCertificateProfileToInitialize != null)
             {
-
                 if (iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = iosImportedPFXCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    iosImportedPFXCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

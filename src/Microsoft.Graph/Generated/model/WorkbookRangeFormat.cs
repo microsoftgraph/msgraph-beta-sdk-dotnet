@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("borders")]
         public IWorkbookRangeFormatBordersCollectionPage Borders { get; set; }
+
+        /// <summary>
+        /// Gets or sets bordersNextLink.
+        /// </summary>
+        [JsonPropertyName("borders@odata.nextLink")]
+        public string BordersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets fill.

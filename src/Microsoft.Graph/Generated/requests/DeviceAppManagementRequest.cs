@@ -244,375 +244,145 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceAppManagement deviceAppManagementToInitialize)
         {
 
-            if (deviceAppManagementToInitialize != null && deviceAppManagementToInitialize.AdditionalData != null)
+            if (deviceAppManagementToInitialize != null)
             {
-
                 if (deviceAppManagementToInitialize.ManagedEBookCategories != null && deviceAppManagementToInitialize.ManagedEBookCategories.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.ManagedEBookCategories.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.ManagedEBookCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.ManagedEBookCategories.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedEBookCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.ManagedEBookCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates != null && deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.EnterpriseCodeSigningCertificatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("enterpriseCodeSigningCertificates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations != null && deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.IosLobAppProvisioningConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("iosLobAppProvisioningConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.MobileAppCategories != null && deviceAppManagementToInitialize.MobileAppCategories.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.MobileAppCategories.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.MobileAppCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.MobileAppCategories.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileAppCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.MobileAppCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.MobileAppConfigurations != null && deviceAppManagementToInitialize.MobileAppConfigurations.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.MobileAppConfigurations.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.MobileAppConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.MobileAppConfigurations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileAppConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.MobileAppConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.MobileApps != null && deviceAppManagementToInitialize.MobileApps.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.MobileApps.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.MobileAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.MobileApps.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.MobileApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.ManagedEBooks != null && deviceAppManagementToInitialize.ManagedEBooks.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.ManagedEBooks.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.ManagedEBooksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.ManagedEBooks.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedEBooks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.ManagedEBooks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.PolicySets != null && deviceAppManagementToInitialize.PolicySets.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.PolicySets.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.PolicySetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.PolicySets.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("policySets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.PolicySets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.SideLoadingKeys != null && deviceAppManagementToInitialize.SideLoadingKeys.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.SideLoadingKeys.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.SideLoadingKeysNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.SideLoadingKeys.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("sideLoadingKeys@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.SideLoadingKeys.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.VppTokens != null && deviceAppManagementToInitialize.VppTokens.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.VppTokens.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.VppTokensNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.VppTokens.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("vppTokens@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.VppTokens.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.AndroidManagedAppProtections != null && deviceAppManagementToInitialize.AndroidManagedAppProtections.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.AndroidManagedAppProtections.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.AndroidManagedAppProtectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.AndroidManagedAppProtections.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("androidManagedAppProtections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.AndroidManagedAppProtections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.DefaultManagedAppProtections != null && deviceAppManagementToInitialize.DefaultManagedAppProtections.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.DefaultManagedAppProtections.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.DefaultManagedAppProtectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.DefaultManagedAppProtections.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("defaultManagedAppProtections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.DefaultManagedAppProtections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.IosManagedAppProtections != null && deviceAppManagementToInitialize.IosManagedAppProtections.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.IosManagedAppProtections.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.IosManagedAppProtectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.IosManagedAppProtections.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("iosManagedAppProtections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.IosManagedAppProtections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.ManagedAppPolicies != null && deviceAppManagementToInitialize.ManagedAppPolicies.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.ManagedAppPolicies.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.ManagedAppPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.ManagedAppPolicies.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.ManagedAppPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.ManagedAppRegistrations != null && deviceAppManagementToInitialize.ManagedAppRegistrations.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.ManagedAppRegistrations.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.ManagedAppRegistrationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.ManagedAppRegistrations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppRegistrations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.ManagedAppRegistrations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.ManagedAppStatuses != null && deviceAppManagementToInitialize.ManagedAppStatuses.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.ManagedAppStatuses.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.ManagedAppStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.ManagedAppStatuses.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.ManagedAppStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies != null && deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.MdmWindowsInformationProtectionPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mdmWindowsInformationProtectionPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.TargetedManagedAppConfigurations != null && deviceAppManagementToInitialize.TargetedManagedAppConfigurations.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.TargetedManagedAppConfigurations.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.TargetedManagedAppConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.TargetedManagedAppConfigurations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("targetedManagedAppConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.TargetedManagedAppConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations != null && deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionDeviceRegistrations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.WindowsInformationProtectionPolicies != null && deviceAppManagementToInitialize.WindowsInformationProtectionPolicies.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.WindowsInformationProtectionPolicies.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.WindowsInformationProtectionPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.WindowsInformationProtectionPolicies.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.WindowsInformationProtectionPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions != null && deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.WindowsInformationProtectionWipeActionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionWipeActions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.DeviceAppManagementTasks != null && deviceAppManagementToInitialize.DeviceAppManagementTasks.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.DeviceAppManagementTasks.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.DeviceAppManagementTasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.DeviceAppManagementTasks.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("deviceAppManagementTasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.DeviceAppManagementTasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.WdacSupplementalPolicies != null && deviceAppManagementToInitialize.WdacSupplementalPolicies.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.WdacSupplementalPolicies.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.WdacSupplementalPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.WdacSupplementalPolicies.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("wdacSupplementalPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.WdacSupplementalPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

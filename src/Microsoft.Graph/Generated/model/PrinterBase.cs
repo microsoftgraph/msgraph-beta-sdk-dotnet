@@ -97,6 +97,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("jobs")]
         public IPrinterBaseJobsCollectionPage Jobs { get; set; }
+
+        /// <summary>
+        /// Gets or sets jobsNextLink.
+        /// </summary>
+        [JsonPropertyName("jobs@odata.nextLink")]
+        public string JobsNextLink { get; set; }
     
     }
 }

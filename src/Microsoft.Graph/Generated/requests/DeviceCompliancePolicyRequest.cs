@@ -244,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceCompliancePolicy deviceCompliancePolicyToInitialize)
         {
 
-            if (deviceCompliancePolicyToInitialize != null && deviceCompliancePolicyToInitialize.AdditionalData != null)
+            if (deviceCompliancePolicyToInitialize != null)
             {
-
                 if (deviceCompliancePolicyToInitialize.Assignments != null && deviceCompliancePolicyToInitialize.Assignments.CurrentPage != null)
                 {
+                    deviceCompliancePolicyToInitialize.Assignments.InitializeNextPageRequest(this.Client, deviceCompliancePolicyToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceCompliancePolicyToInitialize.Assignments.AdditionalData = deviceCompliancePolicyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceCompliancePolicyToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceCompliancePolicyToInitialize.DeviceSettingStateSummaries != null && deviceCompliancePolicyToInitialize.DeviceSettingStateSummaries.CurrentPage != null)
                 {
+                    deviceCompliancePolicyToInitialize.DeviceSettingStateSummaries.InitializeNextPageRequest(this.Client, deviceCompliancePolicyToInitialize.DeviceSettingStateSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceCompliancePolicyToInitialize.DeviceSettingStateSummaries.AdditionalData = deviceCompliancePolicyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("deviceSettingStateSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceCompliancePolicyToInitialize.DeviceSettingStateSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceCompliancePolicyToInitialize.DeviceStatuses != null && deviceCompliancePolicyToInitialize.DeviceStatuses.CurrentPage != null)
                 {
+                    deviceCompliancePolicyToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, deviceCompliancePolicyToInitialize.DeviceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceCompliancePolicyToInitialize.DeviceStatuses.AdditionalData = deviceCompliancePolicyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceCompliancePolicyToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceCompliancePolicyToInitialize.ScheduledActionsForRule != null && deviceCompliancePolicyToInitialize.ScheduledActionsForRule.CurrentPage != null)
                 {
+                    deviceCompliancePolicyToInitialize.ScheduledActionsForRule.InitializeNextPageRequest(this.Client, deviceCompliancePolicyToInitialize.ScheduledActionsForRuleNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceCompliancePolicyToInitialize.ScheduledActionsForRule.AdditionalData = deviceCompliancePolicyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("scheduledActionsForRule@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceCompliancePolicyToInitialize.ScheduledActionsForRule.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceCompliancePolicyToInitialize.UserStatuses != null && deviceCompliancePolicyToInitialize.UserStatuses.CurrentPage != null)
                 {
+                    deviceCompliancePolicyToInitialize.UserStatuses.InitializeNextPageRequest(this.Client, deviceCompliancePolicyToInitialize.UserStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceCompliancePolicyToInitialize.UserStatuses.AdditionalData = deviceCompliancePolicyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceCompliancePolicyToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceCompliancePolicyToInitialize.UserStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

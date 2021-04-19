@@ -2008,6 +2008,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("privacyAccessControls")]
         public IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage PrivacyAccessControls { get; set; }
+
+        /// <summary>
+        /// Gets or sets privacyAccessControlsNextLink.
+        /// </summary>
+        [JsonPropertyName("privacyAccessControls@odata.nextLink")]
+        public string PrivacyAccessControlsNextLink { get; set; }
     
     }
 }

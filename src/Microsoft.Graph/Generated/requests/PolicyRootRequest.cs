@@ -244,199 +244,79 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PolicyRoot policyRootToInitialize)
         {
 
-            if (policyRootToInitialize != null && policyRootToInitialize.AdditionalData != null)
+            if (policyRootToInitialize != null)
             {
-
                 if (policyRootToInitialize.ActivityBasedTimeoutPolicies != null && policyRootToInitialize.ActivityBasedTimeoutPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.ActivityBasedTimeoutPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.ActivityBasedTimeoutPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.ActivityBasedTimeoutPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("activityBasedTimeoutPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.ActivityBasedTimeoutPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policyRootToInitialize.AuthorizationPolicy != null && policyRootToInitialize.AuthorizationPolicy.CurrentPage != null)
                 {
+                    policyRootToInitialize.AuthorizationPolicy.InitializeNextPageRequest(this.Client, policyRootToInitialize.AuthorizationPolicyNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.AuthorizationPolicy.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("authorizationPolicy@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.AuthorizationPolicy.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policyRootToInitialize.ClaimsMappingPolicies != null && policyRootToInitialize.ClaimsMappingPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.ClaimsMappingPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.ClaimsMappingPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.ClaimsMappingPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("claimsMappingPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.ClaimsMappingPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policyRootToInitialize.HomeRealmDiscoveryPolicies != null && policyRootToInitialize.HomeRealmDiscoveryPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.HomeRealmDiscoveryPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.HomeRealmDiscoveryPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("homeRealmDiscoveryPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policyRootToInitialize.PermissionGrantPolicies != null && policyRootToInitialize.PermissionGrantPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.PermissionGrantPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.PermissionGrantPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.PermissionGrantPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("permissionGrantPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.PermissionGrantPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policyRootToInitialize.PrivateLinkResourcePolicies != null && policyRootToInitialize.PrivateLinkResourcePolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.PrivateLinkResourcePolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.PrivateLinkResourcePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.PrivateLinkResourcePolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("privateLinkResourcePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.PrivateLinkResourcePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policyRootToInitialize.TokenIssuancePolicies != null && policyRootToInitialize.TokenIssuancePolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.TokenIssuancePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.TokenIssuancePolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("tokenIssuancePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policyRootToInitialize.TokenLifetimePolicies != null && policyRootToInitialize.TokenLifetimePolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.TokenLifetimePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.TokenLifetimePolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("tokenLifetimePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policyRootToInitialize.FeatureRolloutPolicies != null && policyRootToInitialize.FeatureRolloutPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.FeatureRolloutPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.FeatureRolloutPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.FeatureRolloutPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("featureRolloutPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.FeatureRolloutPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policyRootToInitialize.ConditionalAccessPolicies != null && policyRootToInitialize.ConditionalAccessPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.ConditionalAccessPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.ConditionalAccessPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.ConditionalAccessPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("conditionalAccessPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.ConditionalAccessPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policyRootToInitialize.RoleManagementPolicies != null && policyRootToInitialize.RoleManagementPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.RoleManagementPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.RoleManagementPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.RoleManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("roleManagementPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.RoleManagementPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policyRootToInitialize.RoleManagementPolicyAssignments != null && policyRootToInitialize.RoleManagementPolicyAssignments.CurrentPage != null)
                 {
+                    policyRootToInitialize.RoleManagementPolicyAssignments.InitializeNextPageRequest(this.Client, policyRootToInitialize.RoleManagementPolicyAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.RoleManagementPolicyAssignments.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policyRootToInitialize.AdditionalData.TryGetValue("roleManagementPolicyAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policyRootToInitialize.RoleManagementPolicyAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

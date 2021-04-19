@@ -117,6 +117,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignmentCategories")]
         public IEducationClassAssignmentCategoriesCollectionPage AssignmentCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("assignmentCategories@odata.nextLink")]
+        public string AssignmentCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets assignment defaults.
@@ -130,6 +136,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IEducationClassAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets assignment settings.
@@ -150,6 +162,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("members")]
         public IEducationClassMembersCollectionWithReferencesPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets schools.
@@ -157,6 +175,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("schools")]
         public IEducationClassSchoolsCollectionWithReferencesPage Schools { get; set; }
+
+        /// <summary>
+        /// Gets or sets schoolsNextLink.
+        /// </summary>
+        [JsonPropertyName("schools@odata.nextLink")]
+        public string SchoolsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets teachers.
@@ -164,6 +188,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("teachers")]
         public IEducationClassTeachersCollectionWithReferencesPage Teachers { get; set; }
+
+        /// <summary>
+        /// Gets or sets teachersNextLink.
+        /// </summary>
+        [JsonPropertyName("teachers@odata.nextLink")]
+        public string TeachersNextLink { get; set; }
     
     }
 }

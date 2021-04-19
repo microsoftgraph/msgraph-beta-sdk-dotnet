@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SharedDriveItem sharedDriveItemToInitialize)
         {
 
-            if (sharedDriveItemToInitialize != null && sharedDriveItemToInitialize.AdditionalData != null)
+            if (sharedDriveItemToInitialize != null)
             {
-
                 if (sharedDriveItemToInitialize.Items != null && sharedDriveItemToInitialize.Items.CurrentPage != null)
                 {
+                    sharedDriveItemToInitialize.Items.InitializeNextPageRequest(this.Client, sharedDriveItemToInitialize.ItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     sharedDriveItemToInitialize.Items.AdditionalData = sharedDriveItemToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    sharedDriveItemToInitialize.AdditionalData.TryGetValue("items@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        sharedDriveItemToInitialize.Items.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

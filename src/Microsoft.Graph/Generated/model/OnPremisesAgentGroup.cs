@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("agents")]
         public IOnPremisesAgentGroupAgentsCollectionPage Agents { get; set; }
+
+        /// <summary>
+        /// Gets or sets agentsNextLink.
+        /// </summary>
+        [JsonPropertyName("agents@odata.nextLink")]
+        public string AgentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets published resources.
@@ -62,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("publishedResources")]
         public IOnPremisesAgentGroupPublishedResourcesCollectionPage PublishedResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets publishedResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("publishedResources@odata.nextLink")]
+        public string PublishedResourcesNextLink { get; set; }
     
     }
 }

@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("cloudPCs")]
         public IVirtualEndpointCloudPCsCollectionPage CloudPCs { get; set; }
+
+        /// <summary>
+        /// Gets or sets cloudPCsNextLink.
+        /// </summary>
+        [JsonPropertyName("cloudPCs@odata.nextLink")]
+        public string CloudPCsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device images.
@@ -41,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceImages")]
         public IVirtualEndpointDeviceImagesCollectionPage DeviceImages { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceImagesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceImages@odata.nextLink")]
+        public string DeviceImagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets on premises connections.
@@ -48,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("onPremisesConnections")]
         public IVirtualEndpointOnPremisesConnectionsCollectionPage OnPremisesConnections { get; set; }
+
+        /// <summary>
+        /// Gets or sets onPremisesConnectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("onPremisesConnections@odata.nextLink")]
+        public string OnPremisesConnectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning policies.
@@ -55,6 +73,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("provisioningPolicies")]
         public IVirtualEndpointProvisioningPoliciesCollectionPage ProvisioningPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets provisioningPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("provisioningPolicies@odata.nextLink")]
+        public string ProvisioningPoliciesNextLink { get; set; }
     
     }
 }

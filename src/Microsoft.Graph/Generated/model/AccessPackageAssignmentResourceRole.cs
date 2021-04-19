@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackageAssignments")]
         public IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionPage AccessPackageAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignments@odata.nextLink")]
+        public string AccessPackageAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource role.

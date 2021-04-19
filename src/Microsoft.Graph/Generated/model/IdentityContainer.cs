@@ -40,30 +40,60 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("apiConnectors")]
         public IIdentityContainerApiConnectorsCollectionPage ApiConnectors { get; set; }
+
+        /// <summary>
+        /// Gets or sets apiConnectorsNextLink.
+        /// </summary>
+        [JsonPropertyName("apiConnectors@odata.nextLink")]
+        public string ApiConnectorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets b2c user flows.
         /// </summary>
         [JsonPropertyName("b2cUserFlows")]
         public IIdentityContainerB2cUserFlowsCollectionPage B2cUserFlows { get; set; }
+
+        /// <summary>
+        /// Gets or sets b2cUserFlowsNextLink.
+        /// </summary>
+        [JsonPropertyName("b2cUserFlows@odata.nextLink")]
+        public string B2cUserFlowsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets b2x user flows.
         /// </summary>
         [JsonPropertyName("b2xUserFlows")]
         public IIdentityContainerB2xUserFlowsCollectionPage B2xUserFlows { get; set; }
+
+        /// <summary>
+        /// Gets or sets b2xUserFlowsNextLink.
+        /// </summary>
+        [JsonPropertyName("b2xUserFlows@odata.nextLink")]
+        public string B2xUserFlowsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user flow attributes.
         /// </summary>
         [JsonPropertyName("userFlowAttributes")]
         public IIdentityContainerUserFlowAttributesCollectionPage UserFlowAttributes { get; set; }
+
+        /// <summary>
+        /// Gets or sets userFlowAttributesNextLink.
+        /// </summary>
+        [JsonPropertyName("userFlowAttributes@odata.nextLink")]
+        public string UserFlowAttributesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user flows.
         /// </summary>
         [JsonPropertyName("userFlows")]
         public IIdentityContainerUserFlowsCollectionPage UserFlows { get; set; }
+
+        /// <summary>
+        /// Gets or sets userFlowsNextLink.
+        /// </summary>
+        [JsonPropertyName("userFlows@odata.nextLink")]
+        public string UserFlowsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets continuous access evaluation policy.

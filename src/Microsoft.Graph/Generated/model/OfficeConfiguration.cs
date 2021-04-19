@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("clientConfigurations")]
         public IOfficeConfigurationClientConfigurationsCollectionPage ClientConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets clientConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("clientConfigurations@odata.nextLink")]
+        public string ClientConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OfficeConfiguration officeConfigurationToInitialize)
         {
 
-            if (officeConfigurationToInitialize != null && officeConfigurationToInitialize.AdditionalData != null)
+            if (officeConfigurationToInitialize != null)
             {
-
                 if (officeConfigurationToInitialize.ClientConfigurations != null && officeConfigurationToInitialize.ClientConfigurations.CurrentPage != null)
                 {
+                    officeConfigurationToInitialize.ClientConfigurations.InitializeNextPageRequest(this.Client, officeConfigurationToInitialize.ClientConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     officeConfigurationToInitialize.ClientConfigurations.AdditionalData = officeConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    officeConfigurationToInitialize.AdditionalData.TryGetValue("clientConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        officeConfigurationToInitialize.ClientConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PolicySet policySetToInitialize)
         {
 
-            if (policySetToInitialize != null && policySetToInitialize.AdditionalData != null)
+            if (policySetToInitialize != null)
             {
-
                 if (policySetToInitialize.Assignments != null && policySetToInitialize.Assignments.CurrentPage != null)
                 {
+                    policySetToInitialize.Assignments.InitializeNextPageRequest(this.Client, policySetToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policySetToInitialize.Assignments.AdditionalData = policySetToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policySetToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policySetToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (policySetToInitialize.Items != null && policySetToInitialize.Items.CurrentPage != null)
                 {
+                    policySetToInitialize.Items.InitializeNextPageRequest(this.Client, policySetToInitialize.ItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policySetToInitialize.Items.AdditionalData = policySetToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    policySetToInitialize.AdditionalData.TryGetValue("items@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        policySetToInitialize.Items.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

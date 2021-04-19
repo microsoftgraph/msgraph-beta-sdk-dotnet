@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("value")]
         public IDeviceManagementAbstractComplexSettingInstanceValueCollectionPage Value { get; set; }
+
+        /// <summary>
+        /// Gets or sets valueNextLink.
+        /// </summary>
+        [JsonPropertyName("value@odata.nextLink")]
+        public string ValueNextLink { get; set; }
     
     }
 }

@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(InformationProtection informationProtectionToInitialize)
         {
 
-            if (informationProtectionToInitialize != null && informationProtectionToInitialize.AdditionalData != null)
+            if (informationProtectionToInitialize != null)
             {
-
                 if (informationProtectionToInitialize.DataLossPreventionPolicies != null && informationProtectionToInitialize.DataLossPreventionPolicies.CurrentPage != null)
                 {
+                    informationProtectionToInitialize.DataLossPreventionPolicies.InitializeNextPageRequest(this.Client, informationProtectionToInitialize.DataLossPreventionPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     informationProtectionToInitialize.DataLossPreventionPolicies.AdditionalData = informationProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    informationProtectionToInitialize.AdditionalData.TryGetValue("dataLossPreventionPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        informationProtectionToInitialize.DataLossPreventionPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (informationProtectionToInitialize.SensitivityLabels != null && informationProtectionToInitialize.SensitivityLabels.CurrentPage != null)
                 {
+                    informationProtectionToInitialize.SensitivityLabels.InitializeNextPageRequest(this.Client, informationProtectionToInitialize.SensitivityLabelsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     informationProtectionToInitialize.SensitivityLabels.AdditionalData = informationProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    informationProtectionToInitialize.AdditionalData.TryGetValue("sensitivityLabels@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        informationProtectionToInitialize.SensitivityLabels.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (informationProtectionToInitialize.ThreatAssessmentRequests != null && informationProtectionToInitialize.ThreatAssessmentRequests.CurrentPage != null)
                 {
+                    informationProtectionToInitialize.ThreatAssessmentRequests.InitializeNextPageRequest(this.Client, informationProtectionToInitialize.ThreatAssessmentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     informationProtectionToInitialize.ThreatAssessmentRequests.AdditionalData = informationProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    informationProtectionToInitialize.AdditionalData.TryGetValue("threatAssessmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        informationProtectionToInitialize.ThreatAssessmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

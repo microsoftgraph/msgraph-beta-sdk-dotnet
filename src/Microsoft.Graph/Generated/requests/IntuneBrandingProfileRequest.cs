@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IntuneBrandingProfile intuneBrandingProfileToInitialize)
         {
 
-            if (intuneBrandingProfileToInitialize != null && intuneBrandingProfileToInitialize.AdditionalData != null)
+            if (intuneBrandingProfileToInitialize != null)
             {
-
                 if (intuneBrandingProfileToInitialize.Assignments != null && intuneBrandingProfileToInitialize.Assignments.CurrentPage != null)
                 {
+                    intuneBrandingProfileToInitialize.Assignments.InitializeNextPageRequest(this.Client, intuneBrandingProfileToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     intuneBrandingProfileToInitialize.Assignments.AdditionalData = intuneBrandingProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    intuneBrandingProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        intuneBrandingProfileToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

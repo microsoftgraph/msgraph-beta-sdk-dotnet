@@ -244,23 +244,13 @@ namespace Microsoft.Graph.Ediscovery
         private void InitializeCollectionProperties(ReviewSet reviewSetToInitialize)
         {
 
-            if (reviewSetToInitialize != null && reviewSetToInitialize.AdditionalData != null)
+            if (reviewSetToInitialize != null)
             {
-
                 if (reviewSetToInitialize.Queries != null && reviewSetToInitialize.Queries.CurrentPage != null)
                 {
+                    reviewSetToInitialize.Queries.InitializeNextPageRequest(this.Client, reviewSetToInitialize.QueriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reviewSetToInitialize.Queries.AdditionalData = reviewSetToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    reviewSetToInitialize.AdditionalData.TryGetValue("queries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        reviewSetToInitialize.Queries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

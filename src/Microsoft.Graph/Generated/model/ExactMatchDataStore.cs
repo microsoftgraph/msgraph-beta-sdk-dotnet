@@ -57,6 +57,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("sessions")]
         public IExactMatchDataStoreSessionsCollectionPage Sessions { get; set; }
+
+        /// <summary>
+        /// Gets or sets sessionsNextLink.
+        /// </summary>
+        [JsonPropertyName("sessions@odata.nextLink")]
+        public string SessionsNextLink { get; set; }
     
     }
 }

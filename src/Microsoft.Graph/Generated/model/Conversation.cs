@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("threads")]
         public IConversationThreadsCollectionPage Threads { get; set; }
+
+        /// <summary>
+        /// Gets or sets threadsNextLink.
+        /// </summary>
+        [JsonPropertyName("threads@odata.nextLink")]
+        public string ThreadsNextLink { get; set; }
     
     }
 }

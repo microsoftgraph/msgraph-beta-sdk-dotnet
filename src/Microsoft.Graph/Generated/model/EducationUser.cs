@@ -255,12 +255,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IEducationUserAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets rubrics.
         /// </summary>
         [JsonPropertyName("rubrics")]
         public IEducationUserRubricsCollectionPage Rubrics { get; set; }
+
+        /// <summary>
+        /// Gets or sets rubricsNextLink.
+        /// </summary>
+        [JsonPropertyName("rubrics@odata.nextLink")]
+        public string RubricsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets classes.
@@ -268,6 +280,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("classes")]
         public IEducationUserClassesCollectionWithReferencesPage Classes { get; set; }
+
+        /// <summary>
+        /// Gets or sets classesNextLink.
+        /// </summary>
+        [JsonPropertyName("classes@odata.nextLink")]
+        public string ClassesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets schools.
@@ -275,6 +293,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("schools")]
         public IEducationUserSchoolsCollectionWithReferencesPage Schools { get; set; }
+
+        /// <summary>
+        /// Gets or sets schoolsNextLink.
+        /// </summary>
+        [JsonPropertyName("schools@odata.nextLink")]
+        public string SchoolsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets taught classes.
@@ -282,6 +306,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("taughtClasses")]
         public IEducationUserTaughtClassesCollectionWithReferencesPage TaughtClasses { get; set; }
+
+        /// <summary>
+        /// Gets or sets taughtClassesNextLink.
+        /// </summary>
+        [JsonPropertyName("taughtClasses@odata.nextLink")]
+        public string TaughtClassesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user.

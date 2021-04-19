@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToInitialize)
         {
 
-            if (windows10PkcsCertificateProfileToInitialize != null && windows10PkcsCertificateProfileToInitialize.AdditionalData != null)
+            if (windows10PkcsCertificateProfileToInitialize != null)
             {
-
                 if (windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = windows10PkcsCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windows10PkcsCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

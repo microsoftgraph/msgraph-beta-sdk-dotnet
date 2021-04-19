@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ItemAnalytics itemAnalyticsToInitialize)
         {
 
-            if (itemAnalyticsToInitialize != null && itemAnalyticsToInitialize.AdditionalData != null)
+            if (itemAnalyticsToInitialize != null)
             {
-
                 if (itemAnalyticsToInitialize.ItemActivityStats != null && itemAnalyticsToInitialize.ItemActivityStats.CurrentPage != null)
                 {
+                    itemAnalyticsToInitialize.ItemActivityStats.InitializeNextPageRequest(this.Client, itemAnalyticsToInitialize.ItemActivityStatsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     itemAnalyticsToInitialize.ItemActivityStats.AdditionalData = itemAnalyticsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    itemAnalyticsToInitialize.AdditionalData.TryGetValue("itemActivityStats@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        itemAnalyticsToInitialize.ItemActivityStats.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

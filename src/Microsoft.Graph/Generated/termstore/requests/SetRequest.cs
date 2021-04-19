@@ -244,55 +244,25 @@ namespace Microsoft.Graph.TermStore
         private void InitializeCollectionProperties(Set setToInitialize)
         {
 
-            if (setToInitialize != null && setToInitialize.AdditionalData != null)
+            if (setToInitialize != null)
             {
-
                 if (setToInitialize.Children != null && setToInitialize.Children.CurrentPage != null)
                 {
+                    setToInitialize.Children.InitializeNextPageRequest(this.Client, setToInitialize.ChildrenNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     setToInitialize.Children.AdditionalData = setToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    setToInitialize.AdditionalData.TryGetValue("children@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        setToInitialize.Children.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (setToInitialize.Relations != null && setToInitialize.Relations.CurrentPage != null)
                 {
+                    setToInitialize.Relations.InitializeNextPageRequest(this.Client, setToInitialize.RelationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     setToInitialize.Relations.AdditionalData = setToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    setToInitialize.AdditionalData.TryGetValue("relations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        setToInitialize.Relations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (setToInitialize.Terms != null && setToInitialize.Terms.CurrentPage != null)
                 {
+                    setToInitialize.Terms.InitializeNextPageRequest(this.Client, setToInitialize.TermsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     setToInitialize.Terms.AdditionalData = setToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    setToInitialize.AdditionalData.TryGetValue("terms@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        setToInitialize.Terms.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

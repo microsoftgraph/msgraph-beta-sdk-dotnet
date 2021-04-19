@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("taskFolders")]
         public IOutlookTaskGroupTaskFoldersCollectionPage TaskFolders { get; set; }
+
+        /// <summary>
+        /// Gets or sets taskFoldersNextLink.
+        /// </summary>
+        [JsonPropertyName("taskFolders@odata.nextLink")]
+        public string TaskFoldersNextLink { get; set; }
     
     }
 }

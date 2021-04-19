@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AndroidManagedAppProtection androidManagedAppProtectionToInitialize)
         {
 
-            if (androidManagedAppProtectionToInitialize != null && androidManagedAppProtectionToInitialize.AdditionalData != null)
+            if (androidManagedAppProtectionToInitialize != null)
             {
-
                 if (androidManagedAppProtectionToInitialize.Apps != null && androidManagedAppProtectionToInitialize.Apps.CurrentPage != null)
                 {
+                    androidManagedAppProtectionToInitialize.Apps.InitializeNextPageRequest(this.Client, androidManagedAppProtectionToInitialize.AppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     androidManagedAppProtectionToInitialize.Apps.AdditionalData = androidManagedAppProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    androidManagedAppProtectionToInitialize.AdditionalData.TryGetValue("apps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        androidManagedAppProtectionToInitialize.Apps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

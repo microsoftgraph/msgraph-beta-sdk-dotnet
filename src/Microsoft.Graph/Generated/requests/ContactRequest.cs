@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Contact contactToInitialize)
         {
 
-            if (contactToInitialize != null && contactToInitialize.AdditionalData != null)
+            if (contactToInitialize != null)
             {
-
                 if (contactToInitialize.Extensions != null && contactToInitialize.Extensions.CurrentPage != null)
                 {
+                    contactToInitialize.Extensions.InitializeNextPageRequest(this.Client, contactToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactToInitialize.Extensions.AdditionalData = contactToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (contactToInitialize.MultiValueExtendedProperties != null && contactToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    contactToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, contactToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactToInitialize.MultiValueExtendedProperties.AdditionalData = contactToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (contactToInitialize.SingleValueExtendedProperties != null && contactToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    contactToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, contactToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactToInitialize.SingleValueExtendedProperties.AdditionalData = contactToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -89,6 +89,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("inheritsPermissionsFrom")]
         public IUnifiedRoleDefinitionInheritsPermissionsFromCollectionPage InheritsPermissionsFrom { get; set; }
+
+        /// <summary>
+        /// Gets or sets inheritsPermissionsFromNextLink.
+        /// </summary>
+        [JsonPropertyName("inheritsPermissionsFrom@odata.nextLink")]
+        public string InheritsPermissionsFromNextLink { get; set; }
     
     }
 }

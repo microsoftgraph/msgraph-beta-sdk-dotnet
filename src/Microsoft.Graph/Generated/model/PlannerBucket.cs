@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tasks")]
         public IPlannerBucketTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("contentVersions")]
         public IManagedMobileLobAppContentVersionsCollectionPage ContentVersions { get; set; }
+
+        /// <summary>
+        /// Gets or sets contentVersionsNextLink.
+        /// </summary>
+        [JsonPropertyName("contentVersions@odata.nextLink")]
+        public string ContentVersionsNextLink { get; set; }
     
     }
 }

@@ -110,6 +110,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackageResourceRoles")]
         public IAccessPackageResourceAccessPackageResourceRolesCollectionPage AccessPackageResourceRoles { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourceRolesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceRoles@odata.nextLink")]
+        public string AccessPackageResourceRolesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource scopes.
@@ -117,6 +123,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("accessPackageResourceScopes")]
         public IAccessPackageResourceAccessPackageResourceScopesCollectionPage AccessPackageResourceScopes { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourceScopesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceScopes@odata.nextLink")]
+        public string AccessPackageResourceScopesNextLink { get; set; }
     
     }
 }

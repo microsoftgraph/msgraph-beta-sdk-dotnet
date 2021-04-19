@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OutlookUser outlookUserToInitialize)
         {
 
-            if (outlookUserToInitialize != null && outlookUserToInitialize.AdditionalData != null)
+            if (outlookUserToInitialize != null)
             {
-
                 if (outlookUserToInitialize.MasterCategories != null && outlookUserToInitialize.MasterCategories.CurrentPage != null)
                 {
+                    outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(this.Client, outlookUserToInitialize.MasterCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookUserToInitialize.MasterCategories.AdditionalData = outlookUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookUserToInitialize.AdditionalData.TryGetValue("masterCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (outlookUserToInitialize.TaskFolders != null && outlookUserToInitialize.TaskFolders.CurrentPage != null)
                 {
+                    outlookUserToInitialize.TaskFolders.InitializeNextPageRequest(this.Client, outlookUserToInitialize.TaskFoldersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookUserToInitialize.TaskFolders.AdditionalData = outlookUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookUserToInitialize.AdditionalData.TryGetValue("taskFolders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookUserToInitialize.TaskFolders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (outlookUserToInitialize.TaskGroups != null && outlookUserToInitialize.TaskGroups.CurrentPage != null)
                 {
+                    outlookUserToInitialize.TaskGroups.InitializeNextPageRequest(this.Client, outlookUserToInitialize.TaskGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookUserToInitialize.TaskGroups.AdditionalData = outlookUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookUserToInitialize.AdditionalData.TryGetValue("taskGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookUserToInitialize.TaskGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (outlookUserToInitialize.Tasks != null && outlookUserToInitialize.Tasks.CurrentPage != null)
                 {
+                    outlookUserToInitialize.Tasks.InitializeNextPageRequest(this.Client, outlookUserToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookUserToInitialize.Tasks.AdditionalData = outlookUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookUserToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookUserToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToInitialize)
         {
 
-            if (windowsWifiEnterpriseEAPConfigurationToInitialize != null && windowsWifiEnterpriseEAPConfigurationToInitialize.AdditionalData != null)
+            if (windowsWifiEnterpriseEAPConfigurationToInitialize != null)
             {
-
                 if (windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation != null && windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.CurrentPage != null)
                 {
+                    windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(this.Client, windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.AdditionalData = windowsWifiEnterpriseEAPConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsWifiEnterpriseEAPConfigurationToInitialize.AdditionalData.TryGetValue("rootCertificatesForServerValidation@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -39,12 +39,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("dataLossPreventionPolicies")]
         public IInformationProtectionDataLossPreventionPoliciesCollectionPage DataLossPreventionPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets dataLossPreventionPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("dataLossPreventionPolicies@odata.nextLink")]
+        public string DataLossPreventionPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity labels.
         /// </summary>
         [JsonPropertyName("sensitivityLabels")]
         public IInformationProtectionSensitivityLabelsCollectionPage SensitivityLabels { get; set; }
+
+        /// <summary>
+        /// Gets or sets sensitivityLabelsNextLink.
+        /// </summary>
+        [JsonPropertyName("sensitivityLabels@odata.nextLink")]
+        public string SensitivityLabelsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity policy settings.
@@ -63,6 +75,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("threatAssessmentRequests")]
         public IInformationProtectionThreatAssessmentRequestsCollectionPage ThreatAssessmentRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets threatAssessmentRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("threatAssessmentRequests@odata.nextLink")]
+        public string ThreatAssessmentRequestsNextLink { get; set; }
     
     }
 }

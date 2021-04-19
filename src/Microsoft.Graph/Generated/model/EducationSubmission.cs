@@ -111,6 +111,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("outcomes")]
         public IEducationSubmissionOutcomesCollectionPage Outcomes { get; set; }
+
+        /// <summary>
+        /// Gets or sets outcomesNextLink.
+        /// </summary>
+        [JsonPropertyName("outcomes@odata.nextLink")]
+        public string OutcomesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets resources.
@@ -118,6 +124,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("resources")]
         public IEducationSubmissionResourcesCollectionPage Resources { get; set; }
+
+        /// <summary>
+        /// Gets or sets resourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("resources@odata.nextLink")]
+        public string ResourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets submitted resources.
@@ -125,6 +137,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("submittedResources")]
         public IEducationSubmissionSubmittedResourcesCollectionPage SubmittedResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets submittedResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("submittedResources@odata.nextLink")]
+        public string SubmittedResourcesNextLink { get; set; }
     
     }
 }

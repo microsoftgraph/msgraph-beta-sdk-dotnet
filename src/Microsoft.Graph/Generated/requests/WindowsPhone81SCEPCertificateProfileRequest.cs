@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToInitialize)
         {
 
-            if (windowsPhone81SCEPCertificateProfileToInitialize != null && windowsPhone81SCEPCertificateProfileToInitialize.AdditionalData != null)
+            if (windowsPhone81SCEPCertificateProfileToInitialize != null)
             {
-
                 if (windowsPhone81SCEPCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && windowsPhone81SCEPCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    windowsPhone81SCEPCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, windowsPhone81SCEPCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsPhone81SCEPCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = windowsPhone81SCEPCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsPhone81SCEPCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsPhone81SCEPCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

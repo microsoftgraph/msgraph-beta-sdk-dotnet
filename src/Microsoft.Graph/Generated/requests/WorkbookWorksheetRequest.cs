@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WorkbookWorksheet workbookWorksheetToInitialize)
         {
 
-            if (workbookWorksheetToInitialize != null && workbookWorksheetToInitialize.AdditionalData != null)
+            if (workbookWorksheetToInitialize != null)
             {
-
                 if (workbookWorksheetToInitialize.Charts != null && workbookWorksheetToInitialize.Charts.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.Charts.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.ChartsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.Charts.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("charts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookWorksheetToInitialize.Charts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookWorksheetToInitialize.Names != null && workbookWorksheetToInitialize.Names.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.Names.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.NamesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.Names.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("names@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookWorksheetToInitialize.Names.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookWorksheetToInitialize.PivotTables != null && workbookWorksheetToInitialize.PivotTables.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.PivotTables.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.PivotTablesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.PivotTables.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("pivotTables@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookWorksheetToInitialize.PivotTables.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookWorksheetToInitialize.Tables != null && workbookWorksheetToInitialize.Tables.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.Tables.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.TablesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.Tables.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("tables@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookWorksheetToInitialize.Tables.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToInitialize)
         {
 
-            if (unifiedRbacResourceNamespaceToInitialize != null && unifiedRbacResourceNamespaceToInitialize.AdditionalData != null)
+            if (unifiedRbacResourceNamespaceToInitialize != null)
             {
-
                 if (unifiedRbacResourceNamespaceToInitialize.ResourceActions != null && unifiedRbacResourceNamespaceToInitialize.ResourceActions.CurrentPage != null)
                 {
+                    unifiedRbacResourceNamespaceToInitialize.ResourceActions.InitializeNextPageRequest(this.Client, unifiedRbacResourceNamespaceToInitialize.ResourceActionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     unifiedRbacResourceNamespaceToInitialize.ResourceActions.AdditionalData = unifiedRbacResourceNamespaceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    unifiedRbacResourceNamespaceToInitialize.AdditionalData.TryGetValue("resourceActions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        unifiedRbacResourceNamespaceToInitialize.ResourceActions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

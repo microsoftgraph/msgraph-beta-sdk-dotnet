@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SecurityBaselineTemplate securityBaselineTemplateToInitialize)
         {
 
-            if (securityBaselineTemplateToInitialize != null && securityBaselineTemplateToInitialize.AdditionalData != null)
+            if (securityBaselineTemplateToInitialize != null)
             {
-
                 if (securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries != null && securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.CurrentPage != null)
                 {
+                    securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.InitializeNextPageRequest(this.Client, securityBaselineTemplateToInitialize.CategoryDeviceStateSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.AdditionalData = securityBaselineTemplateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityBaselineTemplateToInitialize.AdditionalData.TryGetValue("categoryDeviceStateSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityBaselineTemplateToInitialize.DeviceStates != null && securityBaselineTemplateToInitialize.DeviceStates.CurrentPage != null)
                 {
+                    securityBaselineTemplateToInitialize.DeviceStates.InitializeNextPageRequest(this.Client, securityBaselineTemplateToInitialize.DeviceStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityBaselineTemplateToInitialize.DeviceStates.AdditionalData = securityBaselineTemplateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityBaselineTemplateToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityBaselineTemplateToInitialize.DeviceStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

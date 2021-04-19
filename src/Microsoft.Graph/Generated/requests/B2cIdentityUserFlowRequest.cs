@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(B2cIdentityUserFlow b2cIdentityUserFlowToInitialize)
         {
 
-            if (b2cIdentityUserFlowToInitialize != null && b2cIdentityUserFlowToInitialize.AdditionalData != null)
+            if (b2cIdentityUserFlowToInitialize != null)
             {
-
                 if (b2cIdentityUserFlowToInitialize.IdentityProviders != null && b2cIdentityUserFlowToInitialize.IdentityProviders.CurrentPage != null)
                 {
+                    b2cIdentityUserFlowToInitialize.IdentityProviders.InitializeNextPageRequest(this.Client, b2cIdentityUserFlowToInitialize.IdentityProvidersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     b2cIdentityUserFlowToInitialize.IdentityProviders.AdditionalData = b2cIdentityUserFlowToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    b2cIdentityUserFlowToInitialize.AdditionalData.TryGetValue("identityProviders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        b2cIdentityUserFlowToInitialize.IdentityProviders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (b2cIdentityUserFlowToInitialize.Languages != null && b2cIdentityUserFlowToInitialize.Languages.CurrentPage != null)
                 {
+                    b2cIdentityUserFlowToInitialize.Languages.InitializeNextPageRequest(this.Client, b2cIdentityUserFlowToInitialize.LanguagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     b2cIdentityUserFlowToInitialize.Languages.AdditionalData = b2cIdentityUserFlowToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    b2cIdentityUserFlowToInitialize.AdditionalData.TryGetValue("languages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        b2cIdentityUserFlowToInitialize.Languages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (b2cIdentityUserFlowToInitialize.UserAttributeAssignments != null && b2cIdentityUserFlowToInitialize.UserAttributeAssignments.CurrentPage != null)
                 {
+                    b2cIdentityUserFlowToInitialize.UserAttributeAssignments.InitializeNextPageRequest(this.Client, b2cIdentityUserFlowToInitialize.UserAttributeAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     b2cIdentityUserFlowToInitialize.UserAttributeAssignments.AdditionalData = b2cIdentityUserFlowToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    b2cIdentityUserFlowToInitialize.AdditionalData.TryGetValue("userAttributeAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        b2cIdentityUserFlowToInitialize.UserAttributeAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

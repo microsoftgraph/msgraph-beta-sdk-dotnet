@@ -195,6 +195,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("purchaseInvoiceLines")]
         public IPurchaseInvoicePurchaseInvoiceLinesCollectionPage PurchaseInvoiceLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets purchaseInvoiceLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("purchaseInvoiceLines@odata.nextLink")]
+        public string PurchaseInvoiceLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets vendor.

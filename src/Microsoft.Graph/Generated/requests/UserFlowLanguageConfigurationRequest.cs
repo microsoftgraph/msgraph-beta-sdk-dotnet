@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserFlowLanguageConfiguration userFlowLanguageConfigurationToInitialize)
         {
 
-            if (userFlowLanguageConfigurationToInitialize != null && userFlowLanguageConfigurationToInitialize.AdditionalData != null)
+            if (userFlowLanguageConfigurationToInitialize != null)
             {
-
                 if (userFlowLanguageConfigurationToInitialize.DefaultPages != null && userFlowLanguageConfigurationToInitialize.DefaultPages.CurrentPage != null)
                 {
+                    userFlowLanguageConfigurationToInitialize.DefaultPages.InitializeNextPageRequest(this.Client, userFlowLanguageConfigurationToInitialize.DefaultPagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userFlowLanguageConfigurationToInitialize.DefaultPages.AdditionalData = userFlowLanguageConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userFlowLanguageConfigurationToInitialize.AdditionalData.TryGetValue("defaultPages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userFlowLanguageConfigurationToInitialize.DefaultPages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (userFlowLanguageConfigurationToInitialize.OverridesPages != null && userFlowLanguageConfigurationToInitialize.OverridesPages.CurrentPage != null)
                 {
+                    userFlowLanguageConfigurationToInitialize.OverridesPages.InitializeNextPageRequest(this.Client, userFlowLanguageConfigurationToInitialize.OverridesPagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userFlowLanguageConfigurationToInitialize.OverridesPages.AdditionalData = userFlowLanguageConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userFlowLanguageConfigurationToInitialize.AdditionalData.TryGetValue("overridesPages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userFlowLanguageConfigurationToInitialize.OverridesPages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -244,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Workbook workbookToInitialize)
         {
 
-            if (workbookToInitialize != null && workbookToInitialize.AdditionalData != null)
+            if (workbookToInitialize != null)
             {
-
                 if (workbookToInitialize.Comments != null && workbookToInitialize.Comments.CurrentPage != null)
                 {
+                    workbookToInitialize.Comments.InitializeNextPageRequest(this.Client, workbookToInitialize.CommentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Comments.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("comments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Comments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookToInitialize.Names != null && workbookToInitialize.Names.CurrentPage != null)
                 {
+                    workbookToInitialize.Names.InitializeNextPageRequest(this.Client, workbookToInitialize.NamesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Names.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("names@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Names.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookToInitialize.Operations != null && workbookToInitialize.Operations.CurrentPage != null)
                 {
+                    workbookToInitialize.Operations.InitializeNextPageRequest(this.Client, workbookToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Operations.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookToInitialize.Tables != null && workbookToInitialize.Tables.CurrentPage != null)
                 {
+                    workbookToInitialize.Tables.InitializeNextPageRequest(this.Client, workbookToInitialize.TablesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Tables.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("tables@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Tables.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookToInitialize.Worksheets != null && workbookToInitialize.Worksheets.CurrentPage != null)
                 {
+                    workbookToInitialize.Worksheets.InitializeNextPageRequest(this.Client, workbookToInitialize.WorksheetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Worksheets.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("worksheets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Worksheets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

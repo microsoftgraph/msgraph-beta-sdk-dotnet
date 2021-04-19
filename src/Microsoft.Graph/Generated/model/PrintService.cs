@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("endpoints")]
         public IPrintServiceEndpointsCollectionPage Endpoints { get; set; }
+
+        /// <summary>
+        /// Gets or sets endpointsNextLink.
+        /// </summary>
+        [JsonPropertyName("endpoints@odata.nextLink")]
+        public string EndpointsNextLink { get; set; }
     
     }
 }

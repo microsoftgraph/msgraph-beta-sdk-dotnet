@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Call callToInitialize)
         {
 
-            if (callToInitialize != null && callToInitialize.AdditionalData != null)
+            if (callToInitialize != null)
             {
-
                 if (callToInitialize.AudioRoutingGroups != null && callToInitialize.AudioRoutingGroups.CurrentPage != null)
                 {
+                    callToInitialize.AudioRoutingGroups.InitializeNextPageRequest(this.Client, callToInitialize.AudioRoutingGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     callToInitialize.AudioRoutingGroups.AdditionalData = callToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    callToInitialize.AdditionalData.TryGetValue("audioRoutingGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        callToInitialize.AudioRoutingGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (callToInitialize.Operations != null && callToInitialize.Operations.CurrentPage != null)
                 {
+                    callToInitialize.Operations.InitializeNextPageRequest(this.Client, callToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     callToInitialize.Operations.AdditionalData = callToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    callToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        callToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (callToInitialize.Participants != null && callToInitialize.Participants.CurrentPage != null)
                 {
+                    callToInitialize.Participants.InitializeNextPageRequest(this.Client, callToInitialize.ParticipantsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     callToInitialize.Participants.AdditionalData = callToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    callToInitialize.AdditionalData.TryGetValue("participants@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        callToInitialize.Participants.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

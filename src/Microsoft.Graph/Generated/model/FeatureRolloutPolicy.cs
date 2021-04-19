@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appliesTo")]
         public IFeatureRolloutPolicyAppliesToCollectionPage AppliesTo { get; set; }
+
+        /// <summary>
+        /// Gets or sets appliesToNextLink.
+        /// </summary>
+        [JsonPropertyName("appliesTo@odata.nextLink")]
+        public string AppliesToNextLink { get; set; }
     
     }
 }

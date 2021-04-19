@@ -244,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Calendar calendarToInitialize)
         {
 
-            if (calendarToInitialize != null && calendarToInitialize.AdditionalData != null)
+            if (calendarToInitialize != null)
             {
-
                 if (calendarToInitialize.CalendarPermissions != null && calendarToInitialize.CalendarPermissions.CurrentPage != null)
                 {
+                    calendarToInitialize.CalendarPermissions.InitializeNextPageRequest(this.Client, calendarToInitialize.CalendarPermissionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     calendarToInitialize.CalendarPermissions.AdditionalData = calendarToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("calendarPermissions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        calendarToInitialize.CalendarPermissions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (calendarToInitialize.CalendarView != null && calendarToInitialize.CalendarView.CurrentPage != null)
                 {
+                    calendarToInitialize.CalendarView.InitializeNextPageRequest(this.Client, calendarToInitialize.CalendarViewNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     calendarToInitialize.CalendarView.AdditionalData = calendarToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        calendarToInitialize.CalendarView.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (calendarToInitialize.Events != null && calendarToInitialize.Events.CurrentPage != null)
                 {
+                    calendarToInitialize.Events.InitializeNextPageRequest(this.Client, calendarToInitialize.EventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     calendarToInitialize.Events.AdditionalData = calendarToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("events@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        calendarToInitialize.Events.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (calendarToInitialize.MultiValueExtendedProperties != null && calendarToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    calendarToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, calendarToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     calendarToInitialize.MultiValueExtendedProperties.AdditionalData = calendarToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        calendarToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (calendarToInitialize.SingleValueExtendedProperties != null && calendarToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    calendarToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, calendarToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     calendarToInitialize.SingleValueExtendedProperties.AdditionalData = calendarToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        calendarToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

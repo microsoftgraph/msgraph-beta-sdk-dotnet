@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Organization organizationToInitialize)
         {
 
-            if (organizationToInitialize != null && organizationToInitialize.AdditionalData != null)
+            if (organizationToInitialize != null)
             {
-
                 if (organizationToInitialize.CertificateBasedAuthConfiguration != null && organizationToInitialize.CertificateBasedAuthConfiguration.CurrentPage != null)
                 {
+                    organizationToInitialize.CertificateBasedAuthConfiguration.InitializeNextPageRequest(this.Client, organizationToInitialize.CertificateBasedAuthConfigurationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     organizationToInitialize.CertificateBasedAuthConfiguration.AdditionalData = organizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    organizationToInitialize.AdditionalData.TryGetValue("certificateBasedAuthConfiguration@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        organizationToInitialize.CertificateBasedAuthConfiguration.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (organizationToInitialize.Extensions != null && organizationToInitialize.Extensions.CurrentPage != null)
                 {
+                    organizationToInitialize.Extensions.InitializeNextPageRequest(this.Client, organizationToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     organizationToInitialize.Extensions.AdditionalData = organizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    organizationToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        organizationToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

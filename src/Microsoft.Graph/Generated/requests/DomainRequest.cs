@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Domain domainToInitialize)
         {
 
-            if (domainToInitialize != null && domainToInitialize.AdditionalData != null)
+            if (domainToInitialize != null)
             {
-
                 if (domainToInitialize.DomainNameReferences != null && domainToInitialize.DomainNameReferences.CurrentPage != null)
                 {
+                    domainToInitialize.DomainNameReferences.InitializeNextPageRequest(this.Client, domainToInitialize.DomainNameReferencesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     domainToInitialize.DomainNameReferences.AdditionalData = domainToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    domainToInitialize.AdditionalData.TryGetValue("domainNameReferences@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        domainToInitialize.DomainNameReferences.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (domainToInitialize.ServiceConfigurationRecords != null && domainToInitialize.ServiceConfigurationRecords.CurrentPage != null)
                 {
+                    domainToInitialize.ServiceConfigurationRecords.InitializeNextPageRequest(this.Client, domainToInitialize.ServiceConfigurationRecordsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     domainToInitialize.ServiceConfigurationRecords.AdditionalData = domainToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    domainToInitialize.AdditionalData.TryGetValue("serviceConfigurationRecords@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        domainToInitialize.ServiceConfigurationRecords.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (domainToInitialize.SharedEmailDomainInvitations != null && domainToInitialize.SharedEmailDomainInvitations.CurrentPage != null)
                 {
+                    domainToInitialize.SharedEmailDomainInvitations.InitializeNextPageRequest(this.Client, domainToInitialize.SharedEmailDomainInvitationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     domainToInitialize.SharedEmailDomainInvitations.AdditionalData = domainToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    domainToInitialize.AdditionalData.TryGetValue("sharedEmailDomainInvitations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        domainToInitialize.SharedEmailDomainInvitations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (domainToInitialize.VerificationDnsRecords != null && domainToInitialize.VerificationDnsRecords.CurrentPage != null)
                 {
+                    domainToInitialize.VerificationDnsRecords.InitializeNextPageRequest(this.Client, domainToInitialize.VerificationDnsRecordsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     domainToInitialize.VerificationDnsRecords.AdditionalData = domainToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    domainToInitialize.AdditionalData.TryGetValue("verificationDnsRecords@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        domainToInitialize.VerificationDnsRecords.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

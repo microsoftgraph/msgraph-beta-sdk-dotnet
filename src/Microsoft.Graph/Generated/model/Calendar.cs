@@ -146,6 +146,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("calendarPermissions")]
         public ICalendarCalendarPermissionsCollectionPage CalendarPermissions { get; set; }
+
+        /// <summary>
+        /// Gets or sets calendarPermissionsNextLink.
+        /// </summary>
+        [JsonPropertyName("calendarPermissions@odata.nextLink")]
+        public string CalendarPermissionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets calendar view.
@@ -153,6 +159,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("calendarView")]
         public ICalendarCalendarViewCollectionPage CalendarView { get; set; }
+
+        /// <summary>
+        /// Gets or sets calendarViewNextLink.
+        /// </summary>
+        [JsonPropertyName("calendarView@odata.nextLink")]
+        public string CalendarViewNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets events.
@@ -160,6 +172,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("events")]
         public ICalendarEventsCollectionPage Events { get; set; }
+
+        /// <summary>
+        /// Gets or sets eventsNextLink.
+        /// </summary>
+        [JsonPropertyName("events@odata.nextLink")]
+        public string EventsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
@@ -167,6 +185,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("multiValueExtendedProperties")]
         public ICalendarMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets multiValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("multiValueExtendedProperties@odata.nextLink")]
+        public string MultiValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
@@ -174,6 +198,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("singleValueExtendedProperties")]
         public ICalendarSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets singleValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("singleValueExtendedProperties@odata.nextLink")]
+        public string SingleValueExtendedPropertiesNextLink { get; set; }
     
     }
 }

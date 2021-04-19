@@ -129,6 +129,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("picture")]
         public IItemPictureCollectionPage Picture { get; set; }
+
+        /// <summary>
+        /// Gets or sets pictureNextLink.
+        /// </summary>
+        [JsonPropertyName("picture@odata.nextLink")]
+        public string PictureNextLink { get; set; }
     
     }
 }

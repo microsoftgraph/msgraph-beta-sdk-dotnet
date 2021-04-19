@@ -75,6 +75,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("columns")]
         public ISiteColumnsCollectionPage Columns { get; set; }
+
+        /// <summary>
+        /// Gets or sets columnsNextLink.
+        /// </summary>
+        [JsonPropertyName("columns@odata.nextLink")]
+        public string ColumnsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets content types.
@@ -82,6 +88,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("contentTypes")]
         public ISiteContentTypesCollectionPage ContentTypes { get; set; }
+
+        /// <summary>
+        /// Gets or sets contentTypesNextLink.
+        /// </summary>
+        [JsonPropertyName("contentTypes@odata.nextLink")]
+        public string ContentTypesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets drive.
@@ -96,6 +108,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("drives")]
         public ISiteDrivesCollectionPage Drives { get; set; }
+
+        /// <summary>
+        /// Gets or sets drivesNextLink.
+        /// </summary>
+        [JsonPropertyName("drives@odata.nextLink")]
+        public string DrivesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets external columns.
@@ -103,6 +121,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("externalColumns")]
         public ISiteExternalColumnsCollectionWithReferencesPage ExternalColumns { get; set; }
+
+        /// <summary>
+        /// Gets or sets externalColumnsNextLink.
+        /// </summary>
+        [JsonPropertyName("externalColumns@odata.nextLink")]
+        public string ExternalColumnsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets items.
@@ -110,6 +134,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("items")]
         public ISiteItemsCollectionPage Items { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemsNextLink.
+        /// </summary>
+        [JsonPropertyName("items@odata.nextLink")]
+        public string ItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets lists.
@@ -117,6 +147,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("lists")]
         public ISiteListsCollectionPage Lists { get; set; }
+
+        /// <summary>
+        /// Gets or sets listsNextLink.
+        /// </summary>
+        [JsonPropertyName("lists@odata.nextLink")]
+        public string ListsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets pages.
@@ -124,6 +160,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("pages")]
         public ISitePagesCollectionPage Pages { get; set; }
+
+        /// <summary>
+        /// Gets or sets pagesNextLink.
+        /// </summary>
+        [JsonPropertyName("pages@odata.nextLink")]
+        public string PagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets permissions.
@@ -131,6 +173,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("permissions")]
         public ISitePermissionsCollectionPage Permissions { get; set; }
+
+        /// <summary>
+        /// Gets or sets permissionsNextLink.
+        /// </summary>
+        [JsonPropertyName("permissions@odata.nextLink")]
+        public string PermissionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sites.
@@ -138,6 +186,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("sites")]
         public ISiteSitesCollectionPage Sites { get; set; }
+
+        /// <summary>
+        /// Gets or sets sitesNextLink.
+        /// </summary>
+        [JsonPropertyName("sites@odata.nextLink")]
+        public string SitesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets term store.

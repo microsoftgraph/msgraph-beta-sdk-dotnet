@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Agreement agreementToInitialize)
         {
 
-            if (agreementToInitialize != null && agreementToInitialize.AdditionalData != null)
+            if (agreementToInitialize != null)
             {
-
                 if (agreementToInitialize.Acceptances != null && agreementToInitialize.Acceptances.CurrentPage != null)
                 {
+                    agreementToInitialize.Acceptances.InitializeNextPageRequest(this.Client, agreementToInitialize.AcceptancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     agreementToInitialize.Acceptances.AdditionalData = agreementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    agreementToInitialize.AdditionalData.TryGetValue("acceptances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        agreementToInitialize.Acceptances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (agreementToInitialize.Files != null && agreementToInitialize.Files.CurrentPage != null)
                 {
+                    agreementToInitialize.Files.InitializeNextPageRequest(this.Client, agreementToInitialize.FilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     agreementToInitialize.Files.AdditionalData = agreementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    agreementToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        agreementToInitialize.Files.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -118,6 +118,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupPolicySettingMappings")]
         public IGroupPolicyMigrationReportGroupPolicySettingMappingsCollectionPage GroupPolicySettingMappings { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupPolicySettingMappingsNextLink.
+        /// </summary>
+        [JsonPropertyName("groupPolicySettingMappings@odata.nextLink")]
+        public string GroupPolicySettingMappingsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets unsupported group policy extensions.
@@ -125,6 +131,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("unsupportedGroupPolicyExtensions")]
         public IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionPage UnsupportedGroupPolicyExtensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets unsupportedGroupPolicyExtensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("unsupportedGroupPolicyExtensions@odata.nextLink")]
+        public string UnsupportedGroupPolicyExtensionsNextLink { get; set; }
     
     }
 }

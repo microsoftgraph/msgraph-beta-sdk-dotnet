@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("directories")]
         public ISynchronizationSchemaDirectoriesCollectionPage Directories { get; set; }
+
+        /// <summary>
+        /// Gets or sets directoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("directories@odata.nextLink")]
+        public string DirectoriesNextLink { get; set; }
     
     }
 }

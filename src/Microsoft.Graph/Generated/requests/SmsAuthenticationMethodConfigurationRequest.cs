@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToInitialize)
         {
 
-            if (smsAuthenticationMethodConfigurationToInitialize != null && smsAuthenticationMethodConfigurationToInitialize.AdditionalData != null)
+            if (smsAuthenticationMethodConfigurationToInitialize != null)
             {
-
                 if (smsAuthenticationMethodConfigurationToInitialize.IncludeTargets != null && smsAuthenticationMethodConfigurationToInitialize.IncludeTargets.CurrentPage != null)
                 {
+                    smsAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(this.Client, smsAuthenticationMethodConfigurationToInitialize.IncludeTargetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     smsAuthenticationMethodConfigurationToInitialize.IncludeTargets.AdditionalData = smsAuthenticationMethodConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    smsAuthenticationMethodConfigurationToInitialize.AdditionalData.TryGetValue("includeTargets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        smsAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

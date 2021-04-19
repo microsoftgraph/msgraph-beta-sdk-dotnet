@@ -244,39 +244,19 @@ namespace Microsoft.Graph.TermStore
         private void InitializeCollectionProperties(Store storeToInitialize)
         {
 
-            if (storeToInitialize != null && storeToInitialize.AdditionalData != null)
+            if (storeToInitialize != null)
             {
-
                 if (storeToInitialize.Groups != null && storeToInitialize.Groups.CurrentPage != null)
                 {
+                    storeToInitialize.Groups.InitializeNextPageRequest(this.Client, storeToInitialize.GroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     storeToInitialize.Groups.AdditionalData = storeToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    storeToInitialize.AdditionalData.TryGetValue("groups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        storeToInitialize.Groups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (storeToInitialize.Sets != null && storeToInitialize.Sets.CurrentPage != null)
                 {
+                    storeToInitialize.Sets.InitializeNextPageRequest(this.Client, storeToInitialize.SetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     storeToInitialize.Sets.AdditionalData = storeToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    storeToInitialize.AdditionalData.TryGetValue("sets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        storeToInitialize.Sets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

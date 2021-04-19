@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceIdentities")]
         public IImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionPage DeviceIdentities { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceIdentitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceIdentities@odata.nextLink")]
+        public string DeviceIdentitiesNextLink { get; set; }
     
     }
 }

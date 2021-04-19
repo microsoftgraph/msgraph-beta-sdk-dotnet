@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ConnectedOrganization connectedOrganizationToInitialize)
         {
 
-            if (connectedOrganizationToInitialize != null && connectedOrganizationToInitialize.AdditionalData != null)
+            if (connectedOrganizationToInitialize != null)
             {
-
                 if (connectedOrganizationToInitialize.ExternalSponsors != null && connectedOrganizationToInitialize.ExternalSponsors.CurrentPage != null)
                 {
+                    connectedOrganizationToInitialize.ExternalSponsors.InitializeNextPageRequest(this.Client, connectedOrganizationToInitialize.ExternalSponsorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     connectedOrganizationToInitialize.ExternalSponsors.AdditionalData = connectedOrganizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    connectedOrganizationToInitialize.AdditionalData.TryGetValue("externalSponsors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        connectedOrganizationToInitialize.ExternalSponsors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (connectedOrganizationToInitialize.InternalSponsors != null && connectedOrganizationToInitialize.InternalSponsors.CurrentPage != null)
                 {
+                    connectedOrganizationToInitialize.InternalSponsors.InitializeNextPageRequest(this.Client, connectedOrganizationToInitialize.InternalSponsorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     connectedOrganizationToInitialize.InternalSponsors.AdditionalData = connectedOrganizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    connectedOrganizationToInitialize.AdditionalData.TryGetValue("internalSponsors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        connectedOrganizationToInitialize.InternalSponsors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

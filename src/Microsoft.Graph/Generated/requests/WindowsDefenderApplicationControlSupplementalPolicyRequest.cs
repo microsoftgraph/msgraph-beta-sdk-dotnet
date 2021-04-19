@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsDefenderApplicationControlSupplementalPolicy windowsDefenderApplicationControlSupplementalPolicyToInitialize)
         {
 
-            if (windowsDefenderApplicationControlSupplementalPolicyToInitialize != null && windowsDefenderApplicationControlSupplementalPolicyToInitialize.AdditionalData != null)
+            if (windowsDefenderApplicationControlSupplementalPolicyToInitialize != null)
             {
-
                 if (windowsDefenderApplicationControlSupplementalPolicyToInitialize.Assignments != null && windowsDefenderApplicationControlSupplementalPolicyToInitialize.Assignments.CurrentPage != null)
                 {
+                    windowsDefenderApplicationControlSupplementalPolicyToInitialize.Assignments.InitializeNextPageRequest(this.Client, windowsDefenderApplicationControlSupplementalPolicyToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsDefenderApplicationControlSupplementalPolicyToInitialize.Assignments.AdditionalData = windowsDefenderApplicationControlSupplementalPolicyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsDefenderApplicationControlSupplementalPolicyToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsDefenderApplicationControlSupplementalPolicyToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatuses != null && windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatuses.CurrentPage != null)
                 {
+                    windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatuses.AdditionalData = windowsDefenderApplicationControlSupplementalPolicyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsDefenderApplicationControlSupplementalPolicyToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsDefenderApplicationControlSupplementalPolicyToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

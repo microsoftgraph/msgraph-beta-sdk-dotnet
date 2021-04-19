@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("scheduledActionConfigurations")]
         public IDeviceComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionPage ScheduledActionConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets scheduledActionConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("scheduledActionConfigurations@odata.nextLink")]
+        public string ScheduledActionConfigurationsNextLink { get; set; }
     
     }
 }

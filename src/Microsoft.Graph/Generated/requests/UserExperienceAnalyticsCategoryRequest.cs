@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToInitialize)
         {
 
-            if (userExperienceAnalyticsCategoryToInitialize != null && userExperienceAnalyticsCategoryToInitialize.AdditionalData != null)
+            if (userExperienceAnalyticsCategoryToInitialize != null)
             {
-
                 if (userExperienceAnalyticsCategoryToInitialize.MetricValues != null && userExperienceAnalyticsCategoryToInitialize.MetricValues.CurrentPage != null)
                 {
+                    userExperienceAnalyticsCategoryToInitialize.MetricValues.InitializeNextPageRequest(this.Client, userExperienceAnalyticsCategoryToInitialize.MetricValuesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userExperienceAnalyticsCategoryToInitialize.MetricValues.AdditionalData = userExperienceAnalyticsCategoryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userExperienceAnalyticsCategoryToInitialize.AdditionalData.TryGetValue("metricValues@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userExperienceAnalyticsCategoryToInitialize.MetricValues.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

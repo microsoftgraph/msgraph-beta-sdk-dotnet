@@ -97,6 +97,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("members")]
         public IChannelMembersCollectionPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets messages.
@@ -104,6 +110,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("messages")]
         public IChannelMessagesCollectionPage Messages { get; set; }
+
+        /// <summary>
+        /// Gets or sets messagesNextLink.
+        /// </summary>
+        [JsonPropertyName("messages@odata.nextLink")]
+        public string MessagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tabs.
@@ -111,6 +123,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tabs")]
         public IChannelTabsCollectionPage Tabs { get; set; }
+
+        /// <summary>
+        /// Gets or sets tabsNextLink.
+        /// </summary>
+        [JsonPropertyName("tabs@odata.nextLink")]
+        public string TabsNextLink { get; set; }
     
     }
 }

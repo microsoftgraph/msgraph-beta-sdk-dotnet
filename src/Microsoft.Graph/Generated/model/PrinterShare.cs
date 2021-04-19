@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("allowedGroups")]
         public IPrinterShareAllowedGroupsCollectionWithReferencesPage AllowedGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets allowedGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("allowedGroups@odata.nextLink")]
+        public string AllowedGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets allowed users.
@@ -55,6 +61,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("allowedUsers")]
         public IPrinterShareAllowedUsersCollectionWithReferencesPage AllowedUsers { get; set; }
+
+        /// <summary>
+        /// Gets or sets allowedUsersNextLink.
+        /// </summary>
+        [JsonPropertyName("allowedUsers@odata.nextLink")]
+        public string AllowedUsersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets printer.

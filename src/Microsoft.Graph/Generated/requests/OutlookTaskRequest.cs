@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OutlookTask outlookTaskToInitialize)
         {
 
-            if (outlookTaskToInitialize != null && outlookTaskToInitialize.AdditionalData != null)
+            if (outlookTaskToInitialize != null)
             {
-
                 if (outlookTaskToInitialize.Attachments != null && outlookTaskToInitialize.Attachments.CurrentPage != null)
                 {
+                    outlookTaskToInitialize.Attachments.InitializeNextPageRequest(this.Client, outlookTaskToInitialize.AttachmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookTaskToInitialize.Attachments.AdditionalData = outlookTaskToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookTaskToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookTaskToInitialize.Attachments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (outlookTaskToInitialize.MultiValueExtendedProperties != null && outlookTaskToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    outlookTaskToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, outlookTaskToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookTaskToInitialize.MultiValueExtendedProperties.AdditionalData = outlookTaskToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookTaskToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookTaskToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (outlookTaskToInitialize.SingleValueExtendedProperties != null && outlookTaskToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    outlookTaskToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, outlookTaskToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookTaskToInitialize.SingleValueExtendedProperties.AdditionalData = outlookTaskToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookTaskToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookTaskToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

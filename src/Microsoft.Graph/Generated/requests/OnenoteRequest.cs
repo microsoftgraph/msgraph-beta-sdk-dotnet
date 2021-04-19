@@ -244,103 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Onenote onenoteToInitialize)
         {
 
-            if (onenoteToInitialize != null && onenoteToInitialize.AdditionalData != null)
+            if (onenoteToInitialize != null)
             {
-
                 if (onenoteToInitialize.Notebooks != null && onenoteToInitialize.Notebooks.CurrentPage != null)
                 {
+                    onenoteToInitialize.Notebooks.InitializeNextPageRequest(this.Client, onenoteToInitialize.NotebooksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.Notebooks.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("notebooks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.Notebooks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onenoteToInitialize.Operations != null && onenoteToInitialize.Operations.CurrentPage != null)
                 {
+                    onenoteToInitialize.Operations.InitializeNextPageRequest(this.Client, onenoteToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.Operations.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onenoteToInitialize.Pages != null && onenoteToInitialize.Pages.CurrentPage != null)
                 {
+                    onenoteToInitialize.Pages.InitializeNextPageRequest(this.Client, onenoteToInitialize.PagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.Pages.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("pages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.Pages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onenoteToInitialize.Resources != null && onenoteToInitialize.Resources.CurrentPage != null)
                 {
+                    onenoteToInitialize.Resources.InitializeNextPageRequest(this.Client, onenoteToInitialize.ResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.Resources.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("resources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.Resources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onenoteToInitialize.SectionGroups != null && onenoteToInitialize.SectionGroups.CurrentPage != null)
                 {
+                    onenoteToInitialize.SectionGroups.InitializeNextPageRequest(this.Client, onenoteToInitialize.SectionGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.SectionGroups.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("sectionGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.SectionGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onenoteToInitialize.Sections != null && onenoteToInitialize.Sections.CurrentPage != null)
                 {
+                    onenoteToInitialize.Sections.InitializeNextPageRequest(this.Client, onenoteToInitialize.SectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.Sections.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.Sections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

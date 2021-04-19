@@ -244,23 +244,13 @@ namespace Microsoft.Graph.TermStore
         private void InitializeCollectionProperties(Group groupToInitialize)
         {
 
-            if (groupToInitialize != null && groupToInitialize.AdditionalData != null)
+            if (groupToInitialize != null)
             {
-
                 if (groupToInitialize.Sets != null && groupToInitialize.Sets.CurrentPage != null)
                 {
+                    groupToInitialize.Sets.InitializeNextPageRequest(this.Client, groupToInitialize.SetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupToInitialize.Sets.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("sets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Sets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

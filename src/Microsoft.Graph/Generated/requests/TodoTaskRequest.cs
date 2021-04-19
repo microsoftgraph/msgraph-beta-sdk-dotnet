@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TodoTask todoTaskToInitialize)
         {
 
-            if (todoTaskToInitialize != null && todoTaskToInitialize.AdditionalData != null)
+            if (todoTaskToInitialize != null)
             {
-
                 if (todoTaskToInitialize.Extensions != null && todoTaskToInitialize.Extensions.CurrentPage != null)
                 {
+                    todoTaskToInitialize.Extensions.InitializeNextPageRequest(this.Client, todoTaskToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     todoTaskToInitialize.Extensions.AdditionalData = todoTaskToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    todoTaskToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        todoTaskToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (todoTaskToInitialize.LinkedResources != null && todoTaskToInitialize.LinkedResources.CurrentPage != null)
                 {
+                    todoTaskToInitialize.LinkedResources.InitializeNextPageRequest(this.Client, todoTaskToInitialize.LinkedResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     todoTaskToInitialize.LinkedResources.AdditionalData = todoTaskToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    todoTaskToInitialize.AdditionalData.TryGetValue("linkedResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        todoTaskToInitialize.LinkedResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

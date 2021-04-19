@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("rooms")]
         public IRoomListRoomsCollectionPage Rooms { get; set; }
+
+        /// <summary>
+        /// Gets or sets roomsNextLink.
+        /// </summary>
+        [JsonPropertyName("rooms@odata.nextLink")]
+        public string RoomsNextLink { get; set; }
     
     }
 }
