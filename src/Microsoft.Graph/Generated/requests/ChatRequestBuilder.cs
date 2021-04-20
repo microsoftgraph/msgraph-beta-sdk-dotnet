@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="IChatPermissionGrantsCollectionRequestBuilder"/>.</returns>
+        public IChatPermissionGrantsCollectionRequestBuilder PermissionGrants
+        {
+            get
+            {
+                return new ChatPermissionGrantsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("permissionGrants"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Tabs.
         /// </summary>
         /// <returns>The <see cref="IChatTabsCollectionRequestBuilder"/>.</returns>

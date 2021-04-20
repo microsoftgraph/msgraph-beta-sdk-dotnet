@@ -30,60 +30,70 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets android phone.
+        /// The number of users who were active on the Teams mobile client for Android.
         /// </summary>
         [JsonPropertyName("androidPhone")]
         public Int64? AndroidPhone { get; set; }
     
         /// <summary>
         /// Gets or sets chrome os.
+        /// The number of users who were active in the Teams desktop client on a ChromeOS computer.
         /// </summary>
         [JsonPropertyName("chromeOS")]
         public Int64? ChromeOS { get; set; }
     
         /// <summary>
         /// Gets or sets ios.
+        /// The number of users who were active on the Teams mobile client for iOS.
         /// </summary>
         [JsonPropertyName("ios")]
         public Int64? Ios { get; set; }
     
         /// <summary>
         /// Gets or sets linux.
+        /// The number of users who were active in the Teams desktop client on a Linux computer.
         /// </summary>
         [JsonPropertyName("linux")]
         public Int64? Linux { get; set; }
     
         /// <summary>
         /// Gets or sets mac.
+        /// The number of users who were active in the Teams desktop client on a macOS computer.
         /// </summary>
         [JsonPropertyName("mac")]
         public Int64? Mac { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
+        /// The number of days the report covers.
         /// </summary>
         [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
+        /// The latest date of the content.
         /// </summary>
         [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets web.
+        /// The number of users who were active in the Teams web client on devices.
         /// </summary>
         [JsonPropertyName("web")]
         public Int64? Web { get; set; }
     
         /// <summary>
         /// Gets or sets windows.
+        /// The number of users who were active in the Teams desktop client on a Windows-based computer.
         /// </summary>
         [JsonPropertyName("windows")]
         public Int64? Windows { get; set; }
     
         /// <summary>
         /// Gets or sets windows phone.
+        /// The number of users who were active on the Teams mobile client for Windows phone.
         /// </summary>
         [JsonPropertyName("windowsPhone")]
         public Int64? WindowsPhone { get; set; }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ExactMatchDataStoreRequestBuilder.
     /// </summary>
-    public partial class ExactMatchDataStoreRequestBuilder : EntityRequestBuilder, IExactMatchDataStoreRequestBuilder
+    public partial class ExactMatchDataStoreRequestBuilder : ExactMatchDataStoreBaseRequestBuilder, IExactMatchDataStoreRequestBuilder
     {
 
         /// <summary>

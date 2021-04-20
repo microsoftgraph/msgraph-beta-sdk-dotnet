@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Ediscovery
     /// The interface ISourceCollectionNoncustodialSourcesCollectionWithReferencesPage.
     /// </summary>
     [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<SourceCollectionNoncustodialSourcesCollectionWithReferencesPage>))]
-    public interface ISourceCollectionNoncustodialSourcesCollectionWithReferencesPage : Microsoft.Graph.ICollectionPage<DataSource>
+    public interface ISourceCollectionNoncustodialSourcesCollectionWithReferencesPage : Microsoft.Graph.ICollectionPage<NoncustodialDataSource>
     {
         /// <summary>
         /// Gets the next page <see cref="ISourceCollectionNoncustodialSourcesCollectionWithReferencesRequest"/> instance.

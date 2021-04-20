@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public ISourceCollectionNoncustodialSourcesCollectionWithReferencesRequest Expand(Expression<Func<DataSource, object>> expandExpression)
+        public ISourceCollectionNoncustodialSourcesCollectionWithReferencesRequest Expand(Expression<Func<NoncustodialDataSource, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public ISourceCollectionNoncustodialSourcesCollectionWithReferencesRequest Select(Expression<Func<DataSource, object>> selectExpression)
+        public ISourceCollectionNoncustodialSourcesCollectionWithReferencesRequest Select(Expression<Func<NoncustodialDataSource, object>> selectExpression)
         {
             if (selectExpression == null)
             {

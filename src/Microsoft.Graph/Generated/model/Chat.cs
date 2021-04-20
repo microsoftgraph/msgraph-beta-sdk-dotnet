@@ -96,6 +96,19 @@ namespace Microsoft.Graph
         public string MessagesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets permission grants.
+        /// A collection of permissions granted to apps for the chat.
+        /// </summary>
+        [JsonPropertyName("permissionGrants")]
+        public IChatPermissionGrantsCollectionPage PermissionGrants { get; set; }
+
+        /// <summary>
+        /// Gets or sets permissionGrantsNextLink.
+        /// </summary>
+        [JsonPropertyName("permissionGrants@odata.nextLink")]
+        public string PermissionGrantsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets tabs.
         /// </summary>
         [JsonPropertyName("tabs")]

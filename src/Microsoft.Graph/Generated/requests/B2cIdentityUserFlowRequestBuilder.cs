@@ -85,6 +85,18 @@ namespace Microsoft.Graph
                 return new B2cIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userAttributeAssignments"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for UserFlowIdentityProviders.
+        /// </summary>
+        /// <returns>The <see cref="IB2cIdentityUserFlowUserFlowIdentityProvidersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IB2cIdentityUserFlowUserFlowIdentityProvidersCollectionWithReferencesRequestBuilder UserFlowIdentityProviders
+        {
+            get
+            {
+                return new B2cIdentityUserFlowUserFlowIdentityProvidersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("userFlowIdentityProviders"), this.Client);
+            }
+        }
     
     }
 }

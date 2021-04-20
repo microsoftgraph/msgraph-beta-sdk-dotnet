@@ -282,6 +282,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.AssignmentFilters.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.ChromeOSOnboardingSettings != null && deviceManagementToInitialize.ChromeOSOnboardingSettings.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ChromeOSOnboardingSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ChromeOSOnboardingSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.ChromeOSOnboardingSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.TermsAndConditions != null && deviceManagementToInitialize.TermsAndConditions.CurrentPage != null)
                 {
                     deviceManagementToInitialize.TermsAndConditions.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.TermsAndConditionsNextLink);

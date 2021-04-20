@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ExactMatchSessionRequestBuilder.
     /// </summary>
-    public partial class ExactMatchSessionRequestBuilder : ExactMatchJobBaseRequestBuilder, IExactMatchSessionRequestBuilder
+    public partial class ExactMatchSessionRequestBuilder : ExactMatchSessionBaseRequestBuilder, IExactMatchSessionRequestBuilder
     {
 
         /// <summary>

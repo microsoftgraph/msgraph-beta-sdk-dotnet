@@ -17,8 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Initiator.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<Initiator>))]
-    public partial class Initiator
+    public partial class Initiator : Identity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Initiator"/> class.
@@ -29,37 +28,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets displayName.
-        /// Name of the person or service that initiated the provisioning event.
-        /// </summary>
-        [JsonPropertyName("displayName")]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets id.
-        /// Uniquely identifies the person or service that initiated the provisioning event.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public string Id { get; set; }
-    
-        /// <summary>
         /// Gets or sets initiatorType.
         /// Type of initiator. Possible values are: user, app, system, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("initiatorType")]
         public InitiatorType? InitiatorType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData]
-        public IDictionary<string, object> AdditionalData { get; set; }
-
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonPropertyName("@odata.type")]
-        public string ODataType { get; set; }
     
     }
 }

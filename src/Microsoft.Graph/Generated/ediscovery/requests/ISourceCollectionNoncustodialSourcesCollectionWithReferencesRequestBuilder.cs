@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Ediscovery
         ISourceCollectionNoncustodialSourcesCollectionWithReferencesRequest Request(IEnumerable<Microsoft.Graph.Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IDataSourceWithReferenceRequestBuilder"/> for the specified DataSource.
+        /// Gets an <see cref="INoncustodialDataSourceWithReferenceRequestBuilder"/> for the specified NoncustodialDataSource.
         /// </summary>
-        /// <param name="id">The ID for the DataSource.</param>
-        /// <returns>The <see cref="IDataSourceWithReferenceRequestBuilder"/>.</returns>
-        IDataSourceWithReferenceRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the NoncustodialDataSource.</param>
+        /// <returns>The <see cref="INoncustodialDataSourceWithReferenceRequestBuilder"/>.</returns>
+        INoncustodialDataSourceWithReferenceRequestBuilder this[string id] { get; }
         
         /// <summary>
         /// Gets an <see cref="ISourceCollectionNoncustodialSourcesCollectionReferencesRequestBuilder"/> for the references in the collection.

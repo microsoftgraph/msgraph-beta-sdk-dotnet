@@ -84,13 +84,6 @@ namespace Microsoft.Graph.Ediscovery
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets tenant sources.
-        /// When specified, the collection will span across a service for an entire workload. Possible values are: allMailboxes, allSites.
-        /// </summary>
-        [JsonPropertyName("tenantSources")]
-        public TenantSources? TenantSources { get; set; }
-    
-        /// <summary>
         /// Gets or sets additional sources.
         /// Adds an additional source to the sourceCollection.
         /// </summary>

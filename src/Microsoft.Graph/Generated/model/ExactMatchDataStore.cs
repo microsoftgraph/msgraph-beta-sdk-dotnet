@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Exact Match Data Store.
     /// </summary>
-    public partial class ExactMatchDataStore : Entity
+    public partial class ExactMatchDataStore : ExactMatchDataStoreBase
     {
     
 		///<summary>
@@ -28,30 +28,6 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.exactMatchDataStore";
         }
 	
-        /// <summary>
-        /// Gets or sets columns.
-        /// </summary>
-        [JsonPropertyName("columns")]
-        public IEnumerable<ExactDataMatchStoreColumn> Columns { get; set; }
-    
-        /// <summary>
-        /// Gets or sets data last updated date time.
-        /// </summary>
-        [JsonPropertyName("dataLastUpdatedDateTime")]
-        public DateTimeOffset? DataLastUpdatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// </summary>
-        [JsonPropertyName("description")]
-        public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// </summary>
-        [JsonPropertyName("displayName")]
-        public string DisplayName { get; set; }
-    
         /// <summary>
         /// Gets or sets sessions.
         /// </summary>

@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Exact Match Session.
     /// </summary>
-    public partial class ExactMatchSession : ExactMatchJobBase
+    public partial class ExactMatchSession : ExactMatchSessionBase
     {
     
 		///<summary>
@@ -33,12 +33,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("checksum")]
         public string Checksum { get; set; }
-    
-        /// <summary>
-        /// Gets or sets datastore id.
-        /// </summary>
-        [JsonPropertyName("datastoreId")]
-        public string DatastoreId { get; set; }
     
         /// <summary>
         /// Gets or sets data upload uri.
@@ -59,24 +53,6 @@ namespace Microsoft.Graph
         public string FileName { get; set; }
     
         /// <summary>
-        /// Gets or sets processing completion date time.
-        /// </summary>
-        [JsonPropertyName("processingCompletionDateTime")]
-        public DateTimeOffset? ProcessingCompletionDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets remaining block count.
-        /// </summary>
-        [JsonPropertyName("remainingBlockCount")]
-        public Int32? RemainingBlockCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets remaining job count.
-        /// </summary>
-        [JsonPropertyName("remainingJobCount")]
-        public Int32? RemainingJobCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets rows per block.
         /// </summary>
         [JsonPropertyName("rowsPerBlock")]
@@ -89,34 +65,10 @@ namespace Microsoft.Graph
         public string Salt { get; set; }
     
         /// <summary>
-        /// Gets or sets state.
-        /// </summary>
-        [JsonPropertyName("state")]
-        public string State { get; set; }
-    
-        /// <summary>
-        /// Gets or sets total block count.
-        /// </summary>
-        [JsonPropertyName("totalBlockCount")]
-        public Int32? TotalBlockCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets total job count.
-        /// </summary>
-        [JsonPropertyName("totalJobCount")]
-        public Int32? TotalJobCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets upload agent id.
         /// </summary>
         [JsonPropertyName("uploadAgentId")]
         public string UploadAgentId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets upload completion date time.
-        /// </summary>
-        [JsonPropertyName("uploadCompletionDateTime")]
-        public DateTimeOffset? UploadCompletionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets upload agent.

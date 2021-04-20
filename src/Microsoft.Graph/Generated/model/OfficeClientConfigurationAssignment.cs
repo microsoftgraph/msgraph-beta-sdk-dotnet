@@ -30,7 +30,6 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets target.
-        /// The target assignment defined by the admin.
         /// </summary>
         [JsonPropertyName("target")]
         public OfficeConfigurationAssignmentTarget Target { get; set; }

@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new AccessReviewSetDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("definitions"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for HistoryDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewSetHistoryDefinitionsCollectionRequestBuilder"/>.</returns>
+        public IAccessReviewSetHistoryDefinitionsCollectionRequestBuilder HistoryDefinitions
+        {
+            get
+            {
+                return new AccessReviewSetHistoryDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("historyDefinitions"), this.Client);
+            }
+        }
     
     }
 }

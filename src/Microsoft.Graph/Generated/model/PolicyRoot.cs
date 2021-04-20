@@ -108,18 +108,6 @@ namespace Microsoft.Graph
         public string PermissionGrantPoliciesNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets private link resource policies.
-        /// </summary>
-        [JsonPropertyName("privateLinkResourcePolicies")]
-        public IPolicyRootPrivateLinkResourcePoliciesCollectionPage PrivateLinkResourcePolicies { get; set; }
-
-        /// <summary>
-        /// Gets or sets privateLinkResourcePoliciesNextLink.
-        /// </summary>
-        [JsonPropertyName("privateLinkResourcePolicies@odata.nextLink")]
-        public string PrivateLinkResourcePoliciesNextLink { get; set; }
-    
-        /// <summary>
         /// Gets or sets token issuance policies.
         /// </summary>
         [JsonPropertyName("tokenIssuancePolicies")]

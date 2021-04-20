@@ -59,6 +59,12 @@ namespace Microsoft.Graph
         public Int32? ReconfirmationInDays { get; set; }
     
         /// <summary>
+        /// Gets or sets registration enforcement.
+        /// </summary>
+        [JsonPropertyName("registrationEnforcement")]
+        public RegistrationEnforcement RegistrationEnforcement { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication method configurations.
         /// </summary>
         [JsonPropertyName("authenticationMethodConfigurations")]

@@ -17,8 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ProvisionedIdentity.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<ProvisionedIdentity>))]
-    public partial class ProvisionedIdentity
+    public partial class ProvisionedIdentity : Identity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProvisionedIdentity"/> class.
@@ -36,37 +35,11 @@ namespace Microsoft.Graph
         public DetailsInfo Details { get; set; }
     
         /// <summary>
-        /// Gets or sets displayName.
-        /// Display name of the identity.
-        /// </summary>
-        [JsonPropertyName("displayName")]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets id.
-        /// Uniquely identifies the identity.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public string Id { get; set; }
-    
-        /// <summary>
         /// Gets or sets identityType.
         /// Type of identity that has been provisioned, such as 'user' or 'group'.
         /// </summary>
         [JsonPropertyName("identityType")]
         public string IdentityType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData]
-        public IDictionary<string, object> AdditionalData { get; set; }
-
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonPropertyName("@odata.type")]
-        public string ODataType { get; set; }
     
     }
 }

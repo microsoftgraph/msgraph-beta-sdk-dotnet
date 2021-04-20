@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Ediscovery
     /// <summary>
     /// The type SourceCollectionNoncustodialSourcesCollectionWithReferencesPage.
     /// </summary>
-    public partial class SourceCollectionNoncustodialSourcesCollectionWithReferencesPage : Microsoft.Graph.CollectionPage<DataSource>, ISourceCollectionNoncustodialSourcesCollectionWithReferencesPage
+    public partial class SourceCollectionNoncustodialSourcesCollectionWithReferencesPage : Microsoft.Graph.CollectionPage<NoncustodialDataSource>, ISourceCollectionNoncustodialSourcesCollectionWithReferencesPage
     {
         /// <summary>
         /// Gets the next page <see cref="ISourceCollectionNoncustodialSourcesCollectionWithReferencesRequest"/> instance.

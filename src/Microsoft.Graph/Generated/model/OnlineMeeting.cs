@@ -197,6 +197,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("videoTeleconferenceId")]
         public string VideoTeleconferenceId { get; set; }
     
+        /// <summary>
+        /// Gets or sets meeting attendance report.
+        /// </summary>
+        [JsonPropertyName("meetingAttendanceReport")]
+        public MeetingAttendanceReport MeetingAttendanceReport { get; set; }
+    
     }
 }
 

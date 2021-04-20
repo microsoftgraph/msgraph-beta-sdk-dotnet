@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status details.
-        /// The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound.
+        /// The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, and sourceImageInvalid.
         /// </summary>
         [JsonPropertyName("statusDetails")]
         public CloudPcDeviceImageStatusDetails? StatusDetails { get; set; }

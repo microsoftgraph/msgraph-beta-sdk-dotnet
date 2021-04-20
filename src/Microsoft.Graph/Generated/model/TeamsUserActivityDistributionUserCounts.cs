@@ -30,36 +30,42 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets calls.
+        /// The number of unique 1:1 calls that users participated in.
         /// </summary>
         [JsonPropertyName("calls")]
         public Int64? Calls { get; set; }
     
         /// <summary>
         /// Gets or sets meetings.
+        /// The number of unique online meetings that users participated in.
         /// </summary>
         [JsonPropertyName("meetings")]
         public Int64? Meetings { get; set; }
     
         /// <summary>
         /// Gets or sets private chat messages.
+        /// The number of unique messages that users posted in a private chat.
         /// </summary>
         [JsonPropertyName("privateChatMessages")]
         public Int64? PrivateChatMessages { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
+        /// The number of days the report covers.
         /// </summary>
         [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
+        /// The latest date of the content.
         /// </summary>
         [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets team chat messages.
+        /// The number of unique messages that users posted in a team chat.
         /// </summary>
         [JsonPropertyName("teamChatMessages")]
         public Int64? TeamChatMessages { get; set; }

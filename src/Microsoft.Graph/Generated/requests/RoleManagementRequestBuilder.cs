@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CloudPC.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationMultipleRequestBuilder"/>.</returns>
+        public IRbacApplicationMultipleRequestBuilder CloudPC
+        {
+            get
+            {
+                return new RbacApplicationMultipleRequestBuilder(this.AppendSegmentToRequestUrl("cloudPC"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for EntitlementManagement.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationRequestBuilder"/>.</returns>

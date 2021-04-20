@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets authentication configuration.
-        /// The object which describes the authentication configuration details for calling the API. Only Basic authentication is supported at this time.
+        /// The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
         /// </summary>
         [JsonPropertyName("authenticationConfiguration")]
         public ApiAuthenticationConfigurationBase AuthenticationConfiguration { get; set; }
