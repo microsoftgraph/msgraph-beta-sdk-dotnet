@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is supervised.
-        /// Indicates if the Apple device is supervised. More information is at: https://support.apple.com/HT202837
+        /// Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSupervised", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsSupervised { get; set; }

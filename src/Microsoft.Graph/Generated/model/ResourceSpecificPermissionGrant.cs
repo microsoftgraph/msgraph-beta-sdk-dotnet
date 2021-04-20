@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permission type.
-        /// The type of permission. Possible values are: Application,Delegated. Read-only.
+        /// The type of permission. Possible values are: Application, Delegated. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionType", Required = Newtonsoft.Json.Required.Default)]
         public string PermissionType { get; set; }

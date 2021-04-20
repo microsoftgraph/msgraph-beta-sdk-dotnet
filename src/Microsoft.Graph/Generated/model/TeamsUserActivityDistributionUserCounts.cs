@@ -32,36 +32,42 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets calls.
+        /// The number of unique 1:1 calls that users participated in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calls", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Calls { get; set; }
     
         /// <summary>
         /// Gets or sets meetings.
+        /// The number of unique online meetings that users participated in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetings", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Meetings { get; set; }
     
         /// <summary>
         /// Gets or sets private chat messages.
+        /// The number of unique messages that users posted in a private chat.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privateChatMessages", Required = Newtonsoft.Json.Required.Default)]
         public Int64? PrivateChatMessages { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
+        /// The number of days the report covers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
+        /// The latest date of the content.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets team chat messages.
+        /// The number of unique messages that users posted in a team chat.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamChatMessages", Required = Newtonsoft.Json.Required.Default)]
         public Int64? TeamChatMessages { get; set; }

@@ -902,6 +902,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceRoleManagement request builder.
+        /// </summary>
+        public IRoleManagementRequestBuilder RoleManagement
+        {
+            get
+            {
+                return new RoleManagementRequestBuilder(this.BaseUrl + "/roleManagement", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceCompliance request builder.
         /// </summary>
         public IComplianceRequestBuilder Compliance
@@ -997,17 +1008,6 @@ namespace Microsoft.Graph
             get
             {
                 return new PolicyRootRequestBuilder(this.BaseUrl + "/policies", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceRoleManagement request builder.
-        /// </summary>
-        public IRoleManagementRequestBuilder RoleManagement
-        {
-            get
-            {
-                return new RoleManagementRequestBuilder(this.BaseUrl + "/roleManagement", this);
             }
         }
     
@@ -1195,6 +1195,17 @@ namespace Microsoft.Graph
             get
             {
                 return new TeamworkRequestBuilder(this.BaseUrl + "/teamwork", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAdmin request builder.
+        /// </summary>
+        public Microsoft.Graph.WindowsUpdates.IAdminRequestBuilder Admin
+        {
+            get
+            {
+                return new Microsoft.Graph.WindowsUpdates.AdminRequestBuilder(this.BaseUrl + "/admin", this);
             }
         }
     

@@ -70,5 +70,20 @@ namespace Microsoft.Graph.ExternalConnectors
         /// </summary>
         UnknownFutureValue = 9,
 	
+        /// <summary>
+        /// Icon Url
+        /// </summary>
+        IconUrl = 10,
+	
+        /// <summary>
+        /// Container Name
+        /// </summary>
+        ContainerName = 11,
+	
+        /// <summary>
+        /// Container Url
+        /// </summary>
+        ContainerUrl = 12,
+	
     }
 }

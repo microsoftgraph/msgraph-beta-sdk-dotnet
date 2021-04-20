@@ -31,5 +31,13 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IIdentityApiConnectorRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for IdentityApiConnectorUploadClientCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityApiConnectorUploadClientCertificateRequestBuilder"/>.</returns>
+        IIdentityApiConnectorUploadClientCertificateRequestBuilder UploadClientCertificate(
+            string pkcs12Value = null,
+            string password = null);
+    
     }
 }

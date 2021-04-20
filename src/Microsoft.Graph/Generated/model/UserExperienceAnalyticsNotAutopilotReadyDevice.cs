@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets azure ad registered.
-        /// The intune device's azureAdRegistered. Possible values are: no, yes, unknown.
+        /// The intune device's azureAdRegistered.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureAdRegistered", Required = Newtonsoft.Json.Required.Default)]
         public AzureAdRegisteredState? AzureAdRegistered { get; set; }

@@ -402,6 +402,11 @@ namespace Microsoft.Graph
         IDeviceManagementRequestBuilder DeviceManagement { get; }
     
         /// <summary>
+        /// Gets the GraphServiceRoleManagement request builder.
+        /// </summary>
+        IRoleManagementRequestBuilder RoleManagement { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceCompliance request builder.
         /// </summary>
         IComplianceRequestBuilder Compliance { get; }
@@ -445,11 +450,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServicePolicies request builder.
         /// </summary>
         IPolicyRootRequestBuilder Policies { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceRoleManagement request builder.
-        /// </summary>
-        IRoleManagementRequestBuilder RoleManagement { get; }
     
         /// <summary>
         /// Gets the GraphServiceEducation request builder.
@@ -535,6 +535,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceTeamwork request builder.
         /// </summary>
         ITeamworkRequestBuilder Teamwork { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAdmin request builder.
+        /// </summary>
+        Microsoft.Graph.WindowsUpdates.IAdminRequestBuilder Admin { get; }
     
     }
 }

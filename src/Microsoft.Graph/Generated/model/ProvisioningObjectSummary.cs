@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         /// Gets or sets action.
         /// Indicates the activity name or the operation name (for example, Create user, Add member to group). For a list of activities logged, refer to Azure AD activity list.
         /// </summary>
+        [Obsolete("The action property is deprecated. The provisioningAction holds the same information as this. This only exists in the beta api.")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
         public string Action { get; set; }
     
@@ -87,6 +88,18 @@ namespace Microsoft.Graph
         public IEnumerable<ModifiedProperty> ModifiedProperties { get; set; }
     
         /// <summary>
+        /// Gets or sets provisioning action.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningAction", Required = Newtonsoft.Json.Required.Default)]
+        public ProvisioningAction? ProvisioningAction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets provisioning status info.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningStatusInfo", Required = Newtonsoft.Json.Required.Default)]
+        public ProvisioningStatusInfo ProvisioningStatusInfo { get; set; }
+    
+        /// <summary>
         /// Gets or sets provisioning steps.
         /// Details of each step in provisioning.
         /// </summary>
@@ -112,12 +125,13 @@ namespace Microsoft.Graph
         /// Details of source system of the object being provisioned.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceSystem", Required = Newtonsoft.Json.Required.Default)]
-        public ProvisioningSystemDetails SourceSystem { get; set; }
+        public ProvisioningSystem SourceSystem { get; set; }
     
         /// <summary>
         /// Gets or sets status info.
         /// Details of provisioning status.
         /// </summary>
+        [Obsolete("The statusBase complex type is deprecated. The provisioningStatusInfo holds the same information as this. This only exists in the beta api.")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statusInfo", Required = Newtonsoft.Json.Required.Default)]
         public StatusBase StatusInfo { get; set; }
     
@@ -133,7 +147,7 @@ namespace Microsoft.Graph
         /// Details of target system of the object being provisioned.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetSystem", Required = Newtonsoft.Json.Required.Default)]
-        public ProvisioningSystemDetails TargetSystem { get; set; }
+        public ProvisioningSystem TargetSystem { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.

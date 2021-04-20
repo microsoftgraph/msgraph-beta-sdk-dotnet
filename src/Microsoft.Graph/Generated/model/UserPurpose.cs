@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserPurpose.
     /// </summary>
+    [Obsolete("The UserPurpose API is deprecated and will stop returning data on April 27, 2021. Please use the UserPurposeV2 API.")]
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class UserPurpose

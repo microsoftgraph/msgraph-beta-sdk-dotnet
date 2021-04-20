@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets azure adapp id.
-        /// The WebApplicationInfo.id from the Teams App manifest.
+        /// The WebApplicationInfo.Id from the Teams app manifest.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureADAppId", Required = Newtonsoft.Json.Required.Default)]
         public string AzureADAppId { get; set; }
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teams app id.
-        /// The id from the Teams App manifest.
+        /// The ID from the Teams app manifest.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsAppId", Required = Newtonsoft.Json.Required.Default)]
         public string TeamsAppId { get; set; }
@@ -106,12 +106,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets color icon.
+        /// The color version of the Teams app's icon.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colorIcon", Required = Newtonsoft.Json.Required.Default)]
         public TeamsAppIcon ColorIcon { get; set; }
     
         /// <summary>
         /// Gets or sets outline icon.
+        /// The outline version of the Teams app's icon.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlineIcon", Required = Newtonsoft.Json.Required.Default)]
         public TeamsAppIcon OutlineIcon { get; set; }

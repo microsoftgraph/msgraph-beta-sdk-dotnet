@@ -32,144 +32,168 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets ad hoc meetings attended count.
+        /// The number of ad hoc meetings a user participated in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adHocMeetingsAttendedCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? AdHocMeetingsAttendedCount { get; set; }
     
         /// <summary>
         /// Gets or sets ad hoc meetings organized count.
+        /// The number of ad hoc meetings a user organized.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adHocMeetingsOrganizedCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? AdHocMeetingsOrganizedCount { get; set; }
     
         /// <summary>
         /// Gets or sets assigned products.
+        /// Products the user assigned with.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedProducts", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> AssignedProducts { get; set; }
     
         /// <summary>
         /// Gets or sets audio duration.
+        /// Audio duration the user participated in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioDuration", Required = Newtonsoft.Json.Required.Default)]
         public Duration AudioDuration { get; set; }
     
         /// <summary>
         /// Gets or sets call count.
+        /// The number of 1:1 calls that the user participated in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? CallCount { get; set; }
     
         /// <summary>
         /// Gets or sets deleted date.
+        /// The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDate", Required = Newtonsoft.Json.Required.Default)]
         public Date DeletedDate { get; set; }
     
         /// <summary>
         /// Gets or sets has other action.
+        /// The User is active but has performed other activities than exposed action types offered in the report (sending or replying to channel messages and chat messages, scheduling or participating in 1:1 calls and meetings). Examples actions are when a user changes the Teams status or the Teams status message or opens a Channel Message post but does not reply.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasOtherAction", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasOtherAction { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
+        /// Whether this user has been deleted or soft deleted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets is licensed.
+        /// Whether the user has been assigned a Teams license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isLicensed", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsLicensed { get; set; }
     
         /// <summary>
         /// Gets or sets last activity date.
+        /// The last date that the user participated in a Microsoft Teams activity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
         public Date LastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets meeting count.
+        /// The number of online meetings that the user participated in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? MeetingCount { get; set; }
     
         /// <summary>
         /// Gets or sets meetings attended count.
+        /// The sum of the one-time scheduled, recurring, ad hoc and unclassified meetings a user participated in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingsAttendedCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? MeetingsAttendedCount { get; set; }
     
         /// <summary>
         /// Gets or sets meetings organized count.
+        /// The sum of one-time scheduled, Recurring, ad hoc and unclassified meetings a user organized.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingsOrganizedCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? MeetingsOrganizedCount { get; set; }
     
         /// <summary>
         /// Gets or sets private chat message count.
+        /// The number of unique messages that the user posted in a private chat.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privateChatMessageCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? PrivateChatMessageCount { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
+        /// The number of days the report covers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
+        /// The latest date of the content.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets scheduled one time meetings attended count.
+        /// The number of the one-time scheduled meetings a user participated in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledOneTimeMeetingsAttendedCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? ScheduledOneTimeMeetingsAttendedCount { get; set; }
     
         /// <summary>
         /// Gets or sets scheduled one time meetings organized count.
+        /// The number of one-time scheduled meetings a user organized.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledOneTimeMeetingsOrganizedCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? ScheduledOneTimeMeetingsOrganizedCount { get; set; }
     
         /// <summary>
         /// Gets or sets scheduled recurring meetings attended count.
+        /// The number of the recurring meetings a user participated in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledRecurringMeetingsAttendedCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? ScheduledRecurringMeetingsAttendedCount { get; set; }
     
         /// <summary>
         /// Gets or sets scheduled recurring meetings organized count.
+        /// The number of recurring meetings a user organized.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledRecurringMeetingsOrganizedCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? ScheduledRecurringMeetingsOrganizedCount { get; set; }
     
         /// <summary>
         /// Gets or sets screen share duration.
+        /// Screen sharing duration the user participated in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenShareDuration", Required = Newtonsoft.Json.Required.Default)]
         public Duration ScreenShareDuration { get; set; }
     
         /// <summary>
         /// Gets or sets team chat message count.
+        /// The number of unique messages that the user posted in a team chat.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamChatMessageCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? TeamChatMessageCount { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
+        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets video duration.
+        /// Video duration the user participated in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "videoDuration", Required = Newtonsoft.Json.Required.Default)]
         public Duration VideoDuration { get; set; }

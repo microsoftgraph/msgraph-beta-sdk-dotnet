@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets durationInSeconds.
+        /// Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInSeconds", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DurationInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets joinDateTime.
+        /// Time attendee joined in UTC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? JoinDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets leaveDateTime.
+        /// Time attendee left in UTC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "leaveDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LeaveDateTime { get; set; }
