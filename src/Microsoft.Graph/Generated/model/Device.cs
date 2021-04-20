@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets account enabled.
-        /// true if the account is enabled; otherwise, false. default is true.
+        /// true if the account is enabled; otherwise, false. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? AccountEnabled { get; set; }
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device id.
-        /// Identifier set by Azure Device Registration Service at the time of registration.
+        /// Unique identifier set by Azure Device Registration Service at the time of registration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceId { get; set; }
@@ -185,7 +185,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operating system version.
-        /// Operating system version of the device. Required.
+        /// The version of the operating system on the device. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemVersion", Required = Newtonsoft.Json.Required.Default)]
         public string OperatingSystemVersion { get; set; }
@@ -220,7 +220,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets trust type.
-        /// Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+        /// Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustType", Required = Newtonsoft.Json.Required.Default)]
         public string TrustType { get; set; }
@@ -269,13 +269,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets usage rights.
+        /// Represents the usage rights a device has been granted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usageRights", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceUsageRightsCollectionPage UsageRights { get; set; }
     
         /// <summary>
         /// Gets or sets member of.
-        /// Groups that this device is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
+        /// Groups that this device is a member of. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberOf", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceMemberOfCollectionWithReferencesPage MemberOf { get; set; }
@@ -296,6 +297,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transitive member of.
+        /// Groups that the device is a member of. This operation is transitive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
@@ -309,7 +311,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets commands.
-        /// Set of commands sent to this device
+        /// Set of commands sent to this device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "commands", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceCommandsCollectionPage Commands { get; set; }

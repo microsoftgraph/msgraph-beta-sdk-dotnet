@@ -8,22 +8,27 @@
 // Template Source: EnumType.cs.tt
 
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.WindowsUpdates
 {
     using System;
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The enum TeamCreationMode.
+    /// The enum MonitoringSignal.
     /// </summary>
-    [JsonConverter(typeof(EnumConverter))]
-    public enum TeamCreationMode
+    [JsonConverter(typeof(Microsoft.Graph.EnumConverter))]
+    public enum MonitoringSignal
     {
     
         /// <summary>
-        /// Migration
+        /// Rollback
         /// </summary>
-        Migration = 0,
+        Rollback = 0,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 1,
 	
     }
 }

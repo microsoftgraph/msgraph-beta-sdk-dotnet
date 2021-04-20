@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets onboarding status.
-        /// The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed.
+        /// The ChromebookTenant's OnboardingStatus
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingStatus", Required = Newtonsoft.Json.Required.Default)]
         public OnboardingStatus? OnboardingStatus { get; set; }

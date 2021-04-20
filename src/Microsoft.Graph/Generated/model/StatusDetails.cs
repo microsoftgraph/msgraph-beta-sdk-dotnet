@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type StatusDetails.
     /// </summary>
+    [Obsolete("The statusDetails complex type is deprecated. The provisioningStatusInfo and provisioningStatusInfo's provisioningErrorInfo holds the same information as this. This only exists in the beta api.")]
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class StatusDetails : StatusBase
     {
@@ -41,7 +42,7 @@ namespace Microsoft.Graph
         /// Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCategory", Required = Newtonsoft.Json.Required.Default)]
-        public string ErrorCategory { get; set; }
+        public ProvisioningStatusErrorCategory? ErrorCategory { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.

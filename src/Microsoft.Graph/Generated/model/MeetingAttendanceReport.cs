@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets attendance records.
+        /// The list of attendance records.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attendanceRecords", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AttendanceRecord> AttendanceRecords { get; set; }

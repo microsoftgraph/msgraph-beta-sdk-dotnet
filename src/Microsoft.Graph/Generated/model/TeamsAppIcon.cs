@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets web url.
+        /// The web URL that can be used for downloading the image.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets hosted content.
+        /// The contents of the app icon if the icon is hosted within the Teams infrastructure.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostedContent", Required = Newtonsoft.Json.Required.Default)]
         public TeamworkHostedContent HostedContent { get; set; }

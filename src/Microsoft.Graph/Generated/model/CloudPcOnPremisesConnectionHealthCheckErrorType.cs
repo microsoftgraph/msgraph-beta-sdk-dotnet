@@ -51,6 +51,11 @@ namespace Microsoft.Graph
         AdJoinCheckOrganizationalUnitIncorrectFormat = 203,
 	
         /// <summary>
+        /// Ad Join Check Computer Object Already Exists
+        /// </summary>
+        AdJoinCheckComputerObjectAlreadyExists = 204,
+	
+        /// <summary>
         /// Ad Join Check Unknown Error
         /// </summary>
         AdJoinCheckUnknownError = 299,

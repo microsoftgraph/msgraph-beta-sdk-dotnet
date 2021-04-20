@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IRbacApplicationRequestBuilder Directory { get; }
 
         /// <summary>
+        /// Gets the request builder for CloudPC.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationMultipleRequestBuilder"/>.</returns>
+        IRbacApplicationMultipleRequestBuilder CloudPC { get; }
+
+        /// <summary>
         /// Gets the request builder for EntitlementManagement.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationRequestBuilder"/>.</returns>

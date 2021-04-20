@@ -50,5 +50,20 @@ namespace Microsoft.Graph
             return new IdentityApiConnectorRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for IdentityApiConnectorUploadClientCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityApiConnectorUploadClientCertificateRequestBuilder"/>.</returns>
+        public IIdentityApiConnectorUploadClientCertificateRequestBuilder UploadClientCertificate(
+            string pkcs12Value = null,
+            string password = null)
+        {
+            return new IdentityApiConnectorUploadClientCertificateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.uploadClientCertificate"),
+                this.Client,
+                pkcs12Value,
+                password);
+        }
+    
     }
 }

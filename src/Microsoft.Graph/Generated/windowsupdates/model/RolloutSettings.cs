@@ -7,7 +7,7 @@
 
 // Template Source: ComplexType.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.WindowsUpdates
 {
     using System;
     using System.Collections.Generic;
@@ -16,40 +16,43 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type ProvisioningSystemDetails.
+    /// The type RolloutSettings.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class ProvisioningSystemDetails
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    public partial class RolloutSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProvisioningSystemDetails"/> class.
+        /// Initializes a new instance of the <see cref="RolloutSettings"/> class.
         /// </summary>
-        public ProvisioningSystemDetails()
+        public RolloutSettings()
         {
-            this.ODataType = "microsoft.graph.provisioningSystemDetails";
+            this.ODataType = "microsoft.graph.windowsUpdates.rolloutSettings";
         }
 
         /// <summary>
-        /// Gets or sets details.
-        /// Details of the system.
+        /// Gets or sets devicesPerOffer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
-        public DetailsInfo Details { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devicesPerOffer", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DevicesPerOffer { get; set; }
     
         /// <summary>
-        /// Gets or sets displayName.
-        /// Name of the system that a user was provisioned to or from.
+        /// Gets or sets durationBetweenOffers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationBetweenOffers", Required = Newtonsoft.Json.Required.Default)]
+        public string DurationBetweenOffers { get; set; }
     
         /// <summary>
-        /// Gets or sets id.
-        /// Identifier of the system that a user was provisioned to or from.
+        /// Gets or sets endDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EndDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets startDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

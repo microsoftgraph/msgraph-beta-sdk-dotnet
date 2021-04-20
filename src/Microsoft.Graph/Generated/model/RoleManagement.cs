@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         public RbacApplication Directory { get; set; }
     
         /// <summary>
+        /// Gets or sets cloud pc.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPC", Required = Newtonsoft.Json.Required.Default)]
+        public RbacApplicationMultiple CloudPC { get; set; }
+    
+        /// <summary>
         /// Gets or sets entitlement management.
         /// The RbacApplication for Entitlement Management
         /// </summary>

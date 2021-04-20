@@ -19,8 +19,7 @@ namespace Microsoft.Graph
     /// The type Initiator.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class Initiator
+    public partial class Initiator : Identity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Initiator"/> class.
@@ -31,37 +30,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets displayName.
-        /// Name of the person or service that initiated the provisioning event.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets id.
-        /// Uniquely identifies the person or service that initiated the provisioning event.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
-    
-        /// <summary>
         /// Gets or sets initiatorType.
         /// Type of initiator. Possible values are: user, app, system, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiatorType", Required = Newtonsoft.Json.Required.Default)]
         public InitiatorType? InitiatorType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData(ReadData = true)]
-        public IDictionary<string, object> AdditionalData { get; set; }
-
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
-        public string ODataType { get; set; }
     
     }
 }

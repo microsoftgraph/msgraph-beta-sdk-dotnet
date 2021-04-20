@@ -32,7 +32,6 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets target.
-        /// The target assignment defined by the admin.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
         public OfficeConfigurationAssignmentTarget Target { get; set; }

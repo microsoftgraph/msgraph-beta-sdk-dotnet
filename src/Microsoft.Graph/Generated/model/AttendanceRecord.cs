@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attendanceIntervals.
+        /// List of time periods between joining and leaving.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attendanceIntervals", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AttendanceInterval> AttendanceIntervals { get; set; }
     
         /// <summary>
         /// Gets or sets emailAddress.
+        /// Email address.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddress", Required = Newtonsoft.Json.Required.Default)]
         public string EmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets identity.
+        /// Identifier, such as display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
         public Identity Identity { get; set; }
     
         /// <summary>
         /// Gets or sets role.
+        /// Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
         public string Role { get; set; }
     
         /// <summary>
         /// Gets or sets totalAttendanceInSeconds.
+        /// Total duration of the attendances in seconds.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalAttendanceInSeconds", Required = Newtonsoft.Json.Required.Default)]
         public Int32? TotalAttendanceInSeconds { get; set; }
