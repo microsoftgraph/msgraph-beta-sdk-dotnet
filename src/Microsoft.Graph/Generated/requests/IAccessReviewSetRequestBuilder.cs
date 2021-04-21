@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessReviewSetDefinitionsCollectionRequestBuilder"/>.</returns>
         IAccessReviewSetDefinitionsCollectionRequestBuilder Definitions { get; }
+
+        /// <summary>
+        /// Gets the request builder for HistoryDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewSetHistoryDefinitionsCollectionRequestBuilder"/>.</returns>
+        IAccessReviewSetHistoryDefinitionsCollectionRequestBuilder HistoryDefinitions { get; }
     
     }
 }

@@ -60,5 +60,25 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 1024,
 	
+        /// <summary>
+        /// Time Card
+        /// </summary>
+        TimeCard = 2048,
+	
+        /// <summary>
+        /// Time Off Reason
+        /// </summary>
+        TimeOffReason = 4096,
+	
+        /// <summary>
+        /// Time Off
+        /// </summary>
+        TimeOff = 8192,
+	
+        /// <summary>
+        /// Time Off Request
+        /// </summary>
+        TimeOffRequest = 16384,
+	
     }
 }

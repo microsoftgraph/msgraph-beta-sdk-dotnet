@@ -159,6 +159,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ChromeOSOnboardingSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementChromeOSOnboardingSettingsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementChromeOSOnboardingSettingsCollectionRequestBuilder ChromeOSOnboardingSettings
+        {
+            get
+            {
+                return new DeviceManagementChromeOSOnboardingSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("chromeOSOnboardingSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TermsAndConditions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTermsAndConditionsCollectionRequestBuilder"/>.</returns>

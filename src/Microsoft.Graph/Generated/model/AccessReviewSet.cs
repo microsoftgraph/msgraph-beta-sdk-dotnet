@@ -40,6 +40,18 @@ namespace Microsoft.Graph
         [JsonPropertyName("definitions@odata.nextLink")]
         public string DefinitionsNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets history definitions.
+        /// </summary>
+        [JsonPropertyName("historyDefinitions")]
+        public IAccessReviewSetHistoryDefinitionsCollectionPage HistoryDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets historyDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("historyDefinitions@odata.nextLink")]
+        public string HistoryDefinitionsNextLink { get; set; }
+    
     }
 }
 

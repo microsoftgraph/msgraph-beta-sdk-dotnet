@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets city.
-        /// The city in which the user is located. Supports $filter.
+        /// The city in which the user is located. Maximum length is 128 characters. Supports $filter.
         /// </summary>
         [JsonPropertyName("city")]
         public string City { get; set; }
@@ -93,7 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets country.
-        /// The country/region in which the user is located; for example, 'US' or 'UK'. Supports $filter.
+        /// The country/region in which the user is located; for example, 'US' or 'UK'. Maximum length is 128 characters. Supports $filter.
         /// </summary>
         [JsonPropertyName("country")]
         public string Country { get; set; }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets department.
-        /// The name for the department in which the user works. Supports $filter.
+        /// The name for the department in which the user works. Maximum length is 64 characters. Supports $filter.
         /// </summary>
         [JsonPropertyName("department")]
         public string Department { get; set; }
@@ -127,7 +127,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.
+        /// The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter and $orderby.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets given name.
-        /// The given name (first name) of the user. Returned by default. Supports $filter.
+        /// The given name (first name) of the user. Returned by default. Maximum length is 64 characters. Supports $filter.
         /// </summary>
         [JsonPropertyName("givenName")]
         public string GivenName { get; set; }
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets job title.
-        /// The user's job title. Returned by default. Supports $filter.
+        /// The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter.
         /// </summary>
         [JsonPropertyName("jobTitle")]
         public string JobTitle { get; set; }
@@ -253,14 +253,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail nickname.
-        /// The mail alias for the user. This property must be specified when a user is created. Supports $filter.
+        /// The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Supports $filter.
         /// </summary>
         [JsonPropertyName("mailNickname")]
         public string MailNickname { get; set; }
     
         /// <summary>
         /// Gets or sets mobile phone.
-        /// The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Returned by default.
+        /// The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default.
         /// </summary>
         [JsonPropertyName("mobilePhone")]
         public string MobilePhone { get; set; }
@@ -365,7 +365,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets postal code.
-        /// The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code.
+        /// The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters.
         /// </summary>
         [JsonPropertyName("postalCode")]
         public string PostalCode { get; set; }
@@ -421,21 +421,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
-        /// The state or province in the user's address. Supports $filter.
+        /// The state or province in the user's address. Maximum length is 128 characters. Supports $filter.
         /// </summary>
         [JsonPropertyName("state")]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets street address.
-        /// The street address of the user's place of business.
+        /// The street address of the user's place of business. Maximum length is 1024 characters.
         /// </summary>
         [JsonPropertyName("streetAddress")]
         public string StreetAddress { get; set; }
     
         /// <summary>
         /// Gets or sets surname.
-        /// The user's surname (family name or last name). Returned by default. Supports $filter.
+        /// The user's surname (family name or last name). Returned by default. Maximum length is 64 characters. Supports $filter.
         /// </summary>
         [JsonPropertyName("surname")]
         public string Surname { get; set; }
@@ -463,7 +463,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mailbox settings.
-        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone.Returned only on $select. Supported only on the Get user API (GET /users/{id} or GET /me).
         /// </summary>
         [JsonPropertyName("mailboxSettings")]
         public MailboxSettings MailboxSettings { get; set; }

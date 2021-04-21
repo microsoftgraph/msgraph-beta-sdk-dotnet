@@ -51,6 +51,7 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets parent site id.
+        /// Id of the parent site of this group.
         /// </summary>
         [JsonPropertyName("parentSiteId")]
         public string ParentSiteId { get; set; }

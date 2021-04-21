@@ -88,6 +88,18 @@ namespace Microsoft.Graph
         [JsonPropertyName("userAttributeAssignments@odata.nextLink")]
         public string UserAttributeAssignmentsNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets user flow identity providers.
+        /// </summary>
+        [JsonPropertyName("userFlowIdentityProviders")]
+        public IB2cIdentityUserFlowUserFlowIdentityProvidersCollectionWithReferencesPage UserFlowIdentityProviders { get; set; }
+
+        /// <summary>
+        /// Gets or sets userFlowIdentityProvidersNextLink.
+        /// </summary>
+        [JsonPropertyName("userFlowIdentityProviders@odata.nextLink")]
+        public string UserFlowIdentityProvidersNextLink { get; set; }
+    
     }
 }
 

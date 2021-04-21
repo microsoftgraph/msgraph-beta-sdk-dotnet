@@ -267,6 +267,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets usage rights.
+        /// Represents the usage rights a device has been granted.
         /// </summary>
         [JsonPropertyName("usageRights")]
         public IDeviceUsageRightsCollectionPage UsageRights { get; set; }
@@ -279,7 +280,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets member of.
-        /// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
+        /// Groups that this device is a member of. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IDeviceMemberOfCollectionWithReferencesPage MemberOf { get; set; }
@@ -318,6 +319,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transitive member of.
+        /// Groups that the device is a member of. This operation is transitive.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf")]
         public IDeviceTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
@@ -343,7 +345,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets commands.
-        /// Set of commands sent to this device
+        /// Set of commands sent to this device.
         /// </summary>
         [JsonPropertyName("commands")]
         public IDeviceCommandsCollectionPage Commands { get; set; }

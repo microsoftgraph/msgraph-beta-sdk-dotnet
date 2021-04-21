@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets isEncrypted.
-        /// Indicates whether the value field is encrypted.
+        /// Indicates whether the value field is encrypted. This property is read-only.
         /// </summary>
         [JsonPropertyName("isEncrypted")]
         public bool? IsEncrypted { get; set; }

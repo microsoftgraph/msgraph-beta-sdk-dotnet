@@ -239,6 +239,19 @@ namespace Microsoft.Graph
         public string AssignmentFiltersNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets chrome osonboarding settings.
+        /// Collection of ChromeOSOnboardingSettings settings associated with account.
+        /// </summary>
+        [JsonPropertyName("chromeOSOnboardingSettings")]
+        public IDeviceManagementChromeOSOnboardingSettingsCollectionPage ChromeOSOnboardingSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets chromeOSOnboardingSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("chromeOSOnboardingSettings@odata.nextLink")]
+        public string ChromeOSOnboardingSettingsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets terms and conditions.
         /// The terms and conditions associated with device management of the company.
         /// </summary>

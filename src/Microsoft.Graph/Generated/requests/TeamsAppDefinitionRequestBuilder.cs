@@ -61,6 +61,30 @@ namespace Microsoft.Graph
                 return new TeamworkBotRequestBuilder(this.AppendSegmentToRequestUrl("bot"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for ColorIcon.
+        /// </summary>
+        /// <returns>The <see cref="ITeamsAppIconRequestBuilder"/>.</returns>
+        public ITeamsAppIconRequestBuilder ColorIcon
+        {
+            get
+            {
+                return new TeamsAppIconRequestBuilder(this.AppendSegmentToRequestUrl("colorIcon"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for OutlineIcon.
+        /// </summary>
+        /// <returns>The <see cref="ITeamsAppIconRequestBuilder"/>.</returns>
+        public ITeamsAppIconRequestBuilder OutlineIcon
+        {
+            get
+            {
+                return new TeamsAppIconRequestBuilder(this.AppendSegmentToRequestUrl("outlineIcon"), this.Client);
+            }
+        }
     
     }
 }

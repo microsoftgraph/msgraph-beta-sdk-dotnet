@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Schedule.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleRequestBuilder"/>.</returns>
-        public IScheduleRequestBuilder Schedule
-        {
-            get
-            {
-                return new ScheduleRequestBuilder(this.AppendSegmentToRequestUrl("schedule"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>
@@ -179,6 +167,18 @@ namespace Microsoft.Graph
             get
             {
                 return new TeamsTemplateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("template"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Schedule.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleRequestBuilder"/>.</returns>
+        public IScheduleRequestBuilder Schedule
+        {
+            get
+            {
+                return new ScheduleRequestBuilder(this.AppendSegmentToRequestUrl("schedule"), this.Client);
             }
         }
     

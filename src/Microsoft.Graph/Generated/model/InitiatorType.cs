@@ -25,9 +25,9 @@ namespace Microsoft.Graph
         User = 0,
 	
         /// <summary>
-        /// App
+        /// Application
         /// </summary>
-        App = 1,
+        Application = 1,
 	
         /// <summary>
         /// System

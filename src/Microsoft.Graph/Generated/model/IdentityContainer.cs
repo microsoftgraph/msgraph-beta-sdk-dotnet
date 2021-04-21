@@ -72,6 +72,18 @@ namespace Microsoft.Graph
         public string B2xUserFlowsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets identity providers.
+        /// </summary>
+        [JsonPropertyName("identityProviders")]
+        public IIdentityContainerIdentityProvidersCollectionPage IdentityProviders { get; set; }
+
+        /// <summary>
+        /// Gets or sets identityProvidersNextLink.
+        /// </summary>
+        [JsonPropertyName("identityProviders@odata.nextLink")]
+        public string IdentityProvidersNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets user flow attributes.
         /// </summary>
         [JsonPropertyName("userFlowAttributes")]

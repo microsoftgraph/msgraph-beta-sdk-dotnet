@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IChatMessagesCollectionRequestBuilder Messages { get; }
 
         /// <summary>
+        /// Gets the request builder for PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="IChatPermissionGrantsCollectionRequestBuilder"/>.</returns>
+        IChatPermissionGrantsCollectionRequestBuilder PermissionGrants { get; }
+
+        /// <summary>
         /// Gets the request builder for Tabs.
         /// </summary>
         /// <returns>The <see cref="IChatTabsCollectionRequestBuilder"/>.</returns>

@@ -30,30 +30,35 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets client app id.
+        /// ID of the service principal of the Azure AD app that has been granted access. Read-only.
         /// </summary>
         [JsonPropertyName("clientAppId")]
         public string ClientAppId { get; set; }
     
         /// <summary>
         /// Gets or sets client id.
+        /// ID of the Azure AD app that has been granted access. Read-only.
         /// </summary>
         [JsonPropertyName("clientId")]
         public string ClientId { get; set; }
     
         /// <summary>
         /// Gets or sets permission.
+        /// The name of the permission. Read-only.
         /// </summary>
         [JsonPropertyName("permission")]
         public string Permission { get; set; }
     
         /// <summary>
         /// Gets or sets permission type.
+        /// The type of permission. Possible values are: Application, Delegated. Read-only.
         /// </summary>
         [JsonPropertyName("permissionType")]
         public string PermissionType { get; set; }
     
         /// <summary>
         /// Gets or sets resource app id.
+        /// ID of the Azure AD app that is hosting the resource. Read-only.
         /// </summary>
         [JsonPropertyName("resourceAppId")]
         public string ResourceAppId { get; set; }

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type StatusBase.
     /// </summary>
+    [Obsolete("The statusBase complex type is deprecated. The provisioningStatusInfo holds the same information as this. This only exists in the beta api.")]
     [JsonConverter(typeof(DerivedTypeConverter<StatusBase>))]
     public partial class StatusBase
     {

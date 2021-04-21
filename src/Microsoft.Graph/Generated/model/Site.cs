@@ -195,6 +195,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets term store.
+        /// The termStore under this site.
         /// </summary>
         [JsonPropertyName("termStore")]
         public Microsoft.Graph.TermStore.Store TermStore { get; set; }

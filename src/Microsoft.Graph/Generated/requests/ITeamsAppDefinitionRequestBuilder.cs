@@ -36,6 +36,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamworkBotRequestBuilder"/>.</returns>
         ITeamworkBotRequestBuilder Bot { get; }
+
+        /// <summary>
+        /// Gets the request builder for ColorIcon.
+        /// </summary>
+        /// <returns>The <see cref="ITeamsAppIconRequestBuilder"/>.</returns>
+        ITeamsAppIconRequestBuilder ColorIcon { get; }
+
+        /// <summary>
+        /// Gets the request builder for OutlineIcon.
+        /// </summary>
+        /// <returns>The <see cref="ITeamsAppIconRequestBuilder"/>.</returns>
+        ITeamsAppIconRequestBuilder OutlineIcon { get; }
     
     }
 }

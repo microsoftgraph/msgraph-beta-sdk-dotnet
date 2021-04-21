@@ -49,15 +49,15 @@ namespace Microsoft.Graph.Ediscovery
         }
 
         /// <summary>
-        /// Gets an <see cref="IDataSourceWithReferenceRequestBuilder"/> for the specified SourceCollectionDataSource.
+        /// Gets an <see cref="INoncustodialDataSourceWithReferenceRequestBuilder"/> for the specified SourceCollectionNoncustodialDataSource.
         /// </summary>
-        /// <param name="id">The ID for the SourceCollectionDataSource.</param>
-        /// <returns>The <see cref="IDataSourceWithReferenceRequestBuilder"/>.</returns>
-        public IDataSourceWithReferenceRequestBuilder this[string id]
+        /// <param name="id">The ID for the SourceCollectionNoncustodialDataSource.</param>
+        /// <returns>The <see cref="INoncustodialDataSourceWithReferenceRequestBuilder"/>.</returns>
+        public INoncustodialDataSourceWithReferenceRequestBuilder this[string id]
         {
             get
             {
-                return new DataSourceWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new NoncustodialDataSourceWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

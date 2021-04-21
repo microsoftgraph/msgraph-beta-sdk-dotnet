@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public RbacApplication Directory { get; set; }
     
         /// <summary>
+        /// Gets or sets cloud pc.
+        /// </summary>
+        [JsonPropertyName("cloudPC")]
+        public RbacApplicationMultiple CloudPC { get; set; }
+    
+        /// <summary>
         /// Gets or sets entitlement management.
         /// The RbacApplication for Entitlement Management
         /// </summary>

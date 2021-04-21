@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type StatusDetails.
     /// </summary>
+    [Obsolete("The statusDetails complex type is deprecated. The provisioningStatusInfo and provisioningStatusInfo's provisioningErrorInfo holds the same information as this. This only exists in the beta api.")]
     public partial class StatusDetails : StatusBase
     {
         /// <summary>
@@ -39,7 +40,7 @@ namespace Microsoft.Graph
         /// Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
         /// </summary>
         [JsonPropertyName("errorCategory")]
-        public string ErrorCategory { get; set; }
+        public ProvisioningStatusErrorCategory? ErrorCategory { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.

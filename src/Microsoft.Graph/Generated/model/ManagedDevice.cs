@@ -85,6 +85,13 @@ namespace Microsoft.Graph
         public ChassisType? ChassisType { get; set; }
     
         /// <summary>
+        /// Gets or sets chrome osdevice info.
+        /// List of properties of the ChromeOS Device.
+        /// </summary>
+        [JsonPropertyName("chromeOSDeviceInfo")]
+        public IEnumerable<ChromeOSDeviceProperty> ChromeOSDeviceInfo { get; set; }
+    
+        /// <summary>
         /// Gets or sets compliance grace period expiration date time.
         /// The DateTime when device compliance grace period expires
         /// </summary>

@@ -98,6 +98,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is device only auth supported.
+        /// Specifies whether this application supports device authentication without a user. The default is false.
         /// </summary>
         [JsonPropertyName("isDeviceOnlyAuthSupported")]
         public bool? IsDeviceOnlyAuthSupported { get; set; }
@@ -202,6 +203,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets unique name.
+        /// The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.
         /// </summary>
         [JsonPropertyName("uniqueName")]
         public string UniqueName { get; set; }

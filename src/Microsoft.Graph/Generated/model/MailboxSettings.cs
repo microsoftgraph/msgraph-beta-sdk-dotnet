@@ -81,6 +81,7 @@ namespace Microsoft.Graph
         /// Gets or sets userPurpose.
         /// The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.
         /// </summary>
+        [Obsolete("The UserPurpose API is deprecated and will stop returning data on April 27, 2021. Please use the UserPurposeV2 API.")]
         [JsonPropertyName("userPurpose")]
         public UserPurpose UserPurpose { get; set; }
     
