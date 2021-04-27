@@ -33,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets matches.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matches", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ExactMatchSensitiveContentLocation> Matches { get; set; }
+        public IEnumerable<SensitiveContentLocation> Matches { get; set; }
     
     }
 }

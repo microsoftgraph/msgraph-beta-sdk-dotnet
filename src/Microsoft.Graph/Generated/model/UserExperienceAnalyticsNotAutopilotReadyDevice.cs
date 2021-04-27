@@ -56,7 +56,7 @@ namespace Microsoft.Graph
         /// The intune device's azureAdRegistered.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureAdRegistered", Required = Newtonsoft.Json.Required.Default)]
-        public AzureAdRegisteredState? AzureAdRegistered { get; set; }
+        public bool? AzureAdRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets device name.

@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceDecisionItemFilterByCurrentUser.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceDecisionItemFilterByCurrentUserRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceDecisionItemFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            AccessReviewInstanceDecisionItemFilterByCurrentUserOptions on)
+        {
+            return new AccessReviewInstanceDecisionItemFilterByCurrentUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.filterByCurrentUser"),
+                this.Client,
+                on);
+        }
     }
 }

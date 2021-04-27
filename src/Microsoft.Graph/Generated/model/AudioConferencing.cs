@@ -52,11 +52,23 @@ namespace Microsoft.Graph
         public string TollFreeNumber { get; set; }
     
         /// <summary>
+        /// Gets or sets tollFreeNumbers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tollFreeNumbers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> TollFreeNumbers { get; set; }
+    
+        /// <summary>
         /// Gets or sets tollNumber.
         /// The toll number that connects to the Audio Conference Provider.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tollNumber", Required = Newtonsoft.Json.Required.Default)]
         public string TollNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tollNumbers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tollNumbers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> TollNumbers { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

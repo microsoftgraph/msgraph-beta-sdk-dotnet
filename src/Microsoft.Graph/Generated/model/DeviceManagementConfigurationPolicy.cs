@@ -101,6 +101,13 @@ namespace Microsoft.Graph
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
     
         /// <summary>
+        /// Gets or sets template reference.
+        /// Template reference information
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateReference", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementConfigurationPolicyTemplateReference TemplateReference { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// Policy assignments
         /// </summary>

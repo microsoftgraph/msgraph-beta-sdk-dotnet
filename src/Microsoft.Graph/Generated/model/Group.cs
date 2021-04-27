@@ -413,6 +413,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permission grants.
+        /// The permission that has been granted for a group to a specific application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionGrants", Required = Newtonsoft.Json.Required.Default)]
         public IGroupPermissionGrantsCollectionPage PermissionGrants { get; set; }

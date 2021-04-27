@@ -586,6 +586,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.ReusablePolicySettings != null && deviceManagementToInitialize.ReusablePolicySettings.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ReusablePolicySettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("reusablePolicySettings@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.ReusablePolicySettings.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.ReusableSettings != null && deviceManagementToInitialize.ReusableSettings.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ReusableSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("reusableSettings@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.ReusableSettings.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.ComplianceManagementPartners != null && deviceManagementToInitialize.ComplianceManagementPartners.CurrentPage != null)
                 {
                     deviceManagementToInitialize.ComplianceManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1130,6 +1162,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsDeviceScores@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistory.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1285,6 +1333,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics != null && deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsWorkFromAnywhereMetrics@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

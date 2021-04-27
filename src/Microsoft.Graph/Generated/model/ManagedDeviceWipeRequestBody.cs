@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         public string MacOsUnlockCode { get; set; }
     
         /// <summary>
+        /// Gets or sets PersistEsimDataPlan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "persistEsimDataPlan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PersistEsimDataPlan { get; set; }
+    
+        /// <summary>
         /// Gets or sets UseProtectedWipe.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useProtectedWipe", Required = Newtonsoft.Json.Required.Default)]

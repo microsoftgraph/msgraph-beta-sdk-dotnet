@@ -174,6 +174,19 @@ namespace Microsoft.Graph
                 this.Client,
                 windowsPrivacyAccessControls);
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceConfigurationGetOmaSettingPlainTextValue.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationGetOmaSettingPlainTextValueRequestBuilder"/>.</returns>
+        public IDeviceConfigurationGetOmaSettingPlainTextValueRequestBuilder GetOmaSettingPlainTextValue(
+            string secretReferenceValueId = null)
+        {
+            return new DeviceConfigurationGetOmaSettingPlainTextValueRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOmaSettingPlainTextValue"),
+                this.Client,
+                secretReferenceValueId);
+        }
     
     }
 }

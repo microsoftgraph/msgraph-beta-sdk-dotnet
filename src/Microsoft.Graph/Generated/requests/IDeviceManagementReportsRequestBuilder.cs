@@ -125,6 +125,21 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetRelatedAppsStatusReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetRelatedAppsStatusReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetRelatedAppsStatusReportRequestBuilder GetRelatedAppsStatusReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetUserInstallStatusReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetUserInstallStatusReportRequestBuilder"/>.</returns>
@@ -174,6 +189,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPolicyDeviceSummaryReportRequestBuilder"/>.</returns>
         IDeviceManagementReportsGetConfigurationPolicyDeviceSummaryReportRequestBuilder GetConfigurationPolicyDeviceSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationPolicySettingsDeviceSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder GetConfigurationPolicySettingsDeviceSummaryReport(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,
@@ -305,10 +335,40 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetAllCertificatesReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetAllCertificatesReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetAllCertificatesReportRequestBuilder GetAllCertificatesReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetCertificatesReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetCertificatesReportRequestBuilder"/>.</returns>
         IDeviceManagementReportsGetCertificatesReportRequestBuilder GetCertificatesReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigManagerDevicePolicyStatusReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigManagerDevicePolicyStatusReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetConfigManagerDevicePolicyStatusReportRequestBuilder GetConfigManagerDevicePolicyStatusReport(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,
@@ -412,6 +472,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder"/>.</returns>
         IDeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder GetConfigurationSettingNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceManagementIntentSettingsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceManagementIntentSettingsReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDeviceManagementIntentSettingsReportRequestBuilder GetDeviceManagementIntentSettingsReport(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,

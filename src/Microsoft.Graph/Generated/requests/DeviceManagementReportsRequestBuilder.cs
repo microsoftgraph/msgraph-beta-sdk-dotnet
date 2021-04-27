@@ -232,6 +232,35 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetRelatedAppsStatusReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetRelatedAppsStatusReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetRelatedAppsStatusReportRequestBuilder GetRelatedAppsStatusReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetRelatedAppsStatusReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRelatedAppsStatusReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetUserInstallStatusReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetUserInstallStatusReportRequestBuilder"/>.</returns>
@@ -335,6 +364,35 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementReportsGetConfigurationPolicyDeviceSummaryReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getConfigurationPolicyDeviceSummaryReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationPolicySettingsDeviceSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder GetConfigurationPolicySettingsDeviceSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getConfigurationPolicySettingsDeviceSummaryReport"),
                 this.Client,
                 name,
                 select,
@@ -580,6 +638,35 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetAllCertificatesReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetAllCertificatesReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetAllCertificatesReportRequestBuilder GetAllCertificatesReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetAllCertificatesReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAllCertificatesReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetCertificatesReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetCertificatesReportRequestBuilder"/>.</returns>
@@ -596,6 +683,35 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementReportsGetCertificatesReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getCertificatesReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigManagerDevicePolicyStatusReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigManagerDevicePolicyStatusReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetConfigManagerDevicePolicyStatusReportRequestBuilder GetConfigManagerDevicePolicyStatusReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetConfigManagerDevicePolicyStatusReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getConfigManagerDevicePolicyStatusReport"),
                 this.Client,
                 name,
                 select,
@@ -795,6 +911,35 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getConfigurationSettingNonComplianceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceManagementIntentSettingsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceManagementIntentSettingsReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDeviceManagementIntentSettingsReportRequestBuilder GetDeviceManagementIntentSettingsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDeviceManagementIntentSettingsReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDeviceManagementIntentSettingsReport"),
                 this.Client,
                 name,
                 select,

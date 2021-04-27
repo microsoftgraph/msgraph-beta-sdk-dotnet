@@ -108,6 +108,13 @@ namespace Microsoft.Graph
             string remediationUrl = null);
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceActivateDeviceEsim.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceActivateDeviceEsimRequestBuilder"/>.</returns>
+        IManagedDeviceActivateDeviceEsimRequestBuilder ActivateDeviceEsim(
+            string carrierUrl = null);
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceBypassActivationLock.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceBypassActivationLockRequestBuilder"/>.</returns>
@@ -275,6 +282,7 @@ namespace Microsoft.Graph
             bool? keepEnrollmentData = null,
             bool? keepUserData = null,
             string macOsUnlockCode = null,
+            bool? persistEsimDataPlan = null,
             bool? useProtectedWipe = null);
 
         /// <summary>

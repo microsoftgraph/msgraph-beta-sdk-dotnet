@@ -201,6 +201,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceActivateDeviceEsim.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceActivateDeviceEsimRequestBuilder"/>.</returns>
+        public IManagedDeviceActivateDeviceEsimRequestBuilder ActivateDeviceEsim(
+            string carrierUrl = null)
+        {
+            return new ManagedDeviceActivateDeviceEsimRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.activateDeviceEsim"),
+                this.Client,
+                carrierUrl);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceBypassActivationLock.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceBypassActivationLockRequestBuilder"/>.</returns>
@@ -503,6 +516,7 @@ namespace Microsoft.Graph
             bool? keepEnrollmentData = null,
             bool? keepUserData = null,
             string macOsUnlockCode = null,
+            bool? persistEsimDataPlan = null,
             bool? useProtectedWipe = null)
         {
             return new ManagedDeviceWipeRequestBuilder(
@@ -511,6 +525,7 @@ namespace Microsoft.Graph
                 keepEnrollmentData,
                 keepUserData,
                 macOsUnlockCode,
+                persistEsimDataPlan,
                 useProtectedWipe);
         }
 

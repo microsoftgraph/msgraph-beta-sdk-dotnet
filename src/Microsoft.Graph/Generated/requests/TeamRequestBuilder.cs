@@ -183,19 +183,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for TeamArchive.
-        /// </summary>
-        /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
-        public ITeamArchiveRequestBuilder Archive(
-            bool? shouldSetSpoSiteReadOnlyForMembers = null)
-        {
-            return new TeamArchiveRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.archive"),
-                this.Client,
-                shouldSetSpoSiteReadOnlyForMembers);
-        }
-
-        /// <summary>
         /// Gets the request builder for TeamClone.
         /// </summary>
         /// <returns>The <see cref="ITeamCloneRequestBuilder"/>.</returns>
@@ -216,6 +203,19 @@ namespace Microsoft.Graph
                 description,
                 mailNickname,
                 classification);
+        }
+
+        /// <summary>
+        /// Gets the request builder for TeamArchive.
+        /// </summary>
+        /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
+        public ITeamArchiveRequestBuilder Archive(
+            bool? shouldSetSpoSiteReadOnlyForMembers = null)
+        {
+            return new TeamArchiveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.archive"),
+                this.Client,
+                shouldSetSpoSiteReadOnlyForMembers);
         }
 
         /// <summary>

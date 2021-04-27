@@ -94,6 +94,13 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder"/>.</returns>
         IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder WindowsPrivacyAccessControls(
             IEnumerable<WindowsPrivacyDataAccessControlItem> windowsPrivacyAccessControls = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceConfigurationGetOmaSettingPlainTextValue.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationGetOmaSettingPlainTextValueRequestBuilder"/>.</returns>
+        IDeviceConfigurationGetOmaSettingPlainTextValueRequestBuilder GetOmaSettingPlainTextValue(
+            string secretReferenceValueId = null);
     
     }
 }

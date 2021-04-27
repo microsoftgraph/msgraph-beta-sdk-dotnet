@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IAccessReviewScheduleDefinitionRequestBuilder"/>.</returns>
         IAccessReviewScheduleDefinitionRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for AccessReviewScheduleDefinitionFilterByCurrentUser.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewScheduleDefinitionFilterByCurrentUserRequestBuilder"/>.</returns>
+        IAccessReviewScheduleDefinitionFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            AccessReviewScheduleDefinitionFilterByCurrentUserOptions on);
     }
 }

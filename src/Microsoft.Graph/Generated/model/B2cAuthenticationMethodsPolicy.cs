@@ -39,6 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is phone one time password authentication enabled.
+        /// The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPhoneOneTimePasswordAuthenticationEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsPhoneOneTimePasswordAuthenticationEnabled { get; set; }

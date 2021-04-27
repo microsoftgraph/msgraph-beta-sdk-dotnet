@@ -59,6 +59,41 @@ namespace Microsoft.Graph
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
+        /// Gets or sets upgrade automatically.
+        /// The site's automatic upgrade setting. True for automatic upgrades, false for manual control
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeAutomatically", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UpgradeAutomatically { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upgrade available.
+        /// True if an upgrade is available
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeAvailable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UpgradeAvailable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upgrade window end time.
+        /// The site's upgrade window end time of day
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeWindowEndTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay UpgradeWindowEndTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upgrade window start time.
+        /// The site's upgrade window start time of day
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeWindowStartTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay UpgradeWindowStartTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upgrade window utc offset in minutes.
+        /// The site's timezone represented as a minute offset from UTC
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeWindowUtcOffsetInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UpgradeWindowUtcOffsetInMinutes { get; set; }
+    
+        /// <summary>
         /// Gets or sets microsoft tunnel configuration.
         /// The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
         /// </summary>
