@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets is default recipients enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultRecipientsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDefaultRecipientsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets notification level.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationLevel", Required = Newtonsoft.Json.Required.Default)]

@@ -32,18 +32,21 @@ namespace Microsoft.Graph.WindowsUpdates
     
         /// <summary>
         /// Gets or sets deployable until date time.
+        /// The date on which the content is no longer available to deploy using the service. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployableUntilDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? DeployableUntilDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name of the content. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets release date time.
+        /// The release date for the content. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releaseDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ReleaseDateTime { get; set; }

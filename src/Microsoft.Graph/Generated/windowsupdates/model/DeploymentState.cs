@@ -32,18 +32,21 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets reasons.
+        /// Specifies the reasons the deployment has its state value. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reasons", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DeploymentStateReason> Reasons { get; set; }
     
         /// <summary>
         /// Gets or sets requestedValue.
+        /// Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestedValue", Required = Newtonsoft.Json.Required.Default)]
         public RequestedDeploymentStateValue? RequestedValue { get; set; }
     
         /// <summary>
         /// Gets or sets value.
+        /// Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public DeploymentStateValue? Value { get; set; }

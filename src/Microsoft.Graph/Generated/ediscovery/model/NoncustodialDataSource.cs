@@ -32,12 +32,14 @@ namespace Microsoft.Graph.Ediscovery
 	
         /// <summary>
         /// Gets or sets apply hold to source.
+        /// Indicates if hold is applied to non-custodial data source (such as mailbox or site).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyHoldToSource", Required = Newtonsoft.Json.Required.Default)]
         public bool? ApplyHoldToSource { get; set; }
     
         /// <summary>
         /// Gets or sets data source.
+        /// User source or SharePoint site data source as non-custodial data source.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataSource", Required = Newtonsoft.Json.Required.Default)]
         public DataSource DataSource { get; set; }

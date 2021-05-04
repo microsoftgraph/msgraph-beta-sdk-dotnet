@@ -26,6 +26,7 @@ namespace Microsoft.Graph
         /// <param name="keepEnrollmentData">A keepEnrollmentData parameter for the OData method call.</param>
         /// <param name="keepUserData">A keepUserData parameter for the OData method call.</param>
         /// <param name="macOsUnlockCode">A macOsUnlockCode parameter for the OData method call.</param>
+        /// <param name="persistEsimDataPlan">A persistEsimDataPlan parameter for the OData method call.</param>
         /// <param name="useProtectedWipe">A useProtectedWipe parameter for the OData method call.</param>
         public ManagedDeviceWipeRequestBuilder(
             string requestUrl,
@@ -33,12 +34,14 @@ namespace Microsoft.Graph
             bool? keepEnrollmentData,
             bool? keepUserData,
             string macOsUnlockCode,
+            bool? persistEsimDataPlan,
             bool? useProtectedWipe)
             : base(requestUrl, client)
         {
             this.SetParameter("keepEnrollmentData", keepEnrollmentData, true);
             this.SetParameter("keepUserData", keepUserData, true);
             this.SetParameter("macOsUnlockCode", macOsUnlockCode, true);
+            this.SetParameter("persistEsimDataPlan", persistEsimDataPlan, true);
             this.SetParameter("useProtectedWipe", useProtectedWipe, true);
         }
 
@@ -65,6 +68,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("macOsUnlockCode"))
             {
                 request.RequestBody.MacOsUnlockCode = this.GetParameter<string>("macOsUnlockCode");
+            }
+
+            if (this.HasParameter("persistEsimDataPlan"))
+            {
+                request.RequestBody.PersistEsimDataPlan = this.GetParameter<bool?>("persistEsimDataPlan");
             }
 
             if (this.HasParameter("useProtectedWipe"))

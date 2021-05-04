@@ -86,6 +86,21 @@ namespace Microsoft.Graph
                 this.Client,
                 assignments);
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementConfigurationPolicyCreateCopy.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementConfigurationPolicyCreateCopyRequestBuilder"/>.</returns>
+        public IDeviceManagementConfigurationPolicyCreateCopyRequestBuilder CreateCopy(
+            string displayName = null,
+            string description = null)
+        {
+            return new DeviceManagementConfigurationPolicyCreateCopyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createCopy"),
+                this.Client,
+                displayName,
+                description);
+        }
     
     }
 }

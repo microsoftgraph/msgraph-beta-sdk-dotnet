@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for AccessReviewScheduleDefinitionFilterByCurrentUser.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewScheduleDefinitionFilterByCurrentUserRequestBuilder"/>.</returns>
+        public IAccessReviewScheduleDefinitionFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            AccessReviewScheduleDefinitionFilterByCurrentUserOptions on)
+        {
+            return new AccessReviewScheduleDefinitionFilterByCurrentUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.filterByCurrentUser"),
+                this.Client,
+                on);
+        }
     }
 }

@@ -33,6 +33,7 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets windows.
+        /// Entity that acts as a container for functionality. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows", Required = Newtonsoft.Json.Required.Default)]
         public Windows Windows { get; set; }

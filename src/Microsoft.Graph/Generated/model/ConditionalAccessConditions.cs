@@ -76,5 +76,20 @@ namespace Microsoft.Graph
         /// </summary>
         Client = 512,
 	
+        /// <summary>
+        /// Ip Address Seen By Azure AD
+        /// </summary>
+        IpAddressSeenByAzureAD = 1024,
+	
+        /// <summary>
+        /// Ip Address Seen By Resource Provider
+        /// </summary>
+        IpAddressSeenByResourceProvider = 2048,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4096,
+	
     }
 }

@@ -41,6 +41,11 @@ namespace Microsoft.Graph
         Failed = 30,
 	
         /// <summary>
+        /// Warning
+        /// </summary>
+        Warning = 40,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
         UnknownFutureValue = 999,

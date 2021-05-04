@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "historyDefinitions", Required = Newtonsoft.Json.Required.Default)]
         public IAccessReviewSetHistoryDefinitionsCollectionPage HistoryDefinitions { get; set; }
     
+        /// <summary>
+        /// Gets or sets policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policy", Required = Newtonsoft.Json.Required.Default)]
+        public AccessReviewPolicy Policy { get; set; }
+    
     }
 }
 

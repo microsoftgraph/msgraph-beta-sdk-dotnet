@@ -115,6 +115,13 @@ namespace Microsoft.Graph
         public string OffsetUri { get; set; }
     
         /// <summary>
+        /// Gets or sets referred setting information list.
+        /// List of referred setting information.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referredSettingInformationList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DeviceManagementConfigurationReferredSettingInformation> ReferredSettingInformationList { get; set; }
+    
+        /// <summary>
         /// Gets or sets root definition id.
         /// Root setting definition if the setting is a child setting.
         /// </summary>

@@ -31,6 +31,7 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets equivalentContent.
+        /// Specifies other content to consider as equivalent. Supports a subset of the values for equivalentContentOption. Default value is latestSecurity. Possible values are: latestSecurity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "equivalentContent", Required = Newtonsoft.Json.Required.Default)]
         public EquivalentContentOption? EquivalentContent { get; set; }

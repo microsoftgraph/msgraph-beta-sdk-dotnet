@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceFilterByCurrentUser.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceFilterByCurrentUserRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            AccessReviewInstanceFilterByCurrentUserOptions on)
+        {
+            return new AccessReviewInstanceFilterByCurrentUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.filterByCurrentUser"),
+                this.Client,
+                on);
+        }
     }
 }

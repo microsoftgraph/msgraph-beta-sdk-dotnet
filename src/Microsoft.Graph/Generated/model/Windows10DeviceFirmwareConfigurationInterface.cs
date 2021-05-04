@@ -73,11 +73,25 @@ namespace Microsoft.Graph
         public Enablement? Radios { get; set; }
     
         /// <summary>
+        /// Gets or sets simultaneous multi threading.
+        /// Defines whether a user is allowed to enable Simultaneous MultiThreading. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "simultaneousMultiThreading", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? SimultaneousMultiThreading { get; set; }
+    
+        /// <summary>
         /// Gets or sets virtualization of cpu and io.
         /// Defines whether CPU and IO virtualization is enabled. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "virtualizationOfCpuAndIO", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? VirtualizationOfCpuAndIO { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows platform binary table.
+        /// Defines whether a user is allowed to enable Windows Platform Binary Table. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsPlatformBinaryTable", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? WindowsPlatformBinaryTable { get; set; }
     
     }
 }

@@ -298,22 +298,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (rbacApplicationToInitialize.RoleAssignmentRequests != null && rbacApplicationToInitialize.RoleAssignmentRequests.CurrentPage != null)
-                {
-                    rbacApplicationToInitialize.RoleAssignmentRequests.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.RoleAssignmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (rbacApplicationToInitialize.RoleAssignmentScheduleInstances != null && rbacApplicationToInitialize.RoleAssignmentScheduleInstances.CurrentPage != null)
                 {
                     rbacApplicationToInitialize.RoleAssignmentScheduleInstances.AdditionalData = rbacApplicationToInitialize.AdditionalData;
@@ -325,6 +309,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         rbacApplicationToInitialize.RoleAssignmentScheduleInstances.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (rbacApplicationToInitialize.RoleAssignmentScheduleRequests != null && rbacApplicationToInitialize.RoleAssignmentScheduleRequests.CurrentPage != null)
+                {
+                    rbacApplicationToInitialize.RoleAssignmentScheduleRequests.AdditionalData = rbacApplicationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentScheduleRequests@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        rbacApplicationToInitialize.RoleAssignmentScheduleRequests.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -346,22 +346,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (rbacApplicationToInitialize.RoleEligibilityRequests != null && rbacApplicationToInitialize.RoleEligibilityRequests.CurrentPage != null)
-                {
-                    rbacApplicationToInitialize.RoleEligibilityRequests.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilityRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.RoleEligibilityRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (rbacApplicationToInitialize.RoleEligibilityScheduleInstances != null && rbacApplicationToInitialize.RoleEligibilityScheduleInstances.CurrentPage != null)
                 {
                     rbacApplicationToInitialize.RoleEligibilityScheduleInstances.AdditionalData = rbacApplicationToInitialize.AdditionalData;
@@ -373,6 +357,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         rbacApplicationToInitialize.RoleEligibilityScheduleInstances.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (rbacApplicationToInitialize.RoleEligibilityScheduleRequests != null && rbacApplicationToInitialize.RoleEligibilityScheduleRequests.CurrentPage != null)
+                {
+                    rbacApplicationToInitialize.RoleEligibilityScheduleRequests.AdditionalData = rbacApplicationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilityScheduleRequests@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        rbacApplicationToInitialize.RoleEligibilityScheduleRequests.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -32,12 +32,14 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets is expeditable.
+        /// Indicates whether the content can be deployed as an expedited quality update. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isExpeditable", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsExpeditable { get; set; }
     
         /// <summary>
         /// Gets or sets quality update classification.
+        /// The classification on the quality update. Supports a subset of the values for qualityUpdateClassification. Possible values are: all, security, nonSecurity. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityUpdateClassification", Required = Newtonsoft.Json.Required.Default)]
         public QualityUpdateClassification? QualityUpdateClassification { get; set; }

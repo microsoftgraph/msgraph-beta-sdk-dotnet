@@ -32,12 +32,14 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets exclusions.
+        /// Specifies the assets to exclude from the audience.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exclusions", Required = Newtonsoft.Json.Required.Default)]
         public IDeploymentAudienceExclusionsCollectionPage Exclusions { get; set; }
     
         /// <summary>
         /// Gets or sets members.
+        /// Specifies the assets to include in the audience.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
         public IDeploymentAudienceMembersCollectionPage Members { get; set; }

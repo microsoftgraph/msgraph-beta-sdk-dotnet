@@ -74,5 +74,16 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelSiteRequestUpgrade.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelSiteRequestUpgradeRequestBuilder"/>.</returns>
+        public IMicrosoftTunnelSiteRequestUpgradeRequestBuilder RequestUpgrade()
+        {
+            return new MicrosoftTunnelSiteRequestUpgradeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.requestUpgrade"),
+                this.Client);
+        }
+    
     }
 }

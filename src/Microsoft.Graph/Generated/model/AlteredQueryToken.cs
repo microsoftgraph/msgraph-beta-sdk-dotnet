@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets length.
+        /// Defines the length of a changed segment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "length", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Length { get; set; }
     
         /// <summary>
         /// Gets or sets offset.
+        /// Defines the offset of a changed segment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offset", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Offset { get; set; }
     
         /// <summary>
         /// Gets or sets suggestion.
+        /// Represents the corrected segment string.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "suggestion", Required = Newtonsoft.Json.Required.Default)]
         public string Suggestion { get; set; }

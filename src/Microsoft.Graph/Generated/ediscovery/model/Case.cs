@@ -95,30 +95,35 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets custodians.
+        /// Returns a list of case custodian objects for this case.  Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custodians", Required = Newtonsoft.Json.Required.Default)]
         public ICaseCustodiansCollectionPage Custodians { get; set; }
     
         /// <summary>
         /// Gets or sets legal holds.
+        /// Returns a list of case legalHold objects for this case.  Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "legalHolds", Required = Newtonsoft.Json.Required.Default)]
         public ICaseLegalHoldsCollectionPage LegalHolds { get; set; }
     
         /// <summary>
         /// Gets or sets noncustodial data sources.
+        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "noncustodialDataSources", Required = Newtonsoft.Json.Required.Default)]
         public ICaseNoncustodialDataSourcesCollectionPage NoncustodialDataSources { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
+        /// Returns a list of case operation objects for this case. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
         public ICaseOperationsCollectionPage Operations { get; set; }
     
         /// <summary>
         /// Gets or sets review sets.
+        /// Returns a list of reviewSet objects in the case. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewSets", Required = Newtonsoft.Json.Required.Default)]
         public ICaseReviewSetsCollectionPage ReviewSets { get; set; }

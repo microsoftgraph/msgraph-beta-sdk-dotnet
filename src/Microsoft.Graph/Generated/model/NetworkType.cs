@@ -43,7 +43,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 4,
+        UnknownFutureValue = 5,
+	
+        /// <summary>
+        /// Trusted Named Location
+        /// </summary>
+        TrustedNamedLocation = 4,
 	
     }
 }

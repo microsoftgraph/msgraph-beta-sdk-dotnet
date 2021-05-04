@@ -32,24 +32,28 @@ namespace Microsoft.Graph.Ediscovery
 
         /// <summary>
         /// Gets or sets dynamicallyAdjustTopicCount.
+        /// To learn more, see Adjust maximum number of themes dynamically.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dynamicallyAdjustTopicCount", Required = Newtonsoft.Json.Required.Default)]
         public bool? DynamicallyAdjustTopicCount { get; set; }
     
         /// <summary>
         /// Gets or sets ignoreNumbers.
+        /// To learn more, see Include numbers in themes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ignoreNumbers", Required = Newtonsoft.Json.Required.Default)]
         public bool? IgnoreNumbers { get; set; }
     
         /// <summary>
         /// Gets or sets isEnabled.
+        /// Indicates whether themes is enabled for the case.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets topicCount.
+        /// To learn more, see Maximum number of themes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topicCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? TopicCount { get; set; }

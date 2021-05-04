@@ -66,11 +66,23 @@ namespace Microsoft.Graph
         public IEnumerable<string> EnforcedSessionControls { get; set; }
     
         /// <summary>
+        /// Gets or sets excludeRulesSatisfied.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeRulesSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ConditionalAccessRuleSatisfied> ExcludeRulesSatisfied { get; set; }
+    
+        /// <summary>
         /// Gets or sets id.
         /// An identifier of the conditional access policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
+    
+        /// <summary>
+        /// Gets or sets includeRulesSatisfied.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeRulesSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ConditionalAccessRuleSatisfied> IncludeRulesSatisfied { get; set; }
     
         /// <summary>
         /// Gets or sets result.
