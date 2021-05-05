@@ -30,18 +30,21 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets action.
+        /// The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment.
         /// </summary>
         [JsonPropertyName("action")]
         public MonitoringAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets signal.
+        /// The signal to monitor. Possible values are: rollback.
         /// </summary>
         [JsonPropertyName("signal")]
         public MonitoringSignal? Signal { get; set; }
     
         /// <summary>
         /// Gets or sets threshold.
+        /// The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
         /// </summary>
         [JsonPropertyName("threshold")]
         public Int32? Threshold { get; set; }

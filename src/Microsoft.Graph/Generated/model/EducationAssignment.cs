@@ -148,11 +148,25 @@ namespace Microsoft.Graph
         public string NotificationChannelUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets resources folder url.
+        /// Folder URL where all the file resources for this assignment are stored.
+        /// </summary>
+        [JsonPropertyName("resourcesFolderUrl")]
+        public string ResourcesFolderUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned.
         /// </summary>
         [JsonPropertyName("status")]
         public EducationAssignmentStatus? Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets web url.
+        /// The deep link URL for the given assignment.
+        /// </summary>
+        [JsonPropertyName("webUrl")]
+        public string WebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets categories.

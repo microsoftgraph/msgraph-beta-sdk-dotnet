@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         public string OmaUri { get; set; }
     
         /// <summary>
+        /// Gets or sets secretReferenceValueId.
+        /// ReferenceId for looking up secret for decryption. This property is read-only.
+        /// </summary>
+        [JsonPropertyName("secretReferenceValueId")]
+        public string SecretReferenceValueId { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

@@ -411,6 +411,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReusablePolicySettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReusablePolicySettingsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementReusablePolicySettingsCollectionRequestBuilder ReusablePolicySettings
+        {
+            get
+            {
+                return new DeviceManagementReusablePolicySettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("reusablePolicySettings"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReusableSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReusableSettingsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementReusableSettingsCollectionRequestBuilder ReusableSettings
+        {
+            get
+            {
+                return new DeviceManagementReusableSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("reusableSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ComplianceManagementPartners.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder"/>.</returns>
@@ -879,6 +903,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceScores.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceScoresCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsDeviceScoresCollectionRequestBuilder UserExperienceAnalyticsDeviceScores
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsDeviceScoresCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsDeviceScores"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsDeviceStartupHistory.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionRequestBuilder"/>.</returns>
@@ -1019,6 +1055,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsScoreHistory"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsWorkFromAnywhereMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereMetricsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereMetricsCollectionRequestBuilder UserExperienceAnalyticsWorkFromAnywhereMetrics
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsWorkFromAnywhereMetricsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsWorkFromAnywhereMetrics"), this.Client);
             }
         }
 
@@ -1539,6 +1587,23 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for DeviceManagementSendCustomNotificationToCompanyPortal.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
+        public IDeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
+            string notificationTitle = null,
+            string notificationBody = null,
+            IEnumerable<string> groupsToNotify = null)
+        {
+            return new DeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendCustomNotificationToCompanyPortal"),
+                this.Client,
+                notificationTitle,
+                notificationBody,
+                groupsToNotify);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementGetAssignmentFiltersStatusDetails.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGetAssignmentFiltersStatusDetailsRequestBuilder"/>.</returns>
@@ -1592,23 +1657,6 @@ namespace Microsoft.Graph
             return new DeviceManagementEnableUnlicensedAdminstratorsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.enableUnlicensedAdminstrators"),
                 this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementSendCustomNotificationToCompanyPortal.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
-        public IDeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
-            string notificationTitle = null,
-            string notificationBody = null,
-            IEnumerable<string> groupsToNotify = null)
-        {
-            return new DeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.sendCustomNotificationToCompanyPortal"),
-                this.Client,
-                notificationTitle,
-                notificationBody,
-                groupsToNotify);
         }
 
         /// <summary>

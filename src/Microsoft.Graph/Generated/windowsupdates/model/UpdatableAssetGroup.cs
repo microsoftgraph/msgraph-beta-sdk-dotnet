@@ -30,6 +30,7 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets members.
+        /// Members of the group. Read-only.
         /// </summary>
         [JsonPropertyName("members")]
         public IUpdatableAssetGroupMembersCollectionPage Members { get; set; }

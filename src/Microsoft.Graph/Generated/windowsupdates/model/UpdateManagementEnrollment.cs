@@ -29,6 +29,7 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets updateCategory.
+        /// The category of updates that the service manages. Supports a subset of the values for updateCategory. Possible values are: feature.
         /// </summary>
         [JsonPropertyName("updateCategory")]
         public UpdateCategory? UpdateCategory { get; set; }

@@ -77,7 +77,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets capabilities.
-        /// The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.
         /// </summary>
         [JsonPropertyName("capabilities")]
         public IEnumerable<MeetingCapabilities> Capabilities { get; set; }

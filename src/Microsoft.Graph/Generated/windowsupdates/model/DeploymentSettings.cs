@@ -30,12 +30,14 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets monitoring.
+        /// Settings governing conditions to monitor and automated actions to take.
         /// </summary>
         [JsonPropertyName("monitoring")]
         public MonitoringSettings Monitoring { get; set; }
     
         /// <summary>
         /// Gets or sets rollout.
+        /// Settings governing how the content is rolled out.
         /// </summary>
         [JsonPropertyName("rollout")]
         public RolloutSettings Rollout { get; set; }

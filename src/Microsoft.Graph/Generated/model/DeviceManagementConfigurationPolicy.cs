@@ -99,6 +99,13 @@ namespace Microsoft.Graph
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
     
         /// <summary>
+        /// Gets or sets template reference.
+        /// Template reference information
+        /// </summary>
+        [JsonPropertyName("templateReference")]
+        public DeviceManagementConfigurationPolicyTemplateReference TemplateReference { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// Policy assignments
         /// </summary>

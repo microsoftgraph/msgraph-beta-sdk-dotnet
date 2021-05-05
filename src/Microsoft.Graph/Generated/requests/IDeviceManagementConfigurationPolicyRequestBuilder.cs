@@ -49,6 +49,14 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceManagementConfigurationPolicyAssignRequestBuilder"/>.</returns>
         IDeviceManagementConfigurationPolicyAssignRequestBuilder Assign(
             IEnumerable<DeviceManagementConfigurationPolicyAssignment> assignments = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementConfigurationPolicyCreateCopy.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementConfigurationPolicyCreateCopyRequestBuilder"/>.</returns>
+        IDeviceManagementConfigurationPolicyCreateCopyRequestBuilder CreateCopy(
+            string displayName = null,
+            string description = null);
     
     }
 }

@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets is default recipients enabled.
+        /// </summary>
+        [JsonPropertyName("isDefaultRecipientsEnabled")]
+        public bool? IsDefaultRecipientsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets notification level.
         /// </summary>
         [JsonPropertyName("notificationLevel")]

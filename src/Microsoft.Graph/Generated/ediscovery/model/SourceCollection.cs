@@ -51,6 +51,7 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets data source scopes.
+        /// When specified, the collection will span across a service for an entire workload. Possible values are: none,allTenantMailboxes,allTenantSites,allCaseCustodians,allCaseNoncustodialDataSources.
         /// </summary>
         [JsonPropertyName("dataSourceScopes")]
         public DataSourceScopes? DataSourceScopes { get; set; }
@@ -125,6 +126,7 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets noncustodial sources.
+        /// noncustodialDataSource sources that are included in the sourceCollection
         /// </summary>
         [JsonPropertyName("noncustodialSources")]
         public ISourceCollectionNoncustodialSourcesCollectionWithReferencesPage NoncustodialSources { get; set; }

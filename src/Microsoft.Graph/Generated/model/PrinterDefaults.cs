@@ -105,14 +105,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mediaSize.
-        /// The default media size to use. Supports standard size names for ISO and ANSI media sizes, along with any custom sizes supported by the associated printer.
+        /// The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
         /// </summary>
         [JsonPropertyName("mediaSize")]
         public string MediaSize { get; set; }
     
         /// <summary>
         /// Gets or sets mediaType.
-        /// The default media (such as paper) type to print the document on. Valid values are described in the following table.
+        /// The default media (such as paper) type to print the document on.
         /// </summary>
         [JsonPropertyName("mediaType")]
         public string MediaType { get; set; }

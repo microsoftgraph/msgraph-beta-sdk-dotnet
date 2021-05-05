@@ -246,17 +246,17 @@ namespace Microsoft.Graph
 
             if (managedDeviceToInitialize != null)
             {
-                if (managedDeviceToInitialize.DeviceCompliancePolicyStates != null && managedDeviceToInitialize.DeviceCompliancePolicyStates.CurrentPage != null)
-                {
-                    managedDeviceToInitialize.DeviceCompliancePolicyStates.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.DeviceCompliancePolicyStatesNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    managedDeviceToInitialize.DeviceCompliancePolicyStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
-                }
                 if (managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails != null && managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails.CurrentPage != null)
                 {
                     managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetailsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.AssignmentFilterEvaluationStatusDetails.AdditionalData = managedDeviceToInitialize.AdditionalData;
+                }
+                if (managedDeviceToInitialize.DeviceCompliancePolicyStates != null && managedDeviceToInitialize.DeviceCompliancePolicyStates.CurrentPage != null)
+                {
+                    managedDeviceToInitialize.DeviceCompliancePolicyStates.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.DeviceCompliancePolicyStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedDeviceToInitialize.DeviceCompliancePolicyStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
                 }
                 if (managedDeviceToInitialize.DeviceConfigurationStates != null && managedDeviceToInitialize.DeviceConfigurationStates.CurrentPage != null)
                 {

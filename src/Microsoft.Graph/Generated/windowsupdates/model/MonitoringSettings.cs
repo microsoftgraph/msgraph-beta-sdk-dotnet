@@ -30,6 +30,7 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets monitoringRules.
+        /// Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or'.
         /// </summary>
         [JsonPropertyName("monitoringRules")]
         public IEnumerable<MonitoringRule> MonitoringRules { get; set; }

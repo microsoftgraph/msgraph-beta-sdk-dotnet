@@ -85,6 +85,13 @@ namespace Microsoft.Graph
         public Int32? AospUserlessCount { get; set; }
     
         /// <summary>
+        /// Gets or sets chromeOSCount.
+        /// Number of Chrome OS devices. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonPropertyName("chromeOSCount")]
+        public Int32? ChromeOSCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets configMgrDeviceCount.
         /// Number of ConfigMgr managed devices.
         /// </summary>

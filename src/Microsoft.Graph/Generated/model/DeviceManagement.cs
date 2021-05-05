@@ -482,6 +482,32 @@ namespace Microsoft.Graph
         public string ConfigurationSettingsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets reusable policy settings.
+        /// List of all reusable settings that can be referred in a policy
+        /// </summary>
+        [JsonPropertyName("reusablePolicySettings")]
+        public IDeviceManagementReusablePolicySettingsCollectionPage ReusablePolicySettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets reusablePolicySettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("reusablePolicySettings@odata.nextLink")]
+        public string ReusablePolicySettingsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reusable settings.
+        /// List of all reusable settings
+        /// </summary>
+        [JsonPropertyName("reusableSettings")]
+        public IDeviceManagementReusableSettingsCollectionPage ReusableSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets reusableSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("reusableSettings@odata.nextLink")]
+        public string ReusableSettingsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets compliance management partners.
         /// The list of Compliance Management Partners configured by the tenant.
         /// </summary>
@@ -959,6 +985,19 @@ namespace Microsoft.Graph
         public string UserExperienceAnalyticsDevicePerformanceNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics device scores.
+        /// User experience analytics device scores
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceScores")]
+        public IDeviceManagementUserExperienceAnalyticsDeviceScoresCollectionPage UserExperienceAnalyticsDeviceScores { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsDeviceScoresNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceScores@odata.nextLink")]
+        public string UserExperienceAnalyticsDeviceScoresNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics device startup history.
         /// User experience analytics device Startup History
         /// </summary>
@@ -1101,6 +1140,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsScoreHistory@odata.nextLink")]
         public string UserExperienceAnalyticsScoreHistoryNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics work from anywhere metrics.
+        /// User experience analytics work from anywhere metrics.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsWorkFromAnywhereMetrics")]
+        public IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereMetricsCollectionPage UserExperienceAnalyticsWorkFromAnywhereMetrics { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsWorkFromAnywhereMetricsNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsWorkFromAnywhereMetrics@odata.nextLink")]
+        public string UserExperienceAnalyticsWorkFromAnywhereMetricsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows malware information.

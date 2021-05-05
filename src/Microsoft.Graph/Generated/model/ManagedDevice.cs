@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets cloud pc remote action results.
+        /// </summary>
+        [JsonPropertyName("cloudPcRemoteActionResults")]
+        public IEnumerable<CloudPcRemoteActionResult> CloudPcRemoteActionResults { get; set; }
+    
+        /// <summary>
         /// Gets or sets aad registered.
         /// Whether the device is Azure Active Directory registered. This property is read-only.
         /// </summary>
@@ -568,19 +574,6 @@ namespace Microsoft.Graph
         public Int32? WindowsRemediatedMalwareCount { get; set; }
     
         /// <summary>
-        /// Gets or sets device compliance policy states.
-        /// Device compliance policy states for this device.
-        /// </summary>
-        [JsonPropertyName("deviceCompliancePolicyStates")]
-        public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }
-
-        /// <summary>
-        /// Gets or sets deviceCompliancePolicyStatesNextLink.
-        /// </summary>
-        [JsonPropertyName("deviceCompliancePolicyStates@odata.nextLink")]
-        public string DeviceCompliancePolicyStatesNextLink { get; set; }
-    
-        /// <summary>
         /// Gets or sets assignment filter evaluation status details.
         /// Managed device mobile app configuration states for this device.
         /// </summary>
@@ -592,6 +585,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignmentFilterEvaluationStatusDetails@odata.nextLink")]
         public string AssignmentFilterEvaluationStatusDetailsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device compliance policy states.
+        /// Device compliance policy states for this device.
+        /// </summary>
+        [JsonPropertyName("deviceCompliancePolicyStates")]
+        public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceCompliancePolicyStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceCompliancePolicyStates@odata.nextLink")]
+        public string DeviceCompliancePolicyStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration states.

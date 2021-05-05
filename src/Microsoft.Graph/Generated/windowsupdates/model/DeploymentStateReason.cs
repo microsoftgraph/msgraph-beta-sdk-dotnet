@@ -30,6 +30,7 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets value.
+        /// Specifies a reason for the deployment state. Possible values are: scheduledByOfferWindow, offeringByRequest, pausedByRequest, pausedByMonitoring. Read-only.
         /// </summary>
         [JsonPropertyName("value")]
         public DeploymentStateReasonValue? Value { get; set; }

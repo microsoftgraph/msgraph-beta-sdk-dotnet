@@ -71,6 +71,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets fallback reviewers.
+        /// </summary>
+        [JsonPropertyName("fallbackReviewers")]
+        public IEnumerable<AccessReviewReviewerScope> FallbackReviewers { get; set; }
+    
+        /// <summary>
         /// Gets or sets instance enumeration scope.
         /// In the case of a review of guest users across all Microsoft 365 groups, this determines the scope of which groups will be reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope.
         /// </summary>

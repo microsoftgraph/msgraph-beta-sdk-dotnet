@@ -29,6 +29,7 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets version.
+        /// Specifies a feature update by version.
         /// </summary>
         [JsonPropertyName("version")]
         public string Version { get; set; }

@@ -183,6 +183,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AccessReviewPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewPolicyRequestBuilder"/>.</returns>
+        public IAccessReviewPolicyRequestBuilder AccessReviewPolicy
+        {
+            get
+            {
+                return new AccessReviewPolicyRequestBuilder(this.AppendSegmentToRequestUrl("accessReviewPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AdminConsentRequestPolicy.
         /// </summary>
         /// <returns>The <see cref="IAdminConsentRequestPolicyRequestBuilder"/>.</returns>

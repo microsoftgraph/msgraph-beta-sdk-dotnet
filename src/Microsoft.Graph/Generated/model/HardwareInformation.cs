@@ -85,6 +85,13 @@ namespace Microsoft.Graph
         public DeviceGuardVirtualizationBasedSecurityState? DeviceGuardVirtualizationBasedSecurityState { get; set; }
     
         /// <summary>
+        /// Gets or sets esimIdentifier.
+        /// eSIM identifier
+        /// </summary>
+        [JsonPropertyName("esimIdentifier")]
+        public string EsimIdentifier { get; set; }
+    
+        /// <summary>
         /// Gets or sets freeStorageSpace.
         /// Free storage space of the device.
         /// </summary>

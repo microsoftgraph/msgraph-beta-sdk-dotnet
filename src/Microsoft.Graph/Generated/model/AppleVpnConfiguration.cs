@@ -79,6 +79,20 @@ namespace Microsoft.Graph
         public bool? DisableOnDemandUserOverride { get; set; }
     
         /// <summary>
+        /// Gets or sets disconnect on idle.
+        /// Whether to disconnect after on-demand connection idles
+        /// </summary>
+        [JsonPropertyName("disconnectOnIdle")]
+        public bool? DisconnectOnIdle { get; set; }
+    
+        /// <summary>
+        /// Gets or sets disconnect on idle timer in seconds.
+        /// The length of time in seconds to wait before disconnecting an on-demand connection. Valid values 0 to 65535
+        /// </summary>
+        [JsonPropertyName("disconnectOnIdleTimerInSeconds")]
+        public Int32? DisconnectOnIdleTimerInSeconds { get; set; }
+    
+        /// <summary>
         /// Gets or sets enable per app.
         /// Setting this to true creates Per-App VPN payload which can later be associated with Apps that can trigger this VPN conneciton on the end user's iOS device.
         /// </summary>

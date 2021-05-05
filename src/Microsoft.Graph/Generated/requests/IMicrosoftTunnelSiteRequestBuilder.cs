@@ -43,5 +43,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IMicrosoftTunnelSiteMicrosoftTunnelServersCollectionRequestBuilder"/>.</returns>
         IMicrosoftTunnelSiteMicrosoftTunnelServersCollectionRequestBuilder MicrosoftTunnelServers { get; }
     
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelSiteRequestUpgrade.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelSiteRequestUpgradeRequestBuilder"/>.</returns>
+        IMicrosoftTunnelSiteRequestUpgradeRequestBuilder RequestUpgrade();
+    
     }
 }

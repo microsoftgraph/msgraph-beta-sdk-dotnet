@@ -134,5 +134,10 @@ namespace Microsoft.Graph
         /// </summary>
         SetDeviceName = 22,
 	
+        /// <summary>
+        /// Activate Device Esim
+        /// </summary>
+        ActivateDeviceEsim = 23,
+	
     }
 }

@@ -98,6 +98,12 @@ namespace Microsoft.Graph
         IPolicyRootFeatureRolloutPoliciesCollectionRequestBuilder FeatureRolloutPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for AccessReviewPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewPolicyRequestBuilder"/>.</returns>
+        IAccessReviewPolicyRequestBuilder AccessReviewPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for AdminConsentRequestPolicy.
         /// </summary>
         /// <returns>The <see cref="IAdminConsentRequestPolicyRequestBuilder"/>.</returns>

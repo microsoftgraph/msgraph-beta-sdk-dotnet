@@ -30,6 +30,7 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets updates.
+        /// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
         /// </summary>
         [JsonPropertyName("updates")]
         public Updates Updates { get; set; }

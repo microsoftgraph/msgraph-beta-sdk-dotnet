@@ -974,6 +974,13 @@ namespace Microsoft.Graph
         public IEnumerable<IosNetworkUsageRule> NetworkUsageRules { get; set; }
     
         /// <summary>
+        /// Gets or sets nfc blocked.
+        /// Disable NFC to prevent devices from pairing with other NFC-enabled devices. Available for iOS/iPadOS devices running 14.2 and later.
+        /// </summary>
+        [JsonPropertyName("nfcBlocked")]
+        public bool? NfcBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets notifications block settings modification.
         /// Indicates whether or not to allow notifications settings modification (iOS 9.3 and later).
         /// </summary>

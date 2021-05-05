@@ -93,6 +93,7 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets custodians.
+        /// Returns a list of case custodian objects for this case.  Nullable.
         /// </summary>
         [JsonPropertyName("custodians")]
         public ICaseCustodiansCollectionPage Custodians { get; set; }
@@ -105,6 +106,7 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets legal holds.
+        /// Returns a list of case legalHold objects for this case.  Nullable.
         /// </summary>
         [JsonPropertyName("legalHolds")]
         public ICaseLegalHoldsCollectionPage LegalHolds { get; set; }
@@ -117,6 +119,7 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets noncustodial data sources.
+        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
         /// </summary>
         [JsonPropertyName("noncustodialDataSources")]
         public ICaseNoncustodialDataSourcesCollectionPage NoncustodialDataSources { get; set; }
@@ -129,6 +132,7 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets operations.
+        /// Returns a list of case operation objects for this case. Nullable.
         /// </summary>
         [JsonPropertyName("operations")]
         public ICaseOperationsCollectionPage Operations { get; set; }
@@ -141,6 +145,7 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets review sets.
+        /// Returns a list of reviewSet objects in the case. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("reviewSets")]
         public ICaseReviewSetsCollectionPage ReviewSets { get; set; }

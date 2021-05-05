@@ -144,6 +144,12 @@ namespace Microsoft.Graph
         public string FeatureRolloutPoliciesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets access review policy.
+        /// </summary>
+        [JsonPropertyName("accessReviewPolicy")]
+        public AccessReviewPolicy AccessReviewPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets admin consent request policy.
         /// </summary>
         [JsonPropertyName("adminConsentRequestPolicy")]

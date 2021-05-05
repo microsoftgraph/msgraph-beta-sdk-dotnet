@@ -57,6 +57,41 @@ namespace Microsoft.Graph
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
+        /// Gets or sets upgrade automatically.
+        /// The site's automatic upgrade setting. True for automatic upgrades, false for manual control
+        /// </summary>
+        [JsonPropertyName("upgradeAutomatically")]
+        public bool? UpgradeAutomatically { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upgrade available.
+        /// True if an upgrade is available
+        /// </summary>
+        [JsonPropertyName("upgradeAvailable")]
+        public bool? UpgradeAvailable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upgrade window end time.
+        /// The site's upgrade window end time of day
+        /// </summary>
+        [JsonPropertyName("upgradeWindowEndTime")]
+        public TimeOfDay UpgradeWindowEndTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upgrade window start time.
+        /// The site's upgrade window start time of day
+        /// </summary>
+        [JsonPropertyName("upgradeWindowStartTime")]
+        public TimeOfDay UpgradeWindowStartTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upgrade window utc offset in minutes.
+        /// The site's timezone represented as a minute offset from UTC
+        /// </summary>
+        [JsonPropertyName("upgradeWindowUtcOffsetInMinutes")]
+        public Int32? UpgradeWindowUtcOffsetInMinutes { get; set; }
+    
+        /// <summary>
         /// Gets or sets microsoft tunnel configuration.
         /// The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
         /// </summary>

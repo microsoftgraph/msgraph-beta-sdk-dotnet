@@ -30,26 +30,26 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attendees.
+        /// Information of the meeting attendees.
         /// </summary>
         [JsonPropertyName("attendees")]
         public IEnumerable<MeetingParticipantInfo> Attendees { get; set; }
     
         /// <summary>
         /// Gets or sets contributors.
-        /// For broadcast meeting only.
         /// </summary>
         [JsonPropertyName("contributors")]
         public IEnumerable<MeetingParticipantInfo> Contributors { get; set; }
     
         /// <summary>
         /// Gets or sets organizer.
+        /// Information of the meeting organizer.
         /// </summary>
         [JsonPropertyName("organizer")]
         public MeetingParticipantInfo Organizer { get; set; }
     
         /// <summary>
         /// Gets or sets producers.
-        /// For broadcast meeting only.
         /// </summary>
         [JsonPropertyName("producers")]
         public IEnumerable<MeetingParticipantInfo> Producers { get; set; }

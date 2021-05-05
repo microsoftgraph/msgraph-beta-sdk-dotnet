@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessReviewSetHistoryDefinitionsCollectionRequestBuilder"/>.</returns>
         IAccessReviewSetHistoryDefinitionsCollectionRequestBuilder HistoryDefinitions { get; }
+
+        /// <summary>
+        /// Gets the request builder for Policy.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewPolicyRequestBuilder"/>.</returns>
+        IAccessReviewPolicyRequestBuilder Policy { get; }
     
     }
 }

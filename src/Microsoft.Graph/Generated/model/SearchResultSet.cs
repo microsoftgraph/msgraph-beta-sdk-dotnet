@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets hitsContainers.
+        /// A collection of search results.
         /// </summary>
         [JsonPropertyName("hitsContainers")]
         public IEnumerable<SearchHitsContainer> HitsContainers { get; set; }
     
         /// <summary>
         /// Gets or sets searchTerms.
+        /// Contains the search terms sent in the initial search query.
         /// </summary>
         [JsonPropertyName("searchTerms")]
         public IEnumerable<string> SearchTerms { get; set; }

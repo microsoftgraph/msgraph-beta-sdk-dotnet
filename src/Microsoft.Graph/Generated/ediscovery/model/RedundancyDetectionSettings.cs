@@ -30,24 +30,28 @@ namespace Microsoft.Graph.Ediscovery
 
         /// <summary>
         /// Gets or sets isEnabled.
+        /// Indicates whether email threading and near duplicate detection are enabled.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets maxWords.
+        /// See Minimum/maximum number of words to learn more.
         /// </summary>
         [JsonPropertyName("maxWords")]
         public Int32? MaxWords { get; set; }
     
         /// <summary>
         /// Gets or sets minWords.
+        /// See Minimum/maximum number of words to learn more.
         /// </summary>
         [JsonPropertyName("minWords")]
         public Int32? MinWords { get; set; }
     
         /// <summary>
         /// Gets or sets similarityThreshold.
+        /// See Document and email similarity threshold to learn more.
         /// </summary>
         [JsonPropertyName("similarityThreshold")]
         public Int32? SimilarityThreshold { get; set; }

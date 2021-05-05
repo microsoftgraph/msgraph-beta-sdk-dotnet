@@ -30,18 +30,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets originalQueryString.
+        /// Defines the original user query string.
         /// </summary>
         [JsonPropertyName("originalQueryString")]
         public string OriginalQueryString { get; set; }
     
         /// <summary>
         /// Gets or sets queryAlteration.
+        /// Defines the details of alteration information for the spelling correction.
         /// </summary>
         [JsonPropertyName("queryAlteration")]
         public SearchAlteration QueryAlteration { get; set; }
     
         /// <summary>
         /// Gets or sets queryAlterationType.
+        /// Defines the type of the spelling correction. Possible values are suggestion, modification.
         /// </summary>
         [JsonPropertyName("queryAlterationType")]
         public SearchAlterationType? QueryAlterationType { get; set; }

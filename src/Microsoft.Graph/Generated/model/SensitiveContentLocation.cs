@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SensitiveContentLocation.
     /// </summary>
-    public partial class SensitiveContentLocation : SensitiveContentLocationBase
+    [JsonConverter(typeof(DerivedTypeConverter<SensitiveContentLocation>))]
+    public partial class SensitiveContentLocation
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SensitiveContentLocation"/> class.
@@ -32,6 +33,42 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("confidence")]
         public Int32? Confidence { get; set; }
+    
+        /// <summary>
+        /// Gets or sets evidences.
+        /// </summary>
+        [JsonPropertyName("evidences")]
+        public IEnumerable<SensitiveContentEvidence> Evidences { get; set; }
+    
+        /// <summary>
+        /// Gets or sets idMatch.
+        /// </summary>
+        [JsonPropertyName("idMatch")]
+        public string IdMatch { get; set; }
+    
+        /// <summary>
+        /// Gets or sets length.
+        /// </summary>
+        [JsonPropertyName("length")]
+        public Int32? Length { get; set; }
+    
+        /// <summary>
+        /// Gets or sets offset.
+        /// </summary>
+        [JsonPropertyName("offset")]
+        public Int32? Offset { get; set; }
+    
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
+
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
     
     }
 }

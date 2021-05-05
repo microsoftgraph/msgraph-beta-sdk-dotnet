@@ -30,12 +30,14 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets catalog.
+        /// Catalog of content that can be approved for deployment by the deployment service. Read-only.
         /// </summary>
         [JsonPropertyName("catalog")]
         public Catalog Catalog { get; set; }
     
         /// <summary>
         /// Gets or sets deployments.
+        /// Deployments created using the deployment service. Read-only.
         /// </summary>
         [JsonPropertyName("deployments")]
         public IUpdatesDeploymentsCollectionPage Deployments { get; set; }
@@ -48,6 +50,7 @@ namespace Microsoft.Graph.WindowsUpdates
     
         /// <summary>
         /// Gets or sets updatable assets.
+        /// Assets registered with the deployment service that can receive updates. Read-only.
         /// </summary>
         [JsonPropertyName("updatableAssets")]
         public IUpdatesUpdatableAssetsCollectionPage UpdatableAssets { get; set; }
