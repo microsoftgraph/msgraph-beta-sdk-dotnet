@@ -31,12 +31,14 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets classification.
+        /// Specifies the classification of the referenced content. Supports a subset of the values for qualityUpdateClassification. Possible values are: security.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
         public QualityUpdateClassification? Classification { get; set; }
     
         /// <summary>
         /// Gets or sets releaseDateTime.
+        /// Specifies a quality update in the given servicingChannel with the given classification by date (i.e. the last update published on the specified date). Default value is security.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releaseDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ReleaseDateTime { get; set; }

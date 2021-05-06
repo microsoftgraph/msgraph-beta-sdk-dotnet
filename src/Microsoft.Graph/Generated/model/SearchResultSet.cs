@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets hitsContainers.
+        /// A collection of search results.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hitsContainers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<SearchHitsContainer> HitsContainers { get; set; }
     
         /// <summary>
         /// Gets or sets searchTerms.
+        /// Contains the search terms sent in the initial search query.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchTerms", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> SearchTerms { get; set; }

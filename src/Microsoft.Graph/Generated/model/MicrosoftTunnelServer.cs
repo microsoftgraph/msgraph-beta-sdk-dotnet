@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets agent image digest.
+        /// The digest of the current agent image running on this server 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agentImageDigest", Required = Newtonsoft.Json.Required.Default)]
+        public string AgentImageDigest { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The MicrosoftTunnelServer's display name
         /// </summary>
@@ -43,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCheckinDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastCheckinDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets server image digest.
+        /// The digest of the current server image running on this server 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverImageDigest", Required = Newtonsoft.Json.Required.Default)]
+        public string ServerImageDigest { get; set; }
     
         /// <summary>
         /// Gets or sets tunnel server health status.

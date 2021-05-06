@@ -32,24 +32,28 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets devicesPerOffer.
+        /// Specifies the number of devices that are offered at the same time. Has no effect when endDateTime is set. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devicesPerOffer", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DevicesPerOffer { get; set; }
     
         /// <summary>
         /// Gets or sets durationBetweenOffers.
+        /// Specifies duration between each set of devices being offered the update. Has an effect when endDateTime or devicesPerOffer are defined. Default value is P1D (1 day).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationBetweenOffers", Required = Newtonsoft.Json.Required.Default)]
         public string DurationBetweenOffers { get; set; }
     
         /// <summary>
         /// Gets or sets endDateTime.
+        /// Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
+        /// Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartDateTime { get; set; }

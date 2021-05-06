@@ -32,36 +32,42 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets content.
+        /// Specifies what content to deploy. Cannot be changed. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
         public DeployableContent Content { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time the deployment was created. Returned by default. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The date and time the deployment was last modified. Returned by default. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
+        /// Settings specified on the specific deployment governing how to deploy content. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
         public DeploymentSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets state.
+        /// Execution status of the deployment. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public DeploymentState State { get; set; }
     
         /// <summary>
         /// Gets or sets audience.
+        /// Specifies the audience to which content is deployed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audience", Required = Newtonsoft.Json.Required.Default)]
         public DeploymentAudience Audience { get; set; }

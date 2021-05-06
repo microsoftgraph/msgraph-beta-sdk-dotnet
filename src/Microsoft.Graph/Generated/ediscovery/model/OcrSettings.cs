@@ -32,18 +32,21 @@ namespace Microsoft.Graph.Ediscovery
 
         /// <summary>
         /// Gets or sets isEnabled.
+        /// Indicates whether or not OCR is enabled for the case.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets maxImageSize.
+        /// Maximum image size that will be processed in KB).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxImageSize", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MaxImageSize { get; set; }
     
         /// <summary>
         /// Gets or sets timeout.
+        /// The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeout", Required = Newtonsoft.Json.Required.Default)]
         public Microsoft.Graph.Duration Timeout { get; set; }

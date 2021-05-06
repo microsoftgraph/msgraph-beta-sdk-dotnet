@@ -32,12 +32,14 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets monitoring.
+        /// Settings governing conditions to monitor and automated actions to take.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monitoring", Required = Newtonsoft.Json.Required.Default)]
         public MonitoringSettings Monitoring { get; set; }
     
         /// <summary>
         /// Gets or sets rollout.
+        /// Settings governing how the content is rolled out.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rollout", Required = Newtonsoft.Json.Required.Default)]
         public RolloutSettings Rollout { get; set; }

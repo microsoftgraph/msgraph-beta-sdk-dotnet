@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets cloud pc remote action results.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcRemoteActionResults", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<CloudPcRemoteActionResult> CloudPcRemoteActionResults { get; set; }
+    
+        /// <summary>
         /// Gets or sets aad registered.
         /// Whether the device is Azure Active Directory registered. This property is read-only.
         /// </summary>
@@ -570,18 +576,18 @@ namespace Microsoft.Graph
         public Int32? WindowsRemediatedMalwareCount { get; set; }
     
         /// <summary>
-        /// Gets or sets device compliance policy states.
-        /// Device compliance policy states for this device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyStates", Required = Newtonsoft.Json.Required.Default)]
-        public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }
-    
-        /// <summary>
         /// Gets or sets assignment filter evaluation status details.
         /// Managed device mobile app configuration states for this device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilterEvaluationStatusDetails", Required = Newtonsoft.Json.Required.Default)]
         public IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionPage AssignmentFilterEvaluationStatusDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device compliance policy states.
+        /// Device compliance policy states for this device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyStates", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration states.

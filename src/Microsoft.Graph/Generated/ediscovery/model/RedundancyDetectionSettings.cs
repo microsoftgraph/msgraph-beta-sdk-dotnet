@@ -32,24 +32,28 @@ namespace Microsoft.Graph.Ediscovery
 
         /// <summary>
         /// Gets or sets isEnabled.
+        /// Indicates whether email threading and near duplicate detection are enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets maxWords.
+        /// See Minimum/maximum number of words to learn more.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxWords", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MaxWords { get; set; }
     
         /// <summary>
         /// Gets or sets minWords.
+        /// See Minimum/maximum number of words to learn more.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minWords", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MinWords { get; set; }
     
         /// <summary>
         /// Gets or sets similarityThreshold.
+        /// See Document and email similarity threshold to learn more.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "similarityThreshold", Required = Newtonsoft.Json.Required.Default)]
         public Int32? SimilarityThreshold { get; set; }

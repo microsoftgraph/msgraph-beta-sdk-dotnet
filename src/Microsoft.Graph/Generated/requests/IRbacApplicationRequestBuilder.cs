@@ -56,16 +56,16 @@ namespace Microsoft.Graph
         IRbacApplicationRoleAssignmentApprovalsCollectionRequestBuilder RoleAssignmentApprovals { get; }
 
         /// <summary>
-        /// Gets the request builder for RoleAssignmentRequests.
-        /// </summary>
-        /// <returns>The <see cref="IRbacApplicationRoleAssignmentRequestsCollectionRequestBuilder"/>.</returns>
-        IRbacApplicationRoleAssignmentRequestsCollectionRequestBuilder RoleAssignmentRequests { get; }
-
-        /// <summary>
         /// Gets the request builder for RoleAssignmentScheduleInstances.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationRoleAssignmentScheduleInstancesCollectionRequestBuilder"/>.</returns>
         IRbacApplicationRoleAssignmentScheduleInstancesCollectionRequestBuilder RoleAssignmentScheduleInstances { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleAssignmentScheduleRequests.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder"/>.</returns>
+        IRbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder RoleAssignmentScheduleRequests { get; }
 
         /// <summary>
         /// Gets the request builder for RoleAssignmentSchedules.
@@ -74,16 +74,16 @@ namespace Microsoft.Graph
         IRbacApplicationRoleAssignmentSchedulesCollectionRequestBuilder RoleAssignmentSchedules { get; }
 
         /// <summary>
-        /// Gets the request builder for RoleEligibilityRequests.
-        /// </summary>
-        /// <returns>The <see cref="IRbacApplicationRoleEligibilityRequestsCollectionRequestBuilder"/>.</returns>
-        IRbacApplicationRoleEligibilityRequestsCollectionRequestBuilder RoleEligibilityRequests { get; }
-
-        /// <summary>
         /// Gets the request builder for RoleEligibilityScheduleInstances.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationRoleEligibilityScheduleInstancesCollectionRequestBuilder"/>.</returns>
         IRbacApplicationRoleEligibilityScheduleInstancesCollectionRequestBuilder RoleEligibilityScheduleInstances { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleEligibilityScheduleRequests.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder"/>.</returns>
+        IRbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder RoleEligibilityScheduleRequests { get; }
 
         /// <summary>
         /// Gets the request builder for RoleEligibilitySchedules.

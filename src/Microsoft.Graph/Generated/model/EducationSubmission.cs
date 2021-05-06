@@ -39,15 +39,15 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets released by.
-        /// User who moved the status of this submission to released.
         /// </summary>
+        [Obsolete("The releasedBy property is deprecated and will stop returning data on May 17, 2021.")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releasedBy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet ReleasedBy { get; set; }
     
         /// <summary>
         /// Gets or sets released date time.
-        /// Moment in time when the submission was released. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
+        [Obsolete("The releasedDateTime property is deprecated and will stop returning data on May 17, 2021.")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releasedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ReleasedDateTime { get; set; }
     

@@ -56,14 +56,29 @@ namespace Microsoft.Graph
         AdJoinCheckComputerObjectAlreadyExists = 204,
 	
         /// <summary>
+        /// Ad Join Check Access Denied
+        /// </summary>
+        AdJoinCheckAccessDenied = 205,
+	
+        /// <summary>
         /// Ad Join Check Unknown Error
         /// </summary>
         AdJoinCheckUnknownError = 299,
 	
         /// <summary>
-        /// Endpoint Connectivity Check Url Not Whitelisted
+        /// Endpoint Connectivity Check Cloud Pc Url Not Allow Listed
         /// </summary>
-        EndpointConnectivityCheckUrlNotWhitelisted = 300,
+        EndpointConnectivityCheckCloudPcUrlNotAllowListed = 300,
+	
+        /// <summary>
+        /// Endpoint Connectivity Check WVDUrl Not Allow Listed
+        /// </summary>
+        EndpointConnectivityCheckWVDUrlNotAllowListed = 301,
+	
+        /// <summary>
+        /// Endpoint Connectivity Check Intune Url Not Allow Listed
+        /// </summary>
+        EndpointConnectivityCheckIntuneUrlNotAllowListed = 302,
 	
         /// <summary>
         /// Endpoint Connectivity Check Unknown Error
@@ -84,6 +99,11 @@ namespace Microsoft.Graph
         /// Resource Availability Check Subscription Disabled
         /// </summary>
         ResourceAvailabilityCheckSubscriptionDisabled = 501,
+	
+        /// <summary>
+        /// Resource Availability Check Unsupported VNet Region
+        /// </summary>
+        ResourceAvailabilityCheckUnsupportedVNetRegion = 506,
 	
         /// <summary>
         /// Resource Availability Check Unknown Error

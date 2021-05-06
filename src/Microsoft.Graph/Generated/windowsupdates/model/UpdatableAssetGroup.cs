@@ -32,6 +32,7 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets members.
+        /// Members of the group. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
         public IUpdatableAssetGroupMembersCollectionPage Members { get; set; }

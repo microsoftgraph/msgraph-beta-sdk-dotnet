@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets end of support date.
+        /// The last supported date for a catalog item
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endOfSupportDate", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EndOfSupportDate { get; set; }
+    
+        /// <summary>
         /// Gets or sets release date time.
         /// The date the catalog item was released
         /// </summary>

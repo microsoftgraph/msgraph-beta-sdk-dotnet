@@ -32,12 +32,14 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets enrollments.
+        /// Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollments", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<UpdatableAssetEnrollment> Enrollments { get; set; }
     
         /// <summary>
         /// Gets or sets errors.
+        /// Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<UpdatableAssetError> Errors { get; set; }

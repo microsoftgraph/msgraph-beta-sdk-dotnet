@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IAccessReviewInstanceRequestBuilder"/>.</returns>
         IAccessReviewInstanceRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceFilterByCurrentUser.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceFilterByCurrentUserRequestBuilder"/>.</returns>
+        IAccessReviewInstanceFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            AccessReviewInstanceFilterByCurrentUserOptions on);
     }
 }

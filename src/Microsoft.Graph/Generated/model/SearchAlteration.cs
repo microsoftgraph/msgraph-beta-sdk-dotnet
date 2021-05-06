@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets alteredHighlightedQueryString.
+        /// Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alteredHighlightedQueryString", Required = Newtonsoft.Json.Required.Default)]
         public string AlteredHighlightedQueryString { get; set; }
     
         /// <summary>
         /// Gets or sets alteredQueryString.
+        /// Defines the altered query string with spelling correction.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alteredQueryString", Required = Newtonsoft.Json.Required.Default)]
         public string AlteredQueryString { get; set; }
     
         /// <summary>
         /// Gets or sets alteredQueryTokens.
+        /// Represents changed segments with respect to original query.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alteredQueryTokens", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AlteredQueryToken> AlteredQueryTokens { get; set; }

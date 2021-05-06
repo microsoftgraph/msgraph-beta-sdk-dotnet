@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets queryAlterationResponse.
+        /// Provides details of query alteration response for spelling correction.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queryAlterationResponse", Required = Newtonsoft.Json.Required.Default)]
         public AlterationResponse QueryAlterationResponse { get; set; }
     
         /// <summary>
         /// Gets or sets value.
+        /// Represents results from a search query, and the terms used for the query.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<SearchResultSet> Value { get; set; }

@@ -56,6 +56,15 @@ namespace Microsoft.Graph
         IOrganizationSettingsRequestBuilder Settings { get; }
     
         /// <summary>
+        /// Gets the request builder for OrganizationActivateService.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationActivateServiceRequestBuilder"/>.</returns>
+        IOrganizationActivateServiceRequestBuilder ActivateService(
+            string service = null,
+            Guid? servicePlanId = null,
+            Guid? skuId = null);
+
+        /// <summary>
         /// Gets the request builder for OrganizationSetMobileDeviceManagementAuthority.
         /// </summary>
         /// <returns>The <see cref="IOrganizationSetMobileDeviceManagementAuthorityRequestBuilder"/>.</returns>

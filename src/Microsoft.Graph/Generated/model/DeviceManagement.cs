@@ -352,6 +352,20 @@ namespace Microsoft.Graph
         public IDeviceManagementConfigurationSettingsCollectionPage ConfigurationSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets reusable policy settings.
+        /// List of all reusable settings that can be referred in a policy
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reusablePolicySettings", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementReusablePolicySettingsCollectionPage ReusablePolicySettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reusable settings.
+        /// List of all reusable settings
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reusableSettings", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementReusableSettingsCollectionPage ReusableSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets compliance management partners.
         /// The list of Compliance Management Partners configured by the tenant.
         /// </summary>
@@ -625,6 +639,13 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionPage UserExperienceAnalyticsDevicePerformance { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics device scores.
+        /// User experience analytics device scores
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsDeviceScores", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsDeviceScoresCollectionPage UserExperienceAnalyticsDeviceScores { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics device startup history.
         /// User experience analytics device Startup History
         /// </summary>
@@ -707,6 +728,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsScoreHistory", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionPage UserExperienceAnalyticsScoreHistory { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics work from anywhere metrics.
+        /// User experience analytics work from anywhere metrics.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsWorkFromAnywhereMetrics", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereMetricsCollectionPage UserExperienceAnalyticsWorkFromAnywhereMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets windows malware information.

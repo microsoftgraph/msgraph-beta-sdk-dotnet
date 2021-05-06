@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for DeviceCompliancePolicyStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
-        public IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder DeviceCompliancePolicyStates
-        {
-            get
-            {
-                return new ManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCompliancePolicyStates"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AssignmentFilterEvaluationStatusDetails.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignmentFilterEvaluationStatusDetails"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder DeviceCompliancePolicyStates
+        {
+            get
+            {
+                return new ManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCompliancePolicyStates"), this.Client);
             }
         }
 
@@ -171,18 +171,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
+        /// Gets the request builder for ManagedDeviceReprovisionCloudPc.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
-        public IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
-            string notificationTitle,
-            string notificationBody)
+        /// <returns>The <see cref="IManagedDeviceReprovisionCloudPcRequestBuilder"/>.</returns>
+        public IManagedDeviceReprovisionCloudPcRequestBuilder ReprovisionCloudPc()
         {
-            return new ManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.sendCustomNotificationToCompanyPortal"),
-                this.Client,
-                notificationTitle,
-                notificationBody);
+            return new ManagedDeviceReprovisionCloudPcRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reprovisionCloudPc"),
+                this.Client);
         }
 
         /// <summary>
@@ -198,6 +194,19 @@ namespace Microsoft.Graph
                 this.Client,
                 complianceState,
                 remediationUrl);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceActivateDeviceEsim.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceActivateDeviceEsimRequestBuilder"/>.</returns>
+        public IManagedDeviceActivateDeviceEsimRequestBuilder ActivateDeviceEsim(
+            string carrierUrl = null)
+        {
+            return new ManagedDeviceActivateDeviceEsimRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.activateDeviceEsim"),
+                this.Client,
+                carrierUrl);
         }
 
         /// <summary>
@@ -411,6 +420,21 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
+        public IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
+            string notificationTitle,
+            string notificationBody)
+        {
+            return new ManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendCustomNotificationToCompanyPortal"),
+                this.Client,
+                notificationTitle,
+                notificationBody);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceSetDeviceName.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceSetDeviceNameRequestBuilder"/>.</returns>
@@ -503,6 +527,7 @@ namespace Microsoft.Graph
             bool? keepEnrollmentData = null,
             bool? keepUserData = null,
             string macOsUnlockCode = null,
+            bool? persistEsimDataPlan = null,
             bool? useProtectedWipe = null)
         {
             return new ManagedDeviceWipeRequestBuilder(
@@ -511,7 +536,19 @@ namespace Microsoft.Graph
                 keepEnrollmentData,
                 keepUserData,
                 macOsUnlockCode,
+                persistEsimDataPlan,
                 useProtectedWipe);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceGetCloudPcRemoteActionResults.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceGetCloudPcRemoteActionResultsRequestBuilder"/>.</returns>
+        public IManagedDeviceGetCloudPcRemoteActionResultsRequestBuilder GetCloudPcRemoteActionResults()
+        {
+            return new ManagedDeviceGetCloudPcRemoteActionResultsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCloudPcRemoteActionResults"),
+                this.Client);
         }
 
         /// <summary>
