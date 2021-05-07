@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets queryAlterationResponse.
+        /// Provides details of query alteration response for spelling correction.
         /// </summary>
         [JsonPropertyName("queryAlterationResponse")]
         public AlterationResponse QueryAlterationResponse { get; set; }
     
         /// <summary>
         /// Gets or sets value.
+        /// Represents results from a search query, and the terms used for the query.
         /// </summary>
         [JsonPropertyName("value")]
         public IEnumerable<SearchResultSet> Value { get; set; }

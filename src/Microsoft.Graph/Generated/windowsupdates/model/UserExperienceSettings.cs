@@ -30,6 +30,7 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets daysUntilForcedReboot.
+        /// Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
         /// </summary>
         [JsonPropertyName("daysUntilForcedReboot")]
         public Int32? DaysUntilForcedReboot { get; set; }

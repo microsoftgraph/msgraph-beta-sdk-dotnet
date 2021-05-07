@@ -30,18 +30,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets length.
+        /// Defines the length of a changed segment.
         /// </summary>
         [JsonPropertyName("length")]
         public Int32? Length { get; set; }
     
         /// <summary>
         /// Gets or sets offset.
+        /// Defines the offset of a changed segment.
         /// </summary>
         [JsonPropertyName("offset")]
         public Int32? Offset { get; set; }
     
         /// <summary>
         /// Gets or sets suggestion.
+        /// Represents the corrected segment string.
         /// </summary>
         [JsonPropertyName("suggestion")]
         public string Suggestion { get; set; }

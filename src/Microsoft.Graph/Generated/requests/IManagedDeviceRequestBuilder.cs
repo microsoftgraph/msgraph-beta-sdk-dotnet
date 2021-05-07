@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IManagedDeviceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for DeviceCompliancePolicyStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
-        IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder DeviceCompliancePolicyStates { get; }
-
-        /// <summary>
         /// Gets the request builder for AssignmentFilterEvaluationStatusDetails.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionRequestBuilder"/>.</returns>
         IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionRequestBuilder AssignmentFilterEvaluationStatusDetails { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder DeviceCompliancePolicyStates { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceConfigurationStates.
@@ -92,12 +92,10 @@ namespace Microsoft.Graph
         IWindowsProtectionStateRequestBuilder WindowsProtectionState { get; }
     
         /// <summary>
-        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
+        /// Gets the request builder for ManagedDeviceReprovisionCloudPc.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
-        IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
-            string notificationTitle,
-            string notificationBody);
+        /// <returns>The <see cref="IManagedDeviceReprovisionCloudPcRequestBuilder"/>.</returns>
+        IManagedDeviceReprovisionCloudPcRequestBuilder ReprovisionCloudPc();
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
@@ -106,6 +104,13 @@ namespace Microsoft.Graph
         IManagedDeviceOverrideComplianceStateRequestBuilder OverrideComplianceState(
             AdministratorConfiguredDeviceComplianceState complianceState,
             string remediationUrl = null);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceActivateDeviceEsim.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceActivateDeviceEsimRequestBuilder"/>.</returns>
+        IManagedDeviceActivateDeviceEsimRequestBuilder ActivateDeviceEsim(
+            string carrierUrl = null);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceBypassActivationLock.
@@ -222,6 +227,14 @@ namespace Microsoft.Graph
         IManagedDeviceRotateFileVaultKeyRequestBuilder RotateFileVaultKey();
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
+        IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
+            string notificationTitle,
+            string notificationBody);
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceSetDeviceName.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceSetDeviceNameRequestBuilder"/>.</returns>
@@ -275,7 +288,14 @@ namespace Microsoft.Graph
             bool? keepEnrollmentData = null,
             bool? keepUserData = null,
             string macOsUnlockCode = null,
+            bool? persistEsimDataPlan = null,
             bool? useProtectedWipe = null);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceGetCloudPcRemoteActionResults.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceGetCloudPcRemoteActionResultsRequestBuilder"/>.</returns>
+        IManagedDeviceGetCloudPcRemoteActionResultsRequestBuilder GetCloudPcRemoteActionResults();
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceGetNonCompliantSettings.

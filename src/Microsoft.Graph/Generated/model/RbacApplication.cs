@@ -77,18 +77,6 @@ namespace Microsoft.Graph
         public string RoleAssignmentApprovalsNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets role assignment requests.
-        /// </summary>
-        [JsonPropertyName("roleAssignmentRequests")]
-        public IRbacApplicationRoleAssignmentRequestsCollectionPage RoleAssignmentRequests { get; set; }
-
-        /// <summary>
-        /// Gets or sets roleAssignmentRequestsNextLink.
-        /// </summary>
-        [JsonPropertyName("roleAssignmentRequests@odata.nextLink")]
-        public string RoleAssignmentRequestsNextLink { get; set; }
-    
-        /// <summary>
         /// Gets or sets role assignment schedule instances.
         /// </summary>
         [JsonPropertyName("roleAssignmentScheduleInstances")]
@@ -99,6 +87,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("roleAssignmentScheduleInstances@odata.nextLink")]
         public string RoleAssignmentScheduleInstancesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role assignment schedule requests.
+        /// </summary>
+        [JsonPropertyName("roleAssignmentScheduleRequests")]
+        public IRbacApplicationRoleAssignmentScheduleRequestsCollectionPage RoleAssignmentScheduleRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleAssignmentScheduleRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleAssignmentScheduleRequests@odata.nextLink")]
+        public string RoleAssignmentScheduleRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment schedules.
@@ -113,18 +113,6 @@ namespace Microsoft.Graph
         public string RoleAssignmentSchedulesNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets role eligibility requests.
-        /// </summary>
-        [JsonPropertyName("roleEligibilityRequests")]
-        public IRbacApplicationRoleEligibilityRequestsCollectionPage RoleEligibilityRequests { get; set; }
-
-        /// <summary>
-        /// Gets or sets roleEligibilityRequestsNextLink.
-        /// </summary>
-        [JsonPropertyName("roleEligibilityRequests@odata.nextLink")]
-        public string RoleEligibilityRequestsNextLink { get; set; }
-    
-        /// <summary>
         /// Gets or sets role eligibility schedule instances.
         /// </summary>
         [JsonPropertyName("roleEligibilityScheduleInstances")]
@@ -135,6 +123,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("roleEligibilityScheduleInstances@odata.nextLink")]
         public string RoleEligibilityScheduleInstancesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role eligibility schedule requests.
+        /// </summary>
+        [JsonPropertyName("roleEligibilityScheduleRequests")]
+        public IRbacApplicationRoleEligibilityScheduleRequestsCollectionPage RoleEligibilityScheduleRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleEligibilityScheduleRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleEligibilityScheduleRequests@odata.nextLink")]
+        public string RoleEligibilityScheduleRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role eligibility schedules.

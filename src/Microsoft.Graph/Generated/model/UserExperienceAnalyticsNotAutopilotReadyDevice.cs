@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// The intune device's azureAdRegistered.
         /// </summary>
         [JsonPropertyName("azureAdRegistered")]
-        public AzureAdRegisteredState? AzureAdRegistered { get; set; }
+        public bool? AzureAdRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets device name.

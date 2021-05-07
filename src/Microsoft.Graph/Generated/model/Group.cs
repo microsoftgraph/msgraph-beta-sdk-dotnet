@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets assigned labels.
-        /// The list of sensitivity label pairs (label ID, label name) associated with an Microsoft 365 group. Returned only on $select. Read-only.
+        /// The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
         /// </summary>
         [JsonPropertyName("assignedLabels")]
         public IEnumerable<AssignedLabel> AssignedLabels { get; set; }
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred language.
-        /// The preferred language for an Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
+        /// The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
         /// </summary>
         [JsonPropertyName("preferredLanguage")]
         public string PreferredLanguage { get; set; }
@@ -267,7 +267,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets theme.
-        /// Specifies an Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
+        /// Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
         /// </summary>
         [JsonPropertyName("theme")]
         public string Theme { get; set; }
@@ -447,6 +447,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permission grants.
+        /// The permission that has been granted for a group to a specific application.
         /// </summary>
         [JsonPropertyName("permissionGrants")]
         public IGroupPermissionGrantsCollectionPage PermissionGrants { get; set; }

@@ -30,6 +30,7 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets entries.
+        /// Lists the content that you can approve for deployment. Read-only.
         /// </summary>
         [JsonPropertyName("entries")]
         public ICatalogEntriesCollectionPage Entries { get; set; }

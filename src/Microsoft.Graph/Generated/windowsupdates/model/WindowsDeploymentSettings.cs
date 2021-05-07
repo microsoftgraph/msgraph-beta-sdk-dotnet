@@ -29,6 +29,7 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets userExperience.
+        /// Settings governing the user's update experience on a device.
         /// </summary>
         [JsonPropertyName("userExperience")]
         public UserExperienceSettings UserExperience { get; set; }

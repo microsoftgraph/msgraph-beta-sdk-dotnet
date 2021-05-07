@@ -31,6 +31,7 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets windows.
+        /// Entity that acts as a container for functionality. Read-only.
         /// </summary>
         [JsonPropertyName("windows")]
         public Windows Windows { get; set; }

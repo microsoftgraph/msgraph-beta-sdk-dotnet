@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets agent image digest.
+        /// The digest of the current agent image running on this server 
+        /// </summary>
+        [JsonPropertyName("agentImageDigest")]
+        public string AgentImageDigest { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The MicrosoftTunnelServer's display name
         /// </summary>
@@ -41,6 +48,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("lastCheckinDateTime")]
         public DateTimeOffset? LastCheckinDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets server image digest.
+        /// The digest of the current server image running on this server 
+        /// </summary>
+        [JsonPropertyName("serverImageDigest")]
+        public string ServerImageDigest { get; set; }
     
         /// <summary>
         /// Gets or sets tunnel server health status.

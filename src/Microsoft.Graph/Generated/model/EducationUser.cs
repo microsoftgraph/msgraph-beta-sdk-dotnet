@@ -253,6 +253,7 @@ namespace Microsoft.Graph
         /// Gets or sets assignments.
         /// List of assignments for the user. Nullable.
         /// </summary>
+        [Obsolete("The me/assignments endpoint is being deprecated and will stop returning data on April 30, 2022.")]
         [JsonPropertyName("assignments")]
         public IEducationUserAssignmentsCollectionPage Assignments { get; set; }
 

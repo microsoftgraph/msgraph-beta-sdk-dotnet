@@ -39,6 +39,12 @@ namespace Microsoft.Graph
         public string MacOsUnlockCode { get; set; }
     
         /// <summary>
+        /// Gets or sets PersistEsimDataPlan.
+        /// </summary>
+        [JsonPropertyName("persistEsimDataPlan")]
+        public bool? PersistEsimDataPlan { get; set; }
+    
+        /// <summary>
         /// Gets or sets UseProtectedWipe.
         /// </summary>
         [JsonPropertyName("useProtectedWipe")]

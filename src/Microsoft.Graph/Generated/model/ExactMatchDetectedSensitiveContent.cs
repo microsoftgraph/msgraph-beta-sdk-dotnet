@@ -31,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets matches.
         /// </summary>
         [JsonPropertyName("matches")]
-        public IEnumerable<ExactMatchSensitiveContentLocation> Matches { get; set; }
+        public IEnumerable<SensitiveContentLocation> Matches { get; set; }
     
     }
 }

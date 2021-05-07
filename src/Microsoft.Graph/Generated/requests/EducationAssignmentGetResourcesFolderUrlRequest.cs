@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationAssignmentGetResourcesFolderUrlRequest.
     /// </summary>
+    [Obsolete("The getResourcesFolderUrl API is deprecated and will stop returning data on May 17, 2021. Please use the new property resourcesFolderUrl exposed on educationAssignment entity to fetch this info.")]
     public partial class EducationAssignmentGetResourcesFolderUrlRequest : BaseRequest, IEducationAssignmentGetResourcesFolderUrlRequest
     {
         /// <summary>

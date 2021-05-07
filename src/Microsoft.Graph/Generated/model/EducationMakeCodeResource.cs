@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationMakeCodeResource.
     /// </summary>
+    [Obsolete("The educationMakeCodeResource type is deprecated and will stop supporting it from May 17, 2021.")]
     public partial class EducationMakeCodeResource : EducationResource
     {
         /// <summary>

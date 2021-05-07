@@ -73,6 +73,18 @@ namespace Microsoft.Graph
                 return new AccessReviewSetHistoryDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("historyDefinitions"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Policy.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewPolicyRequestBuilder"/>.</returns>
+        public IAccessReviewPolicyRequestBuilder Policy
+        {
+            get
+            {
+                return new AccessReviewPolicyRequestBuilder(this.AppendSegmentToRequestUrl("policy"), this.Client);
+            }
+        }
     
     }
 }

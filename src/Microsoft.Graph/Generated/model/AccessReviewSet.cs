@@ -52,6 +52,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("historyDefinitions@odata.nextLink")]
         public string HistoryDefinitionsNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets policy.
+        /// </summary>
+        [JsonPropertyName("policy")]
+        public AccessReviewPolicy Policy { get; set; }
+    
     }
 }
 

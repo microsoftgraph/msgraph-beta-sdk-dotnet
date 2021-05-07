@@ -92,6 +92,13 @@ namespace Microsoft.Graph
         public bool? V10_2004 { get; set; }
     
         /// <summary>
+        /// Gets or sets v10_2H20.
+        /// Windows 10 2H20 or later.
+        /// </summary>
+        [JsonPropertyName("v10_2H20")]
+        public bool? V10_2H20 { get; set; }
+    
+        /// <summary>
         /// Gets or sets v8_0.
         /// Windows version 8.0 or later.
         /// </summary>

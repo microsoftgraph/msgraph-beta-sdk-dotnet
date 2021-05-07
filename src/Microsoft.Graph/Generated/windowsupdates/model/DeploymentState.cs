@@ -30,18 +30,21 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets reasons.
+        /// Specifies the reasons the deployment has its state value. Read-only.
         /// </summary>
         [JsonPropertyName("reasons")]
         public IEnumerable<DeploymentStateReason> Reasons { get; set; }
     
         /// <summary>
         /// Gets or sets requestedValue.
+        /// Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused.
         /// </summary>
         [JsonPropertyName("requestedValue")]
         public RequestedDeploymentStateValue? RequestedValue { get; set; }
     
         /// <summary>
         /// Gets or sets value.
+        /// Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused. Read-only.
         /// </summary>
         [JsonPropertyName("value")]
         public DeploymentStateValue? Value { get; set; }

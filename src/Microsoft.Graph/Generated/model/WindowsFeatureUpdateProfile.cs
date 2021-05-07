@@ -57,6 +57,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets end of support date.
+        /// The last supported date for a feature update
+        /// </summary>
+        [JsonPropertyName("endOfSupportDate")]
+        public DateTimeOffset? EndOfSupportDate { get; set; }
+    
+        /// <summary>
         /// Gets or sets feature update version.
         /// The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.
         /// </summary>

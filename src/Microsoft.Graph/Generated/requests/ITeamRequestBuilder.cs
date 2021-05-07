@@ -98,13 +98,6 @@ namespace Microsoft.Graph
         IScheduleRequestBuilder Schedule { get; }
     
         /// <summary>
-        /// Gets the request builder for TeamArchive.
-        /// </summary>
-        /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
-        ITeamArchiveRequestBuilder Archive(
-            bool? shouldSetSpoSiteReadOnlyForMembers = null);
-
-        /// <summary>
         /// Gets the request builder for TeamClone.
         /// </summary>
         /// <returns>The <see cref="ITeamCloneRequestBuilder"/>.</returns>
@@ -115,6 +108,13 @@ namespace Microsoft.Graph
             string description = null,
             string mailNickname = null,
             string classification = null);
+
+        /// <summary>
+        /// Gets the request builder for TeamArchive.
+        /// </summary>
+        /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
+        ITeamArchiveRequestBuilder Archive(
+            bool? shouldSetSpoSiteReadOnlyForMembers = null);
 
         /// <summary>
         /// Gets the request builder for TeamCompleteMigration.

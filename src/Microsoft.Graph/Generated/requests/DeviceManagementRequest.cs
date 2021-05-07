@@ -378,6 +378,18 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ConfigurationSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.ReusablePolicySettings != null && deviceManagementToInitialize.ReusablePolicySettings.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ReusablePolicySettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ReusablePolicySettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.ReusablePolicySettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.ReusableSettings != null && deviceManagementToInitialize.ReusableSettings.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ReusableSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ReusableSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.ReusableSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.ComplianceManagementPartners != null && deviceManagementToInitialize.ComplianceManagementPartners.CurrentPage != null)
                 {
                     deviceManagementToInitialize.ComplianceManagementPartners.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ComplianceManagementPartnersNextLink);
@@ -582,6 +594,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsDevicePerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceScoresNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistory.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistory.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistoryNextLink);
@@ -641,6 +659,12 @@ namespace Microsoft.Graph
                     deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsScoreHistoryNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics != null && deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetricsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
                 if (deviceManagementToInitialize.WindowsMalwareInformation != null && deviceManagementToInitialize.WindowsMalwareInformation.CurrentPage != null)
                 {

@@ -30,36 +30,42 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets content.
+        /// Specifies what content to deploy. Cannot be changed. Returned by default.
         /// </summary>
         [JsonPropertyName("content")]
         public DeployableContent Content { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time the deployment was created. Returned by default. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The date and time the deployment was last modified. Returned by default. Read-only.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
+        /// Settings specified on the specific deployment governing how to deploy content. Returned by default.
         /// </summary>
         [JsonPropertyName("settings")]
         public DeploymentSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets state.
+        /// Execution status of the deployment. Returned by default.
         /// </summary>
         [JsonPropertyName("state")]
         public DeploymentState State { get; set; }
     
         /// <summary>
         /// Gets or sets audience.
+        /// Specifies the audience to which content is deployed.
         /// </summary>
         [JsonPropertyName("audience")]
         public DeploymentAudience Audience { get; set; }

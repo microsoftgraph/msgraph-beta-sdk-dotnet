@@ -30,6 +30,7 @@ namespace Microsoft.Graph.WindowsUpdates
 	
         /// <summary>
         /// Gets or sets exclusions.
+        /// Specifies the assets to exclude from the audience.
         /// </summary>
         [JsonPropertyName("exclusions")]
         public IDeploymentAudienceExclusionsCollectionPage Exclusions { get; set; }
@@ -42,6 +43,7 @@ namespace Microsoft.Graph.WindowsUpdates
     
         /// <summary>
         /// Gets or sets members.
+        /// Specifies the assets to include in the audience.
         /// </summary>
         [JsonPropertyName("members")]
         public IDeploymentAudienceMembersCollectionPage Members { get; set; }

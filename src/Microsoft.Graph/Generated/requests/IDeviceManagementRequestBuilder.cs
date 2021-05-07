@@ -212,6 +212,18 @@ namespace Microsoft.Graph
         IDeviceManagementConfigurationSettingsCollectionRequestBuilder ConfigurationSettings { get; }
 
         /// <summary>
+        /// Gets the request builder for ReusablePolicySettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReusablePolicySettingsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementReusablePolicySettingsCollectionRequestBuilder ReusablePolicySettings { get; }
+
+        /// <summary>
+        /// Gets the request builder for ReusableSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReusableSettingsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementReusableSettingsCollectionRequestBuilder ReusableSettings { get; }
+
+        /// <summary>
         /// Gets the request builder for ComplianceManagementPartners.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder"/>.</returns>
@@ -446,6 +458,12 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionRequestBuilder UserExperienceAnalyticsDevicePerformance { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceScores.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceScoresCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsDeviceScoresCollectionRequestBuilder UserExperienceAnalyticsDeviceScores { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsDeviceStartupHistory.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionRequestBuilder"/>.</returns>
@@ -516,6 +534,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder"/>.</returns>
         IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsScoreHistory { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsWorkFromAnywhereMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereMetricsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereMetricsCollectionRequestBuilder UserExperienceAnalyticsWorkFromAnywhereMetrics { get; }
 
         /// <summary>
         /// Gets the request builder for WindowsMalwareInformation.
@@ -776,6 +800,15 @@ namespace Microsoft.Graph
         IDeviceManagementUserPfxCertificatesCollectionRequestBuilder UserPfxCertificates { get; }
     
         /// <summary>
+        /// Gets the request builder for DeviceManagementSendCustomNotificationToCompanyPortal.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
+        IDeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
+            string notificationTitle = null,
+            string notificationBody = null,
+            IEnumerable<string> groupsToNotify = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementGetAssignmentFiltersStatusDetails.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGetAssignmentFiltersStatusDetailsRequestBuilder"/>.</returns>
@@ -804,15 +837,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder"/>.</returns>
         IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder EnableUnlicensedAdminstrators();
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementSendCustomNotificationToCompanyPortal.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
-        IDeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
-            string notificationTitle = null,
-            string notificationBody = null,
-            IEnumerable<string> groupsToNotify = null);
 
         /// <summary>
         /// Gets the request builder for DeviceManagementGetEffectivePermissions.
