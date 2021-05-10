@@ -135,6 +135,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
         {
             var itemBody = new ItemBody
             {
+                ODataType = "microsoft.graph.itemBody",
                 Content = "bodyContent",
                 ContentType = BodyType.Text,
             };
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
         {
             var now = DateTimeOffset.UtcNow;
 
-            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\",\"@odata.type\":\"microsoft.graph.recurrenceRange\"}}", now.ToString("yyyy-MM-dd"));
+            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\"}}", now.ToString("yyyy-MM-dd"));
 
             var recurrence = new RecurrenceRange
             {
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 }
             };
             // The email property should exist even though it the property of a derived type.
-            var expectedString = @"{""applyHoldToSource"":true,""dataSource"":{""email"":""jewell@ediscodemo.onmicrosoft.com"",""@odata.type"":""microsoft.graph.ediscovery.userSource""},""@odata.type"":""microsoft.graph.ediscovery.noncustodialDataSource""}";
+            var expectedString = @"{""applyHoldToSource"":true,""dataSource"":{""email"":""jewell@ediscodemo.onmicrosoft.com"",""@odata.type"":""microsoft.graph.ediscovery.userSource""}}";
             
             // Act
             var serializedString = this.serializer.SerializeObject(ncds);
