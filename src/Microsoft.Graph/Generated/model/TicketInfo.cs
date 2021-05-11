@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets ticketNumber.
+        /// Ticket number meta data
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ticketNumber", Required = Newtonsoft.Json.Required.Default)]
         public string TicketNumber { get; set; }
     
         /// <summary>
         /// Gets or sets ticketSystem.
+        /// Ticket system meta data
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ticketSystem", Required = Newtonsoft.Json.Required.Default)]
         public string TicketSystem { get; set; }

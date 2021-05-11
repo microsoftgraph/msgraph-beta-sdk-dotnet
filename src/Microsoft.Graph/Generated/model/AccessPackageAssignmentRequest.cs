@@ -101,6 +101,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package.
+        /// The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackage", Required = Newtonsoft.Json.Required.Default)]
         public AccessPackage AccessPackage { get; set; }

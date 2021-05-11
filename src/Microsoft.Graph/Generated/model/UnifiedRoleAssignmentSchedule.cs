@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets assignment type.
+        /// Type of the assignment. It can either be Assigned or Activated.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentType", Required = Newtonsoft.Json.Required.Default)]
         public string AssignmentType { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
+        /// Membership type of the assignment. It can either be Inherited, Direct, or Group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberType", Required = Newtonsoft.Json.Required.Default)]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets schedule info.
+        /// The schedule object of the role assignment request.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduleInfo", Required = Newtonsoft.Json.Required.Default)]
         public RequestSchedule ScheduleInfo { get; set; }
     
         /// <summary>
         /// Gets or sets activated using.
+        /// If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activatedUsing", Required = Newtonsoft.Json.Required.Default)]
         public UnifiedRoleEligibilitySchedule ActivatedUsing { get; set; }

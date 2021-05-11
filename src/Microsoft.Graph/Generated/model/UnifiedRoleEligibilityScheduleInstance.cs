@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets end date time.
+        /// Time that the roleEligibilityScheduleInstance will expire
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
+        /// Membership type of the assignment. It can either be Inherited, Direct, or Group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberType", Required = Newtonsoft.Json.Required.Default)]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets role eligibility schedule id.
+        /// ID of the parent roleEligibilitySchedule for this instance
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleEligibilityScheduleId", Required = Newtonsoft.Json.Required.Default)]
         public string RoleEligibilityScheduleId { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
+        /// Time that the roleEligibilityScheduleInstance will start
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartDateTime { get; set; }

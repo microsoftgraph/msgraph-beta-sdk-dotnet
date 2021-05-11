@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets enabled rules.
+        /// The rules which are enabled. Allowed values are MultifactorAuthentication, Justification, Ticketing.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabledRules", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> EnabledRules { get; set; }

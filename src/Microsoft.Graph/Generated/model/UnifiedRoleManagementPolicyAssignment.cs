@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets policy id.
+        /// The id of the policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyId", Required = Newtonsoft.Json.Required.Default)]
         public string PolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
+        /// The id of the role definition where the policy applies. If not specified, the policy applies to all roles.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets scope id.
+        /// The id of the scope where the policy is assigned. E.g. '/', groupId, etc.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopeId", Required = Newtonsoft.Json.Required.Default)]
         public string ScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets scope type.
+        /// The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopeType", Required = Newtonsoft.Json.Required.Default)]
         public string ScopeType { get; set; }
     
         /// <summary>
         /// Gets or sets policy.
+        /// The policy for the assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policy", Required = Newtonsoft.Json.Required.Default)]
         public UnifiedRoleManagementPolicy Policy { get; set; }

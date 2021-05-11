@@ -32,42 +32,49 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets assignment type.
+        /// Type of the assignment. It can either be Assigned or Activated.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentType", Required = Newtonsoft.Json.Required.Default)]
         public string AssignmentType { get; set; }
     
         /// <summary>
         /// Gets or sets end date time.
+        /// Time that the roleAssignmentInstance will expire
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
+        /// Membership type of the assignment. It can either be Inherited, Direct, or Group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberType", Required = Newtonsoft.Json.Required.Default)]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment origin id.
+        /// ID of the roleAssignment in the directory
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentOriginId", Required = Newtonsoft.Json.Required.Default)]
         public string RoleAssignmentOriginId { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment schedule id.
+        /// ID of the parent roleAssignmentSchedule for this instance
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentScheduleId", Required = Newtonsoft.Json.Required.Default)]
         public string RoleAssignmentScheduleId { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
+        /// Time that the roleAssignmentInstance will start
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets activated using.
+        /// If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activatedUsing", Required = Newtonsoft.Json.Required.Default)]
         public UnifiedRoleEligibilityScheduleInstance ActivatedUsing { get; set; }

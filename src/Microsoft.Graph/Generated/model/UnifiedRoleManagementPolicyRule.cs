@@ -32,6 +32,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target.
+        /// The target for the policy rule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
         public UnifiedRoleManagementPolicyRuleTarget Target { get; set; }
