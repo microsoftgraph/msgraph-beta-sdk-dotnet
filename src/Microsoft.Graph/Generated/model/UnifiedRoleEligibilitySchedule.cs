@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets member type.
+        /// Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberType", Required = Newtonsoft.Json.Required.Default)]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets schedule info.
+        /// The schedule object of the eligible role assignment request.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduleInfo", Required = Newtonsoft.Json.Required.Default)]
         public RequestSchedule ScheduleInfo { get; set; }

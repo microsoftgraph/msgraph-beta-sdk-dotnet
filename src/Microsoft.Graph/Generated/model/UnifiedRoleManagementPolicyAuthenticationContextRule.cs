@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets claim value.
+        /// Value of the authentication context claim.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimValue", Required = Newtonsoft.Json.Required.Default)]
         public string ClaimValue { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
+        /// Indicates if the setting is enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabled { get; set; }

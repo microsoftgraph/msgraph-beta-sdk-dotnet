@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets is default recipients enabled.
+        /// Whether default recipient is receiving the email or not.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultRecipientsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDefaultRecipientsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets notification level.
+        /// The level of notification. One of None, Critical, All.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationLevel", Required = Newtonsoft.Json.Required.Default)]
         public string NotificationLevel { get; set; }
     
         /// <summary>
         /// Gets or sets notification recipients.
+        /// The list of notification recepients like email.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationRecipients", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> NotificationRecipients { get; set; }
     
         /// <summary>
         /// Gets or sets notification type.
+        /// The type of notification. One of Email.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationType", Required = Newtonsoft.Json.Required.Default)]
         public string NotificationType { get; set; }
     
         /// <summary>
         /// Gets or sets recipient type.
+        /// The type of recipient. One of Requestor, Approver, Admin.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipientType", Required = Newtonsoft.Json.Required.Default)]
         public string RecipientType { get; set; }

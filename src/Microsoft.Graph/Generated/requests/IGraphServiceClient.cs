@@ -392,11 +392,6 @@ namespace Microsoft.Graph
         IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy { get; }
     
         /// <summary>
-        /// Gets the GraphServiceBitlocker request builder.
-        /// </summary>
-        IBitlockerRequestBuilder Bitlocker { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceDeviceManagement request builder.
         /// </summary>
         IDeviceManagementRequestBuilder DeviceManagement { get; }
