@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IOrgContactTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
         IOrgContactTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
+
+        /// <summary>
+        /// Gets the request builder for TransitiveReports.
+        /// </summary>
+        /// <returns>The <see cref="IOrgContactTransitiveReportsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IOrgContactTransitiveReportsCollectionWithReferencesRequestBuilder TransitiveReports { get; }
     
         
     

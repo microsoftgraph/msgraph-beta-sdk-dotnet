@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Root.
     /// </summary>
-    public partial class EducationRoot : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<EducationRoot>))]
+    public partial class EducationRoot
     {
     
 		///<summary>
@@ -42,7 +43,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets classes.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("classes")]
         public IEducationRootClassesCollectionPage Classes { get; set; }
@@ -55,14 +55,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets me.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("me")]
         public EducationUser Me { get; set; }
     
         /// <summary>
         /// Gets or sets schools.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("schools")]
         public IEducationRootSchoolsCollectionPage Schools { get; set; }
@@ -75,7 +73,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets users.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("users")]
         public IEducationRootUsersCollectionPage Users { get; set; }
@@ -85,6 +82,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("users@odata.nextLink")]
         public string UsersNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

@@ -31,48 +31,56 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets app scope id.
+        /// Id of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use '/' for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
         /// </summary>
         [JsonPropertyName("appScopeId")]
         public string AppScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets directory scope id.
+        /// Id of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
         /// </summary>
         [JsonPropertyName("directoryScopeId")]
         public string DirectoryScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets principal id.
+        /// Objectid of the principal to which the assignment is being granted to.
         /// </summary>
         [JsonPropertyName("principalId")]
         public string PrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
+        /// ID of the unifiedRoleDefinition the assignment is for. Read only.
         /// </summary>
         [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets app scope.
+        /// Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
         /// </summary>
         [JsonPropertyName("appScope")]
         public AppScope AppScope { get; set; }
     
         /// <summary>
         /// Gets or sets directory scope.
+        /// The directory object that is the scope of the assignment. Enables the retrieval of the directory object using $expand at the same time as getting the role assignment. Read-only.
         /// </summary>
         [JsonPropertyName("directoryScope")]
         public DirectoryObject DirectoryScope { get; set; }
     
         /// <summary>
         /// Gets or sets principal.
+        /// The principal that is getting a role assignment through the request. Enables the retrieval of the principal using $expand at the same time as getting the role assignment. Read-only.
         /// </summary>
         [JsonPropertyName("principal")]
         public DirectoryObject Principal { get; set; }
     
         /// <summary>
         /// Gets or sets role definition.
+        /// The roleDefinition for the assignment. Enables the retrieval of the role definition using $expand at the same time as getting the role assignment. The roleDefinition.Id is automatically expanded.
         /// </summary>
         [JsonPropertyName("roleDefinition")]
         public UnifiedRoleDefinition RoleDefinition { get; set; }

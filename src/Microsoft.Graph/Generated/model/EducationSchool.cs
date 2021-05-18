@@ -106,6 +106,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets administrative unit.
+        /// The underlying administrativeUnit for this school.
         /// </summary>
         [JsonPropertyName("administrativeUnit")]
         public AdministrativeUnit AdministrativeUnit { get; set; }

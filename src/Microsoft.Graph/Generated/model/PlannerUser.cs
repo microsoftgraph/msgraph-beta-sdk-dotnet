@@ -108,7 +108,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tasks.
-        /// Read-only. Nullable. Returns the plannerPlans shared with the user.
+        /// Read-only. Nullable. Returns the plannerTasks assigned to the user.
         /// </summary>
         [JsonPropertyName("tasks")]
         public IPlannerUserTasksCollectionPage Tasks { get; set; }

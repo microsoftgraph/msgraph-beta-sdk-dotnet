@@ -264,6 +264,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     orgContactToInitialize.TransitiveMemberOf.AdditionalData = orgContactToInitialize.AdditionalData;
                 }
+                if (orgContactToInitialize.TransitiveReports != null && orgContactToInitialize.TransitiveReports.CurrentPage != null)
+                {
+                    orgContactToInitialize.TransitiveReports.InitializeNextPageRequest(this.Client, orgContactToInitialize.TransitiveReportsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    orgContactToInitialize.TransitiveReports.AdditionalData = orgContactToInitialize.AdditionalData;
+                }
 
             }
 

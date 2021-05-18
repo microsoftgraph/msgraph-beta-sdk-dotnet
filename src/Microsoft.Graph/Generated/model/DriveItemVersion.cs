@@ -30,7 +30,6 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets content.
-        /// The content stream for this version of the item.
         /// </summary>
         [JsonPropertyName("content")]
         public Stream Content { get; set; }

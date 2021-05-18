@@ -30,30 +30,35 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets is default recipients enabled.
+        /// Whether default recipient is receiving the email or not.
         /// </summary>
         [JsonPropertyName("isDefaultRecipientsEnabled")]
         public bool? IsDefaultRecipientsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets notification level.
+        /// The level of notification. One of None, Critical, All.
         /// </summary>
         [JsonPropertyName("notificationLevel")]
         public string NotificationLevel { get; set; }
     
         /// <summary>
         /// Gets or sets notification recipients.
+        /// The list of notification recepients like email.
         /// </summary>
         [JsonPropertyName("notificationRecipients")]
         public IEnumerable<string> NotificationRecipients { get; set; }
     
         /// <summary>
         /// Gets or sets notification type.
+        /// The type of notification. One of Email.
         /// </summary>
         [JsonPropertyName("notificationType")]
         public string NotificationType { get; set; }
     
         /// <summary>
         /// Gets or sets recipient type.
+        /// The type of recipient. One of Requestor, Approver, Admin.
         /// </summary>
         [JsonPropertyName("recipientType")]
         public string RecipientType { get; set; }

@@ -898,17 +898,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceBitlocker request builder.
-        /// </summary>
-        public IBitlockerRequestBuilder Bitlocker
-        {
-            get
-            {
-                return new BitlockerRequestBuilder(this.BaseUrl + "/bitlocker", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceDeviceManagement request builder.
         /// </summary>
         public IDeviceManagementRequestBuilder DeviceManagement

@@ -122,6 +122,12 @@ namespace Microsoft.Graph
         IUserTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
 
         /// <summary>
+        /// Gets the request builder for TransitiveReports.
+        /// </summary>
+        /// <returns>The <see cref="IUserTransitiveReportsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserTransitiveReportsCollectionWithReferencesRequestBuilder TransitiveReports { get; }
+
+        /// <summary>
         /// Gets the request builder for Calendar.
         /// </summary>
         /// <returns>The <see cref="ICalendarRequestBuilder"/>.</returns>

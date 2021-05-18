@@ -318,6 +318,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.TransitiveMemberOf.AdditionalData = userToInitialize.AdditionalData;
                 }
+                if (userToInitialize.TransitiveReports != null && userToInitialize.TransitiveReports.CurrentPage != null)
+                {
+                    userToInitialize.TransitiveReports.InitializeNextPageRequest(this.Client, userToInitialize.TransitiveReportsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    userToInitialize.TransitiveReports.AdditionalData = userToInitialize.AdditionalData;
+                }
                 if (userToInitialize.CalendarGroups != null && userToInitialize.CalendarGroups.CurrentPage != null)
                 {
                     userToInitialize.CalendarGroups.InitializeNextPageRequest(this.Client, userToInitialize.CalendarGroupsNextLink);

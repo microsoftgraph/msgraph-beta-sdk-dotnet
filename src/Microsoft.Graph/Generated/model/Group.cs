@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets assigned labels.
-        /// The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+        /// The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
         /// </summary>
         [JsonPropertyName("assignedLabels")]
         public IEnumerable<AssignedLabel> AssignedLabels { get; set; }
@@ -94,7 +94,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets has members with license errors.
-        /// Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example.
+        /// Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).
         /// </summary>
         [JsonPropertyName("hasMembersWithLicenseErrors")]
         public bool? HasMembersWithLicenseErrors { get; set; }
@@ -115,7 +115,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets license processing state.
-        /// Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
+        /// Indicates status of the group license assignment to all members of the group. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.
         /// </summary>
         [JsonPropertyName("licenseProcessingState")]
         public LicenseProcessingState LicenseProcessingState { get; set; }
@@ -226,7 +226,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets proxy addresses.
-        /// Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter.
+        /// Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter.
         /// </summary>
         [JsonPropertyName("proxyAddresses")]
         public IEnumerable<string> ProxyAddresses { get; set; }
@@ -302,14 +302,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hide from address lists.
-        /// True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+        /// true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("hideFromAddressLists")]
         public bool? HideFromAddressLists { get; set; }
     
         /// <summary>
         /// Gets or sets hide from outlook clients.
-        /// True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+        /// true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("hideFromOutlookClients")]
         public bool? HideFromOutlookClients { get; set; }
@@ -336,7 +336,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets unseen count.
-        /// Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+        /// Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("unseenCount")]
         public Int32? UnseenCount { get; set; }
@@ -376,7 +376,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created on behalf of.
-        /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
         /// </summary>
         [JsonPropertyName("createdOnBehalfOf")]
         public DirectoryObject CreatedOnBehalfOf { get; set; }
@@ -396,7 +396,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets member of.
-        /// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
+        /// Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IGroupMemberOfCollectionWithReferencesPage MemberOf { get; set; }
@@ -409,7 +409,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets members.
-        /// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable.
+        /// Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("members")]
         public IGroupMembersCollectionWithReferencesPage Members { get; set; }
@@ -435,7 +435,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable.
+        /// The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("owners")]
         public IGroupOwnersCollectionWithReferencesPage Owners { get; set; }
@@ -461,7 +461,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets settings.
-        /// Read-only. Nullable.
+        /// Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
         /// </summary>
         [JsonPropertyName("settings")]
         public IGroupSettingsCollectionPage Settings { get; set; }
@@ -544,7 +544,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets events.
-        /// The group's calendar events.
+        /// The group's events.
         /// </summary>
         [JsonPropertyName("events")]
         public IGroupEventsCollectionPage Events { get; set; }
@@ -642,7 +642,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets planner.
-        /// Entry-point to Planner resource that might exist for a Unified Group.
+        /// Selective Planner services available to the group. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("planner")]
         public PlannerGroup Planner { get; set; }
@@ -656,7 +656,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets photo.
-        /// The group's profile photo
+        /// The group's profile photo.
         /// </summary>
         [JsonPropertyName("photo")]
         public ProfilePhoto Photo { get; set; }

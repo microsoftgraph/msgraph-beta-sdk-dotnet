@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The current status of the operation: notStarted, running, completed, failed
+        /// Possible values are: notStarted, running, completed, failed. Read-only.
         /// </summary>
         [JsonPropertyName("status")]
         public OperationStatus? Status { get; set; }

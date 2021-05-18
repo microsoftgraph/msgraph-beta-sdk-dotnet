@@ -112,7 +112,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets pending operations.
-        /// If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
+        /// If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
         /// </summary>
         [JsonPropertyName("pendingOperations")]
         public PendingOperations PendingOperations { get; set; }

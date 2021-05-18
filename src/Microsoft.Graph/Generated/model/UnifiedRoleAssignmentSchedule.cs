@@ -30,24 +30,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets assignment type.
+        /// Type of the assignment. It can either be Assigned or Activated.
         /// </summary>
         [JsonPropertyName("assignmentType")]
         public string AssignmentType { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
+        /// Membership type of the assignment. It can either be Inherited, Direct, or Group.
         /// </summary>
         [JsonPropertyName("memberType")]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets schedule info.
+        /// The schedule object of the role assignment request.
         /// </summary>
         [JsonPropertyName("scheduleInfo")]
         public RequestSchedule ScheduleInfo { get; set; }
     
         /// <summary>
         /// Gets or sets activated using.
+        /// If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
         /// </summary>
         [JsonPropertyName("activatedUsing")]
         public UnifiedRoleEligibilitySchedule ActivatedUsing { get; set; }

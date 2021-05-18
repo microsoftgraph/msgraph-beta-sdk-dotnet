@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets externalId.
-        /// ID of the teacher in the source system.
+        /// Id of the Teacher in external source system.
         /// </summary>
         [JsonPropertyName("externalId")]
         public string ExternalId { get; set; }

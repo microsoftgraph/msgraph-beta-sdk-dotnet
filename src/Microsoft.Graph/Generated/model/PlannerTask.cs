@@ -150,7 +150,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preview type.
-        /// This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
+        /// This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
         /// </summary>
         [JsonPropertyName("previewType")]
         public PlannerPreviewType? PreviewType { get; set; }

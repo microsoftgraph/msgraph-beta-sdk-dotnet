@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets details.
+        /// Details of the system.
         /// </summary>
         [JsonPropertyName("details")]
         public DetailsInfo Details { get; set; }

@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attestation level.
-        /// The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
+        /// The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("attestationLevel")]
         public AttestationLevel? AttestationLevel { get; set; }
@@ -59,7 +59,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets creation date time.
-        /// The timestamp when this key was registered to the user.
         /// </summary>
         [Obsolete("The creationDateTime property is deprecated and will stop returning data on December 31, 2020. Please use the createdDateTime property.")]
         [JsonPropertyName("creationDateTime")]

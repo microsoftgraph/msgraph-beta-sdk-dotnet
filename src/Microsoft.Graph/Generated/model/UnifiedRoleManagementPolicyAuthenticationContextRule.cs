@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets claim value.
+        /// Value of the authentication context claim.
         /// </summary>
         [JsonPropertyName("claimValue")]
         public string ClaimValue { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
+        /// Indicates if the setting is enabled.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }

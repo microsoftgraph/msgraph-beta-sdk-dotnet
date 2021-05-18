@@ -122,7 +122,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subscription state.
-        /// Tenant mobile device management subscription state. The possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+        /// Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
         /// </summary>
         [JsonPropertyName("subscriptionState")]
         public DeviceManagementSubscriptionState? SubscriptionState { get; set; }

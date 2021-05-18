@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets cloudAppSecurityType.
-        /// Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
+        /// Possible values are: mcasConfigured, monitorOnly, blockDownloads. Learn more about these values here: https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad#step-1-create-an-azure-ad-conditional-access-test-policy-
         /// </summary>
         [JsonPropertyName("cloudAppSecurityType")]
         public CloudAppSecuritySessionControlType? CloudAppSecurityType { get; set; }

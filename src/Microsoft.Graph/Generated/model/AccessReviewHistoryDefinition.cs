@@ -31,60 +31,70 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets created by.
+        /// User who created this review history definition.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public UserIdentity CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// Timestamp when the access review definition was created.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets decisions.
+        /// Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
         /// </summary>
         [JsonPropertyName("decisions")]
         public IEnumerable<AccessReviewHistoryDecisionFilter> Decisions { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Name for the access review history data collection. Required.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets download uri.
+        /// Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated.
         /// </summary>
         [JsonPropertyName("downloadUri")]
         public string DownloadUri { get; set; }
     
         /// <summary>
         /// Gets or sets fulfilled date time.
+        /// Timestamp when all of the available data for this definition was collected. This will be set after this definition's status is set to done.
         /// </summary>
         [JsonPropertyName("fulfilledDateTime")]
         public DateTimeOffset? FulfilledDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets review history period end date time.
+        /// Timestamp, reviews starting on or after this date will be included in the fetched history data. Required.
         /// </summary>
         [JsonPropertyName("reviewHistoryPeriodEndDateTime")]
         public DateTimeOffset? ReviewHistoryPeriodEndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets review history period start date time.
+        /// Timestamp, reviews starting on or before this date will be included in the fetched history data. Required.
         /// </summary>
         [JsonPropertyName("reviewHistoryPeriodStartDateTime")]
         public DateTimeOffset? ReviewHistoryPeriodStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets scopes.
+        /// Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. See accessreviewqueryscope. Required.
         /// </summary>
         [JsonPropertyName("scopes")]
         public IEnumerable<AccessReviewScope> Scopes { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Represents the status of the review history data collection. Possible values are: done, inprogress, error, requested.
         /// </summary>
         [JsonPropertyName("status")]
         public AccessReviewHistoryStatus? Status { get; set; }

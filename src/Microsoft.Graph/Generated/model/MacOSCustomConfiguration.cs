@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets payload file name.
-        /// Payload file name (.mobileconfig | .xml).
+        /// Payload file name (.mobileconfig
         /// </summary>
         [JsonPropertyName("payloadFileName")]
         public string PayloadFileName { get; set; }

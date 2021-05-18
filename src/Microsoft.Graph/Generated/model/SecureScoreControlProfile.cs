@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets control category.
-        /// Control action category (Identity, Data, Device, Apps, Infrastructure).
+        /// Control action category (Account, Data, Device, Apps, Infrastructure).
         /// </summary>
         [JsonPropertyName("controlCategory")]
         public string ControlCategory { get; set; }
@@ -93,7 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets max score.
-        /// max attainable score for the control.
+        /// Current obtained max score on specified date.
         /// </summary>
         [JsonPropertyName("maxScore")]
         public double? MaxScore { get; set; }
@@ -128,7 +128,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets threats.
-        /// List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+        /// List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
         /// </summary>
         [JsonPropertyName("threats")]
         public IEnumerable<string> Threats { get; set; }

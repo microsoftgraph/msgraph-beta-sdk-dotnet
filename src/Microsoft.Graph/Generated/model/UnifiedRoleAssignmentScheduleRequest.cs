@@ -30,90 +30,105 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets action.
+        /// Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators assign users/groups to roles;UserAdd: Users activate eligible assignments; AdminUpdate: Administrators change existing role assignmentsAdminRemove: Administrators remove users/groups from roles;UserRemove: Users deactivate active assignments;UserExtend: Users request to extend their expiring assignments;AdminExtend: Administrators extend expiring assignments.UserRenew: Users request to renew their expired assignments;AdminRenew: Administrators extend expiring assignments.
         /// </summary>
         [JsonPropertyName("action")]
         public string Action { get; set; }
     
         /// <summary>
         /// Gets or sets app scope id.
+        /// Id of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use '/' for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
         /// </summary>
         [JsonPropertyName("appScopeId")]
         public string AppScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets directory scope id.
+        /// Id of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
         /// </summary>
         [JsonPropertyName("directoryScopeId")]
         public string DirectoryScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets is validation only.
+        /// A boolean that determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
         /// </summary>
         [JsonPropertyName("isValidationOnly")]
         public bool? IsValidationOnly { get; set; }
     
         /// <summary>
         /// Gets or sets justification.
+        /// A message provided by users and administrators when create the request about why it is needed.
         /// </summary>
         [JsonPropertyName("justification")]
         public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets principal id.
+        /// Objectid of the principal to which the assignment is being granted to.
         /// </summary>
         [JsonPropertyName("principalId")]
         public string PrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
+        /// ID of the unifiedRoleDefinition the assignment is for. Read only.
         /// </summary>
         [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets schedule info.
+        /// The schedule object of the role assignment request.
         /// </summary>
         [JsonPropertyName("scheduleInfo")]
         public RequestSchedule ScheduleInfo { get; set; }
     
         /// <summary>
         /// Gets or sets target schedule id.
+        /// ID of the schedule object attached to the assignment.
         /// </summary>
         [JsonPropertyName("targetScheduleId")]
         public string TargetScheduleId { get; set; }
     
         /// <summary>
         /// Gets or sets ticket info.
+        /// The ticketInfo object attached to the role assignment request which includes details of the ticket number and ticket system.
         /// </summary>
         [JsonPropertyName("ticketInfo")]
         public TicketInfo TicketInfo { get; set; }
     
         /// <summary>
         /// Gets or sets activated using.
+        /// If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
         /// </summary>
         [JsonPropertyName("activatedUsing")]
         public UnifiedRoleEligibilitySchedule ActivatedUsing { get; set; }
     
         /// <summary>
         /// Gets or sets app scope.
+        /// Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
         /// </summary>
         [JsonPropertyName("appScope")]
         public AppScope AppScope { get; set; }
     
         /// <summary>
         /// Gets or sets directory scope.
+        /// Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
         /// </summary>
         [JsonPropertyName("directoryScope")]
         public DirectoryObject DirectoryScope { get; set; }
     
         /// <summary>
         /// Gets or sets principal.
+        /// Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
         /// </summary>
         [JsonPropertyName("principal")]
         public DirectoryObject Principal { get; set; }
     
         /// <summary>
         /// Gets or sets role definition.
+        /// Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
         /// </summary>
         [JsonPropertyName("roleDefinition")]
         public UnifiedRoleDefinition RoleDefinition { get; set; }

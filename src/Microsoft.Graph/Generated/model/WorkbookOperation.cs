@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
+        /// The current status of the operation. Possible values are: notStarted, running, succeeded, failed.
         /// </summary>
         [JsonPropertyName("status")]
         public WorkbookOperationStatus? Status { get; set; }
