@@ -118,6 +118,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.unsubmit"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for EducationSubmissionSetUpResourcesFolder.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSubmissionSetUpResourcesFolderRequestBuilder"/>.</returns>
+        public IEducationSubmissionSetUpResourcesFolderRequestBuilder SetUpResourcesFolder()
+        {
+            return new EducationSubmissionSetUpResourcesFolderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setUpResourcesFolder"),
+                this.Client);
+        }
     
     }
 }

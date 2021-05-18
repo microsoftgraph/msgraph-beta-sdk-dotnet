@@ -231,6 +231,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TransitiveReports.
+        /// </summary>
+        /// <returns>The <see cref="IUserTransitiveReportsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserTransitiveReportsCollectionWithReferencesRequestBuilder TransitiveReports
+        {
+            get
+            {
+                return new UserTransitiveReportsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveReports"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Calendar.
         /// </summary>
         /// <returns>The <see cref="ICalendarRequestBuilder"/>.</returns>
