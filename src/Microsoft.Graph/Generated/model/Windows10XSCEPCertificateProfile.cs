@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10XSCEPCertificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10XSCEPCertificateProfile>))]
     public partial class Windows10XSCEPCertificateProfile : Windows10XCertificateProfile
     {
     

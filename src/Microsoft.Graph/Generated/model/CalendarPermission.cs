@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Calendar Permission.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CalendarPermission>))]
     public partial class CalendarPermission : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph.Ediscovery
     /// <summary>
     /// The type Case Operation.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<CaseOperation>))]
     public partial class CaseOperation : Microsoft.Graph.Entity
     {
     

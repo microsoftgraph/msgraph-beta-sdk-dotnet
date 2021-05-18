@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type App Log Collection Request.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AppLogCollectionRequestObject>))]
     public partial class AppLogCollectionRequestObject : Entity
     {
     

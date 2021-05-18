@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Resource Access Profile Assignment.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementResourceAccessProfileAssignment>))]
     public partial class DeviceManagementResourceAccessProfileAssignment : Entity
     {
     

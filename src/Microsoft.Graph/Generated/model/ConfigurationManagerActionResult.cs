@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ConfigurationManagerActionResult.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ConfigurationManagerActionResult>))]
     public partial class ConfigurationManagerActionResult : DeviceActionResult
     {
         /// <summary>

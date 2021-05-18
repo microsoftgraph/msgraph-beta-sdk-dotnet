@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Embedded SIMDevice State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EmbeddedSIMDeviceState>))]
     public partial class EmbeddedSIMDeviceState : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Configuration User Status.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceConfigurationUserStatus>))]
     public partial class DeviceConfigurationUserStatus : Entity
     {
     

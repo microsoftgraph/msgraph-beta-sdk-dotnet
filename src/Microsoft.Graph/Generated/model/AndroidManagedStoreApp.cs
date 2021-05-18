@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Managed Store App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidManagedStoreApp>))]
     public partial class AndroidManagedStoreApp : MobileApp
     {
     

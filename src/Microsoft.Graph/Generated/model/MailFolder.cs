@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mail Folder.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MailFolder>))]
     public partial class MailFolder : Entity
     {
     

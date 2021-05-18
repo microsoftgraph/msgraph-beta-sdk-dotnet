@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsKioskWin32App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsKioskWin32App>))]
     public partial class WindowsKioskWin32App : WindowsKioskAppBase
     {
         /// <summary>

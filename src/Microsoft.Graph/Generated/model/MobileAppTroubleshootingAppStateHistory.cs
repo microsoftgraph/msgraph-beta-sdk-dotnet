@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MobileAppTroubleshootingAppStateHistory.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MobileAppTroubleshootingAppStateHistory>))]
     public partial class MobileAppTroubleshootingAppStateHistory : MobileAppTroubleshootingHistoryItem
     {
         /// <summary>

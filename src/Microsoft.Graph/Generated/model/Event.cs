@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Event.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Event>))]
     public partial class Event : OutlookItem
     {
     

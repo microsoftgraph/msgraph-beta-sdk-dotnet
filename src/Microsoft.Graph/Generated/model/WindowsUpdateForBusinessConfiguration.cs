@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Update For Business Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsUpdateForBusinessConfiguration>))]
     public partial class WindowsUpdateForBusinessConfiguration : DeviceConfiguration
     {
     

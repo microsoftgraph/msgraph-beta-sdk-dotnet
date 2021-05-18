@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Open Id Connect Identity Provider.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OpenIdConnectIdentityProvider>))]
     public partial class OpenIdConnectIdentityProvider : IdentityProviderBase
     {
     

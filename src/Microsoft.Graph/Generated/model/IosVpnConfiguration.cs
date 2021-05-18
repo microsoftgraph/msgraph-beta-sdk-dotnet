@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Vpn Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IosVpnConfiguration>))]
     public partial class IosVpnConfiguration : AppleVpnConfiguration
     {
     

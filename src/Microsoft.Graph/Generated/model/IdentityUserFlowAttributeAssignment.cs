@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Identity User Flow Attribute Assignment.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IdentityUserFlowAttributeAssignment>))]
     public partial class IdentityUserFlowAttributeAssignment : Entity
     {
     

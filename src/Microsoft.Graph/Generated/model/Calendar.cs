@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Calendar.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Calendar>))]
     public partial class Calendar : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Defender Application Control Supplemental Policy Deployment Status.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>))]
     public partial class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Office Graph Insights.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OfficeGraphInsights>))]
     public partial class OfficeGraphInsights : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Iosik Ev2Vpn Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IosikEv2VpnConfiguration>))]
     public partial class IosikEv2VpnConfiguration : IosVpnConfiguration
     {
     

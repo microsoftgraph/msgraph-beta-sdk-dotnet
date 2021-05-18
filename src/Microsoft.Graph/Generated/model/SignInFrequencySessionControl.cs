@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SignInFrequencySessionControl.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<SignInFrequencySessionControl>))]
     public partial class SignInFrequencySessionControl : ConditionalAccessSessionControl
     {
         /// <summary>

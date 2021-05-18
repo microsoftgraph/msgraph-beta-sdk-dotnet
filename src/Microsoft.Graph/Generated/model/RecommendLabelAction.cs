@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RecommendLabelAction.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<RecommendLabelAction>))]
     public partial class RecommendLabelAction : InformationProtectionAction
     {
         /// <summary>

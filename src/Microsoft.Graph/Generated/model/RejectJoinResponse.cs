@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RejectJoinResponse.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<RejectJoinResponse>))]
     public partial class RejectJoinResponse : ParticipantJoiningResponse
     {
         /// <summary>

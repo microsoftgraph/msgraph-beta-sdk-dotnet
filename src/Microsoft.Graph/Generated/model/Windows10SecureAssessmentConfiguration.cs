@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Secure Assessment Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10SecureAssessmentConfiguration>))]
     public partial class Windows10SecureAssessmentConfiguration : DeviceConfiguration
     {
     

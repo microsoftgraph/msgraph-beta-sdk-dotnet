@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Symantec Code Signing Certificate.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<SymantecCodeSigningCertificate>))]
     public partial class SymantecCodeSigningCertificate : Entity
     {
     

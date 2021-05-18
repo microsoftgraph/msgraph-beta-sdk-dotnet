@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Device Firmware Configuration Interface.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10DeviceFirmwareConfigurationInterface>))]
     public partial class Windows10DeviceFirmwareConfigurationInterface : DeviceConfiguration
     {
     

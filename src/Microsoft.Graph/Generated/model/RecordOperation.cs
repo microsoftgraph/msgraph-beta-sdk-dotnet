@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Record Operation.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<RecordOperation>))]
     public partial class RecordOperation : CommsOperation
     {
     

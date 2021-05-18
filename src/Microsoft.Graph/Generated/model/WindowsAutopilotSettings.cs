@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Autopilot Settings.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsAutopilotSettings>))]
     public partial class WindowsAutopilotSettings : Entity
     {
     

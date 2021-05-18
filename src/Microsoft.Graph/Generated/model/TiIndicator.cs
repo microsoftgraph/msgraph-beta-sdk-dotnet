@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ti Indicator.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TiIndicator>))]
     public partial class TiIndicator : Entity
     {
     

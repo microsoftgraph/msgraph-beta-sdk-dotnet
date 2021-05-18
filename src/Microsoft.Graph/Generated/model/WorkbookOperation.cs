@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Operation.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WorkbookOperation>))]
     public partial class WorkbookOperation : Entity
     {
     

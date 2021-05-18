@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Compliance Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidCompliancePolicy>))]
     public partial class AndroidCompliancePolicy : DeviceCompliancePolicy
     {
     

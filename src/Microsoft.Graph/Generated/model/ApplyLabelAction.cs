@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ApplyLabelAction.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ApplyLabelAction>))]
     public partial class ApplyLabelAction : InformationProtectionAction
     {
         /// <summary>

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Security Baseline State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<SecurityBaselineState>))]
     public partial class SecurityBaselineState : Entity
     {
     

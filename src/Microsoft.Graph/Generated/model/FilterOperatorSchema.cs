@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Filter Operator Schema.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<FilterOperatorSchema>))]
     public partial class FilterOperatorSchema : Entity
     {
     

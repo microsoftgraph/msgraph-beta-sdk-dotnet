@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementConfigurationWindowsSettingApplicability.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationWindowsSettingApplicability>))]
     public partial class DeviceManagementConfigurationWindowsSettingApplicability : DeviceManagementConfigurationSettingApplicability
     {
         /// <summary>

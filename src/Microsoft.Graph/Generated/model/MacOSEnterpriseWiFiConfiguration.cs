@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSEnterprise Wi Fi Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSEnterpriseWiFiConfiguration>))]
     public partial class MacOSEnterpriseWiFiConfiguration : MacOSWiFiConfiguration
     {
     

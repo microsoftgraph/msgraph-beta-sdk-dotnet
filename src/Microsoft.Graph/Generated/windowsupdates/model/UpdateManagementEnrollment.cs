@@ -17,6 +17,7 @@ namespace Microsoft.Graph.WindowsUpdates
     /// <summary>
     /// The type UpdateManagementEnrollment.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<UpdateManagementEnrollment>))]
     public partial class UpdateManagementEnrollment : UpdatableAssetEnrollment
     {
         /// <summary>

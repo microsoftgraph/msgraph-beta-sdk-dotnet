@@ -17,6 +17,7 @@ namespace Microsoft.Graph.Ediscovery
     /// <summary>
     /// The type Tag.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Tag>))]
     public partial class Tag : Microsoft.Graph.Entity
     {
     

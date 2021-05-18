@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AddContentFooterAction.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AddContentFooterAction>))]
     public partial class AddContentFooterAction : InformationProtectionAction
     {
         /// <summary>

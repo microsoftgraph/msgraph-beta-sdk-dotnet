@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Fido2Authentication Method.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Fido2AuthenticationMethod>))]
     public partial class Fido2AuthenticationMethod : AuthenticationMethod
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81General Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows81GeneralConfiguration>))]
     public partial class Windows81GeneralConfiguration : DeviceConfiguration
     {
     

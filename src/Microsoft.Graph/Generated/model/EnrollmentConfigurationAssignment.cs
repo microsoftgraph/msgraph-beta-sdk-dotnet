@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Enrollment Configuration Assignment.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EnrollmentConfigurationAssignment>))]
     public partial class EnrollmentConfigurationAssignment : Entity
     {
     

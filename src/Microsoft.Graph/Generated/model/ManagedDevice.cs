@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed Device.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedDevice>))]
     public partial class ManagedDevice : Entity
     {
     

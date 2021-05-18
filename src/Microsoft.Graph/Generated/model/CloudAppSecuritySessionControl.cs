@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CloudAppSecuritySessionControl.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CloudAppSecuritySessionControl>))]
     public partial class CloudAppSecuritySessionControl : ConditionalAccessSessionControl
     {
         /// <summary>

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud PC.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CloudPC>))]
     public partial class CloudPC : Entity
     {
     

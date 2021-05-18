@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSWired Network Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSWiredNetworkConfiguration>))]
     public partial class MacOSWiredNetworkConfiguration : DeviceConfiguration
     {
     

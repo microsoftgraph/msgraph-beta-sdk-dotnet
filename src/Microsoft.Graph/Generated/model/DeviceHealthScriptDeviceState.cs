@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Health Script Device State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceHealthScriptDeviceState>))]
     public partial class DeviceHealthScriptDeviceState : Entity
     {
     

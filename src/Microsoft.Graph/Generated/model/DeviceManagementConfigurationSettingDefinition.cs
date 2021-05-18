@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Configuration Setting Definition.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationSettingDefinition>))]
     public partial class DeviceManagementConfigurationSettingDefinition : Entity
     {
     

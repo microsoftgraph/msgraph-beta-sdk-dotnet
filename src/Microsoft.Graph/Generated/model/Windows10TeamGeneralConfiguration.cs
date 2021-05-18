@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Team General Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10TeamGeneralConfiguration>))]
     public partial class Windows10TeamGeneralConfiguration : DeviceConfiguration
     {
     

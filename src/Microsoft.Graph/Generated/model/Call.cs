@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Call.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Call>))]
     public partial class Call : Entity
     {
     

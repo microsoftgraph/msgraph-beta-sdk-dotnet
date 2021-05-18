@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type On Premises Agent Group.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OnPremisesAgentGroup>))]
     public partial class OnPremisesAgentGroup : Entity
     {
     

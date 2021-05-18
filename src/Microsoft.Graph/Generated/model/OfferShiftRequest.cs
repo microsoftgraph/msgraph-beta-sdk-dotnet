@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Offer Shift Request.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OfferShiftRequestObject>))]
     public partial class OfferShiftRequestObject : ScheduleChangeRequestObject
     {
     

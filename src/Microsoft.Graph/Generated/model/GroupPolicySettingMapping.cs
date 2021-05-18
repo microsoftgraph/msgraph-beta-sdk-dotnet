@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Setting Mapping.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<GroupPolicySettingMapping>))]
     public partial class GroupPolicySettingMapping : Entity
     {
     

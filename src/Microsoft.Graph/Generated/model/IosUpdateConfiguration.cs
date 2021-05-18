@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Update Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IosUpdateConfiguration>))]
     public partial class IosUpdateConfiguration : DeviceConfiguration
     {
     

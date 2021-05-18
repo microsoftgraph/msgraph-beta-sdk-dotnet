@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Activity.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserActivity>))]
     public partial class UserActivity : Entity
     {
     

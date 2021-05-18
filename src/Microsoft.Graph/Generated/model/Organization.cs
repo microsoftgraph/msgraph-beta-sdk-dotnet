@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Organization.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Organization>))]
     public partial class Organization : DirectoryObject
     {
     

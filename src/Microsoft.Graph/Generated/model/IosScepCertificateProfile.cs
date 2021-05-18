@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Scep Certificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IosScepCertificateProfile>))]
     public partial class IosScepCertificateProfile : IosCertificateProfileBase
     {
     

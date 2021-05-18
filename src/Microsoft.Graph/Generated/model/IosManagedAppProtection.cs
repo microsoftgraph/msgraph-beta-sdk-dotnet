@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Managed App Protection.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IosManagedAppProtection>))]
     public partial class IosManagedAppProtection : TargetedManagedAppProtection
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Owner Scep Certificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerScepCertificateProfile>))]
     public partial class AndroidDeviceOwnerScepCertificateProfile : AndroidDeviceOwnerCertificateProfileBase
     {
     

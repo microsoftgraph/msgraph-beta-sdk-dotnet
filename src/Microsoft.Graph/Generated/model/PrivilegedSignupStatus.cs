@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Privileged Signup Status.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PrivilegedSignupStatus>))]
     public partial class PrivilegedSignupStatus : Entity
     {
     

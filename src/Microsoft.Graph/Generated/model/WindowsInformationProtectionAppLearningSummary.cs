@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Information Protection App Learning Summary.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsInformationProtectionAppLearningSummary>))]
     public partial class WindowsInformationProtectionAppLearningSummary : Entity
     {
     

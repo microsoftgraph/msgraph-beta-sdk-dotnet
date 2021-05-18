@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AddHeader.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AddHeader>))]
     public partial class AddHeader : MarkContent
     {
         /// <summary>

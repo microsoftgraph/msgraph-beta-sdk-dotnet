@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Owner Pkcs Certificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerPkcsCertificateProfile>))]
     public partial class AndroidDeviceOwnerPkcsCertificateProfile : AndroidDeviceOwnerCertificateProfileBase
     {
     

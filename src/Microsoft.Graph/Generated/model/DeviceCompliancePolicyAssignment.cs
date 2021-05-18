@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Compliance Policy Assignment.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceCompliancePolicyAssignment>))]
     public partial class DeviceCompliancePolicyAssignment : Entity
     {
     

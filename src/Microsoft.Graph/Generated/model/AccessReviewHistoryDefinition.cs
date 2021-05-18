@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Review History Definition.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AccessReviewHistoryDefinition>))]
     public partial class AccessReviewHistoryDefinition : Entity
     {
     

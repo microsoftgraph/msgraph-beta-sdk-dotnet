@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Outlook Category.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OutlookCategory>))]
     public partial class OutlookCategory : Entity
     {
     

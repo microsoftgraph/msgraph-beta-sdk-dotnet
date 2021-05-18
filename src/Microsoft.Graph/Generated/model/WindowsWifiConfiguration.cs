@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Wifi Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsWifiConfiguration>))]
     public partial class WindowsWifiConfiguration : DeviceConfiguration
     {
     

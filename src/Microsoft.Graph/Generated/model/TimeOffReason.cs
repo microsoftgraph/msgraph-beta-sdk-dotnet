@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Time Off Reason.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TimeOffReason>))]
     public partial class TimeOffReason : ChangeTrackedEntity
     {
     

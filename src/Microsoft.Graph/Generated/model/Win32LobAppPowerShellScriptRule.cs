@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppPowerShellScriptRule.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppPowerShellScriptRule>))]
     public partial class Win32LobAppPowerShellScriptRule : Win32LobAppRule
     {
         /// <summary>

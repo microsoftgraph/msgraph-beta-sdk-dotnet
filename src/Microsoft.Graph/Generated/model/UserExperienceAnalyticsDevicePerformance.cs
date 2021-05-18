@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Device Performance.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsDevicePerformance>))]
     public partial class UserExperienceAnalyticsDevicePerformance : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Notebook.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Notebook>))]
     public partial class Notebook : OnenoteEntityHierarchyModel
     {
     

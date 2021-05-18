@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Uploaded Definition File.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<GroupPolicyUploadedDefinitionFile>))]
     public partial class GroupPolicyUploadedDefinitionFile : GroupPolicyDefinitionFile
     {
     

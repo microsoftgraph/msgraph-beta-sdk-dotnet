@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Teams Async Operation.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TeamsAsyncOperation>))]
     public partial class TeamsAsyncOperation : Entity
     {
     

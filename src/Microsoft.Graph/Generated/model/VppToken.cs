@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Vpp Token.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<VppToken>))]
     public partial class VppToken : Entity
     {
     

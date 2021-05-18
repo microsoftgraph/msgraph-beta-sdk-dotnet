@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Configuration Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationPolicy>))]
     public partial class DeviceManagementConfigurationPolicy : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph.Ediscovery
     /// <summary>
     /// The type Legal Hold.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<LegalHold>))]
     public partial class LegalHold : Microsoft.Graph.Entity
     {
     

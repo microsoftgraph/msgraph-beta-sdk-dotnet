@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Identity Provider.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IdentityProvider>))]
     public partial class IdentityProvider : Entity
     {
     

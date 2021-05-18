@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud Pc Device Image.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CloudPcDeviceImage>))]
     public partial class CloudPcDeviceImage : Entity
     {
     

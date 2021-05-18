@@ -17,6 +17,7 @@ namespace Microsoft.Graph.WindowsUpdates
     /// <summary>
     /// The type Quality Update Catalog Entry.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<QualityUpdateCatalogEntry>))]
     public partial class QualityUpdateCatalogEntry : SoftwareUpdateCatalogEntry
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Eas Email Profile Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10EasEmailProfileConfiguration>))]
     public partial class Windows10EasEmailProfileConfiguration : EasEmailProfileConfigurationBase
     {
     

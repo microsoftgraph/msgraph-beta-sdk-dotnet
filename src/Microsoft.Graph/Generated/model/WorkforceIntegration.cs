@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workforce Integration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WorkforceIntegration>))]
     public partial class WorkforceIntegration : ChangeTrackedEntity
     {
     

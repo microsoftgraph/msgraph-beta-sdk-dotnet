@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Definition.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<GroupPolicyDefinition>))]
     public partial class GroupPolicyDefinition : Entity
     {
     

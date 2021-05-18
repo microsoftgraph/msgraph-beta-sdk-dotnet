@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Autopilot Deployment Profile Assignment.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsAutopilotDeploymentProfileAssignment>))]
     public partial class WindowsAutopilotDeploymentProfileAssignment : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Managed Store Account Enterprise Settings.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidManagedStoreAccountEnterpriseSettings>))]
     public partial class AndroidManagedStoreAccountEnterpriseSettings : Entity
     {
     

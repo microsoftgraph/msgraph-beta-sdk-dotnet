@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TypedEmailAddress.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TypedEmailAddress>))]
     public partial class TypedEmailAddress : EmailAddress
     {
         /// <summary>

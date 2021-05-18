@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Agreement Acceptance.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AgreementAcceptance>))]
     public partial class AgreementAcceptance : Entity
     {
     

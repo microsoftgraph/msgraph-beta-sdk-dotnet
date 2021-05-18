@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Team.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Team>))]
     public partial class Team : Entity
     {
     

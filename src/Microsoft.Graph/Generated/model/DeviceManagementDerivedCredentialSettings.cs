@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Derived Credential Settings.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementDerivedCredentialSettings>))]
     public partial class DeviceManagementDerivedCredentialSettings : Entity
     {
     

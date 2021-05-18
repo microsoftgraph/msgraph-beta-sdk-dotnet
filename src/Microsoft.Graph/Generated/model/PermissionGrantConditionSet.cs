@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Permission Grant Condition Set.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PermissionGrantConditionSet>))]
     public partial class PermissionGrantConditionSet : Entity
     {
     

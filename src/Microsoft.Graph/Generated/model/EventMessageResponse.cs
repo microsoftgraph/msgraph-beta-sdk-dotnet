@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Event Message Response.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EventMessageResponse>))]
     public partial class EventMessageResponse : EventMessage
     {
     

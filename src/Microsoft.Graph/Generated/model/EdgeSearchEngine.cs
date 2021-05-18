@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EdgeSearchEngine.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EdgeSearchEngine>))]
     public partial class EdgeSearchEngine : EdgeSearchEngineBase
     {
         /// <summary>

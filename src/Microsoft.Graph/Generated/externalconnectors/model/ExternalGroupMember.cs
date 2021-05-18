@@ -17,6 +17,7 @@ namespace Microsoft.Graph.ExternalConnectors
     /// <summary>
     /// The type External Group Member.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ExternalGroupMember>))]
     public partial class ExternalGroupMember : Microsoft.Graph.Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Room.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Room>))]
     public partial class Room : Place
     {
     

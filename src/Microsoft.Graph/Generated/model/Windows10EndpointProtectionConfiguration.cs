@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Endpoint Protection Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10EndpointProtectionConfiguration>))]
     public partial class Windows10EndpointProtectionConfiguration : DeviceConfiguration
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Owner Enterprise Wi Fi Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerEnterpriseWiFiConfiguration>))]
     public partial class AndroidDeviceOwnerEnterpriseWiFiConfiguration : AndroidDeviceOwnerWiFiConfiguration
     {
     

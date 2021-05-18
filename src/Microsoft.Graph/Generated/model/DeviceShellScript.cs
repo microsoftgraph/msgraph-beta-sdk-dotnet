@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Shell Script.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceShellScript>))]
     public partial class DeviceShellScript : Entity
     {
     

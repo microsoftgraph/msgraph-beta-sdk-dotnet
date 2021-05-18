@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Restricted Apps Violation.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<RestrictedAppsViolation>))]
     public partial class RestrictedAppsViolation : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sensitive Type.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<SensitiveType>))]
     public partial class SensitiveType : Entity
     {
     

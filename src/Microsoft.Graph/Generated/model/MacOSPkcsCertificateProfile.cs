@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSPkcs Certificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSPkcsCertificateProfile>))]
     public partial class MacOSPkcsCertificateProfile : MacOSCertificateProfileBase
     {
     

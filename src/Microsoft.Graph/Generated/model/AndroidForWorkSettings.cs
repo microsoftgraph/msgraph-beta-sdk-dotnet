@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work Settings.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidForWorkSettings>))]
     public partial class AndroidForWorkSettings : Entity
     {
     

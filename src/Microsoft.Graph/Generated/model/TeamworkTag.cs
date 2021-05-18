@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Teamwork Tag.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TeamworkTag>))]
     public partial class TeamworkTag : Entity
     {
     

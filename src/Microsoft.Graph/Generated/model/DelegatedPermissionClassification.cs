@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Delegated Permission Classification.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DelegatedPermissionClassification>))]
     public partial class DelegatedPermissionClassification : Entity
     {
     

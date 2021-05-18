@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Compliance Policy Setting State Summary.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceCompliancePolicySettingStateSummary>))]
     public partial class DeviceCompliancePolicySettingStateSummary : Entity
     {
     

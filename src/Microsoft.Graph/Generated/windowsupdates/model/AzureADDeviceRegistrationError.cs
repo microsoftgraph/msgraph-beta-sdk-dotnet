@@ -17,6 +17,7 @@ namespace Microsoft.Graph.WindowsUpdates
     /// <summary>
     /// The type AzureADDeviceRegistrationError.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<AzureADDeviceRegistrationError>))]
     public partial class AzureADDeviceRegistrationError : UpdatableAssetError
     {
         /// <summary>

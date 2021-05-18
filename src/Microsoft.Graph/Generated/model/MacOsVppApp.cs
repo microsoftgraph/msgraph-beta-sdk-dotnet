@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac Os Vpp App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MacOsVppApp>))]
     public partial class MacOsVppApp : MobileApp
     {
     

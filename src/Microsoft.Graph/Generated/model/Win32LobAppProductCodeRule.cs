@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppProductCodeRule.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppProductCodeRule>))]
     public partial class Win32LobAppProductCodeRule : Win32LobAppRule
     {
         /// <summary>

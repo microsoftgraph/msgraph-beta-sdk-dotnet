@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sensitivity Label.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<SensitivityLabel>))]
     public partial class SensitivityLabel : Entity
     {
     

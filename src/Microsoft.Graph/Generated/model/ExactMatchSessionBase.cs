@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Exact Match Session Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ExactMatchSessionBase>))]
     public partial class ExactMatchSessionBase : ExactMatchJobBase
     {
     

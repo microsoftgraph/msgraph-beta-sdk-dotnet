@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MachineLearningDetectedSensitiveContent.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MachineLearningDetectedSensitiveContent>))]
     public partial class MachineLearningDetectedSensitiveContent : DetectedSensitiveContent
     {
         /// <summary>

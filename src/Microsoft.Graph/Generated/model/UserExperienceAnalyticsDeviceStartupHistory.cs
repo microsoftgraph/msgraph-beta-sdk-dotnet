@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Device Startup History.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsDeviceStartupHistory>))]
     public partial class UserExperienceAnalyticsDeviceStartupHistory : Entity
     {
     

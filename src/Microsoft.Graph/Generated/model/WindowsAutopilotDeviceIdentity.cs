@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Autopilot Device Identity.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsAutopilotDeviceIdentity>))]
     public partial class WindowsAutopilotDeviceIdentity : Entity
     {
     

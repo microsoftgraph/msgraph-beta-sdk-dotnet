@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Exchange Connector.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementExchangeConnector>))]
     public partial class DeviceManagementExchangeConnector : Entity
     {
     

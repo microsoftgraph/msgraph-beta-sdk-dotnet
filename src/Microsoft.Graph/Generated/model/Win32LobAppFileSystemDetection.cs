@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppFileSystemDetection.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppFileSystemDetection>))]
     public partial class Win32LobAppFileSystemDetection : Win32LobAppDetection
     {
         /// <summary>

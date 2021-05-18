@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Skill Proficiency.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<SkillProficiency>))]
     public partial class SkillProficiency : ItemFacet
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Usage Right.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UsageRight>))]
     public partial class UsageRight : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsUpdateScheduledInstall.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsUpdateScheduledInstall>))]
     public partial class WindowsUpdateScheduledInstall : WindowsUpdateInstallScheduleType
     {
         /// <summary>

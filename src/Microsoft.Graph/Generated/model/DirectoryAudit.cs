@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Directory Audit.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DirectoryAudit>))]
     public partial class DirectoryAudit : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User PFXCertificate.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserPFXCertificate>))]
     public partial class UserPFXCertificate : Entity
     {
     

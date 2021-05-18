@@ -17,6 +17,7 @@ namespace Microsoft.Graph.WindowsUpdates
     /// <summary>
     /// The type QualityUpdateReference.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<QualityUpdateReference>))]
     public partial class QualityUpdateReference : WindowsUpdateReference
     {
         /// <summary>

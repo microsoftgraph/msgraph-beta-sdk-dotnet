@@ -17,6 +17,7 @@ namespace Microsoft.Graph.Ediscovery
     /// <summary>
     /// The type Unified Group Source.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<UnifiedGroupSource>))]
     public partial class UnifiedGroupSource : DataSource
     {
     

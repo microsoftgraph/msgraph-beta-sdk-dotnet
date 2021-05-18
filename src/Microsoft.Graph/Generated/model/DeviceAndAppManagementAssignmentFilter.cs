@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device And App Management Assignment Filter.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceAndAppManagementAssignmentFilter>))]
     public partial class DeviceAndAppManagementAssignmentFilter : Entity
     {
     

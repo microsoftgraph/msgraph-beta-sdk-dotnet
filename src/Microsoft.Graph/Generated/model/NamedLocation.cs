@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Named Location.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<NamedLocation>))]
     public partial class NamedLocation : Entity
     {
     

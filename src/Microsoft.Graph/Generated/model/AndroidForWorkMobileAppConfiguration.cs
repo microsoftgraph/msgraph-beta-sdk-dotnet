@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work Mobile App Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidForWorkMobileAppConfiguration>))]
     public partial class AndroidForWorkMobileAppConfiguration : ManagedDeviceMobileAppConfiguration
     {
     

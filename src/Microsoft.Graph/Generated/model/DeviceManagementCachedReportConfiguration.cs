@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Cached Report Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementCachedReportConfiguration>))]
     public partial class DeviceManagementCachedReportConfiguration : Entity
     {
     

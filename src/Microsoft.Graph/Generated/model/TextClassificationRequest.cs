@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Text Classification Request.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TextClassificationRequestObject>))]
     public partial class TextClassificationRequestObject : Entity
     {
     

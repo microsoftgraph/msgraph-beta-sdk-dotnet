@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Synchronization Profile Status.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EducationSynchronizationProfileStatus>))]
     public partial class EducationSynchronizationProfileStatus : Entity
     {
     

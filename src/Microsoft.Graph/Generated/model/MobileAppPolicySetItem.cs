@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Policy Set Item.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MobileAppPolicySetItem>))]
     public partial class MobileAppPolicySetItem : PolicySetItem
     {
     

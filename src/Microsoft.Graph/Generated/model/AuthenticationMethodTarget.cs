@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Authentication Method Target.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AuthenticationMethodTarget>))]
     public partial class AuthenticationMethodTarget : Entity
     {
     

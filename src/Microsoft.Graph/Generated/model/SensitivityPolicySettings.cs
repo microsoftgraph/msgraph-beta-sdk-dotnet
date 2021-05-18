@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sensitivity Policy Settings.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<SensitivityPolicySettings>))]
     public partial class SensitivityPolicySettings : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Phone Authentication Method.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PhoneAuthenticationMethod>))]
     public partial class PhoneAuthenticationMethod : AuthenticationMethod
     {
     

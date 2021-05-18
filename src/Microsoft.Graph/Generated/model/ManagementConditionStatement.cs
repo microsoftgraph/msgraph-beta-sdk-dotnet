@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Management Condition Statement.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagementConditionStatement>))]
     public partial class ManagementConditionStatement : Entity
     {
     

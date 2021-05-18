@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Update Device Status.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IosUpdateDeviceStatus>))]
     public partial class IosUpdateDeviceStatus : Entity
     {
     

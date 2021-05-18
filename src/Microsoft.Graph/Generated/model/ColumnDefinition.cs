@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Column Definition.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ColumnDefinition>))]
     public partial class ColumnDefinition : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Delivery Optimization Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsDeliveryOptimizationConfiguration>))]
     public partial class WindowsDeliveryOptimizationConfiguration : DeviceConfiguration
     {
     

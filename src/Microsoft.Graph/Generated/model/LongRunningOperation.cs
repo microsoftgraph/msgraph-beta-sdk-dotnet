@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Long Running Operation.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<LongRunningOperation>))]
     public partial class LongRunningOperation : Entity
     {
     

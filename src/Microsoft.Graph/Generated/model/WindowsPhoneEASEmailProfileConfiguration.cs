@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Phone EASEmail Profile Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsPhoneEASEmailProfileConfiguration>))]
     public partial class WindowsPhoneEASEmailProfileConfiguration : EasEmailProfileConfigurationBase
     {
     

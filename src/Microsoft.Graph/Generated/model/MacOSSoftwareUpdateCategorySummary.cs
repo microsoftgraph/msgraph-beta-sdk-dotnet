@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSSoftware Update Category Summary.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSSoftwareUpdateCategorySummary>))]
     public partial class MacOSSoftwareUpdateCategorySummary : Entity
     {
     

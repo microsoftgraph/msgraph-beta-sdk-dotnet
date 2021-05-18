@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Credential Usage Summary.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CredentialUsageSummary>))]
     public partial class CredentialUsageSummary : Entity
     {
     

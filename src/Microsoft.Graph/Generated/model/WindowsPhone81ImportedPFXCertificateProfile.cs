@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Phone81Imported PFXCertificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsPhone81ImportedPFXCertificateProfile>))]
     public partial class WindowsPhone81ImportedPFXCertificateProfile : WindowsCertificateProfileBase
     {
     

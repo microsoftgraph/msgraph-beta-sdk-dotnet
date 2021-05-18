@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Threat Assessment Result.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ThreatAssessmentResult>))]
     public partial class ThreatAssessmentResult : Entity
     {
     

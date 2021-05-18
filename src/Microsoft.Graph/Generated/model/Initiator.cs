@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Initiator.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Initiator>))]
     public partial class Initiator : Identity
     {
         /// <summary>

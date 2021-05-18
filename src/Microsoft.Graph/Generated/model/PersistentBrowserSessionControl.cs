@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PersistentBrowserSessionControl.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PersistentBrowserSessionControl>))]
     public partial class PersistentBrowserSessionControl : ConditionalAccessSessionControl
     {
         /// <summary>

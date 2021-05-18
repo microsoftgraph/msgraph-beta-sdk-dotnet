@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UnaryManagementConditionExpression.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UnaryManagementConditionExpression>))]
     public partial class UnaryManagementConditionExpression : ManagementConditionExpressionModel
     {
         /// <summary>

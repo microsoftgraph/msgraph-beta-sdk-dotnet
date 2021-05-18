@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Outlook Task.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OutlookTask>))]
     public partial class OutlookTask : OutlookItem
     {
     

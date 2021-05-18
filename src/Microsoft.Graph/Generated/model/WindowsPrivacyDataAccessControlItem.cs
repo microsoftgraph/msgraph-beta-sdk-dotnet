@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Privacy Data Access Control Item.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsPrivacyDataAccessControlItem>))]
     public partial class WindowsPrivacyDataAccessControlItem : Entity
     {
     

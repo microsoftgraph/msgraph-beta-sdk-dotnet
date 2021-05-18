@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81SCEPCertificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows81SCEPCertificateProfile>))]
     public partial class Windows81SCEPCertificateProfile : Windows81CertificateProfileBase
     {
     

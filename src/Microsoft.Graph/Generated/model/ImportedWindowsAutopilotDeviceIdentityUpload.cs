@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Imported Windows Autopilot Device Identity Upload.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ImportedWindowsAutopilotDeviceIdentityUpload>))]
     public partial class ImportedWindowsAutopilotDeviceIdentityUpload : Entity
     {
     

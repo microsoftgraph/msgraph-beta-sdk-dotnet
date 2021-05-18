@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Feature Rollout Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<FeatureRolloutPolicy>))]
     public partial class FeatureRolloutPolicy : Entity
     {
     

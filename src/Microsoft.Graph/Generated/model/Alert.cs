@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Alert.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Alert>))]
     public partial class Alert : Entity
     {
     

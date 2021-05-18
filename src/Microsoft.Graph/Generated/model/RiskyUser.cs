@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Risky User.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<RiskyUser>))]
     public partial class RiskyUser : Entity
     {
     

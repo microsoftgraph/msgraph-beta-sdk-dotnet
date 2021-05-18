@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10XTrusted Root Certificate.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10XTrustedRootCertificate>))]
     public partial class Windows10XTrustedRootCertificate : DeviceManagementResourceAccessProfileBase
     {
     

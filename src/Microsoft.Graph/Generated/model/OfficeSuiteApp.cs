@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Office Suite App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OfficeSuiteApp>))]
     public partial class OfficeSuiteApp : MobileApp
     {
     

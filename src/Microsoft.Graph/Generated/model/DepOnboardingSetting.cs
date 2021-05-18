@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Dep Onboarding Setting.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DepOnboardingSetting>))]
     public partial class DepOnboardingSetting : Entity
     {
     

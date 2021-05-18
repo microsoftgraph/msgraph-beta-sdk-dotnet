@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Report Schedule.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementReportSchedule>))]
     public partial class DeviceManagementReportSchedule : Entity
     {
     

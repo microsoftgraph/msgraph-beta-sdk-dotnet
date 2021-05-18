@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Credential User Registration Details.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CredentialUserRegistrationDetails>))]
     public partial class CredentialUserRegistrationDetails : Entity
     {
     

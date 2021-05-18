@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud Pc Provisioning Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CloudPcProvisioningPolicy>))]
     public partial class CloudPcProvisioningPolicy : Entity
     {
     

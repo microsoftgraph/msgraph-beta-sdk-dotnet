@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Custom Attribute Shell Script.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceCustomAttributeShellScript>))]
     public partial class DeviceCustomAttributeShellScript : Entity
     {
     

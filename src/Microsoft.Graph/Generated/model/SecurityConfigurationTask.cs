@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Security Configuration Task.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<SecurityConfigurationTask>))]
     public partial class SecurityConfigurationTask : DeviceAppManagementTask
     {
     

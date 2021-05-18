@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Compliance Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10CompliancePolicy>))]
     public partial class Windows10CompliancePolicy : DeviceCompliancePolicy
     {
     

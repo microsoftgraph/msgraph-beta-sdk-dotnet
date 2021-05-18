@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Role Assignment.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<RoleAssignment>))]
     public partial class RoleAssignment : Entity
     {
     

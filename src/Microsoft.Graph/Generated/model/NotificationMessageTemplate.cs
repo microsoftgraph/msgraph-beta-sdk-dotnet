@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Notification Message Template.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<NotificationMessageTemplate>))]
     public partial class NotificationMessageTemplate : Entity
     {
     

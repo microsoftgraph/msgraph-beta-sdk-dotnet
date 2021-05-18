@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Connector.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Connector>))]
     public partial class Connector : Entity
     {
     

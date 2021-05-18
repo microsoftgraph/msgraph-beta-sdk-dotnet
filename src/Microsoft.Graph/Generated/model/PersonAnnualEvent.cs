@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Person Annual Event.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PersonAnnualEvent>))]
     public partial class PersonAnnualEvent : ItemFacet
     {
     

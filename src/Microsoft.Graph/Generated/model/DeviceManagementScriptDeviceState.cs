@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Script Device State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementScriptDeviceState>))]
     public partial class DeviceManagementScriptDeviceState : Entity
     {
     

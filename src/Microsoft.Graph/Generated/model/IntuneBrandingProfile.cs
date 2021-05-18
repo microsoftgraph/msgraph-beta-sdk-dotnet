@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Intune Branding Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IntuneBrandingProfile>))]
     public partial class IntuneBrandingProfile : Entity
     {
     

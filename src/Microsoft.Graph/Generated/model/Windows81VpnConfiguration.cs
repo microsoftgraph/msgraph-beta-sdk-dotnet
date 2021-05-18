@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81Vpn Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows81VpnConfiguration>))]
     public partial class Windows81VpnConfiguration : WindowsVpnConfiguration
     {
     

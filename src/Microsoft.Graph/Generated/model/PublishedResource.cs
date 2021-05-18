@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Published Resource.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PublishedResource>))]
     public partial class PublishedResource : Entity
     {
     

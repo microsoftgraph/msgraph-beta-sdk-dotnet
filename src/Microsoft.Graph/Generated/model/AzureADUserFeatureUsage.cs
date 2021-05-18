@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Azure ADUser Feature Usage.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AzureADUserFeatureUsage>))]
     public partial class AzureADUserFeatureUsage : Entity
     {
     

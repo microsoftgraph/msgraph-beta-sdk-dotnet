@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Notification.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Notification>))]
     public partial class Notification : Entity
     {
     

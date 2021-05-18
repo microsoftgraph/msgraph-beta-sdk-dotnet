@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Teamwork Hosted Content.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TeamworkHostedContent>))]
     public partial class TeamworkHostedContent : Entity
     {
     

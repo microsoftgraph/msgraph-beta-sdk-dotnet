@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud App Security Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CloudAppSecurityProfile>))]
     public partial class CloudAppSecurityProfile : Entity
     {
     

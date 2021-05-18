@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Remote Action Audit.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<RemoteActionAudit>))]
     public partial class RemoteActionAudit : Entity
     {
     

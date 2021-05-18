@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TeleconferenceDeviceVideoQuality.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TeleconferenceDeviceVideoQuality>))]
     public partial class TeleconferenceDeviceVideoQuality : TeleconferenceDeviceMediaQuality
     {
         /// <summary>

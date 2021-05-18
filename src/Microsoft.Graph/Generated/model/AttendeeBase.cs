@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AttendeeBase.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AttendeeBase>))]
     public partial class AttendeeBase : Recipient
     {
         /// <summary>

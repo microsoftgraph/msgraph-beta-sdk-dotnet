@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Audio Routing Group.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AudioRoutingGroup>))]
     public partial class AudioRoutingGroup : Entity
     {
     

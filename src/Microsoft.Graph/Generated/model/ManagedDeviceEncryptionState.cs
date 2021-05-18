@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed Device Encryption State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedDeviceEncryptionState>))]
     public partial class ManagedDeviceEncryptionState : Entity
     {
     

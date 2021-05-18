@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed All Device Certificate State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedAllDeviceCertificateState>))]
     public partial class ManagedAllDeviceCertificateState : Entity
     {
     

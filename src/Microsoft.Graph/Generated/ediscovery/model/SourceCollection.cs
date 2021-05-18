@@ -17,6 +17,7 @@ namespace Microsoft.Graph.Ediscovery
     /// <summary>
     /// The type Source Collection.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<SourceCollection>))]
     public partial class SourceCollection : Microsoft.Graph.Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Edition Upgrade Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EditionUpgradeConfiguration>))]
     public partial class EditionUpgradeConfiguration : DeviceConfiguration
     {
     

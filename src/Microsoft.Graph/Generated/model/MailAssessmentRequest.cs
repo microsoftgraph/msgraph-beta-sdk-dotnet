@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mail Assessment Request.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MailAssessmentRequestObject>))]
     public partial class MailAssessmentRequestObject : ThreatAssessmentRequestObject
     {
     

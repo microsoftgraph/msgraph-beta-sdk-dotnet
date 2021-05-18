@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ProtectSite.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ProtectSite>))]
     public partial class ProtectSite : LabelActionBase
     {
         /// <summary>

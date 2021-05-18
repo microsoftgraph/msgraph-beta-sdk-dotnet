@@ -17,6 +17,7 @@ namespace Microsoft.Graph.TermStore
     /// <summary>
     /// The type Relation.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Relation>))]
     public partial class Relation : Microsoft.Graph.Entity
     {
     

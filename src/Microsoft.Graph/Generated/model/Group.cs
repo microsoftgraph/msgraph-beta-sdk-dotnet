@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Group>))]
     public partial class Group : DirectoryObject
     {
     

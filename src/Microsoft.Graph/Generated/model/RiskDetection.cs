@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Risk Detection.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<RiskDetection>))]
     public partial class RiskDetection : Entity
     {
     

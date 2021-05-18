@@ -17,6 +17,7 @@ namespace Microsoft.Graph.CallRecords
     /// <summary>
     /// The type Call Record.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<CallRecord>))]
     public partial class CallRecord : Microsoft.Graph.Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Vpp App Assigned License.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IosVppAppAssignedLicense>))]
     public partial class IosVppAppAssignedLicense : Entity
     {
     

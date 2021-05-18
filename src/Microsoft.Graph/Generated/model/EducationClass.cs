@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Class.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EducationClass>))]
     public partial class EducationClass : Entity
     {
     

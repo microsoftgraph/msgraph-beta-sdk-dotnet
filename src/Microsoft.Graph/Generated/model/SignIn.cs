@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sign In.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<SignIn>))]
     public partial class SignIn : Entity
     {
     

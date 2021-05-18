@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Device Features Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IosDeviceFeaturesConfiguration>))]
     public partial class IosDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase
     {
     

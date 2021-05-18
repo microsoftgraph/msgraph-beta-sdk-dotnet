@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Universal App X.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsUniversalAppX>))]
     public partial class WindowsUniversalAppX : MobileLobApp
     {
     

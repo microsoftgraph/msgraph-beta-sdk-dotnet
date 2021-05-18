@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Hello For Business Authentication Method.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsHelloForBusinessAuthenticationMethod>))]
     public partial class WindowsHelloForBusinessAuthenticationMethod : AuthenticationMethod
     {
     

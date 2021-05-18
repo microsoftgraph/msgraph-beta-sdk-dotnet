@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Management App Health State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsManagementAppHealthState>))]
     public partial class WindowsManagementAppHealthState : Entity
     {
     

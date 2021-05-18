@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Comanagement Eligible Device.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ComanagementEligibleDevice>))]
     public partial class ComanagementEligibleDevice : Entity
     {
     

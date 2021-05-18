@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Conditional Access Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessPolicy>))]
     public partial class ConditionalAccessPolicy : Entity
     {
     

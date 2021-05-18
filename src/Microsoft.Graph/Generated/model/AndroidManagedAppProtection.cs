@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Managed App Protection.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidManagedAppProtection>))]
     public partial class AndroidManagedAppProtection : TargetedManagedAppProtection
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Authorization Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AuthorizationPolicy>))]
     public partial class AuthorizationPolicy : PolicyBase
     {
     

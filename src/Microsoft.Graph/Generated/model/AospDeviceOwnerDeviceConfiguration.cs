@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Aosp Device Owner Device Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AospDeviceOwnerDeviceConfiguration>))]
     public partial class AospDeviceOwnerDeviceConfiguration : DeviceConfiguration
     {
     

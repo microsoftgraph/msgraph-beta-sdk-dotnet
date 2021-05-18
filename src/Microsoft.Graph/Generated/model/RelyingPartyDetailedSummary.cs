@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Relying Party Detailed Summary.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<RelyingPartyDetailedSummary>))]
     public partial class RelyingPartyDetailedSummary : Entity
     {
     

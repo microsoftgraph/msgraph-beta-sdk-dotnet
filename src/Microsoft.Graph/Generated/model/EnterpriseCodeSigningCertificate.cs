@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Enterprise Code Signing Certificate.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EnterpriseCodeSigningCertificate>))]
     public partial class EnterpriseCodeSigningCertificate : Entity
     {
     

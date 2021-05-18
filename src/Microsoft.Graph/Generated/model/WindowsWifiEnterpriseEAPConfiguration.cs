@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Wifi Enterprise EAPConfiguration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsWifiEnterpriseEAPConfiguration>))]
     public partial class WindowsWifiEnterpriseEAPConfiguration : WindowsWifiConfiguration
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Compliance Script.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceComplianceScript>))]
     public partial class DeviceComplianceScript : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ProtectOnlineMeetingAction.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ProtectOnlineMeetingAction>))]
     public partial class ProtectOnlineMeetingAction : LabelActionBase
     {
         /// <summary>

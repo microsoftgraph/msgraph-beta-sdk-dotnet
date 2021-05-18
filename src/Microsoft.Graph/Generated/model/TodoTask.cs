@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Todo Task.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TodoTask>))]
     public partial class TodoTask : Entity
     {
     

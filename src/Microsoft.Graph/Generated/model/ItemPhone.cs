@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Phone.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ItemPhone>))]
     public partial class ItemPhone : ItemFacet
     {
     

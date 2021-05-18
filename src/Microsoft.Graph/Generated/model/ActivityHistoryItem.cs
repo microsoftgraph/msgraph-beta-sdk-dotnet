@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Activity History Item.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ActivityHistoryItem>))]
     public partial class ActivityHistoryItem : Entity
     {
     

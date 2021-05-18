@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSEndpoint Protection Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSEndpointProtectionConfiguration>))]
     public partial class MacOSEndpointProtectionConfiguration : DeviceConfiguration
     {
     

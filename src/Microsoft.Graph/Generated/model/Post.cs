@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Post.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Post>))]
     public partial class Post : OutlookItem
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Enrollment Troubleshooting Event.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EnrollmentTroubleshootingEvent>))]
     public partial class EnrollmentTroubleshootingEvent : DeviceManagementTroubleshootingEvent
     {
     

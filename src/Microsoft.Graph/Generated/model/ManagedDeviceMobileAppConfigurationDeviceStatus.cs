@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed Device Mobile App Configuration Device Status.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedDeviceMobileAppConfigurationDeviceStatus>))]
     public partial class ManagedDeviceMobileAppConfigurationDeviceStatus : Entity
     {
     

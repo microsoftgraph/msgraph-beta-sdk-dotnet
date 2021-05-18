@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Connector Group.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ConnectorGroup>))]
     public partial class ConnectorGroup : Entity
     {
     

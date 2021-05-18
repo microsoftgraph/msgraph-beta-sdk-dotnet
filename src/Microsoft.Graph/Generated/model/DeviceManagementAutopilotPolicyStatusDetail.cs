@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Autopilot Policy Status Detail.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementAutopilotPolicyStatusDetail>))]
     public partial class DeviceManagementAutopilotPolicyStatusDetail : Entity
     {
     

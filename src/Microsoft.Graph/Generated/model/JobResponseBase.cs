@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Job Response Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<JobResponseBase>))]
     public partial class JobResponseBase : Entity
     {
     

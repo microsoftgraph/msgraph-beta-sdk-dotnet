@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Teams App Installation.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TeamsAppInstallation>))]
     public partial class TeamsAppInstallation : Entity
     {
     

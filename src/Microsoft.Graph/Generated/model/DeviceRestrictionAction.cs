@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceRestrictionAction.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceRestrictionAction>))]
     public partial class DeviceRestrictionAction : DlpActionInfo
     {
         /// <summary>

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AddWatermarkAction.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AddWatermarkAction>))]
     public partial class AddWatermarkAction : InformationProtectionAction
     {
         /// <summary>

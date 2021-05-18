@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Protection State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsProtectionState>))]
     public partial class WindowsProtectionState : Entity
     {
     

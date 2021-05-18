@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Directory Definition.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DirectoryDefinition>))]
     public partial class DirectoryDefinition : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Identity Protection Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsIdentityProtectionConfiguration>))]
     public partial class WindowsIdentityProtectionConfiguration : DeviceConfiguration
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Online Meeting.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<OnlineMeeting>))]
     public partial class OnlineMeeting : Entity
     {
     

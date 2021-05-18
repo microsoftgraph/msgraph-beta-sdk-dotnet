@@ -17,6 +17,7 @@ namespace Microsoft.Graph.ExternalConnectors
     /// <summary>
     /// The type Connection Operation.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ConnectionOperation>))]
     public partial class ConnectionOperation : Microsoft.Graph.Entity
     {
     

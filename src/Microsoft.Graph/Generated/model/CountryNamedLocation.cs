@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Country Named Location.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CountryNamedLocation>))]
     public partial class CountryNamedLocation : NamedLocation
     {
     

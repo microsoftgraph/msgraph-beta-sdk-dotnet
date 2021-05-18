@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Language Proficiency.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<LanguageProficiency>))]
     public partial class LanguageProficiency : ItemFacet
     {
     

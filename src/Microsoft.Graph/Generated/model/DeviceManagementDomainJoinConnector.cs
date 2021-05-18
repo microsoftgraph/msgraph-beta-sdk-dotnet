@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Domain Join Connector.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementDomainJoinConnector>))]
     public partial class DeviceManagementDomainJoinConnector : Entity
     {
     

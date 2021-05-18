@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Apple User Initiated Enrollment Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AppleUserInitiatedEnrollmentProfile>))]
     public partial class AppleUserInitiatedEnrollmentProfile : Entity
     {
     

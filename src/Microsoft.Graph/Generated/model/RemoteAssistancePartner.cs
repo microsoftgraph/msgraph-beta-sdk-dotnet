@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Remote Assistance Partner.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<RemoteAssistancePartner>))]
     public partial class RemoteAssistancePartner : Entity
     {
     

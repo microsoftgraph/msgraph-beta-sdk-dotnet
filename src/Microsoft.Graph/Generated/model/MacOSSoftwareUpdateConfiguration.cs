@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSSoftware Update Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSSoftwareUpdateConfiguration>))]
     public partial class MacOSSoftwareUpdateConfiguration : DeviceConfiguration
     {
     

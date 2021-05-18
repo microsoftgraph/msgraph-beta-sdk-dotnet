@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Autopilot Event.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementAutopilotEvent>))]
     public partial class DeviceManagementAutopilotEvent : Entity
     {
     

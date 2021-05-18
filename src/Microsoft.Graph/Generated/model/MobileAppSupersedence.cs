@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Supersedence.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MobileAppSupersedence>))]
     public partial class MobileAppSupersedence : MobileAppRelationship
     {
     

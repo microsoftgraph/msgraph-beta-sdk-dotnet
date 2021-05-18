@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Microsoft Edge App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsMicrosoftEdgeApp>))]
     public partial class WindowsMicrosoftEdgeApp : MobileApp
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph.Ediscovery
     /// <summary>
     /// The type Case Export Operation.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<CaseExportOperation>))]
     public partial class CaseExportOperation : CaseOperation
     {
     

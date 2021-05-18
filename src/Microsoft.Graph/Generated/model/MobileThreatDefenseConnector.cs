@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile Threat Defense Connector.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MobileThreatDefenseConnector>))]
     public partial class MobileThreatDefenseConnector : Entity
     {
     

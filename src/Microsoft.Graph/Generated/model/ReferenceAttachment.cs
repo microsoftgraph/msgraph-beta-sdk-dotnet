@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Reference Attachment.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ReferenceAttachment>))]
     public partial class ReferenceAttachment : Attachment
     {
     

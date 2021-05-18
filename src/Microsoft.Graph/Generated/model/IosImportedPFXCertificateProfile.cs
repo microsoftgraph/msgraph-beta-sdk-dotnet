@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Imported PFXCertificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IosImportedPFXCertificateProfile>))]
     public partial class IosImportedPFXCertificateProfile : IosCertificateProfile
     {
     

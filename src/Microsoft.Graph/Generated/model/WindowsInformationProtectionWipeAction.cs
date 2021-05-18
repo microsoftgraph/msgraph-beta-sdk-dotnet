@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Information Protection Wipe Action.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsInformationProtectionWipeAction>))]
     public partial class WindowsInformationProtectionWipeAction : Entity
     {
     

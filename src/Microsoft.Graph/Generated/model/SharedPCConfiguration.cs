@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Shared PCConfiguration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<SharedPCConfiguration>))]
     public partial class SharedPCConfiguration : DeviceConfiguration
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Chat.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Chat>))]
     public partial class Chat : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppAssignmentSettings.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppAssignmentSettings>))]
     public partial class Win32LobAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>

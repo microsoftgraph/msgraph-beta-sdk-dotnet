@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Print Task Trigger.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PrintTaskTrigger>))]
     public partial class PrintTaskTrigger : Entity
     {
     

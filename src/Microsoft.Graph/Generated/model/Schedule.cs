@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Schedule.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Schedule>))]
     public partial class Schedule : Entity
     {
     

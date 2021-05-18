@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Vpn Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidVpnConfiguration>))]
     public partial class AndroidVpnConfiguration : DeviceConfiguration
     {
     

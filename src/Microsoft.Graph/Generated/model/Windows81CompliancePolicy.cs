@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81Compliance Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows81CompliancePolicy>))]
     public partial class Windows81CompliancePolicy : DeviceCompliancePolicy
     {
     

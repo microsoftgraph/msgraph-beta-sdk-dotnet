@@ -17,6 +17,7 @@ namespace Microsoft.Graph.CallRecords
     /// <summary>
     /// The type Session.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Session>))]
     public partial class Session : Microsoft.Graph.Entity
     {
     

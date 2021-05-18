@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Intent Device State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementIntentDeviceState>))]
     public partial class DeviceManagementIntentDeviceState : Entity
     {
     

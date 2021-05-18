@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Email Authentication Method Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EmailAuthenticationMethodConfiguration>))]
     public partial class EmailAuthenticationMethodConfiguration : AuthenticationMethodConfiguration
     {
     

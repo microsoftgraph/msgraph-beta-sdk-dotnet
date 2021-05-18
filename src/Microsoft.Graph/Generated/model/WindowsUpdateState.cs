@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Update State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsUpdateState>))]
     public partial class WindowsUpdateState : Entity
     {
     

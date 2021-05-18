@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Imported Apple Device Identity.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ImportedAppleDeviceIdentity>))]
     public partial class ImportedAppleDeviceIdentity : Entity
     {
     

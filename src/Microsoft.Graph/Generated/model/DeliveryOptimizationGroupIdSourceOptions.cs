@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeliveryOptimizationGroupIdSourceOptions.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeliveryOptimizationGroupIdSourceOptions>))]
     public partial class DeliveryOptimizationGroupIdSourceOptions : DeliveryOptimizationGroupIdSource
     {
         /// <summary>

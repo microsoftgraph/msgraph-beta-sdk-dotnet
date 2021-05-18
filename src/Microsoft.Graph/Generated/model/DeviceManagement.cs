@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagement>))]
     public partial class DeviceManagement : Entity
     {
     

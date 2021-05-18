@@ -17,6 +17,7 @@ namespace Microsoft.Graph.CallRecords
     /// <summary>
     /// The type ServiceUserAgent.
     /// </summary>
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ServiceUserAgent>))]
     public partial class ServiceUserAgent : UserAgent
     {
         /// <summary>

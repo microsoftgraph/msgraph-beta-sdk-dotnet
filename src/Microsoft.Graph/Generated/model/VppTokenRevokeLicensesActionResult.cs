@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type VppTokenRevokeLicensesActionResult.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<VppTokenRevokeLicensesActionResult>))]
     public partial class VppTokenRevokeLicensesActionResult : VppTokenActionResult
     {
         /// <summary>

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ProtectGroup.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ProtectGroup>))]
     public partial class ProtectGroup : LabelActionBase
     {
         /// <summary>

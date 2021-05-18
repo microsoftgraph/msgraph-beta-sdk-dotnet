@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Provisioning Object Summary.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ProvisioningObjectSummary>))]
     public partial class ProvisioningObjectSummary : Entity
     {
     

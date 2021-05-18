@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Quality Update Catalog Item.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsQualityUpdateCatalogItem>))]
     public partial class WindowsQualityUpdateCatalogItem : WindowsUpdateCatalogItem
     {
     

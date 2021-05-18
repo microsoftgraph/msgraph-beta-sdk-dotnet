@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppRegistryRequirement.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppRegistryRequirement>))]
     public partial class Win32LobAppRegistryRequirement : Win32LobAppRequirement
     {
         /// <summary>

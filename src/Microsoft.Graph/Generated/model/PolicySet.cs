@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Policy Set.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PolicySet>))]
     public partial class PolicySet : Entity
     {
     

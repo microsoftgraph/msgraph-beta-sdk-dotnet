@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Time Card.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TimeCard>))]
     public partial class TimeCard : ChangeTrackedEntity
     {
     

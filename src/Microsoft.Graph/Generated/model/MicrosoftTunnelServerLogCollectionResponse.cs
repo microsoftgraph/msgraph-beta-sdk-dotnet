@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Microsoft Tunnel Server Log Collection Response.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MicrosoftTunnelServerLogCollectionResponse>))]
     public partial class MicrosoftTunnelServerLogCollectionResponse : Entity
     {
     

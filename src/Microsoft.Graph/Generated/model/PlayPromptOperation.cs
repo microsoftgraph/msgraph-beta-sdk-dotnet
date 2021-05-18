@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Play Prompt Operation.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PlayPromptOperation>))]
     public partial class PlayPromptOperation : CommsOperation
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type NotifyUserAction.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<NotifyUserAction>))]
     public partial class NotifyUserAction : DlpActionInfo
     {
         /// <summary>

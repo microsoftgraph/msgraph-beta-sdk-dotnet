@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Message.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Message>))]
     public partial class Message : OutlookItem
     {
     

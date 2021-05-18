@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AddFooter.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AddFooter>))]
     public partial class AddFooter : MarkContent
     {
         /// <summary>

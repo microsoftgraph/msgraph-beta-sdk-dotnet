@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Advanced Threat Protection Onboarding Device Setting State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AdvancedThreatProtectionOnboardingDeviceSettingState>))]
     public partial class AdvancedThreatProtectionOnboardingDeviceSettingState : Entity
     {
     

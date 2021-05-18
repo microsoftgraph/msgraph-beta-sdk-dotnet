@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ndes Connector.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<NdesConnector>))]
     public partial class NdesConnector : Entity
     {
     

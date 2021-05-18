@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android General Device Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidGeneralDeviceConfiguration>))]
     public partial class AndroidGeneralDeviceConfiguration : DeviceConfiguration
     {
     

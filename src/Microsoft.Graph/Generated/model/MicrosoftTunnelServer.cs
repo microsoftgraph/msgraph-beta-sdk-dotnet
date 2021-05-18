@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Microsoft Tunnel Server.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MicrosoftTunnelServer>))]
     public partial class MicrosoftTunnelServer : Entity
     {
     

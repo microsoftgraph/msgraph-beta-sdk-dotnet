@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unified Role Schedule Instance Base.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UnifiedRoleScheduleInstanceBase>))]
     public partial class UnifiedRoleScheduleInstanceBase : Entity
     {
     

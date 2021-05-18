@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work Imported PFXCertificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidForWorkImportedPFXCertificateProfile>))]
     public partial class AndroidForWorkImportedPFXCertificateProfile : AndroidCertificateProfileBase
     {
     

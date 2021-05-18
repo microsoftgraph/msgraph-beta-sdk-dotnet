@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Connected Organization.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ConnectedOrganization>))]
     public partial class ConnectedOrganization : Entity
     {
     

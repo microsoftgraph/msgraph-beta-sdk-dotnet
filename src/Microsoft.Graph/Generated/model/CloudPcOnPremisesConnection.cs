@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud Pc On Premises Connection.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CloudPcOnPremisesConnection>))]
     public partial class CloudPcOnPremisesConnection : Entity
     {
     

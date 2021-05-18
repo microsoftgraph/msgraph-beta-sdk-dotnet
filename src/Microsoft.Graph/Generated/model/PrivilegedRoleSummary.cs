@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Privileged Role Summary.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PrivilegedRoleSummary>))]
     public partial class PrivilegedRoleSummary : Entity
     {
     

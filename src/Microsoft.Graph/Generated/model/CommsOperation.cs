@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Comms Operation.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CommsOperation>))]
     public partial class CommsOperation : Entity
     {
     

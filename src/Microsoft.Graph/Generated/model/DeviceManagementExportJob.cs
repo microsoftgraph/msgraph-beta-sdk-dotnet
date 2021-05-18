@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Export Job.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementExportJob>))]
     public partial class DeviceManagementExportJob : Entity
     {
     

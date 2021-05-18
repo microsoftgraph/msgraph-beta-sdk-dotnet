@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Install Status.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MobileAppInstallStatus>))]
     public partial class MobileAppInstallStatus : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Owner Enrollment Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerEnrollmentProfile>))]
     public partial class AndroidDeviceOwnerEnrollmentProfile : Entity
     {
     

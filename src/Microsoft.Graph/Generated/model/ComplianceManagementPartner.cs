@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Compliance Management Partner.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ComplianceManagementPartner>))]
     public partial class ComplianceManagementPartner : Entity
     {
     

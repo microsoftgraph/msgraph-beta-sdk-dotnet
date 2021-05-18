@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Configuration Choice Setting Definition.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationChoiceSettingDefinition>))]
     public partial class DeviceManagementConfigurationChoiceSettingDefinition : DeviceManagementConfigurationSettingDefinition
     {
     

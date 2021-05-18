@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Operation.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Operation>))]
     public partial class Operation : Entity
     {
     

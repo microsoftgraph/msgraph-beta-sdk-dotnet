@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Chrome OSOnboarding Settings.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ChromeOSOnboardingSettings>))]
     public partial class ChromeOSOnboardingSettings : Entity
     {
     

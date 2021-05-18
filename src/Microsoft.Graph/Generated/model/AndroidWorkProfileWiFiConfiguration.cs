@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Work Profile Wi Fi Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidWorkProfileWiFiConfiguration>))]
     public partial class AndroidWorkProfileWiFiConfiguration : DeviceConfiguration
     {
     

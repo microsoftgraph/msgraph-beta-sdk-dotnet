@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81Trusted Root Certificate.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows81TrustedRootCertificate>))]
     public partial class Windows81TrustedRootCertificate : DeviceConfiguration
     {
     

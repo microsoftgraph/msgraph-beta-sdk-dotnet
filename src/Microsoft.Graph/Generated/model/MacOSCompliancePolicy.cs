@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSCompliance Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSCompliancePolicy>))]
     public partial class MacOSCompliancePolicy : DeviceCompliancePolicy
     {
     

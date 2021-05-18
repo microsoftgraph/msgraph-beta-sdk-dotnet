@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GroupAssignmentTarget.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<GroupAssignmentTarget>))]
     public partial class GroupAssignmentTarget : DeviceAndAppManagementAssignmentTarget
     {
         /// <summary>

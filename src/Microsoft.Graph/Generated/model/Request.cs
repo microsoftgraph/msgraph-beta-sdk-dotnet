@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Request.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<RequestObject>))]
     public partial class RequestObject : Entity
     {
     

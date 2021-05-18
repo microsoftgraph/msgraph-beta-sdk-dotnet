@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ShiftItem.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ShiftItem>))]
     public partial class ShiftItem : ScheduleEntity
     {
         /// <summary>

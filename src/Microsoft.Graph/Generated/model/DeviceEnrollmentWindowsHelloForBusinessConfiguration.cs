@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Enrollment Windows Hello For Business Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceEnrollmentWindowsHelloForBusinessConfiguration>))]
     public partial class DeviceEnrollmentWindowsHelloForBusinessConfiguration : DeviceEnrollmentConfiguration
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Bitlocker Recovery Key.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<BitlockerRecoveryKey>))]
     public partial class BitlockerRecoveryKey : Entity
     {
     

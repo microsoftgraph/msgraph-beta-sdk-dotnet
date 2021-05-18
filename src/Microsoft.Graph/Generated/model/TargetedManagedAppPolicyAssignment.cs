@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Targeted Managed App Policy Assignment.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TargetedManagedAppPolicyAssignment>))]
     public partial class TargetedManagedAppPolicyAssignment : Entity
     {
     

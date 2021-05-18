@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Install State.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceInstallState>))]
     public partial class DeviceInstallState : Entity
     {
     

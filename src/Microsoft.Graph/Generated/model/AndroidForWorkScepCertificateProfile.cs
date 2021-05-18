@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work Scep Certificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidForWorkScepCertificateProfile>))]
     public partial class AndroidForWorkScepCertificateProfile : AndroidForWorkCertificateProfileBase
     {
     

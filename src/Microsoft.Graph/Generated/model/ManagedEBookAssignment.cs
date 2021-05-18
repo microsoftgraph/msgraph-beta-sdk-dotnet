@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed EBook Assignment.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedEBookAssignment>))]
     public partial class ManagedEBookAssignment : Entity
     {
     

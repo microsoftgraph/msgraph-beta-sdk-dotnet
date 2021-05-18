@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Email.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ItemEmail>))]
     public partial class ItemEmail : ItemFacet
     {
     

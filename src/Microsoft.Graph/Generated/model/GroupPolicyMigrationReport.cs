@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Migration Report.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<GroupPolicyMigrationReport>))]
     public partial class GroupPolicyMigrationReport : Entity
     {
     

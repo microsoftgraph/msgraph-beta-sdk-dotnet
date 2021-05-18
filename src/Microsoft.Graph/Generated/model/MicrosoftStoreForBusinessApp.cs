@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Microsoft Store For Business App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MicrosoftStoreForBusinessApp>))]
     public partial class MicrosoftStoreForBusinessApp : MobileApp
     {
     

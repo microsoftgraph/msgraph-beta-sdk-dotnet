@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10PFXImport Certificate Profile.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10PFXImportCertificateProfile>))]
     public partial class Windows10PFXImportCertificateProfile : DeviceConfiguration
     {
     

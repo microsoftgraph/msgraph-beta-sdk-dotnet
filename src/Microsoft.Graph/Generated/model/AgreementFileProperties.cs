@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Agreement File Properties.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AgreementFileProperties>))]
     public partial class AgreementFileProperties : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Planner Delta.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PlannerDelta>))]
     public partial class PlannerDelta : Entity
     {
     

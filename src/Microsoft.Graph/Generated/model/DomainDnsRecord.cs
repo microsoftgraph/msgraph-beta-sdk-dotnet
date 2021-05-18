@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Domain Dns Record.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DomainDnsRecord>))]
     public partial class DomainDnsRecord : Entity
     {
     

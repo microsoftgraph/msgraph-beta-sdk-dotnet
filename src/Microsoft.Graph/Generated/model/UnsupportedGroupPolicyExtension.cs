@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unsupported Group Policy Extension.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UnsupportedGroupPolicyExtension>))]
     public partial class UnsupportedGroupPolicyExtension : Entity
     {
     

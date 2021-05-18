@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccessReviewQueryScope.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AccessReviewQueryScope>))]
     public partial class AccessReviewQueryScope : AccessReviewScope
     {
         /// <summary>

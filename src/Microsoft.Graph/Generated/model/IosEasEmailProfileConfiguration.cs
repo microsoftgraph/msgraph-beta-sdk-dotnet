@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Eas Email Profile Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<IosEasEmailProfileConfiguration>))]
     public partial class IosEasEmailProfileConfiguration : EasEmailProfileConfigurationBase
     {
     

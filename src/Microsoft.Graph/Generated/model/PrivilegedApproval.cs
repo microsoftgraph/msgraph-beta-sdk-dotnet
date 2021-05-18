@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Privileged Approval.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<PrivilegedApproval>))]
     public partial class PrivilegedApproval : Entity
     {
     

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Channel.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<Channel>))]
     public partial class Channel : Entity
     {
     

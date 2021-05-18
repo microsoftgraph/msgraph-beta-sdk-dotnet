@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Exchange On Premises Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementExchangeOnPremisesPolicy>))]
     public partial class DeviceManagementExchangeOnPremisesPolicy : Entity
     {
     

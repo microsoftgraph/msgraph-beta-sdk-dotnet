@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Dependency.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MobileAppDependency>))]
     public partial class MobileAppDependency : MobileAppRelationship
     {
     

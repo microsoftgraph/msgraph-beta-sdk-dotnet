@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Inference Classification Override.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<InferenceClassificationOverride>))]
     public partial class InferenceClassificationOverride : Entity
     {
     
