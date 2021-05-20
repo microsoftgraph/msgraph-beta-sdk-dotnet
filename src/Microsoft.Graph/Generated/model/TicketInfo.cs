@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets ticketNumber.
+        /// Ticket number meta data
         /// </summary>
         [JsonPropertyName("ticketNumber")]
         public string TicketNumber { get; set; }
     
         /// <summary>
         /// Gets or sets ticketSystem.
+        /// Ticket system meta data
         /// </summary>
         [JsonPropertyName("ticketSystem")]
         public string TicketSystem { get; set; }

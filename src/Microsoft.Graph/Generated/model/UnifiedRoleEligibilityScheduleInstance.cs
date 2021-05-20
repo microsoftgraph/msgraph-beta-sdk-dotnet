@@ -30,24 +30,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets end date time.
+        /// Time that the roleEligibilityScheduleInstance will expire
         /// </summary>
         [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
+        /// Membership type of the assignment. It can either be Inherited, Direct, or Group.
         /// </summary>
         [JsonPropertyName("memberType")]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets role eligibility schedule id.
+        /// ID of the parent roleEligibilitySchedule for this instance
         /// </summary>
         [JsonPropertyName("roleEligibilityScheduleId")]
         public string RoleEligibilityScheduleId { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
+        /// Time that the roleEligibilityScheduleInstance will start
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }

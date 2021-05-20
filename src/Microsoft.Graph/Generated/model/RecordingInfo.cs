@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets initiator.
-        /// The identities of the recording initiator.
+        /// The identities of recording initiator.
         /// </summary>
         [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }

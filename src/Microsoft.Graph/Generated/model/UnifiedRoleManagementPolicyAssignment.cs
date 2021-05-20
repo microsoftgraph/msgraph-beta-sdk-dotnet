@@ -30,30 +30,35 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets policy id.
+        /// The id of the policy.
         /// </summary>
         [JsonPropertyName("policyId")]
         public string PolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
+        /// The id of the role definition where the policy applies. If not specified, the policy applies to all roles.
         /// </summary>
         [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets scope id.
+        /// The id of the scope where the policy is assigned. E.g. '/', groupId, etc.
         /// </summary>
         [JsonPropertyName("scopeId")]
         public string ScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets scope type.
+        /// The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.
         /// </summary>
         [JsonPropertyName("scopeType")]
         public string ScopeType { get; set; }
     
         /// <summary>
         /// Gets or sets policy.
+        /// The policy for the assignment.
         /// </summary>
         [JsonPropertyName("policy")]
         public UnifiedRoleManagementPolicy Policy { get; set; }

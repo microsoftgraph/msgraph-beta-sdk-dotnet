@@ -30,30 +30,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets additionalDetails.
+        /// Additional details in case of error.
         /// </summary>
         [JsonPropertyName("additionalDetails")]
         public string AdditionalDetails { get; set; }
     
         /// <summary>
         /// Gets or sets errorCategory.
+        /// Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
         /// </summary>
         [JsonPropertyName("errorCategory")]
         public ProvisioningStatusErrorCategory? ErrorCategory { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
+        /// Unique error code if any occurred. Learn more
         /// </summary>
         [JsonPropertyName("errorCode")]
         public string ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets reason.
+        /// Summarizes the status and describes why the status happened.
         /// </summary>
         [JsonPropertyName("reason")]
         public string Reason { get; set; }
     
         /// <summary>
         /// Gets or sets recommendedAction.
+        /// Provides the resolution for the corresponding error.
         /// </summary>
         [JsonPropertyName("recommendedAction")]
         public string RecommendedAction { get; set; }

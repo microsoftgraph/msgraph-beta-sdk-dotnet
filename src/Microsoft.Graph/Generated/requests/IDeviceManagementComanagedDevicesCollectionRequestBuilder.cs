@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         IManagedDeviceRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceBulkReprovisionCloudPc.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceBulkReprovisionCloudPcRequestBuilder"/>.</returns>
+        IManagedDeviceBulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc(
+            IEnumerable<string> managedDeviceIds = null);
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceExecuteAction.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceExecuteActionRequestBuilder"/>.</returns>

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target.
+        /// The target for the policy rule.
         /// </summary>
         [JsonPropertyName("target")]
         public UnifiedRoleManagementPolicyRuleTarget Target { get; set; }

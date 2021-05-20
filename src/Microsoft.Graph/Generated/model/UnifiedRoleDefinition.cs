@@ -37,14 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.
+        /// The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is built in.
-        /// Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.
+        /// Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
         /// </summary>
         [JsonPropertyName("isBuiltIn")]
         public bool? IsBuiltIn { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource scopes.
-        /// List of scopes permissions granted by the role definition apply to. Currently only '/' is supported. Read-only when isBuiltIn is true. DO NOT USE. This is going to be deprecated soon. Attach scope to role assignment
+        /// List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This is going to be deprecated soon. Attach scope to role assignment
         /// </summary>
         [JsonPropertyName("resourceScopes")]
         public IEnumerable<string> ResourceScopes { get; set; }
@@ -86,6 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets inherits permissions from.
+        /// Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
         /// </summary>
         [JsonPropertyName("inheritsPermissionsFrom")]
         public IUnifiedRoleDefinitionInheritsPermissionsFromCollectionPage InheritsPermissionsFrom { get; set; }

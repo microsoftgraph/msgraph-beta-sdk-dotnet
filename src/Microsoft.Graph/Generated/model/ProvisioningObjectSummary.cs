@@ -31,7 +31,6 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets action.
-        /// Indicates the activity name or the operation name (for example, Create user, Add member to group). For a list of activities logged, refer to Azure AD activity list.
         /// </summary>
         [Obsolete("The action property is deprecated. The provisioningAction holds the same information as this. This only exists in the beta api.")]
         [JsonPropertyName("action")]
@@ -88,12 +87,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets provisioning action.
+        /// Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
         /// </summary>
         [JsonPropertyName("provisioningAction")]
         public ProvisioningAction? ProvisioningAction { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning status info.
+        /// Details of provisioning status.
         /// </summary>
         [JsonPropertyName("provisioningStatusInfo")]
         public ProvisioningStatusInfo ProvisioningStatusInfo { get; set; }
@@ -128,7 +129,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status info.
-        /// Details of provisioning status.
         /// </summary>
         [Obsolete("The statusBase complex type is deprecated. The provisioningStatusInfo holds the same information as this. This only exists in the beta api.")]
         [JsonPropertyName("statusInfo")]

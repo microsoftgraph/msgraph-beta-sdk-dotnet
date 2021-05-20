@@ -1354,7 +1354,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets smart screen block override for files.
-        /// Allows IT Admins to control whether users can ignore SmartScreen warnings and run malicious files.
+        /// Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.
         /// </summary>
         [JsonPropertyName("smartScreenBlockOverrideForFiles")]
         public bool? SmartScreenBlockOverrideForFiles { get; set; }

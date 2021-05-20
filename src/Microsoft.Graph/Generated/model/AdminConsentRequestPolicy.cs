@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reviewers.
-        /// The list of reviewers for the admin consent. Required.
+        /// Required.
         /// </summary>
         [JsonPropertyName("reviewers")]
         public IEnumerable<AccessReviewReviewerScope> Reviewers { get; set; }

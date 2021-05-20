@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets member type.
+        /// Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
         /// </summary>
         [JsonPropertyName("memberType")]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets schedule info.
+        /// The schedule object of the eligible role assignment request.
         /// </summary>
         [JsonPropertyName("scheduleInfo")]
         public RequestSchedule ScheduleInfo { get; set; }

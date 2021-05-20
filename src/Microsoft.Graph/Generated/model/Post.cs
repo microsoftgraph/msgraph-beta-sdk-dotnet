@@ -94,7 +94,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attachments.
-        /// Read-only. Nullable.
+        /// The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("attachments")]
         public IPostAttachmentsCollectionPage Attachments { get; set; }
@@ -120,7 +120,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets in reply to.
-        /// Read-only.
+        /// The earlier post that this post is replying to in the conversationThread. Read-only.
         /// </summary>
         [JsonPropertyName("inReplyTo")]
         public Post InReplyTo { get; set; }

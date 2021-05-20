@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target.
-        /// Identifier for deployment of a group or app
+        /// Identifier for deployment to a group or app
         /// </summary>
         [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

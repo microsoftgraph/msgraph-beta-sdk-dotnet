@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets applicable architectures.
-        /// The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral.
+        /// The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
         /// </summary>
         [JsonPropertyName("applicableArchitectures")]
         public WindowsArchitecture? ApplicableArchitectures { get; set; }

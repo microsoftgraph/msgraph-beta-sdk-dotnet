@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Ediscovery
         public INoncustodialDataSourceReleaseRequestBuilder Release()
         {
             return new NoncustodialDataSourceReleaseRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.Release"),
+                this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.release"),
                 this.Client);
         }
 
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Ediscovery
         public INoncustodialDataSourceUpdateIndexRequestBuilder UpdateIndex()
         {
             return new NoncustodialDataSourceUpdateIndexRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.UpdateIndex"),
+                this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.updateIndex"),
                 this.Client);
         }
     

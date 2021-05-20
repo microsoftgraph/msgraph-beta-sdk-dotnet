@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets app scope ids.
-        /// Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use '/' for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
+        /// Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
         /// </summary>
         [JsonPropertyName("appScopeIds")]
         public IEnumerable<string> AppScopeIds { get; set; }
@@ -64,20 +64,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets principal ids.
-        /// Objectids of the principals to which the assignment is granted.
+        /// Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).
         /// </summary>
         [JsonPropertyName("principalIds")]
         public IEnumerable<string> PrincipalIds { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
-        /// ID of the unifiedRoleDefinition the assignment is for.
+        /// Identifier of the unifiedRoleDefinition the assignment is for.
         /// </summary>
         [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets app scopes.
+        /// Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
         /// </summary>
         [JsonPropertyName("appScopes")]
         public IUnifiedRoleAssignmentMultipleAppScopesCollectionPage AppScopes { get; set; }
@@ -90,6 +91,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets directory scopes.
+        /// Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
         /// </summary>
         [JsonPropertyName("directoryScopes")]
         public IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage DirectoryScopes { get; set; }
@@ -102,6 +104,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets principals.
+        /// Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
         /// </summary>
         [JsonPropertyName("principals")]
         public IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesPage Principals { get; set; }
@@ -114,6 +117,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role definition.
+        /// Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. Read-only. Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
         /// </summary>
         [JsonPropertyName("roleDefinition")]
         public UnifiedRoleDefinition RoleDefinition { get; set; }

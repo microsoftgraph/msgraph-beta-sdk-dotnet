@@ -30,48 +30,56 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets description.
+        /// Description for the policy.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Display name for the policy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is organization default.
+        /// This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
         /// </summary>
         [JsonPropertyName("isOrganizationDefault")]
         public bool? IsOrganizationDefault { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// The identity who last modified the role setting.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public Identity LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The time when the role setting was last modified.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets scope id.
+        /// The id of the scope where the policy is created. E.g. '/', groupId, etc.
         /// </summary>
         [JsonPropertyName("scopeId")]
         public string ScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets scope type.
+        /// The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
         /// </summary>
         [JsonPropertyName("scopeType")]
         public string ScopeType { get; set; }
     
         /// <summary>
         /// Gets or sets effective rules.
+        /// The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
         /// </summary>
         [JsonPropertyName("effectiveRules")]
         public IUnifiedRoleManagementPolicyEffectiveRulesCollectionPage EffectiveRules { get; set; }
@@ -84,6 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets rules.
+        /// The collection of rules like approval rule, expiration rule, etc.
         /// </summary>
         [JsonPropertyName("rules")]
         public IUnifiedRoleManagementPolicyRulesCollectionPage Rules { get; set; }

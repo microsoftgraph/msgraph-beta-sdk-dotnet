@@ -30,28 +30,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets defaultValue.
-        /// Default value for the setting.
+        /// Default value for the setting. Read-only.
         /// </summary>
         [JsonPropertyName("defaultValue")]
         public string DefaultValue { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Description of the setting.
+        /// Description of the setting. Read-only.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets name.
-        /// Name of the setting.
+        /// Name of the setting. Read-only.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// Type of the setting.
+        /// Type of the setting. Read-only.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

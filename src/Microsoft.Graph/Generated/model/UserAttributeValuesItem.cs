@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isDefault.
-        /// Determines whether the value is set as the default.
+        /// Used to set the value as the default.
         /// </summary>
         [JsonPropertyName("isDefault")]
         public bool? IsDefault { get; set; }
     
         /// <summary>
         /// Gets or sets name.
-        /// The display name of the property displayed to the user in the user flow.
+        /// The display name of the property displayed to the end user in the user flow.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }

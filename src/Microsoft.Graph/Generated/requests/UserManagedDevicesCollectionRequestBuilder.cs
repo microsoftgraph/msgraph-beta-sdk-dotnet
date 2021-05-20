@@ -61,6 +61,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceBulkReprovisionCloudPc.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceBulkReprovisionCloudPcRequestBuilder"/>.</returns>
+        public IManagedDeviceBulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc(
+            IEnumerable<string> managedDeviceIds = null)
+        {
+            return new ManagedDeviceBulkReprovisionCloudPcRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.bulkReprovisionCloudPc"),
+                this.Client,
+                managedDeviceIds);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceExecuteAction.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceExecuteActionRequestBuilder"/>.</returns>

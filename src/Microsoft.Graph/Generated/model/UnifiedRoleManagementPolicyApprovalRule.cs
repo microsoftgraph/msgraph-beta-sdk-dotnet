@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets setting.
+        /// The approval setting for the rule.
         /// </summary>
         [JsonPropertyName("setting")]
         public ApprovalSettings Setting { get; set; }

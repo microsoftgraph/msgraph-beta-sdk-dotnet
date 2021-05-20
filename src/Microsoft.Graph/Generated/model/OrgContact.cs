@@ -171,6 +171,18 @@ namespace Microsoft.Graph
         [JsonPropertyName("transitiveMemberOf@odata.nextLink")]
         public string TransitiveMemberOfNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets transitive reports.
+        /// </summary>
+        [JsonPropertyName("transitiveReports")]
+        public IOrgContactTransitiveReportsCollectionWithReferencesPage TransitiveReports { get; set; }
+
+        /// <summary>
+        /// Gets or sets transitiveReportsNextLink.
+        /// </summary>
+        [JsonPropertyName("transitiveReports@odata.nextLink")]
+        public string TransitiveReportsNextLink { get; set; }
+    
     }
 }
 

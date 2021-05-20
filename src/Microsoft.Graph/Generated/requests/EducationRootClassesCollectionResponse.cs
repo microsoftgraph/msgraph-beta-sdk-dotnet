@@ -14,6 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationRootClassesCollectionResponse.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<EducationRootClassesCollectionResponse>))]
     public class EducationRootClassesCollectionResponse
     {
         /// <summary>
