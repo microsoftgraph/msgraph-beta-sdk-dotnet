@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class PrintTaskTrigger : Entity
     {
     
-		///<summary>
-		/// The PrintTaskTrigger constructor
-		///</summary>
-        public PrintTaskTrigger()
-        {
-            this.ODataType = "microsoft.graph.printTaskTrigger";
-        }
-	
         /// <summary>
         /// Gets or sets event.
         /// The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.

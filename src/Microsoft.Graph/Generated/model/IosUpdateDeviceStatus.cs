@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class IosUpdateDeviceStatus : Entity
     {
     
-		///<summary>
-		/// The IosUpdateDeviceStatus constructor
-		///</summary>
-        public IosUpdateDeviceStatus()
-        {
-            this.ODataType = "microsoft.graph.iosUpdateDeviceStatus";
-        }
-	
         /// <summary>
         /// Gets or sets compliance grace period expiration date time.
         /// The DateTime when device compliance grace period expires

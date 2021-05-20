@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>))]
     public partial class DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate"/> class.
-        /// </summary>
-        public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationChoiceSettingValueDefinitionTemplate";
-        }
 
         /// <summary>
         /// Gets or sets allowedOptions.

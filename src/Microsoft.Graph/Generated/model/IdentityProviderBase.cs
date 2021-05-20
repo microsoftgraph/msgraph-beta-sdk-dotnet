@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class IdentityProviderBase : Entity
     {
     
-		///<summary>
-		/// The internal IdentityProviderBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal IdentityProviderBase constructor
+        ///</summary>
         protected internal IdentityProviderBase()
         {
             // Don't allow initialization of abstract entity types

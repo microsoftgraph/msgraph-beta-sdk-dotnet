@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RestoreAction>))]
     public partial class RestoreAction
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RestoreAction"/> class.
-        /// </summary>
-        public RestoreAction()
-        {
-            this.ODataType = "microsoft.graph.restoreAction";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

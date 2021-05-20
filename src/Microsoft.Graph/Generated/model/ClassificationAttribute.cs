@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ClassificationAttribute>))]
     public partial class ClassificationAttribute
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ClassificationAttribute"/> class.
-        /// </summary>
-        public ClassificationAttribute()
-        {
-            this.ODataType = "microsoft.graph.classificationAttribute";
-        }
 
         /// <summary>
         /// Gets or sets confidence.

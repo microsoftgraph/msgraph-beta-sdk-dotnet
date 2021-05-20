@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AssignmentFilterEvaluationStatusDetails : Entity
     {
     
-		///<summary>
-		/// The AssignmentFilterEvaluationStatusDetails constructor
-		///</summary>
-        public AssignmentFilterEvaluationStatusDetails()
-        {
-            this.ODataType = "microsoft.graph.assignmentFilterEvaluationStatusDetails";
-        }
-	
         /// <summary>
         /// Gets or sets payload id.
         /// PayloadId on which filter has been applied.

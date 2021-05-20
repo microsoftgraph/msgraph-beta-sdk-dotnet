@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MatchingLabel>))]
     public partial class MatchingLabel
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MatchingLabel"/> class.
-        /// </summary>
-        public MatchingLabel()
-        {
-            this.ODataType = "microsoft.graph.matchingLabel";
-        }
 
         /// <summary>
         /// Gets or sets applicationMode.

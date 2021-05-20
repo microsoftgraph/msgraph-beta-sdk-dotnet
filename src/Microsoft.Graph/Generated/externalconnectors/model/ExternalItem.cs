@@ -20,14 +20,6 @@ namespace Microsoft.Graph.ExternalConnectors
     public partial class ExternalItem : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ExternalItem constructor
-		///</summary>
-        public ExternalItem()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.externalItem";
-        }
-	
         /// <summary>
         /// Gets or sets acl.
         /// </summary>

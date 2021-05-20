@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MeetingTimeSuggestion>))]
     public partial class MeetingTimeSuggestion
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MeetingTimeSuggestion"/> class.
-        /// </summary>
-        public MeetingTimeSuggestion()
-        {
-            this.ODataType = "microsoft.graph.meetingTimeSuggestion";
-        }
 
         /// <summary>
         /// Gets or sets attendeeAvailability.

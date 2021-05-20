@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ConnectionInfo>))]
     public partial class ConnectionInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectionInfo"/> class.
-        /// </summary>
-        public ConnectionInfo()
-        {
-            this.ODataType = "microsoft.graph.connectionInfo";
-        }
 
         /// <summary>
         /// Gets or sets url.

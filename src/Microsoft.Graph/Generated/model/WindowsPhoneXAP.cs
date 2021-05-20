@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhoneXAP : MobileLobApp
     {
     
-		///<summary>
-		/// The WindowsPhoneXAP constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsPhoneXAP constructor
+        ///</summary>
         public WindowsPhoneXAP()
         {
             this.ODataType = "microsoft.graph.windowsPhoneXAP";
         }
-	
+    
         /// <summary>
         /// Gets or sets identity version.
         /// The identity version.

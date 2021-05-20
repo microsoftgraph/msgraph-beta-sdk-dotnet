@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserAnalytics : Entity
     {
     
-		///<summary>
-		/// The UserAnalytics constructor
-		///</summary>
-        public UserAnalytics()
-        {
-            this.ODataType = "microsoft.graph.userAnalytics";
-        }
-	
         /// <summary>
         /// Gets or sets settings.
         /// The current settings for a user to use the analytics API.

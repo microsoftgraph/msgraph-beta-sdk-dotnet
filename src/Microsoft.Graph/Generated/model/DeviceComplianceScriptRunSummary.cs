@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceComplianceScriptRunSummary : Entity
     {
     
-		///<summary>
-		/// The DeviceComplianceScriptRunSummary constructor
-		///</summary>
-        public DeviceComplianceScriptRunSummary()
-        {
-            this.ODataType = "microsoft.graph.deviceComplianceScriptRunSummary";
-        }
-	
         /// <summary>
         /// Gets or sets detection script error device count.
         /// Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647

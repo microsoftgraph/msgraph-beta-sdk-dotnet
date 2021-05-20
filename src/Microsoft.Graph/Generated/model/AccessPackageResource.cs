@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessPackageResource : Entity
     {
     
-		///<summary>
-		/// The AccessPackageResource constructor
-		///</summary>
-        public AccessPackageResource()
-        {
-            this.ODataType = "microsoft.graph.accessPackageResource";
-        }
-	
         /// <summary>
         /// Gets or sets added by.
         /// Read-only.

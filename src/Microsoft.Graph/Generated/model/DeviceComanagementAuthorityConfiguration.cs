@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceComanagementAuthorityConfiguration : DeviceEnrollmentConfiguration
     {
     
-		///<summary>
-		/// The DeviceComanagementAuthorityConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceComanagementAuthorityConfiguration constructor
+        ///</summary>
         public DeviceComanagementAuthorityConfiguration()
         {
             this.ODataType = "microsoft.graph.deviceComanagementAuthorityConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets configuration manager agent command line argument.
         /// CoManagement Authority configuration ConfigurationManagerAgentCommandLineArgument

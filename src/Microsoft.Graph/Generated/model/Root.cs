@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Root>))]
     public partial class Root
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Root"/> class.
-        /// </summary>
-        public Root()
-        {
-            this.ODataType = "microsoft.graph.root";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

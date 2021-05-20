@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class YammerDeviceUsageUserCounts : Entity
     {
     
-		///<summary>
-		/// The YammerDeviceUsageUserCounts constructor
-		///</summary>
-        public YammerDeviceUsageUserCounts()
-        {
-            this.ODataType = "microsoft.graph.yammerDeviceUsageUserCounts";
-        }
-	
         /// <summary>
         /// Gets or sets android phone.
         /// </summary>

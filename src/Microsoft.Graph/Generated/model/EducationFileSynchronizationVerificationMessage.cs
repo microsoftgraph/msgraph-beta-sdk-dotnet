@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EducationFileSynchronizationVerificationMessage>))]
     public partial class EducationFileSynchronizationVerificationMessage
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EducationFileSynchronizationVerificationMessage"/> class.
-        /// </summary>
-        public EducationFileSynchronizationVerificationMessage()
-        {
-            this.ODataType = "microsoft.graph.educationFileSynchronizationVerificationMessage";
-        }
 
         /// <summary>
         /// Gets or sets description.

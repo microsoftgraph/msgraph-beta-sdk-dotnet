@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkPosition : ItemFacet
     {
     
-		///<summary>
-		/// The WorkPosition constructor
-		///</summary>
-        public WorkPosition()
-        {
-            this.ODataType = "microsoft.graph.workPosition";
-        }
-	
         /// <summary>
         /// Gets or sets categories.
         /// Categories that the user has associated with this position.

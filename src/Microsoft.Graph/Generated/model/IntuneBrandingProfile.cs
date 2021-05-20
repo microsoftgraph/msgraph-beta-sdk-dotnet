@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class IntuneBrandingProfile : Entity
     {
     
-		///<summary>
-		/// The IntuneBrandingProfile constructor
-		///</summary>
-        public IntuneBrandingProfile()
-        {
-            this.ODataType = "microsoft.graph.intuneBrandingProfile";
-        }
-	
         /// <summary>
         /// Gets or sets company portal blocked actions.
         /// Collection of blocked actions on the company portal as per platform and device ownership types.

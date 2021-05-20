@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleEligibilityScheduleRequestObject : RequestObject
     {
     
-		///<summary>
-		/// The UnifiedRoleEligibilityScheduleRequest constructor
-		///</summary>
-        public UnifiedRoleEligibilityScheduleRequestObject()
-        {
-            this.ODataType = "microsoft.graph.unifiedRoleEligibilityScheduleRequest";
-        }
-	
         /// <summary>
         /// Gets or sets action.
         /// Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators assign users/groups to roles;UserAdd: Users activate eligible assignments; AdminUpdate: Administrators change existing role assignmentsAdminRemove: Administrators remove users/groups from roles;UserRemove: Users deactivate active assignments;UserExtend: Users request to extend their expiring assignments;AdminExtend: Administrators extend expiring assignments.UserRenew: Users request to renew their expired assignments;AdminRenew: Administrators extend expiring assignments.

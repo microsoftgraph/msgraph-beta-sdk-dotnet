@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ComanagedDevicesSummary>))]
     public partial class ComanagedDevicesSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ComanagedDevicesSummary"/> class.
-        /// </summary>
-        public ComanagedDevicesSummary()
-        {
-            this.ODataType = "microsoft.graph.comanagedDevicesSummary";
-        }
 
         /// <summary>
         /// Gets or sets compliancePolicyCount.

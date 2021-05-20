@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AgreementFileVersion : AgreementFileProperties
     {
     
-		///<summary>
-		/// The AgreementFileVersion constructor
-		///</summary>
-        public AgreementFileVersion()
-        {
-            this.ODataType = "microsoft.graph.agreementFileVersion";
-        }
-	
     }
 }
 

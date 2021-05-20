@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MacOSMinimumOperatingSystem>))]
     public partial class MacOSMinimumOperatingSystem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacOSMinimumOperatingSystem"/> class.
-        /// </summary>
-        public MacOSMinimumOperatingSystem()
-        {
-            this.ODataType = "microsoft.graph.macOSMinimumOperatingSystem";
-        }
 
         /// <summary>
         /// Gets or sets v10_10.

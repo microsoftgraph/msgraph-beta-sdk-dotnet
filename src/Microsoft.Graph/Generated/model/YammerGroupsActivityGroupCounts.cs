@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class YammerGroupsActivityGroupCounts : Entity
     {
     
-		///<summary>
-		/// The YammerGroupsActivityGroupCounts constructor
-		///</summary>
-        public YammerGroupsActivityGroupCounts()
-        {
-            this.ODataType = "microsoft.graph.yammerGroupsActivityGroupCounts";
-        }
-	
         /// <summary>
         /// Gets or sets active.
         /// </summary>

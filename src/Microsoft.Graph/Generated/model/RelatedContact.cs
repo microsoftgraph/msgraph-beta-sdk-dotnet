@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RelatedContact>))]
     public partial class RelatedContact
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RelatedContact"/> class.
-        /// </summary>
-        public RelatedContact()
-        {
-            this.ODataType = "microsoft.graph.relatedContact";
-        }
 
         /// <summary>
         /// Gets or sets accessConsent.

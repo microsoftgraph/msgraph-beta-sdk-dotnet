@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceComplianceActionItem : Entity
     {
     
-		///<summary>
-		/// The DeviceComplianceActionItem constructor
-		///</summary>
-        public DeviceComplianceActionItem()
-        {
-            this.ODataType = "microsoft.graph.deviceComplianceActionItem";
-        }
-	
         /// <summary>
         /// Gets or sets action type.
         /// What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.

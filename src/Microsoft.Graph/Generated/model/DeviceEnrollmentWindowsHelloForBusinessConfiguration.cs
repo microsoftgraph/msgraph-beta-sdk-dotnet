@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class DeviceEnrollmentWindowsHelloForBusinessConfiguration : DeviceEnrollmentConfiguration
     {
     
-		///<summary>
-		/// The DeviceEnrollmentWindowsHelloForBusinessConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceEnrollmentWindowsHelloForBusinessConfiguration constructor
+        ///</summary>
         public DeviceEnrollmentWindowsHelloForBusinessConfiguration()
         {
             this.ODataType = "microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets enhanced biometrics state.
         /// Controls the ability to use the anti-spoofing features for facial recognition on devices which support it. If set to disabled, anti-spoofing features are not allowed. If set to Not Configured, the user can choose whether they want to use anti-spoofing. Possible values are: notConfigured, enabled, disabled.

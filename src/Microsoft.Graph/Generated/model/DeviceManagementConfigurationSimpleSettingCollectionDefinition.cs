@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationSimpleSettingCollectionDefinition : DeviceManagementConfigurationSimpleSettingDefinition
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationSimpleSettingCollectionDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementConfigurationSimpleSettingCollectionDefinition constructor
+        ///</summary>
         public DeviceManagementConfigurationSimpleSettingCollectionDefinition()
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionDefinition";
         }
-	
+    
         /// <summary>
         /// Gets or sets maximum count.
         /// Maximum number of simple settings in the collection. Valid values 1 to 100

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MacOSSystemExtension>))]
     public partial class MacOSSystemExtension
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacOSSystemExtension"/> class.
-        /// </summary>
-        public MacOSSystemExtension()
-        {
-            this.ODataType = "microsoft.graph.macOSSystemExtension";
-        }
 
         /// <summary>
         /// Gets or sets bundleId.

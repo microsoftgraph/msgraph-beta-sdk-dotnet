@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WorkbookSortField>))]
     public partial class WorkbookSortField
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkbookSortField"/> class.
-        /// </summary>
-        public WorkbookSortField()
-        {
-            this.ODataType = "microsoft.graph.workbookSortField";
-        }
 
         /// <summary>
         /// Gets or sets ascending.

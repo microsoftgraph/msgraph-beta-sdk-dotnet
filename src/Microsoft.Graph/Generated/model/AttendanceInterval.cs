@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AttendanceInterval>))]
     public partial class AttendanceInterval
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AttendanceInterval"/> class.
-        /// </summary>
-        public AttendanceInterval()
-        {
-            this.ODataType = "microsoft.graph.attendanceInterval";
-        }
 
         /// <summary>
         /// Gets or sets durationInSeconds.

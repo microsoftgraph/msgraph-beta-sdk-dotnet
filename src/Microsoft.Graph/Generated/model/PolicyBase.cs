@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class PolicyBase : DirectoryObject
     {
     
-		///<summary>
-		/// The internal PolicyBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal PolicyBase constructor
+        ///</summary>
         protected internal PolicyBase()
         {
             // Don't allow initialization of abstract entity types

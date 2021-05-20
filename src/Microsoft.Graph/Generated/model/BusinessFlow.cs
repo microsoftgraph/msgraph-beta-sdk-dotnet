@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class BusinessFlow : Entity
     {
     
-		///<summary>
-		/// The BusinessFlow constructor
-		///</summary>
-        public BusinessFlow()
-        {
-            this.ODataType = "microsoft.graph.businessFlow";
-        }
-	
         /// <summary>
         /// Gets or sets custom data.
         /// </summary>

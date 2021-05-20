@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ManagedAppProtectionPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The ManagedAppProtectionPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The ManagedAppProtectionPolicySetItem constructor
+        ///</summary>
         public ManagedAppProtectionPolicySetItem()
         {
             this.ODataType = "microsoft.graph.managedAppProtectionPolicySetItem";
         }
-	
+    
         /// <summary>
         /// Gets or sets targeted app management levels.
         /// TargetedAppManagementLevels of the ManagedAppPolicySetItem.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileTrustedRootCertificate : DeviceConfiguration
     {
     
-		///<summary>
-		/// The AndroidWorkProfileTrustedRootCertificate constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidWorkProfileTrustedRootCertificate constructor
+        ///</summary>
         public AndroidWorkProfileTrustedRootCertificate()
         {
             this.ODataType = "microsoft.graph.androidWorkProfileTrustedRootCertificate";
         }
-	
+    
         /// <summary>
         /// Gets or sets cert file name.
         /// File name to display in UI.

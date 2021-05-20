@@ -21,14 +21,6 @@ namespace Microsoft.Graph.TermStore
     public partial class Group : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Group constructor
-		///</summary>
-        public Group()
-        {
-            this.ODataType = "microsoft.graph.termStore.group";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// Date and time of group creation. Read-only.

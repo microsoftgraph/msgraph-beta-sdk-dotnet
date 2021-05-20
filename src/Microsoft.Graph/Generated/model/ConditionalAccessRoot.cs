@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ConditionalAccessRoot : Entity
     {
     
-		///<summary>
-		/// The ConditionalAccessRoot constructor
-		///</summary>
-        public ConditionalAccessRoot()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessRoot";
-        }
-	
         /// <summary>
         /// Gets or sets authentication context class references.
         /// </summary>

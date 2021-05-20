@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DlpNotification>))]
     public partial class DlpNotification
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DlpNotification"/> class.
-        /// </summary>
-        public DlpNotification()
-        {
-            this.ODataType = "microsoft.graph.dlpNotification";
-        }
 
         /// <summary>
         /// Gets or sets author.

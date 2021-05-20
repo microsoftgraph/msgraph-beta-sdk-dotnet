@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class FileAttachment : Attachment
     {
     
-		///<summary>
-		/// The FileAttachment constructor
-		///</summary>
+        ///<summary>
+        /// The FileAttachment constructor
+        ///</summary>
         public FileAttachment()
         {
             this.ODataType = "microsoft.graph.fileAttachment";
         }
-	
+    
         /// <summary>
         /// Gets or sets content bytes.
         /// The base64-encoded contents of the file.

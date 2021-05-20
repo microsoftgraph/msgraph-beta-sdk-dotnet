@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class CredentialUsageSummary : Entity
     {
     
-		///<summary>
-		/// The CredentialUsageSummary constructor
-		///</summary>
-        public CredentialUsageSummary()
-        {
-            this.ODataType = "microsoft.graph.credentialUsageSummary";
-        }
-	
         /// <summary>
         /// Gets or sets auth method.
         /// Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementExchangeConnector : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementExchangeConnector constructor
-		///</summary>
-        public DeviceManagementExchangeConnector()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementExchangeConnector";
-        }
-	
         /// <summary>
         /// Gets or sets connector server name.
         /// The name of the server hosting the Exchange Connector.

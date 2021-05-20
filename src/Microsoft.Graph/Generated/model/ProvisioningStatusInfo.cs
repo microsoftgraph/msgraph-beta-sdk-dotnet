@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ProvisioningStatusInfo>))]
     public partial class ProvisioningStatusInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProvisioningStatusInfo"/> class.
-        /// </summary>
-        public ProvisioningStatusInfo()
-        {
-            this.ODataType = "microsoft.graph.provisioningStatusInfo";
-        }
 
         /// <summary>
         /// Gets or sets errorInformation.

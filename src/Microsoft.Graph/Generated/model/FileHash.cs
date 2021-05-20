@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<FileHash>))]
     public partial class FileHash
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FileHash"/> class.
-        /// </summary>
-        public FileHash()
-        {
-            this.ODataType = "microsoft.graph.fileHash";
-        }
 
         /// <summary>
         /// Gets or sets hashType.

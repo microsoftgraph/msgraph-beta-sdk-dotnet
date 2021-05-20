@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class RelyingPartyDetailedSummary : Entity
     {
     
-		///<summary>
-		/// The RelyingPartyDetailedSummary constructor
-		///</summary>
-        public RelyingPartyDetailedSummary()
-        {
-            this.ODataType = "microsoft.graph.relyingPartyDetailedSummary";
-        }
-	
         /// <summary>
         /// Gets or sets failed sign in count.
         /// Number of failed sign in on Active Directory Federation Service in the period specified.

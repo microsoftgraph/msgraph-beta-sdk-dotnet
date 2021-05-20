@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Print
     {
     
-		///<summary>
-		/// The Print constructor
-		///</summary>
-        public Print()
-        {
-            this.ODataType = "microsoft.graph.print";
-        }
-	
         /// <summary>
         /// Gets or sets settings.
         /// Tenant-wide settings for the Universal Print service.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ResourceAccess>))]
     public partial class ResourceAccess
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ResourceAccess"/> class.
-        /// </summary>
-        public ResourceAccess()
-        {
-            this.ODataType = "microsoft.graph.resourceAccess";
-        }
 
         /// <summary>
         /// Gets or sets id.

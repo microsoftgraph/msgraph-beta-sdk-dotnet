@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PlannerRosterMember : Entity
     {
     
-		///<summary>
-		/// The PlannerRosterMember constructor
-		///</summary>
-        public PlannerRosterMember()
-        {
-            this.ODataType = "microsoft.graph.plannerRosterMember";
-        }
-	
         /// <summary>
         /// Gets or sets roles.
         /// Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.

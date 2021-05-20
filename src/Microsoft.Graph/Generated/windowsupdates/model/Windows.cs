@@ -20,14 +20,6 @@ namespace Microsoft.Graph.WindowsUpdates
     public partial class Windows : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Windows constructor
-		///</summary>
-        public Windows()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.windows";
-        }
-	
         /// <summary>
         /// Gets or sets updates.
         /// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.

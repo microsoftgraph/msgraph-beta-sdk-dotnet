@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidImportedPFXCertificateProfile : AndroidCertificateProfileBase
     {
     
-		///<summary>
-		/// The AndroidImportedPFXCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidImportedPFXCertificateProfile constructor
+        ///</summary>
         public AndroidImportedPFXCertificateProfile()
         {
             this.ODataType = "microsoft.graph.androidImportedPFXCertificateProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets intended purpose.
         /// Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.

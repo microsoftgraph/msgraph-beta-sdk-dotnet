@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementIntentDeviceSettingStateSummary : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementIntentDeviceSettingStateSummary constructor
-		///</summary>
-        public DeviceManagementIntentDeviceSettingStateSummary()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementIntentDeviceSettingStateSummary";
-        }
-	
         /// <summary>
         /// Gets or sets compliant count.
         /// Number of compliant devices

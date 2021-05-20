@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EducationalActivityDetail>))]
     public partial class EducationalActivityDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EducationalActivityDetail"/> class.
-        /// </summary>
-        public EducationalActivityDetail()
-        {
-            this.ODataType = "microsoft.graph.educationalActivityDetail";
-        }
 
         /// <summary>
         /// Gets or sets abbreviation.

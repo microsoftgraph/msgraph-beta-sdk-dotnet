@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Media>))]
     public partial class Media
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Media"/> class.
-        /// </summary>
-        public Media()
-        {
-            this.ODataType = "microsoft.graph.media";
-        }
 
         /// <summary>
         /// Gets or sets isTranscriptionShown.

@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class ActivityStatistics : Entity
     {
     
-		///<summary>
-		/// The internal ActivityStatistics constructor
-		///</summary>
+        ///<summary>
+        /// The internal ActivityStatistics constructor
+        ///</summary>
         protected internal ActivityStatistics()
         {
             // Don't allow initialization of abstract entity types

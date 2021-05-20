@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DirectoryAudit : Entity
     {
     
-		///<summary>
-		/// The DirectoryAudit constructor
-		///</summary>
-        public DirectoryAudit()
-        {
-            this.ODataType = "microsoft.graph.directoryAudit";
-        }
-	
         /// <summary>
         /// Gets or sets activity date time.
         /// Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

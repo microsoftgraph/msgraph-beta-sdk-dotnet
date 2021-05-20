@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OperationError>))]
     public partial class OperationError
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OperationError"/> class.
-        /// </summary>
-        public OperationError()
-        {
-            this.ODataType = "microsoft.graph.operationError";
-        }
 
         /// <summary>
         /// Gets or sets code.

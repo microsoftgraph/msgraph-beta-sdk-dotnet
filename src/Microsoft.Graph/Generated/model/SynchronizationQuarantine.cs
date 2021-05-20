@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SynchronizationQuarantine>))]
     public partial class SynchronizationQuarantine
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SynchronizationQuarantine"/> class.
-        /// </summary>
-        public SynchronizationQuarantine()
-        {
-            this.ODataType = "microsoft.graph.synchronizationQuarantine";
-        }
 
         /// <summary>
         /// Gets or sets currentBegan.

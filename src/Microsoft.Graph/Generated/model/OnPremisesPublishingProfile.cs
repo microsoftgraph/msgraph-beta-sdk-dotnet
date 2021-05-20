@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class OnPremisesPublishingProfile : Entity
     {
     
-		///<summary>
-		/// The OnPremisesPublishingProfile constructor
-		///</summary>
-        public OnPremisesPublishingProfile()
-        {
-            this.ODataType = "microsoft.graph.onPremisesPublishingProfile";
-        }
-	
         /// <summary>
         /// Gets or sets hybrid agent updater configuration.
         /// Represents a hybridAgentUpdaterConfiguration object.

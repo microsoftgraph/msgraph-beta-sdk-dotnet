@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AndroidDeviceComplianceLocalActionLockDevice : AndroidDeviceComplianceLocalActionBase
     {
     
-		///<summary>
-		/// The AndroidDeviceComplianceLocalActionLockDevice constructor
-		///</summary>
-        public AndroidDeviceComplianceLocalActionLockDevice()
-        {
-            this.ODataType = "microsoft.graph.androidDeviceComplianceLocalActionLockDevice";
-        }
-	
     }
 }
 

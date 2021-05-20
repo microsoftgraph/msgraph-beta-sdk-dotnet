@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class MessageRule : Entity
     {
     
-		///<summary>
-		/// The MessageRule constructor
-		///</summary>
-        public MessageRule()
-        {
-            this.ODataType = "microsoft.graph.messageRule";
-        }
-	
         /// <summary>
         /// Gets or sets actions.
         /// Actions to be taken on a message when the corresponding conditions are fulfilled.

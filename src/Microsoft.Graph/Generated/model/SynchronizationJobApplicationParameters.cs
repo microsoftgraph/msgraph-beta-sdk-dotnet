@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SynchronizationJobApplicationParameters>))]
     public partial class SynchronizationJobApplicationParameters
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SynchronizationJobApplicationParameters"/> class.
-        /// </summary>
-        public SynchronizationJobApplicationParameters()
-        {
-            this.ODataType = "microsoft.graph.synchronizationJobApplicationParameters";
-        }
 
         /// <summary>
         /// Gets or sets ruleId.

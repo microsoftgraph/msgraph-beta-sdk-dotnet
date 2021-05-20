@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DataSharingConsent : Entity
     {
     
-		///<summary>
-		/// The DataSharingConsent constructor
-		///</summary>
-        public DataSharingConsent()
-        {
-            this.ODataType = "microsoft.graph.dataSharingConsent";
-        }
-	
         /// <summary>
         /// Gets or sets grant date time.
         /// The time consent was granted for this account

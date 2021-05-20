@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserSecurityState>))]
     public partial class UserSecurityState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserSecurityState"/> class.
-        /// </summary>
-        public UserSecurityState()
-        {
-            this.ODataType = "microsoft.graph.userSecurityState";
-        }
 
         /// <summary>
         /// Gets or sets aadUserId.

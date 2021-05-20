@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationChoiceSettingDefinition : DeviceManagementConfigurationSettingDefinition
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationChoiceSettingDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementConfigurationChoiceSettingDefinition constructor
+        ///</summary>
         public DeviceManagementConfigurationChoiceSettingDefinition()
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition";
         }
-	
+    
         /// <summary>
         /// Gets or sets default option id.
         /// Default option for choice setting

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SynchronizationSchema : Entity
     {
     
-		///<summary>
-		/// The SynchronizationSchema constructor
-		///</summary>
-        public SynchronizationSchema()
-        {
-            this.ODataType = "microsoft.graph.synchronizationSchema";
-        }
-	
         /// <summary>
         /// Gets or sets synchronization rules.
         /// A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.

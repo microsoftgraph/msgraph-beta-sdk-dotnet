@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ChangeNotification>))]
     public partial class ChangeNotification
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChangeNotification"/> class.
-        /// </summary>
-        public ChangeNotification()
-        {
-            this.ODataType = "microsoft.graph.changeNotification";
-        }
 
         /// <summary>
         /// Gets or sets changeType.

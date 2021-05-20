@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class EnrollmentRestrictionsConfigurationPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The EnrollmentRestrictionsConfigurationPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The EnrollmentRestrictionsConfigurationPolicySetItem constructor
+        ///</summary>
         public EnrollmentRestrictionsConfigurationPolicySetItem()
         {
             this.ODataType = "microsoft.graph.enrollmentRestrictionsConfigurationPolicySetItem";
         }
-	
+    
         /// <summary>
         /// Gets or sets limit.
         /// Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.

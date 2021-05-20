@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOsVppApp : MobileApp
     {
     
-		///<summary>
-		/// The MacOsVppApp constructor
-		///</summary>
+        ///<summary>
+        /// The MacOsVppApp constructor
+        ///</summary>
         public MacOsVppApp()
         {
             this.ODataType = "microsoft.graph.macOsVppApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets app store url.
         /// The store URL.

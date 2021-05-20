@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ComplianceManagementPartner : Entity
     {
     
-		///<summary>
-		/// The ComplianceManagementPartner constructor
-		///</summary>
-        public ComplianceManagementPartner()
-        {
-            this.ODataType = "microsoft.graph.complianceManagementPartner";
-        }
-	
         /// <summary>
         /// Gets or sets android enrollment assignments.
         /// User groups which enroll Android devices through partner.

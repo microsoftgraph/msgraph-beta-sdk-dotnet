@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ServiceInformation>))]
     public partial class ServiceInformation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ServiceInformation"/> class.
-        /// </summary>
-        public ServiceInformation()
-        {
-            this.ODataType = "microsoft.graph.serviceInformation";
-        }
 
         /// <summary>
         /// Gets or sets name.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph.CallRecords
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<PstnCallLogRow>))]
     public partial class PstnCallLogRow
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PstnCallLogRow"/> class.
-        /// </summary>
-        public PstnCallLogRow()
-        {
-            this.ODataType = "microsoft.graph.callRecords.pstnCallLogRow";
-        }
 
         /// <summary>
         /// Gets or sets calleeNumber.

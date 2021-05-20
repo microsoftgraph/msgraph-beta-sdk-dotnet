@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceAppManagementTask : Entity
     {
     
-		///<summary>
-		/// The DeviceAppManagementTask constructor
-		///</summary>
-        public DeviceAppManagementTask()
-        {
-            this.ODataType = "microsoft.graph.deviceAppManagementTask";
-        }
-	
         /// <summary>
         /// Gets or sets assigned to.
         /// The name or email of the admin this task is assigned to.

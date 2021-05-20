@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ClassifcationErrorBase>))]
     public partial class ClassifcationErrorBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ClassifcationErrorBase"/> class.
-        /// </summary>
-        public ClassifcationErrorBase()
-        {
-            this.ODataType = "microsoft.graph.classifcationErrorBase";
-        }
 
         /// <summary>
         /// Gets or sets code.

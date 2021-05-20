@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class ManagementCondition : Entity
     {
     
-		///<summary>
-		/// The internal ManagementCondition constructor
-		///</summary>
+        ///<summary>
+        /// The internal ManagementCondition constructor
+        ///</summary>
         protected internal ManagementCondition()
         {
             // Don't allow initialization of abstract entity types

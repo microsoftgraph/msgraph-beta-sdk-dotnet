@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookComment : Entity
     {
     
-		///<summary>
-		/// The WorkbookComment constructor
-		///</summary>
-        public WorkbookComment()
-        {
-            this.ODataType = "microsoft.graph.workbookComment";
-        }
-	
         /// <summary>
         /// Gets or sets content.
         /// The content of the comment.

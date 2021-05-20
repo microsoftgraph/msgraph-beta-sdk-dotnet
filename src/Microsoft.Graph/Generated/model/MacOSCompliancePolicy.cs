@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSCompliancePolicy : DeviceCompliancePolicy
     {
     
-		///<summary>
-		/// The MacOSCompliancePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSCompliancePolicy constructor
+        ///</summary>
         public MacOSCompliancePolicy()
         {
             this.ODataType = "microsoft.graph.macOSCompliancePolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets advanced threat protection required security level.
         /// MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.

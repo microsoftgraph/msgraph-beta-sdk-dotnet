@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookWorksheetProtection : Entity
     {
     
-		///<summary>
-		/// The WorkbookWorksheetProtection constructor
-		///</summary>
-        public WorkbookWorksheetProtection()
-        {
-            this.ODataType = "microsoft.graph.workbookWorksheetProtection";
-        }
-	
         /// <summary>
         /// Gets or sets options.
         /// Sheet protection options. Read-only.

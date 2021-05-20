@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class SecurityBaselineSettingState : Entity
     {
     
-		///<summary>
-		/// The SecurityBaselineSettingState constructor
-		///</summary>
-        public SecurityBaselineSettingState()
-        {
-            this.ODataType = "microsoft.graph.securityBaselineSettingState";
-        }
-	
         /// <summary>
         /// Gets or sets contributing policies.
         /// The policies that contribute to this setting instance

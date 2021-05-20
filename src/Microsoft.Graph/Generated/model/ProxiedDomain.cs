@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ProxiedDomain>))]
     public partial class ProxiedDomain
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProxiedDomain"/> class.
-        /// </summary>
-        public ProxiedDomain()
-        {
-            this.ODataType = "microsoft.graph.proxiedDomain";
-        }
 
         /// <summary>
         /// Gets or sets ipAddressOrFQDN.

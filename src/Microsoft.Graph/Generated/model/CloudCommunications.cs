@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class CloudCommunications : Entity
     {
     
-		///<summary>
-		/// The CloudCommunications constructor
-		///</summary>
-        public CloudCommunications()
-        {
-            this.ODataType = "microsoft.graph.cloudCommunications";
-        }
-	
         /// <summary>
         /// Gets or sets calls.
         /// </summary>

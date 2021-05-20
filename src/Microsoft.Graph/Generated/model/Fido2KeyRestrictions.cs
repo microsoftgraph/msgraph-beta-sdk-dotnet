@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Fido2KeyRestrictions>))]
     public partial class Fido2KeyRestrictions
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Fido2KeyRestrictions"/> class.
-        /// </summary>
-        public Fido2KeyRestrictions()
-        {
-            this.ODataType = "microsoft.graph.fido2KeyRestrictions";
-        }
 
         /// <summary>
         /// Gets or sets aaGuids.

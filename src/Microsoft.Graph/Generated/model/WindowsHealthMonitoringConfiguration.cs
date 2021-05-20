@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsHealthMonitoringConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The WindowsHealthMonitoringConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsHealthMonitoringConfiguration constructor
+        ///</summary>
         public WindowsHealthMonitoringConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsHealthMonitoringConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets allow device health monitoring.
         /// Enables device health monitoring on the device. Possible values are: notConfigured, enabled, disabled.

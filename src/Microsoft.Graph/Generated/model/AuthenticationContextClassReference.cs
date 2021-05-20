@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AuthenticationContextClassReference : Entity
     {
     
-		///<summary>
-		/// The AuthenticationContextClassReference constructor
-		///</summary>
-        public AuthenticationContextClassReference()
-        {
-            this.ODataType = "microsoft.graph.authenticationContextClassReference";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user facing admin experiences. For example, selection UX.

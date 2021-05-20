@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Office365GroupsActivityStorage : Entity
     {
     
-		///<summary>
-		/// The Office365GroupsActivityStorage constructor
-		///</summary>
-        public Office365GroupsActivityStorage()
-        {
-            this.ODataType = "microsoft.graph.office365GroupsActivityStorage";
-        }
-	
         /// <summary>
         /// Gets or sets mailbox storage used in bytes.
         /// The storage used in group mailbox.

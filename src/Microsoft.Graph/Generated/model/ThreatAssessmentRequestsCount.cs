@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ThreatAssessmentRequestsCount>))]
     public partial class ThreatAssessmentRequestsCount
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ThreatAssessmentRequestsCount"/> class.
-        /// </summary>
-        public ThreatAssessmentRequestsCount()
-        {
-            this.ODataType = "microsoft.graph.threatAssessmentRequestsCount";
-        }
 
         /// <summary>
         /// Gets or sets count.

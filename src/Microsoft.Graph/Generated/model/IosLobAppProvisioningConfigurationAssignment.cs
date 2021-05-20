@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class IosLobAppProvisioningConfigurationAssignment : Entity
     {
     
-		///<summary>
-		/// The IosLobAppProvisioningConfigurationAssignment constructor
-		///</summary>
-        public IosLobAppProvisioningConfigurationAssignment()
-        {
-            this.ODataType = "microsoft.graph.iosLobAppProvisioningConfigurationAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// The target group assignment defined by the admin.

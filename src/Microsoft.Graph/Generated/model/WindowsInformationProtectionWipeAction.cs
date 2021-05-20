@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class WindowsInformationProtectionWipeAction : Entity
     {
     
-		///<summary>
-		/// The WindowsInformationProtectionWipeAction constructor
-		///</summary>
-        public WindowsInformationProtectionWipeAction()
-        {
-            this.ODataType = "microsoft.graph.windowsInformationProtectionWipeAction";
-        }
-	
         /// <summary>
         /// Gets or sets last check in date time.
         /// Last checkin time of the device that was targeted by this wipe action.

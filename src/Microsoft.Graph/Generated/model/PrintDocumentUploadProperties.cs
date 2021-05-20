@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PrintDocumentUploadProperties>))]
     public partial class PrintDocumentUploadProperties
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrintDocumentUploadProperties"/> class.
-        /// </summary>
-        public PrintDocumentUploadProperties()
-        {
-            this.ODataType = "microsoft.graph.printDocumentUploadProperties";
-        }
 
         /// <summary>
         /// Gets or sets contentType.

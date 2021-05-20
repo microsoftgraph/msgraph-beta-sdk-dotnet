@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceDetail>))]
     public partial class DeviceDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceDetail"/> class.
-        /// </summary>
-        public DeviceDetail()
-        {
-            this.ODataType = "microsoft.graph.deviceDetail";
-        }
 
         /// <summary>
         /// Gets or sets browser.

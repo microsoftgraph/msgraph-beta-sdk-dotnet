@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsBaseline : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsBaseline constructor
-		///</summary>
-        public UserExperienceAnalyticsBaseline()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsBaseline";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The date the custom baseline was created.

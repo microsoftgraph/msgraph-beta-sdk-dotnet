@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ChromeOSOnboardingSettings : Entity
     {
     
-		///<summary>
-		/// The ChromeOSOnboardingSettings constructor
-		///</summary>
-        public ChromeOSOnboardingSettings()
-        {
-            this.ODataType = "microsoft.graph.chromeOSOnboardingSettings";
-        }
-	
         /// <summary>
         /// Gets or sets last directory sync date time.
         /// The ChromebookTenant's LastDirectorySyncDateTime

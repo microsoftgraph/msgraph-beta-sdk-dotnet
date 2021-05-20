@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class Windows81CertificateProfileBase : WindowsCertificateProfileBase
     {
     
-		///<summary>
-		/// The internal Windows81CertificateProfileBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal Windows81CertificateProfileBase constructor
+        ///</summary>
         protected internal Windows81CertificateProfileBase()
         {
             // Don't allow initialization of abstract entity types

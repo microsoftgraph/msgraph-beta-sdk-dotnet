@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserAccount>))]
     public partial class UserAccount
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserAccount"/> class.
-        /// </summary>
-        public UserAccount()
-        {
-            this.ODataType = "microsoft.graph.userAccount";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

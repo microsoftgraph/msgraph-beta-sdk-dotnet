@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class DeviceManagementSettingInstance : Entity
     {
     
-		///<summary>
-		/// The internal DeviceManagementSettingInstance constructor
-		///</summary>
+        ///<summary>
+        /// The internal DeviceManagementSettingInstance constructor
+        ///</summary>
         protected internal DeviceManagementSettingInstance()
         {
             // Don't allow initialization of abstract entity types

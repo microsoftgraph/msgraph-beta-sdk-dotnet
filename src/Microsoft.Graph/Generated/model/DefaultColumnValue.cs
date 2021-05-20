@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DefaultColumnValue>))]
     public partial class DefaultColumnValue
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DefaultColumnValue"/> class.
-        /// </summary>
-        public DefaultColumnValue()
-        {
-            this.ODataType = "microsoft.graph.defaultColumnValue";
-        }
 
         /// <summary>
         /// Gets or sets formula.

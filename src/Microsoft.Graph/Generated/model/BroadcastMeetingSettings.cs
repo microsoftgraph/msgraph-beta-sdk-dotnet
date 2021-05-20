@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<BroadcastMeetingSettings>))]
     public partial class BroadcastMeetingSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BroadcastMeetingSettings"/> class.
-        /// </summary>
-        public BroadcastMeetingSettings()
-        {
-            this.ODataType = "microsoft.graph.broadcastMeetingSettings";
-        }
 
         /// <summary>
         /// Gets or sets allowedAudience.

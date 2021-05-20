@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidDeviceOwnerGeneralDeviceConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The AndroidDeviceOwnerGeneralDeviceConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidDeviceOwnerGeneralDeviceConfiguration constructor
+        ///</summary>
         public AndroidDeviceOwnerGeneralDeviceConfiguration()
         {
             this.ODataType = "microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets accounts block modification.
         /// Indicates whether or not adding or removing accounts is disabled.

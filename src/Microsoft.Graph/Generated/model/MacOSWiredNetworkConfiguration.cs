@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSWiredNetworkConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The MacOSWiredNetworkConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSWiredNetworkConfiguration constructor
+        ///</summary>
         public MacOSWiredNetworkConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSWiredNetworkConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets authentication method.
         /// Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.

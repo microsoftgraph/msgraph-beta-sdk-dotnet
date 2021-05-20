@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Bitlocker : Entity
     {
     
-		///<summary>
-		/// The Bitlocker constructor
-		///</summary>
-        public Bitlocker()
-        {
-            this.ODataType = "microsoft.graph.bitlocker";
-        }
-	
         /// <summary>
         /// Gets or sets recovery keys.
         /// The recovery keys associated with the bitlocker entity.

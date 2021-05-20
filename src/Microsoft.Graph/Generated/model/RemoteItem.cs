@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RemoteItem>))]
     public partial class RemoteItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RemoteItem"/> class.
-        /// </summary>
-        public RemoteItem()
-        {
-            this.ODataType = "microsoft.graph.remoteItem";
-        }
 
         /// <summary>
         /// Gets or sets createdBy.

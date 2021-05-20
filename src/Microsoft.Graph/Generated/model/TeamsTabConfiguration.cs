@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TeamsTabConfiguration>))]
     public partial class TeamsTabConfiguration
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TeamsTabConfiguration"/> class.
-        /// </summary>
-        public TeamsTabConfiguration()
-        {
-            this.ODataType = "microsoft.graph.teamsTabConfiguration";
-        }
 
         /// <summary>
         /// Gets or sets contentUrl.

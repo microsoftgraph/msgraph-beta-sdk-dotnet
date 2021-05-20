@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeletedWindowsAutopilotDeviceState>))]
     public partial class DeletedWindowsAutopilotDeviceState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeletedWindowsAutopilotDeviceState"/> class.
-        /// </summary>
-        public DeletedWindowsAutopilotDeviceState()
-        {
-            this.ODataType = "microsoft.graph.deletedWindowsAutopilotDeviceState";
-        }
 
         /// <summary>
         /// Gets or sets deletionState.

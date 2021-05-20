@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ProgramControlType : Entity
     {
     
-		///<summary>
-		/// The ProgramControlType constructor
-		///</summary>
-        public ProgramControlType()
-        {
-            this.ODataType = "microsoft.graph.programControlType";
-        }
-	
         /// <summary>
         /// Gets or sets control type group id.
         /// </summary>

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ChatMessagePolicyViolation>))]
     public partial class ChatMessagePolicyViolation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChatMessagePolicyViolation"/> class.
-        /// </summary>
-        public ChatMessagePolicyViolation()
-        {
-            this.ODataType = "microsoft.graph.chatMessagePolicyViolation";
-        }
 
         /// <summary>
         /// Gets or sets dlpAction.

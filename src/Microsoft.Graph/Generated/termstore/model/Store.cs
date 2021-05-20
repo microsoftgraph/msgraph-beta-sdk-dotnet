@@ -20,14 +20,6 @@ namespace Microsoft.Graph.TermStore
     public partial class Store : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Store constructor
-		///</summary>
-        public Store()
-        {
-            this.ODataType = "microsoft.graph.termStore.store";
-        }
-	
         /// <summary>
         /// Gets or sets default language tag.
         /// Default language of the term store.

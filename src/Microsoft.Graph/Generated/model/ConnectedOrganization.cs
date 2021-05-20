@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ConnectedOrganization : Entity
     {
     
-		///<summary>
-		/// The ConnectedOrganization constructor
-		///</summary>
-        public ConnectedOrganization()
-        {
-            this.ODataType = "microsoft.graph.connectedOrganization";
-        }
-	
         /// <summary>
         /// Gets or sets created by.
         /// UPN of the user who created this resource. Read-only.

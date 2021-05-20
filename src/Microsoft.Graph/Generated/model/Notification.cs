@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Notification : Entity
     {
     
-		///<summary>
-		/// The Notification constructor
-		///</summary>
-        public Notification()
-        {
-            this.ODataType = "microsoft.graph.notification";
-        }
-	
         /// <summary>
         /// Gets or sets display time to live.
         /// Sets how long (in seconds) this notification content will stay in each platform’s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user’s Windows Action Center.

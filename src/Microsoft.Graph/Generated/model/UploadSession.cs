@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UploadSession>))]
     public partial class UploadSession
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UploadSession"/> class.
-        /// </summary>
-        public UploadSession()
-        {
-            this.ODataType = "microsoft.graph.uploadSession";
-        }
 
         /// <summary>
         /// Gets or sets expirationDateTime.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ApprovalWorkflowProvider : Entity
     {
     
-		///<summary>
-		/// The ApprovalWorkflowProvider constructor
-		///</summary>
-        public ApprovalWorkflowProvider()
-        {
-            this.ODataType = "microsoft.graph.approvalWorkflowProvider";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

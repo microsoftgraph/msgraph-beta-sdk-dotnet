@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EmailAppUsageUserDetail : Entity
     {
     
-		///<summary>
-		/// The EmailAppUsageUserDetail constructor
-		///</summary>
-        public EmailAppUsageUserDetail()
-        {
-            this.ODataType = "microsoft.graph.emailAppUsageUserDetail";
-        }
-	
         /// <summary>
         /// Gets or sets deleted date.
         /// </summary>

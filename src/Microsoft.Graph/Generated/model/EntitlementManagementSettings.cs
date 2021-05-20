@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EntitlementManagementSettings : Entity
     {
     
-		///<summary>
-		/// The EntitlementManagementSettings constructor
-		///</summary>
-        public EntitlementManagementSettings()
-        {
-            this.ODataType = "microsoft.graph.entitlementManagementSettings";
-        }
-	
         /// <summary>
         /// Gets or sets days until external user deleted after blocked.
         /// If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.

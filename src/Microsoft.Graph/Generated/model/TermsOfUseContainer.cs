@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TermsOfUseContainer : Entity
     {
     
-		///<summary>
-		/// The TermsOfUseContainer constructor
-		///</summary>
-        public TermsOfUseContainer()
-        {
-            this.ODataType = "microsoft.graph.termsOfUseContainer";
-        }
-	
         /// <summary>
         /// Gets or sets agreement acceptances.
         /// </summary>

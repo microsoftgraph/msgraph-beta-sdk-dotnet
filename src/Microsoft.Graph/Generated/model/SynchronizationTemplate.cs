@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SynchronizationTemplate : Entity
     {
     
-		///<summary>
-		/// The SynchronizationTemplate constructor
-		///</summary>
-        public SynchronizationTemplate()
-        {
-            this.ODataType = "microsoft.graph.synchronizationTemplate";
-        }
-	
         /// <summary>
         /// Gets or sets application id.
         /// Identifier of the application this template belongs to.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Windows10XCustomSubjectAlternativeName>))]
     public partial class Windows10XCustomSubjectAlternativeName
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Windows10XCustomSubjectAlternativeName"/> class.
-        /// </summary>
-        public Windows10XCustomSubjectAlternativeName()
-        {
-            this.ODataType = "microsoft.graph.windows10XCustomSubjectAlternativeName";
-        }
 
         /// <summary>
         /// Gets or sets name.

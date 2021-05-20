@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class CredentialUserRegistrationDetails : Entity
     {
     
-		///<summary>
-		/// The CredentialUserRegistrationDetails constructor
-		///</summary>
-        public CredentialUserRegistrationDetails()
-        {
-            this.ODataType = "microsoft.graph.credentialUserRegistrationDetails";
-        }
-	
         /// <summary>
         /// Gets or sets auth methods.
         /// Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.

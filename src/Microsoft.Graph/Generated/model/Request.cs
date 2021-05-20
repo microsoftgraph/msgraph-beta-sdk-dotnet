@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class RequestObject : Entity
     {
     
-		///<summary>
-		/// The Request constructor
-		///</summary>
-        public RequestObject()
-        {
-            this.ODataType = "microsoft.graph.request";
-        }
-	
         /// <summary>
         /// Gets or sets approval id.
         /// </summary>

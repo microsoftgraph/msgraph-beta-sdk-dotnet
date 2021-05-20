@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class NetworkIPv4ConfigurationManagementCondition : NetworkManagementCondition
     {
     
-		///<summary>
-		/// The NetworkIPv4ConfigurationManagementCondition constructor
-		///</summary>
+        ///<summary>
+        /// The NetworkIPv4ConfigurationManagementCondition constructor
+        ///</summary>
         public NetworkIPv4ConfigurationManagementCondition()
         {
             this.ODataType = "microsoft.graph.networkIPv4ConfigurationManagementCondition";
         }
-	
+    
         /// <summary>
         /// Gets or sets dns suffix list.
         /// Valid DNS suffixes for the current network. e.g. seattle.contoso.com

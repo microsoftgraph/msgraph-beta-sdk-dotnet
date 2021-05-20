@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ChangeNotificationCollection>))]
     public partial class ChangeNotificationCollection
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChangeNotificationCollection"/> class.
-        /// </summary>
-        public ChangeNotificationCollection()
-        {
-            this.ODataType = "microsoft.graph.changeNotificationCollection";
-        }
 
         /// <summary>
         /// Gets or sets validationTokens.

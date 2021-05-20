@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PublicClientApplication>))]
     public partial class PublicClientApplication
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PublicClientApplication"/> class.
-        /// </summary>
-        public PublicClientApplication()
-        {
-            this.ODataType = "microsoft.graph.publicClientApplication";
-        }
 
         /// <summary>
         /// Gets or sets redirectUris.

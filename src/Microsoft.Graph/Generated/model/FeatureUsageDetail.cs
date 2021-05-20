@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<FeatureUsageDetail>))]
     public partial class FeatureUsageDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FeatureUsageDetail"/> class.
-        /// </summary>
-        public FeatureUsageDetail()
-        {
-            this.ODataType = "microsoft.graph.featureUsageDetail";
-        }
 
         /// <summary>
         /// Gets or sets featureName.

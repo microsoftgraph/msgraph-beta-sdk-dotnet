@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WindowsDefenderApplicationControlSupplementalPolicy : Entity
     {
     
-		///<summary>
-		/// The WindowsDefenderApplicationControlSupplementalPolicy constructor
-		///</summary>
-        public WindowsDefenderApplicationControlSupplementalPolicy()
-        {
-            this.ODataType = "microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets content.
         /// The WindowsDefenderApplicationControl supplemental policy content in byte array format.

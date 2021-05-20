@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ExtendedKeyUsage>))]
     public partial class ExtendedKeyUsage
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExtendedKeyUsage"/> class.
-        /// </summary>
-        public ExtendedKeyUsage()
-        {
-            this.ODataType = "microsoft.graph.extendedKeyUsage";
-        }
 
         /// <summary>
         /// Gets or sets name.

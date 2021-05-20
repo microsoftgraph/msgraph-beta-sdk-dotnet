@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ManagedIOSLobApp : ManagedMobileLobApp
     {
     
-		///<summary>
-		/// The ManagedIOSLobApp constructor
-		///</summary>
+        ///<summary>
+        /// The ManagedIOSLobApp constructor
+        ///</summary>
         public ManagedIOSLobApp()
         {
             this.ODataType = "microsoft.graph.managedIOSLobApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets applicable device type.
         /// The iOS architecture for which this app can run on.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AndroidForWorkEnrollmentProfile : Entity
     {
     
-		///<summary>
-		/// The AndroidForWorkEnrollmentProfile constructor
-		///</summary>
-        public AndroidForWorkEnrollmentProfile()
-        {
-            this.ODataType = "microsoft.graph.androidForWorkEnrollmentProfile";
-        }
-	
         /// <summary>
         /// Gets or sets account id.
         /// Tenant GUID the enrollment profile belongs to.

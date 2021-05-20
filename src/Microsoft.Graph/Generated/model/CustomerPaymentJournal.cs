@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class CustomerPaymentJournal : Entity
     {
     
-		///<summary>
-		/// The CustomerPaymentJournal constructor
-		///</summary>
-        public CustomerPaymentJournal()
-        {
-            this.ODataType = "microsoft.graph.customerPaymentJournal";
-        }
-	
         /// <summary>
         /// Gets or sets balancing account id.
         /// </summary>

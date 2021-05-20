@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class RoleDefinition : Entity
     {
     
-		///<summary>
-		/// The RoleDefinition constructor
-		///</summary>
-        public RoleDefinition()
-        {
-            this.ODataType = "microsoft.graph.roleDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Description of the Role definition.

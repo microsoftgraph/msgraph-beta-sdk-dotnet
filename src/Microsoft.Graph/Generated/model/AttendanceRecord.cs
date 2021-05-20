@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AttendanceRecord>))]
     public partial class AttendanceRecord
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AttendanceRecord"/> class.
-        /// </summary>
-        public AttendanceRecord()
-        {
-            this.ODataType = "microsoft.graph.attendanceRecord";
-        }
 
         /// <summary>
         /// Gets or sets attendanceIntervals.

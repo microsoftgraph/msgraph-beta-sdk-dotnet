@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SynchronizationStatus>))]
     public partial class SynchronizationStatus
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SynchronizationStatus"/> class.
-        /// </summary>
-        public SynchronizationStatus()
-        {
-            this.ODataType = "microsoft.graph.synchronizationStatus";
-        }
 
         /// <summary>
         /// Gets or sets code.

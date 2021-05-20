@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationValueDecimal : GroupPolicyPresentationValue
     {
     
-		///<summary>
-		/// The GroupPolicyPresentationValueDecimal constructor
-		///</summary>
+        ///<summary>
+        /// The GroupPolicyPresentationValueDecimal constructor
+        ///</summary>
         public GroupPolicyPresentationValueDecimal()
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationValueDecimal";
         }
-	
+    
         /// <summary>
         /// Gets or sets value.
         /// An unsigned integer value for the associated presentation.

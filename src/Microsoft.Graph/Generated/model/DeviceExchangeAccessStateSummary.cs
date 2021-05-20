@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceExchangeAccessStateSummary>))]
     public partial class DeviceExchangeAccessStateSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceExchangeAccessStateSummary"/> class.
-        /// </summary>
-        public DeviceExchangeAccessStateSummary()
-        {
-            this.ODataType = "microsoft.graph.deviceExchangeAccessStateSummary";
-        }
 
         /// <summary>
         /// Gets or sets allowedDeviceCount.

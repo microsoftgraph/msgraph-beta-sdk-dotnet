@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleAssignmentScheduleInstance : UnifiedRoleScheduleInstanceBase
     {
     
-		///<summary>
-		/// The UnifiedRoleAssignmentScheduleInstance constructor
-		///</summary>
-        public UnifiedRoleAssignmentScheduleInstance()
-        {
-            this.ODataType = "microsoft.graph.unifiedRoleAssignmentScheduleInstance";
-        }
-	
         /// <summary>
         /// Gets or sets assignment type.
         /// Type of the assignment. It can either be Assigned or Activated.

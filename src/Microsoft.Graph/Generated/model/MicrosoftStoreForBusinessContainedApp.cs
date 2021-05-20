@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MicrosoftStoreForBusinessContainedApp : MobileContainedApp
     {
     
-		///<summary>
-		/// The MicrosoftStoreForBusinessContainedApp constructor
-		///</summary>
+        ///<summary>
+        /// The MicrosoftStoreForBusinessContainedApp constructor
+        ///</summary>
         public MicrosoftStoreForBusinessContainedApp()
         {
             this.ODataType = "microsoft.graph.microsoftStoreForBusinessContainedApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets app user model id.
         /// The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.

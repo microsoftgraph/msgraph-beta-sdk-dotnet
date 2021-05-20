@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class CountryRegion : Entity
     {
     
-		///<summary>
-		/// The CountryRegion constructor
-		///</summary>
-        public CountryRegion()
-        {
-            this.ODataType = "microsoft.graph.countryRegion";
-        }
-	
         /// <summary>
         /// Gets or sets address format.
         /// </summary>

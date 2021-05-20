@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceAndAppManagementData>))]
     public partial class DeviceAndAppManagementData
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceAndAppManagementData"/> class.
-        /// </summary>
-        public DeviceAndAppManagementData()
-        {
-            this.ODataType = "microsoft.graph.deviceAndAppManagementData";
-        }
 
         /// <summary>
         /// Gets or sets content.

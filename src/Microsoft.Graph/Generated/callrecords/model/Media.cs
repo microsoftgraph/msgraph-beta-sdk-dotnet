@@ -20,13 +20,6 @@ namespace Microsoft.Graph.CallRecords
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Media>))]
     public partial class Media
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Media"/> class.
-        /// </summary>
-        public Media()
-        {
-            this.ODataType = "microsoft.graph.callRecords.media";
-        }
 
         /// <summary>
         /// Gets or sets calleeDevice.

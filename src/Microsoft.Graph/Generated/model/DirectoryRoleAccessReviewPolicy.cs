@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DirectoryRoleAccessReviewPolicy : Entity
     {
     
-		///<summary>
-		/// The DirectoryRoleAccessReviewPolicy constructor
-		///</summary>
-        public DirectoryRoleAccessReviewPolicy()
-        {
-            this.ODataType = "microsoft.graph.directoryRoleAccessReviewPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets settings.
         /// </summary>

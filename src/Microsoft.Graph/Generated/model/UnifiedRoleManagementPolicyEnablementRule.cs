@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleManagementPolicyEnablementRule : UnifiedRoleManagementPolicyRule
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicyEnablementRule constructor
-		///</summary>
+        ///<summary>
+        /// The UnifiedRoleManagementPolicyEnablementRule constructor
+        ///</summary>
         public UnifiedRoleManagementPolicyEnablementRule()
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyEnablementRule";
         }
-	
+    
         /// <summary>
         /// Gets or sets enabled rules.
         /// The rules which are enabled. Allowed values are MultifactorAuthentication, Justification, Ticketing.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph.Ediscovery
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<RedundancyDetectionSettings>))]
     public partial class RedundancyDetectionSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RedundancyDetectionSettings"/> class.
-        /// </summary>
-        public RedundancyDetectionSettings()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.redundancyDetectionSettings";
-        }
 
         /// <summary>
         /// Gets or sets isEnabled.

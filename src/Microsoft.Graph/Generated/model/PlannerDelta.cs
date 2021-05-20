@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class PlannerDelta : Entity
     {
     
-		///<summary>
-		/// The PlannerDelta constructor
-		///</summary>
-        public PlannerDelta()
-        {
-            this.ODataType = "microsoft.graph.plannerDelta";
-        }
-	
     }
 }
 

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AlertTrigger>))]
     public partial class AlertTrigger
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AlertTrigger"/> class.
-        /// </summary>
-        public AlertTrigger()
-        {
-            this.ODataType = "microsoft.graph.alertTrigger";
-        }
 
         /// <summary>
         /// Gets or sets name.

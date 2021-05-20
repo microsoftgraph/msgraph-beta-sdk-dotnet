@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AppleOwnerTypeEnrollmentType>))]
     public partial class AppleOwnerTypeEnrollmentType
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppleOwnerTypeEnrollmentType"/> class.
-        /// </summary>
-        public AppleOwnerTypeEnrollmentType()
-        {
-            this.ODataType = "microsoft.graph.appleOwnerTypeEnrollmentType";
-        }
 
         /// <summary>
         /// Gets or sets enrollmentType.

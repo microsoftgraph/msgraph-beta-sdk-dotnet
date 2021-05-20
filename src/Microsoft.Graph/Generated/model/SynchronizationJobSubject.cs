@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SynchronizationJobSubject>))]
     public partial class SynchronizationJobSubject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SynchronizationJobSubject"/> class.
-        /// </summary>
-        public SynchronizationJobSubject()
-        {
-            this.ODataType = "microsoft.graph.synchronizationJobSubject";
-        }
 
         /// <summary>
         /// Gets or sets objectId.

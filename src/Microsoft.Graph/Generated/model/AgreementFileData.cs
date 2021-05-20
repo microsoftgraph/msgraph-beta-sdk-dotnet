@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AgreementFileData>))]
     public partial class AgreementFileData
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AgreementFileData"/> class.
-        /// </summary>
-        public AgreementFileData()
-        {
-            this.ODataType = "microsoft.graph.agreementFileData";
-        }
 
         /// <summary>
         /// Gets or sets data.

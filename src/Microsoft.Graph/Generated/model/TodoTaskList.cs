@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class TodoTaskList : Entity
     {
     
-		///<summary>
-		/// The TodoTaskList constructor
-		///</summary>
-        public TodoTaskList()
-        {
-            this.ODataType = "microsoft.graph.todoTaskList";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The name of the task list.

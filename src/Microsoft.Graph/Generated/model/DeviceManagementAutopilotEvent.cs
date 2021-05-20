@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementAutopilotEvent : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementAutopilotEvent constructor
-		///</summary>
-        public DeviceManagementAutopilotEvent()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementAutopilotEvent";
-        }
-	
         /// <summary>
         /// Gets or sets account setup duration.
         /// Time spent in user ESP.

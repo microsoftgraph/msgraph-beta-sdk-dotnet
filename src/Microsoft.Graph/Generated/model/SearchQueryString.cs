@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SearchQueryString>))]
     public partial class SearchQueryString
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchQueryString"/> class.
-        /// </summary>
-        public SearchQueryString()
-        {
-            this.ODataType = "microsoft.graph.searchQueryString";
-        }
 
         /// <summary>
         /// Gets or sets query.

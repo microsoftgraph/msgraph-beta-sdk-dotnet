@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceProtectionOverview>))]
     public partial class DeviceProtectionOverview
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceProtectionOverview"/> class.
-        /// </summary>
-        public DeviceProtectionOverview()
-        {
-            this.ODataType = "microsoft.graph.deviceProtectionOverview";
-        }
 
         /// <summary>
         /// Gets or sets cleanDeviceCount.

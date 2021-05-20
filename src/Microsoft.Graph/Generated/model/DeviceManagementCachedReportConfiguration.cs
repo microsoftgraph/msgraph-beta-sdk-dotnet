@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementCachedReportConfiguration : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementCachedReportConfiguration constructor
-		///</summary>
-        public DeviceManagementCachedReportConfiguration()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementCachedReportConfiguration";
-        }
-	
         /// <summary>
         /// Gets or sets expiration date time.
         /// Time that the cached report expires

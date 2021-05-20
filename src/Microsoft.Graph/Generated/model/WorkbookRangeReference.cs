@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WorkbookRangeReference>))]
     public partial class WorkbookRangeReference
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkbookRangeReference"/> class.
-        /// </summary>
-        public WorkbookRangeReference()
-        {
-            this.ODataType = "microsoft.graph.workbookRangeReference";
-        }
 
         /// <summary>
         /// Gets or sets address.

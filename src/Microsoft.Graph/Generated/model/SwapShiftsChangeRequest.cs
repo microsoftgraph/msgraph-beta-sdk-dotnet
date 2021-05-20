@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class SwapShiftsChangeRequestObject : OfferShiftRequestObject
     {
     
-		///<summary>
-		/// The SwapShiftsChangeRequest constructor
-		///</summary>
+        ///<summary>
+        /// The SwapShiftsChangeRequest constructor
+        ///</summary>
         public SwapShiftsChangeRequestObject()
         {
             this.ODataType = "microsoft.graph.swapShiftsChangeRequest";
         }
-	
+    
         /// <summary>
         /// Gets or sets recipient shift id.
         /// Shift ID for the recipient user with whom the request is to swap.

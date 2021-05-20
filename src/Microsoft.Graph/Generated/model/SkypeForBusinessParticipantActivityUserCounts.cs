@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SkypeForBusinessParticipantActivityUserCounts : Entity
     {
     
-		///<summary>
-		/// The SkypeForBusinessParticipantActivityUserCounts constructor
-		///</summary>
-        public SkypeForBusinessParticipantActivityUserCounts()
-        {
-            this.ODataType = "microsoft.graph.skypeForBusinessParticipantActivityUserCounts";
-        }
-	
         /// <summary>
         /// Gets or sets app sharing.
         /// </summary>

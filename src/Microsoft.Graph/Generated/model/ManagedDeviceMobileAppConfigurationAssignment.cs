@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceMobileAppConfigurationAssignment : Entity
     {
     
-		///<summary>
-		/// The ManagedDeviceMobileAppConfigurationAssignment constructor
-		///</summary>
-        public ManagedDeviceMobileAppConfigurationAssignment()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceMobileAppConfigurationAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// Assignment target that the T&amp;C policy is assigned to.

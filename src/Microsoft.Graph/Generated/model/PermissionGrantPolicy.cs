@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class PermissionGrantPolicy : PolicyBase
     {
     
-		///<summary>
-		/// The PermissionGrantPolicy constructor
-		///</summary>
+        ///<summary>
+        /// The PermissionGrantPolicy constructor
+        ///</summary>
         public PermissionGrantPolicy()
         {
             this.ODataType = "microsoft.graph.permissionGrantPolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets excludes.
         /// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.

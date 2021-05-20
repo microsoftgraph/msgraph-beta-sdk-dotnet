@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ItemInsights : OfficeGraphInsights
     {
     
-		///<summary>
-		/// The ItemInsights constructor
-		///</summary>
-        public ItemInsights()
-        {
-            this.ODataType = "microsoft.graph.itemInsights";
-        }
-	
     }
 }
 

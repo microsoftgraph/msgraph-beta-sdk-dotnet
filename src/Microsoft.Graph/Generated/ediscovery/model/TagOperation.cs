@@ -20,14 +20,14 @@ namespace Microsoft.Graph.Ediscovery
     public partial class TagOperation : CaseOperation
     {
     
-		///<summary>
-		/// The TagOperation constructor
-		///</summary>
+        ///<summary>
+        /// The TagOperation constructor
+        ///</summary>
         public TagOperation()
         {
             this.ODataType = "microsoft.graph.ediscovery.tagOperation";
         }
-	
+    
     }
 }
 

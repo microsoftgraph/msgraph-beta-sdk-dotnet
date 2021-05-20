@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class ManagedAppConfiguration : ManagedAppPolicy
     {
     
-		///<summary>
-		/// The internal ManagedAppConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The internal ManagedAppConfiguration constructor
+        ///</summary>
         protected internal ManagedAppConfiguration()
         {
             // Don't allow initialization of abstract entity types

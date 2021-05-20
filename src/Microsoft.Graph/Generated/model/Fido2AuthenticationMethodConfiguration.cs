@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration
     {
     
-		///<summary>
-		/// The Fido2AuthenticationMethodConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Fido2AuthenticationMethodConfiguration constructor
+        ///</summary>
         public Fido2AuthenticationMethodConfiguration()
         {
             this.ODataType = "microsoft.graph.fido2AuthenticationMethodConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets is attestation enforced.
         /// Determines whether attestation must be enforced for FIDO2 security key registration.

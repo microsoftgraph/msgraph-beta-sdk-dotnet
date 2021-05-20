@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration
     {
     
-		///<summary>
-		/// The internal AppleDeviceFeaturesConfigurationBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal AppleDeviceFeaturesConfigurationBase constructor
+        ///</summary>
         protected internal AppleDeviceFeaturesConfigurationBase()
         {
             // Don't allow initialization of abstract entity types

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppMsiInformation>))]
     public partial class Win32LobAppMsiInformation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Win32LobAppMsiInformation"/> class.
-        /// </summary>
-        public Win32LobAppMsiInformation()
-        {
-            this.ODataType = "microsoft.graph.win32LobAppMsiInformation";
-        }
 
         /// <summary>
         /// Gets or sets packageType.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Deleted>))]
     public partial class Deleted
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Deleted"/> class.
-        /// </summary>
-        public Deleted()
-        {
-            this.ODataType = "microsoft.graph.deleted";
-        }
 
         /// <summary>
         /// Gets or sets state.

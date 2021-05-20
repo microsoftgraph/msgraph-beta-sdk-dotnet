@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SharePointActivityPages : Entity
     {
     
-		///<summary>
-		/// The SharePointActivityPages constructor
-		///</summary>
-        public SharePointActivityPages()
-        {
-            this.ODataType = "microsoft.graph.sharePointActivityPages";
-        }
-	
         /// <summary>
         /// Gets or sets report date.
         /// </summary>

@@ -21,14 +21,6 @@ namespace Microsoft.Graph.TermStore
     public partial class Relation : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Relation constructor
-		///</summary>
-        public Relation()
-        {
-            this.ODataType = "microsoft.graph.termStore.relation";
-        }
-	
         /// <summary>
         /// Gets or sets relationship.
         /// The type of relation. Possible values are: pin, reuse.

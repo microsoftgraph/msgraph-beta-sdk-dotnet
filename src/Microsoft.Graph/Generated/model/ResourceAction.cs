@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ResourceAction>))]
     public partial class ResourceAction
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ResourceAction"/> class.
-        /// </summary>
-        public ResourceAction()
-        {
-            this.ODataType = "microsoft.graph.resourceAction";
-        }
 
         /// <summary>
         /// Gets or sets allowedResourceActions.

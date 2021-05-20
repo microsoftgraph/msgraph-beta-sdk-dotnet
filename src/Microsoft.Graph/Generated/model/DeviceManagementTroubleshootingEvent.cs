@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementTroubleshootingEvent : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementTroubleshootingEvent constructor
-		///</summary>
-        public DeviceManagementTroubleshootingEvent()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementTroubleshootingEvent";
-        }
-	
         /// <summary>
         /// Gets or sets additional information.
         /// A set of string key and string value pairs which provides additional information on the Troubleshooting event

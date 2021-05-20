@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementDerivedCredentialSettings : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementDerivedCredentialSettings constructor
-		///</summary>
-        public DeviceManagementDerivedCredentialSettings()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementDerivedCredentialSettings";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The display name for the profile.

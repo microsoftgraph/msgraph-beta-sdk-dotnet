@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TimeOff : ChangeTrackedEntity
     {
     
-		///<summary>
-		/// The TimeOff constructor
-		///</summary>
-        public TimeOff()
-        {
-            this.ODataType = "microsoft.graph.timeOff";
-        }
-	
         /// <summary>
         /// Gets or sets draft time off.
         /// The draft version of this timeOff that is viewable by managers. Required.

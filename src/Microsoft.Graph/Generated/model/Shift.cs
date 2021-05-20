@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Shift : ChangeTrackedEntity
     {
     
-		///<summary>
-		/// The Shift constructor
-		///</summary>
-        public Shift()
-        {
-            this.ODataType = "microsoft.graph.shift";
-        }
-	
         /// <summary>
         /// Gets or sets draft shift.
         /// The draft version of this shift that is viewable by managers. Required.

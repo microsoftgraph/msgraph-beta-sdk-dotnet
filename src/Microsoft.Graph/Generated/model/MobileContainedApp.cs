@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class MobileContainedApp : Entity
     {
     
-		///<summary>
-		/// The internal MobileContainedApp constructor
-		///</summary>
+        ///<summary>
+        /// The internal MobileContainedApp constructor
+        ///</summary>
         protected internal MobileContainedApp()
         {
             // Don't allow initialization of abstract entity types

@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MicrosoftStoreForBusinessApp : MobileApp
     {
     
-		///<summary>
-		/// The MicrosoftStoreForBusinessApp constructor
-		///</summary>
+        ///<summary>
+        /// The MicrosoftStoreForBusinessApp constructor
+        ///</summary>
         public MicrosoftStoreForBusinessApp()
         {
             this.ODataType = "microsoft.graph.microsoftStoreForBusinessApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets license type.
         /// The app license type. Possible values are: offline, online.

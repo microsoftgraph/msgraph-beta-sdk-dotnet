@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AccessReviewInstanceDecisionItemResource>))]
     public partial class AccessReviewInstanceDecisionItemResource
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccessReviewInstanceDecisionItemResource"/> class.
-        /// </summary>
-        public AccessReviewInstanceDecisionItemResource()
-        {
-            this.ODataType = "microsoft.graph.accessReviewInstanceDecisionItemResource";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

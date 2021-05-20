@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DisplayNameLocalization>))]
     public partial class DisplayNameLocalization
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DisplayNameLocalization"/> class.
-        /// </summary>
-        public DisplayNameLocalization()
-        {
-            this.ODataType = "microsoft.graph.displayNameLocalization";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<LicenseInfoDetail>))]
     public partial class LicenseInfoDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LicenseInfoDetail"/> class.
-        /// </summary>
-        public LicenseInfoDetail()
-        {
-            this.ODataType = "microsoft.graph.licenseInfoDetail";
-        }
 
         /// <summary>
         /// Gets or sets licenseType.

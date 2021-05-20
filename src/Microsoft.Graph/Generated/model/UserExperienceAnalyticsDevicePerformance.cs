@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsDevicePerformance : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsDevicePerformance constructor
-		///</summary>
-        public UserExperienceAnalyticsDevicePerformance()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsDevicePerformance";
-        }
-	
         /// <summary>
         /// Gets or sets average blue screens.
         /// Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999

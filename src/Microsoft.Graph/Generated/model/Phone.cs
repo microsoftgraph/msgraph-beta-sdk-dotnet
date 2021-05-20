@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Phone>))]
     public partial class Phone
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Phone"/> class.
-        /// </summary>
-        public Phone()
-        {
-            this.ODataType = "microsoft.graph.phone";
-        }
 
         /// <summary>
         /// Gets or sets number.

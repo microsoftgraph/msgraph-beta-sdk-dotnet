@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EducationAssignmentResource : Entity
     {
     
-		///<summary>
-		/// The EducationAssignmentResource constructor
-		///</summary>
-        public EducationAssignmentResource()
-        {
-            this.ODataType = "microsoft.graph.educationAssignmentResource";
-        }
-	
         /// <summary>
         /// Gets or sets distribute for student work.
         /// Indicates whether this resource should be copied to each student submission for modification and submission.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Item : Entity
     {
     
-		///<summary>
-		/// The Item constructor
-		///</summary>
-        public Item()
-        {
-            this.ODataType = "microsoft.graph.item";
-        }
-	
         /// <summary>
         /// Gets or sets base unit of measure id.
         /// </summary>

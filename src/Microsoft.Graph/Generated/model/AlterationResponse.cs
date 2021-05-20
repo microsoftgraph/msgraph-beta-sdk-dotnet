@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AlterationResponse>))]
     public partial class AlterationResponse
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AlterationResponse"/> class.
-        /// </summary>
-        public AlterationResponse()
-        {
-            this.ODataType = "microsoft.graph.alterationResponse";
-        }
 
         /// <summary>
         /// Gets or sets originalQueryString.

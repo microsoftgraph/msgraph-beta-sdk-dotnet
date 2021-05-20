@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsWorkFromAnywhereDevicesSummary>))]
     public partial class UserExperienceAnalyticsWorkFromAnywhereDevicesSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserExperienceAnalyticsWorkFromAnywhereDevicesSummary"/> class.
-        /// </summary>
-        public UserExperienceAnalyticsWorkFromAnywhereDevicesSummary()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary";
-        }
 
         /// <summary>
         /// Gets or sets autopilotDevicesSummary.

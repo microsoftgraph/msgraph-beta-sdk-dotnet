@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceConfigurationGroupAssignment : Entity
     {
     
-		///<summary>
-		/// The DeviceConfigurationGroupAssignment constructor
-		///</summary>
-        public DeviceConfigurationGroupAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceConfigurationGroupAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets exclude group.
         /// Indicates if this group is should be excluded. Defaults that the group should be included

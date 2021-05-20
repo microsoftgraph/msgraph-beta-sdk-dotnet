@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ChannelModerationSettings>))]
     public partial class ChannelModerationSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChannelModerationSettings"/> class.
-        /// </summary>
-        public ChannelModerationSettings()
-        {
-            this.ODataType = "microsoft.graph.channelModerationSettings";
-        }
 
         /// <summary>
         /// Gets or sets allowNewMessageFromBots.

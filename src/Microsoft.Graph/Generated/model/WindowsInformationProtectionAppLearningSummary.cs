@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class WindowsInformationProtectionAppLearningSummary : Entity
     {
     
-		///<summary>
-		/// The WindowsInformationProtectionAppLearningSummary constructor
-		///</summary>
-        public WindowsInformationProtectionAppLearningSummary()
-        {
-            this.ODataType = "microsoft.graph.windowsInformationProtectionAppLearningSummary";
-        }
-	
         /// <summary>
         /// Gets or sets application name.
         /// Application Name

@@ -20,14 +20,6 @@ namespace Microsoft.Graph.Ediscovery
     public partial class Settings : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Settings constructor
-		///</summary>
-        public Settings()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.settings";
-        }
-	
         /// <summary>
         /// Gets or sets ocr.
         /// The OCR (Optical Character Recognition) settings for the case.

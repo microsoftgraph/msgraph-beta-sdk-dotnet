@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EmailActivitySummary : Entity
     {
     
-		///<summary>
-		/// The EmailActivitySummary constructor
-		///</summary>
-        public EmailActivitySummary()
-        {
-            this.ODataType = "microsoft.graph.emailActivitySummary";
-        }
-	
         /// <summary>
         /// Gets or sets read.
         /// </summary>

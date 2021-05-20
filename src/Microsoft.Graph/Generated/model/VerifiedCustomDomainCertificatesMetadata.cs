@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<VerifiedCustomDomainCertificatesMetadata>))]
     public partial class VerifiedCustomDomainCertificatesMetadata
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VerifiedCustomDomainCertificatesMetadata"/> class.
-        /// </summary>
-        public VerifiedCustomDomainCertificatesMetadata()
-        {
-            this.ODataType = "microsoft.graph.verifiedCustomDomainCertificatesMetadata";
-        }
 
         /// <summary>
         /// Gets or sets expiryDate.

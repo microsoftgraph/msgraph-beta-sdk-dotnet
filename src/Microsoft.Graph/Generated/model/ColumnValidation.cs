@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ColumnValidation>))]
     public partial class ColumnValidation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ColumnValidation"/> class.
-        /// </summary>
-        public ColumnValidation()
-        {
-            this.ODataType = "microsoft.graph.columnValidation";
-        }
 
         /// <summary>
         /// Gets or sets defaultLanguage.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class GovernanceSubject : Entity
     {
     
-		///<summary>
-		/// The GovernanceSubject constructor
-		///</summary>
-        public GovernanceSubject()
-        {
-            this.ODataType = "microsoft.graph.governanceSubject";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the subject.

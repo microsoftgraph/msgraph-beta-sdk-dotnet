@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TimeCardEntry>))]
     public partial class TimeCardEntry
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimeCardEntry"/> class.
-        /// </summary>
-        public TimeCardEntry()
-        {
-            this.ODataType = "microsoft.graph.timeCardEntry";
-        }
 
         /// <summary>
         /// Gets or sets breaks.

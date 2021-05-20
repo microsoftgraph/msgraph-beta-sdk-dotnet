@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<LocationConstraint>))]
     public partial class LocationConstraint
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LocationConstraint"/> class.
-        /// </summary>
-        public LocationConstraint()
-        {
-            this.ODataType = "microsoft.graph.locationConstraint";
-        }
 
         /// <summary>
         /// Gets or sets isRequired.

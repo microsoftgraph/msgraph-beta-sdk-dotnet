@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Windows10NetworkProxyServer>))]
     public partial class Windows10NetworkProxyServer
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Windows10NetworkProxyServer"/> class.
-        /// </summary>
-        public Windows10NetworkProxyServer()
-        {
-            this.ODataType = "microsoft.graph.windows10NetworkProxyServer";
-        }
 
         /// <summary>
         /// Gets or sets address.

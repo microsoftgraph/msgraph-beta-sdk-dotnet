@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class Place : Entity
     {
     
-		///<summary>
-		/// The internal Place constructor
-		///</summary>
+        ///<summary>
+        /// The internal Place constructor
+        ///</summary>
         protected internal Place()
         {
             // Don't allow initialization of abstract entity types

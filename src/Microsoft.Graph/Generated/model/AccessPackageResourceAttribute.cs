@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AccessPackageResourceAttribute>))]
     public partial class AccessPackageResourceAttribute
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccessPackageResourceAttribute"/> class.
-        /// </summary>
-        public AccessPackageResourceAttribute()
-        {
-            this.ODataType = "microsoft.graph.accessPackageResourceAttribute";
-        }
 
         /// <summary>
         /// Gets or sets attributeDestination.

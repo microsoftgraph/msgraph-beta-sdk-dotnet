@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class NotificationMessageTemplate : Entity
     {
     
-		///<summary>
-		/// The NotificationMessageTemplate constructor
-		///</summary>
-        public NotificationMessageTemplate()
-        {
-            this.ODataType = "microsoft.graph.notificationMessageTemplate";
-        }
-	
         /// <summary>
         /// Gets or sets branding options.
         /// The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.

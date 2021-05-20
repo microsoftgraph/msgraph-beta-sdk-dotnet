@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSScepCertificateProfile : MacOSCertificateProfileBase
     {
     
-		///<summary>
-		/// The MacOSScepCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSScepCertificateProfile constructor
+        ///</summary>
         public MacOSScepCertificateProfile()
         {
             this.ODataType = "microsoft.graph.macOSScepCertificateProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets certificate store.
         /// Target store certificate. Possible values are: user, machine.

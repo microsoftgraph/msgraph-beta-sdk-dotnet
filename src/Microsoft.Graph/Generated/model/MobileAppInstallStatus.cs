@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class MobileAppInstallStatus : Entity
     {
     
-		///<summary>
-		/// The MobileAppInstallStatus constructor
-		///</summary>
-        public MobileAppInstallStatus()
-        {
-            this.ODataType = "microsoft.graph.mobileAppInstallStatus";
-        }
-	
         /// <summary>
         /// Gets or sets device id.
         /// Device ID

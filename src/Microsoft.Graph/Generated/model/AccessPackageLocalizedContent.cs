@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AccessPackageLocalizedContent>))]
     public partial class AccessPackageLocalizedContent
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccessPackageLocalizedContent"/> class.
-        /// </summary>
-        public AccessPackageLocalizedContent()
-        {
-            this.ODataType = "microsoft.graph.accessPackageLocalizedContent";
-        }
 
         /// <summary>
         /// Gets or sets defaultText.

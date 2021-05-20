@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class WindowsVpnConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The internal WindowsVpnConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The internal WindowsVpnConfiguration constructor
+        ///</summary>
         protected internal WindowsVpnConfiguration()
         {
             // Don't allow initialization of abstract entity types

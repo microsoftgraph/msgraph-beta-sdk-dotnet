@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationSimpleSettingDefinition : DeviceManagementConfigurationSettingDefinition
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationSimpleSettingDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementConfigurationSimpleSettingDefinition constructor
+        ///</summary>
         public DeviceManagementConfigurationSimpleSettingDefinition()
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition";
         }
-	
+    
         /// <summary>
         /// Gets or sets default value.
         /// Default setting value for this setting

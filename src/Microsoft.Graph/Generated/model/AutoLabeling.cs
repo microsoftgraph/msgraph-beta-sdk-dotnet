@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AutoLabeling>))]
     public partial class AutoLabeling
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AutoLabeling"/> class.
-        /// </summary>
-        public AutoLabeling()
-        {
-            this.ODataType = "microsoft.graph.autoLabeling";
-        }
 
         /// <summary>
         /// Gets or sets message.

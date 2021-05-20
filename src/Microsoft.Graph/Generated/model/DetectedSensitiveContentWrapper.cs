@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DetectedSensitiveContentWrapper>))]
     public partial class DetectedSensitiveContentWrapper
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DetectedSensitiveContentWrapper"/> class.
-        /// </summary>
-        public DetectedSensitiveContentWrapper()
-        {
-            this.ODataType = "microsoft.graph.detectedSensitiveContentWrapper";
-        }
 
         /// <summary>
         /// Gets or sets classification.

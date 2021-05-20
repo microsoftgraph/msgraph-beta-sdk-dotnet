@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class BuiltInIdentityProvider : IdentityProviderBase
     {
     
-		///<summary>
-		/// The BuiltInIdentityProvider constructor
-		///</summary>
+        ///<summary>
+        /// The BuiltInIdentityProvider constructor
+        ///</summary>
         public BuiltInIdentityProvider()
         {
             this.ODataType = "microsoft.graph.builtInIdentityProvider";
         }
-	
+    
         /// <summary>
         /// Gets or sets identity provider type.
         /// The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.

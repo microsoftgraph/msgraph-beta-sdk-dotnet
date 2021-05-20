@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ShipmentMethod : Entity
     {
     
-		///<summary>
-		/// The ShipmentMethod constructor
-		///</summary>
-        public ShipmentMethod()
-        {
-            this.ODataType = "microsoft.graph.shipmentMethod";
-        }
-	
         /// <summary>
         /// Gets or sets code.
         /// </summary>

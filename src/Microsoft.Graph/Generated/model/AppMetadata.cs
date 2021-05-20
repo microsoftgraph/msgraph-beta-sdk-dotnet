@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AppMetadata>))]
     public partial class AppMetadata
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppMetadata"/> class.
-        /// </summary>
-        public AppMetadata()
-        {
-            this.ODataType = "microsoft.graph.appMetadata";
-        }
 
         /// <summary>
         /// Gets or sets data.

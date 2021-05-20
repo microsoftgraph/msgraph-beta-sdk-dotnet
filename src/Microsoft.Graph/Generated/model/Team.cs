@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Team : Entity
     {
     
-		///<summary>
-		/// The Team constructor
-		///</summary>
-        public Team()
-        {
-            this.ODataType = "microsoft.graph.team";
-        }
-	
         /// <summary>
         /// Gets or sets classification.
         /// An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PlannerUserIds>))]
     public partial class PlannerUserIds
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlannerUserIds"/> class.
-        /// </summary>
-        public PlannerUserIds()
-        {
-            this.ODataType = "microsoft.graph.plannerUserIds";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

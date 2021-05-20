@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationDependentOn>))]
     public partial class DeviceManagementConfigurationDependentOn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementConfigurationDependentOn"/> class.
-        /// </summary>
-        public DeviceManagementConfigurationDependentOn()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationDependentOn";
-        }
 
         /// <summary>
         /// Gets or sets dependentOn.

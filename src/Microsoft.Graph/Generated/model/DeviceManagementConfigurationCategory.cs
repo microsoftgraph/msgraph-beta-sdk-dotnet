@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationCategory : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationCategory constructor
-		///</summary>
-        public DeviceManagementConfigurationCategory()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationCategory";
-        }
-	
         /// <summary>
         /// Gets or sets child category ids.
         /// List of child ids of the category.

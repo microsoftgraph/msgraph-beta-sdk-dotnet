@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DowngradeJustification>))]
     public partial class DowngradeJustification
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DowngradeJustification"/> class.
-        /// </summary>
-        public DowngradeJustification()
-        {
-            this.ODataType = "microsoft.graph.downgradeJustification";
-        }
 
         /// <summary>
         /// Gets or sets isDowngradeJustified.

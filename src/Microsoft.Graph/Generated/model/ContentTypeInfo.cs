@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ContentTypeInfo>))]
     public partial class ContentTypeInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ContentTypeInfo"/> class.
-        /// </summary>
-        public ContentTypeInfo()
-        {
-            this.ODataType = "microsoft.graph.contentTypeInfo";
-        }
 
         /// <summary>
         /// Gets or sets id.

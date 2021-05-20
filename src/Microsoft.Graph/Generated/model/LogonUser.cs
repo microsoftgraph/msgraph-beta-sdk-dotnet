@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<LogonUser>))]
     public partial class LogonUser
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LogonUser"/> class.
-        /// </summary>
-        public LogonUser()
-        {
-            this.ODataType = "microsoft.graph.logonUser";
-        }
 
         /// <summary>
         /// Gets or sets accountDomain.

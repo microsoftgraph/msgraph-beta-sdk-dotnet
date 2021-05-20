@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserAttributeValuesItem>))]
     public partial class UserAttributeValuesItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserAttributeValuesItem"/> class.
-        /// </summary>
-        public UserAttributeValuesItem()
-        {
-            this.ODataType = "microsoft.graph.userAttributeValuesItem";
-        }
 
         /// <summary>
         /// Gets or sets isDefault.

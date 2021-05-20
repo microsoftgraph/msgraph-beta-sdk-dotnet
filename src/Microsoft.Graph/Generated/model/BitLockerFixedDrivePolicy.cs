@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<BitLockerFixedDrivePolicy>))]
     public partial class BitLockerFixedDrivePolicy
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BitLockerFixedDrivePolicy"/> class.
-        /// </summary>
-        public BitLockerFixedDrivePolicy()
-        {
-            this.ODataType = "microsoft.graph.bitLockerFixedDrivePolicy";
-        }
 
         /// <summary>
         /// Gets or sets encryptionMethod.

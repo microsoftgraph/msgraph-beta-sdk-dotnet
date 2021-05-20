@@ -20,13 +20,6 @@ namespace Microsoft.Graph.Ediscovery
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<TopicModelingSettings>))]
     public partial class TopicModelingSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TopicModelingSettings"/> class.
-        /// </summary>
-        public TopicModelingSettings()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.topicModelingSettings";
-        }
 
         /// <summary>
         /// Gets or sets dynamicallyAdjustTopicCount.

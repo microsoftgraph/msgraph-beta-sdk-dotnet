@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<FilterGroup>))]
     public partial class FilterGroup
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FilterGroup"/> class.
-        /// </summary>
-        public FilterGroup()
-        {
-            this.ODataType = "microsoft.graph.filterGroup";
-        }
 
         /// <summary>
         /// Gets or sets clauses.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ExactDataMatchStoreColumn>))]
     public partial class ExactDataMatchStoreColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExactDataMatchStoreColumn"/> class.
-        /// </summary>
-        public ExactDataMatchStoreColumn()
-        {
-            this.ODataType = "microsoft.graph.exactDataMatchStoreColumn";
-        }
 
         /// <summary>
         /// Gets or sets ignoredDelimiters.

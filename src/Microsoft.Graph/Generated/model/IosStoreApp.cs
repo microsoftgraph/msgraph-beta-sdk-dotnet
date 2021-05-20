@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class IosStoreApp : MobileApp
     {
     
-		///<summary>
-		/// The IosStoreApp constructor
-		///</summary>
+        ///<summary>
+        /// The IosStoreApp constructor
+        ///</summary>
         public IosStoreApp()
         {
             this.ODataType = "microsoft.graph.iosStoreApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets applicable device type.
         /// The iOS architecture for which this app can run on.

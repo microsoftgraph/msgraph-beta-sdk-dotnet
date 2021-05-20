@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OsVersionCount>))]
     public partial class OsVersionCount
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OsVersionCount"/> class.
-        /// </summary>
-        public OsVersionCount()
-        {
-            this.ODataType = "microsoft.graph.osVersionCount";
-        }
 
         /// <summary>
         /// Gets or sets deviceCount.

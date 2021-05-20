@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<NumberColumn>))]
     public partial class NumberColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NumberColumn"/> class.
-        /// </summary>
-        public NumberColumn()
-        {
-            this.ODataType = "microsoft.graph.numberColumn";
-        }
 
         /// <summary>
         /// Gets or sets decimalPlaces.

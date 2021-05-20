@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SearchResultSet>))]
     public partial class SearchResultSet
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchResultSet"/> class.
-        /// </summary>
-        public SearchResultSet()
-        {
-            this.ODataType = "microsoft.graph.searchResultSet";
-        }
 
         /// <summary>
         /// Gets or sets hitsContainers.

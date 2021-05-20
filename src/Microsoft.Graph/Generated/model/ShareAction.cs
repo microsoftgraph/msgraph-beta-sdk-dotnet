@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ShareAction>))]
     public partial class ShareAction
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ShareAction"/> class.
-        /// </summary>
-        public ShareAction()
-        {
-            this.ODataType = "microsoft.graph.shareAction";
-        }
 
         /// <summary>
         /// Gets or sets recipients.

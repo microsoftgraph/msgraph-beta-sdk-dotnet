@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookTableSort : Entity
     {
     
-		///<summary>
-		/// The WorkbookTableSort constructor
-		///</summary>
-        public WorkbookTableSort()
-        {
-            this.ODataType = "microsoft.graph.workbookTableSort";
-        }
-	
         /// <summary>
         /// Gets or sets fields.
         /// Represents the current conditions used to last sort the table. Read-only.

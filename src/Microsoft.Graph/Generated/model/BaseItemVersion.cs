@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class BaseItemVersion : Entity
     {
     
-		///<summary>
-		/// The internal BaseItemVersion constructor
-		///</summary>
+        ///<summary>
+        /// The internal BaseItemVersion constructor
+        ///</summary>
         protected internal BaseItemVersion()
         {
             // Don't allow initialization of abstract entity types

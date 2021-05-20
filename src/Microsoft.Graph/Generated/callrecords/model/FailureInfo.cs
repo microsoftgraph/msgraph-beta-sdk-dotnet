@@ -20,13 +20,6 @@ namespace Microsoft.Graph.CallRecords
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<FailureInfo>))]
     public partial class FailureInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FailureInfo"/> class.
-        /// </summary>
-        public FailureInfo()
-        {
-            this.ODataType = "microsoft.graph.callRecords.failureInfo";
-        }
 
         /// <summary>
         /// Gets or sets reason.

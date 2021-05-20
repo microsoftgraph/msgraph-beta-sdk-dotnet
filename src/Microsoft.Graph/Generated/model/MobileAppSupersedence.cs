@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MobileAppSupersedence : MobileAppRelationship
     {
     
-		///<summary>
-		/// The MobileAppSupersedence constructor
-		///</summary>
+        ///<summary>
+        /// The MobileAppSupersedence constructor
+        ///</summary>
         public MobileAppSupersedence()
         {
             this.ODataType = "microsoft.graph.mobileAppSupersedence";
         }
-	
+    
         /// <summary>
         /// Gets or sets superseded app count.
         /// The total number of apps directly or indirectly superseded by the child app.

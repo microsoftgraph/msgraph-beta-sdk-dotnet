@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Photo>))]
     public partial class Photo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Photo"/> class.
-        /// </summary>
-        public Photo()
-        {
-            this.ODataType = "microsoft.graph.photo";
-        }
 
         /// <summary>
         /// Gets or sets cameraMake.

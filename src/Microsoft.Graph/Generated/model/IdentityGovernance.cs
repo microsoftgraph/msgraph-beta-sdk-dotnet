@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class IdentityGovernance
     {
     
-		///<summary>
-		/// The IdentityGovernance constructor
-		///</summary>
-        public IdentityGovernance()
-        {
-            this.ODataType = "microsoft.graph.identityGovernance";
-        }
-	
         /// <summary>
         /// Gets or sets access reviews.
         /// </summary>

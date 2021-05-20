@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class GovernanceRoleDefinition : Entity
     {
     
-		///<summary>
-		/// The GovernanceRoleDefinition constructor
-		///</summary>
-        public GovernanceRoleDefinition()
-        {
-            this.ODataType = "microsoft.graph.governanceRoleDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the role definition.

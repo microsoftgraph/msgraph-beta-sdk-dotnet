@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class GovernanceRoleAssignmentRequestObject : Entity
     {
     
-		///<summary>
-		/// The GovernanceRoleAssignmentRequest constructor
-		///</summary>
-        public GovernanceRoleAssignmentRequestObject()
-        {
-            this.ODataType = "microsoft.graph.governanceRoleAssignmentRequest";
-        }
-	
         /// <summary>
         /// Gets or sets assignment state.
         /// Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).

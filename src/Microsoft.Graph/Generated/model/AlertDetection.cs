@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AlertDetection>))]
     public partial class AlertDetection
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AlertDetection"/> class.
-        /// </summary>
-        public AlertDetection()
-        {
-            this.ODataType = "microsoft.graph.alertDetection";
-        }
 
         /// <summary>
         /// Gets or sets detectionType.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class IosLobAppProvisioningConfigurationPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The IosLobAppProvisioningConfigurationPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The IosLobAppProvisioningConfigurationPolicySetItem constructor
+        ///</summary>
         public IosLobAppProvisioningConfigurationPolicySetItem()
         {
             this.ODataType = "microsoft.graph.iosLobAppProvisioningConfigurationPolicySetItem";
         }
-	
+    
     }
 }
 

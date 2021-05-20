@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileWiFiConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The AndroidWorkProfileWiFiConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidWorkProfileWiFiConfiguration constructor
+        ///</summary>
         public AndroidWorkProfileWiFiConfiguration()
         {
             this.ODataType = "microsoft.graph.androidWorkProfileWiFiConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets connect automatically.
         /// Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.

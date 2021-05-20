@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class OpenShiftChangeRequestObject : ScheduleChangeRequestObject
     {
     
-		///<summary>
-		/// The internal OpenShiftChangeRequest constructor
-		///</summary>
+        ///<summary>
+        /// The internal OpenShiftChangeRequest constructor
+        ///</summary>
         protected internal OpenShiftChangeRequestObject()
         {
             // Don't allow initialization of abstract entity types

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DirectorySizeQuota>))]
     public partial class DirectorySizeQuota
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DirectorySizeQuota"/> class.
-        /// </summary>
-        public DirectorySizeQuota()
-        {
-            this.ODataType = "microsoft.graph.directorySizeQuota";
-        }
 
         /// <summary>
         /// Gets or sets total.

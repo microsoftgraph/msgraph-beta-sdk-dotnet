@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<FlexSchemaContainer>))]
     public partial class FlexSchemaContainer
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FlexSchemaContainer"/> class.
-        /// </summary>
-        public FlexSchemaContainer()
-        {
-            this.ODataType = "microsoft.graph.flexSchemaContainer";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class WindowsKioskConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The WindowsKioskConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsKioskConfiguration constructor
+        ///</summary>
         public WindowsKioskConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsKioskConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets edge kiosk enable public browsing.
         /// Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.

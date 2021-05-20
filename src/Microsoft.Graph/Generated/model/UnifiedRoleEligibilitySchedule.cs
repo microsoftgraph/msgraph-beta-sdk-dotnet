@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleEligibilitySchedule : UnifiedRoleScheduleBase
     {
     
-		///<summary>
-		/// The UnifiedRoleEligibilitySchedule constructor
-		///</summary>
-        public UnifiedRoleEligibilitySchedule()
-        {
-            this.ODataType = "microsoft.graph.unifiedRoleEligibilitySchedule";
-        }
-	
         /// <summary>
         /// Gets or sets member type.
         /// Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.

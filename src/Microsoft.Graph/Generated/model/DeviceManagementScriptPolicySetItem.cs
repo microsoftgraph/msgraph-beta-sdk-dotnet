@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementScriptPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The DeviceManagementScriptPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementScriptPolicySetItem constructor
+        ///</summary>
         public DeviceManagementScriptPolicySetItem()
         {
             this.ODataType = "microsoft.graph.deviceManagementScriptPolicySetItem";
         }
-	
+    
     }
 }
 

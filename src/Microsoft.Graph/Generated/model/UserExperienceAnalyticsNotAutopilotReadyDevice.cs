@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsNotAutopilotReadyDevice : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsNotAutopilotReadyDevice constructor
-		///</summary>
-        public UserExperienceAnalyticsNotAutopilotReadyDevice()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice";
-        }
-	
         /// <summary>
         /// Gets or sets auto pilot profile assigned.
         /// The intune device's autopilotProfileAssigned.

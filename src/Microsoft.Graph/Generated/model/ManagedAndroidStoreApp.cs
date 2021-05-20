@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ManagedAndroidStoreApp : ManagedApp
     {
     
-		///<summary>
-		/// The ManagedAndroidStoreApp constructor
-		///</summary>
+        ///<summary>
+        /// The ManagedAndroidStoreApp constructor
+        ///</summary>
         public ManagedAndroidStoreApp()
         {
             this.ODataType = "microsoft.graph.managedAndroidStoreApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets app store url.
         /// The Android AppStoreUrl.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration constructor
+        ///</summary>
         public AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration()
         {
             this.ODataType = "microsoft.graph.androidDeviceOwnerDerivedCredentialAuthenticationConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets derived credential settings.
         /// Tenant level settings for the Derived Credentials to be used for authentication.

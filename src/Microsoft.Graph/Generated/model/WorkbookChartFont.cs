@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookChartFont : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartFont constructor
-		///</summary>
-        public WorkbookChartFont()
-        {
-            this.ODataType = "microsoft.graph.workbookChartFont";
-        }
-	
         /// <summary>
         /// Gets or sets bold.
         /// Represents the bold status of font.

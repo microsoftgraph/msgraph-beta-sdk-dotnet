@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SearchAlterationOptions>))]
     public partial class SearchAlterationOptions
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchAlterationOptions"/> class.
-        /// </summary>
-        public SearchAlterationOptions()
-        {
-            this.ODataType = "microsoft.graph.searchAlterationOptions";
-        }
 
         /// <summary>
         /// Gets or sets enableModification.

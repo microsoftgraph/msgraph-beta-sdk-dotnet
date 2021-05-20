@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class CloudPcDeviceImage : Entity
     {
     
-		///<summary>
-		/// The CloudPcDeviceImage constructor
-		///</summary>
-        public CloudPcDeviceImage()
-        {
-            this.ODataType = "microsoft.graph.cloudPcDeviceImage";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The image's display name.

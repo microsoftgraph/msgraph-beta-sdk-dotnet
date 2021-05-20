@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Endpoint : DirectoryObject
     {
     
-		///<summary>
-		/// The Endpoint constructor
-		///</summary>
+        ///<summary>
+        /// The Endpoint constructor
+        ///</summary>
         public Endpoint()
         {
             this.ODataType = "microsoft.graph.endpoint";
         }
-	
+    
         /// <summary>
         /// Gets or sets capability.
         /// Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Configuration>))]
     public partial class Configuration
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Configuration"/> class.
-        /// </summary>
-        public Configuration()
-        {
-            this.ODataType = "microsoft.graph.configuration";
-        }
 
         /// <summary>
         /// Gets or sets authorizedAppIds.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessReview : Entity
     {
     
-		///<summary>
-		/// The AccessReview constructor
-		///</summary>
-        public AccessReview()
-        {
-            this.ODataType = "microsoft.graph.accessReview";
-        }
-	
         /// <summary>
         /// Gets or sets business flow template id.
         /// The business flow template identifier. Required on create.  This value is case sensitive.

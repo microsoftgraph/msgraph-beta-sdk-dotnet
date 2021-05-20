@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Presence : Entity
     {
     
-		///<summary>
-		/// The Presence constructor
-		///</summary>
-        public Presence()
-        {
-            this.ODataType = "microsoft.graph.presence";
-        }
-	
         /// <summary>
         /// Gets or sets activity.
         /// The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.

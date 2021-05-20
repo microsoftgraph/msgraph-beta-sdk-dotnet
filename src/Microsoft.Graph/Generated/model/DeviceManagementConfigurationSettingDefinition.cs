@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationSettingDefinition : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationSettingDefinition constructor
-		///</summary>
-        public DeviceManagementConfigurationSettingDefinition()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationSettingDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets access types.
         /// Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.

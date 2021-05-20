@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81CertificateProfileBase : DeviceConfiguration
     {
     
-		///<summary>
-		/// The internal WindowsPhone81CertificateProfileBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal WindowsPhone81CertificateProfileBase constructor
+        ///</summary>
         protected internal WindowsPhone81CertificateProfileBase()
         {
             // Don't allow initialization of abstract entity types

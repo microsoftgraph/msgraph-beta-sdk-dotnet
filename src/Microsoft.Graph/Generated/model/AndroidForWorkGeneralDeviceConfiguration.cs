@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidForWorkGeneralDeviceConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The AndroidForWorkGeneralDeviceConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidForWorkGeneralDeviceConfiguration constructor
+        ///</summary>
         public AndroidForWorkGeneralDeviceConfiguration()
         {
             this.ODataType = "microsoft.graph.androidForWorkGeneralDeviceConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets password block face unlock.
         /// Indicates whether or not to block face unlock.

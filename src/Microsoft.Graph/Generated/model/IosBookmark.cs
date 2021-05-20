@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IosBookmark>))]
     public partial class IosBookmark
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosBookmark"/> class.
-        /// </summary>
-        public IosBookmark()
-        {
-            this.ODataType = "microsoft.graph.iosBookmark";
-        }
 
         /// <summary>
         /// Gets or sets bookmarkFolder.

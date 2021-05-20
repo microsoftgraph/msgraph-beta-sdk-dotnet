@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10SecureAssessmentConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The Windows10SecureAssessmentConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10SecureAssessmentConfiguration constructor
+        ///</summary>
         public Windows10SecureAssessmentConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10SecureAssessmentConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets allow printing.
         /// Indicates whether or not to allow the app from printing during the test.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationSettingTemplate : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationSettingTemplate constructor
-		///</summary>
-        public DeviceManagementConfigurationSettingTemplate()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationSettingTemplate";
-        }
-	
         /// <summary>
         /// Gets or sets setting instance template.
         /// Setting Instance Template

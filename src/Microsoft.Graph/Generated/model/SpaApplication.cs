@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SpaApplication>))]
     public partial class SpaApplication
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SpaApplication"/> class.
-        /// </summary>
-        public SpaApplication()
-        {
-            this.ODataType = "microsoft.graph.spaApplication";
-        }
 
         /// <summary>
         /// Gets or sets redirectUris.

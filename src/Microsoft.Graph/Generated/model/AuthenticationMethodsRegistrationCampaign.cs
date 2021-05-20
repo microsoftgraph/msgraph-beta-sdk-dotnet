@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AuthenticationMethodsRegistrationCampaign>))]
     public partial class AuthenticationMethodsRegistrationCampaign
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AuthenticationMethodsRegistrationCampaign"/> class.
-        /// </summary>
-        public AuthenticationMethodsRegistrationCampaign()
-        {
-            this.ODataType = "microsoft.graph.authenticationMethodsRegistrationCampaign";
-        }
 
         /// <summary>
         /// Gets or sets excludeTargets.

@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Post : OutlookItem
     {
     
-		///<summary>
-		/// The Post constructor
-		///</summary>
+        ///<summary>
+        /// The Post constructor
+        ///</summary>
         public Post()
         {
             this.ODataType = "microsoft.graph.post";
         }
-	
+    
         /// <summary>
         /// Gets or sets body.
         /// The contents of the post. This is a default property. This property can be null.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementIntegerSettingInstance : DeviceManagementSettingInstance
     {
     
-		///<summary>
-		/// The DeviceManagementIntegerSettingInstance constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementIntegerSettingInstance constructor
+        ///</summary>
         public DeviceManagementIntegerSettingInstance()
         {
             this.ODataType = "microsoft.graph.deviceManagementIntegerSettingInstance";
         }
-	
+    
         /// <summary>
         /// Gets or sets value.
         /// The integer value

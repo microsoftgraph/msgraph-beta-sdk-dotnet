@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class RiskDetection : Entity
     {
     
-		///<summary>
-		/// The RiskDetection constructor
-		///</summary>
-        public RiskDetection()
-        {
-            this.ODataType = "microsoft.graph.riskDetection";
-        }
-	
         /// <summary>
         /// Gets or sets activity.
         /// Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.

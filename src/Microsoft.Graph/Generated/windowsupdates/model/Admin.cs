@@ -21,14 +21,6 @@ namespace Microsoft.Graph.WindowsUpdates
     public partial class Admin
     {
     
-		///<summary>
-		/// The Admin constructor
-		///</summary>
-        public Admin()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.admin";
-        }
-	
         /// <summary>
         /// Gets or sets windows.
         /// Entity that acts as a container for functionality. Read-only.

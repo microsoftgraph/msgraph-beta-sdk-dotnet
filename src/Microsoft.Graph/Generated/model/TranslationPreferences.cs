@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TranslationPreferences>))]
     public partial class TranslationPreferences
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TranslationPreferences"/> class.
-        /// </summary>
-        public TranslationPreferences()
-        {
-            this.ODataType = "microsoft.graph.translationPreferences";
-        }
 
         /// <summary>
         /// Gets or sets languageOverrides.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MacOSCustomAppConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The MacOSCustomAppConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSCustomAppConfiguration constructor
+        ///</summary>
         public MacOSCustomAppConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSCustomAppConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets bundle id.
         /// Bundle id for targeting.

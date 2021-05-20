@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Room : Place
     {
     
-		///<summary>
-		/// The Room constructor
-		///</summary>
+        ///<summary>
+        /// The Room constructor
+        ///</summary>
         public Room()
         {
             this.ODataType = "microsoft.graph.room";
         }
-	
+    
         /// <summary>
         /// Gets or sets audio device name.
         /// Specifies the name of the audio device in the room.

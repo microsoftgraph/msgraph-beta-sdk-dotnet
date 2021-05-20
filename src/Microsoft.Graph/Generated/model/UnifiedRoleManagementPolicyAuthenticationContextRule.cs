@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleManagementPolicyAuthenticationContextRule : UnifiedRoleManagementPolicyRule
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicyAuthenticationContextRule constructor
-		///</summary>
+        ///<summary>
+        /// The UnifiedRoleManagementPolicyAuthenticationContextRule constructor
+        ///</summary>
         public UnifiedRoleManagementPolicyAuthenticationContextRule()
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule";
         }
-	
+    
         /// <summary>
         /// Gets or sets claim value.
         /// Value of the authentication context claim.

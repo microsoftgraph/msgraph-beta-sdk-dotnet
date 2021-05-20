@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AppRole>))]
     public partial class AppRole
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppRole"/> class.
-        /// </summary>
-        public AppRole()
-        {
-            this.ODataType = "microsoft.graph.appRole";
-        }
 
         /// <summary>
         /// Gets or sets allowedMemberTypes.

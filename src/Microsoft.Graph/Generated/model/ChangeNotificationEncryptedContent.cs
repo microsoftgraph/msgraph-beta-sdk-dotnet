@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ChangeNotificationEncryptedContent>))]
     public partial class ChangeNotificationEncryptedContent
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChangeNotificationEncryptedContent"/> class.
-        /// </summary>
-        public ChangeNotificationEncryptedContent()
-        {
-            this.ODataType = "microsoft.graph.changeNotificationEncryptedContent";
-        }
 
         /// <summary>
         /// Gets or sets data.

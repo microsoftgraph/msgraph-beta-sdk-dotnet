@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<InferenceData>))]
     public partial class InferenceData
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InferenceData"/> class.
-        /// </summary>
-        public InferenceData()
-        {
-            this.ODataType = "microsoft.graph.inferenceData";
-        }
 
         /// <summary>
         /// Gets or sets confidenceScore.

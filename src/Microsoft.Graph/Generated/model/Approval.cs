@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Approval : Entity
     {
     
-		///<summary>
-		/// The Approval constructor
-		///</summary>
-        public Approval()
-        {
-            this.ODataType = "microsoft.graph.approval";
-        }
-	
         /// <summary>
         /// Gets or sets steps.
         /// </summary>

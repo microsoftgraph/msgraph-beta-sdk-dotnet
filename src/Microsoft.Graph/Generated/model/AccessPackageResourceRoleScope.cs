@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessPackageResourceRoleScope : Entity
     {
     
-		///<summary>
-		/// The AccessPackageResourceRoleScope constructor
-		///</summary>
-        public AccessPackageResourceRoleScope()
-        {
-            this.ODataType = "microsoft.graph.accessPackageResourceRoleScope";
-        }
-	
         /// <summary>
         /// Gets or sets created by.
         /// Read-only.

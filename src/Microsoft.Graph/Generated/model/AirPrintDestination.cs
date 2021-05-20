@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AirPrintDestination>))]
     public partial class AirPrintDestination
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AirPrintDestination"/> class.
-        /// </summary>
-        public AirPrintDestination()
-        {
-            this.ODataType = "microsoft.graph.airPrintDestination";
-        }
 
         /// <summary>
         /// Gets or sets forceTls.

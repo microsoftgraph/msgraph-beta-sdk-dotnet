@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class TeamsApp : Entity
     {
     
-		///<summary>
-		/// The TeamsApp constructor
-		///</summary>
-        public TeamsApp()
-        {
-            this.ODataType = "microsoft.graph.teamsApp";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.

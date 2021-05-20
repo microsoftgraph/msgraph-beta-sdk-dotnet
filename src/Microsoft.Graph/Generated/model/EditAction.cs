@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EditAction>))]
     public partial class EditAction
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EditAction"/> class.
-        /// </summary>
-        public EditAction()
-        {
-            this.ODataType = "microsoft.graph.editAction";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

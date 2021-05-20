@@ -20,13 +20,6 @@ namespace Microsoft.Graph.CallRecords
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<UserFeedback>))]
     public partial class UserFeedback
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserFeedback"/> class.
-        /// </summary>
-        public UserFeedback()
-        {
-            this.ODataType = "microsoft.graph.callRecords.userFeedback";
-        }
 
         /// <summary>
         /// Gets or sets rating.

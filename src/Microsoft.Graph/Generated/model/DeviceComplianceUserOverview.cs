@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceComplianceUserOverview : Entity
     {
     
-		///<summary>
-		/// The DeviceComplianceUserOverview constructor
-		///</summary>
-        public DeviceComplianceUserOverview()
-        {
-            this.ODataType = "microsoft.graph.deviceComplianceUserOverview";
-        }
-	
         /// <summary>
         /// Gets or sets configuration version.
         /// Version of the policy for that overview

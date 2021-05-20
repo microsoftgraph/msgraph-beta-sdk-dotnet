@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CurrentLabel>))]
     public partial class CurrentLabel
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CurrentLabel"/> class.
-        /// </summary>
-        public CurrentLabel()
-        {
-            this.ODataType = "microsoft.graph.currentLabel";
-        }
 
         /// <summary>
         /// Gets or sets applicationMode.

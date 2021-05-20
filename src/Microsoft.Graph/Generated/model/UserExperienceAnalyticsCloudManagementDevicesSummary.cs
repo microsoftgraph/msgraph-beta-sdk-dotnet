@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsCloudManagementDevicesSummary>))]
     public partial class UserExperienceAnalyticsCloudManagementDevicesSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserExperienceAnalyticsCloudManagementDevicesSummary"/> class.
-        /// </summary>
-        public UserExperienceAnalyticsCloudManagementDevicesSummary()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsCloudManagementDevicesSummary";
-        }
 
         /// <summary>
         /// Gets or sets coManagedDeviceCount.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DefaultUserRolePermissions>))]
     public partial class DefaultUserRolePermissions
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DefaultUserRolePermissions"/> class.
-        /// </summary>
-        public DefaultUserRolePermissions()
-        {
-            this.ODataType = "microsoft.graph.defaultUserRolePermissions";
-        }
 
         /// <summary>
         /// Gets or sets allowedToCreateApps.

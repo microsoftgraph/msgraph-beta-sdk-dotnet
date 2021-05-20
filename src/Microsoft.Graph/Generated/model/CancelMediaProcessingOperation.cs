@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class CancelMediaProcessingOperation : CommsOperation
     {
     
-		///<summary>
-		/// The CancelMediaProcessingOperation constructor
-		///</summary>
+        ///<summary>
+        /// The CancelMediaProcessingOperation constructor
+        ///</summary>
         public CancelMediaProcessingOperation()
         {
             this.ODataType = "microsoft.graph.cancelMediaProcessingOperation";
         }
-	
+    
     }
 }
 

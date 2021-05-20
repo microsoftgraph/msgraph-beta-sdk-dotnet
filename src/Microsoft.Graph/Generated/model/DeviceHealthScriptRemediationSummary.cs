@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceHealthScriptRemediationSummary>))]
     public partial class DeviceHealthScriptRemediationSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceHealthScriptRemediationSummary"/> class.
-        /// </summary>
-        public DeviceHealthScriptRemediationSummary()
-        {
-            this.ODataType = "microsoft.graph.deviceHealthScriptRemediationSummary";
-        }
 
         /// <summary>
         /// Gets or sets remediatedDeviceCount.

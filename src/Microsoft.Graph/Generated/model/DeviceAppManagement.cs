@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceAppManagement : Entity
     {
     
-		///<summary>
-		/// The DeviceAppManagement constructor
-		///</summary>
-        public DeviceAppManagement()
-        {
-            this.ODataType = "microsoft.graph.deviceAppManagement";
-        }
-	
         /// <summary>
         /// Gets or sets is enabled for microsoft store for business.
         /// Whether the account is enabled for syncing applications from the Microsoft Store for Business.

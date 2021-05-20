@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EmailActivityUserDetail : Entity
     {
     
-		///<summary>
-		/// The EmailActivityUserDetail constructor
-		///</summary>
-        public EmailActivityUserDetail()
-        {
-            this.ODataType = "microsoft.graph.emailActivityUserDetail";
-        }
-	
         /// <summary>
         /// Gets or sets assigned products.
         /// </summary>

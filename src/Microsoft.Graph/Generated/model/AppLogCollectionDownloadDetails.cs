@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AppLogCollectionDownloadDetails>))]
     public partial class AppLogCollectionDownloadDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppLogCollectionDownloadDetails"/> class.
-        /// </summary>
-        public AppLogCollectionDownloadDetails()
-        {
-            this.ODataType = "microsoft.graph.appLogCollectionDownloadDetails";
-        }
 
         /// <summary>
         /// Gets or sets appLogDecryptionAlgorithm.

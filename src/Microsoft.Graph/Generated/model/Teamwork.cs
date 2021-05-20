@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Teamwork : Entity
     {
     
-		///<summary>
-		/// The Teamwork constructor
-		///</summary>
-        public Teamwork()
-        {
-            this.ODataType = "microsoft.graph.teamwork";
-        }
-	
         /// <summary>
         /// Gets or sets workforce integrations.
         /// </summary>

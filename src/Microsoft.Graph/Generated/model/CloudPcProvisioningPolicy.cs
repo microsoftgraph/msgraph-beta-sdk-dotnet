@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class CloudPcProvisioningPolicy : Entity
     {
     
-		///<summary>
-		/// The CloudPcProvisioningPolicy constructor
-		///</summary>
-        public CloudPcProvisioningPolicy()
-        {
-            this.ODataType = "microsoft.graph.cloudPcProvisioningPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// The provisioning policy description.

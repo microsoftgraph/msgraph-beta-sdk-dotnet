@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MailboxSettings>))]
     public partial class MailboxSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MailboxSettings"/> class.
-        /// </summary>
-        public MailboxSettings()
-        {
-            this.ODataType = "microsoft.graph.mailboxSettings";
-        }
 
         /// <summary>
         /// Gets or sets archiveFolder.

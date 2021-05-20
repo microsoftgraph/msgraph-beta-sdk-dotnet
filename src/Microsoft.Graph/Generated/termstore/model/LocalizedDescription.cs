@@ -20,13 +20,6 @@ namespace Microsoft.Graph.TermStore
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<LocalizedDescription>))]
     public partial class LocalizedDescription
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LocalizedDescription"/> class.
-        /// </summary>
-        public LocalizedDescription()
-        {
-            this.ODataType = "microsoft.graph.termStore.localizedDescription";
-        }
 
         /// <summary>
         /// Gets or sets description.

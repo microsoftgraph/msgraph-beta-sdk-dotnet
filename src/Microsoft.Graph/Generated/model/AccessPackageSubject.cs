@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessPackageSubject : Entity
     {
     
-		///<summary>
-		/// The AccessPackageSubject constructor
-		///</summary>
-        public AccessPackageSubject()
-        {
-            this.ODataType = "microsoft.graph.accessPackageSubject";
-        }
-	
         /// <summary>
         /// Gets or sets alt sec id.
         /// </summary>

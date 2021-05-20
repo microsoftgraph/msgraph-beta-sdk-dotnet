@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<GovernanceNotificationTemplate>))]
     public partial class GovernanceNotificationTemplate
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GovernanceNotificationTemplate"/> class.
-        /// </summary>
-        public GovernanceNotificationTemplate()
-        {
-            this.ODataType = "microsoft.graph.governanceNotificationTemplate";
-        }
 
         /// <summary>
         /// Gets or sets culture.

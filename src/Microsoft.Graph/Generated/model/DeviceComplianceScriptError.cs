@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceComplianceScriptError>))]
     public partial class DeviceComplianceScriptError
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceComplianceScriptError"/> class.
-        /// </summary>
-        public DeviceComplianceScriptError()
-        {
-            this.ODataType = "microsoft.graph.deviceComplianceScriptError";
-        }
 
         /// <summary>
         /// Gets or sets code.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AdvancedThreatProtectionOnboardingStateSummary : Entity
     {
     
-		///<summary>
-		/// The AdvancedThreatProtectionOnboardingStateSummary constructor
-		///</summary>
-        public AdvancedThreatProtectionOnboardingStateSummary()
-        {
-            this.ODataType = "microsoft.graph.advancedThreatProtectionOnboardingStateSummary";
-        }
-	
         /// <summary>
         /// Gets or sets compliant device count.
         /// Number of compliant devices

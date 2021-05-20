@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSEnterpriseWiFiConfiguration : MacOSWiFiConfiguration
     {
     
-		///<summary>
-		/// The MacOSEnterpriseWiFiConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSEnterpriseWiFiConfiguration constructor
+        ///</summary>
         public MacOSEnterpriseWiFiConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSEnterpriseWiFiConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets authentication method.
         /// Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.

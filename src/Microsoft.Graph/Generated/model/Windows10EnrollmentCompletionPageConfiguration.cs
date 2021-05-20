@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Windows10EnrollmentCompletionPageConfiguration : DeviceEnrollmentConfiguration
     {
     
-		///<summary>
-		/// The Windows10EnrollmentCompletionPageConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10EnrollmentCompletionPageConfiguration constructor
+        ///</summary>
         public Windows10EnrollmentCompletionPageConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10EnrollmentCompletionPageConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets allow device reset on install failure.
         /// Allow or block device reset on installation failure

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<GroupPolicyUploadedLanguageFile>))]
     public partial class GroupPolicyUploadedLanguageFile
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GroupPolicyUploadedLanguageFile"/> class.
-        /// </summary>
-        public GroupPolicyUploadedLanguageFile()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyUploadedLanguageFile";
-        }
 
         /// <summary>
         /// Gets or sets content.

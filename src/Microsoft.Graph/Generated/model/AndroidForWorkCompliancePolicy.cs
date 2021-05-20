@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidForWorkCompliancePolicy : DeviceCompliancePolicy
     {
     
-		///<summary>
-		/// The AndroidForWorkCompliancePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidForWorkCompliancePolicy constructor
+        ///</summary>
         public AndroidForWorkCompliancePolicy()
         {
             this.ODataType = "microsoft.graph.androidForWorkCompliancePolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets device threat protection enabled.
         /// Require that devices have enabled device threat protection.

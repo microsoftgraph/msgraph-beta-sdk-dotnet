@@ -20,13 +20,6 @@ namespace Microsoft.Graph.WindowsUpdates
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<MonitoringSettings>))]
     public partial class MonitoringSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MonitoringSettings"/> class.
-        /// </summary>
-        public MonitoringSettings()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.monitoringSettings";
-        }
 
         /// <summary>
         /// Gets or sets monitoringRules.

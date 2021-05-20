@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WindowsFirewallRule>))]
     public partial class WindowsFirewallRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WindowsFirewallRule"/> class.
-        /// </summary>
-        public WindowsFirewallRule()
-        {
-            this.ODataType = "microsoft.graph.windowsFirewallRule";
-        }
 
         /// <summary>
         /// Gets or sets action.

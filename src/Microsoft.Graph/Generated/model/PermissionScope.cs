@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PermissionScope>))]
     public partial class PermissionScope
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PermissionScope"/> class.
-        /// </summary>
-        public PermissionScope()
-        {
-            this.ODataType = "microsoft.graph.permissionScope";
-        }
 
         /// <summary>
         /// Gets or sets adminConsentDescription.

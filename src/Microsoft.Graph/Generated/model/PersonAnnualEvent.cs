@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class PersonAnnualEvent : ItemFacet
     {
     
-		///<summary>
-		/// The PersonAnnualEvent constructor
-		///</summary>
-        public PersonAnnualEvent()
-        {
-            this.ODataType = "microsoft.graph.personAnnualEvent";
-        }
-	
         /// <summary>
         /// Gets or sets date.
         /// </summary>

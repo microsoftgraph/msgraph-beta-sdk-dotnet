@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AppConsentRequestScope>))]
     public partial class AppConsentRequestScope
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppConsentRequestScope"/> class.
-        /// </summary>
-        public AppConsentRequestScope()
-        {
-            this.ODataType = "microsoft.graph.appConsentRequestScope";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

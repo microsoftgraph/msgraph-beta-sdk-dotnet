@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TimeClockSettings>))]
     public partial class TimeClockSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimeClockSettings"/> class.
-        /// </summary>
-        public TimeClockSettings()
-        {
-            this.ODataType = "microsoft.graph.timeClockSettings";
-        }
 
         /// <summary>
         /// Gets or sets approvedLocation.

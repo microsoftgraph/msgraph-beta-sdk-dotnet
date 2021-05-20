@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ExpeditedWindowsQualityUpdateSettings>))]
     public partial class ExpeditedWindowsQualityUpdateSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExpeditedWindowsQualityUpdateSettings"/> class.
-        /// </summary>
-        public ExpeditedWindowsQualityUpdateSettings()
-        {
-            this.ODataType = "microsoft.graph.expeditedWindowsQualityUpdateSettings";
-        }
 
         /// <summary>
         /// Gets or sets daysUntilForcedReboot.

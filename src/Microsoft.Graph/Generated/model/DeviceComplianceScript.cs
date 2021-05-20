@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceComplianceScript : Entity
     {
     
-		///<summary>
-		/// The DeviceComplianceScript constructor
-		///</summary>
-        public DeviceComplianceScript()
-        {
-            this.ODataType = "microsoft.graph.deviceComplianceScript";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The timestamp of when the device compliance script was created. This property is read-only.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class GroupPolicyMigrationReport : Entity
     {
     
-		///<summary>
-		/// The GroupPolicyMigrationReport constructor
-		///</summary>
-        public GroupPolicyMigrationReport()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyMigrationReport";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time at which the GroupPolicyMigrationReport was created.

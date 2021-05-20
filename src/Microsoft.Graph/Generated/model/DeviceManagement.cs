@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagement : Entity
     {
     
-		///<summary>
-		/// The DeviceManagement constructor
-		///</summary>
-        public DeviceManagement()
-        {
-            this.ODataType = "microsoft.graph.deviceManagement";
-        }
-	
         /// <summary>
         /// Gets or sets device compliance report summarization date time.
         /// The last requested time of device compliance reporting for this account. This property is read-only.

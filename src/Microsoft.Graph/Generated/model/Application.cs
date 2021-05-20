@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Application : DirectoryObject
     {
     
-		///<summary>
-		/// The Application constructor
-		///</summary>
+        ///<summary>
+        /// The Application constructor
+        ///</summary>
         public Application()
         {
             this.ODataType = "microsoft.graph.application";
         }
-	
+    
         /// <summary>
         /// Gets or sets api.
         /// Specifies settings for an application that implements a web API.

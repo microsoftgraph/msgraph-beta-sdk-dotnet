@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EducationSynchronizationError : Entity
     {
     
-		///<summary>
-		/// The EducationSynchronizationError constructor
-		///</summary>
-        public EducationSynchronizationError()
-        {
-            this.ODataType = "microsoft.graph.educationSynchronizationError";
-        }
-	
         /// <summary>
         /// Gets or sets entry type.
         /// Represents the sync entity (school, section, student, teacher).

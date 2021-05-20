@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class DefaultManagedAppProtection : ManagedAppProtection
     {
     
-		///<summary>
-		/// The DefaultManagedAppProtection constructor
-		///</summary>
+        ///<summary>
+        /// The DefaultManagedAppProtection constructor
+        ///</summary>
         public DefaultManagedAppProtection()
         {
             this.ODataType = "microsoft.graph.defaultManagedAppProtection";
         }
-	
+    
         /// <summary>
         /// Gets or sets allowed android device manufacturers.
         /// Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)

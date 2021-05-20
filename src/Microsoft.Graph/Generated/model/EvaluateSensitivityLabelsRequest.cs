@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EvaluateSensitivityLabelsRequestObject>))]
     public partial class EvaluateSensitivityLabelsRequestObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EvaluateSensitivityLabelsRequestObject"/> class.
-        /// </summary>
-        public EvaluateSensitivityLabelsRequestObject()
-        {
-            this.ODataType = "microsoft.graph.evaluateSensitivityLabelsRequest";
-        }
 
         /// <summary>
         /// Gets or sets currentLabel.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceCompliancePolicyAssignment : Entity
     {
     
-		///<summary>
-		/// The DeviceCompliancePolicyAssignment constructor
-		///</summary>
-        public DeviceCompliancePolicyAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceCompliancePolicyAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets source.
         /// The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.

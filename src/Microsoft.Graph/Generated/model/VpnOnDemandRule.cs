@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<VpnOnDemandRule>))]
     public partial class VpnOnDemandRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VpnOnDemandRule"/> class.
-        /// </summary>
-        public VpnOnDemandRule()
-        {
-            this.ODataType = "microsoft.graph.vpnOnDemandRule";
-        }
 
         /// <summary>
         /// Gets or sets action.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class RoomList : Place
     {
     
-		///<summary>
-		/// The RoomList constructor
-		///</summary>
+        ///<summary>
+        /// The RoomList constructor
+        ///</summary>
         public RoomList()
         {
             this.ODataType = "microsoft.graph.roomList";
         }
-	
+    
         /// <summary>
         /// Gets or sets email address.
         /// The email address of the room list.

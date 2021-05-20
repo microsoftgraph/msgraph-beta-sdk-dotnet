@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class IosExpeditedCheckinConfiguration : AppleExpeditedCheckinConfigurationBase
     {
     
-		///<summary>
-		/// The IosExpeditedCheckinConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The IosExpeditedCheckinConfiguration constructor
+        ///</summary>
         public IosExpeditedCheckinConfiguration()
         {
             this.ODataType = "microsoft.graph.iosExpeditedCheckinConfiguration";
         }
-	
+    
     }
 }
 

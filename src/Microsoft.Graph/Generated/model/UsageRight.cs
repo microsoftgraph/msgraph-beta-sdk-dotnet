@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class UsageRight : Entity
     {
     
-		///<summary>
-		/// The UsageRight constructor
-		///</summary>
-        public UsageRight()
-        {
-            this.ODataType = "microsoft.graph.usageRight";
-        }
-	
         /// <summary>
         /// Gets or sets catalog id.
         /// Product id corresponding to the usage right.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class VppToken : Entity
     {
     
-		///<summary>
-		/// The VppToken constructor
-		///</summary>
-        public VppToken()
-        {
-            this.ODataType = "microsoft.graph.vppToken";
-        }
-	
         /// <summary>
         /// Gets or sets apple id.
         /// The apple Id associated with the given Apple Volume Purchase Program Token.

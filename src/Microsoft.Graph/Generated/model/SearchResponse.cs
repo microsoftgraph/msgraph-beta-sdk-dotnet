@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SearchResponse>))]
     public partial class SearchResponse
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchResponse"/> class.
-        /// </summary>
-        public SearchResponse()
-        {
-            this.ODataType = "microsoft.graph.searchResponse";
-        }
 
         /// <summary>
         /// Gets or sets queryAlterationResponse.

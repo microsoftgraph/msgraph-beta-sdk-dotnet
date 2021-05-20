@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PrinterLocation>))]
     public partial class PrinterLocation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrinterLocation"/> class.
-        /// </summary>
-        public PrinterLocation()
-        {
-            this.ODataType = "microsoft.graph.printerLocation";
-        }
 
         /// <summary>
         /// Gets or sets altitudeInMeters.

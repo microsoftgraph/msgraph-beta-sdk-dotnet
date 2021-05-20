@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSEndpointProtectionConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The MacOSEndpointProtectionConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSEndpointProtectionConfiguration constructor
+        ///</summary>
         public MacOSEndpointProtectionConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSEndpointProtectionConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets advanced threat protection automatic sample submission.
         /// Determines whether or not to enable automatic file sample submission for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class IosVppAppAssignedUserLicense : IosVppAppAssignedLicense
     {
     
-		///<summary>
-		/// The IosVppAppAssignedUserLicense constructor
-		///</summary>
+        ///<summary>
+        /// The IosVppAppAssignedUserLicense constructor
+        ///</summary>
         public IosVppAppAssignedUserLicense()
         {
             this.ODataType = "microsoft.graph.iosVppAppAssignedUserLicense";
         }
-	
+    
     }
 }
 

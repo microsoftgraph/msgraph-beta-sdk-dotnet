@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ApiApplication>))]
     public partial class ApiApplication
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ApiApplication"/> class.
-        /// </summary>
-        public ApiApplication()
-        {
-            this.ODataType = "microsoft.graph.apiApplication";
-        }
 
         /// <summary>
         /// Gets or sets acceptMappedClaims.

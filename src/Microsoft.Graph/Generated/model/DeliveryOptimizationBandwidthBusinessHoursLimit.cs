@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeliveryOptimizationBandwidthBusinessHoursLimit>))]
     public partial class DeliveryOptimizationBandwidthBusinessHoursLimit
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeliveryOptimizationBandwidthBusinessHoursLimit"/> class.
-        /// </summary>
-        public DeliveryOptimizationBandwidthBusinessHoursLimit()
-        {
-            this.ODataType = "microsoft.graph.deliveryOptimizationBandwidthBusinessHoursLimit";
-        }
 
         /// <summary>
         /// Gets or sets bandwidthBeginBusinessHours.

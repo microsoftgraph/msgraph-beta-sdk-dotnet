@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WindowsNetworkIsolationPolicy>))]
     public partial class WindowsNetworkIsolationPolicy
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WindowsNetworkIsolationPolicy"/> class.
-        /// </summary>
-        public WindowsNetworkIsolationPolicy()
-        {
-            this.ODataType = "microsoft.graph.windowsNetworkIsolationPolicy";
-        }
 
         /// <summary>
         /// Gets or sets enterpriseCloudResources.

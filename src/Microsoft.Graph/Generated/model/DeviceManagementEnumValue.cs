@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementEnumValue>))]
     public partial class DeviceManagementEnumValue
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementEnumValue"/> class.
-        /// </summary>
-        public DeviceManagementEnumValue()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementEnumValue";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

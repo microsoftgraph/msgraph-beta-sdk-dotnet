@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementAbstractComplexSettingInstance : DeviceManagementSettingInstance
     {
     
-		///<summary>
-		/// The DeviceManagementAbstractComplexSettingInstance constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementAbstractComplexSettingInstance constructor
+        ///</summary>
         public DeviceManagementAbstractComplexSettingInstance()
         {
             this.ODataType = "microsoft.graph.deviceManagementAbstractComplexSettingInstance";
         }
-	
+    
         /// <summary>
         /// Gets or sets implementation id.
         /// The definition ID for the chosen implementation of this complex setting

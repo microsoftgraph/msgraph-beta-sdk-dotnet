@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class ScheduleChangeRequestObject : ChangeTrackedEntity
     {
     
-		///<summary>
-		/// The internal ScheduleChangeRequest constructor
-		///</summary>
+        ///<summary>
+        /// The internal ScheduleChangeRequest constructor
+        ///</summary>
         protected internal ScheduleChangeRequestObject()
         {
             // Don't allow initialization of abstract entity types

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class PrivilegedRoleSummary : Entity
     {
     
-		///<summary>
-		/// The PrivilegedRoleSummary constructor
-		///</summary>
-        public PrivilegedRoleSummary()
-        {
-            this.ODataType = "microsoft.graph.privilegedRoleSummary";
-        }
-	
         /// <summary>
         /// Gets or sets elevated count.
         /// The number of users that have the role assigned and the role is activated.

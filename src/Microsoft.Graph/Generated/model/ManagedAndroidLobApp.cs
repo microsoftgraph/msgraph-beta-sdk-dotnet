@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ManagedAndroidLobApp : ManagedMobileLobApp
     {
     
-		///<summary>
-		/// The ManagedAndroidLobApp constructor
-		///</summary>
+        ///<summary>
+        /// The ManagedAndroidLobApp constructor
+        ///</summary>
         public ManagedAndroidLobApp()
         {
             this.ODataType = "microsoft.graph.managedAndroidLobApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets identity name.
         /// The Identity Name.

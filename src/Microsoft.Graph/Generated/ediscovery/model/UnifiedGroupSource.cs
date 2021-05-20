@@ -21,14 +21,14 @@ namespace Microsoft.Graph.Ediscovery
     public partial class UnifiedGroupSource : DataSource
     {
     
-		///<summary>
-		/// The UnifiedGroupSource constructor
-		///</summary>
+        ///<summary>
+        /// The UnifiedGroupSource constructor
+        ///</summary>
         public UnifiedGroupSource()
         {
             this.ODataType = "microsoft.graph.ediscovery.unifiedGroupSource";
         }
-	
+    
         /// <summary>
         /// Gets or sets included sources.
         /// Specifies which sources are included in this group. Possible values are: mailbox, site.

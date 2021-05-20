@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Call : Entity
     {
     
-		///<summary>
-		/// The Call constructor
-		///</summary>
-        public Call()
-        {
-            this.ODataType = "microsoft.graph.call";
-        }
-	
         /// <summary>
         /// Gets or sets active modalities.
         /// The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.

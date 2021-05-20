@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CloudAppSecurityState>))]
     public partial class CloudAppSecurityState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CloudAppSecurityState"/> class.
-        /// </summary>
-        public CloudAppSecurityState()
-        {
-            this.ODataType = "microsoft.graph.cloudAppSecurityState";
-        }
 
         /// <summary>
         /// Gets or sets destinationServiceIp.

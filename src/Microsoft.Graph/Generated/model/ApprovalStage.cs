@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ApprovalStage>))]
     public partial class ApprovalStage
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ApprovalStage"/> class.
-        /// </summary>
-        public ApprovalStage()
-        {
-            this.ODataType = "microsoft.graph.approvalStage";
-        }
 
         /// <summary>
         /// Gets or sets approvalStageTimeOutInDays.

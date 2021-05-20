@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PaymentTerm : Entity
     {
     
-		///<summary>
-		/// The PaymentTerm constructor
-		///</summary>
-        public PaymentTerm()
-        {
-            this.ODataType = "microsoft.graph.paymentTerm";
-        }
-	
         /// <summary>
         /// Gets or sets calculate discount on credit memos.
         /// </summary>

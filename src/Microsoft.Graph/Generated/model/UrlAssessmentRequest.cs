@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class UrlAssessmentRequestObject : ThreatAssessmentRequestObject
     {
     
-		///<summary>
-		/// The UrlAssessmentRequest constructor
-		///</summary>
+        ///<summary>
+        /// The UrlAssessmentRequest constructor
+        ///</summary>
         public UrlAssessmentRequestObject()
         {
             this.ODataType = "microsoft.graph.urlAssessmentRequest";
         }
-	
+    
         /// <summary>
         /// Gets or sets url.
         /// The URL string.

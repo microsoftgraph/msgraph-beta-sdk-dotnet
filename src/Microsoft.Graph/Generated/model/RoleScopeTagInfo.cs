@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RoleScopeTagInfo>))]
     public partial class RoleScopeTagInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RoleScopeTagInfo"/> class.
-        /// </summary>
-        public RoleScopeTagInfo()
-        {
-            this.ODataType = "microsoft.graph.roleScopeTagInfo";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

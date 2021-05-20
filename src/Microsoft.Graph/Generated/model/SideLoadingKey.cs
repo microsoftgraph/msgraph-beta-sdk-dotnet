@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SideLoadingKey : Entity
     {
     
-		///<summary>
-		/// The SideLoadingKey constructor
-		///</summary>
-        public SideLoadingKey()
-        {
-            this.ODataType = "microsoft.graph.sideLoadingKey";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Side Loading Key description displayed to the ITPro Admins..

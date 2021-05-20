@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class NdesConnector : Entity
     {
     
-		///<summary>
-		/// The NdesConnector constructor
-		///</summary>
-        public NdesConnector()
-        {
-            this.ODataType = "microsoft.graph.ndesConnector";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The friendly name of the Ndes Connector.

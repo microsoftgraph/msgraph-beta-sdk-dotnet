@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DiscoveredSensitiveType>))]
     public partial class DiscoveredSensitiveType
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DiscoveredSensitiveType"/> class.
-        /// </summary>
-        public DiscoveredSensitiveType()
-        {
-            this.ODataType = "microsoft.graph.discoveredSensitiveType";
-        }
 
         /// <summary>
         /// Gets or sets classificationAttributes.

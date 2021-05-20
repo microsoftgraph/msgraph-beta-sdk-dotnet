@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AppMetadataEntry>))]
     public partial class AppMetadataEntry
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppMetadataEntry"/> class.
-        /// </summary>
-        public AppMetadataEntry()
-        {
-            this.ODataType = "microsoft.graph.appMetadataEntry";
-        }
 
         /// <summary>
         /// Gets or sets key.

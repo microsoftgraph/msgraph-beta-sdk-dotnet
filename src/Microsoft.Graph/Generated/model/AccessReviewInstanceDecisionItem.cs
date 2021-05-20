@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessReviewInstanceDecisionItem : Entity
     {
     
-		///<summary>
-		/// The AccessReviewInstanceDecisionItem constructor
-		///</summary>
-        public AccessReviewInstanceDecisionItem()
-        {
-            this.ODataType = "microsoft.graph.accessReviewInstanceDecisionItem";
-        }
-	
         /// <summary>
         /// Gets or sets access review id.
         /// The identifier of the accessReviewInstance parent.

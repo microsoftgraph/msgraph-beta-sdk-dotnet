@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Windows10XWifiConfiguration : DeviceManagementResourceAccessProfileBase
     {
     
-		///<summary>
-		/// The Windows10XWifiConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10XWifiConfiguration constructor
+        ///</summary>
         public Windows10XWifiConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10XWifiConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets authentication certificate id.
         /// ID to the Authentication Certificate

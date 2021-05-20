@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DetectedSensitiveContentBase>))]
     public partial class DetectedSensitiveContentBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DetectedSensitiveContentBase"/> class.
-        /// </summary>
-        public DetectedSensitiveContentBase()
-        {
-            this.ODataType = "microsoft.graph.detectedSensitiveContentBase";
-        }
 
         /// <summary>
         /// Gets or sets confidence.

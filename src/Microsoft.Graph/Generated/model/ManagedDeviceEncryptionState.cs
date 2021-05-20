@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceEncryptionState : Entity
     {
     
-		///<summary>
-		/// The ManagedDeviceEncryptionState constructor
-		///</summary>
-        public ManagedDeviceEncryptionState()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceEncryptionState";
-        }
-	
         /// <summary>
         /// Gets or sets advanced bit locker states.
         /// Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.

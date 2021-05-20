@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PrintMargin>))]
     public partial class PrintMargin
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrintMargin"/> class.
-        /// </summary>
-        public PrintMargin()
-        {
-            this.ODataType = "microsoft.graph.printMargin";
-        }
 
         /// <summary>
         /// Gets or sets bottom.

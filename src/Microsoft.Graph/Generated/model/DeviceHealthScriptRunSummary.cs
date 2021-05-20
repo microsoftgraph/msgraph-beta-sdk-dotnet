@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceHealthScriptRunSummary : Entity
     {
     
-		///<summary>
-		/// The DeviceHealthScriptRunSummary constructor
-		///</summary>
-        public DeviceHealthScriptRunSummary()
-        {
-            this.ODataType = "microsoft.graph.deviceHealthScriptRunSummary";
-        }
-	
         /// <summary>
         /// Gets or sets detection script error device count.
         /// Number of devices on which the detection script execution encountered an error and did not complete

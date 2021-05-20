@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Website>))]
     public partial class Website
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Website"/> class.
-        /// </summary>
-        public Website()
-        {
-            this.ODataType = "microsoft.graph.website";
-        }
 
         /// <summary>
         /// Gets or sets address.

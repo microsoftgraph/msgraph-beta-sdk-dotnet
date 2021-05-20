@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class WindowsAutopilotDeploymentProfilePolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The WindowsAutopilotDeploymentProfilePolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsAutopilotDeploymentProfilePolicySetItem constructor
+        ///</summary>
         public WindowsAutopilotDeploymentProfilePolicySetItem()
         {
             this.ODataType = "microsoft.graph.windowsAutopilotDeploymentProfilePolicySetItem";
         }
-	
+    
     }
 }
 

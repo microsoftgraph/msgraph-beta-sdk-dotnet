@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RecurrencePattern>))]
     public partial class RecurrencePattern
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RecurrencePattern"/> class.
-        /// </summary>
-        public RecurrencePattern()
-        {
-            this.ODataType = "microsoft.graph.recurrencePattern";
-        }
 
         /// <summary>
         /// Gets or sets dayOfMonth.

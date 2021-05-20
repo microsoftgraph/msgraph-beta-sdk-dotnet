@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CompanyPortalBlockedAction>))]
     public partial class CompanyPortalBlockedAction
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CompanyPortalBlockedAction"/> class.
-        /// </summary>
-        public CompanyPortalBlockedAction()
-        {
-            this.ODataType = "microsoft.graph.companyPortalBlockedAction";
-        }
 
         /// <summary>
         /// Gets or sets action.

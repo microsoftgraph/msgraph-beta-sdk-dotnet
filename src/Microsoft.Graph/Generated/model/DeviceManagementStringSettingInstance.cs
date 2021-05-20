@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementStringSettingInstance : DeviceManagementSettingInstance
     {
     
-		///<summary>
-		/// The DeviceManagementStringSettingInstance constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementStringSettingInstance constructor
+        ///</summary>
         public DeviceManagementStringSettingInstance()
         {
             this.ODataType = "microsoft.graph.deviceManagementStringSettingInstance";
         }
-	
+    
         /// <summary>
         /// Gets or sets value.
         /// The string value

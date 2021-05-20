@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CompanyDetail>))]
     public partial class CompanyDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CompanyDetail"/> class.
-        /// </summary>
-        public CompanyDetail()
-        {
-            this.ODataType = "microsoft.graph.companyDetail";
-        }
 
         /// <summary>
         /// Gets or sets address.

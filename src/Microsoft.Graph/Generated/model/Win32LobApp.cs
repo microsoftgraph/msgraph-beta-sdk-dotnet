@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Win32LobApp : MobileLobApp
     {
     
-		///<summary>
-		/// The Win32LobApp constructor
-		///</summary>
+        ///<summary>
+        /// The Win32LobApp constructor
+        ///</summary>
         public Win32LobApp()
         {
             this.ODataType = "microsoft.graph.win32LobApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets applicable architectures.
         /// The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.

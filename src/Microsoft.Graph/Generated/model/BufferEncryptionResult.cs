@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<BufferEncryptionResult>))]
     public partial class BufferEncryptionResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BufferEncryptionResult"/> class.
-        /// </summary>
-        public BufferEncryptionResult()
-        {
-            this.ODataType = "microsoft.graph.bufferEncryptionResult";
-        }
 
         /// <summary>
         /// Gets or sets encryptedBuffer.

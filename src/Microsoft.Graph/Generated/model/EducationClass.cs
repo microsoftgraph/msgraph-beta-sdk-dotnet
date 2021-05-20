@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class EducationClass : Entity
     {
     
-		///<summary>
-		/// The EducationClass constructor
-		///</summary>
-        public EducationClass()
-        {
-            this.ODataType = "microsoft.graph.educationClass";
-        }
-	
         /// <summary>
         /// Gets or sets class code.
         /// Class code used by the school to identify the class.

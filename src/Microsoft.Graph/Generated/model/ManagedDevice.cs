@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ManagedDevice : Entity
     {
     
-		///<summary>
-		/// The ManagedDevice constructor
-		///</summary>
-        public ManagedDevice()
-        {
-            this.ODataType = "microsoft.graph.managedDevice";
-        }
-	
         /// <summary>
         /// Gets or sets cloud pc remote action results.
         /// </summary>

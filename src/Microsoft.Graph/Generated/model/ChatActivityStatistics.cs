@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ChatActivityStatistics : ActivityStatistics
     {
     
-		///<summary>
-		/// The ChatActivityStatistics constructor
-		///</summary>
+        ///<summary>
+        /// The ChatActivityStatistics constructor
+        ///</summary>
         public ChatActivityStatistics()
         {
             this.ODataType = "microsoft.graph.chatActivityStatistics";
         }
-	
+    
         /// <summary>
         /// Gets or sets after hours.
         /// Time spent on chats outside of working hours, which is based on the user's Microsoft Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.

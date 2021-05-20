@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SectionGroup : OnenoteEntityHierarchyModel
     {
     
-		///<summary>
-		/// The SectionGroup constructor
-		///</summary>
-        public SectionGroup()
-        {
-            this.ODataType = "microsoft.graph.sectionGroup";
-        }
-	
         /// <summary>
         /// Gets or sets section groups url.
         /// The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.

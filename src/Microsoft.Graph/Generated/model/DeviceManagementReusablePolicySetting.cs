@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementReusablePolicySetting : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementReusablePolicySetting constructor
-		///</summary>
-        public DeviceManagementReusablePolicySetting()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementReusablePolicySetting";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// reusable setting creation date and time. This property is read-only.

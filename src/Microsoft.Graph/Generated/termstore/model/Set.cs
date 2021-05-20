@@ -20,14 +20,6 @@ namespace Microsoft.Graph.TermStore
     public partial class Set : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Set constructor
-		///</summary>
-        public Set()
-        {
-            this.ODataType = "microsoft.graph.termStore.set";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// Date and time of set creation. Read-only.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Schedule : Entity
     {
     
-		///<summary>
-		/// The Schedule constructor
-		///</summary>
-        public Schedule()
-        {
-            this.ODataType = "microsoft.graph.schedule";
-        }
-	
         /// <summary>
         /// Gets or sets enabled.
         /// Indicates whether the schedule is enabled for the team. Required.

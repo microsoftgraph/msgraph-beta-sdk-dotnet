@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class OpenShift : ChangeTrackedEntity
     {
     
-		///<summary>
-		/// The OpenShift constructor
-		///</summary>
-        public OpenShift()
-        {
-            this.ODataType = "microsoft.graph.openShift";
-        }
-	
         /// <summary>
         /// Gets or sets draft open shift.
         /// An unpublished open shift.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsRemoteConnection : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsRemoteConnection constructor
-		///</summary>
-        public UserExperienceAnalyticsRemoteConnection()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsRemoteConnection";
-        }
-	
         /// <summary>
         /// Gets or sets cloud pc failure percentage.
         /// The sign in failure percentage of Cloud PC Device. Valid values 0 to 100

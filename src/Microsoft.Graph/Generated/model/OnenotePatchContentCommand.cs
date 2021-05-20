@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OnenotePatchContentCommand>))]
     public partial class OnenotePatchContentCommand
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OnenotePatchContentCommand"/> class.
-        /// </summary>
-        public OnenotePatchContentCommand()
-        {
-            this.ODataType = "microsoft.graph.onenotePatchContentCommand";
-        }
 
         /// <summary>
         /// Gets or sets action.

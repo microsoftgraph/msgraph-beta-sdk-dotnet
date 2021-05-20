@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementIntentUserState : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementIntentUserState constructor
-		///</summary>
-        public DeviceManagementIntentUserState()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementIntentUserState";
-        }
-	
         /// <summary>
         /// Gets or sets device count.
         /// Count of Devices that belongs to a user for an intent

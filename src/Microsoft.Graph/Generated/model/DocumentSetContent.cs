@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DocumentSetContent>))]
     public partial class DocumentSetContent
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentSetContent"/> class.
-        /// </summary>
-        public DocumentSetContent()
-        {
-            this.ODataType = "microsoft.graph.documentSetContent";
-        }
 
         /// <summary>
         /// Gets or sets contentType.

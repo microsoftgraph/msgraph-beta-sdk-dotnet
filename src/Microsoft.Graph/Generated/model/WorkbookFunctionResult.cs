@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookFunctionResult : Entity
     {
     
-		///<summary>
-		/// The WorkbookFunctionResult constructor
-		///</summary>
-        public WorkbookFunctionResult()
-        {
-            this.ODataType = "microsoft.graph.workbookFunctionResult";
-        }
-	
         /// <summary>
         /// Gets or sets error.
         /// </summary>

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationPolicyAssignment : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationPolicyAssignment constructor
-		///</summary>
-        public DeviceManagementConfigurationPolicyAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationPolicyAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// The assignment target for the DeviceManagementConfigurationPolicy.

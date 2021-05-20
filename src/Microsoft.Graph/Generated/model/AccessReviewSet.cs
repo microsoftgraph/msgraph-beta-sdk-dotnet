@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessReviewSet : Entity
     {
     
-		///<summary>
-		/// The AccessReviewSet constructor
-		///</summary>
-        public AccessReviewSet()
-        {
-            this.ODataType = "microsoft.graph.accessReviewSet";
-        }
-	
         /// <summary>
         /// Gets or sets definitions.
         /// </summary>

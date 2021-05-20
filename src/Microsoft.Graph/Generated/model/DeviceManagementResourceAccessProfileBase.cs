@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class DeviceManagementResourceAccessProfileBase : Entity
     {
     
-		///<summary>
-		/// The internal DeviceManagementResourceAccessProfileBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal DeviceManagementResourceAccessProfileBase constructor
+        ///</summary>
         protected internal DeviceManagementResourceAccessProfileBase()
         {
             // Don't allow initialization of abstract entity types

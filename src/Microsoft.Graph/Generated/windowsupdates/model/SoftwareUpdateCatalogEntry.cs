@@ -21,9 +21,9 @@ namespace Microsoft.Graph.WindowsUpdates
     public partial class SoftwareUpdateCatalogEntry : CatalogEntry
     {
     
-		///<summary>
-		/// The internal SoftwareUpdateCatalogEntry constructor
-		///</summary>
+        ///<summary>
+        /// The internal SoftwareUpdateCatalogEntry constructor
+        ///</summary>
         protected internal SoftwareUpdateCatalogEntry()
         {
             // Don't allow initialization of abstract entity types

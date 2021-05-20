@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ResourcePermission>))]
     public partial class ResourcePermission
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ResourcePermission"/> class.
-        /// </summary>
-        public ResourcePermission()
-        {
-            this.ODataType = "microsoft.graph.resourcePermission";
-        }
 
         /// <summary>
         /// Gets or sets type.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph.Ediscovery
     public partial class SiteSource : DataSource
     {
     
-		///<summary>
-		/// The SiteSource constructor
-		///</summary>
+        ///<summary>
+        /// The SiteSource constructor
+        ///</summary>
         public SiteSource()
         {
             this.ODataType = "microsoft.graph.ediscovery.siteSource";
         }
-	
+    
         /// <summary>
         /// Gets or sets site.
         /// The SharePoint site associated with the siteSource.

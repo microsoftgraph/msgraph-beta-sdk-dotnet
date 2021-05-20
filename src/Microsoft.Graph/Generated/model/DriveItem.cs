@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DriveItem : BaseItem
     {
     
-		///<summary>
-		/// The DriveItem constructor
-		///</summary>
+        ///<summary>
+        /// The DriveItem constructor
+        ///</summary>
         public DriveItem()
         {
             this.ODataType = "microsoft.graph.driveItem";
         }
-	
+    
         /// <summary>
         /// Gets or sets audio.
         /// Audio metadata, if the item is an audio file. Read-only.

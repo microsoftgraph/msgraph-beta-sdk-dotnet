@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SharedEmailDomainInvitation : Entity
     {
     
-		///<summary>
-		/// The SharedEmailDomainInvitation constructor
-		///</summary>
-        public SharedEmailDomainInvitation()
-        {
-            this.ODataType = "microsoft.graph.sharedEmailDomainInvitation";
-        }
-	
         /// <summary>
         /// Gets or sets expiry time.
         /// </summary>

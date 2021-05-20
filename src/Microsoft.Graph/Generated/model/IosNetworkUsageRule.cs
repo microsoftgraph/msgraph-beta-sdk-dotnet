@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IosNetworkUsageRule>))]
     public partial class IosNetworkUsageRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosNetworkUsageRule"/> class.
-        /// </summary>
-        public IosNetworkUsageRule()
-        {
-            this.ODataType = "microsoft.graph.iosNetworkUsageRule";
-        }
 
         /// <summary>
         /// Gets or sets cellularDataBlocked.

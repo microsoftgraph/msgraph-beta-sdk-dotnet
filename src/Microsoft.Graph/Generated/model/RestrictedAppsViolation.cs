@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class RestrictedAppsViolation : Entity
     {
     
-		///<summary>
-		/// The RestrictedAppsViolation constructor
-		///</summary>
-        public RestrictedAppsViolation()
-        {
-            this.ODataType = "microsoft.graph.restrictedAppsViolation";
-        }
-	
         /// <summary>
         /// Gets or sets device configuration id.
         /// Device configuration profile unique identifier, must be Guid

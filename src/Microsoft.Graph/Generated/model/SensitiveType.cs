@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class SensitiveType : Entity
     {
     
-		///<summary>
-		/// The SensitiveType constructor
-		///</summary>
-        public SensitiveType()
-        {
-            this.ODataType = "microsoft.graph.sensitiveType";
-        }
-	
         /// <summary>
         /// Gets or sets classification method.
         /// </summary>

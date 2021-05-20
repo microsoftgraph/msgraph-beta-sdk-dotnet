@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OutOfOfficeSettings>))]
     public partial class OutOfOfficeSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OutOfOfficeSettings"/> class.
-        /// </summary>
-        public OutOfOfficeSettings()
-        {
-            this.ODataType = "microsoft.graph.outOfOfficeSettings";
-        }
 
         /// <summary>
         /// Gets or sets isOutOfOffice.

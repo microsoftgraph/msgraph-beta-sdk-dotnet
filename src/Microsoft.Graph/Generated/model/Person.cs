@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Person : Entity
     {
     
-		///<summary>
-		/// The Person constructor
-		///</summary>
-        public Person()
-        {
-            this.ODataType = "microsoft.graph.person";
-        }
-	
         /// <summary>
         /// Gets or sets birthday.
         /// The person's birthday.

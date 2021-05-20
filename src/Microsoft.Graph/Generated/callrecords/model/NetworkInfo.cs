@@ -20,13 +20,6 @@ namespace Microsoft.Graph.CallRecords
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<NetworkInfo>))]
     public partial class NetworkInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NetworkInfo"/> class.
-        /// </summary>
-        public NetworkInfo()
-        {
-            this.ODataType = "microsoft.graph.callRecords.networkInfo";
-        }
 
         /// <summary>
         /// Gets or sets bandwidthLowEventRatio.

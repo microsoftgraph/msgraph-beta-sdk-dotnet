@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EvaluateDynamicMembershipResult>))]
     public partial class EvaluateDynamicMembershipResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EvaluateDynamicMembershipResult"/> class.
-        /// </summary>
-        public EvaluateDynamicMembershipResult()
-        {
-            this.ODataType = "microsoft.graph.evaluateDynamicMembershipResult";
-        }
 
         /// <summary>
         /// Gets or sets membershipRule.

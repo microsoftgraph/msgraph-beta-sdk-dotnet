@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class OnPremisesAgentGroup : Entity
     {
     
-		///<summary>
-		/// The OnPremisesAgentGroup constructor
-		///</summary>
-        public OnPremisesAgentGroup()
-        {
-            this.ODataType = "microsoft.graph.onPremisesAgentGroup";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// Display name of the onPremisesAgentGroup.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class BookingAppointment : Entity
     {
     
-		///<summary>
-		/// The BookingAppointment constructor
-		///</summary>
-        public BookingAppointment()
-        {
-            this.ODataType = "microsoft.graph.bookingAppointment";
-        }
-	
         /// <summary>
         /// Gets or sets additional information.
         /// </summary>

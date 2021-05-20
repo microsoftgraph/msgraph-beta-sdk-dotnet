@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class TeamsAsyncOperation : Entity
     {
     
-		///<summary>
-		/// The TeamsAsyncOperation constructor
-		///</summary>
-        public TeamsAsyncOperation()
-        {
-            this.ODataType = "microsoft.graph.teamsAsyncOperation";
-        }
-	
         /// <summary>
         /// Gets or sets attempts count.
         /// Number of times the operation was attempted before being marked successful or failed.

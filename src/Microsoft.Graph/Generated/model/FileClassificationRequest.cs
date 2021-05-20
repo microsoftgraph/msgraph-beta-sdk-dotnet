@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class FileClassificationRequestObject : Entity
     {
     
-		///<summary>
-		/// The FileClassificationRequest constructor
-		///</summary>
-        public FileClassificationRequestObject()
-        {
-            this.ODataType = "microsoft.graph.fileClassificationRequest";
-        }
-	
         /// <summary>
         /// Gets or sets file.
         /// </summary>

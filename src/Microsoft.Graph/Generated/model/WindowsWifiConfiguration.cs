@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsWifiConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The WindowsWifiConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsWifiConfiguration constructor
+        ///</summary>
         public WindowsWifiConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsWifiConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets connect automatically.
         /// Specify whether the wifi connection should connect automatically when in range.

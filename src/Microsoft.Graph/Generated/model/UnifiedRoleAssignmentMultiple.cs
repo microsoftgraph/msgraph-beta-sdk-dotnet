@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleAssignmentMultiple : Entity
     {
     
-		///<summary>
-		/// The UnifiedRoleAssignmentMultiple constructor
-		///</summary>
-        public UnifiedRoleAssignmentMultiple()
-        {
-            this.ODataType = "microsoft.graph.unifiedRoleAssignmentMultiple";
-        }
-	
         /// <summary>
         /// Gets or sets app scope ids.
         /// Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.

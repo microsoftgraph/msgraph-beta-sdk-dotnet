@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AgedAccountsReceivable : Entity
     {
     
-		///<summary>
-		/// The AgedAccountsReceivable constructor
-		///</summary>
-        public AgedAccountsReceivable()
-        {
-            this.ODataType = "microsoft.graph.agedAccountsReceivable";
-        }
-	
         /// <summary>
         /// Gets or sets aged as of date.
         /// </summary>

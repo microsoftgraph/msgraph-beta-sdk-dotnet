@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceMobileAppConfigurationPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The ManagedDeviceMobileAppConfigurationPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The ManagedDeviceMobileAppConfigurationPolicySetItem constructor
+        ///</summary>
         public ManagedDeviceMobileAppConfigurationPolicySetItem()
         {
             this.ODataType = "microsoft.graph.managedDeviceMobileAppConfigurationPolicySetItem";
         }
-	
+    
     }
 }
 

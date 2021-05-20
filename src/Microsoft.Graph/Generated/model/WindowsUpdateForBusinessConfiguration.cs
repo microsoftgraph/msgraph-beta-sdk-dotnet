@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsUpdateForBusinessConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The WindowsUpdateForBusinessConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsUpdateForBusinessConfiguration constructor
+        ///</summary>
         public WindowsUpdateForBusinessConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsUpdateForBusinessConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets automatic update mode.
         /// Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl, windowsDefault.

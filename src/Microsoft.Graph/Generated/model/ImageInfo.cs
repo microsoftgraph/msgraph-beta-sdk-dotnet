@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ImageInfo>))]
     public partial class ImageInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ImageInfo"/> class.
-        /// </summary>
-        public ImageInfo()
-        {
-            this.ODataType = "microsoft.graph.imageInfo";
-        }
 
         /// <summary>
         /// Gets or sets addImageQuery.

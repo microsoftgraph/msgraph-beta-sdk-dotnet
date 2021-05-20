@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class EducationSynchronizationProfile : Entity
     {
     
-		///<summary>
-		/// The EducationSynchronizationProfile constructor
-		///</summary>
-        public EducationSynchronizationProfile()
-        {
-            this.ODataType = "microsoft.graph.educationSynchronizationProfile";
-        }
-	
         /// <summary>
         /// Gets or sets data provider.
         /// The data provider used for the profile.

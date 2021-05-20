@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ImportedWindowsAutopilotDeviceIdentityUpload : Entity
     {
     
-		///<summary>
-		/// The ImportedWindowsAutopilotDeviceIdentityUpload constructor
-		///</summary>
-        public ImportedWindowsAutopilotDeviceIdentityUpload()
-        {
-            this.ODataType = "microsoft.graph.importedWindowsAutopilotDeviceIdentityUpload";
-        }
-	
         /// <summary>
         /// Gets or sets created date time utc.
         /// DateTime when the entity is created.

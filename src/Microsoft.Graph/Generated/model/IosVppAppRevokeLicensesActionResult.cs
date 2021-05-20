@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IosVppAppRevokeLicensesActionResult>))]
     public partial class IosVppAppRevokeLicensesActionResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosVppAppRevokeLicensesActionResult"/> class.
-        /// </summary>
-        public IosVppAppRevokeLicensesActionResult()
-        {
-            this.ODataType = "microsoft.graph.iosVppAppRevokeLicensesActionResult";
-        }
 
         /// <summary>
         /// Gets or sets actionFailureReason.

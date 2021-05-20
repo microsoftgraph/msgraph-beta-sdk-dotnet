@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IncompleteData>))]
     public partial class IncompleteData
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IncompleteData"/> class.
-        /// </summary>
-        public IncompleteData()
-        {
-            this.ODataType = "microsoft.graph.incompleteData";
-        }
 
         /// <summary>
         /// Gets or sets missingDataBeforeDateTime.

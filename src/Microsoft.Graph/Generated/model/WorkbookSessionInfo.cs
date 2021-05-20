@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WorkbookSessionInfo>))]
     public partial class WorkbookSessionInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkbookSessionInfo"/> class.
-        /// </summary>
-        public WorkbookSessionInfo()
-        {
-            this.ODataType = "microsoft.graph.workbookSessionInfo";
-        }
 
         /// <summary>
         /// Gets or sets id.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<LicenseAssignmentState>))]
     public partial class LicenseAssignmentState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LicenseAssignmentState"/> class.
-        /// </summary>
-        public LicenseAssignmentState()
-        {
-            this.ODataType = "microsoft.graph.licenseAssignmentState";
-        }
 
         /// <summary>
         /// Gets or sets assignedByGroup.

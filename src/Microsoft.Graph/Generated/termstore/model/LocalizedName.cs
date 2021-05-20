@@ -20,13 +20,6 @@ namespace Microsoft.Graph.TermStore
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<LocalizedName>))]
     public partial class LocalizedName
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LocalizedName"/> class.
-        /// </summary>
-        public LocalizedName()
-        {
-            this.ODataType = "microsoft.graph.termStore.localizedName";
-        }
 
         /// <summary>
         /// Gets or sets languageTag.

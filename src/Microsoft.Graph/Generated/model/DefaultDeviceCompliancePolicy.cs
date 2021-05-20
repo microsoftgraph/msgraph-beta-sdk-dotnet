@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DefaultDeviceCompliancePolicy : DeviceCompliancePolicy
     {
     
-		///<summary>
-		/// The DefaultDeviceCompliancePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The DefaultDeviceCompliancePolicy constructor
+        ///</summary>
         public DefaultDeviceCompliancePolicy()
         {
             this.ODataType = "microsoft.graph.defaultDeviceCompliancePolicy";
         }
-	
+    
     }
 }
 

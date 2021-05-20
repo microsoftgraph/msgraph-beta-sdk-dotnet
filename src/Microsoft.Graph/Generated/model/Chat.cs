@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Chat : Entity
     {
     
-		///<summary>
-		/// The Chat constructor
-		///</summary>
-        public Chat()
-        {
-            this.ODataType = "microsoft.graph.chat";
-        }
-	
         /// <summary>
         /// Gets or sets chat type.
         /// Specifies the type of chat. Possible values are:group, oneOnOne and meeting.

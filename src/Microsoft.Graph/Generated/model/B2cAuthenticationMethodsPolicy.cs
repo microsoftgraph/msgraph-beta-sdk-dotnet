@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class B2cAuthenticationMethodsPolicy : Entity
     {
     
-		///<summary>
-		/// The B2cAuthenticationMethodsPolicy constructor
-		///</summary>
-        public B2cAuthenticationMethodsPolicy()
-        {
-            this.ODataType = "microsoft.graph.b2cAuthenticationMethodsPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets is email password authentication enabled.
         /// The tenant admin can configure local accounts using email if the email and password authentication method is enabled.

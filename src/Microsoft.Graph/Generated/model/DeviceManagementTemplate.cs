@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementTemplate : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementTemplate constructor
-		///</summary>
-        public DeviceManagementTemplate()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementTemplate";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// The template's description

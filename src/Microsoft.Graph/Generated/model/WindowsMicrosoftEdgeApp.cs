@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsMicrosoftEdgeApp : MobileApp
     {
     
-		///<summary>
-		/// The WindowsMicrosoftEdgeApp constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsMicrosoftEdgeApp constructor
+        ///</summary>
         public WindowsMicrosoftEdgeApp()
         {
             this.ODataType = "microsoft.graph.windowsMicrosoftEdgeApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets channel.
         /// The channel to install on target devices. Possible values are: dev, beta, stable.

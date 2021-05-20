@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementIntentDeviceState : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementIntentDeviceState constructor
-		///</summary>
-        public DeviceManagementIntentDeviceState()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementIntentDeviceState";
-        }
-	
         /// <summary>
         /// Gets or sets device display name.
         /// Device name that is being reported

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsWorkFromAnywhereMetric constructor
-		///</summary>
-        public UserExperienceAnalyticsWorkFromAnywhereMetric()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsWorkFromAnywhereMetric";
-        }
-	
         /// <summary>
         /// Gets or sets metric devices.
         /// The work from anywhere metric devices.

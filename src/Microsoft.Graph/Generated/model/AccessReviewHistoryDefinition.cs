@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class AccessReviewHistoryDefinition : Entity
     {
     
-		///<summary>
-		/// The AccessReviewHistoryDefinition constructor
-		///</summary>
-        public AccessReviewHistoryDefinition()
-        {
-            this.ODataType = "microsoft.graph.accessReviewHistoryDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets created by.
         /// User who created this review history definition.

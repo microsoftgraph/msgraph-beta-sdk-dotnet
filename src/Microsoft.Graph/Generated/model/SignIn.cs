@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class SignIn : Entity
     {
     
-		///<summary>
-		/// The SignIn constructor
-		///</summary>
-        public SignIn()
-        {
-            this.ODataType = "microsoft.graph.signIn";
-        }
-	
         /// <summary>
         /// Gets or sets alternate sign in name.
         /// The alternate sign-in identity whenever you use phone number to sign-in. Supports $filter (eq and startsWith operators only).

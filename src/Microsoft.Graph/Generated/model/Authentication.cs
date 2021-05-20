@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Authentication : Entity
     {
     
-		///<summary>
-		/// The Authentication constructor
-		///</summary>
-        public Authentication()
-        {
-            this.ODataType = "microsoft.graph.authentication";
-        }
-	
         /// <summary>
         /// Gets or sets email methods.
         /// </summary>

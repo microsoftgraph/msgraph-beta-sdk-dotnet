@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ShiftPreferences : ChangeTrackedEntity
     {
     
-		///<summary>
-		/// The ShiftPreferences constructor
-		///</summary>
-        public ShiftPreferences()
-        {
-            this.ODataType = "microsoft.graph.shiftPreferences";
-        }
-	
         /// <summary>
         /// Gets or sets availability.
         /// Availability of the user to be scheduled for work and its recurrence pattern.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MessageRuleActions>))]
     public partial class MessageRuleActions
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MessageRuleActions"/> class.
-        /// </summary>
-        public MessageRuleActions()
-        {
-            this.ODataType = "microsoft.graph.messageRuleActions";
-        }
 
         /// <summary>
         /// Gets or sets assignCategories.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ContinuousAccessEvaluationPolicy : Entity
     {
     
-		///<summary>
-		/// The ContinuousAccessEvaluationPolicy constructor
-		///</summary>
-        public ContinuousAccessEvaluationPolicy()
-        {
-            this.ODataType = "microsoft.graph.continuousAccessEvaluationPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.

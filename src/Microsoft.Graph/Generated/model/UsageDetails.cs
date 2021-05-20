@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UsageDetails>))]
     public partial class UsageDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UsageDetails"/> class.
-        /// </summary>
-        public UsageDetails()
-        {
-            this.ODataType = "microsoft.graph.usageDetails";
-        }
 
         /// <summary>
         /// Gets or sets lastAccessedDateTime.

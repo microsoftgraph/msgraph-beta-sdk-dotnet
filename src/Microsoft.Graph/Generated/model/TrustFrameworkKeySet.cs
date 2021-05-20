@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TrustFrameworkKeySet : Entity
     {
     
-		///<summary>
-		/// The TrustFrameworkKeySet constructor
-		///</summary>
-        public TrustFrameworkKeySet()
-        {
-            this.ODataType = "microsoft.graph.trustFrameworkKeySet";
-        }
-	
         /// <summary>
         /// Gets or sets keys.
         /// A collection of the keys.

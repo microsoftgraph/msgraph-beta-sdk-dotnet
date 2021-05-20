@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<BookingWorkTimeSlot>))]
     public partial class BookingWorkTimeSlot
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BookingWorkTimeSlot"/> class.
-        /// </summary>
-        public BookingWorkTimeSlot()
-        {
-            this.ODataType = "microsoft.graph.bookingWorkTimeSlot";
-        }
 
         /// <summary>
         /// Gets or sets end.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserActivationCounts>))]
     public partial class UserActivationCounts
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserActivationCounts"/> class.
-        /// </summary>
-        public UserActivationCounts()
-        {
-            this.ODataType = "microsoft.graph.userActivationCounts";
-        }
 
         /// <summary>
         /// Gets or sets activatedOnSharedComputer.

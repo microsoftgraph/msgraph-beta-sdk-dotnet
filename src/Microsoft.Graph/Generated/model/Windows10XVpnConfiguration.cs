@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Windows10XVpnConfiguration : DeviceManagementResourceAccessProfileBase
     {
     
-		///<summary>
-		/// The Windows10XVpnConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10XVpnConfiguration constructor
+        ///</summary>
         public Windows10XVpnConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10XVpnConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets authentication certificate id.
         /// ID to the Authentication Certificate

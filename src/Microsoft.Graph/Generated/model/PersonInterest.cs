@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PersonInterest : ItemFacet
     {
     
-		///<summary>
-		/// The PersonInterest constructor
-		///</summary>
-        public PersonInterest()
-        {
-            this.ODataType = "microsoft.graph.personInterest";
-        }
-	
         /// <summary>
         /// Gets or sets categories.
         /// Contains categories a user has associated with the interest (for example, personal, recipies).

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<InformationalUrl>))]
     public partial class InformationalUrl
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InformationalUrl"/> class.
-        /// </summary>
-        public InformationalUrl()
-        {
-            this.ODataType = "microsoft.graph.informationalUrl";
-        }
 
         /// <summary>
         /// Gets or sets logoUrl.

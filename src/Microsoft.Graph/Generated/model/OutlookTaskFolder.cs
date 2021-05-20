@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class OutlookTaskFolder : Entity
     {
     
-		///<summary>
-		/// The OutlookTaskFolder constructor
-		///</summary>
-        public OutlookTaskFolder()
-        {
-            this.ODataType = "microsoft.graph.outlookTaskFolder";
-        }
-	
         /// <summary>
         /// Gets or sets change key.
         /// The version of the task folder.

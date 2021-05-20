@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PersonOrGroupColumn>))]
     public partial class PersonOrGroupColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PersonOrGroupColumn"/> class.
-        /// </summary>
-        public PersonOrGroupColumn()
-        {
-            this.ODataType = "microsoft.graph.personOrGroupColumn";
-        }
 
         /// <summary>
         /// Gets or sets allowMultipleSelection.

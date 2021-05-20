@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Thumbnail>))]
     public partial class Thumbnail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Thumbnail"/> class.
-        /// </summary>
-        public Thumbnail()
-        {
-            this.ODataType = "microsoft.graph.thumbnail";
-        }
 
         /// <summary>
         /// Gets or sets content.

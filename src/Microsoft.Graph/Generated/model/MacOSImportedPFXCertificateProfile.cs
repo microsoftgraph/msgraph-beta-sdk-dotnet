@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSImportedPFXCertificateProfile : MacOSCertificateProfileBase
     {
     
-		///<summary>
-		/// The MacOSImportedPFXCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSImportedPFXCertificateProfile constructor
+        ///</summary>
         public MacOSImportedPFXCertificateProfile()
         {
             this.ODataType = "microsoft.graph.macOSImportedPFXCertificateProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets intended purpose.
         /// Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.

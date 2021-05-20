@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class MobileAppRelationship : Entity
     {
     
-		///<summary>
-		/// The internal MobileAppRelationship constructor
-		///</summary>
+        ///<summary>
+        /// The internal MobileAppRelationship constructor
+        ///</summary>
         protected internal MobileAppRelationship()
         {
             // Don't allow initialization of abstract entity types

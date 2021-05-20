@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Office365ActivationsUserDetail : Entity
     {
     
-		///<summary>
-		/// The Office365ActivationsUserDetail constructor
-		///</summary>
-        public Office365ActivationsUserDetail()
-        {
-            this.ODataType = "microsoft.graph.office365ActivationsUserDetail";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.

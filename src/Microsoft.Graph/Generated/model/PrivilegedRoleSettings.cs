@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PrivilegedRoleSettings : Entity
     {
     
-		///<summary>
-		/// The PrivilegedRoleSettings constructor
-		///</summary>
-        public PrivilegedRoleSettings()
-        {
-            this.ODataType = "microsoft.graph.privilegedRoleSettings";
-        }
-	
         /// <summary>
         /// Gets or sets approval on elevation.
         /// true if the approval is required when activate the role. false if the approval is not required when activate the role.

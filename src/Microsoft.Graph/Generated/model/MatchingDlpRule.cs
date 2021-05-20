@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MatchingDlpRule>))]
     public partial class MatchingDlpRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MatchingDlpRule"/> class.
-        /// </summary>
-        public MatchingDlpRule()
-        {
-            this.ODataType = "microsoft.graph.matchingDlpRule";
-        }
 
         /// <summary>
         /// Gets or sets actions.

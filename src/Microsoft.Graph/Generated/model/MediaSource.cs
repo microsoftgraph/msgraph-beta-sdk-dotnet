@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MediaSource>))]
     public partial class MediaSource
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MediaSource"/> class.
-        /// </summary>
-        public MediaSource()
-        {
-            this.ODataType = "microsoft.graph.mediaSource";
-        }
 
         /// <summary>
         /// Gets or sets contentCategory.

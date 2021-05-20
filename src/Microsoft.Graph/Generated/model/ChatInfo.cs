@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ChatInfo>))]
     public partial class ChatInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChatInfo"/> class.
-        /// </summary>
-        public ChatInfo()
-        {
-            this.ODataType = "microsoft.graph.chatInfo";
-        }
 
         /// <summary>
         /// Gets or sets messageId.

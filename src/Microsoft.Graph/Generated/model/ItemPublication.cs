@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ItemPublication : ItemFacet
     {
     
-		///<summary>
-		/// The ItemPublication constructor
-		///</summary>
-        public ItemPublication()
-        {
-            this.ODataType = "microsoft.graph.itemPublication";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Description of the publication.

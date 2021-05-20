@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class CommsOperation : Entity
     {
     
-		///<summary>
-		/// The CommsOperation constructor
-		///</summary>
-        public CommsOperation()
-        {
-            this.ODataType = "microsoft.graph.commsOperation";
-        }
-	
         /// <summary>
         /// Gets or sets client context.
         /// Unique Client Context string. Max limit is 256 chars.

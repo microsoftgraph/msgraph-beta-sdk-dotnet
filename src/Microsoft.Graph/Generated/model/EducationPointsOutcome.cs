@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class EducationPointsOutcome : EducationOutcome
     {
     
-		///<summary>
-		/// The EducationPointsOutcome constructor
-		///</summary>
+        ///<summary>
+        /// The EducationPointsOutcome constructor
+        ///</summary>
         public EducationPointsOutcome()
         {
             this.ODataType = "microsoft.graph.educationPointsOutcome";
         }
-	
+    
         /// <summary>
         /// Gets or sets points.
         /// The numeric grade the teacher has given the student for this assignment.

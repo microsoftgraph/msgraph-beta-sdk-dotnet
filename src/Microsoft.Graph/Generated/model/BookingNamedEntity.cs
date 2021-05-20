@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class BookingNamedEntity : Entity
     {
     
-		///<summary>
-		/// The internal BookingNamedEntity constructor
-		///</summary>
+        ///<summary>
+        /// The internal BookingNamedEntity constructor
+        ///</summary>
         protected internal BookingNamedEntity()
         {
             // Don't allow initialization of abstract entity types

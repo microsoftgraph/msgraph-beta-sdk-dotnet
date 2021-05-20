@@ -20,14 +20,14 @@ namespace Microsoft.Graph.Ediscovery
     public partial class AddToReviewSetOperation : CaseOperation
     {
     
-		///<summary>
-		/// The AddToReviewSetOperation constructor
-		///</summary>
+        ///<summary>
+        /// The AddToReviewSetOperation constructor
+        ///</summary>
         public AddToReviewSetOperation()
         {
             this.ODataType = "microsoft.graph.ediscovery.addToReviewSetOperation";
         }
-	
+    
         /// <summary>
         /// Gets or sets review set.
         /// The review set to which items matching the source collection query are added to.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ParentLabelDetails>))]
     public partial class ParentLabelDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParentLabelDetails"/> class.
-        /// </summary>
-        public ParentLabelDetails()
-        {
-            this.ODataType = "microsoft.graph.parentLabelDetails";
-        }
 
         /// <summary>
         /// Gets or sets color.

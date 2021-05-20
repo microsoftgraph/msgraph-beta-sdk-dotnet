@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class ChangeTrackedEntity : Entity
     {
     
-		///<summary>
-		/// The internal ChangeTrackedEntity constructor
-		///</summary>
+        ///<summary>
+        /// The internal ChangeTrackedEntity constructor
+        ///</summary>
         protected internal ChangeTrackedEntity()
         {
             // Don't allow initialization of abstract entity types

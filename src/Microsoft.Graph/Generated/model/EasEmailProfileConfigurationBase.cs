@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class EasEmailProfileConfigurationBase : DeviceConfiguration
     {
     
-		///<summary>
-		/// The internal EasEmailProfileConfigurationBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal EasEmailProfileConfigurationBase constructor
+        ///</summary>
         protected internal EasEmailProfileConfigurationBase()
         {
             // Don't allow initialization of abstract entity types

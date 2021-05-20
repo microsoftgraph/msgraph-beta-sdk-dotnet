@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AzureADLicenseUsage : Entity
     {
     
-		///<summary>
-		/// The AzureADLicenseUsage constructor
-		///</summary>
-        public AzureADLicenseUsage()
-        {
-            this.ODataType = "microsoft.graph.azureADLicenseUsage";
-        }
-	
         /// <summary>
         /// Gets or sets license info details.
         /// </summary>

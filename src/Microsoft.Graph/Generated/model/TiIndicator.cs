@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class TiIndicator : Entity
     {
     
-		///<summary>
-		/// The TiIndicator constructor
-		///</summary>
-        public TiIndicator()
-        {
-            this.ODataType = "microsoft.graph.tiIndicator";
-        }
-	
         /// <summary>
         /// Gets or sets action.
         /// The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.

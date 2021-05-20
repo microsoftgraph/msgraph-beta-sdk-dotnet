@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessPackageResourceRequestObject : Entity
     {
     
-		///<summary>
-		/// The AccessPackageResourceRequest constructor
-		///</summary>
-        public AccessPackageResourceRequestObject()
-        {
-            this.ODataType = "microsoft.graph.accessPackageResourceRequest";
-        }
-	
         /// <summary>
         /// Gets or sets catalog id.
         /// The unique ID of the access package catalog.

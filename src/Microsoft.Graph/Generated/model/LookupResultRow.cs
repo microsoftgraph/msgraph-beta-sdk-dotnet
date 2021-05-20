@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class LookupResultRow : Entity
     {
     
-		///<summary>
-		/// The LookupResultRow constructor
-		///</summary>
-        public LookupResultRow()
-        {
-            this.ODataType = "microsoft.graph.lookupResultRow";
-        }
-	
         /// <summary>
         /// Gets or sets row.
         /// </summary>

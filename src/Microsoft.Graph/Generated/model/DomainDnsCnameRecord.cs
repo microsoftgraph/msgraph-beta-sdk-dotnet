@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DomainDnsCnameRecord : DomainDnsRecord
     {
     
-		///<summary>
-		/// The DomainDnsCnameRecord constructor
-		///</summary>
+        ///<summary>
+        /// The DomainDnsCnameRecord constructor
+        ///</summary>
         public DomainDnsCnameRecord()
         {
             this.ODataType = "microsoft.graph.domainDnsCnameRecord";
         }
-	
+    
         /// <summary>
         /// Gets or sets canonical name.
         /// The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.

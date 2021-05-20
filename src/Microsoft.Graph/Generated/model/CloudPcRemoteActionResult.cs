@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CloudPcRemoteActionResult>))]
     public partial class CloudPcRemoteActionResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CloudPcRemoteActionResult"/> class.
-        /// </summary>
-        public CloudPcRemoteActionResult()
-        {
-            this.ODataType = "microsoft.graph.cloudPcRemoteActionResult";
-        }
 
         /// <summary>
         /// Gets or sets actionName.

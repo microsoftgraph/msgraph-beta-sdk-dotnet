@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class OnenotePage : OnenoteEntitySchemaObjectModel
     {
     
-		///<summary>
-		/// The OnenotePage constructor
-		///</summary>
-        public OnenotePage()
-        {
-            this.ODataType = "microsoft.graph.onenotePage";
-        }
-	
         /// <summary>
         /// Gets or sets content.
         /// The page's HTML content.

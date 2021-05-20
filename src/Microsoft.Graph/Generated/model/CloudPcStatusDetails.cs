@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CloudPcStatusDetails>))]
     public partial class CloudPcStatusDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CloudPcStatusDetails"/> class.
-        /// </summary>
-        public CloudPcStatusDetails()
-        {
-            this.ODataType = "microsoft.graph.cloudPcStatusDetails";
-        }
 
         /// <summary>
         /// Gets or sets additionalInformation.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ManagedDeviceReportedApp>))]
     public partial class ManagedDeviceReportedApp
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagedDeviceReportedApp"/> class.
-        /// </summary>
-        public ManagedDeviceReportedApp()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceReportedApp";
-        }
 
         /// <summary>
         /// Gets or sets appId.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Synchronization : Entity
     {
     
-		///<summary>
-		/// The Synchronization constructor
-		///</summary>
-        public Synchronization()
-        {
-            this.ODataType = "microsoft.graph.synchronization";
-        }
-	
         /// <summary>
         /// Gets or sets secrets.
         /// </summary>

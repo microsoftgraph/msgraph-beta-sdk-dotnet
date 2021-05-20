@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceCompliancePolicySettingState>))]
     public partial class DeviceCompliancePolicySettingState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceCompliancePolicySettingState"/> class.
-        /// </summary>
-        public DeviceCompliancePolicySettingState()
-        {
-            this.ODataType = "microsoft.graph.deviceCompliancePolicySettingState";
-        }
 
         /// <summary>
         /// Gets or sets currentValue.

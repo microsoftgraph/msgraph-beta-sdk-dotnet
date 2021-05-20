@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion constructor
-		///</summary>
-        public UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersion";
-        }
-	
         /// <summary>
         /// Gets or sets app crash count.
         /// The number of crashes for the app. Valid values -2147483648 to 2147483647

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class WindowsStoreApp : MobileApp
     {
     
-		///<summary>
-		/// The WindowsStoreApp constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsStoreApp constructor
+        ///</summary>
         public WindowsStoreApp()
         {
             this.ODataType = "microsoft.graph.windowsStoreApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets app store url.
         /// The Windows app store URL.

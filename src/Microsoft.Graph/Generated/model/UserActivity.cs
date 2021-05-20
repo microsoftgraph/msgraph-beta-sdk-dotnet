@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class UserActivity : Entity
     {
     
-		///<summary>
-		/// The UserActivity constructor
-		///</summary>
-        public UserActivity()
-        {
-            this.ODataType = "microsoft.graph.userActivity";
-        }
-	
         /// <summary>
         /// Gets or sets activation url.
         /// Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.

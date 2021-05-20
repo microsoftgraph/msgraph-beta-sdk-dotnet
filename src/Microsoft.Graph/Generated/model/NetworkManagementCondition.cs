@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class NetworkManagementCondition : ManagementCondition
     {
     
-		///<summary>
-		/// The internal NetworkManagementCondition constructor
-		///</summary>
+        ///<summary>
+        /// The internal NetworkManagementCondition constructor
+        ///</summary>
         protected internal NetworkManagementCondition()
         {
             // Don't allow initialization of abstract entity types

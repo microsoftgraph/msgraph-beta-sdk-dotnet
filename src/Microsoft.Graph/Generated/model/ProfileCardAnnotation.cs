@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ProfileCardAnnotation>))]
     public partial class ProfileCardAnnotation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProfileCardAnnotation"/> class.
-        /// </summary>
-        public ProfileCardAnnotation()
-        {
-            this.ODataType = "microsoft.graph.profileCardAnnotation";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

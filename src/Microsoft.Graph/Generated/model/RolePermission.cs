@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RolePermission>))]
     public partial class RolePermission
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RolePermission"/> class.
-        /// </summary>
-        public RolePermission()
-        {
-            this.ODataType = "microsoft.graph.rolePermission";
-        }
 
         /// <summary>
         /// Gets or sets actions.

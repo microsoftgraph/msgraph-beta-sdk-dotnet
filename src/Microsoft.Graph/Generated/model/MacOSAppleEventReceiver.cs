@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MacOSAppleEventReceiver>))]
     public partial class MacOSAppleEventReceiver
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacOSAppleEventReceiver"/> class.
-        /// </summary>
-        public MacOSAppleEventReceiver()
-        {
-            this.ODataType = "microsoft.graph.macOSAppleEventReceiver";
-        }
 
         /// <summary>
         /// Gets or sets allowed.

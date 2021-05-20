@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyUploadedDefinitionFile : GroupPolicyDefinitionFile
     {
     
-		///<summary>
-		/// The GroupPolicyUploadedDefinitionFile constructor
-		///</summary>
+        ///<summary>
+        /// The GroupPolicyUploadedDefinitionFile constructor
+        ///</summary>
         public GroupPolicyUploadedDefinitionFile()
         {
             this.ODataType = "microsoft.graph.groupPolicyUploadedDefinitionFile";
         }
-	
+    
         /// <summary>
         /// Gets or sets content.
         /// The contents of the uploaded ADMX file.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph.Ediscovery
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<OcrSettings>))]
     public partial class OcrSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OcrSettings"/> class.
-        /// </summary>
-        public OcrSettings()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.ocrSettings";
-        }
 
         /// <summary>
         /// Gets or sets isEnabled.

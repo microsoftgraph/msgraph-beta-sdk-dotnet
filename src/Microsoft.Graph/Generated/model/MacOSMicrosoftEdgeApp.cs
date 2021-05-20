@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSMicrosoftEdgeApp : MobileApp
     {
     
-		///<summary>
-		/// The MacOSMicrosoftEdgeApp constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSMicrosoftEdgeApp constructor
+        ///</summary>
         public MacOSMicrosoftEdgeApp()
         {
             this.ODataType = "microsoft.graph.macOSMicrosoftEdgeApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets channel.
         /// The channel to install on target devices. Possible values are: dev, beta, stable.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsDeviceStartupProcess : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsDeviceStartupProcess constructor
-		///</summary>
-        public UserExperienceAnalyticsDeviceStartupProcess()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsDeviceStartupProcess";
-        }
-	
         /// <summary>
         /// Gets or sets managed device id.
         /// The user experience analytics device id.

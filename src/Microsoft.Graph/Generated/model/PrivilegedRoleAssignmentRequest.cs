@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PrivilegedRoleAssignmentRequestObject : Entity
     {
     
-		///<summary>
-		/// The PrivilegedRoleAssignmentRequest constructor
-		///</summary>
-        public PrivilegedRoleAssignmentRequestObject()
-        {
-            this.ODataType = "microsoft.graph.privilegedRoleAssignmentRequest";
-        }
-	
         /// <summary>
         /// Gets or sets assignment state.
         /// The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.

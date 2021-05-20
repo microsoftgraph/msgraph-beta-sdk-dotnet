@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceConfigurationAssignment : Entity
     {
     
-		///<summary>
-		/// The DeviceConfigurationAssignment constructor
-		///</summary>
-        public DeviceConfigurationAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceConfigurationAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets source.
         /// The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.

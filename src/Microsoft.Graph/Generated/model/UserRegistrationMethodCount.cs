@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserRegistrationMethodCount>))]
     public partial class UserRegistrationMethodCount
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserRegistrationMethodCount"/> class.
-        /// </summary>
-        public UserRegistrationMethodCount()
-        {
-            this.ODataType = "microsoft.graph.userRegistrationMethodCount";
-        }
 
         /// <summary>
         /// Gets or sets authenticationMethod.

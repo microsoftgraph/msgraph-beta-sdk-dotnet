@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Operation : Entity
     {
     
-		///<summary>
-		/// The Operation constructor
-		///</summary>
-        public Operation()
-        {
-            this.ODataType = "microsoft.graph.operation";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The start time of the operation.

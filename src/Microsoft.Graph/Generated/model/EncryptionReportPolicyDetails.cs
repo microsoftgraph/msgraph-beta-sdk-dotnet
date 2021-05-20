@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EncryptionReportPolicyDetails>))]
     public partial class EncryptionReportPolicyDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EncryptionReportPolicyDetails"/> class.
-        /// </summary>
-        public EncryptionReportPolicyDetails()
-        {
-            this.ODataType = "microsoft.graph.encryptionReportPolicyDetails";
-        }
 
         /// <summary>
         /// Gets or sets policyId.

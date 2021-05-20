@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IosHomeScreenPage>))]
     public partial class IosHomeScreenPage
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosHomeScreenPage"/> class.
-        /// </summary>
-        public IosHomeScreenPage()
-        {
-            this.ODataType = "microsoft.graph.iosHomeScreenPage";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceComplianceScriptValidationResult>))]
     public partial class DeviceComplianceScriptValidationResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceComplianceScriptValidationResult"/> class.
-        /// </summary>
-        public DeviceComplianceScriptValidationResult()
-        {
-            this.ODataType = "microsoft.graph.deviceComplianceScriptValidationResult";
-        }
 
         /// <summary>
         /// Gets or sets ruleErrors.

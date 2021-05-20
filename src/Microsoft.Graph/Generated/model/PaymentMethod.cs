@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PaymentMethod : Entity
     {
     
-		///<summary>
-		/// The PaymentMethod constructor
-		///</summary>
-        public PaymentMethod()
-        {
-            this.ODataType = "microsoft.graph.paymentMethod";
-        }
-	
         /// <summary>
         /// Gets or sets code.
         /// </summary>

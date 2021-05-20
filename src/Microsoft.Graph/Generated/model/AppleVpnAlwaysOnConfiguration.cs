@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AppleVpnAlwaysOnConfiguration>))]
     public partial class AppleVpnAlwaysOnConfiguration
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppleVpnAlwaysOnConfiguration"/> class.
-        /// </summary>
-        public AppleVpnAlwaysOnConfiguration()
-        {
-            this.ODataType = "microsoft.graph.appleVpnAlwaysOnConfiguration";
-        }
 
         /// <summary>
         /// Gets or sets airPrintExceptionAction.

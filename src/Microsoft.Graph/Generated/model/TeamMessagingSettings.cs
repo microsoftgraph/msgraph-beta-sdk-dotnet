@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TeamMessagingSettings>))]
     public partial class TeamMessagingSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TeamMessagingSettings"/> class.
-        /// </summary>
-        public TeamMessagingSettings()
-        {
-            this.ODataType = "microsoft.graph.teamMessagingSettings";
-        }
 
         /// <summary>
         /// Gets or sets allowChannelMentions.

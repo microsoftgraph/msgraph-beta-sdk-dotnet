@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class MacOSSoftwareUpdateStateSummary : Entity
     {
     
-		///<summary>
-		/// The MacOSSoftwareUpdateStateSummary constructor
-		///</summary>
-        public MacOSSoftwareUpdateStateSummary()
-        {
-            this.ODataType = "microsoft.graph.macOSSoftwareUpdateStateSummary";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// Human readable name of the software update

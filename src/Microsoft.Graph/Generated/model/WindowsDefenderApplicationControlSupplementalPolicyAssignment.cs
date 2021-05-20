@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WindowsDefenderApplicationControlSupplementalPolicyAssignment : Entity
     {
     
-		///<summary>
-		/// The WindowsDefenderApplicationControlSupplementalPolicyAssignment constructor
-		///</summary>
-        public WindowsDefenderApplicationControlSupplementalPolicyAssignment()
-        {
-            this.ODataType = "microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// The target group assignment defined by the admin.

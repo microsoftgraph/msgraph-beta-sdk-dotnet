@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class MicrosoftTunnelHealthThreshold : Entity
     {
     
-		///<summary>
-		/// The MicrosoftTunnelHealthThreshold constructor
-		///</summary>
-        public MicrosoftTunnelHealthThreshold()
-        {
-            this.ODataType = "microsoft.graph.microsoftTunnelHealthThreshold";
-        }
-	
         /// <summary>
         /// Gets or sets default healthy threshold.
         /// The default threshold for being healthy

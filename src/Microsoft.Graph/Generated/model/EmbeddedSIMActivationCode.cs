@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EmbeddedSIMActivationCode>))]
     public partial class EmbeddedSIMActivationCode
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EmbeddedSIMActivationCode"/> class.
-        /// </summary>
-        public EmbeddedSIMActivationCode()
-        {
-            this.ODataType = "microsoft.graph.embeddedSIMActivationCode";
-        }
 
         /// <summary>
         /// Gets or sets integratedCircuitCardIdentifier.

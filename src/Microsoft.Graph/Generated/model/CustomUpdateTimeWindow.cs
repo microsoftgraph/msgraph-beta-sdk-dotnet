@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CustomUpdateTimeWindow>))]
     public partial class CustomUpdateTimeWindow
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CustomUpdateTimeWindow"/> class.
-        /// </summary>
-        public CustomUpdateTimeWindow()
-        {
-            this.ODataType = "microsoft.graph.customUpdateTimeWindow";
-        }
 
         /// <summary>
         /// Gets or sets endDay.

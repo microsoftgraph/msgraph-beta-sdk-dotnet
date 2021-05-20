@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RetireScheduledManagedDevice>))]
     public partial class RetireScheduledManagedDevice
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RetireScheduledManagedDevice"/> class.
-        /// </summary>
-        public RetireScheduledManagedDevice()
-        {
-            this.ODataType = "microsoft.graph.retireScheduledManagedDevice";
-        }
 
         /// <summary>
         /// Gets or sets complianceState.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceLogCollectionRequestObject>))]
     public partial class DeviceLogCollectionRequestObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceLogCollectionRequestObject"/> class.
-        /// </summary>
-        public DeviceLogCollectionRequestObject()
-        {
-            this.ODataType = "microsoft.graph.deviceLogCollectionRequest";
-        }
 
         /// <summary>
         /// Gets or sets id.

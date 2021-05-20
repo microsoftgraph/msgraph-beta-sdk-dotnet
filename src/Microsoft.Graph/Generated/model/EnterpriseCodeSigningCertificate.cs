@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class EnterpriseCodeSigningCertificate : Entity
     {
     
-		///<summary>
-		/// The EnterpriseCodeSigningCertificate constructor
-		///</summary>
-        public EnterpriseCodeSigningCertificate()
-        {
-            this.ODataType = "microsoft.graph.enterpriseCodeSigningCertificate";
-        }
-	
         /// <summary>
         /// Gets or sets content.
         /// The Windows Enterprise Code-Signing Certificate in the raw data format.

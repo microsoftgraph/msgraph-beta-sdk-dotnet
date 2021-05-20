@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementReports : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementReports constructor
-		///</summary>
-        public DeviceManagementReports()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementReports";
-        }
-	
         /// <summary>
         /// Gets or sets cached report configurations.
         /// Entity representing the configuration of a cached report

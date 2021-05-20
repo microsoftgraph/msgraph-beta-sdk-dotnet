@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10TeamGeneralConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The Windows10TeamGeneralConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10TeamGeneralConfiguration constructor
+        ///</summary>
         public Windows10TeamGeneralConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10TeamGeneralConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets azure operational insights block telemetry.
         /// Indicates whether or not to Block Azure Operational Insights.

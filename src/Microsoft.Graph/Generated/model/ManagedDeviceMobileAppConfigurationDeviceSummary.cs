@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceMobileAppConfigurationDeviceSummary : Entity
     {
     
-		///<summary>
-		/// The ManagedDeviceMobileAppConfigurationDeviceSummary constructor
-		///</summary>
-        public ManagedDeviceMobileAppConfigurationDeviceSummary()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary";
-        }
-	
         /// <summary>
         /// Gets or sets configuration version.
         /// Version of the policy for that overview

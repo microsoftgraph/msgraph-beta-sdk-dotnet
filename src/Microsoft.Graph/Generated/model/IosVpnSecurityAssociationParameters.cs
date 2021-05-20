@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IosVpnSecurityAssociationParameters>))]
     public partial class IosVpnSecurityAssociationParameters
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosVpnSecurityAssociationParameters"/> class.
-        /// </summary>
-        public IosVpnSecurityAssociationParameters()
-        {
-            this.ODataType = "microsoft.graph.iosVpnSecurityAssociationParameters";
-        }
 
         /// <summary>
         /// Gets or sets lifetimeInMinutes.

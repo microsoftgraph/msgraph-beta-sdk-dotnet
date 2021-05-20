@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class ManagedEBook : Entity
     {
     
-		///<summary>
-		/// The internal ManagedEBook constructor
-		///</summary>
+        ///<summary>
+        /// The internal ManagedEBook constructor
+        ///</summary>
         protected internal ManagedEBook()
         {
             // Don't allow initialization of abstract entity types

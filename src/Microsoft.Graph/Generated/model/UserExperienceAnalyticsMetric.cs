@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsMetric : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsMetric constructor
-		///</summary>
-        public UserExperienceAnalyticsMetric()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsMetric";
-        }
-	
         /// <summary>
         /// Gets or sets unit.
         /// The unit of the user experience analytics metric.

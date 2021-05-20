@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ParentalControlSettings>))]
     public partial class ParentalControlSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParentalControlSettings"/> class.
-        /// </summary>
-        public ParentalControlSettings()
-        {
-            this.ODataType = "microsoft.graph.parentalControlSettings";
-        }
 
         /// <summary>
         /// Gets or sets countriesBlockedForMinors.

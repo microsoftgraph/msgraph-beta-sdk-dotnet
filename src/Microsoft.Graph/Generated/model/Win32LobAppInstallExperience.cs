@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppInstallExperience>))]
     public partial class Win32LobAppInstallExperience
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Win32LobAppInstallExperience"/> class.
-        /// </summary>
-        public Win32LobAppInstallExperience()
-        {
-            this.ODataType = "microsoft.graph.win32LobAppInstallExperience";
-        }
 
         /// <summary>
         /// Gets or sets deviceRestartBehavior.

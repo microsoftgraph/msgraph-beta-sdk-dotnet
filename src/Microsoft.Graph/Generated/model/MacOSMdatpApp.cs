@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MacOSMdatpApp : MobileApp
     {
     
-		///<summary>
-		/// The MacOSMdatpApp constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSMdatpApp constructor
+        ///</summary>
         public MacOSMdatpApp()
         {
             this.ODataType = "microsoft.graph.macOSMdatpApp";
         }
-	
+    
     }
 }
 

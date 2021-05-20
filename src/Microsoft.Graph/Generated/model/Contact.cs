@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Contact : OutlookItem
     {
     
-		///<summary>
-		/// The Contact constructor
-		///</summary>
+        ///<summary>
+        /// The Contact constructor
+        ///</summary>
         public Contact()
         {
             this.ODataType = "microsoft.graph.contact";
         }
-	
+    
         /// <summary>
         /// Gets or sets assistant name.
         /// The name of the contact's assistant.

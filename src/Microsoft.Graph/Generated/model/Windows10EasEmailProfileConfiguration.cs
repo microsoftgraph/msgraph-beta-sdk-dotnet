@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10EasEmailProfileConfiguration : EasEmailProfileConfigurationBase
     {
     
-		///<summary>
-		/// The Windows10EasEmailProfileConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10EasEmailProfileConfiguration constructor
+        ///</summary>
         public Windows10EasEmailProfileConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10EasEmailProfileConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets account name.
         /// Account name.

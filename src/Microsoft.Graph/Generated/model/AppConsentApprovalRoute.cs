@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AppConsentApprovalRoute : Entity
     {
     
-		///<summary>
-		/// The AppConsentApprovalRoute constructor
-		///</summary>
-        public AppConsentApprovalRoute()
-        {
-            this.ODataType = "microsoft.graph.appConsentApprovalRoute";
-        }
-	
         /// <summary>
         /// Gets or sets app consent requests.
         /// </summary>

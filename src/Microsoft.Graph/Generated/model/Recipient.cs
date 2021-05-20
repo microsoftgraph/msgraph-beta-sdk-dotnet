@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Recipient>))]
     public partial class Recipient
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Recipient"/> class.
-        /// </summary>
-        public Recipient()
-        {
-            this.ODataType = "microsoft.graph.recipient";
-        }
 
         /// <summary>
         /// Gets or sets emailAddress.

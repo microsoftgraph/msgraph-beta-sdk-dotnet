@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ColumnDefinition : Entity
     {
     
-		///<summary>
-		/// The ColumnDefinition constructor
-		///</summary>
-        public ColumnDefinition()
-        {
-            this.ODataType = "microsoft.graph.columnDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets boolean.
         /// This column stores boolean values.

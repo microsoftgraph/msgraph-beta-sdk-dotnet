@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DocumentCommentReply : Entity
     {
     
-		///<summary>
-		/// The DocumentCommentReply constructor
-		///</summary>
-        public DocumentCommentReply()
-        {
-            this.ODataType = "microsoft.graph.documentCommentReply";
-        }
-	
         /// <summary>
         /// Gets or sets content.
         /// </summary>

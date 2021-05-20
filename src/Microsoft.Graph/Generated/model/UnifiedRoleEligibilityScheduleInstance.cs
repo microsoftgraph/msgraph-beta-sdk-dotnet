@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleEligibilityScheduleInstance : UnifiedRoleScheduleInstanceBase
     {
     
-		///<summary>
-		/// The UnifiedRoleEligibilityScheduleInstance constructor
-		///</summary>
-        public UnifiedRoleEligibilityScheduleInstance()
-        {
-            this.ODataType = "microsoft.graph.unifiedRoleEligibilityScheduleInstance";
-        }
-	
         /// <summary>
         /// Gets or sets end date time.
         /// Time that the roleEligibilityScheduleInstance will expire

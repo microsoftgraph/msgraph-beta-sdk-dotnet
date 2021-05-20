@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SoftwareUpdateStatusSummary : Entity
     {
     
-		///<summary>
-		/// The SoftwareUpdateStatusSummary constructor
-		///</summary>
-        public SoftwareUpdateStatusSummary()
-        {
-            this.ODataType = "microsoft.graph.softwareUpdateStatusSummary";
-        }
-	
         /// <summary>
         /// Gets or sets compliant device count.
         /// Number of compliant devices.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsAppHealthDevicePerformanceDetails : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsAppHealthDevicePerformanceDetails constructor
-		///</summary>
-        public UserExperienceAnalyticsAppHealthDevicePerformanceDetails()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformanceDetails";
-        }
-	
         /// <summary>
         /// Gets or sets app display name.
         /// The friendly name of the application for which the event occurred.

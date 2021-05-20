@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessLocations>))]
     public partial class ConditionalAccessLocations
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessLocations"/> class.
-        /// </summary>
-        public ConditionalAccessLocations()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessLocations";
-        }
 
         /// <summary>
         /// Gets or sets excludeLocations.

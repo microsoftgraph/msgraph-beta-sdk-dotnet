@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class JobResponseBase : Entity
     {
     
-		///<summary>
-		/// The JobResponseBase constructor
-		///</summary>
-        public JobResponseBase()
-        {
-            this.ODataType = "microsoft.graph.jobResponseBase";
-        }
-	
         /// <summary>
         /// Gets or sets creation date time.
         /// </summary>

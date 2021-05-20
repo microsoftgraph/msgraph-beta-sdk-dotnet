@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class SensitivityLabel : Entity
     {
     
-		///<summary>
-		/// The SensitivityLabel constructor
-		///</summary>
-        public SensitivityLabel()
-        {
-            this.ODataType = "microsoft.graph.sensitivityLabel";
-        }
-	
         /// <summary>
         /// Gets or sets applicable to.
         /// </summary>

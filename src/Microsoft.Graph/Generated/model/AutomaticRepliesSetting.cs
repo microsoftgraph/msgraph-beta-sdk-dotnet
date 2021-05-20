@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AutomaticRepliesSetting>))]
     public partial class AutomaticRepliesSetting
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AutomaticRepliesSetting"/> class.
-        /// </summary>
-        public AutomaticRepliesSetting()
-        {
-            this.ODataType = "microsoft.graph.automaticRepliesSetting";
-        }
 
         /// <summary>
         /// Gets or sets externalAudience.

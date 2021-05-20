@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ParticipantJoiningNotification : Entity
     {
     
-		///<summary>
-		/// The ParticipantJoiningNotification constructor
-		///</summary>
-        public ParticipantJoiningNotification()
-        {
-            this.ODataType = "microsoft.graph.participantJoiningNotification";
-        }
-	
         /// <summary>
         /// Gets or sets call.
         /// </summary>

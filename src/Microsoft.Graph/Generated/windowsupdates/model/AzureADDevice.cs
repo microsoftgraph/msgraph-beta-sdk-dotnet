@@ -20,14 +20,14 @@ namespace Microsoft.Graph.WindowsUpdates
     public partial class AzureADDevice : UpdatableAsset
     {
     
-		///<summary>
-		/// The AzureADDevice constructor
-		///</summary>
+        ///<summary>
+        /// The AzureADDevice constructor
+        ///</summary>
         public AzureADDevice()
         {
             this.ODataType = "microsoft.graph.windowsUpdates.azureADDevice";
         }
-	
+    
         /// <summary>
         /// Gets or sets enrollments.
         /// Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.

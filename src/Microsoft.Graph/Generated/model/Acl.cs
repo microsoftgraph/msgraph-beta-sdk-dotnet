@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Acl>))]
     public partial class Acl
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Acl"/> class.
-        /// </summary>
-        public Acl()
-        {
-            this.ODataType = "microsoft.graph.acl";
-        }
 
         /// <summary>
         /// Gets or sets accessType.

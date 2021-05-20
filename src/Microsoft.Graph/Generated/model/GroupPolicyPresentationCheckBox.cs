@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationCheckBox : GroupPolicyPresentation
     {
     
-		///<summary>
-		/// The GroupPolicyPresentationCheckBox constructor
-		///</summary>
+        ///<summary>
+        /// The GroupPolicyPresentationCheckBox constructor
+        ///</summary>
         public GroupPolicyPresentationCheckBox()
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationCheckBox";
         }
-	
+    
         /// <summary>
         /// Gets or sets default checked.
         /// Default value for the check box. The default value is false.

@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidForWorkMobileAppConfiguration : ManagedDeviceMobileAppConfiguration
     {
     
-		///<summary>
-		/// The AndroidForWorkMobileAppConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidForWorkMobileAppConfiguration constructor
+        ///</summary>
         public AndroidForWorkMobileAppConfiguration()
         {
             this.ODataType = "microsoft.graph.androidForWorkMobileAppConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets package id.
         /// Android For Work app configuration package id.

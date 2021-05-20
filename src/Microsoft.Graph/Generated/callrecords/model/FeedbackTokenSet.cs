@@ -20,13 +20,6 @@ namespace Microsoft.Graph.CallRecords
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<FeedbackTokenSet>))]
     public partial class FeedbackTokenSet
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FeedbackTokenSet"/> class.
-        /// </summary>
-        public FeedbackTokenSet()
-        {
-            this.ODataType = "microsoft.graph.callRecords.feedbackTokenSet";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SalesInvoiceLine : Entity
     {
     
-		///<summary>
-		/// The SalesInvoiceLine constructor
-		///</summary>
-        public SalesInvoiceLine()
-        {
-            this.ODataType = "microsoft.graph.salesInvoiceLine";
-        }
-	
         /// <summary>
         /// Gets or sets account id.
         /// </summary>

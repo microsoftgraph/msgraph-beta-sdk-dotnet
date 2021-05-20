@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceConfigurationState : Entity
     {
     
-		///<summary>
-		/// The DeviceConfigurationState constructor
-		///</summary>
-        public DeviceConfigurationState()
-        {
-            this.ODataType = "microsoft.graph.deviceConfigurationState";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The name of the policy for this policyBase

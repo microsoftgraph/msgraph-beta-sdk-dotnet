@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PrintService : Entity
     {
     
-		///<summary>
-		/// The PrintService constructor
-		///</summary>
-        public PrintService()
-        {
-            this.ODataType = "microsoft.graph.printService";
-        }
-	
         /// <summary>
         /// Gets or sets endpoints.
         /// Endpoints that can be used to access the service. Read-only. Nullable.

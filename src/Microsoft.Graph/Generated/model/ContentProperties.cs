@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ContentProperties>))]
     public partial class ContentProperties
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ContentProperties"/> class.
-        /// </summary>
-        public ContentProperties()
-        {
-            this.ODataType = "microsoft.graph.contentProperties";
-        }
 
         /// <summary>
         /// Gets or sets extensions.

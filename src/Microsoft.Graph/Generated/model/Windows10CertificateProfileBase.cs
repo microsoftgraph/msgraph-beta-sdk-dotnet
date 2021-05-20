@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class Windows10CertificateProfileBase : WindowsCertificateProfileBase
     {
     
-		///<summary>
-		/// The internal Windows10CertificateProfileBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal Windows10CertificateProfileBase constructor
+        ///</summary>
         protected internal Windows10CertificateProfileBase()
         {
             // Don't allow initialization of abstract entity types

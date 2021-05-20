@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class AdministrativeUnit : DirectoryObject
     {
     
-		///<summary>
-		/// The AdministrativeUnit constructor
-		///</summary>
+        ///<summary>
+        /// The AdministrativeUnit constructor
+        ///</summary>
         public AdministrativeUnit()
         {
             this.ODataType = "microsoft.graph.administrativeUnit";
         }
-	
+    
         /// <summary>
         /// Gets or sets description.
         /// An optional description for the administrative unit.

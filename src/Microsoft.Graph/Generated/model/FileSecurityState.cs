@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<FileSecurityState>))]
     public partial class FileSecurityState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FileSecurityState"/> class.
-        /// </summary>
-        public FileSecurityState()
-        {
-            this.ODataType = "microsoft.graph.fileSecurityState";
-        }
 
         /// <summary>
         /// Gets or sets fileHash.

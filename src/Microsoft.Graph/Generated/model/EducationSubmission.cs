@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class EducationSubmission : Entity
     {
     
-		///<summary>
-		/// The EducationSubmission constructor
-		///</summary>
-        public EducationSubmission()
-        {
-            this.ODataType = "microsoft.graph.educationSubmission";
-        }
-	
         /// <summary>
         /// Gets or sets recipient.
         /// Who this submission is assigned to.

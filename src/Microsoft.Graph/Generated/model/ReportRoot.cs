@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ReportRoot : Entity
     {
     
-		///<summary>
-		/// The ReportRoot constructor
-		///</summary>
-        public ReportRoot()
-        {
-            this.ODataType = "microsoft.graph.reportRoot";
-        }
-	
         /// <summary>
         /// Gets or sets application sign in detailed summary.
         /// </summary>

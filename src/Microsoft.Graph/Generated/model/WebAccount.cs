@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WebAccount : ItemFacet
     {
     
-		///<summary>
-		/// The WebAccount constructor
-		///</summary>
-        public WebAccount()
-        {
-            this.ODataType = "microsoft.graph.webAccount";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Contains the description the user has provided for the account on the service being referenced.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class GroupPolicySettingMapping : Entity
     {
     
-		///<summary>
-		/// The GroupPolicySettingMapping constructor
-		///</summary>
-        public GroupPolicySettingMapping()
-        {
-            this.ODataType = "microsoft.graph.groupPolicySettingMapping";
-        }
-	
         /// <summary>
         /// Gets or sets admx setting definition id.
         /// Admx Group Policy Id

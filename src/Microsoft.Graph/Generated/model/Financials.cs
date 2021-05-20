@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Financials
     {
     
-		///<summary>
-		/// The Financials constructor
-		///</summary>
-        public Financials()
-        {
-            this.ODataType = "microsoft.graph.financials";
-        }
-	
         /// <summary>
         /// Gets or sets companies.
         /// </summary>

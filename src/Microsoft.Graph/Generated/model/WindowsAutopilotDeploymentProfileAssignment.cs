@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class WindowsAutopilotDeploymentProfileAssignment : Entity
     {
     
-		///<summary>
-		/// The WindowsAutopilotDeploymentProfileAssignment constructor
-		///</summary>
-        public WindowsAutopilotDeploymentProfileAssignment()
-        {
-            this.ODataType = "microsoft.graph.windowsAutopilotDeploymentProfileAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets source.
         /// Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.

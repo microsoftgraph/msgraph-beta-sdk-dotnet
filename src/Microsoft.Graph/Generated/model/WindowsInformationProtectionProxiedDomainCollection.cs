@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WindowsInformationProtectionProxiedDomainCollection>))]
     public partial class WindowsInformationProtectionProxiedDomainCollection
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WindowsInformationProtectionProxiedDomainCollection"/> class.
-        /// </summary>
-        public WindowsInformationProtectionProxiedDomainCollection()
-        {
-            this.ODataType = "microsoft.graph.windowsInformationProtectionProxiedDomainCollection";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

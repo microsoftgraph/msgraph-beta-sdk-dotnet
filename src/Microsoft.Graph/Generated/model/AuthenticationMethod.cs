@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class AuthenticationMethod : Entity
     {
     
-		///<summary>
-		/// The internal AuthenticationMethod constructor
-		///</summary>
+        ///<summary>
+        /// The internal AuthenticationMethod constructor
+        ///</summary>
         protected internal AuthenticationMethod()
         {
             // Don't allow initialization of abstract entity types

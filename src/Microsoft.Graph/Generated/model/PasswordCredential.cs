@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PasswordCredential>))]
     public partial class PasswordCredential
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PasswordCredential"/> class.
-        /// </summary>
-        public PasswordCredential()
-        {
-            this.ODataType = "microsoft.graph.passwordCredential";
-        }
 
         /// <summary>
         /// Gets or sets customKeyIdentifier.

@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class ExactMatchJobBase : Entity
     {
     
-		///<summary>
-		/// The internal ExactMatchJobBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal ExactMatchJobBase constructor
+        ///</summary>
         protected internal ExactMatchJobBase()
         {
             // Don't allow initialization of abstract entity types

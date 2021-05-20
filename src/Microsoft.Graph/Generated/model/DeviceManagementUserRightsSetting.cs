@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementUserRightsSetting>))]
     public partial class DeviceManagementUserRightsSetting
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementUserRightsSetting"/> class.
-        /// </summary>
-        public DeviceManagementUserRightsSetting()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementUserRightsSetting";
-        }
 
         /// <summary>
         /// Gets or sets localUsersOrGroups.

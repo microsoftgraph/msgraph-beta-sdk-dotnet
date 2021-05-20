@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DepOnboardingSetting : Entity
     {
     
-		///<summary>
-		/// The DepOnboardingSetting constructor
-		///</summary>
-        public DepOnboardingSetting()
-        {
-            this.ODataType = "microsoft.graph.depOnboardingSetting";
-        }
-	
         /// <summary>
         /// Gets or sets apple identifier.
         /// The Apple ID used to obtain the current token.

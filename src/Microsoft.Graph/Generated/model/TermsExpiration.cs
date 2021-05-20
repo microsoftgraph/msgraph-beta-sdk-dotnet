@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TermsExpiration>))]
     public partial class TermsExpiration
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TermsExpiration"/> class.
-        /// </summary>
-        public TermsExpiration()
-        {
-            this.ODataType = "microsoft.graph.termsExpiration";
-        }
 
         /// <summary>
         /// Gets or sets frequency.

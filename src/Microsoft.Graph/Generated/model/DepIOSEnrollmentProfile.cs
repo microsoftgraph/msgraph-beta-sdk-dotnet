@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class DepIOSEnrollmentProfile : DepEnrollmentBaseProfile
     {
     
-		///<summary>
-		/// The DepIOSEnrollmentProfile constructor
-		///</summary>
+        ///<summary>
+        /// The DepIOSEnrollmentProfile constructor
+        ///</summary>
         public DepIOSEnrollmentProfile()
         {
             this.ODataType = "microsoft.graph.depIOSEnrollmentProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets appearance screen disabled.
         /// Indicates if Apperance screen is disabled

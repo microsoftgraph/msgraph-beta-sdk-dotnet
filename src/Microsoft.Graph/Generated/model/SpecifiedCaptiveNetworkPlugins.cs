@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SpecifiedCaptiveNetworkPlugins>))]
     public partial class SpecifiedCaptiveNetworkPlugins
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SpecifiedCaptiveNetworkPlugins"/> class.
-        /// </summary>
-        public SpecifiedCaptiveNetworkPlugins()
-        {
-            this.ODataType = "microsoft.graph.specifiedCaptiveNetworkPlugins";
-        }
 
         /// <summary>
         /// Gets or sets allowedBundleIdentifiers.

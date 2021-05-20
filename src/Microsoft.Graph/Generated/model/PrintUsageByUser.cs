@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PrintUsageByUser : PrintUsage
     {
     
-		///<summary>
-		/// The PrintUsageByUser constructor
-		///</summary>
-        public PrintUsageByUser()
-        {
-            this.ODataType = "microsoft.graph.printUsageByUser";
-        }
-	
         /// <summary>
         /// Gets or sets user principal name.
         /// The UPN of the user represented by these statistics.

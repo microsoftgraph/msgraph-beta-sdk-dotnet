@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Profile : Entity
     {
     
-		///<summary>
-		/// The Profile constructor
-		///</summary>
-        public Profile()
-        {
-            this.ODataType = "microsoft.graph.profile";
-        }
-	
         /// <summary>
         /// Gets or sets account.
         /// </summary>

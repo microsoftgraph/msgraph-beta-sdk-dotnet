@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class UserScopeTeamsAppInstallation : TeamsAppInstallation
     {
     
-		///<summary>
-		/// The UserScopeTeamsAppInstallation constructor
-		///</summary>
+        ///<summary>
+        /// The UserScopeTeamsAppInstallation constructor
+        ///</summary>
         public UserScopeTeamsAppInstallation()
         {
             this.ODataType = "microsoft.graph.userScopeTeamsAppInstallation";
         }
-	
+    
         /// <summary>
         /// Gets or sets chat.
         /// The chat between the user and Teams app.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PasswordSingleSignOnCredentialSet>))]
     public partial class PasswordSingleSignOnCredentialSet
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PasswordSingleSignOnCredentialSet"/> class.
-        /// </summary>
-        public PasswordSingleSignOnCredentialSet()
-        {
-            this.ODataType = "microsoft.graph.passwordSingleSignOnCredentialSet";
-        }
 
         /// <summary>
         /// Gets or sets credentials.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class OnenoteOperation : Operation
     {
     
-		///<summary>
-		/// The OnenoteOperation constructor
-		///</summary>
-        public OnenoteOperation()
-        {
-            this.ODataType = "microsoft.graph.onenoteOperation";
-        }
-	
         /// <summary>
         /// Gets or sets error.
         /// The error returned by the operation.

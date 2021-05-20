@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AutoReviewSettings>))]
     public partial class AutoReviewSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AutoReviewSettings"/> class.
-        /// </summary>
-        public AutoReviewSettings()
-        {
-            this.ODataType = "microsoft.graph.autoReviewSettings";
-        }
 
         /// <summary>
         /// Gets or sets notReviewedResult.

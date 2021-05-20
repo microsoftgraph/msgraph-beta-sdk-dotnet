@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ExcludedApps>))]
     public partial class ExcludedApps
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExcludedApps"/> class.
-        /// </summary>
-        public ExcludedApps()
-        {
-            this.ODataType = "microsoft.graph.excludedApps";
-        }
 
         /// <summary>
         /// Gets or sets access.

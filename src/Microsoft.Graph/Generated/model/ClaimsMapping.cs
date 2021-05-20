@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ClaimsMapping>))]
     public partial class ClaimsMapping
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ClaimsMapping"/> class.
-        /// </summary>
-        public ClaimsMapping()
-        {
-            this.ODataType = "microsoft.graph.claimsMapping";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class PlannerPlan : PlannerDelta
     {
     
-		///<summary>
-		/// The PlannerPlan constructor
-		///</summary>
+        ///<summary>
+        /// The PlannerPlan constructor
+        ///</summary>
         public PlannerPlan()
         {
             this.ODataType = "microsoft.graph.plannerPlan";
         }
-	
+    
         /// <summary>
         /// Gets or sets container.
         /// Identifies the container of the plan. After it is set, this property can’t be updated. Required.

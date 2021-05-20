@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceAndAppManagementRoleDefinition : RoleDefinition
     {
     
-		///<summary>
-		/// The DeviceAndAppManagementRoleDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceAndAppManagementRoleDefinition constructor
+        ///</summary>
         public DeviceAndAppManagementRoleDefinition()
         {
             this.ODataType = "microsoft.graph.deviceAndAppManagementRoleDefinition";
         }
-	
+    
     }
 }
 

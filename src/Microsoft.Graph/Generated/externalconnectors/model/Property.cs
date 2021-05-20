@@ -20,13 +20,6 @@ namespace Microsoft.Graph.ExternalConnectors
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Property>))]
     public partial class Property
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Property"/> class.
-        /// </summary>
-        public Property()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.property";
-        }
 
         /// <summary>
         /// Gets or sets aliases.

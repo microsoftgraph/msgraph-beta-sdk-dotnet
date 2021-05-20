@@ -21,14 +21,6 @@ namespace Microsoft.Graph.Ediscovery
     public partial class LegalHold : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The LegalHold constructor
-		///</summary>
-        public LegalHold()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.legalHold";
-        }
-	
         /// <summary>
         /// Gets or sets content query.
         /// KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.

@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileScepCertificateProfile : AndroidWorkProfileCertificateProfileBase
     {
     
-		///<summary>
-		/// The AndroidWorkProfileScepCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidWorkProfileScepCertificateProfile constructor
+        ///</summary>
         public AndroidWorkProfileScepCertificateProfile()
         {
             this.ODataType = "microsoft.graph.androidWorkProfileScepCertificateProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets certificate store.
         /// Target store certificate. Possible values are: user, machine.

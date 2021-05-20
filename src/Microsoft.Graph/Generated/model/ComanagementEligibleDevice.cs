@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ComanagementEligibleDevice : Entity
     {
     
-		///<summary>
-		/// The ComanagementEligibleDevice constructor
-		///</summary>
-        public ComanagementEligibleDevice()
-        {
-            this.ODataType = "microsoft.graph.comanagementEligibleDevice";
-        }
-	
         /// <summary>
         /// Gets or sets client registration status.
         /// ClientRegistrationStatus. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.

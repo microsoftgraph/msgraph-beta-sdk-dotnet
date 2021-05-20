@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleManagementPolicyApprovalRule : UnifiedRoleManagementPolicyRule
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicyApprovalRule constructor
-		///</summary>
+        ///<summary>
+        /// The UnifiedRoleManagementPolicyApprovalRule constructor
+        ///</summary>
         public UnifiedRoleManagementPolicyApprovalRule()
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyApprovalRule";
         }
-	
+    
         /// <summary>
         /// Gets or sets setting.
         /// The approval setting for the rule.

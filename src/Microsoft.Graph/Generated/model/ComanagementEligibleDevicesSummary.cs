@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ComanagementEligibleDevicesSummary>))]
     public partial class ComanagementEligibleDevicesSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ComanagementEligibleDevicesSummary"/> class.
-        /// </summary>
-        public ComanagementEligibleDevicesSummary()
-        {
-            this.ODataType = "microsoft.graph.comanagementEligibleDevicesSummary";
-        }
 
         /// <summary>
         /// Gets or sets comanagedCount.

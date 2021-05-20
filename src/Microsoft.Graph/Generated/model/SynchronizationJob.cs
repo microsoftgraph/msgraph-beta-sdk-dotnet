@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SynchronizationJob : Entity
     {
     
-		///<summary>
-		/// The SynchronizationJob constructor
-		///</summary>
-        public SynchronizationJob()
-        {
-            this.ODataType = "microsoft.graph.synchronizationJob";
-        }
-	
         /// <summary>
         /// Gets or sets schedule.
         /// Schedule used to run the job. Read-only.

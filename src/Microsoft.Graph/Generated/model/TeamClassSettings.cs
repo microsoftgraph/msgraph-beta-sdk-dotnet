@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TeamClassSettings>))]
     public partial class TeamClassSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TeamClassSettings"/> class.
-        /// </summary>
-        public TeamClassSettings()
-        {
-            this.ODataType = "microsoft.graph.teamClassSettings";
-        }
 
         /// <summary>
         /// Gets or sets notifyGuardiansAboutAssignments.

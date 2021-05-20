@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class IdentityUserFlow : Entity
     {
     
-		///<summary>
-		/// The IdentityUserFlow constructor
-		///</summary>
-        public IdentityUserFlow()
-        {
-            this.ODataType = "microsoft.graph.identityUserFlow";
-        }
-	
         /// <summary>
         /// Gets or sets user flow type.
         /// </summary>

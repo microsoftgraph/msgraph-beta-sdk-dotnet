@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Group : DirectoryObject
     {
     
-		///<summary>
-		/// The Group constructor
-		///</summary>
+        ///<summary>
+        /// The Group constructor
+        ///</summary>
         public Group()
         {
             this.ODataType = "microsoft.graph.group";
         }
-	
+    
         /// <summary>
         /// Gets or sets assigned labels.
         /// The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.

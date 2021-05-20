@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class IosVppAppAssignedDeviceLicense : IosVppAppAssignedLicense
     {
     
-		///<summary>
-		/// The IosVppAppAssignedDeviceLicense constructor
-		///</summary>
+        ///<summary>
+        /// The IosVppAppAssignedDeviceLicense constructor
+        ///</summary>
         public IosVppAppAssignedDeviceLicense()
         {
             this.ODataType = "microsoft.graph.iosVppAppAssignedDeviceLicense";
         }
-	
+    
         /// <summary>
         /// Gets or sets device name.
         /// The device name.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<FileEncryptionInfo>))]
     public partial class FileEncryptionInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FileEncryptionInfo"/> class.
-        /// </summary>
-        public FileEncryptionInfo()
-        {
-            this.ODataType = "microsoft.graph.fileEncryptionInfo";
-        }
 
         /// <summary>
         /// Gets or sets encryptionKey.

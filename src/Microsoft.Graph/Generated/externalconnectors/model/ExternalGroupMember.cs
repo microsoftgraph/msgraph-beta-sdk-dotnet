@@ -21,14 +21,6 @@ namespace Microsoft.Graph.ExternalConnectors
     public partial class ExternalGroupMember : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ExternalGroupMember constructor
-		///</summary>
-        public ExternalGroupMember()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.externalGroupMember";
-        }
-	
         /// <summary>
         /// Gets or sets identity source.
         /// </summary>

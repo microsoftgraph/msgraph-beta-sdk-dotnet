@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class JournalLine : Entity
     {
     
-		///<summary>
-		/// The JournalLine constructor
-		///</summary>
-        public JournalLine()
-        {
-            this.ODataType = "microsoft.graph.journalLine";
-        }
-	
         /// <summary>
         /// Gets or sets account id.
         /// </summary>

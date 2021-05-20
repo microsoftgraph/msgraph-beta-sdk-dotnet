@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceCompliancePolicyGroupAssignment : Entity
     {
     
-		///<summary>
-		/// The DeviceCompliancePolicyGroupAssignment constructor
-		///</summary>
-        public DeviceCompliancePolicyGroupAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceCompliancePolicyGroupAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets exclude group.
         /// Indicates if this group is should be excluded. Defaults that the group should be included

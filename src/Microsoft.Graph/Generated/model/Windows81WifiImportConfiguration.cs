@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Windows81WifiImportConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The Windows81WifiImportConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows81WifiImportConfiguration constructor
+        ///</summary>
         public Windows81WifiImportConfiguration()
         {
             this.ODataType = "microsoft.graph.windows81WifiImportConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets payload.
         /// Payload. (UTF8 encoded byte array). This is the XML file saved on the device you used to connect to the Wi-Fi endpoint.

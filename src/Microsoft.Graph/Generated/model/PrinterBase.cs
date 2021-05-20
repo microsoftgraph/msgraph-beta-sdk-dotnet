@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class PrinterBase : Entity
     {
     
-		///<summary>
-		/// The internal PrinterBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal PrinterBase constructor
+        ///</summary>
         protected internal PrinterBase()
         {
             // Don't allow initialization of abstract entity types

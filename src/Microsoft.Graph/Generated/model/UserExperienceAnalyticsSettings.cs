@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsSettings>))]
     public partial class UserExperienceAnalyticsSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserExperienceAnalyticsSettings"/> class.
-        /// </summary>
-        public UserExperienceAnalyticsSettings()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsSettings";
-        }
 
         /// <summary>
         /// Gets or sets configurationManagerDataConnectorConfigured.

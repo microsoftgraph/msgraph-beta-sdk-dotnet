@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class SecurityBaselineTemplate : DeviceManagementTemplate
     {
     
-		///<summary>
-		/// The SecurityBaselineTemplate constructor
-		///</summary>
+        ///<summary>
+        /// The SecurityBaselineTemplate constructor
+        ///</summary>
         public SecurityBaselineTemplate()
         {
             this.ODataType = "microsoft.graph.securityBaselineTemplate";
         }
-	
+    
         /// <summary>
         /// Gets or sets category device state summaries.
         /// The security baseline per category device state summary

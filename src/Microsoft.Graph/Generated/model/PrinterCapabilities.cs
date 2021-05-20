@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PrinterCapabilities>))]
     public partial class PrinterCapabilities
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrinterCapabilities"/> class.
-        /// </summary>
-        public PrinterCapabilities()
-        {
-            this.ODataType = "microsoft.graph.printerCapabilities";
-        }
 
         /// <summary>
         /// Gets or sets bottomMargins.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Permission : Entity
     {
     
-		///<summary>
-		/// The Permission constructor
-		///</summary>
-        public Permission()
-        {
-            this.ODataType = "microsoft.graph.permission";
-        }
-	
         /// <summary>
         /// Gets or sets expiration date time.
         /// A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SharingDetail>))]
     public partial class SharingDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SharingDetail"/> class.
-        /// </summary>
-        public SharingDetail()
-        {
-            this.ODataType = "microsoft.graph.sharingDetail";
-        }
 
         /// <summary>
         /// Gets or sets sharedBy.

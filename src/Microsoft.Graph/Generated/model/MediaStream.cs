@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MediaStream>))]
     public partial class MediaStream
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MediaStream"/> class.
-        /// </summary>
-        public MediaStream()
-        {
-            this.ODataType = "microsoft.graph.mediaStream";
-        }
 
         /// <summary>
         /// Gets or sets direction.

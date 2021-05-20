@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RegionalFormatOverrides>))]
     public partial class RegionalFormatOverrides
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RegionalFormatOverrides"/> class.
-        /// </summary>
-        public RegionalFormatOverrides()
-        {
-            this.ODataType = "microsoft.graph.regionalFormatOverrides";
-        }
 
         /// <summary>
         /// Gets or sets calendar.

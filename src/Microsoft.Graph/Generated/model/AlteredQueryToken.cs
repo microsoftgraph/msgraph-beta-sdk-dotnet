@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AlteredQueryToken>))]
     public partial class AlteredQueryToken
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AlteredQueryToken"/> class.
-        /// </summary>
-        public AlteredQueryToken()
-        {
-            this.ODataType = "microsoft.graph.alteredQueryToken";
-        }
 
         /// <summary>
         /// Gets or sets length.

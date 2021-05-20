@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class WindowsAutopilotDeploymentProfile : Entity
     {
     
-		///<summary>
-		/// The internal WindowsAutopilotDeploymentProfile constructor
-		///</summary>
+        ///<summary>
+        /// The internal WindowsAutopilotDeploymentProfile constructor
+        ///</summary>
         protected internal WindowsAutopilotDeploymentProfile()
         {
             // Don't allow initialization of abstract entity types

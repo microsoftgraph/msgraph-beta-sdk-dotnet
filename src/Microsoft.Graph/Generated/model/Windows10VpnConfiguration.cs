@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10VpnConfiguration : WindowsVpnConfiguration
     {
     
-		///<summary>
-		/// The Windows10VpnConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10VpnConfiguration constructor
+        ///</summary>
         public Windows10VpnConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10VpnConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets associated apps.
         /// Associated Apps. This collection can contain a maximum of 10000 elements.

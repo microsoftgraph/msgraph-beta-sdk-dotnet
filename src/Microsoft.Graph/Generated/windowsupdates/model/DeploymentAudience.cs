@@ -20,14 +20,6 @@ namespace Microsoft.Graph.WindowsUpdates
     public partial class DeploymentAudience : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The DeploymentAudience constructor
-		///</summary>
-        public DeploymentAudience()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.deploymentAudience";
-        }
-	
         /// <summary>
         /// Gets or sets exclusions.
         /// Specifies the assets to exclude from the audience.

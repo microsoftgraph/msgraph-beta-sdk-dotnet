@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10MobileCompliancePolicy : DeviceCompliancePolicy
     {
     
-		///<summary>
-		/// The Windows10MobileCompliancePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10MobileCompliancePolicy constructor
+        ///</summary>
         public Windows10MobileCompliancePolicy()
         {
             this.ODataType = "microsoft.graph.windows10MobileCompliancePolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets active firewall required.
         /// Require active firewall on Windows devices.

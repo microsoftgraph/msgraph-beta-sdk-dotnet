@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class IosMobileAppConfiguration : ManagedDeviceMobileAppConfiguration
     {
     
-		///<summary>
-		/// The IosMobileAppConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The IosMobileAppConfiguration constructor
+        ///</summary>
         public IosMobileAppConfiguration()
         {
             this.ODataType = "microsoft.graph.iosMobileAppConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets encoded setting xml.
         /// mdm app configuration Base64 binary.

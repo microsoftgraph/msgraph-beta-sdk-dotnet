@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementApplicabilityRuleDeviceMode>))]
     public partial class DeviceManagementApplicabilityRuleDeviceMode
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementApplicabilityRuleDeviceMode"/> class.
-        /// </summary>
-        public DeviceManagementApplicabilityRuleDeviceMode()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementApplicabilityRuleDeviceMode";
-        }
 
         /// <summary>
         /// Gets or sets deviceMode.

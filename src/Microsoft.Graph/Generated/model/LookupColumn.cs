@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<LookupColumn>))]
     public partial class LookupColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LookupColumn"/> class.
-        /// </summary>
-        public LookupColumn()
-        {
-            this.ODataType = "microsoft.graph.lookupColumn";
-        }
 
         /// <summary>
         /// Gets or sets allowMultipleValues.

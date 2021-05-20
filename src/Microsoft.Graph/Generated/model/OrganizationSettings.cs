@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class OrganizationSettings : Entity
     {
     
-		///<summary>
-		/// The OrganizationSettings constructor
-		///</summary>
-        public OrganizationSettings()
-        {
-            this.ODataType = "microsoft.graph.organizationSettings";
-        }
-	
         /// <summary>
         /// Gets or sets item insights.
         /// Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.

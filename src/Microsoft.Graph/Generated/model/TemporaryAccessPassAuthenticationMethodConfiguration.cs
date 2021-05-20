@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class TemporaryAccessPassAuthenticationMethodConfiguration : AuthenticationMethodConfiguration
     {
     
-		///<summary>
-		/// The TemporaryAccessPassAuthenticationMethodConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The TemporaryAccessPassAuthenticationMethodConfiguration constructor
+        ///</summary>
         public TemporaryAccessPassAuthenticationMethodConfiguration()
         {
             this.ODataType = "microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets default length.
         /// </summary>

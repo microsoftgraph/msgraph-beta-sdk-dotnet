@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserFlowApiConnectorConfiguration>))]
     public partial class UserFlowApiConnectorConfiguration
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserFlowApiConnectorConfiguration"/> class.
-        /// </summary>
-        public UserFlowApiConnectorConfiguration()
-        {
-            this.ODataType = "microsoft.graph.userFlowApiConnectorConfiguration";
-        }
 
         /// <summary>
         /// Gets or sets postAttributeCollection.

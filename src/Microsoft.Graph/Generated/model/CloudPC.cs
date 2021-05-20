@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class CloudPC : Entity
     {
     
-		///<summary>
-		/// The CloudPC constructor
-		///</summary>
-        public CloudPC()
-        {
-            this.ODataType = "microsoft.graph.cloudPC";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The cloud PC display name.

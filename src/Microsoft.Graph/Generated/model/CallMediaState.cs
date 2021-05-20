@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CallMediaState>))]
     public partial class CallMediaState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CallMediaState"/> class.
-        /// </summary>
-        public CallMediaState()
-        {
-            this.ODataType = "microsoft.graph.callMediaState";
-        }
 
         /// <summary>
         /// Gets or sets audio.

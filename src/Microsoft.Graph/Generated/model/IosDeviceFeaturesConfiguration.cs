@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class IosDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase
     {
     
-		///<summary>
-		/// The IosDeviceFeaturesConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The IosDeviceFeaturesConfiguration constructor
+        ///</summary>
         public IosDeviceFeaturesConfiguration()
         {
             this.ODataType = "microsoft.graph.iosDeviceFeaturesConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets asset tag template.
         /// Asset tag information for the device, displayed on the login window and lock screen.

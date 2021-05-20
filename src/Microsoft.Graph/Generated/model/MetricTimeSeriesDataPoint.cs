@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MetricTimeSeriesDataPoint>))]
     public partial class MetricTimeSeriesDataPoint
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MetricTimeSeriesDataPoint"/> class.
-        /// </summary>
-        public MetricTimeSeriesDataPoint()
-        {
-            this.ODataType = "microsoft.graph.metricTimeSeriesDataPoint";
-        }
 
         /// <summary>
         /// Gets or sets dateTime.

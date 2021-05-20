@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ManagedAllDeviceCertificateState : Entity
     {
     
-		///<summary>
-		/// The ManagedAllDeviceCertificateState constructor
-		///</summary>
-        public ManagedAllDeviceCertificateState()
-        {
-            this.ODataType = "microsoft.graph.managedAllDeviceCertificateState";
-        }
-	
         /// <summary>
         /// Gets or sets certificate expiration date time.
         /// Certificate expiry date

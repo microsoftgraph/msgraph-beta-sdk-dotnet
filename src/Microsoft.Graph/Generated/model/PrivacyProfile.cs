@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PrivacyProfile>))]
     public partial class PrivacyProfile
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrivacyProfile"/> class.
-        /// </summary>
-        public PrivacyProfile()
-        {
-            this.ODataType = "microsoft.graph.privacyProfile";
-        }
 
         /// <summary>
         /// Gets or sets contactEmail.

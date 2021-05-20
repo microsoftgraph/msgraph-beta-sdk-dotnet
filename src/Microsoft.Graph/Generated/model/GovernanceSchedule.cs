@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<GovernanceSchedule>))]
     public partial class GovernanceSchedule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GovernanceSchedule"/> class.
-        /// </summary>
-        public GovernanceSchedule()
-        {
-            this.ODataType = "microsoft.graph.governanceSchedule";
-        }
 
         /// <summary>
         /// Gets or sets duration.

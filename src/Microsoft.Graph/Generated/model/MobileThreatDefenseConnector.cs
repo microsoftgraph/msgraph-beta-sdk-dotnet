@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class MobileThreatDefenseConnector : Entity
     {
     
-		///<summary>
-		/// The MobileThreatDefenseConnector constructor
-		///</summary>
-        public MobileThreatDefenseConnector()
-        {
-            this.ODataType = "microsoft.graph.mobileThreatDefenseConnector";
-        }
-	
         /// <summary>
         /// Gets or sets allow partner to collect iosapplication metadata.
         /// For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune

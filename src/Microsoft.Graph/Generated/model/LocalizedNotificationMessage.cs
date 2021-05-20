@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class LocalizedNotificationMessage : Entity
     {
     
-		///<summary>
-		/// The LocalizedNotificationMessage constructor
-		///</summary>
-        public LocalizedNotificationMessage()
-        {
-            this.ODataType = "microsoft.graph.localizedNotificationMessage";
-        }
-	
         /// <summary>
         /// Gets or sets is default.
         /// Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.

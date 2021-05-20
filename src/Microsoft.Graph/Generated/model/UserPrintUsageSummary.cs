@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserPrintUsageSummary>))]
     public partial class UserPrintUsageSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserPrintUsageSummary"/> class.
-        /// </summary>
-        public UserPrintUsageSummary()
-        {
-            this.ODataType = "microsoft.graph.userPrintUsageSummary";
-        }
 
         /// <summary>
         /// Gets or sets completedJobCount.

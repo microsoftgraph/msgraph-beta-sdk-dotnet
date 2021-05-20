@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class OpenTypeExtension : Extension
     {
     
-		///<summary>
-		/// The OpenTypeExtension constructor
-		///</summary>
+        ///<summary>
+        /// The OpenTypeExtension constructor
+        ///</summary>
         public OpenTypeExtension()
         {
             this.ODataType = "microsoft.graph.openTypeExtension";
         }
-	
+    
         /// <summary>
         /// Gets or sets extension name.
         /// A unique text identifier for an open type data extension. Required.

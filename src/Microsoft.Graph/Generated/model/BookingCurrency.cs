@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class BookingCurrency : Entity
     {
     
-		///<summary>
-		/// The BookingCurrency constructor
-		///</summary>
-        public BookingCurrency()
-        {
-            this.ODataType = "microsoft.graph.bookingCurrency";
-        }
-	
         /// <summary>
         /// Gets or sets symbol.
         /// The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.

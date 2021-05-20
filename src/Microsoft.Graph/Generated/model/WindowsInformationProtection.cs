@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class WindowsInformationProtection : ManagedAppPolicy
     {
     
-		///<summary>
-		/// The internal WindowsInformationProtection constructor
-		///</summary>
+        ///<summary>
+        /// The internal WindowsInformationProtection constructor
+        ///</summary>
         protected internal WindowsInformationProtection()
         {
             // Don't allow initialization of abstract entity types

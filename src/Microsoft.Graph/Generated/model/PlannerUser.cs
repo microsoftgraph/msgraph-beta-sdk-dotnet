@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class PlannerUser : PlannerDelta
     {
     
-		///<summary>
-		/// The PlannerUser constructor
-		///</summary>
+        ///<summary>
+        /// The PlannerUser constructor
+        ///</summary>
         public PlannerUser()
         {
             this.ODataType = "microsoft.graph.plannerUser";
         }
-	
+    
         /// <summary>
         /// Gets or sets favorite plan references.
         /// A collection containing the references to the plans that the user has marked as favorites.

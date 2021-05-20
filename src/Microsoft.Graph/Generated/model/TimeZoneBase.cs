@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TimeZoneBase>))]
     public partial class TimeZoneBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimeZoneBase"/> class.
-        /// </summary>
-        public TimeZoneBase()
-        {
-            this.ODataType = "microsoft.graph.timeZoneBase";
-        }
 
         /// <summary>
         /// Gets or sets name.

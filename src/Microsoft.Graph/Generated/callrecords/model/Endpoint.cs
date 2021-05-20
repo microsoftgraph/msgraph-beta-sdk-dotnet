@@ -20,13 +20,6 @@ namespace Microsoft.Graph.CallRecords
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Endpoint>))]
     public partial class Endpoint
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Endpoint"/> class.
-        /// </summary>
-        public Endpoint()
-        {
-            this.ODataType = "microsoft.graph.callRecords.endpoint";
-        }
 
         /// <summary>
         /// Gets or sets userAgent.

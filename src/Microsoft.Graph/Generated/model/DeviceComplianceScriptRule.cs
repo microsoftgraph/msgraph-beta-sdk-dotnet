@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceComplianceScriptRule>))]
     public partial class DeviceComplianceScriptRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceComplianceScriptRule"/> class.
-        /// </summary>
-        public DeviceComplianceScriptRule()
-        {
-            this.ODataType = "microsoft.graph.deviceComplianceScriptRule";
-        }
 
         /// <summary>
         /// Gets or sets dataType.

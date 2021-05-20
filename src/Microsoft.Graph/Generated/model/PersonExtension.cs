@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class PersonExtension : Extension
     {
     
-		///<summary>
-		/// The PersonExtension constructor
-		///</summary>
+        ///<summary>
+        /// The PersonExtension constructor
+        ///</summary>
         public PersonExtension()
         {
             this.ODataType = "microsoft.graph.personExtension";
         }
-	
+    
     }
 }
 

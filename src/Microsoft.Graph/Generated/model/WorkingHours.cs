@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WorkingHours>))]
     public partial class WorkingHours
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkingHours"/> class.
-        /// </summary>
-        public WorkingHours()
-        {
-            this.ODataType = "microsoft.graph.workingHours";
-        }
 
         /// <summary>
         /// Gets or sets daysOfWeek.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WindowsFeatureUpdateProfile : Entity
     {
     
-		///<summary>
-		/// The WindowsFeatureUpdateProfile constructor
-		///</summary>
-        public WindowsFeatureUpdateProfile()
-        {
-            this.ODataType = "microsoft.graph.windowsFeatureUpdateProfile";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The date time that the profile was created.

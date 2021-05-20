@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<FilterOperand>))]
     public partial class FilterOperand
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FilterOperand"/> class.
-        /// </summary>
-        public FilterOperand()
-        {
-            this.ODataType = "microsoft.graph.filterOperand";
-        }
 
         /// <summary>
         /// Gets or sets values.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationSettingOccurrence>))]
     public partial class DeviceManagementConfigurationSettingOccurrence
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementConfigurationSettingOccurrence"/> class.
-        /// </summary>
-        public DeviceManagementConfigurationSettingOccurrence()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationSettingOccurrence";
-        }
 
         /// <summary>
         /// Gets or sets maxDeviceOccurrence.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ChatMessageMention>))]
     public partial class ChatMessageMention
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChatMessageMention"/> class.
-        /// </summary>
-        public ChatMessageMention()
-        {
-            this.ODataType = "microsoft.graph.chatMessageMention";
-        }
 
         /// <summary>
         /// Gets or sets id.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MediaContentRatingJapan>))]
     public partial class MediaContentRatingJapan
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MediaContentRatingJapan"/> class.
-        /// </summary>
-        public MediaContentRatingJapan()
-        {
-            this.ODataType = "microsoft.graph.mediaContentRatingJapan";
-        }
 
         /// <summary>
         /// Gets or sets movieRating.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Program : Entity
     {
     
-		///<summary>
-		/// The Program constructor
-		///</summary>
-        public Program()
-        {
-            this.ODataType = "microsoft.graph.program";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// The description of the program.

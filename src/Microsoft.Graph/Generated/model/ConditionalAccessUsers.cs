@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessUsers>))]
     public partial class ConditionalAccessUsers
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessUsers"/> class.
-        /// </summary>
-        public ConditionalAccessUsers()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessUsers";
-        }
 
         /// <summary>
         /// Gets or sets excludeGroups.

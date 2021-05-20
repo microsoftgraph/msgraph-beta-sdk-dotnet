@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SalesQuoteLine : Entity
     {
     
-		///<summary>
-		/// The SalesQuoteLine constructor
-		///</summary>
-        public SalesQuoteLine()
-        {
-            this.ODataType = "microsoft.graph.salesQuoteLine";
-        }
-	
         /// <summary>
         /// Gets or sets account id.
         /// </summary>

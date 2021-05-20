@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<BucketAggregationRange>))]
     public partial class BucketAggregationRange
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BucketAggregationRange"/> class.
-        /// </summary>
-        public BucketAggregationRange()
-        {
-            this.ODataType = "microsoft.graph.bucketAggregationRange";
-        }
 
         /// <summary>
         /// Gets or sets from.

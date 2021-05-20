@@ -21,14 +21,6 @@ namespace Microsoft.Graph.Ediscovery
     public partial class SourceCollection : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The SourceCollection constructor
-		///</summary>
-        public SourceCollection()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.sourceCollection";
-        }
-	
         /// <summary>
         /// Gets or sets content query.
         /// The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery.  You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date&amp;gt;=06/01/2016 AND Date&amp;lt;=07/01/2016

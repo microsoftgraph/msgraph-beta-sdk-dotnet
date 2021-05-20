@@ -20,14 +20,6 @@ namespace Microsoft.Graph.ExternalConnectors
     public partial class Schema : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Schema constructor
-		///</summary>
-        public Schema()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.schema";
-        }
-	
         /// <summary>
         /// Gets or sets base type.
         /// </summary>

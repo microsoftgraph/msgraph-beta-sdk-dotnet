@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class PolicySet : Entity
     {
     
-		///<summary>
-		/// The PolicySet constructor
-		///</summary>
-        public PolicySet()
-        {
-            this.ODataType = "microsoft.graph.policySet";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// Creation time of the PolicySet.

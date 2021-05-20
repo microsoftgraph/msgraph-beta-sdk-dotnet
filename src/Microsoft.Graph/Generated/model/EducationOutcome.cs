@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class EducationOutcome : Entity
     {
     
-		///<summary>
-		/// The internal EducationOutcome constructor
-		///</summary>
+        ///<summary>
+        /// The internal EducationOutcome constructor
+        ///</summary>
         protected internal EducationOutcome()
         {
             // Don't allow initialization of abstract entity types

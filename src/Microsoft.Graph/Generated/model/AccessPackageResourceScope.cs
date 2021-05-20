@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessPackageResourceScope : Entity
     {
     
-		///<summary>
-		/// The AccessPackageResourceScope constructor
-		///</summary>
-        public AccessPackageResourceScope()
-        {
-            this.ODataType = "microsoft.graph.accessPackageResourceScope";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// The description of the scope.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class CalendarSharingMessage : Message
     {
     
-		///<summary>
-		/// The CalendarSharingMessage constructor
-		///</summary>
+        ///<summary>
+        /// The CalendarSharingMessage constructor
+        ///</summary>
         public CalendarSharingMessage()
         {
             this.ODataType = "microsoft.graph.calendarSharingMessage";
         }
-	
+    
         /// <summary>
         /// Gets or sets can accept.
         /// </summary>

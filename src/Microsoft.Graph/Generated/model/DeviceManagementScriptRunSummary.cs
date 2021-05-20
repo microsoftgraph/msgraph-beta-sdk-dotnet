@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementScriptRunSummary : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementScriptRunSummary constructor
-		///</summary>
-        public DeviceManagementScriptRunSummary()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementScriptRunSummary";
-        }
-	
         /// <summary>
         /// Gets or sets error device count.
         /// Error device count.

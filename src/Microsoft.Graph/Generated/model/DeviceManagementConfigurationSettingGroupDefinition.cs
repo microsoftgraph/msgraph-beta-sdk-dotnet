@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationSettingGroupDefinition : DeviceManagementConfigurationSettingDefinition
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationSettingGroupDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementConfigurationSettingGroupDefinition constructor
+        ///</summary>
         public DeviceManagementConfigurationSettingGroupDefinition()
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationSettingGroupDefinition";
         }
-	
+    
         /// <summary>
         /// Gets or sets child ids.
         /// Dependent child settings to this group of settings

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class BusinessFlowTemplate : Entity
     {
     
-		///<summary>
-		/// The BusinessFlowTemplate constructor
-		///</summary>
-        public BusinessFlowTemplate()
-        {
-            this.ODataType = "microsoft.graph.businessFlowTemplate";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The name of the business flow template

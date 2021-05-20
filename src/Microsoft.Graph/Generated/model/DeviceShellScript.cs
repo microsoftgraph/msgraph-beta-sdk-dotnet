@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceShellScript : Entity
     {
     
-		///<summary>
-		/// The DeviceShellScript constructor
-		///</summary>
-        public DeviceShellScript()
-        {
-            this.ODataType = "microsoft.graph.deviceShellScript";
-        }
-	
         /// <summary>
         /// Gets or sets block execution notifications.
         /// Does not notify the user a script is being executed

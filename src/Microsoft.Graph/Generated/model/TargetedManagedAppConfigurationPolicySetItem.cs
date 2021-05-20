@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class TargetedManagedAppConfigurationPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The TargetedManagedAppConfigurationPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The TargetedManagedAppConfigurationPolicySetItem constructor
+        ///</summary>
         public TargetedManagedAppConfigurationPolicySetItem()
         {
             this.ODataType = "microsoft.graph.targetedManagedAppConfigurationPolicySetItem";
         }
-	
+    
     }
 }
 

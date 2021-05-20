@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PreAuthorizedApplication>))]
     public partial class PreAuthorizedApplication
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PreAuthorizedApplication"/> class.
-        /// </summary>
-        public PreAuthorizedApplication()
-        {
-            this.ODataType = "microsoft.graph.preAuthorizedApplication";
-        }
 
         /// <summary>
         /// Gets or sets appId.

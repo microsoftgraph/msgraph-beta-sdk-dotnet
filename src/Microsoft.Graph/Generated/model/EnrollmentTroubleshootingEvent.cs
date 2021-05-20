@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class EnrollmentTroubleshootingEvent : DeviceManagementTroubleshootingEvent
     {
     
-		///<summary>
-		/// The EnrollmentTroubleshootingEvent constructor
-		///</summary>
+        ///<summary>
+        /// The EnrollmentTroubleshootingEvent constructor
+        ///</summary>
         public EnrollmentTroubleshootingEvent()
         {
             this.ODataType = "microsoft.graph.enrollmentTroubleshootingEvent";
         }
-	
+    
         /// <summary>
         /// Gets or sets device id.
         /// Azure AD device identifier.

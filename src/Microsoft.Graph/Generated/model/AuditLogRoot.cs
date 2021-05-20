@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AuditLogRoot : Entity
     {
     
-		///<summary>
-		/// The AuditLogRoot constructor
-		///</summary>
-        public AuditLogRoot()
-        {
-            this.ODataType = "microsoft.graph.auditLogRoot";
-        }
-	
         /// <summary>
         /// Gets or sets directory audits.
         /// Read-only. Nullable.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PublicInnerError>))]
     public partial class PublicInnerError
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PublicInnerError"/> class.
-        /// </summary>
-        public PublicInnerError()
-        {
-            this.ODataType = "microsoft.graph.publicInnerError";
-        }
 
         /// <summary>
         /// Gets or sets code.

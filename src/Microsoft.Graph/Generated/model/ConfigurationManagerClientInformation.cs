@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ConfigurationManagerClientInformation>))]
     public partial class ConfigurationManagerClientInformation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationManagerClientInformation"/> class.
-        /// </summary>
-        public ConfigurationManagerClientInformation()
-        {
-            this.ODataType = "microsoft.graph.configurationManagerClientInformation";
-        }
 
         /// <summary>
         /// Gets or sets clientIdentifier.

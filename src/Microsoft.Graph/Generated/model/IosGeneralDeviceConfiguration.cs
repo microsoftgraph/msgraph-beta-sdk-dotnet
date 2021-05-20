@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class IosGeneralDeviceConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The IosGeneralDeviceConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The IosGeneralDeviceConfiguration constructor
+        ///</summary>
         public IosGeneralDeviceConfiguration()
         {
             this.ODataType = "microsoft.graph.iosGeneralDeviceConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets account block modification.
         /// Indicates whether or not to allow account modification when the device is in supervised mode.

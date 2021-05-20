@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ExcludeTarget>))]
     public partial class ExcludeTarget
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExcludeTarget"/> class.
-        /// </summary>
-        public ExcludeTarget()
-        {
-            this.ODataType = "microsoft.graph.excludeTarget";
-        }
 
         /// <summary>
         /// Gets or sets id.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WorkbookOperationError>))]
     public partial class WorkbookOperationError
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkbookOperationError"/> class.
-        /// </summary>
-        public WorkbookOperationError()
-        {
-            this.ODataType = "microsoft.graph.workbookOperationError";
-        }
 
         /// <summary>
         /// Gets or sets code.

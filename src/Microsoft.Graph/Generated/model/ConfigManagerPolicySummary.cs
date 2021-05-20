@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ConfigManagerPolicySummary>))]
     public partial class ConfigManagerPolicySummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigManagerPolicySummary"/> class.
-        /// </summary>
-        public ConfigManagerPolicySummary()
-        {
-            this.ODataType = "microsoft.graph.configManagerPolicySummary";
-        }
 
         /// <summary>
         /// Gets or sets compliantDeviceCount.

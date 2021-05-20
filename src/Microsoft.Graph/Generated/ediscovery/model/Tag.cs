@@ -21,14 +21,6 @@ namespace Microsoft.Graph.Ediscovery
     public partial class Tag : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Tag constructor
-		///</summary>
-        public Tag()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.tag";
-        }
-	
         /// <summary>
         /// Gets or sets child selectability.
         /// Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.

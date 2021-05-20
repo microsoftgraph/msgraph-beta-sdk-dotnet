@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81VpnConfiguration : Windows81VpnConfiguration
     {
     
-		///<summary>
-		/// The WindowsPhone81VpnConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsPhone81VpnConfiguration constructor
+        ///</summary>
         public WindowsPhone81VpnConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsPhone81VpnConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets authentication method.
         /// Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.

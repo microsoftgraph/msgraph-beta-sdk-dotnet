@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AuthenticationDetail>))]
     public partial class AuthenticationDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AuthenticationDetail"/> class.
-        /// </summary>
-        public AuthenticationDetail()
-        {
-            this.ODataType = "microsoft.graph.authenticationDetail";
-        }
 
         /// <summary>
         /// Gets or sets authenticationMethod.

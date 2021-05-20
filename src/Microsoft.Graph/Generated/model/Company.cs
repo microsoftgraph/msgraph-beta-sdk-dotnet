@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Company : Entity
     {
     
-		///<summary>
-		/// The Company constructor
-		///</summary>
-        public Company()
-        {
-            this.ODataType = "microsoft.graph.company";
-        }
-	
         /// <summary>
         /// Gets or sets business profile id.
         /// </summary>

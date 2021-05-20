@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AndroidManagedStoreAppTrack>))]
     public partial class AndroidManagedStoreAppTrack
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AndroidManagedStoreAppTrack"/> class.
-        /// </summary>
-        public AndroidManagedStoreAppTrack()
-        {
-            this.ODataType = "microsoft.graph.androidManagedStoreAppTrack";
-        }
 
         /// <summary>
         /// Gets or sets trackAlias.

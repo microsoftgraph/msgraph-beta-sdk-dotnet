@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EducationIdentityDomain>))]
     public partial class EducationIdentityDomain
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EducationIdentityDomain"/> class.
-        /// </summary>
-        public EducationIdentityDomain()
-        {
-            this.ODataType = "microsoft.graph.educationIdentityDomain";
-        }
 
         /// <summary>
         /// Gets or sets appliesTo.

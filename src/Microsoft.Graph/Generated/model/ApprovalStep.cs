@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ApprovalStep : Entity
     {
     
-		///<summary>
-		/// The ApprovalStep constructor
-		///</summary>
-        public ApprovalStep()
-        {
-            this.ODataType = "microsoft.graph.approvalStep";
-        }
-	
         /// <summary>
         /// Gets or sets assigned to me.
         /// Indicates whether the step is assigned to the calling user to review. Read-only.

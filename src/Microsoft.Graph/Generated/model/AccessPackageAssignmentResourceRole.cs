@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessPackageAssignmentResourceRole : Entity
     {
     
-		///<summary>
-		/// The AccessPackageAssignmentResourceRole constructor
-		///</summary>
-        public AccessPackageAssignmentResourceRole()
-        {
-            this.ODataType = "microsoft.graph.accessPackageAssignmentResourceRole";
-        }
-	
         /// <summary>
         /// Gets or sets origin id.
         /// A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.

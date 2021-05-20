@@ -21,14 +21,6 @@ namespace Microsoft.Graph.ExternalConnectors
     public partial class ConnectionOperation : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ConnectionOperation constructor
-		///</summary>
-        public ConnectionOperation()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.connectionOperation";
-        }
-	
         /// <summary>
         /// Gets or sets error.
         /// </summary>

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessRuleSatisfied>))]
     public partial class ConditionalAccessRuleSatisfied
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessRuleSatisfied"/> class.
-        /// </summary>
-        public ConditionalAccessRuleSatisfied()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessRuleSatisfied";
-        }
 
         /// <summary>
         /// Gets or sets conditionalAccessCondition.

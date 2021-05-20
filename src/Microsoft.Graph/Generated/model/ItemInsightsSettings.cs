@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ItemInsightsSettings : Entity
     {
     
-		///<summary>
-		/// The ItemInsightsSettings constructor
-		///</summary>
-        public ItemInsightsSettings()
-        {
-            this.ODataType = "microsoft.graph.itemInsightsSettings";
-        }
-	
         /// <summary>
         /// Gets or sets disabled for group.
         /// The ID of an Azure AD group, of which the members' item insights are disabled. Default is empty. Optional.

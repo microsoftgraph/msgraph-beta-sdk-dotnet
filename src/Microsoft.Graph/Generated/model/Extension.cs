@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class Extension : Entity
     {
     
-		///<summary>
-		/// The internal Extension constructor
-		///</summary>
+        ///<summary>
+        /// The internal Extension constructor
+        ///</summary>
         protected internal Extension()
         {
             // Don't allow initialization of abstract entity types

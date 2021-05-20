@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class IdentityCustomUserFlowAttribute : IdentityUserFlowAttribute
     {
     
-		///<summary>
-		/// The IdentityCustomUserFlowAttribute constructor
-		///</summary>
+        ///<summary>
+        /// The IdentityCustomUserFlowAttribute constructor
+        ///</summary>
         public IdentityCustomUserFlowAttribute()
         {
             this.ODataType = "microsoft.graph.identityCustomUserFlowAttribute";
         }
-	
+    
     }
 }
 

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IosNotificationSettings>))]
     public partial class IosNotificationSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosNotificationSettings"/> class.
-        /// </summary>
-        public IosNotificationSettings()
-        {
-            this.ODataType = "microsoft.graph.iosNotificationSettings";
-        }
 
         /// <summary>
         /// Gets or sets alertType.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationPolicyTemplate : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationPolicyTemplate constructor
-		///</summary>
-        public DeviceManagementConfigurationPolicyTemplate()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationPolicyTemplate";
-        }
-	
         /// <summary>
         /// Gets or sets allow unmanaged settings.
         /// Allow unmanaged setting templates

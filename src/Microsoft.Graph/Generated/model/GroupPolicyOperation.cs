@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class GroupPolicyOperation : Entity
     {
     
-		///<summary>
-		/// The GroupPolicyOperation constructor
-		///</summary>
-        public GroupPolicyOperation()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyOperation";
-        }
-	
         /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time the entity was last modified.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AgreementFileLocalization : AgreementFileProperties
     {
     
-		///<summary>
-		/// The AgreementFileLocalization constructor
-		///</summary>
-        public AgreementFileLocalization()
-        {
-            this.ODataType = "microsoft.graph.agreementFileLocalization";
-        }
-	
         /// <summary>
         /// Gets or sets versions.
         /// </summary>

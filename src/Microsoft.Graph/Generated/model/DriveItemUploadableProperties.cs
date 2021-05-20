@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DriveItemUploadableProperties>))]
     public partial class DriveItemUploadableProperties
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DriveItemUploadableProperties"/> class.
-        /// </summary>
-        public DriveItemUploadableProperties()
-        {
-            this.ODataType = "microsoft.graph.driveItemUploadableProperties";
-        }
 
         /// <summary>
         /// Gets or sets description.

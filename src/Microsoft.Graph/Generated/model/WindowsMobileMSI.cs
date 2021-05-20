@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class WindowsMobileMSI : MobileLobApp
     {
     
-		///<summary>
-		/// The WindowsMobileMSI constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsMobileMSI constructor
+        ///</summary>
         public WindowsMobileMSI()
         {
             this.ODataType = "microsoft.graph.windowsMobileMSI";
         }
-	
+    
         /// <summary>
         /// Gets or sets command line.
         /// The command line.

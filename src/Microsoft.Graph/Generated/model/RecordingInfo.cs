@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RecordingInfo>))]
     public partial class RecordingInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RecordingInfo"/> class.
-        /// </summary>
-        public RecordingInfo()
-        {
-            this.ODataType = "microsoft.graph.recordingInfo";
-        }
 
         /// <summary>
         /// Gets or sets initiatedBy.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph.CallRecords
     public partial class Segment : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Segment constructor
-		///</summary>
-        public Segment()
-        {
-            this.ODataType = "microsoft.graph.callRecords.segment";
-        }
-	
         /// <summary>
         /// Gets or sets callee.
         /// Endpoint that answered this segment.

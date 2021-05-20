@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceConfigurationDeviceOverview : Entity
     {
     
-		///<summary>
-		/// The DeviceConfigurationDeviceOverview constructor
-		///</summary>
-        public DeviceConfigurationDeviceOverview()
-        {
-            this.ODataType = "microsoft.graph.deviceConfigurationDeviceOverview";
-        }
-	
         /// <summary>
         /// Gets or sets configuration version.
         /// Version of the policy for that overview

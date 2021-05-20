@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class List : BaseItem
     {
     
-		///<summary>
-		/// The List constructor
-		///</summary>
+        ///<summary>
+        /// The List constructor
+        ///</summary>
         public List()
         {
             this.ODataType = "microsoft.graph.list";
         }
-	
+    
         /// <summary>
         /// Gets or sets display name.
         /// The displayable title of the list.

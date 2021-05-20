@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Windows10AppsForceUpdateSchedule>))]
     public partial class Windows10AppsForceUpdateSchedule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Windows10AppsForceUpdateSchedule"/> class.
-        /// </summary>
-        public Windows10AppsForceUpdateSchedule()
-        {
-            this.ODataType = "microsoft.graph.windows10AppsForceUpdateSchedule";
-        }
 
         /// <summary>
         /// Gets or sets recurrence.

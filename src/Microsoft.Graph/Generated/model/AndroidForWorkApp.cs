@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class AndroidForWorkApp : MobileApp
     {
     
-		///<summary>
-		/// The AndroidForWorkApp constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidForWorkApp constructor
+        ///</summary>
         public AndroidForWorkApp()
         {
             this.ODataType = "microsoft.graph.androidForWorkApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets app identifier.
         /// The Identity Name.

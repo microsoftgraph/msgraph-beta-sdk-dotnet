@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class VirtualEndpoint : Entity
     {
     
-		///<summary>
-		/// The VirtualEndpoint constructor
-		///</summary>
-        public VirtualEndpoint()
-        {
-            this.ODataType = "microsoft.graph.virtualEndpoint";
-        }
-	
         /// <summary>
         /// Gets or sets cloud pcs.
         /// Cloud managed virtual desktops.

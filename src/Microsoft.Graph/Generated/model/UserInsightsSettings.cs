@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserInsightsSettings : Entity
     {
     
-		///<summary>
-		/// The UserInsightsSettings constructor
-		///</summary>
-        public UserInsightsSettings()
-        {
-            this.ODataType = "microsoft.graph.userInsightsSettings";
-        }
-	
         /// <summary>
         /// Gets or sets is enabled.
         /// </summary>

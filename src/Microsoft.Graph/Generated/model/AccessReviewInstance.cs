@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessReviewInstance : Entity
     {
     
-		///<summary>
-		/// The AccessReviewInstance constructor
-		///</summary>
-        public AccessReviewInstance()
-        {
-            this.ODataType = "microsoft.graph.accessReviewInstance";
-        }
-	
         /// <summary>
         /// Gets or sets end date time.
         /// DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

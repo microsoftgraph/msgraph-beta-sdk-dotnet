@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AuthenticationMethodsRoot : Entity
     {
     
-		///<summary>
-		/// The AuthenticationMethodsRoot constructor
-		///</summary>
-        public AuthenticationMethodsRoot()
-        {
-            this.ODataType = "microsoft.graph.authenticationMethodsRoot";
-        }
-	
     }
 }
 

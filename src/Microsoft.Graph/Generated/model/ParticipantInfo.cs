@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ParticipantInfo>))]
     public partial class ParticipantInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParticipantInfo"/> class.
-        /// </summary>
-        public ParticipantInfo()
-        {
-            this.ODataType = "microsoft.graph.participantInfo";
-        }
 
         /// <summary>
         /// Gets or sets countryCode.

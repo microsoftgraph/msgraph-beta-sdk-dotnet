@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PlannerTaskCreation>))]
     public partial class PlannerTaskCreation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlannerTaskCreation"/> class.
-        /// </summary>
-        public PlannerTaskCreation()
-        {
-            this.ODataType = "microsoft.graph.plannerTaskCreation";
-        }
 
         /// <summary>
         /// Gets or sets teamsPublicationInfo.

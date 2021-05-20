@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class LanguageProficiency : ItemFacet
     {
     
-		///<summary>
-		/// The LanguageProficiency constructor
-		///</summary>
-        public LanguageProficiency()
-        {
-            this.ODataType = "microsoft.graph.languageProficiency";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// Contains the long-form name for the language.

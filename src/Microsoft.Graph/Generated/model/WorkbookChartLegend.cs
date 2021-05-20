@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookChartLegend : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartLegend constructor
-		///</summary>
-        public WorkbookChartLegend()
-        {
-            this.ODataType = "microsoft.graph.workbookChartLegend";
-        }
-	
         /// <summary>
         /// Gets or sets overlay.
         /// Boolean value for whether the chart legend should overlap with the main body of the chart.

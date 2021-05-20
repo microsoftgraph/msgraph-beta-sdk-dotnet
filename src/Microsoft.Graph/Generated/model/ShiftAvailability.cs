@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ShiftAvailability>))]
     public partial class ShiftAvailability
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ShiftAvailability"/> class.
-        /// </summary>
-        public ShiftAvailability()
-        {
-            this.ODataType = "microsoft.graph.shiftAvailability";
-        }
 
         /// <summary>
         /// Gets or sets recurrence.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookChartGridlines : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartGridlines constructor
-		///</summary>
-        public WorkbookChartGridlines()
-        {
-            this.ODataType = "microsoft.graph.workbookChartGridlines";
-        }
-	
         /// <summary>
         /// Gets or sets visible.
         /// Boolean value representing if the axis gridlines are visible or not.

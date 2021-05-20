@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class WindowsAutopilotDeviceIdentity : Entity
     {
     
-		///<summary>
-		/// The WindowsAutopilotDeviceIdentity constructor
-		///</summary>
-        public WindowsAutopilotDeviceIdentity()
-        {
-            this.ODataType = "microsoft.graph.windowsAutopilotDeviceIdentity";
-        }
-	
         /// <summary>
         /// Gets or sets addressable user name.
         /// Addressable user name.
