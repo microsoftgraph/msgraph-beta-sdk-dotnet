@@ -66,6 +66,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEducationSubmissionUnsubmitRequestBuilder"/>.</returns>
         IEducationSubmissionUnsubmitRequestBuilder Unsubmit();
+
+        /// <summary>
+        /// Gets the request builder for EducationSubmissionSetUpResourcesFolder.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSubmissionSetUpResourcesFolderRequestBuilder"/>.</returns>
+        IEducationSubmissionSetUpResourcesFolderRequestBuilder SetUpResourcesFolder();
     
     }
 }

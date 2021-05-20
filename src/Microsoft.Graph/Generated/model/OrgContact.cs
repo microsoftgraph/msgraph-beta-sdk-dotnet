@@ -155,6 +155,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
         public IOrgContactTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
     
+        /// <summary>
+        /// Gets or sets transitive reports.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveReports", Required = Newtonsoft.Json.Required.Default)]
+        public IOrgContactTransitiveReportsCollectionWithReferencesPage TransitiveReports { get; set; }
+    
     }
 }
 

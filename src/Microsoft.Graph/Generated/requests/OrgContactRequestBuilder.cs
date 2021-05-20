@@ -97,6 +97,18 @@ namespace Microsoft.Graph
                 return new OrgContactTransitiveMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveMemberOf"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for TransitiveReports.
+        /// </summary>
+        /// <returns>The <see cref="IOrgContactTransitiveReportsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IOrgContactTransitiveReportsCollectionWithReferencesRequestBuilder TransitiveReports
+        {
+            get
+            {
+                return new OrgContactTransitiveReportsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveReports"), this.Client);
+            }
+        }
     
         
     
