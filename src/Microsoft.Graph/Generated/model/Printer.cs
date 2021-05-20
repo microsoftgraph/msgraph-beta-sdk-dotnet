@@ -20,6 +20,14 @@ namespace Microsoft.Graph
     public partial class Printer : PrinterBase
     {
     
+        ///<summary>
+        /// The Printer constructor
+        ///</summary>
+        public Printer()
+        {
+            this.ODataType = "microsoft.graph.printer";
+        }
+    
         /// <summary>
         /// Gets or sets accepting jobs.
         /// </summary>

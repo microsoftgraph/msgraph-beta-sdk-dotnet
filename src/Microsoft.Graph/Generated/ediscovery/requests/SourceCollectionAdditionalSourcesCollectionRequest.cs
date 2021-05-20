@@ -43,7 +43,6 @@ namespace Microsoft.Graph.Ediscovery
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            dataSource.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(dataSource.GetType().FullName));
             return this.SendAsync<DataSource>(dataSource, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph.Ediscovery
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            dataSource.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(dataSource.GetType().FullName));
             return this.SendAsyncWithGraphResponse<DataSource>(dataSource, cancellationToken);
         }
 

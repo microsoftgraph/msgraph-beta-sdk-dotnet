@@ -20,6 +20,14 @@ namespace Microsoft.Graph
     public partial class SchedulingGroup : ChangeTrackedEntity
     {
     
+        ///<summary>
+        /// The SchedulingGroup constructor
+        ///</summary>
+        public SchedulingGroup()
+        {
+            this.ODataType = "microsoft.graph.schedulingGroup";
+        }
+    
         /// <summary>
         /// Gets or sets display name.
         /// The display name for the schedulingGroup. Required.

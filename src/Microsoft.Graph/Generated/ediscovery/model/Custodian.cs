@@ -20,6 +20,14 @@ namespace Microsoft.Graph.Ediscovery
     public partial class Custodian : DataSourceContainer
     {
     
+        ///<summary>
+        /// The Custodian constructor
+        ///</summary>
+        public Custodian()
+        {
+            this.ODataType = "microsoft.graph.ediscovery.custodian";
+        }
+    
         /// <summary>
         /// Gets or sets acknowledged date time.
         /// Date and time the custodian acknowledged a hold notification.

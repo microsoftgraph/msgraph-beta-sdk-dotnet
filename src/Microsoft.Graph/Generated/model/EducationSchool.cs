@@ -20,6 +20,14 @@ namespace Microsoft.Graph
     public partial class EducationSchool : EducationOrganization
     {
     
+        ///<summary>
+        /// The EducationSchool constructor
+        ///</summary>
+        public EducationSchool()
+        {
+            this.ODataType = "microsoft.graph.educationSchool";
+        }
+    
         /// <summary>
         /// Gets or sets address.
         /// Address of the school.

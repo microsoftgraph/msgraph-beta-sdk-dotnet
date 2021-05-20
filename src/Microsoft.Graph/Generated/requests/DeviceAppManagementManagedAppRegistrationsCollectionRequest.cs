@@ -43,7 +43,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            managedAppRegistration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppRegistration.GetType().FullName));
             return this.SendAsync<ManagedAppRegistration>(managedAppRegistration, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            managedAppRegistration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppRegistration.GetType().FullName));
             return this.SendAsyncWithGraphResponse<ManagedAppRegistration>(managedAppRegistration, cancellationToken);
         }
 

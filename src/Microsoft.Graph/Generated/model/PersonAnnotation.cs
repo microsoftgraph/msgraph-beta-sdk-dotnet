@@ -20,6 +20,14 @@ namespace Microsoft.Graph
     public partial class PersonAnnotation : ItemFacet
     {
     
+        ///<summary>
+        /// The PersonAnnotation constructor
+        ///</summary>
+        public PersonAnnotation()
+        {
+            this.ODataType = "microsoft.graph.personAnnotation";
+        }
+    
         /// <summary>
         /// Gets or sets detail.
         /// Contains the detail of the note itself.

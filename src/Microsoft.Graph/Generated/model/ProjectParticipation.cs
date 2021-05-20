@@ -20,6 +20,14 @@ namespace Microsoft.Graph
     public partial class ProjectParticipation : ItemFacet
     {
     
+        ///<summary>
+        /// The ProjectParticipation constructor
+        ///</summary>
+        public ProjectParticipation()
+        {
+            this.ODataType = "microsoft.graph.projectParticipation";
+        }
+    
         /// <summary>
         /// Gets or sets categories.
         /// Contains categories a user has associated with the project (for example, digital transformation, oil rig).

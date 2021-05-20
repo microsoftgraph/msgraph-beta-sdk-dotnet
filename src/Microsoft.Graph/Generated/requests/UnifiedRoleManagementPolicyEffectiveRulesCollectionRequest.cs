@@ -43,7 +43,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            unifiedRoleManagementPolicyRule.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(unifiedRoleManagementPolicyRule.GetType().FullName));
             return this.SendAsync<UnifiedRoleManagementPolicyRule>(unifiedRoleManagementPolicyRule, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            unifiedRoleManagementPolicyRule.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(unifiedRoleManagementPolicyRule.GetType().FullName));
             return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicyRule>(unifiedRoleManagementPolicyRule, cancellationToken);
         }
 

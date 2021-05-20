@@ -21,6 +21,14 @@ namespace Microsoft.Graph
     public partial class TimeCard : ChangeTrackedEntity
     {
     
+        ///<summary>
+        /// The TimeCard constructor
+        ///</summary>
+        public TimeCard()
+        {
+            this.ODataType = "microsoft.graph.timeCard";
+        }
+    
         /// <summary>
         /// Gets or sets breaks.
         /// </summary>

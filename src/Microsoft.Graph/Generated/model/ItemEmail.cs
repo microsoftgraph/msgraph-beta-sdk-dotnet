@@ -21,6 +21,14 @@ namespace Microsoft.Graph
     public partial class ItemEmail : ItemFacet
     {
     
+        ///<summary>
+        /// The ItemEmail constructor
+        ///</summary>
+        public ItemEmail()
+        {
+            this.ODataType = "microsoft.graph.itemEmail";
+        }
+    
         /// <summary>
         /// Gets or sets address.
         /// The email address itself.

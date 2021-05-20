@@ -21,6 +21,14 @@ namespace Microsoft.Graph
     public partial class ExactMatchSessionBase : ExactMatchJobBase
     {
     
+        ///<summary>
+        /// The ExactMatchSessionBase constructor
+        ///</summary>
+        public ExactMatchSessionBase()
+        {
+            this.ODataType = "microsoft.graph.exactMatchSessionBase";
+        }
+    
         /// <summary>
         /// Gets or sets data store id.
         /// </summary>

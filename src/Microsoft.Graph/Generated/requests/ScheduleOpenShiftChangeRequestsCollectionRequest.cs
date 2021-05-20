@@ -43,7 +43,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            openShiftChangeRequest.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(openShiftChangeRequest.GetType().FullName));
             return this.SendAsync<OpenShiftChangeRequestObject>(openShiftChangeRequest, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            openShiftChangeRequest.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(openShiftChangeRequest.GetType().FullName));
             return this.SendAsyncWithGraphResponse<OpenShiftChangeRequestObject>(openShiftChangeRequest, cancellationToken);
         }
 

@@ -20,6 +20,14 @@ namespace Microsoft.Graph
     public partial class PersonWebsite : ItemFacet
     {
     
+        ///<summary>
+        /// The PersonWebsite constructor
+        ///</summary>
+        public PersonWebsite()
+        {
+            this.ODataType = "microsoft.graph.personWebsite";
+        }
+    
         /// <summary>
         /// Gets or sets categories.
         /// Contains categories a user has associated with the website (for example, personal, recipes).

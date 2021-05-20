@@ -43,7 +43,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            managedEBook.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedEBook.GetType().FullName));
             return this.SendAsync<ManagedEBook>(managedEBook, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            managedEBook.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedEBook.GetType().FullName));
             return this.SendAsyncWithGraphResponse<ManagedEBook>(managedEBook, cancellationToken);
         }
 

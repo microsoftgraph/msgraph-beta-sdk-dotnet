@@ -21,6 +21,14 @@ namespace Microsoft.Graph
     public partial class BookingPerson : BookingNamedEntity
     {
     
+        ///<summary>
+        /// The BookingPerson constructor
+        ///</summary>
+        public BookingPerson()
+        {
+            this.ODataType = "microsoft.graph.bookingPerson";
+        }
+    
         /// <summary>
         /// Gets or sets email address.
         /// The email address of the person.

@@ -43,7 +43,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            printOperation.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(printOperation.GetType().FullName));
             return this.SendAsync<PrintOperation>(printOperation, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            printOperation.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(printOperation.GetType().FullName));
             return this.SendAsyncWithGraphResponse<PrintOperation>(printOperation, cancellationToken);
         }
 
