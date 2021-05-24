@@ -29,6 +29,7 @@
 - [Breaking change] Bump minimun .NetFramework version to 4.6.2 from 4.6.1
 - Add source link to the nuget package.
 - Uses snupkg as symbol file.
+- Fix setting of odata.type in constructor to only types derived from abstract types, or types derived from types referenced in properties or odata actions
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
     <VersionPrefix>4.3.0</VersionPrefix>
