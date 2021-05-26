@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MobileAppTroubleshootingHistoryItem>))]
     public partial class MobileAppTroubleshootingHistoryItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MobileAppTroubleshootingHistoryItem"/> class.
-        /// </summary>
-        public MobileAppTroubleshootingHistoryItem()
-        {
-            this.ODataType = "microsoft.graph.mobileAppTroubleshootingHistoryItem";
-        }
 
         /// <summary>
         /// Gets or sets occurrenceDateTime.

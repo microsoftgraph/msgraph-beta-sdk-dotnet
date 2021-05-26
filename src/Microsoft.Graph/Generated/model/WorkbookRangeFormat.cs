@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookRangeFormat : Entity
     {
     
-		///<summary>
-		/// The WorkbookRangeFormat constructor
-		///</summary>
-        public WorkbookRangeFormat()
-        {
-            this.ODataType = "microsoft.graph.workbookRangeFormat";
-        }
-	
         /// <summary>
         /// Gets or sets column width.
         /// Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.

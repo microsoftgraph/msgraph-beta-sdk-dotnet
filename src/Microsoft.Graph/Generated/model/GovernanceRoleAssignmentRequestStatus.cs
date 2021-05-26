@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<GovernanceRoleAssignmentRequestStatus>))]
     public partial class GovernanceRoleAssignmentRequestStatus
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GovernanceRoleAssignmentRequestStatus"/> class.
-        /// </summary>
-        public GovernanceRoleAssignmentRequestStatus()
-        {
-            this.ODataType = "microsoft.graph.governanceRoleAssignmentRequestStatus";
-        }
 
         /// <summary>
         /// Gets or sets status.

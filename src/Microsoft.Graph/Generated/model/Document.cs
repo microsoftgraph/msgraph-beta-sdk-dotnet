@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Document : Entity
     {
     
-		///<summary>
-		/// The Document constructor
-		///</summary>
-        public Document()
-        {
-            this.ODataType = "microsoft.graph.document";
-        }
-	
         /// <summary>
         /// Gets or sets comments.
         /// </summary>

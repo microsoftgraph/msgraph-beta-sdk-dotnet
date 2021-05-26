@@ -20,14 +20,14 @@ namespace Microsoft.Graph.WindowsUpdates
     public partial class FeatureUpdateCatalogEntry : SoftwareUpdateCatalogEntry
     {
     
-		///<summary>
-		/// The FeatureUpdateCatalogEntry constructor
-		///</summary>
+        ///<summary>
+        /// The FeatureUpdateCatalogEntry constructor
+        ///</summary>
         public FeatureUpdateCatalogEntry()
         {
             this.ODataType = "microsoft.graph.windowsUpdates.featureUpdateCatalogEntry";
         }
-	
+    
         /// <summary>
         /// Gets or sets version.
         /// The version of the feature update. Read-only.

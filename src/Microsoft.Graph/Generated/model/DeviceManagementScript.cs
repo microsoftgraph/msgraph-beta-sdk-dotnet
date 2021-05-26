@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementScript : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementScript constructor
-		///</summary>
-        public DeviceManagementScript()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementScript";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time the device management script was created. This property is read-only.

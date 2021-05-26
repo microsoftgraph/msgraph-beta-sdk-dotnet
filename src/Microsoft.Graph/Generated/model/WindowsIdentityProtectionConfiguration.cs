@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsIdentityProtectionConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The WindowsIdentityProtectionConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsIdentityProtectionConfiguration constructor
+        ///</summary>
         public WindowsIdentityProtectionConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsIdentityProtectionConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets enhanced anti spoofing for facial features enabled.
         /// Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.

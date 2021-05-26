@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementScriptDeviceState : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementScriptDeviceState constructor
-		///</summary>
-        public DeviceManagementScriptDeviceState()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementScriptDeviceState";
-        }
-	
         /// <summary>
         /// Gets or sets error code.
         /// Error code corresponding to erroneous execution of the device management script.

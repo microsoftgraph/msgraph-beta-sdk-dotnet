@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PrivilegedOperationEvent : Entity
     {
     
-		///<summary>
-		/// The PrivilegedOperationEvent constructor
-		///</summary>
-        public PrivilegedOperationEvent()
-        {
-            this.ODataType = "microsoft.graph.privilegedOperationEvent";
-        }
-	
         /// <summary>
         /// Gets or sets additional information.
         /// Detailed human readable information for the event.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<NetworkInterface>))]
     public partial class NetworkInterface
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NetworkInterface"/> class.
-        /// </summary>
-        public NetworkInterface()
-        {
-            this.ODataType = "microsoft.graph.networkInterface";
-        }
 
         /// <summary>
         /// Gets or sets description.

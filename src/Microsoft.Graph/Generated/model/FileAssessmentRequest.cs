@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class FileAssessmentRequestObject : ThreatAssessmentRequestObject
     {
     
-		///<summary>
-		/// The FileAssessmentRequest constructor
-		///</summary>
+        ///<summary>
+        /// The FileAssessmentRequest constructor
+        ///</summary>
         public FileAssessmentRequestObject()
         {
             this.ODataType = "microsoft.graph.fileAssessmentRequest";
         }
-	
+    
         /// <summary>
         /// Gets or sets content data.
         /// Base64 encoded file content. The file content cannot fetch back because it isn't stored.

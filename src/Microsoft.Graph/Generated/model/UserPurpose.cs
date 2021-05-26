@@ -21,13 +21,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserPurpose>))]
     public partial class UserPurpose
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserPurpose"/> class.
-        /// </summary>
-        public UserPurpose()
-        {
-            this.ODataType = "microsoft.graph.userPurpose";
-        }
 
         /// <summary>
         /// Gets or sets value.

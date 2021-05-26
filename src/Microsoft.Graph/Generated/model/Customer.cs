@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Customer : Entity
     {
     
-		///<summary>
-		/// The Customer constructor
-		///</summary>
-        public Customer()
-        {
-            this.ODataType = "microsoft.graph.customer";
-        }
-	
         /// <summary>
         /// Gets or sets address.
         /// </summary>

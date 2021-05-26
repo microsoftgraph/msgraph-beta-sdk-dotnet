@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ItemReference>))]
     public partial class ItemReference
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ItemReference"/> class.
-        /// </summary>
-        public ItemReference()
-        {
-            this.ODataType = "microsoft.graph.itemReference";
-        }
 
         /// <summary>
         /// Gets or sets driveId.

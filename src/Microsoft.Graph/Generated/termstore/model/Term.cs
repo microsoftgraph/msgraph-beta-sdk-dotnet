@@ -20,14 +20,6 @@ namespace Microsoft.Graph.TermStore
     public partial class Term : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Term constructor
-		///</summary>
-        public Term()
-        {
-            this.ODataType = "microsoft.graph.termStore.term";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// Date and time of term creation. Read-only

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IncomingContext>))]
     public partial class IncomingContext
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IncomingContext"/> class.
-        /// </summary>
-        public IncomingContext()
-        {
-            this.ODataType = "microsoft.graph.incomingContext";
-        }
 
         /// <summary>
         /// Gets or sets observedParticipantId.

@@ -21,9 +21,9 @@ namespace Microsoft.Graph.WindowsUpdates
     public partial class UpdatableAsset : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The internal UpdatableAsset constructor
-		///</summary>
+        ///<summary>
+        /// The internal UpdatableAsset constructor
+        ///</summary>
         protected internal UpdatableAsset()
         {
             // Don't allow initialization of abstract entity types

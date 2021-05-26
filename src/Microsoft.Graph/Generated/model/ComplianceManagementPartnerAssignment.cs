@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ComplianceManagementPartnerAssignment>))]
     public partial class ComplianceManagementPartnerAssignment
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ComplianceManagementPartnerAssignment"/> class.
-        /// </summary>
-        public ComplianceManagementPartnerAssignment()
-        {
-            this.ODataType = "microsoft.graph.complianceManagementPartnerAssignment";
-        }
 
         /// <summary>
         /// Gets or sets target.

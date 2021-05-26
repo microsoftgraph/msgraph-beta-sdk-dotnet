@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AlternativeSecurityId>))]
     public partial class AlternativeSecurityId
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AlternativeSecurityId"/> class.
-        /// </summary>
-        public AlternativeSecurityId()
-        {
-            this.ODataType = "microsoft.graph.alternativeSecurityId";
-        }
 
         /// <summary>
         /// Gets or sets identityProvider.

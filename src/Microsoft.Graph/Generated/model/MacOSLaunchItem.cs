@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MacOSLaunchItem>))]
     public partial class MacOSLaunchItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacOSLaunchItem"/> class.
-        /// </summary>
-        public MacOSLaunchItem()
-        {
-            this.ODataType = "microsoft.graph.macOSLaunchItem";
-        }
 
         /// <summary>
         /// Gets or sets hide.

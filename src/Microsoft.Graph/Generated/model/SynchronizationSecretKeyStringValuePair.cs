@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SynchronizationSecretKeyStringValuePair>))]
     public partial class SynchronizationSecretKeyStringValuePair
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SynchronizationSecretKeyStringValuePair"/> class.
-        /// </summary>
-        public SynchronizationSecretKeyStringValuePair()
-        {
-            this.ODataType = "microsoft.graph.synchronizationSecretKeyStringValuePair";
-        }
 
         /// <summary>
         /// Gets or sets key.

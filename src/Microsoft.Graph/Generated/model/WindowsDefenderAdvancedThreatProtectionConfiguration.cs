@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class WindowsDefenderAdvancedThreatProtectionConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The WindowsDefenderAdvancedThreatProtectionConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsDefenderAdvancedThreatProtectionConfiguration constructor
+        ///</summary>
         public WindowsDefenderAdvancedThreatProtectionConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets advanced threat protection auto populate onboarding blob.
         /// Auto populate onboarding blob programmatically from Advanced Threat protection service

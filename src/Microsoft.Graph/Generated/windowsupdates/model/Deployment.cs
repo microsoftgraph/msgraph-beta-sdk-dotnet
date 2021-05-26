@@ -20,14 +20,6 @@ namespace Microsoft.Graph.WindowsUpdates
     public partial class Deployment : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Deployment constructor
-		///</summary>
-        public Deployment()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.deployment";
-        }
-	
         /// <summary>
         /// Gets or sets content.
         /// Specifies what content to deploy. Cannot be changed. Returned by default.

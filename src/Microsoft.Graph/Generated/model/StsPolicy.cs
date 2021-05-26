@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class StsPolicy : PolicyBase
     {
     
-		///<summary>
-		/// The internal StsPolicy constructor
-		///</summary>
+        ///<summary>
+        /// The internal StsPolicy constructor
+        ///</summary>
         protected internal StsPolicy()
         {
             // Don't allow initialization of abstract entity types

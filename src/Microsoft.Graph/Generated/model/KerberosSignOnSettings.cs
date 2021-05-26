@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<KerberosSignOnSettings>))]
     public partial class KerberosSignOnSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="KerberosSignOnSettings"/> class.
-        /// </summary>
-        public KerberosSignOnSettings()
-        {
-            this.ODataType = "microsoft.graph.kerberosSignOnSettings";
-        }
 
         /// <summary>
         /// Gets or sets kerberosServicePrincipalName.

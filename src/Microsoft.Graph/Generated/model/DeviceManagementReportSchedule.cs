@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementReportSchedule : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementReportSchedule constructor
-		///</summary>
-        public DeviceManagementReportSchedule()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementReportSchedule";
-        }
-	
         /// <summary>
         /// Gets or sets emails.
         /// Emails to which the scheduled reports are delivered

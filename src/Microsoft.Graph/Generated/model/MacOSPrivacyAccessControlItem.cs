@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MacOSPrivacyAccessControlItem>))]
     public partial class MacOSPrivacyAccessControlItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacOSPrivacyAccessControlItem"/> class.
-        /// </summary>
-        public MacOSPrivacyAccessControlItem()
-        {
-            this.ODataType = "microsoft.graph.macOSPrivacyAccessControlItem";
-        }
 
         /// <summary>
         /// Gets or sets accessibility.

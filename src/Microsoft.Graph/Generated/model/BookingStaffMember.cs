@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class BookingStaffMember : BookingPerson
     {
     
-		///<summary>
-		/// The BookingStaffMember constructor
-		///</summary>
-        public BookingStaffMember()
-        {
-            this.ODataType = "microsoft.graph.bookingStaffMember";
-        }
-	
         /// <summary>
         /// Gets or sets availability is affected by personal calendar.
         /// True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.

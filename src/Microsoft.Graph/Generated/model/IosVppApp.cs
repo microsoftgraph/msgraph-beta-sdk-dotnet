@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class IosVppApp : MobileApp
     {
     
-		///<summary>
-		/// The IosVppApp constructor
-		///</summary>
+        ///<summary>
+        /// The IosVppApp constructor
+        ///</summary>
         public IosVppApp()
         {
             this.ODataType = "microsoft.graph.iosVppApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets applicable device type.
         /// The applicable iOS Device Type.

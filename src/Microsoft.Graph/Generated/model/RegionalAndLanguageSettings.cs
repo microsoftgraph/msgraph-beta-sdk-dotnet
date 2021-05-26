@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class RegionalAndLanguageSettings : Entity
     {
     
-		///<summary>
-		/// The RegionalAndLanguageSettings constructor
-		///</summary>
-        public RegionalAndLanguageSettings()
-        {
-            this.ODataType = "microsoft.graph.regionalAndLanguageSettings";
-        }
-	
         /// <summary>
         /// Gets or sets authoring languages.
         /// Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.

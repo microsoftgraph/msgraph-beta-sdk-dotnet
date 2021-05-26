@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SecurityBaselineContributingPolicy>))]
     public partial class SecurityBaselineContributingPolicy
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecurityBaselineContributingPolicy"/> class.
-        /// </summary>
-        public SecurityBaselineContributingPolicy()
-        {
-            this.ODataType = "microsoft.graph.securityBaselineContributingPolicy";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OverallPrintUsageSummary>))]
     public partial class OverallPrintUsageSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OverallPrintUsageSummary"/> class.
-        /// </summary>
-        public OverallPrintUsageSummary()
-        {
-            this.ODataType = "microsoft.graph.overallPrintUsageSummary";
-        }
 
         /// <summary>
         /// Gets or sets activePrintersCount.

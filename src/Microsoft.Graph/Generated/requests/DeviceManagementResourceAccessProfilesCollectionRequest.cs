@@ -43,7 +43,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            deviceManagementResourceAccessProfileBase.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceManagementResourceAccessProfileBase.GetType().FullName));
             return this.SendAsync<DeviceManagementResourceAccessProfileBase>(deviceManagementResourceAccessProfileBase, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            deviceManagementResourceAccessProfileBase.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceManagementResourceAccessProfileBase.GetType().FullName));
             return this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfileBase>(deviceManagementResourceAccessProfileBase, cancellationToken);
         }
 

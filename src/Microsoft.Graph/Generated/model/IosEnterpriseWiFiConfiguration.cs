@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class IosEnterpriseWiFiConfiguration : IosWiFiConfiguration
     {
     
-		///<summary>
-		/// The IosEnterpriseWiFiConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The IosEnterpriseWiFiConfiguration constructor
+        ///</summary>
         public IosEnterpriseWiFiConfiguration()
         {
             this.ODataType = "microsoft.graph.iosEnterpriseWiFiConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets authentication method.
         /// Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class AndroidOmaCpConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The AndroidOmaCpConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidOmaCpConfiguration constructor
+        ///</summary>
         public AndroidOmaCpConfiguration()
         {
             this.ODataType = "microsoft.graph.androidOmaCpConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets configuration xml.
         /// Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.

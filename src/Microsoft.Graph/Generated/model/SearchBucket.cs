@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SearchBucket>))]
     public partial class SearchBucket
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchBucket"/> class.
-        /// </summary>
-        public SearchBucket()
-        {
-            this.ODataType = "microsoft.graph.searchBucket";
-        }
 
         /// <summary>
         /// Gets or sets aggregationFilterToken.

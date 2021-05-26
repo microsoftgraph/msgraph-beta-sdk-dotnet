@@ -20,13 +20,6 @@ namespace Microsoft.Graph.ExternalConnectors
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ExternalItemContent>))]
     public partial class ExternalItemContent
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExternalItemContent"/> class.
-        /// </summary>
-        public ExternalItemContent()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.externalItemContent";
-        }
 
         /// <summary>
         /// Gets or sets type.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Office365ServicesUserCounts : Entity
     {
     
-		///<summary>
-		/// The Office365ServicesUserCounts constructor
-		///</summary>
-        public Office365ServicesUserCounts()
-        {
-            this.ODataType = "microsoft.graph.office365ServicesUserCounts";
-        }
-	
         /// <summary>
         /// Gets or sets exchange active.
         /// The number of active users on Exchange. Any user who can read and send email is considered an active user.

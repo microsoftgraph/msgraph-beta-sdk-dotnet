@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Schema : Entity
     {
     
-		///<summary>
-		/// The Schema constructor
-		///</summary>
-        public Schema()
-        {
-            this.ODataType = "microsoft.graph.schema";
-        }
-	
         /// <summary>
         /// Gets or sets base type.
         /// Must be set to microsoft.graph.externalItem. Required.

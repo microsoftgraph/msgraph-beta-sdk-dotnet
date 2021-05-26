@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class TemporaryAccessPassAuthenticationMethod : AuthenticationMethod
     {
     
-		///<summary>
-		/// The TemporaryAccessPassAuthenticationMethod constructor
-		///</summary>
+        ///<summary>
+        /// The TemporaryAccessPassAuthenticationMethod constructor
+        ///</summary>
         public TemporaryAccessPassAuthenticationMethod()
         {
             this.ODataType = "microsoft.graph.temporaryAccessPassAuthenticationMethod";
         }
-	
+    
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time when the temporaryAccessPass was created.

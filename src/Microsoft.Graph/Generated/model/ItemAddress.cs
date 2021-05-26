@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ItemAddress : ItemFacet
     {
     
-		///<summary>
-		/// The ItemAddress constructor
-		///</summary>
+        ///<summary>
+        /// The ItemAddress constructor
+        ///</summary>
         public ItemAddress()
         {
             this.ODataType = "microsoft.graph.itemAddress";
         }
-	
+    
         /// <summary>
         /// Gets or sets detail.
         /// Details about the address itself.

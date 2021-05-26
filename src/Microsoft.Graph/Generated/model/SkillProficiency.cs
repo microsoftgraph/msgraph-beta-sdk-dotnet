@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class SkillProficiency : ItemFacet
     {
     
-		///<summary>
-		/// The SkillProficiency constructor
-		///</summary>
+        ///<summary>
+        /// The SkillProficiency constructor
+        ///</summary>
         public SkillProficiency()
         {
             this.ODataType = "microsoft.graph.skillProficiency";
         }
-	
+    
         /// <summary>
         /// Gets or sets categories.
         /// Contains categories a user has associated with the skill (for example, personal, professional, hobby).

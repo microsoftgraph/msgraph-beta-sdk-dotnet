@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceHealth>))]
     public partial class DeviceHealth
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceHealth"/> class.
-        /// </summary>
-        public DeviceHealth()
-        {
-            this.ODataType = "microsoft.graph.deviceHealth";
-        }
 
         /// <summary>
         /// Gets or sets lastConnectionTime.

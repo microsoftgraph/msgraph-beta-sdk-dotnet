@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IosSingleSignOnSettings>))]
     public partial class IosSingleSignOnSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosSingleSignOnSettings"/> class.
-        /// </summary>
-        public IosSingleSignOnSettings()
-        {
-            this.ODataType = "microsoft.graph.iosSingleSignOnSettings";
-        }
 
         /// <summary>
         /// Gets or sets allowedAppsList.

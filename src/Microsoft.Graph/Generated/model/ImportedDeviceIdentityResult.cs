@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ImportedDeviceIdentityResult : ImportedDeviceIdentity
     {
     
-		///<summary>
-		/// The ImportedDeviceIdentityResult constructor
-		///</summary>
+        ///<summary>
+        /// The ImportedDeviceIdentityResult constructor
+        ///</summary>
         public ImportedDeviceIdentityResult()
         {
             this.ODataType = "microsoft.graph.importedDeviceIdentityResult";
         }
-	
+    
         /// <summary>
         /// Gets or sets status.
         /// Status of imported device identity

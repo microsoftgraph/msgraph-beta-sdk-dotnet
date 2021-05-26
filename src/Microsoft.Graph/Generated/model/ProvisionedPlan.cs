@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ProvisionedPlan>))]
     public partial class ProvisionedPlan
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProvisionedPlan"/> class.
-        /// </summary>
-        public ProvisionedPlan()
-        {
-            this.ODataType = "microsoft.graph.provisionedPlan";
-        }
 
         /// <summary>
         /// Gets or sets capabilityStatus.

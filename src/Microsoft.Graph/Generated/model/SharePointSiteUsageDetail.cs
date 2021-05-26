@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SharePointSiteUsageDetail : Entity
     {
     
-		///<summary>
-		/// The SharePointSiteUsageDetail constructor
-		///</summary>
-        public SharePointSiteUsageDetail()
-        {
-            this.ODataType = "microsoft.graph.sharePointSiteUsageDetail";
-        }
-	
         /// <summary>
         /// Gets or sets active file count.
         /// </summary>

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WebApplication>))]
     public partial class WebApplication
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WebApplication"/> class.
-        /// </summary>
-        public WebApplication()
-        {
-            this.ODataType = "microsoft.graph.webApplication";
-        }
 
         /// <summary>
         /// Gets or sets homePageUrl.

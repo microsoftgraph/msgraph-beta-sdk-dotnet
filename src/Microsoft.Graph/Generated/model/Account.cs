@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Account : Entity
     {
     
-		///<summary>
-		/// The Account constructor
-		///</summary>
-        public Account()
-        {
-            this.ODataType = "microsoft.graph.account";
-        }
-	
         /// <summary>
         /// Gets or sets blocked.
         /// </summary>

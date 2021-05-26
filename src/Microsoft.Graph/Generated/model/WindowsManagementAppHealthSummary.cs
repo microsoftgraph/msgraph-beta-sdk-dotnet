@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WindowsManagementAppHealthSummary : Entity
     {
     
-		///<summary>
-		/// The WindowsManagementAppHealthSummary constructor
-		///</summary>
-        public WindowsManagementAppHealthSummary()
-        {
-            this.ODataType = "microsoft.graph.windowsManagementAppHealthSummary";
-        }
-	
         /// <summary>
         /// Gets or sets healthy device count.
         /// Healthy device count.

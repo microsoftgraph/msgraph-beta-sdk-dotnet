@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MessageSecurityState>))]
     public partial class MessageSecurityState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MessageSecurityState"/> class.
-        /// </summary>
-        public MessageSecurityState()
-        {
-            this.ODataType = "microsoft.graph.messageSecurityState";
-        }
 
         /// <summary>
         /// Gets or sets connectingIP.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ComplianceInformation>))]
     public partial class ComplianceInformation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ComplianceInformation"/> class.
-        /// </summary>
-        public ComplianceInformation()
-        {
-            this.ODataType = "microsoft.graph.complianceInformation";
-        }
 
         /// <summary>
         /// Gets or sets certificationControls.

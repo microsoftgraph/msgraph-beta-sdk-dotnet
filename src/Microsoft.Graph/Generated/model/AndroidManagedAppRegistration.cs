@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class AndroidManagedAppRegistration : ManagedAppRegistration
     {
     
-		///<summary>
-		/// The AndroidManagedAppRegistration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidManagedAppRegistration constructor
+        ///</summary>
         public AndroidManagedAppRegistration()
         {
             this.ODataType = "microsoft.graph.androidManagedAppRegistration";
         }
-	
+    
         /// <summary>
         /// Gets or sets patch version.
         /// The patch version for the current android app registration

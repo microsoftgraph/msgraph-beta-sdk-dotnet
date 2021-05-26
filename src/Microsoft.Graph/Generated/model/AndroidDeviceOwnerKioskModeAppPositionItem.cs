@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerKioskModeAppPositionItem>))]
     public partial class AndroidDeviceOwnerKioskModeAppPositionItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AndroidDeviceOwnerKioskModeAppPositionItem"/> class.
-        /// </summary>
-        public AndroidDeviceOwnerKioskModeAppPositionItem()
-        {
-            this.ODataType = "microsoft.graph.androidDeviceOwnerKioskModeAppPositionItem";
-        }
 
         /// <summary>
         /// Gets or sets item.

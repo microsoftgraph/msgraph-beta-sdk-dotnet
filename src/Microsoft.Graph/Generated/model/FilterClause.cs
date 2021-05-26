@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<FilterClause>))]
     public partial class FilterClause
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FilterClause"/> class.
-        /// </summary>
-        public FilterClause()
-        {
-            this.ODataType = "microsoft.graph.filterClause";
-        }
 
         /// <summary>
         /// Gets or sets operatorName.

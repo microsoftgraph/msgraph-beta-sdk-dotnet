@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Windows10EnrollmentCompletionPageConfigurationPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The Windows10EnrollmentCompletionPageConfigurationPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10EnrollmentCompletionPageConfigurationPolicySetItem constructor
+        ///</summary>
         public Windows10EnrollmentCompletionPageConfigurationPolicySetItem()
         {
             this.ODataType = "microsoft.graph.windows10EnrollmentCompletionPageConfigurationPolicySetItem";
         }
-	
+    
         /// <summary>
         /// Gets or sets priority.
         /// Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.

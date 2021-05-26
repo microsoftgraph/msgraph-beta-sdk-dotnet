@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookRangeView : Entity
     {
     
-		///<summary>
-		/// The WorkbookRangeView constructor
-		///</summary>
-        public WorkbookRangeView()
-        {
-            this.ODataType = "microsoft.graph.workbookRangeView";
-        }
-	
         /// <summary>
         /// Gets or sets cell addresses.
         /// Represents the cell addresses

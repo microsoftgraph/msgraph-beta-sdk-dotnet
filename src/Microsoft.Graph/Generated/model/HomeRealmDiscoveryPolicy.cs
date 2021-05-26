@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class HomeRealmDiscoveryPolicy : StsPolicy
     {
     
-		///<summary>
-		/// The HomeRealmDiscoveryPolicy constructor
-		///</summary>
+        ///<summary>
+        /// The HomeRealmDiscoveryPolicy constructor
+        ///</summary>
         public HomeRealmDiscoveryPolicy()
         {
             this.ODataType = "microsoft.graph.homeRealmDiscoveryPolicy";
         }
-	
+    
     }
 }
 

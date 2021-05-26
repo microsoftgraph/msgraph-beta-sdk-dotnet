@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ExpirationPattern>))]
     public partial class ExpirationPattern
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExpirationPattern"/> class.
-        /// </summary>
-        public ExpirationPattern()
-        {
-            this.ODataType = "microsoft.graph.expirationPattern";
-        }
 
         /// <summary>
         /// Gets or sets duration.

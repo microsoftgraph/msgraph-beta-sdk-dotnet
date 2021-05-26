@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DriveItemVersion : BaseItemVersion
     {
     
-		///<summary>
-		/// The DriveItemVersion constructor
-		///</summary>
+        ///<summary>
+        /// The DriveItemVersion constructor
+        ///</summary>
         public DriveItemVersion()
         {
             this.ODataType = "microsoft.graph.driveItemVersion";
         }
-	
+    
         /// <summary>
         /// Gets or sets content.
         /// </summary>

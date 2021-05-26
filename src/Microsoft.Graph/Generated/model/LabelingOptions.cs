@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<LabelingOptions>))]
     public partial class LabelingOptions
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LabelingOptions"/> class.
-        /// </summary>
-        public LabelingOptions()
-        {
-            this.ODataType = "microsoft.graph.labelingOptions";
-        }
 
         /// <summary>
         /// Gets or sets assignmentMethod.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AssignmentOrder>))]
     public partial class AssignmentOrder
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AssignmentOrder"/> class.
-        /// </summary>
-        public AssignmentOrder()
-        {
-            this.ODataType = "microsoft.graph.assignmentOrder";
-        }
 
         /// <summary>
         /// Gets or sets order.

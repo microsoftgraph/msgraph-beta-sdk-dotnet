@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SessionLifetimePolicy>))]
     public partial class SessionLifetimePolicy
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SessionLifetimePolicy"/> class.
-        /// </summary>
-        public SessionLifetimePolicy()
-        {
-            this.ODataType = "microsoft.graph.sessionLifetimePolicy";
-        }
 
         /// <summary>
         /// Gets or sets detail.

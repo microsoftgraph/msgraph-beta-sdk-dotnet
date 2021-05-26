@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TermsAndConditions : Entity
     {
     
-		///<summary>
-		/// The TermsAndConditions constructor
-		///</summary>
-        public TermsAndConditions()
-        {
-            this.ODataType = "microsoft.graph.termsAndConditions";
-        }
-	
         /// <summary>
         /// Gets or sets acceptance statement.
         /// Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&amp;C policy. This is shown to the user on prompts to accept the T&amp;C policy.

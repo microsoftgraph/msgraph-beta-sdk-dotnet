@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AppScope : Entity
     {
     
-		///<summary>
-		/// The AppScope constructor
-		///</summary>
-        public AppScope()
-        {
-            this.ODataType = "microsoft.graph.appScope";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.

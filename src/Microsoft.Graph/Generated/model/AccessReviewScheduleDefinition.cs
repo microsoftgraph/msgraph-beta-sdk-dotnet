@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessReviewScheduleDefinition : Entity
     {
     
-		///<summary>
-		/// The AccessReviewScheduleDefinition constructor
-		///</summary>
-        public AccessReviewScheduleDefinition()
-        {
-            this.ODataType = "microsoft.graph.accessReviewScheduleDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets backup reviewers.
         /// This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope.

@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class Windows10XCertificateProfile : DeviceManagementResourceAccessProfileBase
     {
     
-		///<summary>
-		/// The internal Windows10XCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The internal Windows10XCertificateProfile constructor
+        ///</summary>
         protected internal Windows10XCertificateProfile()
         {
             // Don't allow initialization of abstract entity types

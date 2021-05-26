@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceMobileAppConfigurationDeviceStatus : Entity
     {
     
-		///<summary>
-		/// The ManagedDeviceMobileAppConfigurationDeviceStatus constructor
-		///</summary>
-        public ManagedDeviceMobileAppConfigurationDeviceStatus()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus";
-        }
-	
         /// <summary>
         /// Gets or sets compliance grace period expiration date time.
         /// The DateTime when device compliance grace period expires

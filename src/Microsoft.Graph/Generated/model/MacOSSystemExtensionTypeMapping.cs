@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MacOSSystemExtensionTypeMapping>))]
     public partial class MacOSSystemExtensionTypeMapping
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacOSSystemExtensionTypeMapping"/> class.
-        /// </summary>
-        public MacOSSystemExtensionTypeMapping()
-        {
-            this.ODataType = "microsoft.graph.macOSSystemExtensionTypeMapping";
-        }
 
         /// <summary>
         /// Gets or sets allowedTypes.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserConfiguration : Entity
     {
     
-		///<summary>
-		/// The UserConfiguration constructor
-		///</summary>
-        public UserConfiguration()
-        {
-            this.ODataType = "microsoft.graph.userConfiguration";
-        }
-	
         /// <summary>
         /// Gets or sets binary data.
         /// </summary>

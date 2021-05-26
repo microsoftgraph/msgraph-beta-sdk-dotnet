@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AverageComparativeScore>))]
     public partial class AverageComparativeScore
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AverageComparativeScore"/> class.
-        /// </summary>
-        public AverageComparativeScore()
-        {
-            this.ODataType = "microsoft.graph.averageComparativeScore";
-        }
 
         /// <summary>
         /// Gets or sets averageScore.

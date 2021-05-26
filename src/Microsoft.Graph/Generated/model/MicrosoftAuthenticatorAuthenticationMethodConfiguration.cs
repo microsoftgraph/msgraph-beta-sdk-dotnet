@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MicrosoftAuthenticatorAuthenticationMethodConfiguration : AuthenticationMethodConfiguration
     {
     
-		///<summary>
-		/// The MicrosoftAuthenticatorAuthenticationMethodConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MicrosoftAuthenticatorAuthenticationMethodConfiguration constructor
+        ///</summary>
         public MicrosoftAuthenticatorAuthenticationMethodConfiguration()
         {
             this.ODataType = "microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets include targets.
         /// A collection of users or groups who are enabled to use the authentication method.

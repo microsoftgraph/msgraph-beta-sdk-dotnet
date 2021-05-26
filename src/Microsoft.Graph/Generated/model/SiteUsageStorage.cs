@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SiteUsageStorage : Entity
     {
     
-		///<summary>
-		/// The SiteUsageStorage constructor
-		///</summary>
-        public SiteUsageStorage()
-        {
-            this.ODataType = "microsoft.graph.siteUsageStorage";
-        }
-	
         /// <summary>
         /// Gets or sets report date.
         /// </summary>

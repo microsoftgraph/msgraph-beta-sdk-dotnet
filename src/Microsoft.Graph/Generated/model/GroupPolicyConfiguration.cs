@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class GroupPolicyConfiguration : Entity
     {
     
-		///<summary>
-		/// The GroupPolicyConfiguration constructor
-		///</summary>
-        public GroupPolicyConfiguration()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyConfiguration";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time the object was created.

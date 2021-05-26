@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ConfigManagerCollection : Entity
     {
     
-		///<summary>
-		/// The ConfigManagerCollection constructor
-		///</summary>
-        public ConfigManagerCollection()
-        {
-            this.ODataType = "microsoft.graph.configManagerCollection";
-        }
-	
         /// <summary>
         /// Gets or sets collection identifier.
         /// The collection identifier in SCCM.

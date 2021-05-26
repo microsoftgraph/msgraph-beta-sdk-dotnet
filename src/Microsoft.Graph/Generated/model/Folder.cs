@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Folder>))]
     public partial class Folder
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Folder"/> class.
-        /// </summary>
-        public Folder()
-        {
-            this.ODataType = "microsoft.graph.folder";
-        }
 
         /// <summary>
         /// Gets or sets childCount.

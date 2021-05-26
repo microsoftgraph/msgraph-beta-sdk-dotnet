@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleManagementPolicy : Entity
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicy constructor
-		///</summary>
-        public UnifiedRoleManagementPolicy()
-        {
-            this.ODataType = "microsoft.graph.unifiedRoleManagementPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Description for the policy.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AttendeeAvailability>))]
     public partial class AttendeeAvailability
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AttendeeAvailability"/> class.
-        /// </summary>
-        public AttendeeAvailability()
-        {
-            this.ODataType = "microsoft.graph.attendeeAvailability";
-        }
 
         /// <summary>
         /// Gets or sets attendee.

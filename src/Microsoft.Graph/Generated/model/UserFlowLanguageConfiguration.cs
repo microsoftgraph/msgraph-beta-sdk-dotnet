@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserFlowLanguageConfiguration : Entity
     {
     
-		///<summary>
-		/// The UserFlowLanguageConfiguration constructor
-		///</summary>
-        public UserFlowLanguageConfiguration()
-        {
-            this.ODataType = "microsoft.graph.userFlowLanguageConfiguration";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The language name to display. This property is read-only.

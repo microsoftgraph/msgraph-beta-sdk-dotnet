@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class MicrosoftTunnelServer : Entity
     {
     
-		///<summary>
-		/// The MicrosoftTunnelServer constructor
-		///</summary>
-        public MicrosoftTunnelServer()
-        {
-            this.ODataType = "microsoft.graph.microsoftTunnelServer";
-        }
-	
         /// <summary>
         /// Gets or sets agent image digest.
         /// The digest of the current agent image running on this server 

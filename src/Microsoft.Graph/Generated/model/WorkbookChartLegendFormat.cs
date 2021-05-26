@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookChartLegendFormat : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartLegendFormat constructor
-		///</summary>
-        public WorkbookChartLegendFormat()
-        {
-            this.ODataType = "microsoft.graph.workbookChartLegendFormat";
-        }
-	
         /// <summary>
         /// Gets or sets fill.
         /// Represents the fill format of an object, which includes background formating information. Read-only.

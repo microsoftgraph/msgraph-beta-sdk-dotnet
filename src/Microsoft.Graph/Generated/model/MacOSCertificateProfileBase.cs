@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class MacOSCertificateProfileBase : DeviceConfiguration
     {
     
-		///<summary>
-		/// The internal MacOSCertificateProfileBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal MacOSCertificateProfileBase constructor
+        ///</summary>
         protected internal MacOSCertificateProfileBase()
         {
             // Don't allow initialization of abstract entity types

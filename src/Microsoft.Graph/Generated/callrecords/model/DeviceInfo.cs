@@ -20,13 +20,6 @@ namespace Microsoft.Graph.CallRecords
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<DeviceInfo>))]
     public partial class DeviceInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceInfo"/> class.
-        /// </summary>
-        public DeviceInfo()
-        {
-            this.ODataType = "microsoft.graph.callRecords.deviceInfo";
-        }
 
         /// <summary>
         /// Gets or sets captureDeviceDriver.

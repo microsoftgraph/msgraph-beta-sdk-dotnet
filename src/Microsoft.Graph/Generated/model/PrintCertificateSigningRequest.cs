@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PrintCertificateSigningRequestObject>))]
     public partial class PrintCertificateSigningRequestObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrintCertificateSigningRequestObject"/> class.
-        /// </summary>
-        public PrintCertificateSigningRequestObject()
-        {
-            this.ODataType = "microsoft.graph.printCertificateSigningRequest";
-        }
 
         /// <summary>
         /// Gets or sets content.

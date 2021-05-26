@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Reminder>))]
     public partial class Reminder
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Reminder"/> class.
-        /// </summary>
-        public Reminder()
-        {
-            this.ODataType = "microsoft.graph.reminder";
-        }
 
         /// <summary>
         /// Gets or sets changeKey.

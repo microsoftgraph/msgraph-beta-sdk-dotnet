@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class DepEnrollmentProfile : EnrollmentProfile
     {
     
-		///<summary>
-		/// The DepEnrollmentProfile constructor
-		///</summary>
+        ///<summary>
+        /// The DepEnrollmentProfile constructor
+        ///</summary>
         public DepEnrollmentProfile()
         {
             this.ODataType = "microsoft.graph.depEnrollmentProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets apple id disabled.
         /// Indicates if Apple id setup pane is disabled

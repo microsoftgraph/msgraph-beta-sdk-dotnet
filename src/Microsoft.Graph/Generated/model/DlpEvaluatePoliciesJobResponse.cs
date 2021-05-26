@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DlpEvaluatePoliciesJobResponse : JobResponseBase
     {
     
-		///<summary>
-		/// The DlpEvaluatePoliciesJobResponse constructor
-		///</summary>
+        ///<summary>
+        /// The DlpEvaluatePoliciesJobResponse constructor
+        ///</summary>
         public DlpEvaluatePoliciesJobResponse()
         {
             this.ODataType = "microsoft.graph.dlpEvaluatePoliciesJobResponse";
         }
-	
+    
         /// <summary>
         /// Gets or sets result.
         /// </summary>

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SharePointActivityUserDetail : Entity
     {
     
-		///<summary>
-		/// The SharePointActivityUserDetail constructor
-		///</summary>
-        public SharePointActivityUserDetail()
-        {
-            this.ODataType = "microsoft.graph.sharePointActivityUserDetail";
-        }
-	
         /// <summary>
         /// Gets or sets assigned products.
         /// </summary>

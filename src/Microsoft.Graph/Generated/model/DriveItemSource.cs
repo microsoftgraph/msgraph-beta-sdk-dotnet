@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DriveItemSource>))]
     public partial class DriveItemSource
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DriveItemSource"/> class.
-        /// </summary>
-        public DriveItemSource()
-        {
-            this.ODataType = "microsoft.graph.driveItemSource";
-        }
 
         /// <summary>
         /// Gets or sets application.

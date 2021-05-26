@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookChartSeriesFormat : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartSeriesFormat constructor
-		///</summary>
-        public WorkbookChartSeriesFormat()
-        {
-            this.ODataType = "microsoft.graph.workbookChartSeriesFormat";
-        }
-	
         /// <summary>
         /// Gets or sets fill.
         /// Represents the fill format of a chart series, which includes background formating information. Read-only.

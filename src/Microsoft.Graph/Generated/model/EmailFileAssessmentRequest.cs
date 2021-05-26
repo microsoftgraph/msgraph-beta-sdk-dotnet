@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class EmailFileAssessmentRequestObject : ThreatAssessmentRequestObject
     {
     
-		///<summary>
-		/// The EmailFileAssessmentRequest constructor
-		///</summary>
+        ///<summary>
+        /// The EmailFileAssessmentRequest constructor
+        ///</summary>
         public EmailFileAssessmentRequestObject()
         {
             this.ODataType = "microsoft.graph.emailFileAssessmentRequest";
         }
-	
+    
         /// <summary>
         /// Gets or sets content data.
         /// Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.

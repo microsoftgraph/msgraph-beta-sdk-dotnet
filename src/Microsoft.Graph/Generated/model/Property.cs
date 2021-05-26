@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Property>))]
     public partial class Property
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Property"/> class.
-        /// </summary>
-        public Property()
-        {
-            this.ODataType = "microsoft.graph.property";
-        }
 
         /// <summary>
         /// Gets or sets aliases.

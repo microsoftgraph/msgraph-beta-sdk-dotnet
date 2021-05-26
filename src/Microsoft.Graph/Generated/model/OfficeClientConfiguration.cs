@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class OfficeClientConfiguration : Entity
     {
     
-		///<summary>
-		/// The internal OfficeClientConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The internal OfficeClientConfiguration constructor
+        ///</summary>
         protected internal OfficeClientConfiguration()
         {
             // Don't allow initialization of abstract entity types

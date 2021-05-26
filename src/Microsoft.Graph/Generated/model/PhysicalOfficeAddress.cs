@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PhysicalOfficeAddress>))]
     public partial class PhysicalOfficeAddress
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PhysicalOfficeAddress"/> class.
-        /// </summary>
-        public PhysicalOfficeAddress()
-        {
-            this.ODataType = "microsoft.graph.physicalOfficeAddress";
-        }
 
         /// <summary>
         /// Gets or sets city.

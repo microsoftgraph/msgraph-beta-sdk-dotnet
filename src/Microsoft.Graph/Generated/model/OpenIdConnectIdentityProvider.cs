@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class OpenIdConnectIdentityProvider : IdentityProviderBase
     {
     
-		///<summary>
-		/// The OpenIdConnectIdentityProvider constructor
-		///</summary>
+        ///<summary>
+        /// The OpenIdConnectIdentityProvider constructor
+        ///</summary>
         public OpenIdConnectIdentityProvider()
         {
             this.ODataType = "microsoft.graph.openIdConnectIdentityProvider";
         }
-	
+    
         /// <summary>
         /// Gets or sets claims mapping.
         /// After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. Required.

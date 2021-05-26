@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class OAuth2PermissionGrant : Entity
     {
     
-		///<summary>
-		/// The OAuth2PermissionGrant constructor
-		///</summary>
-        public OAuth2PermissionGrant()
-        {
-            this.ODataType = "microsoft.graph.oAuth2PermissionGrant";
-        }
-	
         /// <summary>
         /// Gets or sets client id.
         /// The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EmbeddedSIMActivationCodePool : Entity
     {
     
-		///<summary>
-		/// The EmbeddedSIMActivationCodePool constructor
-		///</summary>
-        public EmbeddedSIMActivationCodePool()
-        {
-            this.ODataType = "microsoft.graph.embeddedSIMActivationCodePool";
-        }
-	
         /// <summary>
         /// Gets or sets activation code count.
         /// The total count of activation codes which belong to this pool.

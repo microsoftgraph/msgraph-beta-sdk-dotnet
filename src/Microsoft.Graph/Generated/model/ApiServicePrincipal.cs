@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ApiServicePrincipal>))]
     public partial class ApiServicePrincipal
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ApiServicePrincipal"/> class.
-        /// </summary>
-        public ApiServicePrincipal()
-        {
-            this.ODataType = "microsoft.graph.apiServicePrincipal";
-        }
 
         /// <summary>
         /// Gets or sets resourceSpecificApplicationPermissions.

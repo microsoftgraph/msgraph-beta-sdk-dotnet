@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ManagedAppPolicyDeploymentSummary : Entity
     {
     
-		///<summary>
-		/// The ManagedAppPolicyDeploymentSummary constructor
-		///</summary>
-        public ManagedAppPolicyDeploymentSummary()
-        {
-            this.ODataType = "microsoft.graph.managedAppPolicyDeploymentSummary";
-        }
-	
         /// <summary>
         /// Gets or sets configuration deployed user count.
         /// Not yet documented

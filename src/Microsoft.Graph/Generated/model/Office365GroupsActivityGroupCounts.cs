@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Office365GroupsActivityGroupCounts : Entity
     {
     
-		///<summary>
-		/// The Office365GroupsActivityGroupCounts constructor
-		///</summary>
-        public Office365GroupsActivityGroupCounts()
-        {
-            this.ODataType = "microsoft.graph.office365GroupsActivityGroupCounts";
-        }
-	
         /// <summary>
         /// Gets or sets active.
         /// The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.

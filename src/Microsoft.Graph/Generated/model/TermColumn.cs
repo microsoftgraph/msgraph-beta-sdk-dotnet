@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TermColumn>))]
     public partial class TermColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TermColumn"/> class.
-        /// </summary>
-        public TermColumn()
-        {
-            this.ODataType = "microsoft.graph.termColumn";
-        }
 
         /// <summary>
         /// Gets or sets allowMultipleValues.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Report>))]
     public partial class Report
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Report"/> class.
-        /// </summary>
-        public Report()
-        {
-            this.ODataType = "microsoft.graph.report";
-        }
 
         /// <summary>
         /// Gets or sets content.

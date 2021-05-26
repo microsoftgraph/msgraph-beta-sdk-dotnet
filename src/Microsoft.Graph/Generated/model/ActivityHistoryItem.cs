@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ActivityHistoryItem : Entity
     {
     
-		///<summary>
-		/// The ActivityHistoryItem constructor
-		///</summary>
-        public ActivityHistoryItem()
-        {
-            this.ODataType = "microsoft.graph.activityHistoryItem";
-        }
-	
         /// <summary>
         /// Gets or sets active duration seconds.
         /// Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.

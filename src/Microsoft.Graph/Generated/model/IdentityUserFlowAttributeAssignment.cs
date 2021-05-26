@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class IdentityUserFlowAttributeAssignment : Entity
     {
     
-		///<summary>
-		/// The IdentityUserFlowAttributeAssignment constructor
-		///</summary>
-        public IdentityUserFlowAttributeAssignment()
-        {
-            this.ODataType = "microsoft.graph.identityUserFlowAttributeAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the identityUserFlowAttribute within a user flow.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MailSearchFolder : MailFolder
     {
     
-		///<summary>
-		/// The MailSearchFolder constructor
-		///</summary>
+        ///<summary>
+        /// The MailSearchFolder constructor
+        ///</summary>
         public MailSearchFolder()
         {
             this.ODataType = "microsoft.graph.mailSearchFolder";
         }
-	
+    
         /// <summary>
         /// Gets or sets filter query.
         /// The OData query to filter the messages.

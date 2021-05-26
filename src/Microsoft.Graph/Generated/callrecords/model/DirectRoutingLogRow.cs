@@ -20,13 +20,6 @@ namespace Microsoft.Graph.CallRecords
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<DirectRoutingLogRow>))]
     public partial class DirectRoutingLogRow
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DirectRoutingLogRow"/> class.
-        /// </summary>
-        public DirectRoutingLogRow()
-        {
-            this.ODataType = "microsoft.graph.callRecords.directRoutingLogRow";
-        }
 
         /// <summary>
         /// Gets or sets calleeNumber.

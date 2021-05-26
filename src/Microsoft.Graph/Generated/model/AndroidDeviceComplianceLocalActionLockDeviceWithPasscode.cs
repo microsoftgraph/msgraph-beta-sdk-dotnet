@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class AndroidDeviceComplianceLocalActionLockDeviceWithPasscode : AndroidDeviceComplianceLocalActionBase
     {
     
-		///<summary>
-		/// The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode constructor
+        ///</summary>
         public AndroidDeviceComplianceLocalActionLockDeviceWithPasscode()
         {
             this.ODataType = "microsoft.graph.androidDeviceComplianceLocalActionLockDeviceWithPasscode";
         }
-	
+    
         /// <summary>
         /// Gets or sets passcode.
         /// Passcode to reset to Android device. This property is read-only.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph.Ediscovery
     public partial class EstimateStatisticsOperation : CaseOperation
     {
     
-		///<summary>
-		/// The EstimateStatisticsOperation constructor
-		///</summary>
+        ///<summary>
+        /// The EstimateStatisticsOperation constructor
+        ///</summary>
         public EstimateStatisticsOperation()
         {
             this.ODataType = "microsoft.graph.ediscovery.estimateStatisticsOperation";
         }
-	
+    
         /// <summary>
         /// Gets or sets indexed item count.
         /// The estimated count of items for the sourceCollection that matched the content query.

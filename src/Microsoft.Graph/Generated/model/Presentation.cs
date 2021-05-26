@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Presentation : Entity
     {
     
-		///<summary>
-		/// The Presentation constructor
-		///</summary>
-        public Presentation()
-        {
-            this.ODataType = "microsoft.graph.presentation";
-        }
-	
         /// <summary>
         /// Gets or sets comments.
         /// </summary>

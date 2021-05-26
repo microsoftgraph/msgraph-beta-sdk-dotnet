@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PropertyToEvaluate>))]
     public partial class PropertyToEvaluate
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PropertyToEvaluate"/> class.
-        /// </summary>
-        public PropertyToEvaluate()
-        {
-            this.ODataType = "microsoft.graph.propertyToEvaluate";
-        }
 
         /// <summary>
         /// Gets or sets propertyName.

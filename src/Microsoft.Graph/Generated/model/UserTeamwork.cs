@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserTeamwork : Entity
     {
     
-		///<summary>
-		/// The UserTeamwork constructor
-		///</summary>
-        public UserTeamwork()
-        {
-            this.ODataType = "microsoft.graph.userTeamwork";
-        }
-	
         /// <summary>
         /// Gets or sets installed apps.
         /// The apps installed in the personal scope of this user.

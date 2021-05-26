@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AssignedPlan>))]
     public partial class AssignedPlan
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AssignedPlan"/> class.
-        /// </summary>
-        public AssignedPlan()
-        {
-            this.ODataType = "microsoft.graph.assignedPlan";
-        }
 
         /// <summary>
         /// Gets or sets assignedDateTime.

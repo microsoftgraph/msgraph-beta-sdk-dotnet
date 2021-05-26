@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SamlSingleSignOnSettings>))]
     public partial class SamlSingleSignOnSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SamlSingleSignOnSettings"/> class.
-        /// </summary>
-        public SamlSingleSignOnSettings()
-        {
-            this.ODataType = "microsoft.graph.samlSingleSignOnSettings";
-        }
 
         /// <summary>
         /// Gets or sets relayState.

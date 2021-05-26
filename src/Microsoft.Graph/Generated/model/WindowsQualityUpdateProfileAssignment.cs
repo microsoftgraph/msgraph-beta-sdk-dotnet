@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WindowsQualityUpdateProfileAssignment : Entity
     {
     
-		///<summary>
-		/// The WindowsQualityUpdateProfileAssignment constructor
-		///</summary>
-        public WindowsQualityUpdateProfileAssignment()
-        {
-            this.ODataType = "microsoft.graph.windowsQualityUpdateProfileAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// The assignment target that the feature update profile is assigned to.

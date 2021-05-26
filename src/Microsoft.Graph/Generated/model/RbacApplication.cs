@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class RbacApplication : Entity
     {
     
-		///<summary>
-		/// The RbacApplication constructor
-		///</summary>
-        public RbacApplication()
-        {
-            this.ODataType = "microsoft.graph.rbacApplication";
-        }
-	
         /// <summary>
         /// Gets or sets resource namespaces.
         /// </summary>

@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class ThreatAssessmentRequestObject : Entity
     {
     
-		///<summary>
-		/// The internal ThreatAssessmentRequest constructor
-		///</summary>
+        ///<summary>
+        /// The internal ThreatAssessmentRequest constructor
+        ///</summary>
         protected internal ThreatAssessmentRequestObject()
         {
             // Don't allow initialization of abstract entity types

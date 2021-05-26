@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DateTimeColumn>))]
     public partial class DateTimeColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DateTimeColumn"/> class.
-        /// </summary>
-        public DateTimeColumn()
-        {
-            this.ODataType = "microsoft.graph.dateTimeColumn";
-        }
 
         /// <summary>
         /// Gets or sets displayAs.

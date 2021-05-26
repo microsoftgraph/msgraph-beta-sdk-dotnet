@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EvaluateLabelJobResultGroup>))]
     public partial class EvaluateLabelJobResultGroup
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EvaluateLabelJobResultGroup"/> class.
-        /// </summary>
-        public EvaluateLabelJobResultGroup()
-        {
-            this.ODataType = "microsoft.graph.evaluateLabelJobResultGroup";
-        }
 
         /// <summary>
         /// Gets or sets automatic.

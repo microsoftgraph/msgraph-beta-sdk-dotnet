@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceCompliancePolicyPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The DeviceCompliancePolicyPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceCompliancePolicyPolicySetItem constructor
+        ///</summary>
         public DeviceCompliancePolicyPolicySetItem()
         {
             this.ODataType = "microsoft.graph.deviceCompliancePolicyPolicySetItem";
         }
-	
+    
     }
 }
 

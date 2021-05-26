@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10DeviceFirmwareConfigurationInterface : DeviceConfiguration
     {
     
-		///<summary>
-		/// The Windows10DeviceFirmwareConfigurationInterface constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10DeviceFirmwareConfigurationInterface constructor
+        ///</summary>
         public Windows10DeviceFirmwareConfigurationInterface()
         {
             this.ODataType = "microsoft.graph.windows10DeviceFirmwareConfigurationInterface";
         }
-	
+    
         /// <summary>
         /// Gets or sets boot from built in network adapters.
         /// Defines whether a user is allowed to boot from built-in network adapters. Possible values are: notConfigured, enabled, disabled.

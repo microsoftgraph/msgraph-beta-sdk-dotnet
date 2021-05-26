@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OnPremisesPublishing>))]
     public partial class OnPremisesPublishing
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OnPremisesPublishing"/> class.
-        /// </summary>
-        public OnPremisesPublishing()
-        {
-            this.ODataType = "microsoft.graph.onPremisesPublishing";
-        }
 
         /// <summary>
         /// Gets or sets alternateUrl.

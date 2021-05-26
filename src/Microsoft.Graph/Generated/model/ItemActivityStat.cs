@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ItemActivityStat : Entity
     {
     
-		///<summary>
-		/// The ItemActivityStat constructor
-		///</summary>
-        public ItemActivityStat()
-        {
-            this.ODataType = "microsoft.graph.itemActivityStat";
-        }
-	
         /// <summary>
         /// Gets or sets access.
         /// Statistics about the access actions in this interval. Read-only.

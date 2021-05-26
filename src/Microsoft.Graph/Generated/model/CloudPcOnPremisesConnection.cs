@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class CloudPcOnPremisesConnection : Entity
     {
     
-		///<summary>
-		/// The CloudPcOnPremisesConnection constructor
-		///</summary>
-        public CloudPcOnPremisesConnection()
-        {
-            this.ODataType = "microsoft.graph.cloudPcOnPremisesConnection";
-        }
-	
         /// <summary>
         /// Gets or sets ad domain name.
         /// The fully qualified domain name (FQDN) of the Active Directory domain you want to join.

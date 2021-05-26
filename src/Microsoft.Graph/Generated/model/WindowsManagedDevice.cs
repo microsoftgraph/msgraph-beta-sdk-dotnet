@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class WindowsManagedDevice : ManagedDevice
     {
     
-		///<summary>
-		/// The WindowsManagedDevice constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsManagedDevice constructor
+        ///</summary>
         public WindowsManagedDevice()
         {
             this.ODataType = "microsoft.graph.windowsManagedDevice";
         }
-	
+    
     }
 }
 

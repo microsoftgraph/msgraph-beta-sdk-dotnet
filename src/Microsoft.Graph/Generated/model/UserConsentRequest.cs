@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserConsentRequestObject : RequestObject
     {
     
-		///<summary>
-		/// The UserConsentRequest constructor
-		///</summary>
-        public UserConsentRequestObject()
-        {
-            this.ODataType = "microsoft.graph.userConsentRequest";
-        }
-	
         /// <summary>
         /// Gets or sets reason.
         /// The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.

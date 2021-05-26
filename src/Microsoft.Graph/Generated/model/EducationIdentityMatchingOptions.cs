@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EducationIdentityMatchingOptions>))]
     public partial class EducationIdentityMatchingOptions
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EducationIdentityMatchingOptions"/> class.
-        /// </summary>
-        public EducationIdentityMatchingOptions()
-        {
-            this.ODataType = "microsoft.graph.educationIdentityMatchingOptions";
-        }
 
         /// <summary>
         /// Gets or sets appliesTo.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Site : BaseItem
     {
     
-		///<summary>
-		/// The Site constructor
-		///</summary>
+        ///<summary>
+        /// The Site constructor
+        ///</summary>
         public Site()
         {
             this.ODataType = "microsoft.graph.site";
         }
-	
+    
         /// <summary>
         /// Gets or sets deleted.
         /// </summary>

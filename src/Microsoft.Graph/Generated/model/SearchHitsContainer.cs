@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SearchHitsContainer>))]
     public partial class SearchHitsContainer
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchHitsContainer"/> class.
-        /// </summary>
-        public SearchHitsContainer()
-        {
-            this.ODataType = "microsoft.graph.searchHitsContainer";
-        }
 
         /// <summary>
         /// Gets or sets aggregations.

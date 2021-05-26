@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PrintDocument : Entity
     {
     
-		///<summary>
-		/// The PrintDocument constructor
-		///</summary>
-        public PrintDocument()
-        {
-            this.ODataType = "microsoft.graph.printDocument";
-        }
-	
         /// <summary>
         /// Gets or sets configuration.
         /// </summary>

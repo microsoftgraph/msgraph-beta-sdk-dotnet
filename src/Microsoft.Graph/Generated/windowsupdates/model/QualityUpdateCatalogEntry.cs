@@ -21,14 +21,14 @@ namespace Microsoft.Graph.WindowsUpdates
     public partial class QualityUpdateCatalogEntry : SoftwareUpdateCatalogEntry
     {
     
-		///<summary>
-		/// The QualityUpdateCatalogEntry constructor
-		///</summary>
+        ///<summary>
+        /// The QualityUpdateCatalogEntry constructor
+        ///</summary>
         public QualityUpdateCatalogEntry()
         {
             this.ODataType = "microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry";
         }
-	
+    
         /// <summary>
         /// Gets or sets is expeditable.
         /// Indicates whether the content can be deployed as an expedited quality update. Read-only.

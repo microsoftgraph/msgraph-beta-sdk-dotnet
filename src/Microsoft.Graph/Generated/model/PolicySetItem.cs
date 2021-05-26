@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class PolicySetItem : Entity
     {
     
-		///<summary>
-		/// The internal PolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The internal PolicySetItem constructor
+        ///</summary>
         protected internal PolicySetItem()
         {
             // Don't allow initialization of abstract entity types

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class EmailAuthenticationMethod : AuthenticationMethod
     {
     
-		///<summary>
-		/// The EmailAuthenticationMethod constructor
-		///</summary>
+        ///<summary>
+        /// The EmailAuthenticationMethod constructor
+        ///</summary>
         public EmailAuthenticationMethod()
         {
             this.ODataType = "microsoft.graph.emailAuthenticationMethod";
         }
-	
+    
         /// <summary>
         /// Gets or sets email address.
         /// The email address registered to this user.

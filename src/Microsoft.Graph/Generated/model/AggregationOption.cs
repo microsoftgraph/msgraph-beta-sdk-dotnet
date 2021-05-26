@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AggregationOption>))]
     public partial class AggregationOption
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AggregationOption"/> class.
-        /// </summary>
-        public AggregationOption()
-        {
-            this.ODataType = "microsoft.graph.aggregationOption";
-        }
 
         /// <summary>
         /// Gets or sets bucketDefinition.

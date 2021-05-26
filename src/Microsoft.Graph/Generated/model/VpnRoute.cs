@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<VpnRoute>))]
     public partial class VpnRoute
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VpnRoute"/> class.
-        /// </summary>
-        public VpnRoute()
-        {
-            this.ODataType = "microsoft.graph.vpnRoute";
-        }
 
         /// <summary>
         /// Gets or sets destinationPrefix.

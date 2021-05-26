@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class RecordOperation : CommsOperation
     {
     
-		///<summary>
-		/// The RecordOperation constructor
-		///</summary>
+        ///<summary>
+        /// The RecordOperation constructor
+        ///</summary>
         public RecordOperation()
         {
             this.ODataType = "microsoft.graph.recordOperation";
         }
-	
+    
         /// <summary>
         /// Gets or sets completion reason.
         /// Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.

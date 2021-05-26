@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CryptographySuite>))]
     public partial class CryptographySuite
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CryptographySuite"/> class.
-        /// </summary>
-        public CryptographySuite()
-        {
-            this.ODataType = "microsoft.graph.cryptographySuite";
-        }
 
         /// <summary>
         /// Gets or sets authenticationTransformConstants.

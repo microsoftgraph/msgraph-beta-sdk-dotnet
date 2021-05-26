@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus : Entity
     {
     
-		///<summary>
-		/// The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus constructor
-		///</summary>
-        public WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus()
-        {
-            this.ODataType = "microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus";
-        }
-	
         /// <summary>
         /// Gets or sets deployment status.
         /// The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.

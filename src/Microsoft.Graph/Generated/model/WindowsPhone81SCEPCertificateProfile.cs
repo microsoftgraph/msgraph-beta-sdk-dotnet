@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81SCEPCertificateProfile : WindowsPhone81CertificateProfileBase
     {
     
-		///<summary>
-		/// The WindowsPhone81SCEPCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsPhone81SCEPCertificateProfile constructor
+        ///</summary>
         public WindowsPhone81SCEPCertificateProfile()
         {
             this.ODataType = "microsoft.graph.windowsPhone81SCEPCertificateProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets hash algorithm.
         /// SCEP Hash Algorithm. Possible values are: sha1, sha2.

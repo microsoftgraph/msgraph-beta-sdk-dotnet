@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WindowsKioskProfile>))]
     public partial class WindowsKioskProfile
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WindowsKioskProfile"/> class.
-        /// </summary>
-        public WindowsKioskProfile()
-        {
-            this.ODataType = "microsoft.graph.windowsKioskProfile";
-        }
 
         /// <summary>
         /// Gets or sets appConfiguration.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ManagedAppPolicyDeploymentSummaryPerApp>))]
     public partial class ManagedAppPolicyDeploymentSummaryPerApp
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagedAppPolicyDeploymentSummaryPerApp"/> class.
-        /// </summary>
-        public ManagedAppPolicyDeploymentSummaryPerApp()
-        {
-            this.ODataType = "microsoft.graph.managedAppPolicyDeploymentSummaryPerApp";
-        }
 
         /// <summary>
         /// Gets or sets configurationAppliedUserCount.

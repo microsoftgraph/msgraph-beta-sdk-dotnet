@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MimeContent>))]
     public partial class MimeContent
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MimeContent"/> class.
-        /// </summary>
-        public MimeContent()
-        {
-            this.ODataType = "microsoft.graph.mimeContent";
-        }
 
         /// <summary>
         /// Gets or sets type.

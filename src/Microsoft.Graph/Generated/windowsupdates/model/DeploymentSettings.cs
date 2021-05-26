@@ -20,13 +20,6 @@ namespace Microsoft.Graph.WindowsUpdates
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<DeploymentSettings>))]
     public partial class DeploymentSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeploymentSettings"/> class.
-        /// </summary>
-        public DeploymentSettings()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.deploymentSettings";
-        }
 
         /// <summary>
         /// Gets or sets monitoring.

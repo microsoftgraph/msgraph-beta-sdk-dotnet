@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81AppX : MobileLobApp
     {
     
-		///<summary>
-		/// The WindowsPhone81AppX constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsPhone81AppX constructor
+        ///</summary>
         public WindowsPhone81AppX()
         {
             this.ODataType = "microsoft.graph.windowsPhone81AppX";
         }
-	
+    
         /// <summary>
         /// Gets or sets applicable architectures.
         /// The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.

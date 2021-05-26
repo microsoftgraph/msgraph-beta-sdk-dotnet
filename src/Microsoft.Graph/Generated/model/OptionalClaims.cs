@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OptionalClaims>))]
     public partial class OptionalClaims
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OptionalClaims"/> class.
-        /// </summary>
-        public OptionalClaims()
-        {
-            this.ODataType = "microsoft.graph.optionalClaims";
-        }
 
         /// <summary>
         /// Gets or sets accessToken.

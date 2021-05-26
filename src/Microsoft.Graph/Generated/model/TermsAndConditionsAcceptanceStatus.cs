@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TermsAndConditionsAcceptanceStatus : Entity
     {
     
-		///<summary>
-		/// The TermsAndConditionsAcceptanceStatus constructor
-		///</summary>
-        public TermsAndConditionsAcceptanceStatus()
-        {
-            this.ODataType = "microsoft.graph.termsAndConditionsAcceptanceStatus";
-        }
-	
         /// <summary>
         /// Gets or sets accepted date time.
         /// DateTime when the terms were last accepted by the user.

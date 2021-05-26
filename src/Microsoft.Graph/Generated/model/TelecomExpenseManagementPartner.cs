@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TelecomExpenseManagementPartner : Entity
     {
     
-		///<summary>
-		/// The TelecomExpenseManagementPartner constructor
-		///</summary>
-        public TelecomExpenseManagementPartner()
-        {
-            this.ODataType = "microsoft.graph.telecomExpenseManagementPartner";
-        }
-	
         /// <summary>
         /// Gets or sets app authorized.
         /// Whether the partner's AAD app has been authorized to access Intune.

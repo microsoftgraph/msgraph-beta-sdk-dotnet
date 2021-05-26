@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class CountryNamedLocation : NamedLocation
     {
     
-		///<summary>
-		/// The CountryNamedLocation constructor
-		///</summary>
+        ///<summary>
+        /// The CountryNamedLocation constructor
+        ///</summary>
         public CountryNamedLocation()
         {
             this.ODataType = "microsoft.graph.countryNamedLocation";
         }
-	
+    
         /// <summary>
         /// Gets or sets countries and regions.
         /// List of countries and/or regions in two-letter format specified by ISO 3166-2.

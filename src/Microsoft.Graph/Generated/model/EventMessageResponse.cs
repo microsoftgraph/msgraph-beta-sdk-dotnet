@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class EventMessageResponse : EventMessage
     {
     
-		///<summary>
-		/// The EventMessageResponse constructor
-		///</summary>
+        ///<summary>
+        /// The EventMessageResponse constructor
+        ///</summary>
         public EventMessageResponse()
         {
             this.ODataType = "microsoft.graph.eventMessageResponse";
         }
-	
+    
         /// <summary>
         /// Gets or sets proposed new time.
         /// </summary>

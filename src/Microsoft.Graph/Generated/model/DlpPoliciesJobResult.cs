@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DlpPoliciesJobResult>))]
     public partial class DlpPoliciesJobResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DlpPoliciesJobResult"/> class.
-        /// </summary>
-        public DlpPoliciesJobResult()
-        {
-            this.ODataType = "microsoft.graph.dlpPoliciesJobResult";
-        }
 
         /// <summary>
         /// Gets or sets matchingRules.

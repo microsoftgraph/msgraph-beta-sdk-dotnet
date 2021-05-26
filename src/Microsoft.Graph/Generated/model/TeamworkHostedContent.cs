@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class TeamworkHostedContent : Entity
     {
     
-		///<summary>
-		/// The TeamworkHostedContent constructor
-		///</summary>
-        public TeamworkHostedContent()
-        {
-            this.ODataType = "microsoft.graph.teamworkHostedContent";
-        }
-	
         /// <summary>
         /// Gets or sets content bytes.
         /// Write only. Bytes for the hosted content (such as images).

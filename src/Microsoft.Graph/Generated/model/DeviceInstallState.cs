@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceInstallState : Entity
     {
     
-		///<summary>
-		/// The DeviceInstallState constructor
-		///</summary>
-        public DeviceInstallState()
-        {
-            this.ODataType = "microsoft.graph.deviceInstallState";
-        }
-	
         /// <summary>
         /// Gets or sets device id.
         /// Device Id.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationPolicy : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationPolicy constructor
-		///</summary>
-        public DeviceManagementConfigurationPolicy()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// Policy creation date and time. This property is read-only.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessPackage : Entity
     {
     
-		///<summary>
-		/// The AccessPackage constructor
-		///</summary>
-        public AccessPackage()
-        {
-            this.ODataType = "microsoft.graph.accessPackage";
-        }
-	
         /// <summary>
         /// Gets or sets catalog id.
         /// ID of the access package catalog referencing this access package. Read-only.

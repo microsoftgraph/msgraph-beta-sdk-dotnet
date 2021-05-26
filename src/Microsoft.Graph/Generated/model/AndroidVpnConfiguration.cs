@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidVpnConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The AndroidVpnConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidVpnConfiguration constructor
+        ///</summary>
         public AndroidVpnConfiguration()
         {
             this.ODataType = "microsoft.graph.androidVpnConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets authentication method.
         /// Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.

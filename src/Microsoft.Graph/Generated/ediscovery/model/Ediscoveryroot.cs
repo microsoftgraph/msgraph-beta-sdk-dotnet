@@ -20,14 +20,6 @@ namespace Microsoft.Graph.Ediscovery
     public partial class Ediscoveryroot : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Ediscoveryroot constructor
-		///</summary>
-        public Ediscoveryroot()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.ediscoveryroot";
-        }
-	
         /// <summary>
         /// Gets or sets cases.
         /// </summary>

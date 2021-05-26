@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class MailboxUsageMailboxCounts : Entity
     {
     
-		///<summary>
-		/// The MailboxUsageMailboxCounts constructor
-		///</summary>
-        public MailboxUsageMailboxCounts()
-        {
-            this.ODataType = "microsoft.graph.mailboxUsageMailboxCounts";
-        }
-	
         /// <summary>
         /// Gets or sets active.
         /// </summary>

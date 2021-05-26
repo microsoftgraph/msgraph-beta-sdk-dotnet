@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceHealthScriptDeviceState : Entity
     {
     
-		///<summary>
-		/// The DeviceHealthScriptDeviceState constructor
-		///</summary>
-        public DeviceHealthScriptDeviceState()
-        {
-            this.ODataType = "microsoft.graph.deviceHealthScriptDeviceState";
-        }
-	
         /// <summary>
         /// Gets or sets detection state.
         /// Detection state from the lastest device health script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.

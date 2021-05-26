@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class EducationFeedbackOutcome : EducationOutcome
     {
     
-		///<summary>
-		/// The EducationFeedbackOutcome constructor
-		///</summary>
+        ///<summary>
+        /// The EducationFeedbackOutcome constructor
+        ///</summary>
         public EducationFeedbackOutcome()
         {
             this.ODataType = "microsoft.graph.educationFeedbackOutcome";
         }
-	
+    
         /// <summary>
         /// Gets or sets feedback.
         /// Teacher's written feedback to the student.

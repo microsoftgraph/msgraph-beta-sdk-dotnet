@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<BulkManagedDeviceActionResult>))]
     public partial class BulkManagedDeviceActionResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BulkManagedDeviceActionResult"/> class.
-        /// </summary>
-        public BulkManagedDeviceActionResult()
-        {
-            this.ODataType = "microsoft.graph.bulkManagedDeviceActionResult";
-        }
 
         /// <summary>
         /// Gets or sets failedDeviceIds.

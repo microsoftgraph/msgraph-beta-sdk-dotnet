@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<InstitutionData>))]
     public partial class InstitutionData
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InstitutionData"/> class.
-        /// </summary>
-        public InstitutionData()
-        {
-            this.ODataType = "microsoft.graph.institutionData";
-        }
 
         /// <summary>
         /// Gets or sets description.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class PlannerAssignedToTaskBoardTaskFormat : PlannerDelta
     {
     
-		///<summary>
-		/// The PlannerAssignedToTaskBoardTaskFormat constructor
-		///</summary>
+        ///<summary>
+        /// The PlannerAssignedToTaskBoardTaskFormat constructor
+        ///</summary>
         public PlannerAssignedToTaskBoardTaskFormat()
         {
             this.ODataType = "microsoft.graph.plannerAssignedToTaskBoardTaskFormat";
         }
-	
+    
         /// <summary>
         /// Gets or sets order hints by assignee.
         /// Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Location>))]
     public partial class Location
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Location"/> class.
-        /// </summary>
-        public Location()
-        {
-            this.ODataType = "microsoft.graph.location";
-        }
 
         /// <summary>
         /// Gets or sets address.

@@ -43,7 +43,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            windowsUpdateCatalogItem.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(windowsUpdateCatalogItem.GetType().FullName));
             return this.SendAsync<WindowsUpdateCatalogItem>(windowsUpdateCatalogItem, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            windowsUpdateCatalogItem.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(windowsUpdateCatalogItem.GetType().FullName));
             return this.SendAsyncWithGraphResponse<WindowsUpdateCatalogItem>(windowsUpdateCatalogItem, cancellationToken);
         }
 

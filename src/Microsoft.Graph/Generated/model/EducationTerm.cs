@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EducationTerm>))]
     public partial class EducationTerm
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EducationTerm"/> class.
-        /// </summary>
-        public EducationTerm()
-        {
-            this.ODataType = "microsoft.graph.educationTerm";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class CallActivityStatistics : ActivityStatistics
     {
     
-		///<summary>
-		/// The CallActivityStatistics constructor
-		///</summary>
+        ///<summary>
+        /// The CallActivityStatistics constructor
+        ///</summary>
         public CallActivityStatistics()
         {
             this.ODataType = "microsoft.graph.callActivityStatistics";
         }
-	
+    
         /// <summary>
         /// Gets or sets after hours.
         /// Time spent on calls outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.

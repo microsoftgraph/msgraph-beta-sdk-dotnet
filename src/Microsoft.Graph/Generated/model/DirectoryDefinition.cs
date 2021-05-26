@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DirectoryDefinition : Entity
     {
     
-		///<summary>
-		/// The DirectoryDefinition constructor
-		///</summary>
-        public DirectoryDefinition()
-        {
-            this.ODataType = "microsoft.graph.directoryDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets discoverabilities.
         /// Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.

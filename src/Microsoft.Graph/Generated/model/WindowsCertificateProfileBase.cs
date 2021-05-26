@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class WindowsCertificateProfileBase : DeviceConfiguration
     {
     
-		///<summary>
-		/// The internal WindowsCertificateProfileBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal WindowsCertificateProfileBase constructor
+        ///</summary>
         protected internal WindowsCertificateProfileBase()
         {
             // Don't allow initialization of abstract entity types

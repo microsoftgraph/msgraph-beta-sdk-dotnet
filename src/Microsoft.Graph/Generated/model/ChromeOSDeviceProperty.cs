@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ChromeOSDeviceProperty>))]
     public partial class ChromeOSDeviceProperty
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChromeOSDeviceProperty"/> class.
-        /// </summary>
-        public ChromeOSDeviceProperty()
-        {
-            this.ODataType = "microsoft.graph.chromeOSDeviceProperty";
-        }
 
         /// <summary>
         /// Gets or sets name.

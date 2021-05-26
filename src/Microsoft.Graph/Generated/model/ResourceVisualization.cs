@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ResourceVisualization>))]
     public partial class ResourceVisualization
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ResourceVisualization"/> class.
-        /// </summary>
-        public ResourceVisualization()
-        {
-            this.ODataType = "microsoft.graph.resourceVisualization";
-        }
 
         /// <summary>
         /// Gets or sets containerDisplayName.

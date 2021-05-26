@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CloudPcSourceDeviceImage>))]
     public partial class CloudPcSourceDeviceImage
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CloudPcSourceDeviceImage"/> class.
-        /// </summary>
-        public CloudPcSourceDeviceImage()
-        {
-            this.ODataType = "microsoft.graph.cloudPcSourceDeviceImage";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

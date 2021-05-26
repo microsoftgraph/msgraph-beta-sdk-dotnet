@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class GovernanceResource : Entity
     {
     
-		///<summary>
-		/// The GovernanceResource constructor
-		///</summary>
-        public GovernanceResource()
-        {
-            this.ODataType = "microsoft.graph.governanceResource";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the resource.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationSettingGroupCollectionDefinition : DeviceManagementConfigurationSettingGroupDefinition
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationSettingGroupCollectionDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementConfigurationSettingGroupCollectionDefinition constructor
+        ///</summary>
         public DeviceManagementConfigurationSettingGroupCollectionDefinition()
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition";
         }
-	
+    
         /// <summary>
         /// Gets or sets maximum count.
         /// Maximum number of setting group count in the collection. Valid values 1 to 100

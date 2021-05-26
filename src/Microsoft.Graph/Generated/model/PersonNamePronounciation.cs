@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PersonNamePronounciation>))]
     public partial class PersonNamePronounciation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PersonNamePronounciation"/> class.
-        /// </summary>
-        public PersonNamePronounciation()
-        {
-            this.ODataType = "microsoft.graph.personNamePronounciation";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

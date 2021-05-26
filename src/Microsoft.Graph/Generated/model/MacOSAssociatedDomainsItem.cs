@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MacOSAssociatedDomainsItem>))]
     public partial class MacOSAssociatedDomainsItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacOSAssociatedDomainsItem"/> class.
-        /// </summary>
-        public MacOSAssociatedDomainsItem()
-        {
-            this.ODataType = "microsoft.graph.macOSAssociatedDomainsItem";
-        }
 
         /// <summary>
         /// Gets or sets applicationIdentifier.

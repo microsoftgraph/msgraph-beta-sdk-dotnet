@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TrustFrameworkKey>))]
     public partial class TrustFrameworkKey
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TrustFrameworkKey"/> class.
-        /// </summary>
-        public TrustFrameworkKey()
-        {
-            this.ODataType = "microsoft.graph.trustFrameworkKey";
-        }
 
         /// <summary>
         /// Gets or sets d.

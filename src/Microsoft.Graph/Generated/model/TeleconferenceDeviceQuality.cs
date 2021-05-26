@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TeleconferenceDeviceQuality>))]
     public partial class TeleconferenceDeviceQuality
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TeleconferenceDeviceQuality"/> class.
-        /// </summary>
-        public TeleconferenceDeviceQuality()
-        {
-            this.ODataType = "microsoft.graph.teleconferenceDeviceQuality";
-        }
 
         /// <summary>
         /// Gets or sets callChainId.

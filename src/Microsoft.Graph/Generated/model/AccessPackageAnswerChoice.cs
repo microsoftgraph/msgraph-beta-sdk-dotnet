@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AccessPackageAnswerChoice>))]
     public partial class AccessPackageAnswerChoice
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccessPackageAnswerChoice"/> class.
-        /// </summary>
-        public AccessPackageAnswerChoice()
-        {
-            this.ODataType = "microsoft.graph.accessPackageAnswerChoice";
-        }
 
         /// <summary>
         /// Gets or sets actualValue.

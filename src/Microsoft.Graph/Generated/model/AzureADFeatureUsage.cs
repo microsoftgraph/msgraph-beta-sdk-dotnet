@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AzureADFeatureUsage : Entity
     {
     
-		///<summary>
-		/// The AzureADFeatureUsage constructor
-		///</summary>
-        public AzureADFeatureUsage()
-        {
-            this.ODataType = "microsoft.graph.azureADFeatureUsage";
-        }
-	
         /// <summary>
         /// Gets or sets feature name.
         /// </summary>

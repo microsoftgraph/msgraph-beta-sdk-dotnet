@@ -43,7 +43,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            identityProviderBase.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(identityProviderBase.GetType().FullName));
             return this.SendAsync<IdentityProviderBase>(identityProviderBase, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            identityProviderBase.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(identityProviderBase.GetType().FullName));
             return this.SendAsyncWithGraphResponse<IdentityProviderBase>(identityProviderBase, cancellationToken);
         }
 

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DataClassificationService : Entity
     {
     
-		///<summary>
-		/// The DataClassificationService constructor
-		///</summary>
-        public DataClassificationService()
-        {
-            this.ODataType = "microsoft.graph.dataClassificationService";
-        }
-	
         /// <summary>
         /// Gets or sets exact match data stores.
         /// </summary>

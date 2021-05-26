@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PrivilegedRole : Entity
     {
     
-		///<summary>
-		/// The PrivilegedRole constructor
-		///</summary>
-        public PrivilegedRole()
-        {
-            this.ODataType = "microsoft.graph.privilegedRole";
-        }
-	
         /// <summary>
         /// Gets or sets name.
         /// Role name.

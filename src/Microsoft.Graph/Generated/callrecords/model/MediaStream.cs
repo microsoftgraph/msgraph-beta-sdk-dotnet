@@ -20,13 +20,6 @@ namespace Microsoft.Graph.CallRecords
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<MediaStream>))]
     public partial class MediaStream
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MediaStream"/> class.
-        /// </summary>
-        public MediaStream()
-        {
-            this.ODataType = "microsoft.graph.callRecords.mediaStream";
-        }
 
         /// <summary>
         /// Gets or sets averageAudioDegradation.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class MicrosoftTunnelServerLogCollectionResponse : Entity
     {
     
-		///<summary>
-		/// The MicrosoftTunnelServerLogCollectionResponse constructor
-		///</summary>
-        public MicrosoftTunnelServerLogCollectionResponse()
-        {
-            this.ODataType = "microsoft.graph.microsoftTunnelServerLogCollectionResponse";
-        }
-	
         /// <summary>
         /// Gets or sets end date time.
         /// The end time of the logs collected

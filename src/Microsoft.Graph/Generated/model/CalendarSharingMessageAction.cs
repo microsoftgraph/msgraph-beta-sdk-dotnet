@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CalendarSharingMessageAction>))]
     public partial class CalendarSharingMessageAction
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CalendarSharingMessageAction"/> class.
-        /// </summary>
-        public CalendarSharingMessageAction()
-        {
-            this.ODataType = "microsoft.graph.calendarSharingMessageAction";
-        }
 
         /// <summary>
         /// Gets or sets action.

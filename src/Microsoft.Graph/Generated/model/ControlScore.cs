@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ControlScore>))]
     public partial class ControlScore
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ControlScore"/> class.
-        /// </summary>
-        public ControlScore()
-        {
-            this.ODataType = "microsoft.graph.controlScore";
-        }
 
         /// <summary>
         /// Gets or sets controlCategory.

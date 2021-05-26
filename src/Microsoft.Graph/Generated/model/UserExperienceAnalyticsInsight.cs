@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsInsight>))]
     public partial class UserExperienceAnalyticsInsight
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserExperienceAnalyticsInsight"/> class.
-        /// </summary>
-        public UserExperienceAnalyticsInsight()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsInsight";
-        }
 
         /// <summary>
         /// Gets or sets insightId.

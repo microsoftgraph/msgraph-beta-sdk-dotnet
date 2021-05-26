@@ -21,9 +21,9 @@ namespace Microsoft.Graph.Ediscovery
     public partial class DataSource : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The internal DataSource constructor
-		///</summary>
+        ///<summary>
+        /// The internal DataSource constructor
+        ///</summary>
         protected internal DataSource()
         {
             // Don't allow initialization of abstract entity types

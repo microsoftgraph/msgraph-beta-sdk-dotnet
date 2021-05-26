@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AssignmentFilterStatusDetails>))]
     public partial class AssignmentFilterStatusDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AssignmentFilterStatusDetails"/> class.
-        /// </summary>
-        public AssignmentFilterStatusDetails()
-        {
-            this.ODataType = "microsoft.graph.assignmentFilterStatusDetails";
-        }
 
         /// <summary>
         /// Gets or sets deviceProperties.

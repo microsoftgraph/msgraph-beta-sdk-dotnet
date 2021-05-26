@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UnifiedRbacResourceNamespace : Entity
     {
     
-		///<summary>
-		/// The UnifiedRbacResourceNamespace constructor
-		///</summary>
-        public UnifiedRbacResourceNamespace()
-        {
-            this.ODataType = "microsoft.graph.unifiedRbacResourceNamespace";
-        }
-	
         /// <summary>
         /// Gets or sets name.
         /// </summary>

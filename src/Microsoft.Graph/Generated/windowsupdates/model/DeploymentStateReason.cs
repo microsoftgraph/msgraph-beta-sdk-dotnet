@@ -20,13 +20,6 @@ namespace Microsoft.Graph.WindowsUpdates
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<DeploymentStateReason>))]
     public partial class DeploymentStateReason
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeploymentStateReason"/> class.
-        /// </summary>
-        public DeploymentStateReason()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.deploymentStateReason";
-        }
 
         /// <summary>
         /// Gets or sets value.

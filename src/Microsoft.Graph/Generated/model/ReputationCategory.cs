@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ReputationCategory>))]
     public partial class ReputationCategory
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ReputationCategory"/> class.
-        /// </summary>
-        public ReputationCategory()
-        {
-            this.ODataType = "microsoft.graph.reputationCategory";
-        }
 
         /// <summary>
         /// Gets or sets description.

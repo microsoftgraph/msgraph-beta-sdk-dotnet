@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TimeCardEvent>))]
     public partial class TimeCardEvent
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimeCardEvent"/> class.
-        /// </summary>
-        public TimeCardEvent()
-        {
-            this.ODataType = "microsoft.graph.timeCardEvent";
-        }
 
         /// <summary>
         /// Gets or sets atApprovedLocation.

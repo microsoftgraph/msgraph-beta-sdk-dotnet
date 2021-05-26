@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementTroubleshootingErrorResource>))]
     public partial class DeviceManagementTroubleshootingErrorResource
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementTroubleshootingErrorResource"/> class.
-        /// </summary>
-        public DeviceManagementTroubleshootingErrorResource()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementTroubleshootingErrorResource";
-        }
 
         /// <summary>
         /// Gets or sets link.

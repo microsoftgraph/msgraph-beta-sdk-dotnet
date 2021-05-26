@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementIntentAssignment : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementIntentAssignment constructor
-		///</summary>
-        public DeviceManagementIntentAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementIntentAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// The assignment target

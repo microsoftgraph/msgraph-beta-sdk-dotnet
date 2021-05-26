@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<BucketAggregationDefinition>))]
     public partial class BucketAggregationDefinition
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BucketAggregationDefinition"/> class.
-        /// </summary>
-        public BucketAggregationDefinition()
-        {
-            this.ODataType = "microsoft.graph.bucketAggregationDefinition";
-        }
 
         /// <summary>
         /// Gets or sets isDescending.

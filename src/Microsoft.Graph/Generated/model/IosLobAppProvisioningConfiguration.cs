@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class IosLobAppProvisioningConfiguration : Entity
     {
     
-		///<summary>
-		/// The IosLobAppProvisioningConfiguration constructor
-		///</summary>
-        public IosLobAppProvisioningConfiguration()
-        {
-            this.ODataType = "microsoft.graph.iosLobAppProvisioningConfiguration";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// DateTime the object was created.

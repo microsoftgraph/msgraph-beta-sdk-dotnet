@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserRegistrationFeatureSummary>))]
     public partial class UserRegistrationFeatureSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserRegistrationFeatureSummary"/> class.
-        /// </summary>
-        public UserRegistrationFeatureSummary()
-        {
-            this.ODataType = "microsoft.graph.userRegistrationFeatureSummary";
-        }
 
         /// <summary>
         /// Gets or sets totalUserCount.

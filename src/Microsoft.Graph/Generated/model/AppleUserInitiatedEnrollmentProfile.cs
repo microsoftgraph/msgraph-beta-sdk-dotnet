@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class AppleUserInitiatedEnrollmentProfile : Entity
     {
     
-		///<summary>
-		/// The AppleUserInitiatedEnrollmentProfile constructor
-		///</summary>
-        public AppleUserInitiatedEnrollmentProfile()
-        {
-            this.ODataType = "microsoft.graph.appleUserInitiatedEnrollmentProfile";
-        }
-	
         /// <summary>
         /// Gets or sets available enrollment type options.
         /// List of available enrollment type options

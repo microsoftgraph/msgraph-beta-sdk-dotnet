@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ItemActivityOLD : Entity
     {
     
-		///<summary>
-		/// The ItemActivityOLD constructor
-		///</summary>
-        public ItemActivityOLD()
-        {
-            this.ODataType = "microsoft.graph.itemActivityOLD";
-        }
-	
         /// <summary>
         /// Gets or sets action.
         /// </summary>

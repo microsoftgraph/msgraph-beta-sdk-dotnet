@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class AppLogCollectionRequestObject : Entity
     {
     
-		///<summary>
-		/// The AppLogCollectionRequest constructor
-		///</summary>
-        public AppLogCollectionRequestObject()
-        {
-            this.ODataType = "microsoft.graph.appLogCollectionRequest";
-        }
-	
         /// <summary>
         /// Gets or sets completed date time.
         /// Time at which the upload log request reached a terminal state

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentation : Entity
     {
     
-		///<summary>
-		/// The GroupPolicyPresentation constructor
-		///</summary>
-        public GroupPolicyPresentation()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyPresentation";
-        }
-	
         /// <summary>
         /// Gets or sets label.
         /// Localized text label for any presentation entity. The default value is empty.

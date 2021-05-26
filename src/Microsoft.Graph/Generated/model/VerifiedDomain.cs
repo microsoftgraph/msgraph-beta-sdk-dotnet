@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<VerifiedDomain>))]
     public partial class VerifiedDomain
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VerifiedDomain"/> class.
-        /// </summary>
-        public VerifiedDomain()
-        {
-            this.ODataType = "microsoft.graph.verifiedDomain";
-        }
 
         /// <summary>
         /// Gets or sets capabilities.

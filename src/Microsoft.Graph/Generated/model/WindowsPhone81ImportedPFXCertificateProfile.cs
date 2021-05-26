@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81ImportedPFXCertificateProfile : WindowsCertificateProfileBase
     {
     
-		///<summary>
-		/// The WindowsPhone81ImportedPFXCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsPhone81ImportedPFXCertificateProfile constructor
+        ///</summary>
         public WindowsPhone81ImportedPFXCertificateProfile()
         {
             this.ODataType = "microsoft.graph.windowsPhone81ImportedPFXCertificateProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets intended purpose.
         /// Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.

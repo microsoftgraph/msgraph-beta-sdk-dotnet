@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ManagedEBookCategory : Entity
     {
     
-		///<summary>
-		/// The ManagedEBookCategory constructor
-		///</summary>
-        public ManagedEBookCategory()
-        {
-            this.ODataType = "microsoft.graph.managedEBookCategory";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The name of the eBook category.

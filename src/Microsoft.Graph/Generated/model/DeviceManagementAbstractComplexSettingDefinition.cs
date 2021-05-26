@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementAbstractComplexSettingDefinition : DeviceManagementSettingDefinition
     {
     
-		///<summary>
-		/// The DeviceManagementAbstractComplexSettingDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementAbstractComplexSettingDefinition constructor
+        ///</summary>
         public DeviceManagementAbstractComplexSettingDefinition()
         {
             this.ODataType = "microsoft.graph.deviceManagementAbstractComplexSettingDefinition";
         }
-	
+    
         /// <summary>
         /// Gets or sets implementations.
         /// List of definition IDs for all possible implementations of this abstract complex setting

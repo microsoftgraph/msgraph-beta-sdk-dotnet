@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class UnsupportedGroupPolicyExtension : Entity
     {
     
-		///<summary>
-		/// The UnsupportedGroupPolicyExtension constructor
-		///</summary>
-        public UnsupportedGroupPolicyExtension()
-        {
-            this.ODataType = "microsoft.graph.unsupportedGroupPolicyExtension";
-        }
-	
         /// <summary>
         /// Gets or sets extension type.
         /// ExtensionType of the unsupported extension.

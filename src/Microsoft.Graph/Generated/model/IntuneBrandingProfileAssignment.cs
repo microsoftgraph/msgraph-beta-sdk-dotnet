@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class IntuneBrandingProfileAssignment : Entity
     {
     
-		///<summary>
-		/// The IntuneBrandingProfileAssignment constructor
-		///</summary>
-        public IntuneBrandingProfileAssignment()
-        {
-            this.ODataType = "microsoft.graph.intuneBrandingProfileAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// Assignment target that the branding profile is assigned to.

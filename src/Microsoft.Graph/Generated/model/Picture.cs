@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Picture : Entity
     {
     
-		///<summary>
-		/// The Picture constructor
-		///</summary>
-        public Picture()
-        {
-            this.ODataType = "microsoft.graph.picture";
-        }
-	
         /// <summary>
         /// Gets or sets content.
         /// </summary>

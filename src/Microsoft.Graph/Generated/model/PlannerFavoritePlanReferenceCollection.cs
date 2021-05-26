@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PlannerFavoritePlanReferenceCollection>))]
     public partial class PlannerFavoritePlanReferenceCollection
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlannerFavoritePlanReferenceCollection"/> class.
-        /// </summary>
-        public PlannerFavoritePlanReferenceCollection()
-        {
-            this.ODataType = "microsoft.graph.plannerFavoritePlanReferenceCollection";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

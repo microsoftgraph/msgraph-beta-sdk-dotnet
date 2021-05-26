@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MobileAppRelationshipState>))]
     public partial class MobileAppRelationshipState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MobileAppRelationshipState"/> class.
-        /// </summary>
-        public MobileAppRelationshipState()
-        {
-            this.ODataType = "microsoft.graph.mobileAppRelationshipState";
-        }
 
         /// <summary>
         /// Gets or sets deviceId.

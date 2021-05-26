@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class UnmanagedDeviceDiscoveryTask : DeviceAppManagementTask
     {
     
-		///<summary>
-		/// The UnmanagedDeviceDiscoveryTask constructor
-		///</summary>
+        ///<summary>
+        /// The UnmanagedDeviceDiscoveryTask constructor
+        ///</summary>
         public UnmanagedDeviceDiscoveryTask()
         {
             this.ODataType = "microsoft.graph.unmanagedDeviceDiscoveryTask";
         }
-	
+    
         /// <summary>
         /// Gets or sets unmanaged devices.
         /// Unmanaged devices discovered in the network.

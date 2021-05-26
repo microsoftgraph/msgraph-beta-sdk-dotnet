@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class FilterOperatorSchema : Entity
     {
     
-		///<summary>
-		/// The FilterOperatorSchema constructor
-		///</summary>
-        public FilterOperatorSchema()
-        {
-            this.ODataType = "microsoft.graph.filterOperatorSchema";
-        }
-	
         /// <summary>
         /// Gets or sets arity.
         /// Arity of the operator. Possible values are: Binary, Unary. The default is Binary.

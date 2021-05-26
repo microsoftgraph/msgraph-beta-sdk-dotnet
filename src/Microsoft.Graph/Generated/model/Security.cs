@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Security : Entity
     {
     
-		///<summary>
-		/// The Security constructor
-		///</summary>
-        public Security()
-        {
-            this.ODataType = "microsoft.graph.security";
-        }
-	
         /// <summary>
         /// Gets or sets provider status.
         /// </summary>

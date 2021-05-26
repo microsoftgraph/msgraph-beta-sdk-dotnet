@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceOverview : Entity
     {
     
-		///<summary>
-		/// The ManagedDeviceOverview constructor
-		///</summary>
-        public ManagedDeviceOverview()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceOverview";
-        }
-	
         /// <summary>
         /// Gets or sets device exchange access state summary.
         /// Distribution of Exchange Access State in Intune

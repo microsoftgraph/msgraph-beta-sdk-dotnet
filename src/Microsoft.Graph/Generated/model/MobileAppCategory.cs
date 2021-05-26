@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class MobileAppCategory : Entity
     {
     
-		///<summary>
-		/// The MobileAppCategory constructor
-		///</summary>
-        public MobileAppCategory()
-        {
-            this.ODataType = "microsoft.graph.mobileAppCategory";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The name of the app category.

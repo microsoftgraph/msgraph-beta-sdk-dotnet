@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Event : OutlookItem
     {
     
-		///<summary>
-		/// The Event constructor
-		///</summary>
+        ///<summary>
+        /// The Event constructor
+        ///</summary>
         public Event()
         {
             this.ODataType = "microsoft.graph.event";
         }
-	
+    
         /// <summary>
         /// Gets or sets allow new time proposals.
         /// True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.

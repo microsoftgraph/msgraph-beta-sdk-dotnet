@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class AndroidForWorkNineWorkEasConfiguration : AndroidForWorkEasEmailProfileBase
     {
     
-		///<summary>
-		/// The AndroidForWorkNineWorkEasConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidForWorkNineWorkEasConfiguration constructor
+        ///</summary>
         public AndroidForWorkNineWorkEasConfiguration()
         {
             this.ODataType = "microsoft.graph.androidForWorkNineWorkEasConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets sync calendar.
         /// Toggles syncing the calendar. If set to false the calendar is turned off on the device.

@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class PlannerTaskDetails : PlannerDelta
     {
     
-		///<summary>
-		/// The PlannerTaskDetails constructor
-		///</summary>
+        ///<summary>
+        /// The PlannerTaskDetails constructor
+        ///</summary>
         public PlannerTaskDetails()
         {
             this.ODataType = "microsoft.graph.plannerTaskDetails";
         }
-	
+    
         /// <summary>
         /// Gets or sets checklist.
         /// The collection of checklist items on the task.

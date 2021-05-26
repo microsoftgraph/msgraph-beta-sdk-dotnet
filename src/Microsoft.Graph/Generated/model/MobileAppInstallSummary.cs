@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class MobileAppInstallSummary : Entity
     {
     
-		///<summary>
-		/// The MobileAppInstallSummary constructor
-		///</summary>
-        public MobileAppInstallSummary()
-        {
-            this.ODataType = "microsoft.graph.mobileAppInstallSummary";
-        }
-	
         /// <summary>
         /// Gets or sets failed device count.
         /// Number of Devices that have failed to install this app.

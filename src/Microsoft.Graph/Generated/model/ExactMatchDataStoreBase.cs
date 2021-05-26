@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ExactMatchDataStoreBase : Entity
     {
     
-		///<summary>
-		/// The ExactMatchDataStoreBase constructor
-		///</summary>
-        public ExactMatchDataStoreBase()
-        {
-            this.ODataType = "microsoft.graph.exactMatchDataStoreBase";
-        }
-	
         /// <summary>
         /// Gets or sets columns.
         /// </summary>

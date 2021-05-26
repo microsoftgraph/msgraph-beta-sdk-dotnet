@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ScopedRoleMembership : Entity
     {
     
-		///<summary>
-		/// The ScopedRoleMembership constructor
-		///</summary>
-        public ScopedRoleMembership()
-        {
-            this.ODataType = "microsoft.graph.scopedRoleMembership";
-        }
-	
         /// <summary>
         /// Gets or sets administrative unit id.
         /// Unique identifier for the administrative unit that the directory role is scoped to

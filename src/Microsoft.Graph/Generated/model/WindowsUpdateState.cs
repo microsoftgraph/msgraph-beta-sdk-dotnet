@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class WindowsUpdateState : Entity
     {
     
-		///<summary>
-		/// The WindowsUpdateState constructor
-		///</summary>
-        public WindowsUpdateState()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdateState";
-        }
-	
         /// <summary>
         /// Gets or sets device display name.
         /// Device display name.

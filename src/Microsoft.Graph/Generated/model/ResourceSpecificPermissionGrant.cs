@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ResourceSpecificPermissionGrant : DirectoryObject
     {
     
-		///<summary>
-		/// The ResourceSpecificPermissionGrant constructor
-		///</summary>
+        ///<summary>
+        /// The ResourceSpecificPermissionGrant constructor
+        ///</summary>
         public ResourceSpecificPermissionGrant()
         {
             this.ODataType = "microsoft.graph.resourceSpecificPermissionGrant";
         }
-	
+    
         /// <summary>
         /// Gets or sets client app id.
         /// ID of the service principal of the Azure AD app that has been granted access. Read-only.

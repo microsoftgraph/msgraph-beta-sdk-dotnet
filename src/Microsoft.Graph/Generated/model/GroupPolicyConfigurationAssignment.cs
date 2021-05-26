@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class GroupPolicyConfigurationAssignment : Entity
     {
     
-		///<summary>
-		/// The GroupPolicyConfigurationAssignment constructor
-		///</summary>
-        public GroupPolicyConfigurationAssignment()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyConfigurationAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time the entity was last modified.

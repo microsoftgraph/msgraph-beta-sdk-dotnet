@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ExternalItem : Entity
     {
     
-		///<summary>
-		/// The ExternalItem constructor
-		///</summary>
-        public ExternalItem()
-        {
-            this.ODataType = "microsoft.graph.externalItem";
-        }
-	
         /// <summary>
         /// Gets or sets acl.
         /// An array of access control entries. Each entry specifies the access granted to a user or group. Required.

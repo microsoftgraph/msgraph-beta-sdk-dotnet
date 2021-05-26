@@ -20,14 +20,14 @@ namespace Microsoft.Graph.Ediscovery
     public partial class CaseIndexOperation : CaseOperation
     {
     
-		///<summary>
-		/// The CaseIndexOperation constructor
-		///</summary>
+        ///<summary>
+        /// The CaseIndexOperation constructor
+        ///</summary>
         public CaseIndexOperation()
         {
             this.ODataType = "microsoft.graph.ediscovery.caseIndexOperation";
         }
-	
+    
     }
 }
 

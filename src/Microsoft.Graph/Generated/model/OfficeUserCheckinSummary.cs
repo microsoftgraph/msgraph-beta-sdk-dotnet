@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OfficeUserCheckinSummary>))]
     public partial class OfficeUserCheckinSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OfficeUserCheckinSummary"/> class.
-        /// </summary>
-        public OfficeUserCheckinSummary()
-        {
-            this.ODataType = "microsoft.graph.officeUserCheckinSummary";
-        }
 
         /// <summary>
         /// Gets or sets failedUserCount.

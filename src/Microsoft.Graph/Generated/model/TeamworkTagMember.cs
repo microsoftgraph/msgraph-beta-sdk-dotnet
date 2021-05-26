@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TeamworkTagMember : Entity
     {
     
-		///<summary>
-		/// The TeamworkTagMember constructor
-		///</summary>
-        public TeamworkTagMember()
-        {
-            this.ODataType = "microsoft.graph.teamworkTagMember";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

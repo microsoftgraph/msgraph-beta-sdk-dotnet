@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SearchResult>))]
     public partial class SearchResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchResult"/> class.
-        /// </summary>
-        public SearchResult()
-        {
-            this.ODataType = "microsoft.graph.searchResult";
-        }
 
         /// <summary>
         /// Gets or sets onClickTelemetryUrl.

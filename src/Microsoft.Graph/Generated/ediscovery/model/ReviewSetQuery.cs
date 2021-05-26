@@ -20,14 +20,6 @@ namespace Microsoft.Graph.Ediscovery
     public partial class ReviewSetQuery : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ReviewSetQuery constructor
-		///</summary>
-        public ReviewSetQuery()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.reviewSetQuery";
-        }
-	
         /// <summary>
         /// Gets or sets created by.
         /// The user who created the query.

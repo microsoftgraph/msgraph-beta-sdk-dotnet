@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MobileAppInstallTimeSettings>))]
     public partial class MobileAppInstallTimeSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MobileAppInstallTimeSettings"/> class.
-        /// </summary>
-        public MobileAppInstallTimeSettings()
-        {
-            this.ODataType = "microsoft.graph.mobileAppInstallTimeSettings";
-        }
 
         /// <summary>
         /// Gets or sets deadlineDateTime.

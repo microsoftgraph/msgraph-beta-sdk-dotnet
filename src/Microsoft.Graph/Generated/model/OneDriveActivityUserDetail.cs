@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class OneDriveActivityUserDetail : Entity
     {
     
-		///<summary>
-		/// The OneDriveActivityUserDetail constructor
-		///</summary>
-        public OneDriveActivityUserDetail()
-        {
-            this.ODataType = "microsoft.graph.oneDriveActivityUserDetail";
-        }
-	
         /// <summary>
         /// Gets or sets assigned products.
         /// </summary>

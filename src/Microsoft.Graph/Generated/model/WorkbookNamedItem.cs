@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookNamedItem : Entity
     {
     
-		///<summary>
-		/// The WorkbookNamedItem constructor
-		///</summary>
-        public WorkbookNamedItem()
-        {
-            this.ODataType = "microsoft.graph.workbookNamedItem";
-        }
-	
         /// <summary>
         /// Gets or sets comment.
         /// Represents the comment associated with this name.

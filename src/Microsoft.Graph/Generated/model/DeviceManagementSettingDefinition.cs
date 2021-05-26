@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementSettingDefinition : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementSettingDefinition constructor
-		///</summary>
-        public DeviceManagementSettingDefinition()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementSettingDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets constraints.
         /// Collection of constraints for the setting value

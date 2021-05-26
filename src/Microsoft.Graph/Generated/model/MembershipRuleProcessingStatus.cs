@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MembershipRuleProcessingStatus>))]
     public partial class MembershipRuleProcessingStatus
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MembershipRuleProcessingStatus"/> class.
-        /// </summary>
-        public MembershipRuleProcessingStatus()
-        {
-            this.ODataType = "microsoft.graph.membershipRuleProcessingStatus";
-        }
 
         /// <summary>
         /// Gets or sets errorMessage.

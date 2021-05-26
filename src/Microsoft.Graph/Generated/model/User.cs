@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class User : DirectoryObject
     {
     
-		///<summary>
-		/// The User constructor
-		///</summary>
+        ///<summary>
+        /// The User constructor
+        ///</summary>
         public User()
         {
             this.ODataType = "microsoft.graph.user";
         }
-	
+    
         /// <summary>
         /// Gets or sets sign in activity.
         /// Get the last signed-in date and request ID of the sign-in for a given user.Supports $filter, but not with any other filterable properties. Returned only on $select. Read-only. Note: Details for this property require an Azure AD Premium P1/P2 license.

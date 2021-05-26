@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class YammerGroupsActivityDetail : Entity
     {
     
-		///<summary>
-		/// The YammerGroupsActivityDetail constructor
-		///</summary>
-        public YammerGroupsActivityDetail()
-        {
-            this.ODataType = "microsoft.graph.yammerGroupsActivityDetail";
-        }
-	
         /// <summary>
         /// Gets or sets group display name.
         /// </summary>

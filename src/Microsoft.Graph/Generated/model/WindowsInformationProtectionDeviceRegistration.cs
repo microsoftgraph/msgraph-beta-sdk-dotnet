@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WindowsInformationProtectionDeviceRegistration : Entity
     {
     
-		///<summary>
-		/// The WindowsInformationProtectionDeviceRegistration constructor
-		///</summary>
-        public WindowsInformationProtectionDeviceRegistration()
-        {
-            this.ODataType = "microsoft.graph.windowsInformationProtectionDeviceRegistration";
-        }
-	
         /// <summary>
         /// Gets or sets device mac address.
         /// Device Mac address.

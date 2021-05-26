@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class CommsApplication
     {
     
-		///<summary>
-		/// The CommsApplication constructor
-		///</summary>
-        public CommsApplication()
-        {
-            this.ODataType = "microsoft.graph.commsApplication";
-        }
-	
         /// <summary>
         /// Gets or sets calls.
         /// </summary>

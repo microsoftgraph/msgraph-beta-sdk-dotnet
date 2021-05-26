@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AddIn>))]
     public partial class AddIn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AddIn"/> class.
-        /// </summary>
-        public AddIn()
-        {
-            this.ODataType = "microsoft.graph.addIn";
-        }
 
         /// <summary>
         /// Gets or sets id.

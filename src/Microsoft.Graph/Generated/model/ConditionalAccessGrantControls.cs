@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessGrantControls>))]
     public partial class ConditionalAccessGrantControls
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessGrantControls"/> class.
-        /// </summary>
-        public ConditionalAccessGrantControls()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessGrantControls";
-        }
 
         /// <summary>
         /// Gets or sets builtInControls.

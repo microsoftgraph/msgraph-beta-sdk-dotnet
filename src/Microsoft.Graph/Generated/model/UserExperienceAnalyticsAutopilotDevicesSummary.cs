@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsAutopilotDevicesSummary>))]
     public partial class UserExperienceAnalyticsAutopilotDevicesSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserExperienceAnalyticsAutopilotDevicesSummary"/> class.
-        /// </summary>
-        public UserExperienceAnalyticsAutopilotDevicesSummary()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsAutopilotDevicesSummary";
-        }
 
         /// <summary>
         /// Gets or sets devicesNotAutopilotRegistered.

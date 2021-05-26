@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PrintTaskStatus>))]
     public partial class PrintTaskStatus
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrintTaskStatus"/> class.
-        /// </summary>
-        public PrintTaskStatus()
-        {
-            this.ODataType = "microsoft.graph.printTaskStatus";
-        }
 
         /// <summary>
         /// Gets or sets description.

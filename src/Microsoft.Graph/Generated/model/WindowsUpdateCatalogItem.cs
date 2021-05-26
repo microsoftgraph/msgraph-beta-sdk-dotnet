@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class WindowsUpdateCatalogItem : Entity
     {
     
-		///<summary>
-		/// The internal WindowsUpdateCatalogItem constructor
-		///</summary>
+        ///<summary>
+        /// The internal WindowsUpdateCatalogItem constructor
+        ///</summary>
         protected internal WindowsUpdateCatalogItem()
         {
             // Don't allow initialization of abstract entity types

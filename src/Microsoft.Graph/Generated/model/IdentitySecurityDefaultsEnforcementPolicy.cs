@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class IdentitySecurityDefaultsEnforcementPolicy : PolicyBase
     {
     
-		///<summary>
-		/// The IdentitySecurityDefaultsEnforcementPolicy constructor
-		///</summary>
+        ///<summary>
+        /// The IdentitySecurityDefaultsEnforcementPolicy constructor
+        ///</summary>
         public IdentitySecurityDefaultsEnforcementPolicy()
         {
             this.ODataType = "microsoft.graph.identitySecurityDefaultsEnforcementPolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets is enabled.
         /// If set to true, Azure Active Directory security defaults is enabled for the tenant.

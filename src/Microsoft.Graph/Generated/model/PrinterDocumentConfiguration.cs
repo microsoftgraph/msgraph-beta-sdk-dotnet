@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PrinterDocumentConfiguration>))]
     public partial class PrinterDocumentConfiguration
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrinterDocumentConfiguration"/> class.
-        /// </summary>
-        public PrinterDocumentConfiguration()
-        {
-            this.ODataType = "microsoft.graph.printerDocumentConfiguration";
-        }
 
         /// <summary>
         /// Gets or sets collate.

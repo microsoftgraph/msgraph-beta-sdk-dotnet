@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementResourceAccessProfileAssignment : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementResourceAccessProfileAssignment constructor
-		///</summary>
-        public DeviceManagementResourceAccessProfileAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementResourceAccessProfileAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets intent.
         /// The assignment intent for the resource access profile. Possible values are: apply, remove.

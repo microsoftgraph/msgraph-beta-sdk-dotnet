@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerKioskModeManagedFolder>))]
     public partial class AndroidDeviceOwnerKioskModeManagedFolder
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AndroidDeviceOwnerKioskModeManagedFolder"/> class.
-        /// </summary>
-        public AndroidDeviceOwnerKioskModeManagedFolder()
-        {
-            this.ODataType = "microsoft.graph.androidDeviceOwnerKioskModeManagedFolder";
-        }
 
         /// <summary>
         /// Gets or sets folderIdentifier.

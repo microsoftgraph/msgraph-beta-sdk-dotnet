@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsMetricHistory : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsMetricHistory constructor
-		///</summary>
-        public UserExperienceAnalyticsMetricHistory()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsMetricHistory";
-        }
-	
         /// <summary>
         /// Gets or sets device id.
         /// The user experience analytics device id.

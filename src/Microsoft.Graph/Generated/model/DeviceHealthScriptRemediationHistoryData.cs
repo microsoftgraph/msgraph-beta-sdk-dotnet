@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceHealthScriptRemediationHistoryData>))]
     public partial class DeviceHealthScriptRemediationHistoryData
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceHealthScriptRemediationHistoryData"/> class.
-        /// </summary>
-        public DeviceHealthScriptRemediationHistoryData()
-        {
-            this.ODataType = "microsoft.graph.deviceHealthScriptRemediationHistoryData";
-        }
 
         /// <summary>
         /// Gets or sets date.

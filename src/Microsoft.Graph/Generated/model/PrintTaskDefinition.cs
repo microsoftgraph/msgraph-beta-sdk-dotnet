@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PrintTaskDefinition : Entity
     {
     
-		///<summary>
-		/// The PrintTaskDefinition constructor
-		///</summary>
-        public PrintTaskDefinition()
-        {
-            this.ODataType = "microsoft.graph.printTaskDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets created by.
         /// The application that created the printTaskDefinition. Read-only.

@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class IosCertificateProfileBase : IosCertificateProfile
     {
     
-		///<summary>
-		/// The internal IosCertificateProfileBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal IosCertificateProfileBase constructor
+        ///</summary>
         protected internal IosCertificateProfileBase()
         {
             // Don't allow initialization of abstract entity types

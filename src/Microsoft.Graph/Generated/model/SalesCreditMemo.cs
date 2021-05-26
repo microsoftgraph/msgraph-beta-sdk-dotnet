@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SalesCreditMemo : Entity
     {
     
-		///<summary>
-		/// The SalesCreditMemo constructor
-		///</summary>
-        public SalesCreditMemo()
-        {
-            this.ODataType = "microsoft.graph.salesCreditMemo";
-        }
-	
         /// <summary>
         /// Gets or sets billing postal address.
         /// </summary>

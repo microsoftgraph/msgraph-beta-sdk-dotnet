@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UnitOfMeasure : Entity
     {
     
-		///<summary>
-		/// The UnitOfMeasure constructor
-		///</summary>
-        public UnitOfMeasure()
-        {
-            this.ODataType = "microsoft.graph.unitOfMeasure";
-        }
-	
         /// <summary>
         /// Gets or sets code.
         /// </summary>

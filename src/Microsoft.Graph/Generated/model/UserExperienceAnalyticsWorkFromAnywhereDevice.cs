@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsWorkFromAnywhereDevice : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsWorkFromAnywhereDevice constructor
-		///</summary>
-        public UserExperienceAnalyticsWorkFromAnywhereDevice()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevice";
-        }
-	
         /// <summary>
         /// Gets or sets auto pilot profile assigned.
         /// The user experience analytics work from anywhere intune device's autopilotProfileAssigned.

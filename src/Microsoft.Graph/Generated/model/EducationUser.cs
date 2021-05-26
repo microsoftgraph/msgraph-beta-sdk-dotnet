@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class EducationUser : Entity
     {
     
-		///<summary>
-		/// The EducationUser constructor
-		///</summary>
-        public EducationUser()
-        {
-            this.ODataType = "microsoft.graph.educationUser";
-        }
-	
         /// <summary>
         /// Gets or sets related contacts.
         /// Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue

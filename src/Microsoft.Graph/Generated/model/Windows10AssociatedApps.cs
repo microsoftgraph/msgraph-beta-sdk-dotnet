@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Windows10AssociatedApps>))]
     public partial class Windows10AssociatedApps
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Windows10AssociatedApps"/> class.
-        /// </summary>
-        public Windows10AssociatedApps()
-        {
-            this.ODataType = "microsoft.graph.windows10AssociatedApps";
-        }
 
         /// <summary>
         /// Gets or sets appType.

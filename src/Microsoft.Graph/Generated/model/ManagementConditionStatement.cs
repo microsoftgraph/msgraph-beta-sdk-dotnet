@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ManagementConditionStatement : Entity
     {
     
-		///<summary>
-		/// The ManagementConditionStatement constructor
-		///</summary>
-        public ManagementConditionStatement()
-        {
-            this.ODataType = "microsoft.graph.managementConditionStatement";
-        }
-	
         /// <summary>
         /// Gets or sets applicable platforms.
         /// This is calculated from looking the management conditions associated to the management condition statement and finding the intersection of applicable platforms.

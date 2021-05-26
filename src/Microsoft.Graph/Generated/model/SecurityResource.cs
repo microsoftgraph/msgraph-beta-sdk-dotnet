@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SecurityResource>))]
     public partial class SecurityResource
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecurityResource"/> class.
-        /// </summary>
-        public SecurityResource()
-        {
-            this.ODataType = "microsoft.graph.securityResource";
-        }
 
         /// <summary>
         /// Gets or sets resource.

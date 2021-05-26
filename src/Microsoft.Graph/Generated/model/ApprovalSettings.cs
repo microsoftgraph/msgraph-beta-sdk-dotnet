@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ApprovalSettings>))]
     public partial class ApprovalSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ApprovalSettings"/> class.
-        /// </summary>
-        public ApprovalSettings()
-        {
-            this.ODataType = "microsoft.graph.approvalSettings";
-        }
 
         /// <summary>
         /// Gets or sets approvalMode.

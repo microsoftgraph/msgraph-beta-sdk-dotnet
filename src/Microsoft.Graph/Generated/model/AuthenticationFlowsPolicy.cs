@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AuthenticationFlowsPolicy : Entity
     {
     
-		///<summary>
-		/// The AuthenticationFlowsPolicy constructor
-		///</summary>
-        public AuthenticationFlowsPolicy()
-        {
-            this.ODataType = "microsoft.graph.authenticationFlowsPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Inherited property. A description of the policy. This property is not a key. Optional. Read-only.

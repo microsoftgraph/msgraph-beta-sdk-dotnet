@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RoleSuccessStatistics>))]
     public partial class RoleSuccessStatistics
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RoleSuccessStatistics"/> class.
-        /// </summary>
-        public RoleSuccessStatistics()
-        {
-            this.ODataType = "microsoft.graph.roleSuccessStatistics";
-        }
 
         /// <summary>
         /// Gets or sets permanentFail.

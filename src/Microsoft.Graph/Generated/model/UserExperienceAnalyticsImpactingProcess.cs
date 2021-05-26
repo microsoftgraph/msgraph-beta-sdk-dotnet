@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsImpactingProcess : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsImpactingProcess constructor
-		///</summary>
-        public UserExperienceAnalyticsImpactingProcess()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsImpactingProcess";
-        }
-	
         /// <summary>
         /// Gets or sets category.
         /// The category of impacting process.

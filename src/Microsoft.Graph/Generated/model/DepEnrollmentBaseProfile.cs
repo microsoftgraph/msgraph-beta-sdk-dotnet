@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class DepEnrollmentBaseProfile : EnrollmentProfile
     {
     
-		///<summary>
-		/// The internal DepEnrollmentBaseProfile constructor
-		///</summary>
+        ///<summary>
+        /// The internal DepEnrollmentBaseProfile constructor
+        ///</summary>
         protected internal DepEnrollmentBaseProfile()
         {
             // Don't allow initialization of abstract entity types

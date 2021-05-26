@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OnPremisesPublishingSingleSignOn>))]
     public partial class OnPremisesPublishingSingleSignOn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OnPremisesPublishingSingleSignOn"/> class.
-        /// </summary>
-        public OnPremisesPublishingSingleSignOn()
-        {
-            this.ODataType = "microsoft.graph.onPremisesPublishingSingleSignOn";
-        }
 
         /// <summary>
         /// Gets or sets kerberosSignOnSettings.

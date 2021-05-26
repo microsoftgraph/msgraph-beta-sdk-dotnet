@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TimeRange>))]
     public partial class TimeRange
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimeRange"/> class.
-        /// </summary>
-        public TimeRange()
-        {
-            this.ODataType = "microsoft.graph.timeRange";
-        }
 
         /// <summary>
         /// Gets or sets endTime.

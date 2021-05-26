@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<InvitationParticipantInfo>))]
     public partial class InvitationParticipantInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InvitationParticipantInfo"/> class.
-        /// </summary>
-        public InvitationParticipantInfo()
-        {
-            this.ODataType = "microsoft.graph.invitationParticipantInfo";
-        }
 
         /// <summary>
         /// Gets or sets endpointType.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsDeviceStartupProcessPerformance : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsDeviceStartupProcessPerformance constructor
-		///</summary>
-        public UserExperienceAnalyticsDeviceStartupProcessPerformance()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsDeviceStartupProcessPerformance";
-        }
-	
         /// <summary>
         /// Gets or sets device count.
         /// User experience analytics device startup process summarized count.

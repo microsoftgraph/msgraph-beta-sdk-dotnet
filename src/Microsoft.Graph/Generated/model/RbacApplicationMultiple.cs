@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class RbacApplicationMultiple : Entity
     {
     
-		///<summary>
-		/// The RbacApplicationMultiple constructor
-		///</summary>
-        public RbacApplicationMultiple()
-        {
-            this.ODataType = "microsoft.graph.rbacApplicationMultiple";
-        }
-	
         /// <summary>
         /// Gets or sets resource namespaces.
         /// </summary>

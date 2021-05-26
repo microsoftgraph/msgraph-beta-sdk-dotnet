@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsResourcePerformance : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsResourcePerformance constructor
-		///</summary>
-        public UserExperienceAnalyticsResourcePerformance()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsResourcePerformance";
-        }
-	
         /// <summary>
         /// Gets or sets cpu spike time percentage.
         /// CPU spike time in percentage. Valid values 0 to 100

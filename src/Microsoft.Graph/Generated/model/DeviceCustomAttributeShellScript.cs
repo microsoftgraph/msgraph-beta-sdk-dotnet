@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceCustomAttributeShellScript : Entity
     {
     
-		///<summary>
-		/// The DeviceCustomAttributeShellScript constructor
-		///</summary>
-        public DeviceCustomAttributeShellScript()
-        {
-            this.ODataType = "microsoft.graph.deviceCustomAttributeShellScript";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time the device management script was created. This property is read-only.

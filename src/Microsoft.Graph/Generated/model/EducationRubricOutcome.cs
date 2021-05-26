@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class EducationRubricOutcome : EducationOutcome
     {
     
-		///<summary>
-		/// The EducationRubricOutcome constructor
-		///</summary>
+        ///<summary>
+        /// The EducationRubricOutcome constructor
+        ///</summary>
         public EducationRubricOutcome()
         {
             this.ODataType = "microsoft.graph.educationRubricOutcome";
         }
-	
+    
         /// <summary>
         /// Gets or sets published rubric quality feedback.
         /// A copy of the rubricQualityFeedback property that is made when the grade is released to the student.

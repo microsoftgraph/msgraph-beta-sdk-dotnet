@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10XSCEPCertificateProfile : Windows10XCertificateProfile
     {
     
-		///<summary>
-		/// The Windows10XSCEPCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10XSCEPCertificateProfile constructor
+        ///</summary>
         public Windows10XSCEPCertificateProfile()
         {
             this.ODataType = "microsoft.graph.windows10XSCEPCertificateProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets certificate store.
         /// Target store certificate. Possible values are: user, machine.

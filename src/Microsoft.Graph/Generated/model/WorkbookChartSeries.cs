@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WorkbookChartSeries : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartSeries constructor
-		///</summary>
-        public WorkbookChartSeries()
-        {
-            this.ODataType = "microsoft.graph.workbookChartSeries";
-        }
-	
         /// <summary>
         /// Gets or sets name.
         /// Represents the name of a series in a chart.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MentionsPreview>))]
     public partial class MentionsPreview
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MentionsPreview"/> class.
-        /// </summary>
-        public MentionsPreview()
-        {
-            this.ODataType = "microsoft.graph.mentionsPreview";
-        }
 
         /// <summary>
         /// Gets or sets isMentioned.

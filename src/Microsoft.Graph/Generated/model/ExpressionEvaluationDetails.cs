@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ExpressionEvaluationDetails>))]
     public partial class ExpressionEvaluationDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExpressionEvaluationDetails"/> class.
-        /// </summary>
-        public ExpressionEvaluationDetails()
-        {
-            this.ODataType = "microsoft.graph.expressionEvaluationDetails";
-        }
 
         /// <summary>
         /// Gets or sets expression.

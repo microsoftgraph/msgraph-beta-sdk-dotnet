@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EmployeeOrgData>))]
     public partial class EmployeeOrgData
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EmployeeOrgData"/> class.
-        /// </summary>
-        public EmployeeOrgData()
-        {
-            this.ODataType = "microsoft.graph.employeeOrgData";
-        }
 
         /// <summary>
         /// Gets or sets costCenter.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PlannerOrderHintsByAssignee>))]
     public partial class PlannerOrderHintsByAssignee
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlannerOrderHintsByAssignee"/> class.
-        /// </summary>
-        public PlannerOrderHintsByAssignee()
-        {
-            this.ODataType = "microsoft.graph.plannerOrderHintsByAssignee";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

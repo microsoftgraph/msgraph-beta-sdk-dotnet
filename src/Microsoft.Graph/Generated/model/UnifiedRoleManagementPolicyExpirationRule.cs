@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleManagementPolicyExpirationRule : UnifiedRoleManagementPolicyRule
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicyExpirationRule constructor
-		///</summary>
+        ///<summary>
+        /// The UnifiedRoleManagementPolicyExpirationRule constructor
+        ///</summary>
         public UnifiedRoleManagementPolicyExpirationRule()
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyExpirationRule";
         }
-	
+    
         /// <summary>
         /// Gets or sets is expiration required.
         /// Indicates if expiration is required for eligibility or assignment.

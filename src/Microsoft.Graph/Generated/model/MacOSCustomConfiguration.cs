@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MacOSCustomConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The MacOSCustomConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSCustomConfiguration constructor
+        ///</summary>
         public MacOSCustomConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSCustomConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets payload.
         /// Payload. (UTF8 encoded byte array)

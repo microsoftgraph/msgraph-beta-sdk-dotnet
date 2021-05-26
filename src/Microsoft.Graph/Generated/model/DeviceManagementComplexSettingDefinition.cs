@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementComplexSettingDefinition : DeviceManagementSettingDefinition
     {
     
-		///<summary>
-		/// The DeviceManagementComplexSettingDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementComplexSettingDefinition constructor
+        ///</summary>
         public DeviceManagementComplexSettingDefinition()
         {
             this.ODataType = "microsoft.graph.deviceManagementComplexSettingDefinition";
         }
-	
+    
         /// <summary>
         /// Gets or sets property definition ids.
         /// The definitions of each property of the complex setting

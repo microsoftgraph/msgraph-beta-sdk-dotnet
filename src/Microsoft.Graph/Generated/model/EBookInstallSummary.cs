@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EBookInstallSummary : Entity
     {
     
-		///<summary>
-		/// The EBookInstallSummary constructor
-		///</summary>
-        public EBookInstallSummary()
-        {
-            this.ODataType = "microsoft.graph.eBookInstallSummary";
-        }
-	
         /// <summary>
         /// Gets or sets failed device count.
         /// Number of Devices that have failed to install this book.

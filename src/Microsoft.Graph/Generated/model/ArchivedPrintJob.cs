@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ArchivedPrintJob>))]
     public partial class ArchivedPrintJob
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ArchivedPrintJob"/> class.
-        /// </summary>
-        public ArchivedPrintJob()
-        {
-            this.ODataType = "microsoft.graph.archivedPrintJob";
-        }
 
         /// <summary>
         /// Gets or sets acquiredByPrinter.

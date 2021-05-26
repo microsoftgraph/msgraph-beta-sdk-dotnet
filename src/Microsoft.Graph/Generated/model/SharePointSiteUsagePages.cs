@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SharePointSiteUsagePages : Entity
     {
     
-		///<summary>
-		/// The SharePointSiteUsagePages constructor
-		///</summary>
-        public SharePointSiteUsagePages()
-        {
-            this.ODataType = "microsoft.graph.sharePointSiteUsagePages";
-        }
-	
         /// <summary>
         /// Gets or sets page view count.
         /// </summary>

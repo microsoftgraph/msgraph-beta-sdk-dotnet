@@ -20,13 +20,6 @@ namespace Microsoft.Graph.ExternalConnectors
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Acl>))]
     public partial class Acl
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Acl"/> class.
-        /// </summary>
-        public Acl()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.acl";
-        }
 
         /// <summary>
         /// Gets or sets accessType.

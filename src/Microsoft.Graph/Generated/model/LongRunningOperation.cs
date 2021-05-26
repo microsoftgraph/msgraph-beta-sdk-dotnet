@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class LongRunningOperation : Entity
     {
     
-		///<summary>
-		/// The LongRunningOperation constructor
-		///</summary>
-        public LongRunningOperation()
-        {
-            this.ODataType = "microsoft.graph.longRunningOperation";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// </summary>

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ResourceData>))]
     public partial class ResourceData
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ResourceData"/> class.
-        /// </summary>
-        public ResourceData()
-        {
-            this.ODataType = "microsoft.graph.resourceData";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

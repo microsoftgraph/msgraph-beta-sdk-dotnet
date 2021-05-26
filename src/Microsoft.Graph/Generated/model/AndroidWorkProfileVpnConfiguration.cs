@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileVpnConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The AndroidWorkProfileVpnConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidWorkProfileVpnConfiguration constructor
+        ///</summary>
         public AndroidWorkProfileVpnConfiguration()
         {
             this.ODataType = "microsoft.graph.androidWorkProfileVpnConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets always on.
         /// Whether or not to enable always-on VPN connection.

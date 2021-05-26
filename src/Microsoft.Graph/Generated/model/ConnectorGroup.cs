@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ConnectorGroup : Entity
     {
     
-		///<summary>
-		/// The ConnectorGroup constructor
-		///</summary>
-        public ConnectorGroup()
-        {
-            this.ODataType = "microsoft.graph.connectorGroup";
-        }
-	
         /// <summary>
         /// Gets or sets connector group type.
         /// Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.

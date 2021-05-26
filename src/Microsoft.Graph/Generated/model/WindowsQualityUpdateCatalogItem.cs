@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsQualityUpdateCatalogItem : WindowsUpdateCatalogItem
     {
     
-		///<summary>
-		/// The WindowsQualityUpdateCatalogItem constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsQualityUpdateCatalogItem constructor
+        ///</summary>
         public WindowsQualityUpdateCatalogItem()
         {
             this.ODataType = "microsoft.graph.windowsQualityUpdateCatalogItem";
         }
-	
+    
         /// <summary>
         /// Gets or sets classification.
         /// Classification of the quality update. Possible values are: all, security, nonSecurity.

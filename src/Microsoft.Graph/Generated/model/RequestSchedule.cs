@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RequestSchedule>))]
     public partial class RequestSchedule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RequestSchedule"/> class.
-        /// </summary>
-        public RequestSchedule()
-        {
-            this.ODataType = "microsoft.graph.requestSchedule";
-        }
 
         /// <summary>
         /// Gets or sets expiration.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PolicySetAssignment : Entity
     {
     
-		///<summary>
-		/// The PolicySetAssignment constructor
-		///</summary>
-        public PolicySetAssignment()
-        {
-            this.ODataType = "microsoft.graph.policySetAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets last modified date time.
         /// Last modified time of the PolicySetAssignment.

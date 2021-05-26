@@ -20,13 +20,6 @@ namespace Microsoft.Graph.TermStore
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<LocalizedLabel>))]
     public partial class LocalizedLabel
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LocalizedLabel"/> class.
-        /// </summary>
-        public LocalizedLabel()
-        {
-            this.ODataType = "microsoft.graph.termStore.localizedLabel";
-        }
 
         /// <summary>
         /// Gets or sets isDefault.

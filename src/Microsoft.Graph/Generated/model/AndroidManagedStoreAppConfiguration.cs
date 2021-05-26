@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidManagedStoreAppConfiguration : ManagedDeviceMobileAppConfiguration
     {
     
-		///<summary>
-		/// The AndroidManagedStoreAppConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidManagedStoreAppConfiguration constructor
+        ///</summary>
         public AndroidManagedStoreAppConfiguration()
         {
             this.ODataType = "microsoft.graph.androidManagedStoreAppConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets app supports oem config.
         /// Whether or not this AppConfig is an OEMConfig policy.

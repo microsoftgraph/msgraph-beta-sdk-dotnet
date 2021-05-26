@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DlpEvaluatePoliciesRequestObject>))]
     public partial class DlpEvaluatePoliciesRequestObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DlpEvaluatePoliciesRequestObject"/> class.
-        /// </summary>
-        public DlpEvaluatePoliciesRequestObject()
-        {
-            this.ODataType = "microsoft.graph.dlpEvaluatePoliciesRequest";
-        }
 
         /// <summary>
         /// Gets or sets evaluationInput.

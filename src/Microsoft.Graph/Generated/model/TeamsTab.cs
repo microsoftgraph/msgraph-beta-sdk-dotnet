@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TeamsTab : Entity
     {
     
-		///<summary>
-		/// The TeamsTab constructor
-		///</summary>
-        public TeamsTab()
-        {
-            this.ODataType = "microsoft.graph.teamsTab";
-        }
-	
         /// <summary>
         /// Gets or sets configuration.
         /// Container for custom settings applied to a tab. The tab is considered configured only once this property is set.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Employee : Entity
     {
     
-		///<summary>
-		/// The Employee constructor
-		///</summary>
-        public Employee()
-        {
-            this.ODataType = "microsoft.graph.employee";
-        }
-	
         /// <summary>
         /// Gets or sets address.
         /// </summary>

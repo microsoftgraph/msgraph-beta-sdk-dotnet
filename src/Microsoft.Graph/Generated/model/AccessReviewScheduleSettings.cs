@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AccessReviewScheduleSettings>))]
     public partial class AccessReviewScheduleSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccessReviewScheduleSettings"/> class.
-        /// </summary>
-        public AccessReviewScheduleSettings()
-        {
-            this.ODataType = "microsoft.graph.accessReviewScheduleSettings";
-        }
 
         /// <summary>
         /// Gets or sets applyActions.

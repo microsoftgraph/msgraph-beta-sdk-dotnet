@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IosAvailableUpdateVersion>))]
     public partial class IosAvailableUpdateVersion
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosAvailableUpdateVersion"/> class.
-        /// </summary>
-        public IosAvailableUpdateVersion()
-        {
-            this.ODataType = "microsoft.graph.iosAvailableUpdateVersion";
-        }
 
         /// <summary>
         /// Gets or sets expirationDateTime.

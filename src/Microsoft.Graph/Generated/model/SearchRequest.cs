@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SearchRequestObject>))]
     public partial class SearchRequestObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchRequestObject"/> class.
-        /// </summary>
-        public SearchRequestObject()
-        {
-            this.ODataType = "microsoft.graph.searchRequest";
-        }
 
         /// <summary>
         /// Gets or sets aggregationFilters.

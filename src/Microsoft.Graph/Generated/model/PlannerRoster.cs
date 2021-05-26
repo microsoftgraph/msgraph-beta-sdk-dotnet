@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PlannerRoster : Entity
     {
     
-		///<summary>
-		/// The PlannerRoster constructor
-		///</summary>
-        public PlannerRoster()
-        {
-            this.ODataType = "microsoft.graph.plannerRoster";
-        }
-	
         /// <summary>
         /// Gets or sets members.
         /// Retrieves the members of the plannerRoster.

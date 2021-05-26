@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationComboBox : GroupPolicyPresentation
     {
     
-		///<summary>
-		/// The GroupPolicyPresentationComboBox constructor
-		///</summary>
+        ///<summary>
+        /// The GroupPolicyPresentationComboBox constructor
+        ///</summary>
         public GroupPolicyPresentationComboBox()
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationComboBox";
         }
-	
+    
         /// <summary>
         /// Gets or sets default value.
         /// Localized default string displayed in the combo box. The default value is empty.

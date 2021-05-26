@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SensitiveContentEvidence>))]
     public partial class SensitiveContentEvidence
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SensitiveContentEvidence"/> class.
-        /// </summary>
-        public SensitiveContentEvidence()
-        {
-            this.ODataType = "microsoft.graph.sensitiveContentEvidence";
-        }
 
         /// <summary>
         /// Gets or sets length.

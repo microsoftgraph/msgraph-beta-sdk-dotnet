@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UnifiedRbacResourceScope : Entity
     {
     
-		///<summary>
-		/// The UnifiedRbacResourceScope constructor
-		///</summary>
-        public UnifiedRbacResourceScope()
-        {
-            this.ODataType = "microsoft.graph.unifiedRbacResourceScope";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

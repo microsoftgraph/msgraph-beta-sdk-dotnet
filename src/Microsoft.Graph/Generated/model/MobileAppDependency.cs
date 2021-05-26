@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MobileAppDependency : MobileAppRelationship
     {
     
-		///<summary>
-		/// The MobileAppDependency constructor
-		///</summary>
+        ///<summary>
+        /// The MobileAppDependency constructor
+        ///</summary>
         public MobileAppDependency()
         {
             this.ODataType = "microsoft.graph.mobileAppDependency";
         }
-	
+    
         /// <summary>
         /// Gets or sets dependency type.
         /// The type of dependency relationship between the parent and child apps. Possible values are: detect, autoInstall.

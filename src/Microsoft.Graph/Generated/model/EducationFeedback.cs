@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EducationFeedback>))]
     public partial class EducationFeedback
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EducationFeedback"/> class.
-        /// </summary>
-        public EducationFeedback()
-        {
-            this.ODataType = "microsoft.graph.educationFeedback";
-        }
 
         /// <summary>
         /// Gets or sets feedbackBy.

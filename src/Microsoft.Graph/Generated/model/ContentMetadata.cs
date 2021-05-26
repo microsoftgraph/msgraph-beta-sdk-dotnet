@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ContentMetadata>))]
     public partial class ContentMetadata
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ContentMetadata"/> class.
-        /// </summary>
-        public ContentMetadata()
-        {
-            this.ODataType = "microsoft.graph.contentMetadata";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

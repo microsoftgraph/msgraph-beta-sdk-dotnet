@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AlertHistoryState>))]
     public partial class AlertHistoryState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AlertHistoryState"/> class.
-        /// </summary>
-        public AlertHistoryState()
-        {
-            this.ODataType = "microsoft.graph.alertHistoryState";
-        }
 
         /// <summary>
         /// Gets or sets appId.

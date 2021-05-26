@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AutomaticRepliesMailTips>))]
     public partial class AutomaticRepliesMailTips
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AutomaticRepliesMailTips"/> class.
-        /// </summary>
-        public AutomaticRepliesMailTips()
-        {
-            this.ODataType = "microsoft.graph.automaticRepliesMailTips";
-        }
 
         /// <summary>
         /// Gets or sets message.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<VisualProperties>))]
     public partial class VisualProperties
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VisualProperties"/> class.
-        /// </summary>
-        public VisualProperties()
-        {
-            this.ODataType = "microsoft.graph.visualProperties";
-        }
 
         /// <summary>
         /// Gets or sets body.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SubscribedSku : Entity
     {
     
-		///<summary>
-		/// The SubscribedSku constructor
-		///</summary>
-        public SubscribedSku()
-        {
-            this.ODataType = "microsoft.graph.subscribedSku";
-        }
-	
         /// <summary>
         /// Gets or sets applies to.
         /// For example, 'User' or 'Company'.

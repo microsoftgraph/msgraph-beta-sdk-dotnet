@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ExactMatchSession : ExactMatchSessionBase
     {
     
-		///<summary>
-		/// The ExactMatchSession constructor
-		///</summary>
-        public ExactMatchSession()
-        {
-            this.ODataType = "microsoft.graph.exactMatchSession";
-        }
-	
         /// <summary>
         /// Gets or sets checksum.
         /// </summary>

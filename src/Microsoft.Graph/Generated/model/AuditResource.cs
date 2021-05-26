@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AuditResource>))]
     public partial class AuditResource
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AuditResource"/> class.
-        /// </summary>
-        public AuditResource()
-        {
-            this.ODataType = "microsoft.graph.auditResource";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

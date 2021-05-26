@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ItemCategory : Entity
     {
     
-		///<summary>
-		/// The ItemCategory constructor
-		///</summary>
-        public ItemCategory()
-        {
-            this.ODataType = "microsoft.graph.itemCategory";
-        }
-	
         /// <summary>
         /// Gets or sets code.
         /// </summary>

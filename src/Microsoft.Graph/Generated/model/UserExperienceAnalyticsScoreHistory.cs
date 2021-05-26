@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsScoreHistory : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsScoreHistory constructor
-		///</summary>
-        public UserExperienceAnalyticsScoreHistory()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsScoreHistory";
-        }
-	
         /// <summary>
         /// Gets or sets startup date time.
         /// The user experience analytics device startup date time.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ItemAttachment : Attachment
     {
     
-		///<summary>
-		/// The ItemAttachment constructor
-		///</summary>
+        ///<summary>
+        /// The ItemAttachment constructor
+        ///</summary>
         public ItemAttachment()
         {
             this.ODataType = "microsoft.graph.itemAttachment";
         }
-	
+    
         /// <summary>
         /// Gets or sets item.
         /// The attached contact, message or event. Navigation property.

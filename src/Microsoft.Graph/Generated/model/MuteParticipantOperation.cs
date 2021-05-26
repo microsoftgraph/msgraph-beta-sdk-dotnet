@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MuteParticipantOperation : CommsOperation
     {
     
-		///<summary>
-		/// The MuteParticipantOperation constructor
-		///</summary>
+        ///<summary>
+        /// The MuteParticipantOperation constructor
+        ///</summary>
         public MuteParticipantOperation()
         {
             this.ODataType = "microsoft.graph.muteParticipantOperation";
         }
-	
+    
     }
 }
 

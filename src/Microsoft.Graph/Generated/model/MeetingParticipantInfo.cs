@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MeetingParticipantInfo>))]
     public partial class MeetingParticipantInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MeetingParticipantInfo"/> class.
-        /// </summary>
-        public MeetingParticipantInfo()
-        {
-            this.ODataType = "microsoft.graph.meetingParticipantInfo";
-        }
 
         /// <summary>
         /// Gets or sets identity.

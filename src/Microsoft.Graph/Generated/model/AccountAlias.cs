@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AccountAlias>))]
     public partial class AccountAlias
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccountAlias"/> class.
-        /// </summary>
-        public AccountAlias()
-        {
-            this.ODataType = "microsoft.graph.accountAlias";
-        }
 
         /// <summary>
         /// Gets or sets id.

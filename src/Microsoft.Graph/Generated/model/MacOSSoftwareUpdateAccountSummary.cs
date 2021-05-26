@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class MacOSSoftwareUpdateAccountSummary : Entity
     {
     
-		///<summary>
-		/// The MacOSSoftwareUpdateAccountSummary constructor
-		///</summary>
-        public MacOSSoftwareUpdateAccountSummary()
-        {
-            this.ODataType = "microsoft.graph.macOSSoftwareUpdateAccountSummary";
-        }
-	
         /// <summary>
         /// Gets or sets device id.
         /// The device ID.

@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileCertificateProfileBase : DeviceConfiguration
     {
     
-		///<summary>
-		/// The internal AndroidWorkProfileCertificateProfileBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal AndroidWorkProfileCertificateProfileBase constructor
+        ///</summary>
         protected internal AndroidWorkProfileCertificateProfileBase()
         {
             // Don't allow initialization of abstract entity types

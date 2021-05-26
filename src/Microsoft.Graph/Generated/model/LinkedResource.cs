@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class LinkedResource : Entity
     {
     
-		///<summary>
-		/// The LinkedResource constructor
-		///</summary>
-        public LinkedResource()
-        {
-            this.ODataType = "microsoft.graph.linkedResource";
-        }
-	
         /// <summary>
         /// Gets or sets application name.
         /// Field indicating the app name of the source that is sending the linkedResource.

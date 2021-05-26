@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SharedEmailDomain : Entity
     {
     
-		///<summary>
-		/// The SharedEmailDomain constructor
-		///</summary>
-        public SharedEmailDomain()
-        {
-            this.ODataType = "microsoft.graph.sharedEmailDomain";
-        }
-	
         /// <summary>
         /// Gets or sets provisioning status.
         /// </summary>

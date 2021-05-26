@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsWindows10DevicesSummary>))]
     public partial class UserExperienceAnalyticsWindows10DevicesSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserExperienceAnalyticsWindows10DevicesSummary"/> class.
-        /// </summary>
-        public UserExperienceAnalyticsWindows10DevicesSummary()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary";
-        }
 
         /// <summary>
         /// Gets or sets unsupportedOSversionDeviceCount.

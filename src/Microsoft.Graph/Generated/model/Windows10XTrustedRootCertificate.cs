@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10XTrustedRootCertificate : DeviceManagementResourceAccessProfileBase
     {
     
-		///<summary>
-		/// The Windows10XTrustedRootCertificate constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10XTrustedRootCertificate constructor
+        ///</summary>
         public Windows10XTrustedRootCertificate()
         {
             this.ODataType = "microsoft.graph.windows10XTrustedRootCertificate";
         }
-	
+    
         /// <summary>
         /// Gets or sets cert file name.
         /// File name to display in UI.

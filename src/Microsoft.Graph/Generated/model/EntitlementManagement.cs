@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EntitlementManagement : Entity
     {
     
-		///<summary>
-		/// The EntitlementManagement constructor
-		///</summary>
-        public EntitlementManagement()
-        {
-            this.ODataType = "microsoft.graph.entitlementManagement";
-        }
-	
         /// <summary>
         /// Gets or sets access package assignment approvals.
         /// </summary>

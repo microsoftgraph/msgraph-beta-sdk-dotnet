@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class UpdateRecordingStatusOperation : CommsOperation
     {
     
-		///<summary>
-		/// The UpdateRecordingStatusOperation constructor
-		///</summary>
+        ///<summary>
+        /// The UpdateRecordingStatusOperation constructor
+        ///</summary>
         public UpdateRecordingStatusOperation()
         {
             this.ODataType = "microsoft.graph.updateRecordingStatusOperation";
         }
-	
+    
     }
 }
 

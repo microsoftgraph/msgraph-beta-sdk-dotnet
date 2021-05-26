@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TermsAndConditionsGroupAssignment : Entity
     {
     
-		///<summary>
-		/// The TermsAndConditionsGroupAssignment constructor
-		///</summary>
-        public TermsAndConditionsGroupAssignment()
-        {
-            this.ODataType = "microsoft.graph.termsAndConditionsGroupAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target group id.
         /// Unique identifier of a group that the T&amp;C policy is assigned to.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Mention : Entity
     {
     
-		///<summary>
-		/// The Mention constructor
-		///</summary>
-        public Mention()
-        {
-            this.ODataType = "microsoft.graph.mention";
-        }
-	
         /// <summary>
         /// Gets or sets application.
         /// The name of the application where the mention is created. Optional. Not used and defaulted as null for message.

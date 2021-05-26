@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ConfigurationManagerClientHealthState>))]
     public partial class ConfigurationManagerClientHealthState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationManagerClientHealthState"/> class.
-        /// </summary>
-        public ConfigurationManagerClientHealthState()
-        {
-            this.ODataType = "microsoft.graph.configurationManagerClientHealthState";
-        }
 
         /// <summary>
         /// Gets or sets errorCode.

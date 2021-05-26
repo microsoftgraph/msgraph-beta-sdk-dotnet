@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TeamsAppIcon : Entity
     {
     
-		///<summary>
-		/// The TeamsAppIcon constructor
-		///</summary>
-        public TeamsAppIcon()
-        {
-            this.ODataType = "microsoft.graph.teamsAppIcon";
-        }
-	
         /// <summary>
         /// Gets or sets web url.
         /// The web URL that can be used for downloading the image.

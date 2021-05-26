@@ -43,7 +43,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            threatAssessmentRequest.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(threatAssessmentRequest.GetType().FullName));
             return this.SendAsync<ThreatAssessmentRequestObject>(threatAssessmentRequest, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            threatAssessmentRequest.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(threatAssessmentRequest.GetType().FullName));
             return this.SendAsyncWithGraphResponse<ThreatAssessmentRequestObject>(threatAssessmentRequest, cancellationToken);
         }
 

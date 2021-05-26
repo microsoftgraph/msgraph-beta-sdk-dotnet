@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileEasEmailProfileBase : DeviceConfiguration
     {
     
-		///<summary>
-		/// The internal AndroidWorkProfileEasEmailProfileBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal AndroidWorkProfileEasEmailProfileBase constructor
+        ///</summary>
         protected internal AndroidWorkProfileEasEmailProfileBase()
         {
             // Don't allow initialization of abstract entity types

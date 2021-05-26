@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SkypeForBusinessDeviceUsageUserDetail : Entity
     {
     
-		///<summary>
-		/// The SkypeForBusinessDeviceUsageUserDetail constructor
-		///</summary>
-        public SkypeForBusinessDeviceUsageUserDetail()
-        {
-            this.ODataType = "microsoft.graph.skypeForBusinessDeviceUsageUserDetail";
-        }
-	
         /// <summary>
         /// Gets or sets last activity date.
         /// </summary>

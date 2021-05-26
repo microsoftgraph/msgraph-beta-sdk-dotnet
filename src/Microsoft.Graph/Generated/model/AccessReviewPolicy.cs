@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessReviewPolicy : Entity
     {
     
-		///<summary>
-		/// The AccessReviewPolicy constructor
-		///</summary>
-        public AccessReviewPolicy()
-        {
-            this.ODataType = "microsoft.graph.accessReviewPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Description for this policy. Read-only.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TeamworkBot : Entity
     {
     
-		///<summary>
-		/// The TeamworkBot constructor
-		///</summary>
-        public TeamworkBot()
-        {
-            this.ODataType = "microsoft.graph.teamworkBot";
-        }
-	
     }
 }
 

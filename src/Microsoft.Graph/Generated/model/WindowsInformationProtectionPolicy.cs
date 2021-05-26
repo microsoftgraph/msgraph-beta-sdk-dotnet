@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsInformationProtectionPolicy : WindowsInformationProtection
     {
     
-		///<summary>
-		/// The WindowsInformationProtectionPolicy constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsInformationProtectionPolicy constructor
+        ///</summary>
         public WindowsInformationProtectionPolicy()
         {
             this.ODataType = "microsoft.graph.windowsInformationProtectionPolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets days without contact before unenroll.
         /// Offline interval before app data is wiped (days)

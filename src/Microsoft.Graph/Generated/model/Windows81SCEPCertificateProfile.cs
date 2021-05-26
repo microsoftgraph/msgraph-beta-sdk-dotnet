@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows81SCEPCertificateProfile : Windows81CertificateProfileBase
     {
     
-		///<summary>
-		/// The Windows81SCEPCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The Windows81SCEPCertificateProfile constructor
+        ///</summary>
         public Windows81SCEPCertificateProfile()
         {
             this.ODataType = "microsoft.graph.windows81SCEPCertificateProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets certificate store.
         /// Target store certificate. Possible values are: user, machine.

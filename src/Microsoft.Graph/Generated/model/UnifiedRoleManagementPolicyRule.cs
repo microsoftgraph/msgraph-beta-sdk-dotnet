@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleManagementPolicyRule : Entity
     {
     
-		///<summary>
-		/// The internal UnifiedRoleManagementPolicyRule constructor
-		///</summary>
+        ///<summary>
+        /// The internal UnifiedRoleManagementPolicyRule constructor
+        ///</summary>
         protected internal UnifiedRoleManagementPolicyRule()
         {
             // Don't allow initialization of abstract entity types

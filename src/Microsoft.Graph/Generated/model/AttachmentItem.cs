@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AttachmentItem>))]
     public partial class AttachmentItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AttachmentItem"/> class.
-        /// </summary>
-        public AttachmentItem()
-        {
-            this.ODataType = "microsoft.graph.attachmentItem";
-        }
 
         /// <summary>
         /// Gets or sets attachmentType.

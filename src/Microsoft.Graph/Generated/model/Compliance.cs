@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Compliance
     {
     
-		///<summary>
-		/// The Compliance constructor
-		///</summary>
-        public Compliance()
-        {
-            this.ODataType = "microsoft.graph.compliance";
-        }
-	
         /// <summary>
         /// Gets or sets ediscovery.
         /// </summary>

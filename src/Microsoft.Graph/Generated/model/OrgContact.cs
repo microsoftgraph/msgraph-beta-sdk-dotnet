@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class OrgContact : DirectoryObject
     {
     
-		///<summary>
-		/// The OrgContact constructor
-		///</summary>
+        ///<summary>
+        /// The OrgContact constructor
+        ///</summary>
         public OrgContact()
         {
             this.ODataType = "microsoft.graph.orgContact";
         }
-	
+    
         /// <summary>
         /// Gets or sets addresses.
         /// Postal addresses for this organizational contact. For now a contact can only have one physical address.

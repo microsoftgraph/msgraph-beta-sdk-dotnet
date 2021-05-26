@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessSessionControls>))]
     public partial class ConditionalAccessSessionControls
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessSessionControls"/> class.
-        /// </summary>
-        public ConditionalAccessSessionControls()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessSessionControls";
-        }
 
         /// <summary>
         /// Gets or sets applicationEnforcedRestrictions.

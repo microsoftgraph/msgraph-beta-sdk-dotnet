@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Office365GroupsActivityFileCounts : Entity
     {
     
-		///<summary>
-		/// The Office365GroupsActivityFileCounts constructor
-		///</summary>
-        public Office365GroupsActivityFileCounts()
-        {
-            this.ODataType = "microsoft.graph.office365GroupsActivityFileCounts";
-        }
-	
         /// <summary>
         /// Gets or sets active.
         /// The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessPackageResourceRole : Entity
     {
     
-		///<summary>
-		/// The AccessPackageResourceRole constructor
-		///</summary>
-        public AccessPackageResourceRole()
-        {
-            this.ODataType = "microsoft.graph.accessPackageResourceRole";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// A description for the resource role.

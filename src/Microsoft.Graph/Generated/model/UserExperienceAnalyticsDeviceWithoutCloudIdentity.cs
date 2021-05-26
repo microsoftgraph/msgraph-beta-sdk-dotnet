@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsDeviceWithoutCloudIdentity : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsDeviceWithoutCloudIdentity constructor
-		///</summary>
-        public UserExperienceAnalyticsDeviceWithoutCloudIdentity()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsDeviceWithoutCloudIdentity";
-        }
-	
         /// <summary>
         /// Gets or sets azure ad device id.
         /// Azure Active Directory Device Id

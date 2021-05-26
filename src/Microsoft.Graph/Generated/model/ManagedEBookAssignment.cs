@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ManagedEBookAssignment : Entity
     {
     
-		///<summary>
-		/// The ManagedEBookAssignment constructor
-		///</summary>
-        public ManagedEBookAssignment()
-        {
-            this.ODataType = "microsoft.graph.managedEBookAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets install intent.
         /// The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.

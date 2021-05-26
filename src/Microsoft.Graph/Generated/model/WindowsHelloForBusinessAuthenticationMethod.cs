@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsHelloForBusinessAuthenticationMethod : AuthenticationMethod
     {
     
-		///<summary>
-		/// The WindowsHelloForBusinessAuthenticationMethod constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsHelloForBusinessAuthenticationMethod constructor
+        ///</summary>
         public WindowsHelloForBusinessAuthenticationMethod()
         {
             this.ODataType = "microsoft.graph.windowsHelloForBusinessAuthenticationMethod";
         }
-	
+    
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time that this Windows Hello for Business key was registered.

@@ -19,13 +19,6 @@ namespace Microsoft.Graph
     /// </summary>
     public partial class ExactMatchDetectedSensitiveContent : DetectedSensitiveContentBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExactMatchDetectedSensitiveContent"/> class.
-        /// </summary>
-        public ExactMatchDetectedSensitiveContent()
-        {
-            this.ODataType = "microsoft.graph.exactMatchDetectedSensitiveContent";
-        }
 
         /// <summary>
         /// Gets or sets matches.

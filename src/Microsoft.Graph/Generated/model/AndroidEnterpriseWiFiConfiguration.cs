@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidEnterpriseWiFiConfiguration : AndroidWiFiConfiguration
     {
     
-		///<summary>
-		/// The AndroidEnterpriseWiFiConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidEnterpriseWiFiConfiguration constructor
+        ///</summary>
         public AndroidEnterpriseWiFiConfiguration()
         {
             this.ODataType = "microsoft.graph.androidEnterpriseWiFiConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets authentication method.
         /// Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.

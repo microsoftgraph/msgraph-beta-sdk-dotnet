@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AuthorizationPolicy : PolicyBase
     {
     
-		///<summary>
-		/// The AuthorizationPolicy constructor
-		///</summary>
+        ///<summary>
+        /// The AuthorizationPolicy constructor
+        ///</summary>
         public AuthorizationPolicy()
         {
             this.ODataType = "microsoft.graph.authorizationPolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets allowed to sign up email based subscriptions.
         /// Indicates whether users can sign up for email based subscriptions.

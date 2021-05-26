@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UpdateWindow>))]
     public partial class UpdateWindow
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateWindow"/> class.
-        /// </summary>
-        public UpdateWindow()
-        {
-            this.ODataType = "microsoft.graph.updateWindow";
-        }
 
         /// <summary>
         /// Gets or sets updateWindowEndTime.

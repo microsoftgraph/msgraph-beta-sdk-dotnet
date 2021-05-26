@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class IdentityProtectionRoot
     {
     
-		///<summary>
-		/// The IdentityProtectionRoot constructor
-		///</summary>
-        public IdentityProtectionRoot()
-        {
-            this.ODataType = "microsoft.graph.identityProtectionRoot";
-        }
-	
         /// <summary>
         /// Gets or sets risk detections.
         /// </summary>

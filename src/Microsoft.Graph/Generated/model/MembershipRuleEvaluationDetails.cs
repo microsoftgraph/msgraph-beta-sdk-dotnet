@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MembershipRuleEvaluationDetails>))]
     public partial class MembershipRuleEvaluationDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MembershipRuleEvaluationDetails"/> class.
-        /// </summary>
-        public MembershipRuleEvaluationDetails()
-        {
-            this.ODataType = "microsoft.graph.membershipRuleEvaluationDetails";
-        }
 
         /// <summary>
         /// Gets or sets membershipRuleEvaluationDetails.

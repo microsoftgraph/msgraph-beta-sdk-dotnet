@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CallTranscriptionInfo>))]
     public partial class CallTranscriptionInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CallTranscriptionInfo"/> class.
-        /// </summary>
-        public CallTranscriptionInfo()
-        {
-            this.ODataType = "microsoft.graph.callTranscriptionInfo";
-        }
 
         /// <summary>
         /// Gets or sets lastModifiedDateTime.

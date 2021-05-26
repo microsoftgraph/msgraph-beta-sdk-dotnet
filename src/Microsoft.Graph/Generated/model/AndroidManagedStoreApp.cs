@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidManagedStoreApp : MobileApp
     {
     
-		///<summary>
-		/// The AndroidManagedStoreApp constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidManagedStoreApp constructor
+        ///</summary>
         public AndroidManagedStoreApp()
         {
             this.ODataType = "microsoft.graph.androidManagedStoreApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets app identifier.
         /// The Identity Name.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class AndroidForWorkPkcsCertificateProfile : AndroidForWorkCertificateProfileBase
     {
     
-		///<summary>
-		/// The AndroidForWorkPkcsCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidForWorkPkcsCertificateProfile constructor
+        ///</summary>
         public AndroidForWorkPkcsCertificateProfile()
         {
             this.ODataType = "microsoft.graph.androidForWorkPkcsCertificateProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets certificate template name.
         /// PKCS Certificate Template Name

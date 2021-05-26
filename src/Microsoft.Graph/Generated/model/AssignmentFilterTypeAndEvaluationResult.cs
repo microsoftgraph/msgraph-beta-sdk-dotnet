@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AssignmentFilterTypeAndEvaluationResult>))]
     public partial class AssignmentFilterTypeAndEvaluationResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AssignmentFilterTypeAndEvaluationResult"/> class.
-        /// </summary>
-        public AssignmentFilterTypeAndEvaluationResult()
-        {
-            this.ODataType = "microsoft.graph.assignmentFilterTypeAndEvaluationResult";
-        }
 
         /// <summary>
         /// Gets or sets assignmentFilterType.

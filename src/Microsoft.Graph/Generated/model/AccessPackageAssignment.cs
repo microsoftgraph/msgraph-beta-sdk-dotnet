@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessPackageAssignment : Entity
     {
     
-		///<summary>
-		/// The AccessPackageAssignment constructor
-		///</summary>
-        public AccessPackageAssignment()
-        {
-            this.ODataType = "microsoft.graph.accessPackageAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets access package id.
         /// The identifier of the access package. Read-only.

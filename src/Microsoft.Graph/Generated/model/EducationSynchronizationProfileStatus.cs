@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class EducationSynchronizationProfileStatus : Entity
     {
     
-		///<summary>
-		/// The EducationSynchronizationProfileStatus constructor
-		///</summary>
-        public EducationSynchronizationProfileStatus()
-        {
-            this.ODataType = "microsoft.graph.educationSynchronizationProfileStatus";
-        }
-	
         /// <summary>
         /// Gets or sets last activity date time.
         /// </summary>

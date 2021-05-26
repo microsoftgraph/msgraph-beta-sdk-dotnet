@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<FolderView>))]
     public partial class FolderView
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FolderView"/> class.
-        /// </summary>
-        public FolderView()
-        {
-            this.ODataType = "microsoft.graph.folderView";
-        }
 
         /// <summary>
         /// Gets or sets sortBy.

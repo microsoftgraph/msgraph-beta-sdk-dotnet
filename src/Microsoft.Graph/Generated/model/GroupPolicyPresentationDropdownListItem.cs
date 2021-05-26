@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<GroupPolicyPresentationDropdownListItem>))]
     public partial class GroupPolicyPresentationDropdownListItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GroupPolicyPresentationDropdownListItem"/> class.
-        /// </summary>
-        public GroupPolicyPresentationDropdownListItem()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyPresentationDropdownListItem";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

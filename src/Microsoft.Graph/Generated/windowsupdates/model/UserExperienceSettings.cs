@@ -20,13 +20,6 @@ namespace Microsoft.Graph.WindowsUpdates
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<UserExperienceSettings>))]
     public partial class UserExperienceSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserExperienceSettings"/> class.
-        /// </summary>
-        public UserExperienceSettings()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.userExperienceSettings";
-        }
 
         /// <summary>
         /// Gets or sets daysUntilForcedReboot.

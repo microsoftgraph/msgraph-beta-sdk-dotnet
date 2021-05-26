@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class MicrosoftTunnelConfiguration : Entity
     {
     
-		///<summary>
-		/// The MicrosoftTunnelConfiguration constructor
-		///</summary>
-        public MicrosoftTunnelConfiguration()
-        {
-            this.ODataType = "microsoft.graph.microsoftTunnelConfiguration";
-        }
-	
         /// <summary>
         /// Gets or sets advanced settings.
         /// Additional settings that may be applied to the server

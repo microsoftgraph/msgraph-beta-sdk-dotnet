@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows81CompliancePolicy : DeviceCompliancePolicy
     {
     
-		///<summary>
-		/// The Windows81CompliancePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The Windows81CompliancePolicy constructor
+        ///</summary>
         public Windows81CompliancePolicy()
         {
             this.ODataType = "microsoft.graph.windows81CompliancePolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets os maximum version.
         /// Maximum Windows 8.1 version.

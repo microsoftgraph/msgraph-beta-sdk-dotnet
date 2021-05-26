@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class GroupPolicyCategory : Entity
     {
     
-		///<summary>
-		/// The GroupPolicyCategory constructor
-		///</summary>
-        public GroupPolicyCategory()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyCategory";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The string id of the category's display name

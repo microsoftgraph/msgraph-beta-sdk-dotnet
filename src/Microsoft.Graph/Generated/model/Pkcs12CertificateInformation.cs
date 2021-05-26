@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Pkcs12CertificateInformation>))]
     public partial class Pkcs12CertificateInformation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Pkcs12CertificateInformation"/> class.
-        /// </summary>
-        public Pkcs12CertificateInformation()
-        {
-            this.ODataType = "microsoft.graph.pkcs12CertificateInformation";
-        }
 
         /// <summary>
         /// Gets or sets isActive.

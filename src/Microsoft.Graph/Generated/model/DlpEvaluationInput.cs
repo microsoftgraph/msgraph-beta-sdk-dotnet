@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DlpEvaluationInput>))]
     public partial class DlpEvaluationInput
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DlpEvaluationInput"/> class.
-        /// </summary>
-        public DlpEvaluationInput()
-        {
-            this.ODataType = "microsoft.graph.dlpEvaluationInput";
-        }
 
         /// <summary>
         /// Gets or sets accessScope.

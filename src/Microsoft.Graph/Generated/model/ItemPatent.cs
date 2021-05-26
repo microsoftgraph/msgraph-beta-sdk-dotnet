@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ItemPatent : ItemFacet
     {
     
-		///<summary>
-		/// The ItemPatent constructor
-		///</summary>
+        ///<summary>
+        /// The ItemPatent constructor
+        ///</summary>
         public ItemPatent()
         {
             this.ODataType = "microsoft.graph.itemPatent";
         }
-	
+    
         /// <summary>
         /// Gets or sets description.
         /// Descpription of the patent or filing.

@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhoneEASEmailProfileConfiguration : EasEmailProfileConfigurationBase
     {
     
-		///<summary>
-		/// The WindowsPhoneEASEmailProfileConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsPhoneEASEmailProfileConfiguration constructor
+        ///</summary>
         public WindowsPhoneEASEmailProfileConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsPhoneEASEmailProfileConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets account name.
         /// Account name.

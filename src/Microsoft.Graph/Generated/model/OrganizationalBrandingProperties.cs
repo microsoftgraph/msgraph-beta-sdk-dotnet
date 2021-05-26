@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class OrganizationalBrandingProperties : Entity
     {
     
-		///<summary>
-		/// The internal OrganizationalBrandingProperties constructor
-		///</summary>
+        ///<summary>
+        /// The internal OrganizationalBrandingProperties constructor
+        ///</summary>
         protected internal OrganizationalBrandingProperties()
         {
             // Don't allow initialization of abstract entity types

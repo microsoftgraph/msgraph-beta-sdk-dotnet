@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AccessReviewSettings>))]
     public partial class AccessReviewSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccessReviewSettings"/> class.
-        /// </summary>
-        public AccessReviewSettings()
-        {
-            this.ODataType = "microsoft.graph.accessReviewSettings";
-        }
 
         /// <summary>
         /// Gets or sets accessRecommendationsEnabled.

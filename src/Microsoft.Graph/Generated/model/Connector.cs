@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Connector : Entity
     {
     
-		///<summary>
-		/// The Connector constructor
-		///</summary>
-        public Connector()
-        {
-            this.ODataType = "microsoft.graph.connector";
-        }
-	
         /// <summary>
         /// Gets or sets external ip.
         /// The external IP address as detected by the the connector server. Read-only.

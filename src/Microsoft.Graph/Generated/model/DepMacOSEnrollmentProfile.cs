@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DepMacOSEnrollmentProfile : DepEnrollmentBaseProfile
     {
     
-		///<summary>
-		/// The DepMacOSEnrollmentProfile constructor
-		///</summary>
+        ///<summary>
+        /// The DepMacOSEnrollmentProfile constructor
+        ///</summary>
         public DepMacOSEnrollmentProfile()
         {
             this.ODataType = "microsoft.graph.depMacOSEnrollmentProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets accessibility screen disabled.
         /// Indicates if Accessibility screen is disabled

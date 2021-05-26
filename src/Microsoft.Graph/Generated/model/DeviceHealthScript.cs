@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceHealthScript : Entity
     {
     
-		///<summary>
-		/// The DeviceHealthScript constructor
-		///</summary>
-        public DeviceHealthScript()
-        {
-            this.ODataType = "microsoft.graph.deviceHealthScript";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The timestamp of when the device health script was created. This property is read-only.

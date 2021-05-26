@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ChatMessage : Entity
     {
     
-		///<summary>
-		/// The ChatMessage constructor
-		///</summary>
-        public ChatMessage()
-        {
-            this.ODataType = "microsoft.graph.chatMessage";
-        }
-	
         /// <summary>
         /// Gets or sets attachments.
         /// Attached files. Attachments are currently read-only – sending attachments is not supported.

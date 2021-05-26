@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10PkcsCertificateProfile : Windows10CertificateProfileBase
     {
     
-		///<summary>
-		/// The Windows10PkcsCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10PkcsCertificateProfile constructor
+        ///</summary>
         public Windows10PkcsCertificateProfile()
         {
             this.ODataType = "microsoft.graph.windows10PkcsCertificateProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets certificate store.
         /// Target store certificate. Possible values are: user, machine.

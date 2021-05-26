@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementSettings>))]
     public partial class DeviceManagementSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementSettings"/> class.
-        /// </summary>
-        public DeviceManagementSettings()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementSettings";
-        }
 
         /// <summary>
         /// Gets or sets androidDeviceAdministratorEnrollmentEnabled.

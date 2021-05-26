@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class VulnerableManagedDevice : Entity
     {
     
-		///<summary>
-		/// The VulnerableManagedDevice constructor
-		///</summary>
-        public VulnerableManagedDevice()
-        {
-            this.ODataType = "microsoft.graph.vulnerableManagedDevice";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The device name.

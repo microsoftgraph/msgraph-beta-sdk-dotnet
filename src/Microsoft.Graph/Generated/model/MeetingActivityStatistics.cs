@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MeetingActivityStatistics : ActivityStatistics
     {
     
-		///<summary>
-		/// The MeetingActivityStatistics constructor
-		///</summary>
+        ///<summary>
+        /// The MeetingActivityStatistics constructor
+        ///</summary>
         public MeetingActivityStatistics()
         {
             this.ODataType = "microsoft.graph.meetingActivityStatistics";
         }
-	
+    
         /// <summary>
         /// Gets or sets after hours.
         /// Time spent on meetings outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.

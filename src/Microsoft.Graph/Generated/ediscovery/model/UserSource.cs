@@ -21,14 +21,14 @@ namespace Microsoft.Graph.Ediscovery
     public partial class UserSource : DataSource
     {
     
-		///<summary>
-		/// The UserSource constructor
-		///</summary>
+        ///<summary>
+        /// The UserSource constructor
+        ///</summary>
         public UserSource()
         {
             this.ODataType = "microsoft.graph.ediscovery.userSource";
         }
-	
+    
         /// <summary>
         /// Gets or sets email.
         /// Email address of the user's mailbox.

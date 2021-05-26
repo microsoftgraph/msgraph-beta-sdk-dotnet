@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsOverview : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsOverview constructor
-		///</summary>
-        public UserExperienceAnalyticsOverview()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsOverview";
-        }
-	
         /// <summary>
         /// Gets or sets insights.
         /// The user experience analytics insights.

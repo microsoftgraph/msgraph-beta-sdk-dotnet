@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementIntentDeviceStateSummary : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementIntentDeviceStateSummary constructor
-		///</summary>
-        public DeviceManagementIntentDeviceStateSummary()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementIntentDeviceStateSummary";
-        }
-	
         /// <summary>
         /// Gets or sets conflict count.
         /// Number of devices in conflict

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class SocialIdentityProvider : IdentityProviderBase
     {
     
-		///<summary>
-		/// The SocialIdentityProvider constructor
-		///</summary>
+        ///<summary>
+        /// The SocialIdentityProvider constructor
+        ///</summary>
         public SocialIdentityProvider()
         {
             this.ODataType = "microsoft.graph.socialIdentityProvider";
         }
-	
+    
         /// <summary>
         /// Gets or sets client id.
         /// The client identifier for the application obtained when registering the application with the identity provider. Required.

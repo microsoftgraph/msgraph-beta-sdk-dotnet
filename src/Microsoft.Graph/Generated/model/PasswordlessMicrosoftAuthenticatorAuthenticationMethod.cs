@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class PasswordlessMicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod
     {
     
-		///<summary>
-		/// The PasswordlessMicrosoftAuthenticatorAuthenticationMethod constructor
-		///</summary>
+        ///<summary>
+        /// The PasswordlessMicrosoftAuthenticatorAuthenticationMethod constructor
+        ///</summary>
         public PasswordlessMicrosoftAuthenticatorAuthenticationMethod()
         {
             this.ODataType = "microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod";
         }
-	
+    
         /// <summary>
         /// Gets or sets created date time.
         /// </summary>

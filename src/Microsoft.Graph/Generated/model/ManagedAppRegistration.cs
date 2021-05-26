@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class ManagedAppRegistration : Entity
     {
     
-		///<summary>
-		/// The internal ManagedAppRegistration constructor
-		///</summary>
+        ///<summary>
+        /// The internal ManagedAppRegistration constructor
+        ///</summary>
         protected internal ManagedAppRegistration()
         {
             // Don't allow initialization of abstract entity types

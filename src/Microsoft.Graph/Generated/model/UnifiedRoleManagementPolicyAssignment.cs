@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleManagementPolicyAssignment : Entity
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicyAssignment constructor
-		///</summary>
-        public UnifiedRoleManagementPolicyAssignment()
-        {
-            this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets policy id.
         /// The id of the policy.

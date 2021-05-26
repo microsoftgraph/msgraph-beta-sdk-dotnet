@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AppleEnrollmentProfileAssignment : Entity
     {
     
-		///<summary>
-		/// The AppleEnrollmentProfileAssignment constructor
-		///</summary>
-        public AppleEnrollmentProfileAssignment()
-        {
-            this.ODataType = "microsoft.graph.appleEnrollmentProfileAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// The assignment target for the Apple user initiated deployment profile.

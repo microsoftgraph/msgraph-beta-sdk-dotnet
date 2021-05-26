@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<KeyCredential>))]
     public partial class KeyCredential
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="KeyCredential"/> class.
-        /// </summary>
-        public KeyCredential()
-        {
-            this.ODataType = "microsoft.graph.keyCredential";
-        }
 
         /// <summary>
         /// Gets or sets customKeyIdentifier.

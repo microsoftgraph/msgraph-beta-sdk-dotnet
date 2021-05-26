@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ManagedDeviceMobileAppConfigurationSettingState>))]
     public partial class ManagedDeviceMobileAppConfigurationSettingState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagedDeviceMobileAppConfigurationSettingState"/> class.
-        /// </summary>
-        public ManagedDeviceMobileAppConfigurationSettingState()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceMobileAppConfigurationSettingState";
-        }
 
         /// <summary>
         /// Gets or sets currentValue.

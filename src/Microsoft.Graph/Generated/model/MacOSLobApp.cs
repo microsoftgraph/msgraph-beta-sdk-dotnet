@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MacOSLobApp : MobileLobApp
     {
     
-		///<summary>
-		/// The MacOSLobApp constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSLobApp constructor
+        ///</summary>
         public MacOSLobApp()
         {
             this.ODataType = "microsoft.graph.macOSLobApp";
         }
-	
+    
         /// <summary>
         /// Gets or sets build number.
         /// The build number of MacOS Line of Business (LoB) app.

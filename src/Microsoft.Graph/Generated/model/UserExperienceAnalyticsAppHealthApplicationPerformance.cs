@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsAppHealthApplicationPerformance : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsAppHealthApplicationPerformance constructor
-		///</summary>
-        public UserExperienceAnalyticsAppHealthApplicationPerformance()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsAppHealthApplicationPerformance";
-        }
-	
         /// <summary>
         /// Gets or sets active device count.
         /// The number of devices where the app has been active. Valid values -2147483648 to 2147483647

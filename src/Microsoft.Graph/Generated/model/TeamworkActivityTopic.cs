@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TeamworkActivityTopic>))]
     public partial class TeamworkActivityTopic
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TeamworkActivityTopic"/> class.
-        /// </summary>
-        public TeamworkActivityTopic()
-        {
-            this.ODataType = "microsoft.graph.teamworkActivityTopic";
-        }
 
         /// <summary>
         /// Gets or sets source.

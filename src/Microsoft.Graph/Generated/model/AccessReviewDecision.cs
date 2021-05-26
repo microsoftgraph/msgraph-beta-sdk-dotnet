@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessReviewDecision : Entity
     {
     
-		///<summary>
-		/// The AccessReviewDecision constructor
-		///</summary>
-        public AccessReviewDecision()
-        {
-            this.ODataType = "microsoft.graph.accessReviewDecision";
-        }
-	
         /// <summary>
         /// Gets or sets access recommendation.
         /// The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.

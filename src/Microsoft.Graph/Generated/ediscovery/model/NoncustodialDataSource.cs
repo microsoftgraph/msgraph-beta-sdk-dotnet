@@ -20,14 +20,14 @@ namespace Microsoft.Graph.Ediscovery
     public partial class NoncustodialDataSource : DataSourceContainer
     {
     
-		///<summary>
-		/// The NoncustodialDataSource constructor
-		///</summary>
+        ///<summary>
+        /// The NoncustodialDataSource constructor
+        ///</summary>
         public NoncustodialDataSource()
         {
             this.ODataType = "microsoft.graph.ediscovery.noncustodialDataSource";
         }
-	
+    
         /// <summary>
         /// Gets or sets apply hold to source.
         /// Indicates if hold is applied to non-custodial data source (such as mailbox or site).

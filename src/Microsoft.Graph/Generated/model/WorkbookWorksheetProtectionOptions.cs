@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WorkbookWorksheetProtectionOptions>))]
     public partial class WorkbookWorksheetProtectionOptions
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkbookWorksheetProtectionOptions"/> class.
-        /// </summary>
-        public WorkbookWorksheetProtectionOptions()
-        {
-            this.ODataType = "microsoft.graph.workbookWorksheetProtectionOptions";
-        }
 
         /// <summary>
         /// Gets or sets allowAutoFilter.

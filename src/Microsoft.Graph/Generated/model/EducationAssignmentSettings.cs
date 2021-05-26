@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EducationAssignmentSettings : Entity
     {
     
-		///<summary>
-		/// The EducationAssignmentSettings constructor
-		///</summary>
-        public EducationAssignmentSettings()
-        {
-            this.ODataType = "microsoft.graph.educationAssignmentSettings";
-        }
-	
         /// <summary>
         /// Gets or sets submission animation disabled.
         /// Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.

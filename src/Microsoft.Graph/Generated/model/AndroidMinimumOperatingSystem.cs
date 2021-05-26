@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AndroidMinimumOperatingSystem>))]
     public partial class AndroidMinimumOperatingSystem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AndroidMinimumOperatingSystem"/> class.
-        /// </summary>
-        public AndroidMinimumOperatingSystem()
-        {
-            this.ODataType = "microsoft.graph.androidMinimumOperatingSystem";
-        }
 
         /// <summary>
         /// Gets or sets v10_0.

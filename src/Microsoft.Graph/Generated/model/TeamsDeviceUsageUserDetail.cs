@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TeamsDeviceUsageUserDetail : Entity
     {
     
-		///<summary>
-		/// The TeamsDeviceUsageUserDetail constructor
-		///</summary>
-        public TeamsDeviceUsageUserDetail()
-        {
-            this.ODataType = "microsoft.graph.teamsDeviceUsageUserDetail";
-        }
-	
         /// <summary>
         /// Gets or sets deleted date.
         /// The date when the delete operation happened. Default value is 'null' when the user has not been deleted.

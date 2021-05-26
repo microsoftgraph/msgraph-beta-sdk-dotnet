@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsDeviceStartupHistory : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsDeviceStartupHistory constructor
-		///</summary>
-        public UserExperienceAnalyticsDeviceStartupHistory()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsDeviceStartupHistory";
-        }
-	
         /// <summary>
         /// Gets or sets core boot time in ms.
         /// The user experience analytics device core boot time in milliseconds.

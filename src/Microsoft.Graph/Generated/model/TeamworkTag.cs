@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class TeamworkTag : Entity
     {
     
-		///<summary>
-		/// The TeamworkTag constructor
-		///</summary>
-        public TeamworkTag()
-        {
-            this.ODataType = "microsoft.graph.teamworkTag";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// </summary>

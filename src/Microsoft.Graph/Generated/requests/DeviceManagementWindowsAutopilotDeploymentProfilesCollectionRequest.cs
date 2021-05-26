@@ -43,7 +43,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            windowsAutopilotDeploymentProfile.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(windowsAutopilotDeploymentProfile.GetType().FullName));
             return this.SendAsync<WindowsAutopilotDeploymentProfile>(windowsAutopilotDeploymentProfile, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            windowsAutopilotDeploymentProfile.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(windowsAutopilotDeploymentProfile.GetType().FullName));
             return this.SendAsyncWithGraphResponse<WindowsAutopilotDeploymentProfile>(windowsAutopilotDeploymentProfile, cancellationToken);
         }
 

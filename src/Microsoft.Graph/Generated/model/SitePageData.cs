@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SitePageData>))]
     public partial class SitePageData
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SitePageData"/> class.
-        /// </summary>
-        public SitePageData()
-        {
-            this.ODataType = "microsoft.graph.sitePageData";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

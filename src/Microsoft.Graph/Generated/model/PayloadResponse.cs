@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PayloadResponse : Entity
     {
     
-		///<summary>
-		/// The PayloadResponse constructor
-		///</summary>
-        public PayloadResponse()
-        {
-            this.ODataType = "microsoft.graph.payloadResponse";
-        }
-	
     }
 }
 

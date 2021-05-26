@@ -21,14 +21,6 @@ namespace Microsoft.Graph.Ediscovery
     public partial class CaseOperation : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The CaseOperation constructor
-		///</summary>
-        public CaseOperation()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.caseOperation";
-        }
-	
         /// <summary>
         /// Gets or sets action.
         /// The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics

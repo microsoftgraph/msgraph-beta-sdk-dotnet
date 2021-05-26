@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary : Entity
     {
     
-		///<summary>
-		/// The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary constructor
-		///</summary>
-        public WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary()
-        {
-            this.ODataType = "microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary";
-        }
-	
         /// <summary>
         /// Gets or sets deployed device count.
         /// Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.

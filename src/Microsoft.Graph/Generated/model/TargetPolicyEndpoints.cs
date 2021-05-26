@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TargetPolicyEndpoints>))]
     public partial class TargetPolicyEndpoints
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TargetPolicyEndpoints"/> class.
-        /// </summary>
-        public TargetPolicyEndpoints()
-        {
-            this.ODataType = "microsoft.graph.targetPolicyEndpoints";
-        }
 
         /// <summary>
         /// Gets or sets platformTypes.

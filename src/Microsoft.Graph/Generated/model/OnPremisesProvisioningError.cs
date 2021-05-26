@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OnPremisesProvisioningError>))]
     public partial class OnPremisesProvisioningError
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OnPremisesProvisioningError"/> class.
-        /// </summary>
-        public OnPremisesProvisioningError()
-        {
-            this.ODataType = "microsoft.graph.onPremisesProvisioningError";
-        }
 
         /// <summary>
         /// Gets or sets category.

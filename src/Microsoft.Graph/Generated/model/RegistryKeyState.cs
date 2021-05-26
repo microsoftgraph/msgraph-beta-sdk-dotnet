@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RegistryKeyState>))]
     public partial class RegistryKeyState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RegistryKeyState"/> class.
-        /// </summary>
-        public RegistryKeyState()
-        {
-            this.ODataType = "microsoft.graph.registryKeyState";
-        }
 
         /// <summary>
         /// Gets or sets hive.

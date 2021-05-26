@@ -22,14 +22,6 @@ namespace Microsoft.Graph
     public partial class ExternalGroupMember : Entity
     {
     
-		///<summary>
-		/// The ExternalGroupMember constructor
-		///</summary>
-        public ExternalGroupMember()
-        {
-            this.ODataType = "microsoft.graph.externalGroupMember";
-        }
-	
         /// <summary>
         /// Gets or sets identity source.
         /// The identity source that the member belongs to. Possible values are: azureActiveDirectory, external.

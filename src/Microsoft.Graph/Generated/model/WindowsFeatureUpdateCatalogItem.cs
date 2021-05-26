@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class WindowsFeatureUpdateCatalogItem : WindowsUpdateCatalogItem
     {
     
-		///<summary>
-		/// The WindowsFeatureUpdateCatalogItem constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsFeatureUpdateCatalogItem constructor
+        ///</summary>
         public WindowsFeatureUpdateCatalogItem()
         {
             this.ODataType = "microsoft.graph.windowsFeatureUpdateCatalogItem";
         }
-	
+    
         /// <summary>
         /// Gets or sets version.
         /// The feature update version

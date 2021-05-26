@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Currency : Entity
     {
     
-		///<summary>
-		/// The Currency constructor
-		///</summary>
-        public Currency()
-        {
-            this.ODataType = "microsoft.graph.currency";
-        }
-	
         /// <summary>
         /// Gets or sets amount decimal places.
         /// </summary>

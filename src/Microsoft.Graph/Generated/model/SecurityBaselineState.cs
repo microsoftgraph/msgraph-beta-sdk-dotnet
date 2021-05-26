@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class SecurityBaselineState : Entity
     {
     
-		///<summary>
-		/// The SecurityBaselineState constructor
-		///</summary>
-        public SecurityBaselineState()
-        {
-            this.ODataType = "microsoft.graph.securityBaselineState";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the security baseline

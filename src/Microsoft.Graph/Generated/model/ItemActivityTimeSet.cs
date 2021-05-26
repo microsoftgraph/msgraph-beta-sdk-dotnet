@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ItemActivityTimeSet>))]
     public partial class ItemActivityTimeSet
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ItemActivityTimeSet"/> class.
-        /// </summary>
-        public ItemActivityTimeSet()
-        {
-            this.ODataType = "microsoft.graph.itemActivityTimeSet";
-        }
 
         /// <summary>
         /// Gets or sets lastRecordedDateTime.

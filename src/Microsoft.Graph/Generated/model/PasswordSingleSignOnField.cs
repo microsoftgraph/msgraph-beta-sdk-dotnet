@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PasswordSingleSignOnField>))]
     public partial class PasswordSingleSignOnField
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PasswordSingleSignOnField"/> class.
-        /// </summary>
-        public PasswordSingleSignOnField()
-        {
-            this.ODataType = "microsoft.graph.passwordSingleSignOnField";
-        }
 
         /// <summary>
         /// Gets or sets customizedLabel.

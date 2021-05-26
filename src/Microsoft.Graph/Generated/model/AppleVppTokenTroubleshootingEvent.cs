@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class AppleVppTokenTroubleshootingEvent : DeviceManagementTroubleshootingEvent
     {
     
-		///<summary>
-		/// The AppleVppTokenTroubleshootingEvent constructor
-		///</summary>
+        ///<summary>
+        /// The AppleVppTokenTroubleshootingEvent constructor
+        ///</summary>
         public AppleVppTokenTroubleshootingEvent()
         {
             this.ODataType = "microsoft.graph.appleVppTokenTroubleshootingEvent";
         }
-	
+    
         /// <summary>
         /// Gets or sets token id.
         /// Apple Volume Purchase Program Token Identifier.

@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class TargetedManagedAppConfiguration : ManagedAppConfiguration
     {
     
-		///<summary>
-		/// The TargetedManagedAppConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The TargetedManagedAppConfiguration constructor
+        ///</summary>
         public TargetedManagedAppConfiguration()
         {
             this.ODataType = "microsoft.graph.targetedManagedAppConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets deployed app count.
         /// Count of apps to which the current policy is deployed.

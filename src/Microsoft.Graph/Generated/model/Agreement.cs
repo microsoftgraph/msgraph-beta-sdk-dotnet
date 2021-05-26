@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Agreement : Entity
     {
     
-		///<summary>
-		/// The Agreement constructor
-		///</summary>
-        public Agreement()
-        {
-            this.ODataType = "microsoft.graph.agreement";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.

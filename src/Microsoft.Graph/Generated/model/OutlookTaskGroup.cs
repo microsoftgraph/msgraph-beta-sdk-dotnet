@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class OutlookTaskGroup : Entity
     {
     
-		///<summary>
-		/// The OutlookTaskGroup constructor
-		///</summary>
-        public OutlookTaskGroup()
-        {
-            this.ODataType = "microsoft.graph.outlookTaskGroup";
-        }
-	
         /// <summary>
         /// Gets or sets change key.
         /// The version of the task group.

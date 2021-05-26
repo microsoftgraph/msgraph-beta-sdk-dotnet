@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AccessReviewRecurrenceSettings>))]
     public partial class AccessReviewRecurrenceSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccessReviewRecurrenceSettings"/> class.
-        /// </summary>
-        public AccessReviewRecurrenceSettings()
-        {
-            this.ODataType = "microsoft.graph.accessReviewRecurrenceSettings";
-        }
 
         /// <summary>
         /// Gets or sets durationInDays.

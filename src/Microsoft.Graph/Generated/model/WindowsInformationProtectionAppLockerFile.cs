@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WindowsInformationProtectionAppLockerFile : Entity
     {
     
-		///<summary>
-		/// The WindowsInformationProtectionAppLockerFile constructor
-		///</summary>
-        public WindowsInformationProtectionAppLockerFile()
-        {
-            this.ODataType = "microsoft.graph.windowsInformationProtectionAppLockerFile";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The friendly name

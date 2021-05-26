@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Note : OutlookItem
     {
     
-		///<summary>
-		/// The Note constructor
-		///</summary>
+        ///<summary>
+        /// The Note constructor
+        ///</summary>
         public Note()
         {
             this.ODataType = "microsoft.graph.note";
         }
-	
+    
         /// <summary>
         /// Gets or sets body.
         /// </summary>

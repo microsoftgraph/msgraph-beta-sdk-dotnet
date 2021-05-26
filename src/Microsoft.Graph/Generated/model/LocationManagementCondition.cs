@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class LocationManagementCondition : ManagementCondition
     {
     
-		///<summary>
-		/// The internal LocationManagementCondition constructor
-		///</summary>
+        ///<summary>
+        /// The internal LocationManagementCondition constructor
+        ///</summary>
         protected internal LocationManagementCondition()
         {
             // Don't allow initialization of abstract entity types

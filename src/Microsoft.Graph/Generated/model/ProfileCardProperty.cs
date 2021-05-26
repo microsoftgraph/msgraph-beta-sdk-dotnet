@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ProfileCardProperty : Entity
     {
     
-		///<summary>
-		/// The ProfileCardProperty constructor
-		///</summary>
-        public ProfileCardProperty()
-        {
-            this.ODataType = "microsoft.graph.profileCardProperty";
-        }
-	
         /// <summary>
         /// Gets or sets annotations.
         /// Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.

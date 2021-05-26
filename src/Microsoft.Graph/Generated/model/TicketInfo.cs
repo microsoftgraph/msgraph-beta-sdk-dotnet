@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TicketInfo>))]
     public partial class TicketInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TicketInfo"/> class.
-        /// </summary>
-        public TicketInfo()
-        {
-            this.ODataType = "microsoft.graph.ticketInfo";
-        }
 
         /// <summary>
         /// Gets or sets ticketNumber.

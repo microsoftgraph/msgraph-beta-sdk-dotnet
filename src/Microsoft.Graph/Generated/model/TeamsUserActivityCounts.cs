@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TeamsUserActivityCounts : Entity
     {
     
-		///<summary>
-		/// The TeamsUserActivityCounts constructor
-		///</summary>
-        public TeamsUserActivityCounts()
-        {
-            this.ODataType = "microsoft.graph.teamsUserActivityCounts";
-        }
-	
         /// <summary>
         /// Gets or sets calls.
         /// The number of unique 1:1 calls that users participated in.

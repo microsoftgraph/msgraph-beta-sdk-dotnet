@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class SiteActivitySummary : Entity
     {
     
-		///<summary>
-		/// The SiteActivitySummary constructor
-		///</summary>
-        public SiteActivitySummary()
-        {
-            this.ODataType = "microsoft.graph.siteActivitySummary";
-        }
-	
         /// <summary>
         /// Gets or sets report date.
         /// </summary>

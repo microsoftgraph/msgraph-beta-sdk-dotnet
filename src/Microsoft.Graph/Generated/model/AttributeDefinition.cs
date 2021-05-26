@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AttributeDefinition>))]
     public partial class AttributeDefinition
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AttributeDefinition"/> class.
-        /// </summary>
-        public AttributeDefinition()
-        {
-            this.ODataType = "microsoft.graph.attributeDefinition";
-        }
 
         /// <summary>
         /// Gets or sets anchor.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AdminConsentRequestPolicy : Entity
     {
     
-		///<summary>
-		/// The AdminConsentRequestPolicy constructor
-		///</summary>
-        public AdminConsentRequestPolicy()
-        {
-            this.ODataType = "microsoft.graph.adminConsentRequestPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets is enabled.
         /// Specifies whether the admin consent request feature is enabled or disabled. Required.

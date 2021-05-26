@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessApplications>))]
     public partial class ConditionalAccessApplications
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessApplications"/> class.
-        /// </summary>
-        public ConditionalAccessApplications()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessApplications";
-        }
 
         /// <summary>
         /// Gets or sets excludeApplications.

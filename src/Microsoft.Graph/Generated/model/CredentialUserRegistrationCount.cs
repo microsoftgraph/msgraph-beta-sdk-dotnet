@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class CredentialUserRegistrationCount : Entity
     {
     
-		///<summary>
-		/// The CredentialUserRegistrationCount constructor
-		///</summary>
-        public CredentialUserRegistrationCount()
-        {
-            this.ODataType = "microsoft.graph.credentialUserRegistrationCount";
-        }
-	
         /// <summary>
         /// Gets or sets total user count.
         /// Provides the total user count in the tenant.

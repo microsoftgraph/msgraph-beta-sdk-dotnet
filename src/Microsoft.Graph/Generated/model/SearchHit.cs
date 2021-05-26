@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SearchHit>))]
     public partial class SearchHit
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchHit"/> class.
-        /// </summary>
-        public SearchHit()
-        {
-            this.ODataType = "microsoft.graph.searchHit";
-        }
 
         /// <summary>
         /// Gets or sets contentSource.

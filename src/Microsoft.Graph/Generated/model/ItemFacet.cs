@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class ItemFacet : Entity
     {
     
-		///<summary>
-		/// The internal ItemFacet constructor
-		///</summary>
+        ///<summary>
+        /// The internal ItemFacet constructor
+        ///</summary>
         protected internal ItemFacet()
         {
             // Don't allow initialization of abstract entity types

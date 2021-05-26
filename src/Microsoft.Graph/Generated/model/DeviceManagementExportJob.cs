@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementExportJob : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementExportJob constructor
-		///</summary>
-        public DeviceManagementExportJob()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementExportJob";
-        }
-	
         /// <summary>
         /// Gets or sets expiration date time.
         /// Time that the exported report expires

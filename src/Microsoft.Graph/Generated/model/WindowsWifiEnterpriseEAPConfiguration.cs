@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class WindowsWifiEnterpriseEAPConfiguration : WindowsWifiConfiguration
     {
     
-		///<summary>
-		/// The WindowsWifiEnterpriseEAPConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsWifiEnterpriseEAPConfiguration constructor
+        ///</summary>
         public WindowsWifiEnterpriseEAPConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsWifiEnterpriseEAPConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets authentication method.
         /// Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential.

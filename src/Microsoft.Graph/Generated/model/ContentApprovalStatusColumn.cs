@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ContentApprovalStatusColumn>))]
     public partial class ContentApprovalStatusColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ContentApprovalStatusColumn"/> class.
-        /// </summary>
-        public ContentApprovalStatusColumn()
-        {
-            this.ODataType = "microsoft.graph.contentApprovalStatusColumn";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

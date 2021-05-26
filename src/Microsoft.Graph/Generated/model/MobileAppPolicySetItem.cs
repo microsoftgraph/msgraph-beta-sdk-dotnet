@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MobileAppPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The MobileAppPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The MobileAppPolicySetItem constructor
+        ///</summary>
         public MobileAppPolicySetItem()
         {
             this.ODataType = "microsoft.graph.mobileAppPolicySetItem";
         }
-	
+    
         /// <summary>
         /// Gets or sets intent.
         /// Install intent of the MobileAppPolicySetItem. Possible values are: available, required, uninstall, availableWithoutEnrollment.

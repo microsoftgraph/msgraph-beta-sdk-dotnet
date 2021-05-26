@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ApplicationSignInSummary : Entity
     {
     
-		///<summary>
-		/// The ApplicationSignInSummary constructor
-		///</summary>
-        public ApplicationSignInSummary()
-        {
-            this.ODataType = "microsoft.graph.applicationSignInSummary";
-        }
-	
         /// <summary>
         /// Gets or sets app display name.
         /// Name of the application that the user signed in to.

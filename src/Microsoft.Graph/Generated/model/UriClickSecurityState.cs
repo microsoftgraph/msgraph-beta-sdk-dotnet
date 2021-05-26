@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UriClickSecurityState>))]
     public partial class UriClickSecurityState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UriClickSecurityState"/> class.
-        /// </summary>
-        public UriClickSecurityState()
-        {
-            this.ODataType = "microsoft.graph.uriClickSecurityState";
-        }
 
         /// <summary>
         /// Gets or sets clickAction.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SuggestedEnrollmentLimit>))]
     public partial class SuggestedEnrollmentLimit
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SuggestedEnrollmentLimit"/> class.
-        /// </summary>
-        public SuggestedEnrollmentLimit()
-        {
-            this.ODataType = "microsoft.graph.suggestedEnrollmentLimit";
-        }
 
         /// <summary>
         /// Gets or sets suggestedDailyLimit.

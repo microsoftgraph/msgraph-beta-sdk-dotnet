@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Fido2AuthenticationMethod : AuthenticationMethod
     {
     
-		///<summary>
-		/// The Fido2AuthenticationMethod constructor
-		///</summary>
+        ///<summary>
+        /// The Fido2AuthenticationMethod constructor
+        ///</summary>
         public Fido2AuthenticationMethod()
         {
             this.ODataType = "microsoft.graph.fido2AuthenticationMethod";
         }
-	
+    
         /// <summary>
         /// Gets or sets aa guid.
         /// Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.

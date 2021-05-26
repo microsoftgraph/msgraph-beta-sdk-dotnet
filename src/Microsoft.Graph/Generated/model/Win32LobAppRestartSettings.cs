@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppRestartSettings>))]
     public partial class Win32LobAppRestartSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Win32LobAppRestartSettings"/> class.
-        /// </summary>
-        public Win32LobAppRestartSettings()
-        {
-            this.ODataType = "microsoft.graph.win32LobAppRestartSettings";
-        }
 
         /// <summary>
         /// Gets or sets countdownDisplayBeforeRestartInMinutes.

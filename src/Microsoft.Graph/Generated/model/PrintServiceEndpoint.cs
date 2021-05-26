@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PrintServiceEndpoint : Entity
     {
     
-		///<summary>
-		/// The PrintServiceEndpoint constructor
-		///</summary>
-        public PrintServiceEndpoint()
-        {
-            this.ODataType = "microsoft.graph.printServiceEndpoint";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// A human-readable display name for the endpoint.

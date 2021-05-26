@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RequiredResourceAccess>))]
     public partial class RequiredResourceAccess
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RequiredResourceAccess"/> class.
-        /// </summary>
-        public RequiredResourceAccess()
-        {
-            this.ODataType = "microsoft.graph.requiredResourceAccess";
-        }
 
         /// <summary>
         /// Gets or sets resourceAccess.

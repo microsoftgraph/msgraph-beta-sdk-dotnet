@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class CloudPcProvisioningPolicyAssignment : Entity
     {
     
-		///<summary>
-		/// The CloudPcProvisioningPolicyAssignment constructor
-		///</summary>
-        public CloudPcProvisioningPolicyAssignment()
-        {
-            this.ODataType = "microsoft.graph.cloudPcProvisioningPolicyAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group.

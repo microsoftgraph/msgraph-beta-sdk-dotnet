@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class GeneralLedgerEntry : Entity
     {
     
-		///<summary>
-		/// The GeneralLedgerEntry constructor
-		///</summary>
-        public GeneralLedgerEntry()
-        {
-            this.ODataType = "microsoft.graph.generalLedgerEntry";
-        }
-	
         /// <summary>
         /// Gets or sets account id.
         /// </summary>

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CloudPcOnPremisesConnectionStatusDetails>))]
     public partial class CloudPcOnPremisesConnectionStatusDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CloudPcOnPremisesConnectionStatusDetails"/> class.
-        /// </summary>
-        public CloudPcOnPremisesConnectionStatusDetails()
-        {
-            this.ODataType = "microsoft.graph.cloudPcOnPremisesConnectionStatusDetails";
-        }
 
         /// <summary>
         /// Gets or sets endDateTime.

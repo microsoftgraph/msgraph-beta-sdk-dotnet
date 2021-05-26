@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EducationOnPremisesInfo>))]
     public partial class EducationOnPremisesInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EducationOnPremisesInfo"/> class.
-        /// </summary>
-        public EducationOnPremisesInfo()
-        {
-            this.ODataType = "microsoft.graph.educationOnPremisesInfo";
-        }
 
         /// <summary>
         /// Gets or sets immutableId.

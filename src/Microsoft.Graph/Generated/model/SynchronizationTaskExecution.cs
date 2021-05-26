@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SynchronizationTaskExecution>))]
     public partial class SynchronizationTaskExecution
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SynchronizationTaskExecution"/> class.
-        /// </summary>
-        public SynchronizationTaskExecution()
-        {
-            this.ODataType = "microsoft.graph.synchronizationTaskExecution";
-        }
 
         /// <summary>
         /// Gets or sets activityIdentifier.

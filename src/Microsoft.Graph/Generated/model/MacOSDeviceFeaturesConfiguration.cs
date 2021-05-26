@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase
     {
     
-		///<summary>
-		/// The MacOSDeviceFeaturesConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSDeviceFeaturesConfiguration constructor
+        ///</summary>
         public MacOSDeviceFeaturesConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSDeviceFeaturesConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets admin show host info.
         /// Whether to show admin host information on the login window.

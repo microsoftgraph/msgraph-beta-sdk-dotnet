@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AssignmentReviewSettings>))]
     public partial class AssignmentReviewSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AssignmentReviewSettings"/> class.
-        /// </summary>
-        public AssignmentReviewSettings()
-        {
-            this.ODataType = "microsoft.graph.assignmentReviewSettings";
-        }
 
         /// <summary>
         /// Gets or sets durationInDays.

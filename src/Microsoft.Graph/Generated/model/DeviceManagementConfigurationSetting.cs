@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementConfigurationSetting : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationSetting constructor
-		///</summary>
-        public DeviceManagementConfigurationSetting()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationSetting";
-        }
-	
         /// <summary>
         /// Gets or sets setting instance.
         /// Setting Instance

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class FieldValueSet : Entity
     {
     
-		///<summary>
-		/// The FieldValueSet constructor
-		///</summary>
-        public FieldValueSet()
-        {
-            this.ODataType = "microsoft.graph.fieldValueSet";
-        }
-	
     }
 }
 

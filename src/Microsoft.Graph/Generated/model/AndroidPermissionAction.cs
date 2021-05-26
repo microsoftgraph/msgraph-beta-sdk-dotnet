@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AndroidPermissionAction>))]
     public partial class AndroidPermissionAction
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AndroidPermissionAction"/> class.
-        /// </summary>
-        public AndroidPermissionAction()
-        {
-            this.ODataType = "microsoft.graph.androidPermissionAction";
-        }
 
         /// <summary>
         /// Gets or sets action.

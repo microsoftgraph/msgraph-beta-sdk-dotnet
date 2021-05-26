@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceAndAppManagementAssignmentFilter : Entity
     {
     
-		///<summary>
-		/// The DeviceAndAppManagementAssignmentFilter constructor
-		///</summary>
-        public DeviceAndAppManagementAssignmentFilter()
-        {
-            this.ODataType = "microsoft.graph.deviceAndAppManagementAssignmentFilter";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// Creation time of the Assignment Filter.

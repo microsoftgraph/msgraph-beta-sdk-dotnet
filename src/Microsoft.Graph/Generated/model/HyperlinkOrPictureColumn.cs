@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<HyperlinkOrPictureColumn>))]
     public partial class HyperlinkOrPictureColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HyperlinkOrPictureColumn"/> class.
-        /// </summary>
-        public HyperlinkOrPictureColumn()
-        {
-            this.ODataType = "microsoft.graph.hyperlinkOrPictureColumn";
-        }
 
         /// <summary>
         /// Gets or sets isPicture.

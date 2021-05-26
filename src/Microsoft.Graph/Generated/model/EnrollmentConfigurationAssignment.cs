@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class EnrollmentConfigurationAssignment : Entity
     {
     
-		///<summary>
-		/// The EnrollmentConfigurationAssignment constructor
-		///</summary>
-        public EnrollmentConfigurationAssignment()
-        {
-            this.ODataType = "microsoft.graph.enrollmentConfigurationAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets source.
         /// Type of resource used for deployment to a group, direct or policySet. Possible values are: direct, policySets.

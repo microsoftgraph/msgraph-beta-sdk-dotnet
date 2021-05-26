@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OnenotePagePreview>))]
     public partial class OnenotePagePreview
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OnenotePagePreview"/> class.
-        /// </summary>
-        public OnenotePagePreview()
-        {
-            this.ODataType = "microsoft.graph.onenotePagePreview";
-        }
 
         /// <summary>
         /// Gets or sets links.

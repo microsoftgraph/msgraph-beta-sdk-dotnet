@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSPkcsCertificateProfile : MacOSCertificateProfileBase
     {
     
-		///<summary>
-		/// The MacOSPkcsCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSPkcsCertificateProfile constructor
+        ///</summary>
         public MacOSPkcsCertificateProfile()
         {
             this.ODataType = "microsoft.graph.macOSPkcsCertificateProfile";
         }
-	
+    
         /// <summary>
         /// Gets or sets allow all apps access.
         /// AllowAllAppsAccess setting

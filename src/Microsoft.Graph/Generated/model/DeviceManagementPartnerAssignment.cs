@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementPartnerAssignment>))]
     public partial class DeviceManagementPartnerAssignment
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementPartnerAssignment"/> class.
-        /// </summary>
-        public DeviceManagementPartnerAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementPartnerAssignment";
-        }
 
         /// <summary>
         /// Gets or sets target.

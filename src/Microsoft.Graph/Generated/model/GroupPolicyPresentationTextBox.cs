@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationTextBox : GroupPolicyPresentation
     {
     
-		///<summary>
-		/// The GroupPolicyPresentationTextBox constructor
-		///</summary>
+        ///<summary>
+        /// The GroupPolicyPresentationTextBox constructor
+        ///</summary>
         public GroupPolicyPresentationTextBox()
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationTextBox";
         }
-	
+    
         /// <summary>
         /// Gets or sets default value.
         /// Localized default string displayed in the text box. The default value is empty.

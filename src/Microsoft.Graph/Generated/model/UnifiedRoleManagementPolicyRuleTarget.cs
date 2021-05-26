@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UnifiedRoleManagementPolicyRuleTarget>))]
     public partial class UnifiedRoleManagementPolicyRuleTarget
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UnifiedRoleManagementPolicyRuleTarget"/> class.
-        /// </summary>
-        public UnifiedRoleManagementPolicyRuleTarget()
-        {
-            this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyRuleTarget";
-        }
 
         /// <summary>
         /// Gets or sets caller.

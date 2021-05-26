@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PrivilegedRoleAssignment : Entity
     {
     
-		///<summary>
-		/// The PrivilegedRoleAssignment constructor
-		///</summary>
-        public PrivilegedRoleAssignment()
-        {
-            this.ODataType = "microsoft.graph.privilegedRoleAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets expiration date time.
         /// The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.

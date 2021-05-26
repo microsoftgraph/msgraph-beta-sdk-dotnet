@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MacOSExtensionsConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The MacOSExtensionsConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSExtensionsConfiguration constructor
+        ///</summary>
         public MacOSExtensionsConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSExtensionsConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets kernel extension allowed team identifiers.
         /// All kernel extensions validly signed by the team identifiers in this list will be allowed to load.

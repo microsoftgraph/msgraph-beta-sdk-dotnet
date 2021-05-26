@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceCategory : Entity
     {
     
-		///<summary>
-		/// The DeviceCategory constructor
-		///</summary>
-        public DeviceCategory()
-        {
-            this.ODataType = "microsoft.graph.deviceCategory";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Optional description for the device category.

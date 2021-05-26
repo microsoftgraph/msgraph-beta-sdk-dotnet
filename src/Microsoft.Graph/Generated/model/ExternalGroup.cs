@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ExternalGroup : Entity
     {
     
-		///<summary>
-		/// The ExternalGroup constructor
-		///</summary>
-        public ExternalGroup()
-        {
-            this.ODataType = "microsoft.graph.externalGroup";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// The description of the external group. Optional.

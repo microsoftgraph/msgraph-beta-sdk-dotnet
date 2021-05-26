@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Journal : Entity
     {
     
-		///<summary>
-		/// The Journal constructor
-		///</summary>
-        public Journal()
-        {
-            this.ODataType = "microsoft.graph.journal";
-        }
-	
         /// <summary>
         /// Gets or sets balancing account id.
         /// </summary>

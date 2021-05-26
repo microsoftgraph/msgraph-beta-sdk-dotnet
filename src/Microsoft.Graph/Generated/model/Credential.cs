@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Credential>))]
     public partial class Credential
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Credential"/> class.
-        /// </summary>
-        public Credential()
-        {
-            this.ODataType = "microsoft.graph.credential";
-        }
 
         /// <summary>
         /// Gets or sets fieldId.

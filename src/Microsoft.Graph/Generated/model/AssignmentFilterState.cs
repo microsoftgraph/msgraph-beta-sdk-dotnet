@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AssignmentFilterState>))]
     public partial class AssignmentFilterState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AssignmentFilterState"/> class.
-        /// </summary>
-        public AssignmentFilterState()
-        {
-            this.ODataType = "microsoft.graph.assignmentFilterState";
-        }
 
         /// <summary>
         /// Gets or sets enabled.

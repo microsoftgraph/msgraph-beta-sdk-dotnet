@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class AndroidDeviceComplianceLocalActionBase : Entity
     {
     
-		///<summary>
-		/// The internal AndroidDeviceComplianceLocalActionBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal AndroidDeviceComplianceLocalActionBase constructor
+        ///</summary>
         protected internal AndroidDeviceComplianceLocalActionBase()
         {
             // Don't allow initialization of abstract entity types

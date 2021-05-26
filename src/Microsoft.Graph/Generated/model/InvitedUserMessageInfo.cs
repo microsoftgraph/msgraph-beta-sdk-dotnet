@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<InvitedUserMessageInfo>))]
     public partial class InvitedUserMessageInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InvitedUserMessageInfo"/> class.
-        /// </summary>
-        public InvitedUserMessageInfo()
-        {
-            this.ODataType = "microsoft.graph.invitedUserMessageInfo";
-        }
 
         /// <summary>
         /// Gets or sets ccRecipients.

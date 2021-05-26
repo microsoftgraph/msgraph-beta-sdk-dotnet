@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class PrintUsage : Entity
     {
     
-		///<summary>
-		/// The internal PrintUsage constructor
-		///</summary>
+        ///<summary>
+        /// The internal PrintUsage constructor
+        ///</summary>
         protected internal PrintUsage()
         {
             // Don't allow initialization of abstract entity types

@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class IosUpdateConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The IosUpdateConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The IosUpdateConfiguration constructor
+        ///</summary>
         public IosUpdateConfiguration()
         {
             this.ODataType = "microsoft.graph.iosUpdateConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets active hours end.
         /// Active Hours End (active hours mean the time window when updates install should not happen)

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class GovernanceRoleAssignment : Entity
     {
     
-		///<summary>
-		/// The GovernanceRoleAssignment constructor
-		///</summary>
-        public GovernanceRoleAssignment()
-        {
-            this.ODataType = "microsoft.graph.governanceRoleAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets assignment state.
         /// The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.

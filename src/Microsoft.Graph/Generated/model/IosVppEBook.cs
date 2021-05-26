@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class IosVppEBook : ManagedEBook
     {
     
-		///<summary>
-		/// The IosVppEBook constructor
-		///</summary>
+        ///<summary>
+        /// The IosVppEBook constructor
+        ///</summary>
         public IosVppEBook()
         {
             this.ODataType = "microsoft.graph.iosVppEBook";
         }
-	
+    
         /// <summary>
         /// Gets or sets apple id.
         /// The Apple ID associated with Vpp token.

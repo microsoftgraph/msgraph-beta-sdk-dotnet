@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WorkforceIntegrationEncryption>))]
     public partial class WorkforceIntegrationEncryption
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkforceIntegrationEncryption"/> class.
-        /// </summary>
-        public WorkforceIntegrationEncryption()
-        {
-            this.ODataType = "microsoft.graph.workforceIntegrationEncryption";
-        }
 
         /// <summary>
         /// Gets or sets protocol.

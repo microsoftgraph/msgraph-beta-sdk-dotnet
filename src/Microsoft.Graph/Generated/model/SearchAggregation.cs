@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SearchAggregation>))]
     public partial class SearchAggregation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchAggregation"/> class.
-        /// </summary>
-        public SearchAggregation()
-        {
-            this.ODataType = "microsoft.graph.searchAggregation";
-        }
 
         /// <summary>
         /// Gets or sets buckets.

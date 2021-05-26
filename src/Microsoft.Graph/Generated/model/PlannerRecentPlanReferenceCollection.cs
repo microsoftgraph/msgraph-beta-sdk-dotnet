@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PlannerRecentPlanReferenceCollection>))]
     public partial class PlannerRecentPlanReferenceCollection
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlannerRecentPlanReferenceCollection"/> class.
-        /// </summary>
-        public PlannerRecentPlanReferenceCollection()
-        {
-            this.ODataType = "microsoft.graph.plannerRecentPlanReferenceCollection";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

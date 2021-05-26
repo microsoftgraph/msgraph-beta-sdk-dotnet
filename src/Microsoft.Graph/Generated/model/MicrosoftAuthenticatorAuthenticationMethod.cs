@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod
     {
     
-		///<summary>
-		/// The MicrosoftAuthenticatorAuthenticationMethod constructor
-		///</summary>
+        ///<summary>
+        /// The MicrosoftAuthenticatorAuthenticationMethod constructor
+        ///</summary>
         public MicrosoftAuthenticatorAuthenticationMethod()
         {
             this.ODataType = "microsoft.graph.microsoftAuthenticatorAuthenticationMethod";
         }
-	
+    
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.

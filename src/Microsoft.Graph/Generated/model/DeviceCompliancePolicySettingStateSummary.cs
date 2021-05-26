@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceCompliancePolicySettingStateSummary : Entity
     {
     
-		///<summary>
-		/// The DeviceCompliancePolicySettingStateSummary constructor
-		///</summary>
-        public DeviceCompliancePolicySettingStateSummary()
-        {
-            this.ODataType = "microsoft.graph.deviceCompliancePolicySettingStateSummary";
-        }
-	
         /// <summary>
         /// Gets or sets compliant device count.
         /// Number of compliant devices

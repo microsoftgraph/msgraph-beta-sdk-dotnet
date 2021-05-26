@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AppConsentRequestObject : Entity
     {
     
-		///<summary>
-		/// The AppConsentRequest constructor
-		///</summary>
-        public AppConsentRequestObject()
-        {
-            this.ODataType = "microsoft.graph.appConsentRequest";
-        }
-	
         /// <summary>
         /// Gets or sets app display name.
         /// The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.

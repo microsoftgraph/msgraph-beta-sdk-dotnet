@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessPackageAssignmentRequestObject : Entity
     {
     
-		///<summary>
-		/// The AccessPackageAssignmentRequest constructor
-		///</summary>
-        public AccessPackageAssignmentRequestObject()
-        {
-            this.ODataType = "microsoft.graph.accessPackageAssignmentRequest";
-        }
-	
         /// <summary>
         /// Gets or sets answers.
         /// Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.

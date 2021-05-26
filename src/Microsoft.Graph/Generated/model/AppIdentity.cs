@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AppIdentity>))]
     public partial class AppIdentity
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppIdentity"/> class.
-        /// </summary>
-        public AppIdentity()
-        {
-            this.ODataType = "microsoft.graph.appIdentity";
-        }
 
         /// <summary>
         /// Gets or sets appId.

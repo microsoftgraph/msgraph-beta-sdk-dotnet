@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceKey>))]
     public partial class DeviceKey
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceKey"/> class.
-        /// </summary>
-        public DeviceKey()
-        {
-            this.ODataType = "microsoft.graph.deviceKey";
-        }
 
         /// <summary>
         /// Gets or sets deviceId.

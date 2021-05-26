@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AssignmentFilterValidationResult>))]
     public partial class AssignmentFilterValidationResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AssignmentFilterValidationResult"/> class.
-        /// </summary>
-        public AssignmentFilterValidationResult()
-        {
-            this.ODataType = "microsoft.graph.assignmentFilterValidationResult";
-        }
 
         /// <summary>
         /// Gets or sets isValidRule.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ImportedAppleDeviceIdentity : Entity
     {
     
-		///<summary>
-		/// The ImportedAppleDeviceIdentity constructor
-		///</summary>
-        public ImportedAppleDeviceIdentity()
-        {
-            this.ODataType = "microsoft.graph.importedAppleDeviceIdentity";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// Created Date Time of the device

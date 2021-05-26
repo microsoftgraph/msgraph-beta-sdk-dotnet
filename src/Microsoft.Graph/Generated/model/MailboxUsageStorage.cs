@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class MailboxUsageStorage : Entity
     {
     
-		///<summary>
-		/// The MailboxUsageStorage constructor
-		///</summary>
-        public MailboxUsageStorage()
-        {
-            this.ODataType = "microsoft.graph.mailboxUsageStorage";
-        }
-	
         /// <summary>
         /// Gets or sets report date.
         /// </summary>

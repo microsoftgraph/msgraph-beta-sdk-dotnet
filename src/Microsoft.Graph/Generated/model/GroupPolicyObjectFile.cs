@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class GroupPolicyObjectFile : Entity
     {
     
-		///<summary>
-		/// The GroupPolicyObjectFile constructor
-		///</summary>
-        public GroupPolicyObjectFile()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyObjectFile";
-        }
-	
         /// <summary>
         /// Gets or sets content.
         /// The Group Policy Object file content.

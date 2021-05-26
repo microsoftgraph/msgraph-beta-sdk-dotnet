@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class PersonCertification : ItemFacet
     {
     
-		///<summary>
-		/// The PersonCertification constructor
-		///</summary>
+        ///<summary>
+        /// The PersonCertification constructor
+        ///</summary>
         public PersonCertification()
         {
             this.ODataType = "microsoft.graph.personCertification";
         }
-	
+    
         /// <summary>
         /// Gets or sets certification id.
         /// The referenceable identifier for the certification.

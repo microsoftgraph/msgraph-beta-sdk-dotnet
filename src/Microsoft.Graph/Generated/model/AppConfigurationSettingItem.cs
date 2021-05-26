@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AppConfigurationSettingItem>))]
     public partial class AppConfigurationSettingItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppConfigurationSettingItem"/> class.
-        /// </summary>
-        public AppConfigurationSettingItem()
-        {
-            this.ODataType = "microsoft.graph.appConfigurationSettingItem";
-        }
 
         /// <summary>
         /// Gets or sets appConfigKey.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DataLossPreventionPolicy : Entity
     {
     
-		///<summary>
-		/// The DataLossPreventionPolicy constructor
-		///</summary>
-        public DataLossPreventionPolicy()
-        {
-            this.ODataType = "microsoft.graph.dataLossPreventionPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets name.
         /// </summary>

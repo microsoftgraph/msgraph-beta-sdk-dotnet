@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class PrivilegedSignupStatus : Entity
     {
     
-		///<summary>
-		/// The PrivilegedSignupStatus constructor
-		///</summary>
-        public PrivilegedSignupStatus()
-        {
-            this.ODataType = "microsoft.graph.privilegedSignupStatus";
-        }
-	
         /// <summary>
         /// Gets or sets is registered.
         /// </summary>

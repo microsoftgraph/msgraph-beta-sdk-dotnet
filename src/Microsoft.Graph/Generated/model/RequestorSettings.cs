@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RequestorSettings>))]
     public partial class RequestorSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RequestorSettings"/> class.
-        /// </summary>
-        public RequestorSettings()
-        {
-            this.ODataType = "microsoft.graph.requestorSettings";
-        }
 
         /// <summary>
         /// Gets or sets acceptRequests.

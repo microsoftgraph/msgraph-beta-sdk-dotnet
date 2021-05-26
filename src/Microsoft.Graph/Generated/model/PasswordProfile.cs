@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PasswordProfile>))]
     public partial class PasswordProfile
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PasswordProfile"/> class.
-        /// </summary>
-        public PasswordProfile()
-        {
-            this.ODataType = "microsoft.graph.passwordProfile";
-        }
 
         /// <summary>
         /// Gets or sets forceChangePasswordNextSignIn.

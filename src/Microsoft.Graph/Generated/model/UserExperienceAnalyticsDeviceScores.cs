@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsDeviceScores : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsDeviceScores constructor
-		///</summary>
-        public UserExperienceAnalyticsDeviceScores()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsDeviceScores";
-        }
-	
         /// <summary>
         /// Gets or sets app reliability score.
         /// The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308

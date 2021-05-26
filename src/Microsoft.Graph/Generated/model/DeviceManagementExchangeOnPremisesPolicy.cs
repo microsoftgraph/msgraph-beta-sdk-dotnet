@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementExchangeOnPremisesPolicy : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementExchangeOnPremisesPolicy constructor
-		///</summary>
-        public DeviceManagementExchangeOnPremisesPolicy()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementExchangeOnPremisesPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets access rules.
         /// The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization

@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class BookingService : BookingNamedEntity
     {
     
-		///<summary>
-		/// The BookingService constructor
-		///</summary>
+        ///<summary>
+        /// The BookingService constructor
+        ///</summary>
         public BookingService()
         {
             this.ODataType = "microsoft.graph.bookingService";
         }
-	
+    
         /// <summary>
         /// Gets or sets additional information.
         /// </summary>

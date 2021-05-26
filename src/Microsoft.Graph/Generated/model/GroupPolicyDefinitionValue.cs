@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class GroupPolicyDefinitionValue : Entity
     {
     
-		///<summary>
-		/// The GroupPolicyDefinitionValue constructor
-		///</summary>
-        public GroupPolicyDefinitionValue()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyDefinitionValue";
-        }
-	
         /// <summary>
         /// Gets or sets configuration type.
         /// Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.

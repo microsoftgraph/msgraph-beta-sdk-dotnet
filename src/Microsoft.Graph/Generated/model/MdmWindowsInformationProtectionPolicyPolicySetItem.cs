@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MdmWindowsInformationProtectionPolicyPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The MdmWindowsInformationProtectionPolicyPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The MdmWindowsInformationProtectionPolicyPolicySetItem constructor
+        ///</summary>
         public MdmWindowsInformationProtectionPolicyPolicySetItem()
         {
             this.ODataType = "microsoft.graph.mdmWindowsInformationProtectionPolicyPolicySetItem";
         }
-	
+    
     }
 }
 

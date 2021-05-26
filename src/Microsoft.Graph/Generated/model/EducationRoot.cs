@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class EducationRoot
     {
     
-		///<summary>
-		/// The EducationRoot constructor
-		///</summary>
-        public EducationRoot()
-        {
-            this.ODataType = "microsoft.graph.educationRoot";
-        }
-	
         /// <summary>
         /// Gets or sets synchronization profiles.
         /// </summary>

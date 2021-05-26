@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SecurityProviderStatus>))]
     public partial class SecurityProviderStatus
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecurityProviderStatus"/> class.
-        /// </summary>
-        public SecurityProviderStatus()
-        {
-            this.ODataType = "microsoft.graph.securityProviderStatus";
-        }
 
         /// <summary>
         /// Gets or sets enabled.

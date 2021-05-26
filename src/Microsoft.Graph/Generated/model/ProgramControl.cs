@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ProgramControl : Entity
     {
     
-		///<summary>
-		/// The ProgramControl constructor
-		///</summary>
-        public ProgramControl()
-        {
-            this.ODataType = "microsoft.graph.programControl";
-        }
-	
         /// <summary>
         /// Gets or sets control id.
         /// The controlId of the control, in particular the identifier of an access review. Required on create.

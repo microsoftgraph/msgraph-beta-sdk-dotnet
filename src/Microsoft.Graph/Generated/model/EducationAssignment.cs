@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class EducationAssignment : Entity
     {
     
-		///<summary>
-		/// The EducationAssignment constructor
-		///</summary>
-        public EducationAssignment()
-        {
-            this.ODataType = "microsoft.graph.educationAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets added student action.
         /// Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.

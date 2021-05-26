@@ -20,13 +20,6 @@ namespace Microsoft.Graph.WindowsUpdates
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<RolloutSettings>))]
     public partial class RolloutSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RolloutSettings"/> class.
-        /// </summary>
-        public RolloutSettings()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.rolloutSettings";
-        }
 
         /// <summary>
         /// Gets or sets devicesPerOffer.

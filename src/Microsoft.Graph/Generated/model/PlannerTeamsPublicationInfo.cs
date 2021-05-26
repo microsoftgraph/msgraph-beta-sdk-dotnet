@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PlannerTeamsPublicationInfo>))]
     public partial class PlannerTeamsPublicationInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlannerTeamsPublicationInfo"/> class.
-        /// </summary>
-        public PlannerTeamsPublicationInfo()
-        {
-            this.ODataType = "microsoft.graph.plannerTeamsPublicationInfo";
-        }
 
         /// <summary>
         /// Gets or sets lastModifiedDateTime.

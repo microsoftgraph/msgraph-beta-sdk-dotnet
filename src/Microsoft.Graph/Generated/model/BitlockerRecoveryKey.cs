@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class BitlockerRecoveryKey : Entity
     {
     
-		///<summary>
-		/// The BitlockerRecoveryKey constructor
-		///</summary>
-        public BitlockerRecoveryKey()
-        {
-            this.ODataType = "microsoft.graph.bitlockerRecoveryKey";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time when the key was originally backed up to Azure Active Directory.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Office365ActiveUserDetail : Entity
     {
     
-		///<summary>
-		/// The Office365ActiveUserDetail constructor
-		///</summary>
-        public Office365ActiveUserDetail()
-        {
-            this.ODataType = "microsoft.graph.office365ActiveUserDetail";
-        }
-	
         /// <summary>
         /// Gets or sets assigned products.
         /// All the products assigned for the user.

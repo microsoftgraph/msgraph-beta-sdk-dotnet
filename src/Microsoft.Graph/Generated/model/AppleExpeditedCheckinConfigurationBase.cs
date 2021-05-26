@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class AppleExpeditedCheckinConfigurationBase : DeviceConfiguration
     {
     
-		///<summary>
-		/// The internal AppleExpeditedCheckinConfigurationBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal AppleExpeditedCheckinConfigurationBase constructor
+        ///</summary>
         protected internal AppleExpeditedCheckinConfigurationBase()
         {
             // Don't allow initialization of abstract entity types

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class RemoteActionAudit : Entity
     {
     
-		///<summary>
-		/// The RemoteActionAudit constructor
-		///</summary>
-        public RemoteActionAudit()
-        {
-            this.ODataType = "microsoft.graph.remoteActionAudit";
-        }
-	
         /// <summary>
         /// Gets or sets action.
         /// The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.

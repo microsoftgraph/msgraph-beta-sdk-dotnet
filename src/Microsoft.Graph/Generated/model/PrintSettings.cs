@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PrintSettings>))]
     public partial class PrintSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrintSettings"/> class.
-        /// </summary>
-        public PrintSettings()
-        {
-            this.ODataType = "microsoft.graph.printSettings";
-        }
 
         /// <summary>
         /// Gets or sets documentConversionEnabled.

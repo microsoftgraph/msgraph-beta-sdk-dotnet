@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementTemplateSettingCategory : DeviceManagementSettingCategory
     {
     
-		///<summary>
-		/// The DeviceManagementTemplateSettingCategory constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementTemplateSettingCategory constructor
+        ///</summary>
         public DeviceManagementTemplateSettingCategory()
         {
             this.ODataType = "microsoft.graph.deviceManagementTemplateSettingCategory";
         }
-	
+    
         /// <summary>
         /// Gets or sets recommended settings.
         /// The settings this category contains

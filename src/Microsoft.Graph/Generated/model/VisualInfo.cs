@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<VisualInfo>))]
     public partial class VisualInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VisualInfo"/> class.
-        /// </summary>
-        public VisualInfo()
-        {
-            this.ODataType = "microsoft.graph.visualInfo";
-        }
 
         /// <summary>
         /// Gets or sets attribution.

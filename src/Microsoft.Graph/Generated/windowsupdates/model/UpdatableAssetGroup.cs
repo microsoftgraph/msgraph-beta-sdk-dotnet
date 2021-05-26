@@ -20,14 +20,14 @@ namespace Microsoft.Graph.WindowsUpdates
     public partial class UpdatableAssetGroup : UpdatableAsset
     {
     
-		///<summary>
-		/// The UpdatableAssetGroup constructor
-		///</summary>
+        ///<summary>
+        /// The UpdatableAssetGroup constructor
+        ///</summary>
         public UpdatableAssetGroup()
         {
             this.ODataType = "microsoft.graph.windowsUpdates.updatableAssetGroup";
         }
-	
+    
         /// <summary>
         /// Gets or sets members.
         /// Members of the group. Read-only.

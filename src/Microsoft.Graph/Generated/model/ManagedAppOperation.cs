@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ManagedAppOperation : Entity
     {
     
-		///<summary>
-		/// The ManagedAppOperation constructor
-		///</summary>
-        public ManagedAppOperation()
-        {
-            this.ODataType = "microsoft.graph.managedAppOperation";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The operation name.

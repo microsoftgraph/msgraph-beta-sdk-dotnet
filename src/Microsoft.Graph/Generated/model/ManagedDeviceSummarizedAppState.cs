@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ManagedDeviceSummarizedAppState>))]
     public partial class ManagedDeviceSummarizedAppState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagedDeviceSummarizedAppState"/> class.
-        /// </summary>
-        public ManagedDeviceSummarizedAppState()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceSummarizedAppState";
-        }
 
         /// <summary>
         /// Gets or sets deviceId.

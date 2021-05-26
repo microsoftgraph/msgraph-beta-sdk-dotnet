@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<Audio>))]
     public partial class Audio
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Audio"/> class.
-        /// </summary>
-        public Audio()
-        {
-            this.ODataType = "microsoft.graph.audio";
-        }
 
         /// <summary>
         /// Gets or sets album.

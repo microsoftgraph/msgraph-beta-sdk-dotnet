@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsRegressionSummary : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsRegressionSummary constructor
-		///</summary>
-        public UserExperienceAnalyticsRegressionSummary()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsRegressionSummary";
-        }
-	
         /// <summary>
         /// Gets or sets manufacturer regression.
         /// The metric values for the user experience analytics Manufacturer regression.

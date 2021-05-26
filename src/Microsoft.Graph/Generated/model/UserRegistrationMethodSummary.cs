@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UserRegistrationMethodSummary>))]
     public partial class UserRegistrationMethodSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserRegistrationMethodSummary"/> class.
-        /// </summary>
-        public UserRegistrationMethodSummary()
-        {
-            this.ODataType = "microsoft.graph.userRegistrationMethodSummary";
-        }
 
         /// <summary>
         /// Gets or sets totalUserCount.

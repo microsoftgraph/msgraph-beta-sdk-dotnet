@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class RiskyUserHistoryItem : RiskyUser
     {
     
-		///<summary>
-		/// The RiskyUserHistoryItem constructor
-		///</summary>
+        ///<summary>
+        /// The RiskyUserHistoryItem constructor
+        ///</summary>
         public RiskyUserHistoryItem()
         {
             this.ODataType = "microsoft.graph.riskyUserHistoryItem";
         }
-	
+    
         /// <summary>
         /// Gets or sets activity.
         /// The activity related to user risk level change.

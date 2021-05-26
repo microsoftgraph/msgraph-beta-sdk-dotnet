@@ -22,14 +22,6 @@ namespace Microsoft.Graph
     public partial class ConnectionOperation : Entity
     {
     
-		///<summary>
-		/// The ConnectionOperation constructor
-		///</summary>
-        public ConnectionOperation()
-        {
-            this.ODataType = "microsoft.graph.connectionOperation";
-        }
-	
         /// <summary>
         /// Gets or sets error.
         /// If status is failed, provides more information about the error that caused the failure.

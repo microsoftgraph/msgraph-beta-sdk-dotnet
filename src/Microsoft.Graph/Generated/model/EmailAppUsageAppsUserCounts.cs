@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EmailAppUsageAppsUserCounts : Entity
     {
     
-		///<summary>
-		/// The EmailAppUsageAppsUserCounts constructor
-		///</summary>
-        public EmailAppUsageAppsUserCounts()
-        {
-            this.ODataType = "microsoft.graph.emailAppUsageAppsUserCounts";
-        }
-	
         /// <summary>
         /// Gets or sets imap4app.
         /// </summary>

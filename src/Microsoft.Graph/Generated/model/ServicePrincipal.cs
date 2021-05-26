@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ServicePrincipal : DirectoryObject
     {
     
-		///<summary>
-		/// The ServicePrincipal constructor
-		///</summary>
+        ///<summary>
+        /// The ServicePrincipal constructor
+        ///</summary>
         public ServicePrincipal()
         {
             this.ODataType = "microsoft.graph.servicePrincipal";
         }
-	
+    
         /// <summary>
         /// Gets or sets password single sign on settings.
         /// The collection for settings related to password single sign-on. Use $select=passwordSingleSignOnSettings to read the property. Read-only for applicationTemplates except for custom applicationTemplates.

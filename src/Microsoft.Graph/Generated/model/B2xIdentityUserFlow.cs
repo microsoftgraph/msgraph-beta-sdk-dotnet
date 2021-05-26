@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class B2xIdentityUserFlow : IdentityUserFlow
     {
     
-		///<summary>
-		/// The B2xIdentityUserFlow constructor
-		///</summary>
+        ///<summary>
+        /// The B2xIdentityUserFlow constructor
+        ///</summary>
         public B2xIdentityUserFlow()
         {
             this.ODataType = "microsoft.graph.b2xIdentityUserFlow";
         }
-	
+    
         /// <summary>
         /// Gets or sets api connector configuration.
         /// Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.

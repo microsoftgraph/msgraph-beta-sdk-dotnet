@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleManagementPolicyNotificationRule : UnifiedRoleManagementPolicyRule
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicyNotificationRule constructor
-		///</summary>
+        ///<summary>
+        /// The UnifiedRoleManagementPolicyNotificationRule constructor
+        ///</summary>
         public UnifiedRoleManagementPolicyNotificationRule()
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyNotificationRule";
         }
-	
+    
         /// <summary>
         /// Gets or sets is default recipients enabled.
         /// Whether default recipient is receiving the email or not.

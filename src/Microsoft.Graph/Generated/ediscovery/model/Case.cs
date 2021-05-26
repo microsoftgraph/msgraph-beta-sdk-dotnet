@@ -21,14 +21,6 @@ namespace Microsoft.Graph.Ediscovery
     public partial class Case : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Case constructor
-		///</summary>
-        public Case()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.case";
-        }
-	
         /// <summary>
         /// Gets or sets closed by.
         /// The user who closed the case.

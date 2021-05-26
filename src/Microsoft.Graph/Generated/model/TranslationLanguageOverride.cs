@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<TranslationLanguageOverride>))]
     public partial class TranslationLanguageOverride
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TranslationLanguageOverride"/> class.
-        /// </summary>
-        public TranslationLanguageOverride()
-        {
-            this.ODataType = "microsoft.graph.translationLanguageOverride";
-        }
 
         /// <summary>
         /// Gets or sets languageTag.

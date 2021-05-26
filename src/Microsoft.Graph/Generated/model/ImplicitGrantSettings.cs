@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ImplicitGrantSettings>))]
     public partial class ImplicitGrantSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ImplicitGrantSettings"/> class.
-        /// </summary>
-        public ImplicitGrantSettings()
-        {
-            this.ODataType = "microsoft.graph.implicitGrantSettings";
-        }
 
         /// <summary>
         /// Gets or sets enableAccessTokenIssuance.

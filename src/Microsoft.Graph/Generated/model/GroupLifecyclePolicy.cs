@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class GroupLifecyclePolicy : Entity
     {
     
-		///<summary>
-		/// The GroupLifecyclePolicy constructor
-		///</summary>
-        public GroupLifecyclePolicy()
-        {
-            this.ODataType = "microsoft.graph.groupLifecyclePolicy";
-        }
-	
         /// <summary>
         /// Gets or sets alternate notification emails.
         /// List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.

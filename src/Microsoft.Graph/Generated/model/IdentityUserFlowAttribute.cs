@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class IdentityUserFlowAttribute : Entity
     {
     
-		///<summary>
-		/// The IdentityUserFlowAttribute constructor
-		///</summary>
-        public IdentityUserFlowAttribute()
-        {
-            this.ODataType = "microsoft.graph.identityUserFlowAttribute";
-        }
-	
         /// <summary>
         /// Gets or sets data type.
         /// The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PositionDetail>))]
     public partial class PositionDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PositionDetail"/> class.
-        /// </summary>
-        public PositionDetail()
-        {
-            this.ODataType = "microsoft.graph.positionDetail";
-        }
 
         /// <summary>
         /// Gets or sets company.

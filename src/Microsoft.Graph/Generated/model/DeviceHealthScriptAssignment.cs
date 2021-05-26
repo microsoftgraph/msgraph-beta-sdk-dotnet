@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceHealthScriptAssignment : Entity
     {
     
-		///<summary>
-		/// The DeviceHealthScriptAssignment constructor
-		///</summary>
-        public DeviceHealthScriptAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceHealthScriptAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets run remediation script.
         /// Determine whether we want to run detection script only or run both detection script and remediation script

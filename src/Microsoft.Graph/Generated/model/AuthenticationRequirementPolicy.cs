@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AuthenticationRequirementPolicy>))]
     public partial class AuthenticationRequirementPolicy
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AuthenticationRequirementPolicy"/> class.
-        /// </summary>
-        public AuthenticationRequirementPolicy()
-        {
-            this.ODataType = "microsoft.graph.authenticationRequirementPolicy";
-        }
 
         /// <summary>
         /// Gets or sets detail.

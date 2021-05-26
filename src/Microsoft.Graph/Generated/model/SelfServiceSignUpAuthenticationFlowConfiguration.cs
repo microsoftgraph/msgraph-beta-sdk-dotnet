@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SelfServiceSignUpAuthenticationFlowConfiguration>))]
     public partial class SelfServiceSignUpAuthenticationFlowConfiguration
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SelfServiceSignUpAuthenticationFlowConfiguration"/> class.
-        /// </summary>
-        public SelfServiceSignUpAuthenticationFlowConfiguration()
-        {
-            this.ODataType = "microsoft.graph.selfServiceSignUpAuthenticationFlowConfiguration";
-        }
 
         /// <summary>
         /// Gets or sets isEnabled.

@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class DeviceSetupConfiguration : Entity
     {
     
-		///<summary>
-		/// The internal DeviceSetupConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The internal DeviceSetupConfiguration constructor
+        ///</summary>
         protected internal DeviceSetupConfiguration()
         {
             // Don't allow initialization of abstract entity types

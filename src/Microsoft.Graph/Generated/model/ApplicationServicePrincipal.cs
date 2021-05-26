@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ApplicationServicePrincipal>))]
     public partial class ApplicationServicePrincipal
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ApplicationServicePrincipal"/> class.
-        /// </summary>
-        public ApplicationServicePrincipal()
-        {
-            this.ODataType = "microsoft.graph.applicationServicePrincipal";
-        }
 
         /// <summary>
         /// Gets or sets application.

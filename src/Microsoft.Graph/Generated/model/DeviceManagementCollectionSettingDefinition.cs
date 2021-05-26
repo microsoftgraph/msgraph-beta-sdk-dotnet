@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementCollectionSettingDefinition : DeviceManagementSettingDefinition
     {
     
-		///<summary>
-		/// The DeviceManagementCollectionSettingDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementCollectionSettingDefinition constructor
+        ///</summary>
         public DeviceManagementCollectionSettingDefinition()
         {
             this.ODataType = "microsoft.graph.deviceManagementCollectionSettingDefinition";
         }
-	
+    
         /// <summary>
         /// Gets or sets element definition id.
         /// The Setting Definition ID that describes what each element of the collection looks like

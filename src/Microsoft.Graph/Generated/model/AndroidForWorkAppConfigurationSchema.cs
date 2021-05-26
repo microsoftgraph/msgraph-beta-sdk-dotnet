@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AndroidForWorkAppConfigurationSchema : Entity
     {
     
-		///<summary>
-		/// The AndroidForWorkAppConfigurationSchema constructor
-		///</summary>
-        public AndroidForWorkAppConfigurationSchema()
-        {
-            this.ODataType = "microsoft.graph.androidForWorkAppConfigurationSchema";
-        }
-	
         /// <summary>
         /// Gets or sets example json.
         /// UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app

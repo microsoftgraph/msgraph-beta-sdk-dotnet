@@ -21,13 +21,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<StatusBase>))]
     public partial class StatusBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StatusBase"/> class.
-        /// </summary>
-        public StatusBase()
-        {
-            this.ODataType = "microsoft.graph.statusBase";
-        }
 
         /// <summary>
         /// Gets or sets status.

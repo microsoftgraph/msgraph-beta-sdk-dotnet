@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TeamsDeviceUsageUserCounts : Entity
     {
     
-		///<summary>
-		/// The TeamsDeviceUsageUserCounts constructor
-		///</summary>
-        public TeamsDeviceUsageUserCounts()
-        {
-            this.ODataType = "microsoft.graph.teamsDeviceUsageUserCounts";
-        }
-	
         /// <summary>
         /// Gets or sets android phone.
         /// The number of users who were active on the Teams mobile client for Android.

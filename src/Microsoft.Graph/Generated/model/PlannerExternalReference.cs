@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PlannerExternalReference>))]
     public partial class PlannerExternalReference
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlannerExternalReference"/> class.
-        /// </summary>
-        public PlannerExternalReference()
-        {
-            this.ODataType = "microsoft.graph.plannerExternalReference";
-        }
 
         /// <summary>
         /// Gets or sets alias.

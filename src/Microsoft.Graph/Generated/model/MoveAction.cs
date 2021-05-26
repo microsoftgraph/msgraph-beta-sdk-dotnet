@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<MoveAction>))]
     public partial class MoveAction
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MoveAction"/> class.
-        /// </summary>
-        public MoveAction()
-        {
-            this.ODataType = "microsoft.graph.moveAction";
-        }
 
         /// <summary>
         /// Gets or sets from.

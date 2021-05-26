@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class AuthenticationMethodTarget : Entity
     {
     
-		///<summary>
-		/// The AuthenticationMethodTarget constructor
-		///</summary>
-        public AuthenticationMethodTarget()
-        {
-            this.ODataType = "microsoft.graph.authenticationMethodTarget";
-        }
-	
         /// <summary>
         /// Gets or sets is registration required.
         /// Determines if the user is enforced to register the authentication method.

@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class AndroidDeviceOwnerEnrollmentProfile : Entity
     {
     
-		///<summary>
-		/// The AndroidDeviceOwnerEnrollmentProfile constructor
-		///</summary>
-        public AndroidDeviceOwnerEnrollmentProfile()
-        {
-            this.ODataType = "microsoft.graph.androidDeviceOwnerEnrollmentProfile";
-        }
-	
         /// <summary>
         /// Gets or sets account id.
         /// Tenant GUID the enrollment profile belongs to.

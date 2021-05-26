@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class CalendarPermission : Entity
     {
     
-		///<summary>
-		/// The CalendarPermission constructor
-		///</summary>
-        public CalendarPermission()
-        {
-            this.ODataType = "microsoft.graph.calendarPermission";
-        }
-	
         /// <summary>
         /// Gets or sets allowed roles.
         /// List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.

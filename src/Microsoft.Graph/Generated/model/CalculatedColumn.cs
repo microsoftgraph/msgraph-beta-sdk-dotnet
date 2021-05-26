@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CalculatedColumn>))]
     public partial class CalculatedColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CalculatedColumn"/> class.
-        /// </summary>
-        public CalculatedColumn()
-        {
-            this.ODataType = "microsoft.graph.calculatedColumn";
-        }
 
         /// <summary>
         /// Gets or sets format.

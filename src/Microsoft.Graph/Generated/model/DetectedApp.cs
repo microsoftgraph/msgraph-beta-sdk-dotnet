@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DetectedApp : Entity
     {
     
-		///<summary>
-		/// The DetectedApp constructor
-		///</summary>
-        public DetectedApp()
-        {
-            this.ODataType = "microsoft.graph.detectedApp";
-        }
-	
         /// <summary>
         /// Gets or sets device count.
         /// The number of devices that have installed this application

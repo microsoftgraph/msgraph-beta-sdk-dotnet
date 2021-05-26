@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ShiftActivity>))]
     public partial class ShiftActivity
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ShiftActivity"/> class.
-        /// </summary>
-        public ShiftActivity()
-        {
-            this.ODataType = "microsoft.graph.shiftActivity";
-        }
 
         /// <summary>
         /// Gets or sets code.

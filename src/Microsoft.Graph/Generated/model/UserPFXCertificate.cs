@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class UserPFXCertificate : Entity
     {
     
-		///<summary>
-		/// The UserPFXCertificate constructor
-		///</summary>
-        public UserPFXCertificate()
-        {
-            this.ODataType = "microsoft.graph.userPFXCertificate";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// Date/time when this PFX certificate was imported.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<WindowsKioskForceUpdateSchedule>))]
     public partial class WindowsKioskForceUpdateSchedule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WindowsKioskForceUpdateSchedule"/> class.
-        /// </summary>
-        public WindowsKioskForceUpdateSchedule()
-        {
-            this.ODataType = "microsoft.graph.windowsKioskForceUpdateSchedule";
-        }
 
         /// <summary>
         /// Gets or sets dayofMonth.

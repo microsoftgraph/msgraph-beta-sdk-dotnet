@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CloudPcOnPremisesConnectionHealthCheck>))]
     public partial class CloudPcOnPremisesConnectionHealthCheck
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CloudPcOnPremisesConnectionHealthCheck"/> class.
-        /// </summary>
-        public CloudPcOnPremisesConnectionHealthCheck()
-        {
-            this.ODataType = "microsoft.graph.cloudPcOnPremisesConnectionHealthCheck";
-        }
 
         /// <summary>
         /// Gets or sets additionalDetails.

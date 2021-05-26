@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PlannerCategoryDescriptions>))]
     public partial class PlannerCategoryDescriptions
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlannerCategoryDescriptions"/> class.
-        /// </summary>
-        public PlannerCategoryDescriptions()
-        {
-            this.ODataType = "microsoft.graph.plannerCategoryDescriptions";
-        }
 
         /// <summary>
         /// Gets or sets category1.

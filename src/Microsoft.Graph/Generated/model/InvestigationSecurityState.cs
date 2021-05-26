@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<InvestigationSecurityState>))]
     public partial class InvestigationSecurityState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InvestigationSecurityState"/> class.
-        /// </summary>
-        public InvestigationSecurityState()
-        {
-            this.ODataType = "microsoft.graph.investigationSecurityState";
-        }
 
         /// <summary>
         /// Gets or sets name.

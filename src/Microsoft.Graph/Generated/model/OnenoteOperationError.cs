@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<OnenoteOperationError>))]
     public partial class OnenoteOperationError
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OnenoteOperationError"/> class.
-        /// </summary>
-        public OnenoteOperationError()
-        {
-            this.ODataType = "microsoft.graph.onenoteOperationError";
-        }
 
         /// <summary>
         /// Gets or sets code.

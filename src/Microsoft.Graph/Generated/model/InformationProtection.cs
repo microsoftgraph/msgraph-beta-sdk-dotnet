@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class InformationProtection : Entity
     {
     
-		///<summary>
-		/// The InformationProtection constructor
-		///</summary>
-        public InformationProtection()
-        {
-            this.ODataType = "microsoft.graph.informationProtection";
-        }
-	
         /// <summary>
         /// Gets or sets bitlocker.
         /// </summary>

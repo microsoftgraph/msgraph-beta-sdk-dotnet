@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IosEduCertificateSettings>))]
     public partial class IosEduCertificateSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosEduCertificateSettings"/> class.
-        /// </summary>
-        public IosEduCertificateSettings()
-        {
-            this.ODataType = "microsoft.graph.iosEduCertificateSettings";
-        }
 
         /// <summary>
         /// Gets or sets certFileName.

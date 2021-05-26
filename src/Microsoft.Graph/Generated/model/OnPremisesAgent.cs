@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class OnPremisesAgent : Entity
     {
     
-		///<summary>
-		/// The OnPremisesAgent constructor
-		///</summary>
-        public OnPremisesAgent()
-        {
-            this.ODataType = "microsoft.graph.onPremisesAgent";
-        }
-	
         /// <summary>
         /// Gets or sets external ip.
         /// The external IP address as detected by the service for the agent machine. Read-only

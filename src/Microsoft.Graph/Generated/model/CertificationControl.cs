@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<CertificationControl>))]
     public partial class CertificationControl
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CertificationControl"/> class.
-        /// </summary>
-        public CertificationControl()
-        {
-            this.ODataType = "microsoft.graph.certificationControl";
-        }
 
         /// <summary>
         /// Gets or sets name.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessPackageResourceEnvironment : Entity
     {
     
-		///<summary>
-		/// The AccessPackageResourceEnvironment constructor
-		///</summary>
-        public AccessPackageResourceEnvironment()
-        {
-            this.ODataType = "microsoft.graph.accessPackageResourceEnvironment";
-        }
-	
         /// <summary>
         /// Gets or sets connection info.
         /// Connection information of an environment used to connect to a resource.

@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidCompliancePolicy : DeviceCompliancePolicy
     {
     
-		///<summary>
-		/// The AndroidCompliancePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidCompliancePolicy constructor
+        ///</summary>
         public AndroidCompliancePolicy()
         {
             this.ODataType = "microsoft.graph.androidCompliancePolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets advanced threat protection required security level.
         /// MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.

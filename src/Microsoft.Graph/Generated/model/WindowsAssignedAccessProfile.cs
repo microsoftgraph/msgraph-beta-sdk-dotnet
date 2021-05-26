@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WindowsAssignedAccessProfile : Entity
     {
     
-		///<summary>
-		/// The WindowsAssignedAccessProfile constructor
-		///</summary>
-        public WindowsAssignedAccessProfile()
-        {
-            this.ODataType = "microsoft.graph.windowsAssignedAccessProfile";
-        }
-	
         /// <summary>
         /// Gets or sets app user model ids.
         /// These are the only Windows Store Apps that will be available to launch from the Start menu.

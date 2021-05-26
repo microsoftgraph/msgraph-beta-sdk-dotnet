@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserInstallStateSummary : Entity
     {
     
-		///<summary>
-		/// The UserInstallStateSummary constructor
-		///</summary>
-        public UserInstallStateSummary()
-        {
-            this.ODataType = "microsoft.graph.userInstallStateSummary";
-        }
-	
         /// <summary>
         /// Gets or sets failed device count.
         /// Failed Device Count.

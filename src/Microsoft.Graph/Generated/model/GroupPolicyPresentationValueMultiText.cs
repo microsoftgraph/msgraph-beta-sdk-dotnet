@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationValueMultiText : GroupPolicyPresentationValue
     {
     
-		///<summary>
-		/// The GroupPolicyPresentationValueMultiText constructor
-		///</summary>
+        ///<summary>
+        /// The GroupPolicyPresentationValueMultiText constructor
+        ///</summary>
         public GroupPolicyPresentationValueMultiText()
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationValueMultiText";
         }
-	
+    
         /// <summary>
         /// Gets or sets values.
         /// A collection of non-empty strings for the associated presentation.

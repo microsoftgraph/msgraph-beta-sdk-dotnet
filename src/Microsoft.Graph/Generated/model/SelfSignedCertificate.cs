@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SelfSignedCertificate>))]
     public partial class SelfSignedCertificate
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SelfSignedCertificate"/> class.
-        /// </summary>
-        public SelfSignedCertificate()
-        {
-            this.ODataType = "microsoft.graph.selfSignedCertificate";
-        }
 
         /// <summary>
         /// Gets or sets customKeyIdentifier.

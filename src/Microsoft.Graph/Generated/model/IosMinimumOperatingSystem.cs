@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IosMinimumOperatingSystem>))]
     public partial class IosMinimumOperatingSystem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosMinimumOperatingSystem"/> class.
-        /// </summary>
-        public IosMinimumOperatingSystem()
-        {
-            this.ODataType = "microsoft.graph.iosMinimumOperatingSystem";
-        }
 
         /// <summary>
         /// Gets or sets v10_0.

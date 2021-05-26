@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Subscription : Entity
     {
     
-		///<summary>
-		/// The Subscription constructor
-		///</summary>
-        public Subscription()
-        {
-            this.ODataType = "microsoft.graph.subscription";
-        }
-	
         /// <summary>
         /// Gets or sets application id.
         /// Identifier of the application used to create the subscription. Read-only.

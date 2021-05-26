@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PayloadRequestObject>))]
     public partial class PayloadRequestObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PayloadRequestObject"/> class.
-        /// </summary>
-        public PayloadRequestObject()
-        {
-            this.ODataType = "microsoft.graph.payloadRequest";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

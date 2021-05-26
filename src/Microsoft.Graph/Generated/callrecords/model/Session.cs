@@ -21,14 +21,6 @@ namespace Microsoft.Graph.CallRecords
     public partial class Session : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Session constructor
-		///</summary>
-        public Session()
-        {
-            this.ODataType = "microsoft.graph.callRecords.session";
-        }
-	
         /// <summary>
         /// Gets or sets callee.
         /// Endpoint that answered the session.

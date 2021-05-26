@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementAutopilotPolicyStatusDetail : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementAutopilotPolicyStatusDetail constructor
-		///</summary>
-        public DeviceManagementAutopilotPolicyStatusDetail()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementAutopilotPolicyStatusDetail";
-        }
-	
         /// <summary>
         /// Gets or sets compliance status.
         /// The policy compliance status. Possible values are: unknown, compliant, installed, notCompliant, notInstalled, error.

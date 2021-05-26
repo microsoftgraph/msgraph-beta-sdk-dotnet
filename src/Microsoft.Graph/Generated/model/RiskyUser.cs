@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class RiskyUser : Entity
     {
     
-		///<summary>
-		/// The RiskyUser constructor
-		///</summary>
-        public RiskyUser()
-        {
-            this.ODataType = "microsoft.graph.riskyUser";
-        }
-	
         /// <summary>
         /// Gets or sets is deleted.
         /// Indicates whether the user is deleted. Possible values are: true, false.

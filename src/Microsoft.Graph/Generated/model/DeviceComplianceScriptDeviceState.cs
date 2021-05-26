@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceComplianceScriptDeviceState : Entity
     {
     
-		///<summary>
-		/// The DeviceComplianceScriptDeviceState constructor
-		///</summary>
-        public DeviceComplianceScriptDeviceState()
-        {
-            this.ODataType = "microsoft.graph.deviceComplianceScriptDeviceState";
-        }
-	
         /// <summary>
         /// Gets or sets detection state.
         /// Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.

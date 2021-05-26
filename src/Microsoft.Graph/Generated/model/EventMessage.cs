@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class EventMessage : Message
     {
     
-		///<summary>
-		/// The EventMessage constructor
-		///</summary>
+        ///<summary>
+        /// The EventMessage constructor
+        ///</summary>
         public EventMessage()
         {
             this.ODataType = "microsoft.graph.eventMessage";
         }
-	
+    
         /// <summary>
         /// Gets or sets end date time.
         /// The end time of the requested meeting.

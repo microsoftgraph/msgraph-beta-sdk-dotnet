@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class PermissionGrantConditionSet : Entity
     {
     
-		///<summary>
-		/// The PermissionGrantConditionSet constructor
-		///</summary>
-        public PermissionGrantConditionSet()
-        {
-            this.ODataType = "microsoft.graph.permissionGrantConditionSet";
-        }
-	
         /// <summary>
         /// Gets or sets client application ids.
         /// A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ConfigurationManagerAction>))]
     public partial class ConfigurationManagerAction
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationManagerAction"/> class.
-        /// </summary>
-        public ConfigurationManagerAction()
-        {
-            this.ODataType = "microsoft.graph.configurationManagerAction";
-        }
 
         /// <summary>
         /// Gets or sets action.

@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class IosVpnConfiguration : AppleVpnConfiguration
     {
     
-		///<summary>
-		/// The IosVpnConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The IosVpnConfiguration constructor
+        ///</summary>
         public IosVpnConfiguration()
         {
             this.ODataType = "microsoft.graph.iosVpnConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets cloud name.
         /// Zscaler only. Zscaler cloud which the user is assigned to.

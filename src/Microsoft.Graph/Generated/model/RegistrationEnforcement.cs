@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RegistrationEnforcement>))]
     public partial class RegistrationEnforcement
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RegistrationEnforcement"/> class.
-        /// </summary>
-        public RegistrationEnforcement()
-        {
-            this.ODataType = "microsoft.graph.registrationEnforcement";
-        }
 
         /// <summary>
         /// Gets or sets authenticationMethodsRegistrationCampaign.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AssignedLabel>))]
     public partial class AssignedLabel
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AssignedLabel"/> class.
-        /// </summary>
-        public AssignedLabel()
-        {
-            this.ODataType = "microsoft.graph.assignedLabel";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

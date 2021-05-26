@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UserSettings : Entity
     {
     
-		///<summary>
-		/// The UserSettings constructor
-		///</summary>
-        public UserSettings()
-        {
-            this.ODataType = "microsoft.graph.userSettings";
-        }
-	
         /// <summary>
         /// Gets or sets contribution to content discovery as organization disabled.
         /// Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.

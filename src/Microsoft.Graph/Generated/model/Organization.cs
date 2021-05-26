@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Organization : DirectoryObject
     {
     
-		///<summary>
-		/// The Organization constructor
-		///</summary>
+        ///<summary>
+        /// The Organization constructor
+        ///</summary>
         public Organization()
         {
             this.ODataType = "microsoft.graph.organization";
         }
-	
+    
         /// <summary>
         /// Gets or sets assigned plans.
         /// The collection of service plans associated with the tenant. Not nullable.

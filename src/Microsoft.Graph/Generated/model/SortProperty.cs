@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<SortProperty>))]
     public partial class SortProperty
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SortProperty"/> class.
-        /// </summary>
-        public SortProperty()
-        {
-            this.ODataType = "microsoft.graph.sortProperty";
-        }
 
         /// <summary>
         /// Gets or sets isDescending.

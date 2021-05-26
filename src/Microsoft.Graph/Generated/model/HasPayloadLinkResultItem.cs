@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<HasPayloadLinkResultItem>))]
     public partial class HasPayloadLinkResultItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HasPayloadLinkResultItem"/> class.
-        /// </summary>
-        public HasPayloadLinkResultItem()
-        {
-            this.ODataType = "microsoft.graph.hasPayloadLinkResultItem";
-        }
 
         /// <summary>
         /// Gets or sets error.

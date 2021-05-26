@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AppListItem>))]
     public partial class AppListItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppListItem"/> class.
-        /// </summary>
-        public AppListItem()
-        {
-            this.ODataType = "microsoft.graph.appListItem";
-        }
 
         /// <summary>
         /// Gets or sets appId.

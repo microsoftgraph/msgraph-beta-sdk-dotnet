@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationPolicyTemplateReference>))]
     public partial class DeviceManagementConfigurationPolicyTemplateReference
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementConfigurationPolicyTemplateReference"/> class.
-        /// </summary>
-        public DeviceManagementConfigurationPolicyTemplateReference()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationPolicyTemplateReference";
-        }
 
         /// <summary>
         /// Gets or sets templateDisplayName.

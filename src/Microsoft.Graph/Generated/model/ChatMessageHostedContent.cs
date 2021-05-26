@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ChatMessageHostedContent : TeamworkHostedContent
     {
     
-		///<summary>
-		/// The ChatMessageHostedContent constructor
-		///</summary>
+        ///<summary>
+        /// The ChatMessageHostedContent constructor
+        ///</summary>
         public ChatMessageHostedContent()
         {
             this.ODataType = "microsoft.graph.chatMessageHostedContent";
         }
-	
+    
     }
 }
 

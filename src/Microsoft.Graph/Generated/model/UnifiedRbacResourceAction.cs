@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class UnifiedRbacResourceAction : Entity
     {
     
-		///<summary>
-		/// The UnifiedRbacResourceAction constructor
-		///</summary>
-        public UnifiedRbacResourceAction()
-        {
-            this.ODataType = "microsoft.graph.unifiedRbacResourceAction";
-        }
-	
         /// <summary>
         /// Gets or sets action verb.
         /// </summary>

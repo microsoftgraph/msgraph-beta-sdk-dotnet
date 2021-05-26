@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Command : Entity
     {
     
-		///<summary>
-		/// The Command constructor
-		///</summary>
-        public Command()
-        {
-            this.ODataType = "microsoft.graph.command";
-        }
-	
         /// <summary>
         /// Gets or sets app service name.
         /// </summary>

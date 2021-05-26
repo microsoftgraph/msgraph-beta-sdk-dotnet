@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class IosikEv2VpnConfiguration : IosVpnConfiguration
     {
     
-		///<summary>
-		/// The IosikEv2VpnConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The IosikEv2VpnConfiguration constructor
+        ///</summary>
         public IosikEv2VpnConfiguration()
         {
             this.ODataType = "microsoft.graph.iosikEv2VpnConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets allow default child security association parameters.
         /// Allows the use of child security association parameters by setting all parameters to the device's default unless explicitly specified.

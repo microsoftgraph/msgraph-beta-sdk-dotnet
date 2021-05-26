@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class WindowsQualityUpdateProfile : Entity
     {
     
-		///<summary>
-		/// The WindowsQualityUpdateProfile constructor
-		///</summary>
-        public WindowsQualityUpdateProfile()
-        {
-            this.ODataType = "microsoft.graph.windowsQualityUpdateProfile";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The date time that the profile was created.

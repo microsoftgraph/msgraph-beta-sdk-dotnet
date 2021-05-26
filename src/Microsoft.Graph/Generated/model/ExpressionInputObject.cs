@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ExpressionInputObject>))]
     public partial class ExpressionInputObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExpressionInputObject"/> class.
-        /// </summary>
-        public ExpressionInputObject()
-        {
-            this.ODataType = "microsoft.graph.expressionInputObject";
-        }
 
         /// <summary>
         /// Gets or sets definition.

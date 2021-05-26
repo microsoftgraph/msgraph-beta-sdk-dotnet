@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10EndpointProtectionConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The Windows10EndpointProtectionConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10EndpointProtectionConfiguration constructor
+        ///</summary>
         public Windows10EndpointProtectionConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10EndpointProtectionConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets application guard allow camera microphone redirection.
         /// Gets or sets whether applications inside Microsoft Defender Application Guard can access the device’s camera and microphone.

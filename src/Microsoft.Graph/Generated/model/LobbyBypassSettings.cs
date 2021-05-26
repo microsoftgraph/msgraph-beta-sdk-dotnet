@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<LobbyBypassSettings>))]
     public partial class LobbyBypassSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LobbyBypassSettings"/> class.
-        /// </summary>
-        public LobbyBypassSettings()
-        {
-            this.ODataType = "microsoft.graph.lobbyBypassSettings";
-        }
 
         /// <summary>
         /// Gets or sets isDialInBypassEnabled.

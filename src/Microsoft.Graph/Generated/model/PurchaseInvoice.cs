@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PurchaseInvoice : Entity
     {
     
-		///<summary>
-		/// The PurchaseInvoice constructor
-		///</summary>
-        public PurchaseInvoice()
-        {
-            this.ODataType = "microsoft.graph.purchaseInvoice";
-        }
-	
         /// <summary>
         /// Gets or sets buy from address.
         /// </summary>

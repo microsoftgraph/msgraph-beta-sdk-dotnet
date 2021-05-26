@@ -19,13 +19,6 @@ namespace Microsoft.Graph
     /// </summary>
     public partial class TimeOffItem : ScheduleEntity
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimeOffItem"/> class.
-        /// </summary>
-        public TimeOffItem()
-        {
-            this.ODataType = "microsoft.graph.timeOffItem";
-        }
 
         /// <summary>
         /// Gets or sets timeOffReasonId.

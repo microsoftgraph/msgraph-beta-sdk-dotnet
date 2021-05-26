@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class DeviceManagementSettingCategory : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementSettingCategory constructor
-		///</summary>
-        public DeviceManagementSettingCategory()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementSettingCategory";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The category name

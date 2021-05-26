@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ProvisioningObjectSummary : Entity
     {
     
-		///<summary>
-		/// The ProvisioningObjectSummary constructor
-		///</summary>
-        public ProvisioningObjectSummary()
-        {
-            this.ODataType = "microsoft.graph.provisioningObjectSummary";
-        }
-	
         /// <summary>
         /// Gets or sets action.
         /// </summary>

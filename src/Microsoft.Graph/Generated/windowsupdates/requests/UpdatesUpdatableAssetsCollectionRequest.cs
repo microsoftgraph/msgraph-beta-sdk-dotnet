@@ -43,7 +43,6 @@ namespace Microsoft.Graph.WindowsUpdates
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            updatableAsset.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(updatableAsset.GetType().FullName));
             return this.SendAsync<UpdatableAsset>(updatableAsset, cancellationToken);
         }
 
@@ -57,7 +56,6 @@ namespace Microsoft.Graph.WindowsUpdates
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            updatableAsset.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(updatableAsset.GetType().FullName));
             return this.SendAsyncWithGraphResponse<UpdatableAsset>(updatableAsset, cancellationToken);
         }
 

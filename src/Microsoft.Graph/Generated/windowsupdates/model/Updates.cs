@@ -20,14 +20,6 @@ namespace Microsoft.Graph.WindowsUpdates
     public partial class Updates : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Updates constructor
-		///</summary>
-        public Updates()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.updates";
-        }
-	
         /// <summary>
         /// Gets or sets catalog.
         /// Catalog of content that can be approved for deployment by the deployment service. Read-only.

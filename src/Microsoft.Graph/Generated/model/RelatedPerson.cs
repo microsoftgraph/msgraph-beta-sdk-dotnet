@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<RelatedPerson>))]
     public partial class RelatedPerson
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RelatedPerson"/> class.
-        /// </summary>
-        public RelatedPerson()
-        {
-            this.ODataType = "microsoft.graph.relatedPerson";
-        }
 
         /// <summary>
         /// Gets or sets displayName.

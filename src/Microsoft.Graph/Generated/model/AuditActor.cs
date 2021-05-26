@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AuditActor>))]
     public partial class AuditActor
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AuditActor"/> class.
-        /// </summary>
-        public AuditActor()
-        {
-            this.ODataType = "microsoft.graph.auditActor";
-        }
 
         /// <summary>
         /// Gets or sets applicationDisplayName.

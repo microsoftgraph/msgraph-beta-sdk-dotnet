@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<EntitySetNames>))]
     public partial class EntitySetNames
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EntitySetNames"/> class.
-        /// </summary>
-        public EntitySetNames()
-        {
-            this.ODataType = "microsoft.graph.entitySetNames";
-        }
 
         /// <summary>
         /// Gets or sets additional data.

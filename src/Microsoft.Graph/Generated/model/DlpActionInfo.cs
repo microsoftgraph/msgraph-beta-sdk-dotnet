@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<DlpActionInfo>))]
     public partial class DlpActionInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DlpActionInfo"/> class.
-        /// </summary>
-        public DlpActionInfo()
-        {
-            this.ODataType = "microsoft.graph.dlpActionInfo";
-        }
 
         /// <summary>
         /// Gets or sets action.

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class EducationSubmissionResource : Entity
     {
     
-		///<summary>
-		/// The EducationSubmissionResource constructor
-		///</summary>
-        public EducationSubmissionResource()
-        {
-            this.ODataType = "microsoft.graph.educationSubmissionResource";
-        }
-	
         /// <summary>
         /// Gets or sets assignment resource url.
         /// Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PasswordResetResponse>))]
     public partial class PasswordResetResponse
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PasswordResetResponse"/> class.
-        /// </summary>
-        public PasswordResetResponse()
-        {
-            this.ODataType = "microsoft.graph.passwordResetResponse";
-        }
 
         /// <summary>
         /// Gets or sets newPassword.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ChoiceColumn>))]
     public partial class ChoiceColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChoiceColumn"/> class.
-        /// </summary>
-        public ChoiceColumn()
-        {
-            this.ODataType = "microsoft.graph.choiceColumn";
-        }
 
         /// <summary>
         /// Gets or sets allowTextEntry.

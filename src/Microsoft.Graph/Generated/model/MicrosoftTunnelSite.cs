@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class MicrosoftTunnelSite : Entity
     {
     
-		///<summary>
-		/// The MicrosoftTunnelSite constructor
-		///</summary>
-        public MicrosoftTunnelSite()
-        {
-            this.ODataType = "microsoft.graph.microsoftTunnelSite";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// The MicrosoftTunnelSite's description

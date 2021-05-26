@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<PrinterDefaults>))]
     public partial class PrinterDefaults
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrinterDefaults"/> class.
-        /// </summary>
-        public PrinterDefaults()
-        {
-            this.ODataType = "microsoft.graph.printerDefaults";
-        }
 
         /// <summary>
         /// Gets or sets colorMode.

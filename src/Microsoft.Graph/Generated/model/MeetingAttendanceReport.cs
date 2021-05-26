@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class MeetingAttendanceReport : Entity
     {
     
-		///<summary>
-		/// The MeetingAttendanceReport constructor
-		///</summary>
-        public MeetingAttendanceReport()
-        {
-            this.ODataType = "microsoft.graph.meetingAttendanceReport";
-        }
-	
         /// <summary>
         /// Gets or sets attendance records.
         /// The list of attendance records.

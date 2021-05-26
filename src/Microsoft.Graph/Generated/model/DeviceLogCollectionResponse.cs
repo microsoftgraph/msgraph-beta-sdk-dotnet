@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceLogCollectionResponse : Entity
     {
     
-		///<summary>
-		/// The DeviceLogCollectionResponse constructor
-		///</summary>
-        public DeviceLogCollectionResponse()
-        {
-            this.ODataType = "microsoft.graph.deviceLogCollectionResponse";
-        }
-	
         /// <summary>
         /// Gets or sets error code.
         /// The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18

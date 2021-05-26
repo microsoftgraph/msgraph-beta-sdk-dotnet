@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class Onenote : Entity
     {
     
-		///<summary>
-		/// The Onenote constructor
-		///</summary>
-        public Onenote()
-        {
-            this.ODataType = "microsoft.graph.onenote";
-        }
-	
         /// <summary>
         /// Gets or sets notebooks.
         /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.

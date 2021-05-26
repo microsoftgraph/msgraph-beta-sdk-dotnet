@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<NumberRange>))]
     public partial class NumberRange
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NumberRange"/> class.
-        /// </summary>
-        public NumberRange()
-        {
-            this.ODataType = "microsoft.graph.numberRange";
-        }
 
         /// <summary>
         /// Gets or sets lowerNumber.

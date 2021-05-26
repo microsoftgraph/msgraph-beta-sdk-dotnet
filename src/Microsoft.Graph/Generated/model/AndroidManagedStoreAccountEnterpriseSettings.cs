@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class AndroidManagedStoreAccountEnterpriseSettings : Entity
     {
     
-		///<summary>
-		/// The AndroidManagedStoreAccountEnterpriseSettings constructor
-		///</summary>
-        public AndroidManagedStoreAccountEnterpriseSettings()
-        {
-            this.ODataType = "microsoft.graph.androidManagedStoreAccountEnterpriseSettings";
-        }
-	
         /// <summary>
         /// Gets or sets android device owner fully managed enrollment enabled.
         /// Company codes for AndroidManagedStoreAccountEnterpriseSettings

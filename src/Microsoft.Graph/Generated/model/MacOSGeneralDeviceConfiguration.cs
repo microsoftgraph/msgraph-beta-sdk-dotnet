@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSGeneralDeviceConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The MacOSGeneralDeviceConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSGeneralDeviceConfiguration constructor
+        ///</summary>
         public MacOSGeneralDeviceConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSGeneralDeviceConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets air drop blocked.
         /// Indicates whether or not to allow AirDrop.

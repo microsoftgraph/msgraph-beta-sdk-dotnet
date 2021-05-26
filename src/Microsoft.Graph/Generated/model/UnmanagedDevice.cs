@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<UnmanagedDevice>))]
     public partial class UnmanagedDevice
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UnmanagedDevice"/> class.
-        /// </summary>
-        public UnmanagedDevice()
-        {
-            this.ODataType = "microsoft.graph.unmanagedDevice";
-        }
 
         /// <summary>
         /// Gets or sets deviceName.

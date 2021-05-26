@@ -21,14 +21,6 @@ namespace Microsoft.Graph.ExternalConnectors
     public partial class ExternalConnection : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ExternalConnection constructor
-		///</summary>
-        public ExternalConnection()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.externalConnection";
-        }
-	
         /// <summary>
         /// Gets or sets configuration.
         /// </summary>

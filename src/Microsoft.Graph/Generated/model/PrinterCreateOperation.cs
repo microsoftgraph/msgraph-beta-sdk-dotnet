@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class PrinterCreateOperation : PrintOperation
     {
     
-		///<summary>
-		/// The PrinterCreateOperation constructor
-		///</summary>
+        ///<summary>
+        /// The PrinterCreateOperation constructor
+        ///</summary>
         public PrinterCreateOperation()
         {
             this.ODataType = "microsoft.graph.printerCreateOperation";
         }
-	
+    
         /// <summary>
         /// Gets or sets certificate.
         /// The signed certificate created during the registration process. Read-only.

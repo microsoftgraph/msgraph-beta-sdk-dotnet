@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceCertificateState : Entity
     {
     
-		///<summary>
-		/// The ManagedDeviceCertificateState constructor
-		///</summary>
-        public ManagedDeviceCertificateState()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceCertificateState";
-        }
-	
         /// <summary>
         /// Gets or sets certificate enhanced key usage.
         /// Extended key usage

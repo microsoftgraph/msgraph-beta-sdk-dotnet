@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IntegerRange>))]
     public partial class IntegerRange
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IntegerRange"/> class.
-        /// </summary>
-        public IntegerRange()
-        {
-            this.ODataType = "microsoft.graph.integerRange";
-        }
 
         /// <summary>
         /// Gets or sets end.

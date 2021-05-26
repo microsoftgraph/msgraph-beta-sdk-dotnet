@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class WindowsDomainJoinConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The WindowsDomainJoinConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsDomainJoinConfiguration constructor
+        ///</summary>
         public WindowsDomainJoinConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsDomainJoinConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets active directory domain name.
         /// Active Directory domain name to join.

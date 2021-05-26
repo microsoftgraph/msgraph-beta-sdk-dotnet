@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ParticipantLeftNotification : Entity
     {
     
-		///<summary>
-		/// The ParticipantLeftNotification constructor
-		///</summary>
-        public ParticipantLeftNotification()
-        {
-            this.ODataType = "microsoft.graph.participantLeftNotification";
-        }
-	
         /// <summary>
         /// Gets or sets participant id.
         /// ID of the participant under the policy who has left the meeting.

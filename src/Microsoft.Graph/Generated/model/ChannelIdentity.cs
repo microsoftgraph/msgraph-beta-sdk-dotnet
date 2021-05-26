@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ChannelIdentity>))]
     public partial class ChannelIdentity
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChannelIdentity"/> class.
-        /// </summary>
-        public ChannelIdentity()
-        {
-            this.ODataType = "microsoft.graph.channelIdentity";
-        }
 
         /// <summary>
         /// Gets or sets channelId.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ResponsibleSensitiveType>))]
     public partial class ResponsibleSensitiveType
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ResponsibleSensitiveType"/> class.
-        /// </summary>
-        public ResponsibleSensitiveType()
-        {
-            this.ODataType = "microsoft.graph.responsibleSensitiveType";
-        }
 
         /// <summary>
         /// Gets or sets description.

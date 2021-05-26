@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class GroupPolicyDefinition : Entity
     {
     
-		///<summary>
-		/// The GroupPolicyDefinition constructor
-		///</summary>
-        public GroupPolicyDefinition()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets category path.
         /// The localized full category path for the policy.

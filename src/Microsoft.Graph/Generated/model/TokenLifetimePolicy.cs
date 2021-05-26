@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class TokenLifetimePolicy : StsPolicy
     {
     
-		///<summary>
-		/// The TokenLifetimePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The TokenLifetimePolicy constructor
+        ///</summary>
         public TokenLifetimePolicy()
         {
             this.ODataType = "microsoft.graph.tokenLifetimePolicy";
         }
-	
+    
     }
 }
 

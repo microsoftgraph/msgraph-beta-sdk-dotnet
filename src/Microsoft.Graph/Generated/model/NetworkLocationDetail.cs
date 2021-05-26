@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<NetworkLocationDetail>))]
     public partial class NetworkLocationDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NetworkLocationDetail"/> class.
-        /// </summary>
-        public NetworkLocationDetail()
-        {
-            this.ODataType = "microsoft.graph.networkLocationDetail";
-        }
 
         /// <summary>
         /// Gets or sets networkNames.

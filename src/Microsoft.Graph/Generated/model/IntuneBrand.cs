@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<IntuneBrand>))]
     public partial class IntuneBrand
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IntuneBrand"/> class.
-        /// </summary>
-        public IntuneBrand()
-        {
-            this.ODataType = "microsoft.graph.intuneBrand";
-        }
 
         /// <summary>
         /// Gets or sets companyPortalBlockedActions.

@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<BookingReminder>))]
     public partial class BookingReminder
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BookingReminder"/> class.
-        /// </summary>
-        public BookingReminder()
-        {
-            this.ODataType = "microsoft.graph.bookingReminder";
-        }
 
         /// <summary>
         /// Gets or sets message.

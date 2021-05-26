@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ExtensionProperty : DirectoryObject
     {
     
-		///<summary>
-		/// The ExtensionProperty constructor
-		///</summary>
+        ///<summary>
+        /// The ExtensionProperty constructor
+        ///</summary>
         public ExtensionProperty()
         {
             this.ODataType = "microsoft.graph.extensionProperty";
         }
-	
+    
         /// <summary>
         /// Gets or sets app display name.
         /// Display name of the application object on which this extension property is defined. Read-only.

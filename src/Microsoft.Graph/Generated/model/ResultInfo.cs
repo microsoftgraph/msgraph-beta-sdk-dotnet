@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<ResultInfo>))]
     public partial class ResultInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ResultInfo"/> class.
-        /// </summary>
-        public ResultInfo()
-        {
-            this.ODataType = "microsoft.graph.resultInfo";
-        }
 
         /// <summary>
         /// Gets or sets code.

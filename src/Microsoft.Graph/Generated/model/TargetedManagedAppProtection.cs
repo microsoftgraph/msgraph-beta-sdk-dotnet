@@ -21,9 +21,9 @@ namespace Microsoft.Graph
     public partial class TargetedManagedAppProtection : ManagedAppProtection
     {
     
-		///<summary>
-		/// The internal TargetedManagedAppProtection constructor
-		///</summary>
+        ///<summary>
+        /// The internal TargetedManagedAppProtection constructor
+        ///</summary>
         protected internal TargetedManagedAppProtection()
         {
             // Don't allow initialization of abstract entity types

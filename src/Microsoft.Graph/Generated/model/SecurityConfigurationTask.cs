@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class SecurityConfigurationTask : DeviceAppManagementTask
     {
     
-		///<summary>
-		/// The SecurityConfigurationTask constructor
-		///</summary>
+        ///<summary>
+        /// The SecurityConfigurationTask constructor
+        ///</summary>
         public SecurityConfigurationTask()
         {
             this.ODataType = "microsoft.graph.securityConfigurationTask";
         }
-	
+    
         /// <summary>
         /// Gets or sets applicable platform.
         /// The applicable platform. Possible values are: unknown, macOS, windows10AndLater, windows10AndWindowsServer.
