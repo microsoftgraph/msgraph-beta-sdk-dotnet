@@ -244,7 +244,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemCreateLinkRequestBuilder"/>.</returns>
         public IDriveItemCreateLinkRequestBuilder CreateLink(
-            string type,
+            string type = null,
             string scope = null,
             DateTimeOffset? expirationDateTime = null,
             string password = null,

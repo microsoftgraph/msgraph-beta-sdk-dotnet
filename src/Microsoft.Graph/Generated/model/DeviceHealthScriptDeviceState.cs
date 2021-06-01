@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets assignment filter ids.
+        /// A list of the assignment filter ids used for health script applicability evaluation
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilterIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AssignmentFilterIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets detection state.
         /// Detection state from the lastest device health script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
         /// </summary>

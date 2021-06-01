@@ -94,6 +94,20 @@ namespace Microsoft.Graph
         public string Model { get; set; }
     
         /// <summary>
+        /// Gets or sets os description.
+        /// The user experience work from anywhere device's OS Description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osDescription", Required = Newtonsoft.Json.Required.Default)]
+        public string OsDescription { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os version.
+        /// The user experience work from anywhere device's OS Version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets ownership.
         /// The user experience work from anywhere device's ownership.
         /// </summary>

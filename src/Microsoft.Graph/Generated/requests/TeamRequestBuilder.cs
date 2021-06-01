@@ -219,6 +219,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TeamUnarchive.
+        /// </summary>
+        /// <returns>The <see cref="ITeamUnarchiveRequestBuilder"/>.</returns>
+        public ITeamUnarchiveRequestBuilder Unarchive()
+        {
+            return new TeamUnarchiveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unarchive"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for TeamCompleteMigration.
         /// </summary>
         /// <returns>The <see cref="ITeamCompleteMigrationRequestBuilder"/>.</returns>
@@ -250,17 +261,6 @@ namespace Microsoft.Graph
                 previewText,
                 templateParameters,
                 recipient);
-        }
-
-        /// <summary>
-        /// Gets the request builder for TeamUnarchive.
-        /// </summary>
-        /// <returns>The <see cref="ITeamUnarchiveRequestBuilder"/>.</returns>
-        public ITeamUnarchiveRequestBuilder Unarchive()
-        {
-            return new TeamUnarchiveRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.unarchive"),
-                this.Client);
         }
     
     }

@@ -38,6 +38,20 @@ namespace Microsoft.Graph
         public string AvailableVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets managed installer.
+        /// Managed Installer Status. Possible values are: disabled, enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedInstaller", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedInstallerStatus? ManagedInstaller { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed installer configured date time.
+        /// Managed Installer Configured Date Time
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedInstallerConfiguredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public string ManagedInstallerConfiguredDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets health states.
         /// The list of health states for installed Windows management app.
         /// </summary>

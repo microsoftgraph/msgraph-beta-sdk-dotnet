@@ -98,6 +98,13 @@ namespace Microsoft.Graph
         IManagedDeviceReprovisionCloudPcRequestBuilder ReprovisionCloudPc();
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceResizeCloudPc.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceResizeCloudPcRequestBuilder"/>.</returns>
+        IManagedDeviceResizeCloudPcRequestBuilder ResizeCloudPc(
+            string targetServicePlanId = null);
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>

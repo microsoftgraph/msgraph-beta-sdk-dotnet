@@ -143,6 +143,13 @@ namespace Microsoft.Graph
         public bool? SecurityRequireCompanyPortalAppIntegrity { get; set; }
     
         /// <summary>
+        /// Gets or sets security required android safety net evaluation type.
+        /// Require a specific SafetyNet evaluation type for compliance. Possible values are: basic, hardwareBacked.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityRequiredAndroidSafetyNetEvaluationType", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidSafetyNetEvaluationType? SecurityRequiredAndroidSafetyNetEvaluationType { get; set; }
+    
+        /// <summary>
         /// Gets or sets security require google play services.
         /// Require Google Play Services to be installed and enabled on the device.
         /// </summary>

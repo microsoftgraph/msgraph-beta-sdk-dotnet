@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointProvisioningPoliciesCollectionRequestBuilder"/>.</returns>
         IVirtualEndpointProvisioningPoliciesCollectionRequestBuilder ProvisioningPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserSettings.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointUserSettingsCollectionRequestBuilder"/>.</returns>
+        IVirtualEndpointUserSettingsCollectionRequestBuilder UserSettings { get; }
     
         /// <summary>
         /// Gets the request builder for VirtualEndpointGetEffectivePermissions.

@@ -179,7 +179,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device platform.
-        /// Device platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+        /// Device platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devicePlatform", Required = Newtonsoft.Json.Required.Default)]
         public DevicePlatformType? DevicePlatform { get; set; }
