@@ -29,20 +29,6 @@ namespace Microsoft.Graph
         public EducationSubmissionRecipient Recipient { get; set; }
     
         /// <summary>
-        /// Gets or sets released by.
-        /// </summary>
-        [Obsolete("The releasedBy property is deprecated and will stop returning data on May 17, 2021.")]
-        [JsonPropertyName("releasedBy")]
-        public IdentitySet ReleasedBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets released date time.
-        /// </summary>
-        [Obsolete("The releasedDateTime property is deprecated and will stop returning data on May 17, 2021.")]
-        [JsonPropertyName("releasedDateTime")]
-        public DateTimeOffset? ReleasedDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets resources folder url.
         /// Folder where all file resources for this submission need to be stored.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10DeviceFirmwareConfigurationInterface";
         }
-    
+
         /// <summary>
         /// Gets or sets boot from built in network adapters.
         /// Defines whether a user is allowed to boot from built-in network adapters. Possible values are: notConfigured, enabled, disabled.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.mailSearchFolder";
         }
-    
+
         /// <summary>
         /// Gets or sets filter query.
         /// The OData query to filter the messages.

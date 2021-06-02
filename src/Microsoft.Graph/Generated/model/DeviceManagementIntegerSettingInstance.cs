@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceManagementIntegerSettingInstance";
         }
-    
+
         /// <summary>
         /// Gets or sets value.
         /// The integer value

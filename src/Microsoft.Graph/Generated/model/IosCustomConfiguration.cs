@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosCustomConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets payload.
         /// Payload. (UTF8 encoded byte array)

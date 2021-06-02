@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.organizationalBranding";
         }
-    
+
         /// <summary>
         /// Gets or sets localizations.
         /// </summary>

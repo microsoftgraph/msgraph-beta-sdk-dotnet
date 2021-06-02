@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.printer";
         }
-    
+
         /// <summary>
         /// Gets or sets accepting jobs.
         /// </summary>

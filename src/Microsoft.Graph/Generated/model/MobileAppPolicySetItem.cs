@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.mobileAppPolicySetItem";
         }
-    
+
         /// <summary>
         /// Gets or sets intent.
         /// Install intent of the MobileAppPolicySetItem. Possible values are: available, required, uninstall, availableWithoutEnrollment.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyEnablementRule";
         }
-    
+
         /// <summary>
         /// Gets or sets enabled rules.
         /// The rules which are enabled. Allowed values are MultifactorAuthentication, Justification, Ticketing.

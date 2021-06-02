@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.temporaryAccessPassAuthenticationMethod";
         }
-    
+
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time when the temporaryAccessPass was created.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidPkcsCertificateProfile";
         }
-    
+
         /// <summary>
         /// Gets or sets certificate template name.
         /// PKCS Certificate Template Name

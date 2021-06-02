@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.swapShiftsChangeRequest";
         }
-    
+
         /// <summary>
         /// Gets or sets recipient shift id.
         /// Shift ID for the recipient user with whom the request is to swap.

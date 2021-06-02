@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.shift";
         }
-    
+
         /// <summary>
         /// Gets or sets draft shift.
         /// The draft version of this shift that is viewable by managers. Required.

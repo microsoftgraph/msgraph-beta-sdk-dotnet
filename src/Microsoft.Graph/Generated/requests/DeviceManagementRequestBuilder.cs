@@ -399,6 +399,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ConfigurationPolicyTemplates.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementConfigurationPolicyTemplatesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementConfigurationPolicyTemplatesCollectionRequestBuilder ConfigurationPolicyTemplates
+        {
+            get
+            {
+                return new DeviceManagementConfigurationPolicyTemplatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("configurationPolicyTemplates"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ConfigurationSettings.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementConfigurationSettingsCollectionRequestBuilder"/>.</returns>
@@ -431,6 +443,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementReusableSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("reusableSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TemplateSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateSettingsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementTemplateSettingsCollectionRequestBuilder TemplateSettings
+        {
+            get
+            {
+                return new DeviceManagementTemplateSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("templateSettings"), this.Client);
             }
         }
 
@@ -599,6 +623,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ApplePushNotificationCertificateRequestBuilder(this.AppendSegmentToRequestUrl("applePushNotificationCertificate"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCConnectivityIssues.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementCloudPCConnectivityIssuesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementCloudPCConnectivityIssuesCollectionRequestBuilder CloudPCConnectivityIssues
+        {
+            get
+            {
+                return new DeviceManagementCloudPCConnectivityIssuesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("cloudPCConnectivityIssues"), this.Client);
             }
         }
 

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows81CompliancePolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets os maximum version.
         /// Maximum Windows 8.1 version.

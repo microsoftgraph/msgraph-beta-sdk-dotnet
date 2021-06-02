@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.personInterest";
         }
-    
+
         /// <summary>
         /// Gets or sets categories.
         /// Contains categories a user has associated with the interest (for example, personal, recipies).

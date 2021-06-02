@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.eventMessageRequest";
         }
-    
+
         /// <summary>
         /// Gets or sets allow new time proposals.
         /// True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.

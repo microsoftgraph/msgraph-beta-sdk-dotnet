@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsDeliveryOptimizationConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets background download from http delay in seconds.
         /// Specifies number of seconds to delay an HTTP source in a background download that is allowed to use peer-to-peer. Valid values 0 to 4294967295

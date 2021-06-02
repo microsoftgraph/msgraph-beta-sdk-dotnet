@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.webApp";
         }
-    
+
         /// <summary>
         /// Gets or sets app url.
         /// The web app URL. This property cannot be PATCHed.

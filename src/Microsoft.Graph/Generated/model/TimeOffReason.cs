@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.timeOffReason";
         }
-    
+
         /// <summary>
         /// Gets or sets display name.
         /// The name of the timeOffReason. Required.

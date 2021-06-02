@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationDropdownList";
         }
-    
+
         /// <summary>
         /// Gets or sets default item.
         /// Localized string value identifying the default choice of the list of items.

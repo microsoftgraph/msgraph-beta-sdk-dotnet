@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.enrollmentTroubleshootingEvent";
         }
-    
+
         /// <summary>
         /// Gets or sets device id.
         /// Azure AD device identifier.

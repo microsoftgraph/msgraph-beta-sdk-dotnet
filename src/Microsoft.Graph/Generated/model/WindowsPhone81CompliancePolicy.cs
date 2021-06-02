@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsPhone81CompliancePolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets os maximum version.
         /// Maximum Windows Phone version.

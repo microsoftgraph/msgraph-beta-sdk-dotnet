@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.countryNamedLocation";
         }
-    
+
         /// <summary>
         /// Gets or sets countries and regions.
         /// List of countries and/or regions in two-letter format specified by ISO 3166-2.

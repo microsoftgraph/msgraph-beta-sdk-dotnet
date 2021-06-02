@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.plannerBucketTaskBoardTaskFormat";
         }
-    
+
         /// <summary>
         /// Gets or sets order hint.
         /// Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.

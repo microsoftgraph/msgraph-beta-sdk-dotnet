@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.identitySecurityDefaultsEnforcementPolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets is enabled.
         /// If set to true, Azure Active Directory security defaults is enabled for the tenant.

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Ediscovery
         {
             this.ODataType = "microsoft.graph.ediscovery.caseExportOperation";
         }
-    
+
         /// <summary>
         /// Gets or sets azure blob container.
         /// The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.

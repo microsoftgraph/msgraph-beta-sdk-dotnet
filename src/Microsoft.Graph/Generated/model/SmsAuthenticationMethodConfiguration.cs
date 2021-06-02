@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.smsAuthenticationMethodConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets include targets.
         /// A collection of users or groups who are enabled to use the authentication method.

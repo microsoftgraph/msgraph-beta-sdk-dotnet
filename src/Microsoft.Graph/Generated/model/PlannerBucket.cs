@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.plannerBucket";
         }
-    
+
         /// <summary>
         /// Gets or sets name.
         /// Name of the bucket.

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupPolicyUploadedDefinitionFile";
         }
-    
+
         /// <summary>
         /// Gets or sets content.
         /// The contents of the uploaded ADMX file.

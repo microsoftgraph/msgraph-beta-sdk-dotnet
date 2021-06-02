@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10EnrollmentCompletionPageConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets allow device reset on install failure.
         /// Allow or block device reset on installation failure

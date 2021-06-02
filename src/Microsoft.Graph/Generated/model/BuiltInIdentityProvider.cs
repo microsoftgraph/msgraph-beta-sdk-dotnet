@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.builtInIdentityProvider";
         }
-    
+
         /// <summary>
         /// Gets or sets identity provider type.
         /// The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.

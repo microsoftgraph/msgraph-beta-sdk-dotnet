@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidWorkProfileCompliancePolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets advanced threat protection required security level.
         /// MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
@@ -147,6 +147,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("securityRequireCompanyPortalAppIntegrity")]
         public bool? SecurityRequireCompanyPortalAppIntegrity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security required android safety net evaluation type.
+        /// Require a specific SafetyNet evaluation type for compliance. Possible values are: basic, hardwareBacked.
+        /// </summary>
+        [JsonPropertyName("securityRequiredAndroidSafetyNetEvaluationType")]
+        public AndroidSafetyNetEvaluationType? SecurityRequiredAndroidSafetyNetEvaluationType { get; set; }
     
         /// <summary>
         /// Gets or sets security require google play services.

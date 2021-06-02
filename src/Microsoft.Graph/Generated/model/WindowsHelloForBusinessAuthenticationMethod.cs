@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsHelloForBusinessAuthenticationMethod";
         }
-    
+
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time that this Windows Hello for Business key was registered.

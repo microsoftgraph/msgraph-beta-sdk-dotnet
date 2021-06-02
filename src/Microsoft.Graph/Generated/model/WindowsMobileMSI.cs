@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsMobileMSI";
         }
-    
+
         /// <summary>
         /// Gets or sets command line.
         /// The command line.

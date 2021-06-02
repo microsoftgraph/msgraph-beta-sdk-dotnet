@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.b2xIdentityUserFlow";
         }
-    
+
         /// <summary>
         /// Gets or sets api connector configuration.
         /// Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.

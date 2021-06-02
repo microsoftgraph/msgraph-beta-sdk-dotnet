@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Ediscovery
         {
             this.ODataType = "microsoft.graph.ediscovery.custodian";
         }
-    
+
         /// <summary>
         /// Gets or sets acknowledged date time.
         /// Date and time the custodian acknowledged a hold notification.

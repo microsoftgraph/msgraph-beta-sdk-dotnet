@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.eventMessage";
         }
-    
+
         /// <summary>
         /// Gets or sets end date time.
         /// The end time of the requested meeting.

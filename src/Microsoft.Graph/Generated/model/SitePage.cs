@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.sitePage";
         }
-    
+
         /// <summary>
         /// Gets or sets content type.
         /// The content type of the page.

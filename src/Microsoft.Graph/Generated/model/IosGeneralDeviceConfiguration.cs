@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosGeneralDeviceConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets account block modification.
         /// Indicates whether or not to allow account modification when the device is in supervised mode.
@@ -196,6 +196,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("autoFillForceAuthentication")]
         public bool? AutoFillForceAuthentication { get; set; }
+    
+        /// <summary>
+        /// Gets or sets auto unlock blocked.
+        /// Blocks users from unlocking their device with Apple Watch. Available for devices running iOS and iPadOS versions 14.5 and later.
+        /// </summary>
+        [JsonPropertyName("autoUnlockBlocked")]
+        public bool? AutoUnlockBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets block system app removal.
@@ -989,6 +996,13 @@ namespace Microsoft.Graph
         public bool? NotificationsBlockSettingsModification { get; set; }
     
         /// <summary>
+        /// Gets or sets on device only dictation forced.
+        /// Disables connections to Siri servers so that users can’t use Siri to dictate text. Available for devices running iOS and iPadOS versions 14.5 and later.
+        /// </summary>
+        [JsonPropertyName("onDeviceOnlyDictationForced")]
+        public bool? OnDeviceOnlyDictationForced { get; set; }
+    
+        /// <summary>
         /// Gets or sets passcode block fingerprint modification.
         /// Block modification of registered Touch ID fingerprints when in supervised mode.
         /// </summary>
@@ -1248,6 +1262,13 @@ namespace Microsoft.Graph
         public bool? SpotlightBlockInternetResults { get; set; }
     
         /// <summary>
+        /// Gets or sets unpaired external boot to recovery allowed.
+        /// Allow users to boot devices into recovery mode with unpaired devices. Available for devices running iOS and iPadOS versions 14.5 and later.
+        /// </summary>
+        [JsonPropertyName("unpairedExternalBootToRecoveryAllowed")]
+        public bool? UnpairedExternalBootToRecoveryAllowed { get; set; }
+    
+        /// <summary>
         /// Gets or sets usb restricted mode blocked.
         /// Indicates if connecting to USB accessories while the device is locked is allowed (iOS 11.4.1 and later).
         /// </summary>
@@ -1277,7 +1298,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets wi fi connect only to configured networks.
-        /// Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode.
+        /// Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode. Available for devices running iOS and iPadOS versions 14.4 and earlier. Devices running 14.5+ should use the setting, 'WiFiConnectToAllowedNetworksOnlyForced.
         /// </summary>
         [JsonPropertyName("wiFiConnectOnlyToConfiguredNetworks")]
         public bool? WiFiConnectOnlyToConfiguredNetworks { get; set; }

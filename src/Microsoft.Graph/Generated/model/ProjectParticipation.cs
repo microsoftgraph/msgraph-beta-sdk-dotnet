@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.projectParticipation";
         }
-    
+
         /// <summary>
         /// Gets or sets categories.
         /// Contains categories a user has associated with the project (for example, digital transformation, oil rig).

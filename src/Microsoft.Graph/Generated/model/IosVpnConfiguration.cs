@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosVpnConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets cloud name.
         /// Zscaler only. Zscaler cloud which the user is assigned to.

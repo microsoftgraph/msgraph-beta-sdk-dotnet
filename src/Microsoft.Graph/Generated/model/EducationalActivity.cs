@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.educationalActivity";
         }
-    
+
         /// <summary>
         /// Gets or sets completion month year.
         /// The month and year the user graduated or completed the activity.

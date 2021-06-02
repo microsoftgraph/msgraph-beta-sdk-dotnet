@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.personAward";
         }
-    
+
         /// <summary>
         /// Gets or sets description.
         /// Descpription of the award or honor.

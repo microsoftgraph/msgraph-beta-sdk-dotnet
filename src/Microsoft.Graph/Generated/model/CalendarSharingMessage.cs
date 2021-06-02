@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.calendarSharingMessage";
         }
-    
+
         /// <summary>
         /// Gets or sets can accept.
         /// </summary>

@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets pattern.
-        /// The frequency of an event.
+        /// The frequency of an event. Do not specify for a one-time access review.
         /// </summary>
         [JsonPropertyName("pattern")]
         public RecurrencePattern Pattern { get; set; }

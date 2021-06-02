@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.classificationJobResponse";
         }
-    
+
         /// <summary>
         /// Gets or sets result.
         /// </summary>

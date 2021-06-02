@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.printUsageByPrinter";
         }
-    
+
         /// <summary>
         /// Gets or sets printer id.
         /// </summary>

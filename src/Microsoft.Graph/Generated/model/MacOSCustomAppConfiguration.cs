@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSCustomAppConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets bundle id.
         /// Bundle id for targeting.

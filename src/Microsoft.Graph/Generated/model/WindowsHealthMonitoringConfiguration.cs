@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsHealthMonitoringConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets allow device health monitoring.
         /// Enables device health monitoring on the device. Possible values are: notConfigured, enabled, disabled.

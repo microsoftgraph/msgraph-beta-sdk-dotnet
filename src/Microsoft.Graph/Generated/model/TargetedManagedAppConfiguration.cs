@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.targetedManagedAppConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets deployed app count.
         /// Count of apps to which the current policy is deployed.

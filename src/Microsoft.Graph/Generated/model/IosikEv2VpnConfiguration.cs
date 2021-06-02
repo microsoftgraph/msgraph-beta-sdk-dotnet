@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosikEv2VpnConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets allow default child security association parameters.
         /// Allows the use of child security association parameters by setting all parameters to the device's default unless explicitly specified.

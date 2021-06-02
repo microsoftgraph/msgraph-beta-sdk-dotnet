@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.educationSchool";
         }
-    
+
         /// <summary>
         /// Gets or sets address.
         /// Address of the school.

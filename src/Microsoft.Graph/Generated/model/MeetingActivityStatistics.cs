@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.meetingActivityStatistics";
         }
-    
+
         /// <summary>
         /// Gets or sets after hours.
         /// Time spent on meetings outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.

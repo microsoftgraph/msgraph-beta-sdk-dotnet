@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.managedAppProtectionPolicySetItem";
         }
-    
+
         /// <summary>
         /// Gets or sets targeted app management levels.
         /// TargetedAppManagementLevels of the ManagedAppPolicySetItem.

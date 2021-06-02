@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.fileAttachment";
         }
-    
+
         /// <summary>
         /// Gets or sets content bytes.
         /// The base64-encoded contents of the file.

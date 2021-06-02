@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSExtensionsConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets kernel extension allowed team identifiers.
         /// All kernel extensions validly signed by the team identifiers in this list will be allowed to load.

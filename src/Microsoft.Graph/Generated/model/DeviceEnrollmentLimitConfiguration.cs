@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceEnrollmentLimitConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets limit.
         /// The maximum number of devices that a user can enroll

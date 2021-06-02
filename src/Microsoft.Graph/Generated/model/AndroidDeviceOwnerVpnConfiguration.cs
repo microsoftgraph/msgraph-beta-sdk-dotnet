@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidDeviceOwnerVpnConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets always on.
         /// Whether or not to enable always-on VPN connection.

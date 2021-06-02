@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.aadUserConversationMember";
         }
-    
+
         /// <summary>
         /// Gets or sets email.
         /// The email address of the user.

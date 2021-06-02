@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSEnterpriseWiFiConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets authentication method.
         /// Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.

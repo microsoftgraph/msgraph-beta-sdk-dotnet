@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationTextBox";
         }
-    
+
         /// <summary>
         /// Gets or sets default value.
         /// Localized default string displayed in the text box. The default value is empty.

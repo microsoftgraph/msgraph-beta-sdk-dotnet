@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.onenotePage";
         }
-    
+
         /// <summary>
         /// Gets or sets content.
         /// The page's HTML content.

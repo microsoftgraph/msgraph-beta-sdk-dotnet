@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets grace period end date time.
+        /// </summary>
+        [JsonPropertyName("gracePeriodEndDateTime")]
+        public DateTimeOffset? GracePeriodEndDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets image display name.
         /// Name of the OS image that's on the cloud PC.
         /// </summary>
@@ -57,11 +63,23 @@ namespace Microsoft.Graph
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises connection name.
+        /// </summary>
+        [JsonPropertyName("onPremisesConnectionName")]
+        public string OnPremisesConnectionName { get; set; }
+    
+        /// <summary>
         /// Gets or sets provisioning policy id.
         /// The cloud PC's provisioning policy ID.
         /// </summary>
         [JsonPropertyName("provisioningPolicyId")]
         public string ProvisioningPolicyId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets provisioning policy name.
+        /// </summary>
+        [JsonPropertyName("provisioningPolicyName")]
+        public string ProvisioningPolicyName { get; set; }
     
         /// <summary>
         /// Gets or sets service plan id.

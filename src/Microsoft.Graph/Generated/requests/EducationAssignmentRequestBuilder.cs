@@ -110,13 +110,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for EducationAssignmentGetResourcesFolderUrl.
+        /// Gets the request builder for EducationAssignmentSetUpResourcesFolder.
         /// </summary>
-        /// <returns>The <see cref="IEducationAssignmentGetResourcesFolderUrlRequestBuilder"/>.</returns>
-        public IEducationAssignmentGetResourcesFolderUrlRequestBuilder GetResourcesFolderUrl()
+        /// <returns>The <see cref="IEducationAssignmentSetUpResourcesFolderRequestBuilder"/>.</returns>
+        public IEducationAssignmentSetUpResourcesFolderRequestBuilder SetUpResourcesFolder()
         {
-            return new EducationAssignmentGetResourcesFolderUrlRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getResourcesFolderUrl"),
+            return new EducationAssignmentSetUpResourcesFolderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setUpResourcesFolder"),
                 this.Client);
         }
     

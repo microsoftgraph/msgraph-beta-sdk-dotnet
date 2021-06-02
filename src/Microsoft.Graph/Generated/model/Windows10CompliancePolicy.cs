@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10CompliancePolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets active firewall required.
         /// Require active firewall on Windows devices.

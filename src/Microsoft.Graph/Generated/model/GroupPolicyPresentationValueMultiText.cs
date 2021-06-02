@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationValueMultiText";
         }
-    
+
         /// <summary>
         /// Gets or sets values.
         /// A collection of non-empty strings for the associated presentation.

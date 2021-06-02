@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.list";
         }
-    
+
         /// <summary>
         /// Gets or sets display name.
         /// The displayable title of the list.

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Ediscovery
         {
             this.ODataType = "microsoft.graph.ediscovery.userSource";
         }
-    
+
         /// <summary>
         /// Gets or sets email.
         /// Email address of the user's mailbox.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.managedAppStatusRaw";
         }
-    
+
         /// <summary>
         /// Gets or sets content.
         /// Status report content.

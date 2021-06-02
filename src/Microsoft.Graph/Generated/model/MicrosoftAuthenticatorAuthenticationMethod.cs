@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.microsoftAuthenticatorAuthenticationMethod";
         }
-    
+
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.

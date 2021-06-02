@@ -58,14 +58,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lifecycle state.
-        /// Indicate current lifecycle state of template
+        /// Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.
         /// </summary>
         [JsonPropertyName("lifecycleState")]
         public DeviceManagementTemplateLifecycleState? LifecycleState { get; set; }
     
         /// <summary>
         /// Gets or sets platforms.
-        /// Platforms for this template
+        /// Platforms for this template. Possible values are: none, macOS, windows10X, windows10.
         /// </summary>
         [JsonPropertyName("platforms")]
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
@@ -79,14 +79,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets technologies.
-        /// Technologies for this template
+        /// Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense.
         /// </summary>
         [JsonPropertyName("technologies")]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
     
         /// <summary>
         /// Gets or sets template family.
-        /// TemplateFamily for this template
+        /// TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl.
         /// </summary>
         [JsonPropertyName("templateFamily")]
         public DeviceManagementConfigurationTemplateFamily? TemplateFamily { get; set; }

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.restrictedSignIn";
         }
-    
+
         /// <summary>
         /// Gets or sets target tenant id.
         /// </summary>

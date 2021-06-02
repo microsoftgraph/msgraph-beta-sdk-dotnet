@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.muteParticipantsOperation";
         }
-    
+
         /// <summary>
         /// Gets or sets participants.
         /// </summary>

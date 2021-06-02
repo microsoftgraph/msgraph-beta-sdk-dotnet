@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceManagementIntentSettingCategory";
         }
-    
+
         /// <summary>
         /// Gets or sets settings.
         /// The settings this category contains

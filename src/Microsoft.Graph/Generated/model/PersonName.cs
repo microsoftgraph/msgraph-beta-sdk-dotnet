@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.personName";
         }
-    
+
         /// <summary>
         /// Gets or sets display name.
         /// Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.

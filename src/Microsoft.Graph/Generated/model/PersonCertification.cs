@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.personCertification";
         }
-    
+
         /// <summary>
         /// Gets or sets certification id.
         /// The referenceable identifier for the certification.

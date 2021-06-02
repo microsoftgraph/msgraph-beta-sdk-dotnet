@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsStoreApp";
         }
-    
+
         /// <summary>
         /// Gets or sets app store url.
         /// The Windows app store URL.

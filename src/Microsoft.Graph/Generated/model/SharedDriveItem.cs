@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.sharedDriveItem";
         }
-    
+
         /// <summary>
         /// Gets or sets owner.
         /// Information about the owner of the shared item being referenced.

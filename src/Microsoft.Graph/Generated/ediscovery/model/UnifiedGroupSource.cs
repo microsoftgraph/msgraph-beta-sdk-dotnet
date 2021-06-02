@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Ediscovery
         {
             this.ODataType = "microsoft.graph.ediscovery.unifiedGroupSource";
         }
-    
+
         /// <summary>
         /// Gets or sets included sources.
         /// Specifies which sources are included in this group. Possible values are: mailbox, site.

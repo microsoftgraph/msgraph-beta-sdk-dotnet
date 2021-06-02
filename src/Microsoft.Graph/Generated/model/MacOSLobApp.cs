@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSLobApp";
         }
-    
+
         /// <summary>
         /// Gets or sets build number.
         /// The build number of MacOS Line of Business (LoB) app.

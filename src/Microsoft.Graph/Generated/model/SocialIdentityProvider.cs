@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.socialIdentityProvider";
         }
-    
+
         /// <summary>
         /// Gets or sets client id.
         /// The client identifier for the application obtained when registering the application with the identity provider. Required.

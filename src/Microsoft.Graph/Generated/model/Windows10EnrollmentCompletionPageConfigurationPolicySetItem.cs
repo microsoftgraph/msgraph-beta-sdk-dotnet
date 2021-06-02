@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10EnrollmentCompletionPageConfigurationPolicySetItem";
         }
-    
+
         /// <summary>
         /// Gets or sets priority.
         /// Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.

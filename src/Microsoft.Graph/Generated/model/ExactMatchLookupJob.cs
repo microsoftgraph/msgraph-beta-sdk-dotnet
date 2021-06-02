@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.exactMatchLookupJob";
         }
-    
+
         /// <summary>
         /// Gets or sets state.
         /// </summary>

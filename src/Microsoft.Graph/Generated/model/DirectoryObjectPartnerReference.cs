@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.directoryObjectPartnerReference";
         }
-    
+
         /// <summary>
         /// Gets or sets description.
         /// Description of the object returned. Read-only.

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.itemPhone";
         }
-    
+
         /// <summary>
         /// Gets or sets display name.
         /// Friendly name the user has assigned this phone number.

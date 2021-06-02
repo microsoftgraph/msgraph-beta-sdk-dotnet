@@ -28,7 +28,7 @@ namespace Microsoft.Graph.WindowsUpdates
         {
             this.ODataType = "microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry";
         }
-    
+
         /// <summary>
         /// Gets or sets is expeditable.
         /// Indicates whether the content can be deployed as an expedited quality update. Read-only.

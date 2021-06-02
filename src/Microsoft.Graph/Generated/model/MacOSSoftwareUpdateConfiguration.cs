@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSSoftwareUpdateConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets all other update behavior.
         /// Update behavior for all other updates. Possible values are: notConfigured, default.

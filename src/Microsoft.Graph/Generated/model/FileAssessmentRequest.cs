@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.fileAssessmentRequest";
         }
-    
+
         /// <summary>
         /// Gets or sets content data.
         /// Base64 encoded file content. The file content cannot fetch back because it isn't stored.

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.authorizationPolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets allowed to sign up email based subscriptions.
         /// Indicates whether users can sign up for email based subscriptions.

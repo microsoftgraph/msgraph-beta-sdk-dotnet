@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.contact";
         }
-    
+
         /// <summary>
         /// Gets or sets assistant name.
         /// The name of the contact's assistant.

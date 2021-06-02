@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.fido2AuthenticationMethod";
         }
-    
+
         /// <summary>
         /// Gets or sets aa guid.
         /// Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.

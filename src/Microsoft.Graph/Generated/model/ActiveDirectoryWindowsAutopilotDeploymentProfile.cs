@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile";
         }
-    
+
         /// <summary>
         /// Gets or sets hybrid azure adjoin skip connectivity check.
         /// The Autopilot Hybrid Azure AD join flow will continue even if it does not establish domain controller connectivity during OOBE.

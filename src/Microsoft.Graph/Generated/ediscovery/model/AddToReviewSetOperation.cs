@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Ediscovery
         {
             this.ODataType = "microsoft.graph.ediscovery.addToReviewSetOperation";
         }
-    
+
         /// <summary>
         /// Gets or sets review set.
         /// The review set to which items matching the source collection query are added to.

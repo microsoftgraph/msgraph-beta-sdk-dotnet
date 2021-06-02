@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.microsoftStoreForBusinessContainedApp";
         }
-    
+
         /// <summary>
         /// Gets or sets app user model id.
         /// The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.

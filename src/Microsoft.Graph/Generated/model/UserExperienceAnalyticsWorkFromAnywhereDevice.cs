@@ -84,6 +84,20 @@ namespace Microsoft.Graph
         public string Model { get; set; }
     
         /// <summary>
+        /// Gets or sets os description.
+        /// The user experience work from anywhere device's OS Description.
+        /// </summary>
+        [JsonPropertyName("osDescription")]
+        public string OsDescription { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os version.
+        /// The user experience work from anywhere device's OS Version.
+        /// </summary>
+        [JsonPropertyName("osVersion")]
+        public string OsVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets ownership.
         /// The user experience work from anywhere device's ownership.
         /// </summary>

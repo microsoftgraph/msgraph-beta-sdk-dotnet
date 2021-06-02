@@ -30,7 +30,7 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets languageTag.
-        /// The anguage tag for the label.
+        /// The language tag for the label.
         /// </summary>
         [JsonPropertyName("languageTag")]
         public string LanguageTag { get; set; }

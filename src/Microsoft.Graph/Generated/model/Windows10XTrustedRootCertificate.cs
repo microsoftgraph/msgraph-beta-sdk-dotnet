@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10XTrustedRootCertificate";
         }
-    
+
         /// <summary>
         /// Gets or sets cert file name.
         /// File name to display in UI.

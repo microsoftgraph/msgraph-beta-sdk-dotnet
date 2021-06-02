@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Ediscovery
         {
             this.ODataType = "microsoft.graph.ediscovery.estimateStatisticsOperation";
         }
-    
+
         /// <summary>
         /// Gets or sets indexed item count.
         /// The estimated count of items for the sourceCollection that matched the content query.

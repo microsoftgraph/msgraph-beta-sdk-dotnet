@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets query.
-        /// The query representing what will be reviewed in an access review. Examples of this include /groups/{id}/members?$filter=…
+        /// The query representing what will be reviewed in an access review.
         /// </summary>
         [JsonPropertyName("query")]
         public string Query { get; set; }

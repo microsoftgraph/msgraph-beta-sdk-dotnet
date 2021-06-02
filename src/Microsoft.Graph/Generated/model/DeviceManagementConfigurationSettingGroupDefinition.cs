@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationSettingGroupDefinition";
         }
-    
+
         /// <summary>
         /// Gets or sets child ids.
         /// Dependent child settings to this group of settings

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10VpnConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets associated apps.
         /// Associated Apps. This collection can contain a maximum of 10000 elements.

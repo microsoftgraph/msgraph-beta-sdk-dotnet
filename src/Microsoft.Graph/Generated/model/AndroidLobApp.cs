@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidLobApp";
         }
-    
+
         /// <summary>
         /// Gets or sets identity name.
         /// The Identity Name.

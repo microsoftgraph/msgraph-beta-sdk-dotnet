@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.depMacOSEnrollmentProfile";
         }
-    
+
         /// <summary>
         /// Gets or sets accessibility screen disabled.
         /// Indicates if Accessibility screen is disabled

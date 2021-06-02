@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsDomainJoinConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets active directory domain name.
         /// Active Directory domain name to join.

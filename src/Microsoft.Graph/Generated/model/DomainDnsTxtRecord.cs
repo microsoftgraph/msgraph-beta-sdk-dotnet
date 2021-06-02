@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.domainDnsTxtRecord";
         }
-    
+
         /// <summary>
         /// Gets or sets text.
         /// Value used when configuring the text property at the DNS host.

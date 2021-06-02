@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10EnterpriseModernAppManagementConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets uninstall built in apps.
         /// Indicates whether or not to uninstall a fixed list of built-in Windows apps.

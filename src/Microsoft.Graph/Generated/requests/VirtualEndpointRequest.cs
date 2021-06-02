@@ -270,6 +270,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.ProvisioningPolicies.AdditionalData = virtualEndpointToInitialize.AdditionalData;
                 }
+                if (virtualEndpointToInitialize.UserSettings != null && virtualEndpointToInitialize.UserSettings.CurrentPage != null)
+                {
+                    virtualEndpointToInitialize.UserSettings.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.UserSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    virtualEndpointToInitialize.UserSettings.AdditionalData = virtualEndpointToInitialize.AdditionalData;
+                }
 
             }
 

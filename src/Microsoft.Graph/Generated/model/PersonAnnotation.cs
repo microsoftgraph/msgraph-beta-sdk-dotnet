@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.personAnnotation";
         }
-    
+
         /// <summary>
         /// Gets or sets detail.
         /// Contains the detail of the note itself.

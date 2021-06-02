@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsPhone81AppXBundle";
         }
-    
+
         /// <summary>
         /// Gets or sets app xpackage information list.
         /// The list of AppX Package Information.

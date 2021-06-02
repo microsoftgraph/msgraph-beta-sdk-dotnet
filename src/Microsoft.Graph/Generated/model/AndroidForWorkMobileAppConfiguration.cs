@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidForWorkMobileAppConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets package id.
         /// Android For Work app configuration package id.

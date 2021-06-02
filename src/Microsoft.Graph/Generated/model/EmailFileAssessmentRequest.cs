@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.emailFileAssessmentRequest";
         }
-    
+
         /// <summary>
         /// Gets or sets content data.
         /// Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.

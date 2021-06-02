@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.listItem";
         }
-    
+
         /// <summary>
         /// Gets or sets content type.
         /// The content type of this list item

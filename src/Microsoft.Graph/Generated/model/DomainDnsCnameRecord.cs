@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.domainDnsCnameRecord";
         }
-    
+
         /// <summary>
         /// Gets or sets canonical name.
         /// The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.

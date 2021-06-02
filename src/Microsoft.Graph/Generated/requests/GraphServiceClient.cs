@@ -1118,6 +1118,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceTenantRelationships request builder.
+        /// </summary>
+        public ITenantRelationshipRequestBuilder TenantRelationships
+        {
+            get
+            {
+                return new TenantRelationshipRequestBuilder(this.BaseUrl + "/tenantRelationships", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceFinancials request builder.
         /// </summary>
         public IFinancialsRequestBuilder Financials
@@ -1208,11 +1219,11 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAdmin request builder.
         /// </summary>
-        public Microsoft.Graph.WindowsUpdates.IAdminRequestBuilder Admin
+        public IAdminRequestBuilder Admin
         {
             get
             {
-                return new Microsoft.Graph.WindowsUpdates.AdminRequestBuilder(this.BaseUrl + "/admin", this);
+                return new AdminRequestBuilder(this.BaseUrl + "/admin", this);
             }
         }
     

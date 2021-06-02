@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.itemPatent";
         }
-    
+
         /// <summary>
         /// Gets or sets description.
         /// Descpription of the patent or filing.

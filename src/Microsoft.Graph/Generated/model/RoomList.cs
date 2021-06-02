@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.roomList";
         }
-    
+
         /// <summary>
         /// Gets or sets email address.
         /// The email address of the room list.

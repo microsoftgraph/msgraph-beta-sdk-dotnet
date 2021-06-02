@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets authenticationMethodsRegistrationCampaign.
+        /// Run campaigns to remind users to setup targeted authentication methods.
         /// </summary>
         [JsonPropertyName("authenticationMethodsRegistrationCampaign")]
         public AuthenticationMethodsRegistrationCampaign AuthenticationMethodsRegistrationCampaign { get; set; }

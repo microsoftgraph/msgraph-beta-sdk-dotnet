@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.urlAssessmentRequest";
         }
-    
+
         /// <summary>
         /// Gets or sets url.
         /// The URL string.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets settingValueTemplateReference.
+        /// Setting value template reference
+        /// </summary>
+        [JsonPropertyName("settingValueTemplateReference")]
+        public DeviceManagementConfigurationSettingValueTemplateReference SettingValueTemplateReference { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

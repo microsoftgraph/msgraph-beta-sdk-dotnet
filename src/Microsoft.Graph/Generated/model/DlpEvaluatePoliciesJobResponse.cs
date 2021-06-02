@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.dlpEvaluatePoliciesJobResponse";
         }
-    
+
         /// <summary>
         /// Gets or sets result.
         /// </summary>

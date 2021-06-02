@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.microsoftStoreForBusinessApp";
         }
-    
+
         /// <summary>
         /// Gets or sets license type.
         /// The app license type. Possible values are: offline, online.

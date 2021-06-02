@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.appleVppTokenTroubleshootingEvent";
         }
-    
+
         /// <summary>
         /// Gets or sets token id.
         /// Apple Volume Purchase Program Token Identifier.

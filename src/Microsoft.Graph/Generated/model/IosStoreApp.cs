@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosStoreApp";
         }
-    
+
         /// <summary>
         /// Gets or sets applicable device type.
         /// The iOS architecture for which this app can run on.

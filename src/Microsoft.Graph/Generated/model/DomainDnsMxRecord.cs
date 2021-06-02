@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.domainDnsMxRecord";
         }
-    
+
         /// <summary>
         /// Gets or sets mail exchange.
         /// Value used when configuring the answer/destination/value of the MX record at the DNS host.

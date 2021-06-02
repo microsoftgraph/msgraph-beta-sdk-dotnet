@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.managedAndroidStoreApp";
         }
-    
+
         /// <summary>
         /// Gets or sets app store url.
         /// The Android AppStoreUrl.

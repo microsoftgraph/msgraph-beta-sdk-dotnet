@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceManagementCollectionSettingInstance";
         }
-    
+
         /// <summary>
         /// Gets or sets value.
         /// The collection of values

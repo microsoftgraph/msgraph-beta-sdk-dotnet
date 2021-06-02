@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.domainDnsSrvRecord";
         }
-    
+
         /// <summary>
         /// Gets or sets name target.
         /// Value to use when configuring the Target property of the SRV record at the DNS host.

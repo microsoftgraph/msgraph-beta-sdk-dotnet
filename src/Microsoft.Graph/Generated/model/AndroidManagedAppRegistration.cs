@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidManagedAppRegistration";
         }
-    
+
         /// <summary>
         /// Gets or sets patch version.
         /// The patch version for the current android app registration

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget";
         }
-    
+
         /// <summary>
         /// Gets or sets authentication mode.
         /// Determines which types of notifications can be used for sign-in. Possible values are: any, deviceBasedPush (passwordless only), push.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.unmanagedDeviceDiscoveryTask";
         }
-    
+
         /// <summary>
         /// Gets or sets unmanaged devices.
         /// Unmanaged devices discovered in the network.

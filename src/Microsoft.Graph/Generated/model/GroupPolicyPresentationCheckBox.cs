@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationCheckBox";
         }
-    
+
         /// <summary>
         /// Gets or sets default checked.
         /// Default value for the check box. The default value is false.

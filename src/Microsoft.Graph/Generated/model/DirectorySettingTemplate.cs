@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.directorySettingTemplate";
         }
-    
+
         /// <summary>
         /// Gets or sets description.
         /// Description of the template. Read-only.

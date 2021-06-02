@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.plannerTaskDetails";
         }
-    
+
         /// <summary>
         /// Gets or sets checklist.
         /// The collection of checklist items on the task.

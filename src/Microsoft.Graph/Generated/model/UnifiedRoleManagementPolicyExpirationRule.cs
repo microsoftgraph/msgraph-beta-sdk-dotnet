@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyExpirationRule";
         }
-    
+
         /// <summary>
         /// Gets or sets is expiration required.
         /// Indicates if expiration is required for eligibility or assignment.

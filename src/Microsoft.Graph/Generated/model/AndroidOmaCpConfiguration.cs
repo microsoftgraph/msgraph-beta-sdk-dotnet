@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidOmaCpConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets configuration xml.
         /// Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.

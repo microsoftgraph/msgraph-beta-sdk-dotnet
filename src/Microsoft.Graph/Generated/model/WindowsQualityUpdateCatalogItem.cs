@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsQualityUpdateCatalogItem";
         }
-    
+
         /// <summary>
         /// Gets or sets classification.
         /// Classification of the quality update. Possible values are: all, security, nonSecurity.

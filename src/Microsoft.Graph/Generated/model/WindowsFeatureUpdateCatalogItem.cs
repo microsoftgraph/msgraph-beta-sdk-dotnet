@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsFeatureUpdateCatalogItem";
         }
-    
+
         /// <summary>
         /// Gets or sets version.
         /// The feature update version

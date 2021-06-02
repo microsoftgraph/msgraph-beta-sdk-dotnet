@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets default length.
         /// </summary>

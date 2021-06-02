@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.openTypeExtension";
         }
-    
+
         /// <summary>
         /// Gets or sets extension name.
         /// A unique text identifier for an open type data extension. Required.

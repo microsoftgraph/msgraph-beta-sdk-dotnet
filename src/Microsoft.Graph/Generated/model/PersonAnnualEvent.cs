@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.personAnnualEvent";
         }
-    
+
         /// <summary>
         /// Gets or sets date.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.message";
         }
-    
+
         /// <summary>
         /// Gets or sets bcc recipients.
         /// The Bcc: recipients for the message.

@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// An optional description for the team.
+        /// An optional description for the team. Maximum length: 1024 characters.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }

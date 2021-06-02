@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.riskyUserHistoryItem";
         }
-    
+
         /// <summary>
         /// Gets or sets activity.
         /// The activity related to user risk level change.

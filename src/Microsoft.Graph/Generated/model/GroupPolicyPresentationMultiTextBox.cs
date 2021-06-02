@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationMultiTextBox";
         }
-    
+
         /// <summary>
         /// Gets or sets max length.
         /// An unsigned integer that specifies the maximum number of text characters. Default value is 1023.

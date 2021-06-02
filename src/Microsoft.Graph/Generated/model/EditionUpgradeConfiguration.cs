@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.editionUpgradeConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets license.
         /// Edition Upgrade License File Content.

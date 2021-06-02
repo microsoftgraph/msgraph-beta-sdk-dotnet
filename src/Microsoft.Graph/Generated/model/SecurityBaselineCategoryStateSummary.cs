@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.securityBaselineCategoryStateSummary";
         }
-    
+
         /// <summary>
         /// Gets or sets display name.
         /// The category name

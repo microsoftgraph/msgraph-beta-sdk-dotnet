@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationValueList";
         }
-    
+
         /// <summary>
         /// Gets or sets values.
         /// A list of pairs for the associated presentation.

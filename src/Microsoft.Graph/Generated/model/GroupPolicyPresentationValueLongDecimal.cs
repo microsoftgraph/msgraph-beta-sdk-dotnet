@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationValueLongDecimal";
         }
-    
+
         /// <summary>
         /// Gets or sets value.
         /// An unsigned long value for the associated presentation.

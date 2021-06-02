@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceManagementBooleanSettingInstance";
         }
-    
+
         /// <summary>
         /// Gets or sets value.
         /// The boolean value

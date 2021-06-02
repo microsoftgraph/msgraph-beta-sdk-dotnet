@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOsVppApp";
         }
-    
+
         /// <summary>
         /// Gets or sets app store url.
         /// The store URL.

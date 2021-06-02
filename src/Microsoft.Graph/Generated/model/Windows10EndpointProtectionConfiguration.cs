@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10EndpointProtectionConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets application guard allow camera microphone redirection.
         /// Gets or sets whether applications inside Microsoft Defender Application Guard can access the device’s camera and microphone.

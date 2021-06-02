@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsPhoneXAP";
         }
-    
+
         /// <summary>
         /// Gets or sets identity version.
         /// The identity version.

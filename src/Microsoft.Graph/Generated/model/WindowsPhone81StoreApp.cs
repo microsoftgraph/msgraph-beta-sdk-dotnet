@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsPhone81StoreApp";
         }
-    
+
         /// <summary>
         /// Gets or sets app store url.
         /// The Windows Phone 8.1 app store URL.
