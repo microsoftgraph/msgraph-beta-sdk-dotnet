@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.onenoteSection";
         }
-    
+
         /// <summary>
         /// Gets or sets is default.
         /// Indicates whether this is the user's default section. Read-only.

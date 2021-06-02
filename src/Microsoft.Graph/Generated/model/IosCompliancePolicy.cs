@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosCompliancePolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets advanced threat protection required security level.
         /// MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.

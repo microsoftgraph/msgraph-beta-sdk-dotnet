@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.educationRubricOutcome";
         }
-    
+
         /// <summary>
         /// Gets or sets published rubric quality feedback.
         /// A copy of the rubricQualityFeedback property that is made when the grade is released to the student.

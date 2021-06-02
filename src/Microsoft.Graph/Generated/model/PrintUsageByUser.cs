@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.printUsageByUser";
         }
-    
+
         /// <summary>
         /// Gets or sets user principal name.
         /// The UPN of the user represented by these statistics.

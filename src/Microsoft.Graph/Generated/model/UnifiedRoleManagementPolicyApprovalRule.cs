@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyApprovalRule";
         }
-    
+
         /// <summary>
         /// Gets or sets setting.
         /// The approval setting for the rule.

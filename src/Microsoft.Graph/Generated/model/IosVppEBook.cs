@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosVppEBook";
         }
-    
+
         /// <summary>
         /// Gets or sets apple id.
         /// The Apple ID associated with Vpp token.

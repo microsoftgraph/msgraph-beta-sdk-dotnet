@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.post";
         }
-    
+
         /// <summary>
         /// Gets or sets body.
         /// The contents of the post. This is a default property. This property can be null.

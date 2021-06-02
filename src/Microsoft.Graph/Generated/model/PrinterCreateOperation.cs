@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.printerCreateOperation";
         }
-    
+
         /// <summary>
         /// Gets or sets certificate.
         /// The signed certificate created during the registration process. Read-only.

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.exactMatchSessionBase";
         }
-    
+
         /// <summary>
         /// Gets or sets data store id.
         /// </summary>

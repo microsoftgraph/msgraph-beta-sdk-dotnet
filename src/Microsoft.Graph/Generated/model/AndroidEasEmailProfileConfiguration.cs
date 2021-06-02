@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidEasEmailProfileConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets account name.
         /// Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.

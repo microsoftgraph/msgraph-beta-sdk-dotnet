@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.officeSuiteApp";
         }
-    
+
         /// <summary>
         /// Gets or sets auto accept eula.
         /// The value to accept the EULA automatically on the enduser's device.

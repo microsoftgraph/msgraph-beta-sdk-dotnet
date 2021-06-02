@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.networkIPv4ConfigurationManagementCondition";
         }
-    
+
         /// <summary>
         /// Gets or sets dns suffix list.
         /// Valid DNS suffixes for the current network. e.g. seattle.contoso.com

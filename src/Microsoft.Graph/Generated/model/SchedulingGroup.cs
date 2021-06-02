@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.schedulingGroup";
         }
-    
+
         /// <summary>
         /// Gets or sets display name.
         /// The display name for the schedulingGroup. Required.

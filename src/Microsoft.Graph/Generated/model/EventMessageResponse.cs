@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.eventMessageResponse";
         }
-    
+
         /// <summary>
         /// Gets or sets proposed new time.
         /// </summary>

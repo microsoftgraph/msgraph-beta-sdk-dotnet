@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets accounts block modification.
         /// Indicates whether or not adding or removing accounts is disabled.

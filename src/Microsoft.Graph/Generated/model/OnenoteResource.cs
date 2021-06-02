@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.onenoteResource";
         }
-    
+
         /// <summary>
         /// Gets or sets content.
         /// The content stream

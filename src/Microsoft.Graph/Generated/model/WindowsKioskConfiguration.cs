@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsKioskConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets edge kiosk enable public browsing.
         /// Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.

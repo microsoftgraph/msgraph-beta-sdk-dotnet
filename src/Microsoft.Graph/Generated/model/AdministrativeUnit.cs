@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.administrativeUnit";
         }
-    
+
         /// <summary>
         /// Gets or sets description.
         /// An optional description for the administrative unit.

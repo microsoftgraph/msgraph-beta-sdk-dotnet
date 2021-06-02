@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsPhone81GeneralConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets apply only to windows phone81.
         /// Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.

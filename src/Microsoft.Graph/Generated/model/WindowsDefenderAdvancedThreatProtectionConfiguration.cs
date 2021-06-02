@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets advanced threat protection auto populate onboarding blob.
         /// Auto populate onboarding blob programmatically from Advanced Threat protection service

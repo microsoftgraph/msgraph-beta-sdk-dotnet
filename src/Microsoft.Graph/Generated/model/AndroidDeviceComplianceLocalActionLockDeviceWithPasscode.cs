@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidDeviceComplianceLocalActionLockDeviceWithPasscode";
         }
-    
+
         /// <summary>
         /// Gets or sets passcode.
         /// Passcode to reset to Android device. This property is read-only.

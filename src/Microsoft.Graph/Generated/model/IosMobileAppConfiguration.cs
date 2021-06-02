@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosMobileAppConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets encoded setting xml.
         /// mdm app configuration Base64 binary.

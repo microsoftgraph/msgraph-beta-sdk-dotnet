@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationValueDecimal";
         }
-    
+
         /// <summary>
         /// Gets or sets value.
         /// An unsigned integer value for the associated presentation.

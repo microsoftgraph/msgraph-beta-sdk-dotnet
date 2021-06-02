@@ -182,6 +182,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceResizeCloudPc.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceResizeCloudPcRequestBuilder"/>.</returns>
+        public IManagedDeviceResizeCloudPcRequestBuilder ResizeCloudPc(
+            string targetServicePlanId = null)
+        {
+            return new ManagedDeviceResizeCloudPcRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.resizeCloudPc"),
+                this.Client,
+                targetServicePlanId);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>

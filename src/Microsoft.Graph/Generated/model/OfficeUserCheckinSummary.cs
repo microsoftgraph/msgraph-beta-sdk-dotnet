@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets failedUserCount.
+        /// Total failed user check ins for the last 3 months.
         /// </summary>
         [JsonPropertyName("failedUserCount")]
         public Int32? FailedUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets succeededUserCount.
+        /// Total successful user check ins for the last 3 months.
         /// </summary>
         [JsonPropertyName("succeededUserCount")]
         public Int32? SucceededUserCount { get; set; }

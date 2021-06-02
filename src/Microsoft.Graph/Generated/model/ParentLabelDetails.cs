@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets color.
+        /// The color that the user interface should display for the label, if configured.
         /// </summary>
         [JsonPropertyName("color")]
         public string Color { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The admin-defined description for the label.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets id.
+        /// The label ID is a globally unique identifier (GUID).
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets isActive.
+        /// Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
         /// </summary>
         [JsonPropertyName("isActive")]
         public bool? IsActive { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The plaintext name of the label.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
@@ -59,12 +64,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sensitivity.
+        /// The sensitivity value of the label, where lower is less sensitive.
         /// </summary>
         [JsonPropertyName("sensitivity")]
         public Int32? Sensitivity { get; set; }
     
         /// <summary>
         /// Gets or sets tooltip.
+        /// The tooltip that should be displayed for the label in a user interface.
         /// </summary>
         [JsonPropertyName("tooltip")]
         public string Tooltip { get; set; }

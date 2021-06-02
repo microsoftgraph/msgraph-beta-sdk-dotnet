@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Ediscovery
         {
             this.ODataType = "microsoft.graph.ediscovery.noncustodialDataSource";
         }
-    
+
         /// <summary>
         /// Gets or sets apply hold to source.
         /// Indicates if hold is applied to non-custodial data source (such as mailbox or site).

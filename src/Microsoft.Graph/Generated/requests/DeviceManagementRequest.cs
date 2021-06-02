@@ -372,6 +372,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ConfigurationPolicies.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.ConfigurationPolicyTemplates != null && deviceManagementToInitialize.ConfigurationPolicyTemplates.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ConfigurationPolicyTemplates.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ConfigurationPolicyTemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.ConfigurationPolicyTemplates.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.ConfigurationSettings != null && deviceManagementToInitialize.ConfigurationSettings.CurrentPage != null)
                 {
                     deviceManagementToInitialize.ConfigurationSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ConfigurationSettingsNextLink);
@@ -389,6 +395,12 @@ namespace Microsoft.Graph
                     deviceManagementToInitialize.ReusableSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ReusableSettingsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ReusableSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.TemplateSettings != null && deviceManagementToInitialize.TemplateSettings.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.TemplateSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.TemplateSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.TemplateSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
                 if (deviceManagementToInitialize.ComplianceManagementPartners != null && deviceManagementToInitialize.ComplianceManagementPartners.CurrentPage != null)
                 {
@@ -455,6 +467,12 @@ namespace Microsoft.Graph
                     deviceManagementToInitialize.Templates.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.TemplatesNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.Templates.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.CloudPCConnectivityIssues != null && deviceManagementToInitialize.CloudPCConnectivityIssues.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.CloudPCConnectivityIssues.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.CloudPCConnectivityIssuesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.CloudPCConnectivityIssues.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
                 if (deviceManagementToInitialize.ComanagedDevices != null && deviceManagementToInitialize.ComanagedDevices.CurrentPage != null)
                 {

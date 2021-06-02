@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSPkcsCertificateProfile";
         }
-    
+
         /// <summary>
         /// Gets or sets allow all apps access.
         /// AllowAllAppsAccess setting

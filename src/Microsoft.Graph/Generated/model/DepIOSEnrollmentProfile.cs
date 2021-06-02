@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.depIOSEnrollmentProfile";
         }
-    
+
         /// <summary>
         /// Gets or sets appearance screen disabled.
         /// Indicates if Apperance screen is disabled

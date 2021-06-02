@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.timeCard";
         }
-    
+
         /// <summary>
         /// Gets or sets breaks.
         /// </summary>

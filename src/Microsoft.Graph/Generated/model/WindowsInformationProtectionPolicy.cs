@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsInformationProtectionPolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets days without contact before unenroll.
         /// Offline interval before app data is wiped (days)

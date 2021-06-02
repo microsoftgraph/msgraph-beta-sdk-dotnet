@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidManagedAppProtection";
         }
-    
+
         /// <summary>
         /// Gets or sets allowed android device manufacturers.
         /// Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.

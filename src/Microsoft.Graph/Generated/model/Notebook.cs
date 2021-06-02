@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.notebook";
         }
-    
+
         /// <summary>
         /// Gets or sets is default.
         /// Indicates whether this is the user's default notebook. Read-only.

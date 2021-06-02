@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosVppAppAssignedDeviceLicense";
         }
-    
+
         /// <summary>
         /// Gets or sets device name.
         /// The device name.

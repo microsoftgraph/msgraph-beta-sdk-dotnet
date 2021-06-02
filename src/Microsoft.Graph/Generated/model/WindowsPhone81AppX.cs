@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsPhone81AppX";
         }
-    
+
         /// <summary>
         /// Gets or sets applicable architectures.
         /// The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.

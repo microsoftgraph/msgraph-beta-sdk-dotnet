@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.itemEmail";
         }
-    
+
         /// <summary>
         /// Gets or sets address.
         /// The email address itself.

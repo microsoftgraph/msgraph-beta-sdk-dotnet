@@ -36,12 +36,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<string> GetAsync(
+        public System.Threading.Tasks.Task<EducationSubmission> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.GET;
-            var response = await this.SendAsync<ODataMethodStringResponse>(null, cancellationToken);
-            return response.Value;
+            return this.SendAsync<EducationSubmission>(null, cancellationToken);
         }
 
         /// <summary>
@@ -49,10 +48,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ODataMethodStringResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<ODataMethodStringResponse>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<EducationSubmission>(null, cancellationToken);
         }
 
 

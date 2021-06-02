@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.smsAuthenticationMethodTarget";
         }
-    
+
         /// <summary>
         /// Gets or sets is usable for sign in.
         /// Determines if the users or groups can use this authentication method to sign in to Azure AD. The value is always true.

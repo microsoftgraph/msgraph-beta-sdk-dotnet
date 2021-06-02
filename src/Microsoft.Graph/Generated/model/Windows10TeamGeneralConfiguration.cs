@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10TeamGeneralConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets azure operational insights block telemetry.
         /// Indicates whether or not to Block Azure Operational Insights.

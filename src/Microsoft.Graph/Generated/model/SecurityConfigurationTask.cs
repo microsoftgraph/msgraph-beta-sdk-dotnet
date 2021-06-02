@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.securityConfigurationTask";
         }
-    
+
         /// <summary>
         /// Gets or sets applicable platform.
         /// The applicable platform. Possible values are: unknown, macOS, windows10AndLater, windows10AndWindowsServer.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.note";
         }
-    
+
         /// <summary>
         /// Gets or sets body.
         /// </summary>

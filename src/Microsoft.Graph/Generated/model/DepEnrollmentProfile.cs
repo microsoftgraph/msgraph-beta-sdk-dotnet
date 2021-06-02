@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.depEnrollmentProfile";
         }
-    
+
         /// <summary>
         /// Gets or sets apple id disabled.
         /// Indicates if Apple id setup pane is disabled

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10SecureAssessmentConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets allow printing.
         /// Indicates whether or not to allow the app from printing during the test.

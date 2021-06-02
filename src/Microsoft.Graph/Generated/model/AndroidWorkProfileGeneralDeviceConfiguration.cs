@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidWorkProfileGeneralDeviceConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets password block face unlock.
         /// Indicates whether or not to block face unlock.

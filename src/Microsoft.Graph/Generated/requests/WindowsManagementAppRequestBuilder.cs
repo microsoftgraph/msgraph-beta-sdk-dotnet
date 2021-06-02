@@ -62,5 +62,16 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for WindowsManagementAppSetAsManagedInstaller.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsManagementAppSetAsManagedInstallerRequestBuilder"/>.</returns>
+        public IWindowsManagementAppSetAsManagedInstallerRequestBuilder SetAsManagedInstaller()
+        {
+            return new WindowsManagementAppSetAsManagedInstallerRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setAsManagedInstaller"),
+                this.Client);
+        }
+    
     }
 }

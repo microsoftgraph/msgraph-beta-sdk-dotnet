@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.plannerPlan";
         }
-    
+
         /// <summary>
         /// Gets or sets container.
         /// Identifies the container of the plan. After it is set, this property can’t be updated. Required.

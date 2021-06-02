@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceAndAppManagementRoleAssignment";
         }
-    
+
         /// <summary>
         /// Gets or sets members.
         /// The list of ids of role member security groups. These are IDs from Azure Active Directory.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10NetworkBoundaryConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets windows network isolation policy.
         /// Windows Network Isolation Policy

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosManagedAppProtection";
         }
-    
+
         /// <summary>
         /// Gets or sets allowed ios device models.
         /// Semicolon seperated list of device models allowed, as a string, for the managed app to work.

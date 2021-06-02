@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.bookingService";
         }
-    
+
         /// <summary>
         /// Gets or sets additional information.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsWifiEnterpriseEAPConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets authentication method.
         /// Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential.

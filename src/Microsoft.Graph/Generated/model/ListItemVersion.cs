@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.listItemVersion";
         }
-    
+
         /// <summary>
         /// Gets or sets fields.
         /// A collection of the fields and values for this version of the list item.

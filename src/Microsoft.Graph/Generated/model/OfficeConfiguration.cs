@@ -23,18 +23,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tenant checkin statuses.
+        /// List of office Client check-in status.
         /// </summary>
         [JsonPropertyName("tenantCheckinStatuses")]
         public IEnumerable<OfficeClientCheckinStatus> TenantCheckinStatuses { get; set; }
     
         /// <summary>
         /// Gets or sets tenant user checkin summary.
+        /// Entity that describes tenant check-in statues
         /// </summary>
         [JsonPropertyName("tenantUserCheckinSummary")]
         public OfficeUserCheckinSummary TenantUserCheckinSummary { get; set; }
     
         /// <summary>
         /// Gets or sets client configurations.
+        /// List of office Client configuration.
         /// </summary>
         [JsonPropertyName("clientConfigurations")]
         public IOfficeConfigurationClientConfigurationsCollectionPage ClientConfigurations { get; set; }

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsIdentityProtectionConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets enhanced anti spoofing for facial features enabled.
         /// Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.fido2AuthenticationMethodConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets is attestation enforced.
         /// Determines whether attestation must be enforced for FIDO2 security key registration.

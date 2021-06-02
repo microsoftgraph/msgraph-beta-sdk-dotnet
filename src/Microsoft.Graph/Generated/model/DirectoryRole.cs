@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.directoryRole";
         }
-    
+
         /// <summary>
         /// Gets or sets description.
         /// The description for the directory role. Read-only.

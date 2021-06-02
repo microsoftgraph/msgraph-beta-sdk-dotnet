@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidCustomConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets oma settings.
         /// OMA settings. This collection can contain a maximum of 1000 elements.

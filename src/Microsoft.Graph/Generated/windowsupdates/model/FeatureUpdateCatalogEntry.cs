@@ -27,7 +27,7 @@ namespace Microsoft.Graph.WindowsUpdates
         {
             this.ODataType = "microsoft.graph.windowsUpdates.featureUpdateCatalogEntry";
         }
-    
+
         /// <summary>
         /// Gets or sets version.
         /// The version of the feature update. Read-only.

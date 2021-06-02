@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.workPosition";
         }
-    
+
         /// <summary>
         /// Gets or sets categories.
         /// Categories that the user has associated with this position.

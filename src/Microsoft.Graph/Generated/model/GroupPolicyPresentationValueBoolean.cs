@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationValueBoolean";
         }
-    
+
         /// <summary>
         /// Gets or sets value.
         /// An boolean value for the associated presentation.

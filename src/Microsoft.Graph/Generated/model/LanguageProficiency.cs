@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.languageProficiency";
         }
-    
+
         /// <summary>
         /// Gets or sets display name.
         /// Contains the long-form name for the language.

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Management App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsManagementApp>))]
     public partial class WindowsManagementApp : Entity
     {
     
@@ -26,6 +27,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("availableVersion")]
         public string AvailableVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed installer.
+        /// Managed Installer Status. Possible values are: disabled, enabled.
+        /// </summary>
+        [JsonPropertyName("managedInstaller")]
+        public ManagedInstallerStatus? ManagedInstaller { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed installer configured date time.
+        /// Managed Installer Configured Date Time
+        /// </summary>
+        [JsonPropertyName("managedInstallerConfiguredDateTime")]
+        public string ManagedInstallerConfiguredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets health states.

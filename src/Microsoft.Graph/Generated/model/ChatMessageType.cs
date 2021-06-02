@@ -34,5 +34,15 @@ namespace Microsoft.Graph
         /// </summary>
         Typing = 2,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 3,
+	
+        /// <summary>
+        /// System Event Message
+        /// </summary>
+        SystemEventMessage = 4,
+	
     }
 }

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.playPromptOperation";
         }
-    
+
         /// <summary>
         /// Gets or sets completion reason.
         /// Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.userScopeTeamsAppInstallation";
         }
-    
+
         /// <summary>
         /// Gets or sets chat.
         /// The chat between the user and Teams app.

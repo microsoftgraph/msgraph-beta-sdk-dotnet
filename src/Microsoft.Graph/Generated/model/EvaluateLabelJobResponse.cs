@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.evaluateLabelJobResponse";
         }
-    
+
         /// <summary>
         /// Gets or sets result.
         /// </summary>

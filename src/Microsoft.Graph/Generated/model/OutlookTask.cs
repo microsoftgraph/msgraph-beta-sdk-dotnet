@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.outlookTask";
         }
-    
+
         /// <summary>
         /// Gets or sets assigned to.
         /// The name of the person who has been assigned the task in Outlook. Read-only.

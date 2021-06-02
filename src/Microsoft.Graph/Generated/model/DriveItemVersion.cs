@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.driveItemVersion";
         }
-    
+
         /// <summary>
         /// Gets or sets content.
         /// </summary>

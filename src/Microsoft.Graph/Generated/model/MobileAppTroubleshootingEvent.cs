@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.mobileAppTroubleshootingEvent";
         }
-    
+
         /// <summary>
         /// Gets or sets application id.
         /// Intune application identifier.

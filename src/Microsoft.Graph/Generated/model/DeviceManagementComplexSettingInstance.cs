@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceManagementComplexSettingInstance";
         }
-    
+
         /// <summary>
         /// Gets or sets value.
         /// The values that make up the complex setting

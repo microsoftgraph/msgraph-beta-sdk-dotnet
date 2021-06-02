@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionDefinition";
         }
-    
+
         /// <summary>
         /// Gets or sets maximum count.
         /// Maximum number of choices in the collection. Valid values 1 to 100

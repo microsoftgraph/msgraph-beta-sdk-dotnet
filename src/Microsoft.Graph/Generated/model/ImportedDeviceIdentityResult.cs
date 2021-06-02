@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.importedDeviceIdentityResult";
         }
-    
+
         /// <summary>
         /// Gets or sets status.
         /// Status of imported device identity

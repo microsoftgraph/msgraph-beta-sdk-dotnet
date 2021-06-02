@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets groupId.
+        /// The Id of the AAD group we are targeting the device configuration to.
         /// </summary>
         [JsonPropertyName("groupId")]
         public string GroupId { get; set; }

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsPhone81SCEPCertificateProfile";
         }
-    
+
         /// <summary>
         /// Gets or sets hash algorithm.
         /// SCEP Hash Algorithm. Possible values are: sha1, sha2.

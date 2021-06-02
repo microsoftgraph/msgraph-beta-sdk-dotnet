@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.driveItem";
         }
-    
+
         /// <summary>
         /// Gets or sets audio.
         /// Audio metadata, if the item is an audio file. Read-only.

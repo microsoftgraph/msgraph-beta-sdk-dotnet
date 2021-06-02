@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSDeviceFeaturesConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets admin show host info.
         /// Whether to show admin host information on the login window.

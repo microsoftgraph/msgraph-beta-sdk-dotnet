@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.openShift";
         }
-    
+
         /// <summary>
         /// Gets or sets draft open shift.
         /// An unpublished open shift.

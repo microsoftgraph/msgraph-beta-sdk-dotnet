@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceManagementAbstractComplexSettingInstance";
         }
-    
+
         /// <summary>
         /// Gets or sets implementation id.
         /// The definition ID for the chosen implementation of this complex setting

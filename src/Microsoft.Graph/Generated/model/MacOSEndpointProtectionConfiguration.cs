@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSEndpointProtectionConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets advanced threat protection automatic sample submission.
         /// Determines whether or not to enable automatic file sample submission for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.

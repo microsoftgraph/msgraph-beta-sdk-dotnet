@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSGeneralDeviceConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets air drop blocked.
         /// Indicates whether or not to allow AirDrop.

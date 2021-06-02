@@ -71,6 +71,12 @@ namespace Microsoft.Graph
         public string Etag { get; set; }
     
         /// <summary>
+        /// Gets or sets event detail.
+        /// </summary>
+        [JsonPropertyName("eventDetail")]
+        public EventMessageDetail EventDetail { get; set; }
+    
+        /// <summary>
         /// Gets or sets from.
         /// Read only. Details of the sender of the chat message.
         /// </summary>

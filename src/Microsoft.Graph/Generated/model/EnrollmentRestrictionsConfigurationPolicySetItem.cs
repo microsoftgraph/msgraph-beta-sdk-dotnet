@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.enrollmentRestrictionsConfigurationPolicySetItem";
         }
-    
+
         /// <summary>
         /// Gets or sets limit.
         /// Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.

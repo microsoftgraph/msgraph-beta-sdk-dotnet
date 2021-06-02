@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.educationFeedbackOutcome";
         }
-    
+
         /// <summary>
         /// Gets or sets feedback.
         /// Teacher's written feedback to the student.

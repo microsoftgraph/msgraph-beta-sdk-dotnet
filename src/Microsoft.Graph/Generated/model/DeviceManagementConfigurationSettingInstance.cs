@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public string SettingDefinitionId { get; set; }
     
         /// <summary>
+        /// Gets or sets settingInstanceTemplateReference.
+        /// Setting Instance Template Reference
+        /// </summary>
+        [JsonPropertyName("settingInstanceTemplateReference")]
+        public DeviceManagementConfigurationSettingInstanceTemplateReference SettingInstanceTemplateReference { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

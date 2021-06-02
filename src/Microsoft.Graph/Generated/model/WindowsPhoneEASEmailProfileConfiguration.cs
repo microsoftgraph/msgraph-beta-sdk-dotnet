@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsPhoneEASEmailProfileConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets account name.
         /// Account name.

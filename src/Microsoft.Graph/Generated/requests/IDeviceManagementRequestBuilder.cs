@@ -206,6 +206,12 @@ namespace Microsoft.Graph
         IDeviceManagementConfigurationPoliciesCollectionRequestBuilder ConfigurationPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for ConfigurationPolicyTemplates.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementConfigurationPolicyTemplatesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementConfigurationPolicyTemplatesCollectionRequestBuilder ConfigurationPolicyTemplates { get; }
+
+        /// <summary>
         /// Gets the request builder for ConfigurationSettings.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementConfigurationSettingsCollectionRequestBuilder"/>.</returns>
@@ -222,6 +228,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReusableSettingsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementReusableSettingsCollectionRequestBuilder ReusableSettings { get; }
+
+        /// <summary>
+        /// Gets the request builder for TemplateSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateSettingsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementTemplateSettingsCollectionRequestBuilder TemplateSettings { get; }
 
         /// <summary>
         /// Gets the request builder for ComplianceManagementPartners.
@@ -306,6 +318,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IApplePushNotificationCertificateRequestBuilder"/>.</returns>
         IApplePushNotificationCertificateRequestBuilder ApplePushNotificationCertificate { get; }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCConnectivityIssues.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementCloudPCConnectivityIssuesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementCloudPCConnectivityIssuesCollectionRequestBuilder CloudPCConnectivityIssues { get; }
 
         /// <summary>
         /// Gets the request builder for ComanagedDevices.

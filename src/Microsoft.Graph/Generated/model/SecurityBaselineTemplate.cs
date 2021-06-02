@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.securityBaselineTemplate";
         }
-    
+
         /// <summary>
         /// Gets or sets category device state summaries.
         /// The security baseline per category device state summary

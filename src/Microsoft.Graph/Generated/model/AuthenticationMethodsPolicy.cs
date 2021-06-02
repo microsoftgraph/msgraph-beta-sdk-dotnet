@@ -22,24 +22,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
+        /// A description of the policy.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The name of the policy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The date and time of the last update to the policy.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets policy version.
+        /// The version of the policy in use.
         /// </summary>
         [JsonPropertyName("policyVersion")]
         public string PolicyVersion { get; set; }
@@ -52,12 +56,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets registration enforcement.
+        /// Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
         /// </summary>
         [JsonPropertyName("registrationEnforcement")]
         public RegistrationEnforcement RegistrationEnforcement { get; set; }
     
         /// <summary>
         /// Gets or sets authentication method configurations.
+        /// Represents the settings for each authentication method.
         /// </summary>
         [JsonPropertyName("authenticationMethodConfigurations")]
         public IAuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionPage AuthenticationMethodConfigurations { get; set; }

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.plannerUser";
         }
-    
+
         /// <summary>
         /// Gets or sets favorite plan references.
         /// A collection containing the references to the plans that the user has marked as favorites.

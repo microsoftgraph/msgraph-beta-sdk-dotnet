@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.room";
         }
-    
+
         /// <summary>
         /// Gets or sets audio device name.
         /// Specifies the name of the audio device in the room.

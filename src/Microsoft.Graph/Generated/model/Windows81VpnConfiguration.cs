@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows81VpnConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets apply only to windows81.
         /// Value indicating whether this policy only applies to Windows 8.1. This property is read-only.

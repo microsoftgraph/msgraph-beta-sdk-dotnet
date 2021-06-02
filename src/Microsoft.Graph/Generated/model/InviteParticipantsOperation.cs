@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.inviteParticipantsOperation";
         }
-    
+
         /// <summary>
         /// Gets or sets participants.
         /// The participants to invite.

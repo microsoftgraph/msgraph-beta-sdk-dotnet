@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidManagedStoreAppConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets app supports oem config.
         /// Whether or not this AppConfig is an OEMConfig policy.

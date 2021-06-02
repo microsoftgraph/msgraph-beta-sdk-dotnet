@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows81WifiImportConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets payload.
         /// Payload. (UTF8 encoded byte array). This is the XML file saved on the device you used to connect to the Wi-Fi endpoint.

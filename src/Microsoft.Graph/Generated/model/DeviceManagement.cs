@@ -462,6 +462,19 @@ namespace Microsoft.Graph
         public string ConfigurationPoliciesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets configuration policy templates.
+        /// List of all templates
+        /// </summary>
+        [JsonPropertyName("configurationPolicyTemplates")]
+        public IDeviceManagementConfigurationPolicyTemplatesCollectionPage ConfigurationPolicyTemplates { get; set; }
+
+        /// <summary>
+        /// Gets or sets configurationPolicyTemplatesNextLink.
+        /// </summary>
+        [JsonPropertyName("configurationPolicyTemplates@odata.nextLink")]
+        public string ConfigurationPolicyTemplatesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets configuration settings.
         /// List of all ConfigurationSettings
         /// </summary>
@@ -499,6 +512,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("reusableSettings@odata.nextLink")]
         public string ReusableSettingsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets template settings.
+        /// List of all TemplateSettings
+        /// </summary>
+        [JsonPropertyName("templateSettings")]
+        public IDeviceManagementTemplateSettingsCollectionPage TemplateSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets templateSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("templateSettings@odata.nextLink")]
+        public string TemplateSettingsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets compliance management partners.
@@ -663,6 +689,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("applePushNotificationCertificate")]
         public ApplePushNotificationCertificate ApplePushNotificationCertificate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cloud pcconnectivity issues.
+        /// The list of CloudPC Connectivity Issue.
+        /// </summary>
+        [JsonPropertyName("cloudPCConnectivityIssues")]
+        public IDeviceManagementCloudPCConnectivityIssuesCollectionPage CloudPCConnectivityIssues { get; set; }
+
+        /// <summary>
+        /// Gets or sets cloudPCConnectivityIssuesNextLink.
+        /// </summary>
+        [JsonPropertyName("cloudPCConnectivityIssues@odata.nextLink")]
+        public string CloudPCConnectivityIssuesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets comanaged devices.

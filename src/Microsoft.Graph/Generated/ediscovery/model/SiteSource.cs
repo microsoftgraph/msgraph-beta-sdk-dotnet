@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Ediscovery
         {
             this.ODataType = "microsoft.graph.ediscovery.siteSource";
         }
-    
+
         /// <summary>
         /// Gets or sets site.
         /// The SharePoint site associated with the siteSource.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationLongDecimalTextBox";
         }
-    
+
         /// <summary>
         /// Gets or sets default value.
         /// An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.

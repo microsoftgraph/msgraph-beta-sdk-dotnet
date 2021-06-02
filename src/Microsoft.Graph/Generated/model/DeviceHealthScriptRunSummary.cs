@@ -28,6 +28,13 @@ namespace Microsoft.Graph
         public Int32? DetectionScriptErrorDeviceCount { get; set; }
     
         /// <summary>
+        /// Gets or sets detection script not applicable device count.
+        /// Number of devices for which the detection script was not applicable
+        /// </summary>
+        [JsonPropertyName("detectionScriptNotApplicableDeviceCount")]
+        public Int32? DetectionScriptNotApplicableDeviceCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets detection script pending device count.
         /// Number of devices which have not yet run the latest version of the device health script
         /// </summary>

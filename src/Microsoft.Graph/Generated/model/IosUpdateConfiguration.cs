@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosUpdateConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets active hours end.
         /// Active Hours End (active hours mean the time window when updates install should not happen)

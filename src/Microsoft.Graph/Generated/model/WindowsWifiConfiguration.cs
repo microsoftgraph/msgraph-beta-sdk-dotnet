@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windowsWifiConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets connect automatically.
         /// Specify whether the wifi connection should connect automatically when in range.

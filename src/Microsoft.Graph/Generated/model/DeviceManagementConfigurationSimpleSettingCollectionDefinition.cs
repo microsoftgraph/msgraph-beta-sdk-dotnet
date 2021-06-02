@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionDefinition";
         }
-    
+
         /// <summary>
         /// Gets or sets maximum count.
         /// Maximum number of simple settings in the collection. Valid values 1 to 100

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.itemAddress";
         }
-    
+
         /// <summary>
         /// Gets or sets detail.
         /// Details about the address itself.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.orgContact";
         }
-    
+
         /// <summary>
         /// Gets or sets addresses.
         /// Postal addresses for this organizational contact. For now a contact can only have one physical address.

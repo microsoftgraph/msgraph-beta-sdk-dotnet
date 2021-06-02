@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.domainDnsUnavailableRecord";
         }
-    
+
         /// <summary>
         /// Gets or sets description.
         /// Provides the reason why the DomainDnsUnavailableRecord entity is returned.

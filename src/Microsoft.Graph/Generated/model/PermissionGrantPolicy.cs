@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.permissionGrantPolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets excludes.
         /// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.

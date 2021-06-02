@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceComanagementAuthorityConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets configuration manager agent command line argument.
         /// CoManagement Authority configuration ConfigurationManagerAgentCommandLineArgument

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.educationPointsOutcome";
         }
-    
+
         /// <summary>
         /// Gets or sets points.
         /// The numeric grade the teacher has given the student for this assignment.

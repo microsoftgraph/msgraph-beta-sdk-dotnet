@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.referenceAttachment";
         }
-    
+
         /// <summary>
         /// Gets or sets is folder.
         /// Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10GeneralConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets accounts block adding non microsoft account email.
         /// Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.

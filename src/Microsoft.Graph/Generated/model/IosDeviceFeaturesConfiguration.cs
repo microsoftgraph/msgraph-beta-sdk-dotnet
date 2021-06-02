@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosDeviceFeaturesConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets asset tag template.
         /// Asset tag information for the device, displayed on the login window and lock screen.

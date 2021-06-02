@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.itemAttachment";
         }
-    
+
         /// <summary>
         /// Gets or sets item.
         /// The attached contact, message or event. Navigation property.

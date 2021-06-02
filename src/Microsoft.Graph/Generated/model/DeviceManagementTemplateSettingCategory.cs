@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceManagementTemplateSettingCategory";
         }
-    
+
         /// <summary>
         /// Gets or sets recommended settings.
         /// The settings this category contains

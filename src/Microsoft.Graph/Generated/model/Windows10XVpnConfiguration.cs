@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10XVpnConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets authentication certificate id.
         /// ID to the Authentication Certificate

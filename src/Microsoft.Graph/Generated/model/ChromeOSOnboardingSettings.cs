@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets onboarding status.
-        /// The ChromebookTenant's OnboardingStatus
+        /// The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed.
         /// </summary>
         [JsonPropertyName("onboardingStatus")]
         public OnboardingStatus? OnboardingStatus { get; set; }

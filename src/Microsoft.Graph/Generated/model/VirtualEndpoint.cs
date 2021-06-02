@@ -72,6 +72,18 @@ namespace Microsoft.Graph
         [JsonPropertyName("provisioningPolicies@odata.nextLink")]
         public string ProvisioningPoliciesNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets user settings.
+        /// </summary>
+        [JsonPropertyName("userSettings")]
+        public IVirtualEndpointUserSettingsCollectionPage UserSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets userSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("userSettings@odata.nextLink")]
+        public string UserSettingsNextLink { get; set; }
+    
     }
 }
 

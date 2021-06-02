@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.shiftPreferences";
         }
-    
+
         /// <summary>
         /// Gets or sets availability.
         /// Availability of the user to be scheduled for work and its recurrence pattern.

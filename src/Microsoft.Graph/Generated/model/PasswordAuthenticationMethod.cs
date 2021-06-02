@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.passwordAuthenticationMethod";
         }
-    
+
         /// <summary>
         /// Gets or sets created date time.
         /// </summary>

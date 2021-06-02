@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.bookingBusiness";
         }
-    
+
         /// <summary>
         /// Gets or sets address.
         /// The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.emailAuthenticationMethod";
         }
-    
+
         /// <summary>
         /// Gets or sets email address.
         /// The email address registered to this user.

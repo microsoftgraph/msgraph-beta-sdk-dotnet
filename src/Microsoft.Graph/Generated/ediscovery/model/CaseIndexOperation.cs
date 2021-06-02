@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Ediscovery
         {
             this.ODataType = "microsoft.graph.ediscovery.caseIndexOperation";
         }
-    
+
     }
 }
 

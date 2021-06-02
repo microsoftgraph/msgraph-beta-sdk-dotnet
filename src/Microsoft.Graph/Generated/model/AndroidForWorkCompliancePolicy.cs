@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidForWorkCompliancePolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets device threat protection enabled.
         /// Require that devices have enabled device threat protection.
@@ -140,6 +140,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("securityRequireCompanyPortalAppIntegrity")]
         public bool? SecurityRequireCompanyPortalAppIntegrity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security required android safety net evaluation type.
+        /// Require a specific SafetyNet evaluation type for compliance. Possible values are: basic, hardwareBacked.
+        /// </summary>
+        [JsonPropertyName("securityRequiredAndroidSafetyNetEvaluationType")]
+        public AndroidSafetyNetEvaluationType? SecurityRequiredAndroidSafetyNetEvaluationType { get; set; }
     
         /// <summary>
         /// Gets or sets security require google play services.

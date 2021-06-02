@@ -27,7 +27,7 @@ namespace Microsoft.Graph.WindowsUpdates
         {
             this.ODataType = "microsoft.graph.windowsUpdates.updatableAssetGroup";
         }
-    
+
         /// <summary>
         /// Gets or sets members.
         /// Members of the group. Read-only.

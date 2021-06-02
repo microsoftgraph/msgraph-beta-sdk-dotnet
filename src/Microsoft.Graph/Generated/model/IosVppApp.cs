@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosVppApp";
         }
-    
+
         /// <summary>
         /// Gets or sets applicable device type.
         /// The applicable iOS Device Type.

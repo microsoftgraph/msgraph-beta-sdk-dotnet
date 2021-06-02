@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule";
         }
-    
+
         /// <summary>
         /// Gets or sets claim value.
         /// Value of the authentication context claim.

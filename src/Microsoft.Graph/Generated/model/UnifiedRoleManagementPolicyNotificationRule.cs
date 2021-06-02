@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyNotificationRule";
         }
-    
+
         /// <summary>
         /// Gets or sets is default recipients enabled.
         /// Whether default recipient is receiving the email or not.

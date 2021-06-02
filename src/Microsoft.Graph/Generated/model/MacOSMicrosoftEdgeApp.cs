@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSMicrosoftEdgeApp";
         }
-    
+
         /// <summary>
         /// Gets or sets channel.
         /// The channel to install on target devices. Possible values are: dev, beta, stable.

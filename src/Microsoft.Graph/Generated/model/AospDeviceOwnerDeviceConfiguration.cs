@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.aospDeviceOwnerDeviceConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets apps allow install from unknown sources.
         /// Indicates whether or not the user is allowed to enable to unknown sources setting.

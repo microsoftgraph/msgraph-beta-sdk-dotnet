@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition";
         }
-    
+
         /// <summary>
         /// Gets or sets default value.
         /// Default setting value for this setting

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.skillProficiency";
         }
-    
+
         /// <summary>
         /// Gets or sets categories.
         /// Contains categories a user has associated with the skill (for example, personal, professional, hobby).

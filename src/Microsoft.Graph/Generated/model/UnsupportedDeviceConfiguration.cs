@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.unsupportedDeviceConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets details.
         /// Details describing why the entity is unsupported. This collection can contain a maximum of 1000 elements.

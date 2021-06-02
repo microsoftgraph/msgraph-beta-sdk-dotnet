@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidForWorkTrustedRootCertificate";
         }
-    
+
         /// <summary>
         /// Gets or sets cert file name.
         /// File name to display in UI.
