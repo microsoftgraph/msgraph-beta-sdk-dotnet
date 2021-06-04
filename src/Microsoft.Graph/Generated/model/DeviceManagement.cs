@@ -345,6 +345,13 @@ namespace Microsoft.Graph
         public IDeviceManagementConfigurationPoliciesCollectionPage ConfigurationPolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets configuration policy templates.
+        /// List of all templates
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationPolicyTemplates", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementConfigurationPolicyTemplatesCollectionPage ConfigurationPolicyTemplates { get; set; }
+    
+        /// <summary>
         /// Gets or sets configuration settings.
         /// List of all ConfigurationSettings
         /// </summary>
@@ -364,6 +371,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reusableSettings", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementReusableSettingsCollectionPage ReusableSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets template settings.
+        /// List of all TemplateSettings
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateSettings", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementTemplateSettingsCollectionPage TemplateSettings { get; set; }
     
         /// <summary>
         /// Gets or sets compliance management partners.
@@ -462,6 +476,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applePushNotificationCertificate", Required = Newtonsoft.Json.Required.Default)]
         public ApplePushNotificationCertificate ApplePushNotificationCertificate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cloud pcconnectivity issues.
+        /// The list of CloudPC Connectivity Issue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPCConnectivityIssues", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementCloudPCConnectivityIssuesCollectionPage CloudPCConnectivityIssues { get; set; }
     
         /// <summary>
         /// Gets or sets comanaged devices.

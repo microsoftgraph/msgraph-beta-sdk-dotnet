@@ -40,7 +40,7 @@ namespace Microsoft.Graph
             IEnumerable<DriveRecipient> recipients)
             : base(requestUrl, client)
         {
-            this.SetParameter("type", type, false);
+            this.SetParameter("type", type, true);
             this.SetParameter("scope", scope, true);
             this.SetParameter("expirationDateTime", expirationDateTime, true);
             this.SetParameter("password", password, true);

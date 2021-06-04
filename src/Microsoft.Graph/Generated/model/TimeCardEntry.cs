@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets breaks.
+        /// The list of breaks associated with the timeCard.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "breaks", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<TimeCardBreak> Breaks { get; set; }
     
         /// <summary>
         /// Gets or sets clockInEvent.
+        /// The clock-in event of the timeCard.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clockInEvent", Required = Newtonsoft.Json.Required.Default)]
         public TimeCardEvent ClockInEvent { get; set; }
     
         /// <summary>
         /// Gets or sets clockOutEvent.
+        /// The clock-out event of the timeCard.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clockOutEvent", Required = Newtonsoft.Json.Required.Default)]
         public TimeCardEvent ClockOutEvent { get; set; }

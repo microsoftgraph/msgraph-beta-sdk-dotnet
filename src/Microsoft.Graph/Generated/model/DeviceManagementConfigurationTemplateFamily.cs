@@ -41,9 +41,9 @@ namespace Microsoft.Graph
         EndpointSecurityFirewall = 12,
 	
         /// <summary>
-        /// Endpoint Security Endpoint Dection And Response
+        /// Endpoint Security Endpoint Detection And Response
         /// </summary>
-        EndpointSecurityEndpointDectionAndResponse = 13,
+        EndpointSecurityEndpointDetectionAndResponse = 13,
 	
         /// <summary>
         /// Endpoint Security Attack Surface Reduction

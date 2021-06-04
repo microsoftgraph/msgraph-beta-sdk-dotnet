@@ -492,6 +492,11 @@ namespace Microsoft.Graph
         ISearchEntityRequestBuilder Search { get; }
     
         /// <summary>
+        /// Gets the GraphServiceTenantRelationships request builder.
+        /// </summary>
+        ITenantRelationshipRequestBuilder TenantRelationships { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceFinancials request builder.
         /// </summary>
         IFinancialsRequestBuilder Financials { get; }
@@ -534,7 +539,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAdmin request builder.
         /// </summary>
-        Microsoft.Graph.WindowsUpdates.IAdminRequestBuilder Admin { get; }
+        IAdminRequestBuilder Admin { get; }
     
     }
 }

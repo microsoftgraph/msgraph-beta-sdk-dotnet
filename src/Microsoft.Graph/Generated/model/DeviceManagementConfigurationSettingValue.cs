@@ -24,6 +24,13 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets settingValueTemplateReference.
+        /// Setting value template reference
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingValueTemplateReference", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementConfigurationSettingValueTemplateReference SettingValueTemplateReference { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

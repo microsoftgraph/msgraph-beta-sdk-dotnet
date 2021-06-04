@@ -33,18 +33,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets tenant checkin statuses.
+        /// List of office Client check-in status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantCheckinStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<OfficeClientCheckinStatus> TenantCheckinStatuses { get; set; }
     
         /// <summary>
         /// Gets or sets tenant user checkin summary.
+        /// Entity that describes tenant check-in statues
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantUserCheckinSummary", Required = Newtonsoft.Json.Required.Default)]
         public OfficeUserCheckinSummary TenantUserCheckinSummary { get; set; }
     
         /// <summary>
         /// Gets or sets client configurations.
+        /// List of office Client configuration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientConfigurations", Required = Newtonsoft.Json.Required.Default)]
         public IOfficeConfigurationClientConfigurationsCollectionPage ClientConfigurations { get; set; }

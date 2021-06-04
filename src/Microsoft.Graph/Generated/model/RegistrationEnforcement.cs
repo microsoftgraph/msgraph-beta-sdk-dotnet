@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets authenticationMethodsRegistrationCampaign.
+        /// Run campaigns to remind users to setup targeted authentication methods.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethodsRegistrationCampaign", Required = Newtonsoft.Json.Required.Default)]
         public AuthenticationMethodsRegistrationCampaign AuthenticationMethodsRegistrationCampaign { get; set; }
