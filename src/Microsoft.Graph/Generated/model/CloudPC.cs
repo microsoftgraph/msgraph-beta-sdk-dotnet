@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets grace period end date time.
+        /// The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gracePeriodEndDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? GracePeriodEndDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets image display name.
         /// Name of the OS image that's on the cloud PC.
         /// </summary>
@@ -66,11 +73,25 @@ namespace Microsoft.Graph
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises connection name.
+        /// The on-premises connection that is applied during provisioning of cloud PCs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesConnectionName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnPremisesConnectionName { get; set; }
+    
+        /// <summary>
         /// Gets or sets provisioning policy id.
         /// The cloud PC's provisioning policy ID.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningPolicyId", Required = Newtonsoft.Json.Required.Default)]
         public string ProvisioningPolicyId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets provisioning policy name.
+        /// The provisioning policy that is applied during provisioning of cloud PCs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningPolicyName", Required = Newtonsoft.Json.Required.Default)]
+        public string ProvisioningPolicyName { get; set; }
     
         /// <summary>
         /// Gets or sets service plan id.

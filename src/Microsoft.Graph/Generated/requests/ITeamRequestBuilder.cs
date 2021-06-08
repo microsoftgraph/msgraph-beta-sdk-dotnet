@@ -68,6 +68,12 @@ namespace Microsoft.Graph
         ITeamOwnersCollectionWithReferencesRequestBuilder Owners { get; }
 
         /// <summary>
+        /// Gets the request builder for PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="ITeamPermissionGrantsCollectionRequestBuilder"/>.</returns>
+        ITeamPermissionGrantsCollectionRequestBuilder PermissionGrants { get; }
+
+        /// <summary>
         /// Gets the request builder for Photo.
         /// </summary>
         /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
@@ -117,6 +123,12 @@ namespace Microsoft.Graph
             bool? shouldSetSpoSiteReadOnlyForMembers = null);
 
         /// <summary>
+        /// Gets the request builder for TeamUnarchive.
+        /// </summary>
+        /// <returns>The <see cref="ITeamUnarchiveRequestBuilder"/>.</returns>
+        ITeamUnarchiveRequestBuilder Unarchive();
+
+        /// <summary>
         /// Gets the request builder for TeamCompleteMigration.
         /// </summary>
         /// <returns>The <see cref="ITeamCompleteMigrationRequestBuilder"/>.</returns>
@@ -133,12 +145,6 @@ namespace Microsoft.Graph
             ItemBody previewText = null,
             IEnumerable<KeyValuePair> templateParameters = null,
             TeamworkNotificationRecipient recipient = null);
-
-        /// <summary>
-        /// Gets the request builder for TeamUnarchive.
-        /// </summary>
-        /// <returns>The <see cref="ITeamUnarchiveRequestBuilder"/>.</returns>
-        ITeamUnarchiveRequestBuilder Unarchive();
     
     }
 }

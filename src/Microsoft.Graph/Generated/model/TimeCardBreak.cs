@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets breakId.
+        /// ID of the timeCardBreak.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "breakId", Required = Newtonsoft.Json.Required.Default)]
         public string BreakId { get; set; }
     
         /// <summary>
         /// Gets or sets end.
+        /// The start event of the timeCardBreak.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "end", Required = Newtonsoft.Json.Required.Default)]
         public TimeCardEvent End { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
+        /// Notes about the timeCardBreak.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
         public ItemBody Notes { get; set; }
     
         /// <summary>
         /// Gets or sets start.
+        /// The start event of the timeCardBreak.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
         public TimeCardEvent Start { get; set; }

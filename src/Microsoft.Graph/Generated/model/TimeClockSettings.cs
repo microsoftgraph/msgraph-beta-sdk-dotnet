@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets approvedLocation.
+        /// The aprroved location of the timeClock.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvedLocation", Required = Newtonsoft.Json.Required.Default)]
         public GeoCoordinates ApprovedLocation { get; set; }

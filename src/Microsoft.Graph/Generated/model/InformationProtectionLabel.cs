@@ -60,6 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets parent.
+        /// The parent label associated with a child label. Null if label has no parent.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parent", Required = Newtonsoft.Json.Required.Default)]
         public ParentLabelDetails Parent { get; set; }

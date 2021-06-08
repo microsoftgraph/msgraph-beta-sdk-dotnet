@@ -45,7 +45,8 @@ namespace Microsoft.Graph
         IPresenceSetPresenceRequestBuilder SetPresence(
             string sessionId,
             string availability,
-            string activity);
+            string activity,
+            Duration expirationDuration = null);
     
     }
 }

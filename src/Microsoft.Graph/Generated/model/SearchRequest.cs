@@ -87,6 +87,12 @@ namespace Microsoft.Graph
         public SearchQuery Query { get; set; }
     
         /// <summary>
+        /// Gets or sets resultTemplateOptions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultTemplateOptions", Required = Newtonsoft.Json.Required.Default)]
+        public ResultTemplateOption ResultTemplateOptions { get; set; }
+    
+        /// <summary>
         /// Gets or sets size.
         /// The size of the page to be retrieved. Optional.
         /// </summary>

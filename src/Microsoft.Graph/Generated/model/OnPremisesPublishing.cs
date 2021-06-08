@@ -73,6 +73,12 @@ namespace Microsoft.Graph
         public string InternalUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets isBackendCertificateValidationEnabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBackendCertificateValidationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsBackendCertificateValidationEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets isHttpOnlyCookieEnabled.
         /// Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
         /// </summary>

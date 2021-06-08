@@ -60,5 +60,10 @@ namespace Microsoft.Graph
         /// </summary>
         CreateChannel = 7,
 	
+        /// <summary>
+        /// Create Chat
+        /// </summary>
+        CreateChat = 8,
+	
     }
 }

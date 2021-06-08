@@ -86,9 +86,19 @@ namespace Microsoft.Graph
         EndpointConnectivityCheckUnknownError = 399,
 	
         /// <summary>
-        /// Aad Connectivity Check Unknown Error
+        /// Azure Ad Device Sync Check Device Not Found
         /// </summary>
-        AadConnectivityCheckUnknownError = 499,
+        AzureAdDeviceSyncCheckDeviceNotFound = 400,
+	
+        /// <summary>
+        /// Azure Ad Device Sync Check Long Sync Circle
+        /// </summary>
+        AzureAdDeviceSyncCheckLongSyncCircle = 401,
+	
+        /// <summary>
+        /// Azure Ad Device Sync Check Unknown Error
+        /// </summary>
+        AzureAdDeviceSyncCheckUnknownError = 499,
 	
         /// <summary>
         /// Resource Availability Check No Subnet IP
@@ -99,6 +109,11 @@ namespace Microsoft.Graph
         /// Resource Availability Check Subscription Disabled
         /// </summary>
         ResourceAvailabilityCheckSubscriptionDisabled = 501,
+	
+        /// <summary>
+        /// Resource Availability Check Azure Policy Violation
+        /// </summary>
+        ResourceAvailabilityCheckAzurePolicyViolation = 502,
 	
         /// <summary>
         /// Resource Availability Check Unsupported VNet Region
@@ -129,6 +144,21 @@ namespace Microsoft.Graph
         /// Permission Check Unknown Error
         /// </summary>
         PermissionCheckUnknownError = 699,
+	
+        /// <summary>
+        /// Internal Server Error Deployment Canceled
+        /// </summary>
+        InternalServerErrorDeploymentCanceled = 900,
+	
+        /// <summary>
+        /// Internal Server Error Allocate Resource Failed
+        /// </summary>
+        InternalServerErrorAllocateResourceFailed = 901,
+	
+        /// <summary>
+        /// Internal Server Error VMDeployment Timeout
+        /// </summary>
+        InternalServerErrorVMDeploymentTimeout = 902,
 	
         /// <summary>
         /// Internal Server Unknown Error

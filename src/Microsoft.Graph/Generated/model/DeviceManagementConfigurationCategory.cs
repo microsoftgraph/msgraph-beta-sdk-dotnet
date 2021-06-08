@@ -95,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets technologies.
-        /// Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager.
+        /// Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "technologies", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }

@@ -70,14 +70,16 @@ namespace Microsoft.Graph
         public IPresenceSetPresenceRequestBuilder SetPresence(
             string sessionId,
             string availability,
-            string activity)
+            string activity,
+            Duration expirationDuration = null)
         {
             return new PresenceSetPresenceRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.setPresence"),
                 this.Client,
                 sessionId,
                 availability,
-                activity);
+                activity,
+                expirationDuration);
         }
     
     }

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets languageTag.
-        /// The anguage tag for the label.
+        /// The language tag for the label.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageTag", Required = Newtonsoft.Json.Required.Default)]
         public string LanguageTag { get; set; }

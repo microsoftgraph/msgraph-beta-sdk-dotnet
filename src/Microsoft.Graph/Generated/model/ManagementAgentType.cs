@@ -85,5 +85,10 @@ namespace Microsoft.Graph
         /// </summary>
         WindowsManagementCloudApi = 512,
 	
+        /// <summary>
+        /// Intune Aosp
+        /// </summary>
+        IntuneAosp = 2048,
+	
     }
 }

@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         public IChatMessagesCollectionPage Messages { get; set; }
     
         /// <summary>
+        /// Gets or sets operations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        public IChatOperationsCollectionPage Operations { get; set; }
+    
+        /// <summary>
         /// Gets or sets permission grants.
         /// A collection of permissions granted to apps for the chat.
         /// </summary>

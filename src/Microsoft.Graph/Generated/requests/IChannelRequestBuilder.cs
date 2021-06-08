@@ -60,6 +60,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IChannelCompleteMigrationRequestBuilder"/>.</returns>
         IChannelCompleteMigrationRequestBuilder CompleteMigration();
+
+        /// <summary>
+        /// Gets the request builder for ChannelProvisionEmail.
+        /// </summary>
+        /// <returns>The <see cref="IChannelProvisionEmailRequestBuilder"/>.</returns>
+        IChannelProvisionEmailRequestBuilder ProvisionEmail();
+
+        /// <summary>
+        /// Gets the request builder for ChannelRemoveEmail.
+        /// </summary>
+        /// <returns>The <see cref="IChannelRemoveEmailRequestBuilder"/>.</returns>
+        IChannelRemoveEmailRequestBuilder RemoveEmail();
     
     }
 }
