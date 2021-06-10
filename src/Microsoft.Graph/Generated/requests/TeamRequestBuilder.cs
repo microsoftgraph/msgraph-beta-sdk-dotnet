@@ -123,6 +123,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="ITeamPermissionGrantsCollectionRequestBuilder"/>.</returns>
+        public ITeamPermissionGrantsCollectionRequestBuilder PermissionGrants
+        {
+            get
+            {
+                return new TeamPermissionGrantsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("permissionGrants"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Photo.
         /// </summary>
         /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
@@ -219,6 +231,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TeamUnarchive.
+        /// </summary>
+        /// <returns>The <see cref="ITeamUnarchiveRequestBuilder"/>.</returns>
+        public ITeamUnarchiveRequestBuilder Unarchive()
+        {
+            return new TeamUnarchiveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unarchive"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for TeamCompleteMigration.
         /// </summary>
         /// <returns>The <see cref="ITeamCompleteMigrationRequestBuilder"/>.</returns>
@@ -250,17 +273,6 @@ namespace Microsoft.Graph
                 previewText,
                 templateParameters,
                 recipient);
-        }
-
-        /// <summary>
-        /// Gets the request builder for TeamUnarchive.
-        /// </summary>
-        /// <returns>The <see cref="ITeamUnarchiveRequestBuilder"/>.</returns>
-        public ITeamUnarchiveRequestBuilder Unarchive()
-        {
-            return new TeamUnarchiveRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.unarchive"),
-                this.Client);
         }
     
     }

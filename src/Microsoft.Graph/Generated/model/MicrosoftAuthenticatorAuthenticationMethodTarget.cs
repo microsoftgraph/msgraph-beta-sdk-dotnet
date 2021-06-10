@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Microsoft Authenticator Authentication Method Target.
     /// </summary>
+    [Obsolete("")]
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MicrosoftAuthenticatorAuthenticationMethodTarget : AuthenticationMethodTarget
     {

@@ -41,5 +41,10 @@ namespace Microsoft.Graph
         /// </summary>
         ConfigManager = 4,
 	
+        /// <summary>
+        /// Microsoft Sense
+        /// </summary>
+        MicrosoftSense = 128,
+	
     }
 }

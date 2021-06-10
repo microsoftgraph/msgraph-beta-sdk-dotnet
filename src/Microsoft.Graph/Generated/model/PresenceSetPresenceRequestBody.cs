@@ -40,5 +40,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activity", Required = Newtonsoft.Json.Required.Default)]
         public string Activity { get; set; }
     
+        /// <summary>
+        /// Gets or sets ExpirationDuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDuration", Required = Newtonsoft.Json.Required.Default)]
+        public Duration ExpirationDuration { get; set; }
+    
     }
 }

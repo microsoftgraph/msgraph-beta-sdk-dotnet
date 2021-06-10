@@ -26,17 +26,20 @@ namespace Microsoft.Graph
         /// <param name="sessionId">A sessionId parameter for the OData method call.</param>
         /// <param name="availability">A availability parameter for the OData method call.</param>
         /// <param name="activity">A activity parameter for the OData method call.</param>
+        /// <param name="expirationDuration">A expirationDuration parameter for the OData method call.</param>
         public PresenceSetPresenceRequestBuilder(
             string requestUrl,
             IBaseClient client,
             string sessionId,
             string availability,
-            string activity)
+            string activity,
+            Duration expirationDuration)
             : base(requestUrl, client)
         {
             this.SetParameter("sessionId", sessionId, false);
             this.SetParameter("availability", availability, false);
             this.SetParameter("activity", activity, false);
+            this.SetParameter("expirationDuration", expirationDuration, true);
         }
 
         /// <summary>
@@ -62,6 +65,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("activity"))
             {
                 request.RequestBody.Activity = this.GetParameter<string>("activity");
+            }
+
+            if (this.HasParameter("expirationDuration"))
+            {
+                request.RequestBody.ExpirationDuration = this.GetParameter<Duration>("expirationDuration");
             }
 
             return request;

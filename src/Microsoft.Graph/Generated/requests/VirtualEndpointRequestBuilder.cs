@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AuditEvents.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointAuditEventsCollectionRequestBuilder"/>.</returns>
+        public IVirtualEndpointAuditEventsCollectionRequestBuilder AuditEvents
+        {
+            get
+            {
+                return new VirtualEndpointAuditEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("auditEvents"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPCs.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointCloudPCsCollectionRequestBuilder"/>.</returns>
@@ -95,6 +107,18 @@ namespace Microsoft.Graph
             get
             {
                 return new VirtualEndpointProvisioningPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("provisioningPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserSettings.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointUserSettingsCollectionRequestBuilder"/>.</returns>
+        public IVirtualEndpointUserSettingsCollectionRequestBuilder UserSettings
+        {
+            get
+            {
+                return new VirtualEndpointUserSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userSettings"), this.Client);
             }
         }
     

@@ -51,6 +51,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets microsoft authenticator methods.
         /// </summary>
+        [Obsolete("")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftAuthenticatorMethods", Required = Newtonsoft.Json.Required.Default)]
         public IAuthenticationMicrosoftAuthenticatorMethodsCollectionPage MicrosoftAuthenticatorMethods { get; set; }
     

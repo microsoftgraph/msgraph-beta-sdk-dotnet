@@ -36,24 +36,34 @@ namespace Microsoft.Graph
         Provisioned = 2,
 	
         /// <summary>
-        /// Upgrading
-        /// </summary>
-        Upgrading = 3,
-	
-        /// <summary>
         /// In Grace Period
         /// </summary>
-        InGracePeriod = 4,
+        InGracePeriod = 3,
 	
         /// <summary>
         /// Deprovisioning
         /// </summary>
-        Deprovisioning = 5,
+        Deprovisioning = 4,
 	
         /// <summary>
         /// Failed
         /// </summary>
-        Failed = 6,
+        Failed = 5,
+	
+        /// <summary>
+        /// Provisioned With Warnings
+        /// </summary>
+        ProvisionedWithWarnings = 6,
+	
+        /// <summary>
+        /// Resizing
+        /// </summary>
+        Resizing = 7,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 999,
 	
     }
 }

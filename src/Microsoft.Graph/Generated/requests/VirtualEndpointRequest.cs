@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (virtualEndpointToInitialize != null && virtualEndpointToInitialize.AdditionalData != null)
             {
 
+                if (virtualEndpointToInitialize.AuditEvents != null && virtualEndpointToInitialize.AuditEvents.CurrentPage != null)
+                {
+                    virtualEndpointToInitialize.AuditEvents.AdditionalData = virtualEndpointToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    virtualEndpointToInitialize.AdditionalData.TryGetValue("auditEvents@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        virtualEndpointToInitialize.AuditEvents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (virtualEndpointToInitialize.CloudPCs != null && virtualEndpointToInitialize.CloudPCs.CurrentPage != null)
                 {
                     virtualEndpointToInitialize.CloudPCs.AdditionalData = virtualEndpointToInitialize.AdditionalData;
@@ -293,6 +309,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         virtualEndpointToInitialize.ProvisioningPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (virtualEndpointToInitialize.UserSettings != null && virtualEndpointToInitialize.UserSettings.CurrentPage != null)
+                {
+                    virtualEndpointToInitialize.UserSettings.AdditionalData = virtualEndpointToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    virtualEndpointToInitialize.AdditionalData.TryGetValue("userSettings@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        virtualEndpointToInitialize.UserSettings.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

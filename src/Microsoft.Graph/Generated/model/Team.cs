@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// An optional description for the team.
+        /// An optional description for the team. Maximum length: 1024 characters.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
@@ -175,6 +175,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
         public ITeamOwnersCollectionWithReferencesPage Owners { get; set; }
+    
+        /// <summary>
+        /// Gets or sets permission grants.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionGrants", Required = Newtonsoft.Json.Required.Default)]
+        public ITeamPermissionGrantsCollectionPage PermissionGrants { get; set; }
     
         /// <summary>
         /// Gets or sets photo.

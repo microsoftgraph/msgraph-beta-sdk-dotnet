@@ -37,5 +37,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWindowsManagementAppHealthStatesCollectionRequestBuilder"/>.</returns>
         IWindowsManagementAppHealthStatesCollectionRequestBuilder HealthStates { get; }
     
+        /// <summary>
+        /// Gets the request builder for WindowsManagementAppSetAsManagedInstaller.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsManagementAppSetAsManagedInstallerRequestBuilder"/>.</returns>
+        IWindowsManagementAppSetAsManagedInstallerRequestBuilder SetAsManagedInstaller();
+    
     }
 }

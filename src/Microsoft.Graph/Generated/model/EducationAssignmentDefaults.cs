@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public EducationAddedStudentAction? AddedStudentAction { get; set; }
     
         /// <summary>
+        /// Gets or sets add to calendar action.
+        /// Optional field to control the asfor adding assignments to students' and teachers' calendars when the assignment is published. Possible values are: studentsAndPublisher, studentsAndTeamOwners, none. Default value is none.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addToCalendarAction", Required = Newtonsoft.Json.Required.Default)]
+        public EducationAddToCalendarOptions? AddToCalendarAction { get; set; }
+    
+        /// <summary>
         /// Gets or sets due time.
         /// Class-level default value for due time field. Default value is 23:59:00.
         /// </summary>

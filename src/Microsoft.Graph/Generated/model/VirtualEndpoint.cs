@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets audit events.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "auditEvents", Required = Newtonsoft.Json.Required.Default)]
+        public IVirtualEndpointAuditEventsCollectionPage AuditEvents { get; set; }
+    
+        /// <summary>
         /// Gets or sets cloud pcs.
         /// Cloud managed virtual desktops.
         /// </summary>
@@ -57,6 +63,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningPolicies", Required = Newtonsoft.Json.Required.Default)]
         public IVirtualEndpointProvisioningPoliciesCollectionPage ProvisioningPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userSettings", Required = Newtonsoft.Json.Required.Default)]
+        public IVirtualEndpointUserSettingsCollectionPage UserSettings { get; set; }
     
     }
 }

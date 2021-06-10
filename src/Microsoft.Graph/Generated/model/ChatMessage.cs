@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         public string Etag { get; set; }
     
         /// <summary>
+        /// Gets or sets event detail.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventDetail", Required = Newtonsoft.Json.Required.Default)]
+        public EventMessageDetail EventDetail { get; set; }
+    
+        /// <summary>
         /// Gets or sets from.
         /// Read only. Details of the sender of the chat message.
         /// </summary>
@@ -172,7 +178,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hosted contents.
-        /// Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.
+        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostedContents", Required = Newtonsoft.Json.Required.Default)]
         public IChatMessageHostedContentsCollectionPage HostedContents { get; set; }

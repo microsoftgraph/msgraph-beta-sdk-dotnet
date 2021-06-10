@@ -66,6 +66,11 @@ namespace Microsoft.Graph
         Windows10XProfile = 8,
 	
         /// <summary>
+        /// Android AOSP
+        /// </summary>
+        AndroidAOSP = 9,
+	
+        /// <summary>
         /// All
         /// </summary>
         All = 100,

@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets deviceFilter.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceFilter", Required = Newtonsoft.Json.Required.Default)]
+        public ConditionalAccessFilter DeviceFilter { get; set; }
+    
+        /// <summary>
         /// Gets or sets excludeDevices.
         /// States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
         /// </summary>

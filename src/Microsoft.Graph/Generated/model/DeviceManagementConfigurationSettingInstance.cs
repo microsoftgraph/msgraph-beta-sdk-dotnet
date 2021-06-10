@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         public string SettingDefinitionId { get; set; }
     
         /// <summary>
+        /// Gets or sets settingInstanceTemplateReference.
+        /// Setting Instance Template Reference
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingInstanceTemplateReference", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementConfigurationSettingInstanceTemplateReference SettingInstanceTemplateReference { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]
