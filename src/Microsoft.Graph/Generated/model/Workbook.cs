@@ -50,7 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets names.
-        /// Represents a collection of workbook scoped named items (named ranges and constants). Read-only.
+        /// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "names", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookNamesCollectionPage Names { get; set; }

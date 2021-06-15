@@ -94,7 +94,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IEventDeclineRequestBuilder"/>.</returns>
         IEventDeclineRequestBuilder Decline(
             string Comment = null,
-            bool? SendResponse = null);
+            bool? SendResponse = null,
+            TimeSlot ProposedNewTime = null);
 
         /// <summary>
         /// Gets the request builder for EventDismissReminder.
@@ -123,7 +124,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IEventTentativelyAcceptRequestBuilder"/>.</returns>
         IEventTentativelyAcceptRequestBuilder TentativelyAccept(
             string Comment = null,
-            bool? SendResponse = null);
+            bool? SendResponse = null,
+            TimeSlot ProposedNewTime = null);
     
     }
 }
