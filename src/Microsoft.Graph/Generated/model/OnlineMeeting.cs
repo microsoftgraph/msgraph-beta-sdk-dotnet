@@ -37,11 +37,39 @@ namespace Microsoft.Graph
         public AccessLevel? AccessLevel { get; set; }
     
         /// <summary>
+        /// Gets or sets allow attendee to enable camera.
+        /// Indicates whether attendees can turn on their camera.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAttendeeToEnableCamera", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowAttendeeToEnableCamera { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow attendee to enable mic.
+        /// Indicates whether attendees can turn on their microphone.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAttendeeToEnableMic", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowAttendeeToEnableMic { get; set; }
+    
+        /// <summary>
         /// Gets or sets allowed presenters.
         /// Specifies who can be a presenter in a meeting. Possible values are everyone, organization, roleIsPresenter, organizer, and unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedPresenters", Required = Newtonsoft.Json.Required.Default)]
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow meeting chat.
+        /// Specifies the mode of meeting chat.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowMeetingChat", Required = Newtonsoft.Json.Required.Default)]
+        public MeetingChatMode? AllowMeetingChat { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow teamwork reactions.
+        /// Indicates if Teams reactions are enabled for the meeting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowTeamworkReactions", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowTeamworkReactions { get; set; }
     
         /// <summary>
         /// Gets or sets alternative recording.
@@ -125,7 +153,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is broadcast.
-        /// Indicates if this is a live event.
+        /// Indicates whether this is a live event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBroadcast", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsBroadcast { get; set; }
@@ -138,7 +166,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is entry exit announced.
-        /// Whether or not to announce when callers join or leave.
+        /// Indicates whether to announce when callers join or leave.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEntryExitAnnounced", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEntryExitAnnounced { get; set; }

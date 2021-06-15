@@ -52,6 +52,12 @@ namespace Microsoft.Graph
         public Int32? Rank { get; set; }
     
         /// <summary>
+        /// Gets or sets resultTemplateId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultTemplateId", Required = Newtonsoft.Json.Required.Default)]
+        public string ResultTemplateId { get; set; }
+    
+        /// <summary>
         /// Gets or sets summary.
         /// A summary of the result, if a summary is available.
         /// </summary>

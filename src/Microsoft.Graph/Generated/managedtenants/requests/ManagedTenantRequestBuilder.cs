@@ -159,6 +159,54 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
+        /// Gets the request builder for ManagementActions.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementActionsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagementActionsCollectionRequestBuilder ManagementActions
+        {
+            get
+            {
+                return new ManagedTenantManagementActionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementActions"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagementActionTenantDeploymentStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementActionTenantDeploymentStatusesCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagementActionTenantDeploymentStatusesCollectionRequestBuilder ManagementActionTenantDeploymentStatuses
+        {
+            get
+            {
+                return new ManagedTenantManagementActionTenantDeploymentStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementActionTenantDeploymentStatuses"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagementIntents.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementIntentsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagementIntentsCollectionRequestBuilder ManagementIntents
+        {
+            get
+            {
+                return new ManagedTenantManagementIntentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementIntents"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagementTemplates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplatesCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagementTemplatesCollectionRequestBuilder ManagementTemplates
+        {
+            get
+            {
+                return new ManagedTenantManagementTemplatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementTemplates"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RiskyUsers.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantRiskyUsersCollectionRequestBuilder"/>.</returns>
@@ -167,6 +215,66 @@ namespace Microsoft.Graph.ManagedTenants
             get
             {
                 return new ManagedTenantRiskyUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("riskyUsers"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TenantGroups.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantTenantGroupsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantTenantGroupsCollectionRequestBuilder TenantGroups
+        {
+            get
+            {
+                return new ManagedTenantTenantGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tenantGroups"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Tenants.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantTenantsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantTenantsCollectionRequestBuilder Tenants
+        {
+            get
+            {
+                return new ManagedTenantTenantsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tenants"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TenantsCustomizedInformation.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantTenantsCustomizedInformationCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantTenantsCustomizedInformationCollectionRequestBuilder TenantsCustomizedInformation
+        {
+            get
+            {
+                return new ManagedTenantTenantsCustomizedInformationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tenantsCustomizedInformation"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TenantsDetailedInformation.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantTenantsDetailedInformationCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantTenantsDetailedInformationCollectionRequestBuilder TenantsDetailedInformation
+        {
+            get
+            {
+                return new ManagedTenantTenantsDetailedInformationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tenantsDetailedInformation"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TenantTags.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantTenantTagsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantTenantTagsCollectionRequestBuilder TenantTags
+        {
+            get
+            {
+                return new ManagedTenantTenantTagsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tenantTags"), this.Client);
             }
         }
 

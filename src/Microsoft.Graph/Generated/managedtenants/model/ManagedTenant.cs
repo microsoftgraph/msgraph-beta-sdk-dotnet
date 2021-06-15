@@ -85,10 +85,64 @@ namespace Microsoft.Graph.ManagedTenants
         public IManagedTenantManagedDeviceComplianceTrendsCollectionPage ManagedDeviceComplianceTrends { get; set; }
     
         /// <summary>
+        /// Gets or sets management actions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementActions", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedTenantManagementActionsCollectionPage ManagementActions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management action tenant deployment statuses.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementActionTenantDeploymentStatuses", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedTenantManagementActionTenantDeploymentStatusesCollectionPage ManagementActionTenantDeploymentStatuses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management intents.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementIntents", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedTenantManagementIntentsCollectionPage ManagementIntents { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management templates.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementTemplates", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedTenantManagementTemplatesCollectionPage ManagementTemplates { get; set; }
+    
+        /// <summary>
         /// Gets or sets risky users.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskyUsers", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantRiskyUsersCollectionPage RiskyUsers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenant groups.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantGroups", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedTenantTenantGroupsCollectionPage TenantGroups { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenants.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenants", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedTenantTenantsCollectionPage Tenants { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenants customized information.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantsCustomizedInformation", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedTenantTenantsCustomizedInformationCollectionPage TenantsCustomizedInformation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenants detailed information.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantsDetailedInformation", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedTenantTenantsDetailedInformationCollectionPage TenantsDetailedInformation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenant tags.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantTags", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedTenantTenantTagsCollectionPage TenantTags { get; set; }
     
         /// <summary>
         /// Gets or sets windows device malware states.

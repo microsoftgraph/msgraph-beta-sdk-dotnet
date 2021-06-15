@@ -378,6 +378,70 @@ namespace Microsoft.Graph.ManagedTenants
                     }
                 }
 
+                if (managedTenantToInitialize.ManagementActions != null && managedTenantToInitialize.ManagementActions.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementActions.AdditionalData = managedTenantToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedTenantToInitialize.AdditionalData.TryGetValue("managementActions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedTenantToInitialize.ManagementActions.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedTenantToInitialize.ManagementActionTenantDeploymentStatuses != null && managedTenantToInitialize.ManagementActionTenantDeploymentStatuses.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementActionTenantDeploymentStatuses.AdditionalData = managedTenantToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedTenantToInitialize.AdditionalData.TryGetValue("managementActionTenantDeploymentStatuses@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedTenantToInitialize.ManagementActionTenantDeploymentStatuses.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedTenantToInitialize.ManagementIntents != null && managedTenantToInitialize.ManagementIntents.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementIntents.AdditionalData = managedTenantToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedTenantToInitialize.AdditionalData.TryGetValue("managementIntents@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedTenantToInitialize.ManagementIntents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedTenantToInitialize.ManagementTemplates != null && managedTenantToInitialize.ManagementTemplates.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementTemplates.AdditionalData = managedTenantToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedTenantToInitialize.AdditionalData.TryGetValue("managementTemplates@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedTenantToInitialize.ManagementTemplates.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (managedTenantToInitialize.RiskyUsers != null && managedTenantToInitialize.RiskyUsers.CurrentPage != null)
                 {
                     managedTenantToInitialize.RiskyUsers.AdditionalData = managedTenantToInitialize.AdditionalData;
@@ -389,6 +453,86 @@ namespace Microsoft.Graph.ManagedTenants
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         managedTenantToInitialize.RiskyUsers.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedTenantToInitialize.TenantGroups != null && managedTenantToInitialize.TenantGroups.CurrentPage != null)
+                {
+                    managedTenantToInitialize.TenantGroups.AdditionalData = managedTenantToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedTenantToInitialize.AdditionalData.TryGetValue("tenantGroups@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedTenantToInitialize.TenantGroups.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedTenantToInitialize.Tenants != null && managedTenantToInitialize.Tenants.CurrentPage != null)
+                {
+                    managedTenantToInitialize.Tenants.AdditionalData = managedTenantToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedTenantToInitialize.AdditionalData.TryGetValue("tenants@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedTenantToInitialize.Tenants.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedTenantToInitialize.TenantsCustomizedInformation != null && managedTenantToInitialize.TenantsCustomizedInformation.CurrentPage != null)
+                {
+                    managedTenantToInitialize.TenantsCustomizedInformation.AdditionalData = managedTenantToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedTenantToInitialize.AdditionalData.TryGetValue("tenantsCustomizedInformation@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedTenantToInitialize.TenantsCustomizedInformation.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedTenantToInitialize.TenantsDetailedInformation != null && managedTenantToInitialize.TenantsDetailedInformation.CurrentPage != null)
+                {
+                    managedTenantToInitialize.TenantsDetailedInformation.AdditionalData = managedTenantToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedTenantToInitialize.AdditionalData.TryGetValue("tenantsDetailedInformation@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedTenantToInitialize.TenantsDetailedInformation.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedTenantToInitialize.TenantTags != null && managedTenantToInitialize.TenantTags.CurrentPage != null)
+                {
+                    managedTenantToInitialize.TenantTags.AdditionalData = managedTenantToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedTenantToInitialize.AdditionalData.TryGetValue("tenantTags@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedTenantToInitialize.TenantTags.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -25,15 +25,18 @@ namespace Microsoft.Graph
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="Comment">A Comment parameter for the OData method call.</param>
         /// <param name="SendResponse">A SendResponse parameter for the OData method call.</param>
+        /// <param name="ProposedNewTime">A ProposedNewTime parameter for the OData method call.</param>
         public EventTentativelyAcceptRequestBuilder(
             string requestUrl,
             IBaseClient client,
             string Comment,
-            bool? SendResponse)
+            bool? SendResponse,
+            TimeSlot ProposedNewTime)
             : base(requestUrl, client)
         {
             this.SetParameter("comment", Comment, true);
             this.SetParameter("sendResponse", SendResponse, true);
+            this.SetParameter("proposedNewTime", ProposedNewTime, true);
         }
 
         /// <summary>
@@ -54,6 +57,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("sendResponse"))
             {
                 request.RequestBody.SendResponse = this.GetParameter<bool?>("sendResponse");
+            }
+
+            if (this.HasParameter("proposedNewTime"))
+            {
+                request.RequestBody.ProposedNewTime = this.GetParameter<TimeSlot>("proposedNewTime");
             }
 
             return request;

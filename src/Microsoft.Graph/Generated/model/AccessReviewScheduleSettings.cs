@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         public bool? MailNotificationsEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets recommendationLookBackDuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendationLookBackDuration", Required = Newtonsoft.Json.Required.Default)]
+        public Duration RecommendationLookBackDuration { get; set; }
+    
+        /// <summary>
         /// Gets or sets recommendationsEnabled.
         /// Indicates whether decision recommendations are enabled/disabled.
         /// </summary>
