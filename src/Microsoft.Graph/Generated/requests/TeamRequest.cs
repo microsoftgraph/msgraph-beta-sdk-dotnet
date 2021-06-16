@@ -276,6 +276,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Owners.AdditionalData = teamToInitialize.AdditionalData;
                 }
+                if (teamToInitialize.PermissionGrants != null && teamToInitialize.PermissionGrants.CurrentPage != null)
+                {
+                    teamToInitialize.PermissionGrants.InitializeNextPageRequest(this.Client, teamToInitialize.PermissionGrantsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    teamToInitialize.PermissionGrants.AdditionalData = teamToInitialize.AdditionalData;
+                }
                 if (teamToInitialize.Tags != null && teamToInitialize.Tags.CurrentPage != null)
                 {
                     teamToInitialize.Tags.InitializeNextPageRequest(this.Client, teamToInitialize.TagsNextLink);

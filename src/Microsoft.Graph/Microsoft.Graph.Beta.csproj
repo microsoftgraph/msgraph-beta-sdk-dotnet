@@ -32,7 +32,7 @@
 - Fix setting of odata.type in constructor to only types derived from abstract types, or types derived from types referenced in properties or odata actions
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>4.4.0</VersionPrefix>
+    <VersionPrefix>4.5.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->

@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets grace period end date time.
+        /// The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("gracePeriodEndDateTime")]
         public DateTimeOffset? GracePeriodEndDateTime { get; set; }
@@ -64,6 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises connection name.
+        /// The on-premises connection that is applied during provisioning of cloud PCs.
         /// </summary>
         [JsonPropertyName("onPremisesConnectionName")]
         public string OnPremisesConnectionName { get; set; }
@@ -77,6 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets provisioning policy name.
+        /// The provisioning policy that is applied during provisioning of cloud PCs.
         /// </summary>
         [JsonPropertyName("provisioningPolicyName")]
         public string ProvisioningPolicyName { get; set; }

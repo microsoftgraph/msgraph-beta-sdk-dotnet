@@ -8,46 +8,31 @@
 // Template Source: EnumType.cs.tt
 
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.ManagedTenants
 {
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum UserIdentityType.
+    /// The enum DelegatedPrivilegeStatus.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum UserIdentityType
+    public enum DelegatedPrivilegeStatus
     {
     
         /// <summary>
-        /// Aad User
+        /// None
         /// </summary>
-        AadUser = 0,
+        None = 0,
 	
         /// <summary>
-        /// On Premise Aad User
+        /// Delegated Admin Privileges
         /// </summary>
-        OnPremiseAadUser = 1,
+        DelegatedAdminPrivileges = 1,
 	
         /// <summary>
-        /// Anonymous Guest
+        /// Unknown Future Value
         /// </summary>
-        AnonymousGuest = 2,
-	
-        /// <summary>
-        /// Federated User
-        /// </summary>
-        FederatedUser = 3,
-	
-        /// <summary>
-        /// Personal Microsoft Account User
-        /// </summary>
-        PersonalMicrosoftAccountUser = 4,
-	
-        /// <summary>
-        /// Skype User
-        /// </summary>
-        SkypeUser = 5,
+        UnknownFutureValue = 2,
 	
     }
 }

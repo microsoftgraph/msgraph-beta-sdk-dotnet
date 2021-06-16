@@ -21,6 +21,18 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets audit events.
+        /// </summary>
+        [JsonPropertyName("auditEvents")]
+        public IVirtualEndpointAuditEventsCollectionPage AuditEvents { get; set; }
+
+        /// <summary>
+        /// Gets or sets auditEventsNextLink.
+        /// </summary>
+        [JsonPropertyName("auditEvents@odata.nextLink")]
+        public string AuditEventsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets cloud pcs.
         /// Cloud managed virtual desktops.
         /// </summary>

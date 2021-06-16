@@ -129,6 +129,54 @@ namespace Microsoft.Graph.ManagedTenants
         public string ManagedDeviceComplianceTrendsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets management actions.
+        /// </summary>
+        [JsonPropertyName("managementActions")]
+        public IManagedTenantManagementActionsCollectionPage ManagementActions { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementActionsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementActions@odata.nextLink")]
+        public string ManagementActionsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management action tenant deployment statuses.
+        /// </summary>
+        [JsonPropertyName("managementActionTenantDeploymentStatuses")]
+        public IManagedTenantManagementActionTenantDeploymentStatusesCollectionPage ManagementActionTenantDeploymentStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementActionTenantDeploymentStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("managementActionTenantDeploymentStatuses@odata.nextLink")]
+        public string ManagementActionTenantDeploymentStatusesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management intents.
+        /// </summary>
+        [JsonPropertyName("managementIntents")]
+        public IManagedTenantManagementIntentsCollectionPage ManagementIntents { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementIntentsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementIntents@odata.nextLink")]
+        public string ManagementIntentsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management templates.
+        /// </summary>
+        [JsonPropertyName("managementTemplates")]
+        public IManagedTenantManagementTemplatesCollectionPage ManagementTemplates { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementTemplatesNextLink.
+        /// </summary>
+        [JsonPropertyName("managementTemplates@odata.nextLink")]
+        public string ManagementTemplatesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets risky users.
         /// </summary>
         [JsonPropertyName("riskyUsers")]
@@ -139,6 +187,66 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         [JsonPropertyName("riskyUsers@odata.nextLink")]
         public string RiskyUsersNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenant groups.
+        /// </summary>
+        [JsonPropertyName("tenantGroups")]
+        public IManagedTenantTenantGroupsCollectionPage TenantGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets tenantGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("tenantGroups@odata.nextLink")]
+        public string TenantGroupsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenants.
+        /// </summary>
+        [JsonPropertyName("tenants")]
+        public IManagedTenantTenantsCollectionPage Tenants { get; set; }
+
+        /// <summary>
+        /// Gets or sets tenantsNextLink.
+        /// </summary>
+        [JsonPropertyName("tenants@odata.nextLink")]
+        public string TenantsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenants customized information.
+        /// </summary>
+        [JsonPropertyName("tenantsCustomizedInformation")]
+        public IManagedTenantTenantsCustomizedInformationCollectionPage TenantsCustomizedInformation { get; set; }
+
+        /// <summary>
+        /// Gets or sets tenantsCustomizedInformationNextLink.
+        /// </summary>
+        [JsonPropertyName("tenantsCustomizedInformation@odata.nextLink")]
+        public string TenantsCustomizedInformationNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenants detailed information.
+        /// </summary>
+        [JsonPropertyName("tenantsDetailedInformation")]
+        public IManagedTenantTenantsDetailedInformationCollectionPage TenantsDetailedInformation { get; set; }
+
+        /// <summary>
+        /// Gets or sets tenantsDetailedInformationNextLink.
+        /// </summary>
+        [JsonPropertyName("tenantsDetailedInformation@odata.nextLink")]
+        public string TenantsDetailedInformationNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenant tags.
+        /// </summary>
+        [JsonPropertyName("tenantTags")]
+        public IManagedTenantTenantTagsCollectionPage TenantTags { get; set; }
+
+        /// <summary>
+        /// Gets or sets tenantTagsNextLink.
+        /// </summary>
+        [JsonPropertyName("tenantTags@odata.nextLink")]
+        public string TenantTagsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows device malware states.

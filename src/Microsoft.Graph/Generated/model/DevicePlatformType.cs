@@ -64,5 +64,10 @@ namespace Microsoft.Graph
         /// </summary>
         Unknown = 8,
 	
+        /// <summary>
+        /// Android AOSP
+        /// </summary>
+        AndroidAOSP = 9,
+	
     }
 }

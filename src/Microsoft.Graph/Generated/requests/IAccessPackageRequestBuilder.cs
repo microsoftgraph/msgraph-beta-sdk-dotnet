@@ -49,7 +49,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IAccessPackageAccessPackageResourceRoleScopesCollectionRequestBuilder"/>.</returns>
         IAccessPackageAccessPackageResourceRoleScopesCollectionRequestBuilder AccessPackageResourceRoleScopes { get; }
     
-        
+        /// <summary>
+        /// Gets the request builder for AccessPackageGetApplicablePolicyRequirements.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageGetApplicablePolicyRequirementsRequestBuilder"/>.</returns>
+        IAccessPackageGetApplicablePolicyRequirementsRequestBuilder GetApplicablePolicyRequirements();
     
     }
 }

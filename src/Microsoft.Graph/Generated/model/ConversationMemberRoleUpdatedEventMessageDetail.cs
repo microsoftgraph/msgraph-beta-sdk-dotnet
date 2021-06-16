@@ -28,16 +28,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets conversationMemberId.
-        /// </summary>
-        [JsonPropertyName("conversationMemberId")]
-        public string ConversationMemberId { get; set; }
-    
-        /// <summary>
         /// Gets or sets conversationMemberRoles.
         /// </summary>
         [JsonPropertyName("conversationMemberRoles")]
         public IEnumerable<string> ConversationMemberRoles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets conversationMemberUser.
+        /// </summary>
+        [JsonPropertyName("conversationMemberUser")]
+        public Identity ConversationMemberUser { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.

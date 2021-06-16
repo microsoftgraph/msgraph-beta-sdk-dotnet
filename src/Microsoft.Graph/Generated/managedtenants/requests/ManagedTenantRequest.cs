@@ -300,11 +300,65 @@ namespace Microsoft.Graph.ManagedTenants
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagedDeviceComplianceTrends.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
+                if (managedTenantToInitialize.ManagementActions != null && managedTenantToInitialize.ManagementActions.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementActions.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementActionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagementActions.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagementActionTenantDeploymentStatuses != null && managedTenantToInitialize.ManagementActionTenantDeploymentStatuses.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementActionTenantDeploymentStatuses.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementActionTenantDeploymentStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagementActionTenantDeploymentStatuses.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagementIntents != null && managedTenantToInitialize.ManagementIntents.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementIntents.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementIntentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagementIntents.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagementTemplates != null && managedTenantToInitialize.ManagementTemplates.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementTemplates.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementTemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagementTemplates.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
                 if (managedTenantToInitialize.RiskyUsers != null && managedTenantToInitialize.RiskyUsers.CurrentPage != null)
                 {
                     managedTenantToInitialize.RiskyUsers.InitializeNextPageRequest(this.Client, managedTenantToInitialize.RiskyUsersNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.RiskyUsers.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.TenantGroups != null && managedTenantToInitialize.TenantGroups.CurrentPage != null)
+                {
+                    managedTenantToInitialize.TenantGroups.InitializeNextPageRequest(this.Client, managedTenantToInitialize.TenantGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.TenantGroups.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.Tenants != null && managedTenantToInitialize.Tenants.CurrentPage != null)
+                {
+                    managedTenantToInitialize.Tenants.InitializeNextPageRequest(this.Client, managedTenantToInitialize.TenantsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.Tenants.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.TenantsCustomizedInformation != null && managedTenantToInitialize.TenantsCustomizedInformation.CurrentPage != null)
+                {
+                    managedTenantToInitialize.TenantsCustomizedInformation.InitializeNextPageRequest(this.Client, managedTenantToInitialize.TenantsCustomizedInformationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.TenantsCustomizedInformation.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.TenantsDetailedInformation != null && managedTenantToInitialize.TenantsDetailedInformation.CurrentPage != null)
+                {
+                    managedTenantToInitialize.TenantsDetailedInformation.InitializeNextPageRequest(this.Client, managedTenantToInitialize.TenantsDetailedInformationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.TenantsDetailedInformation.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.TenantTags != null && managedTenantToInitialize.TenantTags.CurrentPage != null)
+                {
+                    managedTenantToInitialize.TenantTags.InitializeNextPageRequest(this.Client, managedTenantToInitialize.TenantTagsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.TenantTags.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
                 if (managedTenantToInitialize.WindowsDeviceMalwareStates != null && managedTenantToInitialize.WindowsDeviceMalwareStates.CurrentPage != null)
                 {

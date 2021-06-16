@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// Read only. Details of the sender of the chat message.
         /// </summary>
         [JsonPropertyName("from")]
-        public IdentitySet From { get; set; }
+        public ChatMessageFromIdentitySet From { get; set; }
     
         /// <summary>
         /// Gets or sets importance.
@@ -169,7 +169,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hosted contents.
-        /// Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.
+        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
         /// </summary>
         [JsonPropertyName("hostedContents")]
         public IChatMessageHostedContentsCollectionPage HostedContents { get; set; }

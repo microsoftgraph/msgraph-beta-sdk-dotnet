@@ -32,5 +32,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("SendResponse")]
         public bool? SendResponse { get; set; }
     
+        /// <summary>
+        /// Gets or sets ProposedNewTime.
+        /// </summary>
+        [JsonPropertyName("ProposedNewTime")]
+        public TimeSlot ProposedNewTime { get; set; }
+    
     }
 }

@@ -108,6 +108,28 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.completeMigration"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for ChannelProvisionEmail.
+        /// </summary>
+        /// <returns>The <see cref="IChannelProvisionEmailRequestBuilder"/>.</returns>
+        public IChannelProvisionEmailRequestBuilder ProvisionEmail()
+        {
+            return new ChannelProvisionEmailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.provisionEmail"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ChannelRemoveEmail.
+        /// </summary>
+        /// <returns>The <see cref="IChannelRemoveEmailRequestBuilder"/>.</returns>
+        public IChannelRemoveEmailRequestBuilder RemoveEmail()
+        {
+            return new ChannelRemoveEmailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.removeEmail"),
+                this.Client);
+        }
     
     }
 }

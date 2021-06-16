@@ -86,10 +86,64 @@ namespace Microsoft.Graph.ManagedTenants
         IManagedTenantManagedDeviceComplianceTrendsCollectionRequestBuilder ManagedDeviceComplianceTrends { get; }
 
         /// <summary>
+        /// Gets the request builder for ManagementActions.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementActionsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagementActionsCollectionRequestBuilder ManagementActions { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagementActionTenantDeploymentStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementActionTenantDeploymentStatusesCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagementActionTenantDeploymentStatusesCollectionRequestBuilder ManagementActionTenantDeploymentStatuses { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagementIntents.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementIntentsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagementIntentsCollectionRequestBuilder ManagementIntents { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagementTemplates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplatesCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagementTemplatesCollectionRequestBuilder ManagementTemplates { get; }
+
+        /// <summary>
         /// Gets the request builder for RiskyUsers.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantRiskyUsersCollectionRequestBuilder"/>.</returns>
         IManagedTenantRiskyUsersCollectionRequestBuilder RiskyUsers { get; }
+
+        /// <summary>
+        /// Gets the request builder for TenantGroups.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantTenantGroupsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantTenantGroupsCollectionRequestBuilder TenantGroups { get; }
+
+        /// <summary>
+        /// Gets the request builder for Tenants.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantTenantsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantTenantsCollectionRequestBuilder Tenants { get; }
+
+        /// <summary>
+        /// Gets the request builder for TenantsCustomizedInformation.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantTenantsCustomizedInformationCollectionRequestBuilder"/>.</returns>
+        IManagedTenantTenantsCustomizedInformationCollectionRequestBuilder TenantsCustomizedInformation { get; }
+
+        /// <summary>
+        /// Gets the request builder for TenantsDetailedInformation.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantTenantsDetailedInformationCollectionRequestBuilder"/>.</returns>
+        IManagedTenantTenantsDetailedInformationCollectionRequestBuilder TenantsDetailedInformation { get; }
+
+        /// <summary>
+        /// Gets the request builder for TenantTags.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantTenantTagsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantTenantTagsCollectionRequestBuilder TenantTags { get; }
 
         /// <summary>
         /// Gets the request builder for WindowsDeviceMalwareStates.

@@ -123,6 +123,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="ITeamPermissionGrantsCollectionRequestBuilder"/>.</returns>
+        public ITeamPermissionGrantsCollectionRequestBuilder PermissionGrants
+        {
+            get
+            {
+                return new TeamPermissionGrantsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("permissionGrants"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Photo.
         /// </summary>
         /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>

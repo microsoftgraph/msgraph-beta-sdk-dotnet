@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IVirtualEndpointRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AuditEvents.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointAuditEventsCollectionRequestBuilder"/>.</returns>
+        IVirtualEndpointAuditEventsCollectionRequestBuilder AuditEvents { get; }
+
+        /// <summary>
         /// Gets the request builder for CloudPCs.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointCloudPCsCollectionRequestBuilder"/>.</returns>

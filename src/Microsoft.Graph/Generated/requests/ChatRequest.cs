@@ -264,6 +264,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     chatToInitialize.Messages.AdditionalData = chatToInitialize.AdditionalData;
                 }
+                if (chatToInitialize.Operations != null && chatToInitialize.Operations.CurrentPage != null)
+                {
+                    chatToInitialize.Operations.InitializeNextPageRequest(this.Client, chatToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    chatToInitialize.Operations.AdditionalData = chatToInitialize.AdditionalData;
+                }
                 if (chatToInitialize.PermissionGrants != null && chatToInitialize.PermissionGrants.CurrentPage != null)
                 {
                     chatToInitialize.PermissionGrants.InitializeNextPageRequest(this.Client, chatToInitialize.PermissionGrantsNextLink);

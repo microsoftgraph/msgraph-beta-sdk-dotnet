@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets deviceFilter.
+        /// </summary>
+        [JsonPropertyName("deviceFilter")]
+        public ConditionalAccessFilter DeviceFilter { get; set; }
+    
+        /// <summary>
         /// Gets or sets excludeDevices.
         /// States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
         /// </summary>

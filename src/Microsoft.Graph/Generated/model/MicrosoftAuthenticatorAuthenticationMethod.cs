@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Microsoft Authenticator Authentication Method.
     /// </summary>
+    [Obsolete("")]
     public partial class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod
     {
     

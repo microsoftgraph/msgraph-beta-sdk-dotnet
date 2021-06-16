@@ -39,5 +39,15 @@ namespace Microsoft.Graph
         /// </summary>
         EveryoneExceptGuests = 4,
 	
+        /// <summary>
+        /// External Group
+        /// </summary>
+        ExternalGroup = 5,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 6,
+	
     }
 }
