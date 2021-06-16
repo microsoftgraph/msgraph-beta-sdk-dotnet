@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets additional notification recipients.
+        /// Defines the list of additional users or group members to be notified of the access review progress.
+        /// </summary>
+        [JsonPropertyName("additionalNotificationRecipients")]
+        public IEnumerable<AccessReviewNotificationRecipientItem> AdditionalNotificationRecipients { get; set; }
+    
+        /// <summary>
         /// Gets or sets backup reviewers.
         /// This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.
         /// </summary>

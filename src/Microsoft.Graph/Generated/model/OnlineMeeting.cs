@@ -28,11 +28,39 @@ namespace Microsoft.Graph
         public AccessLevel? AccessLevel { get; set; }
     
         /// <summary>
+        /// Gets or sets allow attendee to enable camera.
+        /// Indicates whether attendees can turn on their camera.
+        /// </summary>
+        [JsonPropertyName("allowAttendeeToEnableCamera")]
+        public bool? AllowAttendeeToEnableCamera { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow attendee to enable mic.
+        /// Indicates whether attendees can turn on their microphone.
+        /// </summary>
+        [JsonPropertyName("allowAttendeeToEnableMic")]
+        public bool? AllowAttendeeToEnableMic { get; set; }
+    
+        /// <summary>
         /// Gets or sets allowed presenters.
         /// Specifies who can be a presenter in a meeting. Possible values are everyone, organization, roleIsPresenter, organizer, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("allowedPresenters")]
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow meeting chat.
+        /// Specifies the mode of meeting chat.
+        /// </summary>
+        [JsonPropertyName("allowMeetingChat")]
+        public MeetingChatMode? AllowMeetingChat { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow teamwork reactions.
+        /// Indicates if Teams reactions are enabled for the meeting.
+        /// </summary>
+        [JsonPropertyName("allowTeamworkReactions")]
+        public bool? AllowTeamworkReactions { get; set; }
     
         /// <summary>
         /// Gets or sets alternative recording.
@@ -116,7 +144,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is broadcast.
-        /// Indicates if this is a live event.
+        /// Indicates whether this is a live event.
         /// </summary>
         [JsonPropertyName("isBroadcast")]
         public bool? IsBroadcast { get; set; }
@@ -129,7 +157,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is entry exit announced.
-        /// Whether or not to announce when callers join or leave.
+        /// Indicates whether to announce when callers join or leave.
         /// </summary>
         [JsonPropertyName("isEntryExitAnnounced")]
         public bool? IsEntryExitAnnounced { get; set; }

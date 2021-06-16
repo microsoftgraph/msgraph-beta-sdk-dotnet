@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets breakId.
+        /// ID of the timeCardBreak.
         /// </summary>
         [JsonPropertyName("breakId")]
         public string BreakId { get; set; }
     
         /// <summary>
         /// Gets or sets end.
+        /// The start event of the timeCardBreak.
         /// </summary>
         [JsonPropertyName("end")]
         public TimeCardEvent End { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
+        /// Notes about the timeCardBreak.
         /// </summary>
         [JsonPropertyName("notes")]
         public ItemBody Notes { get; set; }
     
         /// <summary>
         /// Gets or sets start.
+        /// The start event of the timeCardBreak.
         /// </summary>
         [JsonPropertyName("start")]
         public TimeCardEvent Start { get; set; }

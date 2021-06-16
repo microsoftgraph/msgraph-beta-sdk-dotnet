@@ -198,6 +198,18 @@ namespace Microsoft.Graph
         public string OwnersNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets permission grants.
+        /// </summary>
+        [JsonPropertyName("permissionGrants")]
+        public ITeamPermissionGrantsCollectionPage PermissionGrants { get; set; }
+
+        /// <summary>
+        /// Gets or sets permissionGrantsNextLink.
+        /// </summary>
+        [JsonPropertyName("permissionGrants@odata.nextLink")]
+        public string PermissionGrantsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets photo.
         /// The team photo.
         /// </summary>

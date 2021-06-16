@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public EducationAddedStudentAction? AddedStudentAction { get; set; }
     
         /// <summary>
+        /// Gets or sets add to calendar action.
+        /// Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. Possible values are: studentsAndPublisher, studentsAndTeamOwners, none. Default value is none.
+        /// </summary>
+        [JsonPropertyName("addToCalendarAction")]
+        public EducationAddToCalendarOptions? AddToCalendarAction { get; set; }
+    
+        /// <summary>
         /// Gets or sets allow late submissions.
         /// Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.
         /// </summary>

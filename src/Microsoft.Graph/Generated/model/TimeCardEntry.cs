@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets breaks.
+        /// The list of breaks associated with the timeCard.
         /// </summary>
         [JsonPropertyName("breaks")]
         public IEnumerable<TimeCardBreak> Breaks { get; set; }
     
         /// <summary>
         /// Gets or sets clockInEvent.
+        /// The clock-in event of the timeCard.
         /// </summary>
         [JsonPropertyName("clockInEvent")]
         public TimeCardEvent ClockInEvent { get; set; }
     
         /// <summary>
         /// Gets or sets clockOutEvent.
+        /// The clock-out event of the timeCard.
         /// </summary>
         [JsonPropertyName("clockOutEvent")]
         public TimeCardEvent ClockOutEvent { get; set; }

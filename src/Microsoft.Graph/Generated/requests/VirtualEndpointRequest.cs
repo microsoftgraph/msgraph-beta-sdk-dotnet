@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (virtualEndpointToInitialize != null)
             {
+                if (virtualEndpointToInitialize.AuditEvents != null && virtualEndpointToInitialize.AuditEvents.CurrentPage != null)
+                {
+                    virtualEndpointToInitialize.AuditEvents.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.AuditEventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    virtualEndpointToInitialize.AuditEvents.AdditionalData = virtualEndpointToInitialize.AdditionalData;
+                }
                 if (virtualEndpointToInitialize.CloudPCs != null && virtualEndpointToInitialize.CloudPCs.CurrentPage != null)
                 {
                     virtualEndpointToInitialize.CloudPCs.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.CloudPCsNextLink);

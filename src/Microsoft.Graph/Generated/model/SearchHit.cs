@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public Int32? Rank { get; set; }
     
         /// <summary>
+        /// Gets or sets resultTemplateId.
+        /// </summary>
+        [JsonPropertyName("resultTemplateId")]
+        public string ResultTemplateId { get; set; }
+    
+        /// <summary>
         /// Gets or sets summary.
         /// A summary of the result, if a summary is available.
         /// </summary>

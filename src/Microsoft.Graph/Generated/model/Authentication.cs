@@ -59,6 +59,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets microsoft authenticator methods.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("microsoftAuthenticatorMethods")]
         public IAuthenticationMicrosoftAuthenticatorMethodsCollectionPage MicrosoftAuthenticatorMethods { get; set; }
 

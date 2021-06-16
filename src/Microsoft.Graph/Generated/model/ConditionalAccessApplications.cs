@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> IncludeApplications { get; set; }
     
         /// <summary>
+        /// Gets or sets includeAuthenticationContextClassReferences.
+        /// Authentication context class references include. Supported values are c1 through c25.
+        /// </summary>
+        [JsonPropertyName("includeAuthenticationContextClassReferences")]
+        public IEnumerable<string> IncludeAuthenticationContextClassReferences { get; set; }
+    
+        /// <summary>
         /// Gets or sets includeUserActions.
         /// User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
         /// </summary>

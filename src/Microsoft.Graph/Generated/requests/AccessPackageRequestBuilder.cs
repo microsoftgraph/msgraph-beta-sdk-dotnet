@@ -86,7 +86,16 @@ namespace Microsoft.Graph
             }
         }
     
-        
+        /// <summary>
+        /// Gets the request builder for AccessPackageGetApplicablePolicyRequirements.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageGetApplicablePolicyRequirementsRequestBuilder"/>.</returns>
+        public IAccessPackageGetApplicablePolicyRequirementsRequestBuilder GetApplicablePolicyRequirements()
+        {
+            return new AccessPackageGetApplicablePolicyRequirementsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getApplicablePolicyRequirements"),
+                this.Client);
+        }
     
     }
 }

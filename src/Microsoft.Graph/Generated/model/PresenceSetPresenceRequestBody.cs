@@ -38,5 +38,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("activity")]
         public string Activity { get; set; }
     
+        /// <summary>
+        /// Gets or sets ExpirationDuration.
+        /// </summary>
+        [JsonPropertyName("expirationDuration")]
+        public Duration ExpirationDuration { get; set; }
+    
     }
 }

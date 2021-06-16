@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets approvedLocation.
+        /// The aprroved location of the timeClock.
         /// </summary>
         [JsonPropertyName("approvedLocation")]
         public GeoCoordinates ApprovedLocation { get; set; }

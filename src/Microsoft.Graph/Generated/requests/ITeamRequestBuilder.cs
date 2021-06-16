@@ -68,6 +68,12 @@ namespace Microsoft.Graph
         ITeamOwnersCollectionWithReferencesRequestBuilder Owners { get; }
 
         /// <summary>
+        /// Gets the request builder for PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="ITeamPermissionGrantsCollectionRequestBuilder"/>.</returns>
+        ITeamPermissionGrantsCollectionRequestBuilder PermissionGrants { get; }
+
+        /// <summary>
         /// Gets the request builder for Photo.
         /// </summary>
         /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>

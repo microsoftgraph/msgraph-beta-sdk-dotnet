@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets atApprovedLocation.
+        /// Indicates whether the entry was recorded at the approved location.
         /// </summary>
         [JsonPropertyName("atApprovedLocation")]
         public bool? AtApprovedLocation { get; set; }
     
         /// <summary>
         /// Gets or sets dateTime.
+        /// The time the entry is recorded.
         /// </summary>
         [JsonPropertyName("dateTime")]
         public DateTimeOffset? DateTime { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
+        /// Notes about the timeCardEvent.
         /// </summary>
         [JsonPropertyName("notes")]
         public ItemBody Notes { get; set; }
