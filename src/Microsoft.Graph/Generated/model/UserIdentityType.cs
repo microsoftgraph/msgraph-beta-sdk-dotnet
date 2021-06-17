@@ -13,31 +13,41 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum TeamworkConversationIdentityType.
+    /// The enum UserIdentityType.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum TeamworkConversationIdentityType
+    public enum UserIdentityType
     {
     
         /// <summary>
-        /// Team
+        /// Aad User
         /// </summary>
-        Team = 0,
+        AadUser = 0,
 	
         /// <summary>
-        /// Channel
+        /// On Premise Aad User
         /// </summary>
-        Channel = 1,
+        OnPremiseAadUser = 1,
 	
         /// <summary>
-        /// Chat
+        /// Anonymous Guest
         /// </summary>
-        Chat = 2,
+        AnonymousGuest = 2,
 	
         /// <summary>
-        /// Unknown Future Value
+        /// Federated User
         /// </summary>
-        UnknownFutureValue = 3,
+        FederatedUser = 3,
+	
+        /// <summary>
+        /// Personal Microsoft Account User
+        /// </summary>
+        PersonalMicrosoftAccountUser = 4,
+	
+        /// <summary>
+        /// Skype User
+        /// </summary>
+        SkypeUser = 5,
 	
     }
 }

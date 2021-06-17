@@ -448,7 +448,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permission grants.
-        /// The permission that has been granted for a group to a specific application.
+        /// The permissions that have been granted for a group to a specific application.
         /// </summary>
         [JsonPropertyName("permissionGrants")]
         public IGroupPermissionGrantsCollectionPage PermissionGrants { get; set; }

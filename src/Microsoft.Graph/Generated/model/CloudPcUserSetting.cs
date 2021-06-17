@@ -22,36 +22,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time the setting was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The setting name displayed in the user interface.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The last date and time the setting was modified. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets local admin enabled.
+        /// Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true.
         /// </summary>
         [JsonPropertyName("localAdminEnabled")]
         public bool? LocalAdminEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets self service enabled.
+        /// Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true.
         /// </summary>
         [JsonPropertyName("selfServiceEnabled")]
         public bool? SelfServiceEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
+        /// Office 365 and security groups in Azure AD can have a set of user settings assigned.
         /// </summary>
         [JsonPropertyName("assignments")]
         public ICloudPcUserSettingAssignmentsCollectionPage Assignments { get; set; }

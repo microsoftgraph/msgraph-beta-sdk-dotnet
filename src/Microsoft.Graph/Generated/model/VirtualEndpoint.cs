@@ -73,7 +73,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets provisioning policies.
-        /// cloud PC provisioning policy.
+        /// Cloud PC provisioning policy.
         /// </summary>
         [JsonPropertyName("provisioningPolicies")]
         public IVirtualEndpointProvisioningPoliciesCollectionPage ProvisioningPolicies { get; set; }
@@ -86,6 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user settings.
+        /// Cloud PC user settings.
         /// </summary>
         [JsonPropertyName("userSettings")]
         public IVirtualEndpointUserSettingsCollectionPage UserSettings { get; set; }

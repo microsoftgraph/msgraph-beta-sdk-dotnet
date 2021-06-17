@@ -50,19 +50,6 @@ namespace Microsoft.Graph
         public string Topic { get; set; }
     
         /// <summary>
-        /// Gets or sets viewpoint.
-        /// </summary>
-        [JsonPropertyName("viewpoint")]
-        public ChatViewpoint Viewpoint { get; set; }
-    
-        /// <summary>
-        /// Gets or sets web url.
-        /// A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.
-        /// </summary>
-        [JsonPropertyName("webUrl")]
-        public string WebUrl { get; set; }
-    
-        /// <summary>
         /// Gets or sets installed apps.
         /// A collection of all the apps in the chat. Nullable.
         /// </summary>
@@ -74,12 +61,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("installedApps@odata.nextLink")]
         public string InstalledAppsNextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last message preview.
-        /// </summary>
-        [JsonPropertyName("lastMessagePreview")]
-        public ChatMessageInfo LastMessagePreview { get; set; }
     
         /// <summary>
         /// Gets or sets members.

@@ -199,6 +199,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permission grants.
+        /// A collection of permissions granted to apps to access the team.
         /// </summary>
         [JsonPropertyName("permissionGrants")]
         public ITeamPermissionGrantsCollectionPage PermissionGrants { get; set; }

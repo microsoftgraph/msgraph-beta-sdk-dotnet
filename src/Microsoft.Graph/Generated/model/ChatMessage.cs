@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// Read only. Details of the sender of the chat message.
         /// </summary>
         [JsonPropertyName("from")]
-        public ChatMessageFromIdentitySet From { get; set; }
+        public IdentitySet From { get; set; }
     
         /// <summary>
         /// Gets or sets importance.

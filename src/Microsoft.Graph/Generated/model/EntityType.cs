@@ -60,9 +60,9 @@ namespace Microsoft.Graph
         Drive = 8,
 	
         /// <summary>
-        /// Unknown Future Value
+        /// Unknownfuturevalue
         /// </summary>
-        UnknownFutureValue = 9,
+        Unknownfuturevalue = 9,
 	
     }
 }
