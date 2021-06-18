@@ -75,7 +75,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceInvitations request builder.
         /// </summary>
-        public IGraphServiceInvitationsCollectionRequestBuilder Invitations
+        public virtual IGraphServiceInvitationsCollectionRequestBuilder Invitations
         {
             get
             {
@@ -86,7 +86,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceUsers request builder.
         /// </summary>
-        public IGraphServiceUsersCollectionRequestBuilder Users
+        public virtual IGraphServiceUsersCollectionRequestBuilder Users
         {
             get
             {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceActivitystatistics request builder.
         /// </summary>
-        public IGraphServiceActivitystatisticsCollectionRequestBuilder Activitystatistics
+        public virtual IGraphServiceActivitystatisticsCollectionRequestBuilder Activitystatistics
         {
             get
             {
@@ -108,7 +108,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceApplicationTemplates request builder.
         /// </summary>
-        public IGraphServiceApplicationTemplatesCollectionRequestBuilder ApplicationTemplates
+        public virtual IGraphServiceApplicationTemplatesCollectionRequestBuilder ApplicationTemplates
         {
             get
             {
@@ -119,7 +119,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceServicePrincipals request builder.
         /// </summary>
-        public IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals
+        public virtual IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals
         {
             get
             {
@@ -130,7 +130,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAuthenticationMethodConfigurations request builder.
         /// </summary>
-        public IGraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder AuthenticationMethodConfigurations
+        public virtual IGraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder AuthenticationMethodConfigurations
         {
             get
             {
@@ -141,7 +141,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceBookingBusinesses request builder.
         /// </summary>
-        public IGraphServiceBookingBusinessesCollectionRequestBuilder BookingBusinesses
+        public virtual IGraphServiceBookingBusinessesCollectionRequestBuilder BookingBusinesses
         {
             get
             {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceBookingCurrencies request builder.
         /// </summary>
-        public IGraphServiceBookingCurrenciesCollectionRequestBuilder BookingCurrencies
+        public virtual IGraphServiceBookingCurrenciesCollectionRequestBuilder BookingCurrencies
         {
             get
             {
@@ -163,7 +163,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDevices request builder.
         /// </summary>
-        public IGraphServiceDevicesCollectionRequestBuilder Devices
+        public virtual IGraphServiceDevicesCollectionRequestBuilder Devices
         {
             get
             {
@@ -174,7 +174,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceIdentityProviders request builder.
         /// </summary>
-        public IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders
+        public virtual IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders
         {
             get
             {
@@ -185,7 +185,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAdministrativeUnits request builder.
         /// </summary>
-        public IGraphServiceAdministrativeUnitsCollectionRequestBuilder AdministrativeUnits
+        public virtual IGraphServiceAdministrativeUnitsCollectionRequestBuilder AdministrativeUnits
         {
             get
             {
@@ -196,7 +196,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAllowedDataLocations request builder.
         /// </summary>
-        public IGraphServiceAllowedDataLocationsCollectionRequestBuilder AllowedDataLocations
+        public virtual IGraphServiceAllowedDataLocationsCollectionRequestBuilder AllowedDataLocations
         {
             get
             {
@@ -207,7 +207,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceApplications request builder.
         /// </summary>
-        public IGraphServiceApplicationsCollectionRequestBuilder Applications
+        public virtual IGraphServiceApplicationsCollectionRequestBuilder Applications
         {
             get
             {
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAppRoleAssignments request builder.
         /// </summary>
-        public IGraphServiceAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments
+        public virtual IGraphServiceAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments
         {
             get
             {
@@ -229,7 +229,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceCertificateBasedAuthConfiguration request builder.
         /// </summary>
-        public IGraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder CertificateBasedAuthConfiguration
+        public virtual IGraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder CertificateBasedAuthConfiguration
         {
             get
             {
@@ -240,7 +240,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceContacts request builder.
         /// </summary>
-        public IGraphServiceContactsCollectionRequestBuilder Contacts
+        public virtual IGraphServiceContactsCollectionRequestBuilder Contacts
         {
             get
             {
@@ -251,7 +251,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceContracts request builder.
         /// </summary>
-        public IGraphServiceContractsCollectionRequestBuilder Contracts
+        public virtual IGraphServiceContractsCollectionRequestBuilder Contracts
         {
             get
             {
@@ -262,7 +262,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
-        public IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects
+        public virtual IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects
         {
             get
             {
@@ -273,7 +273,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDirectoryRoles request builder.
         /// </summary>
-        public IGraphServiceDirectoryRolesCollectionRequestBuilder DirectoryRoles
+        public virtual IGraphServiceDirectoryRolesCollectionRequestBuilder DirectoryRoles
         {
             get
             {
@@ -284,7 +284,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDirectoryRoleTemplates request builder.
         /// </summary>
-        public IGraphServiceDirectoryRoleTemplatesCollectionRequestBuilder DirectoryRoleTemplates
+        public virtual IGraphServiceDirectoryRoleTemplatesCollectionRequestBuilder DirectoryRoleTemplates
         {
             get
             {
@@ -295,7 +295,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDirectorySettingTemplates request builder.
         /// </summary>
-        public IGraphServiceDirectorySettingTemplatesCollectionRequestBuilder DirectorySettingTemplates
+        public virtual IGraphServiceDirectorySettingTemplatesCollectionRequestBuilder DirectorySettingTemplates
         {
             get
             {
@@ -306,7 +306,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDomainDnsRecords request builder.
         /// </summary>
-        public IGraphServiceDomainDnsRecordsCollectionRequestBuilder DomainDnsRecords
+        public virtual IGraphServiceDomainDnsRecordsCollectionRequestBuilder DomainDnsRecords
         {
             get
             {
@@ -317,7 +317,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDomains request builder.
         /// </summary>
-        public IGraphServiceDomainsCollectionRequestBuilder Domains
+        public virtual IGraphServiceDomainsCollectionRequestBuilder Domains
         {
             get
             {
@@ -328,7 +328,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceGroups request builder.
         /// </summary>
-        public IGraphServiceGroupsCollectionRequestBuilder Groups
+        public virtual IGraphServiceGroupsCollectionRequestBuilder Groups
         {
             get
             {
@@ -339,7 +339,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceOauth2PermissionGrants request builder.
         /// </summary>
-        public IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants
+        public virtual IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants
         {
             get
             {
@@ -350,7 +350,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceOrganization request builder.
         /// </summary>
-        public IGraphServiceOrganizationCollectionRequestBuilder Organization
+        public virtual IGraphServiceOrganizationCollectionRequestBuilder Organization
         {
             get
             {
@@ -361,7 +361,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePermissionGrants request builder.
         /// </summary>
-        public IGraphServicePermissionGrantsCollectionRequestBuilder PermissionGrants
+        public virtual IGraphServicePermissionGrantsCollectionRequestBuilder PermissionGrants
         {
             get
             {
@@ -372,7 +372,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceScopedRoleMemberships request builder.
         /// </summary>
-        public IGraphServiceScopedRoleMembershipsCollectionRequestBuilder ScopedRoleMemberships
+        public virtual IGraphServiceScopedRoleMembershipsCollectionRequestBuilder ScopedRoleMemberships
         {
             get
             {
@@ -383,7 +383,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceSettings request builder.
         /// </summary>
-        public IGraphServiceSettingsCollectionRequestBuilder Settings
+        public virtual IGraphServiceSettingsCollectionRequestBuilder Settings
         {
             get
             {
@@ -394,7 +394,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceSubscribedSkus request builder.
         /// </summary>
-        public IGraphServiceSubscribedSkusCollectionRequestBuilder SubscribedSkus
+        public virtual IGraphServiceSubscribedSkusCollectionRequestBuilder SubscribedSkus
         {
             get
             {
@@ -405,7 +405,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceWorkbooks request builder.
         /// </summary>
-        public IGraphServiceWorkbooksCollectionRequestBuilder Workbooks
+        public virtual IGraphServiceWorkbooksCollectionRequestBuilder Workbooks
         {
             get
             {
@@ -416,7 +416,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePlaces request builder.
         /// </summary>
-        public IGraphServicePlacesCollectionRequestBuilder Places
+        public virtual IGraphServicePlacesCollectionRequestBuilder Places
         {
             get
             {
@@ -427,7 +427,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDrives request builder.
         /// </summary>
-        public IGraphServiceDrivesCollectionRequestBuilder Drives
+        public virtual IGraphServiceDrivesCollectionRequestBuilder Drives
         {
             get
             {
@@ -438,7 +438,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceShares request builder.
         /// </summary>
-        public IGraphServiceSharesCollectionRequestBuilder Shares
+        public virtual IGraphServiceSharesCollectionRequestBuilder Shares
         {
             get
             {
@@ -449,7 +449,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceSites request builder.
         /// </summary>
-        public IGraphServiceSitesCollectionRequestBuilder Sites
+        public virtual IGraphServiceSitesCollectionRequestBuilder Sites
         {
             get
             {
@@ -460,7 +460,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceSchemaExtensions request builder.
         /// </summary>
-        public IGraphServiceSchemaExtensionsCollectionRequestBuilder SchemaExtensions
+        public virtual IGraphServiceSchemaExtensionsCollectionRequestBuilder SchemaExtensions
         {
             get
             {
@@ -471,7 +471,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceOnPremisesPublishingProfiles request builder.
         /// </summary>
-        public IGraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder OnPremisesPublishingProfiles
+        public virtual IGraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder OnPremisesPublishingProfiles
         {
             get
             {
@@ -482,7 +482,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceGroupLifecyclePolicies request builder.
         /// </summary>
-        public IGraphServiceGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies
+        public virtual IGraphServiceGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies
         {
             get
             {
@@ -493,7 +493,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceFilterOperators request builder.
         /// </summary>
-        public IGraphServiceFilterOperatorsCollectionRequestBuilder FilterOperators
+        public virtual IGraphServiceFilterOperatorsCollectionRequestBuilder FilterOperators
         {
             get
             {
@@ -504,7 +504,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceFunctions request builder.
         /// </summary>
-        public IGraphServiceFunctionsCollectionRequestBuilder Functions
+        public virtual IGraphServiceFunctionsCollectionRequestBuilder Functions
         {
             get
             {
@@ -515,7 +515,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAccessReviewDecisions request builder.
         /// </summary>
-        public IGraphServiceAccessReviewDecisionsCollectionRequestBuilder AccessReviewDecisions
+        public virtual IGraphServiceAccessReviewDecisionsCollectionRequestBuilder AccessReviewDecisions
         {
             get
             {
@@ -526,7 +526,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAccessReviews request builder.
         /// </summary>
-        public IGraphServiceAccessReviewsCollectionRequestBuilder AccessReviews
+        public virtual IGraphServiceAccessReviewsCollectionRequestBuilder AccessReviews
         {
             get
             {
@@ -537,7 +537,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceApprovalWorkflowProviders request builder.
         /// </summary>
-        public IGraphServiceApprovalWorkflowProvidersCollectionRequestBuilder ApprovalWorkflowProviders
+        public virtual IGraphServiceApprovalWorkflowProvidersCollectionRequestBuilder ApprovalWorkflowProviders
         {
             get
             {
@@ -548,7 +548,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceBusinessFlowTemplates request builder.
         /// </summary>
-        public IGraphServiceBusinessFlowTemplatesCollectionRequestBuilder BusinessFlowTemplates
+        public virtual IGraphServiceBusinessFlowTemplatesCollectionRequestBuilder BusinessFlowTemplates
         {
             get
             {
@@ -559,7 +559,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceProgramControls request builder.
         /// </summary>
-        public IGraphServiceProgramControlsCollectionRequestBuilder ProgramControls
+        public virtual IGraphServiceProgramControlsCollectionRequestBuilder ProgramControls
         {
             get
             {
@@ -570,7 +570,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceProgramControlTypes request builder.
         /// </summary>
-        public IGraphServiceProgramControlTypesCollectionRequestBuilder ProgramControlTypes
+        public virtual IGraphServiceProgramControlTypesCollectionRequestBuilder ProgramControlTypes
         {
             get
             {
@@ -581,7 +581,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePrograms request builder.
         /// </summary>
-        public IGraphServiceProgramsCollectionRequestBuilder Programs
+        public virtual IGraphServiceProgramsCollectionRequestBuilder Programs
         {
             get
             {
@@ -592,7 +592,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAgreementAcceptances request builder.
         /// </summary>
-        public IGraphServiceAgreementAcceptancesCollectionRequestBuilder AgreementAcceptances
+        public virtual IGraphServiceAgreementAcceptancesCollectionRequestBuilder AgreementAcceptances
         {
             get
             {
@@ -603,7 +603,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAgreements request builder.
         /// </summary>
-        public IGraphServiceAgreementsCollectionRequestBuilder Agreements
+        public virtual IGraphServiceAgreementsCollectionRequestBuilder Agreements
         {
             get
             {
@@ -614,7 +614,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceRiskDetections request builder.
         /// </summary>
-        public IGraphServiceRiskDetectionsCollectionRequestBuilder RiskDetections
+        public virtual IGraphServiceRiskDetectionsCollectionRequestBuilder RiskDetections
         {
             get
             {
@@ -625,7 +625,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceRiskyUsers request builder.
         /// </summary>
-        public IGraphServiceRiskyUsersCollectionRequestBuilder RiskyUsers
+        public virtual IGraphServiceRiskyUsersCollectionRequestBuilder RiskyUsers
         {
             get
             {
@@ -636,7 +636,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceGovernanceResources request builder.
         /// </summary>
-        public IGraphServiceGovernanceResourcesCollectionRequestBuilder GovernanceResources
+        public virtual IGraphServiceGovernanceResourcesCollectionRequestBuilder GovernanceResources
         {
             get
             {
@@ -647,7 +647,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceGovernanceRoleAssignmentRequests request builder.
         /// </summary>
-        public IGraphServiceGovernanceRoleAssignmentRequestsCollectionRequestBuilder GovernanceRoleAssignmentRequests
+        public virtual IGraphServiceGovernanceRoleAssignmentRequestsCollectionRequestBuilder GovernanceRoleAssignmentRequests
         {
             get
             {
@@ -658,7 +658,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceGovernanceRoleAssignments request builder.
         /// </summary>
-        public IGraphServiceGovernanceRoleAssignmentsCollectionRequestBuilder GovernanceRoleAssignments
+        public virtual IGraphServiceGovernanceRoleAssignmentsCollectionRequestBuilder GovernanceRoleAssignments
         {
             get
             {
@@ -669,7 +669,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceGovernanceRoleDefinitions request builder.
         /// </summary>
-        public IGraphServiceGovernanceRoleDefinitionsCollectionRequestBuilder GovernanceRoleDefinitions
+        public virtual IGraphServiceGovernanceRoleDefinitionsCollectionRequestBuilder GovernanceRoleDefinitions
         {
             get
             {
@@ -680,7 +680,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceGovernanceRoleSettings request builder.
         /// </summary>
-        public IGraphServiceGovernanceRoleSettingsCollectionRequestBuilder GovernanceRoleSettings
+        public virtual IGraphServiceGovernanceRoleSettingsCollectionRequestBuilder GovernanceRoleSettings
         {
             get
             {
@@ -691,7 +691,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceGovernanceSubjects request builder.
         /// </summary>
-        public IGraphServiceGovernanceSubjectsCollectionRequestBuilder GovernanceSubjects
+        public virtual IGraphServiceGovernanceSubjectsCollectionRequestBuilder GovernanceSubjects
         {
             get
             {
@@ -702,7 +702,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePrivilegedAccess request builder.
         /// </summary>
-        public IGraphServicePrivilegedAccessCollectionRequestBuilder PrivilegedAccess
+        public virtual IGraphServicePrivilegedAccessCollectionRequestBuilder PrivilegedAccess
         {
             get
             {
@@ -713,7 +713,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePrivilegedApproval request builder.
         /// </summary>
-        public IGraphServicePrivilegedApprovalCollectionRequestBuilder PrivilegedApproval
+        public virtual IGraphServicePrivilegedApprovalCollectionRequestBuilder PrivilegedApproval
         {
             get
             {
@@ -724,7 +724,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePrivilegedOperationEvents request builder.
         /// </summary>
-        public IGraphServicePrivilegedOperationEventsCollectionRequestBuilder PrivilegedOperationEvents
+        public virtual IGraphServicePrivilegedOperationEventsCollectionRequestBuilder PrivilegedOperationEvents
         {
             get
             {
@@ -735,7 +735,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePrivilegedRoleAssignmentRequests request builder.
         /// </summary>
-        public IGraphServicePrivilegedRoleAssignmentRequestsCollectionRequestBuilder PrivilegedRoleAssignmentRequests
+        public virtual IGraphServicePrivilegedRoleAssignmentRequestsCollectionRequestBuilder PrivilegedRoleAssignmentRequests
         {
             get
             {
@@ -746,7 +746,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePrivilegedRoleAssignments request builder.
         /// </summary>
-        public IGraphServicePrivilegedRoleAssignmentsCollectionRequestBuilder PrivilegedRoleAssignments
+        public virtual IGraphServicePrivilegedRoleAssignmentsCollectionRequestBuilder PrivilegedRoleAssignments
         {
             get
             {
@@ -757,7 +757,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePrivilegedRoles request builder.
         /// </summary>
-        public IGraphServicePrivilegedRolesCollectionRequestBuilder PrivilegedRoles
+        public virtual IGraphServicePrivilegedRolesCollectionRequestBuilder PrivilegedRoles
         {
             get
             {
@@ -768,7 +768,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePrivilegedSignupStatus request builder.
         /// </summary>
-        public IGraphServicePrivilegedSignupStatusCollectionRequestBuilder PrivilegedSignupStatus
+        public virtual IGraphServicePrivilegedSignupStatusCollectionRequestBuilder PrivilegedSignupStatus
         {
             get
             {
@@ -779,7 +779,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceCommands request builder.
         /// </summary>
-        public IGraphServiceCommandsCollectionRequestBuilder Commands
+        public virtual IGraphServiceCommandsCollectionRequestBuilder Commands
         {
             get
             {
@@ -790,7 +790,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePayloadResponse request builder.
         /// </summary>
-        public IGraphServicePayloadResponseCollectionRequestBuilder PayloadResponse
+        public virtual IGraphServicePayloadResponseCollectionRequestBuilder PayloadResponse
         {
             get
             {
@@ -801,7 +801,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDataPolicyOperations request builder.
         /// </summary>
-        public IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations
+        public virtual IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations
         {
             get
             {
@@ -812,7 +812,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceSubscriptions request builder.
         /// </summary>
-        public IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions
+        public virtual IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions
         {
             get
             {
@@ -823,7 +823,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceConnections request builder.
         /// </summary>
-        public IGraphServiceConnectionsCollectionRequestBuilder Connections
+        public virtual IGraphServiceConnectionsCollectionRequestBuilder Connections
         {
             get
             {
@@ -834,7 +834,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceChats request builder.
         /// </summary>
-        public IGraphServiceChatsCollectionRequestBuilder Chats
+        public virtual IGraphServiceChatsCollectionRequestBuilder Chats
         {
             get
             {
@@ -845,7 +845,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceTeams request builder.
         /// </summary>
-        public IGraphServiceTeamsCollectionRequestBuilder Teams
+        public virtual IGraphServiceTeamsCollectionRequestBuilder Teams
         {
             get
             {
@@ -856,7 +856,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceTeamsTemplates request builder.
         /// </summary>
-        public IGraphServiceTeamsTemplatesCollectionRequestBuilder TeamsTemplates
+        public virtual IGraphServiceTeamsTemplatesCollectionRequestBuilder TeamsTemplates
         {
             get
             {
@@ -867,7 +867,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAuditLogs request builder.
         /// </summary>
-        public IAuditLogRootRequestBuilder AuditLogs
+        public virtual IAuditLogRootRequestBuilder AuditLogs
         {
             get
             {
@@ -878,7 +878,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceReports request builder.
         /// </summary>
-        public IReportRootRequestBuilder Reports
+        public virtual IReportRootRequestBuilder Reports
         {
             get
             {
@@ -889,7 +889,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAuthenticationMethodsPolicy request builder.
         /// </summary>
-        public IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
+        public virtual IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
         {
             get
             {
@@ -900,7 +900,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDeviceManagement request builder.
         /// </summary>
-        public IDeviceManagementRequestBuilder DeviceManagement
+        public virtual IDeviceManagementRequestBuilder DeviceManagement
         {
             get
             {
@@ -911,7 +911,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceRoleManagement request builder.
         /// </summary>
-        public IRoleManagementRequestBuilder RoleManagement
+        public virtual IRoleManagementRequestBuilder RoleManagement
         {
             get
             {
@@ -922,7 +922,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceCompliance request builder.
         /// </summary>
-        public IComplianceRequestBuilder Compliance
+        public virtual IComplianceRequestBuilder Compliance
         {
             get
             {
@@ -933,7 +933,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceIdentity request builder.
         /// </summary>
-        public IIdentityContainerRequestBuilder Identity
+        public virtual IIdentityContainerRequestBuilder Identity
         {
             get
             {
@@ -944,7 +944,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceTrustFramework request builder.
         /// </summary>
-        public ITrustFrameworkRequestBuilder TrustFramework
+        public virtual ITrustFrameworkRequestBuilder TrustFramework
         {
             get
             {
@@ -955,7 +955,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDataClassification request builder.
         /// </summary>
-        public IDataClassificationServiceRequestBuilder DataClassification
+        public virtual IDataClassificationServiceRequestBuilder DataClassification
         {
             get
             {
@@ -966,7 +966,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceInformationProtection request builder.
         /// </summary>
-        public IInformationProtectionRequestBuilder InformationProtection
+        public virtual IInformationProtectionRequestBuilder InformationProtection
         {
             get
             {
@@ -977,7 +977,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceBranding request builder.
         /// </summary>
-        public IOrganizationalBrandingRequestBuilder Branding
+        public virtual IOrganizationalBrandingRequestBuilder Branding
         {
             get
             {
@@ -988,7 +988,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDirectory request builder.
         /// </summary>
-        public IDirectoryRequestBuilder Directory
+        public virtual IDirectoryRequestBuilder Directory
         {
             get
             {
@@ -999,7 +999,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceMe request builder.
         /// </summary>
-        public IUserRequestBuilder Me
+        public virtual IUserRequestBuilder Me
         {
             get
             {
@@ -1010,7 +1010,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePolicies request builder.
         /// </summary>
-        public IPolicyRootRequestBuilder Policies
+        public virtual IPolicyRootRequestBuilder Policies
         {
             get
             {
@@ -1021,7 +1021,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceEducation request builder.
         /// </summary>
-        public IEducationRootRequestBuilder Education
+        public virtual IEducationRootRequestBuilder Education
         {
             get
             {
@@ -1032,7 +1032,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDrive request builder.
         /// </summary>
-        public IDriveRequestBuilder Drive
+        public virtual IDriveRequestBuilder Drive
         {
             get
             {
@@ -1043,7 +1043,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceTermStore request builder.
         /// </summary>
-        public Microsoft.Graph.TermStore.IStoreRequestBuilder TermStore
+        public virtual Microsoft.Graph.TermStore.IStoreRequestBuilder TermStore
         {
             get
             {
@@ -1054,7 +1054,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceCommunications request builder.
         /// </summary>
-        public ICloudCommunicationsRequestBuilder Communications
+        public virtual ICloudCommunicationsRequestBuilder Communications
         {
             get
             {
@@ -1065,7 +1065,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceIdentityGovernance request builder.
         /// </summary>
-        public IIdentityGovernanceRequestBuilder IdentityGovernance
+        public virtual IIdentityGovernanceRequestBuilder IdentityGovernance
         {
             get
             {
@@ -1076,7 +1076,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceIdentityProtection request builder.
         /// </summary>
-        public IIdentityProtectionRootRequestBuilder IdentityProtection
+        public virtual IIdentityProtectionRootRequestBuilder IdentityProtection
         {
             get
             {
@@ -1087,7 +1087,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceDeviceAppManagement request builder.
         /// </summary>
-        public IDeviceAppManagementRequestBuilder DeviceAppManagement
+        public virtual IDeviceAppManagementRequestBuilder DeviceAppManagement
         {
             get
             {
@@ -1098,7 +1098,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceOfficeConfiguration request builder.
         /// </summary>
-        public IOfficeConfigurationRequestBuilder OfficeConfiguration
+        public virtual IOfficeConfigurationRequestBuilder OfficeConfiguration
         {
             get
             {
@@ -1109,7 +1109,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceSearch request builder.
         /// </summary>
-        public ISearchEntityRequestBuilder Search
+        public virtual ISearchEntityRequestBuilder Search
         {
             get
             {
@@ -1120,7 +1120,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceTenantRelationships request builder.
         /// </summary>
-        public ITenantRelationshipRequestBuilder TenantRelationships
+        public virtual ITenantRelationshipRequestBuilder TenantRelationships
         {
             get
             {
@@ -1131,7 +1131,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceFinancials request builder.
         /// </summary>
-        public IFinancialsRequestBuilder Financials
+        public virtual IFinancialsRequestBuilder Financials
         {
             get
             {
@@ -1142,7 +1142,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePlanner request builder.
         /// </summary>
-        public IPlannerRequestBuilder Planner
+        public virtual IPlannerRequestBuilder Planner
         {
             get
             {
@@ -1153,7 +1153,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServicePrint request builder.
         /// </summary>
-        public IPrintRequestBuilder Print
+        public virtual IPrintRequestBuilder Print
         {
             get
             {
@@ -1164,7 +1164,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
-        public ISecurityRequestBuilder Security
+        public virtual ISecurityRequestBuilder Security
         {
             get
             {
@@ -1175,7 +1175,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceApp request builder.
         /// </summary>
-        public ICommsApplicationRequestBuilder App
+        public virtual ICommsApplicationRequestBuilder App
         {
             get
             {
@@ -1186,7 +1186,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceExternal request builder.
         /// </summary>
-        public Microsoft.Graph.ExternalConnectors.IExternalRequestBuilder External
+        public virtual Microsoft.Graph.ExternalConnectors.IExternalRequestBuilder External
         {
             get
             {
@@ -1197,7 +1197,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAppCatalogs request builder.
         /// </summary>
-        public IAppCatalogsRequestBuilder AppCatalogs
+        public virtual IAppCatalogsRequestBuilder AppCatalogs
         {
             get
             {
@@ -1208,7 +1208,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceTeamwork request builder.
         /// </summary>
-        public ITeamworkRequestBuilder Teamwork
+        public virtual ITeamworkRequestBuilder Teamwork
         {
             get
             {
@@ -1219,7 +1219,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceAdmin request builder.
         /// </summary>
-        public IAdminRequestBuilder Admin
+        public virtual IAdminRequestBuilder Admin
         {
             get
             {
