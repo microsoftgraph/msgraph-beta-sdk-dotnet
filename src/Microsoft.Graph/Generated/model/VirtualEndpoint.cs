@@ -59,13 +59,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets provisioning policies.
-        /// cloud PC provisioning policy.
+        /// Cloud PC provisioning policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningPolicies", Required = Newtonsoft.Json.Required.Default)]
         public IVirtualEndpointProvisioningPoliciesCollectionPage ProvisioningPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets user settings.
+        /// Cloud PC user settings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userSettings", Required = Newtonsoft.Json.Required.Default)]
         public IVirtualEndpointUserSettingsCollectionPage UserSettings { get; set; }
