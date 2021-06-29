@@ -32,48 +32,56 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets action required by date time.
+        /// The expected deadline of the action for the message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionRequiredByDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ActionRequiredByDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets body.
+        /// The content type and content of the service message body.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "body", Required = Newtonsoft.Json.Required.Default)]
         public ItemBody Body { get; set; }
     
         /// <summary>
         /// Gets or sets category.
+        /// The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
         public ServiceUpdateCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets is major change.
+        /// Indicates whether the message describes a major update for the service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMajorChange", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsMajorChange { get; set; }
     
         /// <summary>
         /// Gets or sets services.
+        /// The affected services by the service message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "services", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Services { get; set; }
     
         /// <summary>
         /// Gets or sets severity.
+        /// The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "severity", Required = Newtonsoft.Json.Required.Default)]
         public ServiceUpdateSeverity? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
+        /// A collection of tags for the service message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tags", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Tags { get; set; }
     
         /// <summary>
         /// Gets or sets view point.
+        /// Represents user view points data of the service message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "viewPoint", Required = Newtonsoft.Json.Required.Default)]
         public ServiceUpdateMessageViewpoint ViewPoint { get; set; }
