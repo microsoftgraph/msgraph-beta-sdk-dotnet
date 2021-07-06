@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contentCategory.
+        /// Enumeration value that indicates the media content category.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCategory", Required = Newtonsoft.Json.Required.Default)]
         public MediaSourceContentCategory? ContentCategory { get; set; }

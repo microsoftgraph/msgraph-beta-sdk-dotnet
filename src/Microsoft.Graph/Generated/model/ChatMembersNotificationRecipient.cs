@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets chatId.
+        /// The chat's identifier.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatId", Required = Newtonsoft.Json.Required.Default)]
         public string ChatId { get; set; }

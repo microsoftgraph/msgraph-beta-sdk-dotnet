@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets is enabled.
+        /// true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabled { get; set; }

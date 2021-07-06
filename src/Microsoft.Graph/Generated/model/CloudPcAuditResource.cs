@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The resource entity display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets modifiedProperties.
+        /// A list of modified properties.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<CloudPcAuditProperty> ModifiedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets resourceId.
+        /// The ID of the audit resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// The type of the audit resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }

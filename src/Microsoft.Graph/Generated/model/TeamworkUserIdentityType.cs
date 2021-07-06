@@ -14,10 +14,10 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The enum UserIdentityType.
+    /// The enum TeamworkUserIdentityType.
     /// </summary>
     [JsonConverter(typeof(EnumConverter))]
-    public enum UserIdentityType
+    public enum TeamworkUserIdentityType
     {
     
         /// <summary>
@@ -49,6 +49,16 @@ namespace Microsoft.Graph
         /// Skype User
         /// </summary>
         SkypeUser = 5,
+	
+        /// <summary>
+        /// Phone User
+        /// </summary>
+        PhoneUser = 6,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 7,
 	
     }
 }

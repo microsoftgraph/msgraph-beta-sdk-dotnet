@@ -157,6 +157,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transitive reports.
+        /// The transitive reports for a contact. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveReports", Required = Newtonsoft.Json.Required.Default)]
         public IOrgContactTransitiveReportsCollectionWithReferencesPage TransitiveReports { get; set; }

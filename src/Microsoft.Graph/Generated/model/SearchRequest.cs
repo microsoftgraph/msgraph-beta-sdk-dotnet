@@ -88,6 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resultTemplateOptions.
+        /// Provides the search result templates options for rendering connectors search results.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultTemplateOptions", Required = Newtonsoft.Json.Required.Default)]
         public ResultTemplateOption ResultTemplateOptions { get; set; }
