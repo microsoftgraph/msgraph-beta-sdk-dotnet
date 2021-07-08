@@ -556,10 +556,14 @@ namespace Microsoft.Graph
         public IReportRootGetM365AppUserDetailRequestBuilder GetM365AppUserDetail(
             Date date)
         {
-            return new ReportRootGetM365AppUserDetailRequestBuilder(
+            var baseBuilder = new ReportRootGetM365AppUserDetailRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppUserDetail"),
                 this.Client,
                 date);
+
+            return new ReportRootGetM365AppUserDetailRequestBuilder(
+                        baseBuilder.AppendSegmentToRequestUrl("content"),
+                        this.Client);
         }
 
         /// <summary>
@@ -569,10 +573,14 @@ namespace Microsoft.Graph
         public IReportRootGetM365AppUserDetailRequestBuilder GetM365AppUserDetail(
             string period)
         {
-            return new ReportRootGetM365AppUserDetailRequestBuilder(
+            var baseBuilder =  new ReportRootGetM365AppUserDetailRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppUserDetail"),
                 this.Client,
                 period);
+
+            return new ReportRootGetM365AppUserDetailRequestBuilder(
+                        baseBuilder.AppendSegmentToRequestUrl("content"),
+                        this.Client);           
         }
 
         /// <summary>

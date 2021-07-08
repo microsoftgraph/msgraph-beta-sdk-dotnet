@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Constructs a new <see cref="ReportRootGetM365AppUserDetailRequestBuilder"/>. Only used internally.
+        /// </summary>
+        /// <param name="requestUrl">The URL for the request.</param>
+        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        public ReportRootGetM365AppUserDetailRequestBuilder(
+            string requestUrl,
+            IBaseClient client)
+            : base(requestUrl, client)
+        {
+        }
+		
+		/// <summary>
         /// A method used by the base class to construct a request class instance.
         /// </summary>
         /// <param name="functionUrl">The request URL to </param>
