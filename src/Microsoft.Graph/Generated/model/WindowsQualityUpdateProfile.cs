@@ -12,86 +12,82 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Quality Update Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsQualityUpdateProfile : Entity
     {
     
-		///<summary>
-		/// The WindowsQualityUpdateProfile constructor
-		///</summary>
-        public WindowsQualityUpdateProfile()
-        {
-            this.ODataType = "microsoft.graph.windowsQualityUpdateProfile";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The date time that the profile was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets deployable content display name.
         /// Friendly display name of the quality update profile deployable content
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployableContentDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deployableContentDisplayName")]
         public string DeployableContentDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The description of the profile which is specified by the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name for the profile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets expedited update settings.
         /// Expedited update settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expeditedUpdateSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expeditedUpdateSettings")]
         public ExpeditedWindowsQualityUpdateSettings ExpeditedUpdateSettings { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The date time that the profile was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets release date display name.
         /// Friendly release date to display for a Quality Update release
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releaseDateDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("releaseDateDisplayName")]
         public string ReleaseDateDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of Scope Tags for this Quality Update entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignments of the profile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IWindowsQualityUpdateProfileAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
     }
 }

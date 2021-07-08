@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CallEndedEventMessageDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CallEndedEventMessageDetail : EventMessageDetail
     {
         /// <summary>
@@ -32,25 +30,25 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets callDuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callDuration")]
         public Duration CallDuration { get; set; }
     
         /// <summary>
         /// Gets or sets callId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callId")]
         public string CallId { get; set; }
     
         /// <summary>
         /// Gets or sets callParticipants.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callParticipants", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callParticipants")]
         public IEnumerable<CallParticipantInfo> CallParticipants { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
     }

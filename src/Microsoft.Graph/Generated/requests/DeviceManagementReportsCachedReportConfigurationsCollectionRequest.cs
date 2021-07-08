@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementCachedReportConfiguration to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementCachedReportConfiguration">The DeviceManagementCachedReportConfiguration to add.</param>
-        /// <returns>The created DeviceManagementCachedReportConfiguration.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> AddAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfiguration)
-        {
-            return this.AddAsync(deviceManagementCachedReportConfiguration, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementCachedReportConfiguration to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementCachedReportConfiguration">The DeviceManagementCachedReportConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementCachedReportConfiguration.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> AddAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfiguration, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> AddAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<DeviceManagementCachedReportConfiguration>(deviceManagementCachedReportConfiguration, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceManagementCachedReportConfiguration to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementReportsCachedReportConfigurationsCollectionPage> GetAsync()
+        /// <param name="deviceManagementCachedReportConfiguration">The DeviceManagementCachedReportConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> AddResponseAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagementCachedReportConfiguration>(deviceManagementCachedReportConfiguration, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementReportsCachedReportConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementReportsCachedReportConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementReportsCachedReportConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementReportsCachedReportConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReportsCachedReportConfigurationsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportsCachedReportConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReportsCachedReportConfigurationsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

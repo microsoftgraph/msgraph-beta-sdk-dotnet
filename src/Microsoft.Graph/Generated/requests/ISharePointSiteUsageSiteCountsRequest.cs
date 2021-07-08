@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified SharePointSiteUsageSiteCounts using POST.
         /// </summary>
         /// <param name="sharePointSiteUsageSiteCountsToCreate">The SharePointSiteUsageSiteCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharePointSiteUsageSiteCounts.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> CreateAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToCreate);        /// <summary>
-        /// Creates the specified SharePointSiteUsageSiteCounts using POST.
+        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> CreateAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified SharePointSiteUsageSiteCounts using POST and returns a <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object.
         /// </summary>
         /// <param name="sharePointSiteUsageSiteCountsToCreate">The SharePointSiteUsageSiteCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SharePointSiteUsageSiteCounts.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> CreateAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SharePointSiteUsageSiteCounts.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageSiteCounts>> CreateResponseAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SharePointSiteUsageSiteCounts.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified SharePointSiteUsageSiteCounts.
+        /// Deletes the specified SharePointSiteUsageSiteCounts and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SharePointSiteUsageSiteCounts.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SharePointSiteUsageSiteCounts.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharePointSiteUsageSiteCounts.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified SharePointSiteUsageSiteCounts using PATCH.
+        /// Gets the specified SharePointSiteUsageSiteCounts and returns a <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object.
         /// </summary>
-        /// <param name="sharePointSiteUsageSiteCountsToUpdate">The SharePointSiteUsageSiteCounts to update.</param>
-        /// <returns>The updated SharePointSiteUsageSiteCounts.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> UpdateAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageSiteCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SharePointSiteUsageSiteCounts using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharePointSiteUsageSiteCounts.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> UpdateAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> UpdateAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SharePointSiteUsageSiteCounts using PATCH and returns a <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object.
+        /// </summary>
+        /// <param name="sharePointSiteUsageSiteCountsToUpdate">The SharePointSiteUsageSiteCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageSiteCounts>> UpdateResponseAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SharePointSiteUsageSiteCounts using PUT.
+        /// </summary>
+        /// <param name="sharePointSiteUsageSiteCountsToUpdate">The SharePointSiteUsageSiteCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> PutAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified SharePointSiteUsageSiteCounts using PUT and returns a <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object.
+        /// </summary>
+        /// <param name="sharePointSiteUsageSiteCountsToUpdate">The SharePointSiteUsageSiteCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageSiteCounts>> PutResponseAsync(SharePointSiteUsageSiteCounts sharePointSiteUsageSiteCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

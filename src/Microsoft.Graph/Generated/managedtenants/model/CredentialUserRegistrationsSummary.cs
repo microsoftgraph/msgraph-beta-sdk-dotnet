@@ -12,82 +12,72 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Credential User Registrations Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CredentialUserRegistrationsSummary : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The CredentialUserRegistrationsSummary constructor
-		///</summary>
-        public CredentialUserRegistrationsSummary()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.credentialUserRegistrationsSummary";
-        }
-	
         /// <summary>
         /// Gets or sets last refreshed date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastRefreshedDateTime")]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets mfa and sspr capable user count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mfaAndSsprCapableUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mfaAndSsprCapableUserCount")]
         public Int32? MfaAndSsprCapableUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets mfa conditional access policy state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mfaConditionalAccessPolicyState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mfaConditionalAccessPolicyState")]
         public string MfaConditionalAccessPolicyState { get; set; }
     
         /// <summary>
         /// Gets or sets mfa registered user count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mfaRegisteredUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mfaRegisteredUserCount")]
         public Int32? MfaRegisteredUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets security defaults enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityDefaultsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("securityDefaultsEnabled")]
         public bool? SecurityDefaultsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets sspr enabled user count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ssprEnabledUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ssprEnabledUserCount")]
         public Int32? SsprEnabledUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets sspr registered user count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ssprRegisteredUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ssprRegisteredUserCount")]
         public Int32? SsprRegisteredUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantDisplayName")]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets total user count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalUserCount")]
         public Int32? TotalUserCount { get; set; }
     
     }

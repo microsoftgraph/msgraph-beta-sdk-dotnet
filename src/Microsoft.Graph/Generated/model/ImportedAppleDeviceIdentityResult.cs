@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Imported Apple Device Identity Result.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ImportedAppleDeviceIdentityResult : ImportedAppleDeviceIdentity
     {
     
-		///<summary>
-		/// The ImportedAppleDeviceIdentityResult constructor
-		///</summary>
+        ///<summary>
+        /// The ImportedAppleDeviceIdentityResult constructor
+        ///</summary>
         public ImportedAppleDeviceIdentityResult()
         {
             this.ODataType = "microsoft.graph.importedAppleDeviceIdentityResult";
         }
-	
+
         /// <summary>
         /// Gets or sets status.
         /// Status of imported device identity
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public bool? Status { get; set; }
     
     }

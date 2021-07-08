@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph.Ediscovery
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ReviewSetQueryApplyTagsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ReviewSetQueryApplyTagsRequestBody
     {
     
         /// <summary>
         /// Gets or sets TagsToAdd.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tagsToAdd", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tagsToAdd")]
         public IEnumerable<Tag> TagsToAdd { get; set; }
     
         /// <summary>
         /// Gets or sets TagsToRemove.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tagsToRemove", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tagsToRemove")]
         public IEnumerable<Tag> TagsToRemove { get; set; }
     
     }

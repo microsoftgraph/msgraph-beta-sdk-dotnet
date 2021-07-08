@@ -12,46 +12,36 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Allowed Data Location.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AllowedDataLocation : Entity
     {
     
-		///<summary>
-		/// The AllowedDataLocation constructor
-		///</summary>
-        public AllowedDataLocation()
-        {
-            this.ODataType = "microsoft.graph.allowedDataLocation";
-        }
-	
         /// <summary>
         /// Gets or sets app id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appId")]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets domain.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domain", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("domain")]
         public string Domain { get; set; }
     
         /// <summary>
         /// Gets or sets is default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDefault")]
         public bool? IsDefault { get; set; }
     
         /// <summary>
         /// Gets or sets location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("location")]
         public string Location { get; set; }
     
     }

@@ -12,64 +12,55 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SecurityProviderStatus.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SecurityProviderStatus>))]
     public partial class SecurityProviderStatus
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecurityProviderStatus"/> class.
-        /// </summary>
-        public SecurityProviderStatus()
-        {
-            this.ODataType = "microsoft.graph.securityProviderStatus";
-        }
 
         /// <summary>
         /// Gets or sets enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
     
         /// <summary>
         /// Gets or sets endpoint.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpoint", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endpoint")]
         public string Endpoint { get; set; }
     
         /// <summary>
         /// Gets or sets provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provider", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provider")]
         public string Provider { get; set; }
     
         /// <summary>
         /// Gets or sets region.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "region", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("region")]
         public string Region { get; set; }
     
         /// <summary>
         /// Gets or sets vendor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vendor")]
         public string Vendor { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

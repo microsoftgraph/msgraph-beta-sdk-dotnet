@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsMetric using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsMetricToCreate">The UserExperienceAnalyticsMetric to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsMetric.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> CreateAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetricToCreate);        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsMetric using POST.
+        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> CreateAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetricToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsMetric using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object.
         /// </summary>
         /// <param name="userExperienceAnalyticsMetricToCreate">The UserExperienceAnalyticsMetric to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UserExperienceAnalyticsMetric.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> CreateAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetricToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsMetric.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> CreateResponseAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetricToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsMetric.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified UserExperienceAnalyticsMetric.
+        /// Deletes the specified UserExperienceAnalyticsMetric and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsMetric.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsMetric.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsMetric.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified UserExperienceAnalyticsMetric using PATCH.
+        /// Gets the specified UserExperienceAnalyticsMetric and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object.
         /// </summary>
-        /// <param name="userExperienceAnalyticsMetricToUpdate">The UserExperienceAnalyticsMetric to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsMetric.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> UpdateAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetricToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsMetric using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsMetric.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> UpdateAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetricToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> UpdateAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetricToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsMetric using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsMetricToUpdate">The UserExperienceAnalyticsMetric to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> UpdateResponseAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetricToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsMetric using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsMetricToUpdate">The UserExperienceAnalyticsMetric object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> PutAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetricToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsMetric using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsMetricToUpdate">The UserExperienceAnalyticsMetric object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> PutResponseAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetricToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

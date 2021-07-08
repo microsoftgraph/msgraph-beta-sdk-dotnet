@@ -12,86 +12,91 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSPkcs Certificate Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSPkcsCertificateProfile>))]
     public partial class MacOSPkcsCertificateProfile : MacOSCertificateProfileBase
     {
     
-		///<summary>
-		/// The MacOSPkcsCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSPkcsCertificateProfile constructor
+        ///</summary>
         public MacOSPkcsCertificateProfile()
         {
             this.ODataType = "microsoft.graph.macOSPkcsCertificateProfile";
         }
-	
+
         /// <summary>
         /// Gets or sets allow all apps access.
         /// AllowAllAppsAccess setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAllAppsAccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowAllAppsAccess")]
         public bool? AllowAllAppsAccess { get; set; }
     
         /// <summary>
         /// Gets or sets certificate store.
         /// Target store certificate. Possible values are: user, machine.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateStore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certificateStore")]
         public CertificateStore? CertificateStore { get; set; }
     
         /// <summary>
         /// Gets or sets certificate template name.
         /// PKCS certificate template name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateTemplateName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certificateTemplateName")]
         public string CertificateTemplateName { get; set; }
     
         /// <summary>
         /// Gets or sets certification authority.
         /// PKCS certification authority FQDN.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificationAuthority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certificationAuthority")]
         public string CertificationAuthority { get; set; }
     
         /// <summary>
         /// Gets or sets certification authority name.
         /// PKCS certification authority Name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificationAuthorityName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certificationAuthorityName")]
         public string CertificationAuthorityName { get; set; }
     
         /// <summary>
         /// Gets or sets custom subject alternative names.
         /// Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customSubjectAlternativeNames", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customSubjectAlternativeNames")]
         public IEnumerable<CustomSubjectAlternativeName> CustomSubjectAlternativeNames { get; set; }
     
         /// <summary>
         /// Gets or sets subject alternative name format string.
         /// Format string that defines the subject alternative name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameFormatString", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subjectAlternativeNameFormatString")]
         public string SubjectAlternativeNameFormatString { get; set; }
     
         /// <summary>
         /// Gets or sets subject name format string.
         /// Format string that defines the subject name. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectNameFormatString", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subjectNameFormatString")]
         public string SubjectNameFormatString { get; set; }
     
         /// <summary>
         /// Gets or sets managed device certificate states.
         /// Certificate state for devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceCertificateStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceCertificateStates")]
         public IMacOSPkcsCertificateProfileManagedDeviceCertificateStatesCollectionPage ManagedDeviceCertificateStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedDeviceCertificateStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedDeviceCertificateStates@odata.nextLink")]
+        public string ManagedDeviceCertificateStatesNextLink { get; set; }
     
     }
 }

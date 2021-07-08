@@ -12,29 +12,25 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Document.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Document : Entity
     {
     
-		///<summary>
-		/// The Document constructor
-		///</summary>
-        public Document()
-        {
-            this.ODataType = "microsoft.graph.document";
-        }
-	
         /// <summary>
         /// Gets or sets comments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("comments")]
         public IDocumentCommentsCollectionPage Comments { get; set; }
+
+        /// <summary>
+        /// Gets or sets commentsNextLink.
+        /// </summary>
+        [JsonPropertyName("comments@odata.nextLink")]
+        public string CommentsNextLink { get; set; }
     
     }
 }

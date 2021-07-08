@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SearchAlteration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SearchAlteration>))]
     public partial class SearchAlteration
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchAlteration"/> class.
-        /// </summary>
-        public SearchAlteration()
-        {
-            this.ODataType = "microsoft.graph.searchAlteration";
-        }
 
         /// <summary>
         /// Gets or sets alteredHighlightedQueryString.
         /// Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alteredHighlightedQueryString", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alteredHighlightedQueryString")]
         public string AlteredHighlightedQueryString { get; set; }
     
         /// <summary>
         /// Gets or sets alteredQueryString.
         /// Defines the altered query string with spelling correction.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alteredQueryString", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alteredQueryString")]
         public string AlteredQueryString { get; set; }
     
         /// <summary>
         /// Gets or sets alteredQueryTokens.
         /// Represents changed segments with respect to original query.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alteredQueryTokens", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alteredQueryTokens")]
         public IEnumerable<AlteredQueryToken> AlteredQueryTokens { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

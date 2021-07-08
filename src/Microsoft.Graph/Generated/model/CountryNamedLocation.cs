@@ -12,43 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Country Named Location.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<CountryNamedLocation>))]
     public partial class CountryNamedLocation : NamedLocation
     {
     
-		///<summary>
-		/// The CountryNamedLocation constructor
-		///</summary>
+        ///<summary>
+        /// The CountryNamedLocation constructor
+        ///</summary>
         public CountryNamedLocation()
         {
             this.ODataType = "microsoft.graph.countryNamedLocation";
         }
-	
+
         /// <summary>
         /// Gets or sets countries and regions.
         /// List of countries and/or regions in two-letter format specified by ISO 3166-2.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countriesAndRegions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countriesAndRegions")]
         public IEnumerable<string> CountriesAndRegions { get; set; }
     
         /// <summary>
         /// Gets or sets country lookup method.
         /// Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress and authenticatorAppGps.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryLookupMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countryLookupMethod")]
         public CountryLookupMethodType? CountryLookupMethod { get; set; }
     
         /// <summary>
         /// Gets or sets include unknown countries and regions.
         /// True if IP addresses that don't map to a country or region should be included in the named location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeUnknownCountriesAndRegions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeUnknownCountriesAndRegions")]
         public bool? IncludeUnknownCountriesAndRegions { get; set; }
     
     }

@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -12,83 +12,133 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Rbac Application.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RbacApplication : Entity
     {
     
-		///<summary>
-		/// The RbacApplication constructor
-		///</summary>
-        public RbacApplication()
-        {
-            this.ODataType = "microsoft.graph.rbacApplication";
-        }
-	
         /// <summary>
         /// Gets or sets resource namespaces.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceNamespaces", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceNamespaces")]
         public IRbacApplicationResourceNamespacesCollectionPage ResourceNamespaces { get; set; }
+
+        /// <summary>
+        /// Gets or sets resourceNamespacesNextLink.
+        /// </summary>
+        [JsonPropertyName("resourceNamespaces@odata.nextLink")]
+        public string ResourceNamespacesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role assignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleAssignments")]
         public IRbacApplicationRoleAssignmentsCollectionPage RoleAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleAssignments@odata.nextLink")]
+        public string RoleAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role definitions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleDefinitions")]
         public IRbacApplicationRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleDefinitions@odata.nextLink")]
+        public string RoleDefinitionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment approvals.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentApprovals", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleAssignmentApprovals")]
         public IRbacApplicationRoleAssignmentApprovalsCollectionPage RoleAssignmentApprovals { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleAssignmentApprovalsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleAssignmentApprovals@odata.nextLink")]
+        public string RoleAssignmentApprovalsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment schedule instances.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentScheduleInstances", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleAssignmentScheduleInstances")]
         public IRbacApplicationRoleAssignmentScheduleInstancesCollectionPage RoleAssignmentScheduleInstances { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleAssignmentScheduleInstancesNextLink.
+        /// </summary>
+        [JsonPropertyName("roleAssignmentScheduleInstances@odata.nextLink")]
+        public string RoleAssignmentScheduleInstancesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment schedule requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentScheduleRequests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleAssignmentScheduleRequests")]
         public IRbacApplicationRoleAssignmentScheduleRequestsCollectionPage RoleAssignmentScheduleRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleAssignmentScheduleRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleAssignmentScheduleRequests@odata.nextLink")]
+        public string RoleAssignmentScheduleRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment schedules.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentSchedules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleAssignmentSchedules")]
         public IRbacApplicationRoleAssignmentSchedulesCollectionPage RoleAssignmentSchedules { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleAssignmentSchedulesNextLink.
+        /// </summary>
+        [JsonPropertyName("roleAssignmentSchedules@odata.nextLink")]
+        public string RoleAssignmentSchedulesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role eligibility schedule instances.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleEligibilityScheduleInstances", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleEligibilityScheduleInstances")]
         public IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage RoleEligibilityScheduleInstances { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleEligibilityScheduleInstancesNextLink.
+        /// </summary>
+        [JsonPropertyName("roleEligibilityScheduleInstances@odata.nextLink")]
+        public string RoleEligibilityScheduleInstancesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role eligibility schedule requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleEligibilityScheduleRequests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleEligibilityScheduleRequests")]
         public IRbacApplicationRoleEligibilityScheduleRequestsCollectionPage RoleEligibilityScheduleRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleEligibilityScheduleRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleEligibilityScheduleRequests@odata.nextLink")]
+        public string RoleEligibilityScheduleRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role eligibility schedules.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleEligibilitySchedules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleEligibilitySchedules")]
         public IRbacApplicationRoleEligibilitySchedulesCollectionPage RoleEligibilitySchedules { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleEligibilitySchedulesNextLink.
+        /// </summary>
+        [JsonPropertyName("roleEligibilitySchedules@odata.nextLink")]
+        public string RoleEligibilitySchedulesNextLink { get; set; }
     
     }
 }

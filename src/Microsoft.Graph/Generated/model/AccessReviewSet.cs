@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -12,40 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Review Set.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessReviewSet : Entity
     {
     
-		///<summary>
-		/// The AccessReviewSet constructor
-		///</summary>
-        public AccessReviewSet()
-        {
-            this.ODataType = "microsoft.graph.accessReviewSet";
-        }
-	
         /// <summary>
         /// Gets or sets definitions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("definitions")]
         public IAccessReviewSetDefinitionsCollectionPage Definitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets definitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("definitions@odata.nextLink")]
+        public string DefinitionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets history definitions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "historyDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("historyDefinitions")]
         public IAccessReviewSetHistoryDefinitionsCollectionPage HistoryDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets historyDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("historyDefinitions@odata.nextLink")]
+        public string HistoryDefinitionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policy")]
         public AccessReviewPolicy Policy { get; set; }
     
     }

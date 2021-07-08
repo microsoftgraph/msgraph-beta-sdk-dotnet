@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets allowUnmanagedValues.
         /// Linked policy may append values which are not present in the template.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUnmanagedValues", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowUnmanagedValues")]
         public bool? AllowUnmanagedValues { get; set; }
     
         /// <summary>
         /// Gets or sets choiceSettingCollectionValueTemplate.
         /// Choice Setting Collection Value Template
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "choiceSettingCollectionValueTemplate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("choiceSettingCollectionValueTemplate")]
         public IEnumerable<DeviceManagementConfigurationChoiceSettingValueTemplate> ChoiceSettingCollectionValueTemplate { get; set; }
     
     }

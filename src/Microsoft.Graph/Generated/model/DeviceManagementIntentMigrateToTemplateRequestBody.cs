@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementIntentMigrateToTemplateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementIntentMigrateToTemplateRequestBody
     {
     
         /// <summary>
         /// Gets or sets NewTemplateId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newTemplateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("newTemplateId")]
         public string NewTemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets PreserveCustomValues.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preserveCustomValues", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("preserveCustomValues")]
         public bool PreserveCustomValues { get; set; }
     
     }

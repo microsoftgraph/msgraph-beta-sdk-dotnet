@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified EasEmailProfileConfigurationBase using POST.
         /// </summary>
         /// <param name="easEmailProfileConfigurationBaseToCreate">The EasEmailProfileConfigurationBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EasEmailProfileConfigurationBase.</returns>
-        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> CreateAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToCreate);        /// <summary>
-        /// Creates the specified EasEmailProfileConfigurationBase using POST.
+        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> CreateAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified EasEmailProfileConfigurationBase using POST and returns a <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> object.
         /// </summary>
         /// <param name="easEmailProfileConfigurationBaseToCreate">The EasEmailProfileConfigurationBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created EasEmailProfileConfigurationBase.</returns>
-        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> CreateAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EasEmailProfileConfigurationBase.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EasEmailProfileConfigurationBase>> CreateResponseAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified EasEmailProfileConfigurationBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified EasEmailProfileConfigurationBase.
+        /// Deletes the specified EasEmailProfileConfigurationBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EasEmailProfileConfigurationBase.</returns>
-        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EasEmailProfileConfigurationBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EasEmailProfileConfigurationBase.</returns>
-        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified EasEmailProfileConfigurationBase using PATCH.
+        /// Gets the specified EasEmailProfileConfigurationBase and returns a <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> object.
         /// </summary>
-        /// <param name="easEmailProfileConfigurationBaseToUpdate">The EasEmailProfileConfigurationBase to update.</param>
-        /// <returns>The updated EasEmailProfileConfigurationBase.</returns>
-        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> UpdateAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EasEmailProfileConfigurationBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EasEmailProfileConfigurationBase using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EasEmailProfileConfigurationBase.</returns>
-        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> UpdateAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> UpdateAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EasEmailProfileConfigurationBase using PATCH and returns a <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="easEmailProfileConfigurationBaseToUpdate">The EasEmailProfileConfigurationBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EasEmailProfileConfigurationBase>> UpdateResponseAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EasEmailProfileConfigurationBase using PUT.
+        /// </summary>
+        /// <param name="easEmailProfileConfigurationBaseToUpdate">The EasEmailProfileConfigurationBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> PutAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EasEmailProfileConfigurationBase using PUT and returns a <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="easEmailProfileConfigurationBaseToUpdate">The EasEmailProfileConfigurationBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EasEmailProfileConfigurationBase>> PutResponseAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

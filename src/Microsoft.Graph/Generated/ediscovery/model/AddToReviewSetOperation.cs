@@ -12,36 +12,34 @@ namespace Microsoft.Graph.Ediscovery
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Add To Review Set Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AddToReviewSetOperation : CaseOperation
     {
     
-		///<summary>
-		/// The AddToReviewSetOperation constructor
-		///</summary>
+        ///<summary>
+        /// The AddToReviewSetOperation constructor
+        ///</summary>
         public AddToReviewSetOperation()
         {
             this.ODataType = "microsoft.graph.ediscovery.addToReviewSetOperation";
         }
-	
+
         /// <summary>
         /// Gets or sets review set.
         /// The review set to which items matching the source collection query are added to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewSet", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewSet")]
         public ReviewSet ReviewSet { get; set; }
     
         /// <summary>
         /// Gets or sets source collection.
         /// The sourceCollection that items are being added from.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceCollection", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceCollection")]
         public SourceCollection SourceCollection { get; set; }
     
     }

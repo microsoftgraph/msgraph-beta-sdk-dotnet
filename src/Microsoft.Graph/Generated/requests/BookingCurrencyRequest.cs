@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified BookingCurrency using POST.
         /// </summary>
         /// <param name="bookingCurrencyToCreate">The BookingCurrency to create.</param>
-        /// <returns>The created BookingCurrency.</returns>
-        public System.Threading.Tasks.Task<BookingCurrency> CreateAsync(BookingCurrency bookingCurrencyToCreate)
-        {
-            return this.CreateAsync(bookingCurrencyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified BookingCurrency using POST.
-        /// </summary>
-        /// <param name="bookingCurrencyToCreate">The BookingCurrency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingCurrency.</returns>
-        public async System.Threading.Tasks.Task<BookingCurrency> CreateAsync(BookingCurrency bookingCurrencyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingCurrency> CreateAsync(BookingCurrency bookingCurrencyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<BookingCurrency>(bookingCurrencyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified BookingCurrency.
+        /// Creates the specified BookingCurrency using POST and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="bookingCurrencyToCreate">The BookingCurrency to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> CreateResponseAsync(BookingCurrency bookingCurrencyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<BookingCurrency>(bookingCurrencyToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<BookingCurrency>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified BookingCurrency.
+        /// Deletes the specified BookingCurrency and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The BookingCurrency.</returns>
-        public System.Threading.Tasks.Task<BookingCurrency> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingCurrency.</returns>
-        public async System.Threading.Tasks.Task<BookingCurrency> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingCurrency> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<BookingCurrency>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified BookingCurrency using PATCH.
+        /// Gets the specified BookingCurrency and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
         /// </summary>
-        /// <param name="bookingCurrencyToUpdate">The BookingCurrency to update.</param>
-        /// <returns>The updated BookingCurrency.</returns>
-        public System.Threading.Tasks.Task<BookingCurrency> UpdateAsync(BookingCurrency bookingCurrencyToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(bookingCurrencyToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<BookingCurrency>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingCurrency.</returns>
-        public async System.Threading.Tasks.Task<BookingCurrency> UpdateAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingCurrency> UpdateAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (bookingCurrencyToUpdate.AdditionalData != null)
-			{
-				if (bookingCurrencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					bookingCurrencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingCurrencyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (bookingCurrencyToUpdate.AdditionalData != null)
-            {
-                if (bookingCurrencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    bookingCurrencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingCurrencyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<BookingCurrency>(bookingCurrencyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified BookingCurrency using PATCH and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
+        /// </summary>
+        /// <param name="bookingCurrencyToUpdate">The BookingCurrency to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> UpdateResponseAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<BookingCurrency>(bookingCurrencyToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified BookingCurrency using PUT.
+        /// </summary>
+        /// <param name="bookingCurrencyToUpdate">The BookingCurrency object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<BookingCurrency> PutAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<BookingCurrency>(bookingCurrencyToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified BookingCurrency using PUT and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
+        /// </summary>
+        /// <param name="bookingCurrencyToUpdate">The BookingCurrency object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{BookingCurrency}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> PutResponseAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<BookingCurrency>(bookingCurrencyToUpdate, cancellationToken);
         }
 
         /// <summary>

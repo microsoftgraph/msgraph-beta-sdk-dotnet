@@ -12,41 +12,49 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Service Announcement.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ServiceAnnouncement : Entity
     {
     
-		///<summary>
-		/// The ServiceAnnouncement constructor
-		///</summary>
-        public ServiceAnnouncement()
-        {
-            this.ODataType = "microsoft.graph.serviceAnnouncement";
-        }
-	
         /// <summary>
         /// Gets or sets health overviews.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "healthOverviews", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("healthOverviews")]
         public IServiceAnnouncementHealthOverviewsCollectionPage HealthOverviews { get; set; }
+
+        /// <summary>
+        /// Gets or sets healthOverviewsNextLink.
+        /// </summary>
+        [JsonPropertyName("healthOverviews@odata.nextLink")]
+        public string HealthOverviewsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets issues.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issues", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("issues")]
         public IServiceAnnouncementIssuesCollectionPage Issues { get; set; }
+
+        /// <summary>
+        /// Gets or sets issuesNextLink.
+        /// </summary>
+        [JsonPropertyName("issues@odata.nextLink")]
+        public string IssuesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets messages.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("messages")]
         public IServiceAnnouncementMessagesCollectionPage Messages { get; set; }
+
+        /// <summary>
+        /// Gets or sets messagesNextLink.
+        /// </summary>
+        [JsonPropertyName("messages@odata.nextLink")]
+        public string MessagesNextLink { get; set; }
     
     }
 }

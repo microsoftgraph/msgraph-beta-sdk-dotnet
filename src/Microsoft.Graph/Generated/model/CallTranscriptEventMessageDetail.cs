@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CallTranscriptEventMessageDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CallTranscriptEventMessageDetail : EventMessageDetail
     {
         /// <summary>
@@ -32,19 +30,19 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets callId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callId")]
         public string CallId { get; set; }
     
         /// <summary>
         /// Gets or sets callTranscriptICalUid.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callTranscriptICalUid", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callTranscriptICalUid")]
         public string CallTranscriptICalUid { get; set; }
     
         /// <summary>
         /// Gets or sets meetingOrganizer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingOrganizer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meetingOrganizer")]
         public IdentitySet MeetingOrganizer { get; set; }
     
     }

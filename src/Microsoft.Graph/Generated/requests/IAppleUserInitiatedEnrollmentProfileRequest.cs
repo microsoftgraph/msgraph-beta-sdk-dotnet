@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AppleUserInitiatedEnrollmentProfile using POST.
         /// </summary>
         /// <param name="appleUserInitiatedEnrollmentProfileToCreate">The AppleUserInitiatedEnrollmentProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppleUserInitiatedEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> CreateAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfileToCreate);        /// <summary>
-        /// Creates the specified AppleUserInitiatedEnrollmentProfile using POST.
+        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> CreateAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified AppleUserInitiatedEnrollmentProfile using POST and returns a <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object.
         /// </summary>
         /// <param name="appleUserInitiatedEnrollmentProfileToCreate">The AppleUserInitiatedEnrollmentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AppleUserInitiatedEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> CreateAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AppleUserInitiatedEnrollmentProfile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleUserInitiatedEnrollmentProfile>> CreateResponseAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AppleUserInitiatedEnrollmentProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified AppleUserInitiatedEnrollmentProfile.
+        /// Deletes the specified AppleUserInitiatedEnrollmentProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AppleUserInitiatedEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppleUserInitiatedEnrollmentProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppleUserInitiatedEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified AppleUserInitiatedEnrollmentProfile using PATCH.
+        /// Gets the specified AppleUserInitiatedEnrollmentProfile and returns a <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object.
         /// </summary>
-        /// <param name="appleUserInitiatedEnrollmentProfileToUpdate">The AppleUserInitiatedEnrollmentProfile to update.</param>
-        /// <returns>The updated AppleUserInitiatedEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> UpdateAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfileToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleUserInitiatedEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AppleUserInitiatedEnrollmentProfile using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AppleUserInitiatedEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> UpdateAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> UpdateAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AppleUserInitiatedEnrollmentProfile using PATCH and returns a <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="appleUserInitiatedEnrollmentProfileToUpdate">The AppleUserInitiatedEnrollmentProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleUserInitiatedEnrollmentProfile>> UpdateResponseAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AppleUserInitiatedEnrollmentProfile using PUT.
+        /// </summary>
+        /// <param name="appleUserInitiatedEnrollmentProfileToUpdate">The AppleUserInitiatedEnrollmentProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> PutAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AppleUserInitiatedEnrollmentProfile using PUT and returns a <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="appleUserInitiatedEnrollmentProfileToUpdate">The AppleUserInitiatedEnrollmentProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleUserInitiatedEnrollmentProfile>> PutResponseAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

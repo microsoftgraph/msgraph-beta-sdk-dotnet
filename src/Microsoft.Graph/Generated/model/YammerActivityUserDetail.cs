@@ -12,88 +12,78 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Yammer Activity User Detail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class YammerActivityUserDetail : Entity
     {
     
-		///<summary>
-		/// The YammerActivityUserDetail constructor
-		///</summary>
-        public YammerActivityUserDetail()
-        {
-            this.ODataType = "microsoft.graph.yammerActivityUserDetail";
-        }
-	
         /// <summary>
         /// Gets or sets assigned products.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedProducts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedProducts")]
         public IEnumerable<string> AssignedProducts { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last activity date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastActivityDate")]
         public Date LastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets liked count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "likedCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("likedCount")]
         public Int64? LikedCount { get; set; }
     
         /// <summary>
         /// Gets or sets posted count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postedCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("postedCount")]
         public Int64? PostedCount { get; set; }
     
         /// <summary>
         /// Gets or sets read count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "readCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("readCount")]
         public Int64? ReadCount { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets state change date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stateChangeDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("stateChangeDate")]
         public Date StateChangeDate { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets user state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userState")]
         public string UserState { get; set; }
     
     }

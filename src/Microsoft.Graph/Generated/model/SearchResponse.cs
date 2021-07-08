@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SearchResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SearchResponse>))]
     public partial class SearchResponse
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchResponse"/> class.
-        /// </summary>
-        public SearchResponse()
-        {
-            this.ODataType = "microsoft.graph.searchResponse";
-        }
 
         /// <summary>
         /// Gets or sets queryAlterationResponse.
         /// Provides details of query alteration response for spelling correction.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queryAlterationResponse", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("queryAlterationResponse")]
         public AlterationResponse QueryAlterationResponse { get; set; }
     
         /// <summary>
         /// Gets or sets value.
         /// Represents results from a search query, and the terms used for the query.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public IEnumerable<SearchResultSet> Value { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

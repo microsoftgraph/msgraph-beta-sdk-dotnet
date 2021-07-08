@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AttributeMappingFunctionSchema using POST.
         /// </summary>
         /// <param name="attributeMappingFunctionSchemaToCreate">The AttributeMappingFunctionSchema to create.</param>
-        /// <returns>The created AttributeMappingFunctionSchema.</returns>
-        public System.Threading.Tasks.Task<AttributeMappingFunctionSchema> CreateAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToCreate)
-        {
-            return this.CreateAsync(attributeMappingFunctionSchemaToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AttributeMappingFunctionSchema using POST.
-        /// </summary>
-        /// <param name="attributeMappingFunctionSchemaToCreate">The AttributeMappingFunctionSchema to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AttributeMappingFunctionSchema.</returns>
-        public async System.Threading.Tasks.Task<AttributeMappingFunctionSchema> CreateAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AttributeMappingFunctionSchema> CreateAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AttributeMappingFunctionSchema>(attributeMappingFunctionSchemaToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AttributeMappingFunctionSchema.
+        /// Creates the specified AttributeMappingFunctionSchema using POST and returns a <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="attributeMappingFunctionSchemaToCreate">The AttributeMappingFunctionSchema to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AttributeMappingFunctionSchema>> CreateResponseAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AttributeMappingFunctionSchema>(attributeMappingFunctionSchemaToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AttributeMappingFunctionSchema>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AttributeMappingFunctionSchema.
+        /// Deletes the specified AttributeMappingFunctionSchema and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AttributeMappingFunctionSchema.</returns>
-        public System.Threading.Tasks.Task<AttributeMappingFunctionSchema> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AttributeMappingFunctionSchema.</returns>
-        public async System.Threading.Tasks.Task<AttributeMappingFunctionSchema> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AttributeMappingFunctionSchema> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AttributeMappingFunctionSchema>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AttributeMappingFunctionSchema using PATCH.
+        /// Gets the specified AttributeMappingFunctionSchema and returns a <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object.
         /// </summary>
-        /// <param name="attributeMappingFunctionSchemaToUpdate">The AttributeMappingFunctionSchema to update.</param>
-        /// <returns>The updated AttributeMappingFunctionSchema.</returns>
-        public System.Threading.Tasks.Task<AttributeMappingFunctionSchema> UpdateAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AttributeMappingFunctionSchema>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(attributeMappingFunctionSchemaToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AttributeMappingFunctionSchema>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AttributeMappingFunctionSchema.</returns>
-        public async System.Threading.Tasks.Task<AttributeMappingFunctionSchema> UpdateAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AttributeMappingFunctionSchema> UpdateAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (attributeMappingFunctionSchemaToUpdate.AdditionalData != null)
-			{
-				if (attributeMappingFunctionSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					attributeMappingFunctionSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, attributeMappingFunctionSchemaToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (attributeMappingFunctionSchemaToUpdate.AdditionalData != null)
-            {
-                if (attributeMappingFunctionSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    attributeMappingFunctionSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, attributeMappingFunctionSchemaToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AttributeMappingFunctionSchema>(attributeMappingFunctionSchemaToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AttributeMappingFunctionSchema using PATCH and returns a <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object.
+        /// </summary>
+        /// <param name="attributeMappingFunctionSchemaToUpdate">The AttributeMappingFunctionSchema to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AttributeMappingFunctionSchema>> UpdateResponseAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AttributeMappingFunctionSchema>(attributeMappingFunctionSchemaToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AttributeMappingFunctionSchema using PUT.
+        /// </summary>
+        /// <param name="attributeMappingFunctionSchemaToUpdate">The AttributeMappingFunctionSchema object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AttributeMappingFunctionSchema> PutAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AttributeMappingFunctionSchema>(attributeMappingFunctionSchemaToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AttributeMappingFunctionSchema using PUT and returns a <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object.
+        /// </summary>
+        /// <param name="attributeMappingFunctionSchemaToUpdate">The AttributeMappingFunctionSchema object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AttributeMappingFunctionSchema}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AttributeMappingFunctionSchema>> PutResponseAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AttributeMappingFunctionSchema>(attributeMappingFunctionSchemaToUpdate, cancellationToken);
         }
 
         /// <summary>

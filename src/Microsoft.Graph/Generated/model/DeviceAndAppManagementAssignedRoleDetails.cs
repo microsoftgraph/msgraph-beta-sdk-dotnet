@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceAndAppManagementAssignedRoleDetails.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceAndAppManagementAssignedRoleDetails>))]
     public partial class DeviceAndAppManagementAssignedRoleDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceAndAppManagementAssignedRoleDetails"/> class.
-        /// </summary>
-        public DeviceAndAppManagementAssignedRoleDetails()
-        {
-            this.ODataType = "microsoft.graph.deviceAndAppManagementAssignedRoleDetails";
-        }
 
         /// <summary>
         /// Gets or sets roleAssignmentIds.
         /// Role Assignment IDs for the specifc Role Assignments assigned to a user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleAssignmentIds")]
         public IEnumerable<string> RoleAssignmentIds { get; set; }
     
         /// <summary>
         /// Gets or sets roleDefinitionIds.
         /// Role Definition IDs for the specifc Role Definitions assigned to a user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleDefinitionIds")]
         public IEnumerable<string> RoleDefinitionIds { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

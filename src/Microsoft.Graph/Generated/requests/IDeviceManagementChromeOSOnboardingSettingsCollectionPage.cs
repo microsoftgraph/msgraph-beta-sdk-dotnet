@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementChromeOSOnboardingSettingsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementChromeOSOnboardingSettingsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementChromeOSOnboardingSettingsCollectionPage>))]
     public interface IDeviceManagementChromeOSOnboardingSettingsCollectionPage : ICollectionPage<ChromeOSOnboardingSettings>
     {
         /// <summary>

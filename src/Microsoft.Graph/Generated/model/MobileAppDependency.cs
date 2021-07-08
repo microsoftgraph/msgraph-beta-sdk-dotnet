@@ -12,43 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mobile App Dependency.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MobileAppDependency>))]
     public partial class MobileAppDependency : MobileAppRelationship
     {
     
-		///<summary>
-		/// The MobileAppDependency constructor
-		///</summary>
+        ///<summary>
+        /// The MobileAppDependency constructor
+        ///</summary>
         public MobileAppDependency()
         {
             this.ODataType = "microsoft.graph.mobileAppDependency";
         }
-	
+
         /// <summary>
         /// Gets or sets dependency type.
         /// The type of dependency relationship between the parent and child apps. Possible values are: detect, autoInstall.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dependencyType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dependencyType")]
         public MobileAppDependencyType? DependencyType { get; set; }
     
         /// <summary>
         /// Gets or sets dependent app count.
         /// The total number of apps that directly or indirectly depend on the parent app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dependentAppCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dependentAppCount")]
         public Int32? DependentAppCount { get; set; }
     
         /// <summary>
         /// Gets or sets depends on app count.
         /// The total number of apps the child app directly or indirectly depends on.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dependsOnAppCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dependsOnAppCount")]
         public Int32? DependsOnAppCount { get; set; }
     
     }

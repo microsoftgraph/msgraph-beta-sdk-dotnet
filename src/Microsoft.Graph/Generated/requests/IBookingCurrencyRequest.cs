@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified BookingCurrency using POST.
         /// </summary>
         /// <param name="bookingCurrencyToCreate">The BookingCurrency to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingCurrency.</returns>
-        System.Threading.Tasks.Task<BookingCurrency> CreateAsync(BookingCurrency bookingCurrencyToCreate);        /// <summary>
-        /// Creates the specified BookingCurrency using POST.
+        System.Threading.Tasks.Task<BookingCurrency> CreateAsync(BookingCurrency bookingCurrencyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified BookingCurrency using POST and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
         /// </summary>
         /// <param name="bookingCurrencyToCreate">The BookingCurrency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created BookingCurrency.</returns>
-        System.Threading.Tasks.Task<BookingCurrency> CreateAsync(BookingCurrency bookingCurrencyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified BookingCurrency.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> CreateResponseAsync(BookingCurrency bookingCurrencyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified BookingCurrency.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified BookingCurrency.
+        /// Deletes the specified BookingCurrency and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The BookingCurrency.</returns>
-        System.Threading.Tasks.Task<BookingCurrency> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified BookingCurrency.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingCurrency.</returns>
-        System.Threading.Tasks.Task<BookingCurrency> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<BookingCurrency> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified BookingCurrency using PATCH.
+        /// Gets the specified BookingCurrency and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
         /// </summary>
-        /// <param name="bookingCurrencyToUpdate">The BookingCurrency to update.</param>
-        /// <returns>The updated BookingCurrency.</returns>
-        System.Threading.Tasks.Task<BookingCurrency> UpdateAsync(BookingCurrency bookingCurrencyToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified BookingCurrency using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingCurrency.</returns>
-        System.Threading.Tasks.Task<BookingCurrency> UpdateAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<BookingCurrency> UpdateAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified BookingCurrency using PATCH and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
+        /// </summary>
+        /// <param name="bookingCurrencyToUpdate">The BookingCurrency to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> UpdateResponseAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified BookingCurrency using PUT.
+        /// </summary>
+        /// <param name="bookingCurrencyToUpdate">The BookingCurrency object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<BookingCurrency> PutAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified BookingCurrency using PUT and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
+        /// </summary>
+        /// <param name="bookingCurrencyToUpdate">The BookingCurrency object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{BookingCurrency}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> PutResponseAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

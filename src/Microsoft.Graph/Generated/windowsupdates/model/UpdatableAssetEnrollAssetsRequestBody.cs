@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph.WindowsUpdates
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UpdatableAssetEnrollAssetsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UpdatableAssetEnrollAssetsRequestBody
     {
     
         /// <summary>
         /// Gets or sets UpdateCategory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateCategory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("updateCategory")]
         public UpdateCategory UpdateCategory { get; set; }
     
         /// <summary>
         /// Gets or sets Assets.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assets")]
         public IEnumerable<UpdatableAsset> Assets { get; set; }
     
     }

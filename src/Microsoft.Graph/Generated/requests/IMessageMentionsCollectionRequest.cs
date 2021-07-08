@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IMessageMentionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Mention to the collection via POST.
-        /// </summary>
-        /// <param name="mention">The Mention to add.</param>
-        /// <returns>The created Mention.</returns>
-        System.Threading.Tasks.Task<Mention> AddAsync(Mention mention);
-
         /// <summary>
         /// Adds the specified Mention to the collection via POST.
         /// </summary>
         /// <param name="mention">The Mention to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Mention.</returns>
-        System.Threading.Tasks.Task<Mention> AddAsync(Mention mention, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Mention> AddAsync(Mention mention, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Mention to the collection via POST and returns a <see cref="GraphResponse{Mention}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMessageMentionsCollectionPage> GetAsync();
+        /// <param name="mention">The Mention to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Mention}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Mention>> AddResponseAsync(Mention mention, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMessageMentionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IMessageMentionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MessageMentionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MessageMentionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MessageMentionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

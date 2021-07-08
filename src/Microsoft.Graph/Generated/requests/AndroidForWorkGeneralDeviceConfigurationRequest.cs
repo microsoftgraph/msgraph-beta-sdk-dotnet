@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidForWorkGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkGeneralDeviceConfigurationToCreate">The AndroidForWorkGeneralDeviceConfiguration to create.</param>
-        /// <returns>The created AndroidForWorkGeneralDeviceConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> CreateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToCreate)
-        {
-            return this.CreateAsync(androidForWorkGeneralDeviceConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidForWorkGeneralDeviceConfiguration using POST.
-        /// </summary>
-        /// <param name="androidForWorkGeneralDeviceConfigurationToCreate">The AndroidForWorkGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkGeneralDeviceConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> CreateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> CreateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidForWorkGeneralDeviceConfiguration>(androidForWorkGeneralDeviceConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidForWorkGeneralDeviceConfiguration.
+        /// Creates the specified AndroidForWorkGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidForWorkGeneralDeviceConfigurationToCreate">The AndroidForWorkGeneralDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGeneralDeviceConfiguration>> CreateResponseAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkGeneralDeviceConfiguration>(androidForWorkGeneralDeviceConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidForWorkGeneralDeviceConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidForWorkGeneralDeviceConfiguration.
+        /// Deletes the specified AndroidForWorkGeneralDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidForWorkGeneralDeviceConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkGeneralDeviceConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidForWorkGeneralDeviceConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidForWorkGeneralDeviceConfiguration using PATCH.
+        /// Gets the specified AndroidForWorkGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object.
         /// </summary>
-        /// <param name="androidForWorkGeneralDeviceConfigurationToUpdate">The AndroidForWorkGeneralDeviceConfiguration to update.</param>
-        /// <returns>The updated AndroidForWorkGeneralDeviceConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> UpdateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(androidForWorkGeneralDeviceConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkGeneralDeviceConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkGeneralDeviceConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> UpdateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> UpdateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidForWorkGeneralDeviceConfigurationToUpdate.AdditionalData != null)
-			{
-				if (androidForWorkGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidForWorkGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkGeneralDeviceConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidForWorkGeneralDeviceConfigurationToUpdate.AdditionalData != null)
-            {
-                if (androidForWorkGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidForWorkGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkGeneralDeviceConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidForWorkGeneralDeviceConfiguration>(androidForWorkGeneralDeviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkGeneralDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkGeneralDeviceConfigurationToUpdate">The AndroidForWorkGeneralDeviceConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGeneralDeviceConfiguration>> UpdateResponseAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkGeneralDeviceConfiguration>(androidForWorkGeneralDeviceConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkGeneralDeviceConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidForWorkGeneralDeviceConfigurationToUpdate">The AndroidForWorkGeneralDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> PutAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidForWorkGeneralDeviceConfiguration>(androidForWorkGeneralDeviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkGeneralDeviceConfiguration using PUT and returns a <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkGeneralDeviceConfigurationToUpdate">The AndroidForWorkGeneralDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGeneralDeviceConfiguration>> PutResponseAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkGeneralDeviceConfiguration>(androidForWorkGeneralDeviceConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

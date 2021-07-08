@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementApplicabilityRuleDeviceMode.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementApplicabilityRuleDeviceMode>))]
     public partial class DeviceManagementApplicabilityRuleDeviceMode
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementApplicabilityRuleDeviceMode"/> class.
-        /// </summary>
-        public DeviceManagementApplicabilityRuleDeviceMode()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementApplicabilityRuleDeviceMode";
-        }
 
         /// <summary>
         /// Gets or sets deviceMode.
         /// Applicability rule for device mode. Possible values are: standardConfiguration, sModeConfiguration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceMode")]
         public Windows10DeviceModeType? DeviceMode { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// Name for object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets ruleType.
         /// Applicability Rule type. Possible values are: include, exclude.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ruleType")]
         public DeviceManagementApplicabilityRuleType? RuleType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

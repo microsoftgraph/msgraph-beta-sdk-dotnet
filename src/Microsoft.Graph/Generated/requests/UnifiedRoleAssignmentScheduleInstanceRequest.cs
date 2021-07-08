@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRoleAssignmentScheduleInstance using POST.
         /// </summary>
         /// <param name="unifiedRoleAssignmentScheduleInstanceToCreate">The UnifiedRoleAssignmentScheduleInstance to create.</param>
-        /// <returns>The created UnifiedRoleAssignmentScheduleInstance.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> CreateAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstanceToCreate)
-        {
-            return this.CreateAsync(unifiedRoleAssignmentScheduleInstanceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnifiedRoleAssignmentScheduleInstance using POST.
-        /// </summary>
-        /// <param name="unifiedRoleAssignmentScheduleInstanceToCreate">The UnifiedRoleAssignmentScheduleInstance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleAssignmentScheduleInstance.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> CreateAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstanceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> CreateAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstanceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UnifiedRoleAssignmentScheduleInstance>(unifiedRoleAssignmentScheduleInstanceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UnifiedRoleAssignmentScheduleInstance.
+        /// Creates the specified UnifiedRoleAssignmentScheduleInstance using POST and returns a <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="unifiedRoleAssignmentScheduleInstanceToCreate">The UnifiedRoleAssignmentScheduleInstance to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentScheduleInstance>> CreateResponseAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstanceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleAssignmentScheduleInstance>(unifiedRoleAssignmentScheduleInstanceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UnifiedRoleAssignmentScheduleInstance>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UnifiedRoleAssignmentScheduleInstance.
+        /// Deletes the specified UnifiedRoleAssignmentScheduleInstance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UnifiedRoleAssignmentScheduleInstance.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleAssignmentScheduleInstance.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UnifiedRoleAssignmentScheduleInstance>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UnifiedRoleAssignmentScheduleInstance using PATCH.
+        /// Gets the specified UnifiedRoleAssignmentScheduleInstance and returns a <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object.
         /// </summary>
-        /// <param name="unifiedRoleAssignmentScheduleInstanceToUpdate">The UnifiedRoleAssignmentScheduleInstance to update.</param>
-        /// <returns>The updated UnifiedRoleAssignmentScheduleInstance.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> UpdateAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstanceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentScheduleInstance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(unifiedRoleAssignmentScheduleInstanceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleAssignmentScheduleInstance>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleAssignmentScheduleInstance.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> UpdateAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstanceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> UpdateAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (unifiedRoleAssignmentScheduleInstanceToUpdate.AdditionalData != null)
-			{
-				if (unifiedRoleAssignmentScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unifiedRoleAssignmentScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleAssignmentScheduleInstanceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unifiedRoleAssignmentScheduleInstanceToUpdate.AdditionalData != null)
-            {
-                if (unifiedRoleAssignmentScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unifiedRoleAssignmentScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleAssignmentScheduleInstanceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UnifiedRoleAssignmentScheduleInstance>(unifiedRoleAssignmentScheduleInstanceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleAssignmentScheduleInstance using PATCH and returns a <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleAssignmentScheduleInstanceToUpdate">The UnifiedRoleAssignmentScheduleInstance to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentScheduleInstance>> UpdateResponseAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleAssignmentScheduleInstance>(unifiedRoleAssignmentScheduleInstanceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleAssignmentScheduleInstance using PUT.
+        /// </summary>
+        /// <param name="unifiedRoleAssignmentScheduleInstanceToUpdate">The UnifiedRoleAssignmentScheduleInstance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> PutAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UnifiedRoleAssignmentScheduleInstance>(unifiedRoleAssignmentScheduleInstanceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleAssignmentScheduleInstance using PUT and returns a <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleAssignmentScheduleInstanceToUpdate">The UnifiedRoleAssignmentScheduleInstance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentScheduleInstance>> PutResponseAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleAssignmentScheduleInstance>(unifiedRoleAssignmentScheduleInstanceToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -12,57 +12,47 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Side Loading Key.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SideLoadingKey : Entity
     {
     
-		///<summary>
-		/// The SideLoadingKey constructor
-		///</summary>
-        public SideLoadingKey()
-        {
-            this.ODataType = "microsoft.graph.sideLoadingKey";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Side Loading Key description displayed to the ITPro Admins..
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Side Loading Key Name displayed to the ITPro Admins.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last updated date time.
         /// Side Loading Key Last Updated Date displayed to the ITPro Admins.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUpdatedDateTime")]
         public string LastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets total activation.
         /// Side Loading Key Total Activation displayed to the ITPro Admins.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalActivation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalActivation")]
         public Int32? TotalActivation { get; set; }
     
         /// <summary>
         /// Gets or sets value.
         /// Side Loading Key Value, it is 5x5 value, seperated by hiphens.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public string Value { get; set; }
     
     }

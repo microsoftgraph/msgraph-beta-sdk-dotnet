@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PermissionRevokeGrantsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PermissionRevokeGrantsRequestBody
     {
     
         /// <summary>
         /// Gets or sets Grantees.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grantees", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("grantees")]
         public IEnumerable<DriveRecipient> Grantees { get; set; }
     
     }

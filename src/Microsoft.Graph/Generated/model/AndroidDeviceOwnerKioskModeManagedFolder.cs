@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AndroidDeviceOwnerKioskModeManagedFolder.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerKioskModeManagedFolder>))]
     public partial class AndroidDeviceOwnerKioskModeManagedFolder
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AndroidDeviceOwnerKioskModeManagedFolder"/> class.
-        /// </summary>
-        public AndroidDeviceOwnerKioskModeManagedFolder()
-        {
-            this.ODataType = "microsoft.graph.androidDeviceOwnerKioskModeManagedFolder";
-        }
 
         /// <summary>
         /// Gets or sets folderIdentifier.
         /// Unique identifier for the folder
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "folderIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("folderIdentifier")]
         public string FolderIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets folderName.
         /// Display name for the folder
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "folderName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("folderName")]
         public string FolderName { get; set; }
     
         /// <summary>
         /// Gets or sets items.
         /// Items to be added to managed folder. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("items")]
         public IEnumerable<AndroidDeviceOwnerKioskModeFolderItem> Items { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

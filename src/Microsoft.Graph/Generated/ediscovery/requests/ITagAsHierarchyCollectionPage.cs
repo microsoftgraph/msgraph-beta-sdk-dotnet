@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph.Ediscovery
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ITagAsHierarchyCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.InterfaceConverter<TagAsHierarchyCollectionPage>))]
+    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<TagAsHierarchyCollectionPage>))]
     public interface ITagAsHierarchyCollectionPage : Microsoft.Graph.ICollectionPage<Tag>
     {
         /// <summary>

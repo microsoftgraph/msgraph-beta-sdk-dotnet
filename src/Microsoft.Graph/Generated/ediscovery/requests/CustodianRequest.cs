@@ -39,34 +39,28 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified Custodian using POST.
         /// </summary>
         /// <param name="custodianToCreate">The Custodian to create.</param>
-        /// <returns>The created Custodian.</returns>
-        public System.Threading.Tasks.Task<Custodian> CreateAsync(Custodian custodianToCreate)
-        {
-            return this.CreateAsync(custodianToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Custodian using POST.
-        /// </summary>
-        /// <param name="custodianToCreate">The Custodian to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Custodian.</returns>
-        public async System.Threading.Tasks.Task<Custodian> CreateAsync(Custodian custodianToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Custodian> CreateAsync(Custodian custodianToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Custodian>(custodianToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Custodian.
+        /// Creates the specified Custodian using POST and returns a <see cref="GraphResponse{Custodian}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="custodianToCreate">The Custodian to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Custodian}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Custodian>> CreateResponseAsync(Custodian custodianToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Custodian>(custodianToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Custodian>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Custodian.
+        /// Deletes the specified Custodian and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Custodian.</returns>
-        public System.Threading.Tasks.Task<Custodian> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Custodian.</returns>
-        public async System.Threading.Tasks.Task<Custodian> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Custodian> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Custodian>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Custodian using PATCH.
+        /// Gets the specified Custodian and returns a <see cref="GraphResponse{Custodian}"/> object.
         /// </summary>
-        /// <param name="custodianToUpdate">The Custodian to update.</param>
-        /// <returns>The updated Custodian.</returns>
-        public System.Threading.Tasks.Task<Custodian> UpdateAsync(Custodian custodianToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Custodian}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Custodian>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(custodianToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Custodian>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Custodian.</returns>
-        public async System.Threading.Tasks.Task<Custodian> UpdateAsync(Custodian custodianToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Custodian> UpdateAsync(Custodian custodianToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (custodianToUpdate.AdditionalData != null)
-			{
-				if (custodianToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					custodianToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, custodianToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (custodianToUpdate.AdditionalData != null)
-            {
-                if (custodianToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    custodianToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, custodianToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Custodian>(custodianToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Custodian using PATCH and returns a <see cref="GraphResponse{Custodian}"/> object.
+        /// </summary>
+        /// <param name="custodianToUpdate">The Custodian to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Custodian}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Custodian>> UpdateResponseAsync(Custodian custodianToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Custodian>(custodianToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Custodian using PUT.
+        /// </summary>
+        /// <param name="custodianToUpdate">The Custodian object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Custodian> PutAsync(Custodian custodianToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Custodian>(custodianToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Custodian using PUT and returns a <see cref="GraphResponse{Custodian}"/> object.
+        /// </summary>
+        /// <param name="custodianToUpdate">The Custodian object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Custodian}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Custodian>> PutResponseAsync(Custodian custodianToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Custodian>(custodianToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,55 +244,25 @@ namespace Microsoft.Graph.Ediscovery
         private void InitializeCollectionProperties(Custodian custodianToInitialize)
         {
 
-            if (custodianToInitialize != null && custodianToInitialize.AdditionalData != null)
+            if (custodianToInitialize != null)
             {
-
                 if (custodianToInitialize.SiteSources != null && custodianToInitialize.SiteSources.CurrentPage != null)
                 {
+                    custodianToInitialize.SiteSources.InitializeNextPageRequest(this.Client, custodianToInitialize.SiteSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     custodianToInitialize.SiteSources.AdditionalData = custodianToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    custodianToInitialize.AdditionalData.TryGetValue("siteSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        custodianToInitialize.SiteSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (custodianToInitialize.UnifiedGroupSources != null && custodianToInitialize.UnifiedGroupSources.CurrentPage != null)
                 {
+                    custodianToInitialize.UnifiedGroupSources.InitializeNextPageRequest(this.Client, custodianToInitialize.UnifiedGroupSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     custodianToInitialize.UnifiedGroupSources.AdditionalData = custodianToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    custodianToInitialize.AdditionalData.TryGetValue("unifiedGroupSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        custodianToInitialize.UnifiedGroupSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (custodianToInitialize.UserSources != null && custodianToInitialize.UserSources.CurrentPage != null)
                 {
+                    custodianToInitialize.UserSources.InitializeNextPageRequest(this.Client, custodianToInitialize.UserSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     custodianToInitialize.UserSources.AdditionalData = custodianToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    custodianToInitialize.AdditionalData.TryGetValue("userSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        custodianToInitialize.UserSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPlannerRosterMembersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PlannerRosterMember to the collection via POST.
-        /// </summary>
-        /// <param name="plannerRosterMember">The PlannerRosterMember to add.</param>
-        /// <returns>The created PlannerRosterMember.</returns>
-        System.Threading.Tasks.Task<PlannerRosterMember> AddAsync(PlannerRosterMember plannerRosterMember);
-
         /// <summary>
         /// Adds the specified PlannerRosterMember to the collection via POST.
         /// </summary>
         /// <param name="plannerRosterMember">The PlannerRosterMember to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerRosterMember.</returns>
-        System.Threading.Tasks.Task<PlannerRosterMember> AddAsync(PlannerRosterMember plannerRosterMember, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PlannerRosterMember> AddAsync(PlannerRosterMember plannerRosterMember, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PlannerRosterMember to the collection via POST and returns a <see cref="GraphResponse{PlannerRosterMember}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPlannerRosterMembersCollectionPage> GetAsync();
+        /// <param name="plannerRosterMember">The PlannerRosterMember to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerRosterMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerRosterMember>> AddResponseAsync(PlannerRosterMember plannerRosterMember, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPlannerRosterMembersCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IPlannerRosterMembersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PlannerRosterMembersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerRosterMembersCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerRosterMembersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

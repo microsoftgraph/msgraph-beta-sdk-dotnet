@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage>))]
     public interface IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage : ICollectionPage<MicrosoftTunnelServerLogCollectionResponse>
     {
         /// <summary>

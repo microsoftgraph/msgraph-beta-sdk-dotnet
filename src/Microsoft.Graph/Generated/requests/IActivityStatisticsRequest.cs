@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ActivityStatistics using POST.
         /// </summary>
         /// <param name="activityStatisticsToCreate">The ActivityStatistics to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ActivityStatistics.</returns>
-        System.Threading.Tasks.Task<ActivityStatistics> CreateAsync(ActivityStatistics activityStatisticsToCreate);        /// <summary>
-        /// Creates the specified ActivityStatistics using POST.
+        System.Threading.Tasks.Task<ActivityStatistics> CreateAsync(ActivityStatistics activityStatisticsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified ActivityStatistics using POST and returns a <see cref="GraphResponse{ActivityStatistics}"/> object.
         /// </summary>
         /// <param name="activityStatisticsToCreate">The ActivityStatistics to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ActivityStatistics.</returns>
-        System.Threading.Tasks.Task<ActivityStatistics> CreateAsync(ActivityStatistics activityStatisticsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ActivityStatistics.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ActivityStatistics}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityStatistics>> CreateResponseAsync(ActivityStatistics activityStatisticsToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ActivityStatistics.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified ActivityStatistics.
+        /// Deletes the specified ActivityStatistics and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ActivityStatistics.</returns>
-        System.Threading.Tasks.Task<ActivityStatistics> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ActivityStatistics.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ActivityStatistics.</returns>
-        System.Threading.Tasks.Task<ActivityStatistics> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ActivityStatistics> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified ActivityStatistics using PATCH.
+        /// Gets the specified ActivityStatistics and returns a <see cref="GraphResponse{ActivityStatistics}"/> object.
         /// </summary>
-        /// <param name="activityStatisticsToUpdate">The ActivityStatistics to update.</param>
-        /// <returns>The updated ActivityStatistics.</returns>
-        System.Threading.Tasks.Task<ActivityStatistics> UpdateAsync(ActivityStatistics activityStatisticsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityStatistics}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityStatistics>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ActivityStatistics using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ActivityStatistics.</returns>
-        System.Threading.Tasks.Task<ActivityStatistics> UpdateAsync(ActivityStatistics activityStatisticsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ActivityStatistics> UpdateAsync(ActivityStatistics activityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ActivityStatistics using PATCH and returns a <see cref="GraphResponse{ActivityStatistics}"/> object.
+        /// </summary>
+        /// <param name="activityStatisticsToUpdate">The ActivityStatistics to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ActivityStatistics}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityStatistics>> UpdateResponseAsync(ActivityStatistics activityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ActivityStatistics using PUT.
+        /// </summary>
+        /// <param name="activityStatisticsToUpdate">The ActivityStatistics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ActivityStatistics> PutAsync(ActivityStatistics activityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ActivityStatistics using PUT and returns a <see cref="GraphResponse{ActivityStatistics}"/> object.
+        /// </summary>
+        /// <param name="activityStatisticsToUpdate">The ActivityStatistics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ActivityStatistics}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityStatistics>> PutResponseAsync(ActivityStatistics activityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,154 +12,145 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PrinterDocumentConfiguration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PrinterDocumentConfiguration>))]
     public partial class PrinterDocumentConfiguration
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrinterDocumentConfiguration"/> class.
-        /// </summary>
-        public PrinterDocumentConfiguration()
-        {
-            this.ODataType = "microsoft.graph.printerDocumentConfiguration";
-        }
 
         /// <summary>
         /// Gets or sets collate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("collate")]
         public bool? Collate { get; set; }
     
         /// <summary>
         /// Gets or sets colorMode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colorMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("colorMode")]
         public PrintColorMode? ColorMode { get; set; }
     
         /// <summary>
         /// Gets or sets copies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "copies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("copies")]
         public Int32? Copies { get; set; }
     
         /// <summary>
         /// Gets or sets dpi.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dpi", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dpi")]
         public Int32? Dpi { get; set; }
     
         /// <summary>
         /// Gets or sets duplexMode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duplexMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("duplexMode")]
         public PrintDuplexMode? DuplexMode { get; set; }
     
         /// <summary>
         /// Gets or sets feedDirection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedDirection", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("feedDirection")]
         public PrinterFeedDirection? FeedDirection { get; set; }
     
         /// <summary>
         /// Gets or sets feedOrientation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedOrientation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("feedOrientation")]
         public PrinterFeedOrientation? FeedOrientation { get; set; }
     
         /// <summary>
         /// Gets or sets finishings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "finishings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("finishings")]
         public IEnumerable<PrintFinishing> Finishings { get; set; }
     
         /// <summary>
         /// Gets or sets fitPdfToPage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fitPdfToPage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fitPdfToPage")]
         public bool? FitPdfToPage { get; set; }
     
         /// <summary>
         /// Gets or sets inputBin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inputBin", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inputBin")]
         public string InputBin { get; set; }
     
         /// <summary>
         /// Gets or sets margin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "margin", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("margin")]
         public PrintMargin Margin { get; set; }
     
         /// <summary>
         /// Gets or sets mediaSize.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaSize", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mediaSize")]
         public string MediaSize { get; set; }
     
         /// <summary>
         /// Gets or sets mediaType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mediaType")]
         public string MediaType { get; set; }
     
         /// <summary>
         /// Gets or sets multipageLayout.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multipageLayout", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("multipageLayout")]
         public PrintMultipageLayout? MultipageLayout { get; set; }
     
         /// <summary>
         /// Gets or sets orientation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orientation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("orientation")]
         public PrintOrientation? Orientation { get; set; }
     
         /// <summary>
         /// Gets or sets outputBin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outputBin", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outputBin")]
         public string OutputBin { get; set; }
     
         /// <summary>
         /// Gets or sets pageRanges.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pageRanges", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pageRanges")]
         public IEnumerable<IntegerRange> PageRanges { get; set; }
     
         /// <summary>
         /// Gets or sets pagesPerSheet.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pagesPerSheet", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pagesPerSheet")]
         public Int32? PagesPerSheet { get; set; }
     
         /// <summary>
         /// Gets or sets quality.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quality", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("quality")]
         public PrintQuality? Quality { get; set; }
     
         /// <summary>
         /// Gets or sets scaling.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scaling", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scaling")]
         public PrintScaling? Scaling { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

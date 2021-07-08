@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppIntentAndState using POST.
         /// </summary>
         /// <param name="mobileAppIntentAndStateToCreate">The MobileAppIntentAndState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppIntentAndState.</returns>
-        System.Threading.Tasks.Task<MobileAppIntentAndState> CreateAsync(MobileAppIntentAndState mobileAppIntentAndStateToCreate);        /// <summary>
-        /// Creates the specified MobileAppIntentAndState using POST.
+        System.Threading.Tasks.Task<MobileAppIntentAndState> CreateAsync(MobileAppIntentAndState mobileAppIntentAndStateToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified MobileAppIntentAndState using POST and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object.
         /// </summary>
         /// <param name="mobileAppIntentAndStateToCreate">The MobileAppIntentAndState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MobileAppIntentAndState.</returns>
-        System.Threading.Tasks.Task<MobileAppIntentAndState> CreateAsync(MobileAppIntentAndState mobileAppIntentAndStateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MobileAppIntentAndState.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> CreateResponseAsync(MobileAppIntentAndState mobileAppIntentAndStateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MobileAppIntentAndState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified MobileAppIntentAndState.
+        /// Deletes the specified MobileAppIntentAndState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MobileAppIntentAndState.</returns>
-        System.Threading.Tasks.Task<MobileAppIntentAndState> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MobileAppIntentAndState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppIntentAndState.</returns>
-        System.Threading.Tasks.Task<MobileAppIntentAndState> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppIntentAndState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified MobileAppIntentAndState using PATCH.
+        /// Gets the specified MobileAppIntentAndState and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object.
         /// </summary>
-        /// <param name="mobileAppIntentAndStateToUpdate">The MobileAppIntentAndState to update.</param>
-        /// <returns>The updated MobileAppIntentAndState.</returns>
-        System.Threading.Tasks.Task<MobileAppIntentAndState> UpdateAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MobileAppIntentAndState using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppIntentAndState.</returns>
-        System.Threading.Tasks.Task<MobileAppIntentAndState> UpdateAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppIntentAndState> UpdateAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MobileAppIntentAndState using PATCH and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object.
+        /// </summary>
+        /// <param name="mobileAppIntentAndStateToUpdate">The MobileAppIntentAndState to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> UpdateResponseAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MobileAppIntentAndState using PUT.
+        /// </summary>
+        /// <param name="mobileAppIntentAndStateToUpdate">The MobileAppIntentAndState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MobileAppIntentAndState> PutAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MobileAppIntentAndState using PUT and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object.
+        /// </summary>
+        /// <param name="mobileAppIntentAndStateToUpdate">The MobileAppIntentAndState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MobileAppIntentAndState}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> PutResponseAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

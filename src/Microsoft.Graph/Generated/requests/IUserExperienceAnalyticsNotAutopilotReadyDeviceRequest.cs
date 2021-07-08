@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsNotAutopilotReadyDevice using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsNotAutopilotReadyDeviceToCreate">The UserExperienceAnalyticsNotAutopilotReadyDevice to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsNotAutopilotReadyDevice.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> CreateAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDeviceToCreate);        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsNotAutopilotReadyDevice using POST.
+        System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> CreateAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsNotAutopilotReadyDevice using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsNotAutopilotReadyDevice}"/> object.
         /// </summary>
         /// <param name="userExperienceAnalyticsNotAutopilotReadyDeviceToCreate">The UserExperienceAnalyticsNotAutopilotReadyDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UserExperienceAnalyticsNotAutopilotReadyDevice.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> CreateAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDeviceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsNotAutopilotReadyDevice.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsNotAutopilotReadyDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsNotAutopilotReadyDevice>> CreateResponseAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsNotAutopilotReadyDevice.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified UserExperienceAnalyticsNotAutopilotReadyDevice.
+        /// Deletes the specified UserExperienceAnalyticsNotAutopilotReadyDevice and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsNotAutopilotReadyDevice.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsNotAutopilotReadyDevice.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsNotAutopilotReadyDevice.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified UserExperienceAnalyticsNotAutopilotReadyDevice using PATCH.
+        /// Gets the specified UserExperienceAnalyticsNotAutopilotReadyDevice and returns a <see cref="GraphResponse{UserExperienceAnalyticsNotAutopilotReadyDevice}"/> object.
         /// </summary>
-        /// <param name="userExperienceAnalyticsNotAutopilotReadyDeviceToUpdate">The UserExperienceAnalyticsNotAutopilotReadyDevice to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsNotAutopilotReadyDevice.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> UpdateAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDeviceToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsNotAutopilotReadyDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsNotAutopilotReadyDevice>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsNotAutopilotReadyDevice using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsNotAutopilotReadyDevice.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> UpdateAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDeviceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> UpdateAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsNotAutopilotReadyDevice using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsNotAutopilotReadyDevice}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsNotAutopilotReadyDeviceToUpdate">The UserExperienceAnalyticsNotAutopilotReadyDevice to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsNotAutopilotReadyDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsNotAutopilotReadyDevice>> UpdateResponseAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsNotAutopilotReadyDevice using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsNotAutopilotReadyDeviceToUpdate">The UserExperienceAnalyticsNotAutopilotReadyDevice object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> PutAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsNotAutopilotReadyDevice using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsNotAutopilotReadyDevice}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsNotAutopilotReadyDeviceToUpdate">The UserExperienceAnalyticsNotAutopilotReadyDevice object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UserExperienceAnalyticsNotAutopilotReadyDevice}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsNotAutopilotReadyDevice>> PutResponseAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

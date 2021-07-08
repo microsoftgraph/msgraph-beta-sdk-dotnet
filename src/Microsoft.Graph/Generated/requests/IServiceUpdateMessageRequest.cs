@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ServiceUpdateMessage using POST.
         /// </summary>
         /// <param name="serviceUpdateMessageToCreate">The ServiceUpdateMessage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServiceUpdateMessage.</returns>
-        System.Threading.Tasks.Task<ServiceUpdateMessage> CreateAsync(ServiceUpdateMessage serviceUpdateMessageToCreate);        /// <summary>
-        /// Creates the specified ServiceUpdateMessage using POST.
+        System.Threading.Tasks.Task<ServiceUpdateMessage> CreateAsync(ServiceUpdateMessage serviceUpdateMessageToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified ServiceUpdateMessage using POST and returns a <see cref="GraphResponse{ServiceUpdateMessage}"/> object.
         /// </summary>
         /// <param name="serviceUpdateMessageToCreate">The ServiceUpdateMessage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ServiceUpdateMessage.</returns>
-        System.Threading.Tasks.Task<ServiceUpdateMessage> CreateAsync(ServiceUpdateMessage serviceUpdateMessageToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ServiceUpdateMessage.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ServiceUpdateMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceUpdateMessage>> CreateResponseAsync(ServiceUpdateMessage serviceUpdateMessageToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ServiceUpdateMessage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified ServiceUpdateMessage.
+        /// Deletes the specified ServiceUpdateMessage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ServiceUpdateMessage.</returns>
-        System.Threading.Tasks.Task<ServiceUpdateMessage> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ServiceUpdateMessage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ServiceUpdateMessage.</returns>
-        System.Threading.Tasks.Task<ServiceUpdateMessage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ServiceUpdateMessage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified ServiceUpdateMessage using PATCH.
+        /// Gets the specified ServiceUpdateMessage and returns a <see cref="GraphResponse{ServiceUpdateMessage}"/> object.
         /// </summary>
-        /// <param name="serviceUpdateMessageToUpdate">The ServiceUpdateMessage to update.</param>
-        /// <returns>The updated ServiceUpdateMessage.</returns>
-        System.Threading.Tasks.Task<ServiceUpdateMessage> UpdateAsync(ServiceUpdateMessage serviceUpdateMessageToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceUpdateMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceUpdateMessage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ServiceUpdateMessage using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ServiceUpdateMessage.</returns>
-        System.Threading.Tasks.Task<ServiceUpdateMessage> UpdateAsync(ServiceUpdateMessage serviceUpdateMessageToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ServiceUpdateMessage> UpdateAsync(ServiceUpdateMessage serviceUpdateMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ServiceUpdateMessage using PATCH and returns a <see cref="GraphResponse{ServiceUpdateMessage}"/> object.
+        /// </summary>
+        /// <param name="serviceUpdateMessageToUpdate">The ServiceUpdateMessage to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ServiceUpdateMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceUpdateMessage>> UpdateResponseAsync(ServiceUpdateMessage serviceUpdateMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ServiceUpdateMessage using PUT.
+        /// </summary>
+        /// <param name="serviceUpdateMessageToUpdate">The ServiceUpdateMessage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ServiceUpdateMessage> PutAsync(ServiceUpdateMessage serviceUpdateMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ServiceUpdateMessage using PUT and returns a <see cref="GraphResponse{ServiceUpdateMessage}"/> object.
+        /// </summary>
+        /// <param name="serviceUpdateMessageToUpdate">The ServiceUpdateMessage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ServiceUpdateMessage}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceUpdateMessage>> PutResponseAsync(ServiceUpdateMessage serviceUpdateMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

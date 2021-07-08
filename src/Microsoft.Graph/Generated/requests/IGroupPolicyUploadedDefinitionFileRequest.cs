@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyUploadedDefinitionFile using POST.
         /// </summary>
         /// <param name="groupPolicyUploadedDefinitionFileToCreate">The GroupPolicyUploadedDefinitionFile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyUploadedDefinitionFile.</returns>
-        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> CreateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToCreate);        /// <summary>
-        /// Creates the specified GroupPolicyUploadedDefinitionFile using POST.
+        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> CreateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified GroupPolicyUploadedDefinitionFile using POST and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object.
         /// </summary>
         /// <param name="groupPolicyUploadedDefinitionFileToCreate">The GroupPolicyUploadedDefinitionFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created GroupPolicyUploadedDefinitionFile.</returns>
-        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> CreateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyUploadedDefinitionFile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> CreateResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicyUploadedDefinitionFile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified GroupPolicyUploadedDefinitionFile.
+        /// Deletes the specified GroupPolicyUploadedDefinitionFile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The GroupPolicyUploadedDefinitionFile.</returns>
-        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyUploadedDefinitionFile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyUploadedDefinitionFile.</returns>
-        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified GroupPolicyUploadedDefinitionFile using PATCH.
+        /// Gets the specified GroupPolicyUploadedDefinitionFile and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object.
         /// </summary>
-        /// <param name="groupPolicyUploadedDefinitionFileToUpdate">The GroupPolicyUploadedDefinitionFile to update.</param>
-        /// <returns>The updated GroupPolicyUploadedDefinitionFile.</returns>
-        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> UpdateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyUploadedDefinitionFile using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyUploadedDefinitionFile.</returns>
-        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> UpdateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> UpdateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicyUploadedDefinitionFile using PATCH and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyUploadedDefinitionFileToUpdate">The GroupPolicyUploadedDefinitionFile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> UpdateResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicyUploadedDefinitionFile using PUT.
+        /// </summary>
+        /// <param name="groupPolicyUploadedDefinitionFileToUpdate">The GroupPolicyUploadedDefinitionFile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> PutAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicyUploadedDefinitionFile using PUT and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyUploadedDefinitionFileToUpdate">The GroupPolicyUploadedDefinitionFile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> PutResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

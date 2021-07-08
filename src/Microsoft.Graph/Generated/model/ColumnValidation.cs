@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ColumnValidation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ColumnValidation>))]
     public partial class ColumnValidation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ColumnValidation"/> class.
-        /// </summary>
-        public ColumnValidation()
-        {
-            this.ODataType = "microsoft.graph.columnValidation";
-        }
 
         /// <summary>
         /// Gets or sets defaultLanguage.
         /// Default BCP 47 language tag for the description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultLanguage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultLanguage")]
         public string DefaultLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets descriptions.
         /// Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "descriptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("descriptions")]
         public IEnumerable<DisplayNameLocalization> Descriptions { get; set; }
     
         /// <summary>
         /// Gets or sets formula.
         /// The formula to validate column value. For examples, see Examples of common formulas in lists
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "formula", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("formula")]
         public string Formula { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

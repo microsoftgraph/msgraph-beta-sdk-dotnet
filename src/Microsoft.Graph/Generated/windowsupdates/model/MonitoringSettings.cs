@@ -12,41 +12,32 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MonitoringSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<MonitoringSettings>))]
     public partial class MonitoringSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MonitoringSettings"/> class.
-        /// </summary>
-        public MonitoringSettings()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.monitoringSettings";
-        }
 
         /// <summary>
         /// Gets or sets monitoringRules.
         /// Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monitoringRules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("monitoringRules")]
         public IEnumerable<MonitoringRule> MonitoringRules { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

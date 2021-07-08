@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IntuneBrandingProfile using POST.
         /// </summary>
         /// <param name="intuneBrandingProfileToCreate">The IntuneBrandingProfile to create.</param>
-        /// <returns>The created IntuneBrandingProfile.</returns>
-        public System.Threading.Tasks.Task<IntuneBrandingProfile> CreateAsync(IntuneBrandingProfile intuneBrandingProfileToCreate)
-        {
-            return this.CreateAsync(intuneBrandingProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IntuneBrandingProfile using POST.
-        /// </summary>
-        /// <param name="intuneBrandingProfileToCreate">The IntuneBrandingProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IntuneBrandingProfile.</returns>
-        public async System.Threading.Tasks.Task<IntuneBrandingProfile> CreateAsync(IntuneBrandingProfile intuneBrandingProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IntuneBrandingProfile> CreateAsync(IntuneBrandingProfile intuneBrandingProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IntuneBrandingProfile>(intuneBrandingProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IntuneBrandingProfile.
+        /// Creates the specified IntuneBrandingProfile using POST and returns a <see cref="GraphResponse{IntuneBrandingProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="intuneBrandingProfileToCreate">The IntuneBrandingProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IntuneBrandingProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfile>> CreateResponseAsync(IntuneBrandingProfile intuneBrandingProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IntuneBrandingProfile>(intuneBrandingProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IntuneBrandingProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IntuneBrandingProfile.
+        /// Deletes the specified IntuneBrandingProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IntuneBrandingProfile.</returns>
-        public System.Threading.Tasks.Task<IntuneBrandingProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IntuneBrandingProfile.</returns>
-        public async System.Threading.Tasks.Task<IntuneBrandingProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IntuneBrandingProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IntuneBrandingProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IntuneBrandingProfile using PATCH.
+        /// Gets the specified IntuneBrandingProfile and returns a <see cref="GraphResponse{IntuneBrandingProfile}"/> object.
         /// </summary>
-        /// <param name="intuneBrandingProfileToUpdate">The IntuneBrandingProfile to update.</param>
-        /// <returns>The updated IntuneBrandingProfile.</returns>
-        public System.Threading.Tasks.Task<IntuneBrandingProfile> UpdateAsync(IntuneBrandingProfile intuneBrandingProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IntuneBrandingProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(intuneBrandingProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IntuneBrandingProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IntuneBrandingProfile.</returns>
-        public async System.Threading.Tasks.Task<IntuneBrandingProfile> UpdateAsync(IntuneBrandingProfile intuneBrandingProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IntuneBrandingProfile> UpdateAsync(IntuneBrandingProfile intuneBrandingProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (intuneBrandingProfileToUpdate.AdditionalData != null)
-			{
-				if (intuneBrandingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					intuneBrandingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, intuneBrandingProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (intuneBrandingProfileToUpdate.AdditionalData != null)
-            {
-                if (intuneBrandingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    intuneBrandingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, intuneBrandingProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IntuneBrandingProfile>(intuneBrandingProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IntuneBrandingProfile using PATCH and returns a <see cref="GraphResponse{IntuneBrandingProfile}"/> object.
+        /// </summary>
+        /// <param name="intuneBrandingProfileToUpdate">The IntuneBrandingProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IntuneBrandingProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfile>> UpdateResponseAsync(IntuneBrandingProfile intuneBrandingProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IntuneBrandingProfile>(intuneBrandingProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified IntuneBrandingProfile using PUT.
+        /// </summary>
+        /// <param name="intuneBrandingProfileToUpdate">The IntuneBrandingProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IntuneBrandingProfile> PutAsync(IntuneBrandingProfile intuneBrandingProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IntuneBrandingProfile>(intuneBrandingProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IntuneBrandingProfile using PUT and returns a <see cref="GraphResponse{IntuneBrandingProfile}"/> object.
+        /// </summary>
+        /// <param name="intuneBrandingProfileToUpdate">The IntuneBrandingProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IntuneBrandingProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfile>> PutResponseAsync(IntuneBrandingProfile intuneBrandingProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IntuneBrandingProfile>(intuneBrandingProfileToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IntuneBrandingProfile intuneBrandingProfileToInitialize)
         {
 
-            if (intuneBrandingProfileToInitialize != null && intuneBrandingProfileToInitialize.AdditionalData != null)
+            if (intuneBrandingProfileToInitialize != null)
             {
-
                 if (intuneBrandingProfileToInitialize.Assignments != null && intuneBrandingProfileToInitialize.Assignments.CurrentPage != null)
                 {
+                    intuneBrandingProfileToInitialize.Assignments.InitializeNextPageRequest(this.Client, intuneBrandingProfileToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     intuneBrandingProfileToInitialize.Assignments.AdditionalData = intuneBrandingProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    intuneBrandingProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        intuneBrandingProfileToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

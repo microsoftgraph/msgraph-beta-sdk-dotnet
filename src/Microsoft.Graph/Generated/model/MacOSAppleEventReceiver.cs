@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MacOSAppleEventReceiver.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSAppleEventReceiver>))]
     public partial class MacOSAppleEventReceiver
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacOSAppleEventReceiver"/> class.
-        /// </summary>
-        public MacOSAppleEventReceiver()
-        {
-            this.ODataType = "microsoft.graph.macOSAppleEventReceiver";
-        }
 
         /// <summary>
         /// Gets or sets allowed.
         /// Allow or block this app from receiving Apple events.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowed")]
         public bool? Allowed { get; set; }
     
         /// <summary>
         /// Gets or sets codeRequirement.
         /// Code requirement for the app or binary that receives the Apple Event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "codeRequirement", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("codeRequirement")]
         public string CodeRequirement { get; set; }
     
         /// <summary>
         /// Gets or sets identifier.
         /// Bundle ID of the app or file path of the process or executable that receives the Apple Event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identifier")]
         public string Identifier { get; set; }
     
         /// <summary>
         /// Gets or sets identifierType.
         /// Use bundle ID for an app or path for a process or executable that receives the Apple Event. Possible values are: bundleID, path.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifierType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identifierType")]
         public MacOSProcessIdentifierType? IdentifierType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

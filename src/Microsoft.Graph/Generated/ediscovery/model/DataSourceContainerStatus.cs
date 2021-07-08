@@ -10,13 +10,12 @@
 
 namespace Microsoft.Graph.Ediscovery
 {
-    using System;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum DataSourceContainerStatus.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.EnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum DataSourceContainerStatus
     {
     

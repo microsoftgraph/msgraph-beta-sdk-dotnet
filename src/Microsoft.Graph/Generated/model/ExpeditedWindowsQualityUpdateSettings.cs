@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ExpeditedWindowsQualityUpdateSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ExpeditedWindowsQualityUpdateSettings>))]
     public partial class ExpeditedWindowsQualityUpdateSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExpeditedWindowsQualityUpdateSettings"/> class.
-        /// </summary>
-        public ExpeditedWindowsQualityUpdateSettings()
-        {
-            this.ODataType = "microsoft.graph.expeditedWindowsQualityUpdateSettings";
-        }
 
         /// <summary>
         /// Gets or sets daysUntilForcedReboot.
         /// The number of days after installation that forced reboot will happen.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "daysUntilForcedReboot", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("daysUntilForcedReboot")]
         public Int32? DaysUntilForcedReboot { get; set; }
     
         /// <summary>
         /// Gets or sets qualityUpdateRelease.
         /// The release date to identify a quality update.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityUpdateRelease", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("qualityUpdateRelease")]
         public string QualityUpdateRelease { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

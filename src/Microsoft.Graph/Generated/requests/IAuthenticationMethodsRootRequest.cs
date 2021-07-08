@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AuthenticationMethodsRoot using POST.
         /// </summary>
         /// <param name="authenticationMethodsRootToCreate">The AuthenticationMethodsRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuthenticationMethodsRoot.</returns>
-        System.Threading.Tasks.Task<AuthenticationMethodsRoot> CreateAsync(AuthenticationMethodsRoot authenticationMethodsRootToCreate);        /// <summary>
-        /// Creates the specified AuthenticationMethodsRoot using POST.
+        System.Threading.Tasks.Task<AuthenticationMethodsRoot> CreateAsync(AuthenticationMethodsRoot authenticationMethodsRootToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified AuthenticationMethodsRoot using POST and returns a <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object.
         /// </summary>
         /// <param name="authenticationMethodsRootToCreate">The AuthenticationMethodsRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AuthenticationMethodsRoot.</returns>
-        System.Threading.Tasks.Task<AuthenticationMethodsRoot> CreateAsync(AuthenticationMethodsRoot authenticationMethodsRootToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AuthenticationMethodsRoot.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsRoot>> CreateResponseAsync(AuthenticationMethodsRoot authenticationMethodsRootToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AuthenticationMethodsRoot.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified AuthenticationMethodsRoot.
+        /// Deletes the specified AuthenticationMethodsRoot and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AuthenticationMethodsRoot.</returns>
-        System.Threading.Tasks.Task<AuthenticationMethodsRoot> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AuthenticationMethodsRoot.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AuthenticationMethodsRoot.</returns>
-        System.Threading.Tasks.Task<AuthenticationMethodsRoot> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AuthenticationMethodsRoot> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified AuthenticationMethodsRoot using PATCH.
+        /// Gets the specified AuthenticationMethodsRoot and returns a <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object.
         /// </summary>
-        /// <param name="authenticationMethodsRootToUpdate">The AuthenticationMethodsRoot to update.</param>
-        /// <returns>The updated AuthenticationMethodsRoot.</returns>
-        System.Threading.Tasks.Task<AuthenticationMethodsRoot> UpdateAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsRoot>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AuthenticationMethodsRoot using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AuthenticationMethodsRoot.</returns>
-        System.Threading.Tasks.Task<AuthenticationMethodsRoot> UpdateAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AuthenticationMethodsRoot> UpdateAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AuthenticationMethodsRoot using PATCH and returns a <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object.
+        /// </summary>
+        /// <param name="authenticationMethodsRootToUpdate">The AuthenticationMethodsRoot to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsRoot>> UpdateResponseAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AuthenticationMethodsRoot using PUT.
+        /// </summary>
+        /// <param name="authenticationMethodsRootToUpdate">The AuthenticationMethodsRoot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AuthenticationMethodsRoot> PutAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AuthenticationMethodsRoot using PUT and returns a <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object.
+        /// </summary>
+        /// <param name="authenticationMethodsRootToUpdate">The AuthenticationMethodsRoot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AuthenticationMethodsRoot}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsRoot>> PutResponseAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

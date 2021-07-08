@@ -12,37 +12,28 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Connection Operation.
     /// </summary>
     [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ConnectionOperation>))]
     public partial class ConnectionOperation : Entity
     {
     
-		///<summary>
-		/// The ConnectionOperation constructor
-		///</summary>
-        public ConnectionOperation()
-        {
-            this.ODataType = "microsoft.graph.connectionOperation";
-        }
-	
         /// <summary>
         /// Gets or sets error.
         /// If status is failed, provides more information about the error that caused the failure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public PublicError Error { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public ConnectionOperationStatus? Status { get; set; }
     
     }

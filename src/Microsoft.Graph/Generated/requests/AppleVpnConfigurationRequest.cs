@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AppleVpnConfiguration using POST.
         /// </summary>
         /// <param name="appleVpnConfigurationToCreate">The AppleVpnConfiguration to create.</param>
-        /// <returns>The created AppleVpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<AppleVpnConfiguration> CreateAsync(AppleVpnConfiguration appleVpnConfigurationToCreate)
-        {
-            return this.CreateAsync(appleVpnConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AppleVpnConfiguration using POST.
-        /// </summary>
-        /// <param name="appleVpnConfigurationToCreate">The AppleVpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppleVpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AppleVpnConfiguration> CreateAsync(AppleVpnConfiguration appleVpnConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppleVpnConfiguration> CreateAsync(AppleVpnConfiguration appleVpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AppleVpnConfiguration>(appleVpnConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AppleVpnConfiguration.
+        /// Creates the specified AppleVpnConfiguration using POST and returns a <see cref="GraphResponse{AppleVpnConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="appleVpnConfigurationToCreate">The AppleVpnConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppleVpnConfiguration>> CreateResponseAsync(AppleVpnConfiguration appleVpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AppleVpnConfiguration>(appleVpnConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AppleVpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AppleVpnConfiguration.
+        /// Deletes the specified AppleVpnConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AppleVpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<AppleVpnConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppleVpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AppleVpnConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppleVpnConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AppleVpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AppleVpnConfiguration using PATCH.
+        /// Gets the specified AppleVpnConfiguration and returns a <see cref="GraphResponse{AppleVpnConfiguration}"/> object.
         /// </summary>
-        /// <param name="appleVpnConfigurationToUpdate">The AppleVpnConfiguration to update.</param>
-        /// <returns>The updated AppleVpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<AppleVpnConfiguration> UpdateAsync(AppleVpnConfiguration appleVpnConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppleVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(appleVpnConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AppleVpnConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AppleVpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AppleVpnConfiguration> UpdateAsync(AppleVpnConfiguration appleVpnConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppleVpnConfiguration> UpdateAsync(AppleVpnConfiguration appleVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (appleVpnConfigurationToUpdate.AdditionalData != null)
-			{
-				if (appleVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					appleVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appleVpnConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (appleVpnConfigurationToUpdate.AdditionalData != null)
-            {
-                if (appleVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    appleVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appleVpnConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AppleVpnConfiguration>(appleVpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AppleVpnConfiguration using PATCH and returns a <see cref="GraphResponse{AppleVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="appleVpnConfigurationToUpdate">The AppleVpnConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AppleVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppleVpnConfiguration>> UpdateResponseAsync(AppleVpnConfiguration appleVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AppleVpnConfiguration>(appleVpnConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AppleVpnConfiguration using PUT.
+        /// </summary>
+        /// <param name="appleVpnConfigurationToUpdate">The AppleVpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AppleVpnConfiguration> PutAsync(AppleVpnConfiguration appleVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AppleVpnConfiguration>(appleVpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AppleVpnConfiguration using PUT and returns a <see cref="GraphResponse{AppleVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="appleVpnConfigurationToUpdate">The AppleVpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AppleVpnConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppleVpnConfiguration>> PutResponseAsync(AppleVpnConfiguration appleVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AppleVpnConfiguration>(appleVpnConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

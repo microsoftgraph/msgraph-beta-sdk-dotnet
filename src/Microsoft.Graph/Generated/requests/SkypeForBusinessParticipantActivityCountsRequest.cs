@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified SkypeForBusinessParticipantActivityCounts using POST.
         /// </summary>
         /// <param name="skypeForBusinessParticipantActivityCountsToCreate">The SkypeForBusinessParticipantActivityCounts to create.</param>
-        /// <returns>The created SkypeForBusinessParticipantActivityCounts.</returns>
-        public System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityCounts> CreateAsync(SkypeForBusinessParticipantActivityCounts skypeForBusinessParticipantActivityCountsToCreate)
-        {
-            return this.CreateAsync(skypeForBusinessParticipantActivityCountsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SkypeForBusinessParticipantActivityCounts using POST.
-        /// </summary>
-        /// <param name="skypeForBusinessParticipantActivityCountsToCreate">The SkypeForBusinessParticipantActivityCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SkypeForBusinessParticipantActivityCounts.</returns>
-        public async System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityCounts> CreateAsync(SkypeForBusinessParticipantActivityCounts skypeForBusinessParticipantActivityCountsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityCounts> CreateAsync(SkypeForBusinessParticipantActivityCounts skypeForBusinessParticipantActivityCountsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SkypeForBusinessParticipantActivityCounts>(skypeForBusinessParticipantActivityCountsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified SkypeForBusinessParticipantActivityCounts.
+        /// Creates the specified SkypeForBusinessParticipantActivityCounts using POST and returns a <see cref="GraphResponse{SkypeForBusinessParticipantActivityCounts}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="skypeForBusinessParticipantActivityCountsToCreate">The SkypeForBusinessParticipantActivityCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessParticipantActivityCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessParticipantActivityCounts>> CreateResponseAsync(SkypeForBusinessParticipantActivityCounts skypeForBusinessParticipantActivityCountsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SkypeForBusinessParticipantActivityCounts>(skypeForBusinessParticipantActivityCountsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SkypeForBusinessParticipantActivityCounts>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified SkypeForBusinessParticipantActivityCounts.
+        /// Deletes the specified SkypeForBusinessParticipantActivityCounts and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SkypeForBusinessParticipantActivityCounts.</returns>
-        public System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityCounts> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SkypeForBusinessParticipantActivityCounts.</returns>
-        public async System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityCounts> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<SkypeForBusinessParticipantActivityCounts>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified SkypeForBusinessParticipantActivityCounts using PATCH.
+        /// Gets the specified SkypeForBusinessParticipantActivityCounts and returns a <see cref="GraphResponse{SkypeForBusinessParticipantActivityCounts}"/> object.
         /// </summary>
-        /// <param name="skypeForBusinessParticipantActivityCountsToUpdate">The SkypeForBusinessParticipantActivityCounts to update.</param>
-        /// <returns>The updated SkypeForBusinessParticipantActivityCounts.</returns>
-        public System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityCounts> UpdateAsync(SkypeForBusinessParticipantActivityCounts skypeForBusinessParticipantActivityCountsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessParticipantActivityCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessParticipantActivityCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(skypeForBusinessParticipantActivityCountsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SkypeForBusinessParticipantActivityCounts>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SkypeForBusinessParticipantActivityCounts.</returns>
-        public async System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityCounts> UpdateAsync(SkypeForBusinessParticipantActivityCounts skypeForBusinessParticipantActivityCountsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityCounts> UpdateAsync(SkypeForBusinessParticipantActivityCounts skypeForBusinessParticipantActivityCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (skypeForBusinessParticipantActivityCountsToUpdate.AdditionalData != null)
-			{
-				if (skypeForBusinessParticipantActivityCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					skypeForBusinessParticipantActivityCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skypeForBusinessParticipantActivityCountsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (skypeForBusinessParticipantActivityCountsToUpdate.AdditionalData != null)
-            {
-                if (skypeForBusinessParticipantActivityCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    skypeForBusinessParticipantActivityCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skypeForBusinessParticipantActivityCountsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SkypeForBusinessParticipantActivityCounts>(skypeForBusinessParticipantActivityCountsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessParticipantActivityCounts using PATCH and returns a <see cref="GraphResponse{SkypeForBusinessParticipantActivityCounts}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessParticipantActivityCountsToUpdate">The SkypeForBusinessParticipantActivityCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessParticipantActivityCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessParticipantActivityCounts>> UpdateResponseAsync(SkypeForBusinessParticipantActivityCounts skypeForBusinessParticipantActivityCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SkypeForBusinessParticipantActivityCounts>(skypeForBusinessParticipantActivityCountsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessParticipantActivityCounts using PUT.
+        /// </summary>
+        /// <param name="skypeForBusinessParticipantActivityCountsToUpdate">The SkypeForBusinessParticipantActivityCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityCounts> PutAsync(SkypeForBusinessParticipantActivityCounts skypeForBusinessParticipantActivityCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SkypeForBusinessParticipantActivityCounts>(skypeForBusinessParticipantActivityCountsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessParticipantActivityCounts using PUT and returns a <see cref="GraphResponse{SkypeForBusinessParticipantActivityCounts}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessParticipantActivityCountsToUpdate">The SkypeForBusinessParticipantActivityCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SkypeForBusinessParticipantActivityCounts}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessParticipantActivityCounts>> PutResponseAsync(SkypeForBusinessParticipantActivityCounts skypeForBusinessParticipantActivityCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SkypeForBusinessParticipantActivityCounts>(skypeForBusinessParticipantActivityCountsToUpdate, cancellationToken);
         }
 
         /// <summary>

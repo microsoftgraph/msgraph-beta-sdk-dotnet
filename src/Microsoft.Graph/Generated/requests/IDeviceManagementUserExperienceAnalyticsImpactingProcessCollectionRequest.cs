@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsImpactingProcess to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsImpactingProcess">The UserExperienceAnalyticsImpactingProcess to add.</param>
-        /// <returns>The created UserExperienceAnalyticsImpactingProcess.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsImpactingProcess> AddAsync(UserExperienceAnalyticsImpactingProcess userExperienceAnalyticsImpactingProcess);
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsImpactingProcess to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsImpactingProcess">The UserExperienceAnalyticsImpactingProcess to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsImpactingProcess.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsImpactingProcess> AddAsync(UserExperienceAnalyticsImpactingProcess userExperienceAnalyticsImpactingProcess, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsImpactingProcess> AddAsync(UserExperienceAnalyticsImpactingProcess userExperienceAnalyticsImpactingProcess, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UserExperienceAnalyticsImpactingProcess to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsImpactingProcess}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionPage> GetAsync();
+        /// <param name="userExperienceAnalyticsImpactingProcess">The UserExperienceAnalyticsImpactingProcess to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsImpactingProcess}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsImpactingProcess>> AddResponseAsync(UserExperienceAnalyticsImpactingProcess userExperienceAnalyticsImpactingProcess, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsImpactingProcessCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsImpactingProcessCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsImpactingProcessCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

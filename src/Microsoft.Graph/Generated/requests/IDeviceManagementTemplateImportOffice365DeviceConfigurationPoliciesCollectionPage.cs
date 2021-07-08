@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesCollectionPage>))]
     public interface IDeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesCollectionPage : ICollectionPage<DeviceManagementIntent>
     {
         /// <summary>

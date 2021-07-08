@@ -12,88 +12,79 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RoleSuccessStatistics.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RoleSuccessStatistics>))]
     public partial class RoleSuccessStatistics
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RoleSuccessStatistics"/> class.
-        /// </summary>
-        public RoleSuccessStatistics()
-        {
-            this.ODataType = "microsoft.graph.roleSuccessStatistics";
-        }
 
         /// <summary>
         /// Gets or sets permanentFail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permanentFail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("permanentFail")]
         public Int64? PermanentFail { get; set; }
     
         /// <summary>
         /// Gets or sets permanentSuccess.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permanentSuccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("permanentSuccess")]
         public Int64? PermanentSuccess { get; set; }
     
         /// <summary>
         /// Gets or sets removeFail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeFail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("removeFail")]
         public Int64? RemoveFail { get; set; }
     
         /// <summary>
         /// Gets or sets removeSuccess.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeSuccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("removeSuccess")]
         public Int64? RemoveSuccess { get; set; }
     
         /// <summary>
         /// Gets or sets roleId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleId")]
         public string RoleId { get; set; }
     
         /// <summary>
         /// Gets or sets roleName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleName")]
         public string RoleName { get; set; }
     
         /// <summary>
         /// Gets or sets temporaryFail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "temporaryFail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("temporaryFail")]
         public Int64? TemporaryFail { get; set; }
     
         /// <summary>
         /// Gets or sets temporarySuccess.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "temporarySuccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("temporarySuccess")]
         public Int64? TemporarySuccess { get; set; }
     
         /// <summary>
         /// Gets or sets unknownFail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownFail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unknownFail")]
         public Int64? UnknownFail { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

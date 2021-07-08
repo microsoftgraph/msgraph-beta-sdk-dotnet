@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified CountryRegion using POST.
         /// </summary>
         /// <param name="countryRegionToCreate">The CountryRegion to create.</param>
-        /// <returns>The created CountryRegion.</returns>
-        public System.Threading.Tasks.Task<CountryRegion> CreateAsync(CountryRegion countryRegionToCreate)
-        {
-            return this.CreateAsync(countryRegionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CountryRegion using POST.
-        /// </summary>
-        /// <param name="countryRegionToCreate">The CountryRegion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CountryRegion.</returns>
-        public async System.Threading.Tasks.Task<CountryRegion> CreateAsync(CountryRegion countryRegionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CountryRegion> CreateAsync(CountryRegion countryRegionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<CountryRegion>(countryRegionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified CountryRegion.
+        /// Creates the specified CountryRegion using POST and returns a <see cref="GraphResponse{CountryRegion}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="countryRegionToCreate">The CountryRegion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CountryRegion>> CreateResponseAsync(CountryRegion countryRegionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<CountryRegion>(countryRegionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<CountryRegion>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified CountryRegion.
+        /// Deletes the specified CountryRegion and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CountryRegion.</returns>
-        public System.Threading.Tasks.Task<CountryRegion> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CountryRegion.</returns>
-        public async System.Threading.Tasks.Task<CountryRegion> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CountryRegion> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<CountryRegion>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified CountryRegion using PATCH.
+        /// Gets the specified CountryRegion and returns a <see cref="GraphResponse{CountryRegion}"/> object.
         /// </summary>
-        /// <param name="countryRegionToUpdate">The CountryRegion to update.</param>
-        /// <returns>The updated CountryRegion.</returns>
-        public System.Threading.Tasks.Task<CountryRegion> UpdateAsync(CountryRegion countryRegionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CountryRegion>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(countryRegionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<CountryRegion>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CountryRegion.</returns>
-        public async System.Threading.Tasks.Task<CountryRegion> UpdateAsync(CountryRegion countryRegionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CountryRegion> UpdateAsync(CountryRegion countryRegionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (countryRegionToUpdate.AdditionalData != null)
-			{
-				if (countryRegionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					countryRegionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, countryRegionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (countryRegionToUpdate.AdditionalData != null)
-            {
-                if (countryRegionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    countryRegionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, countryRegionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<CountryRegion>(countryRegionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CountryRegion using PATCH and returns a <see cref="GraphResponse{CountryRegion}"/> object.
+        /// </summary>
+        /// <param name="countryRegionToUpdate">The CountryRegion to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CountryRegion>> UpdateResponseAsync(CountryRegion countryRegionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<CountryRegion>(countryRegionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified CountryRegion using PUT.
+        /// </summary>
+        /// <param name="countryRegionToUpdate">The CountryRegion object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<CountryRegion> PutAsync(CountryRegion countryRegionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<CountryRegion>(countryRegionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CountryRegion using PUT and returns a <see cref="GraphResponse{CountryRegion}"/> object.
+        /// </summary>
+        /// <param name="countryRegionToUpdate">The CountryRegion object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{CountryRegion}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CountryRegion>> PutResponseAsync(CountryRegion countryRegionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<CountryRegion>(countryRegionToUpdate, cancellationToken);
         }
 
         /// <summary>

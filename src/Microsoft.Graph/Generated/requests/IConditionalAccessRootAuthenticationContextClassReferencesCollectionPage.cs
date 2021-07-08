@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IConditionalAccessRootAuthenticationContextClassReferencesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ConditionalAccessRootAuthenticationContextClassReferencesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ConditionalAccessRootAuthenticationContextClassReferencesCollectionPage>))]
     public interface IConditionalAccessRootAuthenticationContextClassReferencesCollectionPage : ICollectionPage<AuthenticationContextClassReference>
     {
         /// <summary>

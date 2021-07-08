@@ -39,34 +39,28 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Creates the specified AzureADDevice using POST.
         /// </summary>
         /// <param name="azureADDeviceToCreate">The AzureADDevice to create.</param>
-        /// <returns>The created AzureADDevice.</returns>
-        public System.Threading.Tasks.Task<AzureADDevice> CreateAsync(AzureADDevice azureADDeviceToCreate)
-        {
-            return this.CreateAsync(azureADDeviceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AzureADDevice using POST.
-        /// </summary>
-        /// <param name="azureADDeviceToCreate">The AzureADDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AzureADDevice.</returns>
-        public async System.Threading.Tasks.Task<AzureADDevice> CreateAsync(AzureADDevice azureADDeviceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AzureADDevice> CreateAsync(AzureADDevice azureADDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AzureADDevice>(azureADDeviceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AzureADDevice.
+        /// Creates the specified AzureADDevice using POST and returns a <see cref="GraphResponse{AzureADDevice}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="azureADDeviceToCreate">The AzureADDevice to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AzureADDevice}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AzureADDevice>> CreateResponseAsync(AzureADDevice azureADDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AzureADDevice>(azureADDeviceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AzureADDevice>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AzureADDevice.
+        /// Deletes the specified AzureADDevice and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AzureADDevice.</returns>
-        public System.Threading.Tasks.Task<AzureADDevice> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AzureADDevice.</returns>
-        public async System.Threading.Tasks.Task<AzureADDevice> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AzureADDevice> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AzureADDevice>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AzureADDevice using PATCH.
+        /// Gets the specified AzureADDevice and returns a <see cref="GraphResponse{AzureADDevice}"/> object.
         /// </summary>
-        /// <param name="azureADDeviceToUpdate">The AzureADDevice to update.</param>
-        /// <returns>The updated AzureADDevice.</returns>
-        public System.Threading.Tasks.Task<AzureADDevice> UpdateAsync(AzureADDevice azureADDeviceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AzureADDevice}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AzureADDevice>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(azureADDeviceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AzureADDevice>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AzureADDevice.</returns>
-        public async System.Threading.Tasks.Task<AzureADDevice> UpdateAsync(AzureADDevice azureADDeviceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AzureADDevice> UpdateAsync(AzureADDevice azureADDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (azureADDeviceToUpdate.AdditionalData != null)
-			{
-				if (azureADDeviceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					azureADDeviceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADDeviceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (azureADDeviceToUpdate.AdditionalData != null)
-            {
-                if (azureADDeviceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    azureADDeviceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADDeviceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AzureADDevice>(azureADDeviceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AzureADDevice using PATCH and returns a <see cref="GraphResponse{AzureADDevice}"/> object.
+        /// </summary>
+        /// <param name="azureADDeviceToUpdate">The AzureADDevice to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AzureADDevice}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AzureADDevice>> UpdateResponseAsync(AzureADDevice azureADDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AzureADDevice>(azureADDeviceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AzureADDevice using PUT.
+        /// </summary>
+        /// <param name="azureADDeviceToUpdate">The AzureADDevice object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AzureADDevice> PutAsync(AzureADDevice azureADDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AzureADDevice>(azureADDeviceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AzureADDevice using PUT and returns a <see cref="GraphResponse{AzureADDevice}"/> object.
+        /// </summary>
+        /// <param name="azureADDeviceToUpdate">The AzureADDevice object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AzureADDevice}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AzureADDevice>> PutResponseAsync(AzureADDevice azureADDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AzureADDevice>(azureADDeviceToUpdate, cancellationToken);
         }
 
         /// <summary>

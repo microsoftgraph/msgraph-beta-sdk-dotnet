@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AttendanceInterval.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AttendanceInterval>))]
     public partial class AttendanceInterval
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AttendanceInterval"/> class.
-        /// </summary>
-        public AttendanceInterval()
-        {
-            this.ODataType = "microsoft.graph.attendanceInterval";
-        }
 
         /// <summary>
         /// Gets or sets durationInSeconds.
         /// Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("durationInSeconds")]
         public Int32? DurationInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets joinDateTime.
         /// Time attendee joined in UTC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("joinDateTime")]
         public DateTimeOffset? JoinDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets leaveDateTime.
         /// Time attendee left in UTC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "leaveDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("leaveDateTime")]
         public DateTimeOffset? LeaveDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

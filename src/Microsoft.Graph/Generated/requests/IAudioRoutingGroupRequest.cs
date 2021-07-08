@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AudioRoutingGroup using POST.
         /// </summary>
         /// <param name="audioRoutingGroupToCreate">The AudioRoutingGroup to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AudioRoutingGroup.</returns>
-        System.Threading.Tasks.Task<AudioRoutingGroup> CreateAsync(AudioRoutingGroup audioRoutingGroupToCreate);        /// <summary>
-        /// Creates the specified AudioRoutingGroup using POST.
+        System.Threading.Tasks.Task<AudioRoutingGroup> CreateAsync(AudioRoutingGroup audioRoutingGroupToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified AudioRoutingGroup using POST and returns a <see cref="GraphResponse{AudioRoutingGroup}"/> object.
         /// </summary>
         /// <param name="audioRoutingGroupToCreate">The AudioRoutingGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AudioRoutingGroup.</returns>
-        System.Threading.Tasks.Task<AudioRoutingGroup> CreateAsync(AudioRoutingGroup audioRoutingGroupToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AudioRoutingGroup.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AudioRoutingGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AudioRoutingGroup>> CreateResponseAsync(AudioRoutingGroup audioRoutingGroupToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AudioRoutingGroup.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified AudioRoutingGroup.
+        /// Deletes the specified AudioRoutingGroup and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AudioRoutingGroup.</returns>
-        System.Threading.Tasks.Task<AudioRoutingGroup> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AudioRoutingGroup.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AudioRoutingGroup.</returns>
-        System.Threading.Tasks.Task<AudioRoutingGroup> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AudioRoutingGroup> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified AudioRoutingGroup using PATCH.
+        /// Gets the specified AudioRoutingGroup and returns a <see cref="GraphResponse{AudioRoutingGroup}"/> object.
         /// </summary>
-        /// <param name="audioRoutingGroupToUpdate">The AudioRoutingGroup to update.</param>
-        /// <returns>The updated AudioRoutingGroup.</returns>
-        System.Threading.Tasks.Task<AudioRoutingGroup> UpdateAsync(AudioRoutingGroup audioRoutingGroupToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AudioRoutingGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AudioRoutingGroup>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AudioRoutingGroup using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AudioRoutingGroup.</returns>
-        System.Threading.Tasks.Task<AudioRoutingGroup> UpdateAsync(AudioRoutingGroup audioRoutingGroupToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AudioRoutingGroup> UpdateAsync(AudioRoutingGroup audioRoutingGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AudioRoutingGroup using PATCH and returns a <see cref="GraphResponse{AudioRoutingGroup}"/> object.
+        /// </summary>
+        /// <param name="audioRoutingGroupToUpdate">The AudioRoutingGroup to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AudioRoutingGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AudioRoutingGroup>> UpdateResponseAsync(AudioRoutingGroup audioRoutingGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AudioRoutingGroup using PUT.
+        /// </summary>
+        /// <param name="audioRoutingGroupToUpdate">The AudioRoutingGroup object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AudioRoutingGroup> PutAsync(AudioRoutingGroup audioRoutingGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AudioRoutingGroup using PUT and returns a <see cref="GraphResponse{AudioRoutingGroup}"/> object.
+        /// </summary>
+        /// <param name="audioRoutingGroupToUpdate">The AudioRoutingGroup object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AudioRoutingGroup}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AudioRoutingGroup>> PutResponseAsync(AudioRoutingGroup audioRoutingGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

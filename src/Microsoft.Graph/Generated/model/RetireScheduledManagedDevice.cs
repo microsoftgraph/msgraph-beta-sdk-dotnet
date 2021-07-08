@@ -12,111 +12,102 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RetireScheduledManagedDevice.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RetireScheduledManagedDevice>))]
     public partial class RetireScheduledManagedDevice
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RetireScheduledManagedDevice"/> class.
-        /// </summary>
-        public RetireScheduledManagedDevice()
-        {
-            this.ODataType = "microsoft.graph.retireScheduledManagedDevice";
-        }
 
         /// <summary>
         /// Gets or sets complianceState.
         /// Managed Device ComplianceStatus. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("complianceState")]
         public ComplianceStatus? ComplianceState { get; set; }
     
         /// <summary>
         /// Gets or sets deviceCompliancePolicyId.
         /// Device Compliance PolicyId
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceCompliancePolicyId")]
         public string DeviceCompliancePolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets deviceCompliancePolicyName.
         /// Device Compliance Policy Name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceCompliancePolicyName")]
         public string DeviceCompliancePolicyName { get; set; }
     
         /// <summary>
         /// Gets or sets deviceType.
         /// Managed Device Device Type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceType")]
         public DeviceType? DeviceType { get; set; }
     
         /// <summary>
         /// Gets or sets id.
         /// Key of the entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets managedDeviceId.
         /// Managed DeviceId
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets managedDeviceName.
         /// Managed Device Name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceName")]
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets managementAgent.
         /// Managed Device ManagementAgentType. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, windowsManagementCloudApi.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementAgent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementAgent")]
         public ManagementAgentType? ManagementAgent { get; set; }
     
         /// <summary>
         /// Gets or sets ownerType.
         /// Managed Device ManagedDeviceOwnerType. Possible values are: unknown, company, personal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownerType")]
         public ManagedDeviceOwnerType? OwnerType { get; set; }
     
         /// <summary>
         /// Gets or sets retireAfterDateTime.
         /// Managed Device Retire After DateTime
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "retireAfterDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("retireAfterDateTime")]
         public DateTimeOffset? RetireAfterDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets roleScopeTagIds.
         /// List of Scope Tags for this Entity instance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

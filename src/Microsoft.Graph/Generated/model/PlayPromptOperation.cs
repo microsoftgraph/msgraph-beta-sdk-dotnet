@@ -12,29 +12,28 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Play Prompt Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<PlayPromptOperation>))]
     public partial class PlayPromptOperation : CommsOperation
     {
     
-		///<summary>
-		/// The PlayPromptOperation constructor
-		///</summary>
+        ///<summary>
+        /// The PlayPromptOperation constructor
+        ///</summary>
         public PlayPromptOperation()
         {
             this.ODataType = "microsoft.graph.playPromptOperation";
         }
-	
+
         /// <summary>
         /// Gets or sets completion reason.
         /// Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionReason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completionReason")]
         public PlayPromptCompletionReason? CompletionReason { get; set; }
     
     }

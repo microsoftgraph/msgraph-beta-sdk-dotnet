@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IServiceAnnouncementMessagesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ServiceUpdateMessage to the collection via POST.
-        /// </summary>
-        /// <param name="serviceUpdateMessage">The ServiceUpdateMessage to add.</param>
-        /// <returns>The created ServiceUpdateMessage.</returns>
-        System.Threading.Tasks.Task<ServiceUpdateMessage> AddAsync(ServiceUpdateMessage serviceUpdateMessage);
-
         /// <summary>
         /// Adds the specified ServiceUpdateMessage to the collection via POST.
         /// </summary>
         /// <param name="serviceUpdateMessage">The ServiceUpdateMessage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServiceUpdateMessage.</returns>
-        System.Threading.Tasks.Task<ServiceUpdateMessage> AddAsync(ServiceUpdateMessage serviceUpdateMessage, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ServiceUpdateMessage> AddAsync(ServiceUpdateMessage serviceUpdateMessage, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ServiceUpdateMessage to the collection via POST and returns a <see cref="GraphResponse{ServiceUpdateMessage}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IServiceAnnouncementMessagesCollectionPage> GetAsync();
+        /// <param name="serviceUpdateMessage">The ServiceUpdateMessage to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceUpdateMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceUpdateMessage>> AddResponseAsync(ServiceUpdateMessage serviceUpdateMessage, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IServiceAnnouncementMessagesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IServiceAnnouncementMessagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ServiceAnnouncementMessagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceAnnouncementMessagesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementMessagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

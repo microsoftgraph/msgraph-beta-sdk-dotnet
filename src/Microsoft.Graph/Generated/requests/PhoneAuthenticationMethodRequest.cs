@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PhoneAuthenticationMethod using POST.
         /// </summary>
         /// <param name="phoneAuthenticationMethodToCreate">The PhoneAuthenticationMethod to create.</param>
-        /// <returns>The created PhoneAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<PhoneAuthenticationMethod> CreateAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToCreate)
-        {
-            return this.CreateAsync(phoneAuthenticationMethodToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PhoneAuthenticationMethod using POST.
-        /// </summary>
-        /// <param name="phoneAuthenticationMethodToCreate">The PhoneAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PhoneAuthenticationMethod.</returns>
-        public async System.Threading.Tasks.Task<PhoneAuthenticationMethod> CreateAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PhoneAuthenticationMethod> CreateAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PhoneAuthenticationMethod>(phoneAuthenticationMethodToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PhoneAuthenticationMethod.
+        /// Creates the specified PhoneAuthenticationMethod using POST and returns a <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="phoneAuthenticationMethodToCreate">The PhoneAuthenticationMethod to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> CreateResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PhoneAuthenticationMethod>(phoneAuthenticationMethodToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PhoneAuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PhoneAuthenticationMethod.
+        /// Deletes the specified PhoneAuthenticationMethod and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PhoneAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<PhoneAuthenticationMethod> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PhoneAuthenticationMethod.</returns>
-        public async System.Threading.Tasks.Task<PhoneAuthenticationMethod> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PhoneAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PhoneAuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PhoneAuthenticationMethod using PATCH.
+        /// Gets the specified PhoneAuthenticationMethod and returns a <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object.
         /// </summary>
-        /// <param name="phoneAuthenticationMethodToUpdate">The PhoneAuthenticationMethod to update.</param>
-        /// <returns>The updated PhoneAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<PhoneAuthenticationMethod> UpdateAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(phoneAuthenticationMethodToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PhoneAuthenticationMethod>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PhoneAuthenticationMethod.</returns>
-        public async System.Threading.Tasks.Task<PhoneAuthenticationMethod> UpdateAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PhoneAuthenticationMethod> UpdateAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (phoneAuthenticationMethodToUpdate.AdditionalData != null)
-			{
-				if (phoneAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					phoneAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, phoneAuthenticationMethodToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (phoneAuthenticationMethodToUpdate.AdditionalData != null)
-            {
-                if (phoneAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    phoneAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, phoneAuthenticationMethodToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PhoneAuthenticationMethod>(phoneAuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PhoneAuthenticationMethod using PATCH and returns a <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="phoneAuthenticationMethodToUpdate">The PhoneAuthenticationMethod to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> UpdateResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PhoneAuthenticationMethod>(phoneAuthenticationMethodToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PhoneAuthenticationMethod using PUT.
+        /// </summary>
+        /// <param name="phoneAuthenticationMethodToUpdate">The PhoneAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PhoneAuthenticationMethod> PutAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PhoneAuthenticationMethod>(phoneAuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PhoneAuthenticationMethod using PUT and returns a <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="phoneAuthenticationMethodToUpdate">The PhoneAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PhoneAuthenticationMethod}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> PutResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PhoneAuthenticationMethod>(phoneAuthenticationMethodToUpdate, cancellationToken);
         }
 
         /// <summary>

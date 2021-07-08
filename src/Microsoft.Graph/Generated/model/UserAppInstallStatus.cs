@@ -12,72 +12,68 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User App Install Status.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserAppInstallStatus : Entity
     {
     
-		///<summary>
-		/// The UserAppInstallStatus constructor
-		///</summary>
-        public UserAppInstallStatus()
-        {
-            this.ODataType = "microsoft.graph.userAppInstallStatus";
-        }
-	
         /// <summary>
         /// Gets or sets failed device count.
         /// Failed Device Count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failedDeviceCount")]
         public Int32? FailedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets installed device count.
         /// Installed Device Count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installedDeviceCount")]
         public Int32? InstalledDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets not installed device count.
         /// Not installed device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notInstalledDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notInstalledDeviceCount")]
         public Int32? NotInstalledDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets user name.
         /// User name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userName")]
         public string UserName { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// User Principal Name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets app.
         /// The navigation link to the mobile app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "app", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("app")]
         public MobileApp App { get; set; }
     
         /// <summary>
         /// Gets or sets device statuses.
         /// The install state of the app on devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatuses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceStatuses")]
         public IUserAppInstallStatusDeviceStatusesCollectionPage DeviceStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceStatuses@odata.nextLink")]
+        public string DeviceStatusesNextLink { get; set; }
     
     }
 }

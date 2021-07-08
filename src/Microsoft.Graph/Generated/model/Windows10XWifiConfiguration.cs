@@ -12,43 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10XWifi Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Windows10XWifiConfiguration : DeviceManagementResourceAccessProfileBase
     {
     
-		///<summary>
-		/// The Windows10XWifiConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10XWifiConfiguration constructor
+        ///</summary>
         public Windows10XWifiConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10XWifiConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets authentication certificate id.
         /// ID to the Authentication Certificate
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationCertificateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationCertificateId")]
         public Guid? AuthenticationCertificateId { get; set; }
     
         /// <summary>
         /// Gets or sets custom xml.
         /// Custom XML commands that configures the VPN connection. (UTF8 byte encoding)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customXml", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customXml")]
         public byte[] CustomXml { get; set; }
     
         /// <summary>
         /// Gets or sets custom xml file name.
         /// Custom Xml file name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customXmlFileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customXmlFileName")]
         public string CustomXmlFileName { get; set; }
     
     }

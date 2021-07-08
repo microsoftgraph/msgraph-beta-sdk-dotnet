@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IExternalConnectionOperationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ConnectionOperation to the collection via POST.
-        /// </summary>
-        /// <param name="connectionOperation">The ConnectionOperation to add.</param>
-        /// <returns>The created ConnectionOperation.</returns>
-        System.Threading.Tasks.Task<ConnectionOperation> AddAsync(ConnectionOperation connectionOperation);
-
         /// <summary>
         /// Adds the specified ConnectionOperation to the collection via POST.
         /// </summary>
         /// <param name="connectionOperation">The ConnectionOperation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConnectionOperation.</returns>
-        System.Threading.Tasks.Task<ConnectionOperation> AddAsync(ConnectionOperation connectionOperation, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ConnectionOperation> AddAsync(ConnectionOperation connectionOperation, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ConnectionOperation to the collection via POST and returns a <see cref="GraphResponse{ConnectionOperation}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IExternalConnectionOperationsCollectionPage> GetAsync();
+        /// <param name="connectionOperation">The ConnectionOperation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectionOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConnectionOperation>> AddResponseAsync(ConnectionOperation connectionOperation, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IExternalConnectionOperationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IExternalConnectionOperationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ExternalConnectionOperationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExternalConnectionOperationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExternalConnectionOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

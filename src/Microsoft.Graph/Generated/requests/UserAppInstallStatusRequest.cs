@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UserAppInstallStatus using POST.
         /// </summary>
         /// <param name="userAppInstallStatusToCreate">The UserAppInstallStatus to create.</param>
-        /// <returns>The created UserAppInstallStatus.</returns>
-        public System.Threading.Tasks.Task<UserAppInstallStatus> CreateAsync(UserAppInstallStatus userAppInstallStatusToCreate)
-        {
-            return this.CreateAsync(userAppInstallStatusToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserAppInstallStatus using POST.
-        /// </summary>
-        /// <param name="userAppInstallStatusToCreate">The UserAppInstallStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserAppInstallStatus.</returns>
-        public async System.Threading.Tasks.Task<UserAppInstallStatus> CreateAsync(UserAppInstallStatus userAppInstallStatusToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserAppInstallStatus> CreateAsync(UserAppInstallStatus userAppInstallStatusToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserAppInstallStatus>(userAppInstallStatusToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UserAppInstallStatus.
+        /// Creates the specified UserAppInstallStatus using POST and returns a <see cref="GraphResponse{UserAppInstallStatus}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="userAppInstallStatusToCreate">The UserAppInstallStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> CreateResponseAsync(UserAppInstallStatus userAppInstallStatusToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserAppInstallStatus>(userAppInstallStatusToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserAppInstallStatus>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UserAppInstallStatus.
+        /// Deletes the specified UserAppInstallStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserAppInstallStatus.</returns>
-        public System.Threading.Tasks.Task<UserAppInstallStatus> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserAppInstallStatus.</returns>
-        public async System.Threading.Tasks.Task<UserAppInstallStatus> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserAppInstallStatus> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserAppInstallStatus>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UserAppInstallStatus using PATCH.
+        /// Gets the specified UserAppInstallStatus and returns a <see cref="GraphResponse{UserAppInstallStatus}"/> object.
         /// </summary>
-        /// <param name="userAppInstallStatusToUpdate">The UserAppInstallStatus to update.</param>
-        /// <returns>The updated UserAppInstallStatus.</returns>
-        public System.Threading.Tasks.Task<UserAppInstallStatus> UpdateAsync(UserAppInstallStatus userAppInstallStatusToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(userAppInstallStatusToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserAppInstallStatus>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserAppInstallStatus.</returns>
-        public async System.Threading.Tasks.Task<UserAppInstallStatus> UpdateAsync(UserAppInstallStatus userAppInstallStatusToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserAppInstallStatus> UpdateAsync(UserAppInstallStatus userAppInstallStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userAppInstallStatusToUpdate.AdditionalData != null)
-			{
-				if (userAppInstallStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userAppInstallStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userAppInstallStatusToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userAppInstallStatusToUpdate.AdditionalData != null)
-            {
-                if (userAppInstallStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userAppInstallStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userAppInstallStatusToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserAppInstallStatus>(userAppInstallStatusToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserAppInstallStatus using PATCH and returns a <see cref="GraphResponse{UserAppInstallStatus}"/> object.
+        /// </summary>
+        /// <param name="userAppInstallStatusToUpdate">The UserAppInstallStatus to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> UpdateResponseAsync(UserAppInstallStatus userAppInstallStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserAppInstallStatus>(userAppInstallStatusToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UserAppInstallStatus using PUT.
+        /// </summary>
+        /// <param name="userAppInstallStatusToUpdate">The UserAppInstallStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserAppInstallStatus> PutAsync(UserAppInstallStatus userAppInstallStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserAppInstallStatus>(userAppInstallStatusToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserAppInstallStatus using PUT and returns a <see cref="GraphResponse{UserAppInstallStatus}"/> object.
+        /// </summary>
+        /// <param name="userAppInstallStatusToUpdate">The UserAppInstallStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserAppInstallStatus}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> PutResponseAsync(UserAppInstallStatus userAppInstallStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserAppInstallStatus>(userAppInstallStatusToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserAppInstallStatus userAppInstallStatusToInitialize)
         {
 
-            if (userAppInstallStatusToInitialize != null && userAppInstallStatusToInitialize.AdditionalData != null)
+            if (userAppInstallStatusToInitialize != null)
             {
-
                 if (userAppInstallStatusToInitialize.DeviceStatuses != null && userAppInstallStatusToInitialize.DeviceStatuses.CurrentPage != null)
                 {
+                    userAppInstallStatusToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, userAppInstallStatusToInitialize.DeviceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userAppInstallStatusToInitialize.DeviceStatuses.AdditionalData = userAppInstallStatusToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userAppInstallStatusToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userAppInstallStatusToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

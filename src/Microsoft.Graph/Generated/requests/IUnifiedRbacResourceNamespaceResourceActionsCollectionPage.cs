@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUnifiedRbacResourceNamespaceResourceActionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UnifiedRbacResourceNamespaceResourceActionsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UnifiedRbacResourceNamespaceResourceActionsCollectionPage>))]
     public interface IUnifiedRbacResourceNamespaceResourceActionsCollectionPage : ICollectionPage<UnifiedRbacResourceAction>
     {
         /// <summary>

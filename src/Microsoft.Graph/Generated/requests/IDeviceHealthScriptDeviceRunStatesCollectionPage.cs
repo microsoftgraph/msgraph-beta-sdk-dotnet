@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceHealthScriptDeviceRunStatesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceHealthScriptDeviceRunStatesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceHealthScriptDeviceRunStatesCollectionPage>))]
     public interface IDeviceHealthScriptDeviceRunStatesCollectionPage : ICollectionPage<DeviceHealthScriptDeviceState>
     {
         /// <summary>

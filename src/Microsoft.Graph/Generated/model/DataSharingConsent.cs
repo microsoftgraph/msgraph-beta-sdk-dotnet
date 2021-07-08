@@ -12,64 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Data Sharing Consent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DataSharingConsent : Entity
     {
     
-		///<summary>
-		/// The DataSharingConsent constructor
-		///</summary>
-        public DataSharingConsent()
-        {
-            this.ODataType = "microsoft.graph.dataSharingConsent";
-        }
-	
         /// <summary>
         /// Gets or sets grant date time.
         /// The time consent was granted for this account
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grantDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("grantDateTime")]
         public DateTimeOffset? GrantDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets granted.
         /// The granted state for the data sharing consent
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "granted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("granted")]
         public bool? Granted { get; set; }
     
         /// <summary>
         /// Gets or sets granted by upn.
         /// The Upn of the user that granted consent for this account
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grantedByUpn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("grantedByUpn")]
         public string GrantedByUpn { get; set; }
     
         /// <summary>
         /// Gets or sets granted by user id.
         /// The UserId of the user that granted consent for this account
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grantedByUserId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("grantedByUserId")]
         public string GrantedByUserId { get; set; }
     
         /// <summary>
         /// Gets or sets service display name.
         /// The display name of the service work flow
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("serviceDisplayName")]
         public string ServiceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets terms url.
         /// The TermsUrl for the data sharing consent
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("termsUrl")]
         public string TermsUrl { get; set; }
     
     }

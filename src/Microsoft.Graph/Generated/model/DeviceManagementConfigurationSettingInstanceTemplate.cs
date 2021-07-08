@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationSettingInstanceTemplate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationSettingInstanceTemplate>))]
     public abstract partial class DeviceManagementConfigurationSettingInstanceTemplate
     {
 
@@ -27,33 +25,33 @@ namespace Microsoft.Graph
         /// Gets or sets isRequired.
         /// Indicates if a policy must specify this setting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRequired")]
         public bool? IsRequired { get; set; }
     
         /// <summary>
         /// Gets or sets settingDefinitionId.
         /// Setting Definition Id
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingDefinitionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingDefinitionId")]
         public string SettingDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets settingInstanceTemplateId.
         /// Setting Instance Template Id
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingInstanceTemplateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingInstanceTemplateId")]
         public string SettingInstanceTemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

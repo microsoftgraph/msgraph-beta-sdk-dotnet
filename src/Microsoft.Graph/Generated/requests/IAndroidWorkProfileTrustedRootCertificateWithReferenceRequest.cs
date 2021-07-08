@@ -23,57 +23,64 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidWorkProfileTrustedRootCertificate.
         /// </summary>
-        /// <returns>The AndroidWorkProfileTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidWorkProfileTrustedRootCertificate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the specified AndroidWorkProfileTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified AndroidWorkProfileTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="androidWorkProfileTrustedRootCertificateToCreate">The AndroidWorkProfileTrustedRootCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidWorkProfileTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> CreateAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToCreate);        /// <summary>
-        /// Creates the specified AndroidWorkProfileTrustedRootCertificate using POST.
+        System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> CreateAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Creates the specified AndroidWorkProfileTrustedRootCertificate using POST and returns a <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object.
         /// </summary>
         /// <param name="androidWorkProfileTrustedRootCertificateToCreate">The AndroidWorkProfileTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AndroidWorkProfileTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> CreateAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileTrustedRootCertificate>> CreateResponseAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
-        /// Updates the specified AndroidWorkProfileTrustedRootCertificate using PATCH.
-        /// </summary>
-        /// <param name="androidWorkProfileTrustedRootCertificateToUpdate">The AndroidWorkProfileTrustedRootCertificate to update.</param>
-        /// <returns>The updated AndroidWorkProfileTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> UpdateAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToUpdate);
-
-        /// <summary>
         /// Updates the specified AndroidWorkProfileTrustedRootCertificate using PATCH.
         /// </summary>
         /// <param name="androidWorkProfileTrustedRootCertificateToUpdate">The AndroidWorkProfileTrustedRootCertificate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfileTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> UpdateAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> UpdateAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Updates the specified AndroidWorkProfileTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileTrustedRootCertificateToUpdate">The AndroidWorkProfileTrustedRootCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileTrustedRootCertificate>> UpdateResponseAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Deletes the specified AndroidWorkProfileTrustedRootCertificate.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified AndroidWorkProfileTrustedRootCertificate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Deletes the specified AndroidWorkProfileTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

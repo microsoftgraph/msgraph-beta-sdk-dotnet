@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph.ManagedTenants
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagementActionApplyRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagementActionApplyRequestBody
     {
     
         /// <summary>
         /// Gets or sets TenantId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets TenantGroupId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantGroupId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantGroupId")]
         public string TenantGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets ManagementTemplateId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementTemplateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementTemplateId")]
         public string ManagementTemplateId { get; set; }
     
     }

@@ -12,51 +12,53 @@ namespace Microsoft.Graph.TermStore
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Store.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Store : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Store constructor
-		///</summary>
-        public Store()
-        {
-            this.ODataType = "microsoft.graph.termStore.store";
-        }
-	
         /// <summary>
         /// Gets or sets default language tag.
         /// Default language of the term store.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultLanguageTag", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultLanguageTag")]
         public string DefaultLanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets language tags.
         /// List of languages for the term store.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageTags", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("languageTags")]
         public IEnumerable<string> LanguageTags { get; set; }
     
         /// <summary>
         /// Gets or sets groups.
         /// Collection of all groups available in the term store.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groups")]
         public IStoreGroupsCollectionPage Groups { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupsNextLink.
+        /// </summary>
+        [JsonPropertyName("groups@odata.nextLink")]
+        public string GroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sets.
         /// Collection of all sets available in the term store.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sets")]
         public IStoreSetsCollectionPage Sets { get; set; }
+
+        /// <summary>
+        /// Gets or sets setsNextLink.
+        /// </summary>
+        [JsonPropertyName("sets@odata.nextLink")]
+        public string SetsNextLink { get; set; }
     
     }
 }

@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceConfigurationWindowsPrivacyAccessControlsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceConfigurationWindowsPrivacyAccessControlsRequestBody
     {
     
         /// <summary>
         /// Gets or sets WindowsPrivacyAccessControls.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsPrivacyAccessControls", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsPrivacyAccessControls")]
         public IEnumerable<WindowsPrivacyDataAccessControlItem> WindowsPrivacyAccessControls { get; set; }
     
     }

@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RequestorSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RequestorSettings>))]
     public partial class RequestorSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RequestorSettings"/> class.
-        /// </summary>
-        public RequestorSettings()
-        {
-            this.ODataType = "microsoft.graph.requestorSettings";
-        }
 
         /// <summary>
         /// Gets or sets acceptRequests.
         /// Indicates whether new requests are accepted on this policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptRequests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("acceptRequests")]
         public bool? AcceptRequests { get; set; }
     
         /// <summary>
         /// Gets or sets allowedRequestors.
         /// The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedRequestors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedRequestors")]
         public IEnumerable<UserSet> AllowedRequestors { get; set; }
     
         /// <summary>
         /// Gets or sets scopeType.
         /// Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopeType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scopeType")]
         public string ScopeType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

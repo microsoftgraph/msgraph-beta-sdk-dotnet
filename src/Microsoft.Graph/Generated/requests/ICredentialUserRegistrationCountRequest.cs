@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified CredentialUserRegistrationCount using POST.
         /// </summary>
         /// <param name="credentialUserRegistrationCountToCreate">The CredentialUserRegistrationCount to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CredentialUserRegistrationCount.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationCount> CreateAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToCreate);        /// <summary>
-        /// Creates the specified CredentialUserRegistrationCount using POST.
+        System.Threading.Tasks.Task<CredentialUserRegistrationCount> CreateAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified CredentialUserRegistrationCount using POST and returns a <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object.
         /// </summary>
         /// <param name="credentialUserRegistrationCountToCreate">The CredentialUserRegistrationCount to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created CredentialUserRegistrationCount.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationCount> CreateAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CredentialUserRegistrationCount.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationCount>> CreateResponseAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified CredentialUserRegistrationCount.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified CredentialUserRegistrationCount.
+        /// Deletes the specified CredentialUserRegistrationCount and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CredentialUserRegistrationCount.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationCount> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CredentialUserRegistrationCount.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CredentialUserRegistrationCount.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationCount> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CredentialUserRegistrationCount> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified CredentialUserRegistrationCount using PATCH.
+        /// Gets the specified CredentialUserRegistrationCount and returns a <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object.
         /// </summary>
-        /// <param name="credentialUserRegistrationCountToUpdate">The CredentialUserRegistrationCount to update.</param>
-        /// <returns>The updated CredentialUserRegistrationCount.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationCount> UpdateAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationCount>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CredentialUserRegistrationCount using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CredentialUserRegistrationCount.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationCount> UpdateAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CredentialUserRegistrationCount> UpdateAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CredentialUserRegistrationCount using PATCH and returns a <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object.
+        /// </summary>
+        /// <param name="credentialUserRegistrationCountToUpdate">The CredentialUserRegistrationCount to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationCount>> UpdateResponseAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CredentialUserRegistrationCount using PUT.
+        /// </summary>
+        /// <param name="credentialUserRegistrationCountToUpdate">The CredentialUserRegistrationCount object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<CredentialUserRegistrationCount> PutAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CredentialUserRegistrationCount using PUT and returns a <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object.
+        /// </summary>
+        /// <param name="credentialUserRegistrationCountToUpdate">The CredentialUserRegistrationCount object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{CredentialUserRegistrationCount}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationCount>> PutResponseAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

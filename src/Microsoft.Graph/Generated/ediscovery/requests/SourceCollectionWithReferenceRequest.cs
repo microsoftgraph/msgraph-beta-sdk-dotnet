@@ -38,117 +38,102 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified SourceCollection.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SourceCollection.</returns>
-        public System.Threading.Tasks.Task<SourceCollection> GetAsync()
+        public async System.Threading.Tasks.Task<SourceCollection> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<SourceCollection>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified SourceCollection.
+        /// Gets the specified SourceCollection and returns a <see cref="GraphResponse{SourceCollection}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The SourceCollection.</returns>
-        public async System.Threading.Tasks.Task<SourceCollection> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{SourceCollection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SourceCollection>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<SourceCollection>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SourceCollection>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified SourceCollection using POST.
         /// </summary>
         /// <param name="sourceCollectionToCreate">The SourceCollection to create.</param>
-        /// <returns>The created SourceCollection.</returns>
-        public System.Threading.Tasks.Task<SourceCollection> CreateAsync(SourceCollection sourceCollectionToCreate)
-        {
-            return this.CreateAsync(sourceCollectionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SourceCollection using POST.
-        /// </summary>
-        /// <param name="sourceCollectionToCreate">The SourceCollection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SourceCollection.</returns>
-        public async System.Threading.Tasks.Task<SourceCollection> CreateAsync(SourceCollection sourceCollectionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SourceCollection> CreateAsync(SourceCollection sourceCollectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SourceCollection>(sourceCollectionToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified SourceCollection using PATCH.
+        /// Creates the specified SourceCollection using POST and returns a <see cref="GraphResponse{SourceCollection}"/> object.
         /// </summary>
-        /// <param name="sourceCollectionToUpdate">The SourceCollection to update.</param>
-        /// <returns>The updated SourceCollection.</returns>
-        public System.Threading.Tasks.Task<SourceCollection> UpdateAsync(SourceCollection sourceCollectionToUpdate)
+        /// <param name="sourceCollectionToCreate">The SourceCollection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SourceCollection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SourceCollection>> CreateResponseAsync(SourceCollection sourceCollectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(sourceCollectionToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SourceCollection>(sourceCollectionToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified SourceCollection using PATCH.
         /// </summary>
         /// <param name="sourceCollectionToUpdate">The SourceCollection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SourceCollection.</returns>
-        public async System.Threading.Tasks.Task<SourceCollection> UpdateAsync(SourceCollection sourceCollectionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SourceCollection> UpdateAsync(SourceCollection sourceCollectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (sourceCollectionToUpdate.AdditionalData != null)
-			{
-				if (sourceCollectionToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					sourceCollectionToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sourceCollectionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (sourceCollectionToUpdate.AdditionalData != null)
-            {
-                if (sourceCollectionToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    sourceCollectionToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sourceCollectionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SourceCollection>(sourceCollectionToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified SourceCollection.
+        /// Updates the specified SourceCollection using PATCH and returns a <see cref="GraphResponse{SourceCollection}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="sourceCollectionToUpdate">The SourceCollection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SourceCollection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SourceCollection>> UpdateResponseAsync(SourceCollection sourceCollectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SourceCollection>(sourceCollectionToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified SourceCollection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SourceCollection>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified SourceCollection and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

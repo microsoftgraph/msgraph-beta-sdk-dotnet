@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AggregationOption.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AggregationOption>))]
     public partial class AggregationOption
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AggregationOption"/> class.
-        /// </summary>
-        public AggregationOption()
-        {
-            this.ODataType = "microsoft.graph.aggregationOption";
-        }
 
         /// <summary>
         /// Gets or sets bucketDefinition.
         /// Specifies the criteria to compute an aggregation. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bucketDefinition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bucketDefinition")]
         public BucketAggregationDefinition BucketDefinition { get; set; }
     
         /// <summary>
         /// Gets or sets field.
         /// Specifies the field in the schema of the specified entity type that aggregation should be computed on. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "field", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("field")]
         public string Field { get; set; }
     
         /// <summary>
         /// Gets or sets size.
         /// The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("size")]
         public Int32? Size { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

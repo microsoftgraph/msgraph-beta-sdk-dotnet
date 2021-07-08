@@ -12,41 +12,32 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedDeviceCleanupSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedDeviceCleanupSettings>))]
     public partial class ManagedDeviceCleanupSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagedDeviceCleanupSettings"/> class.
-        /// </summary>
-        public ManagedDeviceCleanupSettings()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceCleanupSettings";
-        }
 
         /// <summary>
         /// Gets or sets deviceInactivityBeforeRetirementInDays.
         /// Number of days when the device has not contacted Intune.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceInactivityBeforeRetirementInDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceInactivityBeforeRetirementInDays")]
         public string DeviceInactivityBeforeRetirementInDays { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

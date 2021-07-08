@@ -12,40 +12,30 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Azure ADFeature Usage.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AzureADFeatureUsage : Entity
     {
     
-		///<summary>
-		/// The AzureADFeatureUsage constructor
-		///</summary>
-        public AzureADFeatureUsage()
-        {
-            this.ODataType = "microsoft.graph.azureADFeatureUsage";
-        }
-	
         /// <summary>
         /// Gets or sets feature name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("featureName")]
         public string FeatureName { get; set; }
     
         /// <summary>
         /// Gets or sets snapshot date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "snapshotDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("snapshotDateTime")]
         public DateTimeOffset? SnapshotDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets usage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usage")]
         public Int32? Usage { get; set; }
     
     }

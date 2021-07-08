@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IRiskyUserHistoryCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified RiskyUserHistoryItem to the collection via POST.
-        /// </summary>
-        /// <param name="riskyUserHistoryItem">The RiskyUserHistoryItem to add.</param>
-        /// <returns>The created RiskyUserHistoryItem.</returns>
-        System.Threading.Tasks.Task<RiskyUserHistoryItem> AddAsync(RiskyUserHistoryItem riskyUserHistoryItem);
-
         /// <summary>
         /// Adds the specified RiskyUserHistoryItem to the collection via POST.
         /// </summary>
         /// <param name="riskyUserHistoryItem">The RiskyUserHistoryItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RiskyUserHistoryItem.</returns>
-        System.Threading.Tasks.Task<RiskyUserHistoryItem> AddAsync(RiskyUserHistoryItem riskyUserHistoryItem, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<RiskyUserHistoryItem> AddAsync(RiskyUserHistoryItem riskyUserHistoryItem, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified RiskyUserHistoryItem to the collection via POST and returns a <see cref="GraphResponse{RiskyUserHistoryItem}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRiskyUserHistoryCollectionPage> GetAsync();
+        /// <param name="riskyUserHistoryItem">The RiskyUserHistoryItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RiskyUserHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryItem>> AddResponseAsync(RiskyUserHistoryItem riskyUserHistoryItem, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRiskyUserHistoryCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IRiskyUserHistoryCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{RiskyUserHistoryCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RiskyUserHistoryCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

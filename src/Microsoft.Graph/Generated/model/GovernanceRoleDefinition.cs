@@ -12,63 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Governance Role Definition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GovernanceRoleDefinition : Entity
     {
     
-		///<summary>
-		/// The GovernanceRoleDefinition constructor
-		///</summary>
-        public GovernanceRoleDefinition()
-        {
-            this.ODataType = "microsoft.graph.governanceRoleDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
         /// The external id of the role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalId")]
         public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets resource id.
         /// Required. The id of the resource associated with the role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets template id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateId")]
         public string TemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
         /// Read-only. The associated resource for the role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resource")]
         public GovernanceResource Resource { get; set; }
     
         /// <summary>
         /// Gets or sets role setting.
         /// The associated role setting for the role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleSetting", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleSetting")]
         public GovernanceRoleSetting RoleSetting { get; set; }
     
     }

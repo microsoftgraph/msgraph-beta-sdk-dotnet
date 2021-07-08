@@ -12,28 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Classification Job Response.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ClassificationJobResponse : JobResponseBase
     {
     
-		///<summary>
-		/// The ClassificationJobResponse constructor
-		///</summary>
+        ///<summary>
+        /// The ClassificationJobResponse constructor
+        ///</summary>
         public ClassificationJobResponse()
         {
             this.ODataType = "microsoft.graph.classificationJobResponse";
         }
-	
+
         /// <summary>
         /// Gets or sets result.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "result", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("result")]
         public DetectedSensitiveContentWrapper Result { get; set; }
     
     }

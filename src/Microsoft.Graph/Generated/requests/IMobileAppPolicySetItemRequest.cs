@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppPolicySetItem using POST.
         /// </summary>
         /// <param name="mobileAppPolicySetItemToCreate">The MobileAppPolicySetItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppPolicySetItem.</returns>
-        System.Threading.Tasks.Task<MobileAppPolicySetItem> CreateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToCreate);        /// <summary>
-        /// Creates the specified MobileAppPolicySetItem using POST.
+        System.Threading.Tasks.Task<MobileAppPolicySetItem> CreateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified MobileAppPolicySetItem using POST and returns a <see cref="GraphResponse{MobileAppPolicySetItem}"/> object.
         /// </summary>
         /// <param name="mobileAppPolicySetItemToCreate">The MobileAppPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MobileAppPolicySetItem.</returns>
-        System.Threading.Tasks.Task<MobileAppPolicySetItem> CreateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MobileAppPolicySetItem.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MobileAppPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppPolicySetItem>> CreateResponseAsync(MobileAppPolicySetItem mobileAppPolicySetItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MobileAppPolicySetItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified MobileAppPolicySetItem.
+        /// Deletes the specified MobileAppPolicySetItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MobileAppPolicySetItem.</returns>
-        System.Threading.Tasks.Task<MobileAppPolicySetItem> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MobileAppPolicySetItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppPolicySetItem.</returns>
-        System.Threading.Tasks.Task<MobileAppPolicySetItem> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppPolicySetItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified MobileAppPolicySetItem using PATCH.
+        /// Gets the specified MobileAppPolicySetItem and returns a <see cref="GraphResponse{MobileAppPolicySetItem}"/> object.
         /// </summary>
-        /// <param name="mobileAppPolicySetItemToUpdate">The MobileAppPolicySetItem to update.</param>
-        /// <returns>The updated MobileAppPolicySetItem.</returns>
-        System.Threading.Tasks.Task<MobileAppPolicySetItem> UpdateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MobileAppPolicySetItem using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppPolicySetItem.</returns>
-        System.Threading.Tasks.Task<MobileAppPolicySetItem> UpdateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppPolicySetItem> UpdateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MobileAppPolicySetItem using PATCH and returns a <see cref="GraphResponse{MobileAppPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="mobileAppPolicySetItemToUpdate">The MobileAppPolicySetItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppPolicySetItem>> UpdateResponseAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MobileAppPolicySetItem using PUT.
+        /// </summary>
+        /// <param name="mobileAppPolicySetItemToUpdate">The MobileAppPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MobileAppPolicySetItem> PutAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MobileAppPolicySetItem using PUT and returns a <see cref="GraphResponse{MobileAppPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="mobileAppPolicySetItemToUpdate">The MobileAppPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MobileAppPolicySetItem}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppPolicySetItem>> PutResponseAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

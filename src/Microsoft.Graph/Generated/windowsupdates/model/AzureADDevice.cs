@@ -12,36 +12,34 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Azure ADDevice.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AzureADDevice : UpdatableAsset
     {
     
-		///<summary>
-		/// The AzureADDevice constructor
-		///</summary>
+        ///<summary>
+        /// The AzureADDevice constructor
+        ///</summary>
         public AzureADDevice()
         {
             this.ODataType = "microsoft.graph.windowsUpdates.azureADDevice";
         }
-	
+
         /// <summary>
         /// Gets or sets enrollments.
         /// Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollments")]
         public IEnumerable<UpdatableAssetEnrollment> Enrollments { get; set; }
     
         /// <summary>
         /// Gets or sets errors.
         /// Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errors")]
         public IEnumerable<UpdatableAssetError> Errors { get; set; }
     
     }

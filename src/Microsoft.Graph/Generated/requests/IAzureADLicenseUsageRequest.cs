@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AzureADLicenseUsage using POST.
         /// </summary>
         /// <param name="azureADLicenseUsageToCreate">The AzureADLicenseUsage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AzureADLicenseUsage.</returns>
-        System.Threading.Tasks.Task<AzureADLicenseUsage> CreateAsync(AzureADLicenseUsage azureADLicenseUsageToCreate);        /// <summary>
-        /// Creates the specified AzureADLicenseUsage using POST.
+        System.Threading.Tasks.Task<AzureADLicenseUsage> CreateAsync(AzureADLicenseUsage azureADLicenseUsageToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified AzureADLicenseUsage using POST and returns a <see cref="GraphResponse{AzureADLicenseUsage}"/> object.
         /// </summary>
         /// <param name="azureADLicenseUsageToCreate">The AzureADLicenseUsage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AzureADLicenseUsage.</returns>
-        System.Threading.Tasks.Task<AzureADLicenseUsage> CreateAsync(AzureADLicenseUsage azureADLicenseUsageToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AzureADLicenseUsage.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AzureADLicenseUsage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AzureADLicenseUsage>> CreateResponseAsync(AzureADLicenseUsage azureADLicenseUsageToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AzureADLicenseUsage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified AzureADLicenseUsage.
+        /// Deletes the specified AzureADLicenseUsage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AzureADLicenseUsage.</returns>
-        System.Threading.Tasks.Task<AzureADLicenseUsage> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AzureADLicenseUsage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AzureADLicenseUsage.</returns>
-        System.Threading.Tasks.Task<AzureADLicenseUsage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AzureADLicenseUsage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified AzureADLicenseUsage using PATCH.
+        /// Gets the specified AzureADLicenseUsage and returns a <see cref="GraphResponse{AzureADLicenseUsage}"/> object.
         /// </summary>
-        /// <param name="azureADLicenseUsageToUpdate">The AzureADLicenseUsage to update.</param>
-        /// <returns>The updated AzureADLicenseUsage.</returns>
-        System.Threading.Tasks.Task<AzureADLicenseUsage> UpdateAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AzureADLicenseUsage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AzureADLicenseUsage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AzureADLicenseUsage using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AzureADLicenseUsage.</returns>
-        System.Threading.Tasks.Task<AzureADLicenseUsage> UpdateAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AzureADLicenseUsage> UpdateAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AzureADLicenseUsage using PATCH and returns a <see cref="GraphResponse{AzureADLicenseUsage}"/> object.
+        /// </summary>
+        /// <param name="azureADLicenseUsageToUpdate">The AzureADLicenseUsage to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AzureADLicenseUsage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AzureADLicenseUsage>> UpdateResponseAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AzureADLicenseUsage using PUT.
+        /// </summary>
+        /// <param name="azureADLicenseUsageToUpdate">The AzureADLicenseUsage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AzureADLicenseUsage> PutAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AzureADLicenseUsage using PUT and returns a <see cref="GraphResponse{AzureADLicenseUsage}"/> object.
+        /// </summary>
+        /// <param name="azureADLicenseUsageToUpdate">The AzureADLicenseUsage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AzureADLicenseUsage}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AzureADLicenseUsage>> PutResponseAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,44 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type External Item.
     /// </summary>
     [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ExternalItem : Entity
     {
     
-		///<summary>
-		/// The ExternalItem constructor
-		///</summary>
-        public ExternalItem()
-        {
-            this.ODataType = "microsoft.graph.externalItem";
-        }
-	
         /// <summary>
         /// Gets or sets acl.
         /// An array of access control entries. Each entry specifies the access granted to a user or group. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("acl")]
         public IEnumerable<Acl> Acl { get; set; }
     
         /// <summary>
         /// Gets or sets content.
         /// A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("content")]
         public ExternalItemContent Content { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
         /// A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "properties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("properties")]
         public Properties Properties { get; set; }
     
     }

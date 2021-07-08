@@ -33,72 +33,62 @@ namespace Microsoft.Graph.Ediscovery
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ReviewSet to the collection via POST.
-        /// </summary>
-        /// <param name="reviewSet">The ReviewSet to add.</param>
-        /// <returns>The created ReviewSet.</returns>
-        public System.Threading.Tasks.Task<ReviewSet> AddAsync(ReviewSet reviewSet)
-        {
-            return this.AddAsync(reviewSet, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ReviewSet to the collection via POST.
         /// </summary>
         /// <param name="reviewSet">The ReviewSet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ReviewSet.</returns>
-        public System.Threading.Tasks.Task<ReviewSet> AddAsync(ReviewSet reviewSet, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ReviewSet> AddAsync(ReviewSet reviewSet, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ReviewSet>(reviewSet, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ReviewSet to the collection via POST and returns a <see cref="GraphResponse{ReviewSet}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICaseReviewSetsCollectionPage> GetAsync()
+        /// <param name="reviewSet">The ReviewSet to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReviewSet}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReviewSet>> AddResponseAsync(ReviewSet reviewSet, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ReviewSet>(reviewSet, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICaseReviewSetsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICaseReviewSetsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CaseReviewSetsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CaseReviewSetsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CaseReviewSetsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CaseReviewSetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<CaseReviewSetsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

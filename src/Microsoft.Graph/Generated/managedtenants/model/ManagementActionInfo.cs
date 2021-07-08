@@ -12,46 +12,37 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagementActionInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ManagementActionInfo>))]
     public partial class ManagementActionInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagementActionInfo"/> class.
-        /// </summary>
-        public ManagementActionInfo()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.managementActionInfo";
-        }
 
         /// <summary>
         /// Gets or sets managementActionId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementActionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementActionId")]
         public string ManagementActionId { get; set; }
     
         /// <summary>
         /// Gets or sets managementTemplateId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementTemplateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementTemplateId")]
         public string ManagementTemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

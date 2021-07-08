@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementDeviceHealthScriptsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceHealthScript to the collection via POST.
-        /// </summary>
-        /// <param name="deviceHealthScript">The DeviceHealthScript to add.</param>
-        /// <returns>The created DeviceHealthScript.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScript> AddAsync(DeviceHealthScript deviceHealthScript);
-
         /// <summary>
         /// Adds the specified DeviceHealthScript to the collection via POST.
         /// </summary>
         /// <param name="deviceHealthScript">The DeviceHealthScript to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceHealthScript.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScript> AddAsync(DeviceHealthScript deviceHealthScript, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceHealthScript> AddAsync(DeviceHealthScript deviceHealthScript, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceHealthScript to the collection via POST and returns a <see cref="GraphResponse{DeviceHealthScript}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementDeviceHealthScriptsCollectionPage> GetAsync();
+        /// <param name="deviceHealthScript">The DeviceHealthScript to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceHealthScript}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScript>> AddResponseAsync(DeviceHealthScript deviceHealthScript, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementDeviceHealthScriptsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementDeviceHealthScriptsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceHealthScriptsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceHealthScriptsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceHealthScriptsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

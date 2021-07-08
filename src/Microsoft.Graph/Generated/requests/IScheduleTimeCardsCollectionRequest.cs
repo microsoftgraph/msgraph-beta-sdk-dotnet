@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IScheduleTimeCardsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified TimeCard to the collection via POST.
-        /// </summary>
-        /// <param name="timeCard">The TimeCard to add.</param>
-        /// <returns>The created TimeCard.</returns>
-        System.Threading.Tasks.Task<TimeCard> AddAsync(TimeCard timeCard);
-
         /// <summary>
         /// Adds the specified TimeCard to the collection via POST.
         /// </summary>
         /// <param name="timeCard">The TimeCard to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TimeCard.</returns>
-        System.Threading.Tasks.Task<TimeCard> AddAsync(TimeCard timeCard, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TimeCard> AddAsync(TimeCard timeCard, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified TimeCard to the collection via POST and returns a <see cref="GraphResponse{TimeCard}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IScheduleTimeCardsCollectionPage> GetAsync();
+        /// <param name="timeCard">The TimeCard to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TimeCard}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeCard>> AddResponseAsync(TimeCard timeCard, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IScheduleTimeCardsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IScheduleTimeCardsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleTimeCardsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleTimeCardsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScheduleTimeCardsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

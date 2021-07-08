@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PlannerRosterMember using POST.
         /// </summary>
         /// <param name="plannerRosterMemberToCreate">The PlannerRosterMember to create.</param>
-        /// <returns>The created PlannerRosterMember.</returns>
-        public System.Threading.Tasks.Task<PlannerRosterMember> CreateAsync(PlannerRosterMember plannerRosterMemberToCreate)
-        {
-            return this.CreateAsync(plannerRosterMemberToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PlannerRosterMember using POST.
-        /// </summary>
-        /// <param name="plannerRosterMemberToCreate">The PlannerRosterMember to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerRosterMember.</returns>
-        public async System.Threading.Tasks.Task<PlannerRosterMember> CreateAsync(PlannerRosterMember plannerRosterMemberToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerRosterMember> CreateAsync(PlannerRosterMember plannerRosterMemberToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PlannerRosterMember>(plannerRosterMemberToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PlannerRosterMember.
+        /// Creates the specified PlannerRosterMember using POST and returns a <see cref="GraphResponse{PlannerRosterMember}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="plannerRosterMemberToCreate">The PlannerRosterMember to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerRosterMember}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerRosterMember>> CreateResponseAsync(PlannerRosterMember plannerRosterMemberToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PlannerRosterMember>(plannerRosterMemberToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PlannerRosterMember>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PlannerRosterMember.
+        /// Deletes the specified PlannerRosterMember and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PlannerRosterMember.</returns>
-        public System.Threading.Tasks.Task<PlannerRosterMember> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PlannerRosterMember.</returns>
-        public async System.Threading.Tasks.Task<PlannerRosterMember> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerRosterMember> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PlannerRosterMember>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PlannerRosterMember using PATCH.
+        /// Gets the specified PlannerRosterMember and returns a <see cref="GraphResponse{PlannerRosterMember}"/> object.
         /// </summary>
-        /// <param name="plannerRosterMemberToUpdate">The PlannerRosterMember to update.</param>
-        /// <returns>The updated PlannerRosterMember.</returns>
-        public System.Threading.Tasks.Task<PlannerRosterMember> UpdateAsync(PlannerRosterMember plannerRosterMemberToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerRosterMember}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerRosterMember>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(plannerRosterMemberToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PlannerRosterMember>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlannerRosterMember.</returns>
-        public async System.Threading.Tasks.Task<PlannerRosterMember> UpdateAsync(PlannerRosterMember plannerRosterMemberToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerRosterMember> UpdateAsync(PlannerRosterMember plannerRosterMemberToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (plannerRosterMemberToUpdate.AdditionalData != null)
-			{
-				if (plannerRosterMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					plannerRosterMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerRosterMemberToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (plannerRosterMemberToUpdate.AdditionalData != null)
-            {
-                if (plannerRosterMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    plannerRosterMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerRosterMemberToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PlannerRosterMember>(plannerRosterMemberToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerRosterMember using PATCH and returns a <see cref="GraphResponse{PlannerRosterMember}"/> object.
+        /// </summary>
+        /// <param name="plannerRosterMemberToUpdate">The PlannerRosterMember to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PlannerRosterMember}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerRosterMember>> UpdateResponseAsync(PlannerRosterMember plannerRosterMemberToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PlannerRosterMember>(plannerRosterMemberToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerRosterMember using PUT.
+        /// </summary>
+        /// <param name="plannerRosterMemberToUpdate">The PlannerRosterMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PlannerRosterMember> PutAsync(PlannerRosterMember plannerRosterMemberToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PlannerRosterMember>(plannerRosterMemberToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerRosterMember using PUT and returns a <see cref="GraphResponse{PlannerRosterMember}"/> object.
+        /// </summary>
+        /// <param name="plannerRosterMemberToUpdate">The PlannerRosterMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PlannerRosterMember}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerRosterMember>> PutResponseAsync(PlannerRosterMember plannerRosterMemberToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PlannerRosterMember>(plannerRosterMemberToUpdate, cancellationToken);
         }
 
         /// <summary>

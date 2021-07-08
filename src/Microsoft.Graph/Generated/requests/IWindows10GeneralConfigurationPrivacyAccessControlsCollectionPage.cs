@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<Windows10GeneralConfigurationPrivacyAccessControlsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<Windows10GeneralConfigurationPrivacyAccessControlsCollectionPage>))]
     public interface IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage : ICollectionPage<WindowsPrivacyDataAccessControlItem>
     {
         /// <summary>

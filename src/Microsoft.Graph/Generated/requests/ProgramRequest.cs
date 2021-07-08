@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Program using POST.
         /// </summary>
         /// <param name="programToCreate">The Program to create.</param>
-        /// <returns>The created Program.</returns>
-        public System.Threading.Tasks.Task<Program> CreateAsync(Program programToCreate)
-        {
-            return this.CreateAsync(programToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Program using POST.
-        /// </summary>
-        /// <param name="programToCreate">The Program to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Program.</returns>
-        public async System.Threading.Tasks.Task<Program> CreateAsync(Program programToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Program> CreateAsync(Program programToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Program>(programToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Program.
+        /// Creates the specified Program using POST and returns a <see cref="GraphResponse{Program}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="programToCreate">The Program to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Program}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Program>> CreateResponseAsync(Program programToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Program>(programToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Program>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Program.
+        /// Deletes the specified Program and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Program.</returns>
-        public System.Threading.Tasks.Task<Program> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Program.</returns>
-        public async System.Threading.Tasks.Task<Program> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Program> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Program>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Program using PATCH.
+        /// Gets the specified Program and returns a <see cref="GraphResponse{Program}"/> object.
         /// </summary>
-        /// <param name="programToUpdate">The Program to update.</param>
-        /// <returns>The updated Program.</returns>
-        public System.Threading.Tasks.Task<Program> UpdateAsync(Program programToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Program}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Program>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(programToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Program>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Program.</returns>
-        public async System.Threading.Tasks.Task<Program> UpdateAsync(Program programToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Program> UpdateAsync(Program programToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (programToUpdate.AdditionalData != null)
-			{
-				if (programToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					programToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, programToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (programToUpdate.AdditionalData != null)
-            {
-                if (programToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    programToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, programToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Program>(programToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Program using PATCH and returns a <see cref="GraphResponse{Program}"/> object.
+        /// </summary>
+        /// <param name="programToUpdate">The Program to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Program}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Program>> UpdateResponseAsync(Program programToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Program>(programToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Program using PUT.
+        /// </summary>
+        /// <param name="programToUpdate">The Program object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Program> PutAsync(Program programToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Program>(programToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Program using PUT and returns a <see cref="GraphResponse{Program}"/> object.
+        /// </summary>
+        /// <param name="programToUpdate">The Program object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Program}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Program>> PutResponseAsync(Program programToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Program>(programToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Program programToInitialize)
         {
 
-            if (programToInitialize != null && programToInitialize.AdditionalData != null)
+            if (programToInitialize != null)
             {
-
                 if (programToInitialize.Controls != null && programToInitialize.Controls.CurrentPage != null)
                 {
+                    programToInitialize.Controls.InitializeNextPageRequest(this.Client, programToInitialize.ControlsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     programToInitialize.Controls.AdditionalData = programToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    programToInitialize.AdditionalData.TryGetValue("controls@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        programToInitialize.Controls.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

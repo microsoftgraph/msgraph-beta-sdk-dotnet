@@ -12,37 +12,33 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Organization Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OrganizationSettings : Entity
     {
     
-		///<summary>
-		/// The OrganizationSettings constructor
-		///</summary>
-        public OrganizationSettings()
-        {
-            this.ODataType = "microsoft.graph.organizationSettings";
-        }
-	
         /// <summary>
         /// Gets or sets item insights.
         /// Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemInsights", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("itemInsights")]
         public ItemInsightsSettings ItemInsights { get; set; }
     
         /// <summary>
         /// Gets or sets profile card properties.
         /// Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileCardProperties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("profileCardProperties")]
         public IOrganizationSettingsProfileCardPropertiesCollectionPage ProfileCardProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets profileCardPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("profileCardProperties@odata.nextLink")]
+        public string ProfileCardPropertiesNextLink { get; set; }
     
     }
 }

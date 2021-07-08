@@ -12,57 +12,55 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Network IPv4Configuration Management Condition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class NetworkIPv4ConfigurationManagementCondition : NetworkManagementCondition
     {
     
-		///<summary>
-		/// The NetworkIPv4ConfigurationManagementCondition constructor
-		///</summary>
+        ///<summary>
+        /// The NetworkIPv4ConfigurationManagementCondition constructor
+        ///</summary>
         public NetworkIPv4ConfigurationManagementCondition()
         {
             this.ODataType = "microsoft.graph.networkIPv4ConfigurationManagementCondition";
         }
-	
+
         /// <summary>
         /// Gets or sets dns suffix list.
         /// Valid DNS suffixes for the current network. e.g. seattle.contoso.com
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSuffixList", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dnsSuffixList")]
         public IEnumerable<string> DnsSuffixList { get; set; }
     
         /// <summary>
         /// Gets or sets ip v4dhcpserver.
         /// The IPv4 address of the DHCP server for the adapter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV4DHCPServer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ipV4DHCPServer")]
         public string IpV4DHCPServer { get; set; }
     
         /// <summary>
         /// Gets or sets ip v4dnsserver list.
         /// The IPv4 DNS servers configured for the adapter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV4DNSServerList", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ipV4DNSServerList")]
         public IEnumerable<string> IpV4DNSServerList { get; set; }
     
         /// <summary>
         /// Gets or sets ip v4gateway.
         /// The IPv4 gateway address. e.g. 10.0.0.0
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV4Gateway", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ipV4Gateway")]
         public string IpV4Gateway { get; set; }
     
         /// <summary>
         /// Gets or sets ip v4prefix.
         /// The IPv4 subnet to be connected to. e.g. 10.0.0.0/8
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV4Prefix", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ipV4Prefix")]
         public string IpV4Prefix { get; set; }
     
     }

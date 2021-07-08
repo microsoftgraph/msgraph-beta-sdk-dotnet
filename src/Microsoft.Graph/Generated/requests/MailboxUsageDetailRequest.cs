@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified MailboxUsageDetail using POST.
         /// </summary>
         /// <param name="mailboxUsageDetailToCreate">The MailboxUsageDetail to create.</param>
-        /// <returns>The created MailboxUsageDetail.</returns>
-        public System.Threading.Tasks.Task<MailboxUsageDetail> CreateAsync(MailboxUsageDetail mailboxUsageDetailToCreate)
-        {
-            return this.CreateAsync(mailboxUsageDetailToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MailboxUsageDetail using POST.
-        /// </summary>
-        /// <param name="mailboxUsageDetailToCreate">The MailboxUsageDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MailboxUsageDetail.</returns>
-        public async System.Threading.Tasks.Task<MailboxUsageDetail> CreateAsync(MailboxUsageDetail mailboxUsageDetailToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MailboxUsageDetail> CreateAsync(MailboxUsageDetail mailboxUsageDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<MailboxUsageDetail>(mailboxUsageDetailToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified MailboxUsageDetail.
+        /// Creates the specified MailboxUsageDetail using POST and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="mailboxUsageDetailToCreate">The MailboxUsageDetail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailboxUsageDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> CreateResponseAsync(MailboxUsageDetail mailboxUsageDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MailboxUsageDetail>(mailboxUsageDetailToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<MailboxUsageDetail>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified MailboxUsageDetail.
+        /// Deletes the specified MailboxUsageDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MailboxUsageDetail.</returns>
-        public System.Threading.Tasks.Task<MailboxUsageDetail> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MailboxUsageDetail.</returns>
-        public async System.Threading.Tasks.Task<MailboxUsageDetail> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MailboxUsageDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<MailboxUsageDetail>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified MailboxUsageDetail using PATCH.
+        /// Gets the specified MailboxUsageDetail and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
         /// </summary>
-        /// <param name="mailboxUsageDetailToUpdate">The MailboxUsageDetail to update.</param>
-        /// <returns>The updated MailboxUsageDetail.</returns>
-        public System.Threading.Tasks.Task<MailboxUsageDetail> UpdateAsync(MailboxUsageDetail mailboxUsageDetailToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailboxUsageDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(mailboxUsageDetailToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MailboxUsageDetail>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MailboxUsageDetail.</returns>
-        public async System.Threading.Tasks.Task<MailboxUsageDetail> UpdateAsync(MailboxUsageDetail mailboxUsageDetailToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MailboxUsageDetail> UpdateAsync(MailboxUsageDetail mailboxUsageDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (mailboxUsageDetailToUpdate.AdditionalData != null)
-			{
-				if (mailboxUsageDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mailboxUsageDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailboxUsageDetailToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mailboxUsageDetailToUpdate.AdditionalData != null)
-            {
-                if (mailboxUsageDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mailboxUsageDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailboxUsageDetailToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<MailboxUsageDetail>(mailboxUsageDetailToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MailboxUsageDetail using PATCH and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="mailboxUsageDetailToUpdate">The MailboxUsageDetail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MailboxUsageDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> UpdateResponseAsync(MailboxUsageDetail mailboxUsageDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<MailboxUsageDetail>(mailboxUsageDetailToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified MailboxUsageDetail using PUT.
+        /// </summary>
+        /// <param name="mailboxUsageDetailToUpdate">The MailboxUsageDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MailboxUsageDetail> PutAsync(MailboxUsageDetail mailboxUsageDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MailboxUsageDetail>(mailboxUsageDetailToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MailboxUsageDetail using PUT and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="mailboxUsageDetailToUpdate">The MailboxUsageDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MailboxUsageDetail}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> PutResponseAsync(MailboxUsageDetail mailboxUsageDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MailboxUsageDetail>(mailboxUsageDetailToUpdate, cancellationToken);
         }
 
         /// <summary>

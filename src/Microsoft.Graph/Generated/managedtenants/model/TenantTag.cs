@@ -12,70 +12,60 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Tenant Tag.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TenantTag : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The TenantTag constructor
-		///</summary>
-        public TenantTag()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.tenantTag";
-        }
-	
         /// <summary>
         /// Gets or sets created by user id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdByUserId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdByUserId")]
         public string CreatedByUserId { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets deleted date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deletedDateTime")]
         public DateTimeOffset? DeletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last action by user id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActionByUserId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastActionByUserId")]
         public string LastActionByUserId { get; set; }
     
         /// <summary>
         /// Gets or sets last action date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastActionDateTime")]
         public DateTimeOffset? LastActionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets tenants.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenants", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenants")]
         public IEnumerable<TenantInfo> Tenants { get; set; }
     
     }

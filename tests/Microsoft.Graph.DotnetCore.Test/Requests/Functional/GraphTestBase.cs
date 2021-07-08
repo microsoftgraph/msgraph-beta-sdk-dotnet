@@ -2,7 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         private async Task<string> getAccessTokenUsingPasswordGrant()
         {
-            JObject jResult = null;
+            JsonDocument jResult = null;
             String urlParameters = String.Format(
                     "client_id={0}&client_info=1&client_secret={1}&scope={2}&grant_type={3}",
                     clientId,
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Task<string> responseTask = response.Content.ReadAsStringAsync();
                 responseTask.Wait();
                 string responseContent = responseTask.Result;
-                jResult = JObject.Parse(responseContent);
+                jResult = JsonDocument.Parse(responseContent);
             }
-            accessToken = (string)jResult["access_token"];
+            accessToken = jResult?.RootElement.GetProperty("access_token").ToString();
 
             return accessToken;
         }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ServiceHealth using POST.
         /// </summary>
         /// <param name="serviceHealthToCreate">The ServiceHealth to create.</param>
-        /// <returns>The created ServiceHealth.</returns>
-        public System.Threading.Tasks.Task<ServiceHealth> CreateAsync(ServiceHealth serviceHealthToCreate)
-        {
-            return this.CreateAsync(serviceHealthToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ServiceHealth using POST.
-        /// </summary>
-        /// <param name="serviceHealthToCreate">The ServiceHealth to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServiceHealth.</returns>
-        public async System.Threading.Tasks.Task<ServiceHealth> CreateAsync(ServiceHealth serviceHealthToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ServiceHealth> CreateAsync(ServiceHealth serviceHealthToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ServiceHealth>(serviceHealthToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ServiceHealth.
+        /// Creates the specified ServiceHealth using POST and returns a <see cref="GraphResponse{ServiceHealth}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="serviceHealthToCreate">The ServiceHealth to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceHealth}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServiceHealth>> CreateResponseAsync(ServiceHealth serviceHealthToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ServiceHealth>(serviceHealthToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ServiceHealth>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ServiceHealth.
+        /// Deletes the specified ServiceHealth and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ServiceHealth.</returns>
-        public System.Threading.Tasks.Task<ServiceHealth> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ServiceHealth.</returns>
-        public async System.Threading.Tasks.Task<ServiceHealth> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ServiceHealth> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ServiceHealth>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ServiceHealth using PATCH.
+        /// Gets the specified ServiceHealth and returns a <see cref="GraphResponse{ServiceHealth}"/> object.
         /// </summary>
-        /// <param name="serviceHealthToUpdate">The ServiceHealth to update.</param>
-        /// <returns>The updated ServiceHealth.</returns>
-        public System.Threading.Tasks.Task<ServiceHealth> UpdateAsync(ServiceHealth serviceHealthToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceHealth}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServiceHealth>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(serviceHealthToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ServiceHealth>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ServiceHealth.</returns>
-        public async System.Threading.Tasks.Task<ServiceHealth> UpdateAsync(ServiceHealth serviceHealthToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ServiceHealth> UpdateAsync(ServiceHealth serviceHealthToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (serviceHealthToUpdate.AdditionalData != null)
-			{
-				if (serviceHealthToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					serviceHealthToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, serviceHealthToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (serviceHealthToUpdate.AdditionalData != null)
-            {
-                if (serviceHealthToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    serviceHealthToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, serviceHealthToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ServiceHealth>(serviceHealthToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ServiceHealth using PATCH and returns a <see cref="GraphResponse{ServiceHealth}"/> object.
+        /// </summary>
+        /// <param name="serviceHealthToUpdate">The ServiceHealth to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ServiceHealth}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServiceHealth>> UpdateResponseAsync(ServiceHealth serviceHealthToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ServiceHealth>(serviceHealthToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ServiceHealth using PUT.
+        /// </summary>
+        /// <param name="serviceHealthToUpdate">The ServiceHealth object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ServiceHealth> PutAsync(ServiceHealth serviceHealthToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ServiceHealth>(serviceHealthToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ServiceHealth using PUT and returns a <see cref="GraphResponse{ServiceHealth}"/> object.
+        /// </summary>
+        /// <param name="serviceHealthToUpdate">The ServiceHealth object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ServiceHealth}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServiceHealth>> PutResponseAsync(ServiceHealth serviceHealthToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ServiceHealth>(serviceHealthToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ServiceHealth serviceHealthToInitialize)
         {
 
-            if (serviceHealthToInitialize != null && serviceHealthToInitialize.AdditionalData != null)
+            if (serviceHealthToInitialize != null)
             {
-
                 if (serviceHealthToInitialize.Issues != null && serviceHealthToInitialize.Issues.CurrentPage != null)
                 {
+                    serviceHealthToInitialize.Issues.InitializeNextPageRequest(this.Client, serviceHealthToInitialize.IssuesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     serviceHealthToInitialize.Issues.AdditionalData = serviceHealthToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    serviceHealthToInitialize.AdditionalData.TryGetValue("issues@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        serviceHealthToInitialize.Issues.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

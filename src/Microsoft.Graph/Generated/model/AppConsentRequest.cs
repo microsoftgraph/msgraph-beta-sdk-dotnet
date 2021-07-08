@@ -12,58 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type App Consent Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AppConsentRequestObject : Entity
     {
     
-		///<summary>
-		/// The AppConsentRequest constructor
-		///</summary>
-        public AppConsentRequestObject()
-        {
-            this.ODataType = "microsoft.graph.appConsentRequest";
-        }
-	
         /// <summary>
         /// Gets or sets app display name.
         /// The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appDisplayName")]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets app id.
         /// The identifier of the application. Required. Supports $filter (eq only) and $orderby.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appId")]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets consent type.
         /// The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "consentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("consentType")]
         public string ConsentType { get; set; }
     
         /// <summary>
         /// Gets or sets pending scopes.
         /// A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingScopes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingScopes")]
         public IEnumerable<AppConsentRequestScope> PendingScopes { get; set; }
     
         /// <summary>
         /// Gets or sets user consent requests.
         /// A list of pending user consent requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userConsentRequests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userConsentRequests")]
         public IAppConsentRequestUserConsentRequestsCollectionPage UserConsentRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets userConsentRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("userConsentRequests@odata.nextLink")]
+        public string UserConsentRequestsNextLink { get; set; }
     
     }
 }

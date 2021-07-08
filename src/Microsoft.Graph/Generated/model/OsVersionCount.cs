@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type OsVersionCount.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<OsVersionCount>))]
     public partial class OsVersionCount
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OsVersionCount"/> class.
-        /// </summary>
-        public OsVersionCount()
-        {
-            this.ODataType = "microsoft.graph.osVersionCount";
-        }
 
         /// <summary>
         /// Gets or sets deviceCount.
         /// Count of devices with malware for the OS version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceCount")]
         public Int32? DeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets lastUpdateDateTime.
         /// The Timestamp of the last update for the device count in UTC
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUpdateDateTime")]
         public DateTimeOffset? LastUpdateDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets osVersion.
         /// OS version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsQualityUpdateProfile using POST.
         /// </summary>
         /// <param name="windowsQualityUpdateProfileToCreate">The WindowsQualityUpdateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsQualityUpdateProfile.</returns>
-        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> CreateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToCreate);        /// <summary>
-        /// Creates the specified WindowsQualityUpdateProfile using POST.
+        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> CreateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified WindowsQualityUpdateProfile using POST and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object.
         /// </summary>
         /// <param name="windowsQualityUpdateProfileToCreate">The WindowsQualityUpdateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsQualityUpdateProfile.</returns>
-        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> CreateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsQualityUpdateProfile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> CreateResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsQualityUpdateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified WindowsQualityUpdateProfile.
+        /// Deletes the specified WindowsQualityUpdateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsQualityUpdateProfile.</returns>
-        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsQualityUpdateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsQualityUpdateProfile.</returns>
-        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified WindowsQualityUpdateProfile using PATCH.
+        /// Gets the specified WindowsQualityUpdateProfile and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object.
         /// </summary>
-        /// <param name="windowsQualityUpdateProfileToUpdate">The WindowsQualityUpdateProfile to update.</param>
-        /// <returns>The updated WindowsQualityUpdateProfile.</returns>
-        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> UpdateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsQualityUpdateProfile using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsQualityUpdateProfile.</returns>
-        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> UpdateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> UpdateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsQualityUpdateProfile using PATCH and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object.
+        /// </summary>
+        /// <param name="windowsQualityUpdateProfileToUpdate">The WindowsQualityUpdateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> UpdateResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsQualityUpdateProfile using PUT.
+        /// </summary>
+        /// <param name="windowsQualityUpdateProfileToUpdate">The WindowsQualityUpdateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> PutAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsQualityUpdateProfile using PUT and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object.
+        /// </summary>
+        /// <param name="windowsQualityUpdateProfileToUpdate">The WindowsQualityUpdateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> PutResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

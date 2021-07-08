@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -12,51 +12,65 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Planner.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Planner : Entity
     {
     
-		///<summary>
-		/// The Planner constructor
-		///</summary>
-        public Planner()
-        {
-            this.ODataType = "microsoft.graph.planner";
-        }
-	
         /// <summary>
         /// Gets or sets buckets.
         /// Read-only. Nullable. Returns a collection of the specified buckets
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "buckets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("buckets")]
         public IPlannerBucketsCollectionPage Buckets { get; set; }
+
+        /// <summary>
+        /// Gets or sets bucketsNextLink.
+        /// </summary>
+        [JsonPropertyName("buckets@odata.nextLink")]
+        public string BucketsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets plans.
         /// Read-only. Nullable. Returns a collection of the specified plans
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plans", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("plans")]
         public IPlannerPlansCollectionPage Plans { get; set; }
+
+        /// <summary>
+        /// Gets or sets plansNextLink.
+        /// </summary>
+        [JsonPropertyName("plans@odata.nextLink")]
+        public string PlansNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets rosters.
         /// Read-only. Nullable. Returns a collection of the specified rosters
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rosters", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rosters")]
         public IPlannerRostersCollectionPage Rosters { get; set; }
+
+        /// <summary>
+        /// Gets or sets rostersNextLink.
+        /// </summary>
+        [JsonPropertyName("rosters@odata.nextLink")]
+        public string RostersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
         /// Read-only. Nullable. Returns a collection of the specified tasks
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tasks")]
         public IPlannerTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

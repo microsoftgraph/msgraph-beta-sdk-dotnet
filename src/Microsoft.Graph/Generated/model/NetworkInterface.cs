@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type NetworkInterface.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<NetworkInterface>))]
     public partial class NetworkInterface
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NetworkInterface"/> class.
-        /// </summary>
-        public NetworkInterface()
-        {
-            this.ODataType = "microsoft.graph.networkInterface";
-        }
 
         /// <summary>
         /// Gets or sets description.
         /// Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection &amp;lt;#&amp;gt;, etc.).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets ipV4Address.
         /// Last IPv4 address associated with this NIC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV4Address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ipV4Address")]
         public string IpV4Address { get; set; }
     
         /// <summary>
         /// Gets or sets ipV6Address.
         /// Last Public (aka global) IPv6 address associated with this NIC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV6Address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ipV6Address")]
         public string IpV6Address { get; set; }
     
         /// <summary>
         /// Gets or sets localIpV6Address.
         /// Last local (link-local or site-local) IPv6 address associated with this NIC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localIpV6Address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("localIpV6Address")]
         public string LocalIpV6Address { get; set; }
     
         /// <summary>
         /// Gets or sets macAddress.
         /// MAC address of the NIC on this host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("macAddress")]
         public string MacAddress { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

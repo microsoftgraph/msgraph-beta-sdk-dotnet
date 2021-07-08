@@ -12,90 +12,81 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AssignmentFilterEvaluationSummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AssignmentFilterEvaluationSummary>))]
     public partial class AssignmentFilterEvaluationSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AssignmentFilterEvaluationSummary"/> class.
-        /// </summary>
-        public AssignmentFilterEvaluationSummary()
-        {
-            this.ODataType = "microsoft.graph.assignmentFilterEvaluationSummary";
-        }
 
         /// <summary>
         /// Gets or sets assignmentFilterDisplayName.
         /// The admin defined name for assignment filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilterDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentFilterDisplayName")]
         public string AssignmentFilterDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets assignmentFilterId.
         /// Unique identifier for the assignment filter object
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilterId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentFilterId")]
         public string AssignmentFilterId { get; set; }
     
         /// <summary>
         /// Gets or sets assignmentFilterLastModifiedDateTime.
         /// The time the assignment filter was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilterLastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentFilterLastModifiedDateTime")]
         public DateTimeOffset? AssignmentFilterLastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets assignmentFilterPlatform.
         /// The platform for which this assignment filter is created. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilterPlatform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentFilterPlatform")]
         public DevicePlatformType? AssignmentFilterPlatform { get; set; }
     
         /// <summary>
         /// Gets or sets assignmentFilterType.
         /// Indicate filter type either include or exclude. Possible values are: none, include, exclude.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilterType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentFilterType")]
         public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType { get; set; }
     
         /// <summary>
         /// Gets or sets assignmentFilterTypeAndEvaluationResults.
         /// A collection of filter types and their corresponding evaluation results.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilterTypeAndEvaluationResults", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentFilterTypeAndEvaluationResults")]
         public IEnumerable<AssignmentFilterTypeAndEvaluationResult> AssignmentFilterTypeAndEvaluationResults { get; set; }
     
         /// <summary>
         /// Gets or sets evaluationDateTime.
         /// The time assignment filter was evaluated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("evaluationDateTime")]
         public DateTimeOffset? EvaluationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets evaluationResult.
         /// Assignment filter evaluation result. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationResult", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("evaluationResult")]
         public AssignmentFilterEvaluationResult? EvaluationResult { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

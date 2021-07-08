@@ -9,41 +9,39 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PresenceSetPresenceRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PresenceSetPresenceRequestBody
     {
     
         /// <summary>
         /// Gets or sets SessionId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sessionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sessionId")]
         public string SessionId { get; set; }
     
         /// <summary>
         /// Gets or sets Availability.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availability", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("availability")]
         public string Availability { get; set; }
     
         /// <summary>
         /// Gets or sets Activity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activity")]
         public string Activity { get; set; }
     
         /// <summary>
         /// Gets or sets ExpirationDuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expirationDuration")]
         public Duration ExpirationDuration { get; set; }
     
     }

@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserRegistrationMethodCount.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UserRegistrationMethodCount>))]
     public partial class UserRegistrationMethodCount
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserRegistrationMethodCount"/> class.
-        /// </summary>
-        public UserRegistrationMethodCount()
-        {
-            this.ODataType = "microsoft.graph.userRegistrationMethodCount";
-        }
 
         /// <summary>
         /// Gets or sets authenticationMethod.
         /// Name of authentication method.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationMethod")]
         public string AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets userCount.
         /// Number of users registered.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userCount")]
         public Int64? UserCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type NotifyUserAction.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<NotifyUserAction>))]
     public partial class NotifyUserAction : DlpActionInfo
     {
         /// <summary>
@@ -32,31 +31,31 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets actionLastModifiedDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionLastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionLastModifiedDateTime")]
         public DateTimeOffset? ActionLastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets emailText.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("emailText")]
         public string EmailText { get; set; }
     
         /// <summary>
         /// Gets or sets overrideOption.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overrideOption", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("overrideOption")]
         public OverrideOption? OverrideOption { get; set; }
     
         /// <summary>
         /// Gets or sets policyTip.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyTip", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policyTip")]
         public string PolicyTip { get; set; }
     
         /// <summary>
         /// Gets or sets recipients.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipients", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recipients")]
         public IEnumerable<string> Recipients { get; set; }
     
     }

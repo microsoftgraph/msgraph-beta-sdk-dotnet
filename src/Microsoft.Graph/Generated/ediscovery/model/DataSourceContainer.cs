@@ -12,19 +12,18 @@ namespace Microsoft.Graph.Ediscovery
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Data Source Container.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<DataSourceContainer>))]
     public partial class DataSourceContainer : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The internal DataSourceContainer constructor
-		///</summary>
+        ///<summary>
+        /// The internal DataSourceContainer constructor
+        ///</summary>
         protected internal DataSourceContainer()
         {
             // Don't allow initialization of abstract entity types
@@ -34,41 +33,41 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets created date time.
         /// Created date and time of the dataSourceContainer entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Display name of the dataSourceContainer entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// Last modified date and time of the dataSourceContainer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets released date time.
         /// Date and time that the dataSourceContainer was released from the case.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releasedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("releasedDateTime")]
         public DateTimeOffset? ReleasedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Latest status of the dataSourceContainer. Possible values are: Active, Released.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public DataSourceContainerStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets last index operation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastIndexOperation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastIndexOperation")]
         public CaseIndexOperation LastIndexOperation { get; set; }
     
     }

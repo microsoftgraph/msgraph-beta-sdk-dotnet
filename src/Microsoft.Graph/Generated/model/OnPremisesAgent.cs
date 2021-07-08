@@ -12,57 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type On Premises Agent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<OnPremisesAgent>))]
     public partial class OnPremisesAgent : Entity
     {
     
-		///<summary>
-		/// The OnPremisesAgent constructor
-		///</summary>
-        public OnPremisesAgent()
-        {
-            this.ODataType = "microsoft.graph.onPremisesAgent";
-        }
-	
         /// <summary>
         /// Gets or sets external ip.
         /// The external IP address as detected by the service for the agent machine. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalIp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalIp")]
         public string ExternalIp { get; set; }
     
         /// <summary>
         /// Gets or sets machine name.
         /// The name of the machine that the aggent is running on. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "machineName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("machineName")]
         public string MachineName { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Possible values are: active, inactive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public AgentStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets supported publishing types.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedPublishingTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supportedPublishingTypes")]
         public IEnumerable<OnPremisesPublishingType> SupportedPublishingTypes { get; set; }
     
         /// <summary>
         /// Gets or sets agent groups.
         /// List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agentGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agentGroups")]
         public IOnPremisesAgentAgentGroupsCollectionPage AgentGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets agentGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("agentGroups@odata.nextLink")]
+        public string AgentGroupsNextLink { get; set; }
     
     }
 }

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ITeamTagsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified TeamworkTag to the collection via POST.
-        /// </summary>
-        /// <param name="teamworkTag">The TeamworkTag to add.</param>
-        /// <returns>The created TeamworkTag.</returns>
-        System.Threading.Tasks.Task<TeamworkTag> AddAsync(TeamworkTag teamworkTag);
-
         /// <summary>
         /// Adds the specified TeamworkTag to the collection via POST.
         /// </summary>
         /// <param name="teamworkTag">The TeamworkTag to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamworkTag.</returns>
-        System.Threading.Tasks.Task<TeamworkTag> AddAsync(TeamworkTag teamworkTag, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TeamworkTag> AddAsync(TeamworkTag teamworkTag, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified TeamworkTag to the collection via POST and returns a <see cref="GraphResponse{TeamworkTag}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITeamTagsCollectionPage> GetAsync();
+        /// <param name="teamworkTag">The TeamworkTag to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamworkTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> AddResponseAsync(TeamworkTag teamworkTag, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITeamTagsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ITeamTagsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TeamTagsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamTagsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamTagsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

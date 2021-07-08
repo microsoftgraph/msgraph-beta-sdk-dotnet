@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type InformationProtectionContentLabel.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<InformationProtectionContentLabel>))]
     public partial class InformationProtectionContentLabel
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InformationProtectionContentLabel"/> class.
-        /// </summary>
-        public InformationProtectionContentLabel()
-        {
-            this.ODataType = "microsoft.graph.informationProtectionContentLabel";
-        }
 
         /// <summary>
         /// Gets or sets assignmentMethod.
         /// Possible values are: standard, privileged, auto.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentMethod")]
         public AssignmentMethod? AssignmentMethod { get; set; }
     
         /// <summary>
         /// Gets or sets creationDateTime.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creationDateTime")]
         public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets label.
         /// Details on the label that is currently applied to the file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("label")]
         public LabelDetails Label { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

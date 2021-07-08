@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceAndAppManagementAssignmentFilterEnableRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceAndAppManagementAssignmentFilterEnableRequestBody
     {
     
         /// <summary>
         /// Gets or sets Enable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enable")]
         public bool Enable { get; set; }
     
     }

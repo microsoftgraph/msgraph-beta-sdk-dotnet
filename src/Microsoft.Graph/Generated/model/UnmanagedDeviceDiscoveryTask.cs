@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unmanaged Device Discovery Task.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UnmanagedDeviceDiscoveryTask : DeviceAppManagementTask
     {
     
-		///<summary>
-		/// The UnmanagedDeviceDiscoveryTask constructor
-		///</summary>
+        ///<summary>
+        /// The UnmanagedDeviceDiscoveryTask constructor
+        ///</summary>
         public UnmanagedDeviceDiscoveryTask()
         {
             this.ODataType = "microsoft.graph.unmanagedDeviceDiscoveryTask";
         }
-	
+
         /// <summary>
         /// Gets or sets unmanaged devices.
         /// Unmanaged devices discovered in the network.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unmanagedDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unmanagedDevices")]
         public IEnumerable<UnmanagedDevice> UnmanagedDevices { get; set; }
     
     }

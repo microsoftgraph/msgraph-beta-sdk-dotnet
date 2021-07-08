@@ -12,36 +12,35 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Configuration Choice Setting Definition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationChoiceSettingDefinition>))]
     public partial class DeviceManagementConfigurationChoiceSettingDefinition : DeviceManagementConfigurationSettingDefinition
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationChoiceSettingDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementConfigurationChoiceSettingDefinition constructor
+        ///</summary>
         public DeviceManagementConfigurationChoiceSettingDefinition()
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition";
         }
-	
+
         /// <summary>
         /// Gets or sets default option id.
         /// Default option for choice setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultOptionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultOptionId")]
         public string DefaultOptionId { get; set; }
     
         /// <summary>
         /// Gets or sets options.
         /// Options for the setting that can be selected
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "options", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("options")]
         public IEnumerable<DeviceManagementConfigurationOptionDefinition> Options { get; set; }
     
     }

@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Office Client Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsOfficeClientConfiguration : OfficeClientConfiguration
     {
     
-		///<summary>
-		/// The WindowsOfficeClientConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsOfficeClientConfiguration constructor
+        ///</summary>
         public WindowsOfficeClientConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsOfficeClientConfiguration";
         }
-	
+
     }
 }
 

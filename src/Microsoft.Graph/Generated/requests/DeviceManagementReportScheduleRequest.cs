@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementReportSchedule using POST.
         /// </summary>
         /// <param name="deviceManagementReportScheduleToCreate">The DeviceManagementReportSchedule to create.</param>
-        /// <returns>The created DeviceManagementReportSchedule.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementReportSchedule> CreateAsync(DeviceManagementReportSchedule deviceManagementReportScheduleToCreate)
-        {
-            return this.CreateAsync(deviceManagementReportScheduleToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementReportSchedule using POST.
-        /// </summary>
-        /// <param name="deviceManagementReportScheduleToCreate">The DeviceManagementReportSchedule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementReportSchedule.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementReportSchedule> CreateAsync(DeviceManagementReportSchedule deviceManagementReportScheduleToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementReportSchedule> CreateAsync(DeviceManagementReportSchedule deviceManagementReportScheduleToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceManagementReportSchedule>(deviceManagementReportScheduleToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceManagementReportSchedule.
+        /// Creates the specified DeviceManagementReportSchedule using POST and returns a <see cref="GraphResponse{DeviceManagementReportSchedule}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceManagementReportScheduleToCreate">The DeviceManagementReportSchedule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReportSchedule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportSchedule>> CreateResponseAsync(DeviceManagementReportSchedule deviceManagementReportScheduleToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReportSchedule>(deviceManagementReportScheduleToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceManagementReportSchedule>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceManagementReportSchedule.
+        /// Deletes the specified DeviceManagementReportSchedule and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementReportSchedule.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementReportSchedule> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementReportSchedule.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementReportSchedule> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementReportSchedule> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceManagementReportSchedule>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceManagementReportSchedule using PATCH.
+        /// Gets the specified DeviceManagementReportSchedule and returns a <see cref="GraphResponse{DeviceManagementReportSchedule}"/> object.
         /// </summary>
-        /// <param name="deviceManagementReportScheduleToUpdate">The DeviceManagementReportSchedule to update.</param>
-        /// <returns>The updated DeviceManagementReportSchedule.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementReportSchedule> UpdateAsync(DeviceManagementReportSchedule deviceManagementReportScheduleToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReportSchedule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportSchedule>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(deviceManagementReportScheduleToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReportSchedule>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementReportSchedule.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementReportSchedule> UpdateAsync(DeviceManagementReportSchedule deviceManagementReportScheduleToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementReportSchedule> UpdateAsync(DeviceManagementReportSchedule deviceManagementReportScheduleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementReportScheduleToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementReportScheduleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementReportScheduleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementReportScheduleToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementReportScheduleToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementReportScheduleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementReportScheduleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementReportScheduleToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceManagementReportSchedule>(deviceManagementReportScheduleToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReportSchedule using PATCH and returns a <see cref="GraphResponse{DeviceManagementReportSchedule}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReportScheduleToUpdate">The DeviceManagementReportSchedule to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReportSchedule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportSchedule>> UpdateResponseAsync(DeviceManagementReportSchedule deviceManagementReportScheduleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReportSchedule>(deviceManagementReportScheduleToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReportSchedule using PUT.
+        /// </summary>
+        /// <param name="deviceManagementReportScheduleToUpdate">The DeviceManagementReportSchedule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceManagementReportSchedule> PutAsync(DeviceManagementReportSchedule deviceManagementReportScheduleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceManagementReportSchedule>(deviceManagementReportScheduleToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReportSchedule using PUT and returns a <see cref="GraphResponse{DeviceManagementReportSchedule}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReportScheduleToUpdate">The DeviceManagementReportSchedule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceManagementReportSchedule}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportSchedule>> PutResponseAsync(DeviceManagementReportSchedule deviceManagementReportScheduleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReportSchedule>(deviceManagementReportScheduleToUpdate, cancellationToken);
         }
 
         /// <summary>

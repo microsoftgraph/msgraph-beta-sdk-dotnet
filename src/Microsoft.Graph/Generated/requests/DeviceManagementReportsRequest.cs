@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementReports using POST.
         /// </summary>
         /// <param name="deviceManagementReportsToCreate">The DeviceManagementReports to create.</param>
-        /// <returns>The created DeviceManagementReports.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementReports> CreateAsync(DeviceManagementReports deviceManagementReportsToCreate)
-        {
-            return this.CreateAsync(deviceManagementReportsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementReports using POST.
-        /// </summary>
-        /// <param name="deviceManagementReportsToCreate">The DeviceManagementReports to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementReports.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementReports> CreateAsync(DeviceManagementReports deviceManagementReportsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementReports> CreateAsync(DeviceManagementReports deviceManagementReportsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceManagementReports>(deviceManagementReportsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceManagementReports.
+        /// Creates the specified DeviceManagementReports using POST and returns a <see cref="GraphResponse{DeviceManagementReports}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceManagementReportsToCreate">The DeviceManagementReports to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReports}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> CreateResponseAsync(DeviceManagementReports deviceManagementReportsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReports>(deviceManagementReportsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceManagementReports>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceManagementReports.
+        /// Deletes the specified DeviceManagementReports and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementReports.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementReports> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementReports.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementReports> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementReports> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceManagementReports>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceManagementReports using PATCH.
+        /// Gets the specified DeviceManagementReports and returns a <see cref="GraphResponse{DeviceManagementReports}"/> object.
         /// </summary>
-        /// <param name="deviceManagementReportsToUpdate">The DeviceManagementReports to update.</param>
-        /// <returns>The updated DeviceManagementReports.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementReports> UpdateAsync(DeviceManagementReports deviceManagementReportsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReports}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(deviceManagementReportsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReports>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementReports.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementReports> UpdateAsync(DeviceManagementReports deviceManagementReportsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementReports> UpdateAsync(DeviceManagementReports deviceManagementReportsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementReportsToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementReportsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementReportsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementReportsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementReportsToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementReportsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementReportsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementReportsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceManagementReports>(deviceManagementReportsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReports using PATCH and returns a <see cref="GraphResponse{DeviceManagementReports}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReportsToUpdate">The DeviceManagementReports to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReports}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> UpdateResponseAsync(DeviceManagementReports deviceManagementReportsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReports>(deviceManagementReportsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReports using PUT.
+        /// </summary>
+        /// <param name="deviceManagementReportsToUpdate">The DeviceManagementReports object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceManagementReports> PutAsync(DeviceManagementReports deviceManagementReportsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceManagementReports>(deviceManagementReportsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReports using PUT and returns a <see cref="GraphResponse{DeviceManagementReports}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReportsToUpdate">The DeviceManagementReports object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceManagementReports}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> PutResponseAsync(DeviceManagementReports deviceManagementReportsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReports>(deviceManagementReportsToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementReports deviceManagementReportsToInitialize)
         {
 
-            if (deviceManagementReportsToInitialize != null && deviceManagementReportsToInitialize.AdditionalData != null)
+            if (deviceManagementReportsToInitialize != null)
             {
-
                 if (deviceManagementReportsToInitialize.CachedReportConfigurations != null && deviceManagementReportsToInitialize.CachedReportConfigurations.CurrentPage != null)
                 {
+                    deviceManagementReportsToInitialize.CachedReportConfigurations.InitializeNextPageRequest(this.Client, deviceManagementReportsToInitialize.CachedReportConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementReportsToInitialize.CachedReportConfigurations.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementReportsToInitialize.AdditionalData.TryGetValue("cachedReportConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementReportsToInitialize.CachedReportConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementReportsToInitialize.ExportJobs != null && deviceManagementReportsToInitialize.ExportJobs.CurrentPage != null)
                 {
+                    deviceManagementReportsToInitialize.ExportJobs.InitializeNextPageRequest(this.Client, deviceManagementReportsToInitialize.ExportJobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementReportsToInitialize.ExportJobs.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementReportsToInitialize.AdditionalData.TryGetValue("exportJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementReportsToInitialize.ExportJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementReportsToInitialize.ReportSchedules != null && deviceManagementReportsToInitialize.ReportSchedules.CurrentPage != null)
                 {
+                    deviceManagementReportsToInitialize.ReportSchedules.InitializeNextPageRequest(this.Client, deviceManagementReportsToInitialize.ReportSchedulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementReportsToInitialize.ReportSchedules.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementReportsToInitialize.AdditionalData.TryGetValue("reportSchedules@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementReportsToInitialize.ReportSchedules.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

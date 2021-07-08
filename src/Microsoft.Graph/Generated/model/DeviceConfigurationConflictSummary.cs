@@ -12,43 +12,33 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Configuration Conflict Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceConfigurationConflictSummary : Entity
     {
     
-		///<summary>
-		/// The DeviceConfigurationConflictSummary constructor
-		///</summary>
-        public DeviceConfigurationConflictSummary()
-        {
-            this.ODataType = "microsoft.graph.deviceConfigurationConflictSummary";
-        }
-	
         /// <summary>
         /// Gets or sets conflicting device configurations.
         /// The set of policies in conflict with the given setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflictingDeviceConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conflictingDeviceConfigurations")]
         public IEnumerable<SettingSource> ConflictingDeviceConfigurations { get; set; }
     
         /// <summary>
         /// Gets or sets contributing settings.
         /// The set of settings in conflict with the given policies
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contributingSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contributingSettings")]
         public IEnumerable<string> ContributingSettings { get; set; }
     
         /// <summary>
         /// Gets or sets device checkins impacted.
         /// The count of checkins impacted by the conflicting policies and settings
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCheckinsImpacted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceCheckinsImpacted")]
         public Int32? DeviceCheckinsImpacted { get; set; }
     
     }

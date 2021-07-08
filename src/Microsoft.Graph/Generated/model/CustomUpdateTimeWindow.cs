@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CustomUpdateTimeWindow.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<CustomUpdateTimeWindow>))]
     public partial class CustomUpdateTimeWindow
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CustomUpdateTimeWindow"/> class.
-        /// </summary>
-        public CustomUpdateTimeWindow()
-        {
-            this.ODataType = "microsoft.graph.customUpdateTimeWindow";
-        }
 
         /// <summary>
         /// Gets or sets endDay.
         /// End day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDay", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDay")]
         public DayOfWeek? EndDay { get; set; }
     
         /// <summary>
         /// Gets or sets endTime.
         /// End time of the time window
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endTime")]
         public TimeOfDay EndTime { get; set; }
     
         /// <summary>
         /// Gets or sets startDay.
         /// Start day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDay", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDay")]
         public DayOfWeek? StartDay { get; set; }
     
         /// <summary>
         /// Gets or sets startTime.
         /// Start time of the time window
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startTime")]
         public TimeOfDay StartTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

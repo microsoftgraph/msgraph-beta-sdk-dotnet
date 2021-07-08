@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MeetingAttendanceReport using POST.
         /// </summary>
         /// <param name="meetingAttendanceReportToCreate">The MeetingAttendanceReport to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MeetingAttendanceReport.</returns>
-        System.Threading.Tasks.Task<MeetingAttendanceReport> CreateAsync(MeetingAttendanceReport meetingAttendanceReportToCreate);        /// <summary>
-        /// Creates the specified MeetingAttendanceReport using POST.
+        System.Threading.Tasks.Task<MeetingAttendanceReport> CreateAsync(MeetingAttendanceReport meetingAttendanceReportToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified MeetingAttendanceReport using POST and returns a <see cref="GraphResponse{MeetingAttendanceReport}"/> object.
         /// </summary>
         /// <param name="meetingAttendanceReportToCreate">The MeetingAttendanceReport to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MeetingAttendanceReport.</returns>
-        System.Threading.Tasks.Task<MeetingAttendanceReport> CreateAsync(MeetingAttendanceReport meetingAttendanceReportToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MeetingAttendanceReport.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MeetingAttendanceReport}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MeetingAttendanceReport>> CreateResponseAsync(MeetingAttendanceReport meetingAttendanceReportToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MeetingAttendanceReport.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified MeetingAttendanceReport.
+        /// Deletes the specified MeetingAttendanceReport and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MeetingAttendanceReport.</returns>
-        System.Threading.Tasks.Task<MeetingAttendanceReport> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MeetingAttendanceReport.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MeetingAttendanceReport.</returns>
-        System.Threading.Tasks.Task<MeetingAttendanceReport> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MeetingAttendanceReport> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified MeetingAttendanceReport using PATCH.
+        /// Gets the specified MeetingAttendanceReport and returns a <see cref="GraphResponse{MeetingAttendanceReport}"/> object.
         /// </summary>
-        /// <param name="meetingAttendanceReportToUpdate">The MeetingAttendanceReport to update.</param>
-        /// <returns>The updated MeetingAttendanceReport.</returns>
-        System.Threading.Tasks.Task<MeetingAttendanceReport> UpdateAsync(MeetingAttendanceReport meetingAttendanceReportToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MeetingAttendanceReport}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MeetingAttendanceReport>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MeetingAttendanceReport using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MeetingAttendanceReport.</returns>
-        System.Threading.Tasks.Task<MeetingAttendanceReport> UpdateAsync(MeetingAttendanceReport meetingAttendanceReportToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MeetingAttendanceReport> UpdateAsync(MeetingAttendanceReport meetingAttendanceReportToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MeetingAttendanceReport using PATCH and returns a <see cref="GraphResponse{MeetingAttendanceReport}"/> object.
+        /// </summary>
+        /// <param name="meetingAttendanceReportToUpdate">The MeetingAttendanceReport to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MeetingAttendanceReport}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MeetingAttendanceReport>> UpdateResponseAsync(MeetingAttendanceReport meetingAttendanceReportToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MeetingAttendanceReport using PUT.
+        /// </summary>
+        /// <param name="meetingAttendanceReportToUpdate">The MeetingAttendanceReport object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MeetingAttendanceReport> PutAsync(MeetingAttendanceReport meetingAttendanceReportToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MeetingAttendanceReport using PUT and returns a <see cref="GraphResponse{MeetingAttendanceReport}"/> object.
+        /// </summary>
+        /// <param name="meetingAttendanceReportToUpdate">The MeetingAttendanceReport object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MeetingAttendanceReport}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MeetingAttendanceReport>> PutResponseAsync(MeetingAttendanceReport meetingAttendanceReportToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ExactMatchSession using POST.
         /// </summary>
         /// <param name="exactMatchSessionToCreate">The ExactMatchSession to create.</param>
-        /// <returns>The created ExactMatchSession.</returns>
-        public System.Threading.Tasks.Task<ExactMatchSession> CreateAsync(ExactMatchSession exactMatchSessionToCreate)
-        {
-            return this.CreateAsync(exactMatchSessionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ExactMatchSession using POST.
-        /// </summary>
-        /// <param name="exactMatchSessionToCreate">The ExactMatchSession to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExactMatchSession.</returns>
-        public async System.Threading.Tasks.Task<ExactMatchSession> CreateAsync(ExactMatchSession exactMatchSessionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExactMatchSession> CreateAsync(ExactMatchSession exactMatchSessionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ExactMatchSession>(exactMatchSessionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ExactMatchSession.
+        /// Creates the specified ExactMatchSession using POST and returns a <see cref="GraphResponse{ExactMatchSession}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="exactMatchSessionToCreate">The ExactMatchSession to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> CreateResponseAsync(ExactMatchSession exactMatchSessionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ExactMatchSession>(exactMatchSessionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ExactMatchSession>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ExactMatchSession.
+        /// Deletes the specified ExactMatchSession and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ExactMatchSession.</returns>
-        public System.Threading.Tasks.Task<ExactMatchSession> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExactMatchSession.</returns>
-        public async System.Threading.Tasks.Task<ExactMatchSession> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExactMatchSession> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ExactMatchSession>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ExactMatchSession using PATCH.
+        /// Gets the specified ExactMatchSession and returns a <see cref="GraphResponse{ExactMatchSession}"/> object.
         /// </summary>
-        /// <param name="exactMatchSessionToUpdate">The ExactMatchSession to update.</param>
-        /// <returns>The updated ExactMatchSession.</returns>
-        public System.Threading.Tasks.Task<ExactMatchSession> UpdateAsync(ExactMatchSession exactMatchSessionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(exactMatchSessionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ExactMatchSession>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ExactMatchSession.</returns>
-        public async System.Threading.Tasks.Task<ExactMatchSession> UpdateAsync(ExactMatchSession exactMatchSessionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExactMatchSession> UpdateAsync(ExactMatchSession exactMatchSessionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (exactMatchSessionToUpdate.AdditionalData != null)
-			{
-				if (exactMatchSessionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					exactMatchSessionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchSessionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (exactMatchSessionToUpdate.AdditionalData != null)
-            {
-                if (exactMatchSessionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    exactMatchSessionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchSessionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ExactMatchSession>(exactMatchSessionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ExactMatchSession using PATCH and returns a <see cref="GraphResponse{ExactMatchSession}"/> object.
+        /// </summary>
+        /// <param name="exactMatchSessionToUpdate">The ExactMatchSession to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> UpdateResponseAsync(ExactMatchSession exactMatchSessionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ExactMatchSession>(exactMatchSessionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ExactMatchSession using PUT.
+        /// </summary>
+        /// <param name="exactMatchSessionToUpdate">The ExactMatchSession object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ExactMatchSession> PutAsync(ExactMatchSession exactMatchSessionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ExactMatchSession>(exactMatchSessionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ExactMatchSession using PUT and returns a <see cref="GraphResponse{ExactMatchSession}"/> object.
+        /// </summary>
+        /// <param name="exactMatchSessionToUpdate">The ExactMatchSession object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ExactMatchSession}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> PutResponseAsync(ExactMatchSession exactMatchSessionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ExactMatchSession>(exactMatchSessionToUpdate, cancellationToken);
         }
 
         /// <summary>

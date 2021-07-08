@@ -12,44 +12,46 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Updates.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Updates : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Updates constructor
-		///</summary>
-        public Updates()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.updates";
-        }
-	
         /// <summary>
         /// Gets or sets catalog.
         /// Catalog of content that can be approved for deployment by the deployment service. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "catalog", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("catalog")]
         public Catalog Catalog { get; set; }
     
         /// <summary>
         /// Gets or sets deployments.
         /// Deployments created using the deployment service. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deployments")]
         public IUpdatesDeploymentsCollectionPage Deployments { get; set; }
+
+        /// <summary>
+        /// Gets or sets deploymentsNextLink.
+        /// </summary>
+        [JsonPropertyName("deployments@odata.nextLink")]
+        public string DeploymentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets updatable assets.
         /// Assets registered with the deployment service that can receive updates. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updatableAssets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("updatableAssets")]
         public IUpdatesUpdatableAssetsCollectionPage UpdatableAssets { get; set; }
+
+        /// <summary>
+        /// Gets or sets updatableAssetsNextLink.
+        /// </summary>
+        [JsonPropertyName("updatableAssets@odata.nextLink")]
+        public string UpdatableAssetsNextLink { get; set; }
     
     }
 }

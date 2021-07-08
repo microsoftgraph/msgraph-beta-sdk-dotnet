@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionPage>))]
     public interface IApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionPage : ICollectionPage<BusinessFlow>
     {
         /// <summary>

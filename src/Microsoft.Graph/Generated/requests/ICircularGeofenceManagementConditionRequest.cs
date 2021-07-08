@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified CircularGeofenceManagementCondition using POST.
         /// </summary>
         /// <param name="circularGeofenceManagementConditionToCreate">The CircularGeofenceManagementCondition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CircularGeofenceManagementCondition.</returns>
-        System.Threading.Tasks.Task<CircularGeofenceManagementCondition> CreateAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToCreate);        /// <summary>
-        /// Creates the specified CircularGeofenceManagementCondition using POST.
+        System.Threading.Tasks.Task<CircularGeofenceManagementCondition> CreateAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified CircularGeofenceManagementCondition using POST and returns a <see cref="GraphResponse{CircularGeofenceManagementCondition}"/> object.
         /// </summary>
         /// <param name="circularGeofenceManagementConditionToCreate">The CircularGeofenceManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created CircularGeofenceManagementCondition.</returns>
-        System.Threading.Tasks.Task<CircularGeofenceManagementCondition> CreateAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CircularGeofenceManagementCondition.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{CircularGeofenceManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CircularGeofenceManagementCondition>> CreateResponseAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified CircularGeofenceManagementCondition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified CircularGeofenceManagementCondition.
+        /// Deletes the specified CircularGeofenceManagementCondition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CircularGeofenceManagementCondition.</returns>
-        System.Threading.Tasks.Task<CircularGeofenceManagementCondition> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CircularGeofenceManagementCondition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CircularGeofenceManagementCondition.</returns>
-        System.Threading.Tasks.Task<CircularGeofenceManagementCondition> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CircularGeofenceManagementCondition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified CircularGeofenceManagementCondition using PATCH.
+        /// Gets the specified CircularGeofenceManagementCondition and returns a <see cref="GraphResponse{CircularGeofenceManagementCondition}"/> object.
         /// </summary>
-        /// <param name="circularGeofenceManagementConditionToUpdate">The CircularGeofenceManagementCondition to update.</param>
-        /// <returns>The updated CircularGeofenceManagementCondition.</returns>
-        System.Threading.Tasks.Task<CircularGeofenceManagementCondition> UpdateAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CircularGeofenceManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CircularGeofenceManagementCondition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CircularGeofenceManagementCondition using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CircularGeofenceManagementCondition.</returns>
-        System.Threading.Tasks.Task<CircularGeofenceManagementCondition> UpdateAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CircularGeofenceManagementCondition> UpdateAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CircularGeofenceManagementCondition using PATCH and returns a <see cref="GraphResponse{CircularGeofenceManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="circularGeofenceManagementConditionToUpdate">The CircularGeofenceManagementCondition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CircularGeofenceManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CircularGeofenceManagementCondition>> UpdateResponseAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CircularGeofenceManagementCondition using PUT.
+        /// </summary>
+        /// <param name="circularGeofenceManagementConditionToUpdate">The CircularGeofenceManagementCondition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<CircularGeofenceManagementCondition> PutAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CircularGeofenceManagementCondition using PUT and returns a <see cref="GraphResponse{CircularGeofenceManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="circularGeofenceManagementConditionToUpdate">The CircularGeofenceManagementCondition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{CircularGeofenceManagementCondition}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CircularGeofenceManagementCondition>> PutResponseAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

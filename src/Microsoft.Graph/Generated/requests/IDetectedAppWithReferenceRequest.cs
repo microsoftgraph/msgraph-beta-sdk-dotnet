@@ -23,57 +23,64 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DetectedApp.
         /// </summary>
-        /// <returns>The DetectedApp.</returns>
-        System.Threading.Tasks.Task<DetectedApp> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DetectedApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DetectedApp.</returns>
-        System.Threading.Tasks.Task<DetectedApp> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DetectedApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the specified DetectedApp and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified DetectedApp using POST.
         /// </summary>
         /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DetectedApp.</returns>
-        System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate);        /// <summary>
-        /// Creates the specified DetectedApp using POST.
+        System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Creates the specified DetectedApp using POST and returns a <see cref="GraphResponse{DetectedApp}"/> object.
         /// </summary>
         /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DetectedApp.</returns>
-        System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> CreateResponseAsync(DetectedApp detectedAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
-        /// Updates the specified DetectedApp using PATCH.
-        /// </summary>
-        /// <param name="detectedAppToUpdate">The DetectedApp to update.</param>
-        /// <returns>The updated DetectedApp.</returns>
-        System.Threading.Tasks.Task<DetectedApp> UpdateAsync(DetectedApp detectedAppToUpdate);
-
-        /// <summary>
         /// Updates the specified DetectedApp using PATCH.
         /// </summary>
         /// <param name="detectedAppToUpdate">The DetectedApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DetectedApp.</returns>
-        System.Threading.Tasks.Task<DetectedApp> UpdateAsync(DetectedApp detectedAppToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DetectedApp> UpdateAsync(DetectedApp detectedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Updates the specified DetectedApp using PATCH and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="detectedAppToUpdate">The DetectedApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> UpdateResponseAsync(DetectedApp detectedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Deletes the specified DetectedApp.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified DetectedApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Deletes the specified DetectedApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

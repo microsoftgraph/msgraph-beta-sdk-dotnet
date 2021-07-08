@@ -12,40 +12,31 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DlpPoliciesJobResult.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DlpPoliciesJobResult>))]
     public partial class DlpPoliciesJobResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DlpPoliciesJobResult"/> class.
-        /// </summary>
-        public DlpPoliciesJobResult()
-        {
-            this.ODataType = "microsoft.graph.dlpPoliciesJobResult";
-        }
 
         /// <summary>
         /// Gets or sets matchingRules.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchingRules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("matchingRules")]
         public IEnumerable<MatchingDlpRule> MatchingRules { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

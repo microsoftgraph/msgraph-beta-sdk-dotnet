@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IRbacApplicationRoleEligibilityScheduleInstancesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleEligibilityScheduleInstance to the collection via POST.
-        /// </summary>
-        /// <param name="unifiedRoleEligibilityScheduleInstance">The UnifiedRoleEligibilityScheduleInstance to add.</param>
-        /// <returns>The created UnifiedRoleEligibilityScheduleInstance.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> AddAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance);
-
         /// <summary>
         /// Adds the specified UnifiedRoleEligibilityScheduleInstance to the collection via POST.
         /// </summary>
         /// <param name="unifiedRoleEligibilityScheduleInstance">The UnifiedRoleEligibilityScheduleInstance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleEligibilityScheduleInstance.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> AddAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> AddAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UnifiedRoleEligibilityScheduleInstance to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage> GetAsync();
+        /// <param name="unifiedRoleEligibilityScheduleInstance">The UnifiedRoleEligibilityScheduleInstance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> AddResponseAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -20,33 +20,36 @@ namespace Microsoft.Graph.TermStore
     /// </summary>
     public partial interface IStoreSetsCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Set to the collection via POST.
-        /// </summary>
-        /// <param name="set">The Set to add.</param>
-        /// <returns>The created Set.</returns>
-        System.Threading.Tasks.Task<Set> AddAsync(Set set);
-
         /// <summary>
         /// Adds the specified Set to the collection via POST.
         /// </summary>
         /// <param name="set">The Set to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Set.</returns>
-        System.Threading.Tasks.Task<Set> AddAsync(Set set, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Set> AddAsync(Set set, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Set to the collection via POST and returns a <see cref="GraphResponse{Set}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IStoreSetsCollectionPage> GetAsync();
+        /// <param name="set">The Set to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Set}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Set>> AddResponseAsync(Set set, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IStoreSetsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IStoreSetsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{StoreSetsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{StoreSetsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<StoreSetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

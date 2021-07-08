@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IosScepCertificateProfile using POST.
         /// </summary>
         /// <param name="iosScepCertificateProfileToCreate">The IosScepCertificateProfile to create.</param>
-        /// <returns>The created IosScepCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<IosScepCertificateProfile> CreateAsync(IosScepCertificateProfile iosScepCertificateProfileToCreate)
-        {
-            return this.CreateAsync(iosScepCertificateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosScepCertificateProfile using POST.
-        /// </summary>
-        /// <param name="iosScepCertificateProfileToCreate">The IosScepCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosScepCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<IosScepCertificateProfile> CreateAsync(IosScepCertificateProfile iosScepCertificateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosScepCertificateProfile> CreateAsync(IosScepCertificateProfile iosScepCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IosScepCertificateProfile>(iosScepCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IosScepCertificateProfile.
+        /// Creates the specified IosScepCertificateProfile using POST and returns a <see cref="GraphResponse{IosScepCertificateProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="iosScepCertificateProfileToCreate">The IosScepCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosScepCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosScepCertificateProfile>> CreateResponseAsync(IosScepCertificateProfile iosScepCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IosScepCertificateProfile>(iosScepCertificateProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IosScepCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IosScepCertificateProfile.
+        /// Deletes the specified IosScepCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosScepCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<IosScepCertificateProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosScepCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<IosScepCertificateProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosScepCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IosScepCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IosScepCertificateProfile using PATCH.
+        /// Gets the specified IosScepCertificateProfile and returns a <see cref="GraphResponse{IosScepCertificateProfile}"/> object.
         /// </summary>
-        /// <param name="iosScepCertificateProfileToUpdate">The IosScepCertificateProfile to update.</param>
-        /// <returns>The updated IosScepCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<IosScepCertificateProfile> UpdateAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosScepCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosScepCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(iosScepCertificateProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IosScepCertificateProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosScepCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<IosScepCertificateProfile> UpdateAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosScepCertificateProfile> UpdateAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosScepCertificateProfileToUpdate.AdditionalData != null)
-			{
-				if (iosScepCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosScepCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosScepCertificateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosScepCertificateProfileToUpdate.AdditionalData != null)
-            {
-                if (iosScepCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosScepCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosScepCertificateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IosScepCertificateProfile>(iosScepCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosScepCertificateProfile using PATCH and returns a <see cref="GraphResponse{IosScepCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosScepCertificateProfileToUpdate">The IosScepCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosScepCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosScepCertificateProfile>> UpdateResponseAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IosScepCertificateProfile>(iosScepCertificateProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified IosScepCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="iosScepCertificateProfileToUpdate">The IosScepCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosScepCertificateProfile> PutAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosScepCertificateProfile>(iosScepCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosScepCertificateProfile using PUT and returns a <see cref="GraphResponse{IosScepCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosScepCertificateProfileToUpdate">The IosScepCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosScepCertificateProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosScepCertificateProfile>> PutResponseAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosScepCertificateProfile>(iosScepCertificateProfileToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IosScepCertificateProfile iosScepCertificateProfileToInitialize)
         {
 
-            if (iosScepCertificateProfileToInitialize != null && iosScepCertificateProfileToInitialize.AdditionalData != null)
+            if (iosScepCertificateProfileToInitialize != null)
             {
-
                 if (iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = iosScepCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    iosScepCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        iosScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

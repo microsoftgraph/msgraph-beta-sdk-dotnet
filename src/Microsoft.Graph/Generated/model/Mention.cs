@@ -12,78 +12,68 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mention.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Mention : Entity
     {
     
-		///<summary>
-		/// The Mention constructor
-		///</summary>
-        public Mention()
-        {
-            this.ODataType = "microsoft.graph.mention";
-        }
-	
         /// <summary>
         /// Gets or sets application.
         /// The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "application", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("application")]
         public string Application { get; set; }
     
         /// <summary>
         /// Gets or sets client reference.
         /// A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientReference", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientReference")]
         public string ClientReference { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
         /// The email information of the user who made the mention.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public EmailAddress CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time that the mention is created on the client.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets deep link.
         /// A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deepLink", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deepLink")]
         public string DeepLink { get; set; }
     
         /// <summary>
         /// Gets or sets mentioned.
         /// The email information of the mentioned person. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentioned", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mentioned")]
         public EmailAddress Mentioned { get; set; }
     
         /// <summary>
         /// Gets or sets mention text.
         /// Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentionText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mentionText")]
         public string MentionText { get; set; }
     
         /// <summary>
         /// Gets or sets server created date time.
         /// The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverCreatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("serverCreatedDateTime")]
         public DateTimeOffset? ServerCreatedDateTime { get; set; }
     
     }

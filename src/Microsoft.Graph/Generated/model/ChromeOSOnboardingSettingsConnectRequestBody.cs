@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ChromeOSOnboardingSettingsConnectRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ChromeOSOnboardingSettingsConnectRequestBody
     {
     
         /// <summary>
         /// Gets or sets OwnerUserPrincipalName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownerUserPrincipalName")]
         public string OwnerUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets ServiceAccountCredentials.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serviceAccountCredentials", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("serviceAccountCredentials")]
         public string ServiceAccountCredentials { get; set; }
     
     }

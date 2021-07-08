@@ -12,36 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Configuration Choice Setting Collection Definition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementConfigurationChoiceSettingCollectionDefinition : DeviceManagementConfigurationChoiceSettingDefinition
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationChoiceSettingCollectionDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementConfigurationChoiceSettingCollectionDefinition constructor
+        ///</summary>
         public DeviceManagementConfigurationChoiceSettingCollectionDefinition()
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionDefinition";
         }
-	
+
         /// <summary>
         /// Gets or sets maximum count.
         /// Maximum number of choices in the collection. Valid values 1 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumCount")]
         public Int32? MaximumCount { get; set; }
     
         /// <summary>
         /// Gets or sets minimum count.
         /// Minimum number of choices in the collection. Valid values 1 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumCount")]
         public Int32? MinimumCount { get; set; }
     
     }

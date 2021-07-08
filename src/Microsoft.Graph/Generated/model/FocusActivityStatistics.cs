@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Focus Activity Statistics.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class FocusActivityStatistics : ActivityStatistics
     {
     
-		///<summary>
-		/// The FocusActivityStatistics constructor
-		///</summary>
+        ///<summary>
+        /// The FocusActivityStatistics constructor
+        ///</summary>
         public FocusActivityStatistics()
         {
             this.ODataType = "microsoft.graph.focusActivityStatistics";
         }
-	
+
     }
 }
 

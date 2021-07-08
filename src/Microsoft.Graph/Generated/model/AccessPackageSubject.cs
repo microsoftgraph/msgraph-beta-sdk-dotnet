@@ -12,81 +12,71 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Package Subject.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessPackageSubject : Entity
     {
     
-		///<summary>
-		/// The AccessPackageSubject constructor
-		///</summary>
-        public AccessPackageSubject()
-        {
-            this.ODataType = "microsoft.graph.accessPackageSubject";
-        }
-	
         /// <summary>
         /// Gets or sets alt sec id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altSecId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("altSecId")]
         public string AltSecId { get; set; }
     
         /// <summary>
         /// Gets or sets connected organization id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedOrganizationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectedOrganizationId")]
         public string ConnectedOrganizationId { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the subject.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets email.
         /// The email address of the subject.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("email")]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets object id.
         /// The object ID of the subject.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "objectId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("objectId")]
         public string ObjectId { get; set; }
     
         /// <summary>
         /// Gets or sets on premises security identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSecurityIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesSecurityIdentifier")]
         public string OnPremisesSecurityIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets principal name.
         /// The principal name, if known, of the subject.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("principalName")]
         public string PrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// The resource type of the subject.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets connected organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedOrganization", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectedOrganization")]
         public ConnectedOrganization ConnectedOrganization { get; set; }
     
     }

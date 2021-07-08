@@ -12,40 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Person Annual Event.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<PersonAnnualEvent>))]
     public partial class PersonAnnualEvent : ItemFacet
     {
     
-		///<summary>
-		/// The PersonAnnualEvent constructor
-		///</summary>
+        ///<summary>
+        /// The PersonAnnualEvent constructor
+        ///</summary>
         public PersonAnnualEvent()
         {
             this.ODataType = "microsoft.graph.personAnnualEvent";
         }
-	
+
         /// <summary>
         /// Gets or sets date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "date", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("date")]
         public Date Date { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public PersonAnnualEventType? Type { get; set; }
     
     }

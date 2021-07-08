@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementTemplateCategoriesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementTemplateSettingCategory to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementTemplateSettingCategory">The DeviceManagementTemplateSettingCategory to add.</param>
-        /// <returns>The created DeviceManagementTemplateSettingCategory.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTemplateSettingCategory> AddAsync(DeviceManagementTemplateSettingCategory deviceManagementTemplateSettingCategory);
-
         /// <summary>
         /// Adds the specified DeviceManagementTemplateSettingCategory to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementTemplateSettingCategory">The DeviceManagementTemplateSettingCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementTemplateSettingCategory.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTemplateSettingCategory> AddAsync(DeviceManagementTemplateSettingCategory deviceManagementTemplateSettingCategory, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementTemplateSettingCategory> AddAsync(DeviceManagementTemplateSettingCategory deviceManagementTemplateSettingCategory, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceManagementTemplateSettingCategory to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementTemplateSettingCategory}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementTemplateCategoriesCollectionPage> GetAsync();
+        /// <param name="deviceManagementTemplateSettingCategory">The DeviceManagementTemplateSettingCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTemplateSettingCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplateSettingCategory>> AddResponseAsync(DeviceManagementTemplateSettingCategory deviceManagementTemplateSettingCategory, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementTemplateCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementTemplateCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementTemplateCategoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTemplateCategoriesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplateCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

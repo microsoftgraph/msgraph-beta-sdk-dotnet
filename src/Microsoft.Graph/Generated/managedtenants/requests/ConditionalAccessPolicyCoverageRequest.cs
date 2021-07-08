@@ -39,34 +39,28 @@ namespace Microsoft.Graph.ManagedTenants
         /// Creates the specified ConditionalAccessPolicyCoverage using POST.
         /// </summary>
         /// <param name="conditionalAccessPolicyCoverageToCreate">The ConditionalAccessPolicyCoverage to create.</param>
-        /// <returns>The created ConditionalAccessPolicyCoverage.</returns>
-        public System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> CreateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToCreate)
-        {
-            return this.CreateAsync(conditionalAccessPolicyCoverageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ConditionalAccessPolicyCoverage using POST.
-        /// </summary>
-        /// <param name="conditionalAccessPolicyCoverageToCreate">The ConditionalAccessPolicyCoverage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConditionalAccessPolicyCoverage.</returns>
-        public async System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> CreateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> CreateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ConditionalAccessPolicyCoverage>(conditionalAccessPolicyCoverageToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ConditionalAccessPolicyCoverage.
+        /// Creates the specified ConditionalAccessPolicyCoverage using POST and returns a <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="conditionalAccessPolicyCoverageToCreate">The ConditionalAccessPolicyCoverage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicyCoverage>> CreateResponseAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ConditionalAccessPolicyCoverage>(conditionalAccessPolicyCoverageToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ConditionalAccessPolicyCoverage>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ConditionalAccessPolicyCoverage.
+        /// Deletes the specified ConditionalAccessPolicyCoverage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ConditionalAccessPolicyCoverage.</returns>
-        public System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ConditionalAccessPolicyCoverage.</returns>
-        public async System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ConditionalAccessPolicyCoverage>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ConditionalAccessPolicyCoverage using PATCH.
+        /// Gets the specified ConditionalAccessPolicyCoverage and returns a <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object.
         /// </summary>
-        /// <param name="conditionalAccessPolicyCoverageToUpdate">The ConditionalAccessPolicyCoverage to update.</param>
-        /// <returns>The updated ConditionalAccessPolicyCoverage.</returns>
-        public System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> UpdateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicyCoverage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(conditionalAccessPolicyCoverageToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ConditionalAccessPolicyCoverage>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ConditionalAccessPolicyCoverage.</returns>
-        public async System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> UpdateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> UpdateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (conditionalAccessPolicyCoverageToUpdate.AdditionalData != null)
-			{
-				if (conditionalAccessPolicyCoverageToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					conditionalAccessPolicyCoverageToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, conditionalAccessPolicyCoverageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (conditionalAccessPolicyCoverageToUpdate.AdditionalData != null)
-            {
-                if (conditionalAccessPolicyCoverageToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    conditionalAccessPolicyCoverageToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, conditionalAccessPolicyCoverageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ConditionalAccessPolicyCoverage>(conditionalAccessPolicyCoverageToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ConditionalAccessPolicyCoverage using PATCH and returns a <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyCoverageToUpdate">The ConditionalAccessPolicyCoverage to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicyCoverage>> UpdateResponseAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ConditionalAccessPolicyCoverage>(conditionalAccessPolicyCoverageToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ConditionalAccessPolicyCoverage using PUT.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyCoverageToUpdate">The ConditionalAccessPolicyCoverage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> PutAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ConditionalAccessPolicyCoverage>(conditionalAccessPolicyCoverageToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ConditionalAccessPolicyCoverage using PUT and returns a <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyCoverageToUpdate">The ConditionalAccessPolicyCoverage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicyCoverage>> PutResponseAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ConditionalAccessPolicyCoverage>(conditionalAccessPolicyCoverageToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ItemAddress using POST.
         /// </summary>
         /// <param name="itemAddressToCreate">The ItemAddress to create.</param>
-        /// <returns>The created ItemAddress.</returns>
-        public System.Threading.Tasks.Task<ItemAddress> CreateAsync(ItemAddress itemAddressToCreate)
-        {
-            return this.CreateAsync(itemAddressToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ItemAddress using POST.
-        /// </summary>
-        /// <param name="itemAddressToCreate">The ItemAddress to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemAddress.</returns>
-        public async System.Threading.Tasks.Task<ItemAddress> CreateAsync(ItemAddress itemAddressToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemAddress> CreateAsync(ItemAddress itemAddressToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ItemAddress>(itemAddressToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ItemAddress.
+        /// Creates the specified ItemAddress using POST and returns a <see cref="GraphResponse{ItemAddress}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="itemAddressToCreate">The ItemAddress to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAddress>> CreateResponseAsync(ItemAddress itemAddressToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ItemAddress>(itemAddressToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ItemAddress>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ItemAddress.
+        /// Deletes the specified ItemAddress and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ItemAddress.</returns>
-        public System.Threading.Tasks.Task<ItemAddress> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemAddress.</returns>
-        public async System.Threading.Tasks.Task<ItemAddress> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemAddress> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ItemAddress>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ItemAddress using PATCH.
+        /// Gets the specified ItemAddress and returns a <see cref="GraphResponse{ItemAddress}"/> object.
         /// </summary>
-        /// <param name="itemAddressToUpdate">The ItemAddress to update.</param>
-        /// <returns>The updated ItemAddress.</returns>
-        public System.Threading.Tasks.Task<ItemAddress> UpdateAsync(ItemAddress itemAddressToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAddress>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(itemAddressToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ItemAddress>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemAddress.</returns>
-        public async System.Threading.Tasks.Task<ItemAddress> UpdateAsync(ItemAddress itemAddressToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemAddress> UpdateAsync(ItemAddress itemAddressToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (itemAddressToUpdate.AdditionalData != null)
-			{
-				if (itemAddressToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					itemAddressToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemAddressToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (itemAddressToUpdate.AdditionalData != null)
-            {
-                if (itemAddressToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    itemAddressToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemAddressToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ItemAddress>(itemAddressToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ItemAddress using PATCH and returns a <see cref="GraphResponse{ItemAddress}"/> object.
+        /// </summary>
+        /// <param name="itemAddressToUpdate">The ItemAddress to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAddress>> UpdateResponseAsync(ItemAddress itemAddressToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ItemAddress>(itemAddressToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ItemAddress using PUT.
+        /// </summary>
+        /// <param name="itemAddressToUpdate">The ItemAddress object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ItemAddress> PutAsync(ItemAddress itemAddressToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ItemAddress>(itemAddressToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ItemAddress using PUT and returns a <see cref="GraphResponse{ItemAddress}"/> object.
+        /// </summary>
+        /// <param name="itemAddressToUpdate">The ItemAddress object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ItemAddress}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAddress>> PutResponseAsync(ItemAddress itemAddressToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ItemAddress>(itemAddressToUpdate, cancellationToken);
         }
 
         /// <summary>

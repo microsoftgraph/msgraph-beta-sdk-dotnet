@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified RiskyUser using POST.
         /// </summary>
         /// <param name="riskyUserToCreate">The RiskyUser to create.</param>
-        /// <returns>The created RiskyUser.</returns>
-        public System.Threading.Tasks.Task<RiskyUser> CreateAsync(RiskyUser riskyUserToCreate)
-        {
-            return this.CreateAsync(riskyUserToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RiskyUser using POST.
-        /// </summary>
-        /// <param name="riskyUserToCreate">The RiskyUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RiskyUser.</returns>
-        public async System.Threading.Tasks.Task<RiskyUser> CreateAsync(RiskyUser riskyUserToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RiskyUser> CreateAsync(RiskyUser riskyUserToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<RiskyUser>(riskyUserToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified RiskyUser.
+        /// Creates the specified RiskyUser using POST and returns a <see cref="GraphResponse{RiskyUser}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="riskyUserToCreate">The RiskyUser to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RiskyUser>> CreateResponseAsync(RiskyUser riskyUserToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<RiskyUser>(riskyUserToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<RiskyUser>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified RiskyUser.
+        /// Deletes the specified RiskyUser and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The RiskyUser.</returns>
-        public System.Threading.Tasks.Task<RiskyUser> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RiskyUser.</returns>
-        public async System.Threading.Tasks.Task<RiskyUser> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RiskyUser> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<RiskyUser>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified RiskyUser using PATCH.
+        /// Gets the specified RiskyUser and returns a <see cref="GraphResponse{RiskyUser}"/> object.
         /// </summary>
-        /// <param name="riskyUserToUpdate">The RiskyUser to update.</param>
-        /// <returns>The updated RiskyUser.</returns>
-        public System.Threading.Tasks.Task<RiskyUser> UpdateAsync(RiskyUser riskyUserToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RiskyUser>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(riskyUserToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<RiskyUser>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RiskyUser.</returns>
-        public async System.Threading.Tasks.Task<RiskyUser> UpdateAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RiskyUser> UpdateAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (riskyUserToUpdate.AdditionalData != null)
-			{
-				if (riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, riskyUserToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (riskyUserToUpdate.AdditionalData != null)
-            {
-                if (riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, riskyUserToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<RiskyUser>(riskyUserToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RiskyUser using PATCH and returns a <see cref="GraphResponse{RiskyUser}"/> object.
+        /// </summary>
+        /// <param name="riskyUserToUpdate">The RiskyUser to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RiskyUser>> UpdateResponseAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<RiskyUser>(riskyUserToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified RiskyUser using PUT.
+        /// </summary>
+        /// <param name="riskyUserToUpdate">The RiskyUser object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<RiskyUser> PutAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<RiskyUser>(riskyUserToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RiskyUser using PUT and returns a <see cref="GraphResponse{RiskyUser}"/> object.
+        /// </summary>
+        /// <param name="riskyUserToUpdate">The RiskyUser object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{RiskyUser}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RiskyUser>> PutResponseAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<RiskyUser>(riskyUserToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(RiskyUser riskyUserToInitialize)
         {
 
-            if (riskyUserToInitialize != null && riskyUserToInitialize.AdditionalData != null)
+            if (riskyUserToInitialize != null)
             {
-
                 if (riskyUserToInitialize.History != null && riskyUserToInitialize.History.CurrentPage != null)
                 {
+                    riskyUserToInitialize.History.InitializeNextPageRequest(this.Client, riskyUserToInitialize.HistoryNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     riskyUserToInitialize.History.AdditionalData = riskyUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    riskyUserToInitialize.AdditionalData.TryGetValue("history@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        riskyUserToInitialize.History.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsKioskWin32App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsKioskWin32App>))]
     public partial class WindowsKioskWin32App : WindowsKioskAppBase
     {
         /// <summary>
@@ -33,35 +32,35 @@ namespace Microsoft.Graph
         /// Gets or sets classicAppPath.
         /// This is the classicapppath to be used by v4 Win32 app while in Kiosk Mode
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classicAppPath", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classicAppPath")]
         public string ClassicAppPath { get; set; }
     
         /// <summary>
         /// Gets or sets edgeKiosk.
         /// Edge kiosk (url) for Edge kiosk mode
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeKiosk", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("edgeKiosk")]
         public string EdgeKiosk { get; set; }
     
         /// <summary>
         /// Gets or sets edgeKioskIdleTimeoutMinutes.
         /// Edge kiosk idle timeout in minutes for Edge kiosk mode. Valid values 0 to 1440
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeKioskIdleTimeoutMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("edgeKioskIdleTimeoutMinutes")]
         public Int32? EdgeKioskIdleTimeoutMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets edgeKioskType.
         /// Edge kiosk type for Edge kiosk mode. Possible values are: publicBrowsing, fullScreen.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeKioskType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("edgeKioskType")]
         public WindowsEdgeKioskType? EdgeKioskType { get; set; }
     
         /// <summary>
         /// Gets or sets edgeNoFirstRun.
         /// Edge first run flag for Edge kiosk mode
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeNoFirstRun", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("edgeNoFirstRun")]
         public bool? EdgeNoFirstRun { get; set; }
     
     }

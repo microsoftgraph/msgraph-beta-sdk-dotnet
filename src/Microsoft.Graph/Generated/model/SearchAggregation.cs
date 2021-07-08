@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SearchAggregation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SearchAggregation>))]
     public partial class SearchAggregation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchAggregation"/> class.
-        /// </summary>
-        public SearchAggregation()
-        {
-            this.ODataType = "microsoft.graph.searchAggregation";
-        }
 
         /// <summary>
         /// Gets or sets buckets.
         /// Defines the actual buckets of the computed aggregation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "buckets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("buckets")]
         public IEnumerable<SearchBucket> Buckets { get; set; }
     
         /// <summary>
         /// Gets or sets field.
         /// Defines on which field the aggregation was computed on.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "field", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("field")]
         public string Field { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

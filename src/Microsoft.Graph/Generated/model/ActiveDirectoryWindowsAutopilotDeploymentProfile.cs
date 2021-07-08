@@ -12,36 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Active Directory Windows Autopilot Deployment Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ActiveDirectoryWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile
     {
     
-		///<summary>
-		/// The ActiveDirectoryWindowsAutopilotDeploymentProfile constructor
-		///</summary>
+        ///<summary>
+        /// The ActiveDirectoryWindowsAutopilotDeploymentProfile constructor
+        ///</summary>
         public ActiveDirectoryWindowsAutopilotDeploymentProfile()
         {
             this.ODataType = "microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile";
         }
-	
+
         /// <summary>
         /// Gets or sets hybrid azure adjoin skip connectivity check.
         /// The Autopilot Hybrid Azure AD join flow will continue even if it does not establish domain controller connectivity during OOBE.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hybridAzureADJoinSkipConnectivityCheck", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hybridAzureADJoinSkipConnectivityCheck")]
         public bool? HybridAzureADJoinSkipConnectivityCheck { get; set; }
     
         /// <summary>
         /// Gets or sets domain join configuration.
         /// Configuration to join Active Directory domain
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainJoinConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("domainJoinConfiguration")]
         public WindowsDomainJoinConfiguration DomainJoinConfiguration { get; set; }
     
     }

@@ -34,23 +34,26 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the GET request.
         /// </summary>
-        public System.Threading.Tasks.Task<Stream> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Issues the GET request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<Stream> GetAsync(
-            CancellationToken cancellationToken,
+            CancellationToken cancellationToken = default(CancellationToken),
             HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             return this.SendStreamRequestAsync(null, cancellationToken, httpCompletionOption);
+        }
+
+        /// <summary>
+        /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
     }

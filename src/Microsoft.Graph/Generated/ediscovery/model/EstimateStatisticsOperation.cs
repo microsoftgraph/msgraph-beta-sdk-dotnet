@@ -12,71 +12,69 @@ namespace Microsoft.Graph.Ediscovery
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Estimate Statistics Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EstimateStatisticsOperation : CaseOperation
     {
     
-		///<summary>
-		/// The EstimateStatisticsOperation constructor
-		///</summary>
+        ///<summary>
+        /// The EstimateStatisticsOperation constructor
+        ///</summary>
         public EstimateStatisticsOperation()
         {
             this.ODataType = "microsoft.graph.ediscovery.estimateStatisticsOperation";
         }
-	
+
         /// <summary>
         /// Gets or sets indexed item count.
         /// The estimated count of items for the sourceCollection that matched the content query.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "indexedItemCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("indexedItemCount")]
         public Int64? IndexedItemCount { get; set; }
     
         /// <summary>
         /// Gets or sets indexed items size.
         /// The estimated size of items for the sourceCollection that matched the content query.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "indexedItemsSize", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("indexedItemsSize")]
         public Int64? IndexedItemsSize { get; set; }
     
         /// <summary>
         /// Gets or sets mailbox count.
         /// The number of mailboxes that had search hits.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailboxCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mailboxCount")]
         public Int32? MailboxCount { get; set; }
     
         /// <summary>
         /// Gets or sets site count.
         /// The number of mailboxes that had search hits.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("siteCount")]
         public Int32? SiteCount { get; set; }
     
         /// <summary>
         /// Gets or sets unindexed item count.
         /// The estimated count of unindexed items for the collection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unindexedItemCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unindexedItemCount")]
         public Int64? UnindexedItemCount { get; set; }
     
         /// <summary>
         /// Gets or sets unindexed items size.
         /// The estimated size of unindexed items for the collection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unindexedItemsSize", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unindexedItemsSize")]
         public Int64? UnindexedItemsSize { get; set; }
     
         /// <summary>
         /// Gets or sets source collection.
         /// eDiscovery collection, commonly known as a search.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceCollection", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceCollection")]
         public SourceCollection SourceCollection { get; set; }
     
     }

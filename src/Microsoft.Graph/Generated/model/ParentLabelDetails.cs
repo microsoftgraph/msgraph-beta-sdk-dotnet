@@ -12,89 +12,80 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ParentLabelDetails.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ParentLabelDetails>))]
     public partial class ParentLabelDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParentLabelDetails"/> class.
-        /// </summary>
-        public ParentLabelDetails()
-        {
-            this.ODataType = "microsoft.graph.parentLabelDetails";
-        }
 
         /// <summary>
         /// Gets or sets color.
         /// The color that the user interface should display for the label, if configured.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "color", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("color")]
         public string Color { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The admin-defined description for the label.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets id.
         /// The label ID is a globally unique identifier (GUID).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets isActive.
         /// Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isActive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isActive")]
         public bool? IsActive { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// The plaintext name of the label.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets parent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parent")]
         public ParentLabelDetails Parent { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity.
         /// The sensitivity value of the label, where lower is less sensitive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitivity")]
         public Int32? Sensitivity { get; set; }
     
         /// <summary>
         /// Gets or sets tooltip.
         /// The tooltip that should be displayed for the label in a user interface.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tooltip", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tooltip")]
         public string Tooltip { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

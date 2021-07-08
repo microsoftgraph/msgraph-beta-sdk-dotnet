@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PrivilegedRoleSummary using POST.
         /// </summary>
         /// <param name="privilegedRoleSummaryToCreate">The PrivilegedRoleSummary to create.</param>
-        /// <returns>The created PrivilegedRoleSummary.</returns>
-        public System.Threading.Tasks.Task<PrivilegedRoleSummary> CreateAsync(PrivilegedRoleSummary privilegedRoleSummaryToCreate)
-        {
-            return this.CreateAsync(privilegedRoleSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrivilegedRoleSummary using POST.
-        /// </summary>
-        /// <param name="privilegedRoleSummaryToCreate">The PrivilegedRoleSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedRoleSummary.</returns>
-        public async System.Threading.Tasks.Task<PrivilegedRoleSummary> CreateAsync(PrivilegedRoleSummary privilegedRoleSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrivilegedRoleSummary> CreateAsync(PrivilegedRoleSummary privilegedRoleSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PrivilegedRoleSummary>(privilegedRoleSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PrivilegedRoleSummary.
+        /// Creates the specified PrivilegedRoleSummary using POST and returns a <see cref="GraphResponse{PrivilegedRoleSummary}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="privilegedRoleSummaryToCreate">The PrivilegedRoleSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedRoleSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleSummary>> CreateResponseAsync(PrivilegedRoleSummary privilegedRoleSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PrivilegedRoleSummary>(privilegedRoleSummaryToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PrivilegedRoleSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PrivilegedRoleSummary.
+        /// Deletes the specified PrivilegedRoleSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PrivilegedRoleSummary.</returns>
-        public System.Threading.Tasks.Task<PrivilegedRoleSummary> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrivilegedRoleSummary.</returns>
-        public async System.Threading.Tasks.Task<PrivilegedRoleSummary> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrivilegedRoleSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PrivilegedRoleSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PrivilegedRoleSummary using PATCH.
+        /// Gets the specified PrivilegedRoleSummary and returns a <see cref="GraphResponse{PrivilegedRoleSummary}"/> object.
         /// </summary>
-        /// <param name="privilegedRoleSummaryToUpdate">The PrivilegedRoleSummary to update.</param>
-        /// <returns>The updated PrivilegedRoleSummary.</returns>
-        public System.Threading.Tasks.Task<PrivilegedRoleSummary> UpdateAsync(PrivilegedRoleSummary privilegedRoleSummaryToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedRoleSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(privilegedRoleSummaryToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PrivilegedRoleSummary>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrivilegedRoleSummary.</returns>
-        public async System.Threading.Tasks.Task<PrivilegedRoleSummary> UpdateAsync(PrivilegedRoleSummary privilegedRoleSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrivilegedRoleSummary> UpdateAsync(PrivilegedRoleSummary privilegedRoleSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (privilegedRoleSummaryToUpdate.AdditionalData != null)
-			{
-				if (privilegedRoleSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					privilegedRoleSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedRoleSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (privilegedRoleSummaryToUpdate.AdditionalData != null)
-            {
-                if (privilegedRoleSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    privilegedRoleSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedRoleSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PrivilegedRoleSummary>(privilegedRoleSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PrivilegedRoleSummary using PATCH and returns a <see cref="GraphResponse{PrivilegedRoleSummary}"/> object.
+        /// </summary>
+        /// <param name="privilegedRoleSummaryToUpdate">The PrivilegedRoleSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrivilegedRoleSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleSummary>> UpdateResponseAsync(PrivilegedRoleSummary privilegedRoleSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PrivilegedRoleSummary>(privilegedRoleSummaryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PrivilegedRoleSummary using PUT.
+        /// </summary>
+        /// <param name="privilegedRoleSummaryToUpdate">The PrivilegedRoleSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PrivilegedRoleSummary> PutAsync(PrivilegedRoleSummary privilegedRoleSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PrivilegedRoleSummary>(privilegedRoleSummaryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PrivilegedRoleSummary using PUT and returns a <see cref="GraphResponse{PrivilegedRoleSummary}"/> object.
+        /// </summary>
+        /// <param name="privilegedRoleSummaryToUpdate">The PrivilegedRoleSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PrivilegedRoleSummary}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleSummary>> PutResponseAsync(PrivilegedRoleSummary privilegedRoleSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PrivilegedRoleSummary>(privilegedRoleSummaryToUpdate, cancellationToken);
         }
 
         /// <summary>

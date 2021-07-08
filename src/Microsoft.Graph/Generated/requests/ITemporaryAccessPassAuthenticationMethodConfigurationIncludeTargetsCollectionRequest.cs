@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ITemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AuthenticationMethodTarget to the collection via POST.
-        /// </summary>
-        /// <param name="authenticationMethodTarget">The AuthenticationMethodTarget to add.</param>
-        /// <returns>The created AuthenticationMethodTarget.</returns>
-        System.Threading.Tasks.Task<AuthenticationMethodTarget> AddAsync(AuthenticationMethodTarget authenticationMethodTarget);
-
         /// <summary>
         /// Adds the specified AuthenticationMethodTarget to the collection via POST.
         /// </summary>
         /// <param name="authenticationMethodTarget">The AuthenticationMethodTarget to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuthenticationMethodTarget.</returns>
-        System.Threading.Tasks.Task<AuthenticationMethodTarget> AddAsync(AuthenticationMethodTarget authenticationMethodTarget, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AuthenticationMethodTarget> AddAsync(AuthenticationMethodTarget authenticationMethodTarget, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AuthenticationMethodTarget to the collection via POST and returns a <see cref="GraphResponse{AuthenticationMethodTarget}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionPage> GetAsync();
+        /// <param name="authenticationMethodTarget">The AuthenticationMethodTarget to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethodTarget}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodTarget>> AddResponseAsync(AuthenticationMethodTarget authenticationMethodTarget, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ITemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

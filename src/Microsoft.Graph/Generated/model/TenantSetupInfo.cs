@@ -12,58 +12,49 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Tenant Setup Info.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<TenantSetupInfo>))]
     public partial class TenantSetupInfo : Entity
     {
     
-		///<summary>
-		/// The TenantSetupInfo constructor
-		///</summary>
-        public TenantSetupInfo()
-        {
-            this.ODataType = "microsoft.graph.tenantSetupInfo";
-        }
-	
         /// <summary>
         /// Gets or sets first time setup.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firstTimeSetup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firstTimeSetup")]
         public bool? FirstTimeSetup { get; set; }
     
         /// <summary>
         /// Gets or sets relevant roles settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relevantRolesSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("relevantRolesSettings")]
         public IEnumerable<string> RelevantRolesSettings { get; set; }
     
         /// <summary>
         /// Gets or sets setup status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setupStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("setupStatus")]
         public SetupStatus? SetupStatus { get; set; }
     
         /// <summary>
         /// Gets or sets skip setup.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skipSetup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("skipSetup")]
         public bool? SkipSetup { get; set; }
     
         /// <summary>
         /// Gets or sets user roles actions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRolesActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userRolesActions")]
         public string UserRolesActions { get; set; }
     
         /// <summary>
         /// Gets or sets default roles settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultRolesSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultRolesSettings")]
         public PrivilegedRoleSettings DefaultRolesSettings { get; set; }
     
     }

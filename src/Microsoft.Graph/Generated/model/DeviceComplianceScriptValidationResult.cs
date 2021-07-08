@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceComplianceScriptValidationResult.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceComplianceScriptValidationResult>))]
     public partial class DeviceComplianceScriptValidationResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceComplianceScriptValidationResult"/> class.
-        /// </summary>
-        public DeviceComplianceScriptValidationResult()
-        {
-            this.ODataType = "microsoft.graph.deviceComplianceScriptValidationResult";
-        }
 
         /// <summary>
         /// Gets or sets ruleErrors.
         /// Errors in json for the script for rules.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleErrors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ruleErrors")]
         public IEnumerable<DeviceComplianceScriptRuleError> RuleErrors { get; set; }
     
         /// <summary>
         /// Gets or sets rules.
         /// Parsed rules from json.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rules")]
         public IEnumerable<DeviceComplianceScriptRule> Rules { get; set; }
     
         /// <summary>
         /// Gets or sets scriptErrors.
         /// Errors in json for the script.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scriptErrors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scriptErrors")]
         public IEnumerable<DeviceComplianceScriptError> ScriptErrors { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

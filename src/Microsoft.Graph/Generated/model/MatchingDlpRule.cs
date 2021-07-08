@@ -12,82 +12,73 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MatchingDlpRule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MatchingDlpRule>))]
     public partial class MatchingDlpRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MatchingDlpRule"/> class.
-        /// </summary>
-        public MatchingDlpRule()
-        {
-            this.ODataType = "microsoft.graph.matchingDlpRule";
-        }
 
         /// <summary>
         /// Gets or sets actions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actions")]
         public IEnumerable<DlpActionInfo> Actions { get; set; }
     
         /// <summary>
         /// Gets or sets isMostRestrictive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMostRestrictive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isMostRestrictive")]
         public bool? IsMostRestrictive { get; set; }
     
         /// <summary>
         /// Gets or sets policyId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policyId")]
         public string PolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets policyName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policyName")]
         public string PolicyName { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets ruleId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ruleId")]
         public string RuleId { get; set; }
     
         /// <summary>
         /// Gets or sets ruleMode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ruleMode")]
         public RuleMode? RuleMode { get; set; }
     
         /// <summary>
         /// Gets or sets ruleName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ruleName")]
         public string RuleName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

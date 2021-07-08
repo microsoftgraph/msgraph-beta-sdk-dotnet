@@ -12,46 +12,37 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Exact Match Data Store Base.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ExactMatchDataStoreBase>))]
     public partial class ExactMatchDataStoreBase : Entity
     {
     
-		///<summary>
-		/// The ExactMatchDataStoreBase constructor
-		///</summary>
-        public ExactMatchDataStoreBase()
-        {
-            this.ODataType = "microsoft.graph.exactMatchDataStoreBase";
-        }
-	
         /// <summary>
         /// Gets or sets columns.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "columns", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("columns")]
         public IEnumerable<ExactDataMatchStoreColumn> Columns { get; set; }
     
         /// <summary>
         /// Gets or sets data last updated date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataLastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataLastUpdatedDateTime")]
         public DateTimeOffset? DataLastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
     }

@@ -12,119 +12,121 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Package Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessPackageAssignment : Entity
     {
     
-		///<summary>
-		/// The AccessPackageAssignment constructor
-		///</summary>
-        public AccessPackageAssignment()
-        {
-            this.ODataType = "microsoft.graph.accessPackageAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets access package id.
         /// The identifier of the access package. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageId")]
         public string AccessPackageId { get; set; }
     
         /// <summary>
         /// Gets or sets assignment policy id.
         /// The identifier of the access package assignment policy. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentPolicyId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentPolicyId")]
         public string AssignmentPolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets assignment state.
         /// The state of the access package assignment. Possible values are Delivering, Delivered, or Expired. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentState")]
         public string AssignmentState { get; set; }
     
         /// <summary>
         /// Gets or sets assignment status.
         /// More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentStatus")]
         public string AssignmentStatus { get; set; }
     
         /// <summary>
         /// Gets or sets catalog id.
         /// The identifier of the catalog containing the access package. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "catalogId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("catalogId")]
         public string CatalogId { get; set; }
     
         /// <summary>
         /// Gets or sets expired date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expiredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expiredDateTime")]
         public DateTimeOffset? ExpiredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets is extended.
         /// Indicates whether the access package assignment is extended. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isExtended", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isExtended")]
         public bool? IsExtended { get; set; }
     
         /// <summary>
         /// Gets or sets schedule.
         /// When the access assignment is to be in place. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schedule")]
         public RequestSchedule Schedule { get; set; }
     
         /// <summary>
         /// Gets or sets target id.
         /// The ID of the subject with the assignment. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetId")]
         public string TargetId { get; set; }
     
         /// <summary>
         /// Gets or sets access package.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackage")]
         public AccessPackage AccessPackage { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment policy.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageAssignmentPolicy")]
         public AccessPackageAssignmentPolicy AccessPackageAssignmentPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentRequests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageAssignmentRequests")]
         public IAccessPackageAssignmentAccessPackageAssignmentRequestsCollectionPage AccessPackageAssignmentRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentRequests@odata.nextLink")]
+        public string AccessPackageAssignmentRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment resource roles.
         /// The resource roles delivered to the target user for this assignment. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentResourceRoles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageAssignmentResourceRoles")]
         public IAccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionPage AccessPackageAssignmentResourceRoles { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentResourceRolesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentResourceRoles@odata.nextLink")]
+        public string AccessPackageAssignmentResourceRolesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets target.
         /// The subject of the access package assignment. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public AccessPackageSubject Target { get; set; }
     
     }

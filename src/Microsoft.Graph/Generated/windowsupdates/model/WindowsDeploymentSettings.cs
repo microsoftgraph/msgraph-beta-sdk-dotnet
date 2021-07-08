@@ -12,13 +12,11 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsDeploymentSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsDeploymentSettings : DeploymentSettings
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Gets or sets userExperience.
         /// Settings governing the user's update experience on a device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperience", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userExperience")]
         public UserExperienceSettings UserExperience { get; set; }
     
     }

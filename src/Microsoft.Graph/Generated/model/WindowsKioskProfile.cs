@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsKioskProfile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsKioskProfile>))]
     public partial class WindowsKioskProfile
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WindowsKioskProfile"/> class.
-        /// </summary>
-        public WindowsKioskProfile()
-        {
-            this.ODataType = "microsoft.graph.windowsKioskProfile";
-        }
 
         /// <summary>
         /// Gets or sets appConfiguration.
         /// The App configuration that will be used for this kiosk configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appConfiguration")]
         public WindowsKioskAppConfiguration AppConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets profileId.
         /// Key of the entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("profileId")]
         public string ProfileId { get; set; }
     
         /// <summary>
         /// Gets or sets profileName.
         /// This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("profileName")]
         public string ProfileName { get; set; }
     
         /// <summary>
         /// Gets or sets userAccountsConfiguration.
         /// The user accounts that will be locked to this kiosk configuration. This collection can contain a maximum of 100 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userAccountsConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userAccountsConfiguration")]
         public IEnumerable<WindowsKioskUser> UserAccountsConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

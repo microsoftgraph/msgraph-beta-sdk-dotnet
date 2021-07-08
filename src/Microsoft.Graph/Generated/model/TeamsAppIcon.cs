@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Teams App Icon.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TeamsAppIcon : Entity
     {
     
-		///<summary>
-		/// The TeamsAppIcon constructor
-		///</summary>
-        public TeamsAppIcon()
-        {
-            this.ODataType = "microsoft.graph.teamsAppIcon";
-        }
-	
         /// <summary>
         /// Gets or sets web url.
         /// The web URL that can be used for downloading the image.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets hosted content.
         /// The contents of the app icon if the icon is hosted within the Teams infrastructure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostedContent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hostedContent")]
         public TeamworkHostedContent HostedContent { get; set; }
     
     }

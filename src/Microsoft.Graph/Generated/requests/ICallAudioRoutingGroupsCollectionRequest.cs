@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICallAudioRoutingGroupsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AudioRoutingGroup to the collection via POST.
-        /// </summary>
-        /// <param name="audioRoutingGroup">The AudioRoutingGroup to add.</param>
-        /// <returns>The created AudioRoutingGroup.</returns>
-        System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup audioRoutingGroup);
-
         /// <summary>
         /// Adds the specified AudioRoutingGroup to the collection via POST.
         /// </summary>
         /// <param name="audioRoutingGroup">The AudioRoutingGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AudioRoutingGroup.</returns>
-        System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup audioRoutingGroup, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup audioRoutingGroup, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AudioRoutingGroup to the collection via POST and returns a <see cref="GraphResponse{AudioRoutingGroup}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICallAudioRoutingGroupsCollectionPage> GetAsync();
+        /// <param name="audioRoutingGroup">The AudioRoutingGroup to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AudioRoutingGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AudioRoutingGroup>> AddResponseAsync(AudioRoutingGroup audioRoutingGroup, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICallAudioRoutingGroupsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICallAudioRoutingGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CallAudioRoutingGroupsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CallAudioRoutingGroupsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CallAudioRoutingGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

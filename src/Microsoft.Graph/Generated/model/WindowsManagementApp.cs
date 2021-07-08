@@ -12,51 +12,48 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Management App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsManagementApp>))]
     public partial class WindowsManagementApp : Entity
     {
     
-		///<summary>
-		/// The WindowsManagementApp constructor
-		///</summary>
-        public WindowsManagementApp()
-        {
-            this.ODataType = "microsoft.graph.windowsManagementApp";
-        }
-	
         /// <summary>
         /// Gets or sets available version.
         /// Windows management app available version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availableVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("availableVersion")]
         public string AvailableVersion { get; set; }
     
         /// <summary>
         /// Gets or sets managed installer.
         /// Managed Installer Status. Possible values are: disabled, enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedInstaller", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedInstaller")]
         public ManagedInstallerStatus? ManagedInstaller { get; set; }
     
         /// <summary>
         /// Gets or sets managed installer configured date time.
         /// Managed Installer Configured Date Time
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedInstallerConfiguredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedInstallerConfiguredDateTime")]
         public string ManagedInstallerConfiguredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets health states.
         /// The list of health states for installed Windows management app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "healthStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("healthStates")]
         public IWindowsManagementAppHealthStatesCollectionPage HealthStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets healthStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("healthStates@odata.nextLink")]
+        public string HealthStatesNextLink { get; set; }
     
     }
 }

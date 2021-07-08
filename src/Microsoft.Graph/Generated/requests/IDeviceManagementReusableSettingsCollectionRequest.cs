@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementReusableSettingsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementConfigurationSettingDefinition to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationSettingDefinition">The DeviceManagementConfigurationSettingDefinition to add.</param>
-        /// <returns>The created DeviceManagementConfigurationSettingDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationSettingDefinition> AddAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition);
-
         /// <summary>
         /// Adds the specified DeviceManagementConfigurationSettingDefinition to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementConfigurationSettingDefinition">The DeviceManagementConfigurationSettingDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementConfigurationSettingDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationSettingDefinition> AddAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementConfigurationSettingDefinition> AddAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceManagementConfigurationSettingDefinition to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementReusableSettingsCollectionPage> GetAsync();
+        /// <param name="deviceManagementConfigurationSettingDefinition">The DeviceManagementConfigurationSettingDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingDefinition>> AddResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementReusableSettingsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementReusableSettingsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementReusableSettingsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReusableSettingsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReusableSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

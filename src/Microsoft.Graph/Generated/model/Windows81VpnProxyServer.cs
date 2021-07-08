@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows81VpnProxyServer.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Windows81VpnProxyServer : VpnProxyServer
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets automaticallyDetectProxySettings.
         /// Automatically detect proxy settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "automaticallyDetectProxySettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("automaticallyDetectProxySettings")]
         public bool? AutomaticallyDetectProxySettings { get; set; }
     
         /// <summary>
         /// Gets or sets bypassProxyServerForLocalAddress.
         /// Bypass proxy server for local address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bypassProxyServerForLocalAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bypassProxyServerForLocalAddress")]
         public bool? BypassProxyServerForLocalAddress { get; set; }
     
     }

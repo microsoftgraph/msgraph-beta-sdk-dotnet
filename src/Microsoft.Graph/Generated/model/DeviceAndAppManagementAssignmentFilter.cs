@@ -12,71 +12,62 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device And App Management Assignment Filter.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceAndAppManagementAssignmentFilter>))]
     public partial class DeviceAndAppManagementAssignmentFilter : Entity
     {
     
-		///<summary>
-		/// The DeviceAndAppManagementAssignmentFilter constructor
-		///</summary>
-        public DeviceAndAppManagementAssignmentFilter()
-        {
-            this.ODataType = "microsoft.graph.deviceAndAppManagementAssignmentFilter";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// Creation time of the Assignment Filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description of the Assignment Filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// DisplayName of the Assignment Filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// Last modified time of the Assignment Filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
         /// Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platform")]
         public DevicePlatformType? Platform { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tags.
         /// RoleScopeTags of the Assignment Filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTags", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTags")]
         public IEnumerable<string> RoleScopeTags { get; set; }
     
         /// <summary>
         /// Gets or sets rule.
         /// Rule definition of the Assignment Filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rule", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rule")]
         public string Rule { get; set; }
     
     }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Security using POST.
         /// </summary>
         /// <param name="securityToCreate">The Security to create.</param>
-        /// <returns>The created Security.</returns>
-        public System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate)
-        {
-            return this.CreateAsync(securityToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Security using POST.
-        /// </summary>
-        /// <param name="securityToCreate">The Security to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Security.</returns>
-        public async System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Security>(securityToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Security.
+        /// Creates the specified Security using POST and returns a <see cref="GraphResponse{Security}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="securityToCreate">The Security to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Security>> CreateResponseAsync(Security securityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Security>(securityToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Security>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Security.
+        /// Deletes the specified Security and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Security.</returns>
-        public System.Threading.Tasks.Task<Security> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Security.</returns>
-        public async System.Threading.Tasks.Task<Security> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Security> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Security>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Security using PATCH.
+        /// Gets the specified Security and returns a <see cref="GraphResponse{Security}"/> object.
         /// </summary>
-        /// <param name="securityToUpdate">The Security to update.</param>
-        /// <returns>The updated Security.</returns>
-        public System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Security>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(securityToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Security>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Security.</returns>
-        public async System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (securityToUpdate.AdditionalData != null)
-			{
-				if (securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (securityToUpdate.AdditionalData != null)
-            {
-                if (securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Security>(securityToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Security using PATCH and returns a <see cref="GraphResponse{Security}"/> object.
+        /// </summary>
+        /// <param name="securityToUpdate">The Security to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Security>> UpdateResponseAsync(Security securityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Security>(securityToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Security using PUT.
+        /// </summary>
+        /// <param name="securityToUpdate">The Security object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Security> PutAsync(Security securityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Security>(securityToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Security using PUT and returns a <see cref="GraphResponse{Security}"/> object.
+        /// </summary>
+        /// <param name="securityToUpdate">The Security object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Security}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Security>> PutResponseAsync(Security securityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Security>(securityToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,199 +244,79 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Security securityToInitialize)
         {
 
-            if (securityToInitialize != null && securityToInitialize.AdditionalData != null)
+            if (securityToInitialize != null)
             {
-
                 if (securityToInitialize.Alerts != null && securityToInitialize.Alerts.CurrentPage != null)
                 {
+                    securityToInitialize.Alerts.InitializeNextPageRequest(this.Client, securityToInitialize.AlertsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.Alerts.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("alerts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.Alerts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.CloudAppSecurityProfiles != null && securityToInitialize.CloudAppSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.CloudAppSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.CloudAppSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.CloudAppSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("cloudAppSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.CloudAppSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.DomainSecurityProfiles != null && securityToInitialize.DomainSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.DomainSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.DomainSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.DomainSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("domainSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.DomainSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.FileSecurityProfiles != null && securityToInitialize.FileSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.FileSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.FileSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.FileSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("fileSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.FileSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.HostSecurityProfiles != null && securityToInitialize.HostSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.HostSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.HostSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.HostSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("hostSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.HostSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.IpSecurityProfiles != null && securityToInitialize.IpSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.IpSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.IpSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.IpSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("ipSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.IpSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.ProviderTenantSettings != null && securityToInitialize.ProviderTenantSettings.CurrentPage != null)
                 {
+                    securityToInitialize.ProviderTenantSettings.InitializeNextPageRequest(this.Client, securityToInitialize.ProviderTenantSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.ProviderTenantSettings.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("providerTenantSettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.ProviderTenantSettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.SecureScoreControlProfiles != null && securityToInitialize.SecureScoreControlProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.SecureScoreControlProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.SecureScoreControlProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.SecureScoreControlProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("secureScoreControlProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.SecureScoreControlProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.SecureScores != null && securityToInitialize.SecureScores.CurrentPage != null)
                 {
+                    securityToInitialize.SecureScores.InitializeNextPageRequest(this.Client, securityToInitialize.SecureScoresNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.SecureScores.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("secureScores@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.SecureScores.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.SecurityActions != null && securityToInitialize.SecurityActions.CurrentPage != null)
                 {
+                    securityToInitialize.SecurityActions.InitializeNextPageRequest(this.Client, securityToInitialize.SecurityActionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.SecurityActions.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("securityActions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.SecurityActions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.TiIndicators != null && securityToInitialize.TiIndicators.CurrentPage != null)
                 {
+                    securityToInitialize.TiIndicators.InitializeNextPageRequest(this.Client, securityToInitialize.TiIndicatorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.TiIndicators.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("tiIndicators@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.TiIndicators.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.UserSecurityProfiles != null && securityToInitialize.UserSecurityProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.UserSecurityProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.UserSecurityProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.UserSecurityProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("userSecurityProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.UserSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

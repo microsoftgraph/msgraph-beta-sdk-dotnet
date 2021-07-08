@@ -12,64 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Impacting Process.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsImpactingProcess : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsImpactingProcess constructor
-		///</summary>
-        public UserExperienceAnalyticsImpactingProcess()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsImpactingProcess";
-        }
-	
         /// <summary>
         /// Gets or sets category.
         /// The category of impacting process.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("category")]
         public string Category { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The description of process.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
         /// The unique identifier of the impacted device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets impact value.
         /// The impact value of the process. Valid values 0 to 1.79769313486232E+308
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "impactValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("impactValue")]
         public double? ImpactValue { get; set; }
     
         /// <summary>
         /// Gets or sets process name.
         /// The process name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("processName")]
         public string ProcessName { get; set; }
     
         /// <summary>
         /// Gets or sets publisher.
         /// The publisher of the process.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publisher")]
         public string Publisher { get; set; }
     
     }

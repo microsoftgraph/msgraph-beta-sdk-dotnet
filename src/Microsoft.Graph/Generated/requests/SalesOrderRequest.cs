@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified SalesOrder using POST.
         /// </summary>
         /// <param name="salesOrderToCreate">The SalesOrder to create.</param>
-        /// <returns>The created SalesOrder.</returns>
-        public System.Threading.Tasks.Task<SalesOrder> CreateAsync(SalesOrder salesOrderToCreate)
-        {
-            return this.CreateAsync(salesOrderToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SalesOrder using POST.
-        /// </summary>
-        /// <param name="salesOrderToCreate">The SalesOrder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesOrder.</returns>
-        public async System.Threading.Tasks.Task<SalesOrder> CreateAsync(SalesOrder salesOrderToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SalesOrder> CreateAsync(SalesOrder salesOrderToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SalesOrder>(salesOrderToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified SalesOrder.
+        /// Creates the specified SalesOrder using POST and returns a <see cref="GraphResponse{SalesOrder}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="salesOrderToCreate">The SalesOrder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesOrder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesOrder>> CreateResponseAsync(SalesOrder salesOrderToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SalesOrder>(salesOrderToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SalesOrder>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified SalesOrder.
+        /// Deletes the specified SalesOrder and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SalesOrder.</returns>
-        public System.Threading.Tasks.Task<SalesOrder> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SalesOrder.</returns>
-        public async System.Threading.Tasks.Task<SalesOrder> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SalesOrder> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<SalesOrder>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified SalesOrder using PATCH.
+        /// Gets the specified SalesOrder and returns a <see cref="GraphResponse{SalesOrder}"/> object.
         /// </summary>
-        /// <param name="salesOrderToUpdate">The SalesOrder to update.</param>
-        /// <returns>The updated SalesOrder.</returns>
-        public System.Threading.Tasks.Task<SalesOrder> UpdateAsync(SalesOrder salesOrderToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesOrder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesOrder>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(salesOrderToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SalesOrder>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SalesOrder.</returns>
-        public async System.Threading.Tasks.Task<SalesOrder> UpdateAsync(SalesOrder salesOrderToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SalesOrder> UpdateAsync(SalesOrder salesOrderToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (salesOrderToUpdate.AdditionalData != null)
-			{
-				if (salesOrderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					salesOrderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesOrderToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (salesOrderToUpdate.AdditionalData != null)
-            {
-                if (salesOrderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    salesOrderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesOrderToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SalesOrder>(salesOrderToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SalesOrder using PATCH and returns a <see cref="GraphResponse{SalesOrder}"/> object.
+        /// </summary>
+        /// <param name="salesOrderToUpdate">The SalesOrder to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SalesOrder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesOrder>> UpdateResponseAsync(SalesOrder salesOrderToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SalesOrder>(salesOrderToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified SalesOrder using PUT.
+        /// </summary>
+        /// <param name="salesOrderToUpdate">The SalesOrder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SalesOrder> PutAsync(SalesOrder salesOrderToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SalesOrder>(salesOrderToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SalesOrder using PUT and returns a <see cref="GraphResponse{SalesOrder}"/> object.
+        /// </summary>
+        /// <param name="salesOrderToUpdate">The SalesOrder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SalesOrder}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesOrder>> PutResponseAsync(SalesOrder salesOrderToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SalesOrder>(salesOrderToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SalesOrder salesOrderToInitialize)
         {
 
-            if (salesOrderToInitialize != null && salesOrderToInitialize.AdditionalData != null)
+            if (salesOrderToInitialize != null)
             {
-
                 if (salesOrderToInitialize.SalesOrderLines != null && salesOrderToInitialize.SalesOrderLines.CurrentPage != null)
                 {
+                    salesOrderToInitialize.SalesOrderLines.InitializeNextPageRequest(this.Client, salesOrderToInitialize.SalesOrderLinesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     salesOrderToInitialize.SalesOrderLines.AdditionalData = salesOrderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    salesOrderToInitialize.AdditionalData.TryGetValue("salesOrderLines@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        salesOrderToInitialize.SalesOrderLines.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

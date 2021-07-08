@@ -12,70 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IpReferenceData.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<IpReferenceData>))]
     public partial class IpReferenceData
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IpReferenceData"/> class.
-        /// </summary>
-        public IpReferenceData()
-        {
-            this.ODataType = "microsoft.graph.ipReferenceData";
-        }
 
         /// <summary>
         /// Gets or sets asn.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "asn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("asn")]
         public Int64? Asn { get; set; }
     
         /// <summary>
         /// Gets or sets city.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "city", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("city")]
         public string City { get; set; }
     
         /// <summary>
         /// Gets or sets countryOrRegionCode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryOrRegionCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countryOrRegionCode")]
         public string CountryOrRegionCode { get; set; }
     
         /// <summary>
         /// Gets or sets organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organization", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("organization")]
         public string Organization { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets vendor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vendor")]
         public string Vendor { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

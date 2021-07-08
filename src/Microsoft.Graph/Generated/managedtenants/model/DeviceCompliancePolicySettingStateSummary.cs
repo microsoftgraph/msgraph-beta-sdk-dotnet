@@ -12,100 +12,90 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Compliance Policy Setting State Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceCompliancePolicySettingStateSummary : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The DeviceCompliancePolicySettingStateSummary constructor
-		///</summary>
-        public DeviceCompliancePolicySettingStateSummary()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary";
-        }
-	
         /// <summary>
         /// Gets or sets conflict device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflictDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conflictDeviceCount")]
         public Int32? ConflictDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets error device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorDeviceCount")]
         public Int32? ErrorDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets failed device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failedDeviceCount")]
         public Int32? FailedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets intune account id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneAccountId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("intuneAccountId")]
         public string IntuneAccountId { get; set; }
     
         /// <summary>
         /// Gets or sets intune setting id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneSettingId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("intuneSettingId")]
         public string IntuneSettingId { get; set; }
     
         /// <summary>
         /// Gets or sets last refreshed date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastRefreshedDateTime")]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets not applicable device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notApplicableDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notApplicableDeviceCount")]
         public Int32? NotApplicableDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pending device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingDeviceCount")]
         public Int32? PendingDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets policy type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policyType")]
         public string PolicyType { get; set; }
     
         /// <summary>
         /// Gets or sets setting name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingName")]
         public string SettingName { get; set; }
     
         /// <summary>
         /// Gets or sets succeeded device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "succeededDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("succeededDeviceCount")]
         public Int32? SucceededDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantDisplayName")]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
     }

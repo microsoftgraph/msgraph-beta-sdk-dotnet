@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Sms Authentication Method Target.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SmsAuthenticationMethodTarget : AuthenticationMethodTarget
     {
     
-		///<summary>
-		/// The SmsAuthenticationMethodTarget constructor
-		///</summary>
+        ///<summary>
+        /// The SmsAuthenticationMethodTarget constructor
+        ///</summary>
         public SmsAuthenticationMethodTarget()
         {
             this.ODataType = "microsoft.graph.smsAuthenticationMethodTarget";
         }
-	
+
         /// <summary>
         /// Gets or sets is usable for sign in.
         /// Determines if the users or groups can use this authentication method to sign in to Azure AD. The value is always true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isUsableForSignIn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isUsableForSignIn")]
         public bool? IsUsableForSignIn { get; set; }
     
     }

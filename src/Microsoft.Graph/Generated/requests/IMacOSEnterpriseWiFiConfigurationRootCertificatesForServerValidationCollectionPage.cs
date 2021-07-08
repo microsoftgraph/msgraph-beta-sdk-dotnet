@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IMacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage>))]
     public interface IMacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage : ICollectionPage<MacOSTrustedRootCertificate>
     {
         /// <summary>

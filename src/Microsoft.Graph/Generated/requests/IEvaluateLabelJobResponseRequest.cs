@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified EvaluateLabelJobResponse using POST.
         /// </summary>
         /// <param name="evaluateLabelJobResponseToCreate">The EvaluateLabelJobResponse to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EvaluateLabelJobResponse.</returns>
-        System.Threading.Tasks.Task<EvaluateLabelJobResponse> CreateAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToCreate);        /// <summary>
-        /// Creates the specified EvaluateLabelJobResponse using POST.
+        System.Threading.Tasks.Task<EvaluateLabelJobResponse> CreateAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified EvaluateLabelJobResponse using POST and returns a <see cref="GraphResponse{EvaluateLabelJobResponse}"/> object.
         /// </summary>
         /// <param name="evaluateLabelJobResponseToCreate">The EvaluateLabelJobResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created EvaluateLabelJobResponse.</returns>
-        System.Threading.Tasks.Task<EvaluateLabelJobResponse> CreateAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EvaluateLabelJobResponse.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{EvaluateLabelJobResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EvaluateLabelJobResponse>> CreateResponseAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified EvaluateLabelJobResponse.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified EvaluateLabelJobResponse.
+        /// Deletes the specified EvaluateLabelJobResponse and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EvaluateLabelJobResponse.</returns>
-        System.Threading.Tasks.Task<EvaluateLabelJobResponse> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EvaluateLabelJobResponse.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EvaluateLabelJobResponse.</returns>
-        System.Threading.Tasks.Task<EvaluateLabelJobResponse> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EvaluateLabelJobResponse> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified EvaluateLabelJobResponse using PATCH.
+        /// Gets the specified EvaluateLabelJobResponse and returns a <see cref="GraphResponse{EvaluateLabelJobResponse}"/> object.
         /// </summary>
-        /// <param name="evaluateLabelJobResponseToUpdate">The EvaluateLabelJobResponse to update.</param>
-        /// <returns>The updated EvaluateLabelJobResponse.</returns>
-        System.Threading.Tasks.Task<EvaluateLabelJobResponse> UpdateAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EvaluateLabelJobResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EvaluateLabelJobResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EvaluateLabelJobResponse using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EvaluateLabelJobResponse.</returns>
-        System.Threading.Tasks.Task<EvaluateLabelJobResponse> UpdateAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EvaluateLabelJobResponse> UpdateAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EvaluateLabelJobResponse using PATCH and returns a <see cref="GraphResponse{EvaluateLabelJobResponse}"/> object.
+        /// </summary>
+        /// <param name="evaluateLabelJobResponseToUpdate">The EvaluateLabelJobResponse to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EvaluateLabelJobResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EvaluateLabelJobResponse>> UpdateResponseAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EvaluateLabelJobResponse using PUT.
+        /// </summary>
+        /// <param name="evaluateLabelJobResponseToUpdate">The EvaluateLabelJobResponse object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EvaluateLabelJobResponse> PutAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EvaluateLabelJobResponse using PUT and returns a <see cref="GraphResponse{EvaluateLabelJobResponse}"/> object.
+        /// </summary>
+        /// <param name="evaluateLabelJobResponseToUpdate">The EvaluateLabelJobResponse object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EvaluateLabelJobResponse}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EvaluateLabelJobResponse>> PutResponseAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

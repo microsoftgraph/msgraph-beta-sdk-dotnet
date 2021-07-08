@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AccessReview using POST.
         /// </summary>
         /// <param name="accessReviewToCreate">The AccessReview to create.</param>
-        /// <returns>The created AccessReview.</returns>
-        public System.Threading.Tasks.Task<AccessReview> CreateAsync(AccessReview accessReviewToCreate)
-        {
-            return this.CreateAsync(accessReviewToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AccessReview using POST.
-        /// </summary>
-        /// <param name="accessReviewToCreate">The AccessReview to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReview.</returns>
-        public async System.Threading.Tasks.Task<AccessReview> CreateAsync(AccessReview accessReviewToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessReview> CreateAsync(AccessReview accessReviewToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AccessReview>(accessReviewToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AccessReview.
+        /// Creates the specified AccessReview using POST and returns a <see cref="GraphResponse{AccessReview}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="accessReviewToCreate">The AccessReview to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReview}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReview>> CreateResponseAsync(AccessReview accessReviewToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AccessReview>(accessReviewToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AccessReview>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AccessReview.
+        /// Deletes the specified AccessReview and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AccessReview.</returns>
-        public System.Threading.Tasks.Task<AccessReview> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessReview.</returns>
-        public async System.Threading.Tasks.Task<AccessReview> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessReview> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AccessReview>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AccessReview using PATCH.
+        /// Gets the specified AccessReview and returns a <see cref="GraphResponse{AccessReview}"/> object.
         /// </summary>
-        /// <param name="accessReviewToUpdate">The AccessReview to update.</param>
-        /// <returns>The updated AccessReview.</returns>
-        public System.Threading.Tasks.Task<AccessReview> UpdateAsync(AccessReview accessReviewToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReview}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReview>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(accessReviewToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AccessReview>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessReview.</returns>
-        public async System.Threading.Tasks.Task<AccessReview> UpdateAsync(AccessReview accessReviewToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessReview> UpdateAsync(AccessReview accessReviewToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (accessReviewToUpdate.AdditionalData != null)
-			{
-				if (accessReviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					accessReviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessReviewToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (accessReviewToUpdate.AdditionalData != null)
-            {
-                if (accessReviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    accessReviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessReviewToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AccessReview>(accessReviewToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AccessReview using PATCH and returns a <see cref="GraphResponse{AccessReview}"/> object.
+        /// </summary>
+        /// <param name="accessReviewToUpdate">The AccessReview to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessReview}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReview>> UpdateResponseAsync(AccessReview accessReviewToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AccessReview>(accessReviewToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AccessReview using PUT.
+        /// </summary>
+        /// <param name="accessReviewToUpdate">The AccessReview object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AccessReview> PutAsync(AccessReview accessReviewToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AccessReview>(accessReviewToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AccessReview using PUT and returns a <see cref="GraphResponse{AccessReview}"/> object.
+        /// </summary>
+        /// <param name="accessReviewToUpdate">The AccessReview object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AccessReview}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReview>> PutResponseAsync(AccessReview accessReviewToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AccessReview>(accessReviewToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessReview accessReviewToInitialize)
         {
 
-            if (accessReviewToInitialize != null && accessReviewToInitialize.AdditionalData != null)
+            if (accessReviewToInitialize != null)
             {
-
                 if (accessReviewToInitialize.Decisions != null && accessReviewToInitialize.Decisions.CurrentPage != null)
                 {
+                    accessReviewToInitialize.Decisions.InitializeNextPageRequest(this.Client, accessReviewToInitialize.DecisionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.Decisions.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("decisions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessReviewToInitialize.Decisions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessReviewToInitialize.Instances != null && accessReviewToInitialize.Instances.CurrentPage != null)
                 {
+                    accessReviewToInitialize.Instances.InitializeNextPageRequest(this.Client, accessReviewToInitialize.InstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.Instances.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessReviewToInitialize.Instances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessReviewToInitialize.MyDecisions != null && accessReviewToInitialize.MyDecisions.CurrentPage != null)
                 {
+                    accessReviewToInitialize.MyDecisions.InitializeNextPageRequest(this.Client, accessReviewToInitialize.MyDecisionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.MyDecisions.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("myDecisions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessReviewToInitialize.MyDecisions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessReviewToInitialize.Reviewers != null && accessReviewToInitialize.Reviewers.CurrentPage != null)
                 {
+                    accessReviewToInitialize.Reviewers.InitializeNextPageRequest(this.Client, accessReviewToInitialize.ReviewersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewToInitialize.Reviewers.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("reviewers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessReviewToInitialize.Reviewers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

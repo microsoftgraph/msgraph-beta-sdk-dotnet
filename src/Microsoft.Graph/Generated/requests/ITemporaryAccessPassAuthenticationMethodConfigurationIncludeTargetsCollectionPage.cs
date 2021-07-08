@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ITemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<TemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<TemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionPage>))]
     public interface ITemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionPage : ICollectionPage<AuthenticationMethodTarget>
     {
         /// <summary>

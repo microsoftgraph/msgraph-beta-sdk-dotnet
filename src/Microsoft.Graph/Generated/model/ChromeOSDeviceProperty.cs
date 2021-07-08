@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ChromeOSDeviceProperty.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ChromeOSDeviceProperty>))]
     public partial class ChromeOSDeviceProperty
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChromeOSDeviceProperty"/> class.
-        /// </summary>
-        public ChromeOSDeviceProperty()
-        {
-            this.ODataType = "microsoft.graph.chromeOSDeviceProperty";
-        }
 
         /// <summary>
         /// Gets or sets name.
         /// Name of the property
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets updatable.
         /// Whether this property is updatable
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updatable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("updatable")]
         public bool? Updatable { get; set; }
     
         /// <summary>
         /// Gets or sets value.
         /// Value of the property
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public string Value { get; set; }
     
         /// <summary>
         /// Gets or sets valueType.
         /// Type of the value
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("valueType")]
         public string ValueType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

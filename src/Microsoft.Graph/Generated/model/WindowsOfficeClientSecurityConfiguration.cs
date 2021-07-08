@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Office Client Security Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsOfficeClientSecurityConfiguration : OfficeClientConfiguration
     {
     
-		///<summary>
-		/// The WindowsOfficeClientSecurityConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsOfficeClientSecurityConfiguration constructor
+        ///</summary>
         public WindowsOfficeClientSecurityConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsOfficeClientSecurityConfiguration";
         }
-	
+
     }
 }
 

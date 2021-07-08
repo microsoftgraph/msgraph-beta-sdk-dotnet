@@ -12,24 +12,14 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Booking Customer.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class BookingCustomer : BookingPerson
     {
     
-		///<summary>
-		/// The BookingCustomer constructor
-		///</summary>
-        public BookingCustomer()
-        {
-            this.ODataType = "microsoft.graph.bookingCustomer";
-        }
-	
     }
 }
 

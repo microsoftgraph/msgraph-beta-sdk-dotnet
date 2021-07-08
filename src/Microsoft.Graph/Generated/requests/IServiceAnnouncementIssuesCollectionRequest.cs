@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IServiceAnnouncementIssuesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ServiceHealthIssue to the collection via POST.
-        /// </summary>
-        /// <param name="serviceHealthIssue">The ServiceHealthIssue to add.</param>
-        /// <returns>The created ServiceHealthIssue.</returns>
-        System.Threading.Tasks.Task<ServiceHealthIssue> AddAsync(ServiceHealthIssue serviceHealthIssue);
-
         /// <summary>
         /// Adds the specified ServiceHealthIssue to the collection via POST.
         /// </summary>
         /// <param name="serviceHealthIssue">The ServiceHealthIssue to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServiceHealthIssue.</returns>
-        System.Threading.Tasks.Task<ServiceHealthIssue> AddAsync(ServiceHealthIssue serviceHealthIssue, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ServiceHealthIssue> AddAsync(ServiceHealthIssue serviceHealthIssue, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ServiceHealthIssue to the collection via POST and returns a <see cref="GraphResponse{ServiceHealthIssue}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IServiceAnnouncementIssuesCollectionPage> GetAsync();
+        /// <param name="serviceHealthIssue">The ServiceHealthIssue to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceHealthIssue}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceHealthIssue>> AddResponseAsync(ServiceHealthIssue serviceHealthIssue, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IServiceAnnouncementIssuesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IServiceAnnouncementIssuesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ServiceAnnouncementIssuesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceAnnouncementIssuesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementIssuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

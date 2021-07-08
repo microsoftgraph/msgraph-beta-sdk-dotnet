@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSMdatp App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MacOSMdatpApp : MobileApp
     {
     
-		///<summary>
-		/// The MacOSMdatpApp constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSMdatpApp constructor
+        ///</summary>
         public MacOSMdatpApp()
         {
             this.ODataType = "microsoft.graph.macOSMdatpApp";
         }
-	
+
     }
 }
 

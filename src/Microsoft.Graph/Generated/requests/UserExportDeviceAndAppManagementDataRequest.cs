@@ -34,33 +34,26 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the GET request.
         /// </summary>
-        public System.Threading.Tasks.Task<DeviceAndAppManagementData> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Issues the GET request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<DeviceAndAppManagementData> GetAsync(
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             return this.SendAsync<DeviceAndAppManagementData>(null, cancellationToken);
         }
 
-
         /// <summary>
-        /// Issues the PATCH request.
+        /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="deviceandappmanagementdata">The DeviceAndAppManagementData object set with the properties to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<DeviceAndAppManagementData> PatchAsync(DeviceAndAppManagementData deviceandappmanagementdata)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementData>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.PatchAsync(deviceandappmanagementdata, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceAndAppManagementData>(null, cancellationToken);
         }
+
 
         /// <summary>
         /// Issues the PATCH request.
@@ -69,20 +62,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<DeviceAndAppManagementData> PatchAsync(DeviceAndAppManagementData deviceandappmanagementdata,
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
+            this.Method = HttpMethods.PATCH;
             return this.SendAsync<DeviceAndAppManagementData>(deviceandappmanagementdata, cancellationToken);
         }
 
         /// <summary>
-        /// Issues the PUT request.
+        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="deviceandappmanagementdata">The DeviceAndAppManagementData object to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<DeviceAndAppManagementData> PutAsync(DeviceAndAppManagementData deviceandappmanagementdata)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="deviceandappmanagementdata">The DeviceAndAppManagementData object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementData>> PatchResponseAsync(DeviceAndAppManagementData deviceandappmanagementdata, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.PutAsync(deviceandappmanagementdata, CancellationToken.None);
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceAndAppManagementData>(deviceandappmanagementdata, cancellationToken);
         }
 
         /// <summary>
@@ -92,10 +87,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<DeviceAndAppManagementData> PutAsync(DeviceAndAppManagementData deviceandappmanagementdata,
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
+            this.Method = HttpMethods.PUT;
             return this.SendAsync<DeviceAndAppManagementData>(deviceandappmanagementdata, cancellationToken);
+        }
+
+        /// <summary>
+        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="deviceandappmanagementdata">The DeviceAndAppManagementData object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementData>> PutResponseAsync(DeviceAndAppManagementData deviceandappmanagementdata, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceAndAppManagementData>(deviceandappmanagementdata, cancellationToken);
         }
 
         /// <summary>

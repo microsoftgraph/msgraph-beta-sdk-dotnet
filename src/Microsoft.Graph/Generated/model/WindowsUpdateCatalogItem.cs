@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Update Catalog Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsUpdateCatalogItem>))]
     public partial class WindowsUpdateCatalogItem : Entity
     {
     
-		///<summary>
-		/// The internal WindowsUpdateCatalogItem constructor
-		///</summary>
+        ///<summary>
+        /// The internal WindowsUpdateCatalogItem constructor
+        ///</summary>
         protected internal WindowsUpdateCatalogItem()
         {
             // Don't allow initialization of abstract entity types
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets display name.
         /// The display name for the catalog item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets end of support date.
         /// The last supported date for a catalog item
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endOfSupportDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endOfSupportDate")]
         public DateTimeOffset? EndOfSupportDate { get; set; }
     
         /// <summary>
         /// Gets or sets release date time.
         /// The date the catalog item was released
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releaseDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("releaseDateTime")]
         public DateTimeOffset? ReleaseDateTime { get; set; }
     
     }

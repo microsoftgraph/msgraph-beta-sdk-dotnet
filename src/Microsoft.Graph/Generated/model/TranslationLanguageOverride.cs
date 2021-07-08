@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TranslationLanguageOverride.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TranslationLanguageOverride>))]
     public partial class TranslationLanguageOverride
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TranslationLanguageOverride"/> class.
-        /// </summary>
-        public TranslationLanguageOverride()
-        {
-            this.ODataType = "microsoft.graph.translationLanguageOverride";
-        }
 
         /// <summary>
         /// Gets or sets languageTag.
         /// The language to apply the override.Returned by default. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageTag", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("languageTag")]
         public string LanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets translationBehavior.
         /// The translation override behavior for the language, if any.Returned by default. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "translationBehavior", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("translationBehavior")]
         public TranslationBehavior? TranslationBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

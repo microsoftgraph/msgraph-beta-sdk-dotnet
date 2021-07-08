@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserJoinedGroupsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Group to the collection via POST.
-        /// </summary>
-        /// <param name="group">The Group to add.</param>
-        /// <returns>The created Group.</returns>
-        System.Threading.Tasks.Task<Group> AddAsync(Group group);
-
         /// <summary>
         /// Adds the specified Group to the collection via POST.
         /// </summary>
         /// <param name="group">The Group to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Group.</returns>
-        System.Threading.Tasks.Task<Group> AddAsync(Group group, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Group> AddAsync(Group group, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Group to the collection via POST and returns a <see cref="GraphResponse{Group}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserJoinedGroupsCollectionPage> GetAsync();
+        /// <param name="group">The Group to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Group}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Group>> AddResponseAsync(Group group, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserJoinedGroupsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IUserJoinedGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserJoinedGroupsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserJoinedGroupsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserJoinedGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

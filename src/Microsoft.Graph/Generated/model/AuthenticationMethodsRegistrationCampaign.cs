@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AuthenticationMethodsRegistrationCampaign.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AuthenticationMethodsRegistrationCampaign>))]
     public partial class AuthenticationMethodsRegistrationCampaign
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AuthenticationMethodsRegistrationCampaign"/> class.
-        /// </summary>
-        public AuthenticationMethodsRegistrationCampaign()
-        {
-            this.ODataType = "microsoft.graph.authenticationMethodsRegistrationCampaign";
-        }
 
         /// <summary>
         /// Gets or sets excludeTargets.
         /// Users and groups of users that are excluded from being prompted to set up the authentication method.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeTargets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludeTargets")]
         public IEnumerable<ExcludeTarget> ExcludeTargets { get; set; }
     
         /// <summary>
         /// Gets or sets includeTargets.
         /// Users and groups of users that are prompted to set up the authentication method.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeTargets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeTargets")]
         public IEnumerable<AuthenticationMethodsRegistrationCampaignIncludeTarget> IncludeTargets { get; set; }
     
         /// <summary>
         /// Gets or sets snoozeDurationInDays.
         /// Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "snoozeDurationInDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("snoozeDurationInDays")]
         public Int32? SnoozeDurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public AdvancedConfigState? State { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

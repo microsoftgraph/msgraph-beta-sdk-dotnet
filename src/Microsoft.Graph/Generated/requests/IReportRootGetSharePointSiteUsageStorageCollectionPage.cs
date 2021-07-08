@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IReportRootGetSharePointSiteUsageStorageCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ReportRootGetSharePointSiteUsageStorageCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ReportRootGetSharePointSiteUsageStorageCollectionPage>))]
     public interface IReportRootGetSharePointSiteUsageStorageCollectionPage : ICollectionPage<SiteUsageStorage>
     {
         /// <summary>

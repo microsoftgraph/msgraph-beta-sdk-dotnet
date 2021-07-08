@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ConnectedOrganization using POST.
         /// </summary>
         /// <param name="connectedOrganizationToCreate">The ConnectedOrganization to create.</param>
-        /// <returns>The created ConnectedOrganization.</returns>
-        public System.Threading.Tasks.Task<ConnectedOrganization> CreateAsync(ConnectedOrganization connectedOrganizationToCreate)
-        {
-            return this.CreateAsync(connectedOrganizationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ConnectedOrganization using POST.
-        /// </summary>
-        /// <param name="connectedOrganizationToCreate">The ConnectedOrganization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConnectedOrganization.</returns>
-        public async System.Threading.Tasks.Task<ConnectedOrganization> CreateAsync(ConnectedOrganization connectedOrganizationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConnectedOrganization> CreateAsync(ConnectedOrganization connectedOrganizationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ConnectedOrganization>(connectedOrganizationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ConnectedOrganization.
+        /// Creates the specified ConnectedOrganization using POST and returns a <see cref="GraphResponse{ConnectedOrganization}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="connectedOrganizationToCreate">The ConnectedOrganization to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectedOrganization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectedOrganization>> CreateResponseAsync(ConnectedOrganization connectedOrganizationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ConnectedOrganization>(connectedOrganizationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ConnectedOrganization>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ConnectedOrganization.
+        /// Deletes the specified ConnectedOrganization and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ConnectedOrganization.</returns>
-        public System.Threading.Tasks.Task<ConnectedOrganization> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ConnectedOrganization.</returns>
-        public async System.Threading.Tasks.Task<ConnectedOrganization> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConnectedOrganization> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ConnectedOrganization>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ConnectedOrganization using PATCH.
+        /// Gets the specified ConnectedOrganization and returns a <see cref="GraphResponse{ConnectedOrganization}"/> object.
         /// </summary>
-        /// <param name="connectedOrganizationToUpdate">The ConnectedOrganization to update.</param>
-        /// <returns>The updated ConnectedOrganization.</returns>
-        public System.Threading.Tasks.Task<ConnectedOrganization> UpdateAsync(ConnectedOrganization connectedOrganizationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectedOrganization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectedOrganization>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(connectedOrganizationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ConnectedOrganization>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ConnectedOrganization.</returns>
-        public async System.Threading.Tasks.Task<ConnectedOrganization> UpdateAsync(ConnectedOrganization connectedOrganizationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConnectedOrganization> UpdateAsync(ConnectedOrganization connectedOrganizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (connectedOrganizationToUpdate.AdditionalData != null)
-			{
-				if (connectedOrganizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					connectedOrganizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, connectedOrganizationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (connectedOrganizationToUpdate.AdditionalData != null)
-            {
-                if (connectedOrganizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    connectedOrganizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, connectedOrganizationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ConnectedOrganization>(connectedOrganizationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ConnectedOrganization using PATCH and returns a <see cref="GraphResponse{ConnectedOrganization}"/> object.
+        /// </summary>
+        /// <param name="connectedOrganizationToUpdate">The ConnectedOrganization to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConnectedOrganization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectedOrganization>> UpdateResponseAsync(ConnectedOrganization connectedOrganizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ConnectedOrganization>(connectedOrganizationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ConnectedOrganization using PUT.
+        /// </summary>
+        /// <param name="connectedOrganizationToUpdate">The ConnectedOrganization object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ConnectedOrganization> PutAsync(ConnectedOrganization connectedOrganizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ConnectedOrganization>(connectedOrganizationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ConnectedOrganization using PUT and returns a <see cref="GraphResponse{ConnectedOrganization}"/> object.
+        /// </summary>
+        /// <param name="connectedOrganizationToUpdate">The ConnectedOrganization object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ConnectedOrganization}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectedOrganization>> PutResponseAsync(ConnectedOrganization connectedOrganizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ConnectedOrganization>(connectedOrganizationToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ConnectedOrganization connectedOrganizationToInitialize)
         {
 
-            if (connectedOrganizationToInitialize != null && connectedOrganizationToInitialize.AdditionalData != null)
+            if (connectedOrganizationToInitialize != null)
             {
-
                 if (connectedOrganizationToInitialize.ExternalSponsors != null && connectedOrganizationToInitialize.ExternalSponsors.CurrentPage != null)
                 {
+                    connectedOrganizationToInitialize.ExternalSponsors.InitializeNextPageRequest(this.Client, connectedOrganizationToInitialize.ExternalSponsorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     connectedOrganizationToInitialize.ExternalSponsors.AdditionalData = connectedOrganizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    connectedOrganizationToInitialize.AdditionalData.TryGetValue("externalSponsors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        connectedOrganizationToInitialize.ExternalSponsors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (connectedOrganizationToInitialize.InternalSponsors != null && connectedOrganizationToInitialize.InternalSponsors.CurrentPage != null)
                 {
+                    connectedOrganizationToInitialize.InternalSponsors.InitializeNextPageRequest(this.Client, connectedOrganizationToInitialize.InternalSponsorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     connectedOrganizationToInitialize.InternalSponsors.AdditionalData = connectedOrganizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    connectedOrganizationToInitialize.AdditionalData.TryGetValue("internalSponsors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        connectedOrganizationToInitialize.InternalSponsors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

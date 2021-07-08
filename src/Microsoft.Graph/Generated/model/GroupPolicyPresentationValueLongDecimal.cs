@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Presentation Value Long Decimal.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupPolicyPresentationValueLongDecimal : GroupPolicyPresentationValue
     {
     
-		///<summary>
-		/// The GroupPolicyPresentationValueLongDecimal constructor
-		///</summary>
+        ///<summary>
+        /// The GroupPolicyPresentationValueLongDecimal constructor
+        ///</summary>
         public GroupPolicyPresentationValueLongDecimal()
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationValueLongDecimal";
         }
-	
+
         /// <summary>
         /// Gets or sets value.
         /// An unsigned long value for the associated presentation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public Int64? Value { get; set; }
     
     }

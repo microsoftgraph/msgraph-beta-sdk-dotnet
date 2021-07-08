@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IEducationSynchronizationProfileStartCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<EducationSynchronizationProfileStartCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<EducationSynchronizationProfileStartCollectionPage>))]
     public interface IEducationSynchronizationProfileStartCollectionPage : ICollectionPage<EducationFileSynchronizationVerificationMessage>
     {
         /// <summary>

@@ -12,41 +12,43 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Synchronization.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Synchronization : Entity
     {
     
-		///<summary>
-		/// The Synchronization constructor
-		///</summary>
-        public Synchronization()
-        {
-            this.ODataType = "microsoft.graph.synchronization";
-        }
-	
         /// <summary>
         /// Gets or sets secrets.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secrets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("secrets")]
         public IEnumerable<SynchronizationSecretKeyStringValuePair> Secrets { get; set; }
     
         /// <summary>
         /// Gets or sets jobs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("jobs")]
         public ISynchronizationJobsCollectionPage Jobs { get; set; }
+
+        /// <summary>
+        /// Gets or sets jobsNextLink.
+        /// </summary>
+        [JsonPropertyName("jobs@odata.nextLink")]
+        public string JobsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets templates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templates")]
         public ISynchronizationTemplatesCollectionPage Templates { get; set; }
+
+        /// <summary>
+        /// Gets or sets templatesNextLink.
+        /// </summary>
+        [JsonPropertyName("templates@odata.nextLink")]
+        public string TemplatesNextLink { get; set; }
     
     }
 }

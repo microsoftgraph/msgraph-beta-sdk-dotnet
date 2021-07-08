@@ -12,44 +12,52 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Reports.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementReports : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementReports constructor
-		///</summary>
-        public DeviceManagementReports()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementReports";
-        }
-	
         /// <summary>
         /// Gets or sets cached report configurations.
         /// Entity representing the configuration of a cached report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cachedReportConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cachedReportConfigurations")]
         public IDeviceManagementReportsCachedReportConfigurationsCollectionPage CachedReportConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets cachedReportConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("cachedReportConfigurations@odata.nextLink")]
+        public string CachedReportConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets export jobs.
         /// Entity representing a job to export a report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exportJobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exportJobs")]
         public IDeviceManagementReportsExportJobsCollectionPage ExportJobs { get; set; }
+
+        /// <summary>
+        /// Gets or sets exportJobsNextLink.
+        /// </summary>
+        [JsonPropertyName("exportJobs@odata.nextLink")]
+        public string ExportJobsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets report schedules.
         /// Entity representing a schedule for which reports are delivered
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportSchedules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportSchedules")]
         public IDeviceManagementReportsReportSchedulesCollectionPage ReportSchedules { get; set; }
+
+        /// <summary>
+        /// Gets or sets reportSchedulesNextLink.
+        /// </summary>
+        [JsonPropertyName("reportSchedules@odata.nextLink")]
+        public string ReportSchedulesNextLink { get; set; }
     
     }
 }

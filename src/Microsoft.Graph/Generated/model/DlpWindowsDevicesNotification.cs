@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DlpWindowsDevicesNotification.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DlpWindowsDevicesNotification : DlpNotification
     {
         /// <summary>
@@ -32,13 +30,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets contentName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentName")]
         public string ContentName { get; set; }
     
         /// <summary>
         /// Gets or sets lastModfiedBy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModfiedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModfiedBy")]
         public string LastModfiedBy { get; set; }
     
     }
