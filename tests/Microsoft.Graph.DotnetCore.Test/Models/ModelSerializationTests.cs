@@ -104,7 +104,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
 
             var deserializedPage = this.serializer.DeserializeObject<IDriveItemChildrenCollectionPage>(serializedString);
 
-            Assert.IsType(typeof(DriveItemChildrenCollectionPage), deserializedPage);
+            Assert.IsType<DriveItemChildrenCollectionPage>(deserializedPage);
             Assert.Equal(1, deserializedPage.Count);
             Assert.Equal("id", deserializedPage[0].Id);
         }

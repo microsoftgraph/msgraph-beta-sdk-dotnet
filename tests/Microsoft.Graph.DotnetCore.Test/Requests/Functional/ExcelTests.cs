@@ -2,7 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-// README before adding tests here. 
+// README before adding tests here.
 // If you are adding tests for Excel, please do the following:
 // -- Use the template at the bottom of this file.  Make sure to create test file per test method and then delete your resource.
 // -- Add worksheets to Requests\Functional\Resources\excelTestResource to target for your test case. Do not touch existing sheets.
@@ -37,11 +37,13 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
         }
 
+        [Theory(Skip = "No CI set up for functional tests")]
+        [InlineData("_excelTestResource.xlsx")]
         public async Async.Task OneDriveSearchForTestFile(string fileName = "_excelTestResource.xlsx")
         {
             try
             {
-                // Check that this item hasn't already been created. 
+                // Check that this item hasn't already been created.
                 // https://graph.microsoft.io/en-us/docs/api-reference/beta/api/item_search
                 var searchResults = await graphClient.Me.Drive.Root.Search(fileName).Request().GetAsync();
                 foreach (var r in searchResults)
@@ -93,33 +95,37 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             return "";
         }
 
+        [Theory(Skip = "No CI set up for functional tests")]
+        [InlineData("")]
         public async Async.Task OneDriveUploadTestFileContent(string fileId)
         {
-            //try
-            //{
-            //    DriveItem excelDriveItem;
-            //    var excelBuff = Microsoft.Graph.DotnetCore.Test.Properties.Resources.excelTestResource;
-            //    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(excelBuff))
-            //    {
-            //        Upload content to the file.
-            //        https://graph.microsoft.io/en-us/docs/api-reference/beta/api/item_uploadcontent
-            //        excelDriveItem = await graphClient.Me.Drive.Items[fileId].Content.Request().PutAsync<DriveItem>(ms);
-            //    }
+            try
+            {
+                DriveItem excelDriveItem;
+                var excelBuff = Microsoft.Graph.DotnetCore.Test.Properties.Resource1.excelTestResource;
+                using (System.IO.MemoryStream ms = new System.IO.MemoryStream(excelBuff))
+                {
+                    //Upload content to the file.
+                    // https://graph.microsoft.io/en-us/docs/api-reference/beta/api/item_uploadcontent
+                    excelDriveItem = await graphClient.Me.Drive.Items[fileId].Content.Request().PutAsync<DriveItem>(ms);
+                }
 
-            //    Assert.NotNull(excelDriveItem);
-            //}
-            //catch (Microsoft.Graph.ServiceException e)
-            //{
-            //    Assert.True(false, "Something happened. Error code: " + e.Error.Code);
-            //}
+                Assert.NotNull(excelDriveItem);
+            }
+            catch (Microsoft.Graph.ServiceException e)
+            {
+                Assert.True(false, "Something happened. Error code: " + e.Error.Code);
+            }
         }
 
+        [Theory(Skip = "No CI set up for functional tests")]
+        [InlineData("", 0)]
         public async Async.Task OneDriveDeleteTestFile(string fileId, int delayInMilliseconds = 0)
         {
             try
             {
-                // Get the item. The service tracks when the resource was last read and 
-                // gives an error if we try to delete after an update. 
+                // Get the item. The service tracks when the resource was last read and
+                // gives an error if we try to delete after an update.
                 DriveItem w = await graphClient.Me.Drive.Items[fileId].Request().GetAsync();
 
                 var headers = new List<Option>()
@@ -128,7 +134,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     new HeaderOption("if-match", "*")
                 };
 
-                // Adding this since there is latency between OneDrive and the Excel WAC. Use when 
+                // Adding this since there is latency between OneDrive and the Excel WAC. Use when
                 // you PATCH/POST/PUT to the workbook before you DELETE in test.
                 if (delayInMilliseconds > 0)
                 {
@@ -323,14 +329,14 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                                               .GetAsync();
 
 
-                // Create the dummy workbook object. Must use the AdditionalData property for this. 
+                // Create the dummy workbook object. Must use the AdditionalData property for this.
                 var dummyWorkbookTable = new WorkbookTable();
                 var requiredPropsCreatingTableFromRange = new Dictionary<string, object>();
                 requiredPropsCreatingTableFromRange.Add("address", workbookRange.Address);
                 requiredPropsCreatingTableFromRange.Add("hasHeaders", false);
                 dummyWorkbookTable.AdditionalData = requiredPropsCreatingTableFromRange;
 
-                // Create a table based on the address of the workbookRange. 
+                // Create a table based on the address of the workbookRange.
                 // This results in a call to the service.
                 // https://graph.microsoft.io/en-us/docs/api-reference/beta/api/tablecollection_add
                 var workbookTable = await graphClient.Me.Drive.Items[excelFileId]
@@ -505,7 +511,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 // Sometimes the creation of the chart takes too long and the new chart resource isn't accessible.
                 await Async.Task.Delay(1000);
 
-                // Workaround since the metadata description isn't correct as it states it returns a string and not the 
+                // Workaround since the metadata description isn't correct as it states it returns a string and not the
                 // actual JSON object, and since the service doesn't accept the fully qualified name that the client emits
                 // even though it should accept the FQN.
                 string chartResourceUrl = graphClient.Me.Drive.Items[excelFileId]
@@ -575,7 +581,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 // Try to write to the worksheet. Expect an exception.
                 var workbookRange = await graphClient.Me.Drive.Items[excelFileId]
                                                               .Workbook
-                                                              .Worksheets["ProtectWorksheet"] // Set in excelTestResource.xlsx 
+                                                              .Worksheets["ProtectWorksheet"] // Set in excelTestResource.xlsx
                                                               .Cell(1, 1)
                                                               .Request()
                                                               .PatchAsync(dummyWorkbookRange);

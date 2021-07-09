@@ -30,7 +30,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
     
     # Create a pull request [1]
     - name: Create PR using the GitHub REST API via hub
@@ -38,7 +38,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MESSAGE_TITLE: Generated beta models and request builders using Typewriter
-        MESSAGE_BODY: "This pull request was automatically created by the GitHub Action, **${{github.workflow}}**. \n\n The commit hash is _${{github.sha}}_. \n\n **Important** Check for unexpected deletions or changes in this PR. \n\n - [ ] Check that the changes match the changes in the captured commit for [beta_metadata.xml](https://github.com/microsoftgraph/msgraph-metadata/blob/master/beta_metadata.xml)  \n\n cc: @darrelmiller"
+        MESSAGE_BODY: "This pull request was automatically created by the GitHub Action, **${{github.workflow}}**. \n\n The commit hash is _${{github.sha}}_. \n\n **Important** Check for unexpected deletions or changes in this PR. \n\n - [ ] Check that the changes match the changes in the captured commit for [beta_metadata.xml](https://github.com/microsoftgraph/msgraph-metadata/blob/master/beta_metadata.xml)"
         REVIEWERS: peombwa,ddyett,zengin,baywet,nikithauc
         ASSIGNEDTO: MIchaelMainer
         LABELS: generated

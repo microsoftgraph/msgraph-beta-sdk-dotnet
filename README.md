@@ -7,10 +7,11 @@
 [![NuGet Version](https://buildstats.info/nuget/Microsoft.Graph)](https://www.nuget.org/packages/Microsoft.Graph/)
 -->
 
-Integrate the [Microsoft Graph Beta API](https://graph.microsoft.io) into your .NET
-project!
+Integrate the [Microsoft Graph Beta API](https://graph.microsoft.com) into your .NET project!
 
-The Microsoft Graph Beta .NET Client Library targets .NetStandard 1.1 and .Net Framework 4.5.
+The Microsoft Graph Beta .NET Client Library 0.x targets .NetStandard 1.1 and .Net Framework 4.5.
+
+The Microsoft Graph Beta .NET Client Library 4.x targets .NetStandard 2.0 and .Net Framework 4.6.2.
 
 ## Installation via NuGet
 
@@ -84,13 +85,13 @@ View the upgrade guide [here](docs/upgrade-to-v2.md).
 
 ## Issues
 
-To view or log issues, see [issues](https://github.com/microsoftgraph/msgraph-sdk-dotnet-beta/issues).
+To view or log issues, see [issues](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues).
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## Other resources
 
-* NuGet Package: [https://www.nuget.org/packages/Microsoft.Graph.Beta](https://www.nuget.org/packages/Microsoft.Graph)
+* NuGet Package: [https://www.nuget.org/packages/Microsoft.Graph.Beta](https://www.nuget.org/packages/Microsoft.Graph.Beta)
 
 ## Building library locally
 

@@ -55,7 +55,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         //            //props.FileSystemInfo.CreatedDateTime = System.DateTimeOffset.Now;
         //            //props.FileSystemInfo.LastModifiedDateTime = System.DateTimeOffset.Now;
 
-        //            // Get the provider. 
+        //            // Get the provider.
         //            // POST /beta/drive/items/01KGPRHTV6Y2GOVW7725BZO354PWSELRRZ:/_hamiltion.png:/microsoft.graph.createUploadSession
         //            // The CreateUploadSesssion action doesn't seem to support the options stated in the metadata.
         //            var uploadSession = await graphClient.Drive.Items["01KGPRHTV6Y2GOVW7725BZO354PWSELRRZ"].ItemWithPath("_hamilton.png").CreateUploadSession().Request().PostAsync();
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                         // the last chunk size.
                         long size = (long)driveItemInfo.Size;
                         int numberOfChunks = Convert.ToInt32(size / DefaultChunkSize);
-                        // We are incrementing the offset cursor after writing the response stream to a file after each chunk. 
+                        // We are incrementing the offset cursor after writing the response stream to a file after each chunk.
                         // Subtracting one since the size is 1 based, and the range is 0 base. There should be a better way to do
                         // this but I haven't spent the time on that.
                         int lastChunkSize = Convert.ToInt32(size % DefaultChunkSize) - numberOfChunks - 1;
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                                 // We can use the the client library to send this although it does add an authentication cost.
                                 // HttpResponseMessage response = await graphClient.HttpProvider.SendAsync(req);
-                                // Since the download URL is preauthenticated, and we aren't deserializing objects, 
+                                // Since the download URL is preauthenticated, and we aren't deserializing objects,
                                 // we'd be better to make the request with HttpClient.
                                 var client = new HttpClient();
                                 HttpResponseMessage response = await client.SendAsync(req);
@@ -211,7 +211,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Assert.True(false, "Something happened, check out a trace. Error code: " + e.Error.Code);
             }
         }
-               
+
         // http://graph.microsoft.io/en-us/docs/api-reference/beta/api/item_downloadcontent
         [Fact(Skip = "No CI set up for functional tests")]
         public async Async.Task OneDriveGetContent()
@@ -227,7 +227,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     {
                         var driveItemContent = await graphClient.Me.Drive.Items[item.Id].Content.Request().GetAsync();
                         Assert.NotNull(driveItemContent);
-                        Assert.IsType(typeof(Stream), driveItemContent);
+                        Assert.IsAssignableFrom<Stream>(driveItemContent);
                         return;
                     }
                 }

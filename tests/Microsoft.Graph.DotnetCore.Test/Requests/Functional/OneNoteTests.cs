@@ -27,11 +27,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             // Get a handle to the first section.
             firstSectionID = sectionPage[0].Id;
         }
-        
-        public async void TestPageCleanUp()
-        {
-            await graphClient.Me.Onenote.Pages[testPage.Id].Request().DeleteAsync();
-        }
 
         /// <summary>
         /// Get the OneNote notebooks.
@@ -39,8 +34,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         /// </summary>
         [Fact(Skip = "No CI set up for functional tests")]
         public async Async.Task OneNoteGetNotebooks()
-        { 
-            try 
+        {
+            try
             {
                 IOnenoteNotebooksCollectionPage notebooksPage = await graphClient.Me
                                                                                  .Onenote
@@ -367,7 +362,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     Assert.Contains(testPage.Title, title); // Expected: title from the posted body matches the title in the OneNotePage object. That didn't happen
                     Assert.Null(testPage.Content); // Expected: content property does not contain anything. Actual: there's an unexpected object in the content property.
 
-                    TestPageCleanUp(); 
+                    await graphClient.Me.Onenote.Pages[testPage.Id].Request().DeleteAsync();
                 }
                 else
                     throw new ServiceException(
@@ -397,7 +392,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         {
             try
             {
-                // Get the request URL for adding a page. You don't have to use the request builder to 
+                // Get the request URL for adding a page. You don't have to use the request builder to
                 // get the URL. We use it here for convenience.
                 string requestUrl = graphClient.Me.Onenote.Sections[firstSectionID].Pages.Request().RequestUrl;
 
@@ -422,7 +417,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     // Send the request and get the response.
                     response = await graphClient.HttpProvider.SendAsync(hrm);
                 }
-                
+
                 // Get the OneNote page that we created.
                 if (response.IsSuccessStatusCode)
                 {
@@ -433,7 +428,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     Assert.NotNull(testPage); // We didn't deserialize the OnenotePage object.
                     Assert.Contains(testPage.Title, title); // Expected: title matches, Actual: they don't match.
 
-                    TestPageCleanUp();
+                    await graphClient.Me.Onenote.Pages[testPage.Id].Request().DeleteAsync();
                 }
                 else
                     throw new ServiceException(
@@ -479,7 +474,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         //        HttpResponseMessage response;
 
-        //        // Create the presentation part. 
+        //        // Create the presentation part.
         //        StringContent presentation = new StringContent(htmlBody);
         //        presentation.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data");
         //        presentation.Headers.ContentDisposition.Name = "Presentation";
@@ -501,7 +496,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         //            MultipartContent multiPartContent = new MultipartContent("form-data", boundary);
         //            multiPartContent.Add(presentation);
         //            multiPartContent.Add(image);
-                    
+
         //            // Create the request message and add the content.
         //            HttpRequestMessage hrm = new HttpRequestMessage(HttpMethod.Post, requestUrl);
         //            hrm.Content = multiPartContent;
@@ -521,7 +516,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         //            Assert.True(testPage.GetType() == typeof(OnenotePage), $"Expected a OnenotePage object. Actual type is {testPage.GetType().ToString()} ");
         //            Assert.Contains(testPage.Title, title); // "Expected: title matches, Actual: they don't match.
 
-        //            TestPageCleanUp();
+        //            await graphClient.Me.Onenote.Pages[testPage.Id].Request().DeleteAsync();
         //        }
         //        else
         //            throw new ServiceException(
@@ -548,7 +543,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         /// https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/page_update
         /// The service expects PATCH https://graph.microsoft.com/beta/me/onenote/pages/{id}/content with a
         /// body that includes a JSON object that describes the PATCH. We generate a dummy object that is
-        /// supposed to be set with the properties PATCH. 
+        /// supposed to be set with the properties PATCH.
         /// Issue: metadata describes a onenotePatchContent action. This scenario would probably generate correctly.
         /// This conflicts with the documentation.
         /// Issue: The documented form we cannot generate from our metadata. Docs say that we PATCH to the content structural property
@@ -627,7 +622,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             string testString = ". Choose positive.";
 
             // Create the request body.
-            string htmlBody = $"<!DOCTYPE html><html><head><title>OneNoteAddPageHtmlWithStream test created this{testString}</title></head>" + 
+            string htmlBody = $"<!DOCTYPE html><html><head><title>OneNoteAddPageHtmlWithStream test created this{testString}</title></head>" +
                                     "<body>Generated from the test with the partial</body></html> ";
             byte[] byteArray = Encoding.ASCII.GetBytes(htmlBody);
 
@@ -640,7 +635,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             Assert.NotNull(testPage); // EXPECTED: A OneNote page, ACTUAL: null
             Assert.Contains(testPage.Title, testString); // EXPECTED: Test string from the create action in the title.
 
-            TestPageCleanUp();
+            await graphClient.Me.Onenote.Pages[testPage.Id].Request().DeleteAsync();
         }
 
         /// <summary>
@@ -660,74 +655,74 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             Assert.NotNull(testPage); // EXPECTED: A OneNote page, ACTUAL: null
             Assert.Contains(testPage.Title, testString); // EXPECTED: Test string from the create action in the title.
 
-            TestPageCleanUp();
+            await graphClient.Me.Onenote.Pages[testPage.Id].Request().DeleteAsync();
         }
 
         /// <summary>
         /// Add a multi-part page.
         /// Needs ImageConverter to replace System.Drawing
         /// </summary>
-//        [Fact(Skip = "No CI set up for functional tests")]
-//        public async Async.Task OneNoteAddPageWithMultipart()
-//        {
-//            try
-//            {
-//                string title = "OneNoteAddPageMultipart test created this";
-//                string htmlBody = $@"<!DOCTYPE html><html><head><title>{title}</title></head>
-//                                    <body>Generated from the test
-//                                        <p>
-//                                            <img src=""name:imageBlock1"" alt=""an image on the page"" width=""300"" />
-//                                        </p>
-//                                    </body></html>
-//";
+        //        [Fact(Skip = "No CI set up for functional tests")]
+        //        public async Async.Task OneNoteAddPageWithMultipart()
+        //        {
+        //            try
+        //            {
+        //                string title = "OneNoteAddPageMultipart test created this";
+        //                string htmlBody = $@"<!DOCTYPE html><html><head><title>{title}</title></head>
+        //                                    <body>Generated from the test
+        //                                        <p>
+        //                                            <img src=""name:imageBlock1"" alt=""an image on the page"" width=""300"" />
+        //                                        </p>
+        //                                    </body></html>
+        //";
 
-//                string boundary = "MultiPartBoundary32541";
-//                string contentType = "multipart/form-data; boundary=" + boundary;
+        //                string boundary = "MultiPartBoundary32541";
+        //                string contentType = "multipart/form-data; boundary=" + boundary;
 
-//                // Create the presentation part. 
-//                StringContent presentation = new StringContent(htmlBody);
-//                presentation.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data");
-//                presentation.Headers.ContentDisposition.Name = "Presentation";
-//                presentation.Headers.ContentType = new MediaTypeHeaderValue("text/html");
+        //                // Create the presentation part.
+        //                StringContent presentation = new StringContent(htmlBody);
+        //                presentation.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data");
+        //                presentation.Headers.ContentDisposition.Name = "Presentation";
+        //                presentation.Headers.ContentType = new MediaTypeHeaderValue("text/html");
 
-//                StreamContent image;
+        //                StreamContent image;
 
-//                // Get an image stream.
-//                System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
-//                var buff = (byte[])converter.ConvertTo(Microsoft.Graph.Test.Properties.Resources.hamilton, typeof(byte[]));
-//                using (System.IO.MemoryStream ms = new System.IO.MemoryStream(buff))
-//                {
-//                    // Create the image part.
-//                    image = new StreamContent(ms);
-//                    image.Headers.ContentDisposition = new ContentDispositionHeaderValue(@"form-data");
-//                    image.Headers.ContentDisposition.Name = "imageBlock1";
-//                    image.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+        //                // Get an image stream.
+        //                System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
+        //                var buff = (byte[])converter.ConvertTo(Microsoft.Graph.Test.Properties.Resources.hamilton, typeof(byte[]));
+        //                using (System.IO.MemoryStream ms = new System.IO.MemoryStream(buff))
+        //                {
+        //                    // Create the image part.
+        //                    image = new StreamContent(ms);
+        //                    image.Headers.ContentDisposition = new ContentDispositionHeaderValue(@"form-data");
+        //                    image.Headers.ContentDisposition.Name = "imageBlock1";
+        //                    image.Headers.ContentType = new MediaTypeHeaderValue("image/png");
 
-//                    // Put the multiparts together
-//                    MultipartContent multiPartContent = new MultipartContent("form-data", boundary);
-//                    multiPartContent.Add(presentation);
-//                    multiPartContent.Add(image);
+        //                    // Put the multiparts together
+        //                    MultipartContent multiPartContent = new MultipartContent("form-data", boundary);
+        //                    multiPartContent.Add(presentation);
+        //                    multiPartContent.Add(image);
 
-//                    // Get the multiPart stream and then send the request to add a page using the stream.
-//                    testPage = await graphClient.Me.Onenote.Sections[firstSectionID].Pages.Request().AddAsync(multiPartContent);
-//                }
+        //                    // Get the multiPart stream and then send the request to add a page using the stream.
+        //                    testPage = await graphClient.Me.Onenote.Sections[firstSectionID].Pages.Request().AddAsync(multiPartContent);
+        //                }
 
-//                Assert.NotNull(testPage); // We didn't deserialize the OnenotePage object.
-//                Assert.True(testPage.GetType() == typeof(OnenotePage), $"Expected a OnenotePage object. Actual type is {testPage.GetType().ToString()} ");
-//                Assert.Contains(htmlBody, testPage.Title); // Expected: title returned in the OneNotePage object is found in the source HTML. Actual: not found.
+        //                Assert.NotNull(testPage); // We didn't deserialize the OnenotePage object.
+        //                Assert.True(testPage.GetType() == typeof(OnenotePage), $"Expected a OnenotePage object. Actual type is {testPage.GetType().ToString()} ");
+        //                Assert.Contains(htmlBody, testPage.Title); // Expected: title returned in the OneNotePage object is found in the source HTML. Actual: not found.
 
-//                TestPageCleanUp();
-//            }
-//            catch (Microsoft.Graph.ServiceException e)
-//            {
-//                Assert.True(false, $"Error code: {e.Error.Code}");
-//            }
+        //                await graphClient.Me.Onenote.Pages[testPage.Id].Request().DeleteAsync();
+        //            }
+        //            catch (Microsoft.Graph.ServiceException e)
+        //            {
+        //                Assert.True(false, $"Error code: {e.Error.Code}");
+        //            }
 
-//            catch (Exception e)
-//            {
-//                Assert.True(false, $"Error code: {e.Message}");
-//            }
-//        }
+        //            catch (Exception e)
+        //            {
+        //                Assert.True(false, $"Error code: {e.Message}");
+        //            }
+        //        }
 
         /// <summary>
         /// Test the custom 'Root' partial request builder and accessing Onenote notebook collection.
