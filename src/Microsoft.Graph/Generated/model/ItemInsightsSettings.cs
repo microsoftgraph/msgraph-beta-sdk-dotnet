@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Item Insights Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ItemInsightsSettings : Entity
     {
     
-		///<summary>
-		/// The ItemInsightsSettings constructor
-		///</summary>
-        public ItemInsightsSettings()
-        {
-            this.ODataType = "microsoft.graph.itemInsightsSettings";
-        }
-	
         /// <summary>
         /// Gets or sets disabled for group.
         /// The ID of an Azure AD group, of which the members' item insights are disabled. Default is empty. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disabledForGroup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("disabledForGroup")]
         public string DisabledForGroup { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled in organization.
         /// true if organization item insights are enabled; false if organization item insights are disabled for all users without exceptions. Default is true. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabledInOrganization", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabledInOrganization")]
         public bool? IsEnabledInOrganization { get; set; }
     
     }

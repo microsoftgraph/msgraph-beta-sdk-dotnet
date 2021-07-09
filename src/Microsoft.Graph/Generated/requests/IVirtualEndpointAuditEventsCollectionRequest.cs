@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IVirtualEndpointAuditEventsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified CloudPcAuditEvent to the collection via POST.
-        /// </summary>
-        /// <param name="cloudPcAuditEvent">The CloudPcAuditEvent to add.</param>
-        /// <returns>The created CloudPcAuditEvent.</returns>
-        System.Threading.Tasks.Task<CloudPcAuditEvent> AddAsync(CloudPcAuditEvent cloudPcAuditEvent);
-
         /// <summary>
         /// Adds the specified CloudPcAuditEvent to the collection via POST.
         /// </summary>
         /// <param name="cloudPcAuditEvent">The CloudPcAuditEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcAuditEvent.</returns>
-        System.Threading.Tasks.Task<CloudPcAuditEvent> AddAsync(CloudPcAuditEvent cloudPcAuditEvent, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CloudPcAuditEvent> AddAsync(CloudPcAuditEvent cloudPcAuditEvent, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified CloudPcAuditEvent to the collection via POST and returns a <see cref="GraphResponse{CloudPcAuditEvent}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IVirtualEndpointAuditEventsCollectionPage> GetAsync();
+        /// <param name="cloudPcAuditEvent">The CloudPcAuditEvent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcAuditEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcAuditEvent>> AddResponseAsync(CloudPcAuditEvent cloudPcAuditEvent, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IVirtualEndpointAuditEventsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IVirtualEndpointAuditEventsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointAuditEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpointAuditEventsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpointAuditEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

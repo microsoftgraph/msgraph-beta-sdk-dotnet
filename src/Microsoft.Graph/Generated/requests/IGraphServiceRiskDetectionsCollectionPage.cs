@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IGraphServiceRiskDetectionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<GraphServiceRiskDetectionsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<GraphServiceRiskDetectionsCollectionPage>))]
     public interface IGraphServiceRiskDetectionsCollectionPage : ICollectionPage<RiskDetection>
     {
         /// <summary>

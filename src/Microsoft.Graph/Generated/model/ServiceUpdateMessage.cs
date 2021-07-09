@@ -12,70 +12,69 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Service Update Message.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ServiceUpdateMessage>))]
     public partial class ServiceUpdateMessage : ServiceAnnouncementBase
     {
     
-		///<summary>
-		/// The ServiceUpdateMessage constructor
-		///</summary>
+        ///<summary>
+        /// The ServiceUpdateMessage constructor
+        ///</summary>
         public ServiceUpdateMessage()
         {
             this.ODataType = "microsoft.graph.serviceUpdateMessage";
         }
-	
+
         /// <summary>
         /// Gets or sets action required by date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionRequiredByDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionRequiredByDateTime")]
         public DateTimeOffset? ActionRequiredByDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets body.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "body", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("body")]
         public ItemBody Body { get; set; }
     
         /// <summary>
         /// Gets or sets category.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("category")]
         public ServiceUpdateCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets is major change.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMajorChange", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isMajorChange")]
         public bool? IsMajorChange { get; set; }
     
         /// <summary>
         /// Gets or sets services.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "services", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("services")]
         public IEnumerable<string> Services { get; set; }
     
         /// <summary>
         /// Gets or sets severity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "severity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("severity")]
         public ServiceUpdateSeverity? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tags", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }
     
         /// <summary>
         /// Gets or sets view point.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "viewPoint", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("viewPoint")]
         public ServiceUpdateMessageViewpoint ViewPoint { get; set; }
     
     }

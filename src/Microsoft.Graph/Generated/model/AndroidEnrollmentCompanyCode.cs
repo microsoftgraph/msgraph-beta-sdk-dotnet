@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AndroidEnrollmentCompanyCode.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidEnrollmentCompanyCode>))]
     public partial class AndroidEnrollmentCompanyCode
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AndroidEnrollmentCompanyCode"/> class.
-        /// </summary>
-        public AndroidEnrollmentCompanyCode()
-        {
-            this.ODataType = "microsoft.graph.androidEnrollmentCompanyCode";
-        }
 
         /// <summary>
         /// Gets or sets enrollmentToken.
         /// Enrollment Token used by the User to enroll their device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentToken", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentToken")]
         public string EnrollmentToken { get; set; }
     
         /// <summary>
         /// Gets or sets qrCodeContent.
         /// String used to generate a QR code for the token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qrCodeContent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("qrCodeContent")]
         public string QrCodeContent { get; set; }
     
         /// <summary>
         /// Gets or sets qrCodeImage.
         /// Generated QR code for the token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qrCodeImage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("qrCodeImage")]
         public MimeContent QrCodeImage { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

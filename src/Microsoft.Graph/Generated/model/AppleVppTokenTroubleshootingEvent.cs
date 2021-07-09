@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Apple Vpp Token Troubleshooting Event.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AppleVppTokenTroubleshootingEvent : DeviceManagementTroubleshootingEvent
     {
     
-		///<summary>
-		/// The AppleVppTokenTroubleshootingEvent constructor
-		///</summary>
+        ///<summary>
+        /// The AppleVppTokenTroubleshootingEvent constructor
+        ///</summary>
         public AppleVppTokenTroubleshootingEvent()
         {
             this.ODataType = "microsoft.graph.appleVppTokenTroubleshootingEvent";
         }
-	
+
         /// <summary>
         /// Gets or sets token id.
         /// Apple Volume Purchase Program Token Identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tokenId")]
         public string TokenId { get; set; }
     
     }

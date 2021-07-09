@@ -12,104 +12,95 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MacOSMinimumOperatingSystem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSMinimumOperatingSystem>))]
     public partial class MacOSMinimumOperatingSystem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacOSMinimumOperatingSystem"/> class.
-        /// </summary>
-        public MacOSMinimumOperatingSystem()
-        {
-            this.ODataType = "microsoft.graph.macOSMinimumOperatingSystem";
-        }
 
         /// <summary>
         /// Gets or sets v10_10.
         /// Mac OS 10.10 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_10", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_10")]
         public bool? V10_10 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_11.
         /// Mac OS 10.11 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_11", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_11")]
         public bool? V10_11 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_12.
         /// Mac OS 10.12 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_12", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_12")]
         public bool? V10_12 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_13.
         /// Mac OS 10.13 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_13", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_13")]
         public bool? V10_13 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_14.
         /// Mac OS 10.14 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_14", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_14")]
         public bool? V10_14 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_15.
         /// Mac OS 10.15 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_15", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_15")]
         public bool? V10_15 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_7.
         /// Mac OS 10.7 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_7", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_7")]
         public bool? V10_7 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_8.
         /// Mac OS 10.8 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_8", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_8")]
         public bool? V10_8 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_9.
         /// Mac OS 10.9 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_9", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_9")]
         public bool? V10_9 { get; set; }
     
         /// <summary>
         /// Gets or sets v11_0.
         /// Mac OS 11.0 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v11_0", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v11_0")]
         public bool? V11_0 { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

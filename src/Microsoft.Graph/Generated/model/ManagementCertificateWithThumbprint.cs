@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagementCertificateWithThumbprint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagementCertificateWithThumbprint>))]
     public partial class ManagementCertificateWithThumbprint
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagementCertificateWithThumbprint"/> class.
-        /// </summary>
-        public ManagementCertificateWithThumbprint()
-        {
-            this.ODataType = "microsoft.graph.managementCertificateWithThumbprint";
-        }
 
         /// <summary>
         /// Gets or sets certificate.
         /// The Base 64 encoded management certificate
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certificate")]
         public string Certificate { get; set; }
     
         /// <summary>
         /// Gets or sets thumbprint.
         /// The thumbprint of the management certificate
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbprint", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("thumbprint")]
         public string Thumbprint { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TranslationPreferences.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TranslationPreferences>))]
     public partial class TranslationPreferences
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TranslationPreferences"/> class.
-        /// </summary>
-        public TranslationPreferences()
-        {
-            this.ODataType = "microsoft.graph.translationPreferences";
-        }
 
         /// <summary>
         /// Gets or sets languageOverrides.
         /// Translation override behavior for languages, if any.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageOverrides", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("languageOverrides")]
         public IEnumerable<TranslationLanguageOverride> LanguageOverrides { get; set; }
     
         /// <summary>
         /// Gets or sets translationBehavior.
         /// The user's preferred translation behavior.Returned by default. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "translationBehavior", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("translationBehavior")]
         public TranslationBehavior? TranslationBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets untranslatedLanguages.
         /// The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "untranslatedLanguages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("untranslatedLanguages")]
         public IEnumerable<string> UntranslatedLanguages { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

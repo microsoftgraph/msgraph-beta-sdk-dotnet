@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IOrganizationSettingsProfileCardPropertiesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ProfileCardProperty to the collection via POST.
-        /// </summary>
-        /// <param name="profileCardProperty">The ProfileCardProperty to add.</param>
-        /// <returns>The created ProfileCardProperty.</returns>
-        System.Threading.Tasks.Task<ProfileCardProperty> AddAsync(ProfileCardProperty profileCardProperty);
-
         /// <summary>
         /// Adds the specified ProfileCardProperty to the collection via POST.
         /// </summary>
         /// <param name="profileCardProperty">The ProfileCardProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProfileCardProperty.</returns>
-        System.Threading.Tasks.Task<ProfileCardProperty> AddAsync(ProfileCardProperty profileCardProperty, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ProfileCardProperty> AddAsync(ProfileCardProperty profileCardProperty, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ProfileCardProperty to the collection via POST and returns a <see cref="GraphResponse{ProfileCardProperty}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOrganizationSettingsProfileCardPropertiesCollectionPage> GetAsync();
+        /// <param name="profileCardProperty">The ProfileCardProperty to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileCardProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfileCardProperty>> AddResponseAsync(ProfileCardProperty profileCardProperty, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOrganizationSettingsProfileCardPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IOrganizationSettingsProfileCardPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OrganizationSettingsProfileCardPropertiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationSettingsProfileCardPropertiesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationSettingsProfileCardPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

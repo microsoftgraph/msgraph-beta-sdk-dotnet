@@ -12,88 +12,78 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Aggregated Policy Compliance.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AggregatedPolicyCompliance : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The AggregatedPolicyCompliance constructor
-		///</summary>
-        public AggregatedPolicyCompliance()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.aggregatedPolicyCompliance";
-        }
-	
         /// <summary>
         /// Gets or sets compliance policy id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicyId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("compliancePolicyId")]
         public string CompliancePolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets compliance policy name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicyName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("compliancePolicyName")]
         public string CompliancePolicyName { get; set; }
     
         /// <summary>
         /// Gets or sets compliance policy platform.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicyPlatform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("compliancePolicyPlatform")]
         public string CompliancePolicyPlatform { get; set; }
     
         /// <summary>
         /// Gets or sets compliance policy type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicyType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("compliancePolicyType")]
         public string CompliancePolicyType { get; set; }
     
         /// <summary>
         /// Gets or sets last refreshed date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastRefreshedDateTime")]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets number of compliant devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCompliantDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("numberOfCompliantDevices")]
         public Int64? NumberOfCompliantDevices { get; set; }
     
         /// <summary>
         /// Gets or sets number of error devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfErrorDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("numberOfErrorDevices")]
         public Int64? NumberOfErrorDevices { get; set; }
     
         /// <summary>
         /// Gets or sets number of non compliant devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfNonCompliantDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("numberOfNonCompliantDevices")]
         public Int64? NumberOfNonCompliantDevices { get; set; }
     
         /// <summary>
         /// Gets or sets policy modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policyModifiedDateTime")]
         public DateTimeOffset? PolicyModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantDisplayName")]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CustomAction.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CustomAction : InformationProtectionAction
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets name.
         /// Name of the custom action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
         /// Properties, in key value pair format, of the action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "properties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("properties")]
         public IEnumerable<KeyValuePair> Properties { get; set; }
     
     }

@@ -12,149 +12,265 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed Tenant.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedTenant : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ManagedTenant constructor
-		///</summary>
-        public ManagedTenant()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.managedTenant";
-        }
-	
         /// <summary>
         /// Gets or sets aggregated policy compliances.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aggregatedPolicyCompliances", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("aggregatedPolicyCompliances")]
         public IManagedTenantAggregatedPolicyCompliancesCollectionPage AggregatedPolicyCompliances { get; set; }
+
+        /// <summary>
+        /// Gets or sets aggregatedPolicyCompliancesNextLink.
+        /// </summary>
+        [JsonPropertyName("aggregatedPolicyCompliances@odata.nextLink")]
+        public string AggregatedPolicyCompliancesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets cloud pc connections.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcConnections", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudPcConnections")]
         public IManagedTenantCloudPcConnectionsCollectionPage CloudPcConnections { get; set; }
+
+        /// <summary>
+        /// Gets or sets cloudPcConnectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("cloudPcConnections@odata.nextLink")]
+        public string CloudPcConnectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets cloud pc devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudPcDevices")]
         public IManagedTenantCloudPcDevicesCollectionPage CloudPcDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets cloudPcDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("cloudPcDevices@odata.nextLink")]
+        public string CloudPcDevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets cloud pcs overview.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcsOverview", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudPcsOverview")]
         public IManagedTenantCloudPcsOverviewCollectionPage CloudPcsOverview { get; set; }
+
+        /// <summary>
+        /// Gets or sets cloudPcsOverviewNextLink.
+        /// </summary>
+        [JsonPropertyName("cloudPcsOverview@odata.nextLink")]
+        public string CloudPcsOverviewNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets conditional access policy coverages.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccessPolicyCoverages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conditionalAccessPolicyCoverages")]
         public IManagedTenantConditionalAccessPolicyCoveragesCollectionPage ConditionalAccessPolicyCoverages { get; set; }
+
+        /// <summary>
+        /// Gets or sets conditionalAccessPolicyCoveragesNextLink.
+        /// </summary>
+        [JsonPropertyName("conditionalAccessPolicyCoverages@odata.nextLink")]
+        public string ConditionalAccessPolicyCoveragesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets credential user registrations summaries.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credentialUserRegistrationsSummaries", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("credentialUserRegistrationsSummaries")]
         public IManagedTenantCredentialUserRegistrationsSummariesCollectionPage CredentialUserRegistrationsSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets credentialUserRegistrationsSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("credentialUserRegistrationsSummaries@odata.nextLink")]
+        public string CredentialUserRegistrationsSummariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device compliance policy setting state summaries.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicySettingStateSummaries", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceCompliancePolicySettingStateSummaries")]
         public IManagedTenantDeviceCompliancePolicySettingStateSummariesCollectionPage DeviceCompliancePolicySettingStateSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceCompliancePolicySettingStateSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceCompliancePolicySettingStateSummaries@odata.nextLink")]
+        public string DeviceCompliancePolicySettingStateSummariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed device compliances.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceCompliances", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceCompliances")]
         public IManagedTenantManagedDeviceCompliancesCollectionPage ManagedDeviceCompliances { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedDeviceCompliancesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedDeviceCompliances@odata.nextLink")]
+        public string ManagedDeviceCompliancesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed device compliance trends.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceComplianceTrends", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceComplianceTrends")]
         public IManagedTenantManagedDeviceComplianceTrendsCollectionPage ManagedDeviceComplianceTrends { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedDeviceComplianceTrendsNextLink.
+        /// </summary>
+        [JsonPropertyName("managedDeviceComplianceTrends@odata.nextLink")]
+        public string ManagedDeviceComplianceTrendsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets management actions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementActions")]
         public IManagedTenantManagementActionsCollectionPage ManagementActions { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementActionsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementActions@odata.nextLink")]
+        public string ManagementActionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets management action tenant deployment statuses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementActionTenantDeploymentStatuses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementActionTenantDeploymentStatuses")]
         public IManagedTenantManagementActionTenantDeploymentStatusesCollectionPage ManagementActionTenantDeploymentStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementActionTenantDeploymentStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("managementActionTenantDeploymentStatuses@odata.nextLink")]
+        public string ManagementActionTenantDeploymentStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets management intents.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementIntents", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementIntents")]
         public IManagedTenantManagementIntentsCollectionPage ManagementIntents { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementIntentsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementIntents@odata.nextLink")]
+        public string ManagementIntentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets management templates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementTemplates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementTemplates")]
         public IManagedTenantManagementTemplatesCollectionPage ManagementTemplates { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementTemplatesNextLink.
+        /// </summary>
+        [JsonPropertyName("managementTemplates@odata.nextLink")]
+        public string ManagementTemplatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets risky users.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskyUsers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("riskyUsers")]
         public IManagedTenantRiskyUsersCollectionPage RiskyUsers { get; set; }
+
+        /// <summary>
+        /// Gets or sets riskyUsersNextLink.
+        /// </summary>
+        [JsonPropertyName("riskyUsers@odata.nextLink")]
+        public string RiskyUsersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tenant groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantGroups")]
         public IManagedTenantTenantGroupsCollectionPage TenantGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets tenantGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("tenantGroups@odata.nextLink")]
+        public string TenantGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tenants.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenants", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenants")]
         public IManagedTenantTenantsCollectionPage Tenants { get; set; }
+
+        /// <summary>
+        /// Gets or sets tenantsNextLink.
+        /// </summary>
+        [JsonPropertyName("tenants@odata.nextLink")]
+        public string TenantsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tenants customized information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantsCustomizedInformation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantsCustomizedInformation")]
         public IManagedTenantTenantsCustomizedInformationCollectionPage TenantsCustomizedInformation { get; set; }
+
+        /// <summary>
+        /// Gets or sets tenantsCustomizedInformationNextLink.
+        /// </summary>
+        [JsonPropertyName("tenantsCustomizedInformation@odata.nextLink")]
+        public string TenantsCustomizedInformationNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tenants detailed information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantsDetailedInformation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantsDetailedInformation")]
         public IManagedTenantTenantsDetailedInformationCollectionPage TenantsDetailedInformation { get; set; }
+
+        /// <summary>
+        /// Gets or sets tenantsDetailedInformationNextLink.
+        /// </summary>
+        [JsonPropertyName("tenantsDetailedInformation@odata.nextLink")]
+        public string TenantsDetailedInformationNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tenant tags.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantTags", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantTags")]
         public IManagedTenantTenantTagsCollectionPage TenantTags { get; set; }
+
+        /// <summary>
+        /// Gets or sets tenantTagsNextLink.
+        /// </summary>
+        [JsonPropertyName("tenantTags@odata.nextLink")]
+        public string TenantTagsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows device malware states.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsDeviceMalwareStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsDeviceMalwareStates")]
         public IManagedTenantWindowsDeviceMalwareStatesCollectionPage WindowsDeviceMalwareStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsDeviceMalwareStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsDeviceMalwareStates@odata.nextLink")]
+        public string WindowsDeviceMalwareStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows protection states.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsProtectionStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsProtectionStates")]
         public IManagedTenantWindowsProtectionStatesCollectionPage WindowsProtectionStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsProtectionStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsProtectionStates@odata.nextLink")]
+        public string WindowsProtectionStatesNextLink { get; set; }
     
     }
 }

@@ -12,36 +12,35 @@ namespace Microsoft.Graph.Ediscovery
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unified Group Source.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<UnifiedGroupSource>))]
     public partial class UnifiedGroupSource : DataSource
     {
     
-		///<summary>
-		/// The UnifiedGroupSource constructor
-		///</summary>
+        ///<summary>
+        /// The UnifiedGroupSource constructor
+        ///</summary>
         public UnifiedGroupSource()
         {
             this.ODataType = "microsoft.graph.ediscovery.unifiedGroupSource";
         }
-	
+
         /// <summary>
         /// Gets or sets included sources.
         /// Specifies which sources are included in this group. Possible values are: mailbox, site.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includedSources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includedSources")]
         public SourceType? IncludedSources { get; set; }
     
         /// <summary>
         /// Gets or sets group.
         /// The group associated with the unifiedGroupSource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("group")]
         public Microsoft.Graph.Group Group { get; set; }
     
     }

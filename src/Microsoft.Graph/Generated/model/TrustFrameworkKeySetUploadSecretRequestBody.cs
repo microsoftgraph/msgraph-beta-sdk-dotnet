@@ -9,41 +9,39 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TrustFrameworkKeySetUploadSecretRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TrustFrameworkKeySetUploadSecretRequestBody
     {
     
         /// <summary>
         /// Gets or sets Use.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "use", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("use")]
         public string Use { get; set; }
     
         /// <summary>
         /// Gets or sets K.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "k", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("k")]
         public string K { get; set; }
     
         /// <summary>
         /// Gets or sets Nbf.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nbf", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("nbf")]
         public Int64? Nbf { get; set; }
     
         /// <summary>
         /// Gets or sets Exp.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exp")]
         public Int64? Exp { get; set; }
     
     }

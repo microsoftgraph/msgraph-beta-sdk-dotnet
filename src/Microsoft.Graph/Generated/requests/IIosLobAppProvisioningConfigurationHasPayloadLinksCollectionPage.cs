@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IIosLobAppProvisioningConfigurationHasPayloadLinksCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<IosLobAppProvisioningConfigurationHasPayloadLinksCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<IosLobAppProvisioningConfigurationHasPayloadLinksCollectionPage>))]
     public interface IIosLobAppProvisioningConfigurationHasPayloadLinksCollectionPage : ICollectionPage<HasPayloadLinkResultItem>
     {
         /// <summary>

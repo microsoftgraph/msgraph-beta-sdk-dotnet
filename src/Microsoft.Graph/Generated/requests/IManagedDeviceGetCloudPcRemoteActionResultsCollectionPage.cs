@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IManagedDeviceGetCloudPcRemoteActionResultsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ManagedDeviceGetCloudPcRemoteActionResultsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ManagedDeviceGetCloudPcRemoteActionResultsCollectionPage>))]
     public interface IManagedDeviceGetCloudPcRemoteActionResultsCollectionPage : ICollectionPage<CloudPcRemoteActionResult>
     {
         /// <summary>

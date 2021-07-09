@@ -325,7 +325,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsync();
 
                 Assert.NotNull(directoryObjectGetMemberGroupsCollectionPage); // Unexpected results.
-                Assert.Equal("POST", getMemberGroupsRequest.Method); // Unexpected HTTP method
+                Assert.Equal("POST", getMemberGroupsRequest.Method.ToString()); // Unexpected HTTP method
                 Assert.True(getMemberGroupsRequest.RequestBody.SecurityEnabledOnly.Value, "Unexpected value for SecurityEnabledOnly in request body.");
             }
             catch (Microsoft.Graph.ServiceException e)

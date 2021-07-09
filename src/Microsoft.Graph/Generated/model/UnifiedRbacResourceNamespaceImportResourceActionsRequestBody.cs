@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UnifiedRbacResourceNamespaceImportResourceActionsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UnifiedRbacResourceNamespaceImportResourceActionsRequestBody
     {
     
         /// <summary>
         /// Gets or sets Format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("format")]
         public string Format { get; set; }
     
         /// <summary>
         /// Gets or sets Value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public string Value { get; set; }
     
         /// <summary>
         /// Gets or sets OverwriteResourceNamespace.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overwriteResourceNamespace", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("overwriteResourceNamespace")]
         public bool OverwriteResourceNamespace { get; set; }
     
     }

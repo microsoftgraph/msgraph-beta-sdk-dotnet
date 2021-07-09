@@ -12,58 +12,48 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Share Point Site Usage File Counts.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SharePointSiteUsageFileCounts : Entity
     {
     
-		///<summary>
-		/// The SharePointSiteUsageFileCounts constructor
-		///</summary>
-        public SharePointSiteUsageFileCounts()
-        {
-            this.ODataType = "microsoft.graph.sharePointSiteUsageFileCounts";
-        }
-	
         /// <summary>
         /// Gets or sets active.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "active", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("active")]
         public Int64? Active { get; set; }
     
         /// <summary>
         /// Gets or sets report date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportDate")]
         public Date ReportDate { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets site type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("siteType")]
         public string SiteType { get; set; }
     
         /// <summary>
         /// Gets or sets total.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "total", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("total")]
         public Int64? Total { get; set; }
     
     }

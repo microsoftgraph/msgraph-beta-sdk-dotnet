@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MacOSLaunchItem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSLaunchItem>))]
     public partial class MacOSLaunchItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacOSLaunchItem"/> class.
-        /// </summary>
-        public MacOSLaunchItem()
-        {
-            this.ODataType = "microsoft.graph.macOSLaunchItem";
-        }
 
         /// <summary>
         /// Gets or sets hide.
         /// Whether or not to hide the item from the Users and Groups List.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hide", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hide")]
         public bool? Hide { get; set; }
     
         /// <summary>
         /// Gets or sets path.
         /// Path to the launch item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "path", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("path")]
         public string Path { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

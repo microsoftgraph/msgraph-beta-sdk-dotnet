@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserActivateServicePlanRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserActivateServicePlanRequestBody
     {
     
         /// <summary>
         /// Gets or sets ServicePlanId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePlanId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("servicePlanId")]
         public Guid ServicePlanId { get; set; }
     
         /// <summary>
         /// Gets or sets SkuId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skuId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("skuId")]
         public Guid SkuId { get; set; }
     
     }

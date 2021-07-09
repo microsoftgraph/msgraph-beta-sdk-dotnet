@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MetadataAction.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MetadataAction : InformationProtectionAction
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets metadataToAdd.
         /// A collection of key value pairs that should be added to the file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadataToAdd", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("metadataToAdd")]
         public IEnumerable<KeyValuePair> MetadataToAdd { get; set; }
     
         /// <summary>
         /// Gets or sets metadataToRemove.
         /// A collection of strings that indicate which keys to remove from the file metadata.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadataToRemove", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("metadataToRemove")]
         public IEnumerable<string> MetadataToRemove { get; set; }
     
     }

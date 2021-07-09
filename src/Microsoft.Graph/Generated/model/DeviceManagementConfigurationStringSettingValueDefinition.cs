@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationStringSettingValueDefinition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationStringSettingValueDefinition>))]
     public partial class DeviceManagementConfigurationStringSettingValueDefinition : DeviceManagementConfigurationSettingValueDefinition
     {
         /// <summary>
@@ -33,35 +32,35 @@ namespace Microsoft.Graph
         /// Gets or sets format.
         /// Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("format")]
         public DeviceManagementConfigurationStringFormat? Format { get; set; }
     
         /// <summary>
         /// Gets or sets inputValidationSchema.
         /// Regular expression or any xml or json schema that the input string should match
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inputValidationSchema", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inputValidationSchema")]
         public string InputValidationSchema { get; set; }
     
         /// <summary>
         /// Gets or sets isSecret.
         /// Specifies whether the setting needs to be treated as a secret. Settings marked as yes will be encrypted in transit and at rest and will be displayed as asterisks when represented in the UX.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSecret", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isSecret")]
         public bool? IsSecret { get; set; }
     
         /// <summary>
         /// Gets or sets maximumLength.
         /// Maximum length of string. Valid values 0 to 87516
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumLength")]
         public Int64? MaximumLength { get; set; }
     
         /// <summary>
         /// Gets or sets minimumLength.
         /// Minimum length of string. Valid values 0 to 87516
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumLength")]
         public Int64? MinimumLength { get; set; }
     
     }

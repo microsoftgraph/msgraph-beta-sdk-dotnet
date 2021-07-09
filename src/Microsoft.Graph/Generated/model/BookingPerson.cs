@@ -12,29 +12,28 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Booking Person.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<BookingPerson>))]
     public partial class BookingPerson : BookingNamedEntity
     {
     
-		///<summary>
-		/// The BookingPerson constructor
-		///</summary>
+        ///<summary>
+        /// The BookingPerson constructor
+        ///</summary>
         public BookingPerson()
         {
             this.ODataType = "microsoft.graph.bookingPerson";
         }
-	
+
         /// <summary>
         /// Gets or sets email address.
         /// The email address of the person.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("emailAddress")]
         public string EmailAddress { get; set; }
     
     }

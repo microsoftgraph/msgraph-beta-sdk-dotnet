@@ -12,30 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Sms Authentication Method Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SmsAuthenticationMethodConfiguration : AuthenticationMethodConfiguration
     {
     
-		///<summary>
-		/// The SmsAuthenticationMethodConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The SmsAuthenticationMethodConfiguration constructor
+        ///</summary>
         public SmsAuthenticationMethodConfiguration()
         {
             this.ODataType = "microsoft.graph.smsAuthenticationMethodConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets include targets.
         /// A collection of users or groups who are enabled to use the authentication method.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeTargets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeTargets")]
         public ISmsAuthenticationMethodConfigurationIncludeTargetsCollectionPage IncludeTargets { get; set; }
+
+        /// <summary>
+        /// Gets or sets includeTargetsNextLink.
+        /// </summary>
+        [JsonPropertyName("includeTargets@odata.nextLink")]
+        public string IncludeTargetsNextLink { get; set; }
     
     }
 }

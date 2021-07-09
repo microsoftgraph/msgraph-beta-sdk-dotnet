@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceCompliancePolicySetScheduledRetireStateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceCompliancePolicySetScheduledRetireStateRequestBody
     {
     
         /// <summary>
         /// Gets or sets State.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public ScheduledRetireState State { get; set; }
     
         /// <summary>
         /// Gets or sets ManagedDeviceIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceIds")]
         public IEnumerable<string> ManagedDeviceIds { get; set; }
     
     }

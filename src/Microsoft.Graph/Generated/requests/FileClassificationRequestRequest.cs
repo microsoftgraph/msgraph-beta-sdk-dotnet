@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified FileClassificationRequestObject using POST.
         /// </summary>
         /// <param name="fileClassificationRequestObjectToCreate">The FileClassificationRequestObject to create.</param>
-        /// <returns>The created FileClassificationRequestObject.</returns>
-        public System.Threading.Tasks.Task<FileClassificationRequestObject> CreateAsync(FileClassificationRequestObject fileClassificationRequestObjectToCreate)
-        {
-            return this.CreateAsync(fileClassificationRequestObjectToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified FileClassificationRequestObject using POST.
-        /// </summary>
-        /// <param name="fileClassificationRequestObjectToCreate">The FileClassificationRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FileClassificationRequestObject.</returns>
-        public async System.Threading.Tasks.Task<FileClassificationRequestObject> CreateAsync(FileClassificationRequestObject fileClassificationRequestObjectToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FileClassificationRequestObject> CreateAsync(FileClassificationRequestObject fileClassificationRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<FileClassificationRequestObject>(fileClassificationRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified FileClassificationRequest.
+        /// Creates the specified FileClassificationRequestObject using POST and returns a <see cref="GraphResponse{FileClassificationRequestObject}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="fileClassificationRequestObjectToCreate">The FileClassificationRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FileClassificationRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FileClassificationRequestObject>> CreateResponseAsync(FileClassificationRequestObject fileClassificationRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<FileClassificationRequestObject>(fileClassificationRequestObjectToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<FileClassificationRequestObject>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified FileClassificationRequestObject.
+        /// Deletes the specified FileClassificationRequest and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The FileClassificationRequestObject.</returns>
-        public System.Threading.Tasks.Task<FileClassificationRequestObject> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The FileClassificationRequestObject.</returns>
-        public async System.Threading.Tasks.Task<FileClassificationRequestObject> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FileClassificationRequestObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<FileClassificationRequestObject>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified FileClassificationRequestObject using PATCH.
+        /// Gets the specified FileClassificationRequestObject and returns a <see cref="GraphResponse{FileClassificationRequestObject}"/> object.
         /// </summary>
-        /// <param name="fileClassificationRequestObjectToUpdate">The FileClassificationRequestObject to update.</param>
-        /// <returns>The updated FileClassificationRequestObject.</returns>
-        public System.Threading.Tasks.Task<FileClassificationRequestObject> UpdateAsync(FileClassificationRequestObject fileClassificationRequestObjectToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FileClassificationRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FileClassificationRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(fileClassificationRequestObjectToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<FileClassificationRequestObject>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FileClassificationRequestObject.</returns>
-        public async System.Threading.Tasks.Task<FileClassificationRequestObject> UpdateAsync(FileClassificationRequestObject fileClassificationRequestObjectToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FileClassificationRequestObject> UpdateAsync(FileClassificationRequestObject fileClassificationRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (fileClassificationRequestObjectToUpdate.AdditionalData != null)
-			{
-				if (fileClassificationRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					fileClassificationRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileClassificationRequestObjectToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (fileClassificationRequestObjectToUpdate.AdditionalData != null)
-            {
-                if (fileClassificationRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    fileClassificationRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileClassificationRequestObjectToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<FileClassificationRequestObject>(fileClassificationRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified FileClassificationRequestObject using PATCH and returns a <see cref="GraphResponse{FileClassificationRequestObject}"/> object.
+        /// </summary>
+        /// <param name="fileClassificationRequestObjectToUpdate">The FileClassificationRequestObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{FileClassificationRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FileClassificationRequestObject>> UpdateResponseAsync(FileClassificationRequestObject fileClassificationRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<FileClassificationRequestObject>(fileClassificationRequestObjectToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified FileClassificationRequestObject using PUT.
+        /// </summary>
+        /// <param name="fileClassificationRequestObjectToUpdate">The FileClassificationRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<FileClassificationRequestObject> PutAsync(FileClassificationRequestObject fileClassificationRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<FileClassificationRequestObject>(fileClassificationRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified FileClassificationRequestObject using PUT and returns a <see cref="GraphResponse{FileClassificationRequestObject}"/> object.
+        /// </summary>
+        /// <param name="fileClassificationRequestObjectToUpdate">The FileClassificationRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{FileClassificationRequestObject}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FileClassificationRequestObject>> PutResponseAsync(FileClassificationRequestObject fileClassificationRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<FileClassificationRequestObject>(fileClassificationRequestObjectToUpdate, cancellationToken);
         }
 
         /// <summary>

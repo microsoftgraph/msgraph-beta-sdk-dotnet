@@ -12,99 +12,89 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Remote Connection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsRemoteConnection : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsRemoteConnection constructor
-		///</summary>
-        public UserExperienceAnalyticsRemoteConnection()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsRemoteConnection";
-        }
-	
         /// <summary>
         /// Gets or sets cloud pc failure percentage.
         /// The sign in failure percentage of Cloud PC Device. Valid values 0 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcFailurePercentage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudPcFailurePercentage")]
         public double? CloudPcFailurePercentage { get; set; }
     
         /// <summary>
         /// Gets or sets cloud pc round trip time.
         /// The round tip time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcRoundTripTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudPcRoundTripTime")]
         public double? CloudPcRoundTripTime { get; set; }
     
         /// <summary>
         /// Gets or sets cloud pc sign in time.
         /// The sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcSignInTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudPcSignInTime")]
         public double? CloudPcSignInTime { get; set; }
     
         /// <summary>
         /// Gets or sets core boot time.
         /// The core boot time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coreBootTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("coreBootTime")]
         public double? CoreBootTime { get; set; }
     
         /// <summary>
         /// Gets or sets core sign in time.
         /// The core sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coreSignInTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("coreSignInTime")]
         public double? CoreSignInTime { get; set; }
     
         /// <summary>
         /// Gets or sets device count.
         /// The count of remote connection. Valid values 0 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceCount")]
         public Int32? DeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
         /// The id of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets device name.
         /// The name of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets model.
         /// The user experience analytics device model.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets remote sign in time.
         /// The remote sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteSignInTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remoteSignInTime")]
         public double? RemoteSignInTime { get; set; }
     
         /// <summary>
         /// Gets or sets virtual network.
         /// The user experience analytics virtual network.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "virtualNetwork", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("virtualNetwork")]
         public string VirtualNetwork { get; set; }
     
     }

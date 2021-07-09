@@ -12,43 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Item Email.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ItemEmail>))]
     public partial class ItemEmail : ItemFacet
     {
     
-		///<summary>
-		/// The ItemEmail constructor
-		///</summary>
+        ///<summary>
+        /// The ItemEmail constructor
+        ///</summary>
         public ItemEmail()
         {
             this.ODataType = "microsoft.graph.itemEmail";
         }
-	
+
         /// <summary>
         /// Gets or sets address.
         /// The email address itself.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("address")]
         public string Address { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The name or label a user has associated with a particular email address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// The type of email address. Possible values are: unknown, work, personal, main, other.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public EmailType? Type { get; set; }
     
     }

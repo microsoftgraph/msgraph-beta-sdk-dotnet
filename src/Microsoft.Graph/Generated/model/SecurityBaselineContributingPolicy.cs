@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SecurityBaselineContributingPolicy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SecurityBaselineContributingPolicy>))]
     public partial class SecurityBaselineContributingPolicy
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecurityBaselineContributingPolicy"/> class.
-        /// </summary>
-        public SecurityBaselineContributingPolicy()
-        {
-            this.ODataType = "microsoft.graph.securityBaselineContributingPolicy";
-        }
 
         /// <summary>
         /// Gets or sets displayName.
         /// Name of the policy
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets sourceId.
         /// Unique identifier of the policy
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceId")]
         public string SourceId { get; set; }
     
         /// <summary>
         /// Gets or sets sourceType.
         /// Authoring source of the policy. Possible values are: deviceConfiguration, deviceIntent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceType")]
         public SecurityBaselinePolicySourceType? SourceType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsRegressionSummary using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsRegressionSummaryToCreate">The UserExperienceAnalyticsRegressionSummary to create.</param>
-        /// <returns>The created UserExperienceAnalyticsRegressionSummary.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> CreateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToCreate)
-        {
-            return this.CreateAsync(userExperienceAnalyticsRegressionSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsRegressionSummary using POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsRegressionSummaryToCreate">The UserExperienceAnalyticsRegressionSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsRegressionSummary.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> CreateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> CreateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserExperienceAnalyticsRegressionSummary>(userExperienceAnalyticsRegressionSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsRegressionSummary.
+        /// Creates the specified UserExperienceAnalyticsRegressionSummary using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="userExperienceAnalyticsRegressionSummaryToCreate">The UserExperienceAnalyticsRegressionSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> CreateResponseAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsRegressionSummary>(userExperienceAnalyticsRegressionSummaryToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserExperienceAnalyticsRegressionSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UserExperienceAnalyticsRegressionSummary.
+        /// Deletes the specified UserExperienceAnalyticsRegressionSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsRegressionSummary.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsRegressionSummary.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserExperienceAnalyticsRegressionSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UserExperienceAnalyticsRegressionSummary using PATCH.
+        /// Gets the specified UserExperienceAnalyticsRegressionSummary and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object.
         /// </summary>
-        /// <param name="userExperienceAnalyticsRegressionSummaryToUpdate">The UserExperienceAnalyticsRegressionSummary to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsRegressionSummary.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> UpdateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(userExperienceAnalyticsRegressionSummaryToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsRegressionSummary>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsRegressionSummary.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> UpdateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> UpdateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userExperienceAnalyticsRegressionSummaryToUpdate.AdditionalData != null)
-			{
-				if (userExperienceAnalyticsRegressionSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userExperienceAnalyticsRegressionSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsRegressionSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userExperienceAnalyticsRegressionSummaryToUpdate.AdditionalData != null)
-            {
-                if (userExperienceAnalyticsRegressionSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userExperienceAnalyticsRegressionSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsRegressionSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserExperienceAnalyticsRegressionSummary>(userExperienceAnalyticsRegressionSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsRegressionSummary using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsRegressionSummaryToUpdate">The UserExperienceAnalyticsRegressionSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> UpdateResponseAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsRegressionSummary>(userExperienceAnalyticsRegressionSummaryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsRegressionSummary using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsRegressionSummaryToUpdate">The UserExperienceAnalyticsRegressionSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> PutAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserExperienceAnalyticsRegressionSummary>(userExperienceAnalyticsRegressionSummaryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsRegressionSummary using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsRegressionSummaryToUpdate">The UserExperienceAnalyticsRegressionSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> PutResponseAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsRegressionSummary>(userExperienceAnalyticsRegressionSummaryToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToInitialize)
         {
 
-            if (userExperienceAnalyticsRegressionSummaryToInitialize != null && userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData != null)
+            if (userExperienceAnalyticsRegressionSummaryToInitialize != null)
             {
-
                 if (userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression != null && userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression.CurrentPage != null)
                 {
+                    userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression.InitializeNextPageRequest(this.Client, userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegressionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression.AdditionalData = userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData.TryGetValue("manufacturerRegression@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression != null && userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.CurrentPage != null)
                 {
+                    userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.InitializeNextPageRequest(this.Client, userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegressionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.AdditionalData = userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData.TryGetValue("modelRegression@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegression != null && userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegression.CurrentPage != null)
                 {
+                    userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegression.InitializeNextPageRequest(this.Client, userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegressionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegression.AdditionalData = userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData.TryGetValue("operatingSystemRegression@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userExperienceAnalyticsRegressionSummaryToInitialize.OperatingSystemRegression.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

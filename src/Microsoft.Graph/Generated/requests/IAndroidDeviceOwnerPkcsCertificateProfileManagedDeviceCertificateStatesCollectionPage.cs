@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IAndroidDeviceOwnerPkcsCertificateProfileManagedDeviceCertificateStatesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<AndroidDeviceOwnerPkcsCertificateProfileManagedDeviceCertificateStatesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<AndroidDeviceOwnerPkcsCertificateProfileManagedDeviceCertificateStatesCollectionPage>))]
     public interface IAndroidDeviceOwnerPkcsCertificateProfileManagedDeviceCertificateStatesCollectionPage : ICollectionPage<ManagedDeviceCertificateState>
     {
         /// <summary>

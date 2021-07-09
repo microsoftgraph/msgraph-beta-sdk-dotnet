@@ -12,86 +12,83 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Apple User Initiated Enrollment Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<AppleUserInitiatedEnrollmentProfile>))]
     public partial class AppleUserInitiatedEnrollmentProfile : Entity
     {
     
-		///<summary>
-		/// The AppleUserInitiatedEnrollmentProfile constructor
-		///</summary>
-        public AppleUserInitiatedEnrollmentProfile()
-        {
-            this.ODataType = "microsoft.graph.appleUserInitiatedEnrollmentProfile";
-        }
-	
         /// <summary>
         /// Gets or sets available enrollment type options.
         /// List of available enrollment type options
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availableEnrollmentTypeOptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("availableEnrollmentTypeOptions")]
         public IEnumerable<AppleOwnerTypeEnrollmentType> AvailableEnrollmentTypeOptions { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// Profile creation time
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets default enrollment type.
         /// The default profile enrollment type. Possible values are: unknown, device, user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultEnrollmentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultEnrollmentType")]
         public AppleUserInitiatedEnrollmentType? DefaultEnrollmentType { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description of the profile
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name of the profile
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// Profile last modified time
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
         /// The platform of the Device. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platform")]
         public DevicePlatformType? Platform { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
         /// Priority, 0 is highest
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// The list of assignments for this profile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IAppleUserInitiatedEnrollmentProfileAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
     }
 }

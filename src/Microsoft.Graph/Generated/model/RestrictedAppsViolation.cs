@@ -12,85 +12,76 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Restricted Apps Violation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<RestrictedAppsViolation>))]
     public partial class RestrictedAppsViolation : Entity
     {
     
-		///<summary>
-		/// The RestrictedAppsViolation constructor
-		///</summary>
-        public RestrictedAppsViolation()
-        {
-            this.ODataType = "microsoft.graph.restrictedAppsViolation";
-        }
-	
         /// <summary>
         /// Gets or sets device configuration id.
         /// Device configuration profile unique identifier, must be Guid
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceConfigurationId")]
         public string DeviceConfigurationId { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration name.
         /// Device configuration profile name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurationName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceConfigurationName")]
         public string DeviceConfigurationName { get; set; }
     
         /// <summary>
         /// Gets or sets device name.
         /// Device name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets managed device id.
         /// Managed device unique identifier, must be Guid
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets platform type.
         /// Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platformType")]
         public PolicyPlatformType? PlatformType { get; set; }
     
         /// <summary>
         /// Gets or sets restricted apps.
         /// List of violated restricted apps
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictedApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("restrictedApps")]
         public IEnumerable<ManagedDeviceReportedApp> RestrictedApps { get; set; }
     
         /// <summary>
         /// Gets or sets restricted apps state.
         /// Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictedAppsState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("restrictedAppsState")]
         public RestrictedAppsState? RestrictedAppsState { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// User unique identifier, must be Guid
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets user name.
         /// User name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userName")]
         public string UserName { get; set; }
     
     }

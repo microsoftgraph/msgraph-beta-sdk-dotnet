@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IWindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<WindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<WindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionPage>))]
     public interface IWindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionPage : ICollectionPage<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>
     {
         /// <summary>

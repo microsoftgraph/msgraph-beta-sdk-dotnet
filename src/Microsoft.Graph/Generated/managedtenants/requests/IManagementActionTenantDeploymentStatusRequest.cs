@@ -24,47 +24,45 @@ namespace Microsoft.Graph.ManagedTenants
         /// Creates the specified ManagementActionTenantDeploymentStatus using POST.
         /// </summary>
         /// <param name="managementActionTenantDeploymentStatusToCreate">The ManagementActionTenantDeploymentStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagementActionTenantDeploymentStatus.</returns>
-        System.Threading.Tasks.Task<ManagementActionTenantDeploymentStatus> CreateAsync(ManagementActionTenantDeploymentStatus managementActionTenantDeploymentStatusToCreate);        /// <summary>
-        /// Creates the specified ManagementActionTenantDeploymentStatus using POST.
+        System.Threading.Tasks.Task<ManagementActionTenantDeploymentStatus> CreateAsync(ManagementActionTenantDeploymentStatus managementActionTenantDeploymentStatusToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified ManagementActionTenantDeploymentStatus using POST and returns a <see cref="GraphResponse{ManagementActionTenantDeploymentStatus}"/> object.
         /// </summary>
         /// <param name="managementActionTenantDeploymentStatusToCreate">The ManagementActionTenantDeploymentStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ManagementActionTenantDeploymentStatus.</returns>
-        System.Threading.Tasks.Task<ManagementActionTenantDeploymentStatus> CreateAsync(ManagementActionTenantDeploymentStatus managementActionTenantDeploymentStatusToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ManagementActionTenantDeploymentStatus.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ManagementActionTenantDeploymentStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementActionTenantDeploymentStatus>> CreateResponseAsync(ManagementActionTenantDeploymentStatus managementActionTenantDeploymentStatusToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ManagementActionTenantDeploymentStatus.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified ManagementActionTenantDeploymentStatus.
+        /// Deletes the specified ManagementActionTenantDeploymentStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagementActionTenantDeploymentStatus.</returns>
-        System.Threading.Tasks.Task<ManagementActionTenantDeploymentStatus> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagementActionTenantDeploymentStatus.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagementActionTenantDeploymentStatus.</returns>
-        System.Threading.Tasks.Task<ManagementActionTenantDeploymentStatus> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagementActionTenantDeploymentStatus> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified ManagementActionTenantDeploymentStatus using PATCH.
+        /// Gets the specified ManagementActionTenantDeploymentStatus and returns a <see cref="GraphResponse{ManagementActionTenantDeploymentStatus}"/> object.
         /// </summary>
-        /// <param name="managementActionTenantDeploymentStatusToUpdate">The ManagementActionTenantDeploymentStatus to update.</param>
-        /// <returns>The updated ManagementActionTenantDeploymentStatus.</returns>
-        System.Threading.Tasks.Task<ManagementActionTenantDeploymentStatus> UpdateAsync(ManagementActionTenantDeploymentStatus managementActionTenantDeploymentStatusToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagementActionTenantDeploymentStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementActionTenantDeploymentStatus>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagementActionTenantDeploymentStatus using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagementActionTenantDeploymentStatus.</returns>
-        System.Threading.Tasks.Task<ManagementActionTenantDeploymentStatus> UpdateAsync(ManagementActionTenantDeploymentStatus managementActionTenantDeploymentStatusToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagementActionTenantDeploymentStatus> UpdateAsync(ManagementActionTenantDeploymentStatus managementActionTenantDeploymentStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ManagementActionTenantDeploymentStatus using PATCH and returns a <see cref="GraphResponse{ManagementActionTenantDeploymentStatus}"/> object.
+        /// </summary>
+        /// <param name="managementActionTenantDeploymentStatusToUpdate">The ManagementActionTenantDeploymentStatus to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagementActionTenantDeploymentStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementActionTenantDeploymentStatus>> UpdateResponseAsync(ManagementActionTenantDeploymentStatus managementActionTenantDeploymentStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ManagementActionTenantDeploymentStatus using PUT.
+        /// </summary>
+        /// <param name="managementActionTenantDeploymentStatusToUpdate">The ManagementActionTenantDeploymentStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagementActionTenantDeploymentStatus> PutAsync(ManagementActionTenantDeploymentStatus managementActionTenantDeploymentStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ManagementActionTenantDeploymentStatus using PUT and returns a <see cref="GraphResponse{ManagementActionTenantDeploymentStatus}"/> object.
+        /// </summary>
+        /// <param name="managementActionTenantDeploymentStatusToUpdate">The ManagementActionTenantDeploymentStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagementActionTenantDeploymentStatus}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementActionTenantDeploymentStatus>> PutResponseAsync(ManagementActionTenantDeploymentStatus managementActionTenantDeploymentStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

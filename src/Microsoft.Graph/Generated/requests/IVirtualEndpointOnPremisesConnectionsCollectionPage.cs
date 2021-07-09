@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IVirtualEndpointOnPremisesConnectionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<VirtualEndpointOnPremisesConnectionsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<VirtualEndpointOnPremisesConnectionsCollectionPage>))]
     public interface IVirtualEndpointOnPremisesConnectionsCollectionPage : ICollectionPage<CloudPcOnPremisesConnection>
     {
         /// <summary>

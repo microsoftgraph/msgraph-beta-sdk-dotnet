@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AccessReviewInstanceDecisionItemUserTarget.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessReviewInstanceDecisionItemUserTarget : AccessReviewInstanceDecisionItemTarget
     {
         /// <summary>
@@ -33,21 +31,21 @@ namespace Microsoft.Graph
         /// Gets or sets userDisplayName.
         /// The name of user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userDisplayName")]
         public string UserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets userId.
         /// The identifier of user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
         /// The user principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
     }

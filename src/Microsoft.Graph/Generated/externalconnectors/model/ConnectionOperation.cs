@@ -12,34 +12,25 @@ namespace Microsoft.Graph.ExternalConnectors
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Connection Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ConnectionOperation>))]
     public partial class ConnectionOperation : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ConnectionOperation constructor
-		///</summary>
-        public ConnectionOperation()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.connectionOperation";
-        }
-	
         /// <summary>
         /// Gets or sets error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public Microsoft.Graph.PublicError Error { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public ConnectionOperationStatus? Status { get; set; }
     
     }

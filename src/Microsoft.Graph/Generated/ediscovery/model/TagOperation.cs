@@ -12,24 +12,22 @@ namespace Microsoft.Graph.Ediscovery
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Tag Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TagOperation : CaseOperation
     {
     
-		///<summary>
-		/// The TagOperation constructor
-		///</summary>
+        ///<summary>
+        /// The TagOperation constructor
+        ///</summary>
         public TagOperation()
         {
             this.ODataType = "microsoft.graph.ediscovery.tagOperation";
         }
-	
+
     }
 }
 

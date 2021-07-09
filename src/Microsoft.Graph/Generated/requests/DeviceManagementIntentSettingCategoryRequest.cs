@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementIntentSettingCategory using POST.
         /// </summary>
         /// <param name="deviceManagementIntentSettingCategoryToCreate">The DeviceManagementIntentSettingCategory to create.</param>
-        /// <returns>The created DeviceManagementIntentSettingCategory.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> CreateAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToCreate)
-        {
-            return this.CreateAsync(deviceManagementIntentSettingCategoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementIntentSettingCategory using POST.
-        /// </summary>
-        /// <param name="deviceManagementIntentSettingCategoryToCreate">The DeviceManagementIntentSettingCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntentSettingCategory.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> CreateAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> CreateAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceManagementIntentSettingCategory>(deviceManagementIntentSettingCategoryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceManagementIntentSettingCategory.
+        /// Creates the specified DeviceManagementIntentSettingCategory using POST and returns a <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceManagementIntentSettingCategoryToCreate">The DeviceManagementIntentSettingCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentSettingCategory>> CreateResponseAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntentSettingCategory>(deviceManagementIntentSettingCategoryToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceManagementIntentSettingCategory>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceManagementIntentSettingCategory.
+        /// Deletes the specified DeviceManagementIntentSettingCategory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementIntentSettingCategory.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementIntentSettingCategory.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceManagementIntentSettingCategory>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceManagementIntentSettingCategory using PATCH.
+        /// Gets the specified DeviceManagementIntentSettingCategory and returns a <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object.
         /// </summary>
-        /// <param name="deviceManagementIntentSettingCategoryToUpdate">The DeviceManagementIntentSettingCategory to update.</param>
-        /// <returns>The updated DeviceManagementIntentSettingCategory.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> UpdateAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentSettingCategory>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(deviceManagementIntentSettingCategoryToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntentSettingCategory>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementIntentSettingCategory.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> UpdateAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> UpdateAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementIntentSettingCategoryToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementIntentSettingCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementIntentSettingCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentSettingCategoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementIntentSettingCategoryToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementIntentSettingCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementIntentSettingCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentSettingCategoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceManagementIntentSettingCategory>(deviceManagementIntentSettingCategoryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntentSettingCategory using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentSettingCategoryToUpdate">The DeviceManagementIntentSettingCategory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentSettingCategory>> UpdateResponseAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntentSettingCategory>(deviceManagementIntentSettingCategoryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntentSettingCategory using PUT.
+        /// </summary>
+        /// <param name="deviceManagementIntentSettingCategoryToUpdate">The DeviceManagementIntentSettingCategory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> PutAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceManagementIntentSettingCategory>(deviceManagementIntentSettingCategoryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntentSettingCategory using PUT and returns a <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentSettingCategoryToUpdate">The DeviceManagementIntentSettingCategory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentSettingCategory>> PutResponseAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntentSettingCategory>(deviceManagementIntentSettingCategoryToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToInitialize)
         {
 
-            if (deviceManagementIntentSettingCategoryToInitialize != null && deviceManagementIntentSettingCategoryToInitialize.AdditionalData != null)
+            if (deviceManagementIntentSettingCategoryToInitialize != null)
             {
-
                 if (deviceManagementIntentSettingCategoryToInitialize.Settings != null && deviceManagementIntentSettingCategoryToInitialize.Settings.CurrentPage != null)
                 {
+                    deviceManagementIntentSettingCategoryToInitialize.Settings.InitializeNextPageRequest(this.Client, deviceManagementIntentSettingCategoryToInitialize.SettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementIntentSettingCategoryToInitialize.Settings.AdditionalData = deviceManagementIntentSettingCategoryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementIntentSettingCategoryToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementIntentSettingCategoryToInitialize.Settings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

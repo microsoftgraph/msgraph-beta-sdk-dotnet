@@ -12,43 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Phone XAP.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsPhoneXAP : MobileLobApp
     {
     
-		///<summary>
-		/// The WindowsPhoneXAP constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsPhoneXAP constructor
+        ///</summary>
         public WindowsPhoneXAP()
         {
             this.ODataType = "microsoft.graph.windowsPhoneXAP";
         }
-	
+
         /// <summary>
         /// Gets or sets identity version.
         /// The identity version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityVersion")]
         public string IdentityVersion { get; set; }
     
         /// <summary>
         /// Gets or sets minimum supported operating system.
         /// The value for the minimum applicable operating system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumSupportedOperatingSystem")]
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets product identifier.
         /// The Product Identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productIdentifier")]
         public string ProductIdentifier { get; set; }
     
     }

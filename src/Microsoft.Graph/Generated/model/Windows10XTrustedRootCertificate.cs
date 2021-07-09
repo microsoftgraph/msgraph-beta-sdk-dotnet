@@ -12,43 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10XTrusted Root Certificate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10XTrustedRootCertificate>))]
     public partial class Windows10XTrustedRootCertificate : DeviceManagementResourceAccessProfileBase
     {
     
-		///<summary>
-		/// The Windows10XTrustedRootCertificate constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10XTrustedRootCertificate constructor
+        ///</summary>
         public Windows10XTrustedRootCertificate()
         {
             this.ODataType = "microsoft.graph.windows10XTrustedRootCertificate";
         }
-	
+
         /// <summary>
         /// Gets or sets cert file name.
         /// File name to display in UI.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certFileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certFileName")]
         public string CertFileName { get; set; }
     
         /// <summary>
         /// Gets or sets destination store.
         /// Destination store location for the Trusted Root Certificate. Possible values are: computerCertStoreRoot, computerCertStoreIntermediate, userCertStoreIntermediate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationStore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("destinationStore")]
         public CertificateDestinationStore? DestinationStore { get; set; }
     
         /// <summary>
         /// Gets or sets trusted root certificate.
         /// Trusted Root Certificate
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedRootCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("trustedRootCertificate")]
         public byte[] TrustedRootCertificate { get; set; }
     
     }

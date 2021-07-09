@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PlannerPlanContextDetails.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PlannerPlanContextDetails>))]
     public partial class PlannerPlanContextDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlannerPlanContextDetails"/> class.
-        /// </summary>
-        public PlannerPlanContextDetails()
-        {
-            this.ODataType = "microsoft.graph.plannerPlanContextDetails";
-        }
 
         /// <summary>
         /// Gets or sets customLinkText.
         /// Nullable. Specifies the text to use in a user experience to display a link the the associated plannerPlanContext. If null, applications should display the link with a custom text based on the displayLinkType property.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customLinkText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customLinkText")]
         public string CustomLinkText { get; set; }
     
         /// <summary>
         /// Gets or sets displayLinkType.
         /// Specifies how an application should display the link to the associated plannerPlanContext. Applications may choose to provide customized text, description, icons, or other experiences based on the type of the link. Possible values are: teamsTab, sharePointPage, meetingNotes, other, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayLinkType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayLinkType")]
         public PlannerPlanContextType? DisplayLinkType { get; set; }
     
         /// <summary>
         /// Gets or sets url.
         /// URL of the user experience represented by the associated plannerPlanContext.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("url")]
         public string Url { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

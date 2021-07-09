@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUserGetEffectiveDeviceEnrollmentConfigurationsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UserGetEffectiveDeviceEnrollmentConfigurationsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UserGetEffectiveDeviceEnrollmentConfigurationsCollectionPage>))]
     public interface IUserGetEffectiveDeviceEnrollmentConfigurationsCollectionPage : ICollectionPage<DeviceEnrollmentConfiguration>
     {
         /// <summary>

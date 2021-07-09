@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementSendCustomNotificationToCompanyPortalRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementSendCustomNotificationToCompanyPortalRequestBody
     {
     
         /// <summary>
         /// Gets or sets NotificationTitle.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationTitle", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notificationTitle")]
         public string NotificationTitle { get; set; }
     
         /// <summary>
         /// Gets or sets NotificationBody.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationBody", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notificationBody")]
         public string NotificationBody { get; set; }
     
         /// <summary>
         /// Gets or sets GroupsToNotify.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupsToNotify", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupsToNotify")]
         public IEnumerable<string> GroupsToNotify { get; set; }
     
     }

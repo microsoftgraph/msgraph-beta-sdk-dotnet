@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph.Ediscovery
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ReviewSetAddToReviewSetRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ReviewSetAddToReviewSetRequestBody
     {
     
         /// <summary>
         /// Gets or sets SourceCollection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceCollection", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceCollection")]
         public SourceCollection SourceCollection { get; set; }
     
         /// <summary>
         /// Gets or sets AdditionalData.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("additionalData")]
         public AdditionalDataOptions? AdditionalData { get; set; }
     
     }

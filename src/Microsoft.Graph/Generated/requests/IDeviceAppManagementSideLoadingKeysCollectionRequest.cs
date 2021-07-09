@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceAppManagementSideLoadingKeysCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified SideLoadingKey to the collection via POST.
-        /// </summary>
-        /// <param name="sideLoadingKey">The SideLoadingKey to add.</param>
-        /// <returns>The created SideLoadingKey.</returns>
-        System.Threading.Tasks.Task<SideLoadingKey> AddAsync(SideLoadingKey sideLoadingKey);
-
         /// <summary>
         /// Adds the specified SideLoadingKey to the collection via POST.
         /// </summary>
         /// <param name="sideLoadingKey">The SideLoadingKey to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SideLoadingKey.</returns>
-        System.Threading.Tasks.Task<SideLoadingKey> AddAsync(SideLoadingKey sideLoadingKey, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SideLoadingKey> AddAsync(SideLoadingKey sideLoadingKey, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified SideLoadingKey to the collection via POST and returns a <see cref="GraphResponse{SideLoadingKey}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementSideLoadingKeysCollectionPage> GetAsync();
+        /// <param name="sideLoadingKey">The SideLoadingKey to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> AddResponseAsync(SideLoadingKey sideLoadingKey, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementSideLoadingKeysCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceAppManagementSideLoadingKeysCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementSideLoadingKeysCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementSideLoadingKeysCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementSideLoadingKeysCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ISiteExternalColumnsCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<SiteExternalColumnsCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<SiteExternalColumnsCollectionWithReferencesPage>))]
     public interface ISiteExternalColumnsCollectionWithReferencesPage : ICollectionPage<ColumnDefinition>
     {
         /// <summary>

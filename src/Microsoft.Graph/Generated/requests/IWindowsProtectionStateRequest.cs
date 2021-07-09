@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsProtectionState using POST.
         /// </summary>
         /// <param name="windowsProtectionStateToCreate">The WindowsProtectionState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsProtectionState.</returns>
-        System.Threading.Tasks.Task<WindowsProtectionState> CreateAsync(WindowsProtectionState windowsProtectionStateToCreate);        /// <summary>
-        /// Creates the specified WindowsProtectionState using POST.
+        System.Threading.Tasks.Task<WindowsProtectionState> CreateAsync(WindowsProtectionState windowsProtectionStateToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified WindowsProtectionState using POST and returns a <see cref="GraphResponse{WindowsProtectionState}"/> object.
         /// </summary>
         /// <param name="windowsProtectionStateToCreate">The WindowsProtectionState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsProtectionState.</returns>
-        System.Threading.Tasks.Task<WindowsProtectionState> CreateAsync(WindowsProtectionState windowsProtectionStateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsProtectionState.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WindowsProtectionState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> CreateResponseAsync(WindowsProtectionState windowsProtectionStateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsProtectionState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified WindowsProtectionState.
+        /// Deletes the specified WindowsProtectionState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsProtectionState.</returns>
-        System.Threading.Tasks.Task<WindowsProtectionState> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsProtectionState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsProtectionState.</returns>
-        System.Threading.Tasks.Task<WindowsProtectionState> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsProtectionState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified WindowsProtectionState using PATCH.
+        /// Gets the specified WindowsProtectionState and returns a <see cref="GraphResponse{WindowsProtectionState}"/> object.
         /// </summary>
-        /// <param name="windowsProtectionStateToUpdate">The WindowsProtectionState to update.</param>
-        /// <returns>The updated WindowsProtectionState.</returns>
-        System.Threading.Tasks.Task<WindowsProtectionState> UpdateAsync(WindowsProtectionState windowsProtectionStateToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsProtectionState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsProtectionState using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsProtectionState.</returns>
-        System.Threading.Tasks.Task<WindowsProtectionState> UpdateAsync(WindowsProtectionState windowsProtectionStateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsProtectionState> UpdateAsync(WindowsProtectionState windowsProtectionStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsProtectionState using PATCH and returns a <see cref="GraphResponse{WindowsProtectionState}"/> object.
+        /// </summary>
+        /// <param name="windowsProtectionStateToUpdate">The WindowsProtectionState to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsProtectionState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> UpdateResponseAsync(WindowsProtectionState windowsProtectionStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsProtectionState using PUT.
+        /// </summary>
+        /// <param name="windowsProtectionStateToUpdate">The WindowsProtectionState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsProtectionState> PutAsync(WindowsProtectionState windowsProtectionStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsProtectionState using PUT and returns a <see cref="GraphResponse{WindowsProtectionState}"/> object.
+        /// </summary>
+        /// <param name="windowsProtectionStateToUpdate">The WindowsProtectionState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsProtectionState}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> PutResponseAsync(WindowsProtectionState windowsProtectionStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TimeCardBreak.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TimeCardBreak>))]
     public partial class TimeCardBreak
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimeCardBreak"/> class.
-        /// </summary>
-        public TimeCardBreak()
-        {
-            this.ODataType = "microsoft.graph.timeCardBreak";
-        }
 
         /// <summary>
         /// Gets or sets breakId.
         /// ID of the timeCardBreak.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "breakId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("breakId")]
         public string BreakId { get; set; }
     
         /// <summary>
         /// Gets or sets end.
         /// The start event of the timeCardBreak.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "end", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("end")]
         public TimeCardEvent End { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
         /// Notes about the timeCardBreak.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notes")]
         public ItemBody Notes { get; set; }
     
         /// <summary>
         /// Gets or sets start.
         /// The start event of the timeCardBreak.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("start")]
         public TimeCardEvent Start { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

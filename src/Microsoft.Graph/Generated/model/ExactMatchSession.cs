@@ -12,70 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Exact Match Session.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ExactMatchSession : ExactMatchSessionBase
     {
     
-		///<summary>
-		/// The ExactMatchSession constructor
-		///</summary>
-        public ExactMatchSession()
-        {
-            this.ODataType = "microsoft.graph.exactMatchSession";
-        }
-	
         /// <summary>
         /// Gets or sets checksum.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checksum", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("checksum")]
         public string Checksum { get; set; }
     
         /// <summary>
         /// Gets or sets data upload uri.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataUploadURI", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataUploadURI")]
         public string DataUploadURI { get; set; }
     
         /// <summary>
         /// Gets or sets fields.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fields")]
         public IEnumerable<string> Fields { get; set; }
     
         /// <summary>
         /// Gets or sets file name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileName")]
         public string FileName { get; set; }
     
         /// <summary>
         /// Gets or sets rows per block.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rowsPerBlock", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rowsPerBlock")]
         public Int32? RowsPerBlock { get; set; }
     
         /// <summary>
         /// Gets or sets salt.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salt", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("salt")]
         public string Salt { get; set; }
     
         /// <summary>
         /// Gets or sets upload agent id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadAgentId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uploadAgentId")]
         public string UploadAgentId { get; set; }
     
         /// <summary>
         /// Gets or sets upload agent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadAgent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uploadAgent")]
         public ExactMatchUploadAgent UploadAgent { get; set; }
     
     }

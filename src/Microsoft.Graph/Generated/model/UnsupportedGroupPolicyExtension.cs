@@ -12,50 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unsupported Group Policy Extension.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<UnsupportedGroupPolicyExtension>))]
     public partial class UnsupportedGroupPolicyExtension : Entity
     {
     
-		///<summary>
-		/// The UnsupportedGroupPolicyExtension constructor
-		///</summary>
-        public UnsupportedGroupPolicyExtension()
-        {
-            this.ODataType = "microsoft.graph.unsupportedGroupPolicyExtension";
-        }
-	
         /// <summary>
         /// Gets or sets extension type.
         /// ExtensionType of the unsupported extension.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensionType")]
         public string ExtensionType { get; set; }
     
         /// <summary>
         /// Gets or sets namespace url.
         /// Namespace Url of the unsupported extension.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "namespaceUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("namespaceUrl")]
         public string NamespaceUrl { get; set; }
     
         /// <summary>
         /// Gets or sets node name.
         /// Node name of the unsupported extension.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nodeName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("nodeName")]
         public string NodeName { get; set; }
     
         /// <summary>
         /// Gets or sets setting scope.
         /// Setting Scope of the unsupported extension. Possible values are: unknown, device, user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingScope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingScope")]
         public GroupPolicySettingScope? SettingScope { get; set; }
     
     }

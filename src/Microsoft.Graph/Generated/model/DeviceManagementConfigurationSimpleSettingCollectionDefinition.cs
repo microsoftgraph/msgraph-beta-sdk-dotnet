@@ -12,36 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Configuration Simple Setting Collection Definition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementConfigurationSimpleSettingCollectionDefinition : DeviceManagementConfigurationSimpleSettingDefinition
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationSimpleSettingCollectionDefinition constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementConfigurationSimpleSettingCollectionDefinition constructor
+        ///</summary>
         public DeviceManagementConfigurationSimpleSettingCollectionDefinition()
         {
             this.ODataType = "microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionDefinition";
         }
-	
+
         /// <summary>
         /// Gets or sets maximum count.
         /// Maximum number of simple settings in the collection. Valid values 1 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumCount")]
         public Int32? MaximumCount { get; set; }
     
         /// <summary>
         /// Gets or sets minimum count.
         /// Minimum number of simple settings in the collection. Valid values 1 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumCount")]
         public Int32? MinimumCount { get; set; }
     
     }

@@ -12,86 +12,88 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unified Role Management Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UnifiedRoleManagementPolicy : Entity
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicy constructor
-		///</summary>
-        public UnifiedRoleManagementPolicy()
-        {
-            this.ODataType = "microsoft.graph.unifiedRoleManagementPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Description for the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Display name for the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is organization default.
         /// This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOrganizationDefault", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isOrganizationDefault")]
         public bool? IsOrganizationDefault { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
         /// The identity who last modified the role setting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedBy")]
         public Identity LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The time when the role setting was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets scope id.
         /// The id of the scope where the policy is created. E.g. '/', groupId, etc.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopeId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scopeId")]
         public string ScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets scope type.
         /// The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopeType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scopeType")]
         public string ScopeType { get; set; }
     
         /// <summary>
         /// Gets or sets effective rules.
         /// The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "effectiveRules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("effectiveRules")]
         public IUnifiedRoleManagementPolicyEffectiveRulesCollectionPage EffectiveRules { get; set; }
+
+        /// <summary>
+        /// Gets or sets effectiveRulesNextLink.
+        /// </summary>
+        [JsonPropertyName("effectiveRules@odata.nextLink")]
+        public string EffectiveRulesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets rules.
         /// The collection of rules like approval rule, expiration rule, etc.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rules")]
         public IUnifiedRoleManagementPolicyRulesCollectionPage Rules { get; set; }
+
+        /// <summary>
+        /// Gets or sets rulesNextLink.
+        /// </summary>
+        [JsonPropertyName("rules@odata.nextLink")]
+        public string RulesNextLink { get; set; }
     
     }
 }

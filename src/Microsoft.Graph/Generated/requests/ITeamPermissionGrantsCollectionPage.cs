@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ITeamPermissionGrantsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<TeamPermissionGrantsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<TeamPermissionGrantsCollectionPage>))]
     public interface ITeamPermissionGrantsCollectionPage : ICollectionPage<ResourceSpecificPermissionGrant>
     {
         /// <summary>

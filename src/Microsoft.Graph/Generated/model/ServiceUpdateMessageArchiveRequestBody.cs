@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ServiceUpdateMessageArchiveRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ServiceUpdateMessageArchiveRequestBody
     {
     
         /// <summary>
         /// Gets or sets MessageIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("messageIds")]
         public IEnumerable<string> MessageIds { get; set; }
     
     }

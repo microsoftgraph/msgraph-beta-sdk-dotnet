@@ -12,34 +12,24 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Exact Match Upload Agent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ExactMatchUploadAgent : Entity
     {
     
-		///<summary>
-		/// The ExactMatchUploadAgent constructor
-		///</summary>
-        public ExactMatchUploadAgent()
-        {
-            this.ODataType = "microsoft.graph.exactMatchUploadAgent";
-        }
-	
         /// <summary>
         /// Gets or sets creation date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creationDateTime")]
         public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
     }

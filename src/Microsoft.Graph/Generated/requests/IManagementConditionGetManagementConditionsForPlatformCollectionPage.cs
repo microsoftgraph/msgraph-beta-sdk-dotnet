@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IManagementConditionGetManagementConditionsForPlatformCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ManagementConditionGetManagementConditionsForPlatformCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ManagementConditionGetManagementConditionsForPlatformCollectionPage>))]
     public interface IManagementConditionGetManagementConditionsForPlatformCollectionPage : ICollectionPage<ManagementCondition>
     {
         /// <summary>

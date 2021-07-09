@@ -12,43 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Targeted Managed App Policy Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<TargetedManagedAppPolicyAssignment>))]
     public partial class TargetedManagedAppPolicyAssignment : Entity
     {
     
-		///<summary>
-		/// The TargetedManagedAppPolicyAssignment constructor
-		///</summary>
-        public TargetedManagedAppPolicyAssignment()
-        {
-            this.ODataType = "microsoft.graph.targetedManagedAppPolicyAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets source.
         /// Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("source")]
         public DeviceAndAppManagementAssignmentSource? Source { get; set; }
     
         /// <summary>
         /// Gets or sets source id.
         /// Identifier for resource used for deployment to a group
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceId")]
         public string SourceId { get; set; }
     
         /// <summary>
         /// Gets or sets target.
         /// Identifier for deployment to a group or app
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }

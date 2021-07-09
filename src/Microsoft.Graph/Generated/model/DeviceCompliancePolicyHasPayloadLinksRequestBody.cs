@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceCompliancePolicyHasPayloadLinksRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceCompliancePolicyHasPayloadLinksRequestBody
     {
     
         /// <summary>
         /// Gets or sets PayloadIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("payloadIds")]
         public IEnumerable<string> PayloadIds { get; set; }
     
     }

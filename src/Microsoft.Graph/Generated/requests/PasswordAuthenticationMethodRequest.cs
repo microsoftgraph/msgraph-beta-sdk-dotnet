@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PasswordAuthenticationMethod using POST.
         /// </summary>
         /// <param name="passwordAuthenticationMethodToCreate">The PasswordAuthenticationMethod to create.</param>
-        /// <returns>The created PasswordAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<PasswordAuthenticationMethod> CreateAsync(PasswordAuthenticationMethod passwordAuthenticationMethodToCreate)
-        {
-            return this.CreateAsync(passwordAuthenticationMethodToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PasswordAuthenticationMethod using POST.
-        /// </summary>
-        /// <param name="passwordAuthenticationMethodToCreate">The PasswordAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PasswordAuthenticationMethod.</returns>
-        public async System.Threading.Tasks.Task<PasswordAuthenticationMethod> CreateAsync(PasswordAuthenticationMethod passwordAuthenticationMethodToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PasswordAuthenticationMethod> CreateAsync(PasswordAuthenticationMethod passwordAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PasswordAuthenticationMethod>(passwordAuthenticationMethodToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PasswordAuthenticationMethod.
+        /// Creates the specified PasswordAuthenticationMethod using POST and returns a <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="passwordAuthenticationMethodToCreate">The PasswordAuthenticationMethod to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PasswordAuthenticationMethod>> CreateResponseAsync(PasswordAuthenticationMethod passwordAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PasswordAuthenticationMethod>(passwordAuthenticationMethodToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PasswordAuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PasswordAuthenticationMethod.
+        /// Deletes the specified PasswordAuthenticationMethod and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PasswordAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<PasswordAuthenticationMethod> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PasswordAuthenticationMethod.</returns>
-        public async System.Threading.Tasks.Task<PasswordAuthenticationMethod> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PasswordAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PasswordAuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PasswordAuthenticationMethod using PATCH.
+        /// Gets the specified PasswordAuthenticationMethod and returns a <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object.
         /// </summary>
-        /// <param name="passwordAuthenticationMethodToUpdate">The PasswordAuthenticationMethod to update.</param>
-        /// <returns>The updated PasswordAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<PasswordAuthenticationMethod> UpdateAsync(PasswordAuthenticationMethod passwordAuthenticationMethodToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PasswordAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(passwordAuthenticationMethodToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PasswordAuthenticationMethod>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PasswordAuthenticationMethod.</returns>
-        public async System.Threading.Tasks.Task<PasswordAuthenticationMethod> UpdateAsync(PasswordAuthenticationMethod passwordAuthenticationMethodToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PasswordAuthenticationMethod> UpdateAsync(PasswordAuthenticationMethod passwordAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (passwordAuthenticationMethodToUpdate.AdditionalData != null)
-			{
-				if (passwordAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					passwordAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, passwordAuthenticationMethodToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (passwordAuthenticationMethodToUpdate.AdditionalData != null)
-            {
-                if (passwordAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    passwordAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, passwordAuthenticationMethodToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PasswordAuthenticationMethod>(passwordAuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PasswordAuthenticationMethod using PATCH and returns a <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="passwordAuthenticationMethodToUpdate">The PasswordAuthenticationMethod to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PasswordAuthenticationMethod>> UpdateResponseAsync(PasswordAuthenticationMethod passwordAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PasswordAuthenticationMethod>(passwordAuthenticationMethodToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PasswordAuthenticationMethod using PUT.
+        /// </summary>
+        /// <param name="passwordAuthenticationMethodToUpdate">The PasswordAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PasswordAuthenticationMethod> PutAsync(PasswordAuthenticationMethod passwordAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PasswordAuthenticationMethod>(passwordAuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PasswordAuthenticationMethod using PUT and returns a <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="passwordAuthenticationMethodToUpdate">The PasswordAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PasswordAuthenticationMethod}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PasswordAuthenticationMethod>> PutResponseAsync(PasswordAuthenticationMethod passwordAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PasswordAuthenticationMethod>(passwordAuthenticationMethodToUpdate, cancellationToken);
         }
 
         /// <summary>

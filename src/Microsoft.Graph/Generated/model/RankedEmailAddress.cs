@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RankedEmailAddress.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RankedEmailAddress>))]
     public partial class RankedEmailAddress
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RankedEmailAddress"/> class.
-        /// </summary>
-        public RankedEmailAddress()
-        {
-            this.ODataType = "microsoft.graph.rankedEmailAddress";
-        }
 
         /// <summary>
         /// Gets or sets address.
         /// The email address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("address")]
         public string Address { get; set; }
     
         /// <summary>
         /// Gets or sets rank.
         /// The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rank", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rank")]
         public double? Rank { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -10,13 +10,12 @@
 namespace Microsoft.Graph.ExternalConnectors
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IExternalConnectionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.InterfaceConverter<ExternalConnectionsCollectionPage>))]
+    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<ExternalConnectionsCollectionPage>))]
     public interface IExternalConnectionsCollectionPage : Microsoft.Graph.ICollectionPage<ExternalConnection>
     {
         /// <summary>

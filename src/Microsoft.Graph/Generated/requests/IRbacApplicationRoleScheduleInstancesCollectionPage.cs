@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IRbacApplicationRoleScheduleInstancesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<RbacApplicationRoleScheduleInstancesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<RbacApplicationRoleScheduleInstancesCollectionPage>))]
     public interface IRbacApplicationRoleScheduleInstancesCollectionPage : ICollectionPage<UnifiedRoleScheduleInstanceBase>
     {
         /// <summary>

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsKioskSingleUWPApp.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsKioskSingleUWPApp : WindowsKioskAppConfiguration
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets uwpApp.
         /// This is the only Application User Model ID (AUMID) that will be available to launch use while in Kiosk Mode
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uwpApp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uwpApp")]
         public WindowsKioskUWPApp UwpApp { get; set; }
     
     }

@@ -12,43 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Autopilot Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsAutopilotSettings>))]
     public partial class WindowsAutopilotSettings : Entity
     {
     
-		///<summary>
-		/// The WindowsAutopilotSettings constructor
-		///</summary>
-        public WindowsAutopilotSettings()
-        {
-            this.ODataType = "microsoft.graph.windowsAutopilotSettings";
-        }
-	
         /// <summary>
         /// Gets or sets last manual sync trigger date time.
         /// Last data sync date time with DDS service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastManualSyncTriggerDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastManualSyncTriggerDateTime")]
         public DateTimeOffset? LastManualSyncTriggerDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last sync date time.
         /// Last data sync date time with DDS service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSyncDateTime")]
         public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets sync status.
         /// Indicates the status of sync with Device data sync (DDS) service. Possible values are: unknown, inProgress, completed, failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("syncStatus")]
         public WindowsAutopilotSyncStatus? SyncStatus { get; set; }
     
     }

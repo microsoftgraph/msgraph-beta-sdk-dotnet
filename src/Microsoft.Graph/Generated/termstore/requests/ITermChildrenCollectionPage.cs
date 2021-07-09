@@ -10,13 +10,12 @@
 namespace Microsoft.Graph.TermStore
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ITermChildrenCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.InterfaceConverter<TermChildrenCollectionPage>))]
+    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<TermChildrenCollectionPage>))]
     public interface ITermChildrenCollectionPage : Microsoft.Graph.ICollectionPage<Term>
     {
         /// <summary>

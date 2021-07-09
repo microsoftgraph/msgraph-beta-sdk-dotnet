@@ -9,41 +9,39 @@
 
 namespace Microsoft.Graph.WindowsUpdates
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeploymentAudienceUpdateAudienceRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeploymentAudienceUpdateAudienceRequestBody
     {
     
         /// <summary>
         /// Gets or sets AddMembers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addMembers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("addMembers")]
         public IEnumerable<UpdatableAsset> AddMembers { get; set; }
     
         /// <summary>
         /// Gets or sets RemoveMembers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeMembers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("removeMembers")]
         public IEnumerable<UpdatableAsset> RemoveMembers { get; set; }
     
         /// <summary>
         /// Gets or sets AddExclusions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addExclusions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("addExclusions")]
         public IEnumerable<UpdatableAsset> AddExclusions { get; set; }
     
         /// <summary>
         /// Gets or sets RemoveExclusions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeExclusions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("removeExclusions")]
         public IEnumerable<UpdatableAsset> RemoveExclusions { get; set; }
     
     }

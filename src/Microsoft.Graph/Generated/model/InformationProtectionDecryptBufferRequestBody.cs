@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type InformationProtectionDecryptBufferRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class InformationProtectionDecryptBufferRequestBody
     {
     
         /// <summary>
         /// Gets or sets EncryptedBuffer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptedBuffer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptedBuffer")]
         public byte[] EncryptedBuffer { get; set; }
     
         /// <summary>
         /// Gets or sets PublishingLicense.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishingLicense", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishingLicense")]
         public byte[] PublishingLicense { get; set; }
     
     }

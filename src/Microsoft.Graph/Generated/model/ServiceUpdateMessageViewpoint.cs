@@ -12,52 +12,43 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ServiceUpdateMessageViewpoint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ServiceUpdateMessageViewpoint>))]
     public partial class ServiceUpdateMessageViewpoint
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ServiceUpdateMessageViewpoint"/> class.
-        /// </summary>
-        public ServiceUpdateMessageViewpoint()
-        {
-            this.ODataType = "microsoft.graph.serviceUpdateMessageViewpoint";
-        }
 
         /// <summary>
         /// Gets or sets isArchived.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isArchived", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isArchived")]
         public bool? IsArchived { get; set; }
     
         /// <summary>
         /// Gets or sets isFavorited.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFavorited", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isFavorited")]
         public bool? IsFavorited { get; set; }
     
         /// <summary>
         /// Gets or sets isRead.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRead", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRead")]
         public bool? IsRead { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

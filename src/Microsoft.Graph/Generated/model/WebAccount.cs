@@ -12,63 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Web Account.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WebAccount : ItemFacet
     {
     
-		///<summary>
-		/// The WebAccount constructor
-		///</summary>
+        ///<summary>
+        /// The WebAccount constructor
+        ///</summary>
         public WebAccount()
         {
             this.ODataType = "microsoft.graph.webAccount";
         }
-	
+
         /// <summary>
         /// Gets or sets description.
         /// Contains the description the user has provided for the account on the service being referenced.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets service.
         /// Contains basic detail about the service that is being associated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("service")]
         public ServiceInformation Service { get; set; }
     
         /// <summary>
         /// Gets or sets status message.
         /// Contains a status message from the cloud service if provided or synchronized.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statusMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("statusMessage")]
         public string StatusMessage { get; set; }
     
         /// <summary>
         /// Gets or sets thumbnail url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("thumbnailUrl")]
         public string ThumbnailUrl { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// The user name  displayed for the webaccount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
         /// Contains a link to the user's profile on the cloud service if one exists.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
     
     }

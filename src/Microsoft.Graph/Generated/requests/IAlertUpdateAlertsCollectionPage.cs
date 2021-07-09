@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IAlertUpdateAlertsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<AlertUpdateAlertsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<AlertUpdateAlertsCollectionPage>))]
     public interface IAlertUpdateAlertsCollectionPage : ICollectionPage<Alert>
     {
         /// <summary>

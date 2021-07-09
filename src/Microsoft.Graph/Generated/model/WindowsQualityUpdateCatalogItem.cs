@@ -12,43 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Quality Update Catalog Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsQualityUpdateCatalogItem>))]
     public partial class WindowsQualityUpdateCatalogItem : WindowsUpdateCatalogItem
     {
     
-		///<summary>
-		/// The WindowsQualityUpdateCatalogItem constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsQualityUpdateCatalogItem constructor
+        ///</summary>
         public WindowsQualityUpdateCatalogItem()
         {
             this.ODataType = "microsoft.graph.windowsQualityUpdateCatalogItem";
         }
-	
+
         /// <summary>
         /// Gets or sets classification.
         /// Classification of the quality update. Possible values are: all, security, nonSecurity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classification")]
         public WindowsQualityUpdateClassification? Classification { get; set; }
     
         /// <summary>
         /// Gets or sets is expeditable.
         /// Flag indicating if update qualifies for expedite
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isExpeditable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isExpeditable")]
         public bool? IsExpeditable { get; set; }
     
         /// <summary>
         /// Gets or sets kb article id.
         /// Knowledge base article id
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kbArticleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("kbArticleId")]
         public string KbArticleId { get; set; }
     
     }

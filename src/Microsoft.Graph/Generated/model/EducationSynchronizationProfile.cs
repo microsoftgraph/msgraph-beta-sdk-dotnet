@@ -12,85 +12,82 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Synchronization Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<EducationSynchronizationProfile>))]
     public partial class EducationSynchronizationProfile : Entity
     {
     
-		///<summary>
-		/// The EducationSynchronizationProfile constructor
-		///</summary>
-        public EducationSynchronizationProfile()
-        {
-            this.ODataType = "microsoft.graph.educationSynchronizationProfile";
-        }
-	
         /// <summary>
         /// Gets or sets data provider.
         /// The data provider used for the profile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataProvider", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataProvider")]
         public EducationSynchronizationDataProvider DataProvider { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name of the configuration profile for syncing identities.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date.
         /// The date the profile should be considered expired and cease syncing. When null. the profile will never expire. (optional)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expirationDate")]
         public Date ExpirationDate { get; set; }
     
         /// <summary>
         /// Gets or sets handle special character constraint.
         /// Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "handleSpecialCharacterConstraint", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("handleSpecialCharacterConstraint")]
         public bool? HandleSpecialCharacterConstraint { get; set; }
     
         /// <summary>
         /// Gets or sets identity synchronization configuration.
         /// Determines how the Profile should [create new][fullsync] or [match existing][dirsync] AAD Users.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySynchronizationConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identitySynchronizationConfiguration")]
         public EducationIdentitySynchronizationConfiguration IdentitySynchronizationConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets licenses to assign.
         /// License setup configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licensesToAssign", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("licensesToAssign")]
         public IEnumerable<EducationSynchronizationLicenseAssignment> LicensesToAssign { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public EducationSynchronizationProfileState? State { get; set; }
     
         /// <summary>
         /// Gets or sets errors.
         /// All errors associated with this synchronization profile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errors")]
         public IEducationSynchronizationProfileErrorsCollectionPage Errors { get; set; }
+
+        /// <summary>
+        /// Gets or sets errorsNextLink.
+        /// </summary>
+        [JsonPropertyName("errors@odata.nextLink")]
+        public string ErrorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets profile status.
         /// The synchronization status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("profileStatus")]
         public EducationSynchronizationProfileStatus ProfileStatus { get; set; }
     
     }

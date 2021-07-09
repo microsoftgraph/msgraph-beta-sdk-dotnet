@@ -9,26 +9,30 @@
 namespace Microsoft.Graph
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PolicyRootRoleManagementPoliciesCollectionResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PolicyRootRoleManagementPoliciesCollectionResponse>))]
     public class PolicyRootRoleManagementPoliciesCollectionResponse
     {
         /// <summary>
         /// Gets or sets the <see cref="IPolicyRootRoleManagementPoliciesCollectionPage"/> value.
         /// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName ="value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public IPolicyRootRoleManagementPoliciesCollectionPage Value { get; set; }
+
+        /// <summary>
+        /// Gets or sets the nextLink string value.
+        /// </summary>
+        [JsonPropertyName("@odata.nextLink")]
+        public string NextLink { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     }
 }

@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type VpnDnsRule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<VpnDnsRule>))]
     public partial class VpnDnsRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VpnDnsRule"/> class.
-        /// </summary>
-        public VpnDnsRule()
-        {
-            this.ODataType = "microsoft.graph.vpnDnsRule";
-        }
 
         /// <summary>
         /// Gets or sets autoTrigger.
         /// Automatically connect to the VPN when the device connects to this domain: Default False.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoTrigger", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("autoTrigger")]
         public bool? AutoTrigger { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// Name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets persistent.
         /// Keep this rule active even when the VPN is not connected: Default False
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "persistent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("persistent")]
         public bool? Persistent { get; set; }
     
         /// <summary>
         /// Gets or sets proxyServerUri.
         /// Proxy Server Uri.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyServerUri", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxyServerUri")]
         public string ProxyServerUri { get; set; }
     
         /// <summary>
         /// Gets or sets servers.
         /// Servers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("servers")]
         public IEnumerable<string> Servers { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

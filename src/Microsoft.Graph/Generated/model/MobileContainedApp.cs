@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mobile Contained App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MobileContainedApp>))]
     public partial class MobileContainedApp : Entity
     {
     
-		///<summary>
-		/// The internal MobileContainedApp constructor
-		///</summary>
+        ///<summary>
+        /// The internal MobileContainedApp constructor
+        ///</summary>
         protected internal MobileContainedApp()
         {
             // Don't allow initialization of abstract entity types

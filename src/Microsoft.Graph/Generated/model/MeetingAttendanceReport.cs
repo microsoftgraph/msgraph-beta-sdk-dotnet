@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Meeting Attendance Report.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MeetingAttendanceReport : Entity
     {
     
-		///<summary>
-		/// The MeetingAttendanceReport constructor
-		///</summary>
-        public MeetingAttendanceReport()
-        {
-            this.ODataType = "microsoft.graph.meetingAttendanceReport";
-        }
-	
         /// <summary>
         /// Gets or sets attendance records.
         /// The list of attendance records.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attendanceRecords", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("attendanceRecords")]
         public IEnumerable<AttendanceRecord> AttendanceRecords { get; set; }
     
     }

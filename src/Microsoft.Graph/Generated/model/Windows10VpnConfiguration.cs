@@ -12,190 +12,189 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10Vpn Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10VpnConfiguration>))]
     public partial class Windows10VpnConfiguration : WindowsVpnConfiguration
     {
     
-		///<summary>
-		/// The Windows10VpnConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10VpnConfiguration constructor
+        ///</summary>
         public Windows10VpnConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10VpnConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets associated apps.
         /// Associated Apps. This collection can contain a maximum of 10000 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "associatedApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("associatedApps")]
         public IEnumerable<Windows10AssociatedApps> AssociatedApps { get; set; }
     
         /// <summary>
         /// Gets or sets authentication method.
         /// Authentication method. Possible values are: certificate, usernameAndPassword, customEapXml, derivedCredential.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationMethod")]
         public Windows10VpnAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets connection type.
         /// Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, automatic, ikEv2, l2tp, pptp, citrix, paloAltoGlobalProtect, ciscoAnyConnect.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectionType")]
         public Windows10VpnConnectionType? ConnectionType { get; set; }
     
         /// <summary>
         /// Gets or sets cryptography suite.
         /// Cryptography Suite security settings for IKEv2 VPN in Windows10 and above
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cryptographySuite", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cryptographySuite")]
         public CryptographySuite CryptographySuite { get; set; }
     
         /// <summary>
         /// Gets or sets dns rules.
         /// DNS rules. This collection can contain a maximum of 1000 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsRules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dnsRules")]
         public IEnumerable<VpnDnsRule> DnsRules { get; set; }
     
         /// <summary>
         /// Gets or sets dns suffixes.
         /// Specify DNS suffixes to add to the DNS search list to properly route short names.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSuffixes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dnsSuffixes")]
         public IEnumerable<string> DnsSuffixes { get; set; }
     
         /// <summary>
         /// Gets or sets eap xml.
         /// Extensible Authentication Protocol (EAP) XML. (UTF8 encoded byte array)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapXml", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eapXml")]
         public byte[] EapXml { get; set; }
     
         /// <summary>
         /// Gets or sets enable always on.
         /// Enable Always On mode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableAlwaysOn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableAlwaysOn")]
         public bool? EnableAlwaysOn { get; set; }
     
         /// <summary>
         /// Gets or sets enable conditional access.
         /// Enable conditional access.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableConditionalAccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableConditionalAccess")]
         public bool? EnableConditionalAccess { get; set; }
     
         /// <summary>
         /// Gets or sets enable device tunnel.
         /// Enable device tunnel.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableDeviceTunnel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableDeviceTunnel")]
         public bool? EnableDeviceTunnel { get; set; }
     
         /// <summary>
         /// Gets or sets enable dns registration.
         /// Enable IP address registration with internal DNS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableDnsRegistration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableDnsRegistration")]
         public bool? EnableDnsRegistration { get; set; }
     
         /// <summary>
         /// Gets or sets enable single sign on with alternate certificate.
         /// Enable single sign-on (SSO) with alternate certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSingleSignOnWithAlternateCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableSingleSignOnWithAlternateCertificate")]
         public bool? EnableSingleSignOnWithAlternateCertificate { get; set; }
     
         /// <summary>
         /// Gets or sets enable split tunneling.
         /// Enable split tunneling.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSplitTunneling", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableSplitTunneling")]
         public bool? EnableSplitTunneling { get; set; }
     
         /// <summary>
         /// Gets or sets only associated apps can use connection.
         /// Only associated Apps can use connection (per-app VPN).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlyAssociatedAppsCanUseConnection", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onlyAssociatedAppsCanUseConnection")]
         public bool? OnlyAssociatedAppsCanUseConnection { get; set; }
     
         /// <summary>
         /// Gets or sets profile target.
         /// Profile target type. Possible values are: user, device, autoPilotDevice.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileTarget", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("profileTarget")]
         public Windows10VpnProfileTarget? ProfileTarget { get; set; }
     
         /// <summary>
         /// Gets or sets proxy server.
         /// Proxy Server.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyServer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxyServer")]
         public Windows10VpnProxyServer ProxyServer { get; set; }
     
         /// <summary>
         /// Gets or sets remember user credentials.
         /// Remember user credentials.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rememberUserCredentials", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rememberUserCredentials")]
         public bool? RememberUserCredentials { get; set; }
     
         /// <summary>
         /// Gets or sets routes.
         /// Routes (optional for third-party providers). This collection can contain a maximum of 1000 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "routes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("routes")]
         public IEnumerable<VpnRoute> Routes { get; set; }
     
         /// <summary>
         /// Gets or sets single sign on eku.
         /// Single sign-on Extended Key Usage (EKU).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnEku", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("singleSignOnEku")]
         public ExtendedKeyUsage SingleSignOnEku { get; set; }
     
         /// <summary>
         /// Gets or sets single sign on issuer hash.
         /// Single sign-on issuer hash.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnIssuerHash", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("singleSignOnIssuerHash")]
         public string SingleSignOnIssuerHash { get; set; }
     
         /// <summary>
         /// Gets or sets traffic rules.
         /// Traffic rules. This collection can contain a maximum of 1000 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trafficRules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("trafficRules")]
         public IEnumerable<VpnTrafficRule> TrafficRules { get; set; }
     
         /// <summary>
         /// Gets or sets trusted network domains.
         /// Trusted Network Domains
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedNetworkDomains", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("trustedNetworkDomains")]
         public IEnumerable<string> TrustedNetworkDomains { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection domain.
         /// Windows Information Protection (WIP) domain to associate with this connection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsInformationProtectionDomain", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsInformationProtectionDomain")]
         public string WindowsInformationProtectionDomain { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate.
         /// Identity certificate for client authentication when authentication method is certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityCertificate")]
         public WindowsCertificateProfileBase IdentityCertificate { get; set; }
     
     }

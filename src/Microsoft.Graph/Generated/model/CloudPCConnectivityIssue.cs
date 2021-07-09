@@ -12,64 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Cloud PCConnectivity Issue.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CloudPCConnectivityIssue : Entity
     {
     
-		///<summary>
-		/// The CloudPCConnectivityIssue constructor
-		///</summary>
-        public CloudPCConnectivityIssue()
-        {
-            this.ODataType = "microsoft.graph.cloudPCConnectivityIssue";
-        }
-	
         /// <summary>
         /// Gets or sets device id.
         /// The Intune DeviceId of the device the connection is associated with.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets error code.
         /// The error code of the connectivity issue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCode")]
         public string ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets error date time.
         /// The time that the connection initiated. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorDateTime")]
         public DateTimeOffset? ErrorDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets error description.
         /// The detailed description of what went wrong.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDescription", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorDescription")]
         public string ErrorDescription { get; set; }
     
         /// <summary>
         /// Gets or sets recommended action.
         /// The recommended action to fix the corresponding error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendedAction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recommendedAction")]
         public string RecommendedAction { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// The unique id of user who initialize the connection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
     }

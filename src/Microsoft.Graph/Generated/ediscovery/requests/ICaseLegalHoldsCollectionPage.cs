@@ -10,13 +10,12 @@
 namespace Microsoft.Graph.Ediscovery
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ICaseLegalHoldsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.InterfaceConverter<CaseLegalHoldsCollectionPage>))]
+    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<CaseLegalHoldsCollectionPage>))]
     public interface ICaseLegalHoldsCollectionPage : Microsoft.Graph.ICollectionPage<LegalHold>
     {
         /// <summary>

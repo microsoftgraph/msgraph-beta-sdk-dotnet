@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Admin using POST.
         /// </summary>
         /// <param name="adminToCreate">The Admin to create.</param>
-        /// <returns>The created Admin.</returns>
-        public System.Threading.Tasks.Task<Admin> CreateAsync(Admin adminToCreate)
-        {
-            return this.CreateAsync(adminToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Admin using POST.
-        /// </summary>
-        /// <param name="adminToCreate">The Admin to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Admin.</returns>
-        public async System.Threading.Tasks.Task<Admin> CreateAsync(Admin adminToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Admin> CreateAsync(Admin adminToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Admin>(adminToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Admin.
+        /// Creates the specified Admin using POST and returns a <see cref="GraphResponse{Admin}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="adminToCreate">The Admin to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Admin}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Admin>> CreateResponseAsync(Admin adminToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Admin>(adminToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Admin>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Admin.
+        /// Deletes the specified Admin and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Admin.</returns>
-        public System.Threading.Tasks.Task<Admin> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Admin.</returns>
-        public async System.Threading.Tasks.Task<Admin> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Admin> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Admin>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Admin using PATCH.
+        /// Gets the specified Admin and returns a <see cref="GraphResponse{Admin}"/> object.
         /// </summary>
-        /// <param name="adminToUpdate">The Admin to update.</param>
-        /// <returns>The updated Admin.</returns>
-        public System.Threading.Tasks.Task<Admin> UpdateAsync(Admin adminToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Admin}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Admin>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(adminToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Admin>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Admin.</returns>
-        public async System.Threading.Tasks.Task<Admin> UpdateAsync(Admin adminToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Admin> UpdateAsync(Admin adminToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (adminToUpdate.AdditionalData != null)
-			{
-				if (adminToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					adminToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, adminToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (adminToUpdate.AdditionalData != null)
-            {
-                if (adminToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    adminToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, adminToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Admin>(adminToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Admin using PATCH and returns a <see cref="GraphResponse{Admin}"/> object.
+        /// </summary>
+        /// <param name="adminToUpdate">The Admin to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Admin}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Admin>> UpdateResponseAsync(Admin adminToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Admin>(adminToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Admin using PUT.
+        /// </summary>
+        /// <param name="adminToUpdate">The Admin object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Admin> PutAsync(Admin adminToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Admin>(adminToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Admin using PUT and returns a <see cref="GraphResponse{Admin}"/> object.
+        /// </summary>
+        /// <param name="adminToUpdate">The Admin object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Admin}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Admin>> PutResponseAsync(Admin adminToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Admin>(adminToUpdate, cancellationToken);
         }
 
         /// <summary>

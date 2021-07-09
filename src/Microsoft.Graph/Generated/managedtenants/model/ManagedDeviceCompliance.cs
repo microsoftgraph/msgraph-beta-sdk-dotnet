@@ -12,106 +12,96 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed Device Compliance.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedDeviceCompliance : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ManagedDeviceCompliance constructor
-		///</summary>
-        public ManagedDeviceCompliance()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.managedDeviceCompliance";
-        }
-	
         /// <summary>
         /// Gets or sets compliance status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("complianceStatus")]
         public string ComplianceStatus { get; set; }
     
         /// <summary>
         /// Gets or sets device type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceType")]
         public string DeviceType { get; set; }
     
         /// <summary>
         /// Gets or sets in grace period until date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inGracePeriodUntilDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inGracePeriodUntilDateTime")]
         public DateTimeOffset? InGracePeriodUntilDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last refreshed date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastRefreshedDateTime")]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last sync date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSyncDateTime")]
         public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets managed device id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets managed device name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceName")]
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets os description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osDescription", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osDescription")]
         public string OsDescription { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets owner type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownerType")]
         public string OwnerType { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantDisplayName")]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
     }

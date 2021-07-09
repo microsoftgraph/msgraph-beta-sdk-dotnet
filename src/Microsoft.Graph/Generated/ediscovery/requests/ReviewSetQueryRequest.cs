@@ -39,34 +39,28 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified ReviewSetQuery using POST.
         /// </summary>
         /// <param name="reviewSetQueryToCreate">The ReviewSetQuery to create.</param>
-        /// <returns>The created ReviewSetQuery.</returns>
-        public System.Threading.Tasks.Task<ReviewSetQuery> CreateAsync(ReviewSetQuery reviewSetQueryToCreate)
-        {
-            return this.CreateAsync(reviewSetQueryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ReviewSetQuery using POST.
-        /// </summary>
-        /// <param name="reviewSetQueryToCreate">The ReviewSetQuery to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ReviewSetQuery.</returns>
-        public async System.Threading.Tasks.Task<ReviewSetQuery> CreateAsync(ReviewSetQuery reviewSetQueryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ReviewSetQuery> CreateAsync(ReviewSetQuery reviewSetQueryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ReviewSetQuery>(reviewSetQueryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ReviewSetQuery.
+        /// Creates the specified ReviewSetQuery using POST and returns a <see cref="GraphResponse{ReviewSetQuery}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="reviewSetQueryToCreate">The ReviewSetQuery to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReviewSetQuery}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> CreateResponseAsync(ReviewSetQuery reviewSetQueryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ReviewSetQuery>(reviewSetQueryToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ReviewSetQuery>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ReviewSetQuery.
+        /// Deletes the specified ReviewSetQuery and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ReviewSetQuery.</returns>
-        public System.Threading.Tasks.Task<ReviewSetQuery> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ReviewSetQuery.</returns>
-        public async System.Threading.Tasks.Task<ReviewSetQuery> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ReviewSetQuery> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ReviewSetQuery>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ReviewSetQuery using PATCH.
+        /// Gets the specified ReviewSetQuery and returns a <see cref="GraphResponse{ReviewSetQuery}"/> object.
         /// </summary>
-        /// <param name="reviewSetQueryToUpdate">The ReviewSetQuery to update.</param>
-        /// <returns>The updated ReviewSetQuery.</returns>
-        public System.Threading.Tasks.Task<ReviewSetQuery> UpdateAsync(ReviewSetQuery reviewSetQueryToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReviewSetQuery}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(reviewSetQueryToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ReviewSetQuery>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ReviewSetQuery.</returns>
-        public async System.Threading.Tasks.Task<ReviewSetQuery> UpdateAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ReviewSetQuery> UpdateAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (reviewSetQueryToUpdate.AdditionalData != null)
-			{
-				if (reviewSetQueryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					reviewSetQueryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, reviewSetQueryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (reviewSetQueryToUpdate.AdditionalData != null)
-            {
-                if (reviewSetQueryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    reviewSetQueryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, reviewSetQueryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ReviewSetQuery>(reviewSetQueryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ReviewSetQuery using PATCH and returns a <see cref="GraphResponse{ReviewSetQuery}"/> object.
+        /// </summary>
+        /// <param name="reviewSetQueryToUpdate">The ReviewSetQuery to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ReviewSetQuery}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> UpdateResponseAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ReviewSetQuery>(reviewSetQueryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ReviewSetQuery using PUT.
+        /// </summary>
+        /// <param name="reviewSetQueryToUpdate">The ReviewSetQuery object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ReviewSetQuery> PutAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ReviewSetQuery>(reviewSetQueryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ReviewSetQuery using PUT and returns a <see cref="GraphResponse{ReviewSetQuery}"/> object.
+        /// </summary>
+        /// <param name="reviewSetQueryToUpdate">The ReviewSetQuery object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ReviewSetQuery}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> PutResponseAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ReviewSetQuery>(reviewSetQueryToUpdate, cancellationToken);
         }
 
         /// <summary>

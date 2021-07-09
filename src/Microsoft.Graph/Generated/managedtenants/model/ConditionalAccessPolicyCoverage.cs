@@ -12,46 +12,36 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Conditional Access Policy Coverage.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ConditionalAccessPolicyCoverage : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ConditionalAccessPolicyCoverage constructor
-		///</summary>
-        public ConditionalAccessPolicyCoverage()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.conditionalAccessPolicyCoverage";
-        }
-	
         /// <summary>
         /// Gets or sets conditional access policy state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccessPolicyState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conditionalAccessPolicyState")]
         public string ConditionalAccessPolicyState { get; set; }
     
         /// <summary>
         /// Gets or sets latest policy modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latestPolicyModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("latestPolicyModifiedDateTime")]
         public DateTimeOffset? LatestPolicyModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets requires device compliance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiresDeviceCompliance", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requiresDeviceCompliance")]
         public bool? RequiresDeviceCompliance { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantDisplayName")]
         public string TenantDisplayName { get; set; }
     
     }

@@ -12,43 +12,33 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Management App Health Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsManagementAppHealthSummary : Entity
     {
     
-		///<summary>
-		/// The WindowsManagementAppHealthSummary constructor
-		///</summary>
-        public WindowsManagementAppHealthSummary()
-        {
-            this.ODataType = "microsoft.graph.windowsManagementAppHealthSummary";
-        }
-	
         /// <summary>
         /// Gets or sets healthy device count.
         /// Healthy device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "healthyDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("healthyDeviceCount")]
         public Int32? HealthyDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets unhealthy device count.
         /// Unhealthy device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unhealthyDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unhealthyDeviceCount")]
         public Int32? UnhealthyDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets unknown device count.
         /// Unknown device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unknownDeviceCount")]
         public Int32? UnknownDeviceCount { get; set; }
     
     }

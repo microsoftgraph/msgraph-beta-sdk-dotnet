@@ -12,28 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Insights Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserInsightsSettings : Entity
     {
     
-		///<summary>
-		/// The UserInsightsSettings constructor
-		///</summary>
-        public UserInsightsSettings()
-        {
-            this.ODataType = "microsoft.graph.userInsightsSettings";
-        }
-	
         /// <summary>
         /// Gets or sets is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
     }

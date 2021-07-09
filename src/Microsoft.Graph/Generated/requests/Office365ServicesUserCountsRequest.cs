@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Office365ServicesUserCounts using POST.
         /// </summary>
         /// <param name="office365ServicesUserCountsToCreate">The Office365ServicesUserCounts to create.</param>
-        /// <returns>The created Office365ServicesUserCounts.</returns>
-        public System.Threading.Tasks.Task<Office365ServicesUserCounts> CreateAsync(Office365ServicesUserCounts office365ServicesUserCountsToCreate)
-        {
-            return this.CreateAsync(office365ServicesUserCountsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Office365ServicesUserCounts using POST.
-        /// </summary>
-        /// <param name="office365ServicesUserCountsToCreate">The Office365ServicesUserCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Office365ServicesUserCounts.</returns>
-        public async System.Threading.Tasks.Task<Office365ServicesUserCounts> CreateAsync(Office365ServicesUserCounts office365ServicesUserCountsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Office365ServicesUserCounts> CreateAsync(Office365ServicesUserCounts office365ServicesUserCountsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Office365ServicesUserCounts>(office365ServicesUserCountsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Office365ServicesUserCounts.
+        /// Creates the specified Office365ServicesUserCounts using POST and returns a <see cref="GraphResponse{Office365ServicesUserCounts}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="office365ServicesUserCountsToCreate">The Office365ServicesUserCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Office365ServicesUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Office365ServicesUserCounts>> CreateResponseAsync(Office365ServicesUserCounts office365ServicesUserCountsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Office365ServicesUserCounts>(office365ServicesUserCountsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Office365ServicesUserCounts>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Office365ServicesUserCounts.
+        /// Deletes the specified Office365ServicesUserCounts and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Office365ServicesUserCounts.</returns>
-        public System.Threading.Tasks.Task<Office365ServicesUserCounts> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Office365ServicesUserCounts.</returns>
-        public async System.Threading.Tasks.Task<Office365ServicesUserCounts> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Office365ServicesUserCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Office365ServicesUserCounts>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Office365ServicesUserCounts using PATCH.
+        /// Gets the specified Office365ServicesUserCounts and returns a <see cref="GraphResponse{Office365ServicesUserCounts}"/> object.
         /// </summary>
-        /// <param name="office365ServicesUserCountsToUpdate">The Office365ServicesUserCounts to update.</param>
-        /// <returns>The updated Office365ServicesUserCounts.</returns>
-        public System.Threading.Tasks.Task<Office365ServicesUserCounts> UpdateAsync(Office365ServicesUserCounts office365ServicesUserCountsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Office365ServicesUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Office365ServicesUserCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(office365ServicesUserCountsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Office365ServicesUserCounts>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365ServicesUserCounts.</returns>
-        public async System.Threading.Tasks.Task<Office365ServicesUserCounts> UpdateAsync(Office365ServicesUserCounts office365ServicesUserCountsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Office365ServicesUserCounts> UpdateAsync(Office365ServicesUserCounts office365ServicesUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (office365ServicesUserCountsToUpdate.AdditionalData != null)
-			{
-				if (office365ServicesUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					office365ServicesUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365ServicesUserCountsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (office365ServicesUserCountsToUpdate.AdditionalData != null)
-            {
-                if (office365ServicesUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    office365ServicesUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365ServicesUserCountsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Office365ServicesUserCounts>(office365ServicesUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Office365ServicesUserCounts using PATCH and returns a <see cref="GraphResponse{Office365ServicesUserCounts}"/> object.
+        /// </summary>
+        /// <param name="office365ServicesUserCountsToUpdate">The Office365ServicesUserCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Office365ServicesUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Office365ServicesUserCounts>> UpdateResponseAsync(Office365ServicesUserCounts office365ServicesUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Office365ServicesUserCounts>(office365ServicesUserCountsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Office365ServicesUserCounts using PUT.
+        /// </summary>
+        /// <param name="office365ServicesUserCountsToUpdate">The Office365ServicesUserCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Office365ServicesUserCounts> PutAsync(Office365ServicesUserCounts office365ServicesUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Office365ServicesUserCounts>(office365ServicesUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Office365ServicesUserCounts using PUT and returns a <see cref="GraphResponse{Office365ServicesUserCounts}"/> object.
+        /// </summary>
+        /// <param name="office365ServicesUserCountsToUpdate">The Office365ServicesUserCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Office365ServicesUserCounts}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Office365ServicesUserCounts>> PutResponseAsync(Office365ServicesUserCounts office365ServicesUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Office365ServicesUserCounts>(office365ServicesUserCountsToUpdate, cancellationToken);
         }
 
         /// <summary>

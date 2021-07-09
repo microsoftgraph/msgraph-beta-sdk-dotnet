@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified EnrollmentRestrictionsConfigurationPolicySetItem using POST.
         /// </summary>
         /// <param name="enrollmentRestrictionsConfigurationPolicySetItemToCreate">The EnrollmentRestrictionsConfigurationPolicySetItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EnrollmentRestrictionsConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<EnrollmentRestrictionsConfigurationPolicySetItem> CreateAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToCreate);        /// <summary>
-        /// Creates the specified EnrollmentRestrictionsConfigurationPolicySetItem using POST.
+        System.Threading.Tasks.Task<EnrollmentRestrictionsConfigurationPolicySetItem> CreateAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified EnrollmentRestrictionsConfigurationPolicySetItem using POST and returns a <see cref="GraphResponse{EnrollmentRestrictionsConfigurationPolicySetItem}"/> object.
         /// </summary>
         /// <param name="enrollmentRestrictionsConfigurationPolicySetItemToCreate">The EnrollmentRestrictionsConfigurationPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created EnrollmentRestrictionsConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<EnrollmentRestrictionsConfigurationPolicySetItem> CreateAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EnrollmentRestrictionsConfigurationPolicySetItem.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{EnrollmentRestrictionsConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentRestrictionsConfigurationPolicySetItem>> CreateResponseAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified EnrollmentRestrictionsConfigurationPolicySetItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified EnrollmentRestrictionsConfigurationPolicySetItem.
+        /// Deletes the specified EnrollmentRestrictionsConfigurationPolicySetItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EnrollmentRestrictionsConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<EnrollmentRestrictionsConfigurationPolicySetItem> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EnrollmentRestrictionsConfigurationPolicySetItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EnrollmentRestrictionsConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<EnrollmentRestrictionsConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EnrollmentRestrictionsConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified EnrollmentRestrictionsConfigurationPolicySetItem using PATCH.
+        /// Gets the specified EnrollmentRestrictionsConfigurationPolicySetItem and returns a <see cref="GraphResponse{EnrollmentRestrictionsConfigurationPolicySetItem}"/> object.
         /// </summary>
-        /// <param name="enrollmentRestrictionsConfigurationPolicySetItemToUpdate">The EnrollmentRestrictionsConfigurationPolicySetItem to update.</param>
-        /// <returns>The updated EnrollmentRestrictionsConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<EnrollmentRestrictionsConfigurationPolicySetItem> UpdateAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentRestrictionsConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentRestrictionsConfigurationPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EnrollmentRestrictionsConfigurationPolicySetItem using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EnrollmentRestrictionsConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<EnrollmentRestrictionsConfigurationPolicySetItem> UpdateAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EnrollmentRestrictionsConfigurationPolicySetItem> UpdateAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EnrollmentRestrictionsConfigurationPolicySetItem using PATCH and returns a <see cref="GraphResponse{EnrollmentRestrictionsConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="enrollmentRestrictionsConfigurationPolicySetItemToUpdate">The EnrollmentRestrictionsConfigurationPolicySetItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EnrollmentRestrictionsConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentRestrictionsConfigurationPolicySetItem>> UpdateResponseAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EnrollmentRestrictionsConfigurationPolicySetItem using PUT.
+        /// </summary>
+        /// <param name="enrollmentRestrictionsConfigurationPolicySetItemToUpdate">The EnrollmentRestrictionsConfigurationPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EnrollmentRestrictionsConfigurationPolicySetItem> PutAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified EnrollmentRestrictionsConfigurationPolicySetItem using PUT and returns a <see cref="GraphResponse{EnrollmentRestrictionsConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="enrollmentRestrictionsConfigurationPolicySetItemToUpdate">The EnrollmentRestrictionsConfigurationPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EnrollmentRestrictionsConfigurationPolicySetItem}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentRestrictionsConfigurationPolicySetItem>> PutResponseAsync(EnrollmentRestrictionsConfigurationPolicySetItem enrollmentRestrictionsConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

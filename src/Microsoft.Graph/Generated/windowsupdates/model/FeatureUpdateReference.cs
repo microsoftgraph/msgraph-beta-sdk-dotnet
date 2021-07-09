@@ -12,13 +12,11 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type FeatureUpdateReference.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class FeatureUpdateReference : WindowsUpdateReference
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Gets or sets version.
         /// Specifies a feature update by version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
     }

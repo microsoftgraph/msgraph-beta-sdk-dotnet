@@ -12,61 +12,51 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Role Management.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RoleManagement>))]
     public partial class RoleManagement
     {
     
-		///<summary>
-		/// The RoleManagement constructor
-		///</summary>
-        public RoleManagement()
-        {
-            this.ODataType = "microsoft.graph.roleManagement";
-        }
-	
         /// <summary>
         /// Gets or sets directory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("directory")]
         public RbacApplication Directory { get; set; }
     
         /// <summary>
         /// Gets or sets cloud pc.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPC", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudPC")]
         public RbacApplicationMultiple CloudPC { get; set; }
     
         /// <summary>
         /// Gets or sets entitlement management.
         /// The RbacApplication for Entitlement Management
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entitlementManagement", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("entitlementManagement")]
         public RbacApplication EntitlementManagement { get; set; }
     
         /// <summary>
         /// Gets or sets device management.
         /// The RbacApplication for Device Management
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagement", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceManagement")]
         public RbacApplicationMultiple DeviceManagement { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     
     }

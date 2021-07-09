@@ -12,57 +12,47 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Device Startup Process.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsDeviceStartupProcess : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsDeviceStartupProcess constructor
-		///</summary>
-        public UserExperienceAnalyticsDeviceStartupProcess()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsDeviceStartupProcess";
-        }
-	
         /// <summary>
         /// Gets or sets managed device id.
         /// The user experience analytics device id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets process name.
         /// User experience analytics device startup process name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("processName")]
         public string ProcessName { get; set; }
     
         /// <summary>
         /// Gets or sets product name.
         /// The user experience analytics device startup process product name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productName")]
         public string ProductName { get; set; }
     
         /// <summary>
         /// Gets or sets publisher.
         /// The User experience analytics device startup process publisher.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publisher")]
         public string Publisher { get; set; }
     
         /// <summary>
         /// Gets or sets startup impact in ms.
         /// User experience analytics device startup process impact in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupImpactInMs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startupImpactInMs")]
         public Int32? StartupImpactInMs { get; set; }
     
     }

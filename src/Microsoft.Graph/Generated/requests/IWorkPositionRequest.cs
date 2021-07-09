@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WorkPosition using POST.
         /// </summary>
         /// <param name="workPositionToCreate">The WorkPosition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkPosition.</returns>
-        System.Threading.Tasks.Task<WorkPosition> CreateAsync(WorkPosition workPositionToCreate);        /// <summary>
-        /// Creates the specified WorkPosition using POST.
+        System.Threading.Tasks.Task<WorkPosition> CreateAsync(WorkPosition workPositionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified WorkPosition using POST and returns a <see cref="GraphResponse{WorkPosition}"/> object.
         /// </summary>
         /// <param name="workPositionToCreate">The WorkPosition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WorkPosition.</returns>
-        System.Threading.Tasks.Task<WorkPosition> CreateAsync(WorkPosition workPositionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkPosition.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WorkPosition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkPosition>> CreateResponseAsync(WorkPosition workPositionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkPosition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified WorkPosition.
+        /// Deletes the specified WorkPosition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkPosition.</returns>
-        System.Threading.Tasks.Task<WorkPosition> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkPosition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkPosition.</returns>
-        System.Threading.Tasks.Task<WorkPosition> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkPosition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified WorkPosition using PATCH.
+        /// Gets the specified WorkPosition and returns a <see cref="GraphResponse{WorkPosition}"/> object.
         /// </summary>
-        /// <param name="workPositionToUpdate">The WorkPosition to update.</param>
-        /// <returns>The updated WorkPosition.</returns>
-        System.Threading.Tasks.Task<WorkPosition> UpdateAsync(WorkPosition workPositionToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkPosition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkPosition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkPosition using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkPosition.</returns>
-        System.Threading.Tasks.Task<WorkPosition> UpdateAsync(WorkPosition workPositionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkPosition> UpdateAsync(WorkPosition workPositionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WorkPosition using PATCH and returns a <see cref="GraphResponse{WorkPosition}"/> object.
+        /// </summary>
+        /// <param name="workPositionToUpdate">The WorkPosition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkPosition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkPosition>> UpdateResponseAsync(WorkPosition workPositionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WorkPosition using PUT.
+        /// </summary>
+        /// <param name="workPositionToUpdate">The WorkPosition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkPosition> PutAsync(WorkPosition workPositionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WorkPosition using PUT and returns a <see cref="GraphResponse{WorkPosition}"/> object.
+        /// </summary>
+        /// <param name="workPositionToUpdate">The WorkPosition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkPosition}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkPosition>> PutResponseAsync(WorkPosition workPositionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

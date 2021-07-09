@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsVpnConfiguration using POST.
         /// </summary>
         /// <param name="windowsVpnConfigurationToCreate">The WindowsVpnConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsVpnConfiguration> CreateAsync(WindowsVpnConfiguration windowsVpnConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsVpnConfiguration using POST.
+        System.Threading.Tasks.Task<WindowsVpnConfiguration> CreateAsync(WindowsVpnConfiguration windowsVpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified WindowsVpnConfiguration using POST and returns a <see cref="GraphResponse{WindowsVpnConfiguration}"/> object.
         /// </summary>
         /// <param name="windowsVpnConfigurationToCreate">The WindowsVpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsVpnConfiguration> CreateAsync(WindowsVpnConfiguration windowsVpnConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsVpnConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WindowsVpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsVpnConfiguration>> CreateResponseAsync(WindowsVpnConfiguration windowsVpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsVpnConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified WindowsVpnConfiguration.
+        /// Deletes the specified WindowsVpnConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsVpnConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsVpnConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsVpnConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsVpnConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified WindowsVpnConfiguration using PATCH.
+        /// Gets the specified WindowsVpnConfiguration and returns a <see cref="GraphResponse{WindowsVpnConfiguration}"/> object.
         /// </summary>
-        /// <param name="windowsVpnConfigurationToUpdate">The WindowsVpnConfiguration to update.</param>
-        /// <returns>The updated WindowsVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsVpnConfiguration> UpdateAsync(WindowsVpnConfiguration windowsVpnConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsVpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsVpnConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsVpnConfiguration> UpdateAsync(WindowsVpnConfiguration windowsVpnConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsVpnConfiguration> UpdateAsync(WindowsVpnConfiguration windowsVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsVpnConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsVpnConfigurationToUpdate">The WindowsVpnConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsVpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsVpnConfiguration>> UpdateResponseAsync(WindowsVpnConfiguration windowsVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsVpnConfiguration using PUT.
+        /// </summary>
+        /// <param name="windowsVpnConfigurationToUpdate">The WindowsVpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsVpnConfiguration> PutAsync(WindowsVpnConfiguration windowsVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsVpnConfiguration using PUT and returns a <see cref="GraphResponse{WindowsVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsVpnConfigurationToUpdate">The WindowsVpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsVpnConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsVpnConfiguration>> PutResponseAsync(WindowsVpnConfiguration windowsVpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

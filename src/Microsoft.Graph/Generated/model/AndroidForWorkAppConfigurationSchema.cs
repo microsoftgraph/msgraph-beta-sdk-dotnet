@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android For Work App Configuration Schema.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidForWorkAppConfigurationSchema : Entity
     {
     
-		///<summary>
-		/// The AndroidForWorkAppConfigurationSchema constructor
-		///</summary>
-        public AndroidForWorkAppConfigurationSchema()
-        {
-            this.ODataType = "microsoft.graph.androidForWorkAppConfigurationSchema";
-        }
-	
         /// <summary>
         /// Gets or sets example json.
         /// UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exampleJson", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exampleJson")]
         public byte[] ExampleJson { get; set; }
     
         /// <summary>
         /// Gets or sets schema items.
         /// Collection of items each representing a named configuration option in the schema
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schemaItems", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schemaItems")]
         public IEnumerable<AndroidForWorkAppConfigurationSchemaItem> SchemaItems { get; set; }
     
     }

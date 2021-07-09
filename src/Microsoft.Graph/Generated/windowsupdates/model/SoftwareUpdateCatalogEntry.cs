@@ -12,19 +12,18 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Software Update Catalog Entry.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<SoftwareUpdateCatalogEntry>))]
     public partial class SoftwareUpdateCatalogEntry : CatalogEntry
     {
     
-		///<summary>
-		/// The internal SoftwareUpdateCatalogEntry constructor
-		///</summary>
+        ///<summary>
+        /// The internal SoftwareUpdateCatalogEntry constructor
+        ///</summary>
         protected internal SoftwareUpdateCatalogEntry()
         {
             // Don't allow initialization of abstract entity types

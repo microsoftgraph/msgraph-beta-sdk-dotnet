@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ITiIndicatorDeleteTiIndicatorsByExternalIdCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<TiIndicatorDeleteTiIndicatorsByExternalIdCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<TiIndicatorDeleteTiIndicatorsByExternalIdCollectionPage>))]
     public interface ITiIndicatorDeleteTiIndicatorsByExternalIdCollectionPage : ICollectionPage<ResultInfo>
     {
         /// <summary>

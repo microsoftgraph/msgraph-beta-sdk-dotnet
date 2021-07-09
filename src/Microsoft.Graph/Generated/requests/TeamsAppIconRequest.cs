@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified TeamsAppIcon using POST.
         /// </summary>
         /// <param name="teamsAppIconToCreate">The TeamsAppIcon to create.</param>
-        /// <returns>The created TeamsAppIcon.</returns>
-        public System.Threading.Tasks.Task<TeamsAppIcon> CreateAsync(TeamsAppIcon teamsAppIconToCreate)
-        {
-            return this.CreateAsync(teamsAppIconToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TeamsAppIcon using POST.
-        /// </summary>
-        /// <param name="teamsAppIconToCreate">The TeamsAppIcon to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsAppIcon.</returns>
-        public async System.Threading.Tasks.Task<TeamsAppIcon> CreateAsync(TeamsAppIcon teamsAppIconToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsAppIcon> CreateAsync(TeamsAppIcon teamsAppIconToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<TeamsAppIcon>(teamsAppIconToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified TeamsAppIcon.
+        /// Creates the specified TeamsAppIcon using POST and returns a <see cref="GraphResponse{TeamsAppIcon}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="teamsAppIconToCreate">The TeamsAppIcon to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppIcon}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAppIcon>> CreateResponseAsync(TeamsAppIcon teamsAppIconToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<TeamsAppIcon>(teamsAppIconToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<TeamsAppIcon>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified TeamsAppIcon.
+        /// Deletes the specified TeamsAppIcon and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TeamsAppIcon.</returns>
-        public System.Threading.Tasks.Task<TeamsAppIcon> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsAppIcon.</returns>
-        public async System.Threading.Tasks.Task<TeamsAppIcon> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsAppIcon> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<TeamsAppIcon>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified TeamsAppIcon using PATCH.
+        /// Gets the specified TeamsAppIcon and returns a <see cref="GraphResponse{TeamsAppIcon}"/> object.
         /// </summary>
-        /// <param name="teamsAppIconToUpdate">The TeamsAppIcon to update.</param>
-        /// <returns>The updated TeamsAppIcon.</returns>
-        public System.Threading.Tasks.Task<TeamsAppIcon> UpdateAsync(TeamsAppIcon teamsAppIconToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppIcon}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAppIcon>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(teamsAppIconToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<TeamsAppIcon>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsAppIcon.</returns>
-        public async System.Threading.Tasks.Task<TeamsAppIcon> UpdateAsync(TeamsAppIcon teamsAppIconToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsAppIcon> UpdateAsync(TeamsAppIcon teamsAppIconToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (teamsAppIconToUpdate.AdditionalData != null)
-			{
-				if (teamsAppIconToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					teamsAppIconToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAppIconToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (teamsAppIconToUpdate.AdditionalData != null)
-            {
-                if (teamsAppIconToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    teamsAppIconToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAppIconToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<TeamsAppIcon>(teamsAppIconToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsAppIcon using PATCH and returns a <see cref="GraphResponse{TeamsAppIcon}"/> object.
+        /// </summary>
+        /// <param name="teamsAppIconToUpdate">The TeamsAppIcon to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamsAppIcon}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAppIcon>> UpdateResponseAsync(TeamsAppIcon teamsAppIconToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<TeamsAppIcon>(teamsAppIconToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsAppIcon using PUT.
+        /// </summary>
+        /// <param name="teamsAppIconToUpdate">The TeamsAppIcon object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<TeamsAppIcon> PutAsync(TeamsAppIcon teamsAppIconToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<TeamsAppIcon>(teamsAppIconToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsAppIcon using PUT and returns a <see cref="GraphResponse{TeamsAppIcon}"/> object.
+        /// </summary>
+        /// <param name="teamsAppIconToUpdate">The TeamsAppIcon object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{TeamsAppIcon}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAppIcon>> PutResponseAsync(TeamsAppIcon teamsAppIconToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<TeamsAppIcon>(teamsAppIconToUpdate, cancellationToken);
         }
 
         /// <summary>

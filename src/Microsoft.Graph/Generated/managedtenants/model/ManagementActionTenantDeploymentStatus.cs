@@ -12,40 +12,30 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Management Action Tenant Deployment Status.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagementActionTenantDeploymentStatus : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ManagementActionTenantDeploymentStatus constructor
-		///</summary>
-        public ManagementActionTenantDeploymentStatus()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.managementActionTenantDeploymentStatus";
-        }
-	
         /// <summary>
         /// Gets or sets statuses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statuses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("statuses")]
         public IEnumerable<ManagementActionDeploymentStatus> Statuses { get; set; }
     
         /// <summary>
         /// Gets or sets tenant group id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantGroupId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantGroupId")]
         public string TenantGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
     }

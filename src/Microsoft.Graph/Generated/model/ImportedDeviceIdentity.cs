@@ -12,78 +12,69 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Imported Device Identity.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ImportedDeviceIdentity>))]
     public partial class ImportedDeviceIdentity : Entity
     {
     
-		///<summary>
-		/// The ImportedDeviceIdentity constructor
-		///</summary>
-        public ImportedDeviceIdentity()
-        {
-            this.ODataType = "microsoft.graph.importedDeviceIdentity";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// Created Date Time of the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The description of the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment state.
         /// The state of the device in Intune. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentState")]
         public EnrollmentState? EnrollmentState { get; set; }
     
         /// <summary>
         /// Gets or sets imported device identifier.
         /// Imported Device Identifier
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importedDeviceIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("importedDeviceIdentifier")]
         public string ImportedDeviceIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets imported device identity type.
         /// Type of Imported Device Identity. Possible values are: unknown, imei, serialNumber.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importedDeviceIdentityType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("importedDeviceIdentityType")]
         public ImportedDeviceIdentityType? ImportedDeviceIdentityType { get; set; }
     
         /// <summary>
         /// Gets or sets last contacted date time.
         /// Last Contacted Date Time of the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastContactedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastContactedDateTime")]
         public DateTimeOffset? LastContactedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// Last Modified DateTime of the description
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
         /// The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platform")]
         public Platform? Platform { get; set; }
     
     }

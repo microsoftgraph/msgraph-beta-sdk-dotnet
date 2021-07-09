@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementWindowsUpdateCatalogItemsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementWindowsUpdateCatalogItemsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementWindowsUpdateCatalogItemsCollectionPage>))]
     public interface IDeviceManagementWindowsUpdateCatalogItemsCollectionPage : ICollectionPage<WindowsUpdateCatalogItem>
     {
         /// <summary>

@@ -12,37 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type External Group.
     /// </summary>
     [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ExternalGroup : Entity
     {
     
-		///<summary>
-		/// The ExternalGroup constructor
-		///</summary>
-        public ExternalGroup()
-        {
-            this.ODataType = "microsoft.graph.externalGroup";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// The description of the external group. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The friendly name of the external group. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
@@ -50,8 +40,14 @@ namespace Microsoft.Graph
         /// A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
         /// </summary>
         [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("members")]
         public IExternalGroupMembersCollectionPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
     }
 }

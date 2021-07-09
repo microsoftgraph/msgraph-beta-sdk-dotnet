@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IMobileAppDeviceStatusesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MobileAppInstallStatus to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppInstallStatus">The MobileAppInstallStatus to add.</param>
-        /// <returns>The created MobileAppInstallStatus.</returns>
-        System.Threading.Tasks.Task<MobileAppInstallStatus> AddAsync(MobileAppInstallStatus mobileAppInstallStatus);
-
         /// <summary>
         /// Adds the specified MobileAppInstallStatus to the collection via POST.
         /// </summary>
         /// <param name="mobileAppInstallStatus">The MobileAppInstallStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppInstallStatus.</returns>
-        System.Threading.Tasks.Task<MobileAppInstallStatus> AddAsync(MobileAppInstallStatus mobileAppInstallStatus, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppInstallStatus> AddAsync(MobileAppInstallStatus mobileAppInstallStatus, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MobileAppInstallStatus to the collection via POST and returns a <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMobileAppDeviceStatusesCollectionPage> GetAsync();
+        /// <param name="mobileAppInstallStatus">The MobileAppInstallStatus to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppInstallStatus>> AddResponseAsync(MobileAppInstallStatus mobileAppInstallStatus, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMobileAppDeviceStatusesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IMobileAppDeviceStatusesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppDeviceStatusesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppDeviceStatusesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppDeviceStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

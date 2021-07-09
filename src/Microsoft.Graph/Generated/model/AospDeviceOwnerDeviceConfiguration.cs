@@ -12,148 +12,147 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Aosp Device Owner Device Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<AospDeviceOwnerDeviceConfiguration>))]
     public partial class AospDeviceOwnerDeviceConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The AospDeviceOwnerDeviceConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AospDeviceOwnerDeviceConfiguration constructor
+        ///</summary>
         public AospDeviceOwnerDeviceConfiguration()
         {
             this.ODataType = "microsoft.graph.aospDeviceOwnerDeviceConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets apps allow install from unknown sources.
         /// Indicates whether or not the user is allowed to enable to unknown sources setting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsAllowInstallFromUnknownSources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appsAllowInstallFromUnknownSources")]
         public bool? AppsAllowInstallFromUnknownSources { get; set; }
     
         /// <summary>
         /// Gets or sets backup blocked.
         /// Indicates whether or not to block backup service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "backupBlocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("backupBlocked")]
         public bool? BackupBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets bluetooth block configuration.
         /// Indicates whether or not to block a user from configuring bluetooth.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bluetoothBlockConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bluetoothBlockConfiguration")]
         public bool? BluetoothBlockConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets bluetooth block contact sharing.
         /// Indicates whether or not to block a user from sharing contacts via bluetooth.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bluetoothBlockContactSharing", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bluetoothBlockContactSharing")]
         public bool? BluetoothBlockContactSharing { get; set; }
     
         /// <summary>
         /// Gets or sets bluetooth blocked.
         /// Indicates whether or not to disable the use of bluetooth. When set to true, bluetooth cannot be enabled on the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bluetoothBlocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bluetoothBlocked")]
         public bool? BluetoothBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets camera blocked.
         /// Indicates whether or not to disable the use of the camera.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cameraBlocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cameraBlocked")]
         public bool? CameraBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets cellular block wi fi tethering.
         /// Indicates whether or not to block Wi-Fi tethering.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularBlockWiFiTethering", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cellularBlockWiFiTethering")]
         public bool? CellularBlockWiFiTethering { get; set; }
     
         /// <summary>
         /// Gets or sets factory reset blocked.
         /// Indicates whether or not the factory reset option in settings is disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "factoryResetBlocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("factoryResetBlocked")]
         public bool? FactoryResetBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets password minimum length.
         /// Indicates the minimum length of the password required on the device. Valid values 4 to 16
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordMinimumLength")]
         public Int32? PasswordMinimumLength { get; set; }
     
         /// <summary>
         /// Gets or sets password minutes of inactivity before screen timeout.
         /// Minutes of inactivity before the screen times out.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinutesOfInactivityBeforeScreenTimeout", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordMinutesOfInactivityBeforeScreenTimeout")]
         public Int32? PasswordMinutesOfInactivityBeforeScreenTimeout { get; set; }
     
         /// <summary>
         /// Gets or sets password required type.
         /// Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordRequiredType")]
         public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType { get; set; }
     
         /// <summary>
         /// Gets or sets password sign in failure count before factory reset.
         /// Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordSignInFailureCountBeforeFactoryReset", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordSignInFailureCountBeforeFactoryReset")]
         public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
     
         /// <summary>
         /// Gets or sets screen capture blocked.
         /// Indicates whether or not to disable the capability to take screenshots.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenCaptureBlocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("screenCaptureBlocked")]
         public bool? ScreenCaptureBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets security allow debugging features.
         /// Indicates whether or not to block the user from enabling debugging features on the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityAllowDebuggingFeatures", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("securityAllowDebuggingFeatures")]
         public bool? SecurityAllowDebuggingFeatures { get; set; }
     
         /// <summary>
         /// Gets or sets storage allow usb.
         /// Indicates whether or not to block USB storage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageAllowUsb", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("storageAllowUsb")]
         public bool? StorageAllowUsb { get; set; }
     
         /// <summary>
         /// Gets or sets storage block external media.
         /// Indicates whether or not to block external media.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageBlockExternalMedia", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("storageBlockExternalMedia")]
         public bool? StorageBlockExternalMedia { get; set; }
     
         /// <summary>
         /// Gets or sets storage block usb file transfer.
         /// Indicates whether or not to block USB file transfer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageBlockUsbFileTransfer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("storageBlockUsbFileTransfer")]
         public bool? StorageBlockUsbFileTransfer { get; set; }
     
         /// <summary>
         /// Gets or sets wifi block edit configurations.
         /// Indicates whether or not to block the user from editing the wifi connection settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiBlockEditConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("wifiBlockEditConfigurations")]
         public bool? WifiBlockEditConfigurations { get; set; }
     
     }

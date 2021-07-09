@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceAppManagementSideLoadingKeysCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceAppManagementSideLoadingKeysCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceAppManagementSideLoadingKeysCollectionPage>))]
     public interface IDeviceAppManagementSideLoadingKeysCollectionPage : ICollectionPage<SideLoadingKey>
     {
         /// <summary>

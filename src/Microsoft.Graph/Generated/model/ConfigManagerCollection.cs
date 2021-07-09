@@ -12,64 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Config Manager Collection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ConfigManagerCollection : Entity
     {
     
-		///<summary>
-		/// The ConfigManagerCollection constructor
-		///</summary>
-        public ConfigManagerCollection()
-        {
-            this.ODataType = "microsoft.graph.configManagerCollection";
-        }
-	
         /// <summary>
         /// Gets or sets collection identifier.
         /// The collection identifier in SCCM.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collectionIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("collectionIdentifier")]
         public string CollectionIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The created date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The DisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets hierarchy identifier.
         /// The Hierarchy Identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hierarchyIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hierarchyIdentifier")]
         public string HierarchyIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets hierarchy name.
         /// The HierarchyName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hierarchyName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hierarchyName")]
         public string HierarchyName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The last modified date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
     }

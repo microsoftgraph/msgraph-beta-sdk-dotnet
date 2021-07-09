@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unified Role Management Policy Enablement Rule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UnifiedRoleManagementPolicyEnablementRule : UnifiedRoleManagementPolicyRule
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicyEnablementRule constructor
-		///</summary>
+        ///<summary>
+        /// The UnifiedRoleManagementPolicyEnablementRule constructor
+        ///</summary>
         public UnifiedRoleManagementPolicyEnablementRule()
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyEnablementRule";
         }
-	
+
         /// <summary>
         /// Gets or sets enabled rules.
         /// The rules which are enabled. Allowed values are MultifactorAuthentication, Justification, Ticketing.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabledRules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enabledRules")]
         public IEnumerable<string> EnabledRules { get; set; }
     
     }

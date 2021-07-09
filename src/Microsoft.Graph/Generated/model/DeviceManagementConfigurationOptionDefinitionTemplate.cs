@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationOptionDefinitionTemplate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationOptionDefinitionTemplate>))]
     public partial class DeviceManagementConfigurationOptionDefinitionTemplate
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementConfigurationOptionDefinitionTemplate"/> class.
-        /// </summary>
-        public DeviceManagementConfigurationOptionDefinitionTemplate()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationOptionDefinitionTemplate";
-        }
 
         /// <summary>
         /// Gets or sets children.
         /// Option Children
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "children", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("children")]
         public IEnumerable<DeviceManagementConfigurationSettingInstanceTemplate> Children { get; set; }
     
         /// <summary>
         /// Gets or sets itemId.
         /// Option ItemId
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("itemId")]
         public string ItemId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

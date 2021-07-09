@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Win32LobAppPowerShellScriptDetection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Win32LobAppPowerShellScriptDetection : Win32LobAppDetection
     {
         /// <summary>
@@ -33,21 +31,21 @@ namespace Microsoft.Graph
         /// Gets or sets enforceSignatureCheck.
         /// A value indicating whether signature check is enforced
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforceSignatureCheck", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enforceSignatureCheck")]
         public bool? EnforceSignatureCheck { get; set; }
     
         /// <summary>
         /// Gets or sets runAs32Bit.
         /// A value indicating whether this script should run as 32-bit
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAs32Bit", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("runAs32Bit")]
         public bool? RunAs32Bit { get; set; }
     
         /// <summary>
         /// Gets or sets scriptContent.
         /// The base64 encoded script content to detect Win32 Line of Business (LoB) app
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scriptContent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scriptContent")]
         public string ScriptContent { get; set; }
     
     }

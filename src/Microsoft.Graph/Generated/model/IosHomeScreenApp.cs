@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosHomeScreenApp.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosHomeScreenApp : IosHomeScreenItem
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets bundleID.
         /// BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleID", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bundleID")]
         public string BundleID { get; set; }
     
         /// <summary>
         /// Gets or sets isWebClip.
         /// When true, the bundle ID will be handled as a URL for a web clip.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isWebClip", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isWebClip")]
         public bool? IsWebClip { get; set; }
     
     }

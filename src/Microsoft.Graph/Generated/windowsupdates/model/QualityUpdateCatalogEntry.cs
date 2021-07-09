@@ -12,36 +12,35 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Quality Update Catalog Entry.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<QualityUpdateCatalogEntry>))]
     public partial class QualityUpdateCatalogEntry : SoftwareUpdateCatalogEntry
     {
     
-		///<summary>
-		/// The QualityUpdateCatalogEntry constructor
-		///</summary>
+        ///<summary>
+        /// The QualityUpdateCatalogEntry constructor
+        ///</summary>
         public QualityUpdateCatalogEntry()
         {
             this.ODataType = "microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry";
         }
-	
+
         /// <summary>
         /// Gets or sets is expeditable.
         /// Indicates whether the content can be deployed as an expedited quality update. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isExpeditable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isExpeditable")]
         public bool? IsExpeditable { get; set; }
     
         /// <summary>
         /// Gets or sets quality update classification.
         /// The classification on the quality update. Supports a subset of the values for qualityUpdateClassification. Possible values are: all, security, nonSecurity. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityUpdateClassification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("qualityUpdateClassification")]
         public QualityUpdateClassification? QualityUpdateClassification { get; set; }
     
     }

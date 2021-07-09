@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unified Role Management Policy Approval Rule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UnifiedRoleManagementPolicyApprovalRule : UnifiedRoleManagementPolicyRule
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicyApprovalRule constructor
-		///</summary>
+        ///<summary>
+        /// The UnifiedRoleManagementPolicyApprovalRule constructor
+        ///</summary>
         public UnifiedRoleManagementPolicyApprovalRule()
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyApprovalRule";
         }
-	
+
         /// <summary>
         /// Gets or sets setting.
         /// The approval setting for the rule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setting", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("setting")]
         public ApprovalSettings Setting { get; set; }
     
     }

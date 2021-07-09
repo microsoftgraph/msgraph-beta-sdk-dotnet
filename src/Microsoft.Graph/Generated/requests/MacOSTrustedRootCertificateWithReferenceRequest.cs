@@ -38,117 +38,102 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MacOSTrustedRootCertificate.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<MacOSTrustedRootCertificate> GetAsync()
+        public async System.Threading.Tasks.Task<MacOSTrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<MacOSTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified MacOSTrustedRootCertificate.
+        /// Gets the specified MacOSTrustedRootCertificate and returns a <see cref="GraphResponse{MacOSTrustedRootCertificate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The MacOSTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<MacOSTrustedRootCertificate> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{MacOSTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<MacOSTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MacOSTrustedRootCertificate>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified MacOSTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="macOSTrustedRootCertificateToCreate">The MacOSTrustedRootCertificate to create.</param>
-        /// <returns>The created MacOSTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<MacOSTrustedRootCertificate> CreateAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificateToCreate)
-        {
-            return this.CreateAsync(macOSTrustedRootCertificateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MacOSTrustedRootCertificate using POST.
-        /// </summary>
-        /// <param name="macOSTrustedRootCertificateToCreate">The MacOSTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<MacOSTrustedRootCertificate> CreateAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MacOSTrustedRootCertificate> CreateAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<MacOSTrustedRootCertificate>(macOSTrustedRootCertificateToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified MacOSTrustedRootCertificate using PATCH.
+        /// Creates the specified MacOSTrustedRootCertificate using POST and returns a <see cref="GraphResponse{MacOSTrustedRootCertificate}"/> object.
         /// </summary>
-        /// <param name="macOSTrustedRootCertificateToUpdate">The MacOSTrustedRootCertificate to update.</param>
-        /// <returns>The updated MacOSTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<MacOSTrustedRootCertificate> UpdateAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificateToUpdate)
+        /// <param name="macOSTrustedRootCertificateToCreate">The MacOSTrustedRootCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSTrustedRootCertificate>> CreateResponseAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(macOSTrustedRootCertificateToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MacOSTrustedRootCertificate>(macOSTrustedRootCertificateToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified MacOSTrustedRootCertificate using PATCH.
         /// </summary>
         /// <param name="macOSTrustedRootCertificateToUpdate">The MacOSTrustedRootCertificate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<MacOSTrustedRootCertificate> UpdateAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MacOSTrustedRootCertificate> UpdateAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (macOSTrustedRootCertificateToUpdate.AdditionalData != null)
-			{
-				if (macOSTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					macOSTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSTrustedRootCertificateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (macOSTrustedRootCertificateToUpdate.AdditionalData != null)
-            {
-                if (macOSTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    macOSTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSTrustedRootCertificateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<MacOSTrustedRootCertificate>(macOSTrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified MacOSTrustedRootCertificate.
+        /// Updates the specified MacOSTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{MacOSTrustedRootCertificate}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="macOSTrustedRootCertificateToUpdate">The MacOSTrustedRootCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSTrustedRootCertificate>> UpdateResponseAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<MacOSTrustedRootCertificate>(macOSTrustedRootCertificateToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified MacOSTrustedRootCertificate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<MacOSTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified MacOSTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

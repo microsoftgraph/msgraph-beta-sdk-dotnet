@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ContentTypeCopyToDefaultContentLocationRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ContentTypeCopyToDefaultContentLocationRequestBody
     {
     
         /// <summary>
         /// Gets or sets SourceFile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceFile", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceFile")]
         public ItemReference SourceFile { get; set; }
     
         /// <summary>
         /// Gets or sets DestinationFileName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationFileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("destinationFileName")]
         public string DestinationFileName { get; set; }
     
     }

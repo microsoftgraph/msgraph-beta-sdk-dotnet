@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementTroubleshootingErrorResource.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementTroubleshootingErrorResource>))]
     public partial class DeviceManagementTroubleshootingErrorResource
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementTroubleshootingErrorResource"/> class.
-        /// </summary>
-        public DeviceManagementTroubleshootingErrorResource()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementTroubleshootingErrorResource";
-        }
 
         /// <summary>
         /// Gets or sets link.
         /// The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "link", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("link")]
         public string Link { get; set; }
     
         /// <summary>
         /// Gets or sets text.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

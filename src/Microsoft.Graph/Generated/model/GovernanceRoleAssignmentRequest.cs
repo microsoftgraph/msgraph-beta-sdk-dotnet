@@ -12,113 +12,103 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Governance Role Assignment Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GovernanceRoleAssignmentRequestObject : Entity
     {
     
-		///<summary>
-		/// The GovernanceRoleAssignmentRequest constructor
-		///</summary>
-        public GovernanceRoleAssignmentRequestObject()
-        {
-            this.ODataType = "microsoft.graph.governanceRoleAssignmentRequest";
-        }
-	
         /// <summary>
         /// Gets or sets assignment state.
         /// Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentState")]
         public string AssignmentState { get; set; }
     
         /// <summary>
         /// Gets or sets linked eligible role assignment id.
         /// If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linkedEligibleRoleAssignmentId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("linkedEligibleRoleAssignmentId")]
         public string LinkedEligibleRoleAssignmentId { get; set; }
     
         /// <summary>
         /// Gets or sets reason.
         /// A message provided by users and administrators when create the request about why it is needed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reason")]
         public string Reason { get; set; }
     
         /// <summary>
         /// Gets or sets requested date time.
         /// Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestedDateTime")]
         public DateTimeOffset? RequestedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets resource id.
         /// Required. The id of the resource which the role assignment request is associated with.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
         /// Required. The id of the role definition which the role assignment request is associated with.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets schedule.
         /// The schedule object of the role assignment request.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schedule")]
         public GovernanceSchedule Schedule { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The status of the role assignment request.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public GovernanceRoleAssignmentRequestStatus Status { get; set; }
     
         /// <summary>
         /// Gets or sets subject id.
         /// Required. The id of the subject which the role assignment request is associated with.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subjectId")]
         public string SubjectId { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
         /// Read-only. The resource that the request aims to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resource")]
         public GovernanceResource Resource { get; set; }
     
         /// <summary>
         /// Gets or sets role definition.
         /// Read-only. The role definition that the request aims to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleDefinition")]
         public GovernanceRoleDefinition RoleDefinition { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
         /// Read-only. The user/group principal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subject")]
         public GovernanceSubject Subject { get; set; }
     
     }

@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AttendanceRecord.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AttendanceRecord>))]
     public partial class AttendanceRecord
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AttendanceRecord"/> class.
-        /// </summary>
-        public AttendanceRecord()
-        {
-            this.ODataType = "microsoft.graph.attendanceRecord";
-        }
 
         /// <summary>
         /// Gets or sets attendanceIntervals.
         /// List of time periods between joining and leaving.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attendanceIntervals", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("attendanceIntervals")]
         public IEnumerable<AttendanceInterval> AttendanceIntervals { get; set; }
     
         /// <summary>
         /// Gets or sets emailAddress.
         /// Email address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("emailAddress")]
         public string EmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets identity.
         /// Identifier, such as display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identity")]
         public Identity Identity { get; set; }
     
         /// <summary>
         /// Gets or sets role.
         /// Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("role")]
         public string Role { get; set; }
     
         /// <summary>
         /// Gets or sets totalAttendanceInSeconds.
         /// Total duration of the attendances in seconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalAttendanceInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalAttendanceInSeconds")]
         public Int32? TotalAttendanceInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

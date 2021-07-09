@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IAndroidManagedAppProtectionHasPayloadLinksCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<AndroidManagedAppProtectionHasPayloadLinksCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<AndroidManagedAppProtectionHasPayloadLinksCollectionPage>))]
     public interface IAndroidManagedAppProtectionHasPayloadLinksCollectionPage : ICollectionPage<HasPayloadLinkResultItem>
     {
         /// <summary>

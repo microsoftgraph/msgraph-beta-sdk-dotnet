@@ -12,37 +12,33 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Analytics.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserAnalytics : Entity
     {
     
-		///<summary>
-		/// The UserAnalytics constructor
-		///</summary>
-        public UserAnalytics()
-        {
-            this.ODataType = "microsoft.graph.userAnalytics";
-        }
-	
         /// <summary>
         /// Gets or sets settings.
         /// The current settings for a user to use the analytics API.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public Settings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets activity statistics.
         /// The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityStatistics", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityStatistics")]
         public IUserAnalyticsActivityStatisticsCollectionPage ActivityStatistics { get; set; }
+
+        /// <summary>
+        /// Gets or sets activityStatisticsNextLink.
+        /// </summary>
+        [JsonPropertyName("activityStatistics@odata.nextLink")]
+        public string ActivityStatisticsNextLink { get; set; }
     
     }
 }

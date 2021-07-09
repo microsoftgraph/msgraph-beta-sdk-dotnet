@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IWindowsUniversalAppXCommittedContainedAppsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<WindowsUniversalAppXCommittedContainedAppsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<WindowsUniversalAppXCommittedContainedAppsCollectionPage>))]
     public interface IWindowsUniversalAppXCommittedContainedAppsCollectionPage : ICollectionPage<MobileContainedApp>
     {
         /// <summary>

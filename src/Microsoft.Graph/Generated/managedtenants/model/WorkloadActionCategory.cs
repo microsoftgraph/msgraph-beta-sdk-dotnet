@@ -10,13 +10,12 @@
 
 namespace Microsoft.Graph.ManagedTenants
 {
-    using System;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum WorkloadActionCategory.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.EnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum WorkloadActionCategory
     {
     

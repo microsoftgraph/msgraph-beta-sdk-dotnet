@@ -12,41 +12,32 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedDeviceReportedApp.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedDeviceReportedApp>))]
     public partial class ManagedDeviceReportedApp
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagedDeviceReportedApp"/> class.
-        /// </summary>
-        public ManagedDeviceReportedApp()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceReportedApp";
-        }
 
         /// <summary>
         /// Gets or sets appId.
         /// The application or bundle identifier of the application
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appId")]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

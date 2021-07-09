@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ISynchronizationSchemaFilterOperatorsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<SynchronizationSchemaFilterOperatorsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<SynchronizationSchemaFilterOperatorsCollectionPage>))]
     public interface ISynchronizationSchemaFilterOperatorsCollectionPage : ICollectionPage<FilterOperatorSchema>
     {
         /// <summary>

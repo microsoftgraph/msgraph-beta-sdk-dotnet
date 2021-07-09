@@ -12,71 +12,62 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Microsoft Tunnel Server Log Collection Response.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MicrosoftTunnelServerLogCollectionResponse>))]
     public partial class MicrosoftTunnelServerLogCollectionResponse : Entity
     {
     
-		///<summary>
-		/// The MicrosoftTunnelServerLogCollectionResponse constructor
-		///</summary>
-        public MicrosoftTunnelServerLogCollectionResponse()
-        {
-            this.ODataType = "microsoft.graph.microsoftTunnelServerLogCollectionResponse";
-        }
-	
         /// <summary>
         /// Gets or sets end date time.
         /// The end time of the logs collected
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets expiry date time.
         /// The time when the log collection is expired
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expiryDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expiryDateTime")]
         public DateTimeOffset? ExpiryDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets request date time.
         /// The time when the log collection was requested
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestDateTime")]
         public DateTimeOffset? RequestDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets server id.
         /// ID of the server the log collection is requested upon
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("serverId")]
         public string ServerId { get; set; }
     
         /// <summary>
         /// Gets or sets size in bytes.
         /// The size of the logs in bytes
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sizeInBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sizeInBytes")]
         public Int64? SizeInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
         /// The start time of the logs collected
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The status of log collection. Possible values are: pending, completed, failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public MicrosoftTunnelLogCollectionStatus? Status { get; set; }
     
     }

@@ -12,70 +12,79 @@ namespace Microsoft.Graph.ExternalConnectors
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type External Connection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ExternalConnection>))]
     public partial class ExternalConnection : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ExternalConnection constructor
-		///</summary>
-        public ExternalConnection()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.externalConnection";
-        }
-	
         /// <summary>
         /// Gets or sets configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configuration")]
         public Configuration Configuration { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public ConnectionState? State { get; set; }
     
         /// <summary>
         /// Gets or sets groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groups")]
         public IExternalConnectionGroupsCollectionPage Groups { get; set; }
+
+        /// <summary>
+        /// Gets or sets groupsNextLink.
+        /// </summary>
+        [JsonPropertyName("groups@odata.nextLink")]
+        public string GroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets items.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("items")]
         public IExternalConnectionItemsCollectionPage Items { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemsNextLink.
+        /// </summary>
+        [JsonPropertyName("items@odata.nextLink")]
+        public string ItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operations")]
         public IExternalConnectionOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets schema.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schema", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schema")]
         public Schema Schema { get; set; }
     
     }

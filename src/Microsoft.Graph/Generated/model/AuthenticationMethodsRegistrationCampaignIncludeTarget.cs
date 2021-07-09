@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AuthenticationMethodsRegistrationCampaignIncludeTarget.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AuthenticationMethodsRegistrationCampaignIncludeTarget>))]
     public partial class AuthenticationMethodsRegistrationCampaignIncludeTarget
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AuthenticationMethodsRegistrationCampaignIncludeTarget"/> class.
-        /// </summary>
-        public AuthenticationMethodsRegistrationCampaignIncludeTarget()
-        {
-            this.ODataType = "microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget";
-        }
 
         /// <summary>
         /// Gets or sets id.
         /// The object identifier of an Azure AD user or group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets targetedAuthenticationMethod.
         /// The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedAuthenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedAuthenticationMethod")]
         public string TargetedAuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets targetType.
         /// The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetType")]
         public AuthenticationMethodTargetType? TargetType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

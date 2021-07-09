@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified SkypeForBusinessDeviceUsageUserDetail using POST.
         /// </summary>
         /// <param name="skypeForBusinessDeviceUsageUserDetailToCreate">The SkypeForBusinessDeviceUsageUserDetail to create.</param>
-        /// <returns>The created SkypeForBusinessDeviceUsageUserDetail.</returns>
-        public System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> CreateAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToCreate)
-        {
-            return this.CreateAsync(skypeForBusinessDeviceUsageUserDetailToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SkypeForBusinessDeviceUsageUserDetail using POST.
-        /// </summary>
-        /// <param name="skypeForBusinessDeviceUsageUserDetailToCreate">The SkypeForBusinessDeviceUsageUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SkypeForBusinessDeviceUsageUserDetail.</returns>
-        public async System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> CreateAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> CreateAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SkypeForBusinessDeviceUsageUserDetail>(skypeForBusinessDeviceUsageUserDetailToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified SkypeForBusinessDeviceUsageUserDetail.
+        /// Creates the specified SkypeForBusinessDeviceUsageUserDetail using POST and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="skypeForBusinessDeviceUsageUserDetailToCreate">The SkypeForBusinessDeviceUsageUserDetail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> CreateResponseAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SkypeForBusinessDeviceUsageUserDetail>(skypeForBusinessDeviceUsageUserDetailToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SkypeForBusinessDeviceUsageUserDetail>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified SkypeForBusinessDeviceUsageUserDetail.
+        /// Deletes the specified SkypeForBusinessDeviceUsageUserDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SkypeForBusinessDeviceUsageUserDetail.</returns>
-        public System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SkypeForBusinessDeviceUsageUserDetail.</returns>
-        public async System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<SkypeForBusinessDeviceUsageUserDetail>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified SkypeForBusinessDeviceUsageUserDetail using PATCH.
+        /// Gets the specified SkypeForBusinessDeviceUsageUserDetail and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
         /// </summary>
-        /// <param name="skypeForBusinessDeviceUsageUserDetailToUpdate">The SkypeForBusinessDeviceUsageUserDetail to update.</param>
-        /// <returns>The updated SkypeForBusinessDeviceUsageUserDetail.</returns>
-        public System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> UpdateAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(skypeForBusinessDeviceUsageUserDetailToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SkypeForBusinessDeviceUsageUserDetail>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SkypeForBusinessDeviceUsageUserDetail.</returns>
-        public async System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> UpdateAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> UpdateAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (skypeForBusinessDeviceUsageUserDetailToUpdate.AdditionalData != null)
-			{
-				if (skypeForBusinessDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					skypeForBusinessDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skypeForBusinessDeviceUsageUserDetailToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (skypeForBusinessDeviceUsageUserDetailToUpdate.AdditionalData != null)
-            {
-                if (skypeForBusinessDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    skypeForBusinessDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skypeForBusinessDeviceUsageUserDetailToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SkypeForBusinessDeviceUsageUserDetail>(skypeForBusinessDeviceUsageUserDetailToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessDeviceUsageUserDetail using PATCH and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessDeviceUsageUserDetailToUpdate">The SkypeForBusinessDeviceUsageUserDetail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> UpdateResponseAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SkypeForBusinessDeviceUsageUserDetail>(skypeForBusinessDeviceUsageUserDetailToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessDeviceUsageUserDetail using PUT.
+        /// </summary>
+        /// <param name="skypeForBusinessDeviceUsageUserDetailToUpdate">The SkypeForBusinessDeviceUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> PutAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SkypeForBusinessDeviceUsageUserDetail>(skypeForBusinessDeviceUsageUserDetailToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessDeviceUsageUserDetail using PUT and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessDeviceUsageUserDetailToUpdate">The SkypeForBusinessDeviceUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> PutResponseAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SkypeForBusinessDeviceUsageUserDetail>(skypeForBusinessDeviceUsageUserDetailToUpdate, cancellationToken);
         }
 
         /// <summary>

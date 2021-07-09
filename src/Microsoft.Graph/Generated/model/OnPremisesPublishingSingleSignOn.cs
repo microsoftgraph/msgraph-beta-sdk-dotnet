@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type OnPremisesPublishingSingleSignOn.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<OnPremisesPublishingSingleSignOn>))]
     public partial class OnPremisesPublishingSingleSignOn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OnPremisesPublishingSingleSignOn"/> class.
-        /// </summary>
-        public OnPremisesPublishingSingleSignOn()
-        {
-            this.ODataType = "microsoft.graph.onPremisesPublishingSingleSignOn";
-        }
 
         /// <summary>
         /// Gets or sets kerberosSignOnSettings.
         /// The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kerberosSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("kerberosSignOnSettings")]
         public KerberosSignOnSettings KerberosSignOnSettings { get; set; }
     
         /// <summary>
         /// Gets or sets singleSignOnMode.
         /// The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("singleSignOnMode")]
         public SingleSignOnMode? SingleSignOnMode { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,58 +12,49 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ContentClassification.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ContentClassification>))]
     public partial class ContentClassification
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ContentClassification"/> class.
-        /// </summary>
-        public ContentClassification()
-        {
-            this.ODataType = "microsoft.graph.contentClassification";
-        }
 
         /// <summary>
         /// Gets or sets confidence.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidence", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("confidence")]
         public Int32? Confidence { get; set; }
     
         /// <summary>
         /// Gets or sets matches.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matches", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("matches")]
         public IEnumerable<MatchLocation> Matches { get; set; }
     
         /// <summary>
         /// Gets or sets sensitiveTypeId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitiveTypeId")]
         public string SensitiveTypeId { get; set; }
     
         /// <summary>
         /// Gets or sets uniqueCount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uniqueCount")]
         public Int32? UniqueCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AospDeviceOwnerCompliancePolicy using POST.
         /// </summary>
         /// <param name="aospDeviceOwnerCompliancePolicyToCreate">The AospDeviceOwnerCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AospDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerCompliancePolicy> CreateAsync(AospDeviceOwnerCompliancePolicy aospDeviceOwnerCompliancePolicyToCreate);        /// <summary>
-        /// Creates the specified AospDeviceOwnerCompliancePolicy using POST.
+        System.Threading.Tasks.Task<AospDeviceOwnerCompliancePolicy> CreateAsync(AospDeviceOwnerCompliancePolicy aospDeviceOwnerCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified AospDeviceOwnerCompliancePolicy using POST and returns a <see cref="GraphResponse{AospDeviceOwnerCompliancePolicy}"/> object.
         /// </summary>
         /// <param name="aospDeviceOwnerCompliancePolicyToCreate">The AospDeviceOwnerCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AospDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerCompliancePolicy> CreateAsync(AospDeviceOwnerCompliancePolicy aospDeviceOwnerCompliancePolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AospDeviceOwnerCompliancePolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AospDeviceOwnerCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerCompliancePolicy>> CreateResponseAsync(AospDeviceOwnerCompliancePolicy aospDeviceOwnerCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AospDeviceOwnerCompliancePolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified AospDeviceOwnerCompliancePolicy.
+        /// Deletes the specified AospDeviceOwnerCompliancePolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AospDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerCompliancePolicy> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AospDeviceOwnerCompliancePolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AospDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerCompliancePolicy> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AospDeviceOwnerCompliancePolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified AospDeviceOwnerCompliancePolicy using PATCH.
+        /// Gets the specified AospDeviceOwnerCompliancePolicy and returns a <see cref="GraphResponse{AospDeviceOwnerCompliancePolicy}"/> object.
         /// </summary>
-        /// <param name="aospDeviceOwnerCompliancePolicyToUpdate">The AospDeviceOwnerCompliancePolicy to update.</param>
-        /// <returns>The updated AospDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerCompliancePolicy> UpdateAsync(AospDeviceOwnerCompliancePolicy aospDeviceOwnerCompliancePolicyToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AospDeviceOwnerCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AospDeviceOwnerCompliancePolicy using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AospDeviceOwnerCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerCompliancePolicy> UpdateAsync(AospDeviceOwnerCompliancePolicy aospDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AospDeviceOwnerCompliancePolicy> UpdateAsync(AospDeviceOwnerCompliancePolicy aospDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AospDeviceOwnerCompliancePolicy using PATCH and returns a <see cref="GraphResponse{AospDeviceOwnerCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="aospDeviceOwnerCompliancePolicyToUpdate">The AospDeviceOwnerCompliancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AospDeviceOwnerCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerCompliancePolicy>> UpdateResponseAsync(AospDeviceOwnerCompliancePolicy aospDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AospDeviceOwnerCompliancePolicy using PUT.
+        /// </summary>
+        /// <param name="aospDeviceOwnerCompliancePolicyToUpdate">The AospDeviceOwnerCompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AospDeviceOwnerCompliancePolicy> PutAsync(AospDeviceOwnerCompliancePolicy aospDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AospDeviceOwnerCompliancePolicy using PUT and returns a <see cref="GraphResponse{AospDeviceOwnerCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="aospDeviceOwnerCompliancePolicyToUpdate">The AospDeviceOwnerCompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AospDeviceOwnerCompliancePolicy}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerCompliancePolicy>> PutResponseAsync(AospDeviceOwnerCompliancePolicy aospDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

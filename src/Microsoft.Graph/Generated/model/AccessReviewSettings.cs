@@ -12,97 +12,88 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AccessReviewSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AccessReviewSettings>))]
     public partial class AccessReviewSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccessReviewSettings"/> class.
-        /// </summary>
-        public AccessReviewSettings()
-        {
-            this.ODataType = "microsoft.graph.accessReviewSettings";
-        }
 
         /// <summary>
         /// Gets or sets accessRecommendationsEnabled.
         /// Indicates whether showing recommendations to reviewers is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessRecommendationsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessRecommendationsEnabled")]
         public bool? AccessRecommendationsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets activityDurationInDays.
         /// The number of days of user activities to show to reviewers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDurationInDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityDurationInDays")]
         public Int32? ActivityDurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets autoApplyReviewResultsEnabled.
         /// Indicates whether the auto-apply capability, to automatically change the target object access resource, is enabled.  If not enabled, a user must, after the review completes, apply the access review.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoApplyReviewResultsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("autoApplyReviewResultsEnabled")]
         public bool? AutoApplyReviewResultsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets autoReviewEnabled.
         /// Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoReviewEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("autoReviewEnabled")]
         public bool? AutoReviewEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets autoReviewSettings.
         /// Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoReviewSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("autoReviewSettings")]
         public AutoReviewSettings AutoReviewSettings { get; set; }
     
         /// <summary>
         /// Gets or sets justificationRequiredOnApproval.
         /// Indicates whether reviewers are required to provide a justification when reviewing access.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justificationRequiredOnApproval", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("justificationRequiredOnApproval")]
         public bool? JustificationRequiredOnApproval { get; set; }
     
         /// <summary>
         /// Gets or sets mailNotificationsEnabled.
         /// Indicates whether sending mails to reviewers and the review creator is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNotificationsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mailNotificationsEnabled")]
         public bool? MailNotificationsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets recurrenceSettings.
         /// Detailed settings for recurrence.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recurrenceSettings")]
         public AccessReviewRecurrenceSettings RecurrenceSettings { get; set; }
     
         /// <summary>
         /// Gets or sets remindersEnabled.
         /// Indicates whether sending reminder emails to reviewers is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remindersEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remindersEnabled")]
         public bool? RemindersEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

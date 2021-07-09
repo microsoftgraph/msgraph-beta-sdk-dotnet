@@ -12,36 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unified Role Management Policy Expiration Rule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UnifiedRoleManagementPolicyExpirationRule : UnifiedRoleManagementPolicyRule
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicyExpirationRule constructor
-		///</summary>
+        ///<summary>
+        /// The UnifiedRoleManagementPolicyExpirationRule constructor
+        ///</summary>
         public UnifiedRoleManagementPolicyExpirationRule()
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyExpirationRule";
         }
-	
+
         /// <summary>
         /// Gets or sets is expiration required.
         /// Indicates if expiration is required for eligibility or assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isExpirationRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isExpirationRequired")]
         public bool? IsExpirationRequired { get; set; }
     
         /// <summary>
         /// Gets or sets maximum duration.
         /// The maximum duration allowed for eligiblity or assignment which is not permanent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumDuration")]
         public Duration MaximumDuration { get; set; }
     
     }

@@ -12,43 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Record Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<RecordOperation>))]
     public partial class RecordOperation : CommsOperation
     {
     
-		///<summary>
-		/// The RecordOperation constructor
-		///</summary>
+        ///<summary>
+        /// The RecordOperation constructor
+        ///</summary>
         public RecordOperation()
         {
             this.ODataType = "microsoft.graph.recordOperation";
         }
-	
+
         /// <summary>
         /// Gets or sets completion reason.
         /// Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionReason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completionReason")]
         public RecordCompletionReason? CompletionReason { get; set; }
     
         /// <summary>
         /// Gets or sets recording access token.
         /// The access token required to retrieve the recording.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingAccessToken", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recordingAccessToken")]
         public string RecordingAccessToken { get; set; }
     
         /// <summary>
         /// Gets or sets recording location.
         /// The location where the recording is located.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recordingLocation")]
         public string RecordingLocation { get; set; }
     
     }

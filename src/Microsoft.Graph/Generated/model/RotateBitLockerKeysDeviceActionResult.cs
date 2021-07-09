@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RotateBitLockerKeysDeviceActionResult.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RotateBitLockerKeysDeviceActionResult : DeviceActionResult
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets errorCode.
         /// RotateBitLockerKeys action error code
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCode")]
         public Int32? ErrorCode { get; set; }
     
     }

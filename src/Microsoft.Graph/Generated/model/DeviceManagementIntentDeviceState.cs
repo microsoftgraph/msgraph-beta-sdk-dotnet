@@ -12,64 +12,55 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Intent Device State.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementIntentDeviceState>))]
     public partial class DeviceManagementIntentDeviceState : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementIntentDeviceState constructor
-		///</summary>
-        public DeviceManagementIntentDeviceState()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementIntentDeviceState";
-        }
-	
         /// <summary>
         /// Gets or sets device display name.
         /// Device name that is being reported
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceDisplayName")]
         public string DeviceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
         /// Device id that is being reported
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets last reported date time.
         /// Last modified date time of an intent report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastReportedDateTime")]
         public DateTimeOffset? LastReportedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// Device state for an intent. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public ComplianceStatus? State { get; set; }
     
         /// <summary>
         /// Gets or sets user name.
         /// The user name that is being reported on a device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userName")]
         public string UserName { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// The user principal name that is being reported on a device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
     }

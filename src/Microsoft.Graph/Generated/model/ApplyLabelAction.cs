@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ApplyLabelAction.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ApplyLabelAction>))]
     public partial class ApplyLabelAction : InformationProtectionAction
     {
         /// <summary>
@@ -33,28 +32,28 @@ namespace Microsoft.Graph
         /// Gets or sets actions.
         /// The collection of specific actions that should be taken by the consuming application to label the document. See  informationProtectionAction for the full list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actions")]
         public IEnumerable<InformationProtectionAction> Actions { get; set; }
     
         /// <summary>
         /// Gets or sets actionSource.
         /// Possible values are: manual, automatic, recommended, default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionSource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionSource")]
         public ActionSource? ActionSource { get; set; }
     
         /// <summary>
         /// Gets or sets label.
         /// Object that describes the details of the label to apply.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("label")]
         public LabelDetails Label { get; set; }
     
         /// <summary>
         /// Gets or sets responsibleSensitiveTypeIds.
         /// If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsibleSensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("responsibleSensitiveTypeIds")]
         public IEnumerable<Guid> ResponsibleSensitiveTypeIds { get; set; }
     
     }

@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeliveryOptimizationBandwidthBusinessHoursLimit.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeliveryOptimizationBandwidthBusinessHoursLimit>))]
     public partial class DeliveryOptimizationBandwidthBusinessHoursLimit
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeliveryOptimizationBandwidthBusinessHoursLimit"/> class.
-        /// </summary>
-        public DeliveryOptimizationBandwidthBusinessHoursLimit()
-        {
-            this.ODataType = "microsoft.graph.deliveryOptimizationBandwidthBusinessHoursLimit";
-        }
 
         /// <summary>
         /// Gets or sets bandwidthBeginBusinessHours.
         /// Specifies the beginning of business hours using a 24-hour clock (0-23). Valid values 0 to 23
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bandwidthBeginBusinessHours", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bandwidthBeginBusinessHours")]
         public Int32? BandwidthBeginBusinessHours { get; set; }
     
         /// <summary>
         /// Gets or sets bandwidthEndBusinessHours.
         /// Specifies the end of business hours using a 24-hour clock (0-23). Valid values 0 to 23
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bandwidthEndBusinessHours", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bandwidthEndBusinessHours")]
         public Int32? BandwidthEndBusinessHours { get; set; }
     
         /// <summary>
         /// Gets or sets bandwidthPercentageDuringBusinessHours.
         /// Specifies the percentage of bandwidth to limit during business hours (0-100). Valid values 0 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bandwidthPercentageDuringBusinessHours", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bandwidthPercentageDuringBusinessHours")]
         public Int32? BandwidthPercentageDuringBusinessHours { get; set; }
     
         /// <summary>
         /// Gets or sets bandwidthPercentageOutsideBusinessHours.
         /// Specifies the percentage of bandwidth to limit outsidse business hours (0-100). Valid values 0 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bandwidthPercentageOutsideBusinessHours", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bandwidthPercentageOutsideBusinessHours")]
         public Int32? BandwidthPercentageOutsideBusinessHours { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

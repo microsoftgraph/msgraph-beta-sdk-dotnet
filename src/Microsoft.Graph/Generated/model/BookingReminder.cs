@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type BookingReminder.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<BookingReminder>))]
     public partial class BookingReminder
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BookingReminder"/> class.
-        /// </summary>
-        public BookingReminder()
-        {
-            this.ODataType = "microsoft.graph.bookingReminder";
-        }
 
         /// <summary>
         /// Gets or sets message.
         /// The message in the reminder.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("message")]
         public string Message { get; set; }
     
         /// <summary>
         /// Gets or sets offset.
         /// The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offset", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("offset")]
         public Duration Offset { get; set; }
     
         /// <summary>
         /// Gets or sets recipients.
         /// The persons who shouold receive the reminder. Possible values are: allAttendees, staff, customer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipients", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recipients")]
         public BookingReminderRecipients? Recipients { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

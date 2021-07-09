@@ -12,83 +12,74 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RegionalFormatOverrides.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RegionalFormatOverrides>))]
     public partial class RegionalFormatOverrides
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RegionalFormatOverrides"/> class.
-        /// </summary>
-        public RegionalFormatOverrides()
-        {
-            this.ODataType = "microsoft.graph.regionalFormatOverrides";
-        }
 
         /// <summary>
         /// Gets or sets calendar.
         /// The calendar to use, e.g., Gregorian Calendar.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendar", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calendar")]
         public string Calendar { get; set; }
     
         /// <summary>
         /// Gets or sets firstDayOfWeek.
         /// The first day of the week to use, e.g., Sunday.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firstDayOfWeek", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firstDayOfWeek")]
         public string FirstDayOfWeek { get; set; }
     
         /// <summary>
         /// Gets or sets longDateFormat.
         /// The long date time format to be used for displaying dates.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longDateFormat", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("longDateFormat")]
         public string LongDateFormat { get; set; }
     
         /// <summary>
         /// Gets or sets longTimeFormat.
         /// The long time format to be used for displaying time.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longTimeFormat", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("longTimeFormat")]
         public string LongTimeFormat { get; set; }
     
         /// <summary>
         /// Gets or sets shortDateFormat.
         /// The short date time format to be used for displaying dates.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shortDateFormat", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("shortDateFormat")]
         public string ShortDateFormat { get; set; }
     
         /// <summary>
         /// Gets or sets shortTimeFormat.
         /// The short time format to be used for displaying time.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shortTimeFormat", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("shortTimeFormat")]
         public string ShortTimeFormat { get; set; }
     
         /// <summary>
         /// Gets or sets timeZone.
         /// The timezone to be used for displaying time.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeZone")]
         public string TimeZone { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

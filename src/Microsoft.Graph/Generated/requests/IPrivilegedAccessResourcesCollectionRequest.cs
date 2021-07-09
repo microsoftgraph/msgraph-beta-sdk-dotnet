@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPrivilegedAccessResourcesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified GovernanceResource to the collection via POST.
-        /// </summary>
-        /// <param name="governanceResource">The GovernanceResource to add.</param>
-        /// <returns>The created GovernanceResource.</returns>
-        System.Threading.Tasks.Task<GovernanceResource> AddAsync(GovernanceResource governanceResource);
-
         /// <summary>
         /// Adds the specified GovernanceResource to the collection via POST.
         /// </summary>
         /// <param name="governanceResource">The GovernanceResource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernanceResource.</returns>
-        System.Threading.Tasks.Task<GovernanceResource> AddAsync(GovernanceResource governanceResource, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GovernanceResource> AddAsync(GovernanceResource governanceResource, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified GovernanceResource to the collection via POST and returns a <see cref="GraphResponse{GovernanceResource}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPrivilegedAccessResourcesCollectionPage> GetAsync();
+        /// <param name="governanceResource">The GovernanceResource to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceResource>> AddResponseAsync(GovernanceResource governanceResource, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPrivilegedAccessResourcesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IPrivilegedAccessResourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PrivilegedAccessResourcesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedAccessResourcesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedAccessResourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationSimpleSettingInstanceTemplate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementConfigurationSimpleSettingInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets simpleSettingValueTemplate.
         /// Simple Setting Value Template
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "simpleSettingValueTemplate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("simpleSettingValueTemplate")]
         public DeviceManagementConfigurationSimpleSettingValueTemplate SimpleSettingValueTemplate { get; set; }
     
     }

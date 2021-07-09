@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserExperienceAnalyticsWorkFromAnywhereDevicesSummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsWorkFromAnywhereDevicesSummary>))]
     public partial class UserExperienceAnalyticsWorkFromAnywhereDevicesSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserExperienceAnalyticsWorkFromAnywhereDevicesSummary"/> class.
-        /// </summary>
-        public UserExperienceAnalyticsWorkFromAnywhereDevicesSummary()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary";
-        }
 
         /// <summary>
         /// Gets or sets autopilotDevicesSummary.
         /// The value of work from anywhere autopilot devices summary.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autopilotDevicesSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("autopilotDevicesSummary")]
         public UserExperienceAnalyticsAutopilotDevicesSummary AutopilotDevicesSummary { get; set; }
     
         /// <summary>
         /// Gets or sets cloudManagementDevicesSummary.
         /// The user experience work from anywhere Cloud management devices summary.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudManagementDevicesSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudManagementDevicesSummary")]
         public UserExperienceAnalyticsCloudManagementDevicesSummary CloudManagementDevicesSummary { get; set; }
     
         /// <summary>
         /// Gets or sets windows10DevicesSummary.
         /// The user experience analytics work from anywhere Windows 10 devices summary.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows10DevicesSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windows10DevicesSummary")]
         public UserExperienceAnalyticsWindows10DevicesSummary Windows10DevicesSummary { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

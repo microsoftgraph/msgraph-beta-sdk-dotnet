@@ -12,50 +12,40 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Office365Activations User Detail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Office365ActivationsUserDetail : Entity
     {
     
-		///<summary>
-		/// The Office365ActivationsUserDetail constructor
-		///</summary>
-        public Office365ActivationsUserDetail()
-        {
-            this.ODataType = "microsoft.graph.office365ActivationsUserDetail";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// The latest date of the content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets user activation counts.
         /// The user's latest product activation counts on all the platforms for all the assigned product types.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userActivationCounts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userActivationCounts")]
         public IEnumerable<UserActivationCounts> UserActivationCounts { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
     }

@@ -12,43 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Phone Authentication Method.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<PhoneAuthenticationMethod>))]
     public partial class PhoneAuthenticationMethod : AuthenticationMethod
     {
     
-		///<summary>
-		/// The PhoneAuthenticationMethod constructor
-		///</summary>
+        ///<summary>
+        /// The PhoneAuthenticationMethod constructor
+        ///</summary>
         public PhoneAuthenticationMethod()
         {
             this.ODataType = "microsoft.graph.phoneAuthenticationMethod";
         }
-	
+
         /// <summary>
         /// Gets or sets phone number.
         /// The phone number to text or call for authentication. Phone numbers use the format '+&amp;lt;country code&amp;gt; &amp;lt;number&amp;gt;x&amp;lt;extension&amp;gt;', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("phoneNumber")]
         public string PhoneNumber { get; set; }
     
         /// <summary>
         /// Gets or sets phone type.
         /// The type of this phone. Possible values are: mobile, alternateMobile, or office.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("phoneType")]
         public AuthenticationPhoneType? PhoneType { get; set; }
     
         /// <summary>
         /// Gets or sets sms sign in state.
         /// Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smsSignInState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("smsSignInState")]
         public AuthenticationMethodSignInState? SmsSignInState { get; set; }
     
     }

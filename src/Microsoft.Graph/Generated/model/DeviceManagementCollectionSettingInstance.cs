@@ -12,30 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Collection Setting Instance.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementCollectionSettingInstance : DeviceManagementSettingInstance
     {
     
-		///<summary>
-		/// The DeviceManagementCollectionSettingInstance constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementCollectionSettingInstance constructor
+        ///</summary>
         public DeviceManagementCollectionSettingInstance()
         {
             this.ODataType = "microsoft.graph.deviceManagementCollectionSettingInstance";
         }
-	
+
         /// <summary>
         /// Gets or sets value.
         /// The collection of values
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public IDeviceManagementCollectionSettingInstanceValueCollectionPage Value { get; set; }
+
+        /// <summary>
+        /// Gets or sets valueNextLink.
+        /// </summary>
+        [JsonPropertyName("value@odata.nextLink")]
+        public string ValueNextLink { get; set; }
     
     }
 }

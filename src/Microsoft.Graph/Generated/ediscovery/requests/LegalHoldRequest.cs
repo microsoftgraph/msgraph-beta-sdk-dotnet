@@ -39,34 +39,28 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified LegalHold using POST.
         /// </summary>
         /// <param name="legalHoldToCreate">The LegalHold to create.</param>
-        /// <returns>The created LegalHold.</returns>
-        public System.Threading.Tasks.Task<LegalHold> CreateAsync(LegalHold legalHoldToCreate)
-        {
-            return this.CreateAsync(legalHoldToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified LegalHold using POST.
-        /// </summary>
-        /// <param name="legalHoldToCreate">The LegalHold to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LegalHold.</returns>
-        public async System.Threading.Tasks.Task<LegalHold> CreateAsync(LegalHold legalHoldToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LegalHold> CreateAsync(LegalHold legalHoldToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<LegalHold>(legalHoldToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified LegalHold.
+        /// Creates the specified LegalHold using POST and returns a <see cref="GraphResponse{LegalHold}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="legalHoldToCreate">The LegalHold to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LegalHold}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LegalHold>> CreateResponseAsync(LegalHold legalHoldToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<LegalHold>(legalHoldToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<LegalHold>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified LegalHold.
+        /// Deletes the specified LegalHold and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The LegalHold.</returns>
-        public System.Threading.Tasks.Task<LegalHold> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The LegalHold.</returns>
-        public async System.Threading.Tasks.Task<LegalHold> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LegalHold> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<LegalHold>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified LegalHold using PATCH.
+        /// Gets the specified LegalHold and returns a <see cref="GraphResponse{LegalHold}"/> object.
         /// </summary>
-        /// <param name="legalHoldToUpdate">The LegalHold to update.</param>
-        /// <returns>The updated LegalHold.</returns>
-        public System.Threading.Tasks.Task<LegalHold> UpdateAsync(LegalHold legalHoldToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LegalHold}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LegalHold>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(legalHoldToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<LegalHold>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LegalHold.</returns>
-        public async System.Threading.Tasks.Task<LegalHold> UpdateAsync(LegalHold legalHoldToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LegalHold> UpdateAsync(LegalHold legalHoldToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (legalHoldToUpdate.AdditionalData != null)
-			{
-				if (legalHoldToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					legalHoldToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, legalHoldToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (legalHoldToUpdate.AdditionalData != null)
-            {
-                if (legalHoldToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    legalHoldToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, legalHoldToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<LegalHold>(legalHoldToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified LegalHold using PATCH and returns a <see cref="GraphResponse{LegalHold}"/> object.
+        /// </summary>
+        /// <param name="legalHoldToUpdate">The LegalHold to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{LegalHold}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LegalHold>> UpdateResponseAsync(LegalHold legalHoldToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<LegalHold>(legalHoldToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified LegalHold using PUT.
+        /// </summary>
+        /// <param name="legalHoldToUpdate">The LegalHold object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<LegalHold> PutAsync(LegalHold legalHoldToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<LegalHold>(legalHoldToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified LegalHold using PUT and returns a <see cref="GraphResponse{LegalHold}"/> object.
+        /// </summary>
+        /// <param name="legalHoldToUpdate">The LegalHold object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{LegalHold}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LegalHold>> PutResponseAsync(LegalHold legalHoldToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<LegalHold>(legalHoldToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,55 +244,25 @@ namespace Microsoft.Graph.Ediscovery
         private void InitializeCollectionProperties(LegalHold legalHoldToInitialize)
         {
 
-            if (legalHoldToInitialize != null && legalHoldToInitialize.AdditionalData != null)
+            if (legalHoldToInitialize != null)
             {
-
                 if (legalHoldToInitialize.SiteSources != null && legalHoldToInitialize.SiteSources.CurrentPage != null)
                 {
+                    legalHoldToInitialize.SiteSources.InitializeNextPageRequest(this.Client, legalHoldToInitialize.SiteSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     legalHoldToInitialize.SiteSources.AdditionalData = legalHoldToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    legalHoldToInitialize.AdditionalData.TryGetValue("siteSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        legalHoldToInitialize.SiteSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (legalHoldToInitialize.UnifiedGroupSources != null && legalHoldToInitialize.UnifiedGroupSources.CurrentPage != null)
                 {
+                    legalHoldToInitialize.UnifiedGroupSources.InitializeNextPageRequest(this.Client, legalHoldToInitialize.UnifiedGroupSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     legalHoldToInitialize.UnifiedGroupSources.AdditionalData = legalHoldToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    legalHoldToInitialize.AdditionalData.TryGetValue("unifiedGroupSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        legalHoldToInitialize.UnifiedGroupSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (legalHoldToInitialize.UserSources != null && legalHoldToInitialize.UserSources.CurrentPage != null)
                 {
+                    legalHoldToInitialize.UserSources.InitializeNextPageRequest(this.Client, legalHoldToInitialize.UserSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     legalHoldToInitialize.UserSources.AdditionalData = legalHoldToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    legalHoldToInitialize.AdditionalData.TryGetValue("userSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        legalHoldToInitialize.UserSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

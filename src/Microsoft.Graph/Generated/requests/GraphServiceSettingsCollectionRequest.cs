@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DirectorySetting to the collection via POST.
-        /// </summary>
-        /// <param name="directorySetting">The DirectorySetting to add.</param>
-        /// <returns>The created DirectorySetting.</returns>
-        public System.Threading.Tasks.Task<DirectorySetting> AddAsync(DirectorySetting directorySetting)
-        {
-            return this.AddAsync(directorySetting, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DirectorySetting to the collection via POST.
         /// </summary>
         /// <param name="directorySetting">The DirectorySetting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectorySetting.</returns>
-        public System.Threading.Tasks.Task<DirectorySetting> AddAsync(DirectorySetting directorySetting, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DirectorySetting> AddAsync(DirectorySetting directorySetting, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<DirectorySetting>(directorySetting, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DirectorySetting to the collection via POST and returns a <see cref="GraphResponse{DirectorySetting}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceSettingsCollectionPage> GetAsync()
+        /// <param name="directorySetting">The DirectorySetting to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> AddResponseAsync(DirectorySetting directorySetting, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DirectorySetting>(directorySetting, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceSettingsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceSettingsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GraphServiceSettingsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceSettingsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceSettingsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GraphServiceSettingsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

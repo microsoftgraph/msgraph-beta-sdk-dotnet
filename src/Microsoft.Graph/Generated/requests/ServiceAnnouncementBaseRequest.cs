@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ServiceAnnouncementBase using POST.
         /// </summary>
         /// <param name="serviceAnnouncementBaseToCreate">The ServiceAnnouncementBase to create.</param>
-        /// <returns>The created ServiceAnnouncementBase.</returns>
-        public System.Threading.Tasks.Task<ServiceAnnouncementBase> CreateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToCreate)
-        {
-            return this.CreateAsync(serviceAnnouncementBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ServiceAnnouncementBase using POST.
-        /// </summary>
-        /// <param name="serviceAnnouncementBaseToCreate">The ServiceAnnouncementBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServiceAnnouncementBase.</returns>
-        public async System.Threading.Tasks.Task<ServiceAnnouncementBase> CreateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ServiceAnnouncementBase> CreateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ServiceAnnouncementBase>(serviceAnnouncementBaseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ServiceAnnouncementBase.
+        /// Creates the specified ServiceAnnouncementBase using POST and returns a <see cref="GraphResponse{ServiceAnnouncementBase}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="serviceAnnouncementBaseToCreate">The ServiceAnnouncementBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceAnnouncementBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementBase>> CreateResponseAsync(ServiceAnnouncementBase serviceAnnouncementBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ServiceAnnouncementBase>(serviceAnnouncementBaseToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ServiceAnnouncementBase>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ServiceAnnouncementBase.
+        /// Deletes the specified ServiceAnnouncementBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ServiceAnnouncementBase.</returns>
-        public System.Threading.Tasks.Task<ServiceAnnouncementBase> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ServiceAnnouncementBase.</returns>
-        public async System.Threading.Tasks.Task<ServiceAnnouncementBase> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ServiceAnnouncementBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ServiceAnnouncementBase>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ServiceAnnouncementBase using PATCH.
+        /// Gets the specified ServiceAnnouncementBase and returns a <see cref="GraphResponse{ServiceAnnouncementBase}"/> object.
         /// </summary>
-        /// <param name="serviceAnnouncementBaseToUpdate">The ServiceAnnouncementBase to update.</param>
-        /// <returns>The updated ServiceAnnouncementBase.</returns>
-        public System.Threading.Tasks.Task<ServiceAnnouncementBase> UpdateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceAnnouncementBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(serviceAnnouncementBaseToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ServiceAnnouncementBase>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ServiceAnnouncementBase.</returns>
-        public async System.Threading.Tasks.Task<ServiceAnnouncementBase> UpdateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ServiceAnnouncementBase> UpdateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (serviceAnnouncementBaseToUpdate.AdditionalData != null)
-			{
-				if (serviceAnnouncementBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					serviceAnnouncementBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, serviceAnnouncementBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (serviceAnnouncementBaseToUpdate.AdditionalData != null)
-            {
-                if (serviceAnnouncementBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    serviceAnnouncementBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, serviceAnnouncementBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ServiceAnnouncementBase>(serviceAnnouncementBaseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ServiceAnnouncementBase using PATCH and returns a <see cref="GraphResponse{ServiceAnnouncementBase}"/> object.
+        /// </summary>
+        /// <param name="serviceAnnouncementBaseToUpdate">The ServiceAnnouncementBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ServiceAnnouncementBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementBase>> UpdateResponseAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ServiceAnnouncementBase>(serviceAnnouncementBaseToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ServiceAnnouncementBase using PUT.
+        /// </summary>
+        /// <param name="serviceAnnouncementBaseToUpdate">The ServiceAnnouncementBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ServiceAnnouncementBase> PutAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ServiceAnnouncementBase>(serviceAnnouncementBaseToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ServiceAnnouncementBase using PUT and returns a <see cref="GraphResponse{ServiceAnnouncementBase}"/> object.
+        /// </summary>
+        /// <param name="serviceAnnouncementBaseToUpdate">The ServiceAnnouncementBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ServiceAnnouncementBase}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementBase>> PutResponseAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ServiceAnnouncementBase>(serviceAnnouncementBaseToUpdate, cancellationToken);
         }
 
         /// <summary>

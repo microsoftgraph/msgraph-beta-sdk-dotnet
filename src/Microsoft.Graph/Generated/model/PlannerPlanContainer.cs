@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PlannerPlanContainer.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PlannerPlanContainer>))]
     public partial class PlannerPlanContainer
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlannerPlanContainer"/> class.
-        /// </summary>
-        public PlannerPlanContainer()
-        {
-            this.ODataType = "microsoft.graph.plannerPlanContainer";
-        }
 
         /// <summary>
         /// Gets or sets containerId.
         /// The identifier of the resource that contains the plan.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "containerId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("containerId")]
         public string ContainerId { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, roster, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public PlannerContainerType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets url.
         /// The full canonical URL of the container.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("url")]
         public string Url { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

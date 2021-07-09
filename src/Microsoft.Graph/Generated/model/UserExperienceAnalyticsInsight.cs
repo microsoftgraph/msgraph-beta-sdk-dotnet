@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserExperienceAnalyticsInsight.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsInsight>))]
     public partial class UserExperienceAnalyticsInsight
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserExperienceAnalyticsInsight"/> class.
-        /// </summary>
-        public UserExperienceAnalyticsInsight()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsInsight";
-        }
 
         /// <summary>
         /// Gets or sets insightId.
         /// The unique identifier of the user experience analytics insight.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "insightId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("insightId")]
         public string InsightId { get; set; }
     
         /// <summary>
         /// Gets or sets severity.
         /// The value of the user experience analytics insight. Possible values are: none, informational, warning, error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "severity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("severity")]
         public UserExperienceAnalyticsInsightSeverity? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets userExperienceAnalyticsMetricId.
         /// The unique identifier of the user experience analytics insight.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsMetricId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userExperienceAnalyticsMetricId")]
         public string UserExperienceAnalyticsMetricId { get; set; }
     
         /// <summary>
         /// Gets or sets values.
         /// The value of the user experience analytics insight.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("values")]
         public IEnumerable<UserExperienceAnalyticsInsightValue> Values { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

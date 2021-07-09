@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedDeviceCreateDeviceLogCollectionRequestRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedDeviceCreateDeviceLogCollectionRequestRequestBody
     {
     
         /// <summary>
         /// Gets or sets TemplateType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateType")]
         public DeviceLogCollectionRequestObject TemplateType { get; set; }
     
     }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsQualityUpdateCatalogItem using POST.
         /// </summary>
         /// <param name="windowsQualityUpdateCatalogItemToCreate">The WindowsQualityUpdateCatalogItem to create.</param>
-        /// <returns>The created WindowsQualityUpdateCatalogItem.</returns>
-        public System.Threading.Tasks.Task<WindowsQualityUpdateCatalogItem> CreateAsync(WindowsQualityUpdateCatalogItem windowsQualityUpdateCatalogItemToCreate)
-        {
-            return this.CreateAsync(windowsQualityUpdateCatalogItemToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsQualityUpdateCatalogItem using POST.
-        /// </summary>
-        /// <param name="windowsQualityUpdateCatalogItemToCreate">The WindowsQualityUpdateCatalogItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsQualityUpdateCatalogItem.</returns>
-        public async System.Threading.Tasks.Task<WindowsQualityUpdateCatalogItem> CreateAsync(WindowsQualityUpdateCatalogItem windowsQualityUpdateCatalogItemToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsQualityUpdateCatalogItem> CreateAsync(WindowsQualityUpdateCatalogItem windowsQualityUpdateCatalogItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsQualityUpdateCatalogItem>(windowsQualityUpdateCatalogItemToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsQualityUpdateCatalogItem.
+        /// Creates the specified WindowsQualityUpdateCatalogItem using POST and returns a <see cref="GraphResponse{WindowsQualityUpdateCatalogItem}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsQualityUpdateCatalogItemToCreate">The WindowsQualityUpdateCatalogItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateCatalogItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateCatalogItem>> CreateResponseAsync(WindowsQualityUpdateCatalogItem windowsQualityUpdateCatalogItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsQualityUpdateCatalogItem>(windowsQualityUpdateCatalogItemToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsQualityUpdateCatalogItem>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsQualityUpdateCatalogItem.
+        /// Deletes the specified WindowsQualityUpdateCatalogItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsQualityUpdateCatalogItem.</returns>
-        public System.Threading.Tasks.Task<WindowsQualityUpdateCatalogItem> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsQualityUpdateCatalogItem.</returns>
-        public async System.Threading.Tasks.Task<WindowsQualityUpdateCatalogItem> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsQualityUpdateCatalogItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsQualityUpdateCatalogItem>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsQualityUpdateCatalogItem using PATCH.
+        /// Gets the specified WindowsQualityUpdateCatalogItem and returns a <see cref="GraphResponse{WindowsQualityUpdateCatalogItem}"/> object.
         /// </summary>
-        /// <param name="windowsQualityUpdateCatalogItemToUpdate">The WindowsQualityUpdateCatalogItem to update.</param>
-        /// <returns>The updated WindowsQualityUpdateCatalogItem.</returns>
-        public System.Threading.Tasks.Task<WindowsQualityUpdateCatalogItem> UpdateAsync(WindowsQualityUpdateCatalogItem windowsQualityUpdateCatalogItemToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateCatalogItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateCatalogItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(windowsQualityUpdateCatalogItemToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsQualityUpdateCatalogItem>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsQualityUpdateCatalogItem.</returns>
-        public async System.Threading.Tasks.Task<WindowsQualityUpdateCatalogItem> UpdateAsync(WindowsQualityUpdateCatalogItem windowsQualityUpdateCatalogItemToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsQualityUpdateCatalogItem> UpdateAsync(WindowsQualityUpdateCatalogItem windowsQualityUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsQualityUpdateCatalogItemToUpdate.AdditionalData != null)
-			{
-				if (windowsQualityUpdateCatalogItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsQualityUpdateCatalogItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsQualityUpdateCatalogItemToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsQualityUpdateCatalogItemToUpdate.AdditionalData != null)
-            {
-                if (windowsQualityUpdateCatalogItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsQualityUpdateCatalogItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsQualityUpdateCatalogItemToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsQualityUpdateCatalogItem>(windowsQualityUpdateCatalogItemToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsQualityUpdateCatalogItem using PATCH and returns a <see cref="GraphResponse{WindowsQualityUpdateCatalogItem}"/> object.
+        /// </summary>
+        /// <param name="windowsQualityUpdateCatalogItemToUpdate">The WindowsQualityUpdateCatalogItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateCatalogItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateCatalogItem>> UpdateResponseAsync(WindowsQualityUpdateCatalogItem windowsQualityUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsQualityUpdateCatalogItem>(windowsQualityUpdateCatalogItemToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsQualityUpdateCatalogItem using PUT.
+        /// </summary>
+        /// <param name="windowsQualityUpdateCatalogItemToUpdate">The WindowsQualityUpdateCatalogItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsQualityUpdateCatalogItem> PutAsync(WindowsQualityUpdateCatalogItem windowsQualityUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsQualityUpdateCatalogItem>(windowsQualityUpdateCatalogItemToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsQualityUpdateCatalogItem using PUT and returns a <see cref="GraphResponse{WindowsQualityUpdateCatalogItem}"/> object.
+        /// </summary>
+        /// <param name="windowsQualityUpdateCatalogItemToUpdate">The WindowsQualityUpdateCatalogItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsQualityUpdateCatalogItem}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateCatalogItem>> PutResponseAsync(WindowsQualityUpdateCatalogItem windowsQualityUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsQualityUpdateCatalogItem>(windowsQualityUpdateCatalogItemToUpdate, cancellationToken);
         }
 
         /// <summary>

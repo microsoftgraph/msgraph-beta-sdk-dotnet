@@ -12,64 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Teams User Activity Distribution User Counts.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TeamsUserActivityDistributionUserCounts : Entity
     {
     
-		///<summary>
-		/// The TeamsUserActivityDistributionUserCounts constructor
-		///</summary>
-        public TeamsUserActivityDistributionUserCounts()
-        {
-            this.ODataType = "microsoft.graph.teamsUserActivityDistributionUserCounts";
-        }
-	
         /// <summary>
         /// Gets or sets calls.
         /// The number of unique 1:1 calls that users participated in.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calls", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calls")]
         public Int64? Calls { get; set; }
     
         /// <summary>
         /// Gets or sets meetings.
         /// The number of unique online meetings that users participated in.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meetings")]
         public Int64? Meetings { get; set; }
     
         /// <summary>
         /// Gets or sets private chat messages.
         /// The number of unique messages that users posted in a private chat.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privateChatMessages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("privateChatMessages")]
         public Int64? PrivateChatMessages { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// The number of days the report covers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// The latest date of the content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets team chat messages.
         /// The number of unique messages that users posted in a team chat.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamChatMessages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamChatMessages")]
         public Int64? TeamChatMessages { get; set; }
     
     }

@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Program to the collection via POST.
-        /// </summary>
-        /// <param name="program">The Program to add.</param>
-        /// <returns>The created Program.</returns>
-        public System.Threading.Tasks.Task<Program> AddAsync(Program program)
-        {
-            return this.AddAsync(program, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Program to the collection via POST.
         /// </summary>
         /// <param name="program">The Program to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Program.</returns>
-        public System.Threading.Tasks.Task<Program> AddAsync(Program program, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Program> AddAsync(Program program, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<Program>(program, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Program to the collection via POST and returns a <see cref="GraphResponse{Program}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceProgramsCollectionPage> GetAsync()
+        /// <param name="program">The Program to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Program}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Program>> AddResponseAsync(Program program, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Program>(program, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceProgramsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceProgramsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GraphServiceProgramsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceProgramsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceProgramsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceProgramsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GraphServiceProgramsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

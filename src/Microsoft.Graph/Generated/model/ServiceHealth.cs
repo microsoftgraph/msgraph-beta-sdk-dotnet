@@ -12,41 +12,38 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Service Health.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ServiceHealth>))]
     public partial class ServiceHealth : Entity
     {
     
-		///<summary>
-		/// The ServiceHealth constructor
-		///</summary>
-        public ServiceHealth()
-        {
-            this.ODataType = "microsoft.graph.serviceHealth";
-        }
-	
         /// <summary>
         /// Gets or sets service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("service")]
         public string Service { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public ServiceHealthStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets issues.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issues", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("issues")]
         public IServiceHealthIssuesCollectionPage Issues { get; set; }
+
+        /// <summary>
+        /// Gets or sets issuesNextLink.
+        /// </summary>
+        [JsonPropertyName("issues@odata.nextLink")]
+        public string IssuesNextLink { get; set; }
     
     }
 }

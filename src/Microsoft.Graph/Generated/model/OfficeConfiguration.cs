@@ -12,56 +12,52 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Office Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<OfficeConfiguration>))]
     public partial class OfficeConfiguration
     {
     
-		///<summary>
-		/// The OfficeConfiguration constructor
-		///</summary>
-        public OfficeConfiguration()
-        {
-            this.ODataType = "microsoft.graph.officeConfiguration";
-        }
-	
         /// <summary>
         /// Gets or sets tenant checkin statuses.
         /// List of office Client check-in status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantCheckinStatuses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantCheckinStatuses")]
         public IEnumerable<OfficeClientCheckinStatus> TenantCheckinStatuses { get; set; }
     
         /// <summary>
         /// Gets or sets tenant user checkin summary.
         /// Entity that describes tenant check-in statues
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantUserCheckinSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantUserCheckinSummary")]
         public OfficeUserCheckinSummary TenantUserCheckinSummary { get; set; }
     
         /// <summary>
         /// Gets or sets client configurations.
         /// List of office Client configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientConfigurations")]
         public IOfficeConfigurationClientConfigurationsCollectionPage ClientConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets clientConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("clientConfigurations@odata.nextLink")]
+        public string ClientConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     
     }

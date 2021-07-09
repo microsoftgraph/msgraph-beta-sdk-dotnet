@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IAppleUserInitiatedEnrollmentProfileAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AppleEnrollmentProfileAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="appleEnrollmentProfileAssignment">The AppleEnrollmentProfileAssignment to add.</param>
-        /// <returns>The created AppleEnrollmentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> AddAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignment);
-
         /// <summary>
         /// Adds the specified AppleEnrollmentProfileAssignment to the collection via POST.
         /// </summary>
         /// <param name="appleEnrollmentProfileAssignment">The AppleEnrollmentProfileAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppleEnrollmentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> AddAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> AddAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignment, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AppleEnrollmentProfileAssignment to the collection via POST and returns a <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAppleUserInitiatedEnrollmentProfileAssignmentsCollectionPage> GetAsync();
+        /// <param name="appleEnrollmentProfileAssignment">The AppleEnrollmentProfileAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> AddResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignment, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAppleUserInitiatedEnrollmentProfileAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IAppleUserInitiatedEnrollmentProfileAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfileAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfileAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleUserInitiatedEnrollmentProfileAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ProgramControlType using POST.
         /// </summary>
         /// <param name="programControlTypeToCreate">The ProgramControlType to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProgramControlType.</returns>
-        System.Threading.Tasks.Task<ProgramControlType> CreateAsync(ProgramControlType programControlTypeToCreate);        /// <summary>
-        /// Creates the specified ProgramControlType using POST.
+        System.Threading.Tasks.Task<ProgramControlType> CreateAsync(ProgramControlType programControlTypeToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified ProgramControlType using POST and returns a <see cref="GraphResponse{ProgramControlType}"/> object.
         /// </summary>
         /// <param name="programControlTypeToCreate">The ProgramControlType to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ProgramControlType.</returns>
-        System.Threading.Tasks.Task<ProgramControlType> CreateAsync(ProgramControlType programControlTypeToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ProgramControlType.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ProgramControlType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProgramControlType>> CreateResponseAsync(ProgramControlType programControlTypeToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ProgramControlType.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified ProgramControlType.
+        /// Deletes the specified ProgramControlType and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ProgramControlType.</returns>
-        System.Threading.Tasks.Task<ProgramControlType> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ProgramControlType.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ProgramControlType.</returns>
-        System.Threading.Tasks.Task<ProgramControlType> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ProgramControlType> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified ProgramControlType using PATCH.
+        /// Gets the specified ProgramControlType and returns a <see cref="GraphResponse{ProgramControlType}"/> object.
         /// </summary>
-        /// <param name="programControlTypeToUpdate">The ProgramControlType to update.</param>
-        /// <returns>The updated ProgramControlType.</returns>
-        System.Threading.Tasks.Task<ProgramControlType> UpdateAsync(ProgramControlType programControlTypeToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProgramControlType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProgramControlType>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ProgramControlType using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ProgramControlType.</returns>
-        System.Threading.Tasks.Task<ProgramControlType> UpdateAsync(ProgramControlType programControlTypeToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ProgramControlType> UpdateAsync(ProgramControlType programControlTypeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ProgramControlType using PATCH and returns a <see cref="GraphResponse{ProgramControlType}"/> object.
+        /// </summary>
+        /// <param name="programControlTypeToUpdate">The ProgramControlType to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ProgramControlType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProgramControlType>> UpdateResponseAsync(ProgramControlType programControlTypeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ProgramControlType using PUT.
+        /// </summary>
+        /// <param name="programControlTypeToUpdate">The ProgramControlType object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ProgramControlType> PutAsync(ProgramControlType programControlTypeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified ProgramControlType using PUT and returns a <see cref="GraphResponse{ProgramControlType}"/> object.
+        /// </summary>
+        /// <param name="programControlTypeToUpdate">The ProgramControlType object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ProgramControlType}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProgramControlType>> PutResponseAsync(ProgramControlType programControlTypeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

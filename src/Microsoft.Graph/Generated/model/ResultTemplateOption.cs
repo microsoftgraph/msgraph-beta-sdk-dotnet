@@ -12,40 +12,31 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ResultTemplateOption.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ResultTemplateOption>))]
     public partial class ResultTemplateOption
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ResultTemplateOption"/> class.
-        /// </summary>
-        public ResultTemplateOption()
-        {
-            this.ODataType = "microsoft.graph.resultTemplateOption";
-        }
 
         /// <summary>
         /// Gets or sets enableResultTemplate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableResultTemplate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableResultTemplate")]
         public bool? EnableResultTemplate { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

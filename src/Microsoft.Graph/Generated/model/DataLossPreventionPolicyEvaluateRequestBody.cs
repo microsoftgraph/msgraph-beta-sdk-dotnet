@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DataLossPreventionPolicyEvaluateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DataLossPreventionPolicyEvaluateRequestBody
     {
     
         /// <summary>
         /// Gets or sets Target.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public string Target { get; set; }
     
         /// <summary>
         /// Gets or sets EvaluationInput.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationInput", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("evaluationInput")]
         public DlpEvaluationInput EvaluationInput { get; set; }
     
         /// <summary>
         /// Gets or sets NotificationInfo.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notificationInfo")]
         public DlpNotification NotificationInfo { get; set; }
     
     }

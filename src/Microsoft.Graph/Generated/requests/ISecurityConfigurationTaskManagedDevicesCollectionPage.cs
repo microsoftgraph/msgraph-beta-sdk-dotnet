@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ISecurityConfigurationTaskManagedDevicesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<SecurityConfigurationTaskManagedDevicesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<SecurityConfigurationTaskManagedDevicesCollectionPage>))]
     public interface ISecurityConfigurationTaskManagedDevicesCollectionPage : ICollectionPage<VulnerableManagedDevice>
     {
         /// <summary>

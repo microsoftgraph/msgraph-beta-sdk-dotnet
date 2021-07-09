@@ -12,79 +12,76 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Management Condition Statement.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagementConditionStatement>))]
     public partial class ManagementConditionStatement : Entity
     {
     
-		///<summary>
-		/// The ManagementConditionStatement constructor
-		///</summary>
-        public ManagementConditionStatement()
-        {
-            this.ODataType = "microsoft.graph.managementConditionStatement";
-        }
-	
         /// <summary>
         /// Gets or sets applicable platforms.
         /// This is calculated from looking the management conditions associated to the management condition statement and finding the intersection of applicable platforms.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicablePlatforms", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicablePlatforms")]
         public IEnumerable<DevicePlatformType> ApplicablePlatforms { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The time the management condition statement was created. Generated service side.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The admin defined description of the management condition statement.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The admin defined name of the management condition statement.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets e tag.
         /// ETag of the management condition statement. Updated service side.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eTag", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eTag")]
         public string ETag { get; set; }
     
         /// <summary>
         /// Gets or sets expression.
         /// The management condition statement expression used to evaluate if a management condition statement was activated/deactivated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expression", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expression")]
         public ManagementConditionExpression Expression { get; set; }
     
         /// <summary>
         /// Gets or sets modified date time.
         /// The time the management condition statement was last modified. Updated service side.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modifiedDateTime")]
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets management conditions.
         /// The management conditions associated to the management condition statement.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementConditions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementConditions")]
         public IManagementConditionStatementManagementConditionsCollectionWithReferencesPage ManagementConditions { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementConditionsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementConditions@odata.nextLink")]
+        public string ManagementConditionsNextLink { get; set; }
     
     }
 }

@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Managed Store Web App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidManagedStoreWebApp : AndroidManagedStoreApp
     {
     
-		///<summary>
-		/// The AndroidManagedStoreWebApp constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidManagedStoreWebApp constructor
+        ///</summary>
         public AndroidManagedStoreWebApp()
         {
             this.ODataType = "microsoft.graph.androidManagedStoreWebApp";
         }
-	
+
     }
 }
 

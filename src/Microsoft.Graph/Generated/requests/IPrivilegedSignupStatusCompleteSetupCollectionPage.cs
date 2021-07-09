@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IPrivilegedSignupStatusCompleteSetupCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<PrivilegedSignupStatusCompleteSetupCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<PrivilegedSignupStatusCompleteSetupCollectionPage>))]
     public interface IPrivilegedSignupStatusCompleteSetupCollectionPage : ICollectionPage<RoleSuccessStatistics>
     {
         /// <summary>

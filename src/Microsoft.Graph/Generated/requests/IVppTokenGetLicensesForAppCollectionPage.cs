@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IVppTokenGetLicensesForAppCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<VppTokenGetLicensesForAppCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<VppTokenGetLicensesForAppCollectionPage>))]
     public interface IVppTokenGetLicensesForAppCollectionPage : ICollectionPage<VppTokenLicenseSummary>
     {
         /// <summary>

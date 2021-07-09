@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Device Compliance Local Action Lock Device.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidDeviceComplianceLocalActionLockDevice : AndroidDeviceComplianceLocalActionBase
     {
     
-		///<summary>
-		/// The AndroidDeviceComplianceLocalActionLockDevice constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidDeviceComplianceLocalActionLockDevice constructor
+        ///</summary>
         public AndroidDeviceComplianceLocalActionLockDevice()
         {
             this.ODataType = "microsoft.graph.androidDeviceComplianceLocalActionLockDevice";
         }
-	
+
     }
 }
 

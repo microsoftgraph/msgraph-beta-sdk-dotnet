@@ -10,13 +10,12 @@
 namespace Microsoft.Graph.WindowsUpdates
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUpdatesUpdatableAssetsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.InterfaceConverter<UpdatesUpdatableAssetsCollectionPage>))]
+    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<UpdatesUpdatableAssetsCollectionPage>))]
     public interface IUpdatesUpdatableAssetsCollectionPage : Microsoft.Graph.ICollectionPage<UpdatableAsset>
     {
         /// <summary>

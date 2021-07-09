@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementSettingComparison.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementSettingComparison>))]
     public partial class DeviceManagementSettingComparison
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementSettingComparison"/> class.
-        /// </summary>
-        public DeviceManagementSettingComparison()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementSettingComparison";
-        }
 
         /// <summary>
         /// Gets or sets comparisonResult.
         /// Setting comparison result. Possible values are: unknown, equal, notEqual, added, removed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comparisonResult", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("comparisonResult")]
         public DeviceManagementComparisonResult? ComparisonResult { get; set; }
     
         /// <summary>
         /// Gets or sets currentValueJson.
         /// JSON representation of current intent (or) template setting's value
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentValueJson", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("currentValueJson")]
         public string CurrentValueJson { get; set; }
     
         /// <summary>
         /// Gets or sets definitionId.
         /// The ID of the setting definition for this instance
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("definitionId")]
         public string DefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// The setting's display name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets id.
         /// The setting ID
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets newValueJson.
         /// JSON representation of new template setting's value
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newValueJson", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("newValueJson")]
         public string NewValueJson { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

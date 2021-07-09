@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Oma Cp Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidOmaCpConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The AndroidOmaCpConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidOmaCpConfiguration constructor
+        ///</summary>
         public AndroidOmaCpConfiguration()
         {
             this.ODataType = "microsoft.graph.androidOmaCpConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets configuration xml.
         /// Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationXml", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationXml")]
         public byte[] ConfigurationXml { get; set; }
     
     }

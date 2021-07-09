@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph.ManagedTenants
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TenantTagAssignTagRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TenantTagAssignTagRequestBody
     {
     
         /// <summary>
         /// Gets or sets TenantIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantIds")]
         public IEnumerable<string> TenantIds { get; set; }
     
     }

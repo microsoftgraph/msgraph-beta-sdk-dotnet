@@ -12,50 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Credential Usage Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<CredentialUsageSummary>))]
     public partial class CredentialUsageSummary : Entity
     {
     
-		///<summary>
-		/// The CredentialUsageSummary constructor
-		///</summary>
-        public CredentialUsageSummary()
-        {
-            this.ODataType = "microsoft.graph.credentialUsageSummary";
-        }
-	
         /// <summary>
         /// Gets or sets auth method.
         /// Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authMethod")]
         public UsageAuthMethod? AuthMethod { get; set; }
     
         /// <summary>
         /// Gets or sets failure activity count.
         /// Provides the count of failed resets or registration data.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureActivityCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failureActivityCount")]
         public Int64? FailureActivityCount { get; set; }
     
         /// <summary>
         /// Gets or sets feature.
         /// Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feature", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("feature")]
         public FeatureType? Feature { get; set; }
     
         /// <summary>
         /// Gets or sets successful activity count.
         /// Provides the count of successful registrations or resets.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulActivityCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("successfulActivityCount")]
         public Int64? SuccessfulActivityCount { get; set; }
     
     }

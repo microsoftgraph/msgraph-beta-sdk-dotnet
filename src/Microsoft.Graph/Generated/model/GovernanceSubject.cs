@@ -12,50 +12,40 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Governance Subject.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GovernanceSubject : Entity
     {
     
-		///<summary>
-		/// The GovernanceSubject constructor
-		///</summary>
-        public GovernanceSubject()
-        {
-            this.ODataType = "microsoft.graph.governanceSubject";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the subject.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets email.
         /// The email address of the user subject. If the subject is in other types, it is empty.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("email")]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets principal name.
         /// The principal name of the user subject. If the subject is in other types, it is empty.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("principalName")]
         public string PrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// The type of the subject. The value can be User, Group, and ServicePrincipal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
     
     }

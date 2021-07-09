@@ -12,28 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserConfiguration : Entity
     {
     
-		///<summary>
-		/// The UserConfiguration constructor
-		///</summary>
-        public UserConfiguration()
-        {
-            this.ODataType = "microsoft.graph.userConfiguration";
-        }
-	
         /// <summary>
         /// Gets or sets binary data.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "binaryData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("binaryData")]
         public byte[] BinaryData { get; set; }
     
     }

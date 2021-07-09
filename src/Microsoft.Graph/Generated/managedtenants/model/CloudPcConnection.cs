@@ -12,52 +12,42 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Cloud Pc Connection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CloudPcConnection : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The CloudPcConnection constructor
-		///</summary>
-        public CloudPcConnection()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.cloudPcConnection";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets health check status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "healthCheckStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("healthCheckStatus")]
         public string HealthCheckStatus { get; set; }
     
         /// <summary>
         /// Gets or sets last refreshed date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastRefreshedDateTime")]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantDisplayName")]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
     }

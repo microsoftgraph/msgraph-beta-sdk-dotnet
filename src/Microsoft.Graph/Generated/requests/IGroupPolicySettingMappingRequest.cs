@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicySettingMapping using POST.
         /// </summary>
         /// <param name="groupPolicySettingMappingToCreate">The GroupPolicySettingMapping to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicySettingMapping.</returns>
-        System.Threading.Tasks.Task<GroupPolicySettingMapping> CreateAsync(GroupPolicySettingMapping groupPolicySettingMappingToCreate);        /// <summary>
-        /// Creates the specified GroupPolicySettingMapping using POST.
+        System.Threading.Tasks.Task<GroupPolicySettingMapping> CreateAsync(GroupPolicySettingMapping groupPolicySettingMappingToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified GroupPolicySettingMapping using POST and returns a <see cref="GraphResponse{GroupPolicySettingMapping}"/> object.
         /// </summary>
         /// <param name="groupPolicySettingMappingToCreate">The GroupPolicySettingMapping to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created GroupPolicySettingMapping.</returns>
-        System.Threading.Tasks.Task<GroupPolicySettingMapping> CreateAsync(GroupPolicySettingMapping groupPolicySettingMappingToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicySettingMapping.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{GroupPolicySettingMapping}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicySettingMapping>> CreateResponseAsync(GroupPolicySettingMapping groupPolicySettingMappingToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicySettingMapping.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified GroupPolicySettingMapping.
+        /// Deletes the specified GroupPolicySettingMapping and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The GroupPolicySettingMapping.</returns>
-        System.Threading.Tasks.Task<GroupPolicySettingMapping> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicySettingMapping.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicySettingMapping.</returns>
-        System.Threading.Tasks.Task<GroupPolicySettingMapping> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupPolicySettingMapping> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified GroupPolicySettingMapping using PATCH.
+        /// Gets the specified GroupPolicySettingMapping and returns a <see cref="GraphResponse{GroupPolicySettingMapping}"/> object.
         /// </summary>
-        /// <param name="groupPolicySettingMappingToUpdate">The GroupPolicySettingMapping to update.</param>
-        /// <returns>The updated GroupPolicySettingMapping.</returns>
-        System.Threading.Tasks.Task<GroupPolicySettingMapping> UpdateAsync(GroupPolicySettingMapping groupPolicySettingMappingToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicySettingMapping}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicySettingMapping>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicySettingMapping using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicySettingMapping.</returns>
-        System.Threading.Tasks.Task<GroupPolicySettingMapping> UpdateAsync(GroupPolicySettingMapping groupPolicySettingMappingToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupPolicySettingMapping> UpdateAsync(GroupPolicySettingMapping groupPolicySettingMappingToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicySettingMapping using PATCH and returns a <see cref="GraphResponse{GroupPolicySettingMapping}"/> object.
+        /// </summary>
+        /// <param name="groupPolicySettingMappingToUpdate">The GroupPolicySettingMapping to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicySettingMapping}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicySettingMapping>> UpdateResponseAsync(GroupPolicySettingMapping groupPolicySettingMappingToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicySettingMapping using PUT.
+        /// </summary>
+        /// <param name="groupPolicySettingMappingToUpdate">The GroupPolicySettingMapping object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<GroupPolicySettingMapping> PutAsync(GroupPolicySettingMapping groupPolicySettingMappingToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified GroupPolicySettingMapping using PUT and returns a <see cref="GraphResponse{GroupPolicySettingMapping}"/> object.
+        /// </summary>
+        /// <param name="groupPolicySettingMappingToUpdate">The GroupPolicySettingMapping object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{GroupPolicySettingMapping}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicySettingMapping>> PutResponseAsync(GroupPolicySettingMapping groupPolicySettingMappingToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

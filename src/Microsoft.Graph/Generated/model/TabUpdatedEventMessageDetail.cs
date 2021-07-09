@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TabUpdatedEventMessageDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TabUpdatedEventMessageDetail : EventMessageDetail
     {
         /// <summary>
@@ -32,13 +30,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets initiator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets tabId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tabId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tabId")]
         public string TabId { get; set; }
     
     }

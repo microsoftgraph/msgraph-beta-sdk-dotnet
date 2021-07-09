@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified EmailAppUsageUserDetail using POST.
         /// </summary>
         /// <param name="emailAppUsageUserDetailToCreate">The EmailAppUsageUserDetail to create.</param>
-        /// <returns>The created EmailAppUsageUserDetail.</returns>
-        public System.Threading.Tasks.Task<EmailAppUsageUserDetail> CreateAsync(EmailAppUsageUserDetail emailAppUsageUserDetailToCreate)
-        {
-            return this.CreateAsync(emailAppUsageUserDetailToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EmailAppUsageUserDetail using POST.
-        /// </summary>
-        /// <param name="emailAppUsageUserDetailToCreate">The EmailAppUsageUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmailAppUsageUserDetail.</returns>
-        public async System.Threading.Tasks.Task<EmailAppUsageUserDetail> CreateAsync(EmailAppUsageUserDetail emailAppUsageUserDetailToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmailAppUsageUserDetail> CreateAsync(EmailAppUsageUserDetail emailAppUsageUserDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<EmailAppUsageUserDetail>(emailAppUsageUserDetailToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified EmailAppUsageUserDetail.
+        /// Creates the specified EmailAppUsageUserDetail using POST and returns a <see cref="GraphResponse{EmailAppUsageUserDetail}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="emailAppUsageUserDetailToCreate">The EmailAppUsageUserDetail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAppUsageUserDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmailAppUsageUserDetail>> CreateResponseAsync(EmailAppUsageUserDetail emailAppUsageUserDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<EmailAppUsageUserDetail>(emailAppUsageUserDetailToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<EmailAppUsageUserDetail>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified EmailAppUsageUserDetail.
+        /// Deletes the specified EmailAppUsageUserDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EmailAppUsageUserDetail.</returns>
-        public System.Threading.Tasks.Task<EmailAppUsageUserDetail> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EmailAppUsageUserDetail.</returns>
-        public async System.Threading.Tasks.Task<EmailAppUsageUserDetail> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmailAppUsageUserDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<EmailAppUsageUserDetail>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified EmailAppUsageUserDetail using PATCH.
+        /// Gets the specified EmailAppUsageUserDetail and returns a <see cref="GraphResponse{EmailAppUsageUserDetail}"/> object.
         /// </summary>
-        /// <param name="emailAppUsageUserDetailToUpdate">The EmailAppUsageUserDetail to update.</param>
-        /// <returns>The updated EmailAppUsageUserDetail.</returns>
-        public System.Threading.Tasks.Task<EmailAppUsageUserDetail> UpdateAsync(EmailAppUsageUserDetail emailAppUsageUserDetailToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAppUsageUserDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmailAppUsageUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(emailAppUsageUserDetailToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<EmailAppUsageUserDetail>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmailAppUsageUserDetail.</returns>
-        public async System.Threading.Tasks.Task<EmailAppUsageUserDetail> UpdateAsync(EmailAppUsageUserDetail emailAppUsageUserDetailToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmailAppUsageUserDetail> UpdateAsync(EmailAppUsageUserDetail emailAppUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (emailAppUsageUserDetailToUpdate.AdditionalData != null)
-			{
-				if (emailAppUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					emailAppUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailAppUsageUserDetailToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (emailAppUsageUserDetailToUpdate.AdditionalData != null)
-            {
-                if (emailAppUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    emailAppUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailAppUsageUserDetailToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<EmailAppUsageUserDetail>(emailAppUsageUserDetailToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EmailAppUsageUserDetail using PATCH and returns a <see cref="GraphResponse{EmailAppUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="emailAppUsageUserDetailToUpdate">The EmailAppUsageUserDetail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EmailAppUsageUserDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmailAppUsageUserDetail>> UpdateResponseAsync(EmailAppUsageUserDetail emailAppUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<EmailAppUsageUserDetail>(emailAppUsageUserDetailToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified EmailAppUsageUserDetail using PUT.
+        /// </summary>
+        /// <param name="emailAppUsageUserDetailToUpdate">The EmailAppUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<EmailAppUsageUserDetail> PutAsync(EmailAppUsageUserDetail emailAppUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<EmailAppUsageUserDetail>(emailAppUsageUserDetailToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EmailAppUsageUserDetail using PUT and returns a <see cref="GraphResponse{EmailAppUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="emailAppUsageUserDetailToUpdate">The EmailAppUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{EmailAppUsageUserDetail}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmailAppUsageUserDetail>> PutResponseAsync(EmailAppUsageUserDetail emailAppUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<EmailAppUsageUserDetail>(emailAppUsageUserDetailToUpdate, cancellationToken);
         }
 
         /// <summary>

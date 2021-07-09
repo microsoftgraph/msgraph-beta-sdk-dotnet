@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Assignment Filter Evaluation Status Details.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AssignmentFilterEvaluationStatusDetails : Entity
     {
     
-		///<summary>
-		/// The AssignmentFilterEvaluationStatusDetails constructor
-		///</summary>
-        public AssignmentFilterEvaluationStatusDetails()
-        {
-            this.ODataType = "microsoft.graph.assignmentFilterEvaluationStatusDetails";
-        }
-	
         /// <summary>
         /// Gets or sets payload id.
         /// PayloadId on which filter has been applied.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("payloadId")]
         public string PayloadId { get; set; }
     
     }

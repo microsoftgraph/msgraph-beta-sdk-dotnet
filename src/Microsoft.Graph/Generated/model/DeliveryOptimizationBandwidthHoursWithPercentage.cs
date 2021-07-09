@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeliveryOptimizationBandwidthHoursWithPercentage.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeliveryOptimizationBandwidthHoursWithPercentage : DeliveryOptimizationBandwidth
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets bandwidthBackgroundPercentageHours.
         /// Background download percentage hours.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bandwidthBackgroundPercentageHours", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bandwidthBackgroundPercentageHours")]
         public DeliveryOptimizationBandwidthBusinessHoursLimit BandwidthBackgroundPercentageHours { get; set; }
     
         /// <summary>
         /// Gets or sets bandwidthForegroundPercentageHours.
         /// Foreground download percentage hours.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bandwidthForegroundPercentageHours", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bandwidthForegroundPercentageHours")]
         public DeliveryOptimizationBandwidthBusinessHoursLimit BandwidthForegroundPercentageHours { get; set; }
     
     }

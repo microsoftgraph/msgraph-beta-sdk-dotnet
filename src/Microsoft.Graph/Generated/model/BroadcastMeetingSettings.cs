@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type BroadcastMeetingSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<BroadcastMeetingSettings>))]
     public partial class BroadcastMeetingSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BroadcastMeetingSettings"/> class.
-        /// </summary>
-        public BroadcastMeetingSettings()
-        {
-            this.ODataType = "microsoft.graph.broadcastMeetingSettings";
-        }
 
         /// <summary>
         /// Gets or sets allowedAudience.
         /// Defines who can join the live event. Possible values are listed in the following table.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedAudience", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedAudience")]
         public BroadcastMeetingAudience? AllowedAudience { get; set; }
     
         /// <summary>
         /// Gets or sets isAttendeeReportEnabled.
         /// Indicates whether attendee report is enabled for this live event. Default value is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAttendeeReportEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAttendeeReportEnabled")]
         public bool? IsAttendeeReportEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isQuestionAndAnswerEnabled.
         /// Indicates whether Q&amp;A is enabled for this live event. Default value is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isQuestionAndAnswerEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isQuestionAndAnswerEnabled")]
         public bool? IsQuestionAndAnswerEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isRecordingEnabled.
         /// Indicates whether recording is enabled for this live event. Default value is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRecordingEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRecordingEnabled")]
         public bool? IsRecordingEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isVideoOnDemandEnabled.
         /// Indicates whether video on demand is enabled for this live event. Default value is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isVideoOnDemandEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isVideoOnDemandEnabled")]
         public bool? IsVideoOnDemandEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

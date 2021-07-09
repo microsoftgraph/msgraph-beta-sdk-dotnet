@@ -12,64 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Intent Device State Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementIntentDeviceStateSummary : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementIntentDeviceStateSummary constructor
-		///</summary>
-        public DeviceManagementIntentDeviceStateSummary()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementIntentDeviceStateSummary";
-        }
-	
         /// <summary>
         /// Gets or sets conflict count.
         /// Number of devices in conflict
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflictCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conflictCount")]
         public Int32? ConflictCount { get; set; }
     
         /// <summary>
         /// Gets or sets error count.
         /// Number of error devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCount")]
         public Int32? ErrorCount { get; set; }
     
         /// <summary>
         /// Gets or sets failed count.
         /// Number of failed devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failedCount")]
         public Int32? FailedCount { get; set; }
     
         /// <summary>
         /// Gets or sets not applicable count.
         /// Number of not applicable devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notApplicableCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notApplicableCount")]
         public Int32? NotApplicableCount { get; set; }
     
         /// <summary>
         /// Gets or sets not applicable platform count.
         /// Number of not applicable devices due to mismatch platform and policy
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notApplicablePlatformCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notApplicablePlatformCount")]
         public Int32? NotApplicablePlatformCount { get; set; }
     
         /// <summary>
         /// Gets or sets success count.
         /// Number of succeeded devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("successCount")]
         public Int32? SuccessCount { get; set; }
     
     }

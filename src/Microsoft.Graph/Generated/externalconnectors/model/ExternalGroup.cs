@@ -12,41 +12,37 @@ namespace Microsoft.Graph.ExternalConnectors
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type External Group.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ExternalGroup : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ExternalGroup constructor
-		///</summary>
-        public ExternalGroup()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.externalGroup";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets members.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("members")]
         public IExternalGroupMembersCollectionPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
     }
 }

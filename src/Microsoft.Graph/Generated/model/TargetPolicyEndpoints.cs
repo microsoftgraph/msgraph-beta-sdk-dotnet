@@ -12,41 +12,32 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TargetPolicyEndpoints.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TargetPolicyEndpoints>))]
     public partial class TargetPolicyEndpoints
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TargetPolicyEndpoints"/> class.
-        /// </summary>
-        public TargetPolicyEndpoints()
-        {
-            this.ODataType = "microsoft.graph.targetPolicyEndpoints";
-        }
 
         /// <summary>
         /// Gets or sets platformTypes.
         /// Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platformTypes")]
         public IEnumerable<string> PlatformTypes { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

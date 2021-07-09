@@ -12,113 +12,103 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Work From Anywhere Device.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsWorkFromAnywhereDevice : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsWorkFromAnywhereDevice constructor
-		///</summary>
-        public UserExperienceAnalyticsWorkFromAnywhereDevice()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevice";
-        }
-	
         /// <summary>
         /// Gets or sets auto pilot profile assigned.
         /// The user experience analytics work from anywhere intune device's autopilotProfileAssigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoPilotProfileAssigned", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("autoPilotProfileAssigned")]
         public bool? AutoPilotProfileAssigned { get; set; }
     
         /// <summary>
         /// Gets or sets auto pilot registered.
         /// The user experience work from anywhere intune device's autopilotRegistered.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoPilotRegistered", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("autoPilotRegistered")]
         public bool? AutoPilotRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets azure ad device id.
         /// The user experience work from anywhere azure Ad device Id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureAdDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureAdDeviceId")]
         public string AzureAdDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets azure ad join type.
         /// The user experience work from anywhere device's azure Ad joinType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureAdJoinType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureAdJoinType")]
         public string AzureAdJoinType { get; set; }
     
         /// <summary>
         /// Gets or sets azure ad registered.
         /// The user experience work from anywhere device's azureAdRegistered.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureAdRegistered", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureAdRegistered")]
         public bool? AzureAdRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets device name.
         /// The work from anywhere device's name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets managed by.
         /// The user experience work from anywhere management agent of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedBy")]
         public string ManagedBy { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
         /// The user experience work from anywhere device's manufacturer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
         /// The user experience work from anywhere device's model.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets os description.
         /// The user experience work from anywhere device's OS Description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osDescription", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osDescription")]
         public string OsDescription { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
         /// The user experience work from anywhere device's OS Version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets ownership.
         /// The user experience work from anywhere device's ownership.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownership", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownership")]
         public string Ownership { get; set; }
     
         /// <summary>
         /// Gets or sets serial number.
         /// The user experience work from anywhere device's serial number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("serialNumber")]
         public string SerialNumber { get; set; }
     
     }

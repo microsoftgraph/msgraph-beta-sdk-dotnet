@@ -20,33 +20,36 @@ namespace Microsoft.Graph.ManagedTenants
     /// </summary>
     public partial interface IManagedTenantCloudPcDevicesCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified CloudPcDevice to the collection via POST.
-        /// </summary>
-        /// <param name="cloudPcDevice">The CloudPcDevice to add.</param>
-        /// <returns>The created CloudPcDevice.</returns>
-        System.Threading.Tasks.Task<CloudPcDevice> AddAsync(CloudPcDevice cloudPcDevice);
-
         /// <summary>
         /// Adds the specified CloudPcDevice to the collection via POST.
         /// </summary>
         /// <param name="cloudPcDevice">The CloudPcDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcDevice.</returns>
-        System.Threading.Tasks.Task<CloudPcDevice> AddAsync(CloudPcDevice cloudPcDevice, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CloudPcDevice> AddAsync(CloudPcDevice cloudPcDevice, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified CloudPcDevice to the collection via POST and returns a <see cref="GraphResponse{CloudPcDevice}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedTenantCloudPcDevicesCollectionPage> GetAsync();
+        /// <param name="cloudPcDevice">The CloudPcDevice to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcDevice>> AddResponseAsync(CloudPcDevice cloudPcDevice, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedTenantCloudPcDevicesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IManagedTenantCloudPcDevicesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedTenantCloudPcDevicesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedTenantCloudPcDevicesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedTenantCloudPcDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

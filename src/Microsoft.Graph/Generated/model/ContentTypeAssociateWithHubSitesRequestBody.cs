@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ContentTypeAssociateWithHubSitesRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ContentTypeAssociateWithHubSitesRequestBody
     {
     
         /// <summary>
         /// Gets or sets HubSiteUrls.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hubSiteUrls", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hubSiteUrls")]
         public IEnumerable<string> HubSiteUrls { get; set; }
     
         /// <summary>
         /// Gets or sets PropagateToExistingLists.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propagateToExistingLists", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("propagateToExistingLists")]
         public bool? PropagateToExistingLists { get; set; }
     
     }

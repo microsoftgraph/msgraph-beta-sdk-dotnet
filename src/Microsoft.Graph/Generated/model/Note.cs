@@ -12,71 +12,93 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Note.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Note : OutlookItem
     {
     
-		///<summary>
-		/// The Note constructor
-		///</summary>
+        ///<summary>
+        /// The Note constructor
+        ///</summary>
         public Note()
         {
             this.ODataType = "microsoft.graph.note";
         }
-	
+
         /// <summary>
         /// Gets or sets body.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "body", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("body")]
         public ItemBody Body { get; set; }
     
         /// <summary>
         /// Gets or sets has attachments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasAttachments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hasAttachments")]
         public bool? HasAttachments { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDeleted")]
         public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subject")]
         public string Subject { get; set; }
     
         /// <summary>
         /// Gets or sets attachments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("attachments")]
         public INoteAttachmentsCollectionPage Attachments { get; set; }
+
+        /// <summary>
+        /// Gets or sets attachmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("attachments@odata.nextLink")]
+        public string AttachmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensions")]
         public INoteExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("multiValueExtendedProperties")]
         public INoteMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets multiValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("multiValueExtendedProperties@odata.nextLink")]
+        public string MultiValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("singleValueExtendedProperties")]
         public INoteSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets singleValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("singleValueExtendedProperties@odata.nextLink")]
+        public string SingleValueExtendedPropertiesNextLink { get; set; }
     
     }
 }

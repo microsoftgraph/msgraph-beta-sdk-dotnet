@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RelatedContact.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RelatedContact>))]
     public partial class RelatedContact
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RelatedContact"/> class.
-        /// </summary>
-        public RelatedContact()
-        {
-            this.ODataType = "microsoft.graph.relatedContact";
-        }
 
         /// <summary>
         /// Gets or sets accessConsent.
         /// Indicates whether the user has been consented to access student data.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessConsent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessConsent")]
         public bool? AccessConsent { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// Name of the contact. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets emailAddress.
         /// Email address of the contact.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("emailAddress")]
         public string EmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets id.
         /// Identity of the contact within Azure Active Directory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets mobilePhone.
         /// Mobile phone number of the contact.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobilePhone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mobilePhone")]
         public string MobilePhone { get; set; }
     
         /// <summary>
         /// Gets or sets relationship.
         /// Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relationship", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("relationship")]
         public ContactRelationship? Relationship { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

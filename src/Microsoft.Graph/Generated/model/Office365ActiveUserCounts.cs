@@ -12,92 +12,82 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Office365Active User Counts.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Office365ActiveUserCounts : Entity
     {
     
-		///<summary>
-		/// The Office365ActiveUserCounts constructor
-		///</summary>
-        public Office365ActiveUserCounts()
-        {
-            this.ODataType = "microsoft.graph.office365ActiveUserCounts";
-        }
-	
         /// <summary>
         /// Gets or sets exchange.
         /// The number of active users in Exchange. Any user who can read and send email is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchange", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exchange")]
         public Int64? Exchange { get; set; }
     
         /// <summary>
         /// Gets or sets office365.
         /// The number of active users in Microsoft 365. This number includes all the active users in Exchange, OneDrive, SharePoint, Skype For Business, Yammer, and Microsoft Teams. You can find the definition of active user for each product in the respective property description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "office365", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("office365")]
         public Int64? Office365 { get; set; }
     
         /// <summary>
         /// Gets or sets one drive.
         /// The number of active users in OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDrive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("oneDrive")]
         public Int64? OneDrive { get; set; }
     
         /// <summary>
         /// Gets or sets report date.
         /// The date on which a number of users were active.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportDate")]
         public Date ReportDate { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// The number of days the report covers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// The latest date of the content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets share point.
         /// The number of active users in SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharePoint", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharePoint")]
         public Int64? SharePoint { get; set; }
     
         /// <summary>
         /// Gets or sets skype for business.
         /// The number of active users in Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skypeForBusiness", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("skypeForBusiness")]
         public Int64? SkypeForBusiness { get; set; }
     
         /// <summary>
         /// Gets or sets teams.
         /// The number of active users in Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teams", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teams")]
         public Int64? Teams { get; set; }
     
         /// <summary>
         /// Gets or sets yammer.
         /// The number of active users in Yammer. Any user who can post, read, or like messages is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("yammer")]
         public Int64? Yammer { get; set; }
     
     }

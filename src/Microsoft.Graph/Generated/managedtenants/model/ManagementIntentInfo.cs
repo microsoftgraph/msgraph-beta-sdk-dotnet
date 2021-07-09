@@ -12,52 +12,43 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagementIntentInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ManagementIntentInfo>))]
     public partial class ManagementIntentInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagementIntentInfo"/> class.
-        /// </summary>
-        public ManagementIntentInfo()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.managementIntentInfo";
-        }
 
         /// <summary>
         /// Gets or sets managementIntentDisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementIntentDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementIntentDisplayName")]
         public string ManagementIntentDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets managementIntentId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementIntentId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementIntentId")]
         public string ManagementIntentId { get; set; }
     
         /// <summary>
         /// Gets or sets managementTemplates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementTemplates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementTemplates")]
         public IEnumerable<ManagementTemplateDetailedInfo> ManagementTemplates { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

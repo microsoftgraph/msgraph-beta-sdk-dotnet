@@ -12,43 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Resource Access Profile Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementResourceAccessProfileAssignment>))]
     public partial class DeviceManagementResourceAccessProfileAssignment : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementResourceAccessProfileAssignment constructor
-		///</summary>
-        public DeviceManagementResourceAccessProfileAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementResourceAccessProfileAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets intent.
         /// The assignment intent for the resource access profile. Possible values are: apply, remove.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("intent")]
         public DeviceManagementResourceAccessProfileIntent? Intent { get; set; }
     
         /// <summary>
         /// Gets or sets source id.
         /// The identifier of the source of the assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceId")]
         public string SourceId { get; set; }
     
         /// <summary>
         /// Gets or sets target.
         /// The assignment target for the resource access profile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }

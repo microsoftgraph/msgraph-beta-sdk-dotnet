@@ -12,62 +12,53 @@ namespace Microsoft.Graph.Ediscovery
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TopicModelingSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<TopicModelingSettings>))]
     public partial class TopicModelingSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TopicModelingSettings"/> class.
-        /// </summary>
-        public TopicModelingSettings()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.topicModelingSettings";
-        }
 
         /// <summary>
         /// Gets or sets dynamicallyAdjustTopicCount.
         /// To learn more, see Adjust maximum number of themes dynamically.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dynamicallyAdjustTopicCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dynamicallyAdjustTopicCount")]
         public bool? DynamicallyAdjustTopicCount { get; set; }
     
         /// <summary>
         /// Gets or sets ignoreNumbers.
         /// To learn more, see Include numbers in themes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ignoreNumbers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ignoreNumbers")]
         public bool? IgnoreNumbers { get; set; }
     
         /// <summary>
         /// Gets or sets isEnabled.
         /// Indicates whether themes is enabled for the case.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets topicCount.
         /// To learn more, see Maximum number of themes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topicCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("topicCount")]
         public Int32? TopicCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

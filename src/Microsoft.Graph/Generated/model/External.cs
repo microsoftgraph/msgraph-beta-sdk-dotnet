@@ -12,31 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type External.
     /// </summary>
     [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class External : Entity
     {
     
-		///<summary>
-		/// The External constructor
-		///</summary>
-        public External()
-        {
-            this.ODataType = "microsoft.graph.external";
-        }
-	
         /// <summary>
         /// Gets or sets connections.
         /// </summary>
         [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connections", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connections")]
         public IExternalConnectionsCollectionPage Connections { get; set; }
+
+        /// <summary>
+        /// Gets or sets connectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("connections@odata.nextLink")]
+        public string ConnectionsNextLink { get; set; }
     
     }
 }

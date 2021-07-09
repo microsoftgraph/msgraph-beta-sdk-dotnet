@@ -12,13 +12,11 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedTenantExecutionError.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedTenantExecutionError : ManagedTenantOperationError
     {
         /// <summary>
@@ -32,25 +30,25 @@ namespace Microsoft.Graph.ManagedTenants
         /// <summary>
         /// Gets or sets errorDetails.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorDetails")]
         public string ErrorDetails { get; set; }
     
         /// <summary>
         /// Gets or sets nodeId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nodeId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("nodeId")]
         public Int32? NodeId { get; set; }
     
         /// <summary>
         /// Gets or sets rawToken.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rawToken", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rawToken")]
         public string RawToken { get; set; }
     
         /// <summary>
         /// Gets or sets statementIndex.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statementIndex", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("statementIndex")]
         public Int32? StatementIndex { get; set; }
     
     }

@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationPolicyTemplateReference.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationPolicyTemplateReference>))]
     public partial class DeviceManagementConfigurationPolicyTemplateReference
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementConfigurationPolicyTemplateReference"/> class.
-        /// </summary>
-        public DeviceManagementConfigurationPolicyTemplateReference()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationPolicyTemplateReference";
-        }
 
         /// <summary>
         /// Gets or sets templateDisplayName.
         /// Template Display Name of the referenced template. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateDisplayName")]
         public string TemplateDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets templateDisplayVersion.
         /// Template Display Version of the referenced Template. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateDisplayVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateDisplayVersion")]
         public string TemplateDisplayVersion { get; set; }
     
         /// <summary>
         /// Gets or sets templateFamily.
         /// Template Family of the referenced Template. This property is read-only. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateFamily", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateFamily")]
         public DeviceManagementConfigurationTemplateFamily? TemplateFamily { get; set; }
     
         /// <summary>
         /// Gets or sets templateId.
         /// Template id
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateId")]
         public string TemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

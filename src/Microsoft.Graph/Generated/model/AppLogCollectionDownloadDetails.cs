@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AppLogCollectionDownloadDetails.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AppLogCollectionDownloadDetails>))]
     public partial class AppLogCollectionDownloadDetails
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppLogCollectionDownloadDetails"/> class.
-        /// </summary>
-        public AppLogCollectionDownloadDetails()
-        {
-            this.ODataType = "microsoft.graph.appLogCollectionDownloadDetails";
-        }
 
         /// <summary>
         /// Gets or sets appLogDecryptionAlgorithm.
         /// DecryptionAlgorithm for Content. Possible values are: aes256.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appLogDecryptionAlgorithm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appLogDecryptionAlgorithm")]
         public AppLogDecryptionAlgorithm? AppLogDecryptionAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets decryptionKey.
         /// DecryptionKey as string
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decryptionKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("decryptionKey")]
         public string DecryptionKey { get; set; }
     
         /// <summary>
         /// Gets or sets downloadUrl.
         /// Download SAS Url for completed AppLogUploadRequest
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "downloadUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("downloadUrl")]
         public string DownloadUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

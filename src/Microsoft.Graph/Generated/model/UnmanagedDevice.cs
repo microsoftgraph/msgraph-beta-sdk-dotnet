@@ -12,111 +12,102 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UnmanagedDevice.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UnmanagedDevice>))]
     public partial class UnmanagedDevice
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UnmanagedDevice"/> class.
-        /// </summary>
-        public UnmanagedDevice()
-        {
-            this.ODataType = "microsoft.graph.unmanagedDevice";
-        }
 
         /// <summary>
         /// Gets or sets deviceName.
         /// Device name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets domain.
         /// Domain.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domain", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("domain")]
         public string Domain { get; set; }
     
         /// <summary>
         /// Gets or sets ipAddress.
         /// IP address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ipAddress")]
         public string IpAddress { get; set; }
     
         /// <summary>
         /// Gets or sets lastLoggedOnUser.
         /// Last logged on user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastLoggedOnUser", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastLoggedOnUser")]
         public string LastLoggedOnUser { get; set; }
     
         /// <summary>
         /// Gets or sets lastSeenDateTime.
         /// Last seen date and time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSeenDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSeenDateTime")]
         public DateTimeOffset? LastSeenDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets location.
         /// Location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("location")]
         public string Location { get; set; }
     
         /// <summary>
         /// Gets or sets macAddress.
         /// MAC address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("macAddress")]
         public string MacAddress { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
         /// Manufacturer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
         /// Model.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets os.
         /// Operating system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "os", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("os")]
         public string Os { get; set; }
     
         /// <summary>
         /// Gets or sets osVersion.
         /// Operating system version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,50 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Privileged Role.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PrivilegedRole : Entity
     {
     
-		///<summary>
-		/// The PrivilegedRole constructor
-		///</summary>
-        public PrivilegedRole()
-        {
-            this.ODataType = "microsoft.graph.privilegedRole";
-        }
-	
         /// <summary>
         /// Gets or sets name.
         /// Role name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// The assignments for this role. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IPrivilegedRoleAssignmentsCollectionWithReferencesPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// The settings for this role. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public PrivilegedRoleSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets summary.
         /// The summary information for this role. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("summary")]
         public PrivilegedRoleSummary Summary { get; set; }
     
     }

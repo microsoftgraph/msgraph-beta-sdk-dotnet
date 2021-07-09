@@ -12,309 +12,349 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Device : DirectoryObject
     {
     
-		///<summary>
-		/// The Device constructor
-		///</summary>
+        ///<summary>
+        /// The Device constructor
+        ///</summary>
         public Device()
         {
             this.ODataType = "microsoft.graph.device";
         }
-	
+
         /// <summary>
         /// Gets or sets account enabled.
         /// true if the account is enabled; otherwise, false. default is true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accountEnabled")]
         public bool? AccountEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets alternative security ids.
         /// For internal use only. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternativeSecurityIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alternativeSecurityIds")]
         public IEnumerable<AlternativeSecurityId> AlternativeSecurityIds { get; set; }
     
         /// <summary>
         /// Gets or sets approximate last sign in date time.
         /// The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approximateLastSignInDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("approximateLastSignInDateTime")]
         public DateTimeOffset? ApproximateLastSignInDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets compliance expiration date time.
         /// The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("complianceExpirationDateTime")]
         public DateTimeOffset? ComplianceExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets device category.
         /// User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCategory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceCategory")]
         public string DeviceCategory { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
         /// Identifier set by Azure Device Registration Service at the time of registration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets device metadata.
         /// For internal use only. Set to null.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceMetadata", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceMetadata")]
         public string DeviceMetadata { get; set; }
     
         /// <summary>
         /// Gets or sets device ownership.
         /// Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOwnership", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceOwnership")]
         public string DeviceOwnership { get; set; }
     
         /// <summary>
         /// Gets or sets device version.
         /// For internal use only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceVersion")]
         public Int32? DeviceVersion { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name for the device. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets domain name.
         /// The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("domainName")]
         public string DomainName { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment profile name.
         /// Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentProfileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentProfileName")]
         public string EnrollmentProfileName { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment type.
         /// Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentType")]
         public string EnrollmentType { get; set; }
     
         /// <summary>
         /// Gets or sets extension attributes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttributes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensionAttributes")]
         public OnPremisesExtensionAttributes ExtensionAttributes { get; set; }
     
         /// <summary>
         /// Gets or sets hostnames.
         /// List of hostNames for the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostnames", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hostnames")]
         public IEnumerable<string> Hostnames { get; set; }
     
         /// <summary>
         /// Gets or sets is compliant.
         /// true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCompliant", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isCompliant")]
         public bool? IsCompliant { get; set; }
     
         /// <summary>
         /// Gets or sets is managed.
         /// true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isManaged", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isManaged")]
         public bool? IsManaged { get; set; }
     
         /// <summary>
         /// Gets or sets is rooted.
         /// true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRooted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRooted")]
         public bool? IsRooted { get; set; }
     
         /// <summary>
         /// Gets or sets management type.
         /// Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementType")]
         public string ManagementType { get; set; }
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
         /// The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesLastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesLastSyncDateTime")]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
         /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesSyncEnabled")]
         public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets operating system.
         /// The type of operating system on the device. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operatingSystem")]
         public string OperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets operating system version.
         /// Operating system version of the device. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operatingSystemVersion")]
         public string OperatingSystemVersion { get; set; }
     
         /// <summary>
         /// Gets or sets physical ids.
         /// For internal use only. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "physicalIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("physicalIds")]
         public IEnumerable<string> PhysicalIds { get; set; }
     
         /// <summary>
         /// Gets or sets profile type.
         /// The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("profileType")]
         public string ProfileType { get; set; }
     
         /// <summary>
         /// Gets or sets registration date time.
         /// Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registrationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("registrationDateTime")]
         public DateTimeOffset? RegistrationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets system labels.
         /// List of labels applied to the device by the system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemLabels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemLabels")]
         public IEnumerable<string> SystemLabels { get; set; }
     
         /// <summary>
         /// Gets or sets trust type.
         /// Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("trustType")]
         public string TrustType { get; set; }
     
         /// <summary>
         /// Gets or sets kind.
         /// Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kind", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("kind")]
         public string Kind { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
         /// Manufacturer of the device. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
         /// Model of the device. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
         /// Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platform")]
         public string Platform { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets usage rights.
         /// Represents the usage rights a device has been granted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usageRights", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usageRights")]
         public IDeviceUsageRightsCollectionPage UsageRights { get; set; }
+
+        /// <summary>
+        /// Gets or sets usageRightsNextLink.
+        /// </summary>
+        [JsonPropertyName("usageRights@odata.nextLink")]
+        public string UsageRightsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets member of.
         /// Groups that this device is a member of. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberOf", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("memberOf")]
         public IDeviceMemberOfCollectionWithReferencesPage MemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets memberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("memberOf@odata.nextLink")]
+        public string MemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets registered owners.
         /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredOwners", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("registeredOwners")]
         public IDeviceRegisteredOwnersCollectionWithReferencesPage RegisteredOwners { get; set; }
+
+        /// <summary>
+        /// Gets or sets registeredOwnersNextLink.
+        /// </summary>
+        [JsonPropertyName("registeredOwners@odata.nextLink")]
+        public string RegisteredOwnersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets registered users.
         /// Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredUsers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("registeredUsers")]
         public IDeviceRegisteredUsersCollectionWithReferencesPage RegisteredUsers { get; set; }
+
+        /// <summary>
+        /// Gets or sets registeredUsersNextLink.
+        /// </summary>
+        [JsonPropertyName("registeredUsers@odata.nextLink")]
+        public string RegisteredUsersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets transitive member of.
         /// Groups that this device is a member of. This operation is transitive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("transitiveMemberOf")]
         public IDeviceTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets transitiveMemberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("transitiveMemberOf@odata.nextLink")]
+        public string TransitiveMemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
         /// The collection of open extensions defined for the device. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensions")]
         public IDeviceExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets commands.
         /// Set of commands sent to this device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "commands", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("commands")]
         public IDeviceCommandsCollectionPage Commands { get; set; }
+
+        /// <summary>
+        /// Gets or sets commandsNextLink.
+        /// </summary>
+        [JsonPropertyName("commands@odata.nextLink")]
+        public string CommandsNextLink { get; set; }
     
     }
 }

@@ -12,118 +12,108 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type File Security Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class FileSecurityProfile : Entity
     {
     
-		///<summary>
-		/// The FileSecurityProfile constructor
-		///</summary>
-        public FileSecurityProfile()
-        {
-            this.ODataType = "microsoft.graph.fileSecurityProfile";
-        }
-	
         /// <summary>
         /// Gets or sets activity group names.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityGroupNames", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityGroupNames")]
         public IEnumerable<string> ActivityGroupNames { get; set; }
     
         /// <summary>
         /// Gets or sets azure subscription id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureSubscriptionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureSubscriptionId")]
         public string AzureSubscriptionId { get; set; }
     
         /// <summary>
         /// Gets or sets azure tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureTenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureTenantId")]
         public string AzureTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets certificate thumbprint.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateThumbprint", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certificateThumbprint")]
         public string CertificateThumbprint { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensions")]
         public IEnumerable<string> Extensions { get; set; }
     
         /// <summary>
         /// Gets or sets file type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileType")]
         public string FileType { get; set; }
     
         /// <summary>
         /// Gets or sets first seen date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firstSeenDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firstSeenDateTime")]
         public DateTimeOffset? FirstSeenDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets hashes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hashes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hashes")]
         public IEnumerable<FileHash> Hashes { get; set; }
     
         /// <summary>
         /// Gets or sets last seen date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSeenDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSeenDateTime")]
         public DateTimeOffset? LastSeenDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets malware states.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "malwareStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("malwareStates")]
         public IEnumerable<MalwareState> MalwareStates { get; set; }
     
         /// <summary>
         /// Gets or sets names.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "names", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("names")]
         public IEnumerable<string> Names { get; set; }
     
         /// <summary>
         /// Gets or sets risk score.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskScore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("riskScore")]
         public string RiskScore { get; set; }
     
         /// <summary>
         /// Gets or sets size.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("size")]
         public Int64? Size { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tags", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }
     
         /// <summary>
         /// Gets or sets vendor information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendorInformation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vendorInformation")]
         public SecurityVendorInformation VendorInformation { get; set; }
     
         /// <summary>
         /// Gets or sets vulnerability states.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vulnerabilityStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vulnerabilityStates")]
         public IEnumerable<VulnerabilityState> VulnerabilityStates { get; set; }
     
     }

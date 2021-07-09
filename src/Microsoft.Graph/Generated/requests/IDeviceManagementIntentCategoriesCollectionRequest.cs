@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementIntentCategoriesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementIntentSettingCategory to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementIntentSettingCategory">The DeviceManagementIntentSettingCategory to add.</param>
-        /// <returns>The created DeviceManagementIntentSettingCategory.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> AddAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategory);
-
         /// <summary>
         /// Adds the specified DeviceManagementIntentSettingCategory to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementIntentSettingCategory">The DeviceManagementIntentSettingCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntentSettingCategory.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> AddAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategory, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> AddAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategory, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceManagementIntentSettingCategory to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementIntentCategoriesCollectionPage> GetAsync();
+        /// <param name="deviceManagementIntentSettingCategory">The DeviceManagementIntentSettingCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentSettingCategory>> AddResponseAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategory, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementIntentCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementIntentCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIntentCategoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentCategoriesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,70 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UnifiedRoleManagementPolicyRuleTarget.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UnifiedRoleManagementPolicyRuleTarget>))]
     public partial class UnifiedRoleManagementPolicyRuleTarget
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UnifiedRoleManagementPolicyRuleTarget"/> class.
-        /// </summary>
-        public UnifiedRoleManagementPolicyRuleTarget()
-        {
-            this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyRuleTarget";
-        }
 
         /// <summary>
         /// Gets or sets caller.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "caller", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("caller")]
         public string Caller { get; set; }
     
         /// <summary>
         /// Gets or sets enforcedSettings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforcedSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enforcedSettings")]
         public IEnumerable<string> EnforcedSettings { get; set; }
     
         /// <summary>
         /// Gets or sets inheritableSettings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inheritableSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inheritableSettings")]
         public IEnumerable<string> InheritableSettings { get; set; }
     
         /// <summary>
         /// Gets or sets level.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "level", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("level")]
         public string Level { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operations")]
         public IEnumerable<string> Operations { get; set; }
     
         /// <summary>
         /// Gets or sets targetObjects.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetObjects", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetObjects")]
         public IEnumerable<DirectoryObject> TargetObjects { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

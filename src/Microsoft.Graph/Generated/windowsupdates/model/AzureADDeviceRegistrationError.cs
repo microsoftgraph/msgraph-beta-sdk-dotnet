@@ -12,13 +12,12 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AzureADDeviceRegistrationError.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<AzureADDeviceRegistrationError>))]
     public partial class AzureADDeviceRegistrationError : UpdatableAssetError
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Gets or sets reason.
         /// The reason why the registration encountered an error. Possible values are: invalidGlobalDeviceId, invalidAzureADDeviceId, missingTrustType, invalidAzureADJoin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reason")]
         public AzureADDeviceRegistrationErrorReason? Reason { get; set; }
     
     }

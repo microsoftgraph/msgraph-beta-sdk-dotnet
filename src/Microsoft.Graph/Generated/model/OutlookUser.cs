@@ -12,48 +12,62 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Outlook User.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OutlookUser : Entity
     {
     
-		///<summary>
-		/// The OutlookUser constructor
-		///</summary>
-        public OutlookUser()
-        {
-            this.ODataType = "microsoft.graph.outlookUser";
-        }
-	
         /// <summary>
         /// Gets or sets master categories.
         /// A list of categories defined for the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "masterCategories", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("masterCategories")]
         public IOutlookUserMasterCategoriesCollectionPage MasterCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets masterCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("masterCategories@odata.nextLink")]
+        public string MasterCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets task folders.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taskFolders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("taskFolders")]
         public IOutlookUserTaskFoldersCollectionPage TaskFolders { get; set; }
+
+        /// <summary>
+        /// Gets or sets taskFoldersNextLink.
+        /// </summary>
+        [JsonPropertyName("taskFolders@odata.nextLink")]
+        public string TaskFoldersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets task groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taskGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("taskGroups")]
         public IOutlookUserTaskGroupsCollectionPage TaskGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets taskGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("taskGroups@odata.nextLink")]
+        public string TaskGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tasks")]
         public IOutlookUserTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

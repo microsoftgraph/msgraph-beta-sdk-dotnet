@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage>))]
     public interface IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage : ICollectionPage<DirectoryObject>
     {
         /// <summary>

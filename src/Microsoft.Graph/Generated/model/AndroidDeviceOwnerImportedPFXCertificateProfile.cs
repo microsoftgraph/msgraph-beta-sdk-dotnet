@@ -12,37 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Device Owner Imported PFXCertificate Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerImportedPFXCertificateProfile>))]
     public partial class AndroidDeviceOwnerImportedPFXCertificateProfile : AndroidDeviceOwnerCertificateProfileBase
     {
     
-		///<summary>
-		/// The AndroidDeviceOwnerImportedPFXCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidDeviceOwnerImportedPFXCertificateProfile constructor
+        ///</summary>
         public AndroidDeviceOwnerImportedPFXCertificateProfile()
         {
             this.ODataType = "microsoft.graph.androidDeviceOwnerImportedPFXCertificateProfile";
         }
-	
+
         /// <summary>
         /// Gets or sets intended purpose.
         /// Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intendedPurpose", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("intendedPurpose")]
         public IntendedPurpose? IntendedPurpose { get; set; }
     
         /// <summary>
         /// Gets or sets managed device certificate states.
         /// Certificate state for devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceCertificateStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceCertificateStates")]
         public IAndroidDeviceOwnerImportedPFXCertificateProfileManagedDeviceCertificateStatesCollectionPage ManagedDeviceCertificateStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedDeviceCertificateStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedDeviceCertificateStates@odata.nextLink")]
+        public string ManagedDeviceCertificateStatesNextLink { get; set; }
     
     }
 }

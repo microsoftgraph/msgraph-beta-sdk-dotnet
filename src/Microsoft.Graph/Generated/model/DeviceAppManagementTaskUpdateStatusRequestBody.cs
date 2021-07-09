@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceAppManagementTaskUpdateStatusRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceAppManagementTaskUpdateStatusRequestBody
     {
     
         /// <summary>
         /// Gets or sets Status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public DeviceAppManagementTaskStatus Status { get; set; }
     
         /// <summary>
         /// Gets or sets Note.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "note", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("note")]
         public string Note { get; set; }
     
     }

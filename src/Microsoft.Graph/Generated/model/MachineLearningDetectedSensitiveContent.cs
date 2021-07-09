@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MachineLearningDetectedSensitiveContent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MachineLearningDetectedSensitiveContent>))]
     public partial class MachineLearningDetectedSensitiveContent : DetectedSensitiveContent
     {
         /// <summary>
@@ -32,13 +31,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets matchTolerance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchTolerance", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("matchTolerance")]
         public MlClassificationMatchTolerance? MatchTolerance { get; set; }
     
         /// <summary>
         /// Gets or sets modelVersion.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modelVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modelVersion")]
         public string ModelVersion { get; set; }
     
     }

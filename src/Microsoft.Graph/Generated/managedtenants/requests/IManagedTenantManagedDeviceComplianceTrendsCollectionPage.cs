@@ -10,13 +10,12 @@
 namespace Microsoft.Graph.ManagedTenants
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IManagedTenantManagedDeviceComplianceTrendsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.InterfaceConverter<ManagedTenantManagedDeviceComplianceTrendsCollectionPage>))]
+    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<ManagedTenantManagedDeviceComplianceTrendsCollectionPage>))]
     public interface IManagedTenantManagedDeviceComplianceTrendsCollectionPage : Microsoft.Graph.ICollectionPage<ManagedDeviceComplianceTrend>
     {
         /// <summary>

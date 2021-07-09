@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph.WindowsUpdates
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UpdatableAssetAddMembersByIdRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UpdatableAssetAddMembersByIdRequestBody
     {
     
         /// <summary>
         /// Gets or sets Ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ids", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ids")]
         public IEnumerable<string> Ids { get; set; }
     
         /// <summary>
         /// Gets or sets MemberEntityType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberEntityType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("memberEntityType")]
         public string MemberEntityType { get; set; }
     
     }

@@ -12,83 +12,74 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PositionDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PositionDetail>))]
     public partial class PositionDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PositionDetail"/> class.
-        /// </summary>
-        public PositionDetail()
-        {
-            this.ODataType = "microsoft.graph.positionDetail";
-        }
 
         /// <summary>
         /// Gets or sets company.
         /// Detail about the company or employer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "company", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("company")]
         public CompanyDetail Company { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description of the position in question.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets endMonthYear.
         /// When the position ended.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endMonthYear", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endMonthYear")]
         public Date EndMonthYear { get; set; }
     
         /// <summary>
         /// Gets or sets jobTitle.
         /// The title held when in that position.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobTitle", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("jobTitle")]
         public string JobTitle { get; set; }
     
         /// <summary>
         /// Gets or sets role.
         /// The role the position entailed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("role")]
         public string Role { get; set; }
     
         /// <summary>
         /// Gets or sets startMonthYear.
         /// The start month and year of the position.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startMonthYear", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startMonthYear")]
         public Date StartMonthYear { get; set; }
     
         /// <summary>
         /// Gets or sets summary.
         /// Short summary of the position.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("summary")]
         public string Summary { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

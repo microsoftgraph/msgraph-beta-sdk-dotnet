@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Presentation Text.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupPolicyPresentationText : GroupPolicyPresentation
     {
     
-		///<summary>
-		/// The GroupPolicyPresentationText constructor
-		///</summary>
+        ///<summary>
+        /// The GroupPolicyPresentationText constructor
+        ///</summary>
         public GroupPolicyPresentationText()
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationText";
         }
-	
+
     }
 }
 

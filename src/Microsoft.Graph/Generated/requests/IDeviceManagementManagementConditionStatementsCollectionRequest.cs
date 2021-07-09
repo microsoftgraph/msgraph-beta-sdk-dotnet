@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementManagementConditionStatementsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ManagementConditionStatement to the collection via POST.
-        /// </summary>
-        /// <param name="managementConditionStatement">The ManagementConditionStatement to add.</param>
-        /// <returns>The created ManagementConditionStatement.</returns>
-        System.Threading.Tasks.Task<ManagementConditionStatement> AddAsync(ManagementConditionStatement managementConditionStatement);
-
         /// <summary>
         /// Adds the specified ManagementConditionStatement to the collection via POST.
         /// </summary>
         /// <param name="managementConditionStatement">The ManagementConditionStatement to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagementConditionStatement.</returns>
-        System.Threading.Tasks.Task<ManagementConditionStatement> AddAsync(ManagementConditionStatement managementConditionStatement, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagementConditionStatement> AddAsync(ManagementConditionStatement managementConditionStatement, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ManagementConditionStatement to the collection via POST and returns a <see cref="GraphResponse{ManagementConditionStatement}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementManagementConditionStatementsCollectionPage> GetAsync();
+        /// <param name="managementConditionStatement">The ManagementConditionStatement to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagementConditionStatement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementConditionStatement>> AddResponseAsync(ManagementConditionStatement managementConditionStatement, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementManagementConditionStatementsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementManagementConditionStatementsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementManagementConditionStatementsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementManagementConditionStatementsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementManagementConditionStatementsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

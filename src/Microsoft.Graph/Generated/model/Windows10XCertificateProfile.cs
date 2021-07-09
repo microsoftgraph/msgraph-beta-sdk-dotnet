@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10XCertificate Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10XCertificateProfile>))]
     public partial class Windows10XCertificateProfile : DeviceManagementResourceAccessProfileBase
     {
     
-		///<summary>
-		/// The internal Windows10XCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The internal Windows10XCertificateProfile constructor
+        ///</summary>
         protected internal Windows10XCertificateProfile()
         {
             // Don't allow initialization of abstract entity types

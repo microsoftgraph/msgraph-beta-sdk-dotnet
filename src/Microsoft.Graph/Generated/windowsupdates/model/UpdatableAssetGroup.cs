@@ -12,30 +12,34 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Updatable Asset Group.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UpdatableAssetGroup : UpdatableAsset
     {
     
-		///<summary>
-		/// The UpdatableAssetGroup constructor
-		///</summary>
+        ///<summary>
+        /// The UpdatableAssetGroup constructor
+        ///</summary>
         public UpdatableAssetGroup()
         {
             this.ODataType = "microsoft.graph.windowsUpdates.updatableAssetGroup";
         }
-	
+
         /// <summary>
         /// Gets or sets members.
         /// Members of the group. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("members")]
         public IUpdatableAssetGroupMembersCollectionPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
     }
 }

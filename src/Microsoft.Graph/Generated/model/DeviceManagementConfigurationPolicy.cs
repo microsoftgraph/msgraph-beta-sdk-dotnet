@@ -12,114 +12,117 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Configuration Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationPolicy>))]
     public partial class DeviceManagementConfigurationPolicy : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationPolicy constructor
-		///</summary>
-        public DeviceManagementConfigurationPolicy()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// Policy creation date and time. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets creation source.
         /// Policy creation source
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationSource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creationSource")]
         public string CreationSource { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Policy description
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets is assigned.
         /// Policy assignment status. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAssigned", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAssigned")]
         public bool? IsAssigned { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// Policy last modification date and time. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// Policy name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets platforms.
         /// Platforms for this policy. Possible values are: none, macOS, windows10X, windows10.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platforms", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platforms")]
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of Scope Tags for this Entity instance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets setting count.
         /// Number of settings. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingCount")]
         public Int32? SettingCount { get; set; }
     
         /// <summary>
         /// Gets or sets technologies.
         /// Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "technologies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("technologies")]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
     
         /// <summary>
         /// Gets or sets template reference.
         /// Template reference information
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateReference", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateReference")]
         public DeviceManagementConfigurationPolicyTemplateReference TemplateReference { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// Policy assignments
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IDeviceManagementConfigurationPolicyAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// Policy settings
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public IDeviceManagementConfigurationPolicySettingsCollectionPage Settings { get; set; }
+
+        /// <summary>
+        /// Gets or sets settingsNextLink.
+        /// </summary>
+        [JsonPropertyName("settings@odata.nextLink")]
+        public string SettingsNextLink { get; set; }
     
     }
 }

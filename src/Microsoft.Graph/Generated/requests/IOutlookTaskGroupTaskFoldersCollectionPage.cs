@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IOutlookTaskGroupTaskFoldersCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<OutlookTaskGroupTaskFoldersCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<OutlookTaskGroupTaskFoldersCollectionPage>))]
     public interface IOutlookTaskGroupTaskFoldersCollectionPage : ICollectionPage<OutlookTaskFolder>
     {
         /// <summary>

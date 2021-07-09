@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MobileAppIntentAndStateDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MobileAppIntentAndStateDetail>))]
     public partial class MobileAppIntentAndStateDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MobileAppIntentAndStateDetail"/> class.
-        /// </summary>
-        public MobileAppIntentAndStateDetail()
-        {
-            this.ODataType = "microsoft.graph.mobileAppIntentAndStateDetail";
-        }
 
         /// <summary>
         /// Gets or sets applicationId.
         /// MobieApp identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicationId")]
         public string ApplicationId { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// The admin provided or imported title of the app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets displayVersion.
         /// Human readable version of the application
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayVersion")]
         public string DisplayVersion { get; set; }
     
         /// <summary>
         /// Gets or sets installState.
         /// The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installState")]
         public ResultantAppState? InstallState { get; set; }
     
         /// <summary>
         /// Gets or sets mobileAppIntent.
         /// Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppIntent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mobileAppIntent")]
         public MobileAppIntent? MobileAppIntent { get; set; }
     
         /// <summary>
         /// Gets or sets supportedDeviceTypes.
         /// The supported platforms for the app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedDeviceTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supportedDeviceTypes")]
         public IEnumerable<MobileAppSupportedDeviceType> SupportedDeviceTypes { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

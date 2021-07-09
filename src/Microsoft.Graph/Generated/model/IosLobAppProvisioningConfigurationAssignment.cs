@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Lob App Provisioning Configuration Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosLobAppProvisioningConfigurationAssignment : Entity
     {
     
-		///<summary>
-		/// The IosLobAppProvisioningConfigurationAssignment constructor
-		///</summary>
-        public IosLobAppProvisioningConfigurationAssignment()
-        {
-            this.ODataType = "microsoft.graph.iosLobAppProvisioningConfigurationAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// The target group assignment defined by the admin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }

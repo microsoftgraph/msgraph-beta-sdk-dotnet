@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Script Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementScriptAssignment : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementScriptAssignment constructor
-		///</summary>
-        public DeviceManagementScriptAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementScriptAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// The Id of the Azure Active Directory group we are targeting the script to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }

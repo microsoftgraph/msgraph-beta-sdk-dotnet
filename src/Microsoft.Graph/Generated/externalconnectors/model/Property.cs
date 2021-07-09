@@ -12,82 +12,73 @@ namespace Microsoft.Graph.ExternalConnectors
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Property.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Property>))]
     public partial class Property
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Property"/> class.
-        /// </summary>
-        public Property()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.property";
-        }
 
         /// <summary>
         /// Gets or sets aliases.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aliases", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("aliases")]
         public IEnumerable<string> Aliases { get; set; }
     
         /// <summary>
         /// Gets or sets isQueryable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isQueryable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isQueryable")]
         public bool? IsQueryable { get; set; }
     
         /// <summary>
         /// Gets or sets isRefinable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRefinable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRefinable")]
         public bool? IsRefinable { get; set; }
     
         /// <summary>
         /// Gets or sets isRetrievable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRetrievable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRetrievable")]
         public bool? IsRetrievable { get; set; }
     
         /// <summary>
         /// Gets or sets isSearchable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSearchable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isSearchable")]
         public bool? IsSearchable { get; set; }
     
         /// <summary>
         /// Gets or sets labels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("labels")]
         public IEnumerable<Label> Labels { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public PropertyType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

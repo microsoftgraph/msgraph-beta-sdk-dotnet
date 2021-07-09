@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IWindows10GeneralConfigurationPrivacyAccessControlsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WindowsPrivacyDataAccessControlItem to the collection via POST.
-        /// </summary>
-        /// <param name="windowsPrivacyDataAccessControlItem">The WindowsPrivacyDataAccessControlItem to add.</param>
-        /// <returns>The created WindowsPrivacyDataAccessControlItem.</returns>
-        System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> AddAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItem);
-
         /// <summary>
         /// Adds the specified WindowsPrivacyDataAccessControlItem to the collection via POST.
         /// </summary>
         /// <param name="windowsPrivacyDataAccessControlItem">The WindowsPrivacyDataAccessControlItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsPrivacyDataAccessControlItem.</returns>
-        System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> AddAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItem, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> AddAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItem, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified WindowsPrivacyDataAccessControlItem to the collection via POST and returns a <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage> GetAsync();
+        /// <param name="windowsPrivacyDataAccessControlItem">The WindowsPrivacyDataAccessControlItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> AddResponseAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItem, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

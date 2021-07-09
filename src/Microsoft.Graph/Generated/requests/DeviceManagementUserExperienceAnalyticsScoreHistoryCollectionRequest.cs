@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsScoreHistory to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsScoreHistory">The UserExperienceAnalyticsScoreHistory to add.</param>
-        /// <returns>The created UserExperienceAnalyticsScoreHistory.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsScoreHistory> AddAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistory)
-        {
-            return this.AddAsync(userExperienceAnalyticsScoreHistory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsScoreHistory to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsScoreHistory">The UserExperienceAnalyticsScoreHistory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsScoreHistory.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsScoreHistory> AddAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistory, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserExperienceAnalyticsScoreHistory> AddAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<UserExperienceAnalyticsScoreHistory>(userExperienceAnalyticsScoreHistory, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UserExperienceAnalyticsScoreHistory to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionPage> GetAsync()
+        /// <param name="userExperienceAnalyticsScoreHistory">The UserExperienceAnalyticsScoreHistory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsScoreHistory>> AddResponseAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsScoreHistory>(userExperienceAnalyticsScoreHistory, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementUserExperienceAnalyticsScoreHistoryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsScoreHistoryCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsScoreHistoryCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsScoreHistoryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementUserExperienceAnalyticsScoreHistoryCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

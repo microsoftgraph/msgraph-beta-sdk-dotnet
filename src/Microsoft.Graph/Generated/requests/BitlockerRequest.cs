@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Bitlocker using POST.
         /// </summary>
         /// <param name="bitlockerToCreate">The Bitlocker to create.</param>
-        /// <returns>The created Bitlocker.</returns>
-        public System.Threading.Tasks.Task<Bitlocker> CreateAsync(Bitlocker bitlockerToCreate)
-        {
-            return this.CreateAsync(bitlockerToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Bitlocker using POST.
-        /// </summary>
-        /// <param name="bitlockerToCreate">The Bitlocker to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Bitlocker.</returns>
-        public async System.Threading.Tasks.Task<Bitlocker> CreateAsync(Bitlocker bitlockerToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Bitlocker> CreateAsync(Bitlocker bitlockerToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Bitlocker>(bitlockerToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Bitlocker.
+        /// Creates the specified Bitlocker using POST and returns a <see cref="GraphResponse{Bitlocker}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="bitlockerToCreate">The Bitlocker to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Bitlocker}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Bitlocker>> CreateResponseAsync(Bitlocker bitlockerToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Bitlocker>(bitlockerToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Bitlocker>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Bitlocker.
+        /// Deletes the specified Bitlocker and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Bitlocker.</returns>
-        public System.Threading.Tasks.Task<Bitlocker> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Bitlocker.</returns>
-        public async System.Threading.Tasks.Task<Bitlocker> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Bitlocker> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Bitlocker>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Bitlocker using PATCH.
+        /// Gets the specified Bitlocker and returns a <see cref="GraphResponse{Bitlocker}"/> object.
         /// </summary>
-        /// <param name="bitlockerToUpdate">The Bitlocker to update.</param>
-        /// <returns>The updated Bitlocker.</returns>
-        public System.Threading.Tasks.Task<Bitlocker> UpdateAsync(Bitlocker bitlockerToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Bitlocker}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Bitlocker>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(bitlockerToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Bitlocker>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Bitlocker.</returns>
-        public async System.Threading.Tasks.Task<Bitlocker> UpdateAsync(Bitlocker bitlockerToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Bitlocker> UpdateAsync(Bitlocker bitlockerToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (bitlockerToUpdate.AdditionalData != null)
-			{
-				if (bitlockerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					bitlockerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bitlockerToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (bitlockerToUpdate.AdditionalData != null)
-            {
-                if (bitlockerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    bitlockerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bitlockerToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Bitlocker>(bitlockerToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Bitlocker using PATCH and returns a <see cref="GraphResponse{Bitlocker}"/> object.
+        /// </summary>
+        /// <param name="bitlockerToUpdate">The Bitlocker to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Bitlocker}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Bitlocker>> UpdateResponseAsync(Bitlocker bitlockerToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Bitlocker>(bitlockerToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Bitlocker using PUT.
+        /// </summary>
+        /// <param name="bitlockerToUpdate">The Bitlocker object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Bitlocker> PutAsync(Bitlocker bitlockerToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Bitlocker>(bitlockerToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Bitlocker using PUT and returns a <see cref="GraphResponse{Bitlocker}"/> object.
+        /// </summary>
+        /// <param name="bitlockerToUpdate">The Bitlocker object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Bitlocker}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Bitlocker>> PutResponseAsync(Bitlocker bitlockerToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Bitlocker>(bitlockerToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Bitlocker bitlockerToInitialize)
         {
 
-            if (bitlockerToInitialize != null && bitlockerToInitialize.AdditionalData != null)
+            if (bitlockerToInitialize != null)
             {
-
                 if (bitlockerToInitialize.RecoveryKeys != null && bitlockerToInitialize.RecoveryKeys.CurrentPage != null)
                 {
+                    bitlockerToInitialize.RecoveryKeys.InitializeNextPageRequest(this.Client, bitlockerToInitialize.RecoveryKeysNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bitlockerToInitialize.RecoveryKeys.AdditionalData = bitlockerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bitlockerToInitialize.AdditionalData.TryGetValue("recoveryKeys@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bitlockerToInitialize.RecoveryKeys.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

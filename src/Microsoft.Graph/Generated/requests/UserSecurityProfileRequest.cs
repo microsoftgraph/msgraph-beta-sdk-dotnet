@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UserSecurityProfile using POST.
         /// </summary>
         /// <param name="userSecurityProfileToCreate">The UserSecurityProfile to create.</param>
-        /// <returns>The created UserSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<UserSecurityProfile> CreateAsync(UserSecurityProfile userSecurityProfileToCreate)
-        {
-            return this.CreateAsync(userSecurityProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserSecurityProfile using POST.
-        /// </summary>
-        /// <param name="userSecurityProfileToCreate">The UserSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<UserSecurityProfile> CreateAsync(UserSecurityProfile userSecurityProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserSecurityProfile> CreateAsync(UserSecurityProfile userSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserSecurityProfile>(userSecurityProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UserSecurityProfile.
+        /// Creates the specified UserSecurityProfile using POST and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="userSecurityProfileToCreate">The UserSecurityProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> CreateResponseAsync(UserSecurityProfile userSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserSecurityProfile>(userSecurityProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UserSecurityProfile.
+        /// Deletes the specified UserSecurityProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<UserSecurityProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<UserSecurityProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserSecurityProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UserSecurityProfile using PATCH.
+        /// Gets the specified UserSecurityProfile and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object.
         /// </summary>
-        /// <param name="userSecurityProfileToUpdate">The UserSecurityProfile to update.</param>
-        /// <returns>The updated UserSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<UserSecurityProfile> UpdateAsync(UserSecurityProfile userSecurityProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(userSecurityProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserSecurityProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<UserSecurityProfile> UpdateAsync(UserSecurityProfile userSecurityProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserSecurityProfile> UpdateAsync(UserSecurityProfile userSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userSecurityProfileToUpdate.AdditionalData != null)
-			{
-				if (userSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userSecurityProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userSecurityProfileToUpdate.AdditionalData != null)
-            {
-                if (userSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userSecurityProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserSecurityProfile>(userSecurityProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserSecurityProfile using PATCH and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="userSecurityProfileToUpdate">The UserSecurityProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> UpdateResponseAsync(UserSecurityProfile userSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserSecurityProfile>(userSecurityProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UserSecurityProfile using PUT.
+        /// </summary>
+        /// <param name="userSecurityProfileToUpdate">The UserSecurityProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserSecurityProfile> PutAsync(UserSecurityProfile userSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserSecurityProfile>(userSecurityProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserSecurityProfile using PUT and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="userSecurityProfileToUpdate">The UserSecurityProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserSecurityProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> PutResponseAsync(UserSecurityProfile userSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserSecurityProfile>(userSecurityProfileToUpdate, cancellationToken);
         }
 
         /// <summary>

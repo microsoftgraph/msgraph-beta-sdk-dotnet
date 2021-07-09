@@ -12,224 +12,215 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Online Meeting.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<OnlineMeeting>))]
     public partial class OnlineMeeting : Entity
     {
     
-		///<summary>
-		/// The OnlineMeeting constructor
-		///</summary>
-        public OnlineMeeting()
-        {
-            this.ODataType = "microsoft.graph.onlineMeeting";
-        }
-	
         /// <summary>
         /// Gets or sets access level.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessLevel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessLevel")]
         public AccessLevel? AccessLevel { get; set; }
     
         /// <summary>
         /// Gets or sets allow attendee to enable camera.
         /// Indicates whether attendees can turn on their camera.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAttendeeToEnableCamera", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowAttendeeToEnableCamera")]
         public bool? AllowAttendeeToEnableCamera { get; set; }
     
         /// <summary>
         /// Gets or sets allow attendee to enable mic.
         /// Indicates whether attendees can turn on their microphone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAttendeeToEnableMic", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowAttendeeToEnableMic")]
         public bool? AllowAttendeeToEnableMic { get; set; }
     
         /// <summary>
         /// Gets or sets allowed presenters.
         /// Specifies who can be a presenter in a meeting. Possible values are everyone, organization, roleIsPresenter, organizer, and unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedPresenters", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedPresenters")]
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
     
         /// <summary>
         /// Gets or sets allow meeting chat.
         /// Specifies the mode of meeting chat.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowMeetingChat", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowMeetingChat")]
         public MeetingChatMode? AllowMeetingChat { get; set; }
     
         /// <summary>
         /// Gets or sets allow teamwork reactions.
         /// Indicates if Teams reactions are enabled for the meeting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowTeamworkReactions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowTeamworkReactions")]
         public bool? AllowTeamworkReactions { get; set; }
     
         /// <summary>
         /// Gets or sets alternative recording.
         /// The content stream of the alternative recording of a live event. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternativeRecording", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alternativeRecording")]
         public Stream AlternativeRecording { get; set; }
     
         /// <summary>
         /// Gets or sets attendee report.
         /// The content stream of the attendee report of a live event. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attendeeReport", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("attendeeReport")]
         public Stream AttendeeReport { get; set; }
     
         /// <summary>
         /// Gets or sets audio conferencing.
         /// The phone access (dial-in) information for an online meeting. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioConferencing", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("audioConferencing")]
         public AudioConferencing AudioConferencing { get; set; }
     
         /// <summary>
         /// Gets or sets broadcast settings.
         /// Settings related to a live event
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "broadcastSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("broadcastSettings")]
         public BroadcastMeetingSettings BroadcastSettings { get; set; }
     
         /// <summary>
         /// Gets or sets canceled date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canceledDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("canceledDateTime")]
         public DateTimeOffset? CanceledDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets capabilities.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "capabilities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("capabilities")]
         public IEnumerable<MeetingCapabilities> Capabilities { get; set; }
     
         /// <summary>
         /// Gets or sets chat info.
         /// The chat information associated with this online meeting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("chatInfo")]
         public ChatInfo ChatInfo { get; set; }
     
         /// <summary>
         /// Gets or sets creation date time.
         /// The meeting creation time in UTC. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creationDateTime")]
         public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets end date time.
         /// The meeting end time in UTC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets entry exit announcement.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entryExitAnnouncement", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("entryExitAnnouncement")]
         public bool? EntryExitAnnouncement { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
         /// The external ID. A custom ID. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalId")]
         public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets is broadcast.
         /// Indicates whether this is a live event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBroadcast", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isBroadcast")]
         public bool? IsBroadcast { get; set; }
     
         /// <summary>
         /// Gets or sets is cancelled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCancelled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isCancelled")]
         public bool? IsCancelled { get; set; }
     
         /// <summary>
         /// Gets or sets is entry exit announced.
         /// Indicates whether to announce when callers join or leave.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEntryExitAnnounced", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEntryExitAnnounced")]
         public bool? IsEntryExitAnnounced { get; set; }
     
         /// <summary>
         /// Gets or sets join information.
         /// The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinInformation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("joinInformation")]
         public ItemBody JoinInformation { get; set; }
     
         /// <summary>
         /// Gets or sets join url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("joinUrl")]
         public string JoinUrl { get; set; }
     
         /// <summary>
         /// Gets or sets lobby bypass settings.
         /// Specifies which participants can bypass the meeting lobby.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lobbyBypassSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lobbyBypassSettings")]
         public LobbyBypassSettings LobbyBypassSettings { get; set; }
     
         /// <summary>
         /// Gets or sets participants.
         /// The participants associated with the online meeting. This includes the organizer and the attendees.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participants", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("participants")]
         public MeetingParticipants Participants { get; set; }
     
         /// <summary>
         /// Gets or sets recording.
         /// The content stream of the recording of a live event. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recording", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recording")]
         public Stream Recording { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
         /// The meeting start time in UTC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
         /// The subject of the online meeting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subject")]
         public string Subject { get; set; }
     
         /// <summary>
         /// Gets or sets video teleconference id.
         /// The video teleconferencing ID. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "videoTeleconferenceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("videoTeleconferenceId")]
         public string VideoTeleconferenceId { get; set; }
     
         /// <summary>
         /// Gets or sets meeting attendance report.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingAttendanceReport", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meetingAttendanceReport")]
         public MeetingAttendanceReport MeetingAttendanceReport { get; set; }
     
     }

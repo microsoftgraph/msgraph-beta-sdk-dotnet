@@ -24,47 +24,45 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Creates the specified QualityUpdateCatalogEntry using POST.
         /// </summary>
         /// <param name="qualityUpdateCatalogEntryToCreate">The QualityUpdateCatalogEntry to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created QualityUpdateCatalogEntry.</returns>
-        System.Threading.Tasks.Task<QualityUpdateCatalogEntry> CreateAsync(QualityUpdateCatalogEntry qualityUpdateCatalogEntryToCreate);        /// <summary>
-        /// Creates the specified QualityUpdateCatalogEntry using POST.
+        System.Threading.Tasks.Task<QualityUpdateCatalogEntry> CreateAsync(QualityUpdateCatalogEntry qualityUpdateCatalogEntryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified QualityUpdateCatalogEntry using POST and returns a <see cref="GraphResponse{QualityUpdateCatalogEntry}"/> object.
         /// </summary>
         /// <param name="qualityUpdateCatalogEntryToCreate">The QualityUpdateCatalogEntry to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created QualityUpdateCatalogEntry.</returns>
-        System.Threading.Tasks.Task<QualityUpdateCatalogEntry> CreateAsync(QualityUpdateCatalogEntry qualityUpdateCatalogEntryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified QualityUpdateCatalogEntry.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{QualityUpdateCatalogEntry}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<QualityUpdateCatalogEntry>> CreateResponseAsync(QualityUpdateCatalogEntry qualityUpdateCatalogEntryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified QualityUpdateCatalogEntry.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified QualityUpdateCatalogEntry.
+        /// Deletes the specified QualityUpdateCatalogEntry and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The QualityUpdateCatalogEntry.</returns>
-        System.Threading.Tasks.Task<QualityUpdateCatalogEntry> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified QualityUpdateCatalogEntry.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The QualityUpdateCatalogEntry.</returns>
-        System.Threading.Tasks.Task<QualityUpdateCatalogEntry> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<QualityUpdateCatalogEntry> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified QualityUpdateCatalogEntry using PATCH.
+        /// Gets the specified QualityUpdateCatalogEntry and returns a <see cref="GraphResponse{QualityUpdateCatalogEntry}"/> object.
         /// </summary>
-        /// <param name="qualityUpdateCatalogEntryToUpdate">The QualityUpdateCatalogEntry to update.</param>
-        /// <returns>The updated QualityUpdateCatalogEntry.</returns>
-        System.Threading.Tasks.Task<QualityUpdateCatalogEntry> UpdateAsync(QualityUpdateCatalogEntry qualityUpdateCatalogEntryToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{QualityUpdateCatalogEntry}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<QualityUpdateCatalogEntry>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified QualityUpdateCatalogEntry using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated QualityUpdateCatalogEntry.</returns>
-        System.Threading.Tasks.Task<QualityUpdateCatalogEntry> UpdateAsync(QualityUpdateCatalogEntry qualityUpdateCatalogEntryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<QualityUpdateCatalogEntry> UpdateAsync(QualityUpdateCatalogEntry qualityUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified QualityUpdateCatalogEntry using PATCH and returns a <see cref="GraphResponse{QualityUpdateCatalogEntry}"/> object.
+        /// </summary>
+        /// <param name="qualityUpdateCatalogEntryToUpdate">The QualityUpdateCatalogEntry to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{QualityUpdateCatalogEntry}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<QualityUpdateCatalogEntry>> UpdateResponseAsync(QualityUpdateCatalogEntry qualityUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified QualityUpdateCatalogEntry using PUT.
+        /// </summary>
+        /// <param name="qualityUpdateCatalogEntryToUpdate">The QualityUpdateCatalogEntry object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<QualityUpdateCatalogEntry> PutAsync(QualityUpdateCatalogEntry qualityUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified QualityUpdateCatalogEntry using PUT and returns a <see cref="GraphResponse{QualityUpdateCatalogEntry}"/> object.
+        /// </summary>
+        /// <param name="qualityUpdateCatalogEntryToUpdate">The QualityUpdateCatalogEntry object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{QualityUpdateCatalogEntry}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<QualityUpdateCatalogEntry>> PutResponseAsync(QualityUpdateCatalogEntry qualityUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

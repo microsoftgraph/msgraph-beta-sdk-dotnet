@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ImportedAppleDeviceIdentity to the collection via POST.
-        /// </summary>
-        /// <param name="importedAppleDeviceIdentity">The ImportedAppleDeviceIdentity to add.</param>
-        /// <returns>The created ImportedAppleDeviceIdentity.</returns>
-        public System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> AddAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity)
-        {
-            return this.AddAsync(importedAppleDeviceIdentity, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ImportedAppleDeviceIdentity to the collection via POST.
         /// </summary>
         /// <param name="importedAppleDeviceIdentity">The ImportedAppleDeviceIdentity to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ImportedAppleDeviceIdentity.</returns>
-        public System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> AddAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> AddAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ImportedAppleDeviceIdentity>(importedAppleDeviceIdentity, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ImportedAppleDeviceIdentity to the collection via POST and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDepOnboardingSettingImportedAppleDeviceIdentitiesCollectionPage> GetAsync()
+        /// <param name="importedAppleDeviceIdentity">The ImportedAppleDeviceIdentity to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> AddResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ImportedAppleDeviceIdentity>(importedAppleDeviceIdentity, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDepOnboardingSettingImportedAppleDeviceIdentitiesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDepOnboardingSettingImportedAppleDeviceIdentitiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

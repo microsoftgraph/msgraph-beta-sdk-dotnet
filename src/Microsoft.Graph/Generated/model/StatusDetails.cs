@@ -12,14 +12,13 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type StatusDetails.
     /// </summary>
     [Obsolete("The statusDetails complex type is deprecated. The provisioningStatusInfo and provisioningStatusInfo's provisioningErrorInfo holds the same information as this. This only exists in the beta api.")]
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<StatusDetails>))]
     public partial class StatusDetails : StatusBase
     {
         /// <summary>
@@ -34,35 +33,35 @@ namespace Microsoft.Graph
         /// Gets or sets additionalDetails.
         /// Additional details in case of error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("additionalDetails")]
         public string AdditionalDetails { get; set; }
     
         /// <summary>
         /// Gets or sets errorCategory.
         /// Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCategory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCategory")]
         public ProvisioningStatusErrorCategory? ErrorCategory { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
         /// Unique error code if any occurred. Learn more
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCode")]
         public string ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets reason.
         /// Summarizes the status and describes why the status happened.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reason")]
         public string Reason { get; set; }
     
         /// <summary>
         /// Gets or sets recommendedAction.
         /// Provides the resolution for the corresponding error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendedAction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recommendedAction")]
         public string RecommendedAction { get; set; }
     
     }

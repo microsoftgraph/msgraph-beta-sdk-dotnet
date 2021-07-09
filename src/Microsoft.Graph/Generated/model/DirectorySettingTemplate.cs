@@ -12,43 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Directory Setting Template.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DirectorySettingTemplate : DirectoryObject
     {
     
-		///<summary>
-		/// The DirectorySettingTemplate constructor
-		///</summary>
+        ///<summary>
+        /// The DirectorySettingTemplate constructor
+        ///</summary>
         public DirectorySettingTemplate()
         {
             this.ODataType = "microsoft.graph.directorySettingTemplate";
         }
-	
+
         /// <summary>
         /// Gets or sets description.
         /// Description of the template. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Display name of the template. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets values.
         /// Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("values")]
         public IEnumerable<SettingTemplateValue> Values { get; set; }
     
     }

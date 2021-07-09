@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsDevicePerformance to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsDevicePerformance">The UserExperienceAnalyticsDevicePerformance to add.</param>
-        /// <returns>The created UserExperienceAnalyticsDevicePerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> AddAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformance);
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsDevicePerformance to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsDevicePerformance">The UserExperienceAnalyticsDevicePerformance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsDevicePerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> AddAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformance, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> AddAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformance, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UserExperienceAnalyticsDevicePerformance to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionPage> GetAsync();
+        /// <param name="userExperienceAnalyticsDevicePerformance">The UserExperienceAnalyticsDevicePerformance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> AddResponseAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformance, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

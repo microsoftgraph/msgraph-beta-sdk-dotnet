@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSCertificateProfileBase using POST.
         /// </summary>
         /// <param name="macOSCertificateProfileBaseToCreate">The MacOSCertificateProfileBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<MacOSCertificateProfileBase> CreateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToCreate);        /// <summary>
-        /// Creates the specified MacOSCertificateProfileBase using POST.
+        System.Threading.Tasks.Task<MacOSCertificateProfileBase> CreateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified MacOSCertificateProfileBase using POST and returns a <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object.
         /// </summary>
         /// <param name="macOSCertificateProfileBaseToCreate">The MacOSCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MacOSCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<MacOSCertificateProfileBase> CreateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MacOSCertificateProfileBase.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCertificateProfileBase>> CreateResponseAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MacOSCertificateProfileBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified MacOSCertificateProfileBase.
+        /// Deletes the specified MacOSCertificateProfileBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MacOSCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<MacOSCertificateProfileBase> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSCertificateProfileBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<MacOSCertificateProfileBase> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MacOSCertificateProfileBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified MacOSCertificateProfileBase using PATCH.
+        /// Gets the specified MacOSCertificateProfileBase and returns a <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object.
         /// </summary>
-        /// <param name="macOSCertificateProfileBaseToUpdate">The MacOSCertificateProfileBase to update.</param>
-        /// <returns>The updated MacOSCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<MacOSCertificateProfileBase> UpdateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSCertificateProfileBase using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<MacOSCertificateProfileBase> UpdateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MacOSCertificateProfileBase> UpdateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MacOSCertificateProfileBase using PATCH and returns a <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object.
+        /// </summary>
+        /// <param name="macOSCertificateProfileBaseToUpdate">The MacOSCertificateProfileBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCertificateProfileBase>> UpdateResponseAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MacOSCertificateProfileBase using PUT.
+        /// </summary>
+        /// <param name="macOSCertificateProfileBaseToUpdate">The MacOSCertificateProfileBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MacOSCertificateProfileBase> PutAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MacOSCertificateProfileBase using PUT and returns a <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object.
+        /// </summary>
+        /// <param name="macOSCertificateProfileBaseToUpdate">The MacOSCertificateProfileBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MacOSCertificateProfileBase}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCertificateProfileBase>> PutResponseAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

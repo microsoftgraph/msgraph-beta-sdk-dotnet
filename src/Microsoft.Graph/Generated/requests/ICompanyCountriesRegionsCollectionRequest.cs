@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanyCountriesRegionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified CountryRegion to the collection via POST.
-        /// </summary>
-        /// <param name="countryRegion">The CountryRegion to add.</param>
-        /// <returns>The created CountryRegion.</returns>
-        System.Threading.Tasks.Task<CountryRegion> AddAsync(CountryRegion countryRegion);
-
         /// <summary>
         /// Adds the specified CountryRegion to the collection via POST.
         /// </summary>
         /// <param name="countryRegion">The CountryRegion to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CountryRegion.</returns>
-        System.Threading.Tasks.Task<CountryRegion> AddAsync(CountryRegion countryRegion, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CountryRegion> AddAsync(CountryRegion countryRegion, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified CountryRegion to the collection via POST and returns a <see cref="GraphResponse{CountryRegion}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyCountriesRegionsCollectionPage> GetAsync();
+        /// <param name="countryRegion">The CountryRegion to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CountryRegion>> AddResponseAsync(CountryRegion countryRegion, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyCountriesRegionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICompanyCountriesRegionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyCountriesRegionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyCountriesRegionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyCountriesRegionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

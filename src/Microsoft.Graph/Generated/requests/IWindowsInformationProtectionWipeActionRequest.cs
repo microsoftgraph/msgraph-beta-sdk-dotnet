@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsInformationProtectionWipeAction using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionWipeActionToCreate">The WindowsInformationProtectionWipeAction to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionWipeAction.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> CreateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToCreate);        /// <summary>
-        /// Creates the specified WindowsInformationProtectionWipeAction using POST.
+        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> CreateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified WindowsInformationProtectionWipeAction using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object.
         /// </summary>
         /// <param name="windowsInformationProtectionWipeActionToCreate">The WindowsInformationProtectionWipeAction to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsInformationProtectionWipeAction.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> CreateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsInformationProtectionWipeAction.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> CreateResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsInformationProtectionWipeAction.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified WindowsInformationProtectionWipeAction.
+        /// Deletes the specified WindowsInformationProtectionWipeAction and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsInformationProtectionWipeAction.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsInformationProtectionWipeAction.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsInformationProtectionWipeAction.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified WindowsInformationProtectionWipeAction using PATCH.
+        /// Gets the specified WindowsInformationProtectionWipeAction and returns a <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object.
         /// </summary>
-        /// <param name="windowsInformationProtectionWipeActionToUpdate">The WindowsInformationProtectionWipeAction to update.</param>
-        /// <returns>The updated WindowsInformationProtectionWipeAction.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> UpdateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsInformationProtectionWipeAction using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsInformationProtectionWipeAction.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> UpdateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> UpdateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsInformationProtectionWipeAction using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionWipeActionToUpdate">The WindowsInformationProtectionWipeAction to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> UpdateResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsInformationProtectionWipeAction using PUT.
+        /// </summary>
+        /// <param name="windowsInformationProtectionWipeActionToUpdate">The WindowsInformationProtectionWipeAction object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> PutAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsInformationProtectionWipeAction using PUT and returns a <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionWipeActionToUpdate">The WindowsInformationProtectionWipeAction object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> PutResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,34 +39,28 @@ namespace Microsoft.Graph.ManagedTenants
         /// Creates the specified ManagedTenant using POST.
         /// </summary>
         /// <param name="managedTenantToCreate">The ManagedTenant to create.</param>
-        /// <returns>The created ManagedTenant.</returns>
-        public System.Threading.Tasks.Task<ManagedTenant> CreateAsync(ManagedTenant managedTenantToCreate)
-        {
-            return this.CreateAsync(managedTenantToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedTenant using POST.
-        /// </summary>
-        /// <param name="managedTenantToCreate">The ManagedTenant to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedTenant.</returns>
-        public async System.Threading.Tasks.Task<ManagedTenant> CreateAsync(ManagedTenant managedTenantToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedTenant> CreateAsync(ManagedTenant managedTenantToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ManagedTenant>(managedTenantToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ManagedTenant.
+        /// Creates the specified ManagedTenant using POST and returns a <see cref="GraphResponse{ManagedTenant}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="managedTenantToCreate">The ManagedTenant to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedTenant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedTenant>> CreateResponseAsync(ManagedTenant managedTenantToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ManagedTenant>(managedTenantToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ManagedTenant>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ManagedTenant.
+        /// Deletes the specified ManagedTenant and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagedTenant.</returns>
-        public System.Threading.Tasks.Task<ManagedTenant> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedTenant.</returns>
-        public async System.Threading.Tasks.Task<ManagedTenant> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedTenant> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ManagedTenant>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ManagedTenant using PATCH.
+        /// Gets the specified ManagedTenant and returns a <see cref="GraphResponse{ManagedTenant}"/> object.
         /// </summary>
-        /// <param name="managedTenantToUpdate">The ManagedTenant to update.</param>
-        /// <returns>The updated ManagedTenant.</returns>
-        public System.Threading.Tasks.Task<ManagedTenant> UpdateAsync(ManagedTenant managedTenantToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedTenant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedTenant>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(managedTenantToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagedTenant>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedTenant.</returns>
-        public async System.Threading.Tasks.Task<ManagedTenant> UpdateAsync(ManagedTenant managedTenantToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedTenant> UpdateAsync(ManagedTenant managedTenantToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (managedTenantToUpdate.AdditionalData != null)
-			{
-				if (managedTenantToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedTenantToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedTenantToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedTenantToUpdate.AdditionalData != null)
-            {
-                if (managedTenantToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedTenantToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedTenantToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ManagedTenant>(managedTenantToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedTenant using PATCH and returns a <see cref="GraphResponse{ManagedTenant}"/> object.
+        /// </summary>
+        /// <param name="managedTenantToUpdate">The ManagedTenant to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedTenant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedTenant>> UpdateResponseAsync(ManagedTenant managedTenantToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ManagedTenant>(managedTenantToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedTenant using PUT.
+        /// </summary>
+        /// <param name="managedTenantToUpdate">The ManagedTenant object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ManagedTenant> PutAsync(ManagedTenant managedTenantToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ManagedTenant>(managedTenantToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedTenant using PUT and returns a <see cref="GraphResponse{ManagedTenant}"/> object.
+        /// </summary>
+        /// <param name="managedTenantToUpdate">The ManagedTenant object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ManagedTenant}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedTenant>> PutResponseAsync(ManagedTenant managedTenantToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ManagedTenant>(managedTenantToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,343 +244,133 @@ namespace Microsoft.Graph.ManagedTenants
         private void InitializeCollectionProperties(ManagedTenant managedTenantToInitialize)
         {
 
-            if (managedTenantToInitialize != null && managedTenantToInitialize.AdditionalData != null)
+            if (managedTenantToInitialize != null)
             {
-
                 if (managedTenantToInitialize.AggregatedPolicyCompliances != null && managedTenantToInitialize.AggregatedPolicyCompliances.CurrentPage != null)
                 {
+                    managedTenantToInitialize.AggregatedPolicyCompliances.InitializeNextPageRequest(this.Client, managedTenantToInitialize.AggregatedPolicyCompliancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.AggregatedPolicyCompliances.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("aggregatedPolicyCompliances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.AggregatedPolicyCompliances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.CloudPcConnections != null && managedTenantToInitialize.CloudPcConnections.CurrentPage != null)
                 {
+                    managedTenantToInitialize.CloudPcConnections.InitializeNextPageRequest(this.Client, managedTenantToInitialize.CloudPcConnectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.CloudPcConnections.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("cloudPcConnections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.CloudPcConnections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.CloudPcDevices != null && managedTenantToInitialize.CloudPcDevices.CurrentPage != null)
                 {
+                    managedTenantToInitialize.CloudPcDevices.InitializeNextPageRequest(this.Client, managedTenantToInitialize.CloudPcDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.CloudPcDevices.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("cloudPcDevices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.CloudPcDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.CloudPcsOverview != null && managedTenantToInitialize.CloudPcsOverview.CurrentPage != null)
                 {
+                    managedTenantToInitialize.CloudPcsOverview.InitializeNextPageRequest(this.Client, managedTenantToInitialize.CloudPcsOverviewNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.CloudPcsOverview.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("cloudPcsOverview@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.CloudPcsOverview.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.ConditionalAccessPolicyCoverages != null && managedTenantToInitialize.ConditionalAccessPolicyCoverages.CurrentPage != null)
                 {
+                    managedTenantToInitialize.ConditionalAccessPolicyCoverages.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ConditionalAccessPolicyCoveragesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ConditionalAccessPolicyCoverages.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("conditionalAccessPolicyCoverages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.ConditionalAccessPolicyCoverages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.CredentialUserRegistrationsSummaries != null && managedTenantToInitialize.CredentialUserRegistrationsSummaries.CurrentPage != null)
                 {
+                    managedTenantToInitialize.CredentialUserRegistrationsSummaries.InitializeNextPageRequest(this.Client, managedTenantToInitialize.CredentialUserRegistrationsSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.CredentialUserRegistrationsSummaries.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("credentialUserRegistrationsSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.CredentialUserRegistrationsSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.DeviceCompliancePolicySettingStateSummaries != null && managedTenantToInitialize.DeviceCompliancePolicySettingStateSummaries.CurrentPage != null)
                 {
+                    managedTenantToInitialize.DeviceCompliancePolicySettingStateSummaries.InitializeNextPageRequest(this.Client, managedTenantToInitialize.DeviceCompliancePolicySettingStateSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.DeviceCompliancePolicySettingStateSummaries.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("deviceCompliancePolicySettingStateSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.DeviceCompliancePolicySettingStateSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.ManagedDeviceCompliances != null && managedTenantToInitialize.ManagedDeviceCompliances.CurrentPage != null)
                 {
+                    managedTenantToInitialize.ManagedDeviceCompliances.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagedDeviceCompliancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagedDeviceCompliances.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("managedDeviceCompliances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.ManagedDeviceCompliances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.ManagedDeviceComplianceTrends != null && managedTenantToInitialize.ManagedDeviceComplianceTrends.CurrentPage != null)
                 {
+                    managedTenantToInitialize.ManagedDeviceComplianceTrends.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagedDeviceComplianceTrendsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagedDeviceComplianceTrends.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("managedDeviceComplianceTrends@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.ManagedDeviceComplianceTrends.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.ManagementActions != null && managedTenantToInitialize.ManagementActions.CurrentPage != null)
                 {
+                    managedTenantToInitialize.ManagementActions.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementActionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagementActions.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("managementActions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.ManagementActions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.ManagementActionTenantDeploymentStatuses != null && managedTenantToInitialize.ManagementActionTenantDeploymentStatuses.CurrentPage != null)
                 {
+                    managedTenantToInitialize.ManagementActionTenantDeploymentStatuses.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementActionTenantDeploymentStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagementActionTenantDeploymentStatuses.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("managementActionTenantDeploymentStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.ManagementActionTenantDeploymentStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.ManagementIntents != null && managedTenantToInitialize.ManagementIntents.CurrentPage != null)
                 {
+                    managedTenantToInitialize.ManagementIntents.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementIntentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagementIntents.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("managementIntents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.ManagementIntents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.ManagementTemplates != null && managedTenantToInitialize.ManagementTemplates.CurrentPage != null)
                 {
+                    managedTenantToInitialize.ManagementTemplates.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementTemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagementTemplates.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("managementTemplates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.ManagementTemplates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.RiskyUsers != null && managedTenantToInitialize.RiskyUsers.CurrentPage != null)
                 {
+                    managedTenantToInitialize.RiskyUsers.InitializeNextPageRequest(this.Client, managedTenantToInitialize.RiskyUsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.RiskyUsers.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("riskyUsers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.RiskyUsers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.TenantGroups != null && managedTenantToInitialize.TenantGroups.CurrentPage != null)
                 {
+                    managedTenantToInitialize.TenantGroups.InitializeNextPageRequest(this.Client, managedTenantToInitialize.TenantGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.TenantGroups.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("tenantGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.TenantGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.Tenants != null && managedTenantToInitialize.Tenants.CurrentPage != null)
                 {
+                    managedTenantToInitialize.Tenants.InitializeNextPageRequest(this.Client, managedTenantToInitialize.TenantsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.Tenants.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("tenants@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.Tenants.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.TenantsCustomizedInformation != null && managedTenantToInitialize.TenantsCustomizedInformation.CurrentPage != null)
                 {
+                    managedTenantToInitialize.TenantsCustomizedInformation.InitializeNextPageRequest(this.Client, managedTenantToInitialize.TenantsCustomizedInformationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.TenantsCustomizedInformation.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("tenantsCustomizedInformation@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.TenantsCustomizedInformation.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.TenantsDetailedInformation != null && managedTenantToInitialize.TenantsDetailedInformation.CurrentPage != null)
                 {
+                    managedTenantToInitialize.TenantsDetailedInformation.InitializeNextPageRequest(this.Client, managedTenantToInitialize.TenantsDetailedInformationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.TenantsDetailedInformation.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("tenantsDetailedInformation@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.TenantsDetailedInformation.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.TenantTags != null && managedTenantToInitialize.TenantTags.CurrentPage != null)
                 {
+                    managedTenantToInitialize.TenantTags.InitializeNextPageRequest(this.Client, managedTenantToInitialize.TenantTagsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.TenantTags.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("tenantTags@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.TenantTags.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.WindowsDeviceMalwareStates != null && managedTenantToInitialize.WindowsDeviceMalwareStates.CurrentPage != null)
                 {
+                    managedTenantToInitialize.WindowsDeviceMalwareStates.InitializeNextPageRequest(this.Client, managedTenantToInitialize.WindowsDeviceMalwareStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.WindowsDeviceMalwareStates.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("windowsDeviceMalwareStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.WindowsDeviceMalwareStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedTenantToInitialize.WindowsProtectionStates != null && managedTenantToInitialize.WindowsProtectionStates.CurrentPage != null)
                 {
+                    managedTenantToInitialize.WindowsProtectionStates.InitializeNextPageRequest(this.Client, managedTenantToInitialize.WindowsProtectionStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.WindowsProtectionStates.AdditionalData = managedTenantToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedTenantToInitialize.AdditionalData.TryGetValue("windowsProtectionStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedTenantToInitialize.WindowsProtectionStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

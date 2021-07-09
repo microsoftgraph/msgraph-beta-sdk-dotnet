@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MoveAction.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MoveAction>))]
     public partial class MoveAction
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MoveAction"/> class.
-        /// </summary>
-        public MoveAction()
-        {
-            this.ODataType = "microsoft.graph.moveAction";
-        }
 
         /// <summary>
         /// Gets or sets from.
         /// The name of the location the item was moved from.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("from")]
         public string From { get; set; }
     
         /// <summary>
         /// Gets or sets to.
         /// The name of the location the item was moved to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "to", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("to")]
         public string To { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

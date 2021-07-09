@@ -38,117 +38,102 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidCertificateProfileBase.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidCertificateProfileBase.</returns>
-        public System.Threading.Tasks.Task<AndroidCertificateProfileBase> GetAsync()
+        public async System.Threading.Tasks.Task<AndroidCertificateProfileBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<AndroidCertificateProfileBase>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified AndroidCertificateProfileBase.
+        /// Gets the specified AndroidCertificateProfileBase and returns a <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The AndroidCertificateProfileBase.</returns>
-        public async System.Threading.Tasks.Task<AndroidCertificateProfileBase> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidCertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<AndroidCertificateProfileBase>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidCertificateProfileBase>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified AndroidCertificateProfileBase using POST.
         /// </summary>
         /// <param name="androidCertificateProfileBaseToCreate">The AndroidCertificateProfileBase to create.</param>
-        /// <returns>The created AndroidCertificateProfileBase.</returns>
-        public System.Threading.Tasks.Task<AndroidCertificateProfileBase> CreateAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToCreate)
-        {
-            return this.CreateAsync(androidCertificateProfileBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidCertificateProfileBase using POST.
-        /// </summary>
-        /// <param name="androidCertificateProfileBaseToCreate">The AndroidCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidCertificateProfileBase.</returns>
-        public async System.Threading.Tasks.Task<AndroidCertificateProfileBase> CreateAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidCertificateProfileBase> CreateAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidCertificateProfileBase>(androidCertificateProfileBaseToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified AndroidCertificateProfileBase using PATCH.
+        /// Creates the specified AndroidCertificateProfileBase using POST and returns a <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object.
         /// </summary>
-        /// <param name="androidCertificateProfileBaseToUpdate">The AndroidCertificateProfileBase to update.</param>
-        /// <returns>The updated AndroidCertificateProfileBase.</returns>
-        public System.Threading.Tasks.Task<AndroidCertificateProfileBase> UpdateAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToUpdate)
+        /// <param name="androidCertificateProfileBaseToCreate">The AndroidCertificateProfileBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidCertificateProfileBase>> CreateResponseAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(androidCertificateProfileBaseToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidCertificateProfileBase>(androidCertificateProfileBaseToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified AndroidCertificateProfileBase using PATCH.
         /// </summary>
         /// <param name="androidCertificateProfileBaseToUpdate">The AndroidCertificateProfileBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidCertificateProfileBase.</returns>
-        public async System.Threading.Tasks.Task<AndroidCertificateProfileBase> UpdateAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidCertificateProfileBase> UpdateAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidCertificateProfileBaseToUpdate.AdditionalData != null)
-			{
-				if (androidCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidCertificateProfileBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidCertificateProfileBaseToUpdate.AdditionalData != null)
-            {
-                if (androidCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidCertificateProfileBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidCertificateProfileBase>(androidCertificateProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified AndroidCertificateProfileBase.
+        /// Updates the specified AndroidCertificateProfileBase using PATCH and returns a <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidCertificateProfileBaseToUpdate">The AndroidCertificateProfileBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidCertificateProfileBase>> UpdateResponseAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidCertificateProfileBase>(androidCertificateProfileBaseToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified AndroidCertificateProfileBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidCertificateProfileBase>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified AndroidCertificateProfileBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

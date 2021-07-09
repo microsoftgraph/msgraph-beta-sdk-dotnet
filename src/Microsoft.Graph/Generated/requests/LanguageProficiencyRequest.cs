@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified LanguageProficiency using POST.
         /// </summary>
         /// <param name="languageProficiencyToCreate">The LanguageProficiency to create.</param>
-        /// <returns>The created LanguageProficiency.</returns>
-        public System.Threading.Tasks.Task<LanguageProficiency> CreateAsync(LanguageProficiency languageProficiencyToCreate)
-        {
-            return this.CreateAsync(languageProficiencyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified LanguageProficiency using POST.
-        /// </summary>
-        /// <param name="languageProficiencyToCreate">The LanguageProficiency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LanguageProficiency.</returns>
-        public async System.Threading.Tasks.Task<LanguageProficiency> CreateAsync(LanguageProficiency languageProficiencyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LanguageProficiency> CreateAsync(LanguageProficiency languageProficiencyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<LanguageProficiency>(languageProficiencyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified LanguageProficiency.
+        /// Creates the specified LanguageProficiency using POST and returns a <see cref="GraphResponse{LanguageProficiency}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="languageProficiencyToCreate">The LanguageProficiency to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LanguageProficiency}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> CreateResponseAsync(LanguageProficiency languageProficiencyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<LanguageProficiency>(languageProficiencyToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<LanguageProficiency>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified LanguageProficiency.
+        /// Deletes the specified LanguageProficiency and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The LanguageProficiency.</returns>
-        public System.Threading.Tasks.Task<LanguageProficiency> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The LanguageProficiency.</returns>
-        public async System.Threading.Tasks.Task<LanguageProficiency> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LanguageProficiency> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<LanguageProficiency>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified LanguageProficiency using PATCH.
+        /// Gets the specified LanguageProficiency and returns a <see cref="GraphResponse{LanguageProficiency}"/> object.
         /// </summary>
-        /// <param name="languageProficiencyToUpdate">The LanguageProficiency to update.</param>
-        /// <returns>The updated LanguageProficiency.</returns>
-        public System.Threading.Tasks.Task<LanguageProficiency> UpdateAsync(LanguageProficiency languageProficiencyToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LanguageProficiency}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(languageProficiencyToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<LanguageProficiency>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LanguageProficiency.</returns>
-        public async System.Threading.Tasks.Task<LanguageProficiency> UpdateAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LanguageProficiency> UpdateAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (languageProficiencyToUpdate.AdditionalData != null)
-			{
-				if (languageProficiencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					languageProficiencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, languageProficiencyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (languageProficiencyToUpdate.AdditionalData != null)
-            {
-                if (languageProficiencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    languageProficiencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, languageProficiencyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<LanguageProficiency>(languageProficiencyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified LanguageProficiency using PATCH and returns a <see cref="GraphResponse{LanguageProficiency}"/> object.
+        /// </summary>
+        /// <param name="languageProficiencyToUpdate">The LanguageProficiency to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{LanguageProficiency}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> UpdateResponseAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<LanguageProficiency>(languageProficiencyToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified LanguageProficiency using PUT.
+        /// </summary>
+        /// <param name="languageProficiencyToUpdate">The LanguageProficiency object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<LanguageProficiency> PutAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<LanguageProficiency>(languageProficiencyToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified LanguageProficiency using PUT and returns a <see cref="GraphResponse{LanguageProficiency}"/> object.
+        /// </summary>
+        /// <param name="languageProficiencyToUpdate">The LanguageProficiency object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{LanguageProficiency}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> PutResponseAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<LanguageProficiency>(languageProficiencyToUpdate, cancellationToken);
         }
 
         /// <summary>

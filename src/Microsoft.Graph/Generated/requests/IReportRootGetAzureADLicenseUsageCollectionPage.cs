@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IReportRootGetAzureADLicenseUsageCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ReportRootGetAzureADLicenseUsageCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ReportRootGetAzureADLicenseUsageCollectionPage>))]
     public interface IReportRootGetAzureADLicenseUsageCollectionPage : ICollectionPage<AzureADLicenseUsage>
     {
         /// <summary>

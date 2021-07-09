@@ -12,37 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Planner Roster.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PlannerRoster : Entity
     {
     
-		///<summary>
-		/// The PlannerRoster constructor
-		///</summary>
-        public PlannerRoster()
-        {
-            this.ODataType = "microsoft.graph.plannerRoster";
-        }
-	
         /// <summary>
         /// Gets or sets members.
         /// Retrieves the members of the plannerRoster.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("members")]
         public IPlannerRosterMembersCollectionPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets plans.
         /// Retrieves the plans contained by the plannerRoster.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plans", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("plans")]
         public IPlannerRosterPlansCollectionWithReferencesPage Plans { get; set; }
+
+        /// <summary>
+        /// Gets or sets plansNextLink.
+        /// </summary>
+        [JsonPropertyName("plans@odata.nextLink")]
+        public string PlansNextLink { get; set; }
     
     }
 }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EncryptWithTemplate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EncryptWithTemplate : EncryptContent
     {
         /// <summary>
@@ -32,13 +30,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets availableForEncryption.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availableForEncryption", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("availableForEncryption")]
         public bool? AvailableForEncryption { get; set; }
     
         /// <summary>
         /// Gets or sets templateId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateId")]
         public string TemplateId { get; set; }
     
     }

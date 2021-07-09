@@ -12,71 +12,69 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Item Patent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ItemPatent : ItemFacet
     {
     
-		///<summary>
-		/// The ItemPatent constructor
-		///</summary>
+        ///<summary>
+        /// The ItemPatent constructor
+        ///</summary>
         public ItemPatent()
         {
             this.ODataType = "microsoft.graph.itemPatent";
         }
-	
+
         /// <summary>
         /// Gets or sets description.
         /// Descpription of the patent or filing.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Title of the patent or filing.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is pending.
         /// Indicates the patent is pending.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPending", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isPending")]
         public bool? IsPending { get; set; }
     
         /// <summary>
         /// Gets or sets issued date.
         /// The date that the patent was granted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuedDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("issuedDate")]
         public Date IssuedDate { get; set; }
     
         /// <summary>
         /// Gets or sets issuing authority.
         /// Authority which granted the patent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuingAuthority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("issuingAuthority")]
         public string IssuingAuthority { get; set; }
     
         /// <summary>
         /// Gets or sets number.
         /// The patent number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("number")]
         public string Number { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
         /// URL referencing the patent or filing.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
     
     }

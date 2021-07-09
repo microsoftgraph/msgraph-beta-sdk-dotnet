@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidForWorkCustomConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkCustomConfigurationToCreate">The AndroidForWorkCustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCustomConfiguration> CreateAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidForWorkCustomConfiguration using POST.
+        System.Threading.Tasks.Task<AndroidForWorkCustomConfiguration> CreateAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified AndroidForWorkCustomConfiguration using POST and returns a <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object.
         /// </summary>
         /// <param name="androidForWorkCustomConfigurationToCreate">The AndroidForWorkCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AndroidForWorkCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCustomConfiguration> CreateAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidForWorkCustomConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCustomConfiguration>> CreateResponseAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AndroidForWorkCustomConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified AndroidForWorkCustomConfiguration.
+        /// Deletes the specified AndroidForWorkCustomConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidForWorkCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCustomConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidForWorkCustomConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCustomConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidForWorkCustomConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified AndroidForWorkCustomConfiguration using PATCH.
+        /// Gets the specified AndroidForWorkCustomConfiguration and returns a <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object.
         /// </summary>
-        /// <param name="androidForWorkCustomConfigurationToUpdate">The AndroidForWorkCustomConfiguration to update.</param>
-        /// <returns>The updated AndroidForWorkCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCustomConfiguration> UpdateAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidForWorkCustomConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCustomConfiguration> UpdateAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidForWorkCustomConfiguration> UpdateAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkCustomConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkCustomConfigurationToUpdate">The AndroidForWorkCustomConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCustomConfiguration>> UpdateResponseAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkCustomConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidForWorkCustomConfigurationToUpdate">The AndroidForWorkCustomConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidForWorkCustomConfiguration> PutAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkCustomConfiguration using PUT and returns a <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkCustomConfigurationToUpdate">The AndroidForWorkCustomConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCustomConfiguration>> PutResponseAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,86 +12,82 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Reusable Policy Setting.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementReusablePolicySetting : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementReusablePolicySetting constructor
-		///</summary>
-        public DeviceManagementReusablePolicySetting()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementReusablePolicySetting";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// reusable setting creation date and time. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// reusable setting description supplied by user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// reusable setting display name supplied by user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// date and time when reusable setting was last modified. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets referencing configuration policy count.
         /// count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referencingConfigurationPolicyCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("referencingConfigurationPolicyCount")]
         public Int32? ReferencingConfigurationPolicyCount { get; set; }
     
         /// <summary>
         /// Gets or sets setting definition id.
         /// setting definition id associated with this reusable setting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingDefinitionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingDefinitionId")]
         public string SettingDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets setting instance.
         /// reusable setting configuration instance
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingInstance", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingInstance")]
         public DeviceManagementConfigurationSettingInstance SettingInstance { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public Int32? Version { get; set; }
     
         /// <summary>
         /// Gets or sets referencing configuration policies.
         /// configuration policies referencing the current reusable setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referencingConfigurationPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("referencingConfigurationPolicies")]
         public IDeviceManagementReusablePolicySettingReferencingConfigurationPoliciesCollectionPage ReferencingConfigurationPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets referencingConfigurationPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("referencingConfigurationPolicies@odata.nextLink")]
+        public string ReferencingConfigurationPoliciesNextLink { get; set; }
     
     }
 }

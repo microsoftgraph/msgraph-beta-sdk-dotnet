@@ -12,34 +12,24 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Document Comment Reply.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DocumentCommentReply : Entity
     {
     
-		///<summary>
-		/// The DocumentCommentReply constructor
-		///</summary>
-        public DocumentCommentReply()
-        {
-            this.ODataType = "microsoft.graph.documentCommentReply";
-        }
-	
         /// <summary>
         /// Gets or sets content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("content")]
         public string Content { get; set; }
     
         /// <summary>
         /// Gets or sets location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("location")]
         public string Location { get; set; }
     
     }

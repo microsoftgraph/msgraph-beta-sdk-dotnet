@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsKioskMultipleApps.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsKioskMultipleApps : WindowsKioskAppConfiguration
     {
         /// <summary>
@@ -33,35 +31,35 @@ namespace Microsoft.Graph
         /// Gets or sets allowAccessToDownloadsFolder.
         /// This setting allows access to Downloads folder in file explorer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAccessToDownloadsFolder", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowAccessToDownloadsFolder")]
         public bool? AllowAccessToDownloadsFolder { get; set; }
     
         /// <summary>
         /// Gets or sets apps.
         /// These are the only Windows Store Apps that will be available to launch from the Start menu. This collection can contain a maximum of 128 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("apps")]
         public IEnumerable<WindowsKioskAppBase> Apps { get; set; }
     
         /// <summary>
         /// Gets or sets disallowDesktopApps.
         /// This setting indicates that desktop apps are allowed. Default to true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disallowDesktopApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("disallowDesktopApps")]
         public bool? DisallowDesktopApps { get; set; }
     
         /// <summary>
         /// Gets or sets showTaskBar.
         /// This setting allows the admin to specify whether the Task Bar is shown or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showTaskBar", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("showTaskBar")]
         public bool? ShowTaskBar { get; set; }
     
         /// <summary>
         /// Gets or sets startMenuLayoutXml.
         /// Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startMenuLayoutXml", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startMenuLayoutXml")]
         public byte[] StartMenuLayoutXml { get; set; }
     
     }

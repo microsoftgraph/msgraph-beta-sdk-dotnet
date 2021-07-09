@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EducationSynchronizationLicenseAssignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<EducationSynchronizationLicenseAssignment>))]
     public partial class EducationSynchronizationLicenseAssignment
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EducationSynchronizationLicenseAssignment"/> class.
-        /// </summary>
-        public EducationSynchronizationLicenseAssignment()
-        {
-            this.ODataType = "microsoft.graph.educationSynchronizationLicenseAssignment";
-        }
 
         /// <summary>
         /// Gets or sets appliesTo.
         /// The user role type to assign to license. Possible values are: student, teacher, faculty.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliesTo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appliesTo")]
         public EducationUserRole? AppliesTo { get; set; }
     
         /// <summary>
         /// Gets or sets skuIds.
         /// Represents the SKU identifiers of the licenses to assign.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skuIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("skuIds")]
         public IEnumerable<string> SkuIds { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

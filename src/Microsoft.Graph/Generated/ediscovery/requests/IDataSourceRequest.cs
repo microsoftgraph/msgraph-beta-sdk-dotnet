@@ -24,47 +24,45 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified DataSource using POST.
         /// </summary>
         /// <param name="dataSourceToCreate">The DataSource to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataSource.</returns>
-        System.Threading.Tasks.Task<DataSource> CreateAsync(DataSource dataSourceToCreate);        /// <summary>
-        /// Creates the specified DataSource using POST.
+        System.Threading.Tasks.Task<DataSource> CreateAsync(DataSource dataSourceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified DataSource using POST and returns a <see cref="GraphResponse{DataSource}"/> object.
         /// </summary>
         /// <param name="dataSourceToCreate">The DataSource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DataSource.</returns>
-        System.Threading.Tasks.Task<DataSource> CreateAsync(DataSource dataSourceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DataSource.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DataSource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataSource>> CreateResponseAsync(DataSource dataSourceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DataSource.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified DataSource.
+        /// Deletes the specified DataSource and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DataSource.</returns>
-        System.Threading.Tasks.Task<DataSource> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DataSource.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DataSource.</returns>
-        System.Threading.Tasks.Task<DataSource> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DataSource> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified DataSource using PATCH.
+        /// Gets the specified DataSource and returns a <see cref="GraphResponse{DataSource}"/> object.
         /// </summary>
-        /// <param name="dataSourceToUpdate">The DataSource to update.</param>
-        /// <returns>The updated DataSource.</returns>
-        System.Threading.Tasks.Task<DataSource> UpdateAsync(DataSource dataSourceToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataSource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataSource>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DataSource using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataSource.</returns>
-        System.Threading.Tasks.Task<DataSource> UpdateAsync(DataSource dataSourceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DataSource> UpdateAsync(DataSource dataSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DataSource using PATCH and returns a <see cref="GraphResponse{DataSource}"/> object.
+        /// </summary>
+        /// <param name="dataSourceToUpdate">The DataSource to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DataSource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataSource>> UpdateResponseAsync(DataSource dataSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DataSource using PUT.
+        /// </summary>
+        /// <param name="dataSourceToUpdate">The DataSource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DataSource> PutAsync(DataSource dataSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DataSource using PUT and returns a <see cref="GraphResponse{DataSource}"/> object.
+        /// </summary>
+        /// <param name="dataSourceToUpdate">The DataSource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DataSource}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataSource>> PutResponseAsync(DataSource dataSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

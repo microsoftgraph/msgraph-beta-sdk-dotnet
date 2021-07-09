@@ -9,59 +9,57 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedDeviceExecuteActionRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedDeviceExecuteActionRequestBody
     {
     
         /// <summary>
         /// Gets or sets ActionName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionName")]
         public ManagedDeviceRemoteAction ActionName { get; set; }
     
         /// <summary>
         /// Gets or sets KeepEnrollmentData.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keepEnrollmentData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keepEnrollmentData")]
         public bool? KeepEnrollmentData { get; set; }
     
         /// <summary>
         /// Gets or sets KeepUserData.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keepUserData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keepUserData")]
         public bool? KeepUserData { get; set; }
     
         /// <summary>
         /// Gets or sets DeviceIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceIds")]
         public IEnumerable<string> DeviceIds { get; set; }
     
         /// <summary>
         /// Gets or sets NotificationTitle.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationTitle", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notificationTitle")]
         public string NotificationTitle { get; set; }
     
         /// <summary>
         /// Gets or sets NotificationBody.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationBody", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notificationBody")]
         public string NotificationBody { get; set; }
     
         /// <summary>
         /// Gets or sets DeviceName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
     }

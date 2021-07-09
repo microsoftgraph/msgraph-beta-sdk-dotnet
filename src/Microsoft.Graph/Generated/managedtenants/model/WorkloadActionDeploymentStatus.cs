@@ -12,64 +12,55 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkloadActionDeploymentStatus.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<WorkloadActionDeploymentStatus>))]
     public partial class WorkloadActionDeploymentStatus
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkloadActionDeploymentStatus"/> class.
-        /// </summary>
-        public WorkloadActionDeploymentStatus()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.workloadActionDeploymentStatus";
-        }
 
         /// <summary>
         /// Gets or sets actionId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionId")]
         public string ActionId { get; set; }
     
         /// <summary>
         /// Gets or sets deployedPolicyId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployedPolicyId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deployedPolicyId")]
         public string DeployedPolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public Microsoft.Graph.GenericError Error { get; set; }
     
         /// <summary>
         /// Gets or sets lastDeploymentDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastDeploymentDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastDeploymentDateTime")]
         public DateTimeOffset? LastDeploymentDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public WorkloadActionStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementAutopilotPolicyStatusDetail using POST.
         /// </summary>
         /// <param name="deviceManagementAutopilotPolicyStatusDetailToCreate">The DeviceManagementAutopilotPolicyStatusDetail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementAutopilotPolicyStatusDetail.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> CreateAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetailToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementAutopilotPolicyStatusDetail using POST.
+        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> CreateAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetailToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified DeviceManagementAutopilotPolicyStatusDetail using POST and returns a <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object.
         /// </summary>
         /// <param name="deviceManagementAutopilotPolicyStatusDetailToCreate">The DeviceManagementAutopilotPolicyStatusDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceManagementAutopilotPolicyStatusDetail.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> CreateAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetailToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementAutopilotPolicyStatusDetail.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotPolicyStatusDetail>> CreateResponseAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetailToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceManagementAutopilotPolicyStatusDetail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified DeviceManagementAutopilotPolicyStatusDetail.
+        /// Deletes the specified DeviceManagementAutopilotPolicyStatusDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementAutopilotPolicyStatusDetail.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementAutopilotPolicyStatusDetail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementAutopilotPolicyStatusDetail.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified DeviceManagementAutopilotPolicyStatusDetail using PATCH.
+        /// Gets the specified DeviceManagementAutopilotPolicyStatusDetail and returns a <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object.
         /// </summary>
-        /// <param name="deviceManagementAutopilotPolicyStatusDetailToUpdate">The DeviceManagementAutopilotPolicyStatusDetail to update.</param>
-        /// <returns>The updated DeviceManagementAutopilotPolicyStatusDetail.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> UpdateAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetailToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotPolicyStatusDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementAutopilotPolicyStatusDetail using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementAutopilotPolicyStatusDetail.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> UpdateAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetailToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> UpdateAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementAutopilotPolicyStatusDetail using PATCH and returns a <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotPolicyStatusDetailToUpdate">The DeviceManagementAutopilotPolicyStatusDetail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotPolicyStatusDetail>> UpdateResponseAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementAutopilotPolicyStatusDetail using PUT.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotPolicyStatusDetailToUpdate">The DeviceManagementAutopilotPolicyStatusDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> PutAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceManagementAutopilotPolicyStatusDetail using PUT and returns a <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotPolicyStatusDetailToUpdate">The DeviceManagementAutopilotPolicyStatusDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotPolicyStatusDetail>> PutResponseAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

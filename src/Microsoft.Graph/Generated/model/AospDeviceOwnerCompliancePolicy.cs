@@ -12,78 +12,77 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Aosp Device Owner Compliance Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<AospDeviceOwnerCompliancePolicy>))]
     public partial class AospDeviceOwnerCompliancePolicy : DeviceCompliancePolicy
     {
     
-		///<summary>
-		/// The AospDeviceOwnerCompliancePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The AospDeviceOwnerCompliancePolicy constructor
+        ///</summary>
         public AospDeviceOwnerCompliancePolicy()
         {
             this.ODataType = "microsoft.graph.aospDeviceOwnerCompliancePolicy";
         }
-	
+
         /// <summary>
         /// Gets or sets min android security patch level.
         /// Minimum Android security patch level.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minAndroidSecurityPatchLevel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minAndroidSecurityPatchLevel")]
         public string MinAndroidSecurityPatchLevel { get; set; }
     
         /// <summary>
         /// Gets or sets os maximum version.
         /// Maximum Android version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osMaximumVersion")]
         public string OsMaximumVersion { get; set; }
     
         /// <summary>
         /// Gets or sets os minimum version.
         /// Minimum Android version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osMinimumVersion")]
         public string OsMinimumVersion { get; set; }
     
         /// <summary>
         /// Gets or sets password minimum length.
         /// Minimum password length. Valid values 4 to 16
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordMinimumLength")]
         public Int32? PasswordMinimumLength { get; set; }
     
         /// <summary>
         /// Gets or sets password minutes of inactivity before lock.
         /// Minutes of inactivity before a password is required. Valid values 1 to 8640
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinutesOfInactivityBeforeLock", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordMinutesOfInactivityBeforeLock")]
         public Int32? PasswordMinutesOfInactivityBeforeLock { get; set; }
     
         /// <summary>
         /// Gets or sets password required.
         /// Require a password to unlock device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordRequired")]
         public bool? PasswordRequired { get; set; }
     
         /// <summary>
         /// Gets or sets password required type.
         /// Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordRequiredType")]
         public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType { get; set; }
     
         /// <summary>
         /// Gets or sets storage require encryption.
         /// Require encryption on Android devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageRequireEncryption", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("storageRequireEncryption")]
         public bool? StorageRequireEncryption { get; set; }
     
     }

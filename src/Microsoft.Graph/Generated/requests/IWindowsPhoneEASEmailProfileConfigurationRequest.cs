@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsPhoneEASEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="windowsPhoneEASEmailProfileConfigurationToCreate">The WindowsPhoneEASEmailProfileConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsPhoneEASEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> CreateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsPhoneEASEmailProfileConfiguration using POST.
+        System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> CreateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified WindowsPhoneEASEmailProfileConfiguration using POST and returns a <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object.
         /// </summary>
         /// <param name="windowsPhoneEASEmailProfileConfigurationToCreate">The WindowsPhoneEASEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsPhoneEASEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> CreateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsPhoneEASEmailProfileConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhoneEASEmailProfileConfiguration>> CreateResponseAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsPhoneEASEmailProfileConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified WindowsPhoneEASEmailProfileConfiguration.
+        /// Deletes the specified WindowsPhoneEASEmailProfileConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsPhoneEASEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsPhoneEASEmailProfileConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhoneEASEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified WindowsPhoneEASEmailProfileConfiguration using PATCH.
+        /// Gets the specified WindowsPhoneEASEmailProfileConfiguration and returns a <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object.
         /// </summary>
-        /// <param name="windowsPhoneEASEmailProfileConfigurationToUpdate">The WindowsPhoneEASEmailProfileConfiguration to update.</param>
-        /// <returns>The updated WindowsPhoneEASEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> UpdateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhoneEASEmailProfileConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsPhoneEASEmailProfileConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhoneEASEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> UpdateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> UpdateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsPhoneEASEmailProfileConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsPhoneEASEmailProfileConfigurationToUpdate">The WindowsPhoneEASEmailProfileConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhoneEASEmailProfileConfiguration>> UpdateResponseAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsPhoneEASEmailProfileConfiguration using PUT.
+        /// </summary>
+        /// <param name="windowsPhoneEASEmailProfileConfigurationToUpdate">The WindowsPhoneEASEmailProfileConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> PutAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified WindowsPhoneEASEmailProfileConfiguration using PUT and returns a <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsPhoneEASEmailProfileConfigurationToUpdate">The WindowsPhoneEASEmailProfileConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsPhoneEASEmailProfileConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhoneEASEmailProfileConfiguration>> PutResponseAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

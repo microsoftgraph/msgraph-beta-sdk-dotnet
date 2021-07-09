@@ -12,100 +12,96 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Microsoft Tunnel Site.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MicrosoftTunnelSite : Entity
     {
     
-		///<summary>
-		/// The MicrosoftTunnelSite constructor
-		///</summary>
-        public MicrosoftTunnelSite()
-        {
-            this.ODataType = "microsoft.graph.microsoftTunnelSite";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// The MicrosoftTunnelSite's description
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The MicrosoftTunnelSite's display name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets public address.
         /// The MicrosoftTunnelSite's public domain name or IP address
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publicAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publicAddress")]
         public string PublicAddress { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of Scope Tags for this Entity instance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets upgrade automatically.
         /// The site's automatic upgrade setting. True for automatic upgrades, false for manual control
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeAutomatically", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("upgradeAutomatically")]
         public bool? UpgradeAutomatically { get; set; }
     
         /// <summary>
         /// Gets or sets upgrade available.
         /// True if an upgrade is available
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeAvailable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("upgradeAvailable")]
         public bool? UpgradeAvailable { get; set; }
     
         /// <summary>
         /// Gets or sets upgrade window end time.
         /// The site's upgrade window end time of day
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeWindowEndTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("upgradeWindowEndTime")]
         public TimeOfDay UpgradeWindowEndTime { get; set; }
     
         /// <summary>
         /// Gets or sets upgrade window start time.
         /// The site's upgrade window start time of day
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeWindowStartTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("upgradeWindowStartTime")]
         public TimeOfDay UpgradeWindowStartTime { get; set; }
     
         /// <summary>
         /// Gets or sets upgrade window utc offset in minutes.
         /// The site's timezone represented as a minute offset from UTC
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeWindowUtcOffsetInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("upgradeWindowUtcOffsetInMinutes")]
         public Int32? UpgradeWindowUtcOffsetInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft tunnel configuration.
         /// The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftTunnelConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("microsoftTunnelConfiguration")]
         public MicrosoftTunnelConfiguration MicrosoftTunnelConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft tunnel servers.
         /// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftTunnelServers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("microsoftTunnelServers")]
         public IMicrosoftTunnelSiteMicrosoftTunnelServersCollectionPage MicrosoftTunnelServers { get; set; }
+
+        /// <summary>
+        /// Gets or sets microsoftTunnelServersNextLink.
+        /// </summary>
+        [JsonPropertyName("microsoftTunnelServers@odata.nextLink")]
+        public string MicrosoftTunnelServersNextLink { get; set; }
     
     }
 }

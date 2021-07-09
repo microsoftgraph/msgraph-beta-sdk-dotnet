@@ -12,57 +12,48 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Microsoft Tunnel Server.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MicrosoftTunnelServer>))]
     public partial class MicrosoftTunnelServer : Entity
     {
     
-		///<summary>
-		/// The MicrosoftTunnelServer constructor
-		///</summary>
-        public MicrosoftTunnelServer()
-        {
-            this.ODataType = "microsoft.graph.microsoftTunnelServer";
-        }
-	
         /// <summary>
         /// Gets or sets agent image digest.
         /// The digest of the current agent image running on this server 
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agentImageDigest", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agentImageDigest")]
         public string AgentImageDigest { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The MicrosoftTunnelServer's display name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last checkin date time.
         /// When the MicrosoftTunnelServer last checked in
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCheckinDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastCheckinDateTime")]
         public DateTimeOffset? LastCheckinDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets server image digest.
         /// The digest of the current server image running on this server 
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverImageDigest", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("serverImageDigest")]
         public string ServerImageDigest { get; set; }
     
         /// <summary>
         /// Gets or sets tunnel server health status.
         /// The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tunnelServerHealthStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tunnelServerHealthStatus")]
         public MicrosoftTunnelServerHealthStatus? TunnelServerHealthStatus { get; set; }
     
     }

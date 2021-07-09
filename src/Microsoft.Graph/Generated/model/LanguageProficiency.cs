@@ -12,69 +12,68 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Language Proficiency.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<LanguageProficiency>))]
     public partial class LanguageProficiency : ItemFacet
     {
     
-		///<summary>
-		/// The LanguageProficiency constructor
-		///</summary>
+        ///<summary>
+        /// The LanguageProficiency constructor
+        ///</summary>
         public LanguageProficiency()
         {
             this.ODataType = "microsoft.graph.languageProficiency";
         }
-	
+
         /// <summary>
         /// Gets or sets display name.
         /// Contains the long-form name for the language.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets proficiency.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proficiency", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proficiency")]
         public LanguageProficiencyLevel? Proficiency { get; set; }
     
         /// <summary>
         /// Gets or sets reading.
         /// Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reading", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reading")]
         public LanguageProficiencyLevel? Reading { get; set; }
     
         /// <summary>
         /// Gets or sets spoken.
         /// Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "spoken", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("spoken")]
         public LanguageProficiencyLevel? Spoken { get; set; }
     
         /// <summary>
         /// Gets or sets tag.
         /// Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tag", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tag")]
         public string Tag { get; set; }
     
         /// <summary>
         /// Gets or sets thumbnail url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("thumbnailUrl")]
         public string ThumbnailUrl { get; set; }
     
         /// <summary>
         /// Gets or sets written.
         /// Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "written", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("written")]
         public LanguageProficiencyLevel? Written { get; set; }
     
     }

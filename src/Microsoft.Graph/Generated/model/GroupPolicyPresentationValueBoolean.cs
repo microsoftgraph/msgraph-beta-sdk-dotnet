@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Presentation Value Boolean.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupPolicyPresentationValueBoolean : GroupPolicyPresentationValue
     {
     
-		///<summary>
-		/// The GroupPolicyPresentationValueBoolean constructor
-		///</summary>
+        ///<summary>
+        /// The GroupPolicyPresentationValueBoolean constructor
+        ///</summary>
         public GroupPolicyPresentationValueBoolean()
         {
             this.ODataType = "microsoft.graph.groupPolicyPresentationValueBoolean";
         }
-	
+
         /// <summary>
         /// Gets or sets value.
         /// An boolean value for the associated presentation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public bool? Value { get; set; }
     
     }

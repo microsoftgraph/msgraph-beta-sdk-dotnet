@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementDerivedCredentialsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementDerivedCredentialsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementDerivedCredentialsCollectionPage>))]
     public interface IDeviceManagementDerivedCredentialsCollectionPage : ICollectionPage<DeviceManagementDerivedCredentialSettings>
     {
         /// <summary>

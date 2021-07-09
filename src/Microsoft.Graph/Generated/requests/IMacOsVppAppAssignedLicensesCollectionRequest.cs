@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IMacOsVppAppAssignedLicensesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MacOsVppAppAssignedLicense to the collection via POST.
-        /// </summary>
-        /// <param name="macOsVppAppAssignedLicense">The MacOsVppAppAssignedLicense to add.</param>
-        /// <returns>The created MacOsVppAppAssignedLicense.</returns>
-        System.Threading.Tasks.Task<MacOsVppAppAssignedLicense> AddAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicense);
-
         /// <summary>
         /// Adds the specified MacOsVppAppAssignedLicense to the collection via POST.
         /// </summary>
         /// <param name="macOsVppAppAssignedLicense">The MacOsVppAppAssignedLicense to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOsVppAppAssignedLicense.</returns>
-        System.Threading.Tasks.Task<MacOsVppAppAssignedLicense> AddAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicense, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MacOsVppAppAssignedLicense> AddAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicense, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MacOsVppAppAssignedLicense to the collection via POST and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMacOsVppAppAssignedLicensesCollectionPage> GetAsync();
+        /// <param name="macOsVppAppAssignedLicense">The MacOsVppAppAssignedLicense to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> AddResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicense, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMacOsVppAppAssignedLicensesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IMacOsVppAppAssignedLicensesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicensesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicensesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicensesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

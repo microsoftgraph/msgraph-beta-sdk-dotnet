@@ -12,111 +12,102 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceProtectionOverview.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceProtectionOverview>))]
     public partial class DeviceProtectionOverview
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceProtectionOverview"/> class.
-        /// </summary>
-        public DeviceProtectionOverview()
-        {
-            this.ODataType = "microsoft.graph.deviceProtectionOverview";
-        }
 
         /// <summary>
         /// Gets or sets cleanDeviceCount.
         /// Clean device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cleanDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cleanDeviceCount")]
         public Int32? CleanDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets criticalFailuresDeviceCount.
         /// Critical failures device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criticalFailuresDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("criticalFailuresDeviceCount")]
         public Int32? CriticalFailuresDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets inactiveThreatAgentDeviceCount.
         /// Device with inactive threat agent count
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inactiveThreatAgentDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inactiveThreatAgentDeviceCount")]
         public Int32? InactiveThreatAgentDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingFullScanDeviceCount.
         /// Pending full scan device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingFullScanDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingFullScanDeviceCount")]
         public Int32? PendingFullScanDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingManualStepsDeviceCount.
         /// Pending manual steps device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingManualStepsDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingManualStepsDeviceCount")]
         public Int32? PendingManualStepsDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingOfflineScanDeviceCount.
         /// Pending offline scan device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingOfflineScanDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingOfflineScanDeviceCount")]
         public Int32? PendingOfflineScanDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingQuickScanDeviceCount.
         /// Pending quick scan device count. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingQuickScanDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingQuickScanDeviceCount")]
         public Int32? PendingQuickScanDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingRestartDeviceCount.
         /// Pending restart device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingRestartDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingRestartDeviceCount")]
         public Int32? PendingRestartDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingSignatureUpdateDeviceCount.
         /// Device with old signature count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingSignatureUpdateDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingSignatureUpdateDeviceCount")]
         public Int32? PendingSignatureUpdateDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets totalReportedDeviceCount.
         /// Total device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalReportedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalReportedDeviceCount")]
         public Int32? TotalReportedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets unknownStateThreatAgentDeviceCount.
         /// Device with threat agent state as unknown count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownStateThreatAgentDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unknownStateThreatAgentDeviceCount")]
         public Int32? UnknownStateThreatAgentDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

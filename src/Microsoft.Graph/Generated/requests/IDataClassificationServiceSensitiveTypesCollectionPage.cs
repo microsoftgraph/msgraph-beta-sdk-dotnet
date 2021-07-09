@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDataClassificationServiceSensitiveTypesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DataClassificationServiceSensitiveTypesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DataClassificationServiceSensitiveTypesCollectionPage>))]
     public interface IDataClassificationServiceSensitiveTypesCollectionPage : ICollectionPage<SensitiveType>
     {
         /// <summary>

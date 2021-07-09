@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MacOSRedirectSingleSignOnExtension.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MacOSRedirectSingleSignOnExtension : MacOSSingleSignOnExtension
     {
         /// <summary>
@@ -33,28 +31,28 @@ namespace Microsoft.Graph
         /// Gets or sets configurations.
         /// Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurations")]
         public IEnumerable<KeyTypedValuePair> Configurations { get; set; }
     
         /// <summary>
         /// Gets or sets extensionIdentifier.
         /// Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensionIdentifier")]
         public string ExtensionIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets teamIdentifier.
         /// Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamIdentifier")]
         public string TeamIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets urlPrefixes.
         /// One or more URL prefixes of identity providers on whose behalf the app extension performs single sign-on. URLs must begin with http:// or https://. All URL prefixes must be unique for all profiles.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "urlPrefixes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("urlPrefixes")]
         public IEnumerable<string> UrlPrefixes { get; set; }
     
     }

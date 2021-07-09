@@ -12,99 +12,90 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed Device Encryption State.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedDeviceEncryptionState>))]
     public partial class ManagedDeviceEncryptionState : Entity
     {
     
-		///<summary>
-		/// The ManagedDeviceEncryptionState constructor
-		///</summary>
-        public ManagedDeviceEncryptionState()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceEncryptionState";
-        }
-	
         /// <summary>
         /// Gets or sets advanced bit locker states.
         /// Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedBitLockerStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("advancedBitLockerStates")]
         public AdvancedBitLockerState? AdvancedBitLockerStates { get; set; }
     
         /// <summary>
         /// Gets or sets device name.
         /// Device name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets device type.
         /// Platform of the device. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, blackberry, palm, unknown.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceType")]
         public DeviceTypes? DeviceType { get; set; }
     
         /// <summary>
         /// Gets or sets encryption policy setting state.
         /// Encryption policy setting state. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionPolicySettingState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptionPolicySettingState")]
         public ComplianceStatus? EncryptionPolicySettingState { get; set; }
     
         /// <summary>
         /// Gets or sets encryption readiness state.
         /// Encryption readiness state. Possible values are: notReady, ready.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionReadinessState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptionReadinessState")]
         public EncryptionReadinessState? EncryptionReadinessState { get; set; }
     
         /// <summary>
         /// Gets or sets encryption state.
         /// Device encryption state. Possible values are: notEncrypted, encrypted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptionState")]
         public EncryptionState? EncryptionState { get; set; }
     
         /// <summary>
         /// Gets or sets file vault states.
         /// FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultStates")]
         public FileVaultState? FileVaultStates { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
         /// Operating system version of the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets policy details.
         /// Policy Details
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policyDetails")]
         public IEnumerable<EncryptionReportPolicyDetails> PolicyDetails { get; set; }
     
         /// <summary>
         /// Gets or sets tpm specification version.
         /// Device TPM Version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tpmSpecificationVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tpmSpecificationVersion")]
         public string TpmSpecificationVersion { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// User name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
     }

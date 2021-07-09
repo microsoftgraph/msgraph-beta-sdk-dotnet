@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUserFindRoomListsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UserFindRoomListsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UserFindRoomListsCollectionPage>))]
     public interface IUserFindRoomListsCollectionPage : ICollectionPage<EmailAddress>
     {
         /// <summary>

@@ -12,146 +12,137 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TrustFrameworkKey.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TrustFrameworkKey>))]
     public partial class TrustFrameworkKey
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TrustFrameworkKey"/> class.
-        /// </summary>
-        public TrustFrameworkKey()
-        {
-            this.ODataType = "microsoft.graph.trustFrameworkKey";
-        }
 
         /// <summary>
         /// Gets or sets d.
         /// RSA Key - private exponent. Field cannot be read back.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "d", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("d")]
         public string D { get; set; }
     
         /// <summary>
         /// Gets or sets dp.
         /// RSA Key - first exponent. Field cannot be read back.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dp")]
         public string Dp { get; set; }
     
         /// <summary>
         /// Gets or sets dq.
         /// RSA Key - second exponent. Field cannot be read back.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dq", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dq")]
         public string Dq { get; set; }
     
         /// <summary>
         /// Gets or sets e.
         /// RSA Key - public exponent
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "e", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("e")]
         public string E { get; set; }
     
         /// <summary>
         /// Gets or sets exp.
         /// This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exp")]
         public Int64? Exp { get; set; }
     
         /// <summary>
         /// Gets or sets k.
         /// Symmetric Key for oct key type. Field cannot be read back.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "k", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("k")]
         public string K { get; set; }
     
         /// <summary>
         /// Gets or sets kid.
         /// The unique identifier for the key.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kid", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("kid")]
         public string Kid { get; set; }
     
         /// <summary>
         /// Gets or sets kty.
         /// The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kty", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("kty")]
         public string Kty { get; set; }
     
         /// <summary>
         /// Gets or sets n.
         /// RSA Key - modulus
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "n", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("n")]
         public string N { get; set; }
     
         /// <summary>
         /// Gets or sets nbf.
         /// This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nbf", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("nbf")]
         public Int64? Nbf { get; set; }
     
         /// <summary>
         /// Gets or sets p.
         /// RSA Key - first prime. Field cannot be read back.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "p", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("p")]
         public string P { get; set; }
     
         /// <summary>
         /// Gets or sets q.
         /// RSA Key - second prime. Field cannot be read back.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "q", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("q")]
         public string Q { get; set; }
     
         /// <summary>
         /// Gets or sets qi.
         /// RSA Key - Coefficient. Field cannot be read back.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qi", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("qi")]
         public string Qi { get; set; }
     
         /// <summary>
         /// Gets or sets use.
         /// The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "use", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("use")]
         public string Use { get; set; }
     
         /// <summary>
         /// Gets or sets x5c.
         /// The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "x5c", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("x5c")]
         public IEnumerable<string> X5c { get; set; }
     
         /// <summary>
         /// Gets or sets x5t.
         /// The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "x5t", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("x5t")]
         public string X5t { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -12,100 +12,162 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Entitlement Management.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EntitlementManagement : Entity
     {
     
-		///<summary>
-		/// The EntitlementManagement constructor
-		///</summary>
-        public EntitlementManagement()
-        {
-            this.ODataType = "microsoft.graph.entitlementManagement";
-        }
-	
         /// <summary>
         /// Gets or sets access package assignment approvals.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentApprovals", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageAssignmentApprovals")]
         public IEntitlementManagementAccessPackageAssignmentApprovalsCollectionPage AccessPackageAssignmentApprovals { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentApprovalsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentApprovals@odata.nextLink")]
+        public string AccessPackageAssignmentApprovalsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageAssignmentPolicies")]
         public IEntitlementManagementAccessPackageAssignmentPoliciesCollectionPage AccessPackageAssignmentPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentPolicies@odata.nextLink")]
+        public string AccessPackageAssignmentPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentRequests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageAssignmentRequests")]
         public IEntitlementManagementAccessPackageAssignmentRequestsCollectionPage AccessPackageAssignmentRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentRequests@odata.nextLink")]
+        public string AccessPackageAssignmentRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment resource roles.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentResourceRoles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageAssignmentResourceRoles")]
         public IEntitlementManagementAccessPackageAssignmentResourceRolesCollectionPage AccessPackageAssignmentResourceRoles { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentResourceRolesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignmentResourceRoles@odata.nextLink")]
+        public string AccessPackageAssignmentResourceRolesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageAssignments")]
         public IEntitlementManagementAccessPackageAssignmentsCollectionPage AccessPackageAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageAssignments@odata.nextLink")]
+        public string AccessPackageAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package catalogs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageCatalogs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageCatalogs")]
         public IEntitlementManagementAccessPackageCatalogsCollectionPage AccessPackageCatalogs { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageCatalogsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageCatalogs@odata.nextLink")]
+        public string AccessPackageCatalogsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource environments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceEnvironments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResourceEnvironments")]
         public IEntitlementManagementAccessPackageResourceEnvironmentsCollectionPage AccessPackageResourceEnvironments { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourceEnvironmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceEnvironments@odata.nextLink")]
+        public string AccessPackageResourceEnvironmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceRequests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResourceRequests")]
         public IEntitlementManagementAccessPackageResourceRequestsCollectionPage AccessPackageResourceRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourceRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceRequests@odata.nextLink")]
+        public string AccessPackageResourceRequestsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource role scopes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceRoleScopes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResourceRoleScopes")]
         public IEntitlementManagementAccessPackageResourceRoleScopesCollectionPage AccessPackageResourceRoleScopes { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourceRoleScopesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceRoleScopes@odata.nextLink")]
+        public string AccessPackageResourceRoleScopesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access package resources.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResources")]
         public IEntitlementManagementAccessPackageResourcesCollectionPage AccessPackageResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResources@odata.nextLink")]
+        public string AccessPackageResourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access packages.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackages")]
         public IEntitlementManagementAccessPackagesCollectionPage AccessPackages { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackagesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackages@odata.nextLink")]
+        public string AccessPackagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets connected organizations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedOrganizations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectedOrganizations")]
         public IEntitlementManagementConnectedOrganizationsCollectionPage ConnectedOrganizations { get; set; }
+
+        /// <summary>
+        /// Gets or sets connectedOrganizationsNextLink.
+        /// </summary>
+        [JsonPropertyName("connectedOrganizations@odata.nextLink")]
+        public string ConnectedOrganizationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public EntitlementManagementSettings Settings { get; set; }
     
     }

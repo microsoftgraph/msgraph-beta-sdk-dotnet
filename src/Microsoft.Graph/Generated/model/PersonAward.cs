@@ -12,64 +12,62 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Person Award.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PersonAward : ItemFacet
     {
     
-		///<summary>
-		/// The PersonAward constructor
-		///</summary>
+        ///<summary>
+        /// The PersonAward constructor
+        ///</summary>
         public PersonAward()
         {
             this.ODataType = "microsoft.graph.personAward";
         }
-	
+
         /// <summary>
         /// Gets or sets description.
         /// Descpription of the award or honor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name of the award or honor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets issued date.
         /// The date that the award or honor was granted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuedDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("issuedDate")]
         public Date IssuedDate { get; set; }
     
         /// <summary>
         /// Gets or sets issuing authority.
         /// Authority which granted the award or honor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuingAuthority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("issuingAuthority")]
         public string IssuingAuthority { get; set; }
     
         /// <summary>
         /// Gets or sets thumbnail url.
         /// URL referencing a thumbnail of the award or honor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("thumbnailUrl")]
         public string ThumbnailUrl { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
         /// URL referencing the award or honor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
     
     }

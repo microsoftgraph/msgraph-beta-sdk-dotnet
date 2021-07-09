@@ -12,50 +12,41 @@ namespace Microsoft.Graph.TermStore
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Relation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Relation>))]
     public partial class Relation : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Relation constructor
-		///</summary>
-        public Relation()
-        {
-            this.ODataType = "microsoft.graph.termStore.relation";
-        }
-	
         /// <summary>
         /// Gets or sets relationship.
         /// The type of relation. Possible values are: pin, reuse.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relationship", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("relationship")]
         public RelationType? Relationship { get; set; }
     
         /// <summary>
         /// Gets or sets from term.
         /// The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fromTerm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fromTerm")]
         public Term FromTerm { get; set; }
     
         /// <summary>
         /// Gets or sets set.
         /// The [set] in which the relation is relevant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "set", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("set")]
         public Set Set { get; set; }
     
         /// <summary>
         /// Gets or sets to term.
         /// The to [term] of the relation. The term to which the relationship is defined.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "toTerm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("toTerm")]
         public Term ToTerm { get; set; }
     
     }

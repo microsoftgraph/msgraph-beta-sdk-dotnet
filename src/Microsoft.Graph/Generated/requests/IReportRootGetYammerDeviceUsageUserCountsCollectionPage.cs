@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IReportRootGetYammerDeviceUsageUserCountsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ReportRootGetYammerDeviceUsageUserCountsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ReportRootGetYammerDeviceUsageUserCountsCollectionPage>))]
     public interface IReportRootGetYammerDeviceUsageUserCountsCollectionPage : ICollectionPage<YammerDeviceUsageUserCounts>
     {
         /// <summary>

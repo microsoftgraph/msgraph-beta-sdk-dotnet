@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidDeviceOwnerCompliancePolicy using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerCompliancePolicyToCreate">The AndroidDeviceOwnerCompliancePolicy to create.</param>
-        /// <returns>The created AndroidDeviceOwnerCompliancePolicy.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> CreateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToCreate)
-        {
-            return this.CreateAsync(androidDeviceOwnerCompliancePolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerCompliancePolicy using POST.
-        /// </summary>
-        /// <param name="androidDeviceOwnerCompliancePolicyToCreate">The AndroidDeviceOwnerCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceOwnerCompliancePolicy.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> CreateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> CreateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidDeviceOwnerCompliancePolicy>(androidDeviceOwnerCompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidDeviceOwnerCompliancePolicy.
+        /// Creates the specified AndroidDeviceOwnerCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidDeviceOwnerCompliancePolicyToCreate">The AndroidDeviceOwnerCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerCompliancePolicy>> CreateResponseAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerCompliancePolicy>(androidDeviceOwnerCompliancePolicyToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidDeviceOwnerCompliancePolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidDeviceOwnerCompliancePolicy.
+        /// Deletes the specified AndroidDeviceOwnerCompliancePolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidDeviceOwnerCompliancePolicy.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerCompliancePolicy.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidDeviceOwnerCompliancePolicy>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidDeviceOwnerCompliancePolicy using PATCH.
+        /// Gets the specified AndroidDeviceOwnerCompliancePolicy and returns a <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object.
         /// </summary>
-        /// <param name="androidDeviceOwnerCompliancePolicyToUpdate">The AndroidDeviceOwnerCompliancePolicy to update.</param>
-        /// <returns>The updated AndroidDeviceOwnerCompliancePolicy.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> UpdateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(androidDeviceOwnerCompliancePolicyToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerCompliancePolicy>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceOwnerCompliancePolicy.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> UpdateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> UpdateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidDeviceOwnerCompliancePolicyToUpdate.AdditionalData != null)
-			{
-				if (androidDeviceOwnerCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidDeviceOwnerCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerCompliancePolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidDeviceOwnerCompliancePolicyToUpdate.AdditionalData != null)
-            {
-                if (androidDeviceOwnerCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidDeviceOwnerCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerCompliancePolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidDeviceOwnerCompliancePolicy>(androidDeviceOwnerCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerCompliancePolicy using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerCompliancePolicyToUpdate">The AndroidDeviceOwnerCompliancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerCompliancePolicy>> UpdateResponseAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerCompliancePolicy>(androidDeviceOwnerCompliancePolicyToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerCompliancePolicy using PUT.
+        /// </summary>
+        /// <param name="androidDeviceOwnerCompliancePolicyToUpdate">The AndroidDeviceOwnerCompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> PutAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidDeviceOwnerCompliancePolicy>(androidDeviceOwnerCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerCompliancePolicy using PUT and returns a <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerCompliancePolicyToUpdate">The AndroidDeviceOwnerCompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidDeviceOwnerCompliancePolicy}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerCompliancePolicy>> PutResponseAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerCompliancePolicy>(androidDeviceOwnerCompliancePolicyToUpdate, cancellationToken);
         }
 
         /// <summary>

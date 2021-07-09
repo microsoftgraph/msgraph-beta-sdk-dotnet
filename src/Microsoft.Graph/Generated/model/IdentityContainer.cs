@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -12,83 +12,109 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Identity Container.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<IdentityContainer>))]
     public partial class IdentityContainer
     {
     
-		///<summary>
-		/// The IdentityContainer constructor
-		///</summary>
-        public IdentityContainer()
-        {
-            this.ODataType = "microsoft.graph.identityContainer";
-        }
-	
         /// <summary>
         /// Gets or sets conditional access.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conditionalAccess")]
         public ConditionalAccessRoot ConditionalAccess { get; set; }
     
         /// <summary>
         /// Gets or sets api connectors.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apiConnectors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("apiConnectors")]
         public IIdentityContainerApiConnectorsCollectionPage ApiConnectors { get; set; }
+
+        /// <summary>
+        /// Gets or sets apiConnectorsNextLink.
+        /// </summary>
+        [JsonPropertyName("apiConnectors@odata.nextLink")]
+        public string ApiConnectorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets b2c user flows.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b2cUserFlows", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("b2cUserFlows")]
         public IIdentityContainerB2cUserFlowsCollectionPage B2cUserFlows { get; set; }
+
+        /// <summary>
+        /// Gets or sets b2cUserFlowsNextLink.
+        /// </summary>
+        [JsonPropertyName("b2cUserFlows@odata.nextLink")]
+        public string B2cUserFlowsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets b2x user flows.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b2xUserFlows", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("b2xUserFlows")]
         public IIdentityContainerB2xUserFlowsCollectionPage B2xUserFlows { get; set; }
+
+        /// <summary>
+        /// Gets or sets b2xUserFlowsNextLink.
+        /// </summary>
+        [JsonPropertyName("b2xUserFlows@odata.nextLink")]
+        public string B2xUserFlowsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets identity providers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityProviders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityProviders")]
         public IIdentityContainerIdentityProvidersCollectionPage IdentityProviders { get; set; }
+
+        /// <summary>
+        /// Gets or sets identityProvidersNextLink.
+        /// </summary>
+        [JsonPropertyName("identityProviders@odata.nextLink")]
+        public string IdentityProvidersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user flow attributes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userFlowAttributes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userFlowAttributes")]
         public IIdentityContainerUserFlowAttributesCollectionPage UserFlowAttributes { get; set; }
+
+        /// <summary>
+        /// Gets or sets userFlowAttributesNextLink.
+        /// </summary>
+        [JsonPropertyName("userFlowAttributes@odata.nextLink")]
+        public string UserFlowAttributesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user flows.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userFlows", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userFlows")]
         public IIdentityContainerUserFlowsCollectionPage UserFlows { get; set; }
+
+        /// <summary>
+        /// Gets or sets userFlowsNextLink.
+        /// </summary>
+        [JsonPropertyName("userFlows@odata.nextLink")]
+        public string UserFlowsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets continuous access evaluation policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "continuousAccessEvaluationPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("continuousAccessEvaluationPolicy")]
         public ContinuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     
     }

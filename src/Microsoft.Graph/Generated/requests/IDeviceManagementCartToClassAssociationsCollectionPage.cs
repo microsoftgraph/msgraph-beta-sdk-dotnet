@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementCartToClassAssociationsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementCartToClassAssociationsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementCartToClassAssociationsCollectionPage>))]
     public interface IDeviceManagementCartToClassAssociationsCollectionPage : ICollectionPage<CartToClassAssociation>
     {
         /// <summary>

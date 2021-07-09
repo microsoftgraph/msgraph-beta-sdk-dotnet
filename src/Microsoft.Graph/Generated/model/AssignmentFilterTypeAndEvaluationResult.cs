@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AssignmentFilterTypeAndEvaluationResult.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AssignmentFilterTypeAndEvaluationResult>))]
     public partial class AssignmentFilterTypeAndEvaluationResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AssignmentFilterTypeAndEvaluationResult"/> class.
-        /// </summary>
-        public AssignmentFilterTypeAndEvaluationResult()
-        {
-            this.ODataType = "microsoft.graph.assignmentFilterTypeAndEvaluationResult";
-        }
 
         /// <summary>
         /// Gets or sets assignmentFilterType.
         /// Represents the filter type. Possible values are: none, include, exclude.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilterType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentFilterType")]
         public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType { get; set; }
     
         /// <summary>
         /// Gets or sets evaluationResult.
         /// Represents the evalaution result of the filter. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationResult", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("evaluationResult")]
         public AssignmentFilterEvaluationResult? EvaluationResult { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

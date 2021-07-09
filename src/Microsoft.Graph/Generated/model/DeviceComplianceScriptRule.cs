@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceComplianceScriptRule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceComplianceScriptRule>))]
     public partial class DeviceComplianceScriptRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceComplianceScriptRule"/> class.
-        /// </summary>
-        public DeviceComplianceScriptRule()
-        {
-            this.ODataType = "microsoft.graph.deviceComplianceScriptRule";
-        }
 
         /// <summary>
         /// Gets or sets dataType.
         /// Data type specified in the rule. Possible values are: none, boolean, int64, double, string, dateTime, version, base64, xml, booleanArray, int64Array, doubleArray, stringArray, dateTimeArray, versionArray.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataType")]
         public DataType? DataType { get; set; }
     
         /// <summary>
         /// Gets or sets deviceComplianceScriptRuleDataType.
         /// Data type specified in the rule. Possible values are: none, boolean, int64, double, string, dateTime, version, base64, xml, booleanArray, int64Array, doubleArray, stringArray, dateTimeArray, versionArray.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceScriptRuleDataType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceComplianceScriptRuleDataType")]
         public DeviceComplianceScriptRuleDataType? DeviceComplianceScriptRuleDataType { get; set; }
     
         /// <summary>
         /// Gets or sets deviceComplianceScriptRulOperator.
         /// Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceScriptRulOperator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceComplianceScriptRulOperator")]
         public DeviceComplianceScriptRulOperator? DeviceComplianceScriptRulOperator { get; set; }
     
         /// <summary>
         /// Gets or sets operand.
         /// Operand specified in the rule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operand", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operand")]
         public string Operand { get; set; }
     
         /// <summary>
         /// Gets or sets operator.
         /// Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operator")]
         public Operator? Operator { get; set; }
     
         /// <summary>
         /// Gets or sets settingName.
         /// Setting name specified in the rule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingName")]
         public string SettingName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

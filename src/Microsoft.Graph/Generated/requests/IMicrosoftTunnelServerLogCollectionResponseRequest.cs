@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MicrosoftTunnelServerLogCollectionResponse using POST.
         /// </summary>
         /// <param name="microsoftTunnelServerLogCollectionResponseToCreate">The MicrosoftTunnelServerLogCollectionResponse to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelServerLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> CreateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToCreate);        /// <summary>
-        /// Creates the specified MicrosoftTunnelServerLogCollectionResponse using POST.
+        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> CreateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified MicrosoftTunnelServerLogCollectionResponse using POST and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object.
         /// </summary>
         /// <param name="microsoftTunnelServerLogCollectionResponseToCreate">The MicrosoftTunnelServerLogCollectionResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MicrosoftTunnelServerLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> CreateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MicrosoftTunnelServerLogCollectionResponse.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> CreateResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MicrosoftTunnelServerLogCollectionResponse.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified MicrosoftTunnelServerLogCollectionResponse.
+        /// Deletes the specified MicrosoftTunnelServerLogCollectionResponse and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MicrosoftTunnelServerLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MicrosoftTunnelServerLogCollectionResponse.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MicrosoftTunnelServerLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified MicrosoftTunnelServerLogCollectionResponse using PATCH.
+        /// Gets the specified MicrosoftTunnelServerLogCollectionResponse and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object.
         /// </summary>
-        /// <param name="microsoftTunnelServerLogCollectionResponseToUpdate">The MicrosoftTunnelServerLogCollectionResponse to update.</param>
-        /// <returns>The updated MicrosoftTunnelServerLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> UpdateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MicrosoftTunnelServerLogCollectionResponse using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MicrosoftTunnelServerLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> UpdateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> UpdateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelServerLogCollectionResponse using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelServerLogCollectionResponseToUpdate">The MicrosoftTunnelServerLogCollectionResponse to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> UpdateResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelServerLogCollectionResponse using PUT.
+        /// </summary>
+        /// <param name="microsoftTunnelServerLogCollectionResponseToUpdate">The MicrosoftTunnelServerLogCollectionResponse object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> PutAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelServerLogCollectionResponse using PUT and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelServerLogCollectionResponseToUpdate">The MicrosoftTunnelServerLogCollectionResponse object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> PutResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

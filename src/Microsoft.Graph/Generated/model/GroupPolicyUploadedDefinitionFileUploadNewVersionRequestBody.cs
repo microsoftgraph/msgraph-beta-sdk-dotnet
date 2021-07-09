@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type GroupPolicyUploadedDefinitionFileUploadNewVersionRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupPolicyUploadedDefinitionFileUploadNewVersionRequestBody
     {
     
         /// <summary>
         /// Gets or sets Content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("content")]
         public byte[] Content { get; set; }
     
         /// <summary>
         /// Gets or sets GroupPolicyUploadedLanguageFiles.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyUploadedLanguageFiles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupPolicyUploadedLanguageFiles")]
         public IEnumerable<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles { get; set; }
     
     }

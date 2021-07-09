@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10AppsForceUpdateSchedule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10AppsForceUpdateSchedule>))]
     public partial class Windows10AppsForceUpdateSchedule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Windows10AppsForceUpdateSchedule"/> class.
-        /// </summary>
-        public Windows10AppsForceUpdateSchedule()
-        {
-            this.ODataType = "microsoft.graph.windows10AppsForceUpdateSchedule";
-        }
 
         /// <summary>
         /// Gets or sets recurrence.
         /// Recurrence schedule. Possible values are: none, daily, weekly, monthly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recurrence")]
         public Windows10AppsUpdateRecurrence? Recurrence { get; set; }
     
         /// <summary>
         /// Gets or sets runImmediatelyIfAfterStartDateTime.
         /// If true, runs the task immediately if StartDateTime is in the past, else, runs at the next recurrence.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runImmediatelyIfAfterStartDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("runImmediatelyIfAfterStartDateTime")]
         public bool? RunImmediatelyIfAfterStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
         /// The start time for the force restart.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,55 +12,46 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeploymentState.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<DeploymentState>))]
     public partial class DeploymentState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeploymentState"/> class.
-        /// </summary>
-        public DeploymentState()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.deploymentState";
-        }
 
         /// <summary>
         /// Gets or sets reasons.
         /// Specifies the reasons the deployment has its state value. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reasons", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reasons")]
         public IEnumerable<DeploymentStateReason> Reasons { get; set; }
     
         /// <summary>
         /// Gets or sets requestedValue.
         /// Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestedValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestedValue")]
         public RequestedDeploymentStateValue? RequestedValue { get; set; }
     
         /// <summary>
         /// Gets or sets value.
         /// Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public DeploymentStateValue? Value { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

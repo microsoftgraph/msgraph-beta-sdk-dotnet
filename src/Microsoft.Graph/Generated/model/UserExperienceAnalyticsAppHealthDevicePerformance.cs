@@ -12,92 +12,82 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics App Health Device Performance.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsAppHealthDevicePerformance : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsAppHealthDevicePerformance constructor
-		///</summary>
-        public UserExperienceAnalyticsAppHealthDevicePerformance()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformance";
-        }
-	
         /// <summary>
         /// Gets or sets app crash count.
         /// The number of app crashes for the device. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appCrashCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appCrashCount")]
         public Int32? AppCrashCount { get; set; }
     
         /// <summary>
         /// Gets or sets app hang count.
         /// The number of app hangs for the device. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appHangCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appHangCount")]
         public Int32? AppHangCount { get; set; }
     
         /// <summary>
         /// Gets or sets crashed app count.
         /// The number of distinct app crashes for the device. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "crashedAppCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("crashedAppCount")]
         public Int32? CrashedAppCount { get; set; }
     
         /// <summary>
         /// Gets or sets device app health score.
         /// The app health score of the device. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceAppHealthScore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceAppHealthScore")]
         public double? DeviceAppHealthScore { get; set; }
     
         /// <summary>
         /// Gets or sets device app health status.
         /// The overall app health status of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceAppHealthStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceAppHealthStatus")]
         public string DeviceAppHealthStatus { get; set; }
     
         /// <summary>
         /// Gets or sets device display name.
         /// The name of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceDisplayName")]
         public string DeviceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
         /// The id of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets device manufacturer.
         /// The manufacturer name of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManufacturer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceManufacturer")]
         public string DeviceManufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets device model.
         /// The model name of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceModel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceModel")]
         public string DeviceModel { get; set; }
     
         /// <summary>
         /// Gets or sets mean time to failure in minutes.
         /// The mean time to failure for the device in minutes. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meanTimeToFailureInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meanTimeToFailureInMinutes")]
         public Int32? MeanTimeToFailureInMinutes { get; set; }
     
     }

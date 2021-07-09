@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceGovernanceRoleAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified GovernanceRoleAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="governanceRoleAssignment">The GovernanceRoleAssignment to add.</param>
-        /// <returns>The created GovernanceRoleAssignment.</returns>
-        System.Threading.Tasks.Task<GovernanceRoleAssignment> AddAsync(GovernanceRoleAssignment governanceRoleAssignment);
-
         /// <summary>
         /// Adds the specified GovernanceRoleAssignment to the collection via POST.
         /// </summary>
         /// <param name="governanceRoleAssignment">The GovernanceRoleAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernanceRoleAssignment.</returns>
-        System.Threading.Tasks.Task<GovernanceRoleAssignment> AddAsync(GovernanceRoleAssignment governanceRoleAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GovernanceRoleAssignment> AddAsync(GovernanceRoleAssignment governanceRoleAssignment, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified GovernanceRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{GovernanceRoleAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceGovernanceRoleAssignmentsCollectionPage> GetAsync();
+        /// <param name="governanceRoleAssignment">The GovernanceRoleAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignment>> AddResponseAsync(GovernanceRoleAssignment governanceRoleAssignment, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceGovernanceRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IGraphServiceGovernanceRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceGovernanceRoleAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceGovernanceRoleAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceGovernanceRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MicrosoftTunnelHealthThreshold using POST.
         /// </summary>
         /// <param name="microsoftTunnelHealthThresholdToCreate">The MicrosoftTunnelHealthThreshold to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelHealthThreshold.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> CreateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToCreate);        /// <summary>
-        /// Creates the specified MicrosoftTunnelHealthThreshold using POST.
+        System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> CreateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified MicrosoftTunnelHealthThreshold using POST and returns a <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object.
         /// </summary>
         /// <param name="microsoftTunnelHealthThresholdToCreate">The MicrosoftTunnelHealthThreshold to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MicrosoftTunnelHealthThreshold.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> CreateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MicrosoftTunnelHealthThreshold.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> CreateResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MicrosoftTunnelHealthThreshold.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified MicrosoftTunnelHealthThreshold.
+        /// Deletes the specified MicrosoftTunnelHealthThreshold and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MicrosoftTunnelHealthThreshold.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MicrosoftTunnelHealthThreshold.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MicrosoftTunnelHealthThreshold.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified MicrosoftTunnelHealthThreshold using PATCH.
+        /// Gets the specified MicrosoftTunnelHealthThreshold and returns a <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object.
         /// </summary>
-        /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold to update.</param>
-        /// <returns>The updated MicrosoftTunnelHealthThreshold.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> UpdateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MicrosoftTunnelHealthThreshold using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MicrosoftTunnelHealthThreshold.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> UpdateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> UpdateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelHealthThreshold using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> UpdateResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelHealthThreshold using PUT.
+        /// </summary>
+        /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> PutAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelHealthThreshold using PUT and returns a <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> PutResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

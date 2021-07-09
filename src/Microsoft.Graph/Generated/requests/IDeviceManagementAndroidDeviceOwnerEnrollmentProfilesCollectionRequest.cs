@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AndroidDeviceOwnerEnrollmentProfile to the collection via POST.
-        /// </summary>
-        /// <param name="androidDeviceOwnerEnrollmentProfile">The AndroidDeviceOwnerEnrollmentProfile to add.</param>
-        /// <returns>The created AndroidDeviceOwnerEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> AddAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfile);
-
         /// <summary>
         /// Adds the specified AndroidDeviceOwnerEnrollmentProfile to the collection via POST.
         /// </summary>
         /// <param name="androidDeviceOwnerEnrollmentProfile">The AndroidDeviceOwnerEnrollmentProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceOwnerEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> AddAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfile, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> AddAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfile, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AndroidDeviceOwnerEnrollmentProfile to the collection via POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionPage> GetAsync();
+        /// <param name="androidDeviceOwnerEnrollmentProfile">The AndroidDeviceOwnerEnrollmentProfile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> AddResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfile, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

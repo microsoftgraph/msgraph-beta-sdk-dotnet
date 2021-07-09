@@ -23,57 +23,64 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AccessReviewScheduleDefinition.
         /// </summary>
-        /// <returns>The AccessReviewScheduleDefinition.</returns>
-        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AccessReviewScheduleDefinition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessReviewScheduleDefinition.</returns>
-        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the specified AccessReviewScheduleDefinition and returns a <see cref="GraphResponse{AccessReviewScheduleDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewScheduleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewScheduleDefinition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified AccessReviewScheduleDefinition using POST.
         /// </summary>
         /// <param name="accessReviewScheduleDefinitionToCreate">The AccessReviewScheduleDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewScheduleDefinition.</returns>
-        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> CreateAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinitionToCreate);        /// <summary>
-        /// Creates the specified AccessReviewScheduleDefinition using POST.
+        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> CreateAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinitionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Creates the specified AccessReviewScheduleDefinition using POST and returns a <see cref="GraphResponse{AccessReviewScheduleDefinition}"/> object.
         /// </summary>
         /// <param name="accessReviewScheduleDefinitionToCreate">The AccessReviewScheduleDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AccessReviewScheduleDefinition.</returns>
-        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> CreateAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinitionToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{AccessReviewScheduleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewScheduleDefinition>> CreateResponseAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinitionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
-        /// Updates the specified AccessReviewScheduleDefinition using PATCH.
-        /// </summary>
-        /// <param name="accessReviewScheduleDefinitionToUpdate">The AccessReviewScheduleDefinition to update.</param>
-        /// <returns>The updated AccessReviewScheduleDefinition.</returns>
-        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> UpdateAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinitionToUpdate);
-
-        /// <summary>
         /// Updates the specified AccessReviewScheduleDefinition using PATCH.
         /// </summary>
         /// <param name="accessReviewScheduleDefinitionToUpdate">The AccessReviewScheduleDefinition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessReviewScheduleDefinition.</returns>
-        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> UpdateAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinitionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> UpdateAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Updates the specified AccessReviewScheduleDefinition using PATCH and returns a <see cref="GraphResponse{AccessReviewScheduleDefinition}"/> object.
+        /// </summary>
+        /// <param name="accessReviewScheduleDefinitionToUpdate">The AccessReviewScheduleDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessReviewScheduleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewScheduleDefinition>> UpdateResponseAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Deletes the specified AccessReviewScheduleDefinition.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified AccessReviewScheduleDefinition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Deletes the specified AccessReviewScheduleDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

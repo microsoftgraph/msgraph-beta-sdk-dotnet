@@ -38,117 +38,102 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsManagementApp.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsManagementApp.</returns>
-        public System.Threading.Tasks.Task<WindowsManagementApp> GetAsync()
+        public async System.Threading.Tasks.Task<WindowsManagementApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<WindowsManagementApp>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified WindowsManagementApp.
+        /// Gets the specified WindowsManagementApp and returns a <see cref="GraphResponse{WindowsManagementApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The WindowsManagementApp.</returns>
-        public async System.Threading.Tasks.Task<WindowsManagementApp> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{WindowsManagementApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsManagementApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<WindowsManagementApp>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsManagementApp>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified WindowsManagementApp using POST.
         /// </summary>
         /// <param name="windowsManagementAppToCreate">The WindowsManagementApp to create.</param>
-        /// <returns>The created WindowsManagementApp.</returns>
-        public System.Threading.Tasks.Task<WindowsManagementApp> CreateAsync(WindowsManagementApp windowsManagementAppToCreate)
-        {
-            return this.CreateAsync(windowsManagementAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsManagementApp using POST.
-        /// </summary>
-        /// <param name="windowsManagementAppToCreate">The WindowsManagementApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsManagementApp.</returns>
-        public async System.Threading.Tasks.Task<WindowsManagementApp> CreateAsync(WindowsManagementApp windowsManagementAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsManagementApp> CreateAsync(WindowsManagementApp windowsManagementAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsManagementApp>(windowsManagementAppToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified WindowsManagementApp using PATCH.
+        /// Creates the specified WindowsManagementApp using POST and returns a <see cref="GraphResponse{WindowsManagementApp}"/> object.
         /// </summary>
-        /// <param name="windowsManagementAppToUpdate">The WindowsManagementApp to update.</param>
-        /// <returns>The updated WindowsManagementApp.</returns>
-        public System.Threading.Tasks.Task<WindowsManagementApp> UpdateAsync(WindowsManagementApp windowsManagementAppToUpdate)
+        /// <param name="windowsManagementAppToCreate">The WindowsManagementApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsManagementApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsManagementApp>> CreateResponseAsync(WindowsManagementApp windowsManagementAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(windowsManagementAppToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsManagementApp>(windowsManagementAppToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified WindowsManagementApp using PATCH.
         /// </summary>
         /// <param name="windowsManagementAppToUpdate">The WindowsManagementApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsManagementApp.</returns>
-        public async System.Threading.Tasks.Task<WindowsManagementApp> UpdateAsync(WindowsManagementApp windowsManagementAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsManagementApp> UpdateAsync(WindowsManagementApp windowsManagementAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsManagementAppToUpdate.AdditionalData != null)
-			{
-				if (windowsManagementAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsManagementAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagementAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsManagementAppToUpdate.AdditionalData != null)
-            {
-                if (windowsManagementAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsManagementAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagementAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsManagementApp>(windowsManagementAppToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified WindowsManagementApp.
+        /// Updates the specified WindowsManagementApp using PATCH and returns a <see cref="GraphResponse{WindowsManagementApp}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsManagementAppToUpdate">The WindowsManagementApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsManagementApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsManagementApp>> UpdateResponseAsync(WindowsManagementApp windowsManagementAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsManagementApp>(windowsManagementAppToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified WindowsManagementApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsManagementApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified WindowsManagementApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

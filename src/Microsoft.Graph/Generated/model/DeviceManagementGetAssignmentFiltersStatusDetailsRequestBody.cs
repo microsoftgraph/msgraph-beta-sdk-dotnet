@@ -9,53 +9,51 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementGetAssignmentFiltersStatusDetailsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementGetAssignmentFiltersStatusDetailsRequestBody
     {
     
         /// <summary>
         /// Gets or sets ManagedDeviceId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets PayloadId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("payloadId")]
         public string PayloadId { get; set; }
     
         /// <summary>
         /// Gets or sets UserId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets AssignmentFilterIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilterIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentFilterIds")]
         public IEnumerable<string> AssignmentFilterIds { get; set; }
     
         /// <summary>
         /// Gets or sets Top.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "top", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("top")]
         public Int32? Top { get; set; }
     
         /// <summary>
         /// Gets or sets Skip.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skip", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("skip")]
         public Int32? Skip { get; set; }
     
     }

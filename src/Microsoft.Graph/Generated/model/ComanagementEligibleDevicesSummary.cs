@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ComanagementEligibleDevicesSummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ComanagementEligibleDevicesSummary>))]
     public partial class ComanagementEligibleDevicesSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ComanagementEligibleDevicesSummary"/> class.
-        /// </summary>
-        public ComanagementEligibleDevicesSummary()
-        {
-            this.ODataType = "microsoft.graph.comanagementEligibleDevicesSummary";
-        }
 
         /// <summary>
         /// Gets or sets comanagedCount.
         /// Count of devices already Co-Managed
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comanagedCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("comanagedCount")]
         public Int32? ComanagedCount { get; set; }
     
         /// <summary>
         /// Gets or sets eligibleButNotAzureAdJoinedCount.
         /// Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eligibleButNotAzureAdJoinedCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eligibleButNotAzureAdJoinedCount")]
         public Int32? EligibleButNotAzureAdJoinedCount { get; set; }
     
         /// <summary>
         /// Gets or sets eligibleCount.
         /// Count of devices fully eligible for Co-Management
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eligibleCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eligibleCount")]
         public Int32? EligibleCount { get; set; }
     
         /// <summary>
         /// Gets or sets ineligibleCount.
         /// Count of devices ineligible for Co-Management
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ineligibleCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ineligibleCount")]
         public Int32? IneligibleCount { get; set; }
     
         /// <summary>
         /// Gets or sets needsOsUpdateCount.
         /// Count of devices that will be eligible for Co-Management after an OS update
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "needsOsUpdateCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("needsOsUpdateCount")]
         public Int32? NeedsOsUpdateCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

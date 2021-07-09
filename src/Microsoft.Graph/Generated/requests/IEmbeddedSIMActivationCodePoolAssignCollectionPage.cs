@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IEmbeddedSIMActivationCodePoolAssignCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<EmbeddedSIMActivationCodePoolAssignCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<EmbeddedSIMActivationCodePoolAssignCollectionPage>))]
     public interface IEmbeddedSIMActivationCodePoolAssignCollectionPage : ICollectionPage<EmbeddedSIMActivationCodePoolAssignment>
     {
         /// <summary>

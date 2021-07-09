@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagement using POST.
         /// </summary>
         /// <param name="deviceManagementToCreate">The DeviceManagement to create.</param>
-        /// <returns>The created DeviceManagement.</returns>
-        public System.Threading.Tasks.Task<DeviceManagement> CreateAsync(DeviceManagement deviceManagementToCreate)
-        {
-            return this.CreateAsync(deviceManagementToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagement using POST.
-        /// </summary>
-        /// <param name="deviceManagementToCreate">The DeviceManagement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagement.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagement> CreateAsync(DeviceManagement deviceManagementToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagement> CreateAsync(DeviceManagement deviceManagementToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceManagement>(deviceManagementToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceManagement.
+        /// Creates the specified DeviceManagement using POST and returns a <see cref="GraphResponse{DeviceManagement}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceManagementToCreate">The DeviceManagement to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagement>> CreateResponseAsync(DeviceManagement deviceManagementToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagement>(deviceManagementToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceManagement>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceManagement.
+        /// Deletes the specified DeviceManagement and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagement.</returns>
-        public System.Threading.Tasks.Task<DeviceManagement> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagement.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagement> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagement> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceManagement>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceManagement using PATCH.
+        /// Gets the specified DeviceManagement and returns a <see cref="GraphResponse{DeviceManagement}"/> object.
         /// </summary>
-        /// <param name="deviceManagementToUpdate">The DeviceManagement to update.</param>
-        /// <returns>The updated DeviceManagement.</returns>
-        public System.Threading.Tasks.Task<DeviceManagement> UpdateAsync(DeviceManagement deviceManagementToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagement>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(deviceManagementToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagement>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagement.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagement> UpdateAsync(DeviceManagement deviceManagementToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagement> UpdateAsync(DeviceManagement deviceManagementToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceManagement>(deviceManagementToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagement using PATCH and returns a <see cref="GraphResponse{DeviceManagement}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementToUpdate">The DeviceManagement to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagement>> UpdateResponseAsync(DeviceManagement deviceManagementToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceManagement>(deviceManagementToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagement using PUT.
+        /// </summary>
+        /// <param name="deviceManagementToUpdate">The DeviceManagement object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceManagement> PutAsync(DeviceManagement deviceManagementToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceManagement>(deviceManagementToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagement using PUT and returns a <see cref="GraphResponse{DeviceManagement}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementToUpdate">The DeviceManagement object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceManagement}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagement>> PutResponseAsync(DeviceManagement deviceManagementToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceManagement>(deviceManagementToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,1831 +244,691 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagement deviceManagementToInitialize)
         {
 
-            if (deviceManagementToInitialize != null && deviceManagementToInitialize.AdditionalData != null)
+            if (deviceManagementToInitialize != null)
             {
-
                 if (deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles != null && deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("androidDeviceOwnerEnrollmentProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.AndroidForWorkAppConfigurationSchemas != null && deviceManagementToInitialize.AndroidForWorkAppConfigurationSchemas.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.AndroidForWorkAppConfigurationSchemas.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.AndroidForWorkAppConfigurationSchemasNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.AndroidForWorkAppConfigurationSchemas.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("androidForWorkAppConfigurationSchemas@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.AndroidForWorkAppConfigurationSchemas.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.AndroidForWorkEnrollmentProfiles != null && deviceManagementToInitialize.AndroidForWorkEnrollmentProfiles.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.AndroidForWorkEnrollmentProfiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.AndroidForWorkEnrollmentProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.AndroidForWorkEnrollmentProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("androidForWorkEnrollmentProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.AndroidForWorkEnrollmentProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.AndroidManagedStoreAppConfigurationSchemas != null && deviceManagementToInitialize.AndroidManagedStoreAppConfigurationSchemas.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.AndroidManagedStoreAppConfigurationSchemas.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.AndroidManagedStoreAppConfigurationSchemasNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.AndroidManagedStoreAppConfigurationSchemas.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("androidManagedStoreAppConfigurationSchemas@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.AndroidManagedStoreAppConfigurationSchemas.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.AuditEvents != null && deviceManagementToInitialize.AuditEvents.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.AuditEvents.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.AuditEventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.AuditEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("auditEvents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.AuditEvents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.AssignmentFilters != null && deviceManagementToInitialize.AssignmentFilters.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.AssignmentFilters.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.AssignmentFiltersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.AssignmentFilters.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("assignmentFilters@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.AssignmentFilters.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ChromeOSOnboardingSettings != null && deviceManagementToInitialize.ChromeOSOnboardingSettings.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ChromeOSOnboardingSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ChromeOSOnboardingSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ChromeOSOnboardingSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("chromeOSOnboardingSettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ChromeOSOnboardingSettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.TermsAndConditions != null && deviceManagementToInitialize.TermsAndConditions.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.TermsAndConditions.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.TermsAndConditionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.TermsAndConditions.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("termsAndConditions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.TermsAndConditions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.CartToClassAssociations != null && deviceManagementToInitialize.CartToClassAssociations.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.CartToClassAssociations.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.CartToClassAssociationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.CartToClassAssociations.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("cartToClassAssociations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.CartToClassAssociations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceCompliancePolicies != null && deviceManagementToInitialize.DeviceCompliancePolicies.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceCompliancePolicies.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceCompliancePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceCompliancePolicies.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceCompliancePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceCompliancePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceCompliancePolicySettingStateSummaries != null && deviceManagementToInitialize.DeviceCompliancePolicySettingStateSummaries.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceCompliancePolicySettingStateSummaries.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceCompliancePolicySettingStateSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceCompliancePolicySettingStateSummaries.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceCompliancePolicySettingStateSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceCompliancePolicySettingStateSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceConfigurationConflictSummary != null && deviceManagementToInitialize.DeviceConfigurationConflictSummary.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceConfigurationConflictSummary.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceConfigurationConflictSummaryNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceConfigurationConflictSummary.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceConfigurationConflictSummary@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceConfigurationConflictSummary.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceConfigurationRestrictedAppsViolations != null && deviceManagementToInitialize.DeviceConfigurationRestrictedAppsViolations.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceConfigurationRestrictedAppsViolations.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceConfigurationRestrictedAppsViolationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceConfigurationRestrictedAppsViolations.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceConfigurationRestrictedAppsViolations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceConfigurationRestrictedAppsViolations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceConfigurations != null && deviceManagementToInitialize.DeviceConfigurations.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceConfigurations.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceConfigurationsAllManagedDeviceCertificateStates != null && deviceManagementToInitialize.DeviceConfigurationsAllManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceConfigurationsAllManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceConfigurationsAllManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceConfigurationsAllManagedDeviceCertificateStates.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceConfigurationsAllManagedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceConfigurationsAllManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.IosUpdateStatuses != null && deviceManagementToInitialize.IosUpdateStatuses.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.IosUpdateStatuses.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.IosUpdateStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.IosUpdateStatuses.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("iosUpdateStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.IosUpdateStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.MacOSSoftwareUpdateAccountSummaries != null && deviceManagementToInitialize.MacOSSoftwareUpdateAccountSummaries.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.MacOSSoftwareUpdateAccountSummaries.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.MacOSSoftwareUpdateAccountSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.MacOSSoftwareUpdateAccountSummaries.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("macOSSoftwareUpdateAccountSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.MacOSSoftwareUpdateAccountSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ManagedDeviceEncryptionStates != null && deviceManagementToInitialize.ManagedDeviceEncryptionStates.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ManagedDeviceEncryptionStates.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ManagedDeviceEncryptionStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ManagedDeviceEncryptionStates.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("managedDeviceEncryptionStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ManagedDeviceEncryptionStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.NdesConnectors != null && deviceManagementToInitialize.NdesConnectors.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.NdesConnectors.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.NdesConnectorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.NdesConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("ndesConnectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.NdesConnectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ConfigurationCategories != null && deviceManagementToInitialize.ConfigurationCategories.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ConfigurationCategories.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ConfigurationCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ConfigurationCategories.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("configurationCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ConfigurationCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ConfigurationPolicies != null && deviceManagementToInitialize.ConfigurationPolicies.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ConfigurationPolicies.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ConfigurationPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ConfigurationPolicies.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("configurationPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ConfigurationPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ConfigurationPolicyTemplates != null && deviceManagementToInitialize.ConfigurationPolicyTemplates.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ConfigurationPolicyTemplates.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ConfigurationPolicyTemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ConfigurationPolicyTemplates.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("configurationPolicyTemplates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ConfigurationPolicyTemplates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ConfigurationSettings != null && deviceManagementToInitialize.ConfigurationSettings.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ConfigurationSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ConfigurationSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ConfigurationSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("configurationSettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ConfigurationSettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ReusablePolicySettings != null && deviceManagementToInitialize.ReusablePolicySettings.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ReusablePolicySettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ReusablePolicySettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ReusablePolicySettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("reusablePolicySettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ReusablePolicySettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ReusableSettings != null && deviceManagementToInitialize.ReusableSettings.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ReusableSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ReusableSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ReusableSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("reusableSettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ReusableSettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.TemplateSettings != null && deviceManagementToInitialize.TemplateSettings.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.TemplateSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.TemplateSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.TemplateSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("templateSettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.TemplateSettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ComplianceManagementPartners != null && deviceManagementToInitialize.ComplianceManagementPartners.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ComplianceManagementPartners.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ComplianceManagementPartnersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ComplianceManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("complianceManagementPartners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ComplianceManagementPartners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceCategories != null && deviceManagementToInitialize.DeviceCategories.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceCategories.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceCategories.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceEnrollmentConfigurations != null && deviceManagementToInitialize.DeviceEnrollmentConfigurations.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceEnrollmentConfigurations.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceEnrollmentConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceEnrollmentConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceEnrollmentConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceEnrollmentConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceManagementPartners != null && deviceManagementToInitialize.DeviceManagementPartners.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceManagementPartners.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceManagementPartnersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceManagementPartners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceManagementPartners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ExchangeConnectors != null && deviceManagementToInitialize.ExchangeConnectors.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ExchangeConnectors.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ExchangeConnectorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ExchangeConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("exchangeConnectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ExchangeConnectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ExchangeOnPremisesPolicies != null && deviceManagementToInitialize.ExchangeOnPremisesPolicies.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ExchangeOnPremisesPolicies.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ExchangeOnPremisesPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ExchangeOnPremisesPolicies.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("exchangeOnPremisesPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ExchangeOnPremisesPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.MobileThreatDefenseConnectors != null && deviceManagementToInitialize.MobileThreatDefenseConnectors.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.MobileThreatDefenseConnectors.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.MobileThreatDefenseConnectorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.MobileThreatDefenseConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("mobileThreatDefenseConnectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.MobileThreatDefenseConnectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.Categories != null && deviceManagementToInitialize.Categories.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.Categories.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.CategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.Categories.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.Categories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.Intents != null && deviceManagementToInitialize.Intents.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.Intents.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.IntentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.Intents.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("intents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.Intents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.SettingDefinitions != null && deviceManagementToInitialize.SettingDefinitions.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.SettingDefinitions.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.SettingDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.SettingDefinitions.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("settingDefinitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.SettingDefinitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.Templates != null && deviceManagementToInitialize.Templates.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.Templates.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.TemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.Templates.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("templates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.Templates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.CloudPCConnectivityIssues != null && deviceManagementToInitialize.CloudPCConnectivityIssues.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.CloudPCConnectivityIssues.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.CloudPCConnectivityIssuesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.CloudPCConnectivityIssues.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("cloudPCConnectivityIssues@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.CloudPCConnectivityIssues.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ComanagedDevices != null && deviceManagementToInitialize.ComanagedDevices.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ComanagedDevices.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ComanagedDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ComanagedDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("comanagedDevices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ComanagedDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ComanagementEligibleDevices != null && deviceManagementToInitialize.ComanagementEligibleDevices.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ComanagementEligibleDevices.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ComanagementEligibleDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ComanagementEligibleDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("comanagementEligibleDevices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ComanagementEligibleDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DataSharingConsents != null && deviceManagementToInitialize.DataSharingConsents.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DataSharingConsents.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DataSharingConsentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DataSharingConsents.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("dataSharingConsents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DataSharingConsents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DetectedApps != null && deviceManagementToInitialize.DetectedApps.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DetectedApps.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DetectedAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DetectedApps.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("detectedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DetectedApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceComplianceScripts != null && deviceManagementToInitialize.DeviceComplianceScripts.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceComplianceScripts.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceComplianceScriptsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceComplianceScripts.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceComplianceScripts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceComplianceScripts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceCustomAttributeShellScripts != null && deviceManagementToInitialize.DeviceCustomAttributeShellScripts.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceCustomAttributeShellScripts.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceCustomAttributeShellScriptsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceCustomAttributeShellScripts.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceCustomAttributeShellScripts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceCustomAttributeShellScripts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceHealthScripts != null && deviceManagementToInitialize.DeviceHealthScripts.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceHealthScripts.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceHealthScriptsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceHealthScripts.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceHealthScripts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceHealthScripts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceManagementScripts != null && deviceManagementToInitialize.DeviceManagementScripts.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceManagementScripts.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceManagementScriptsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceManagementScripts.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceManagementScripts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceManagementScripts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DeviceShellScripts != null && deviceManagementToInitialize.DeviceShellScripts.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DeviceShellScripts.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DeviceShellScriptsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceShellScripts.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceShellScripts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceShellScripts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ManagedDevices != null && deviceManagementToInitialize.ManagedDevices.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ManagedDevices.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ManagedDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ManagedDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("managedDevices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ManagedDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.MobileAppTroubleshootingEvents != null && deviceManagementToInitialize.MobileAppTroubleshootingEvents.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.MobileAppTroubleshootingEvents.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.MobileAppTroubleshootingEventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.MobileAppTroubleshootingEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("mobileAppTroubleshootingEvents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.MobileAppTroubleshootingEvents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.RemoteActionAudits != null && deviceManagementToInitialize.RemoteActionAudits.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.RemoteActionAudits.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.RemoteActionAuditsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.RemoteActionAudits.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("remoteActionAudits@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.RemoteActionAudits.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthApplicationPerformance@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDeviceModelPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDeviceModelPerformance.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDeviceModelPerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDeviceModelPerformanceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDeviceModelPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthDeviceModelPerformance@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDeviceModelPerformance.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformance.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformanceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthDevicePerformance@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformance.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformanceDetails != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformanceDetailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthDevicePerformanceDetails@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthOSVersionPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthOSVersionPerformance.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthOSVersionPerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAppHealthOSVersionPerformanceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsAppHealthOSVersionPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthOSVersionPerformance@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthOSVersionPerformance.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsBaselines != null && deviceManagementToInitialize.UserExperienceAnalyticsBaselines.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsBaselines.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsBaselinesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsBaselines.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsBaselines@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsBaselines.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsCategories != null && deviceManagementToInitialize.UserExperienceAnalyticsCategories.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsCategories.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsCategories.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceMetricHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceMetricHistory.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceMetricHistory.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceMetricHistoryNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsDeviceMetricHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsDeviceMetricHistory@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsDeviceMetricHistory.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsDevicePerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsDevicePerformance.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDevicePerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDevicePerformanceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsDevicePerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsDevicePerformance@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsDevicePerformance.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceScoresNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsDeviceScores@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistory.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistory.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistoryNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsDeviceStartupHistory@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupHistory.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcesses != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcesses.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcesses.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcessesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcesses.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsDeviceStartupProcesses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcesses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcessPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcessPerformance.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcessPerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcessPerformanceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcessPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsDeviceStartupProcessPerformance@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcessPerformance.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsDevicesWithoutCloudIdentity != null && deviceManagementToInitialize.UserExperienceAnalyticsDevicesWithoutCloudIdentity.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDevicesWithoutCloudIdentity.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDevicesWithoutCloudIdentityNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsDevicesWithoutCloudIdentity.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsDevicesWithoutCloudIdentity@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsDevicesWithoutCloudIdentity.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess != null && deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcessNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsImpactingProcess@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsMetricHistoryNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsMetricHistory@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsNotAutopilotReadyDevice != null && deviceManagementToInitialize.UserExperienceAnalyticsNotAutopilotReadyDevice.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsNotAutopilotReadyDevice.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsNotAutopilotReadyDeviceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsNotAutopilotReadyDevice.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsNotAutopilotReadyDevice@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsNotAutopilotReadyDevice.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsRemoteConnection != null && deviceManagementToInitialize.UserExperienceAnalyticsRemoteConnection.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsRemoteConnection.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsRemoteConnectionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsRemoteConnection.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsRemoteConnection@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsRemoteConnection.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsResourcePerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsResourcePerformance.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsResourcePerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsResourcePerformanceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsResourcePerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsResourcePerformance@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsResourcePerformance.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsScoreHistoryNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsScoreHistory@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics != null && deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetricsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsWorkFromAnywhereMetrics@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.WindowsMalwareInformation != null && deviceManagementToInitialize.WindowsMalwareInformation.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.WindowsMalwareInformation.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.WindowsMalwareInformationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.WindowsMalwareInformation.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsMalwareInformation@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.WindowsMalwareInformation.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DerivedCredentials != null && deviceManagementToInitialize.DerivedCredentials.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DerivedCredentials.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DerivedCredentialsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DerivedCredentials.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("derivedCredentials@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DerivedCredentials.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ResourceAccessProfiles != null && deviceManagementToInitialize.ResourceAccessProfiles.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ResourceAccessProfiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ResourceAccessProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ResourceAccessProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("resourceAccessProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ResourceAccessProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles != null && deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("appleUserInitiatedEnrollmentProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DepOnboardingSettings != null && deviceManagementToInitialize.DepOnboardingSettings.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DepOnboardingSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DepOnboardingSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DepOnboardingSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("depOnboardingSettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DepOnboardingSettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ImportedDeviceIdentities != null && deviceManagementToInitialize.ImportedDeviceIdentities.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ImportedDeviceIdentities.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ImportedDeviceIdentitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ImportedDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("importedDeviceIdentities@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ImportedDeviceIdentities.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities != null && deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("importedWindowsAutopilotDeviceIdentities@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles != null && deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.WindowsAutopilotDeploymentProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsAutopilotDeploymentProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.WindowsAutopilotDeviceIdentities != null && deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.WindowsAutopilotDeviceIdentitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsAutopilotDeviceIdentities@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ManagementConditions != null && deviceManagementToInitialize.ManagementConditions.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ManagementConditions.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ManagementConditionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ManagementConditions.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("managementConditions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ManagementConditions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ManagementConditionStatements != null && deviceManagementToInitialize.ManagementConditionStatements.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ManagementConditionStatements.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ManagementConditionStatementsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ManagementConditionStatements.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("managementConditionStatements@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ManagementConditionStatements.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.GroupPolicyMigrationReports != null && deviceManagementToInitialize.GroupPolicyMigrationReports.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.GroupPolicyMigrationReports.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.GroupPolicyMigrationReportsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.GroupPolicyMigrationReports.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyMigrationReports@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.GroupPolicyMigrationReports.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.GroupPolicyObjectFiles != null && deviceManagementToInitialize.GroupPolicyObjectFiles.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.GroupPolicyObjectFiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.GroupPolicyObjectFilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.GroupPolicyObjectFiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyObjectFiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.GroupPolicyObjectFiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.GroupPolicyCategories != null && deviceManagementToInitialize.GroupPolicyCategories.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.GroupPolicyCategories.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.GroupPolicyCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.GroupPolicyCategories.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.GroupPolicyCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.GroupPolicyConfigurations != null && deviceManagementToInitialize.GroupPolicyConfigurations.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.GroupPolicyConfigurations.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.GroupPolicyConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.GroupPolicyConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.GroupPolicyConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.GroupPolicyDefinitionFiles != null && deviceManagementToInitialize.GroupPolicyDefinitionFiles.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.GroupPolicyDefinitionFiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.GroupPolicyDefinitionFilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.GroupPolicyDefinitionFiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyDefinitionFiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.GroupPolicyDefinitionFiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.GroupPolicyDefinitions != null && deviceManagementToInitialize.GroupPolicyDefinitions.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.GroupPolicyDefinitions.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.GroupPolicyDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.GroupPolicyDefinitions.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyDefinitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.GroupPolicyDefinitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.GroupPolicyUploadedDefinitionFiles != null && deviceManagementToInitialize.GroupPolicyUploadedDefinitionFiles.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.GroupPolicyUploadedDefinitionFiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.GroupPolicyUploadedDefinitionFilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.GroupPolicyUploadedDefinitionFiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyUploadedDefinitionFiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.GroupPolicyUploadedDefinitionFiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.MicrosoftTunnelConfigurations != null && deviceManagementToInitialize.MicrosoftTunnelConfigurations.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.MicrosoftTunnelConfigurations.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.MicrosoftTunnelConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.MicrosoftTunnelConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("microsoftTunnelConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.MicrosoftTunnelConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.MicrosoftTunnelHealthThresholds != null && deviceManagementToInitialize.MicrosoftTunnelHealthThresholds.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.MicrosoftTunnelHealthThresholds.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.MicrosoftTunnelHealthThresholdsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.MicrosoftTunnelHealthThresholds.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("microsoftTunnelHealthThresholds@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.MicrosoftTunnelHealthThresholds.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.MicrosoftTunnelServerLogCollectionResponses != null && deviceManagementToInitialize.MicrosoftTunnelServerLogCollectionResponses.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.MicrosoftTunnelServerLogCollectionResponses.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.MicrosoftTunnelServerLogCollectionResponsesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.MicrosoftTunnelServerLogCollectionResponses.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("microsoftTunnelServerLogCollectionResponses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.MicrosoftTunnelServerLogCollectionResponses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.MicrosoftTunnelSites != null && deviceManagementToInitialize.MicrosoftTunnelSites.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.MicrosoftTunnelSites.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.MicrosoftTunnelSitesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.MicrosoftTunnelSites.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("microsoftTunnelSites@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.MicrosoftTunnelSites.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.NotificationMessageTemplates != null && deviceManagementToInitialize.NotificationMessageTemplates.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.NotificationMessageTemplates.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.NotificationMessageTemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.NotificationMessageTemplates.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("notificationMessageTemplates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.NotificationMessageTemplates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.DomainJoinConnectors != null && deviceManagementToInitialize.DomainJoinConnectors.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.DomainJoinConnectors.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.DomainJoinConnectorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DomainJoinConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("domainJoinConnectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DomainJoinConnectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ConfigManagerCollections != null && deviceManagementToInitialize.ConfigManagerCollections.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ConfigManagerCollections.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ConfigManagerCollectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ConfigManagerCollections.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("configManagerCollections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ConfigManagerCollections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.ResourceOperations != null && deviceManagementToInitialize.ResourceOperations.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.ResourceOperations.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ResourceOperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ResourceOperations.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("resourceOperations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ResourceOperations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.RoleAssignments != null && deviceManagementToInitialize.RoleAssignments.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.RoleAssignments.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.RoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.RoleAssignments.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.RoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.RoleDefinitions != null && deviceManagementToInitialize.RoleDefinitions.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.RoleDefinitions.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.RoleDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.RoleDefinitions.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.RoleScopeTags != null && deviceManagementToInitialize.RoleScopeTags.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.RoleScopeTags.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.RoleScopeTagsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.RoleScopeTags.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("roleScopeTags@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.RoleScopeTags.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.RemoteAssistancePartners != null && deviceManagementToInitialize.RemoteAssistancePartners.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.RemoteAssistancePartners.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.RemoteAssistancePartnersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.RemoteAssistancePartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("remoteAssistancePartners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.RemoteAssistancePartners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.EmbeddedSIMActivationCodePools != null && deviceManagementToInitialize.EmbeddedSIMActivationCodePools.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.EmbeddedSIMActivationCodePools.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.EmbeddedSIMActivationCodePoolsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.EmbeddedSIMActivationCodePools.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("embeddedSIMActivationCodePools@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.EmbeddedSIMActivationCodePools.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.TelecomExpenseManagementPartners != null && deviceManagementToInitialize.TelecomExpenseManagementPartners.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.TelecomExpenseManagementPartners.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.TelecomExpenseManagementPartnersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.TelecomExpenseManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("telecomExpenseManagementPartners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.TelecomExpenseManagementPartners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.AutopilotEvents != null && deviceManagementToInitialize.AutopilotEvents.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.AutopilotEvents.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.AutopilotEventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.AutopilotEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("autopilotEvents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.AutopilotEvents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.TroubleshootingEvents != null && deviceManagementToInitialize.TroubleshootingEvents.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.TroubleshootingEvents.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.TroubleshootingEventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.TroubleshootingEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("troubleshootingEvents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.TroubleshootingEvents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.WindowsFeatureUpdateProfiles != null && deviceManagementToInitialize.WindowsFeatureUpdateProfiles.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.WindowsFeatureUpdateProfiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.WindowsFeatureUpdateProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.WindowsFeatureUpdateProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsFeatureUpdateProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.WindowsFeatureUpdateProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.WindowsQualityUpdateProfiles != null && deviceManagementToInitialize.WindowsQualityUpdateProfiles.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.WindowsQualityUpdateProfiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.WindowsQualityUpdateProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.WindowsQualityUpdateProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsQualityUpdateProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.WindowsQualityUpdateProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.WindowsUpdateCatalogItems != null && deviceManagementToInitialize.WindowsUpdateCatalogItems.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.WindowsUpdateCatalogItems.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.WindowsUpdateCatalogItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.WindowsUpdateCatalogItems.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsUpdateCatalogItems@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.WindowsUpdateCatalogItems.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.IntuneBrandingProfiles != null && deviceManagementToInitialize.IntuneBrandingProfiles.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.IntuneBrandingProfiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.IntuneBrandingProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.IntuneBrandingProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("intuneBrandingProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.IntuneBrandingProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.WindowsInformationProtectionAppLearningSummaries != null && deviceManagementToInitialize.WindowsInformationProtectionAppLearningSummaries.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.WindowsInformationProtectionAppLearningSummaries.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.WindowsInformationProtectionAppLearningSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.WindowsInformationProtectionAppLearningSummaries.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionAppLearningSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.WindowsInformationProtectionAppLearningSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.WindowsInformationProtectionNetworkLearningSummaries != null && deviceManagementToInitialize.WindowsInformationProtectionNetworkLearningSummaries.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.WindowsInformationProtectionNetworkLearningSummaries.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.WindowsInformationProtectionNetworkLearningSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.WindowsInformationProtectionNetworkLearningSummaries.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionNetworkLearningSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.WindowsInformationProtectionNetworkLearningSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementToInitialize.UserPfxCertificates != null && deviceManagementToInitialize.UserPfxCertificates.CurrentPage != null)
                 {
+                    deviceManagementToInitialize.UserPfxCertificates.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserPfxCertificatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserPfxCertificates.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userPfxCertificates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserPfxCertificates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

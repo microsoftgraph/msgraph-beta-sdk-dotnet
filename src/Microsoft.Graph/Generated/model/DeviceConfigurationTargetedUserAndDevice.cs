@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceConfigurationTargetedUserAndDevice.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceConfigurationTargetedUserAndDevice>))]
     public partial class DeviceConfigurationTargetedUserAndDevice
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceConfigurationTargetedUserAndDevice"/> class.
-        /// </summary>
-        public DeviceConfigurationTargetedUserAndDevice()
-        {
-            this.ODataType = "microsoft.graph.deviceConfigurationTargetedUserAndDevice";
-        }
 
         /// <summary>
         /// Gets or sets deviceId.
         /// The id of the device in the checkin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets deviceName.
         /// The name of the device in the checkin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets lastCheckinDateTime.
         /// Last checkin time for this user/device pair.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCheckinDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastCheckinDateTime")]
         public DateTimeOffset? LastCheckinDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets userDisplayName.
         /// The display name of the user in the checkin
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userDisplayName")]
         public string UserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets userId.
         /// The id of the user in the checkin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
         /// The UPN of the user in the checkin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

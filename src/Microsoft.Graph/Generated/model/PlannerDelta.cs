@@ -12,24 +12,15 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Planner Delta.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<PlannerDelta>))]
     public partial class PlannerDelta : Entity
     {
     
-		///<summary>
-		/// The PlannerDelta constructor
-		///</summary>
-        public PlannerDelta()
-        {
-            this.ODataType = "microsoft.graph.plannerDelta";
-        }
-	
     }
 }
 

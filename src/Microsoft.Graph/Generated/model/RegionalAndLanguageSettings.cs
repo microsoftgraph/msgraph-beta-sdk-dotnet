@@ -12,71 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Regional And Language Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RegionalAndLanguageSettings : Entity
     {
     
-		///<summary>
-		/// The RegionalAndLanguageSettings constructor
-		///</summary>
-        public RegionalAndLanguageSettings()
-        {
-            this.ODataType = "microsoft.graph.regionalAndLanguageSettings";
-        }
-	
         /// <summary>
         /// Gets or sets authoring languages.
         /// Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authoringLanguages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authoringLanguages")]
         public IEnumerable<LocaleInfo> AuthoringLanguages { get; set; }
     
         /// <summary>
         /// Gets or sets default display language.
         /// The  user's preferred user interface language (menus, buttons, ribbons, warning messages) for Microsoft web applications.Returned by default. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDisplayLanguage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultDisplayLanguage")]
         public LocaleInfo DefaultDisplayLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets default regional format.
         /// The locale that drives the default date, time, and calendar formatting.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultRegionalFormat", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultRegionalFormat")]
         public LocaleInfo DefaultRegionalFormat { get; set; }
     
         /// <summary>
         /// Gets or sets default speech input language.
         /// The language a user expected to use as input for text to speech scenarios.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultSpeechInputLanguage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultSpeechInputLanguage")]
         public LocaleInfo DefaultSpeechInputLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets default translation language.
         /// The language a user expects to have documents, emails, and messages translated into.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultTranslationLanguage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultTranslationLanguage")]
         public LocaleInfo DefaultTranslationLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets regional format overrides.
         /// Allows a user to override their defaultRegionalFormat with field specific formats.Returned by default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "regionalFormatOverrides", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("regionalFormatOverrides")]
         public RegionalFormatOverrides RegionalFormatOverrides { get; set; }
     
         /// <summary>
         /// Gets or sets translation preferences.
         /// The user's preferred settings when consuming translated documents, emails, messages, and websites.Returned by default. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "translationPreferences", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("translationPreferences")]
         public TranslationPreferences TranslationPreferences { get; set; }
     
     }

@@ -20,5 +20,6 @@ namespace Microsoft.Graph.Ediscovery
     public partial interface ITagChildTagsCollectionReferencesRequest : Microsoft.Graph.IBaseRequest
     {
         
+        
     }
 }

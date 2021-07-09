@@ -12,42 +12,33 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Synchronization Profile Status.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<EducationSynchronizationProfileStatus>))]
     public partial class EducationSynchronizationProfileStatus : Entity
     {
     
-		///<summary>
-		/// The EducationSynchronizationProfileStatus constructor
-		///</summary>
-        public EducationSynchronizationProfileStatus()
-        {
-            this.ODataType = "microsoft.graph.educationSynchronizationProfileStatus";
-        }
-	
         /// <summary>
         /// Gets or sets last activity date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastActivityDateTime")]
         public DateTimeOffset? LastActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last synchronization date time.
         /// Represents the time when most recent changes have been observed in the directory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSynchronizationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSynchronizationDateTime")]
         public DateTimeOffset? LastSynchronizationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The status of a sync. Possible values are: paused, inProgress, success, error, quarantined, validationError.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public EducationSynchronizationStatus? Status { get; set; }
     
     }

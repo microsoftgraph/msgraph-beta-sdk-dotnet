@@ -12,190 +12,189 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSEndpoint Protection Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSEndpointProtectionConfiguration>))]
     public partial class MacOSEndpointProtectionConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The MacOSEndpointProtectionConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSEndpointProtectionConfiguration constructor
+        ///</summary>
         public MacOSEndpointProtectionConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSEndpointProtectionConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets advanced threat protection automatic sample submission.
         /// Determines whether or not to enable automatic file sample submission for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionAutomaticSampleSubmission", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("advancedThreatProtectionAutomaticSampleSubmission")]
         public Enablement? AdvancedThreatProtectionAutomaticSampleSubmission { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection cloud delivered.
         /// Determines whether or not to enable cloud-delivered protection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionCloudDelivered", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("advancedThreatProtectionCloudDelivered")]
         public Enablement? AdvancedThreatProtectionCloudDelivered { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection diagnostic data collection.
         /// Determines whether or not to enable diagnostic and usage data collection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionDiagnosticDataCollection", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("advancedThreatProtectionDiagnosticDataCollection")]
         public Enablement? AdvancedThreatProtectionDiagnosticDataCollection { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection excluded extensions.
         /// A list of file extensions to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionExcludedExtensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("advancedThreatProtectionExcludedExtensions")]
         public IEnumerable<string> AdvancedThreatProtectionExcludedExtensions { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection excluded files.
         /// A list of paths to files to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionExcludedFiles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("advancedThreatProtectionExcludedFiles")]
         public IEnumerable<string> AdvancedThreatProtectionExcludedFiles { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection excluded folders.
         /// A list of paths to folders to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionExcludedFolders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("advancedThreatProtectionExcludedFolders")]
         public IEnumerable<string> AdvancedThreatProtectionExcludedFolders { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection excluded processes.
         /// A list of process names to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionExcludedProcesses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("advancedThreatProtectionExcludedProcesses")]
         public IEnumerable<string> AdvancedThreatProtectionExcludedProcesses { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection real time.
         /// Determines whether or not to enable real-time protection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionRealTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("advancedThreatProtectionRealTime")]
         public Enablement? AdvancedThreatProtectionRealTime { get; set; }
     
         /// <summary>
         /// Gets or sets file vault allow deferral until sign out.
         /// Optional. If set to true, the user can defer the enabling of FileVault until they sign out.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultAllowDeferralUntilSignOut", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultAllowDeferralUntilSignOut")]
         public bool? FileVaultAllowDeferralUntilSignOut { get; set; }
     
         /// <summary>
         /// Gets or sets file vault disable prompt at sign out.
         /// Optional. When using the Defer option, if set to true, the user is not prompted to enable FileVault at sign-out.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultDisablePromptAtSignOut", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultDisablePromptAtSignOut")]
         public bool? FileVaultDisablePromptAtSignOut { get; set; }
     
         /// <summary>
         /// Gets or sets file vault enabled.
         /// Whether FileVault should be enabled or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultEnabled")]
         public bool? FileVaultEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets file vault hide personal recovery key.
         /// Optional. A hidden personal recovery key does not appear on the user's screen during FileVault encryption, reducing the risk of it ending up in the wrong hands.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultHidePersonalRecoveryKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultHidePersonalRecoveryKey")]
         public bool? FileVaultHidePersonalRecoveryKey { get; set; }
     
         /// <summary>
         /// Gets or sets file vault institutional recovery key certificate.
         /// Required if selected recovery key type(s) include InstitutionalRecoveryKey. The DER Encoded certificate file used to set an institutional recovery key.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultInstitutionalRecoveryKeyCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultInstitutionalRecoveryKeyCertificate")]
         public byte[] FileVaultInstitutionalRecoveryKeyCertificate { get; set; }
     
         /// <summary>
         /// Gets or sets file vault institutional recovery key certificate file name.
         /// File name of the institutional recovery key certificate to display in UI. (.der).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultInstitutionalRecoveryKeyCertificateFileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultInstitutionalRecoveryKeyCertificateFileName")]
         public string FileVaultInstitutionalRecoveryKeyCertificateFileName { get; set; }
     
         /// <summary>
         /// Gets or sets file vault number of times user can ignore.
         /// Optional. When using the Defer option, this is the maximum number of times the user can ignore prompts to enable FileVault before FileVault will be required for the user to sign in. If set to -1, it will always prompt to enable FileVault until FileVault is enabled, though it will allow the user to bypass enabling FileVault. Setting this to 0 will disable the feature.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultNumberOfTimesUserCanIgnore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultNumberOfTimesUserCanIgnore")]
         public Int32? FileVaultNumberOfTimesUserCanIgnore { get; set; }
     
         /// <summary>
         /// Gets or sets file vault personal recovery key help message.
         /// Required if selected recovery key type(s) include PersonalRecoveryKey. A short message displayed to the user that explains how they can retrieve their personal recovery key.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultPersonalRecoveryKeyHelpMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultPersonalRecoveryKeyHelpMessage")]
         public string FileVaultPersonalRecoveryKeyHelpMessage { get; set; }
     
         /// <summary>
         /// Gets or sets file vault personal recovery key rotation in months.
         /// Optional. If selected recovery key type(s) include PersonalRecoveryKey, the frequency to rotate that key, in months.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultPersonalRecoveryKeyRotationInMonths", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultPersonalRecoveryKeyRotationInMonths")]
         public Int32? FileVaultPersonalRecoveryKeyRotationInMonths { get; set; }
     
         /// <summary>
         /// Gets or sets file vault selected recovery key types.
         /// Required if FileVault is enabled, determines the type(s) of recovery key to use. . Possible values are: notConfigured, institutionalRecoveryKey, personalRecoveryKey.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultSelectedRecoveryKeyTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultSelectedRecoveryKeyTypes")]
         public MacOSFileVaultRecoveryKeyTypes? FileVaultSelectedRecoveryKeyTypes { get; set; }
     
         /// <summary>
         /// Gets or sets firewall applications.
         /// List of applications with firewall settings. Firewall settings for applications not on this list are determined by the user. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallApplications", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firewallApplications")]
         public IEnumerable<MacOSFirewallApplication> FirewallApplications { get; set; }
     
         /// <summary>
         /// Gets or sets firewall block all incoming.
         /// Corresponds to the 'Block all incoming connections' option.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallBlockAllIncoming", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firewallBlockAllIncoming")]
         public bool? FirewallBlockAllIncoming { get; set; }
     
         /// <summary>
         /// Gets or sets firewall enabled.
         /// Whether the firewall should be enabled or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firewallEnabled")]
         public bool? FirewallEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets firewall enable stealth mode.
         /// Corresponds to 'Enable stealth mode.'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallEnableStealthMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firewallEnableStealthMode")]
         public bool? FirewallEnableStealthMode { get; set; }
     
         /// <summary>
         /// Gets or sets gatekeeper allowed app source.
         /// System and Privacy setting that determines which download locations apps can be run from on a macOS device. Possible values are: notConfigured, macAppStore, macAppStoreAndIdentifiedDevelopers, anywhere.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gatekeeperAllowedAppSource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("gatekeeperAllowedAppSource")]
         public MacOSGatekeeperAppSources? GatekeeperAllowedAppSource { get; set; }
     
         /// <summary>
         /// Gets or sets gatekeeper block override.
         /// If set to true, the user override for Gatekeeper will be disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gatekeeperBlockOverride", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("gatekeeperBlockOverride")]
         public bool? GatekeeperBlockOverride { get; set; }
     
     }

@@ -12,141 +12,174 @@ namespace Microsoft.Graph.Ediscovery
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Case.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Case>))]
     public partial class Case : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Case constructor
-		///</summary>
-        public Case()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.case";
-        }
-	
         /// <summary>
         /// Gets or sets closed by.
         /// The user who closed the case.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "closedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("closedBy")]
         public Microsoft.Graph.IdentitySet ClosedBy { get; set; }
     
         /// <summary>
         /// Gets or sets closed date time.
         /// The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "closedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("closedDateTime")]
         public DateTimeOffset? ClosedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The case description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The case name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
         /// The external case number for customer reference.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalId")]
         public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
         /// The last user who modified the entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedBy")]
         public Microsoft.Graph.IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public CaseStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets custodians.
         /// Returns a list of case custodian objects for this case.  Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custodians", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("custodians")]
         public ICaseCustodiansCollectionPage Custodians { get; set; }
+
+        /// <summary>
+        /// Gets or sets custodiansNextLink.
+        /// </summary>
+        [JsonPropertyName("custodians@odata.nextLink")]
+        public string CustodiansNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets legal holds.
         /// Returns a list of case legalHold objects for this case.  Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "legalHolds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("legalHolds")]
         public ICaseLegalHoldsCollectionPage LegalHolds { get; set; }
+
+        /// <summary>
+        /// Gets or sets legalHoldsNextLink.
+        /// </summary>
+        [JsonPropertyName("legalHolds@odata.nextLink")]
+        public string LegalHoldsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets noncustodial data sources.
         /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "noncustodialDataSources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("noncustodialDataSources")]
         public ICaseNoncustodialDataSourcesCollectionPage NoncustodialDataSources { get; set; }
+
+        /// <summary>
+        /// Gets or sets noncustodialDataSourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("noncustodialDataSources@odata.nextLink")]
+        public string NoncustodialDataSourcesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
         /// Returns a list of case operation objects for this case. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operations")]
         public ICaseOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets review sets.
         /// Returns a list of reviewSet objects in the case. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewSets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewSets")]
         public ICaseReviewSetsCollectionPage ReviewSets { get; set; }
+
+        /// <summary>
+        /// Gets or sets reviewSetsNextLink.
+        /// </summary>
+        [JsonPropertyName("reviewSets@odata.nextLink")]
+        public string ReviewSetsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public Settings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets source collections.
         /// Returns a list of sourceCollection objects associated with this case.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceCollections", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceCollections")]
         public ICaseSourceCollectionsCollectionPage SourceCollections { get; set; }
+
+        /// <summary>
+        /// Gets or sets sourceCollectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("sourceCollections@odata.nextLink")]
+        public string SourceCollectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
         /// Returns a list of tag objects associated to this case.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tags", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tags")]
         public ICaseTagsCollectionPage Tags { get; set; }
+
+        /// <summary>
+        /// Gets or sets tagsNextLink.
+        /// </summary>
+        [JsonPropertyName("tags@odata.nextLink")]
+        public string TagsNextLink { get; set; }
     
     }
 }

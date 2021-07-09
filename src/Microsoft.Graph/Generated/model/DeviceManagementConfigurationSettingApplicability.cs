@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationSettingApplicability.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationSettingApplicability>))]
     public partial class DeviceManagementConfigurationSettingApplicability
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementConfigurationSettingApplicability"/> class.
-        /// </summary>
-        public DeviceManagementConfigurationSettingApplicability()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationSettingApplicability";
-        }
 
         /// <summary>
         /// Gets or sets description.
         /// description of the setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets deviceMode.
         /// Device Mode that setting can be applied on. Possible values are: none, kiosk.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceMode")]
         public DeviceManagementConfigurationDeviceMode? DeviceMode { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
         /// Platform setting can be applied on. Possible values are: none, macOS, windows10X, windows10.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platform")]
         public DeviceManagementConfigurationPlatforms? Platform { get; set; }
     
         /// <summary>
         /// Gets or sets technologies.
         /// Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "technologies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("technologies")]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

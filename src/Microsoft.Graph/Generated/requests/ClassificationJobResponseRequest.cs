@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ClassificationJobResponse using POST.
         /// </summary>
         /// <param name="classificationJobResponseToCreate">The ClassificationJobResponse to create.</param>
-        /// <returns>The created ClassificationJobResponse.</returns>
-        public System.Threading.Tasks.Task<ClassificationJobResponse> CreateAsync(ClassificationJobResponse classificationJobResponseToCreate)
-        {
-            return this.CreateAsync(classificationJobResponseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ClassificationJobResponse using POST.
-        /// </summary>
-        /// <param name="classificationJobResponseToCreate">The ClassificationJobResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ClassificationJobResponse.</returns>
-        public async System.Threading.Tasks.Task<ClassificationJobResponse> CreateAsync(ClassificationJobResponse classificationJobResponseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ClassificationJobResponse> CreateAsync(ClassificationJobResponse classificationJobResponseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ClassificationJobResponse>(classificationJobResponseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ClassificationJobResponse.
+        /// Creates the specified ClassificationJobResponse using POST and returns a <see cref="GraphResponse{ClassificationJobResponse}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="classificationJobResponseToCreate">The ClassificationJobResponse to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ClassificationJobResponse}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ClassificationJobResponse>> CreateResponseAsync(ClassificationJobResponse classificationJobResponseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ClassificationJobResponse>(classificationJobResponseToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ClassificationJobResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ClassificationJobResponse.
+        /// Deletes the specified ClassificationJobResponse and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ClassificationJobResponse.</returns>
-        public System.Threading.Tasks.Task<ClassificationJobResponse> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ClassificationJobResponse.</returns>
-        public async System.Threading.Tasks.Task<ClassificationJobResponse> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ClassificationJobResponse> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ClassificationJobResponse>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ClassificationJobResponse using PATCH.
+        /// Gets the specified ClassificationJobResponse and returns a <see cref="GraphResponse{ClassificationJobResponse}"/> object.
         /// </summary>
-        /// <param name="classificationJobResponseToUpdate">The ClassificationJobResponse to update.</param>
-        /// <returns>The updated ClassificationJobResponse.</returns>
-        public System.Threading.Tasks.Task<ClassificationJobResponse> UpdateAsync(ClassificationJobResponse classificationJobResponseToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ClassificationJobResponse}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ClassificationJobResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(classificationJobResponseToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ClassificationJobResponse>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ClassificationJobResponse.</returns>
-        public async System.Threading.Tasks.Task<ClassificationJobResponse> UpdateAsync(ClassificationJobResponse classificationJobResponseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ClassificationJobResponse> UpdateAsync(ClassificationJobResponse classificationJobResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (classificationJobResponseToUpdate.AdditionalData != null)
-			{
-				if (classificationJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					classificationJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, classificationJobResponseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (classificationJobResponseToUpdate.AdditionalData != null)
-            {
-                if (classificationJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    classificationJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, classificationJobResponseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ClassificationJobResponse>(classificationJobResponseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ClassificationJobResponse using PATCH and returns a <see cref="GraphResponse{ClassificationJobResponse}"/> object.
+        /// </summary>
+        /// <param name="classificationJobResponseToUpdate">The ClassificationJobResponse to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ClassificationJobResponse}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ClassificationJobResponse>> UpdateResponseAsync(ClassificationJobResponse classificationJobResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ClassificationJobResponse>(classificationJobResponseToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ClassificationJobResponse using PUT.
+        /// </summary>
+        /// <param name="classificationJobResponseToUpdate">The ClassificationJobResponse object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ClassificationJobResponse> PutAsync(ClassificationJobResponse classificationJobResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ClassificationJobResponse>(classificationJobResponseToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ClassificationJobResponse using PUT and returns a <see cref="GraphResponse{ClassificationJobResponse}"/> object.
+        /// </summary>
+        /// <param name="classificationJobResponseToUpdate">The ClassificationJobResponse object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ClassificationJobResponse}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ClassificationJobResponse>> PutResponseAsync(ClassificationJobResponse classificationJobResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ClassificationJobResponse>(classificationJobResponseToUpdate, cancellationToken);
         }
 
         /// <summary>

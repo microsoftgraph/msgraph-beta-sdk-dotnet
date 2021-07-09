@@ -23,57 +23,64 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DepIOSEnrollmentProfile.
         /// </summary>
-        /// <returns>The DepIOSEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<DepIOSEnrollmentProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DepIOSEnrollmentProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DepIOSEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<DepIOSEnrollmentProfile> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DepIOSEnrollmentProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the specified DepIOSEnrollmentProfile and returns a <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DepIOSEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified DepIOSEnrollmentProfile using POST.
         /// </summary>
         /// <param name="depIOSEnrollmentProfileToCreate">The DepIOSEnrollmentProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DepIOSEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<DepIOSEnrollmentProfile> CreateAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToCreate);        /// <summary>
-        /// Creates the specified DepIOSEnrollmentProfile using POST.
+        System.Threading.Tasks.Task<DepIOSEnrollmentProfile> CreateAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Creates the specified DepIOSEnrollmentProfile using POST and returns a <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object.
         /// </summary>
         /// <param name="depIOSEnrollmentProfileToCreate">The DepIOSEnrollmentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DepIOSEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<DepIOSEnrollmentProfile> CreateAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DepIOSEnrollmentProfile>> CreateResponseAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
-        /// Updates the specified DepIOSEnrollmentProfile using PATCH.
-        /// </summary>
-        /// <param name="depIOSEnrollmentProfileToUpdate">The DepIOSEnrollmentProfile to update.</param>
-        /// <returns>The updated DepIOSEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<DepIOSEnrollmentProfile> UpdateAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToUpdate);
-
-        /// <summary>
         /// Updates the specified DepIOSEnrollmentProfile using PATCH.
         /// </summary>
         /// <param name="depIOSEnrollmentProfileToUpdate">The DepIOSEnrollmentProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DepIOSEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<DepIOSEnrollmentProfile> UpdateAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DepIOSEnrollmentProfile> UpdateAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Updates the specified DepIOSEnrollmentProfile using PATCH and returns a <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="depIOSEnrollmentProfileToUpdate">The DepIOSEnrollmentProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DepIOSEnrollmentProfile>> UpdateResponseAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Deletes the specified DepIOSEnrollmentProfile.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified DepIOSEnrollmentProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+		/// <summary>
+        /// Deletes the specified DepIOSEnrollmentProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

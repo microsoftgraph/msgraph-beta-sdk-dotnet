@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CloudPcRemoteActionResult.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<CloudPcRemoteActionResult>))]
     public partial class CloudPcRemoteActionResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CloudPcRemoteActionResult"/> class.
-        /// </summary>
-        public CloudPcRemoteActionResult()
-        {
-            this.ODataType = "microsoft.graph.cloudPcRemoteActionResult";
-        }
 
         /// <summary>
         /// Gets or sets actionName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionName")]
         public string ActionName { get; set; }
     
         /// <summary>
         /// Gets or sets actionState.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionState")]
         public ActionState? ActionState { get; set; }
     
         /// <summary>
         /// Gets or sets cloudPcId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudPcId")]
         public string CloudPcId { get; set; }
     
         /// <summary>
         /// Gets or sets lastUpdatedDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUpdatedDateTime")]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets managedDeviceId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets statusDetails.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statusDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("statusDetails")]
         public CloudPcStatusDetails StatusDetails { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

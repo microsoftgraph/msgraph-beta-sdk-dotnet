@@ -12,30 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Template Setting Category.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementTemplateSettingCategory : DeviceManagementSettingCategory
     {
     
-		///<summary>
-		/// The DeviceManagementTemplateSettingCategory constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementTemplateSettingCategory constructor
+        ///</summary>
         public DeviceManagementTemplateSettingCategory()
         {
             this.ODataType = "microsoft.graph.deviceManagementTemplateSettingCategory";
         }
-	
+
         /// <summary>
         /// Gets or sets recommended settings.
         /// The settings this category contains
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendedSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recommendedSettings")]
         public IDeviceManagementTemplateSettingCategoryRecommendedSettingsCollectionPage RecommendedSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets recommendedSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("recommendedSettings@odata.nextLink")]
+        public string RecommendedSettingsNextLink { get; set; }
     
     }
 }

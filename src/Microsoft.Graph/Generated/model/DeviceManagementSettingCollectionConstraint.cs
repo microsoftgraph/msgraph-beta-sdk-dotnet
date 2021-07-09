@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementSettingCollectionConstraint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementSettingCollectionConstraint : DeviceManagementConstraint
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets maximumLength.
         /// The maximum number of elements in the collection
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumLength")]
         public Int32? MaximumLength { get; set; }
     
         /// <summary>
         /// Gets or sets minimumLength.
         /// The minimum number of elements in the collection
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumLength")]
         public Int32? MinimumLength { get; set; }
     
     }

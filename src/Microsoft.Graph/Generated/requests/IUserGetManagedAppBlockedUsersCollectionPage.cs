@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUserGetManagedAppBlockedUsersCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UserGetManagedAppBlockedUsersCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UserGetManagedAppBlockedUsersCollectionPage>))]
     public interface IUserGetManagedAppBlockedUsersCollectionPage : ICollectionPage<string>
     {
         /// <summary>

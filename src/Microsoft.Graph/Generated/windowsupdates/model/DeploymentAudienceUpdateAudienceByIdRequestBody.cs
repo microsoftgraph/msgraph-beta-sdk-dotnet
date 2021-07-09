@@ -9,47 +9,45 @@
 
 namespace Microsoft.Graph.WindowsUpdates
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeploymentAudienceUpdateAudienceByIdRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeploymentAudienceUpdateAudienceByIdRequestBody
     {
     
         /// <summary>
         /// Gets or sets MemberEntityType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberEntityType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("memberEntityType")]
         public string MemberEntityType { get; set; }
     
         /// <summary>
         /// Gets or sets AddMembers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addMembers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("addMembers")]
         public IEnumerable<string> AddMembers { get; set; }
     
         /// <summary>
         /// Gets or sets RemoveMembers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeMembers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("removeMembers")]
         public IEnumerable<string> RemoveMembers { get; set; }
     
         /// <summary>
         /// Gets or sets AddExclusions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addExclusions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("addExclusions")]
         public IEnumerable<string> AddExclusions { get; set; }
     
         /// <summary>
         /// Gets or sets RemoveExclusions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeExclusions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("removeExclusions")]
         public IEnumerable<string> RemoveExclusions { get; set; }
     
     }

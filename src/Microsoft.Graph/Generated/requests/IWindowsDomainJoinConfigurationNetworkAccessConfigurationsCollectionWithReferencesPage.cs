@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<WindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<WindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage>))]
     public interface IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage : ICollectionPage<DeviceConfiguration>
     {
         /// <summary>

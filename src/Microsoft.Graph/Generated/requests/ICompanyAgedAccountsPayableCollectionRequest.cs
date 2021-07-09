@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanyAgedAccountsPayableCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AgedAccountsPayable to the collection via POST.
-        /// </summary>
-        /// <param name="agedAccountsPayable">The AgedAccountsPayable to add.</param>
-        /// <returns>The created AgedAccountsPayable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsPayable> AddAsync(AgedAccountsPayable agedAccountsPayable);
-
         /// <summary>
         /// Adds the specified AgedAccountsPayable to the collection via POST.
         /// </summary>
         /// <param name="agedAccountsPayable">The AgedAccountsPayable to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgedAccountsPayable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsPayable> AddAsync(AgedAccountsPayable agedAccountsPayable, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AgedAccountsPayable> AddAsync(AgedAccountsPayable agedAccountsPayable, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AgedAccountsPayable to the collection via POST and returns a <see cref="GraphResponse{AgedAccountsPayable}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyAgedAccountsPayableCollectionPage> GetAsync();
+        /// <param name="agedAccountsPayable">The AgedAccountsPayable to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgedAccountsPayable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgedAccountsPayable>> AddResponseAsync(AgedAccountsPayable agedAccountsPayable, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyAgedAccountsPayableCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICompanyAgedAccountsPayableCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyAgedAccountsPayableCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyAgedAccountsPayableCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyAgedAccountsPayableCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

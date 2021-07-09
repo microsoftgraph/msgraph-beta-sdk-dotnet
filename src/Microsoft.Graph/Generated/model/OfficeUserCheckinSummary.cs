@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type OfficeUserCheckinSummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<OfficeUserCheckinSummary>))]
     public partial class OfficeUserCheckinSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OfficeUserCheckinSummary"/> class.
-        /// </summary>
-        public OfficeUserCheckinSummary()
-        {
-            this.ODataType = "microsoft.graph.officeUserCheckinSummary";
-        }
 
         /// <summary>
         /// Gets or sets failedUserCount.
         /// Total failed user check ins for the last 3 months.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failedUserCount")]
         public Int32? FailedUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets succeededUserCount.
         /// Total successful user check ins for the last 3 months.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "succeededUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("succeededUserCount")]
         public Int32? SucceededUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

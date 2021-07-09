@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IMicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<MicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<MicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage>))]
     public interface IMicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage : ICollectionPage<KeyValuePair>
     {
         /// <summary>

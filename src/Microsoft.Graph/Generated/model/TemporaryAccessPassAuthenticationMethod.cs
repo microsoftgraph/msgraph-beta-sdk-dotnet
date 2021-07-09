@@ -12,71 +12,69 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Temporary Access Pass Authentication Method.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TemporaryAccessPassAuthenticationMethod : AuthenticationMethod
     {
     
-		///<summary>
-		/// The TemporaryAccessPassAuthenticationMethod constructor
-		///</summary>
+        ///<summary>
+        /// The TemporaryAccessPassAuthenticationMethod constructor
+        ///</summary>
         public TemporaryAccessPassAuthenticationMethod()
         {
             this.ODataType = "microsoft.graph.temporaryAccessPassAuthenticationMethod";
         }
-	
+
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time when the temporaryAccessPass was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets is usable.
         /// The state of the authentication method that indicates whether it's currently usable by the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isUsable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isUsable")]
         public bool? IsUsable { get; set; }
     
         /// <summary>
         /// Gets or sets is usable once.
         /// Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isUsableOnce", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isUsableOnce")]
         public bool? IsUsableOnce { get; set; }
     
         /// <summary>
         /// Gets or sets lifetime in minutes.
         /// The lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lifetimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lifetimeInMinutes")]
         public Int32? LifetimeInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets method usability reason.
         /// Details about usability state (isUsable). Reasons can include: enabledByPolicy, disabledByPolicy, expired, notYetValid, oneTimeUsed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "methodUsabilityReason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("methodUsabilityReason")]
         public string MethodUsabilityReason { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
         /// The date and time when the temporaryAccessPass becomes available to use.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets temporary access pass.
         /// The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "temporaryAccessPass", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("temporaryAccessPass")]
         public string TemporaryAccessPass { get; set; }
     
     }

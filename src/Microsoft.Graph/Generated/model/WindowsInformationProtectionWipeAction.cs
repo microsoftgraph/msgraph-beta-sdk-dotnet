@@ -12,64 +12,55 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Information Protection Wipe Action.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsInformationProtectionWipeAction>))]
     public partial class WindowsInformationProtectionWipeAction : Entity
     {
     
-		///<summary>
-		/// The WindowsInformationProtectionWipeAction constructor
-		///</summary>
-        public WindowsInformationProtectionWipeAction()
-        {
-            this.ODataType = "microsoft.graph.windowsInformationProtectionWipeAction";
-        }
-	
         /// <summary>
         /// Gets or sets last check in date time.
         /// Last checkin time of the device that was targeted by this wipe action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCheckInDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastCheckInDateTime")]
         public DateTimeOffset? LastCheckInDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Wipe action status. Possible values are: none, pending, canceled, active, done, failed, notSupported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public ActionState? Status { get; set; }
     
         /// <summary>
         /// Gets or sets targeted device mac address.
         /// Targeted device Mac address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedDeviceMacAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedDeviceMacAddress")]
         public string TargetedDeviceMacAddress { get; set; }
     
         /// <summary>
         /// Gets or sets targeted device name.
         /// Targeted device name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedDeviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedDeviceName")]
         public string TargetedDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets targeted device registration id.
         /// The DeviceRegistrationId being targeted by this wipe action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedDeviceRegistrationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedDeviceRegistrationId")]
         public string TargetedDeviceRegistrationId { get; set; }
     
         /// <summary>
         /// Gets or sets targeted user id.
         /// The UserId being targeted by this wipe action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedUserId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedUserId")]
         public string TargetedUserId { get; set; }
     
     }

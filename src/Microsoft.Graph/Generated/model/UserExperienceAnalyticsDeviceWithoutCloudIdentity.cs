@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Device Without Cloud Identity.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsDeviceWithoutCloudIdentity : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsDeviceWithoutCloudIdentity constructor
-		///</summary>
-        public UserExperienceAnalyticsDeviceWithoutCloudIdentity()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsDeviceWithoutCloudIdentity";
-        }
-	
         /// <summary>
         /// Gets or sets azure ad device id.
         /// Azure Active Directory Device Id
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureAdDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureAdDeviceId")]
         public string AzureAdDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets device name.
         /// The tenant attach device's name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
     }

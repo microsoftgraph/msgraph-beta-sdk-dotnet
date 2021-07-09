@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ICloudPcAuditEventGetAuditActivityTypesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<CloudPcAuditEventGetAuditActivityTypesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<CloudPcAuditEventGetAuditActivityTypesCollectionPage>))]
     public interface ICloudPcAuditEventGetAuditActivityTypesCollectionPage : ICollectionPage<string>
     {
         /// <summary>

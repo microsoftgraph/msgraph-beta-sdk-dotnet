@@ -12,59 +12,56 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Teamwork Tag.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<TeamworkTag>))]
     public partial class TeamworkTag : Entity
     {
     
-		///<summary>
-		/// The TeamworkTag constructor
-		///</summary>
-        public TeamworkTag()
-        {
-            this.ODataType = "microsoft.graph.teamworkTag";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets member count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("memberCount")]
         public Int32? MemberCount { get; set; }
     
         /// <summary>
         /// Gets or sets tag type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tagType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tagType")]
         public TeamworkTagType? TagType { get; set; }
     
         /// <summary>
         /// Gets or sets team id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamId")]
         public string TeamId { get; set; }
     
         /// <summary>
         /// Gets or sets members.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("members")]
         public ITeamworkTagMembersCollectionPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
     }
 }

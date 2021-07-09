@@ -12,41 +12,32 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type HyperlinkOrPictureColumn.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<HyperlinkOrPictureColumn>))]
     public partial class HyperlinkOrPictureColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HyperlinkOrPictureColumn"/> class.
-        /// </summary>
-        public HyperlinkOrPictureColumn()
-        {
-            this.ODataType = "microsoft.graph.hyperlinkOrPictureColumn";
-        }
 
         /// <summary>
         /// Gets or sets isPicture.
         /// Specifies whether the display format used for URL columns is an image or a hyperlink.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPicture", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isPicture")]
         public bool? IsPicture { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

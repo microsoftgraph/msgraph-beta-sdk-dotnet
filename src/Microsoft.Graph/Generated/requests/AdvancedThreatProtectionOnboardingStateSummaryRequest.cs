@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AdvancedThreatProtectionOnboardingStateSummary using POST.
         /// </summary>
         /// <param name="advancedThreatProtectionOnboardingStateSummaryToCreate">The AdvancedThreatProtectionOnboardingStateSummary to create.</param>
-        /// <returns>The created AdvancedThreatProtectionOnboardingStateSummary.</returns>
-        public System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> CreateAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToCreate)
-        {
-            return this.CreateAsync(advancedThreatProtectionOnboardingStateSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AdvancedThreatProtectionOnboardingStateSummary using POST.
-        /// </summary>
-        /// <param name="advancedThreatProtectionOnboardingStateSummaryToCreate">The AdvancedThreatProtectionOnboardingStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AdvancedThreatProtectionOnboardingStateSummary.</returns>
-        public async System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> CreateAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> CreateAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AdvancedThreatProtectionOnboardingStateSummary>(advancedThreatProtectionOnboardingStateSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AdvancedThreatProtectionOnboardingStateSummary.
+        /// Creates the specified AdvancedThreatProtectionOnboardingStateSummary using POST and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="advancedThreatProtectionOnboardingStateSummaryToCreate">The AdvancedThreatProtectionOnboardingStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummary>> CreateResponseAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AdvancedThreatProtectionOnboardingStateSummary>(advancedThreatProtectionOnboardingStateSummaryToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AdvancedThreatProtectionOnboardingStateSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AdvancedThreatProtectionOnboardingStateSummary.
+        /// Deletes the specified AdvancedThreatProtectionOnboardingStateSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AdvancedThreatProtectionOnboardingStateSummary.</returns>
-        public System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AdvancedThreatProtectionOnboardingStateSummary.</returns>
-        public async System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AdvancedThreatProtectionOnboardingStateSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AdvancedThreatProtectionOnboardingStateSummary using PATCH.
+        /// Gets the specified AdvancedThreatProtectionOnboardingStateSummary and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object.
         /// </summary>
-        /// <param name="advancedThreatProtectionOnboardingStateSummaryToUpdate">The AdvancedThreatProtectionOnboardingStateSummary to update.</param>
-        /// <returns>The updated AdvancedThreatProtectionOnboardingStateSummary.</returns>
-        public System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> UpdateAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(advancedThreatProtectionOnboardingStateSummaryToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AdvancedThreatProtectionOnboardingStateSummary>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AdvancedThreatProtectionOnboardingStateSummary.</returns>
-        public async System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> UpdateAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> UpdateAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (advancedThreatProtectionOnboardingStateSummaryToUpdate.AdditionalData != null)
-			{
-				if (advancedThreatProtectionOnboardingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					advancedThreatProtectionOnboardingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, advancedThreatProtectionOnboardingStateSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (advancedThreatProtectionOnboardingStateSummaryToUpdate.AdditionalData != null)
-            {
-                if (advancedThreatProtectionOnboardingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    advancedThreatProtectionOnboardingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, advancedThreatProtectionOnboardingStateSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AdvancedThreatProtectionOnboardingStateSummary>(advancedThreatProtectionOnboardingStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AdvancedThreatProtectionOnboardingStateSummary using PATCH and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object.
+        /// </summary>
+        /// <param name="advancedThreatProtectionOnboardingStateSummaryToUpdate">The AdvancedThreatProtectionOnboardingStateSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummary>> UpdateResponseAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AdvancedThreatProtectionOnboardingStateSummary>(advancedThreatProtectionOnboardingStateSummaryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AdvancedThreatProtectionOnboardingStateSummary using PUT.
+        /// </summary>
+        /// <param name="advancedThreatProtectionOnboardingStateSummaryToUpdate">The AdvancedThreatProtectionOnboardingStateSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> PutAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AdvancedThreatProtectionOnboardingStateSummary>(advancedThreatProtectionOnboardingStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AdvancedThreatProtectionOnboardingStateSummary using PUT and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object.
+        /// </summary>
+        /// <param name="advancedThreatProtectionOnboardingStateSummaryToUpdate">The AdvancedThreatProtectionOnboardingStateSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummary>> PutResponseAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AdvancedThreatProtectionOnboardingStateSummary>(advancedThreatProtectionOnboardingStateSummaryToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToInitialize)
         {
 
-            if (advancedThreatProtectionOnboardingStateSummaryToInitialize != null && advancedThreatProtectionOnboardingStateSummaryToInitialize.AdditionalData != null)
+            if (advancedThreatProtectionOnboardingStateSummaryToInitialize != null)
             {
-
                 if (advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates != null && advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.CurrentPage != null)
                 {
+                    advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.InitializeNextPageRequest(this.Client, advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.AdditionalData = advancedThreatProtectionOnboardingStateSummaryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    advancedThreatProtectionOnboardingStateSummaryToInitialize.AdditionalData.TryGetValue("advancedThreatProtectionOnboardingDeviceSettingStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        advancedThreatProtectionOnboardingStateSummaryToInitialize.AdvancedThreatProtectionOnboardingDeviceSettingStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

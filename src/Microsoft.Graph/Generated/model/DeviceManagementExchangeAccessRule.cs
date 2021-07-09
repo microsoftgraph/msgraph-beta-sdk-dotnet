@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementExchangeAccessRule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementExchangeAccessRule>))]
     public partial class DeviceManagementExchangeAccessRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementExchangeAccessRule"/> class.
-        /// </summary>
-        public DeviceManagementExchangeAccessRule()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementExchangeAccessRule";
-        }
 
         /// <summary>
         /// Gets or sets accessLevel.
         /// Access Level for Exchange granted by this rule. Possible values are: none, allow, block, quarantine.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessLevel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessLevel")]
         public DeviceManagementExchangeAccessLevel? AccessLevel { get; set; }
     
         /// <summary>
         /// Gets or sets deviceClass.
         /// Device Class which will be impacted by this rule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceClass", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceClass")]
         public DeviceManagementExchangeDeviceClass DeviceClass { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

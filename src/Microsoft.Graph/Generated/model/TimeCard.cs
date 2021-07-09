@@ -12,78 +12,77 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Time Card.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<TimeCard>))]
     public partial class TimeCard : ChangeTrackedEntity
     {
     
-		///<summary>
-		/// The TimeCard constructor
-		///</summary>
+        ///<summary>
+        /// The TimeCard constructor
+        ///</summary>
         public TimeCard()
         {
             this.ODataType = "microsoft.graph.timeCard";
         }
-	
+
         /// <summary>
         /// Gets or sets breaks.
         /// The list of breaks associated with the timeCard.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "breaks", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("breaks")]
         public IEnumerable<TimeCardBreak> Breaks { get; set; }
     
         /// <summary>
         /// Gets or sets clock in event.
         /// The clock-in event of the timeCard.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clockInEvent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clockInEvent")]
         public TimeCardEvent ClockInEvent { get; set; }
     
         /// <summary>
         /// Gets or sets clock out event.
         /// The clock-out event of the timeCard.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clockOutEvent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clockOutEvent")]
         public TimeCardEvent ClockOutEvent { get; set; }
     
         /// <summary>
         /// Gets or sets confirmed by.
         /// Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confirmedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("confirmedBy")]
         public ConfirmedBy? ConfirmedBy { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
         /// Notes about the timeCard.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notes")]
         public ItemBody Notes { get; set; }
     
         /// <summary>
         /// Gets or sets original entry.
         /// The original timeCardEntry of the timeCard, before user edits.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalEntry", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originalEntry")]
         public TimeCardEntry OriginalEntry { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public TimeCardState? State { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// User ID to which  the timeCard belongs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
     }

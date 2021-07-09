@@ -12,172 +12,162 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Protection State.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsProtectionState : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The WindowsProtectionState constructor
-		///</summary>
-        public WindowsProtectionState()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.windowsProtectionState";
-        }
-	
         /// <summary>
         /// Gets or sets anti malware version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "antiMalwareVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("antiMalwareVersion")]
         public string AntiMalwareVersion { get; set; }
     
         /// <summary>
         /// Gets or sets attention required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attentionRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("attentionRequired")]
         public bool? AttentionRequired { get; set; }
     
         /// <summary>
         /// Gets or sets device deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDeleted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceDeleted")]
         public bool? DeviceDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets device property refresh date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devicePropertyRefreshDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("devicePropertyRefreshDateTime")]
         public DateTimeOffset? DevicePropertyRefreshDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets engine version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "engineVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("engineVersion")]
         public string EngineVersion { get; set; }
     
         /// <summary>
         /// Gets or sets full scan overdue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fullScanOverdue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fullScanOverdue")]
         public bool? FullScanOverdue { get; set; }
     
         /// <summary>
         /// Gets or sets full scan required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fullScanRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fullScanRequired")]
         public bool? FullScanRequired { get; set; }
     
         /// <summary>
         /// Gets or sets last full scan date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastFullScanDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastFullScanDateTime")]
         public DateTimeOffset? LastFullScanDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last full scan signature version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastFullScanSignatureVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastFullScanSignatureVersion")]
         public string LastFullScanSignatureVersion { get; set; }
     
         /// <summary>
         /// Gets or sets last quick scan date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastQuickScanDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastQuickScanDateTime")]
         public DateTimeOffset? LastQuickScanDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last quick scan signature version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastQuickScanSignatureVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastQuickScanSignatureVersion")]
         public string LastQuickScanSignatureVersion { get; set; }
     
         /// <summary>
         /// Gets or sets last refreshed date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastRefreshedDateTime")]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last reported date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastReportedDateTime")]
         public DateTimeOffset? LastReportedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets malware protection enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "malwareProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("malwareProtectionEnabled")]
         public bool? MalwareProtectionEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets managed device health state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceHealthState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceHealthState")]
         public string ManagedDeviceHealthState { get; set; }
     
         /// <summary>
         /// Gets or sets managed device id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets managed device name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceName")]
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets network inspection system enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkInspectionSystemEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("networkInspectionSystemEnabled")]
         public bool? NetworkInspectionSystemEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets quick scan overdue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quickScanOverdue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("quickScanOverdue")]
         public bool? QuickScanOverdue { get; set; }
     
         /// <summary>
         /// Gets or sets real time protection enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realTimeProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("realTimeProtectionEnabled")]
         public bool? RealTimeProtectionEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets reboot required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rebootRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rebootRequired")]
         public bool? RebootRequired { get; set; }
     
         /// <summary>
         /// Gets or sets signature update overdue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signatureUpdateOverdue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("signatureUpdateOverdue")]
         public bool? SignatureUpdateOverdue { get; set; }
     
         /// <summary>
         /// Gets or sets signature version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signatureVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("signatureVersion")]
         public string SignatureVersion { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantDisplayName")]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
     }

@@ -12,90 +12,81 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Property.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Property>))]
     public partial class Property
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Property"/> class.
-        /// </summary>
-        public Property()
-        {
-            this.ODataType = "microsoft.graph.property";
-        }
 
         /// <summary>
         /// Gets or sets aliases.
         /// A set of aliases or a friendly names for the property. Maximum 32 characters. Each string must not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, ', ', &amp;lt;, &amp;gt;, `
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aliases", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("aliases")]
         public IEnumerable<string> Aliases { get; set; }
     
         /// <summary>
         /// Gets or sets isQueryable.
         /// Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isQueryable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isQueryable")]
         public bool? IsQueryable { get; set; }
     
         /// <summary>
         /// Gets or sets isRefinable.
         /// Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRefinable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRefinable")]
         public bool? IsRefinable { get; set; }
     
         /// <summary>
         /// Gets or sets isRetrievable.
         /// Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRetrievable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRetrievable")]
         public bool? IsRetrievable { get; set; }
     
         /// <summary>
         /// Gets or sets isSearchable.
         /// Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSearchable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isSearchable")]
         public bool? IsSearchable { get; set; }
     
         /// <summary>
         /// Gets or sets labels.
         /// Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Supported labels: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName and fileExtension. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("labels")]
         public IEnumerable<Label> Labels { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// The name of the property. Maximum 32 characters. Must not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, ', ', &amp;lt;, &amp;gt;, `
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// The data type of the property. Possible values are: String, Int64, Double, DateTime, Boolean, StringCollection, Int64Collection, DoubleCollection, DateTimeCollection. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public PropertyType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

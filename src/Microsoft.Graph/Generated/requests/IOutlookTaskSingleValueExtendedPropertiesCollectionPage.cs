@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IOutlookTaskSingleValueExtendedPropertiesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<OutlookTaskSingleValueExtendedPropertiesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<OutlookTaskSingleValueExtendedPropertiesCollectionPage>))]
     public interface IOutlookTaskSingleValueExtendedPropertiesCollectionPage : ICollectionPage<SingleValueLegacyExtendedProperty>
     {
         /// <summary>

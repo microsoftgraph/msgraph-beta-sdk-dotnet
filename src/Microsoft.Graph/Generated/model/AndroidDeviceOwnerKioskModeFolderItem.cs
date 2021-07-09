@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AndroidDeviceOwnerKioskModeFolderItem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerKioskModeFolderItem>))]
     public abstract partial class AndroidDeviceOwnerKioskModeFolderItem : AndroidDeviceOwnerKioskModeHomeScreenItem
     {
 

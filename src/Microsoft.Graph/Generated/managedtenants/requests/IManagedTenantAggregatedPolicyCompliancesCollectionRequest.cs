@@ -20,33 +20,36 @@ namespace Microsoft.Graph.ManagedTenants
     /// </summary>
     public partial interface IManagedTenantAggregatedPolicyCompliancesCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AggregatedPolicyCompliance to the collection via POST.
-        /// </summary>
-        /// <param name="aggregatedPolicyCompliance">The AggregatedPolicyCompliance to add.</param>
-        /// <returns>The created AggregatedPolicyCompliance.</returns>
-        System.Threading.Tasks.Task<AggregatedPolicyCompliance> AddAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance);
-
         /// <summary>
         /// Adds the specified AggregatedPolicyCompliance to the collection via POST.
         /// </summary>
         /// <param name="aggregatedPolicyCompliance">The AggregatedPolicyCompliance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AggregatedPolicyCompliance.</returns>
-        System.Threading.Tasks.Task<AggregatedPolicyCompliance> AddAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AggregatedPolicyCompliance> AddAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AggregatedPolicyCompliance to the collection via POST and returns a <see cref="GraphResponse{AggregatedPolicyCompliance}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedTenantAggregatedPolicyCompliancesCollectionPage> GetAsync();
+        /// <param name="aggregatedPolicyCompliance">The AggregatedPolicyCompliance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AggregatedPolicyCompliance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AggregatedPolicyCompliance>> AddResponseAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedTenantAggregatedPolicyCompliancesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IManagedTenantAggregatedPolicyCompliancesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedTenantAggregatedPolicyCompliancesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedTenantAggregatedPolicyCompliancesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedTenantAggregatedPolicyCompliancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

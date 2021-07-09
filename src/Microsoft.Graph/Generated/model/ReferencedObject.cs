@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ReferencedObject.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ReferencedObject>))]
     public partial class ReferencedObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ReferencedObject"/> class.
-        /// </summary>
-        public ReferencedObject()
-        {
-            this.ODataType = "microsoft.graph.referencedObject";
-        }
 
         /// <summary>
         /// Gets or sets referencedObjectName.
         /// Name of the referenced object. Must match one of the objects in the directory definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referencedObjectName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("referencedObjectName")]
         public string ReferencedObjectName { get; set; }
     
         /// <summary>
         /// Gets or sets referencedProperty.
         /// Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referencedProperty", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("referencedProperty")]
         public string ReferencedProperty { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

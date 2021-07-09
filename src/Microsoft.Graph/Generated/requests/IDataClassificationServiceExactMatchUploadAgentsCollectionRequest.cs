@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDataClassificationServiceExactMatchUploadAgentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ExactMatchUploadAgent to the collection via POST.
-        /// </summary>
-        /// <param name="exactMatchUploadAgent">The ExactMatchUploadAgent to add.</param>
-        /// <returns>The created ExactMatchUploadAgent.</returns>
-        System.Threading.Tasks.Task<ExactMatchUploadAgent> AddAsync(ExactMatchUploadAgent exactMatchUploadAgent);
-
         /// <summary>
         /// Adds the specified ExactMatchUploadAgent to the collection via POST.
         /// </summary>
         /// <param name="exactMatchUploadAgent">The ExactMatchUploadAgent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExactMatchUploadAgent.</returns>
-        System.Threading.Tasks.Task<ExactMatchUploadAgent> AddAsync(ExactMatchUploadAgent exactMatchUploadAgent, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ExactMatchUploadAgent> AddAsync(ExactMatchUploadAgent exactMatchUploadAgent, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ExactMatchUploadAgent to the collection via POST and returns a <see cref="GraphResponse{ExactMatchUploadAgent}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDataClassificationServiceExactMatchUploadAgentsCollectionPage> GetAsync();
+        /// <param name="exactMatchUploadAgent">The ExactMatchUploadAgent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchUploadAgent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchUploadAgent>> AddResponseAsync(ExactMatchUploadAgent exactMatchUploadAgent, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDataClassificationServiceExactMatchUploadAgentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDataClassificationServiceExactMatchUploadAgentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceExactMatchUploadAgentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataClassificationServiceExactMatchUploadAgentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceExactMatchUploadAgentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

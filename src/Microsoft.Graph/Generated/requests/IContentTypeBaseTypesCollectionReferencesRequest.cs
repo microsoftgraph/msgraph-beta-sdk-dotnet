@@ -20,5 +20,6 @@ namespace Microsoft.Graph
     public partial interface IContentTypeBaseTypesCollectionReferencesRequest : IBaseRequest
     {
         
+        
     }
 }

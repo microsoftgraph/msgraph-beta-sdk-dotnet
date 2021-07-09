@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TermColumn.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TermColumn>))]
     public partial class TermColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TermColumn"/> class.
-        /// </summary>
-        public TermColumn()
-        {
-            this.ODataType = "microsoft.graph.termColumn";
-        }
 
         /// <summary>
         /// Gets or sets allowMultipleValues.
         /// Specifies whether the column will allow more than one value
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowMultipleValues", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowMultipleValues")]
         public bool? AllowMultipleValues { get; set; }
     
         /// <summary>
         /// Gets or sets showFullyQualifiedName.
         /// Specifies whether to display the entire term path or only the term label.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showFullyQualifiedName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("showFullyQualifiedName")]
         public bool? ShowFullyQualifiedName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

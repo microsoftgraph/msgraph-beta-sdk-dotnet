@@ -12,82 +12,72 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Cloud Pc Device.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CloudPcDevice : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The CloudPcDevice constructor
-		///</summary>
-        public CloudPcDevice()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.cloudPcDevice";
-        }
-	
         /// <summary>
         /// Gets or sets cloud pc status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudPcStatus")]
         public string CloudPcStatus { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last refreshed date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastRefreshedDateTime")]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets managed device id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets managed device name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceName")]
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning policy id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningPolicyId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provisioningPolicyId")]
         public string ProvisioningPolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets service plan name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePlanName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("servicePlanName")]
         public string ServicePlanName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantDisplayName")]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
     }

@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IGraphServicePrivilegedRolesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<GraphServicePrivilegedRolesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<GraphServicePrivilegedRolesCollectionPage>))]
     public interface IGraphServicePrivilegedRolesCollectionPage : ICollectionPage<PrivilegedRole>
     {
         /// <summary>

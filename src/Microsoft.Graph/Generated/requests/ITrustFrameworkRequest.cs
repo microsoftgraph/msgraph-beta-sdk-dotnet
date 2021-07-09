@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified TrustFramework using POST.
         /// </summary>
         /// <param name="trustFrameworkToCreate">The TrustFramework to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TrustFramework.</returns>
-        System.Threading.Tasks.Task<TrustFramework> CreateAsync(TrustFramework trustFrameworkToCreate);        /// <summary>
-        /// Creates the specified TrustFramework using POST.
+        System.Threading.Tasks.Task<TrustFramework> CreateAsync(TrustFramework trustFrameworkToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified TrustFramework using POST and returns a <see cref="GraphResponse{TrustFramework}"/> object.
         /// </summary>
         /// <param name="trustFrameworkToCreate">The TrustFramework to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TrustFramework.</returns>
-        System.Threading.Tasks.Task<TrustFramework> CreateAsync(TrustFramework trustFrameworkToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TrustFramework.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TrustFramework}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFramework>> CreateResponseAsync(TrustFramework trustFrameworkToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified TrustFramework.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified TrustFramework.
+        /// Deletes the specified TrustFramework and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TrustFramework.</returns>
-        System.Threading.Tasks.Task<TrustFramework> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TrustFramework.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TrustFramework.</returns>
-        System.Threading.Tasks.Task<TrustFramework> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TrustFramework> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified TrustFramework using PATCH.
+        /// Gets the specified TrustFramework and returns a <see cref="GraphResponse{TrustFramework}"/> object.
         /// </summary>
-        /// <param name="trustFrameworkToUpdate">The TrustFramework to update.</param>
-        /// <returns>The updated TrustFramework.</returns>
-        System.Threading.Tasks.Task<TrustFramework> UpdateAsync(TrustFramework trustFrameworkToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TrustFramework}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFramework>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TrustFramework using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TrustFramework.</returns>
-        System.Threading.Tasks.Task<TrustFramework> UpdateAsync(TrustFramework trustFrameworkToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TrustFramework> UpdateAsync(TrustFramework trustFrameworkToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TrustFramework using PATCH and returns a <see cref="GraphResponse{TrustFramework}"/> object.
+        /// </summary>
+        /// <param name="trustFrameworkToUpdate">The TrustFramework to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TrustFramework}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFramework>> UpdateResponseAsync(TrustFramework trustFrameworkToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TrustFramework using PUT.
+        /// </summary>
+        /// <param name="trustFrameworkToUpdate">The TrustFramework object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TrustFramework> PutAsync(TrustFramework trustFrameworkToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified TrustFramework using PUT and returns a <see cref="GraphResponse{TrustFramework}"/> object.
+        /// </summary>
+        /// <param name="trustFrameworkToUpdate">The TrustFramework object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TrustFramework}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFramework>> PutResponseAsync(TrustFramework trustFrameworkToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

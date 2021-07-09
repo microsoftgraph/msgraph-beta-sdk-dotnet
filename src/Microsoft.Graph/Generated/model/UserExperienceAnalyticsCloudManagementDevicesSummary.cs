@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserExperienceAnalyticsCloudManagementDevicesSummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsCloudManagementDevicesSummary>))]
     public partial class UserExperienceAnalyticsCloudManagementDevicesSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserExperienceAnalyticsCloudManagementDevicesSummary"/> class.
-        /// </summary>
-        public UserExperienceAnalyticsCloudManagementDevicesSummary()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsCloudManagementDevicesSummary";
-        }
 
         /// <summary>
         /// Gets or sets coManagedDeviceCount.
         /// Total number of  co-managed devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coManagedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("coManagedDeviceCount")]
         public Int32? CoManagedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets intuneDeviceCount.
         /// The count of intune devices that are not autopilot registerd.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("intuneDeviceCount")]
         public Int32? IntuneDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets tenantAttachDeviceCount.
         /// Total count of tenant attach devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantAttachDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantAttachDeviceCount")]
         public Int32? TenantAttachDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

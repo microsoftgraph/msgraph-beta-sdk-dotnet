@@ -12,52 +12,43 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Management Template.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ManagementTemplate>))]
     public partial class ManagementTemplate : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ManagementTemplate constructor
-		///</summary>
-        public ManagementTemplate()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.managementTemplate";
-        }
-	
         /// <summary>
         /// Gets or sets category.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("category")]
         public ManagementCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets parameters.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parameters", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parameters")]
         public IEnumerable<TemplateParameter> Parameters { get; set; }
     
         /// <summary>
         /// Gets or sets workload actions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workloadActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("workloadActions")]
         public IEnumerable<WorkloadAction> WorkloadActions { get; set; }
     
     }

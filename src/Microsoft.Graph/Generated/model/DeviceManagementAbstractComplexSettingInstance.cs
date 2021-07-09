@@ -12,37 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Abstract Complex Setting Instance.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementAbstractComplexSettingInstance : DeviceManagementSettingInstance
     {
     
-		///<summary>
-		/// The DeviceManagementAbstractComplexSettingInstance constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementAbstractComplexSettingInstance constructor
+        ///</summary>
         public DeviceManagementAbstractComplexSettingInstance()
         {
             this.ODataType = "microsoft.graph.deviceManagementAbstractComplexSettingInstance";
         }
-	
+
         /// <summary>
         /// Gets or sets implementation id.
         /// The definition ID for the chosen implementation of this complex setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "implementationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("implementationId")]
         public string ImplementationId { get; set; }
     
         /// <summary>
         /// Gets or sets value.
         /// The values that make up the complex setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public IDeviceManagementAbstractComplexSettingInstanceValueCollectionPage Value { get; set; }
+
+        /// <summary>
+        /// Gets or sets valueNextLink.
+        /// </summary>
+        [JsonPropertyName("value@odata.nextLink")]
+        public string ValueNextLink { get; set; }
     
     }
 }

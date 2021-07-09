@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceHealthScriptRunOnceSchedule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceHealthScriptRunOnceSchedule : DeviceHealthScriptTimeSchedule
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets date.
         /// The date the script is scheduled to run. This collection can contain a maximum of 20 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "date", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("date")]
         public Date Date { get; set; }
     
     }

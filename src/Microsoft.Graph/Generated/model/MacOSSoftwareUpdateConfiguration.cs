@@ -12,71 +12,70 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSSoftware Update Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSSoftwareUpdateConfiguration>))]
     public partial class MacOSSoftwareUpdateConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The MacOSSoftwareUpdateConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSSoftwareUpdateConfiguration constructor
+        ///</summary>
         public MacOSSoftwareUpdateConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSSoftwareUpdateConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets all other update behavior.
         /// Update behavior for all other updates. Possible values are: notConfigured, default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allOtherUpdateBehavior", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allOtherUpdateBehavior")]
         public MacOSSoftwareUpdateBehavior? AllOtherUpdateBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets config data update behavior.
         /// Update behavior for configuration data file updates. Possible values are: notConfigured, default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configDataUpdateBehavior", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configDataUpdateBehavior")]
         public MacOSSoftwareUpdateBehavior? ConfigDataUpdateBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets critical update behavior.
         /// Update behavior for critical updates. Possible values are: notConfigured, default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criticalUpdateBehavior", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("criticalUpdateBehavior")]
         public MacOSSoftwareUpdateBehavior? CriticalUpdateBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets custom update time windows.
         /// Custom Time windows when updates will be allowed or blocked. This collection can contain a maximum of 20 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customUpdateTimeWindows", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customUpdateTimeWindows")]
         public IEnumerable<CustomUpdateTimeWindow> CustomUpdateTimeWindows { get; set; }
     
         /// <summary>
         /// Gets or sets firmware update behavior.
         /// Update behavior for firmware updates. Possible values are: notConfigured, default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firmwareUpdateBehavior", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firmwareUpdateBehavior")]
         public MacOSSoftwareUpdateBehavior? FirmwareUpdateBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets update schedule type.
         /// Update schedule type. Possible values are: alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateScheduleType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("updateScheduleType")]
         public MacOSSoftwareUpdateScheduleType? UpdateScheduleType { get; set; }
     
         /// <summary>
         /// Gets or sets update time window utc offset in minutes.
         /// Minutes indicating UTC offset for each update time window
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateTimeWindowUtcOffsetInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("updateTimeWindowUtcOffsetInMinutes")]
         public Int32? UpdateTimeWindowUtcOffsetInMinutes { get; set; }
     
     }

@@ -12,43 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Health Monitoring Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsHealthMonitoringConfiguration>))]
     public partial class WindowsHealthMonitoringConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The WindowsHealthMonitoringConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsHealthMonitoringConfiguration constructor
+        ///</summary>
         public WindowsHealthMonitoringConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsHealthMonitoringConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets allow device health monitoring.
         /// Enables device health monitoring on the device. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDeviceHealthMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowDeviceHealthMonitoring")]
         public Enablement? AllowDeviceHealthMonitoring { get; set; }
     
         /// <summary>
         /// Gets or sets config device health monitoring custom scope.
         /// Specifies custom set of events collected from the device where health monitoring is enabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configDeviceHealthMonitoringCustomScope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configDeviceHealthMonitoringCustomScope")]
         public string ConfigDeviceHealthMonitoringCustomScope { get; set; }
     
         /// <summary>
         /// Gets or sets config device health monitoring scope.
         /// Specifies set of events collected from the device where health monitoring is enabled. Possible values are: undefined, healthMonitoring, bootPerformance, windowsUpdates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configDeviceHealthMonitoringScope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configDeviceHealthMonitoringScope")]
         public WindowsHealthMonitoringScope? ConfigDeviceHealthMonitoringScope { get; set; }
     
     }

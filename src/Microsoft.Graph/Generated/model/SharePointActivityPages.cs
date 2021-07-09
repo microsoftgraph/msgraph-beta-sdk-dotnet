@@ -12,46 +12,36 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Share Point Activity Pages.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SharePointActivityPages : Entity
     {
     
-		///<summary>
-		/// The SharePointActivityPages constructor
-		///</summary>
-        public SharePointActivityPages()
-        {
-            this.ODataType = "microsoft.graph.sharePointActivityPages";
-        }
-	
         /// <summary>
         /// Gets or sets report date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportDate")]
         public Date ReportDate { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets visited page count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visitedPageCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("visitedPageCount")]
         public Int64? VisitedPageCount { get; set; }
     
     }

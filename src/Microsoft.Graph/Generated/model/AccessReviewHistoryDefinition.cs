@@ -12,92 +12,83 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Review History Definition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<AccessReviewHistoryDefinition>))]
     public partial class AccessReviewHistoryDefinition : Entity
     {
     
-		///<summary>
-		/// The AccessReviewHistoryDefinition constructor
-		///</summary>
-        public AccessReviewHistoryDefinition()
-        {
-            this.ODataType = "microsoft.graph.accessReviewHistoryDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets created by.
         /// User who created this review history definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public UserIdentity CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// Timestamp when the access review definition was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets decisions.
         /// Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decisions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("decisions")]
         public IEnumerable<AccessReviewHistoryDecisionFilter> Decisions { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name for the access review history data collection. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets download uri.
         /// Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "downloadUri", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("downloadUri")]
         public string DownloadUri { get; set; }
     
         /// <summary>
         /// Gets or sets fulfilled date time.
         /// Timestamp when all of the available data for this definition was collected. This will be set after this definition's status is set to done.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fulfilledDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fulfilledDateTime")]
         public DateTimeOffset? FulfilledDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets review history period end date time.
         /// Timestamp, reviews starting on or after this date will be included in the fetched history data. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewHistoryPeriodEndDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewHistoryPeriodEndDateTime")]
         public DateTimeOffset? ReviewHistoryPeriodEndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets review history period start date time.
         /// Timestamp, reviews starting on or before this date will be included in the fetched history data. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewHistoryPeriodStartDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewHistoryPeriodStartDateTime")]
         public DateTimeOffset? ReviewHistoryPeriodStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets scopes.
         /// Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. See accessreviewqueryscope. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scopes")]
         public IEnumerable<AccessReviewScope> Scopes { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Represents the status of the review history data collection. Possible values are: done, inprogress, error, requested.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public AccessReviewHistoryStatus? Status { get; set; }
     
     }

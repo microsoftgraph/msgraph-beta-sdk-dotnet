@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IReportRootGetOneDriveActivityFileCountsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ReportRootGetOneDriveActivityFileCountsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ReportRootGetOneDriveActivityFileCountsCollectionPage>))]
     public interface IReportRootGetOneDriveActivityFileCountsCollectionPage : ICollectionPage<SiteActivitySummary>
     {
         /// <summary>

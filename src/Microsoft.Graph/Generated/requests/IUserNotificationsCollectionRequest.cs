@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserNotificationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Notification to the collection via POST.
-        /// </summary>
-        /// <param name="notification">The Notification to add.</param>
-        /// <returns>The created Notification.</returns>
-        System.Threading.Tasks.Task<Notification> AddAsync(Notification notification);
-
         /// <summary>
         /// Adds the specified Notification to the collection via POST.
         /// </summary>
         /// <param name="notification">The Notification to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Notification.</returns>
-        System.Threading.Tasks.Task<Notification> AddAsync(Notification notification, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Notification> AddAsync(Notification notification, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Notification to the collection via POST and returns a <see cref="GraphResponse{Notification}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserNotificationsCollectionPage> GetAsync();
+        /// <param name="notification">The Notification to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Notification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Notification>> AddResponseAsync(Notification notification, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserNotificationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IUserNotificationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserNotificationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserNotificationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserNotificationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

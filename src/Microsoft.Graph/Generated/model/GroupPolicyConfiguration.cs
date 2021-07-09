@@ -12,72 +12,74 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupPolicyConfiguration : Entity
     {
     
-		///<summary>
-		/// The GroupPolicyConfiguration constructor
-		///</summary>
-        public GroupPolicyConfiguration()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyConfiguration";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time the object was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// User provided description for the resource object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// User provided name for the resource object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time the entity was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
         /// The list of scope tags for the configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignments for the configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IGroupPolicyConfigurationAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets definition values.
         /// The list of enabled or disabled group policy definition values for the configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionValues", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("definitionValues")]
         public IGroupPolicyConfigurationDefinitionValuesCollectionPage DefinitionValues { get; set; }
+
+        /// <summary>
+        /// Gets or sets definitionValuesNextLink.
+        /// </summary>
+        [JsonPropertyName("definitionValues@odata.nextLink")]
+        public string DefinitionValuesNextLink { get; set; }
     
     }
 }

@@ -12,107 +12,104 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Configuration Policy Template.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationPolicyTemplate>))]
     public partial class DeviceManagementConfigurationPolicyTemplate : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementConfigurationPolicyTemplate constructor
-		///</summary>
-        public DeviceManagementConfigurationPolicyTemplate()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationPolicyTemplate";
-        }
-	
         /// <summary>
         /// Gets or sets allow unmanaged settings.
         /// Allow unmanaged setting templates
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUnmanagedSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowUnmanagedSettings")]
         public bool? AllowUnmanagedSettings { get; set; }
     
         /// <summary>
         /// Gets or sets base id.
         /// Template base identifier
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "baseId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("baseId")]
         public string BaseId { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Template description
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Template display name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets display version.
         /// Description of template version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayVersion")]
         public string DisplayVersion { get; set; }
     
         /// <summary>
         /// Gets or sets lifecycle state.
         /// Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lifecycleState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lifecycleState")]
         public DeviceManagementTemplateLifecycleState? LifecycleState { get; set; }
     
         /// <summary>
         /// Gets or sets platforms.
         /// Platforms for this template. Possible values are: none, macOS, windows10X, windows10.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platforms", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platforms")]
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
     
         /// <summary>
         /// Gets or sets setting template count.
         /// Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingTemplateCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingTemplateCount")]
         public Int32? SettingTemplateCount { get; set; }
     
         /// <summary>
         /// Gets or sets technologies.
         /// Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "technologies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("technologies")]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
     
         /// <summary>
         /// Gets or sets template family.
         /// TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateFamily", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateFamily")]
         public DeviceManagementConfigurationTemplateFamily? TemplateFamily { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// Template version. Valid values 1 to 2147483647. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public Int32? Version { get; set; }
     
         /// <summary>
         /// Gets or sets setting templates.
         /// Setting templates
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingTemplates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingTemplates")]
         public IDeviceManagementConfigurationPolicyTemplateSettingTemplatesCollectionPage SettingTemplates { get; set; }
+
+        /// <summary>
+        /// Gets or sets settingTemplatesNextLink.
+        /// </summary>
+        [JsonPropertyName("settingTemplates@odata.nextLink")]
+        public string SettingTemplatesNextLink { get; set; }
     
     }
 }

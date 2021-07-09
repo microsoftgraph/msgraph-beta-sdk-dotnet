@@ -9,25 +9,29 @@
 namespace Microsoft.Graph
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TeamPermissionGrantsCollectionResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public class TeamPermissionGrantsCollectionResponse
     {
         /// <summary>
         /// Gets or sets the <see cref="ITeamPermissionGrantsCollectionPage"/> value.
         /// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName ="value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public ITeamPermissionGrantsCollectionPage Value { get; set; }
+
+        /// <summary>
+        /// Gets or sets the nextLink string value.
+        /// </summary>
+        [JsonPropertyName("@odata.nextLink")]
+        public string NextLink { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     }
 }

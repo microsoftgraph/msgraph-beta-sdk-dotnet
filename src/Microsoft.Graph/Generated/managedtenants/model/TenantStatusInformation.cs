@@ -12,82 +12,73 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TenantStatusInformation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<TenantStatusInformation>))]
     public partial class TenantStatusInformation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TenantStatusInformation"/> class.
-        /// </summary>
-        public TenantStatusInformation()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.tenantStatusInformation";
-        }
 
         /// <summary>
         /// Gets or sets delegatedPrivilegeStatus.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegatedPrivilegeStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("delegatedPrivilegeStatus")]
         public DelegatedPrivilegeStatus? DelegatedPrivilegeStatus { get; set; }
     
         /// <summary>
         /// Gets or sets lastDelegatedPrivilegeRefreshDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastDelegatedPrivilegeRefreshDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastDelegatedPrivilegeRefreshDateTime")]
         public DateTimeOffset? LastDelegatedPrivilegeRefreshDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets offboardedByUserId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offboardedByUserId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("offboardedByUserId")]
         public string OffboardedByUserId { get; set; }
     
         /// <summary>
         /// Gets or sets offboardedDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offboardedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("offboardedDateTime")]
         public DateTimeOffset? OffboardedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboardedByUserId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardedByUserId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onboardedByUserId")]
         public string OnboardedByUserId { get; set; }
     
         /// <summary>
         /// Gets or sets onboardedDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onboardedDateTime")]
         public DateTimeOffset? OnboardedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboardingStatus.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onboardingStatus")]
         public TenantOnboardingStatus? OnboardingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets workloadStatuses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workloadStatuses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("workloadStatuses")]
         public IEnumerable<WorkloadStatus> WorkloadStatuses { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,28 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Evaluate Label Job Response.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EvaluateLabelJobResponse : JobResponseBase
     {
     
-		///<summary>
-		/// The EvaluateLabelJobResponse constructor
-		///</summary>
+        ///<summary>
+        /// The EvaluateLabelJobResponse constructor
+        ///</summary>
         public EvaluateLabelJobResponse()
         {
             this.ODataType = "microsoft.graph.evaluateLabelJobResponse";
         }
-	
+
         /// <summary>
         /// Gets or sets result.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "result", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("result")]
         public EvaluateLabelJobResultGroup Result { get; set; }
     
     }

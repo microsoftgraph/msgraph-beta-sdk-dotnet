@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SearchAlterationOptions.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SearchAlterationOptions>))]
     public partial class SearchAlterationOptions
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchAlterationOptions"/> class.
-        /// </summary>
-        public SearchAlterationOptions()
-        {
-            this.ODataType = "microsoft.graph.searchAlterationOptions";
-        }
 
         /// <summary>
         /// Gets or sets enableModification.
         /// Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableModification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableModification")]
         public bool? EnableModification { get; set; }
     
         /// <summary>
         /// Gets or sets enableSuggestion.
         /// Indicates whether spelling suggestions are enabled. If enabled, user will get the search results for original search query and suggesting spelling correction in queryAlterationResponse property of the response for typos in query. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSuggestion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableSuggestion")]
         public bool? EnableSuggestion { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

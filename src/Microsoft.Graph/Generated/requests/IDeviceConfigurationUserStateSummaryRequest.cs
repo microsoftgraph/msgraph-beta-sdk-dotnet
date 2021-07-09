@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceConfigurationUserStateSummary using POST.
         /// </summary>
         /// <param name="deviceConfigurationUserStateSummaryToCreate">The DeviceConfigurationUserStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceConfigurationUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationUserStateSummary> CreateAsync(DeviceConfigurationUserStateSummary deviceConfigurationUserStateSummaryToCreate);        /// <summary>
-        /// Creates the specified DeviceConfigurationUserStateSummary using POST.
+        System.Threading.Tasks.Task<DeviceConfigurationUserStateSummary> CreateAsync(DeviceConfigurationUserStateSummary deviceConfigurationUserStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationUserStateSummary using POST and returns a <see cref="GraphResponse{DeviceConfigurationUserStateSummary}"/> object.
         /// </summary>
         /// <param name="deviceConfigurationUserStateSummaryToCreate">The DeviceConfigurationUserStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceConfigurationUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationUserStateSummary> CreateAsync(DeviceConfigurationUserStateSummary deviceConfigurationUserStateSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceConfigurationUserStateSummary.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationUserStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationUserStateSummary>> CreateResponseAsync(DeviceConfigurationUserStateSummary deviceConfigurationUserStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceConfigurationUserStateSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified DeviceConfigurationUserStateSummary.
+        /// Deletes the specified DeviceConfigurationUserStateSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceConfigurationUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationUserStateSummary> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceConfigurationUserStateSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceConfigurationUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationUserStateSummary> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceConfigurationUserStateSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified DeviceConfigurationUserStateSummary using PATCH.
+        /// Gets the specified DeviceConfigurationUserStateSummary and returns a <see cref="GraphResponse{DeviceConfigurationUserStateSummary}"/> object.
         /// </summary>
-        /// <param name="deviceConfigurationUserStateSummaryToUpdate">The DeviceConfigurationUserStateSummary to update.</param>
-        /// <returns>The updated DeviceConfigurationUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationUserStateSummary> UpdateAsync(DeviceConfigurationUserStateSummary deviceConfigurationUserStateSummaryToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationUserStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationUserStateSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceConfigurationUserStateSummary using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceConfigurationUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationUserStateSummary> UpdateAsync(DeviceConfigurationUserStateSummary deviceConfigurationUserStateSummaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceConfigurationUserStateSummary> UpdateAsync(DeviceConfigurationUserStateSummary deviceConfigurationUserStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationUserStateSummary using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationUserStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationUserStateSummaryToUpdate">The DeviceConfigurationUserStateSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationUserStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationUserStateSummary>> UpdateResponseAsync(DeviceConfigurationUserStateSummary deviceConfigurationUserStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationUserStateSummary using PUT.
+        /// </summary>
+        /// <param name="deviceConfigurationUserStateSummaryToUpdate">The DeviceConfigurationUserStateSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceConfigurationUserStateSummary> PutAsync(DeviceConfigurationUserStateSummary deviceConfigurationUserStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationUserStateSummary using PUT and returns a <see cref="GraphResponse{DeviceConfigurationUserStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationUserStateSummaryToUpdate">The DeviceConfigurationUserStateSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceConfigurationUserStateSummary}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationUserStateSummary>> PutResponseAsync(DeviceConfigurationUserStateSummary deviceConfigurationUserStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

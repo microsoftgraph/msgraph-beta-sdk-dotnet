@@ -38,117 +38,102 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerTrustedRootCertificate.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> GetAsync()
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<AndroidDeviceOwnerTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified AndroidDeviceOwnerTrustedRootCertificate.
+        /// Gets the specified AndroidDeviceOwnerTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The AndroidDeviceOwnerTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<AndroidDeviceOwnerTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerTrustedRootCertificate>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified AndroidDeviceOwnerTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerTrustedRootCertificateToCreate">The AndroidDeviceOwnerTrustedRootCertificate to create.</param>
-        /// <returns>The created AndroidDeviceOwnerTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> CreateAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToCreate)
-        {
-            return this.CreateAsync(androidDeviceOwnerTrustedRootCertificateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerTrustedRootCertificate using POST.
-        /// </summary>
-        /// <param name="androidDeviceOwnerTrustedRootCertificateToCreate">The AndroidDeviceOwnerTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceOwnerTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> CreateAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> CreateAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidDeviceOwnerTrustedRootCertificate>(androidDeviceOwnerTrustedRootCertificateToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified AndroidDeviceOwnerTrustedRootCertificate using PATCH.
+        /// Creates the specified AndroidDeviceOwnerTrustedRootCertificate using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object.
         /// </summary>
-        /// <param name="androidDeviceOwnerTrustedRootCertificateToUpdate">The AndroidDeviceOwnerTrustedRootCertificate to update.</param>
-        /// <returns>The updated AndroidDeviceOwnerTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> UpdateAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToUpdate)
+        /// <param name="androidDeviceOwnerTrustedRootCertificateToCreate">The AndroidDeviceOwnerTrustedRootCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> CreateResponseAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(androidDeviceOwnerTrustedRootCertificateToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerTrustedRootCertificate>(androidDeviceOwnerTrustedRootCertificateToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified AndroidDeviceOwnerTrustedRootCertificate using PATCH.
         /// </summary>
         /// <param name="androidDeviceOwnerTrustedRootCertificateToUpdate">The AndroidDeviceOwnerTrustedRootCertificate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceOwnerTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> UpdateAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> UpdateAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidDeviceOwnerTrustedRootCertificateToUpdate.AdditionalData != null)
-			{
-				if (androidDeviceOwnerTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidDeviceOwnerTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerTrustedRootCertificateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidDeviceOwnerTrustedRootCertificateToUpdate.AdditionalData != null)
-            {
-                if (androidDeviceOwnerTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidDeviceOwnerTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerTrustedRootCertificateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidDeviceOwnerTrustedRootCertificate>(androidDeviceOwnerTrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified AndroidDeviceOwnerTrustedRootCertificate.
+        /// Updates the specified AndroidDeviceOwnerTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidDeviceOwnerTrustedRootCertificateToUpdate">The AndroidDeviceOwnerTrustedRootCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> UpdateResponseAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerTrustedRootCertificate>(androidDeviceOwnerTrustedRootCertificateToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified AndroidDeviceOwnerTrustedRootCertificate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidDeviceOwnerTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified AndroidDeviceOwnerTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

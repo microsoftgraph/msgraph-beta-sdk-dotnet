@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IManagementConditionStatementManagementConditionsCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ManagementConditionStatementManagementConditionsCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ManagementConditionStatementManagementConditionsCollectionWithReferencesPage>))]
     public interface IManagementConditionStatementManagementConditionsCollectionWithReferencesPage : ICollectionPage<ManagementCondition>
     {
         /// <summary>

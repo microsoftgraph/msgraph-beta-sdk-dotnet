@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IApprovalFilterByCurrentUserCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ApprovalFilterByCurrentUserCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ApprovalFilterByCurrentUserCollectionPage>))]
     public interface IApprovalFilterByCurrentUserCollectionPage : ICollectionPage<Approval>
     {
         /// <summary>

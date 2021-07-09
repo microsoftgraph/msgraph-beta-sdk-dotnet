@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBody
     {
     
         /// <summary>
         /// Gets or sets MetricName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metricName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("metricName")]
         public string MetricName { get; set; }
     
         /// <summary>
         /// Gets or sets StartTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startTime")]
         public DateTimeOffset StartTime { get; set; }
     
         /// <summary>
         /// Gets or sets EndTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endTime")]
         public DateTimeOffset EndTime { get; set; }
     
     }

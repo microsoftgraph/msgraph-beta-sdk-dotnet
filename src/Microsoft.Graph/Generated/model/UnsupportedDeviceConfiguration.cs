@@ -12,36 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unsupported Device Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UnsupportedDeviceConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The UnsupportedDeviceConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The UnsupportedDeviceConfiguration constructor
+        ///</summary>
         public UnsupportedDeviceConfiguration()
         {
             this.ODataType = "microsoft.graph.unsupportedDeviceConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets details.
         /// Details describing why the entity is unsupported. This collection can contain a maximum of 1000 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("details")]
         public IEnumerable<UnsupportedDeviceConfigurationDetail> Details { get; set; }
     
         /// <summary>
         /// Gets or sets original entity type name.
         /// The type of entity that would be returned otherwise.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalEntityTypeName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originalEntityTypeName")]
         public string OriginalEntityTypeName { get; set; }
     
     }

@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Configuration Policy Set Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceConfigurationPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The DeviceConfigurationPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceConfigurationPolicySetItem constructor
+        ///</summary>
         public DeviceConfigurationPolicySetItem()
         {
             this.ODataType = "microsoft.graph.deviceConfigurationPolicySetItem";
         }
-	
+
     }
 }
 

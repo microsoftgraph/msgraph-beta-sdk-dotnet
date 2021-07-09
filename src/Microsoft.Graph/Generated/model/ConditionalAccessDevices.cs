@@ -12,66 +12,57 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConditionalAccessDevices.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessDevices>))]
     public partial class ConditionalAccessDevices
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessDevices"/> class.
-        /// </summary>
-        public ConditionalAccessDevices()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessDevices";
-        }
 
         /// <summary>
         /// Gets or sets deviceFilter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceFilter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceFilter")]
         public ConditionalAccessFilter DeviceFilter { get; set; }
     
         /// <summary>
         /// Gets or sets excludeDevices.
         /// States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludeDevices")]
         public IEnumerable<string> ExcludeDevices { get; set; }
     
         /// <summary>
         /// Gets or sets excludeDeviceStates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeDeviceStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludeDeviceStates")]
         public IEnumerable<string> ExcludeDeviceStates { get; set; }
     
         /// <summary>
         /// Gets or sets includeDevices.
         /// States in the scope of the policy. All is the only allowed value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeDevices")]
         public IEnumerable<string> IncludeDevices { get; set; }
     
         /// <summary>
         /// Gets or sets includeDeviceStates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeDeviceStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeDeviceStates")]
         public IEnumerable<string> IncludeDeviceStates { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

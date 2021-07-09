@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ParseExpressionResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ParseExpressionResponse>))]
     public partial class ParseExpressionResponse
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParseExpressionResponse"/> class.
-        /// </summary>
-        public ParseExpressionResponse()
-        {
-            this.ODataType = "microsoft.graph.parseExpressionResponse";
-        }
 
         /// <summary>
         /// Gets or sets error.
         /// Error details, if expression evaluation resulted in an error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public PublicError Error { get; set; }
     
         /// <summary>
         /// Gets or sets evaluationResult.
         /// A collection of values produced by the evaluation of the expression.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationResult", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("evaluationResult")]
         public IEnumerable<string> EvaluationResult { get; set; }
     
         /// <summary>
         /// Gets or sets evaluationSucceeded.
         /// true if the evaluation was successful.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationSucceeded", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("evaluationSucceeded")]
         public bool? EvaluationSucceeded { get; set; }
     
         /// <summary>
         /// Gets or sets parsedExpression.
         /// An attributeMappingSource object representing the parsed expression.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parsedExpression", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parsedExpression")]
         public AttributeMappingSource ParsedExpression { get; set; }
     
         /// <summary>
         /// Gets or sets parsingSucceeded.
         /// true if the expression was parsed successfully.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parsingSucceeded", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parsingSucceeded")]
         public bool? ParsingSucceeded { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,30 +12,26 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Catalog.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Catalog : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Catalog constructor
-		///</summary>
-        public Catalog()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.catalog";
-        }
-	
         /// <summary>
         /// Gets or sets entries.
         /// Lists the content that you can approve for deployment. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entries", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("entries")]
         public ICatalogEntriesCollectionPage Entries { get; set; }
+
+        /// <summary>
+        /// Gets or sets entriesNextLink.
+        /// </summary>
+        [JsonPropertyName("entries@odata.nextLink")]
+        public string EntriesNextLink { get; set; }
     
     }
 }

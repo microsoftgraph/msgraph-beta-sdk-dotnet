@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationSimpleSettingCollectionInstance.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementConfigurationSimpleSettingCollectionInstance : DeviceManagementConfigurationSettingInstance
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets simpleSettingCollectionValue.
         /// Simple setting collection instance value
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "simpleSettingCollectionValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("simpleSettingCollectionValue")]
         public IEnumerable<DeviceManagementConfigurationSimpleSettingValue> SimpleSettingCollectionValue { get; set; }
     
     }

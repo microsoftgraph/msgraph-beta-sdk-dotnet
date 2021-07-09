@@ -12,99 +12,98 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Device Owner Vpn Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerVpnConfiguration>))]
     public partial class AndroidDeviceOwnerVpnConfiguration : VpnConfiguration
     {
     
-		///<summary>
-		/// The AndroidDeviceOwnerVpnConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidDeviceOwnerVpnConfiguration constructor
+        ///</summary>
         public AndroidDeviceOwnerVpnConfiguration()
         {
             this.ODataType = "microsoft.graph.androidDeviceOwnerVpnConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets always on.
         /// Whether or not to enable always-on VPN connection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alwaysOn")]
         public bool? AlwaysOn { get; set; }
     
         /// <summary>
         /// Gets or sets always on lockdown.
         /// If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOnLockdown", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alwaysOnLockdown")]
         public bool? AlwaysOnLockdown { get; set; }
     
         /// <summary>
         /// Gets or sets connection type.
         /// Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, microsoftTunnel, netMotionMobility, microsoftProtect.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectionType")]
         public AndroidVpnConnectionType? ConnectionType { get; set; }
     
         /// <summary>
         /// Gets or sets custom data.
         /// Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customData")]
         public IEnumerable<KeyValue> CustomData { get; set; }
     
         /// <summary>
         /// Gets or sets custom key value data.
         /// Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customKeyValueData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customKeyValueData")]
         public IEnumerable<KeyValuePair> CustomKeyValueData { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft tunnel site id.
         /// Microsoft Tunnel site ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftTunnelSiteId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("microsoftTunnelSiteId")]
         public string MicrosoftTunnelSiteId { get; set; }
     
         /// <summary>
         /// Gets or sets proxy server.
         /// Proxy server.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyServer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxyServer")]
         public VpnProxyServer ProxyServer { get; set; }
     
         /// <summary>
         /// Gets or sets targeted mobile apps.
         /// Targeted mobile apps. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedMobileApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedMobileApps")]
         public IEnumerable<AppListItem> TargetedMobileApps { get; set; }
     
         /// <summary>
         /// Gets or sets targeted package ids.
         /// Targeted App package IDs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedPackageIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedPackageIds")]
         public IEnumerable<string> TargetedPackageIds { get; set; }
     
         /// <summary>
         /// Gets or sets derived credential settings.
         /// Tenant level settings for the Derived Credentials to be used for authentication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("derivedCredentialSettings")]
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate.
         /// Identity certificate for client authentication when authentication method is certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityCertificate")]
         public AndroidDeviceOwnerCertificateProfileBase IdentityCertificate { get; set; }
     
     }

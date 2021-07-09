@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionPage>))]
     public interface IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionPage : ICollectionPage<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>
     {
         /// <summary>

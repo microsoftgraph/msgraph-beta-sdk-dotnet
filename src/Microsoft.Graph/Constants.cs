@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -43,22 +43,6 @@ namespace Microsoft.Graph
             /// The Sent Items folder
             /// </summary>
             public const string SentItems = "SentItems";
-        }
-
-        /// <summary>
-        /// Constants used for HTTP property names
-        /// </summary>
-        public static class HttpPropertyNames
-        {
-            /// <summary>
-            /// The Response Headers string
-            /// </summary>
-            public const string ResponseHeaders = "responseHeaders";
-
-            /// <summary>
-            /// The Status Code string
-            /// </summary>
-            public const string StatusCode = "statusCode";
         }
     }
 }

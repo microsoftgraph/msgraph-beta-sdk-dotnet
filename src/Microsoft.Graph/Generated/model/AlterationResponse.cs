@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AlterationResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AlterationResponse>))]
     public partial class AlterationResponse
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AlterationResponse"/> class.
-        /// </summary>
-        public AlterationResponse()
-        {
-            this.ODataType = "microsoft.graph.alterationResponse";
-        }
 
         /// <summary>
         /// Gets or sets originalQueryString.
         /// Defines the original user query string.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalQueryString", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originalQueryString")]
         public string OriginalQueryString { get; set; }
     
         /// <summary>
         /// Gets or sets queryAlteration.
         /// Defines the details of alteration information for the spelling correction.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queryAlteration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("queryAlteration")]
         public SearchAlteration QueryAlteration { get; set; }
     
         /// <summary>
         /// Gets or sets queryAlterationType.
         /// Defines the type of the spelling correction. Possible values are suggestion, modification.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queryAlterationType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("queryAlterationType")]
         public SearchAlterationType? QueryAlterationType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

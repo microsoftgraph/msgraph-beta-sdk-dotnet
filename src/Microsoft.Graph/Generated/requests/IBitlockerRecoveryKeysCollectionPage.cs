@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IBitlockerRecoveryKeysCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<BitlockerRecoveryKeysCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<BitlockerRecoveryKeysCollectionPage>))]
     public interface IBitlockerRecoveryKeysCollectionPage : ICollectionPage<BitlockerRecoveryKey>
     {
         /// <summary>

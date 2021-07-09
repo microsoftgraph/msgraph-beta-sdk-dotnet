@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10XCustomSubjectAlternativeName.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10XCustomSubjectAlternativeName>))]
     public partial class Windows10XCustomSubjectAlternativeName
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Windows10XCustomSubjectAlternativeName"/> class.
-        /// </summary>
-        public Windows10XCustomSubjectAlternativeName()
-        {
-            this.ODataType = "microsoft.graph.windows10XCustomSubjectAlternativeName";
-        }
 
         /// <summary>
         /// Gets or sets name.
         /// Custom SAN Name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets sanType.
         /// Custom SAN Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sanType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sanType")]
         public SubjectAlternativeNameType? SanType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

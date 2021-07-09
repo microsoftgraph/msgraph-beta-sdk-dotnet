@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type HasPayloadLinkResultItem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<HasPayloadLinkResultItem>))]
     public partial class HasPayloadLinkResultItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HasPayloadLinkResultItem"/> class.
-        /// </summary>
-        public HasPayloadLinkResultItem()
-        {
-            this.ODataType = "microsoft.graph.hasPayloadLinkResultItem";
-        }
 
         /// <summary>
         /// Gets or sets error.
         /// Exception information indicates if check for this item was successful or not.Empty string for no error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public string Error { get; set; }
     
         /// <summary>
         /// Gets or sets hasLink.
         /// Indicate whether a payload has any link or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasLink", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hasLink")]
         public bool? HasLink { get; set; }
     
         /// <summary>
         /// Gets or sets payloadId.
         /// Key of the Payload, In the format of Guid.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("payloadId")]
         public string PayloadId { get; set; }
     
         /// <summary>
         /// Gets or sets sources.
         /// The reason where the link comes from.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sources")]
         public IEnumerable<DeviceAndAppManagementAssignmentSource> Sources { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

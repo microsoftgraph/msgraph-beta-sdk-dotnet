@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type NetworkLocationDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<NetworkLocationDetail>))]
     public partial class NetworkLocationDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NetworkLocationDetail"/> class.
-        /// </summary>
-        public NetworkLocationDetail()
-        {
-            this.ODataType = "microsoft.graph.networkLocationDetail";
-        }
 
         /// <summary>
         /// Gets or sets networkNames.
         /// Provides the name of the network used when signing in.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkNames", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("networkNames")]
         public IEnumerable<string> NetworkNames { get; set; }
     
         /// <summary>
         /// Gets or sets networkType.
         /// Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("networkType")]
         public NetworkType? NetworkType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

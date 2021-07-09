@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IMacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<MacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<MacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionPage>))]
     public interface IMacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionPage : ICollectionPage<MacOSSoftwareUpdateCategorySummary>
     {
         /// <summary>

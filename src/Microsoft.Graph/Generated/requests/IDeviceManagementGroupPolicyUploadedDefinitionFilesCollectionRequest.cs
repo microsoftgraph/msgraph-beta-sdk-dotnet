@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified GroupPolicyUploadedDefinitionFile to the collection via POST.
-        /// </summary>
-        /// <param name="groupPolicyUploadedDefinitionFile">The GroupPolicyUploadedDefinitionFile to add.</param>
-        /// <returns>The created GroupPolicyUploadedDefinitionFile.</returns>
-        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> AddAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFile);
-
         /// <summary>
         /// Adds the specified GroupPolicyUploadedDefinitionFile to the collection via POST.
         /// </summary>
         /// <param name="groupPolicyUploadedDefinitionFile">The GroupPolicyUploadedDefinitionFile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyUploadedDefinitionFile.</returns>
-        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> AddAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFile, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> AddAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFile, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified GroupPolicyUploadedDefinitionFile to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionPage> GetAsync();
+        /// <param name="groupPolicyUploadedDefinitionFile">The GroupPolicyUploadedDefinitionFile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> AddResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFile, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementGroupPolicyUploadedDefinitionFilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementGroupPolicyUploadedDefinitionFilesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyUploadedDefinitionFilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationWindowsSettingApplicability.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationWindowsSettingApplicability>))]
     public partial class DeviceManagementConfigurationWindowsSettingApplicability : DeviceManagementConfigurationSettingApplicability
     {
         /// <summary>
@@ -33,42 +32,42 @@ namespace Microsoft.Graph
         /// Gets or sets configurationServiceProviderVersion.
         /// Version of CSP setting is a part of
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationServiceProviderVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationServiceProviderVersion")]
         public string ConfigurationServiceProviderVersion { get; set; }
     
         /// <summary>
         /// Gets or sets maximumSupportedVersion.
         /// Maximum supported version of Windows
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumSupportedVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumSupportedVersion")]
         public string MaximumSupportedVersion { get; set; }
     
         /// <summary>
         /// Gets or sets minimumSupportedVersion.
         /// Minimum supported version of Windows
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumSupportedVersion")]
         public string MinimumSupportedVersion { get; set; }
     
         /// <summary>
         /// Gets or sets requiredAzureAdTrustType.
         /// Required AzureAD trust type. Possible values are: none, azureAdJoined, addWorkAccount, mdmOnly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredAzureAdTrustType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requiredAzureAdTrustType")]
         public DeviceManagementConfigurationAzureAdTrustType? RequiredAzureAdTrustType { get; set; }
     
         /// <summary>
         /// Gets or sets requiresAzureAd.
         /// AzureAD setting requirement
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiresAzureAd", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requiresAzureAd")]
         public bool? RequiresAzureAd { get; set; }
     
         /// <summary>
         /// Gets or sets windowsSkus.
         /// List of Windows SKUs that the setting is applicable for
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsSkus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsSkus")]
         public IEnumerable<DeviceManagementConfigurationWindowsSkus> WindowsSkus { get; set; }
     
     }

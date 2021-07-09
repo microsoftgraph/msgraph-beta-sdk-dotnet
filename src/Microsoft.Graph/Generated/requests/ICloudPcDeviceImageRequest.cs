@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified CloudPcDeviceImage using POST.
         /// </summary>
         /// <param name="cloudPcDeviceImageToCreate">The CloudPcDeviceImage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcDeviceImage.</returns>
-        System.Threading.Tasks.Task<CloudPcDeviceImage> CreateAsync(CloudPcDeviceImage cloudPcDeviceImageToCreate);        /// <summary>
-        /// Creates the specified CloudPcDeviceImage using POST.
+        System.Threading.Tasks.Task<CloudPcDeviceImage> CreateAsync(CloudPcDeviceImage cloudPcDeviceImageToCreate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates the specified CloudPcDeviceImage using POST and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object.
         /// </summary>
         /// <param name="cloudPcDeviceImageToCreate">The CloudPcDeviceImage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created CloudPcDeviceImage.</returns>
-        System.Threading.Tasks.Task<CloudPcDeviceImage> CreateAsync(CloudPcDeviceImage cloudPcDeviceImageToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CloudPcDeviceImage.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> CreateResponseAsync(CloudPcDeviceImage cloudPcDeviceImageToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified CloudPcDeviceImage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets the specified CloudPcDeviceImage.
+        /// Deletes the specified CloudPcDeviceImage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CloudPcDeviceImage.</returns>
-        System.Threading.Tasks.Task<CloudPcDeviceImage> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CloudPcDeviceImage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CloudPcDeviceImage.</returns>
-        System.Threading.Tasks.Task<CloudPcDeviceImage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CloudPcDeviceImage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Updates the specified CloudPcDeviceImage using PATCH.
+        /// Gets the specified CloudPcDeviceImage and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object.
         /// </summary>
-        /// <param name="cloudPcDeviceImageToUpdate">The CloudPcDeviceImage to update.</param>
-        /// <returns>The updated CloudPcDeviceImage.</returns>
-        System.Threading.Tasks.Task<CloudPcDeviceImage> UpdateAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CloudPcDeviceImage using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CloudPcDeviceImage.</returns>
-        System.Threading.Tasks.Task<CloudPcDeviceImage> UpdateAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CloudPcDeviceImage> UpdateAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CloudPcDeviceImage using PATCH and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object.
+        /// </summary>
+        /// <param name="cloudPcDeviceImageToUpdate">The CloudPcDeviceImage to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> UpdateResponseAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CloudPcDeviceImage using PUT.
+        /// </summary>
+        /// <param name="cloudPcDeviceImageToUpdate">The CloudPcDeviceImage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<CloudPcDeviceImage> PutAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Updates the specified CloudPcDeviceImage using PUT and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object.
+        /// </summary>
+        /// <param name="cloudPcDeviceImageToUpdate">The CloudPcDeviceImage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{CloudPcDeviceImage}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> PutResponseAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

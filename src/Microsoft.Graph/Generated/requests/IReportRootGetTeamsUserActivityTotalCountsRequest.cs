@@ -24,22 +24,18 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the GET request.
         /// </summary>
-        System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityTotalCountsCollectionPage> GetAsync();
-
-        /// <summary>
-        /// Issues the GET request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityTotalCountsCollectionPage> GetAsync(
-            CancellationToken cancellationToken);
+            CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Issues the PATCH request.
+        /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="teamsuseractivitycounts">The TeamsUserActivityCounts object set with the properties to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityTotalCountsCollectionPage> PatchAsync(TeamsUserActivityCounts teamsuseractivitycounts);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityTotalCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Issues the PATCH request.
@@ -48,15 +44,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityTotalCountsCollectionPage> PatchAsync(TeamsUserActivityCounts teamsuseractivitycounts,
-            CancellationToken cancellationToken);
-
+            CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Issues the PUT request.
+        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="teamsuseractivitycounts">The TeamsUserActivityCounts object to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityTotalCountsCollectionPage> PutAsync(TeamsUserActivityCounts teamsuseractivitycounts);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="teamsuseractivitycounts">The TeamsUserActivityCounts object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityTotalCountsCollectionResponse>> PatchResponseAsync(TeamsUserActivityCounts teamsuseractivitycounts, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Issues the PUT request.
@@ -65,7 +62,15 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityTotalCountsCollectionPage> PutAsync(TeamsUserActivityCounts teamsuseractivitycounts,
-            CancellationToken cancellationToken);
+            CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="teamsuseractivitycounts">The TeamsUserActivityCounts object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityTotalCountsCollectionResponse>> PutResponseAsync(TeamsUserActivityCounts teamsuseractivitycounts, CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>

@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IReportRootGetOffice365GroupsActivityStorageCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ReportRootGetOffice365GroupsActivityStorageCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ReportRootGetOffice365GroupsActivityStorageCollectionPage>))]
     public interface IReportRootGetOffice365GroupsActivityStorageCollectionPage : ICollectionPage<Office365GroupsActivityStorage>
     {
         /// <summary>

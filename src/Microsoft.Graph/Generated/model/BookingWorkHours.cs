@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type BookingWorkHours.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<BookingWorkHours>))]
     public partial class BookingWorkHours
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BookingWorkHours"/> class.
-        /// </summary>
-        public BookingWorkHours()
-        {
-            this.ODataType = "microsoft.graph.bookingWorkHours";
-        }
 
         /// <summary>
         /// Gets or sets day.
         /// The day of the week represented by this instance. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "day", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("day")]
         public DayOfWeek? Day { get; set; }
     
         /// <summary>
         /// Gets or sets timeSlots.
         /// A list of start/end times during a day.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeSlots", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeSlots")]
         public IEnumerable<BookingWorkTimeSlot> TimeSlots { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

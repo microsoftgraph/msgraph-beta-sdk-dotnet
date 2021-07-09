@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MeetingPolicyUpdatedEventMessageDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MeetingPolicyUpdatedEventMessageDetail : EventMessageDetail
     {
         /// <summary>
@@ -32,19 +30,19 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets initiator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets meetingChatEnabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingChatEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meetingChatEnabled")]
         public bool? MeetingChatEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets meetingChatId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingChatId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meetingChatId")]
         public string MeetingChatId { get; set; }
     
     }

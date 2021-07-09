@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CallRecordingEventMessageDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<CallRecordingEventMessageDetail>))]
     public partial class CallRecordingEventMessageDetail : EventMessageDetail
     {
         /// <summary>
@@ -32,43 +31,43 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets callId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callId")]
         public string CallId { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingDisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callRecordingDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callRecordingDisplayName")]
         public string CallRecordingDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingDuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callRecordingDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callRecordingDuration")]
         public Duration CallRecordingDuration { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingStatus.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callRecordingStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callRecordingStatus")]
         public CallRecordingStatus? CallRecordingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingUrl.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callRecordingUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callRecordingUrl")]
         public string CallRecordingUrl { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets meetingOrganizer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingOrganizer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meetingOrganizer")]
         public IdentitySet MeetingOrganizer { get; set; }
     
     }

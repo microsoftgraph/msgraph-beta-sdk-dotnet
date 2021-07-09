@@ -32,27 +32,16 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ManagementCondition to the collection via POST.
-        /// </summary>
-        /// <param name="managementCondition">The ManagementCondition to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(ManagementCondition managementCondition)
-        {
-            return this.AddAsync(managementCondition, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagementCondition to the collection via POST.
         /// </summary>
         /// <param name="managementCondition">The ManagementCondition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(ManagementCondition managementCondition, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(ManagementCondition managementCondition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
 
             if (string.IsNullOrEmpty(managementCondition.Id))
             {
@@ -61,6 +50,26 @@ namespace Microsoft.Graph
 
             var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/deviceManagement/managementConditions/{1}", this.Client.BaseUrl, managementCondition.Id) };
             return this.SendAsync(requestBody, cancellationToken);
+        }
+
+        /// <summary>
+        /// Adds the specified ManagementCondition to the collection via POST and returns a <see cref="GraphResponse{ManagementCondition}"/> object of the request.
+        /// </summary>
+        /// <param name="managementCondition">The ManagementCondition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagementCondition managementCondition, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+
+            if (string.IsNullOrEmpty(managementCondition.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/deviceManagement/managementConditions/{1}", this.Client.BaseUrl, managementCondition.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
         }
 
     }

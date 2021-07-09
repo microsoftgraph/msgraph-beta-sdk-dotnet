@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WindowsInformationProtectionWipeAction to the collection via POST.
-        /// </summary>
-        /// <param name="windowsInformationProtectionWipeAction">The WindowsInformationProtectionWipeAction to add.</param>
-        /// <returns>The created WindowsInformationProtectionWipeAction.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> AddAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction);
-
         /// <summary>
         /// Adds the specified WindowsInformationProtectionWipeAction to the collection via POST.
         /// </summary>
         /// <param name="windowsInformationProtectionWipeAction">The WindowsInformationProtectionWipeAction to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionWipeAction.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> AddAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> AddAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified WindowsInformationProtectionWipeAction to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionPage> GetAsync();
+        /// <param name="windowsInformationProtectionWipeAction">The WindowsInformationProtectionWipeAction to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> AddResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

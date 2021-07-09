@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsDefenderApplicationControlSupplementalPolicyAssignRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsDefenderApplicationControlSupplementalPolicyAssignRequestBody
     {
     
         /// <summary>
         /// Gets or sets WdacPolicyAssignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wdacPolicyAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("wdacPolicyAssignments")]
         public IEnumerable<WindowsDefenderApplicationControlSupplementalPolicyAssignment> WdacPolicyAssignments { get; set; }
     
     }

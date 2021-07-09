@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ConfigManagerCollection using POST.
         /// </summary>
         /// <param name="configManagerCollectionToCreate">The ConfigManagerCollection to create.</param>
-        /// <returns>The created ConfigManagerCollection.</returns>
-        public System.Threading.Tasks.Task<ConfigManagerCollection> CreateAsync(ConfigManagerCollection configManagerCollectionToCreate)
-        {
-            return this.CreateAsync(configManagerCollectionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ConfigManagerCollection using POST.
-        /// </summary>
-        /// <param name="configManagerCollectionToCreate">The ConfigManagerCollection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConfigManagerCollection.</returns>
-        public async System.Threading.Tasks.Task<ConfigManagerCollection> CreateAsync(ConfigManagerCollection configManagerCollectionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConfigManagerCollection> CreateAsync(ConfigManagerCollection configManagerCollectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ConfigManagerCollection>(configManagerCollectionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ConfigManagerCollection.
+        /// Creates the specified ConfigManagerCollection using POST and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="configManagerCollectionToCreate">The ConfigManagerCollection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> CreateResponseAsync(ConfigManagerCollection configManagerCollectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ConfigManagerCollection>(configManagerCollectionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ConfigManagerCollection>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ConfigManagerCollection.
+        /// Deletes the specified ConfigManagerCollection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ConfigManagerCollection.</returns>
-        public System.Threading.Tasks.Task<ConfigManagerCollection> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ConfigManagerCollection.</returns>
-        public async System.Threading.Tasks.Task<ConfigManagerCollection> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConfigManagerCollection> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ConfigManagerCollection>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ConfigManagerCollection using PATCH.
+        /// Gets the specified ConfigManagerCollection and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object.
         /// </summary>
-        /// <param name="configManagerCollectionToUpdate">The ConfigManagerCollection to update.</param>
-        /// <returns>The updated ConfigManagerCollection.</returns>
-        public System.Threading.Tasks.Task<ConfigManagerCollection> UpdateAsync(ConfigManagerCollection configManagerCollectionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(configManagerCollectionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ConfigManagerCollection>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ConfigManagerCollection.</returns>
-        public async System.Threading.Tasks.Task<ConfigManagerCollection> UpdateAsync(ConfigManagerCollection configManagerCollectionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ConfigManagerCollection> UpdateAsync(ConfigManagerCollection configManagerCollectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (configManagerCollectionToUpdate.AdditionalData != null)
-			{
-				if (configManagerCollectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					configManagerCollectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, configManagerCollectionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (configManagerCollectionToUpdate.AdditionalData != null)
-            {
-                if (configManagerCollectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    configManagerCollectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, configManagerCollectionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ConfigManagerCollection>(configManagerCollectionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ConfigManagerCollection using PATCH and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object.
+        /// </summary>
+        /// <param name="configManagerCollectionToUpdate">The ConfigManagerCollection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> UpdateResponseAsync(ConfigManagerCollection configManagerCollectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ConfigManagerCollection>(configManagerCollectionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ConfigManagerCollection using PUT.
+        /// </summary>
+        /// <param name="configManagerCollectionToUpdate">The ConfigManagerCollection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ConfigManagerCollection> PutAsync(ConfigManagerCollection configManagerCollectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ConfigManagerCollection>(configManagerCollectionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ConfigManagerCollection using PUT and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object.
+        /// </summary>
+        /// <param name="configManagerCollectionToUpdate">The ConfigManagerCollection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ConfigManagerCollection}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> PutResponseAsync(ConfigManagerCollection configManagerCollectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ConfigManagerCollection>(configManagerCollectionToUpdate, cancellationToken);
         }
 
         /// <summary>

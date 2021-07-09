@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DocumentSetContent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DocumentSetContent>))]
     public partial class DocumentSetContent
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentSetContent"/> class.
-        /// </summary>
-        public DocumentSetContent()
-        {
-            this.ODataType = "microsoft.graph.documentSetContent";
-        }
 
         /// <summary>
         /// Gets or sets contentType.
         /// Content type information of the file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentType")]
         public ContentTypeInfo ContentType { get; set; }
     
         /// <summary>
         /// Gets or sets fileName.
         /// Name of the file in resource folder that should be added as a default content or a template in the document set
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileName")]
         public string FileName { get; set; }
     
         /// <summary>
         /// Gets or sets folderName.
         /// Folder name in which the file will be placed when a new document set is created in the library.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "folderName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("folderName")]
         public string FolderName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

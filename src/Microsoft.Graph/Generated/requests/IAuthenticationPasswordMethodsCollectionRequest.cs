@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IAuthenticationPasswordMethodsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PasswordAuthenticationMethod to the collection via POST.
-        /// </summary>
-        /// <param name="passwordAuthenticationMethod">The PasswordAuthenticationMethod to add.</param>
-        /// <returns>The created PasswordAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<PasswordAuthenticationMethod> AddAsync(PasswordAuthenticationMethod passwordAuthenticationMethod);
-
         /// <summary>
         /// Adds the specified PasswordAuthenticationMethod to the collection via POST.
         /// </summary>
         /// <param name="passwordAuthenticationMethod">The PasswordAuthenticationMethod to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PasswordAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<PasswordAuthenticationMethod> AddAsync(PasswordAuthenticationMethod passwordAuthenticationMethod, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PasswordAuthenticationMethod> AddAsync(PasswordAuthenticationMethod passwordAuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PasswordAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAuthenticationPasswordMethodsCollectionPage> GetAsync();
+        /// <param name="passwordAuthenticationMethod">The PasswordAuthenticationMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PasswordAuthenticationMethod>> AddResponseAsync(PasswordAuthenticationMethod passwordAuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAuthenticationPasswordMethodsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IAuthenticationPasswordMethodsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationPasswordMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationPasswordMethodsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationPasswordMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

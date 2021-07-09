@@ -12,85 +12,84 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10Device Firmware Configuration Interface.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10DeviceFirmwareConfigurationInterface>))]
     public partial class Windows10DeviceFirmwareConfigurationInterface : DeviceConfiguration
     {
     
-		///<summary>
-		/// The Windows10DeviceFirmwareConfigurationInterface constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10DeviceFirmwareConfigurationInterface constructor
+        ///</summary>
         public Windows10DeviceFirmwareConfigurationInterface()
         {
             this.ODataType = "microsoft.graph.windows10DeviceFirmwareConfigurationInterface";
         }
-	
+
         /// <summary>
         /// Gets or sets boot from built in network adapters.
         /// Defines whether a user is allowed to boot from built-in network adapters. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bootFromBuiltInNetworkAdapters", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bootFromBuiltInNetworkAdapters")]
         public Enablement? BootFromBuiltInNetworkAdapters { get; set; }
     
         /// <summary>
         /// Gets or sets boot from external media.
         /// Defines whether a user is allowed to boot from external media. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bootFromExternalMedia", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bootFromExternalMedia")]
         public Enablement? BootFromExternalMedia { get; set; }
     
         /// <summary>
         /// Gets or sets cameras.
         /// Defines whether built-in cameras are enabled. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cameras", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cameras")]
         public Enablement? Cameras { get; set; }
     
         /// <summary>
         /// Gets or sets change uefi settings permission.
         /// Defines the permission level granted to users to change UEFI settings. Possible values are: notConfiguredOnly, none.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeUefiSettingsPermission", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("changeUefiSettingsPermission")]
         public ChangeUefiSettingsPermission? ChangeUefiSettingsPermission { get; set; }
     
         /// <summary>
         /// Gets or sets microphones and speakers.
         /// Defines whether built-in microphones or speakers are enabled. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microphonesAndSpeakers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("microphonesAndSpeakers")]
         public Enablement? MicrophonesAndSpeakers { get; set; }
     
         /// <summary>
         /// Gets or sets radios.
         /// Defines whether built-in radios e.g. WIFI, NFC, Bluetooth, are enabled. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "radios", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("radios")]
         public Enablement? Radios { get; set; }
     
         /// <summary>
         /// Gets or sets simultaneous multi threading.
         /// Defines whether a user is allowed to enable Simultaneous MultiThreading. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "simultaneousMultiThreading", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("simultaneousMultiThreading")]
         public Enablement? SimultaneousMultiThreading { get; set; }
     
         /// <summary>
         /// Gets or sets virtualization of cpu and io.
         /// Defines whether CPU and IO virtualization is enabled. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "virtualizationOfCpuAndIO", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("virtualizationOfCpuAndIO")]
         public Enablement? VirtualizationOfCpuAndIO { get; set; }
     
         /// <summary>
         /// Gets or sets windows platform binary table.
         /// Defines whether a user is allowed to enable Windows Platform Binary Table. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsPlatformBinaryTable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsPlatformBinaryTable")]
         public Enablement? WindowsPlatformBinaryTable { get; set; }
     
     }

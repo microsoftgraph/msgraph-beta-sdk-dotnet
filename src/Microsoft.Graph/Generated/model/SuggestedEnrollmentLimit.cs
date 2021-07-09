@@ -12,41 +12,32 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SuggestedEnrollmentLimit.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SuggestedEnrollmentLimit>))]
     public partial class SuggestedEnrollmentLimit
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SuggestedEnrollmentLimit"/> class.
-        /// </summary>
-        public SuggestedEnrollmentLimit()
-        {
-            this.ODataType = "microsoft.graph.suggestedEnrollmentLimit";
-        }
 
         /// <summary>
         /// Gets or sets suggestedDailyLimit.
         /// The suggested enrollment limit within a day
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "suggestedDailyLimit", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("suggestedDailyLimit")]
         public Int32? SuggestedDailyLimit { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

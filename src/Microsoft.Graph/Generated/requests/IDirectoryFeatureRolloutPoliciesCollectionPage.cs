@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDirectoryFeatureRolloutPoliciesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DirectoryFeatureRolloutPoliciesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DirectoryFeatureRolloutPoliciesCollectionPage>))]
     public interface IDirectoryFeatureRolloutPoliciesCollectionPage : ICollectionPage<FeatureRolloutPolicy>
     {
         /// <summary>

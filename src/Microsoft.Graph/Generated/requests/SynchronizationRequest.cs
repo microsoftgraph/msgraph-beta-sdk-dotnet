@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Synchronization using POST.
         /// </summary>
         /// <param name="synchronizationToCreate">The Synchronization to create.</param>
-        /// <returns>The created Synchronization.</returns>
-        public System.Threading.Tasks.Task<Synchronization> CreateAsync(Synchronization synchronizationToCreate)
-        {
-            return this.CreateAsync(synchronizationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Synchronization using POST.
-        /// </summary>
-        /// <param name="synchronizationToCreate">The Synchronization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Synchronization.</returns>
-        public async System.Threading.Tasks.Task<Synchronization> CreateAsync(Synchronization synchronizationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Synchronization> CreateAsync(Synchronization synchronizationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Synchronization>(synchronizationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Synchronization.
+        /// Creates the specified Synchronization using POST and returns a <see cref="GraphResponse{Synchronization}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="synchronizationToCreate">The Synchronization to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Synchronization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Synchronization>> CreateResponseAsync(Synchronization synchronizationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Synchronization>(synchronizationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Synchronization>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Synchronization.
+        /// Deletes the specified Synchronization and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Synchronization.</returns>
-        public System.Threading.Tasks.Task<Synchronization> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Synchronization.</returns>
-        public async System.Threading.Tasks.Task<Synchronization> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Synchronization> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Synchronization>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Synchronization using PATCH.
+        /// Gets the specified Synchronization and returns a <see cref="GraphResponse{Synchronization}"/> object.
         /// </summary>
-        /// <param name="synchronizationToUpdate">The Synchronization to update.</param>
-        /// <returns>The updated Synchronization.</returns>
-        public System.Threading.Tasks.Task<Synchronization> UpdateAsync(Synchronization synchronizationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Synchronization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Synchronization>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(synchronizationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Synchronization>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Synchronization.</returns>
-        public async System.Threading.Tasks.Task<Synchronization> UpdateAsync(Synchronization synchronizationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Synchronization> UpdateAsync(Synchronization synchronizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (synchronizationToUpdate.AdditionalData != null)
-			{
-				if (synchronizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					synchronizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, synchronizationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (synchronizationToUpdate.AdditionalData != null)
-            {
-                if (synchronizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    synchronizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, synchronizationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Synchronization>(synchronizationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Synchronization using PATCH and returns a <see cref="GraphResponse{Synchronization}"/> object.
+        /// </summary>
+        /// <param name="synchronizationToUpdate">The Synchronization to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Synchronization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Synchronization>> UpdateResponseAsync(Synchronization synchronizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Synchronization>(synchronizationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Synchronization using PUT.
+        /// </summary>
+        /// <param name="synchronizationToUpdate">The Synchronization object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Synchronization> PutAsync(Synchronization synchronizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Synchronization>(synchronizationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Synchronization using PUT and returns a <see cref="GraphResponse{Synchronization}"/> object.
+        /// </summary>
+        /// <param name="synchronizationToUpdate">The Synchronization object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Synchronization}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Synchronization>> PutResponseAsync(Synchronization synchronizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Synchronization>(synchronizationToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Synchronization synchronizationToInitialize)
         {
 
-            if (synchronizationToInitialize != null && synchronizationToInitialize.AdditionalData != null)
+            if (synchronizationToInitialize != null)
             {
-
                 if (synchronizationToInitialize.Jobs != null && synchronizationToInitialize.Jobs.CurrentPage != null)
                 {
+                    synchronizationToInitialize.Jobs.InitializeNextPageRequest(this.Client, synchronizationToInitialize.JobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     synchronizationToInitialize.Jobs.AdditionalData = synchronizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    synchronizationToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        synchronizationToInitialize.Jobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (synchronizationToInitialize.Templates != null && synchronizationToInitialize.Templates.CurrentPage != null)
                 {
+                    synchronizationToInitialize.Templates.InitializeNextPageRequest(this.Client, synchronizationToInitialize.TemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     synchronizationToInitialize.Templates.AdditionalData = synchronizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    synchronizationToInitialize.AdditionalData.TryGetValue("templates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        synchronizationToInitialize.Templates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

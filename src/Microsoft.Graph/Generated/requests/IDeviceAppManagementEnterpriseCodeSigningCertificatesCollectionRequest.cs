@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceAppManagementEnterpriseCodeSigningCertificatesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified EnterpriseCodeSigningCertificate to the collection via POST.
-        /// </summary>
-        /// <param name="enterpriseCodeSigningCertificate">The EnterpriseCodeSigningCertificate to add.</param>
-        /// <returns>The created EnterpriseCodeSigningCertificate.</returns>
-        System.Threading.Tasks.Task<EnterpriseCodeSigningCertificate> AddAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificate);
-
         /// <summary>
         /// Adds the specified EnterpriseCodeSigningCertificate to the collection via POST.
         /// </summary>
         /// <param name="enterpriseCodeSigningCertificate">The EnterpriseCodeSigningCertificate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EnterpriseCodeSigningCertificate.</returns>
-        System.Threading.Tasks.Task<EnterpriseCodeSigningCertificate> AddAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EnterpriseCodeSigningCertificate> AddAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificate, CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified EnterpriseCodeSigningCertificate to the collection via POST and returns a <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementEnterpriseCodeSigningCertificatesCollectionPage> GetAsync();
+        /// <param name="enterpriseCodeSigningCertificate">The EnterpriseCodeSigningCertificate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnterpriseCodeSigningCertificate>> AddResponseAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificate, CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementEnterpriseCodeSigningCertificatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceAppManagementEnterpriseCodeSigningCertificatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementEnterpriseCodeSigningCertificatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementEnterpriseCodeSigningCertificatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementEnterpriseCodeSigningCertificatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

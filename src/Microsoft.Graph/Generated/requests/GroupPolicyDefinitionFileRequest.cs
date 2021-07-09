@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyDefinitionFile using POST.
         /// </summary>
         /// <param name="groupPolicyDefinitionFileToCreate">The GroupPolicyDefinitionFile to create.</param>
-        /// <returns>The created GroupPolicyDefinitionFile.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyDefinitionFile> CreateAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToCreate)
-        {
-            return this.CreateAsync(groupPolicyDefinitionFileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupPolicyDefinitionFile using POST.
-        /// </summary>
-        /// <param name="groupPolicyDefinitionFileToCreate">The GroupPolicyDefinitionFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyDefinitionFile.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyDefinitionFile> CreateAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyDefinitionFile> CreateAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<GroupPolicyDefinitionFile>(groupPolicyDefinitionFileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified GroupPolicyDefinitionFile.
+        /// Creates the specified GroupPolicyDefinitionFile using POST and returns a <see cref="GraphResponse{GroupPolicyDefinitionFile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="groupPolicyDefinitionFileToCreate">The GroupPolicyDefinitionFile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyDefinitionFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyDefinitionFile>> CreateResponseAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<GroupPolicyDefinitionFile>(groupPolicyDefinitionFileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<GroupPolicyDefinitionFile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified GroupPolicyDefinitionFile.
+        /// Deletes the specified GroupPolicyDefinitionFile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The GroupPolicyDefinitionFile.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyDefinitionFile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyDefinitionFile.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyDefinitionFile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyDefinitionFile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<GroupPolicyDefinitionFile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified GroupPolicyDefinitionFile using PATCH.
+        /// Gets the specified GroupPolicyDefinitionFile and returns a <see cref="GraphResponse{GroupPolicyDefinitionFile}"/> object.
         /// </summary>
-        /// <param name="groupPolicyDefinitionFileToUpdate">The GroupPolicyDefinitionFile to update.</param>
-        /// <returns>The updated GroupPolicyDefinitionFile.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyDefinitionFile> UpdateAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyDefinitionFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyDefinitionFile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(groupPolicyDefinitionFileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GroupPolicyDefinitionFile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyDefinitionFile.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyDefinitionFile> UpdateAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyDefinitionFile> UpdateAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (groupPolicyDefinitionFileToUpdate.AdditionalData != null)
-			{
-				if (groupPolicyDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupPolicyDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyDefinitionFileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupPolicyDefinitionFileToUpdate.AdditionalData != null)
-            {
-                if (groupPolicyDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupPolicyDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyDefinitionFileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<GroupPolicyDefinitionFile>(groupPolicyDefinitionFileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified GroupPolicyDefinitionFile using PATCH and returns a <see cref="GraphResponse{GroupPolicyDefinitionFile}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyDefinitionFileToUpdate">The GroupPolicyDefinitionFile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyDefinitionFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyDefinitionFile>> UpdateResponseAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<GroupPolicyDefinitionFile>(groupPolicyDefinitionFileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified GroupPolicyDefinitionFile using PUT.
+        /// </summary>
+        /// <param name="groupPolicyDefinitionFileToUpdate">The GroupPolicyDefinitionFile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<GroupPolicyDefinitionFile> PutAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<GroupPolicyDefinitionFile>(groupPolicyDefinitionFileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified GroupPolicyDefinitionFile using PUT and returns a <see cref="GraphResponse{GroupPolicyDefinitionFile}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyDefinitionFileToUpdate">The GroupPolicyDefinitionFile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{GroupPolicyDefinitionFile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyDefinitionFile>> PutResponseAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<GroupPolicyDefinitionFile>(groupPolicyDefinitionFileToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(GroupPolicyDefinitionFile groupPolicyDefinitionFileToInitialize)
         {
 
-            if (groupPolicyDefinitionFileToInitialize != null && groupPolicyDefinitionFileToInitialize.AdditionalData != null)
+            if (groupPolicyDefinitionFileToInitialize != null)
             {
-
                 if (groupPolicyDefinitionFileToInitialize.Definitions != null && groupPolicyDefinitionFileToInitialize.Definitions.CurrentPage != null)
                 {
+                    groupPolicyDefinitionFileToInitialize.Definitions.InitializeNextPageRequest(this.Client, groupPolicyDefinitionFileToInitialize.DefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     groupPolicyDefinitionFileToInitialize.Definitions.AdditionalData = groupPolicyDefinitionFileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupPolicyDefinitionFileToInitialize.AdditionalData.TryGetValue("definitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupPolicyDefinitionFileToInitialize.Definitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

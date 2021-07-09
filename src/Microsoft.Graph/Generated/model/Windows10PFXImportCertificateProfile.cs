@@ -12,29 +12,28 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10PFXImport Certificate Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10PFXImportCertificateProfile>))]
     public partial class Windows10PFXImportCertificateProfile : DeviceConfiguration
     {
     
-		///<summary>
-		/// The Windows10PFXImportCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10PFXImportCertificateProfile constructor
+        ///</summary>
         public Windows10PFXImportCertificateProfile()
         {
             this.ODataType = "microsoft.graph.windows10PFXImportCertificateProfile";
         }
-	
+
         /// <summary>
         /// Gets or sets key storage provider.
         /// Not yet documented. Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyStorageProvider", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keyStorageProvider")]
         public KeyStorageProviderOption? KeyStorageProvider { get; set; }
     
     }

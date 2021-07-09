@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IMobileAppGetRelatedAppStatesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<MobileAppGetRelatedAppStatesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<MobileAppGetRelatedAppStatesCollectionPage>))]
     public interface IMobileAppGetRelatedAppStatesCollectionPage : ICollectionPage<MobileAppRelationshipState>
     {
         /// <summary>

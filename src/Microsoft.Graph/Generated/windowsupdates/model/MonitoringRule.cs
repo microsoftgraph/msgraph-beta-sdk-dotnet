@@ -12,55 +12,46 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MonitoringRule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<MonitoringRule>))]
     public partial class MonitoringRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MonitoringRule"/> class.
-        /// </summary>
-        public MonitoringRule()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.monitoringRule";
-        }
 
         /// <summary>
         /// Gets or sets action.
         /// The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("action")]
         public MonitoringAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets signal.
         /// The signal to monitor. Possible values are: rollback.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signal", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("signal")]
         public MonitoringSignal? Signal { get; set; }
     
         /// <summary>
         /// Gets or sets threshold.
         /// The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "threshold", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("threshold")]
         public Int32? Threshold { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

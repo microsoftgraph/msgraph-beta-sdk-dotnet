@@ -12,58 +12,49 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkloadStatus.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<WorkloadStatus>))]
     public partial class WorkloadStatus
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkloadStatus"/> class.
-        /// </summary>
-        public WorkloadStatus()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.workloadStatus";
-        }
 
         /// <summary>
         /// Gets or sets displayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets offboardedDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offboardedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("offboardedDateTime")]
         public DateTimeOffset? OffboardedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboardedDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onboardedDateTime")]
         public DateTimeOffset? OnboardedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboardingStatus.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onboardingStatus")]
         public WorkloadOnboardingStatus? OnboardingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

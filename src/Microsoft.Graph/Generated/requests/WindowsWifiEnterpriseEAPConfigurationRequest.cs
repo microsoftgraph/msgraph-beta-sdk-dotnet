@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsWifiEnterpriseEAPConfiguration using POST.
         /// </summary>
         /// <param name="windowsWifiEnterpriseEAPConfigurationToCreate">The WindowsWifiEnterpriseEAPConfiguration to create.</param>
-        /// <returns>The created WindowsWifiEnterpriseEAPConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> CreateAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToCreate)
-        {
-            return this.CreateAsync(windowsWifiEnterpriseEAPConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsWifiEnterpriseEAPConfiguration using POST.
-        /// </summary>
-        /// <param name="windowsWifiEnterpriseEAPConfigurationToCreate">The WindowsWifiEnterpriseEAPConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsWifiEnterpriseEAPConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> CreateAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> CreateAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsWifiEnterpriseEAPConfiguration>(windowsWifiEnterpriseEAPConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsWifiEnterpriseEAPConfiguration.
+        /// Creates the specified WindowsWifiEnterpriseEAPConfiguration using POST and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsWifiEnterpriseEAPConfigurationToCreate">The WindowsWifiEnterpriseEAPConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> CreateResponseAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsWifiEnterpriseEAPConfiguration>(windowsWifiEnterpriseEAPConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsWifiEnterpriseEAPConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsWifiEnterpriseEAPConfiguration.
+        /// Deletes the specified WindowsWifiEnterpriseEAPConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsWifiEnterpriseEAPConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsWifiEnterpriseEAPConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsWifiEnterpriseEAPConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsWifiEnterpriseEAPConfiguration using PATCH.
+        /// Gets the specified WindowsWifiEnterpriseEAPConfiguration and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object.
         /// </summary>
-        /// <param name="windowsWifiEnterpriseEAPConfigurationToUpdate">The WindowsWifiEnterpriseEAPConfiguration to update.</param>
-        /// <returns>The updated WindowsWifiEnterpriseEAPConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> UpdateAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsWifiEnterpriseEAPConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsWifiEnterpriseEAPConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> UpdateAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> UpdateAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsWifiEnterpriseEAPConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windowsWifiEnterpriseEAPConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsWifiEnterpriseEAPConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsWifiEnterpriseEAPConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsWifiEnterpriseEAPConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windowsWifiEnterpriseEAPConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsWifiEnterpriseEAPConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsWifiEnterpriseEAPConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsWifiEnterpriseEAPConfiguration>(windowsWifiEnterpriseEAPConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsWifiEnterpriseEAPConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsWifiEnterpriseEAPConfigurationToUpdate">The WindowsWifiEnterpriseEAPConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> UpdateResponseAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsWifiEnterpriseEAPConfiguration>(windowsWifiEnterpriseEAPConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsWifiEnterpriseEAPConfiguration using PUT.
+        /// </summary>
+        /// <param name="windowsWifiEnterpriseEAPConfigurationToUpdate">The WindowsWifiEnterpriseEAPConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> PutAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsWifiEnterpriseEAPConfiguration>(windowsWifiEnterpriseEAPConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsWifiEnterpriseEAPConfiguration using PUT and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsWifiEnterpriseEAPConfigurationToUpdate">The WindowsWifiEnterpriseEAPConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> PutResponseAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsWifiEnterpriseEAPConfiguration>(windowsWifiEnterpriseEAPConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToInitialize)
         {
 
-            if (windowsWifiEnterpriseEAPConfigurationToInitialize != null && windowsWifiEnterpriseEAPConfigurationToInitialize.AdditionalData != null)
+            if (windowsWifiEnterpriseEAPConfigurationToInitialize != null)
             {
-
                 if (windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation != null && windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.CurrentPage != null)
                 {
+                    windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(this.Client, windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.AdditionalData = windowsWifiEnterpriseEAPConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsWifiEnterpriseEAPConfigurationToInitialize.AdditionalData.TryGetValue("rootCertificatesForServerValidation@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsWifiEnterpriseEAPConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

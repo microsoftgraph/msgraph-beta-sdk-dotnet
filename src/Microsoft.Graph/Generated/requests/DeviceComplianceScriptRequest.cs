@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceComplianceScript using POST.
         /// </summary>
         /// <param name="deviceComplianceScriptToCreate">The DeviceComplianceScript to create.</param>
-        /// <returns>The created DeviceComplianceScript.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScript> CreateAsync(DeviceComplianceScript deviceComplianceScriptToCreate)
-        {
-            return this.CreateAsync(deviceComplianceScriptToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceComplianceScript using POST.
-        /// </summary>
-        /// <param name="deviceComplianceScriptToCreate">The DeviceComplianceScript to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceComplianceScript> CreateAsync(DeviceComplianceScript deviceComplianceScriptToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceComplianceScript> CreateAsync(DeviceComplianceScript deviceComplianceScriptToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceComplianceScript>(deviceComplianceScriptToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceComplianceScript.
+        /// Creates the specified DeviceComplianceScript using POST and returns a <see cref="GraphResponse{DeviceComplianceScript}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceComplianceScriptToCreate">The DeviceComplianceScript to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScript>> CreateResponseAsync(DeviceComplianceScript deviceComplianceScriptToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScript>(deviceComplianceScriptToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceComplianceScript>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceComplianceScript.
+        /// Deletes the specified DeviceComplianceScript and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceComplianceScript.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScript> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceComplianceScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceComplianceScript> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceComplianceScript> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceComplianceScript>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceComplianceScript using PATCH.
+        /// Gets the specified DeviceComplianceScript and returns a <see cref="GraphResponse{DeviceComplianceScript}"/> object.
         /// </summary>
-        /// <param name="deviceComplianceScriptToUpdate">The DeviceComplianceScript to update.</param>
-        /// <returns>The updated DeviceComplianceScript.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScript> UpdateAsync(DeviceComplianceScript deviceComplianceScriptToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScript>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(deviceComplianceScriptToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScript>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComplianceScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceComplianceScript> UpdateAsync(DeviceComplianceScript deviceComplianceScriptToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceComplianceScript> UpdateAsync(DeviceComplianceScript deviceComplianceScriptToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceComplianceScriptToUpdate.AdditionalData != null)
-			{
-				if (deviceComplianceScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceComplianceScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScriptToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceComplianceScriptToUpdate.AdditionalData != null)
-            {
-                if (deviceComplianceScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceComplianceScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScriptToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceComplianceScript>(deviceComplianceScriptToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceScript using PATCH and returns a <see cref="GraphResponse{DeviceComplianceScript}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScriptToUpdate">The DeviceComplianceScript to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScript>> UpdateResponseAsync(DeviceComplianceScript deviceComplianceScriptToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScript>(deviceComplianceScriptToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceScript using PUT.
+        /// </summary>
+        /// <param name="deviceComplianceScriptToUpdate">The DeviceComplianceScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceComplianceScript> PutAsync(DeviceComplianceScript deviceComplianceScriptToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceComplianceScript>(deviceComplianceScriptToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceScript using PUT and returns a <see cref="GraphResponse{DeviceComplianceScript}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScriptToUpdate">The DeviceComplianceScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceComplianceScript}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScript>> PutResponseAsync(DeviceComplianceScript deviceComplianceScriptToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScript>(deviceComplianceScriptToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceComplianceScript deviceComplianceScriptToInitialize)
         {
 
-            if (deviceComplianceScriptToInitialize != null && deviceComplianceScriptToInitialize.AdditionalData != null)
+            if (deviceComplianceScriptToInitialize != null)
             {
-
                 if (deviceComplianceScriptToInitialize.Assignments != null && deviceComplianceScriptToInitialize.Assignments.CurrentPage != null)
                 {
+                    deviceComplianceScriptToInitialize.Assignments.InitializeNextPageRequest(this.Client, deviceComplianceScriptToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceComplianceScriptToInitialize.Assignments.AdditionalData = deviceComplianceScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceComplianceScriptToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceComplianceScriptToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceComplianceScriptToInitialize.DeviceRunStates != null && deviceComplianceScriptToInitialize.DeviceRunStates.CurrentPage != null)
                 {
+                    deviceComplianceScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(this.Client, deviceComplianceScriptToInitialize.DeviceRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceComplianceScriptToInitialize.DeviceRunStates.AdditionalData = deviceComplianceScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceComplianceScriptToInitialize.AdditionalData.TryGetValue("deviceRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceComplianceScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

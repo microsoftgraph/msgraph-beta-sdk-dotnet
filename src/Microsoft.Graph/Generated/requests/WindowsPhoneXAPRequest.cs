@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsPhoneXAP using POST.
         /// </summary>
         /// <param name="windowsPhoneXAPToCreate">The WindowsPhoneXAP to create.</param>
-        /// <returns>The created WindowsPhoneXAP.</returns>
-        public System.Threading.Tasks.Task<WindowsPhoneXAP> CreateAsync(WindowsPhoneXAP windowsPhoneXAPToCreate)
-        {
-            return this.CreateAsync(windowsPhoneXAPToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsPhoneXAP using POST.
-        /// </summary>
-        /// <param name="windowsPhoneXAPToCreate">The WindowsPhoneXAP to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsPhoneXAP.</returns>
-        public async System.Threading.Tasks.Task<WindowsPhoneXAP> CreateAsync(WindowsPhoneXAP windowsPhoneXAPToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsPhoneXAP> CreateAsync(WindowsPhoneXAP windowsPhoneXAPToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsPhoneXAP>(windowsPhoneXAPToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsPhoneXAP.
+        /// Creates the specified WindowsPhoneXAP using POST and returns a <see cref="GraphResponse{WindowsPhoneXAP}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsPhoneXAPToCreate">The WindowsPhoneXAP to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhoneXAP}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhoneXAP>> CreateResponseAsync(WindowsPhoneXAP windowsPhoneXAPToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsPhoneXAP>(windowsPhoneXAPToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsPhoneXAP>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsPhoneXAP.
+        /// Deletes the specified WindowsPhoneXAP and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsPhoneXAP.</returns>
-        public System.Threading.Tasks.Task<WindowsPhoneXAP> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhoneXAP.</returns>
-        public async System.Threading.Tasks.Task<WindowsPhoneXAP> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsPhoneXAP> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsPhoneXAP>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsPhoneXAP using PATCH.
+        /// Gets the specified WindowsPhoneXAP and returns a <see cref="GraphResponse{WindowsPhoneXAP}"/> object.
         /// </summary>
-        /// <param name="windowsPhoneXAPToUpdate">The WindowsPhoneXAP to update.</param>
-        /// <returns>The updated WindowsPhoneXAP.</returns>
-        public System.Threading.Tasks.Task<WindowsPhoneXAP> UpdateAsync(WindowsPhoneXAP windowsPhoneXAPToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhoneXAP}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhoneXAP>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.UpdateAsync(windowsPhoneXAPToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsPhoneXAP>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhoneXAP.</returns>
-        public async System.Threading.Tasks.Task<WindowsPhoneXAP> UpdateAsync(WindowsPhoneXAP windowsPhoneXAPToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsPhoneXAP> UpdateAsync(WindowsPhoneXAP windowsPhoneXAPToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsPhoneXAPToUpdate.AdditionalData != null)
-			{
-				if (windowsPhoneXAPToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsPhoneXAPToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhoneXAPToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsPhoneXAPToUpdate.AdditionalData != null)
-            {
-                if (windowsPhoneXAPToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsPhoneXAPToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhoneXAPToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsPhoneXAP>(windowsPhoneXAPToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsPhoneXAP using PATCH and returns a <see cref="GraphResponse{WindowsPhoneXAP}"/> object.
+        /// </summary>
+        /// <param name="windowsPhoneXAPToUpdate">The WindowsPhoneXAP to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsPhoneXAP}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhoneXAP>> UpdateResponseAsync(WindowsPhoneXAP windowsPhoneXAPToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsPhoneXAP>(windowsPhoneXAPToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsPhoneXAP using PUT.
+        /// </summary>
+        /// <param name="windowsPhoneXAPToUpdate">The WindowsPhoneXAP object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsPhoneXAP> PutAsync(WindowsPhoneXAP windowsPhoneXAPToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsPhoneXAP>(windowsPhoneXAPToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsPhoneXAP using PUT and returns a <see cref="GraphResponse{WindowsPhoneXAP}"/> object.
+        /// </summary>
+        /// <param name="windowsPhoneXAPToUpdate">The WindowsPhoneXAP object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsPhoneXAP}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhoneXAP>> PutResponseAsync(WindowsPhoneXAP windowsPhoneXAPToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsPhoneXAP>(windowsPhoneXAPToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -12,52 +12,43 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DlpEvaluationInput.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DlpEvaluationInput>))]
     public partial class DlpEvaluationInput
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DlpEvaluationInput"/> class.
-        /// </summary>
-        public DlpEvaluationInput()
-        {
-            this.ODataType = "microsoft.graph.dlpEvaluationInput";
-        }
 
         /// <summary>
         /// Gets or sets accessScope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessScope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessScope")]
         public AccessScope? AccessScope { get; set; }
     
         /// <summary>
         /// Gets or sets currentLabel.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentLabel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("currentLabel")]
         public CurrentLabel CurrentLabel { get; set; }
     
         /// <summary>
         /// Gets or sets discoveredSensitiveTypes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoveredSensitiveTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("discoveredSensitiveTypes")]
         public IEnumerable<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

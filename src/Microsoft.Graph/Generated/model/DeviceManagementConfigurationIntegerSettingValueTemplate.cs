@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationIntegerSettingValueTemplate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementConfigurationIntegerSettingValueTemplate : DeviceManagementConfigurationSimpleSettingValueTemplate
     {
         /// <summary>
@@ -33,21 +31,21 @@ namespace Microsoft.Graph
         /// Gets or sets defaultValue.
         /// Integer Setting Value Default Template.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultValue")]
         public DeviceManagementConfigurationIntegerSettingValueDefaultTemplate DefaultValue { get; set; }
     
         /// <summary>
         /// Gets or sets recommendedValueDefinition.
         /// Recommended value definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendedValueDefinition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recommendedValueDefinition")]
         public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RecommendedValueDefinition { get; set; }
     
         /// <summary>
         /// Gets or sets requiredValueDefinition.
         /// Required value definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredValueDefinition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requiredValueDefinition")]
         public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RequiredValueDefinition { get; set; }
     
     }

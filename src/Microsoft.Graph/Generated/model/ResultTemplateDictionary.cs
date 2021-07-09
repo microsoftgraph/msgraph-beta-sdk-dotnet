@@ -12,22 +12,13 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ResultTemplateDictionary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ResultTemplateDictionary : Dictionary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ResultTemplateDictionary"/> class.
-        /// </summary>
-        public ResultTemplateDictionary()
-        {
-            this.ODataType = "microsoft.graph.resultTemplateDictionary";
-        }
 
     }
 }

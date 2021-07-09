@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type BookingSchedulingPolicy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<BookingSchedulingPolicy>))]
     public partial class BookingSchedulingPolicy
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BookingSchedulingPolicy"/> class.
-        /// </summary>
-        public BookingSchedulingPolicy()
-        {
-            this.ODataType = "microsoft.graph.bookingSchedulingPolicy";
-        }
 
         /// <summary>
         /// Gets or sets allowStaffSelection.
         /// True if to allow customers to choose a specific person for the booking.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowStaffSelection", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowStaffSelection")]
         public bool? AllowStaffSelection { get; set; }
     
         /// <summary>
         /// Gets or sets maximumAdvance.
         /// Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumAdvance", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumAdvance")]
         public Duration MaximumAdvance { get; set; }
     
         /// <summary>
         /// Gets or sets minimumLeadTime.
         /// The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumLeadTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumLeadTime")]
         public Duration MinimumLeadTime { get; set; }
     
         /// <summary>
         /// Gets or sets sendConfirmationsToOwner.
         /// True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sendConfirmationsToOwner", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sendConfirmationsToOwner")]
         public bool? SendConfirmationsToOwner { get; set; }
     
         /// <summary>
         /// Gets or sets timeSlotInterval.
         /// Duration of each time slot, denoted in ISO 8601 format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeSlotInterval", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeSlotInterval")]
         public Duration TimeSlotInterval { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

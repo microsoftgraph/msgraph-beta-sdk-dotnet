@@ -12,64 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics App Health OSVersion Performance.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsAppHealthOSVersionPerformance : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsAppHealthOSVersionPerformance constructor
-		///</summary>
-        public UserExperienceAnalyticsAppHealthOSVersionPerformance()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsAppHealthOSVersionPerformance";
-        }
-	
         /// <summary>
         /// Gets or sets active device count.
         /// The number of active devices for the OS version. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activeDeviceCount")]
         public Int32? ActiveDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets mean time to failure in minutes.
         /// The mean time to failure for the OS version in minutes. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meanTimeToFailureInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meanTimeToFailureInMinutes")]
         public Int32? MeanTimeToFailureInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets os build number.
         /// The OS build number installed on the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osBuildNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osBuildNumber")]
         public string OsBuildNumber { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
         /// The OS version installed on the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets os version app health score.
         /// The app health score of the OS version. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersionAppHealthScore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersionAppHealthScore")]
         public double? OsVersionAppHealthScore { get; set; }
     
         /// <summary>
         /// Gets or sets os version app health status.
         /// The overall app health status of the OS version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersionAppHealthStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersionAppHealthStatus")]
         public string OsVersionAppHealthStatus { get; set; }
     
     }

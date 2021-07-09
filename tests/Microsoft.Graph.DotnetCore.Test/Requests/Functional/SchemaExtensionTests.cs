@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using Xunit;
@@ -6,10 +6,9 @@ using Async = System.Threading.Tasks;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public class MyDBExtensionClass
     {
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fid", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fid")]
         public int FID { get; set; }
 
         public MyDBExtensionClass(int fid)

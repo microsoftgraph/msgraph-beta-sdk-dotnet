@@ -21,22 +21,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AndroidDeviceOwnerCertificateProfileBase reference.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified AndroidDeviceOwnerCertificateProfileBase reference.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Puts the specified AndroidDeviceOwnerCertificateProfileBase reference.
+        /// Deletes the specified AndroidDeviceOwnerCertificateProfileBase reference and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="id">The AndroidDeviceOwnerCertificateProfileBase reference reference to update.</param>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task PutAsync(string id);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Puts the specified AndroidDeviceOwnerCertificateProfileBase reference.
@@ -44,6 +38,14 @@ namespace Microsoft.Graph
         /// <param name="id">The AndroidDeviceOwnerCertificateProfileBase reference reference to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task PutAsync(string id, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task PutAsync(string id, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Puts the specified AndroidDeviceOwnerCertificateProfileBase reference and returns a <see cref="GraphResponse"/> object
+        /// </summary>
+        /// <param name="id">The AndroidDeviceOwnerCertificateProfileBase reference reference to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(string id, CancellationToken cancellationToken = default(CancellationToken));
     }
 }
