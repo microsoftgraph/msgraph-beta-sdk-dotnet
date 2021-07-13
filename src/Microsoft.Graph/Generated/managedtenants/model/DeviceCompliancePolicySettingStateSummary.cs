@@ -32,78 +32,91 @@ namespace Microsoft.Graph.ManagedTenants
 	
         /// <summary>
         /// Gets or sets conflict device count.
+        /// The number of devices in a conflict state. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflictDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ConflictDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets error device count.
+        /// The number of devices in an error state. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ErrorDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets failed device count.
+        /// The number of devices in a failed state. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? FailedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets intune account id.
+        /// The identifer for the Microsoft Intune account. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneAccountId", Required = Newtonsoft.Json.Required.Default)]
         public string IntuneAccountId { get; set; }
     
         /// <summary>
         /// Gets or sets intune setting id.
+        /// The identifier for the Intune setting. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneSettingId", Required = Newtonsoft.Json.Required.Default)]
         public string IntuneSettingId { get; set; }
     
         /// <summary>
         /// Gets or sets last refreshed date time.
+        /// Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets not applicable device count.
+        /// The number of devices in a not applicable state. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notApplicableDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NotApplicableDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pending device count.
+        /// The number of devices in a pending state. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PendingDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets policy type.
+        /// The type for the device compliance policy. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyType", Required = Newtonsoft.Json.Required.Default)]
         public string PolicyType { get; set; }
     
         /// <summary>
         /// Gets or sets setting name.
+        /// The name for the setting within the device compliance policy. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
         public string SettingName { get; set; }
     
         /// <summary>
         /// Gets or sets succeeded device count.
+        /// The number of devices in a succeeded state. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "succeededDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? SucceededDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
+        /// The display name for the managed tenant. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
         public string TenantId { get; set; }

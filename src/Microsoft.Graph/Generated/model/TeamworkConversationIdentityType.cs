@@ -14,41 +14,31 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The enum UserIdentityType.
+    /// The enum TeamworkConversationIdentityType.
     /// </summary>
     [JsonConverter(typeof(EnumConverter))]
-    public enum UserIdentityType
+    public enum TeamworkConversationIdentityType
     {
     
         /// <summary>
-        /// Aad User
+        /// Team
         /// </summary>
-        AadUser = 0,
+        Team = 0,
 	
         /// <summary>
-        /// On Premise Aad User
+        /// Channel
         /// </summary>
-        OnPremiseAadUser = 1,
+        Channel = 1,
 	
         /// <summary>
-        /// Anonymous Guest
+        /// Chat
         /// </summary>
-        AnonymousGuest = 2,
+        Chat = 2,
 	
         /// <summary>
-        /// Federated User
+        /// Unknown Future Value
         /// </summary>
-        FederatedUser = 3,
-	
-        /// <summary>
-        /// Personal Microsoft Account User
-        /// </summary>
-        PersonalMicrosoftAccountUser = 4,
-	
-        /// <summary>
-        /// Skype User
-        /// </summary>
-        SkypeUser = 5,
+        UnknownFutureValue = 3,
 	
     }
 }

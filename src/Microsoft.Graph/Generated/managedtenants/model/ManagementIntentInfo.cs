@@ -32,18 +32,21 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets managementIntentDisplayName.
+        /// The display name for the management intent. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementIntentDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string ManagementIntentDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets managementIntentId.
+        /// The identifier for the management intent. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementIntentId", Required = Newtonsoft.Json.Required.Default)]
         public string ManagementIntentId { get; set; }
     
         /// <summary>
         /// Gets or sets managementTemplates.
+        /// The collection of management template information associated with the management intent. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementTemplates", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ManagementTemplateDetailedInfo> ManagementTemplates { get; set; }

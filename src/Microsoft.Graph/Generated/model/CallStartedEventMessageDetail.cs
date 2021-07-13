@@ -30,6 +30,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets callEventType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callEventType", Required = Newtonsoft.Json.Required.Default)]
+        public TeamworkCallEventType? CallEventType { get; set; }
+    
+        /// <summary>
         /// Gets or sets callId.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callId", Required = Newtonsoft.Json.Required.Default)]

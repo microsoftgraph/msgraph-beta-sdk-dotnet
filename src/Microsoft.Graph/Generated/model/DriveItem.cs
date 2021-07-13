@@ -101,6 +101,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets media.
+        /// Information about the media (audio or video) item. Read-write. Only on OneDrive for Business and SharePoint.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "media", Required = Newtonsoft.Json.Required.Default)]
         public Media Media { get; set; }
@@ -177,6 +178,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets source.
+        /// Information about the drive item source. Read-only. Only on OneDrive for Business and SharePoint.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
         public DriveItemSource Source { get; set; }

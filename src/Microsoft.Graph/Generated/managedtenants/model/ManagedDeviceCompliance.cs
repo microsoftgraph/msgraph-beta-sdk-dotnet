@@ -32,84 +32,98 @@ namespace Microsoft.Graph.ManagedTenants
 	
         /// <summary>
         /// Gets or sets compliance status.
+        /// Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceStatus", Required = Newtonsoft.Json.Required.Default)]
         public string ComplianceStatus { get; set; }
     
         /// <summary>
         /// Gets or sets device type.
+        /// Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceType", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceType { get; set; }
     
         /// <summary>
         /// Gets or sets in grace period until date time.
+        /// The date and time when the grace period will expire. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inGracePeriodUntilDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? InGracePeriodUntilDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last refreshed date time.
+        /// Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last sync date time.
+        /// The date and time that the device last completed a successful sync with Microsoft Endpoint Manager. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets managed device id.
+        /// The identifier for the managed device in Microsoft Endpoint Manager. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets managed device name.
+        /// The display name for the managed device. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceName", Required = Newtonsoft.Json.Required.Default)]
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
+        /// The manufacture for the device. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
+        /// The model for the device. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets os description.
+        /// The description of the operating system for the managed device. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osDescription", Required = Newtonsoft.Json.Required.Default)]
         public string OsDescription { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
+        /// The version of the operating system for the managed device. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets owner type.
+        /// The type of owner for the managed device. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerType", Required = Newtonsoft.Json.Required.Default)]
         public string OwnerType { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
+        /// The display name for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
         public string TenantId { get; set; }

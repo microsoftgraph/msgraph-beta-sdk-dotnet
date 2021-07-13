@@ -93,6 +93,12 @@ namespace Microsoft.Graph
         public IEnumerable<AuthenticationRequirementPolicy> AuthenticationRequirementPolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets autonomous system number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autonomousSystemNumber", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AutonomousSystemNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets client app used.
         /// The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
         /// </summary>
@@ -119,6 +125,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cross tenant access type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "crossTenantAccessType", Required = Newtonsoft.Json.Required.Default)]
+        public SignInAccessType? CrossTenantAccessType { get; set; }
     
         /// <summary>
         /// Gets or sets device detail.
@@ -160,6 +172,12 @@ namespace Microsoft.Graph
         public bool? IsInteractive { get; set; }
     
         /// <summary>
+        /// Gets or sets is tenant restricted.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isTenantRestricted", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsTenantRestricted { get; set; }
+    
+        /// <summary>
         /// Gets or sets location.
         /// The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
         /// </summary>
@@ -185,6 +203,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalRequestId", Required = Newtonsoft.Json.Required.Default)]
         public string OriginalRequestId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets private link details.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privateLinkDetails", Required = Newtonsoft.Json.Required.Default)]
+        public PrivateLinkDetails PrivateLinkDetails { get; set; }
     
         /// <summary>
         /// Gets or sets processing time in milliseconds.
@@ -254,6 +278,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskState", Required = Newtonsoft.Json.Required.Default)]
         public RiskState? RiskState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service principal credential key id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalCredentialKeyId", Required = Newtonsoft.Json.Required.Default)]
+        public string ServicePrincipalCredentialKeyId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service principal credential thumbprint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalCredentialThumbprint", Required = Newtonsoft.Json.Required.Default)]
+        public string ServicePrincipalCredentialThumbprint { get; set; }
     
         /// <summary>
         /// Gets or sets service principal id.

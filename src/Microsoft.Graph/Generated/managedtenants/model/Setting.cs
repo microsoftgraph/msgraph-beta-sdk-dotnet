@@ -32,24 +32,28 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the setting. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets jsonValue.
+        /// The value for the setting serialized as string of JSON. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jsonValue", Required = Newtonsoft.Json.Required.Default)]
         public string JsonValue { get; set; }
     
         /// <summary>
         /// Gets or sets overwriteAllowed.
+        /// A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overwriteAllowed", Required = Newtonsoft.Json.Required.Default)]
         public bool? OverwriteAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets valueType.
+        /// The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueType", Required = Newtonsoft.Json.Required.Default)]
         public ManagementParameterValueType? ValueType { get; set; }

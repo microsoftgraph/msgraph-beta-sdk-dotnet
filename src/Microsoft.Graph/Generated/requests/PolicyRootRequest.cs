@@ -378,6 +378,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (policyRootToInitialize.MobileAppManagementPolicies != null && policyRootToInitialize.MobileAppManagementPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.MobileAppManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    policyRootToInitialize.AdditionalData.TryGetValue("mobileAppManagementPolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        policyRootToInitialize.MobileAppManagementPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (policyRootToInitialize.MobileDeviceManagementPolicies != null && policyRootToInitialize.MobileDeviceManagementPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.MobileDeviceManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    policyRootToInitialize.AdditionalData.TryGetValue("mobileDeviceManagementPolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        policyRootToInitialize.MobileDeviceManagementPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (policyRootToInitialize.RoleManagementPolicies != null && policyRootToInitialize.RoleManagementPolicies.CurrentPage != null)
                 {
                     policyRootToInitialize.RoleManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;

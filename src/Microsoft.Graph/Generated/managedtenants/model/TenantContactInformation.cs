@@ -32,30 +32,35 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets email.
+        /// The email address for the contact. Optional
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The name for the contact. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
+        /// The notes associated with the contact. Optional
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
         public string Notes { get; set; }
     
         /// <summary>
         /// Gets or sets phone.
+        /// The phone number for the contact. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phone", Required = Newtonsoft.Json.Required.Default)]
         public string Phone { get; set; }
     
         /// <summary>
         /// Gets or sets title.
+        /// The title for the contact. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
         public string Title { get; set; }

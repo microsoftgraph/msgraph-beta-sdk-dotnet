@@ -32,60 +32,70 @@ namespace Microsoft.Graph.ManagedTenants
 	
         /// <summary>
         /// Gets or sets city.
+        /// The city where the managed tenant is located. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "city", Required = Newtonsoft.Json.Required.Default)]
         public string City { get; set; }
     
         /// <summary>
         /// Gets or sets country code.
+        /// The code for the country where the managed tenant is located. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryCode", Required = Newtonsoft.Json.Required.Default)]
         public string CountryCode { get; set; }
     
         /// <summary>
         /// Gets or sets country name.
+        /// The name for the country where the managed tenant is located. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryName", Required = Newtonsoft.Json.Required.Default)]
         public string CountryName { get; set; }
     
         /// <summary>
         /// Gets or sets default domain name.
+        /// The default domain name for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDomainName", Required = Newtonsoft.Json.Required.Default)]
         public string DefaultDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name for the managed tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets industry name.
+        /// The business industry associated with the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "industryName", Required = Newtonsoft.Json.Required.Default)]
         public string IndustryName { get; set; }
     
         /// <summary>
         /// Gets or sets region.
+        /// The region where the managed tenant is located. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "region", Required = Newtonsoft.Json.Required.Default)]
         public string Region { get; set; }
     
         /// <summary>
         /// Gets or sets segment name.
+        /// The business segment associated with the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "segmentName", Required = Newtonsoft.Json.Required.Default)]
         public string SegmentName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant identifier for the managed tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets vertical name.
+        /// The vertical associated with the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "verticalName", Required = Newtonsoft.Json.Required.Default)]
         public string VerticalName { get; set; }

@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets application.
+        /// Enumeration value that indicates the source application where the file was created.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "application", Required = Newtonsoft.Json.Required.Default)]
         public DriveItemSourceApplication? Application { get; set; }
     
         /// <summary>
         /// Gets or sets externalId.
+        /// The external identifier for the drive item from the source.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalId { get; set; }

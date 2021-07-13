@@ -32,30 +32,35 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets actionId.
+        /// The unique identifier for the workload action. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionId", Required = Newtonsoft.Json.Required.Default)]
         public string ActionId { get; set; }
     
         /// <summary>
         /// Gets or sets deployedPolicyId.
+        /// The identifier of any policy that was created by applying the workload action. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployedPolicyId", Required = Newtonsoft.Json.Required.Default)]
         public string DeployedPolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets error.
+        /// The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
         public Microsoft.Graph.GenericError Error { get; set; }
     
         /// <summary>
         /// Gets or sets lastDeploymentDateTime.
+        /// The date and time the workload action was last deployed. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastDeploymentDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastDeploymentDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the workload action deployment. Possible values are: toAddress, completed, error, timeOut, inProgress, unknownFutureValue. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public WorkloadActionStatus? Status { get; set; }

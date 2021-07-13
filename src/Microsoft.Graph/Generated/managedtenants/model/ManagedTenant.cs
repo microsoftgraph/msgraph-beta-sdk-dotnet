@@ -32,126 +32,147 @@ namespace Microsoft.Graph.ManagedTenants
 	
         /// <summary>
         /// Gets or sets aggregated policy compliances.
+        /// Aggregate view of device compliance policies across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aggregatedPolicyCompliances", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantAggregatedPolicyCompliancesCollectionPage AggregatedPolicyCompliances { get; set; }
     
         /// <summary>
         /// Gets or sets cloud pc connections.
+        /// The collection of cloud PC connections across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcConnections", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantCloudPcConnectionsCollectionPage CloudPcConnections { get; set; }
     
         /// <summary>
         /// Gets or sets cloud pc devices.
+        /// The collection of cloud PC devices across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcDevices", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantCloudPcDevicesCollectionPage CloudPcDevices { get; set; }
     
         /// <summary>
         /// Gets or sets cloud pcs overview.
+        /// Overview of cloud PC information across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPcsOverview", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantCloudPcsOverviewCollectionPage CloudPcsOverview { get; set; }
     
         /// <summary>
         /// Gets or sets conditional access policy coverages.
+        /// Aggregate view of conditional access policy coverage across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccessPolicyCoverages", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantConditionalAccessPolicyCoveragesCollectionPage ConditionalAccessPolicyCoverages { get; set; }
     
         /// <summary>
         /// Gets or sets credential user registrations summaries.
+        /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credentialUserRegistrationsSummaries", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantCredentialUserRegistrationsSummariesCollectionPage CredentialUserRegistrationsSummaries { get; set; }
     
         /// <summary>
         /// Gets or sets device compliance policy setting state summaries.
+        /// Summary information for device compliance policy setting states across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicySettingStateSummaries", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantDeviceCompliancePolicySettingStateSummariesCollectionPage DeviceCompliancePolicySettingStateSummaries { get; set; }
     
         /// <summary>
         /// Gets or sets managed device compliances.
+        /// The collection of compliance for managed devices across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceCompliances", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantManagedDeviceCompliancesCollectionPage ManagedDeviceCompliances { get; set; }
     
         /// <summary>
         /// Gets or sets managed device compliance trends.
+        /// Trend insights for device compliance across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceComplianceTrends", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantManagedDeviceComplianceTrendsCollectionPage ManagedDeviceComplianceTrends { get; set; }
     
         /// <summary>
         /// Gets or sets management actions.
+        /// The collection of baseline management actions across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementActions", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantManagementActionsCollectionPage ManagementActions { get; set; }
     
         /// <summary>
         /// Gets or sets management action tenant deployment statuses.
+        /// The tenant level status of management actions across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementActionTenantDeploymentStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantManagementActionTenantDeploymentStatusesCollectionPage ManagementActionTenantDeploymentStatuses { get; set; }
     
         /// <summary>
         /// Gets or sets management intents.
+        /// The collection of baseline management intents across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementIntents", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantManagementIntentsCollectionPage ManagementIntents { get; set; }
     
         /// <summary>
         /// Gets or sets management templates.
+        /// The collection of baseline management templates across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementTemplates", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantManagementTemplatesCollectionPage ManagementTemplates { get; set; }
     
         /// <summary>
         /// Gets or sets risky users.
+        /// The collection of users flagged for risk across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskyUsers", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantRiskyUsersCollectionPage RiskyUsers { get; set; }
     
         /// <summary>
         /// Gets or sets tenant groups.
+        /// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantGroups", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantTenantGroupsCollectionPage TenantGroups { get; set; }
     
         /// <summary>
         /// Gets or sets tenants.
+        /// The collection of tenants associated with the managing entity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenants", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantTenantsCollectionPage Tenants { get; set; }
     
         /// <summary>
         /// Gets or sets tenants customized information.
+        /// The collection of tenant level customized information across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantsCustomizedInformation", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantTenantsCustomizedInformationCollectionPage TenantsCustomizedInformation { get; set; }
     
         /// <summary>
         /// Gets or sets tenants detailed information.
+        /// The collection tenant level detailed information across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantsDetailedInformation", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantTenantsDetailedInformationCollectionPage TenantsDetailedInformation { get; set; }
     
         /// <summary>
         /// Gets or sets tenant tags.
+        /// The collection of tenant tags across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantTags", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantTenantTagsCollectionPage TenantTags { get; set; }
     
         /// <summary>
         /// Gets or sets windows device malware states.
+        /// The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsDeviceMalwareStates", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantWindowsDeviceMalwareStatesCollectionPage WindowsDeviceMalwareStates { get; set; }
     
         /// <summary>
         /// Gets or sets windows protection states.
+        /// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsProtectionStates", Required = Newtonsoft.Json.Required.Default)]
         public IManagedTenantWindowsProtectionStatesCollectionPage WindowsProtectionStates { get; set; }

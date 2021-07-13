@@ -616,6 +616,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceMobilityManagementPolicies request builder.
+        /// </summary>
+        public IGraphServiceMobilityManagementPoliciesCollectionRequestBuilder MobilityManagementPolicies
+        {
+            get
+            {
+                return new GraphServiceMobilityManagementPoliciesCollectionRequestBuilder(this.BaseUrl + "/mobilityManagementPolicies", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceGovernanceResources request builder.
         /// </summary>
         public IGraphServiceGovernanceResourcesCollectionRequestBuilder GovernanceResources

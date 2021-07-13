@@ -243,6 +243,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for MobileAppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootMobileAppManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootMobileAppManagementPoliciesCollectionRequestBuilder MobileAppManagementPolicies
+        {
+            get
+            {
+                return new PolicyRootMobileAppManagementPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileAppManagementPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MobileDeviceManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootMobileDeviceManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootMobileDeviceManagementPoliciesCollectionRequestBuilder MobileDeviceManagementPolicies
+        {
+            get
+            {
+                return new PolicyRootMobileDeviceManagementPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileDeviceManagementPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RoleManagementPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootRoleManagementPoliciesCollectionRequestBuilder"/>.</returns>

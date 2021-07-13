@@ -125,5 +125,15 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 20,
 	
+        /// <summary>
+        /// Device Filter Include Rule Not Matched
+        /// </summary>
+        DeviceFilterIncludeRuleNotMatched = 21,
+	
+        /// <summary>
+        /// All Device States
+        /// </summary>
+        AllDeviceStates = 22,
+	
     }
 }

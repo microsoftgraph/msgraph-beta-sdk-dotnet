@@ -32,12 +32,14 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets managementActionId.
+        /// The identifier for the management action. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementActionId", Required = Newtonsoft.Json.Required.Default)]
         public string ManagementActionId { get; set; }
     
         /// <summary>
         /// Gets or sets managementTemplateId.
+        /// The identifier for the management template. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementTemplateId", Required = Newtonsoft.Json.Required.Default)]
         public string ManagementTemplateId { get; set; }

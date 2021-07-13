@@ -114,6 +114,27 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceRoleScopes", Required = Newtonsoft.Json.Required.Default)]
         public IAccessPackageAccessPackageResourceRoleScopesCollectionPage AccessPackageResourceRoleScopes { get; set; }
     
+        /// <summary>
+        /// Gets or sets access packages incompatible with.
+        /// The access packages that are incompatible with this package. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackagesIncompatibleWith", Required = Newtonsoft.Json.Required.Default)]
+        public IAccessPackageAccessPackagesIncompatibleWithCollectionWithReferencesPage AccessPackagesIncompatibleWith { get; set; }
+    
+        /// <summary>
+        /// Gets or sets incompatible access packages.
+        /// The  access packages whose assigned users are ineligible to be assigned this access package.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incompatibleAccessPackages", Required = Newtonsoft.Json.Required.Default)]
+        public IAccessPackageIncompatibleAccessPackagesCollectionWithReferencesPage IncompatibleAccessPackages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets incompatible groups.
+        /// The groups whose members are ineligible to be assigned this access package.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incompatibleGroups", Required = Newtonsoft.Json.Required.Default)]
+        public IAccessPackageIncompatibleGroupsCollectionPage IncompatibleGroups { get; set; }
+    
     }
 }
 

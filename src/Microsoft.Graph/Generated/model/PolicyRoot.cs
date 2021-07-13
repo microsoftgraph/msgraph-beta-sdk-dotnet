@@ -128,6 +128,18 @@ namespace Microsoft.Graph
         public IdentitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets mobile app management policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppManagementPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IPolicyRootMobileAppManagementPoliciesCollectionPage MobileAppManagementPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mobile device management policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileDeviceManagementPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IPolicyRootMobileDeviceManagementPoliciesCollectionPage MobileDeviceManagementPolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets role management policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleManagementPolicies", Required = Newtonsoft.Json.Required.Default)]

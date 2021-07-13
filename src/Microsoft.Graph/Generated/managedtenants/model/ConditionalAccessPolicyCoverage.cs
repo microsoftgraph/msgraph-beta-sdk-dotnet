@@ -32,24 +32,28 @@ namespace Microsoft.Graph.ManagedTenants
 	
         /// <summary>
         /// Gets or sets conditional access policy state.
+        /// The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccessPolicyState", Required = Newtonsoft.Json.Required.Default)]
         public string ConditionalAccessPolicyState { get; set; }
     
         /// <summary>
         /// Gets or sets latest policy modified date time.
+        /// The date and time the conditional access policy was last modified. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latestPolicyModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LatestPolicyModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets requires device compliance.
+        /// A flag indicating whether the conditional access policy requires device compliance. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiresDeviceCompliance", Required = Newtonsoft.Json.Required.Default)]
         public bool? RequiresDeviceCompliance { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
+        /// The display name for the managed tenant. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string TenantDisplayName { get; set; }

@@ -25,12 +25,14 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets error.
+        /// The error message for the exception.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
         public string Error { get; set; }
     
         /// <summary>
         /// Gets or sets tenantId.
+        /// The Azure Active Directory tenant identifier for the managed tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
         public string TenantId { get; set; }

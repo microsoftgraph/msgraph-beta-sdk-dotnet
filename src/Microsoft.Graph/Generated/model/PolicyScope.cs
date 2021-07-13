@@ -14,36 +14,31 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The enum ApplicationIdentityType.
+    /// The enum PolicyScope.
     /// </summary>
     [JsonConverter(typeof(EnumConverter))]
-    public enum ApplicationIdentityType
+    public enum PolicyScope
     {
     
         /// <summary>
-        /// Aad Application
+        /// None
         /// </summary>
-        AadApplication = 0,
+        None = 0,
 	
         /// <summary>
-        /// Bot
+        /// All
         /// </summary>
-        Bot = 1,
+        All = 1,
 	
         /// <summary>
-        /// Tenant Bot
+        /// Selected
         /// </summary>
-        TenantBot = 2,
+        Selected = 2,
 	
         /// <summary>
-        /// Office365Connector
+        /// Unknown Future Value
         /// </summary>
-        Office365Connector = 3,
-	
-        /// <summary>
-        /// Outgoing Webhook
-        /// </summary>
-        OutgoingWebhook = 4,
+        UnknownFutureValue = 3,
 	
     }
 }
