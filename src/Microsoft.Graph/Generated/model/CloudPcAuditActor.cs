@@ -32,66 +32,77 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets applicationDisplayName.
+        /// Name of the application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string ApplicationDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets applicationId.
+        /// Azure AD application ID.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationId", Required = Newtonsoft.Json.Required.Default)]
         public string ApplicationId { get; set; }
     
         /// <summary>
         /// Gets or sets ipAddress.
+        /// IP address.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddress", Required = Newtonsoft.Json.Required.Default)]
         public string IpAddress { get; set; }
     
         /// <summary>
         /// Gets or sets remoteTenantId.
+        /// The delegated partner tenant ID.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteTenantId", Required = Newtonsoft.Json.Required.Default)]
         public string RemoteTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets remoteUserId.
+        /// The delegated partner user ID.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteUserId", Required = Newtonsoft.Json.Required.Default)]
         public string RemoteUserId { get; set; }
     
         /// <summary>
         /// Gets or sets servicePrincipalName.
+        /// Service Principal Name (SPN).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string ServicePrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// The actor type. Possible values include ItPro, Application, Partner and Unknown.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcAuditActorType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets userId.
+        /// Azure AD user ID.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets userPermissions.
+        /// List of user permissions and application permissions when the audit event was performed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPermissions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> UserPermissions { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
+        /// User Principal Name (UPN).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets userRoleScopeTags.
+        /// List of role scope tags.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRoleScopeTags", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<CloudPcUserRoleScopeTagInfo> UserRoleScopeTags { get; set; }

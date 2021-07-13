@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets health overviews.
+        /// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "healthOverviews", Required = Newtonsoft.Json.Required.Default)]
         public IServiceAnnouncementHealthOverviewsCollectionPage HealthOverviews { get; set; }
     
         /// <summary>
         /// Gets or sets issues.
+        /// A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issues", Required = Newtonsoft.Json.Required.Default)]
         public IServiceAnnouncementIssuesCollectionPage Issues { get; set; }
     
         /// <summary>
         /// Gets or sets messages.
+        /// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
         public IServiceAnnouncementMessagesCollectionPage Messages { get; set; }

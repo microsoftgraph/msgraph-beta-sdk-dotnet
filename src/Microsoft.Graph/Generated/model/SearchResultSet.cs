@@ -39,6 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resultTemplates.
+        /// A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultTemplates", Required = Newtonsoft.Json.Required.Default)]
         public ResultTemplateDictionary ResultTemplates { get; set; }

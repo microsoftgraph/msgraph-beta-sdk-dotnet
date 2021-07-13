@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// Gets or sets conversationMemberUser.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationMemberUser", Required = Newtonsoft.Json.Required.Default)]
-        public Identity ConversationMemberUser { get; set; }
+        public TeamworkUserIdentity ConversationMemberUser { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.

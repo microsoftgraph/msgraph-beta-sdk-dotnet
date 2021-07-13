@@ -33,6 +33,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets managed tenants.
+        /// The operations available to interact with the multi-tenant management platform.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedTenants", Required = Newtonsoft.Json.Required.Default)]
         public Microsoft.Graph.ManagedTenants.ManagedTenant ManagedTenants { get; set; }

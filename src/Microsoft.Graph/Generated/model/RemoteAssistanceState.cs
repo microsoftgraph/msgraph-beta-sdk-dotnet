@@ -14,21 +14,26 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The enum ConversationIdentityType.
+    /// The enum RemoteAssistanceState.
     /// </summary>
     [JsonConverter(typeof(EnumConverter))]
-    public enum ConversationIdentityType
+    public enum RemoteAssistanceState
     {
     
         /// <summary>
-        /// Team
+        /// Not Configured
         /// </summary>
-        Team = 0,
+        NotConfigured = 0,
 	
         /// <summary>
-        /// Channel
+        /// Disabled
         /// </summary>
-        Channel = 1,
+        Disabled = 1,
+	
+        /// <summary>
+        /// Enabled
+        /// </summary>
+        Enabled = 2,
 	
     }
 }

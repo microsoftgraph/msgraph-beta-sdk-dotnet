@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignments.
-        /// A defined collection of provisioning policy assignments. Returned only on $expand. See an example of getting the assignments relationship.
+        /// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
         public ICloudPcProvisioningPolicyAssignmentsCollectionPage Assignments { get; set; }

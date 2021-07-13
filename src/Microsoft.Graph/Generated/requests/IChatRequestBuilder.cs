@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IChatInstalledAppsCollectionRequestBuilder InstalledApps { get; }
 
         /// <summary>
+        /// Gets the request builder for LastMessagePreview.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageInfoRequestBuilder"/>.</returns>
+        IChatMessageInfoRequestBuilder LastMessagePreview { get; }
+
+        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IChatMembersCollectionRequestBuilder"/>.</returns>

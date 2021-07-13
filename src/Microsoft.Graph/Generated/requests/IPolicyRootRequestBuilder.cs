@@ -128,6 +128,18 @@ namespace Microsoft.Graph
         IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy { get; }
 
         /// <summary>
+        /// Gets the request builder for MobileAppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootMobileAppManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootMobileAppManagementPoliciesCollectionRequestBuilder MobileAppManagementPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for MobileDeviceManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootMobileDeviceManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootMobileDeviceManagementPoliciesCollectionRequestBuilder MobileDeviceManagementPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for RoleManagementPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootRoleManagementPoliciesCollectionRequestBuilder"/>.</returns>

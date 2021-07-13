@@ -32,66 +32,77 @@ namespace Microsoft.Graph.ManagedTenants
 	
         /// <summary>
         /// Gets or sets compliance policy id.
+        /// Identifier for the device compliance policy. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicyId", Required = Newtonsoft.Json.Required.Default)]
         public string CompliancePolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets compliance policy name.
+        /// Name of the device compliance policy. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicyName", Required = Newtonsoft.Json.Required.Default)]
         public string CompliancePolicyName { get; set; }
     
         /// <summary>
         /// Gets or sets compliance policy platform.
+        /// Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicyPlatform", Required = Newtonsoft.Json.Required.Default)]
         public string CompliancePolicyPlatform { get; set; }
     
         /// <summary>
         /// Gets or sets compliance policy type.
+        /// The type of compliance policy. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicyType", Required = Newtonsoft.Json.Required.Default)]
         public string CompliancePolicyType { get; set; }
     
         /// <summary>
         /// Gets or sets last refreshed date time.
+        /// Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets number of compliant devices.
+        /// The number of devices that are in a compliant status. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCompliantDevices", Required = Newtonsoft.Json.Required.Default)]
         public Int64? NumberOfCompliantDevices { get; set; }
     
         /// <summary>
         /// Gets or sets number of error devices.
+        /// The number of devices that are in an error status. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfErrorDevices", Required = Newtonsoft.Json.Required.Default)]
         public Int64? NumberOfErrorDevices { get; set; }
     
         /// <summary>
         /// Gets or sets number of non compliant devices.
+        /// The number of device that are in a non-compliant status. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfNonCompliantDevices", Required = Newtonsoft.Json.Required.Default)]
         public Int64? NumberOfNonCompliantDevices { get; set; }
     
         /// <summary>
         /// Gets or sets policy modified date time.
+        /// The date and time the device policy was last modified. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? PolicyModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
+        /// The display name for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
         public string TenantId { get; set; }

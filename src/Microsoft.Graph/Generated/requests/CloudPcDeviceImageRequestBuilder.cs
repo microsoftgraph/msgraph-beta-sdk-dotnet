@@ -50,7 +50,16 @@ namespace Microsoft.Graph
             return new CloudPcDeviceImageRequest(this.RequestUrl, this.Client, options);
         }
     
-        
+        /// <summary>
+        /// Gets the request builder for CloudPcDeviceImageReupload.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcDeviceImageReuploadRequestBuilder"/>.</returns>
+        public ICloudPcDeviceImageReuploadRequestBuilder Reupload()
+        {
+            return new CloudPcDeviceImageReuploadRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reupload"),
+                this.Client);
+        }
     
     }
 }

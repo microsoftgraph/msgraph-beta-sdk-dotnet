@@ -53,7 +53,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identity providers.
-        /// The identity providers included in the user flow.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityProviders", Required = Newtonsoft.Json.Required.Default)]
         public IB2cIdentityUserFlowIdentityProvidersCollectionWithReferencesPage IdentityProviders { get; set; }

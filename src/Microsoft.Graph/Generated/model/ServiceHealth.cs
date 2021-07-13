@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets service.
+        /// The service name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service", Required = Newtonsoft.Json.Required.Default)]
         public string Service { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Show the overral service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public ServiceHealthStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets issues.
+        /// A collection of issues happened on the service, with detailed information for each issue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issues", Required = Newtonsoft.Json.Required.Default)]
         public IServiceHealthIssuesCollectionPage Issues { get; set; }

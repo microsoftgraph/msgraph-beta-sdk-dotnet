@@ -1479,6 +1479,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for RemoteAssistanceSettings.
+        /// </summary>
+        /// <returns>The <see cref="IRemoteAssistanceSettingsRequestBuilder"/>.</returns>
+        public IRemoteAssistanceSettingsRequestBuilder RemoteAssistanceSettings
+        {
+            get
+            {
+                return new RemoteAssistanceSettingsRequestBuilder(this.AppendSegmentToRequestUrl("remoteAssistanceSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Reports.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsRequestBuilder"/>.</returns>

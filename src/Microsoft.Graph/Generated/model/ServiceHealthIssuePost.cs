@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets createdDateTime.
+        /// The published time of the post.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The content of the service issue post.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public ItemBody Description { get; set; }
     
         /// <summary>
         /// Gets or sets postType.
+        /// The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postType", Required = Newtonsoft.Json.Required.Default)]
         public PostType? PostType { get; set; }

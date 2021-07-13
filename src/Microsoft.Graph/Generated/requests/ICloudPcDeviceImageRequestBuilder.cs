@@ -31,7 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new ICloudPcDeviceImageRequest Request(IEnumerable<Option> options);
     
-        
+        /// <summary>
+        /// Gets the request builder for CloudPcDeviceImageReupload.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcDeviceImageReuploadRequestBuilder"/>.</returns>
+        ICloudPcDeviceImageReuploadRequestBuilder Reupload();
     
     }
 }

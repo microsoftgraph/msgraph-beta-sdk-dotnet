@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for LastMessagePreview.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageInfoRequestBuilder"/>.</returns>
+        public IChatMessageInfoRequestBuilder LastMessagePreview
+        {
+            get
+            {
+                return new ChatMessageInfoRequestBuilder(this.AppendSegmentToRequestUrl("lastMessagePreview"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IChatMembersCollectionRequestBuilder"/>.</returns>

@@ -32,24 +32,28 @@ namespace Microsoft.Graph.ManagedTenants
 	
         /// <summary>
         /// Gets or sets contacts.
+        /// The collection of contacts for the managed tenant. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contacts", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<TenantContactInformation> Contacts { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name for the managed tenant. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets website.
+        /// The website for the managed tenant. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "website", Required = Newtonsoft.Json.Required.Default)]
         public string Website { get; set; }

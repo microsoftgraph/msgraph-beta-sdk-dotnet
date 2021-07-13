@@ -32,24 +32,28 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets managementActionId.
+        /// The identifier for the management action. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementActionId", Required = Newtonsoft.Json.Required.Default)]
         public string ManagementActionId { get; set; }
     
         /// <summary>
         /// Gets or sets managementTemplateId.
+        /// The management template identifier that was used to generate the management action. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementTemplateId", Required = Newtonsoft.Json.Required.Default)]
         public string ManagementTemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public ManagementActionStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets workloadActionDeploymentStatuses.
+        /// The collection of workload action deployment statues for the given management action. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workloadActionDeploymentStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<WorkloadActionDeploymentStatus> WorkloadActionDeploymentStatuses { get; set; }

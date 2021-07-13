@@ -74,6 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets isBackendCertificateValidationEnabled.
+        /// Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBackendCertificateValidationEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsBackendCertificateValidationEnabled { get; set; }

@@ -31,24 +31,28 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets errorDetails.
+        /// Additional error information for the exception. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDetails", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorDetails { get; set; }
     
         /// <summary>
         /// Gets or sets nodeId.
+        /// The node identifier where the exception occurred. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nodeId", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NodeId { get; set; }
     
         /// <summary>
         /// Gets or sets rawToken.
+        /// The token for the exception. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rawToken", Required = Newtonsoft.Json.Required.Default)]
         public string RawToken { get; set; }
     
         /// <summary>
         /// Gets or sets statementIndex.
+        /// The statement index for the exception. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statementIndex", Required = Newtonsoft.Json.Required.Default)]
         public Int32? StatementIndex { get; set; }

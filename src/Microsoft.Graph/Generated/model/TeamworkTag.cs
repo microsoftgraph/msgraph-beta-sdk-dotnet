@@ -32,36 +32,42 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets description.
+        /// Tag description as it will appear to the user in Microsoft Teams.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Tag name as it will appear to the user in Microsoft Teams.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets member count.
+        /// The number of users assigned to the tag.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MemberCount { get; set; }
     
         /// <summary>
         /// Gets or sets tag type.
+        /// The type of tag. Default is standard.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tagType", Required = Newtonsoft.Json.Required.Default)]
         public TeamworkTagType? TagType { get; set; }
     
         /// <summary>
         /// Gets or sets team id.
+        /// ID of the team in which the tag is defined.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamId", Required = Newtonsoft.Json.Required.Default)]
         public string TeamId { get; set; }
     
         /// <summary>
         /// Gets or sets members.
+        /// Users assigned to the tag.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
         public ITeamworkTagMembersCollectionPage Members { get; set; }

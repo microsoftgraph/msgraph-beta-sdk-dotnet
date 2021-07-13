@@ -32,36 +32,42 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets actionId.
+        /// The unique identifier for the workload action. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionId", Required = Newtonsoft.Json.Required.Default)]
         public string ActionId { get; set; }
     
         /// <summary>
         /// Gets or sets category.
+        /// The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
         public WorkloadActionCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The description for the workload action. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the workload action. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets service.
+        /// The service associated with workload action. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service", Required = Newtonsoft.Json.Required.Default)]
         public string Service { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
+        /// The collection of settings associated with the workload action. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Setting> Settings { get; set; }

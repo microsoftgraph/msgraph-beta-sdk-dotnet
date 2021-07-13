@@ -32,30 +32,35 @@ namespace Microsoft.Graph.ManagedTenants
 	
         /// <summary>
         /// Gets or sets category.
+        /// The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
         public ManagementCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The description for the management template. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name for the management template. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets parameters.
+        /// The collection of parameters used by the management template. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parameters", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<TemplateParameter> Parameters { get; set; }
     
         /// <summary>
         /// Gets or sets workload actions.
+        /// The collection of workload actions associated with the management template. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workloadActions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<WorkloadAction> WorkloadActions { get; set; }

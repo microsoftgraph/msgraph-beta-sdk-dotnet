@@ -32,13 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets deviceFilter.
+        /// Filter defining the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them. Cannot be set if includeDevices or excludeDevices is set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceFilter", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessFilter DeviceFilter { get; set; }
     
         /// <summary>
         /// Gets or sets excludeDevices.
-        /// States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
+        /// States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeDevices", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ExcludeDevices { get; set; }
@@ -51,7 +52,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets includeDevices.
-        /// States in the scope of the policy. All is the only allowed value.
+        /// States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeDevices", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> IncludeDevices { get; set; }

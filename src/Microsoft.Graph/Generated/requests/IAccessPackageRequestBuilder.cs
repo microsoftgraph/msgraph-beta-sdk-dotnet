@@ -48,8 +48,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessPackageAccessPackageResourceRoleScopesCollectionRequestBuilder"/>.</returns>
         IAccessPackageAccessPackageResourceRoleScopesCollectionRequestBuilder AccessPackageResourceRoleScopes { get; }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackagesIncompatibleWith.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAccessPackagesIncompatibleWithCollectionWithReferencesRequestBuilder"/>.</returns>
+        IAccessPackageAccessPackagesIncompatibleWithCollectionWithReferencesRequestBuilder AccessPackagesIncompatibleWith { get; }
+
+        /// <summary>
+        /// Gets the request builder for IncompatibleAccessPackages.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageIncompatibleAccessPackagesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IAccessPackageIncompatibleAccessPackagesCollectionWithReferencesRequestBuilder IncompatibleAccessPackages { get; }
+
+        /// <summary>
+        /// Gets the request builder for IncompatibleGroups.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageIncompatibleGroupsCollectionRequestBuilder"/>.</returns>
+        IAccessPackageIncompatibleGroupsCollectionRequestBuilder IncompatibleGroups { get; }
     
-        
+        /// <summary>
+        /// Gets the request builder for AccessPackageGetApplicablePolicyRequirements.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageGetApplicablePolicyRequirementsRequestBuilder"/>.</returns>
+        IAccessPackageGetApplicablePolicyRequirementsRequestBuilder GetApplicablePolicyRequirements();
     
     }
 }

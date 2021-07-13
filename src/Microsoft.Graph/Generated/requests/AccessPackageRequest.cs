@@ -266,6 +266,54 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (accessPackageToInitialize.AccessPackagesIncompatibleWith != null && accessPackageToInitialize.AccessPackagesIncompatibleWith.CurrentPage != null)
+                {
+                    accessPackageToInitialize.AccessPackagesIncompatibleWith.AdditionalData = accessPackageToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    accessPackageToInitialize.AdditionalData.TryGetValue("accessPackagesIncompatibleWith@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        accessPackageToInitialize.AccessPackagesIncompatibleWith.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (accessPackageToInitialize.IncompatibleAccessPackages != null && accessPackageToInitialize.IncompatibleAccessPackages.CurrentPage != null)
+                {
+                    accessPackageToInitialize.IncompatibleAccessPackages.AdditionalData = accessPackageToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    accessPackageToInitialize.AdditionalData.TryGetValue("incompatibleAccessPackages@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        accessPackageToInitialize.IncompatibleAccessPackages.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (accessPackageToInitialize.IncompatibleGroups != null && accessPackageToInitialize.IncompatibleGroups.CurrentPage != null)
+                {
+                    accessPackageToInitialize.IncompatibleGroups.AdditionalData = accessPackageToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    accessPackageToInitialize.AdditionalData.TryGetValue("incompatibleGroups@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        accessPackageToInitialize.IncompatibleGroups.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
             }
 
 

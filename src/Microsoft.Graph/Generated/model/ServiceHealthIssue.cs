@@ -32,54 +32,63 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets classification.
+        /// The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
         public ServiceHealthClassificationType? Classification { get; set; }
     
         /// <summary>
         /// Gets or sets feature.
+        /// The feature name of the service issue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feature", Required = Newtonsoft.Json.Required.Default)]
         public string Feature { get; set; }
     
         /// <summary>
         /// Gets or sets feature group.
+        /// The feature group name of the service issue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureGroup", Required = Newtonsoft.Json.Required.Default)]
         public string FeatureGroup { get; set; }
     
         /// <summary>
         /// Gets or sets impact description.
+        /// The description of the service issue impact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "impactDescription", Required = Newtonsoft.Json.Required.Default)]
         public string ImpactDescription { get; set; }
     
         /// <summary>
         /// Gets or sets is resolved.
+        /// Indicates whether the issue is resolved.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isResolved", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsResolved { get; set; }
     
         /// <summary>
         /// Gets or sets origin.
+        /// Indicates the origin of the service issue. Possible values are: microsoft, thirdParty, customer, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "origin", Required = Newtonsoft.Json.Required.Default)]
         public ServiceHealthOrigin? Origin { get; set; }
     
         /// <summary>
         /// Gets or sets posts.
+        /// Collection of historical posts for the service issue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "posts", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ServiceHealthIssuePost> Posts { get; set; }
     
         /// <summary>
         /// Gets or sets service.
+        /// Indicates the service affected by the issue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service", Required = Newtonsoft.Json.Required.Default)]
         public string Service { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public ServiceHealthStatus? Status { get; set; }

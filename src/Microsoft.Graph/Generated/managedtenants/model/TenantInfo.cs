@@ -32,6 +32,7 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets tenantId.
+        /// The Azure Active Directory tenant identifier for the managed tenant. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
         public string TenantId { get; set; }

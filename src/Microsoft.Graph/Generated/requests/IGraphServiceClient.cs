@@ -272,6 +272,11 @@ namespace Microsoft.Graph
         IGraphServiceRiskyUsersCollectionRequestBuilder RiskyUsers { get; }
     
         /// <summary>
+        /// Gets the GraphServiceMobilityManagementPolicies request builder.
+        /// </summary>
+        IGraphServiceMobilityManagementPoliciesCollectionRequestBuilder MobilityManagementPolicies { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceGovernanceResources request builder.
         /// </summary>
         IGraphServiceGovernanceResourcesCollectionRequestBuilder GovernanceResources { get; }

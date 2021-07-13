@@ -19,8 +19,7 @@ namespace Microsoft.Graph.ManagedTenants
     /// The type Cloud Pc Overview.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
-    public partial class CloudPcOverview
+    public partial class CloudPcOverview : Microsoft.Graph.Entity
     {
     
 		///<summary>
@@ -33,90 +32,105 @@ namespace Microsoft.Graph.ManagedTenants
 	
         /// <summary>
         /// Gets or sets last refreshed date time.
+        /// Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc connection status failed.
+        /// The number of cloud PC connections that have a status of failed. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcConnectionStatusFailed", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcConnectionStatusFailed { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc connection status passed.
+        /// The number of cloud PC connections that have a status of passed. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcConnectionStatusPassed", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcConnectionStatusPassed { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc connection status pending.
+        /// The number of cloud PC connections that have a status of pending. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcConnectionStatusPending", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcConnectionStatusPending { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc connection status running.
+        /// The number of cloud PC connections that have a status of running. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcConnectionStatusRunning", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcConnectionStatusRunning { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc connection status unkown future value.
+        /// The number of cloud PC connections that have a status of unknownFutureValue. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcConnectionStatusUnkownFutureValue", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcConnectionStatusUnkownFutureValue { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc status deprovisioning.
+        /// The number of cloud PCs that have a status of deprovisioning. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcStatusDeprovisioning", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcStatusDeprovisioning { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc status failed.
+        /// The number of cloud PCs that have a status of failed. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcStatusFailed", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcStatusFailed { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc status in grace period.
+        /// The number of cloud PCs that have a status of inGracePeriod. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcStatusInGracePeriod", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcStatusInGracePeriod { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc status not provisioned.
+        /// The number of cloud PCs that have a status of notProvisioned. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcStatusNotProvisioned", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcStatusNotProvisioned { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc status provisioned.
+        /// The number of cloud PCs that have a status of provisioned. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcStatusProvisioned", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcStatusProvisioned { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc status provisioning.
+        /// The number of cloud PCs that have a status of provisioning. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcStatusProvisioning", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcStatusProvisioning { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc status unknown.
+        /// The number of cloud PCs that have a status of unknown. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcStatusUnknown", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcStatusUnknown { get; set; }
     
         /// <summary>
         /// Gets or sets number of cloud pc status upgrading.
+        /// The number of cloud PCs that have a status of upgrading. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfCloudPcStatusUpgrading", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NumberOfCloudPcStatusUpgrading { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
+        /// The display name for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string TenantDisplayName { get; set; }
@@ -129,27 +143,17 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets total cloud pc connection status.
+        /// The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalCloudPcConnectionStatus", Required = Newtonsoft.Json.Required.Default)]
         public Int32? TotalCloudPcConnectionStatus { get; set; }
     
         /// <summary>
         /// Gets or sets total cloud pc status.
+        /// The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalCloudPcStatus", Required = Newtonsoft.Json.Required.Default)]
         public Int32? TotalCloudPcStatus { get; set; }
-    
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
-        public string ODataType { get; set; }
-
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
-        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

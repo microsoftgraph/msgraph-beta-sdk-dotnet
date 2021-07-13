@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets entityTypes.
-        /// One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
+        /// One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entityTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<EntityType> EntityTypes { get; set; }
@@ -88,6 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resultTemplateOptions.
+        /// Provides the search result templates options for rendering connectors search results.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultTemplateOptions", Required = Newtonsoft.Json.Required.Default)]
         public ResultTemplateOption ResultTemplateOptions { get; set; }

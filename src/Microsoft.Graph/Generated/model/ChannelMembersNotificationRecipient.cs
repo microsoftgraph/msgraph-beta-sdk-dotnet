@@ -31,12 +31,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets channelId.
+        /// The channel's identifier.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channelId", Required = Newtonsoft.Json.Required.Default)]
         public string ChannelId { get; set; }
     
         /// <summary>
         /// Gets or sets teamId.
+        /// The team's identifier under which the channel resides.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamId", Required = Newtonsoft.Json.Required.Default)]
         public string TeamId { get; set; }

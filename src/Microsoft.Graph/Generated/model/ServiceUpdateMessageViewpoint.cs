@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isArchived.
+        /// Indicates whether the user archived the message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isArchived", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsArchived { get; set; }
     
         /// <summary>
         /// Gets or sets isFavorited.
+        /// Indicates whether the user marked the message as favorite.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFavorited", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsFavorited { get; set; }
     
         /// <summary>
         /// Gets or sets isRead.
+        /// Indicates whether the user read the message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRead", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsRead { get; set; }

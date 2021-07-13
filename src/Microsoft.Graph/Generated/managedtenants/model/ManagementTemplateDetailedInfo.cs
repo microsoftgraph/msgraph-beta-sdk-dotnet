@@ -32,18 +32,21 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets category.
+        /// The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
         public ManagementCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the management template. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets managementTemplateId.
+        /// The unique identifier for the management template. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementTemplateId", Required = Newtonsoft.Json.Required.Default)]
         public string ManagementTemplateId { get; set; }

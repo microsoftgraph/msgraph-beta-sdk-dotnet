@@ -975,6 +975,13 @@ namespace Microsoft.Graph
         public IDeviceManagementRemoteAssistancePartnersCollectionPage RemoteAssistancePartners { get; set; }
     
         /// <summary>
+        /// Gets or sets remote assistance settings.
+        /// The remote assistance settings singleton
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteAssistanceSettings", Required = Newtonsoft.Json.Required.Default)]
+        public RemoteAssistanceSettings RemoteAssistanceSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets reports.
         /// Reports singleton
         /// </summary>

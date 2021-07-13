@@ -32,66 +32,77 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets activity.
+        /// Friendly name of the activity. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activity", Required = Newtonsoft.Json.Required.Default)]
         public string Activity { get; set; }
     
         /// <summary>
         /// Gets or sets activity date time.
+        /// The date time in UTC when the activity was performed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets activity operation type.
+        /// The HTTP operation type of the activity. Possible values include create, delete, patch and other. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityOperationType", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcAuditActivityOperationType? ActivityOperationType { get; set; }
     
         /// <summary>
         /// Gets or sets activity result.
+        /// The result of the activity. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityResult", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcAuditActivityResult? ActivityResult { get; set; }
     
         /// <summary>
         /// Gets or sets activity type.
+        /// The type of activity that was performed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityType", Required = Newtonsoft.Json.Required.Default)]
         public string ActivityType { get; set; }
     
         /// <summary>
         /// Gets or sets actor.
+        /// Azure AD user and application associated with the audit event. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actor", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcAuditActor Actor { get; set; }
     
         /// <summary>
         /// Gets or sets category.
+        /// Audit category. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcAuditCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets component name.
+        /// Component name. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "componentName", Required = Newtonsoft.Json.Required.Default)]
         public string ComponentName { get; set; }
     
         /// <summary>
         /// Gets or sets correlation id.
+        /// The client request identifier, used to correlate activity within the system. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
         public string CorrelationId { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Event display name. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets resources.
+        /// List of cloudPcAuditResource objects. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resources", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<CloudPcAuditResource> Resources { get; set; }

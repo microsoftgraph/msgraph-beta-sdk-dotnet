@@ -32,54 +32,63 @@ namespace Microsoft.Graph.ManagedTenants
 	
         /// <summary>
         /// Gets or sets compliant device count.
+        /// The number of devices with a compliant status. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? CompliantDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets config manager device count.
+        /// The number of devices manged by Configuration Manager. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configManagerDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ConfigManagerDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets count date time.
+        /// The date and time compliance snapshot was performed. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countDateTime", Required = Newtonsoft.Json.Required.Default)]
         public string CountDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets error device count.
+        /// The number of devices with an error status. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ErrorDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets in grace period device count.
+        /// The number of devices that are in a grace period status. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inGracePeriodDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? InGracePeriodDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets noncompliant device count.
+        /// The number of devices that are in a non-compliant status. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "noncompliantDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NoncompliantDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
+        /// The display name for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets unknown device count.
+        /// The number of devices in an unknown status. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? UnknownDeviceCount { get; set; }

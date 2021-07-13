@@ -32,18 +32,21 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets contractType.
+        /// The type of relationship that exists between the managing entity and tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contractType", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ContractType { get; set; }
     
         /// <summary>
         /// Gets or sets defaultDomainName.
+        /// The default domain name for the tenant. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDomainName", Required = Newtonsoft.Json.Required.Default)]
         public string DefaultDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }

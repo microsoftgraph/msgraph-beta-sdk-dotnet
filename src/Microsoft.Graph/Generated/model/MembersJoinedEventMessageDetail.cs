@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// Gets or sets members.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Identity> Members { get; set; }
+        public IEnumerable<TeamworkUserIdentity> Members { get; set; }
     
     }
 }

@@ -32,48 +32,56 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets delegatedPrivilegeStatus.
+        /// The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegatedPrivilegeStatus", Required = Newtonsoft.Json.Required.Default)]
         public DelegatedPrivilegeStatus? DelegatedPrivilegeStatus { get; set; }
     
         /// <summary>
         /// Gets or sets lastDelegatedPrivilegeRefreshDateTime.
+        /// The date and time the delegated admin privileges status was updated. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastDelegatedPrivilegeRefreshDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastDelegatedPrivilegeRefreshDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets offboardedByUserId.
+        /// The identifier for the account that offboarded the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offboardedByUserId", Required = Newtonsoft.Json.Required.Default)]
         public string OffboardedByUserId { get; set; }
     
         /// <summary>
         /// Gets or sets offboardedDateTime.
+        /// The date and time when the managed tenant was offboarded. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offboardedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? OffboardedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboardedByUserId.
+        /// The identifier for the account that onboarded the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardedByUserId", Required = Newtonsoft.Json.Required.Default)]
         public string OnboardedByUserId { get; set; }
     
         /// <summary>
         /// Gets or sets onboardedDateTime.
+        /// The date and time when the managed tenant was onboarded. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? OnboardedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboardingStatus.
+        /// The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingStatus", Required = Newtonsoft.Json.Required.Default)]
         public TenantOnboardingStatus? OnboardingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets workloadStatuses.
+        /// The collection of workload statues for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workloadStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<WorkloadStatus> WorkloadStatuses { get; set; }

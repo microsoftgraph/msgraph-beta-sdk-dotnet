@@ -59,11 +59,32 @@ namespace Microsoft.Graph
         public string Topic { get; set; }
     
         /// <summary>
+        /// Gets or sets viewpoint.
+        /// Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "viewpoint", Required = Newtonsoft.Json.Required.Default)]
+        public ChatViewpoint Viewpoint { get; set; }
+    
+        /// <summary>
+        /// Gets or sets web url.
+        /// A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string WebUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets installed apps.
         /// A collection of all the apps in the chat. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedApps", Required = Newtonsoft.Json.Required.Default)]
         public IChatInstalledAppsCollectionPage InstalledApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last message preview.
+        /// Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastMessagePreview", Required = Newtonsoft.Json.Required.Default)]
+        public ChatMessageInfo LastMessagePreview { get; set; }
     
         /// <summary>
         /// Gets or sets members.
@@ -81,6 +102,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operations.
+        /// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
         public IChatOperationsCollectionPage Operations { get; set; }
