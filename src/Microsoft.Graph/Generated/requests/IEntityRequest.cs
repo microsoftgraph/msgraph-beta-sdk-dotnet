@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="entityToCreate">The Entity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Entity.</returns>
-        System.Threading.Tasks.Task<Entity> CreateAsync(Entity entityToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Entity> CreateAsync(Entity entityToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Entity using POST and returns a <see cref="GraphResponse{Entity}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="entityToCreate">The Entity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Entity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Entity>> CreateResponseAsync(Entity entityToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Entity>> CreateResponseAsync(Entity entityToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Entity.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Entity and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Entity.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Entity.</returns>
-        System.Threading.Tasks.Task<Entity> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Entity> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Entity and returns a <see cref="GraphResponse{Entity}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Entity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Entity>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Entity>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Entity using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Entity.</returns>
-        System.Threading.Tasks.Task<Entity> UpdateAsync(Entity entityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Entity> UpdateAsync(Entity entityToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Entity using PATCH and returns a <see cref="GraphResponse{Entity}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Entity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Entity>> UpdateResponseAsync(Entity entityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Entity>> UpdateResponseAsync(Entity entityToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Entity using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="entityToUpdate">The Entity object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Entity> PutAsync(Entity entityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Entity> PutAsync(Entity entityToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Entity using PUT and returns a <see cref="GraphResponse{Entity}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="entityToUpdate">The Entity object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Entity}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Entity>> PutResponseAsync(Entity entityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Entity>> PutResponseAsync(Entity entityToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

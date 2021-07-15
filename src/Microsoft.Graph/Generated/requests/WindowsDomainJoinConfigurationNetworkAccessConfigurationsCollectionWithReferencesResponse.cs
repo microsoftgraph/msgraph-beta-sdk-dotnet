@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

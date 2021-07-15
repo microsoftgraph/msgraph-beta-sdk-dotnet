@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="onPremisesAgentGroup">The OnPremisesAgentGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnPremisesAgentGroup.</returns>
-        public System.Threading.Tasks.Task<OnPremisesAgentGroup> AddAsync(OnPremisesAgentGroup onPremisesAgentGroup, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<OnPremisesAgentGroup> AddAsync(OnPremisesAgentGroup onPremisesAgentGroup, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="onPremisesAgentGroup">The OnPremisesAgentGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnPremisesAgentGroup}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnPremisesAgentGroup>> AddResponseAsync(OnPremisesAgentGroup onPremisesAgentGroup, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesAgentGroup>> AddResponseAsync(OnPremisesAgentGroup onPremisesAgentGroup, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IOnPremisesPublishingProfileAgentGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IOnPremisesPublishingProfileAgentGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<OnPremisesPublishingProfileAgentGroupsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfileAgentGroupsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfileAgentGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfileAgentGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<OnPremisesPublishingProfileAgentGroupsCollectionResponse>(null, cancellationToken);

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="unifiedGroupSource">The UnifiedGroupSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedGroupSource.</returns>
-        public System.Threading.Tasks.Task<UnifiedGroupSource> AddAsync(UnifiedGroupSource unifiedGroupSource, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<UnifiedGroupSource> AddAsync(UnifiedGroupSource unifiedGroupSource, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="unifiedGroupSource">The UnifiedGroupSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedGroupSource}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedGroupSource>> AddResponseAsync(UnifiedGroupSource unifiedGroupSource, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedGroupSource>> AddResponseAsync(UnifiedGroupSource unifiedGroupSource, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICustodianUnifiedGroupSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ICustodianUnifiedGroupSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CustodianUnifiedGroupSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CustodianUnifiedGroupSourcesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CustodianUnifiedGroupSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<CustodianUnifiedGroupSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<CustodianUnifiedGroupSourcesCollectionResponse>(null, cancellationToken);

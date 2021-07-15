@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="skillProficiency">The SkillProficiency to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SkillProficiency.</returns>
-        System.Threading.Tasks.Task<SkillProficiency> AddAsync(SkillProficiency skillProficiency, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SkillProficiency> AddAsync(SkillProficiency skillProficiency, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified SkillProficiency to the collection via POST and returns a <see cref="GraphResponse{SkillProficiency}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="skillProficiency">The SkillProficiency to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SkillProficiency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> AddResponseAsync(SkillProficiency skillProficiency, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> AddResponseAsync(SkillProficiency skillProficiency, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileSkillsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IProfileSkillsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfileSkillsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfileSkillsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfileSkillsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ProfileSkillsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

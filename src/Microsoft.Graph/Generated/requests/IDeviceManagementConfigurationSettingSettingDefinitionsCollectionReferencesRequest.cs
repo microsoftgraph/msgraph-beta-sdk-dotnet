@@ -24,14 +24,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementConfigurationSettingDefinition">The DeviceManagementConfigurationSettingDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task AddAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified DeviceManagementConfigurationSettingDefinition to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object of the request.
         /// </summary>
         /// <param name="deviceManagementConfigurationSettingDefinition">The DeviceManagementConfigurationSettingDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition, CancellationToken cancellationToken = default);
 
     }
 }

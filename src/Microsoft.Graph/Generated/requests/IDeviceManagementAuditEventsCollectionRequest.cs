@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="auditEvent">The AuditEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuditEvent.</returns>
-        System.Threading.Tasks.Task<AuditEvent> AddAsync(AuditEvent auditEvent, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AuditEvent> AddAsync(AuditEvent auditEvent, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified AuditEvent to the collection via POST and returns a <see cref="GraphResponse{AuditEvent}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="auditEvent">The AuditEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuditEvent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuditEvent>> AddResponseAsync(AuditEvent auditEvent, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AuditEvent>> AddResponseAsync(AuditEvent auditEvent, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementAuditEventsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDeviceManagementAuditEventsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAuditEventsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementAuditEventsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAuditEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAuditEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

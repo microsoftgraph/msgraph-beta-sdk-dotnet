@@ -37,7 +37,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetTeamsDeviceUsageTotalUserCountsCollectionPage> GetAsync(
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>(null, cancellationToken);
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetTeamsDeviceUsageTotalUserCountsCollectionPage> PatchAsync(TeamsDeviceUsageUserCounts teamsdeviceusageusercounts,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PATCH;
             var response = await this.SendAsync<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>(teamsdeviceusageusercounts, cancellationToken).ConfigureAwait(false);
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="teamsdeviceusageusercounts">The TeamsDeviceUsageUserCounts object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>> PatchResponseAsync(TeamsDeviceUsageUserCounts teamsdeviceusageusercounts, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>> PatchResponseAsync(TeamsDeviceUsageUserCounts teamsdeviceusageusercounts, CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>(teamsdeviceusageusercounts, cancellationToken);
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetTeamsDeviceUsageTotalUserCountsCollectionPage> PutAsync(TeamsDeviceUsageUserCounts teamsdeviceusageusercounts,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PUT;
             var response = await this.SendAsync<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>(teamsdeviceusageusercounts, cancellationToken).ConfigureAwait(false);
@@ -126,7 +126,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="teamsdeviceusageusercounts">The TeamsDeviceUsageUserCounts object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>> PutResponseAsync(TeamsDeviceUsageUserCounts teamsdeviceusageusercounts, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>> PutResponseAsync(TeamsDeviceUsageUserCounts teamsdeviceusageusercounts, CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PUT;
             return this.SendAsyncWithGraphResponse<ReportRootGetTeamsDeviceUsageTotalUserCountsCollectionResponse>(teamsdeviceusageusercounts, cancellationToken);

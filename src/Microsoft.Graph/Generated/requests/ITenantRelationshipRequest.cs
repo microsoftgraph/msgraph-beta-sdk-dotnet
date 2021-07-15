@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="tenantRelationshipToCreate">The TenantRelationship to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TenantRelationship.</returns>
-        System.Threading.Tasks.Task<TenantRelationship> CreateAsync(TenantRelationship tenantRelationshipToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TenantRelationship> CreateAsync(TenantRelationship tenantRelationshipToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified TenantRelationship using POST and returns a <see cref="GraphResponse{TenantRelationship}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="tenantRelationshipToCreate">The TenantRelationship to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TenantRelationship}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TenantRelationship>> CreateResponseAsync(TenantRelationship tenantRelationshipToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TenantRelationship>> CreateResponseAsync(TenantRelationship tenantRelationshipToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TenantRelationship.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TenantRelationship and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TenantRelationship.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TenantRelationship.</returns>
-        System.Threading.Tasks.Task<TenantRelationship> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TenantRelationship> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TenantRelationship and returns a <see cref="GraphResponse{TenantRelationship}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TenantRelationship}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TenantRelationship>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TenantRelationship>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TenantRelationship using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TenantRelationship.</returns>
-        System.Threading.Tasks.Task<TenantRelationship> UpdateAsync(TenantRelationship tenantRelationshipToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TenantRelationship> UpdateAsync(TenantRelationship tenantRelationshipToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TenantRelationship using PATCH and returns a <see cref="GraphResponse{TenantRelationship}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TenantRelationship}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TenantRelationship>> UpdateResponseAsync(TenantRelationship tenantRelationshipToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TenantRelationship>> UpdateResponseAsync(TenantRelationship tenantRelationshipToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TenantRelationship using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="tenantRelationshipToUpdate">The TenantRelationship object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<TenantRelationship> PutAsync(TenantRelationship tenantRelationshipToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TenantRelationship> PutAsync(TenantRelationship tenantRelationshipToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TenantRelationship using PUT and returns a <see cref="GraphResponse{TenantRelationship}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="tenantRelationshipToUpdate">The TenantRelationship object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{TenantRelationship}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TenantRelationship>> PutResponseAsync(TenantRelationship tenantRelationshipToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TenantRelationship>> PutResponseAsync(TenantRelationship tenantRelationshipToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

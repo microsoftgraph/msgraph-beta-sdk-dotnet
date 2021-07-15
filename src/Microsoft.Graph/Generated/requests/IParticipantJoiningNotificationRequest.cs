@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="participantJoiningNotificationToCreate">The ParticipantJoiningNotification to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ParticipantJoiningNotification.</returns>
-        System.Threading.Tasks.Task<ParticipantJoiningNotification> CreateAsync(ParticipantJoiningNotification participantJoiningNotificationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ParticipantJoiningNotification> CreateAsync(ParticipantJoiningNotification participantJoiningNotificationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ParticipantJoiningNotification using POST and returns a <see cref="GraphResponse{ParticipantJoiningNotification}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="participantJoiningNotificationToCreate">The ParticipantJoiningNotification to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ParticipantJoiningNotification}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> CreateResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> CreateResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ParticipantJoiningNotification.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ParticipantJoiningNotification and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ParticipantJoiningNotification.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ParticipantJoiningNotification.</returns>
-        System.Threading.Tasks.Task<ParticipantJoiningNotification> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ParticipantJoiningNotification> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ParticipantJoiningNotification and returns a <see cref="GraphResponse{ParticipantJoiningNotification}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ParticipantJoiningNotification}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ParticipantJoiningNotification using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ParticipantJoiningNotification.</returns>
-        System.Threading.Tasks.Task<ParticipantJoiningNotification> UpdateAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ParticipantJoiningNotification> UpdateAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ParticipantJoiningNotification using PATCH and returns a <see cref="GraphResponse{ParticipantJoiningNotification}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ParticipantJoiningNotification}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> UpdateResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> UpdateResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ParticipantJoiningNotification using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="participantJoiningNotificationToUpdate">The ParticipantJoiningNotification object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ParticipantJoiningNotification> PutAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ParticipantJoiningNotification> PutAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ParticipantJoiningNotification using PUT and returns a <see cref="GraphResponse{ParticipantJoiningNotification}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="participantJoiningNotificationToUpdate">The ParticipantJoiningNotification object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ParticipantJoiningNotification}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> PutResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> PutResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

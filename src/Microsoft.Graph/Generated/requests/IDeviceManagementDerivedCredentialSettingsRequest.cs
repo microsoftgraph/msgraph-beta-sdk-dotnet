@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementDerivedCredentialSettingsToCreate">The DeviceManagementDerivedCredentialSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementDerivedCredentialSettings.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> CreateAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> CreateAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified DeviceManagementDerivedCredentialSettings using POST and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementDerivedCredentialSettingsToCreate">The DeviceManagementDerivedCredentialSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> CreateResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> CreateResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementDerivedCredentialSettings.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementDerivedCredentialSettings and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementDerivedCredentialSettings.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementDerivedCredentialSettings.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementDerivedCredentialSettings and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementDerivedCredentialSettings using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementDerivedCredentialSettings.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> UpdateAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> UpdateAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementDerivedCredentialSettings using PATCH and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> UpdateResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> UpdateResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementDerivedCredentialSettings using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementDerivedCredentialSettingsToUpdate">The DeviceManagementDerivedCredentialSettings object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> PutAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> PutAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementDerivedCredentialSettings using PUT and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementDerivedCredentialSettingsToUpdate">The DeviceManagementDerivedCredentialSettings object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> PutResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> PutResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

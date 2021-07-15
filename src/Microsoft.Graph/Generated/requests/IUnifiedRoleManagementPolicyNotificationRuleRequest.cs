@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleManagementPolicyNotificationRuleToCreate">The UnifiedRoleManagementPolicyNotificationRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleManagementPolicyNotificationRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyNotificationRule> CreateAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyNotificationRule> CreateAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified UnifiedRoleManagementPolicyNotificationRule using POST and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyNotificationRule}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleManagementPolicyNotificationRuleToCreate">The UnifiedRoleManagementPolicyNotificationRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyNotificationRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyNotificationRule>> CreateResponseAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyNotificationRule>> CreateResponseAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UnifiedRoleManagementPolicyNotificationRule.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UnifiedRoleManagementPolicyNotificationRule and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UnifiedRoleManagementPolicyNotificationRule.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleManagementPolicyNotificationRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyNotificationRule> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyNotificationRule> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UnifiedRoleManagementPolicyNotificationRule and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyNotificationRule}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyNotificationRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyNotificationRule>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyNotificationRule>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnifiedRoleManagementPolicyNotificationRule using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleManagementPolicyNotificationRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyNotificationRule> UpdateAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyNotificationRule> UpdateAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnifiedRoleManagementPolicyNotificationRule using PATCH and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyNotificationRule}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyNotificationRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyNotificationRule>> UpdateResponseAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyNotificationRule>> UpdateResponseAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnifiedRoleManagementPolicyNotificationRule using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleManagementPolicyNotificationRuleToUpdate">The UnifiedRoleManagementPolicyNotificationRule object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyNotificationRule> PutAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyNotificationRule> PutAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnifiedRoleManagementPolicyNotificationRule using PUT and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyNotificationRule}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleManagementPolicyNotificationRuleToUpdate">The UnifiedRoleManagementPolicyNotificationRule object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{UnifiedRoleManagementPolicyNotificationRule}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyNotificationRule>> PutResponseAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyNotificationRule>> PutResponseAsync(UnifiedRoleManagementPolicyNotificationRule unifiedRoleManagementPolicyNotificationRuleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

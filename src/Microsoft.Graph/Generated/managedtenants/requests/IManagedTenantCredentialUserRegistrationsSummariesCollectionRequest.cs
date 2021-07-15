@@ -26,7 +26,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="credentialUserRegistrationsSummary">The CredentialUserRegistrationsSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CredentialUserRegistrationsSummary.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> AddAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummary, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> AddAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummary, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified CredentialUserRegistrationsSummary to the collection via POST and returns a <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="credentialUserRegistrationsSummary">The CredentialUserRegistrationsSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> AddResponseAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummary, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> AddResponseAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummary, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedTenantCredentialUserRegistrationsSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IManagedTenantCredentialUserRegistrationsSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedTenantCredentialUserRegistrationsSummariesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedTenantCredentialUserRegistrationsSummariesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedTenantCredentialUserRegistrationsSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedTenantCredentialUserRegistrationsSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

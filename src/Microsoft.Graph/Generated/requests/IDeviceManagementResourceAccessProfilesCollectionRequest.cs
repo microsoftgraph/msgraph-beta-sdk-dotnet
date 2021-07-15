@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementResourceAccessProfileBase">The DeviceManagementResourceAccessProfileBase to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementResourceAccessProfileBase.</returns>
-        System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> AddAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBase, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> AddAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBase, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified DeviceManagementResourceAccessProfileBase to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementResourceAccessProfileBase">The DeviceManagementResourceAccessProfileBase to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> AddResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBase, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> AddResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBase, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementResourceAccessProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDeviceManagementResourceAccessProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfilesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

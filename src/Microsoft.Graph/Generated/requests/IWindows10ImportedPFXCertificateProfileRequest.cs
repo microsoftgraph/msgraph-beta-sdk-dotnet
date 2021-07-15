@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windows10ImportedPFXCertificateProfileToCreate">The Windows10ImportedPFXCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10ImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> CreateAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> CreateAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Windows10ImportedPFXCertificateProfile using POST and returns a <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windows10ImportedPFXCertificateProfileToCreate">The Windows10ImportedPFXCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> CreateResponseAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> CreateResponseAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows10ImportedPFXCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows10ImportedPFXCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows10ImportedPFXCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10ImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows10ImportedPFXCertificateProfile and returns a <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10ImportedPFXCertificateProfile using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10ImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> UpdateAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> UpdateAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10ImportedPFXCertificateProfile using PATCH and returns a <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> UpdateResponseAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> UpdateResponseAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10ImportedPFXCertificateProfile using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windows10ImportedPFXCertificateProfileToUpdate">The Windows10ImportedPFXCertificateProfile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> PutAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> PutAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10ImportedPFXCertificateProfile using PUT and returns a <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windows10ImportedPFXCertificateProfileToUpdate">The Windows10ImportedPFXCertificateProfile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> PutResponseAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> PutResponseAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

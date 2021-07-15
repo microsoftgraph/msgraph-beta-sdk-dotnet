@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <param name="governancePolicyTemplateToCreate">The GovernancePolicyTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernancePolicyTemplate.</returns>
-        public async System.Threading.Tasks.Task<GovernancePolicyTemplate> CreateAsync(GovernancePolicyTemplate governancePolicyTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<GovernancePolicyTemplate> CreateAsync(GovernancePolicyTemplate governancePolicyTemplateToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -56,7 +56,7 @@ namespace Microsoft.Graph
         /// <param name="governancePolicyTemplateToCreate">The GovernancePolicyTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GovernancePolicyTemplate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> CreateResponseAsync(GovernancePolicyTemplate governancePolicyTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> CreateResponseAsync(GovernancePolicyTemplate governancePolicyTemplateToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -68,7 +68,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
             await this.SendAsync<GovernancePolicyTemplate>(null, cancellationToken).ConfigureAwait(false);
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
@@ -90,7 +90,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GovernancePolicyTemplate.</returns>
-        public async System.Threading.Tasks.Task<GovernancePolicyTemplate> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<GovernancePolicyTemplate> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<GovernancePolicyTemplate>(null, cancellationToken).ConfigureAwait(false);
@@ -103,7 +103,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GovernancePolicyTemplate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<GovernancePolicyTemplate>(null, cancellationToken);
@@ -116,7 +116,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GovernancePolicyTemplate.</returns>
-        public async System.Threading.Tasks.Task<GovernancePolicyTemplate> UpdateAsync(GovernancePolicyTemplate governancePolicyTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<GovernancePolicyTemplate> UpdateAsync(GovernancePolicyTemplate governancePolicyTemplateToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GovernancePolicyTemplate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> UpdateResponseAsync(GovernancePolicyTemplate governancePolicyTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> UpdateResponseAsync(GovernancePolicyTemplate governancePolicyTemplateToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
@@ -145,7 +145,7 @@ namespace Microsoft.Graph
         /// <param name="governancePolicyTemplateToUpdate">The GovernancePolicyTemplate object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<GovernancePolicyTemplate> PutAsync(GovernancePolicyTemplate governancePolicyTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<GovernancePolicyTemplate> PutAsync(GovernancePolicyTemplate governancePolicyTemplateToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
@@ -160,7 +160,7 @@ namespace Microsoft.Graph
         /// <param name="governancePolicyTemplateToUpdate">The GovernancePolicyTemplate object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await of <see cref="GraphResponse{GovernancePolicyTemplate}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> PutResponseAsync(GovernancePolicyTemplate governancePolicyTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> PutResponseAsync(GovernancePolicyTemplate governancePolicyTemplateToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;

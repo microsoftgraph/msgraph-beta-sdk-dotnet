@@ -24,14 +24,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="oAuth2PermissionGrant">The OAuth2PermissionGrant to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task AddAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified OAuth2PermissionGrant to the collection via POST and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.
         /// </summary>
         /// <param name="oAuth2PermissionGrant">The OAuth2PermissionGrant to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken = default);
 
     }
 }

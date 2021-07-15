@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windowsInformationProtectionAppLockerFile">The WindowsInformationProtectionAppLockerFile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionAppLockerFile.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionAppLockerFile> AddAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFile, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsInformationProtectionAppLockerFile> AddAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFile, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified WindowsInformationProtectionAppLockerFile to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="windowsInformationProtectionAppLockerFile">The WindowsInformationProtectionAppLockerFile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLockerFile>> AddResponseAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFile, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLockerFile>> AddResponseAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFile, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindowsInformationProtectionProtectedAppLockerFilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IWindowsInformationProtectionProtectedAppLockerFilesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{WindowsInformationProtectionProtectedAppLockerFilesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionProtectedAppLockerFilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionProtectedAppLockerFilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionProtectedAppLockerFilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

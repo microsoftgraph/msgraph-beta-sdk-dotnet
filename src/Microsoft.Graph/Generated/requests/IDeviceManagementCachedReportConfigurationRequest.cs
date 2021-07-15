@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementCachedReportConfigurationToCreate">The DeviceManagementCachedReportConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementCachedReportConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> CreateAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> CreateAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified DeviceManagementCachedReportConfiguration using POST and returns a <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementCachedReportConfigurationToCreate">The DeviceManagementCachedReportConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> CreateResponseAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> CreateResponseAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementCachedReportConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementCachedReportConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementCachedReportConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementCachedReportConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementCachedReportConfiguration and returns a <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementCachedReportConfiguration using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementCachedReportConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> UpdateAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> UpdateAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementCachedReportConfiguration using PATCH and returns a <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> UpdateResponseAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> UpdateResponseAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementCachedReportConfiguration using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementCachedReportConfigurationToUpdate">The DeviceManagementCachedReportConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> PutAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> PutAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementCachedReportConfiguration using PUT and returns a <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementCachedReportConfigurationToUpdate">The DeviceManagementCachedReportConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> PutResponseAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> PutResponseAsync(DeviceManagementCachedReportConfiguration deviceManagementCachedReportConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="officeClientConfigurationToCreate">The OfficeClientConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OfficeClientConfiguration.</returns>
-        System.Threading.Tasks.Task<OfficeClientConfiguration> CreateAsync(OfficeClientConfiguration officeClientConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfficeClientConfiguration> CreateAsync(OfficeClientConfiguration officeClientConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified OfficeClientConfiguration using POST and returns a <see cref="GraphResponse{OfficeClientConfiguration}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="officeClientConfigurationToCreate">The OfficeClientConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfficeClientConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfiguration>> CreateResponseAsync(OfficeClientConfiguration officeClientConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfiguration>> CreateResponseAsync(OfficeClientConfiguration officeClientConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified OfficeClientConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified OfficeClientConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified OfficeClientConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OfficeClientConfiguration.</returns>
-        System.Threading.Tasks.Task<OfficeClientConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfficeClientConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified OfficeClientConfiguration and returns a <see cref="GraphResponse{OfficeClientConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfficeClientConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfficeClientConfiguration using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OfficeClientConfiguration.</returns>
-        System.Threading.Tasks.Task<OfficeClientConfiguration> UpdateAsync(OfficeClientConfiguration officeClientConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfficeClientConfiguration> UpdateAsync(OfficeClientConfiguration officeClientConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfficeClientConfiguration using PATCH and returns a <see cref="GraphResponse{OfficeClientConfiguration}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{OfficeClientConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfiguration>> UpdateResponseAsync(OfficeClientConfiguration officeClientConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfiguration>> UpdateResponseAsync(OfficeClientConfiguration officeClientConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfficeClientConfiguration using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="officeClientConfigurationToUpdate">The OfficeClientConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<OfficeClientConfiguration> PutAsync(OfficeClientConfiguration officeClientConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfficeClientConfiguration> PutAsync(OfficeClientConfiguration officeClientConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfficeClientConfiguration using PUT and returns a <see cref="GraphResponse{OfficeClientConfiguration}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="officeClientConfigurationToUpdate">The OfficeClientConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{OfficeClientConfiguration}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfiguration>> PutResponseAsync(OfficeClientConfiguration officeClientConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfiguration>> PutResponseAsync(OfficeClientConfiguration officeClientConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

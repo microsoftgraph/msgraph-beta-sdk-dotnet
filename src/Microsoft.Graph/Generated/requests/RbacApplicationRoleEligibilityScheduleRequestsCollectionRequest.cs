@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleEligibilityScheduleRequest">The UnifiedRoleEligibilityScheduleRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleEligibilityScheduleRequestObject.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> AddAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequest, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> AddAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequest, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleEligibilityScheduleRequest">The UnifiedRoleEligibilityScheduleRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleRequestObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleRequestObject>> AddResponseAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequest, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleRequestObject>> AddResponseAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequest, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<RbacApplicationRoleEligibilityScheduleRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RbacApplicationRoleEligibilityScheduleRequestsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleEligibilityScheduleRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleEligibilityScheduleRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<RbacApplicationRoleEligibilityScheduleRequestsCollectionResponse>(null, cancellationToken);

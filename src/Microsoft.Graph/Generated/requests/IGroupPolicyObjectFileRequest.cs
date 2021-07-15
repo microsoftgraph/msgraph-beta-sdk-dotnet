@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyObjectFileToCreate">The GroupPolicyObjectFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyObjectFile.</returns>
-        System.Threading.Tasks.Task<GroupPolicyObjectFile> CreateAsync(GroupPolicyObjectFile groupPolicyObjectFileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GroupPolicyObjectFile> CreateAsync(GroupPolicyObjectFile groupPolicyObjectFileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified GroupPolicyObjectFile using POST and returns a <see cref="GraphResponse{GroupPolicyObjectFile}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyObjectFileToCreate">The GroupPolicyObjectFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyObjectFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyObjectFile>> CreateResponseAsync(GroupPolicyObjectFile groupPolicyObjectFileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyObjectFile>> CreateResponseAsync(GroupPolicyObjectFile groupPolicyObjectFileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified GroupPolicyObjectFile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified GroupPolicyObjectFile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified GroupPolicyObjectFile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyObjectFile.</returns>
-        System.Threading.Tasks.Task<GroupPolicyObjectFile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GroupPolicyObjectFile> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified GroupPolicyObjectFile and returns a <see cref="GraphResponse{GroupPolicyObjectFile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyObjectFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyObjectFile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyObjectFile>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified GroupPolicyObjectFile using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyObjectFile.</returns>
-        System.Threading.Tasks.Task<GroupPolicyObjectFile> UpdateAsync(GroupPolicyObjectFile groupPolicyObjectFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GroupPolicyObjectFile> UpdateAsync(GroupPolicyObjectFile groupPolicyObjectFileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified GroupPolicyObjectFile using PATCH and returns a <see cref="GraphResponse{GroupPolicyObjectFile}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GroupPolicyObjectFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyObjectFile>> UpdateResponseAsync(GroupPolicyObjectFile groupPolicyObjectFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyObjectFile>> UpdateResponseAsync(GroupPolicyObjectFile groupPolicyObjectFileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified GroupPolicyObjectFile using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyObjectFileToUpdate">The GroupPolicyObjectFile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<GroupPolicyObjectFile> PutAsync(GroupPolicyObjectFile groupPolicyObjectFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GroupPolicyObjectFile> PutAsync(GroupPolicyObjectFile groupPolicyObjectFileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified GroupPolicyObjectFile using PUT and returns a <see cref="GraphResponse{GroupPolicyObjectFile}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyObjectFileToUpdate">The GroupPolicyObjectFile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{GroupPolicyObjectFile}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyObjectFile>> PutResponseAsync(GroupPolicyObjectFile groupPolicyObjectFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyObjectFile>> PutResponseAsync(GroupPolicyObjectFile groupPolicyObjectFileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

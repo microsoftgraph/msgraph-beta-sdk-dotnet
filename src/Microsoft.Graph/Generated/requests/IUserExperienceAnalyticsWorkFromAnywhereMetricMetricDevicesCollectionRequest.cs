@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsWorkFromAnywhereDevice">The UserExperienceAnalyticsWorkFromAnywhereDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsWorkFromAnywhereDevice.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereDevice> AddAsync(UserExperienceAnalyticsWorkFromAnywhereDevice userExperienceAnalyticsWorkFromAnywhereDevice, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereDevice> AddAsync(UserExperienceAnalyticsWorkFromAnywhereDevice userExperienceAnalyticsWorkFromAnywhereDevice, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsWorkFromAnywhereDevice to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereDevice}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsWorkFromAnywhereDevice">The UserExperienceAnalyticsWorkFromAnywhereDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereDevice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereDevice>> AddResponseAsync(UserExperienceAnalyticsWorkFromAnywhereDevice userExperienceAnalyticsWorkFromAnywhereDevice, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereDevice>> AddResponseAsync(UserExperienceAnalyticsWorkFromAnywhereDevice userExperienceAnalyticsWorkFromAnywhereDevice, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IUserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

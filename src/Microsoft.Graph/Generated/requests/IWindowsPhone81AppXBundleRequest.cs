@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windowsPhone81AppXBundleToCreate">The WindowsPhone81AppXBundle to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsPhone81AppXBundle.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81AppXBundle> CreateAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsPhone81AppXBundle> CreateAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified WindowsPhone81AppXBundle using POST and returns a <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windowsPhone81AppXBundleToCreate">The WindowsPhone81AppXBundle to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> CreateResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> CreateResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsPhone81AppXBundle.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsPhone81AppXBundle and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsPhone81AppXBundle.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhone81AppXBundle.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81AppXBundle> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsPhone81AppXBundle> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsPhone81AppXBundle and returns a <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsPhone81AppXBundle using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhone81AppXBundle.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81AppXBundle> UpdateAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsPhone81AppXBundle> UpdateAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsPhone81AppXBundle using PATCH and returns a <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> UpdateResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> UpdateResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsPhone81AppXBundle using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windowsPhone81AppXBundleToUpdate">The WindowsPhone81AppXBundle object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81AppXBundle> PutAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsPhone81AppXBundle> PutAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsPhone81AppXBundle using PUT and returns a <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windowsPhone81AppXBundleToUpdate">The WindowsPhone81AppXBundle object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> PutResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> PutResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

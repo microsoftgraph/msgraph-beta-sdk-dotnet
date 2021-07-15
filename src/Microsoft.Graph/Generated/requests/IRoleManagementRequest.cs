@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="roleManagementToCreate">The RoleManagement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleManagement.</returns>
-        System.Threading.Tasks.Task<RoleManagement> CreateAsync(RoleManagement roleManagementToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RoleManagement> CreateAsync(RoleManagement roleManagementToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified RoleManagement using POST and returns a <see cref="GraphResponse{RoleManagement}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="roleManagementToCreate">The RoleManagement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RoleManagement}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleManagement>> CreateResponseAsync(RoleManagement roleManagementToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RoleManagement>> CreateResponseAsync(RoleManagement roleManagementToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified RoleManagement.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified RoleManagement and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified RoleManagement.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RoleManagement.</returns>
-        System.Threading.Tasks.Task<RoleManagement> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RoleManagement> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified RoleManagement and returns a <see cref="GraphResponse{RoleManagement}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RoleManagement}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleManagement>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RoleManagement>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RoleManagement using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RoleManagement.</returns>
-        System.Threading.Tasks.Task<RoleManagement> UpdateAsync(RoleManagement roleManagementToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RoleManagement> UpdateAsync(RoleManagement roleManagementToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RoleManagement using PATCH and returns a <see cref="GraphResponse{RoleManagement}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{RoleManagement}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleManagement>> UpdateResponseAsync(RoleManagement roleManagementToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RoleManagement>> UpdateResponseAsync(RoleManagement roleManagementToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RoleManagement using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="roleManagementToUpdate">The RoleManagement object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<RoleManagement> PutAsync(RoleManagement roleManagementToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RoleManagement> PutAsync(RoleManagement roleManagementToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RoleManagement using PUT and returns a <see cref="GraphResponse{RoleManagement}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="roleManagementToUpdate">The RoleManagement object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{RoleManagement}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleManagement>> PutResponseAsync(RoleManagement roleManagementToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RoleManagement>> PutResponseAsync(RoleManagement roleManagementToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

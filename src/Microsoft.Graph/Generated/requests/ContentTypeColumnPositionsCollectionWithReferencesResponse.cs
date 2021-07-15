@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IContentTypeColumnPositionsCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IContentTypeColumnPositionsCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="activityBasedTimeoutPolicy">The ActivityBasedTimeoutPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ActivityBasedTimeoutPolicy.</returns>
-        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> AddAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicy, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> AddAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicy, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified ActivityBasedTimeoutPolicy to the collection via POST and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="activityBasedTimeoutPolicy">The ActivityBasedTimeoutPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> AddResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicy, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> AddResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicy, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootActivityBasedTimeoutPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IPolicyRootActivityBasedTimeoutPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootActivityBasedTimeoutPoliciesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicyRootActivityBasedTimeoutPoliciesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicyRootActivityBasedTimeoutPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PolicyRootActivityBasedTimeoutPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

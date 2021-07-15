@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="unifiedGroupSource">The UnifiedGroupSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedGroupSource.</returns>
-        System.Threading.Tasks.Task<UnifiedGroupSource> AddAsync(UnifiedGroupSource unifiedGroupSource, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnifiedGroupSource> AddAsync(UnifiedGroupSource unifiedGroupSource, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified UnifiedGroupSource to the collection via POST and returns a <see cref="GraphResponse{UnifiedGroupSource}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="unifiedGroupSource">The UnifiedGroupSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedGroupSource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedGroupSource>> AddResponseAsync(UnifiedGroupSource unifiedGroupSource, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnifiedGroupSource>> AddResponseAsync(UnifiedGroupSource unifiedGroupSource, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICustodianUnifiedGroupSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ICustodianUnifiedGroupSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CustodianUnifiedGroupSourcesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CustodianUnifiedGroupSourcesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CustodianUnifiedGroupSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CustodianUnifiedGroupSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

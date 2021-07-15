@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="cloudPcUserSettingAssignment">The CloudPcUserSettingAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcUserSettingAssignment.</returns>
-        System.Threading.Tasks.Task<CloudPcUserSettingAssignment> AddAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignment, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CloudPcUserSettingAssignment> AddAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignment, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified CloudPcUserSettingAssignment to the collection via POST and returns a <see cref="GraphResponse{CloudPcUserSettingAssignment}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="cloudPcUserSettingAssignment">The CloudPcUserSettingAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPcUserSettingAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignment>> AddResponseAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignment, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignment>> AddResponseAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignment, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICloudPcUserSettingAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ICloudPcUserSettingAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CloudPcUserSettingAssignmentsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPcUserSettingAssignmentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

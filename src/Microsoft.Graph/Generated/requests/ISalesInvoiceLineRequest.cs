@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="salesInvoiceLineToCreate">The SalesInvoiceLine to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesInvoiceLine.</returns>
-        System.Threading.Tasks.Task<SalesInvoiceLine> CreateAsync(SalesInvoiceLine salesInvoiceLineToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SalesInvoiceLine> CreateAsync(SalesInvoiceLine salesInvoiceLineToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified SalesInvoiceLine using POST and returns a <see cref="GraphResponse{SalesInvoiceLine}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="salesInvoiceLineToCreate">The SalesInvoiceLine to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SalesInvoiceLine}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceLine>> CreateResponseAsync(SalesInvoiceLine salesInvoiceLineToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceLine>> CreateResponseAsync(SalesInvoiceLine salesInvoiceLineToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SalesInvoiceLine.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SalesInvoiceLine and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SalesInvoiceLine.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SalesInvoiceLine.</returns>
-        System.Threading.Tasks.Task<SalesInvoiceLine> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SalesInvoiceLine> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SalesInvoiceLine and returns a <see cref="GraphResponse{SalesInvoiceLine}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SalesInvoiceLine}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceLine>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceLine>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SalesInvoiceLine using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SalesInvoiceLine.</returns>
-        System.Threading.Tasks.Task<SalesInvoiceLine> UpdateAsync(SalesInvoiceLine salesInvoiceLineToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SalesInvoiceLine> UpdateAsync(SalesInvoiceLine salesInvoiceLineToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SalesInvoiceLine using PATCH and returns a <see cref="GraphResponse{SalesInvoiceLine}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SalesInvoiceLine}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceLine>> UpdateResponseAsync(SalesInvoiceLine salesInvoiceLineToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceLine>> UpdateResponseAsync(SalesInvoiceLine salesInvoiceLineToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SalesInvoiceLine using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="salesInvoiceLineToUpdate">The SalesInvoiceLine object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<SalesInvoiceLine> PutAsync(SalesInvoiceLine salesInvoiceLineToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SalesInvoiceLine> PutAsync(SalesInvoiceLine salesInvoiceLineToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SalesInvoiceLine using PUT and returns a <see cref="GraphResponse{SalesInvoiceLine}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="salesInvoiceLineToUpdate">The SalesInvoiceLine object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{SalesInvoiceLine}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceLine>> PutResponseAsync(SalesInvoiceLine salesInvoiceLineToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceLine>> PutResponseAsync(SalesInvoiceLine salesInvoiceLineToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

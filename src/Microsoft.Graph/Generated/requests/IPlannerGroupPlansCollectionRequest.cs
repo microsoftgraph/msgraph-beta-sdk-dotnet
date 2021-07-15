@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="plannerPlan">The PlannerPlan to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerPlan.</returns>
-        System.Threading.Tasks.Task<PlannerPlan> AddAsync(PlannerPlan plannerPlan, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PlannerPlan> AddAsync(PlannerPlan plannerPlan, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified PlannerPlan to the collection via POST and returns a <see cref="GraphResponse{PlannerPlan}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="plannerPlan">The PlannerPlan to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerPlan}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerPlan>> AddResponseAsync(PlannerPlan plannerPlan, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PlannerPlan>> AddResponseAsync(PlannerPlan plannerPlan, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPlannerGroupPlansCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IPlannerGroupPlansCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PlannerGroupPlansCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerGroupPlansCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerGroupPlansCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PlannerGroupPlansCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

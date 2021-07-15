@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="targetedManagedAppConfigurationPolicySetItemToCreate">The TargetedManagedAppConfigurationPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TargetedManagedAppConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppConfigurationPolicySetItem> CreateAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TargetedManagedAppConfigurationPolicySetItem> CreateAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified TargetedManagedAppConfigurationPolicySetItem using POST and returns a <see cref="GraphResponse{TargetedManagedAppConfigurationPolicySetItem}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="targetedManagedAppConfigurationPolicySetItemToCreate">The TargetedManagedAppConfigurationPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TargetedManagedAppConfigurationPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfigurationPolicySetItem>> CreateResponseAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfigurationPolicySetItem>> CreateResponseAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TargetedManagedAppConfigurationPolicySetItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TargetedManagedAppConfigurationPolicySetItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TargetedManagedAppConfigurationPolicySetItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TargetedManagedAppConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TargetedManagedAppConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TargetedManagedAppConfigurationPolicySetItem and returns a <see cref="GraphResponse{TargetedManagedAppConfigurationPolicySetItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TargetedManagedAppConfigurationPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfigurationPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfigurationPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TargetedManagedAppConfigurationPolicySetItem using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TargetedManagedAppConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppConfigurationPolicySetItem> UpdateAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TargetedManagedAppConfigurationPolicySetItem> UpdateAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TargetedManagedAppConfigurationPolicySetItem using PATCH and returns a <see cref="GraphResponse{TargetedManagedAppConfigurationPolicySetItem}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TargetedManagedAppConfigurationPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfigurationPolicySetItem>> UpdateResponseAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfigurationPolicySetItem>> UpdateResponseAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TargetedManagedAppConfigurationPolicySetItem using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="targetedManagedAppConfigurationPolicySetItemToUpdate">The TargetedManagedAppConfigurationPolicySetItem object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppConfigurationPolicySetItem> PutAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TargetedManagedAppConfigurationPolicySetItem> PutAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TargetedManagedAppConfigurationPolicySetItem using PUT and returns a <see cref="GraphResponse{TargetedManagedAppConfigurationPolicySetItem}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="targetedManagedAppConfigurationPolicySetItemToUpdate">The TargetedManagedAppConfigurationPolicySetItem object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{TargetedManagedAppConfigurationPolicySetItem}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfigurationPolicySetItem>> PutResponseAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfigurationPolicySetItem>> PutResponseAsync(TargetedManagedAppConfigurationPolicySetItem targetedManagedAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IOrgContactTransitiveMemberOfCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IOrgContactTransitiveMemberOfCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

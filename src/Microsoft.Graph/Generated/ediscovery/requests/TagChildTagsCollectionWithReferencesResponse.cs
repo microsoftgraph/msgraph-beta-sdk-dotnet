@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets or sets the <see cref="ITagChildTagsCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ITagChildTagsCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

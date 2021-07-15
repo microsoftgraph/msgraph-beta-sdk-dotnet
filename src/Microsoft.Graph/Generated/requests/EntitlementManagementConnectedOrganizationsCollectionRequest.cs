@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="connectedOrganization">The ConnectedOrganization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConnectedOrganization.</returns>
-        public System.Threading.Tasks.Task<ConnectedOrganization> AddAsync(ConnectedOrganization connectedOrganization, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<ConnectedOrganization> AddAsync(ConnectedOrganization connectedOrganization, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="connectedOrganization">The ConnectedOrganization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConnectedOrganization}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ConnectedOrganization>> AddResponseAsync(ConnectedOrganization connectedOrganization, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ConnectedOrganization>> AddResponseAsync(ConnectedOrganization connectedOrganization, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IEntitlementManagementConnectedOrganizationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IEntitlementManagementConnectedOrganizationsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<EntitlementManagementConnectedOrganizationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EntitlementManagementConnectedOrganizationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagementConnectedOrganizationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagementConnectedOrganizationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<EntitlementManagementConnectedOrganizationsCollectionResponse>(null, cancellationToken);

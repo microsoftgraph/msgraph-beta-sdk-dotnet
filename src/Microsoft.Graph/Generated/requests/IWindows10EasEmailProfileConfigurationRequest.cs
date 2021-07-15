@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windows10EasEmailProfileConfigurationToCreate">The Windows10EasEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10EasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EasEmailProfileConfiguration> CreateAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10EasEmailProfileConfiguration> CreateAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Windows10EasEmailProfileConfiguration using POST and returns a <see cref="GraphResponse{Windows10EasEmailProfileConfiguration}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windows10EasEmailProfileConfigurationToCreate">The Windows10EasEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10EasEmailProfileConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10EasEmailProfileConfiguration>> CreateResponseAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10EasEmailProfileConfiguration>> CreateResponseAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows10EasEmailProfileConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows10EasEmailProfileConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows10EasEmailProfileConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10EasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EasEmailProfileConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10EasEmailProfileConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows10EasEmailProfileConfiguration and returns a <see cref="GraphResponse{Windows10EasEmailProfileConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10EasEmailProfileConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10EasEmailProfileConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10EasEmailProfileConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10EasEmailProfileConfiguration using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10EasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EasEmailProfileConfiguration> UpdateAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10EasEmailProfileConfiguration> UpdateAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10EasEmailProfileConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10EasEmailProfileConfiguration}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows10EasEmailProfileConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10EasEmailProfileConfiguration>> UpdateResponseAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10EasEmailProfileConfiguration>> UpdateResponseAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10EasEmailProfileConfiguration using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windows10EasEmailProfileConfigurationToUpdate">The Windows10EasEmailProfileConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Windows10EasEmailProfileConfiguration> PutAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10EasEmailProfileConfiguration> PutAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10EasEmailProfileConfiguration using PUT and returns a <see cref="GraphResponse{Windows10EasEmailProfileConfiguration}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windows10EasEmailProfileConfigurationToUpdate">The Windows10EasEmailProfileConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Windows10EasEmailProfileConfiguration}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10EasEmailProfileConfiguration>> PutResponseAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10EasEmailProfileConfiguration>> PutResponseAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="sensitivityLabel">The SensitivityLabel to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SensitivityLabel.</returns>
-        System.Threading.Tasks.Task<SensitivityLabel> AddAsync(SensitivityLabel sensitivityLabel, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SensitivityLabel> AddAsync(SensitivityLabel sensitivityLabel, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified SensitivityLabel to the collection via POST and returns a <see cref="GraphResponse{SensitivityLabel}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="sensitivityLabel">The SensitivityLabel to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SensitivityLabel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> AddResponseAsync(SensitivityLabel sensitivityLabel, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> AddResponseAsync(SensitivityLabel sensitivityLabel, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IInformationProtectionSensitivityLabelsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IInformationProtectionSensitivityLabelsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{InformationProtectionSensitivityLabelsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{InformationProtectionSensitivityLabelsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InformationProtectionSensitivityLabelsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionSensitivityLabelsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

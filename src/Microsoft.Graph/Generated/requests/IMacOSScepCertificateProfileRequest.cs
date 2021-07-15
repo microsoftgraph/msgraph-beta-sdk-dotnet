@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="macOSScepCertificateProfileToCreate">The MacOSScepCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<MacOSScepCertificateProfile> CreateAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MacOSScepCertificateProfile> CreateAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified MacOSScepCertificateProfile using POST and returns a <see cref="GraphResponse{MacOSScepCertificateProfile}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="macOSScepCertificateProfileToCreate">The MacOSScepCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSScepCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSScepCertificateProfile>> CreateResponseAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MacOSScepCertificateProfile>> CreateResponseAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MacOSScepCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MacOSScepCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MacOSScepCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<MacOSScepCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MacOSScepCertificateProfile> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MacOSScepCertificateProfile and returns a <see cref="GraphResponse{MacOSScepCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSScepCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSScepCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MacOSScepCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MacOSScepCertificateProfile using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<MacOSScepCertificateProfile> UpdateAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MacOSScepCertificateProfile> UpdateAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MacOSScepCertificateProfile using PATCH and returns a <see cref="GraphResponse{MacOSScepCertificateProfile}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MacOSScepCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSScepCertificateProfile>> UpdateResponseAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MacOSScepCertificateProfile>> UpdateResponseAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MacOSScepCertificateProfile using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="macOSScepCertificateProfileToUpdate">The MacOSScepCertificateProfile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<MacOSScepCertificateProfile> PutAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MacOSScepCertificateProfile> PutAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MacOSScepCertificateProfile using PUT and returns a <see cref="GraphResponse{MacOSScepCertificateProfile}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="macOSScepCertificateProfileToUpdate">The MacOSScepCertificateProfile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{MacOSScepCertificateProfile}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSScepCertificateProfile>> PutResponseAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MacOSScepCertificateProfile>> PutResponseAsync(MacOSScepCertificateProfile macOSScepCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

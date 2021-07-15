@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="caseExportOperationToCreate">The CaseExportOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CaseExportOperation.</returns>
-        System.Threading.Tasks.Task<CaseExportOperation> CreateAsync(CaseExportOperation caseExportOperationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CaseExportOperation> CreateAsync(CaseExportOperation caseExportOperationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified CaseExportOperation using POST and returns a <see cref="GraphResponse{CaseExportOperation}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="caseExportOperationToCreate">The CaseExportOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CaseExportOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseExportOperation>> CreateResponseAsync(CaseExportOperation caseExportOperationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CaseExportOperation>> CreateResponseAsync(CaseExportOperation caseExportOperationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CaseExportOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CaseExportOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CaseExportOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CaseExportOperation.</returns>
-        System.Threading.Tasks.Task<CaseExportOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CaseExportOperation> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CaseExportOperation and returns a <see cref="GraphResponse{CaseExportOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CaseExportOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseExportOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CaseExportOperation>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CaseExportOperation using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CaseExportOperation.</returns>
-        System.Threading.Tasks.Task<CaseExportOperation> UpdateAsync(CaseExportOperation caseExportOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CaseExportOperation> UpdateAsync(CaseExportOperation caseExportOperationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CaseExportOperation using PATCH and returns a <see cref="GraphResponse{CaseExportOperation}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CaseExportOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseExportOperation>> UpdateResponseAsync(CaseExportOperation caseExportOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CaseExportOperation>> UpdateResponseAsync(CaseExportOperation caseExportOperationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CaseExportOperation using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="caseExportOperationToUpdate">The CaseExportOperation object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<CaseExportOperation> PutAsync(CaseExportOperation caseExportOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CaseExportOperation> PutAsync(CaseExportOperation caseExportOperationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CaseExportOperation using PUT and returns a <see cref="GraphResponse{CaseExportOperation}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="caseExportOperationToUpdate">The CaseExportOperation object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{CaseExportOperation}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseExportOperation>> PutResponseAsync(CaseExportOperation caseExportOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CaseExportOperation>> PutResponseAsync(CaseExportOperation caseExportOperationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

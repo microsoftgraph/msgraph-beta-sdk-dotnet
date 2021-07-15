@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="identitySecurityDefaultsEnforcementPolicyToCreate">The IdentitySecurityDefaultsEnforcementPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentitySecurityDefaultsEnforcementPolicy.</returns>
-        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> CreateAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> CreateAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified IdentitySecurityDefaultsEnforcementPolicy using POST and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="identitySecurityDefaultsEnforcementPolicyToCreate">The IdentitySecurityDefaultsEnforcementPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> CreateResponseAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> CreateResponseAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified IdentitySecurityDefaultsEnforcementPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified IdentitySecurityDefaultsEnforcementPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified IdentitySecurityDefaultsEnforcementPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentitySecurityDefaultsEnforcementPolicy.</returns>
-        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified IdentitySecurityDefaultsEnforcementPolicy and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IdentitySecurityDefaultsEnforcementPolicy using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IdentitySecurityDefaultsEnforcementPolicy.</returns>
-        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> UpdateAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> UpdateAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IdentitySecurityDefaultsEnforcementPolicy using PATCH and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> UpdateResponseAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> UpdateResponseAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IdentitySecurityDefaultsEnforcementPolicy using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="identitySecurityDefaultsEnforcementPolicyToUpdate">The IdentitySecurityDefaultsEnforcementPolicy object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> PutAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> PutAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IdentitySecurityDefaultsEnforcementPolicy using PUT and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="identitySecurityDefaultsEnforcementPolicyToUpdate">The IdentitySecurityDefaultsEnforcementPolicy object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> PutResponseAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> PutResponseAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

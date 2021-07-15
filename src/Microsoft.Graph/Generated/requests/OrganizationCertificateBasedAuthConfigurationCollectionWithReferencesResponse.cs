@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IApplicationTokenLifetimePoliciesCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IApplicationTokenLifetimePoliciesCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

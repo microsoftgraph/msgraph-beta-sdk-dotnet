@@ -24,14 +24,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="roleScopeTag">The RoleScopeTag to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(RoleScopeTag roleScopeTag, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task AddAsync(RoleScopeTag roleScopeTag, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified RoleScopeTag to the collection via POST and returns a <see cref="GraphResponse{RoleScopeTag}"/> object of the request.
         /// </summary>
         /// <param name="roleScopeTag">The RoleScopeTag to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(RoleScopeTag roleScopeTag, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(RoleScopeTag roleScopeTag, CancellationToken cancellationToken = default);
 
     }
 }

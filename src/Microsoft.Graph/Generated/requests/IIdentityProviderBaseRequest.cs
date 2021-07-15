@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="identityProviderBaseToCreate">The IdentityProviderBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityProviderBase.</returns>
-        System.Threading.Tasks.Task<IdentityProviderBase> CreateAsync(IdentityProviderBase identityProviderBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IdentityProviderBase> CreateAsync(IdentityProviderBase identityProviderBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified IdentityProviderBase using POST and returns a <see cref="GraphResponse{IdentityProviderBase}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="identityProviderBaseToCreate">The IdentityProviderBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityProviderBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityProviderBase>> CreateResponseAsync(IdentityProviderBase identityProviderBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IdentityProviderBase>> CreateResponseAsync(IdentityProviderBase identityProviderBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified IdentityProviderBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified IdentityProviderBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified IdentityProviderBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityProviderBase.</returns>
-        System.Threading.Tasks.Task<IdentityProviderBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IdentityProviderBase> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified IdentityProviderBase and returns a <see cref="GraphResponse{IdentityProviderBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityProviderBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityProviderBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IdentityProviderBase>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IdentityProviderBase using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IdentityProviderBase.</returns>
-        System.Threading.Tasks.Task<IdentityProviderBase> UpdateAsync(IdentityProviderBase identityProviderBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IdentityProviderBase> UpdateAsync(IdentityProviderBase identityProviderBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IdentityProviderBase using PATCH and returns a <see cref="GraphResponse{IdentityProviderBase}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IdentityProviderBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityProviderBase>> UpdateResponseAsync(IdentityProviderBase identityProviderBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IdentityProviderBase>> UpdateResponseAsync(IdentityProviderBase identityProviderBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IdentityProviderBase using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="identityProviderBaseToUpdate">The IdentityProviderBase object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<IdentityProviderBase> PutAsync(IdentityProviderBase identityProviderBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IdentityProviderBase> PutAsync(IdentityProviderBase identityProviderBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IdentityProviderBase using PUT and returns a <see cref="GraphResponse{IdentityProviderBase}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="identityProviderBaseToUpdate">The IdentityProviderBase object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{IdentityProviderBase}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityProviderBase>> PutResponseAsync(IdentityProviderBase identityProviderBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IdentityProviderBase>> PutResponseAsync(IdentityProviderBase identityProviderBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="securityAction">The SecurityAction to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityAction.</returns>
-        System.Threading.Tasks.Task<SecurityAction> AddAsync(SecurityAction securityAction, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SecurityAction> AddAsync(SecurityAction securityAction, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified SecurityAction to the collection via POST and returns a <see cref="GraphResponse{SecurityAction}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="securityAction">The SecurityAction to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityAction}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityAction>> AddResponseAsync(SecurityAction securityAction, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SecurityAction>> AddResponseAsync(SecurityAction securityAction, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecuritySecurityActionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ISecuritySecurityActionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SecuritySecurityActionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecuritySecurityActionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecuritySecurityActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SecuritySecurityActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

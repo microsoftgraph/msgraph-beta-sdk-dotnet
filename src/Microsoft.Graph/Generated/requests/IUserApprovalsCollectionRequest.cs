@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="approval">The Approval to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Approval.</returns>
-        System.Threading.Tasks.Task<Approval> AddAsync(Approval approval, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Approval> AddAsync(Approval approval, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified Approval to the collection via POST and returns a <see cref="GraphResponse{Approval}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="approval">The Approval to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Approval>> AddResponseAsync(Approval approval, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Approval>> AddResponseAsync(Approval approval, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserApprovalsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IUserApprovalsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserApprovalsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserApprovalsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserApprovalsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserApprovalsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

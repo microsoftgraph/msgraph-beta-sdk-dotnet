@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windowsUniversalAppXContainedAppToCreate">The WindowsUniversalAppXContainedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsUniversalAppXContainedApp.</returns>
-        System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> CreateAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> CreateAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified WindowsUniversalAppXContainedApp using POST and returns a <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windowsUniversalAppXContainedAppToCreate">The WindowsUniversalAppXContainedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> CreateResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> CreateResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsUniversalAppXContainedApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsUniversalAppXContainedApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsUniversalAppXContainedApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsUniversalAppXContainedApp.</returns>
-        System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsUniversalAppXContainedApp and returns a <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsUniversalAppXContainedApp using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsUniversalAppXContainedApp.</returns>
-        System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> UpdateAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> UpdateAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsUniversalAppXContainedApp using PATCH and returns a <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> UpdateResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> UpdateResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsUniversalAppXContainedApp using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windowsUniversalAppXContainedAppToUpdate">The WindowsUniversalAppXContainedApp object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> PutAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> PutAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsUniversalAppXContainedApp using PUT and returns a <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windowsUniversalAppXContainedAppToUpdate">The WindowsUniversalAppXContainedApp object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> PutResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> PutResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

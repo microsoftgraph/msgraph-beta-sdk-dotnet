@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="roleScopeTagAutoAssignmentToCreate">The RoleScopeTagAutoAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleScopeTagAutoAssignment.</returns>
-        System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> CreateAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> CreateAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified RoleScopeTagAutoAssignment using POST and returns a <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="roleScopeTagAutoAssignmentToCreate">The RoleScopeTagAutoAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> CreateResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> CreateResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified RoleScopeTagAutoAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified RoleScopeTagAutoAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified RoleScopeTagAutoAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RoleScopeTagAutoAssignment.</returns>
-        System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified RoleScopeTagAutoAssignment and returns a <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RoleScopeTagAutoAssignment using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RoleScopeTagAutoAssignment.</returns>
-        System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> UpdateAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> UpdateAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RoleScopeTagAutoAssignment using PATCH and returns a <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> UpdateResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> UpdateResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RoleScopeTagAutoAssignment using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="roleScopeTagAutoAssignmentToUpdate">The RoleScopeTagAutoAssignment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> PutAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> PutAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RoleScopeTagAutoAssignment using PUT and returns a <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="roleScopeTagAutoAssignmentToUpdate">The RoleScopeTagAutoAssignment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> PutResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> PutResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="importedAppleDeviceIdentity">The ImportedAppleDeviceIdentity to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ImportedAppleDeviceIdentity.</returns>
-        public System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> AddAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> AddAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="importedAppleDeviceIdentity">The ImportedAppleDeviceIdentity to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> AddResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> AddResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDepOnboardingSettingImportedAppleDeviceIdentitiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IDepOnboardingSettingImportedAppleDeviceIdentitiesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>(null, cancellationToken);

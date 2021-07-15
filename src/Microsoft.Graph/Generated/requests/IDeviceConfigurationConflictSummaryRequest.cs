@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="deviceConfigurationConflictSummaryToCreate">The DeviceConfigurationConflictSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceConfigurationConflictSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> CreateAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> CreateAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified DeviceConfigurationConflictSummary using POST and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="deviceConfigurationConflictSummaryToCreate">The DeviceConfigurationConflictSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> CreateResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> CreateResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceConfigurationConflictSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceConfigurationConflictSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceConfigurationConflictSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceConfigurationConflictSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceConfigurationConflictSummary and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceConfigurationConflictSummary using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceConfigurationConflictSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> UpdateAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> UpdateAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceConfigurationConflictSummary using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> UpdateResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> UpdateResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceConfigurationConflictSummary using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="deviceConfigurationConflictSummaryToUpdate">The DeviceConfigurationConflictSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> PutAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> PutAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceConfigurationConflictSummary using PUT and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="deviceConfigurationConflictSummaryToUpdate">The DeviceConfigurationConflictSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> PutResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> PutResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

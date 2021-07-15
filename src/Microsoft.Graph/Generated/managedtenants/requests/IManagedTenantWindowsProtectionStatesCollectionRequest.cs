@@ -26,7 +26,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="windowsProtectionState">The WindowsProtectionState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsProtectionState.</returns>
-        System.Threading.Tasks.Task<WindowsProtectionState> AddAsync(WindowsProtectionState windowsProtectionState, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsProtectionState> AddAsync(WindowsProtectionState windowsProtectionState, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified WindowsProtectionState to the collection via POST and returns a <see cref="GraphResponse{WindowsProtectionState}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="windowsProtectionState">The WindowsProtectionState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsProtectionState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> AddResponseAsync(WindowsProtectionState windowsProtectionState, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> AddResponseAsync(WindowsProtectionState windowsProtectionState, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedTenantWindowsProtectionStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IManagedTenantWindowsProtectionStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedTenantWindowsProtectionStatesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedTenantWindowsProtectionStatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedTenantWindowsProtectionStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedTenantWindowsProtectionStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

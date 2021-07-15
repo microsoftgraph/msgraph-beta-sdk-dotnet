@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windows10XSCEPCertificateProfileToCreate">The Windows10XSCEPCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10XSCEPCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> CreateAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> CreateAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Windows10XSCEPCertificateProfile using POST and returns a <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windows10XSCEPCertificateProfileToCreate">The Windows10XSCEPCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> CreateResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> CreateResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows10XSCEPCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows10XSCEPCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows10XSCEPCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10XSCEPCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows10XSCEPCertificateProfile and returns a <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10XSCEPCertificateProfile using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10XSCEPCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> UpdateAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> UpdateAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10XSCEPCertificateProfile using PATCH and returns a <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> UpdateResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> UpdateResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10XSCEPCertificateProfile using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windows10XSCEPCertificateProfileToUpdate">The Windows10XSCEPCertificateProfile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> PutAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> PutAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10XSCEPCertificateProfile using PUT and returns a <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windows10XSCEPCertificateProfileToUpdate">The Windows10XSCEPCertificateProfile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> PutResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> PutResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

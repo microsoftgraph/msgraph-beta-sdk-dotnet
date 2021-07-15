@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="chatMessageHostedContent">The ChatMessageHostedContent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ChatMessageHostedContent.</returns>
-        System.Threading.Tasks.Task<ChatMessageHostedContent> AddAsync(ChatMessageHostedContent chatMessageHostedContent, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ChatMessageHostedContent> AddAsync(ChatMessageHostedContent chatMessageHostedContent, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified ChatMessageHostedContent to the collection via POST and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="chatMessageHostedContent">The ChatMessageHostedContent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> AddResponseAsync(ChatMessageHostedContent chatMessageHostedContent, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> AddResponseAsync(ChatMessageHostedContent chatMessageHostedContent, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IChatMessageHostedContentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IChatMessageHostedContentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ChatMessageHostedContentsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ChatMessageHostedContentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

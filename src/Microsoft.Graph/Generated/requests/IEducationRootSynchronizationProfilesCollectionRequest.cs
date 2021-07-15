@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="educationSynchronizationProfile">The EducationSynchronizationProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationSynchronizationProfile.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationProfile> AddAsync(EducationSynchronizationProfile educationSynchronizationProfile, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<EducationSynchronizationProfile> AddAsync(EducationSynchronizationProfile educationSynchronizationProfile, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified EducationSynchronizationProfile to the collection via POST and returns a <see cref="GraphResponse{EducationSynchronizationProfile}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="educationSynchronizationProfile">The EducationSynchronizationProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfile>> AddResponseAsync(EducationSynchronizationProfile educationSynchronizationProfile, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfile>> AddResponseAsync(EducationSynchronizationProfile educationSynchronizationProfile, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEducationRootSynchronizationProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IEducationRootSynchronizationProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EducationRootSynchronizationProfilesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationRootSynchronizationProfilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationRootSynchronizationProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EducationRootSynchronizationProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

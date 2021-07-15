@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="userConsentRequest">The UserConsentRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserConsentRequestObject.</returns>
-        System.Threading.Tasks.Task<UserConsentRequestObject> AddAsync(UserConsentRequestObject userConsentRequest, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserConsentRequestObject> AddAsync(UserConsentRequestObject userConsentRequest, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified UserConsentRequestObject to the collection via POST and returns a <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="userConsentRequest">The UserConsentRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> AddResponseAsync(UserConsentRequestObject userConsentRequest, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> AddResponseAsync(UserConsentRequestObject userConsentRequest, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAppConsentRequestUserConsentRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IAppConsentRequestUserConsentRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AppConsentRequestUserConsentRequestsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppConsentRequestUserConsentRequestsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppConsentRequestUserConsentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AppConsentRequestUserConsentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

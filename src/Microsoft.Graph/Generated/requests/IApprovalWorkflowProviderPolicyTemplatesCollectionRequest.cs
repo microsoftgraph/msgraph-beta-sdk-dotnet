@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="governancePolicyTemplate">The GovernancePolicyTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernancePolicyTemplate.</returns>
-        System.Threading.Tasks.Task<GovernancePolicyTemplate> AddAsync(GovernancePolicyTemplate governancePolicyTemplate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GovernancePolicyTemplate> AddAsync(GovernancePolicyTemplate governancePolicyTemplate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified GovernancePolicyTemplate to the collection via POST and returns a <see cref="GraphResponse{GovernancePolicyTemplate}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="governancePolicyTemplate">The GovernancePolicyTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GovernancePolicyTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> AddResponseAsync(GovernancePolicyTemplate governancePolicyTemplate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> AddResponseAsync(GovernancePolicyTemplate governancePolicyTemplate, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IApprovalWorkflowProviderPolicyTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IApprovalWorkflowProviderPolicyTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ApprovalWorkflowProviderPolicyTemplatesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProviderPolicyTemplatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProviderPolicyTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProviderPolicyTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

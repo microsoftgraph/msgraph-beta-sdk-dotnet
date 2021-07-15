@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="smsAuthenticationMethodConfigurationToCreate">The SmsAuthenticationMethodConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SmsAuthenticationMethodConfiguration.</returns>
-        System.Threading.Tasks.Task<SmsAuthenticationMethodConfiguration> CreateAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SmsAuthenticationMethodConfiguration> CreateAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified SmsAuthenticationMethodConfiguration using POST and returns a <see cref="GraphResponse{SmsAuthenticationMethodConfiguration}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="smsAuthenticationMethodConfigurationToCreate">The SmsAuthenticationMethodConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SmsAuthenticationMethodConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodConfiguration>> CreateResponseAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodConfiguration>> CreateResponseAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SmsAuthenticationMethodConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SmsAuthenticationMethodConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SmsAuthenticationMethodConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SmsAuthenticationMethodConfiguration.</returns>
-        System.Threading.Tasks.Task<SmsAuthenticationMethodConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SmsAuthenticationMethodConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SmsAuthenticationMethodConfiguration and returns a <see cref="GraphResponse{SmsAuthenticationMethodConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SmsAuthenticationMethodConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SmsAuthenticationMethodConfiguration using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SmsAuthenticationMethodConfiguration.</returns>
-        System.Threading.Tasks.Task<SmsAuthenticationMethodConfiguration> UpdateAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SmsAuthenticationMethodConfiguration> UpdateAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SmsAuthenticationMethodConfiguration using PATCH and returns a <see cref="GraphResponse{SmsAuthenticationMethodConfiguration}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SmsAuthenticationMethodConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodConfiguration>> UpdateResponseAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodConfiguration>> UpdateResponseAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SmsAuthenticationMethodConfiguration using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="smsAuthenticationMethodConfigurationToUpdate">The SmsAuthenticationMethodConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<SmsAuthenticationMethodConfiguration> PutAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SmsAuthenticationMethodConfiguration> PutAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SmsAuthenticationMethodConfiguration using PUT and returns a <see cref="GraphResponse{SmsAuthenticationMethodConfiguration}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="smsAuthenticationMethodConfigurationToUpdate">The SmsAuthenticationMethodConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{SmsAuthenticationMethodConfiguration}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodConfiguration>> PutResponseAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodConfiguration>> PutResponseAsync(SmsAuthenticationMethodConfiguration smsAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

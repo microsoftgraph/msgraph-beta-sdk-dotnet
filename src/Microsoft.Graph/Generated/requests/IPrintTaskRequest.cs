@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="printTaskToCreate">The PrintTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintTask.</returns>
-        System.Threading.Tasks.Task<PrintTask> CreateAsync(PrintTask printTaskToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrintTask> CreateAsync(PrintTask printTaskToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified PrintTask using POST and returns a <see cref="GraphResponse{PrintTask}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="printTaskToCreate">The PrintTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintTask>> CreateResponseAsync(PrintTask printTaskToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrintTask>> CreateResponseAsync(PrintTask printTaskToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PrintTask.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PrintTask and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PrintTask.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrintTask.</returns>
-        System.Threading.Tasks.Task<PrintTask> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrintTask> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PrintTask and returns a <see cref="GraphResponse{PrintTask}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintTask>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrintTask>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrintTask using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrintTask.</returns>
-        System.Threading.Tasks.Task<PrintTask> UpdateAsync(PrintTask printTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrintTask> UpdateAsync(PrintTask printTaskToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrintTask using PATCH and returns a <see cref="GraphResponse{PrintTask}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PrintTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintTask>> UpdateResponseAsync(PrintTask printTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrintTask>> UpdateResponseAsync(PrintTask printTaskToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrintTask using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="printTaskToUpdate">The PrintTask object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<PrintTask> PutAsync(PrintTask printTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrintTask> PutAsync(PrintTask printTaskToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrintTask using PUT and returns a <see cref="GraphResponse{PrintTask}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="printTaskToUpdate">The PrintTask object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{PrintTask}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintTask>> PutResponseAsync(PrintTask printTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrintTask>> PutResponseAsync(PrintTask printTaskToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

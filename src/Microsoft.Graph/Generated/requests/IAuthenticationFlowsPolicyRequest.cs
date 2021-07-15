@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="authenticationFlowsPolicyToCreate">The AuthenticationFlowsPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuthenticationFlowsPolicy.</returns>
-        System.Threading.Tasks.Task<AuthenticationFlowsPolicy> CreateAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AuthenticationFlowsPolicy> CreateAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified AuthenticationFlowsPolicy using POST and returns a <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="authenticationFlowsPolicyToCreate">The AuthenticationFlowsPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> CreateResponseAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> CreateResponseAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AuthenticationFlowsPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AuthenticationFlowsPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AuthenticationFlowsPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AuthenticationFlowsPolicy.</returns>
-        System.Threading.Tasks.Task<AuthenticationFlowsPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AuthenticationFlowsPolicy> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AuthenticationFlowsPolicy and returns a <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AuthenticationFlowsPolicy using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AuthenticationFlowsPolicy.</returns>
-        System.Threading.Tasks.Task<AuthenticationFlowsPolicy> UpdateAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AuthenticationFlowsPolicy> UpdateAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AuthenticationFlowsPolicy using PATCH and returns a <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> UpdateResponseAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> UpdateResponseAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AuthenticationFlowsPolicy using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="authenticationFlowsPolicyToUpdate">The AuthenticationFlowsPolicy object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<AuthenticationFlowsPolicy> PutAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AuthenticationFlowsPolicy> PutAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AuthenticationFlowsPolicy using PUT and returns a <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="authenticationFlowsPolicyToUpdate">The AuthenticationFlowsPolicy object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> PutResponseAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> PutResponseAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

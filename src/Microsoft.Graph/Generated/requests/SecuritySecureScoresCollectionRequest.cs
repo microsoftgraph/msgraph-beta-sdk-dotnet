@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="secureScore">The SecureScore to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecureScore.</returns>
-        public System.Threading.Tasks.Task<SecureScore> AddAsync(SecureScore secureScore, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<SecureScore> AddAsync(SecureScore secureScore, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="secureScore">The SecureScore to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecureScore>> AddResponseAsync(SecureScore secureScore, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SecureScore>> AddResponseAsync(SecureScore secureScore, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISecuritySecureScoresCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ISecuritySecureScoresCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<SecuritySecureScoresCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecuritySecureScoresCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecuritySecureScoresCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SecuritySecureScoresCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<SecuritySecureScoresCollectionResponse>(null, cancellationToken);

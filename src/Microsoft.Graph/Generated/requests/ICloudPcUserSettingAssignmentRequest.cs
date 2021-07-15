@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="cloudPcUserSettingAssignmentToCreate">The CloudPcUserSettingAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcUserSettingAssignment.</returns>
-        System.Threading.Tasks.Task<CloudPcUserSettingAssignment> CreateAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CloudPcUserSettingAssignment> CreateAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified CloudPcUserSettingAssignment using POST and returns a <see cref="GraphResponse{CloudPcUserSettingAssignment}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="cloudPcUserSettingAssignmentToCreate">The CloudPcUserSettingAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPcUserSettingAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignment>> CreateResponseAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignment>> CreateResponseAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CloudPcUserSettingAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CloudPcUserSettingAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CloudPcUserSettingAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CloudPcUserSettingAssignment.</returns>
-        System.Threading.Tasks.Task<CloudPcUserSettingAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CloudPcUserSettingAssignment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CloudPcUserSettingAssignment and returns a <see cref="GraphResponse{CloudPcUserSettingAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPcUserSettingAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CloudPcUserSettingAssignment using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CloudPcUserSettingAssignment.</returns>
-        System.Threading.Tasks.Task<CloudPcUserSettingAssignment> UpdateAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CloudPcUserSettingAssignment> UpdateAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CloudPcUserSettingAssignment using PATCH and returns a <see cref="GraphResponse{CloudPcUserSettingAssignment}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CloudPcUserSettingAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignment>> UpdateResponseAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignment>> UpdateResponseAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CloudPcUserSettingAssignment using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="cloudPcUserSettingAssignmentToUpdate">The CloudPcUserSettingAssignment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<CloudPcUserSettingAssignment> PutAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CloudPcUserSettingAssignment> PutAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CloudPcUserSettingAssignment using PUT and returns a <see cref="GraphResponse{CloudPcUserSettingAssignment}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="cloudPcUserSettingAssignmentToUpdate">The CloudPcUserSettingAssignment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{CloudPcUserSettingAssignment}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignment>> PutResponseAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPcUserSettingAssignment>> PutResponseAsync(CloudPcUserSettingAssignment cloudPcUserSettingAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

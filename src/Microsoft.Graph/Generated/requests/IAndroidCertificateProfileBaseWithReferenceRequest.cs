@@ -25,14 +25,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidCertificateProfileBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidCertificateProfileBase> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidCertificateProfileBase and returns a <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidCertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidCertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Creates the specified AndroidCertificateProfileBase using POST.
@@ -40,7 +40,7 @@ namespace Microsoft.Graph
         /// <param name="androidCertificateProfileBaseToCreate">The AndroidCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidCertificateProfileBase> CreateAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidCertificateProfileBase> CreateAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToCreate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Creates the specified AndroidCertificateProfileBase using POST and returns a <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object.
@@ -48,7 +48,7 @@ namespace Microsoft.Graph
         /// <param name="androidCertificateProfileBaseToCreate">The AndroidCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidCertificateProfileBase>> CreateResponseAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidCertificateProfileBase>> CreateResponseAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToCreate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Updates the specified AndroidCertificateProfileBase using PATCH.
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidCertificateProfileBase> UpdateAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidCertificateProfileBase> UpdateAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Updates the specified AndroidCertificateProfileBase using PATCH and returns a <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object.
@@ -66,21 +66,21 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidCertificateProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidCertificateProfileBase>> UpdateResponseAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidCertificateProfileBase>> UpdateResponseAsync(AndroidCertificateProfileBase androidCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Deletes the specified AndroidCertificateProfileBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Deletes the specified AndroidCertificateProfileBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

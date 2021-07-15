@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="eventMessageResponseToCreate">The EventMessageResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EventMessageResponse.</returns>
-        System.Threading.Tasks.Task<EventMessageResponse> CreateAsync(EventMessageResponse eventMessageResponseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<EventMessageResponse> CreateAsync(EventMessageResponse eventMessageResponseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified EventMessageResponse using POST and returns a <see cref="GraphResponse{EventMessageResponse}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="eventMessageResponseToCreate">The EventMessageResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EventMessageResponse}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EventMessageResponse>> CreateResponseAsync(EventMessageResponse eventMessageResponseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EventMessageResponse>> CreateResponseAsync(EventMessageResponse eventMessageResponseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified EventMessageResponse.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified EventMessageResponse and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified EventMessageResponse.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EventMessageResponse.</returns>
-        System.Threading.Tasks.Task<EventMessageResponse> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<EventMessageResponse> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified EventMessageResponse and returns a <see cref="GraphResponse{EventMessageResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EventMessageResponse}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EventMessageResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EventMessageResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EventMessageResponse using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EventMessageResponse.</returns>
-        System.Threading.Tasks.Task<EventMessageResponse> UpdateAsync(EventMessageResponse eventMessageResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<EventMessageResponse> UpdateAsync(EventMessageResponse eventMessageResponseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EventMessageResponse using PATCH and returns a <see cref="GraphResponse{EventMessageResponse}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{EventMessageResponse}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EventMessageResponse>> UpdateResponseAsync(EventMessageResponse eventMessageResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EventMessageResponse>> UpdateResponseAsync(EventMessageResponse eventMessageResponseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EventMessageResponse using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="eventMessageResponseToUpdate">The EventMessageResponse object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<EventMessageResponse> PutAsync(EventMessageResponse eventMessageResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<EventMessageResponse> PutAsync(EventMessageResponse eventMessageResponseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EventMessageResponse using PUT and returns a <see cref="GraphResponse{EventMessageResponse}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="eventMessageResponseToUpdate">The EventMessageResponse object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{EventMessageResponse}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EventMessageResponse>> PutResponseAsync(EventMessageResponse eventMessageResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EventMessageResponse>> PutResponseAsync(EventMessageResponse eventMessageResponseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

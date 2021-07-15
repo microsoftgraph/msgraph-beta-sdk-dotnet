@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="yammerActivitySummaryToCreate">The YammerActivitySummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created YammerActivitySummary.</returns>
-        System.Threading.Tasks.Task<YammerActivitySummary> CreateAsync(YammerActivitySummary yammerActivitySummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<YammerActivitySummary> CreateAsync(YammerActivitySummary yammerActivitySummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified YammerActivitySummary using POST and returns a <see cref="GraphResponse{YammerActivitySummary}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="yammerActivitySummaryToCreate">The YammerActivitySummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{YammerActivitySummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> CreateResponseAsync(YammerActivitySummary yammerActivitySummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> CreateResponseAsync(YammerActivitySummary yammerActivitySummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified YammerActivitySummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified YammerActivitySummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified YammerActivitySummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The YammerActivitySummary.</returns>
-        System.Threading.Tasks.Task<YammerActivitySummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<YammerActivitySummary> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified YammerActivitySummary and returns a <see cref="GraphResponse{YammerActivitySummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{YammerActivitySummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified YammerActivitySummary using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated YammerActivitySummary.</returns>
-        System.Threading.Tasks.Task<YammerActivitySummary> UpdateAsync(YammerActivitySummary yammerActivitySummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<YammerActivitySummary> UpdateAsync(YammerActivitySummary yammerActivitySummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified YammerActivitySummary using PATCH and returns a <see cref="GraphResponse{YammerActivitySummary}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{YammerActivitySummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> UpdateResponseAsync(YammerActivitySummary yammerActivitySummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> UpdateResponseAsync(YammerActivitySummary yammerActivitySummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified YammerActivitySummary using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="yammerActivitySummaryToUpdate">The YammerActivitySummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<YammerActivitySummary> PutAsync(YammerActivitySummary yammerActivitySummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<YammerActivitySummary> PutAsync(YammerActivitySummary yammerActivitySummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified YammerActivitySummary using PUT and returns a <see cref="GraphResponse{YammerActivitySummary}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="yammerActivitySummaryToUpdate">The YammerActivitySummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{YammerActivitySummary}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> PutResponseAsync(YammerActivitySummary yammerActivitySummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> PutResponseAsync(YammerActivitySummary yammerActivitySummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

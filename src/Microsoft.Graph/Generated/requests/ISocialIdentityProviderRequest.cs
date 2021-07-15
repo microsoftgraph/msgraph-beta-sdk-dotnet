@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="socialIdentityProviderToCreate">The SocialIdentityProvider to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SocialIdentityProvider.</returns>
-        System.Threading.Tasks.Task<SocialIdentityProvider> CreateAsync(SocialIdentityProvider socialIdentityProviderToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SocialIdentityProvider> CreateAsync(SocialIdentityProvider socialIdentityProviderToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified SocialIdentityProvider using POST and returns a <see cref="GraphResponse{SocialIdentityProvider}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="socialIdentityProviderToCreate">The SocialIdentityProvider to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SocialIdentityProvider}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> CreateResponseAsync(SocialIdentityProvider socialIdentityProviderToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> CreateResponseAsync(SocialIdentityProvider socialIdentityProviderToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SocialIdentityProvider.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SocialIdentityProvider and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SocialIdentityProvider.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SocialIdentityProvider.</returns>
-        System.Threading.Tasks.Task<SocialIdentityProvider> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SocialIdentityProvider> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SocialIdentityProvider and returns a <see cref="GraphResponse{SocialIdentityProvider}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SocialIdentityProvider}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SocialIdentityProvider using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SocialIdentityProvider.</returns>
-        System.Threading.Tasks.Task<SocialIdentityProvider> UpdateAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SocialIdentityProvider> UpdateAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SocialIdentityProvider using PATCH and returns a <see cref="GraphResponse{SocialIdentityProvider}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SocialIdentityProvider}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> UpdateResponseAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> UpdateResponseAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SocialIdentityProvider using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="socialIdentityProviderToUpdate">The SocialIdentityProvider object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<SocialIdentityProvider> PutAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SocialIdentityProvider> PutAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SocialIdentityProvider using PUT and returns a <see cref="GraphResponse{SocialIdentityProvider}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="socialIdentityProviderToUpdate">The SocialIdentityProvider object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{SocialIdentityProvider}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> PutResponseAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> PutResponseAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

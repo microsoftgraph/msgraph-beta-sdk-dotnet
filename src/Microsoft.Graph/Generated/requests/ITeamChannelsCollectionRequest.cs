@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="channel">The Channel to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Channel.</returns>
-        System.Threading.Tasks.Task<Channel> AddAsync(Channel channel, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Channel> AddAsync(Channel channel, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified Channel to the collection via POST and returns a <see cref="GraphResponse{Channel}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="channel">The Channel to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Channel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Channel>> AddResponseAsync(Channel channel, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Channel>> AddResponseAsync(Channel channel, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITeamChannelsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ITeamChannelsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TeamChannelsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamChannelsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamChannelsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TeamChannelsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

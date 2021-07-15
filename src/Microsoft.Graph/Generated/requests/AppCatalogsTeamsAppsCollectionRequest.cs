@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="teamsApp">The TeamsApp to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsApp.</returns>
-        public System.Threading.Tasks.Task<TeamsApp> AddAsync(TeamsApp teamsApp, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<TeamsApp> AddAsync(TeamsApp teamsApp, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="teamsApp">The TeamsApp to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TeamsApp>> AddResponseAsync(TeamsApp teamsApp, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<TeamsApp>> AddResponseAsync(TeamsApp teamsApp, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAppCatalogsTeamsAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IAppCatalogsTeamsAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AppCatalogsTeamsAppsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppCatalogsTeamsAppsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AppCatalogsTeamsAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AppCatalogsTeamsAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<AppCatalogsTeamsAppsCollectionResponse>(null, cancellationToken);

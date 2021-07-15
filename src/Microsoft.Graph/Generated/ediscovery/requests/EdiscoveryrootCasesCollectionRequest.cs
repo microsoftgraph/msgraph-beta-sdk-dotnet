@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="casesCase">The Case to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Case.</returns>
-        public System.Threading.Tasks.Task<Case> AddAsync(Case casesCase, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<Case> AddAsync(Case casesCase, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="casesCase">The Case to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Case}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Case>> AddResponseAsync(Case casesCase, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<Case>> AddResponseAsync(Case casesCase, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IEdiscoveryrootCasesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IEdiscoveryrootCasesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<EdiscoveryrootCasesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EdiscoveryrootCasesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EdiscoveryrootCasesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<EdiscoveryrootCasesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<EdiscoveryrootCasesCollectionResponse>(null, cancellationToken);

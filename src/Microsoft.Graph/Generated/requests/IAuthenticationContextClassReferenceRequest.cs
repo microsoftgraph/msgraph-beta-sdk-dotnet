@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="authenticationContextClassReferenceToCreate">The AuthenticationContextClassReference to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuthenticationContextClassReference.</returns>
-        System.Threading.Tasks.Task<AuthenticationContextClassReference> CreateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AuthenticationContextClassReference> CreateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified AuthenticationContextClassReference using POST and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="authenticationContextClassReferenceToCreate">The AuthenticationContextClassReference to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> CreateResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> CreateResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AuthenticationContextClassReference.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AuthenticationContextClassReference and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AuthenticationContextClassReference.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AuthenticationContextClassReference.</returns>
-        System.Threading.Tasks.Task<AuthenticationContextClassReference> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AuthenticationContextClassReference> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AuthenticationContextClassReference and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AuthenticationContextClassReference using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AuthenticationContextClassReference.</returns>
-        System.Threading.Tasks.Task<AuthenticationContextClassReference> UpdateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AuthenticationContextClassReference> UpdateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AuthenticationContextClassReference using PATCH and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> UpdateResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> UpdateResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AuthenticationContextClassReference using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="authenticationContextClassReferenceToUpdate">The AuthenticationContextClassReference object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<AuthenticationContextClassReference> PutAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AuthenticationContextClassReference> PutAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AuthenticationContextClassReference using PUT and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="authenticationContextClassReferenceToUpdate">The AuthenticationContextClassReference object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{AuthenticationContextClassReference}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> PutResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> PutResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

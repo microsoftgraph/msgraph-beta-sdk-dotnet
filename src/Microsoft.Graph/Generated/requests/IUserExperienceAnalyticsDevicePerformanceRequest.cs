@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsDevicePerformanceToCreate">The UserExperienceAnalyticsDevicePerformance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsDevicePerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> CreateAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> CreateAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified UserExperienceAnalyticsDevicePerformance using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsDevicePerformanceToCreate">The UserExperienceAnalyticsDevicePerformance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> CreateResponseAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> CreateResponseAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsDevicePerformance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsDevicePerformance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsDevicePerformance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsDevicePerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsDevicePerformance and returns a <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsDevicePerformance using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsDevicePerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> UpdateAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> UpdateAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsDevicePerformance using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> UpdateResponseAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> UpdateResponseAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsDevicePerformance using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsDevicePerformanceToUpdate">The UserExperienceAnalyticsDevicePerformance object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> PutAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> PutAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsDevicePerformance using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsDevicePerformanceToUpdate">The UserExperienceAnalyticsDevicePerformance object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> PutResponseAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> PutResponseAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

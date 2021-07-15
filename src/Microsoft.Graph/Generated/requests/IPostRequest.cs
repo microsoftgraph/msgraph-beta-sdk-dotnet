@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="postToCreate">The Post to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Post.</returns>
-        System.Threading.Tasks.Task<Post> CreateAsync(Post postToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Post> CreateAsync(Post postToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Post using POST and returns a <see cref="GraphResponse{Post}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="postToCreate">The Post to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Post}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Post>> CreateResponseAsync(Post postToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Post>> CreateResponseAsync(Post postToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Post.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Post and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Post.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Post.</returns>
-        System.Threading.Tasks.Task<Post> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Post> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Post and returns a <see cref="GraphResponse{Post}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Post}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Post>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Post>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Post using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Post.</returns>
-        System.Threading.Tasks.Task<Post> UpdateAsync(Post postToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Post> UpdateAsync(Post postToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Post using PATCH and returns a <see cref="GraphResponse{Post}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Post}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Post>> UpdateResponseAsync(Post postToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Post>> UpdateResponseAsync(Post postToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Post using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="postToUpdate">The Post object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Post> PutAsync(Post postToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Post> PutAsync(Post postToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Post using PUT and returns a <see cref="GraphResponse{Post}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="postToUpdate">The Post object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Post}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Post>> PutResponseAsync(Post postToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Post>> PutResponseAsync(Post postToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

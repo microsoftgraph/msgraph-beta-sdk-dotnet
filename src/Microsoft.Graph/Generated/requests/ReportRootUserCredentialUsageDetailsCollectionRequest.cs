@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="userCredentialUsageDetails">The UserCredentialUsageDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserCredentialUsageDetails.</returns>
-        public System.Threading.Tasks.Task<UserCredentialUsageDetails> AddAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<UserCredentialUsageDetails> AddAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="userCredentialUsageDetails">The UserCredentialUsageDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> AddResponseAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> AddResponseAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IReportRootUserCredentialUsageDetailsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IReportRootUserCredentialUsageDetailsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ReportRootUserCredentialUsageDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReportRootUserCredentialUsageDetailsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootUserCredentialUsageDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootUserCredentialUsageDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ReportRootUserCredentialUsageDetailsCollectionResponse>(null, cancellationToken);

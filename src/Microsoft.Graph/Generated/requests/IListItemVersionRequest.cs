@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ListItemVersion.</returns>
-        System.Threading.Tasks.Task<ListItemVersion> CreateAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ListItemVersion> CreateAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ListItemVersion using POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> CreateResponseAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> CreateResponseAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ListItemVersion.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ListItemVersion and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ListItemVersion.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ListItemVersion.</returns>
-        System.Threading.Tasks.Task<ListItemVersion> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ListItemVersion> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ListItemVersion and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ListItemVersion using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ListItemVersion.</returns>
-        System.Threading.Tasks.Task<ListItemVersion> UpdateAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ListItemVersion> UpdateAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ListItemVersion using PATCH and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> UpdateResponseAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> UpdateResponseAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ListItemVersion using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="listItemVersionToUpdate">The ListItemVersion object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ListItemVersion> PutAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ListItemVersion> PutAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ListItemVersion using PUT and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="listItemVersionToUpdate">The ListItemVersion object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ListItemVersion}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> PutResponseAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> PutResponseAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

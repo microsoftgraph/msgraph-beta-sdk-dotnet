@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="dataSharingConsentToCreate">The DataSharingConsent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataSharingConsent.</returns>
-        System.Threading.Tasks.Task<DataSharingConsent> CreateAsync(DataSharingConsent dataSharingConsentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DataSharingConsent> CreateAsync(DataSharingConsent dataSharingConsentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified DataSharingConsent using POST and returns a <see cref="GraphResponse{DataSharingConsent}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="dataSharingConsentToCreate">The DataSharingConsent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DataSharingConsent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> CreateResponseAsync(DataSharingConsent dataSharingConsentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> CreateResponseAsync(DataSharingConsent dataSharingConsentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DataSharingConsent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DataSharingConsent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DataSharingConsent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DataSharingConsent.</returns>
-        System.Threading.Tasks.Task<DataSharingConsent> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DataSharingConsent> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DataSharingConsent and returns a <see cref="GraphResponse{DataSharingConsent}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DataSharingConsent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DataSharingConsent using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataSharingConsent.</returns>
-        System.Threading.Tasks.Task<DataSharingConsent> UpdateAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DataSharingConsent> UpdateAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DataSharingConsent using PATCH and returns a <see cref="GraphResponse{DataSharingConsent}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DataSharingConsent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> UpdateResponseAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> UpdateResponseAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DataSharingConsent using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="dataSharingConsentToUpdate">The DataSharingConsent object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<DataSharingConsent> PutAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DataSharingConsent> PutAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DataSharingConsent using PUT and returns a <see cref="GraphResponse{DataSharingConsent}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="dataSharingConsentToUpdate">The DataSharingConsent object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{DataSharingConsent}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> PutResponseAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> PutResponseAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

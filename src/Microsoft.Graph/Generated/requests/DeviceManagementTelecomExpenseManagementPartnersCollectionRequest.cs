@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="telecomExpenseManagementPartner">The TelecomExpenseManagementPartner to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TelecomExpenseManagementPartner.</returns>
-        public System.Threading.Tasks.Task<TelecomExpenseManagementPartner> AddAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartner, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<TelecomExpenseManagementPartner> AddAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartner, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="telecomExpenseManagementPartner">The TelecomExpenseManagementPartner to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> AddResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartner, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> AddResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartner, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementTelecomExpenseManagementPartnersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IDeviceManagementTelecomExpenseManagementPartnersCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementTelecomExpenseManagementPartnersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementTelecomExpenseManagementPartnersCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTelecomExpenseManagementPartnersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTelecomExpenseManagementPartnersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementTelecomExpenseManagementPartnersCollectionResponse>(null, cancellationToken);

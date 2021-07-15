@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="itemActivityStat">The ItemActivityStat to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemActivityStat.</returns>
-        public System.Threading.Tasks.Task<ItemActivityStat> AddAsync(ItemActivityStat itemActivityStat, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<ItemActivityStat> AddAsync(ItemActivityStat itemActivityStat, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="itemActivityStat">The ItemActivityStat to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> AddResponseAsync(ItemActivityStat itemActivityStat, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> AddResponseAsync(ItemActivityStat itemActivityStat, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IItemAnalyticsItemActivityStatsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IItemAnalyticsItemActivityStatsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ItemAnalyticsItemActivityStatsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemAnalyticsItemActivityStatsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ItemAnalyticsItemActivityStatsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ItemAnalyticsItemActivityStatsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ItemAnalyticsItemActivityStatsCollectionResponse>(null, cancellationToken);

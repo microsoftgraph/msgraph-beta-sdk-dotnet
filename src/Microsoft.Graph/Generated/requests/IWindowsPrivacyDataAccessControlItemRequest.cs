@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windowsPrivacyDataAccessControlItemToCreate">The WindowsPrivacyDataAccessControlItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsPrivacyDataAccessControlItem.</returns>
-        System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> CreateAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> CreateAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified WindowsPrivacyDataAccessControlItem using POST and returns a <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windowsPrivacyDataAccessControlItemToCreate">The WindowsPrivacyDataAccessControlItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> CreateResponseAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> CreateResponseAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsPrivacyDataAccessControlItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsPrivacyDataAccessControlItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsPrivacyDataAccessControlItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPrivacyDataAccessControlItem.</returns>
-        System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsPrivacyDataAccessControlItem and returns a <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsPrivacyDataAccessControlItem using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPrivacyDataAccessControlItem.</returns>
-        System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> UpdateAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> UpdateAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsPrivacyDataAccessControlItem using PATCH and returns a <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> UpdateResponseAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> UpdateResponseAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsPrivacyDataAccessControlItem using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windowsPrivacyDataAccessControlItemToUpdate">The WindowsPrivacyDataAccessControlItem object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> PutAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> PutAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsPrivacyDataAccessControlItem using PUT and returns a <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windowsPrivacyDataAccessControlItemToUpdate">The WindowsPrivacyDataAccessControlItem object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> PutResponseAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> PutResponseAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

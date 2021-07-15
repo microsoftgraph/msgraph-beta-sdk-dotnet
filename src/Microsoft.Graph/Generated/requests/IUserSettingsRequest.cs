@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="userSettingsToCreate">The UserSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserSettings.</returns>
-        System.Threading.Tasks.Task<UserSettings> CreateAsync(UserSettings userSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserSettings> CreateAsync(UserSettings userSettingsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified UserSettings using POST and returns a <see cref="GraphResponse{UserSettings}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="userSettingsToCreate">The UserSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserSettings>> CreateResponseAsync(UserSettings userSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserSettings>> CreateResponseAsync(UserSettings userSettingsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserSettings.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserSettings and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserSettings.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserSettings.</returns>
-        System.Threading.Tasks.Task<UserSettings> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserSettings> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserSettings and returns a <see cref="GraphResponse{UserSettings}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserSettings>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserSettings>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserSettings using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserSettings.</returns>
-        System.Threading.Tasks.Task<UserSettings> UpdateAsync(UserSettings userSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserSettings> UpdateAsync(UserSettings userSettingsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserSettings using PATCH and returns a <see cref="GraphResponse{UserSettings}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserSettings>> UpdateResponseAsync(UserSettings userSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserSettings>> UpdateResponseAsync(UserSettings userSettingsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserSettings using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="userSettingsToUpdate">The UserSettings object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<UserSettings> PutAsync(UserSettings userSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserSettings> PutAsync(UserSettings userSettingsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserSettings using PUT and returns a <see cref="GraphResponse{UserSettings}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="userSettingsToUpdate">The UserSettings object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{UserSettings}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserSettings>> PutResponseAsync(UserSettings userSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserSettings>> PutResponseAsync(UserSettings userSettingsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

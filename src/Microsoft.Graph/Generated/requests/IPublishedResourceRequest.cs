@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PublishedResource.</returns>
-        System.Threading.Tasks.Task<PublishedResource> CreateAsync(PublishedResource publishedResourceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PublishedResource> CreateAsync(PublishedResource publishedResourceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified PublishedResource using POST and returns a <see cref="GraphResponse{PublishedResource}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> CreateResponseAsync(PublishedResource publishedResourceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> CreateResponseAsync(PublishedResource publishedResourceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PublishedResource.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PublishedResource and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PublishedResource.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PublishedResource.</returns>
-        System.Threading.Tasks.Task<PublishedResource> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PublishedResource> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PublishedResource and returns a <see cref="GraphResponse{PublishedResource}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PublishedResource using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PublishedResource.</returns>
-        System.Threading.Tasks.Task<PublishedResource> UpdateAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PublishedResource> UpdateAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PublishedResource using PATCH and returns a <see cref="GraphResponse{PublishedResource}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> UpdateResponseAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> UpdateResponseAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PublishedResource using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="publishedResourceToUpdate">The PublishedResource object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<PublishedResource> PutAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PublishedResource> PutAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PublishedResource using PUT and returns a <see cref="GraphResponse{PublishedResource}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="publishedResourceToUpdate">The PublishedResource object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{PublishedResource}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> PutResponseAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> PutResponseAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

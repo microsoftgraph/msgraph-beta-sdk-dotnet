@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="policySet">The PolicySet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicySet.</returns>
-        System.Threading.Tasks.Task<PolicySet> AddAsync(PolicySet policySet, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PolicySet> AddAsync(PolicySet policySet, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified PolicySet to the collection via POST and returns a <see cref="GraphResponse{PolicySet}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="policySet">The PolicySet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicySet>> AddResponseAsync(PolicySet policySet, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PolicySet>> AddResponseAsync(PolicySet policySet, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementPolicySetsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDeviceAppManagementPolicySetsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementPolicySetsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementPolicySetsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementPolicySetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementPolicySetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

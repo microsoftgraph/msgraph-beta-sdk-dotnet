@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="phoneAuthenticationMethodToCreate">The PhoneAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PhoneAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<PhoneAuthenticationMethod> CreateAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PhoneAuthenticationMethod> CreateAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified PhoneAuthenticationMethod using POST and returns a <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="phoneAuthenticationMethodToCreate">The PhoneAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> CreateResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> CreateResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PhoneAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PhoneAuthenticationMethod and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PhoneAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PhoneAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<PhoneAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PhoneAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PhoneAuthenticationMethod and returns a <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PhoneAuthenticationMethod using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PhoneAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<PhoneAuthenticationMethod> UpdateAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PhoneAuthenticationMethod> UpdateAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PhoneAuthenticationMethod using PATCH and returns a <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> UpdateResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> UpdateResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PhoneAuthenticationMethod using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="phoneAuthenticationMethodToUpdate">The PhoneAuthenticationMethod object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<PhoneAuthenticationMethod> PutAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PhoneAuthenticationMethod> PutAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PhoneAuthenticationMethod using PUT and returns a <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="phoneAuthenticationMethodToUpdate">The PhoneAuthenticationMethod object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{PhoneAuthenticationMethod}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> PutResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> PutResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

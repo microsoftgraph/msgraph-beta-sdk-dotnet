@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windowsHealthMonitoringConfigurationToCreate">The WindowsHealthMonitoringConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsHealthMonitoringConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> CreateAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> CreateAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified WindowsHealthMonitoringConfiguration using POST and returns a <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windowsHealthMonitoringConfigurationToCreate">The WindowsHealthMonitoringConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsHealthMonitoringConfiguration>> CreateResponseAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsHealthMonitoringConfiguration>> CreateResponseAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsHealthMonitoringConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsHealthMonitoringConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsHealthMonitoringConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsHealthMonitoringConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsHealthMonitoringConfiguration and returns a <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsHealthMonitoringConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsHealthMonitoringConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsHealthMonitoringConfiguration using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsHealthMonitoringConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> UpdateAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> UpdateAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsHealthMonitoringConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsHealthMonitoringConfiguration>> UpdateResponseAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsHealthMonitoringConfiguration>> UpdateResponseAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsHealthMonitoringConfiguration using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windowsHealthMonitoringConfigurationToUpdate">The WindowsHealthMonitoringConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> PutAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> PutAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsHealthMonitoringConfiguration using PUT and returns a <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windowsHealthMonitoringConfigurationToUpdate">The WindowsHealthMonitoringConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsHealthMonitoringConfiguration>> PutResponseAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsHealthMonitoringConfiguration>> PutResponseAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

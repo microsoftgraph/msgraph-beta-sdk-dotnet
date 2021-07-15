@@ -26,7 +26,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="catalogToCreate">The Catalog to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Catalog.</returns>
-        System.Threading.Tasks.Task<Catalog> CreateAsync(Catalog catalogToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Catalog> CreateAsync(Catalog catalogToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Catalog using POST and returns a <see cref="GraphResponse{Catalog}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="catalogToCreate">The Catalog to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Catalog}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Catalog>> CreateResponseAsync(Catalog catalogToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Catalog>> CreateResponseAsync(Catalog catalogToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Catalog.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Catalog and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Catalog.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Catalog.</returns>
-        System.Threading.Tasks.Task<Catalog> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Catalog> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Catalog and returns a <see cref="GraphResponse{Catalog}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Catalog}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Catalog>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Catalog>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Catalog using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Catalog.</returns>
-        System.Threading.Tasks.Task<Catalog> UpdateAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Catalog> UpdateAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Catalog using PATCH and returns a <see cref="GraphResponse{Catalog}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Catalog}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Catalog>> UpdateResponseAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Catalog>> UpdateResponseAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Catalog using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="catalogToUpdate">The Catalog object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Catalog> PutAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Catalog> PutAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Catalog using PUT and returns a <see cref="GraphResponse{Catalog}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="catalogToUpdate">The Catalog object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Catalog}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Catalog>> PutResponseAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Catalog>> PutResponseAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

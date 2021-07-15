@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToCreate">The UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> CreateAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> CreateAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToCreate">The UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>> CreateResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>> CreateResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> UpdateAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> UpdateAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>> UpdateResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>> UpdateResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToUpdate">The UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> PutAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> PutAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToUpdate">The UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>> PutResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>> PutResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

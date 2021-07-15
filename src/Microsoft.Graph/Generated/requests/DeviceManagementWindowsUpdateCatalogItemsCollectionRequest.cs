@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="windowsUpdateCatalogItem">The WindowsUpdateCatalogItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsUpdateCatalogItem.</returns>
-        public System.Threading.Tasks.Task<WindowsUpdateCatalogItem> AddAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<WindowsUpdateCatalogItem> AddAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="windowsUpdateCatalogItem">The WindowsUpdateCatalogItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsUpdateCatalogItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsUpdateCatalogItem>> AddResponseAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsUpdateCatalogItem>> AddResponseAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementWindowsUpdateCatalogItemsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IDeviceManagementWindowsUpdateCatalogItemsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementWindowsUpdateCatalogItemsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsUpdateCatalogItemsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsUpdateCatalogItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsUpdateCatalogItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementWindowsUpdateCatalogItemsCollectionResponse>(null, cancellationToken);

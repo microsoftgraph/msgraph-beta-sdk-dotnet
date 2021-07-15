@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="accessReviewHistoryDefinition">The AccessReviewHistoryDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewHistoryDefinition.</returns>
-        public System.Threading.Tasks.Task<AccessReviewHistoryDefinition> AddAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinition, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<AccessReviewHistoryDefinition> AddAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinition, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="accessReviewHistoryDefinition">The AccessReviewHistoryDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessReviewHistoryDefinition}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> AddResponseAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinition, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> AddResponseAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinition, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAccessReviewSetHistoryDefinitionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IAccessReviewSetHistoryDefinitionsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AccessReviewSetHistoryDefinitionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessReviewSetHistoryDefinitionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessReviewSetHistoryDefinitionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewSetHistoryDefinitionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<AccessReviewSetHistoryDefinitionsCollectionResponse>(null, cancellationToken);

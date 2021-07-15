@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="referenceAttachmentToCreate">The ReferenceAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ReferenceAttachment.</returns>
-        System.Threading.Tasks.Task<ReferenceAttachment> CreateAsync(ReferenceAttachment referenceAttachmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ReferenceAttachment> CreateAsync(ReferenceAttachment referenceAttachmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ReferenceAttachment using POST and returns a <see cref="GraphResponse{ReferenceAttachment}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="referenceAttachmentToCreate">The ReferenceAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReferenceAttachment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> CreateResponseAsync(ReferenceAttachment referenceAttachmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> CreateResponseAsync(ReferenceAttachment referenceAttachmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ReferenceAttachment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ReferenceAttachment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ReferenceAttachment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ReferenceAttachment.</returns>
-        System.Threading.Tasks.Task<ReferenceAttachment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ReferenceAttachment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ReferenceAttachment and returns a <see cref="GraphResponse{ReferenceAttachment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReferenceAttachment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ReferenceAttachment using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ReferenceAttachment.</returns>
-        System.Threading.Tasks.Task<ReferenceAttachment> UpdateAsync(ReferenceAttachment referenceAttachmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ReferenceAttachment> UpdateAsync(ReferenceAttachment referenceAttachmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ReferenceAttachment using PATCH and returns a <see cref="GraphResponse{ReferenceAttachment}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ReferenceAttachment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> UpdateResponseAsync(ReferenceAttachment referenceAttachmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> UpdateResponseAsync(ReferenceAttachment referenceAttachmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ReferenceAttachment using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="referenceAttachmentToUpdate">The ReferenceAttachment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ReferenceAttachment> PutAsync(ReferenceAttachment referenceAttachmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ReferenceAttachment> PutAsync(ReferenceAttachment referenceAttachmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ReferenceAttachment using PUT and returns a <see cref="GraphResponse{ReferenceAttachment}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="referenceAttachmentToUpdate">The ReferenceAttachment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ReferenceAttachment}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> PutResponseAsync(ReferenceAttachment referenceAttachmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> PutResponseAsync(ReferenceAttachment referenceAttachmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

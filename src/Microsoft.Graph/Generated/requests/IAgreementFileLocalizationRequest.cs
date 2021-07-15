@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="agreementFileLocalizationToCreate">The AgreementFileLocalization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementFileLocalization.</returns>
-        System.Threading.Tasks.Task<AgreementFileLocalization> CreateAsync(AgreementFileLocalization agreementFileLocalizationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AgreementFileLocalization> CreateAsync(AgreementFileLocalization agreementFileLocalizationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified AgreementFileLocalization using POST and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="agreementFileLocalizationToCreate">The AgreementFileLocalization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> CreateResponseAsync(AgreementFileLocalization agreementFileLocalizationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> CreateResponseAsync(AgreementFileLocalization agreementFileLocalizationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AgreementFileLocalization.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AgreementFileLocalization and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AgreementFileLocalization.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AgreementFileLocalization.</returns>
-        System.Threading.Tasks.Task<AgreementFileLocalization> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AgreementFileLocalization> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AgreementFileLocalization and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AgreementFileLocalization using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AgreementFileLocalization.</returns>
-        System.Threading.Tasks.Task<AgreementFileLocalization> UpdateAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AgreementFileLocalization> UpdateAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AgreementFileLocalization using PATCH and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> UpdateResponseAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> UpdateResponseAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AgreementFileLocalization using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="agreementFileLocalizationToUpdate">The AgreementFileLocalization object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<AgreementFileLocalization> PutAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AgreementFileLocalization> PutAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AgreementFileLocalization using PUT and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="agreementFileLocalizationToUpdate">The AgreementFileLocalization object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{AgreementFileLocalization}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> PutResponseAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> PutResponseAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="listToCreate">The List to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created List.</returns>
-        System.Threading.Tasks.Task<List> CreateAsync(List listToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<List> CreateAsync(List listToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified List using POST and returns a <see cref="GraphResponse{List}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="listToCreate">The List to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{List}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<List>> CreateResponseAsync(List listToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<List>> CreateResponseAsync(List listToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified List.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified List and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified List.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The List.</returns>
-        System.Threading.Tasks.Task<List> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<List> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified List and returns a <see cref="GraphResponse{List}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{List}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<List>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<List>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified List using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated List.</returns>
-        System.Threading.Tasks.Task<List> UpdateAsync(List listToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<List> UpdateAsync(List listToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified List using PATCH and returns a <see cref="GraphResponse{List}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{List}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<List>> UpdateResponseAsync(List listToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<List>> UpdateResponseAsync(List listToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified List using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="listToUpdate">The List object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<List> PutAsync(List listToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<List> PutAsync(List listToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified List using PUT and returns a <see cref="GraphResponse{List}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="listToUpdate">The List object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{List}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<List>> PutResponseAsync(List listToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<List>> PutResponseAsync(List listToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

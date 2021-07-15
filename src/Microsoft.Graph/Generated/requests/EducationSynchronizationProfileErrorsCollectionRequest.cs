@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="educationSynchronizationError">The EducationSynchronizationError to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationSynchronizationError.</returns>
-        public System.Threading.Tasks.Task<EducationSynchronizationError> AddAsync(EducationSynchronizationError educationSynchronizationError, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<EducationSynchronizationError> AddAsync(EducationSynchronizationError educationSynchronizationError, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="educationSynchronizationError">The EducationSynchronizationError to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> AddResponseAsync(EducationSynchronizationError educationSynchronizationError, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> AddResponseAsync(EducationSynchronizationError educationSynchronizationError, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IEducationSynchronizationProfileErrorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IEducationSynchronizationProfileErrorsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<EducationSynchronizationProfileErrorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfileErrorsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileErrorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileErrorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<EducationSynchronizationProfileErrorsCollectionResponse>(null, cancellationToken);

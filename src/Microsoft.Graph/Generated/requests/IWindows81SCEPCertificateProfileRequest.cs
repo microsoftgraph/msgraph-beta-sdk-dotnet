@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windows81SCEPCertificateProfileToCreate">The Windows81SCEPCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows81SCEPCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> CreateAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> CreateAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Windows81SCEPCertificateProfile using POST and returns a <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windows81SCEPCertificateProfileToCreate">The Windows81SCEPCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> CreateResponseAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> CreateResponseAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows81SCEPCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows81SCEPCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows81SCEPCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows81SCEPCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows81SCEPCertificateProfile and returns a <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows81SCEPCertificateProfile using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows81SCEPCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> UpdateAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> UpdateAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows81SCEPCertificateProfile using PATCH and returns a <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> UpdateResponseAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> UpdateResponseAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows81SCEPCertificateProfile using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windows81SCEPCertificateProfileToUpdate">The Windows81SCEPCertificateProfile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> PutAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> PutAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows81SCEPCertificateProfile using PUT and returns a <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windows81SCEPCertificateProfileToUpdate">The Windows81SCEPCertificateProfile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> PutResponseAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> PutResponseAsync(Windows81SCEPCertificateProfile windows81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="privilegedSignupStatusToCreate">The PrivilegedSignupStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedSignupStatus.</returns>
-        System.Threading.Tasks.Task<PrivilegedSignupStatus> CreateAsync(PrivilegedSignupStatus privilegedSignupStatusToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrivilegedSignupStatus> CreateAsync(PrivilegedSignupStatus privilegedSignupStatusToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified PrivilegedSignupStatus using POST and returns a <see cref="GraphResponse{PrivilegedSignupStatus}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="privilegedSignupStatusToCreate">The PrivilegedSignupStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedSignupStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> CreateResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> CreateResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PrivilegedSignupStatus.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PrivilegedSignupStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PrivilegedSignupStatus.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrivilegedSignupStatus.</returns>
-        System.Threading.Tasks.Task<PrivilegedSignupStatus> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrivilegedSignupStatus> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PrivilegedSignupStatus and returns a <see cref="GraphResponse{PrivilegedSignupStatus}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedSignupStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrivilegedSignupStatus using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrivilegedSignupStatus.</returns>
-        System.Threading.Tasks.Task<PrivilegedSignupStatus> UpdateAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrivilegedSignupStatus> UpdateAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrivilegedSignupStatus using PATCH and returns a <see cref="GraphResponse{PrivilegedSignupStatus}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PrivilegedSignupStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> UpdateResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> UpdateResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrivilegedSignupStatus using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="privilegedSignupStatusToUpdate">The PrivilegedSignupStatus object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<PrivilegedSignupStatus> PutAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrivilegedSignupStatus> PutAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrivilegedSignupStatus using PUT and returns a <see cref="GraphResponse{PrivilegedSignupStatus}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="privilegedSignupStatusToUpdate">The PrivilegedSignupStatus object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{PrivilegedSignupStatus}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> PutResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> PutResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

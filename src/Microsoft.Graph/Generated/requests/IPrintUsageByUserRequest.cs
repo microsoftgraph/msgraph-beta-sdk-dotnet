@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="printUsageByUserToCreate">The PrintUsageByUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintUsageByUser.</returns>
-        System.Threading.Tasks.Task<PrintUsageByUser> CreateAsync(PrintUsageByUser printUsageByUserToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrintUsageByUser> CreateAsync(PrintUsageByUser printUsageByUserToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified PrintUsageByUser using POST and returns a <see cref="GraphResponse{PrintUsageByUser}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="printUsageByUserToCreate">The PrintUsageByUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> CreateResponseAsync(PrintUsageByUser printUsageByUserToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> CreateResponseAsync(PrintUsageByUser printUsageByUserToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PrintUsageByUser.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PrintUsageByUser and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PrintUsageByUser.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrintUsageByUser.</returns>
-        System.Threading.Tasks.Task<PrintUsageByUser> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrintUsageByUser> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PrintUsageByUser and returns a <see cref="GraphResponse{PrintUsageByUser}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrintUsageByUser using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrintUsageByUser.</returns>
-        System.Threading.Tasks.Task<PrintUsageByUser> UpdateAsync(PrintUsageByUser printUsageByUserToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrintUsageByUser> UpdateAsync(PrintUsageByUser printUsageByUserToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrintUsageByUser using PATCH and returns a <see cref="GraphResponse{PrintUsageByUser}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> UpdateResponseAsync(PrintUsageByUser printUsageByUserToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> UpdateResponseAsync(PrintUsageByUser printUsageByUserToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrintUsageByUser using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="printUsageByUserToUpdate">The PrintUsageByUser object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<PrintUsageByUser> PutAsync(PrintUsageByUser printUsageByUserToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrintUsageByUser> PutAsync(PrintUsageByUser printUsageByUserToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrintUsageByUser using PUT and returns a <see cref="GraphResponse{PrintUsageByUser}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="printUsageByUserToUpdate">The PrintUsageByUser object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{PrintUsageByUser}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> PutResponseAsync(PrintUsageByUser printUsageByUserToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> PutResponseAsync(PrintUsageByUser printUsageByUserToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

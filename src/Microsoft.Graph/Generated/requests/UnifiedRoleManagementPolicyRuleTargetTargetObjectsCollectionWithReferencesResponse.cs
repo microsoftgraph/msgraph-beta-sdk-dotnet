@@ -20,7 +20,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IUnifiedRoleManagementPolicyRuleTargetTargetObjectsCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IUnifiedRoleManagementPolicyRuleTargetTargetObjectsCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

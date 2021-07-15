@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="currency">The Currency to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Currency.</returns>
-        System.Threading.Tasks.Task<Currency> AddAsync(Currency currency, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Currency> AddAsync(Currency currency, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified Currency to the collection via POST and returns a <see cref="GraphResponse{Currency}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="currency">The Currency to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Currency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Currency>> AddResponseAsync(Currency currency, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Currency>> AddResponseAsync(Currency currency, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyCurrenciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ICompanyCurrenciesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CompanyCurrenciesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyCurrenciesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanyCurrenciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CompanyCurrenciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

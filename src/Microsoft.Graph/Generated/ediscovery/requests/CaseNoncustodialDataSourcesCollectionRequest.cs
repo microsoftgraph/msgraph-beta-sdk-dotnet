@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="noncustodialDataSource">The NoncustodialDataSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NoncustodialDataSource.</returns>
-        public System.Threading.Tasks.Task<NoncustodialDataSource> AddAsync(NoncustodialDataSource noncustodialDataSource, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<NoncustodialDataSource> AddAsync(NoncustodialDataSource noncustodialDataSource, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="noncustodialDataSource">The NoncustodialDataSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NoncustodialDataSource}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> AddResponseAsync(NoncustodialDataSource noncustodialDataSource, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> AddResponseAsync(NoncustodialDataSource noncustodialDataSource, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICaseNoncustodialDataSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ICaseNoncustodialDataSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CaseNoncustodialDataSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CaseNoncustodialDataSourcesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CaseNoncustodialDataSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<CaseNoncustodialDataSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<CaseNoncustodialDataSourcesCollectionResponse>(null, cancellationToken);

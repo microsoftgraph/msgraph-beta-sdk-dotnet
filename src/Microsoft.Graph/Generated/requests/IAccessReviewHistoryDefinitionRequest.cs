@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="accessReviewHistoryDefinitionToCreate">The AccessReviewHistoryDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewHistoryDefinition.</returns>
-        System.Threading.Tasks.Task<AccessReviewHistoryDefinition> CreateAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AccessReviewHistoryDefinition> CreateAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified AccessReviewHistoryDefinition using POST and returns a <see cref="GraphResponse{AccessReviewHistoryDefinition}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="accessReviewHistoryDefinitionToCreate">The AccessReviewHistoryDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessReviewHistoryDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> CreateResponseAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> CreateResponseAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AccessReviewHistoryDefinition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AccessReviewHistoryDefinition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AccessReviewHistoryDefinition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessReviewHistoryDefinition.</returns>
-        System.Threading.Tasks.Task<AccessReviewHistoryDefinition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AccessReviewHistoryDefinition> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AccessReviewHistoryDefinition and returns a <see cref="GraphResponse{AccessReviewHistoryDefinition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessReviewHistoryDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AccessReviewHistoryDefinition using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessReviewHistoryDefinition.</returns>
-        System.Threading.Tasks.Task<AccessReviewHistoryDefinition> UpdateAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AccessReviewHistoryDefinition> UpdateAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AccessReviewHistoryDefinition using PATCH and returns a <see cref="GraphResponse{AccessReviewHistoryDefinition}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AccessReviewHistoryDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> UpdateResponseAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> UpdateResponseAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AccessReviewHistoryDefinition using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="accessReviewHistoryDefinitionToUpdate">The AccessReviewHistoryDefinition object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<AccessReviewHistoryDefinition> PutAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AccessReviewHistoryDefinition> PutAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AccessReviewHistoryDefinition using PUT and returns a <see cref="GraphResponse{AccessReviewHistoryDefinition}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="accessReviewHistoryDefinitionToUpdate">The AccessReviewHistoryDefinition object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{AccessReviewHistoryDefinition}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> PutResponseAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> PutResponseAsync(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

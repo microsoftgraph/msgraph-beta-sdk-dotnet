@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IStsPolicyAppliesToCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IStsPolicyAppliesToCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

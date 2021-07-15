@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="outlookTaskFolder">The OutlookTaskFolder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookTaskFolder.</returns>
-        System.Threading.Tasks.Task<OutlookTaskFolder> AddAsync(OutlookTaskFolder outlookTaskFolder, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OutlookTaskFolder> AddAsync(OutlookTaskFolder outlookTaskFolder, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified OutlookTaskFolder to the collection via POST and returns a <see cref="GraphResponse{OutlookTaskFolder}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="outlookTaskFolder">The OutlookTaskFolder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookTaskFolder}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookTaskFolder>> AddResponseAsync(OutlookTaskFolder outlookTaskFolder, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OutlookTaskFolder>> AddResponseAsync(OutlookTaskFolder outlookTaskFolder, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOutlookUserTaskFoldersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IOutlookUserTaskFoldersCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OutlookUserTaskFoldersCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookUserTaskFoldersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookUserTaskFoldersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OutlookUserTaskFoldersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

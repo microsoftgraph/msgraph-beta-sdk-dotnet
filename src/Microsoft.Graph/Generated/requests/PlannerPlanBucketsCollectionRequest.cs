@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="plannerBucket">The PlannerBucket to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerBucket.</returns>
-        public System.Threading.Tasks.Task<PlannerBucket> AddAsync(PlannerBucket plannerBucket, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<PlannerBucket> AddAsync(PlannerBucket plannerBucket, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="plannerBucket">The PlannerBucket to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerBucket}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> AddResponseAsync(PlannerBucket plannerBucket, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> AddResponseAsync(PlannerBucket plannerBucket, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPlannerPlanBucketsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IPlannerPlanBucketsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<PlannerPlanBucketsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerPlanBucketsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PlannerPlanBucketsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<PlannerPlanBucketsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<PlannerPlanBucketsCollectionResponse>(null, cancellationToken);

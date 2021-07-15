@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windowsAppXToCreate">The WindowsAppX to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsAppX.</returns>
-        System.Threading.Tasks.Task<WindowsAppX> CreateAsync(WindowsAppX windowsAppXToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsAppX> CreateAsync(WindowsAppX windowsAppXToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified WindowsAppX using POST and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windowsAppXToCreate">The WindowsAppX to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> CreateResponseAsync(WindowsAppX windowsAppXToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> CreateResponseAsync(WindowsAppX windowsAppXToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsAppX.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsAppX and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsAppX.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsAppX.</returns>
-        System.Threading.Tasks.Task<WindowsAppX> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsAppX> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsAppX and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsAppX using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsAppX.</returns>
-        System.Threading.Tasks.Task<WindowsAppX> UpdateAsync(WindowsAppX windowsAppXToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsAppX> UpdateAsync(WindowsAppX windowsAppXToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsAppX using PATCH and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> UpdateResponseAsync(WindowsAppX windowsAppXToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> UpdateResponseAsync(WindowsAppX windowsAppXToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsAppX using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windowsAppXToUpdate">The WindowsAppX object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<WindowsAppX> PutAsync(WindowsAppX windowsAppXToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsAppX> PutAsync(WindowsAppX windowsAppXToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsAppX using PUT and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windowsAppXToUpdate">The WindowsAppX object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{WindowsAppX}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> PutResponseAsync(WindowsAppX windowsAppXToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> PutResponseAsync(WindowsAppX windowsAppXToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

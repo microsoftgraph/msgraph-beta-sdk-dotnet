@@ -26,7 +26,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="tenantCustomizedInformationToCreate">The TenantCustomizedInformation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TenantCustomizedInformation.</returns>
-        System.Threading.Tasks.Task<TenantCustomizedInformation> CreateAsync(TenantCustomizedInformation tenantCustomizedInformationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TenantCustomizedInformation> CreateAsync(TenantCustomizedInformation tenantCustomizedInformationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified TenantCustomizedInformation using POST and returns a <see cref="GraphResponse{TenantCustomizedInformation}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="tenantCustomizedInformationToCreate">The TenantCustomizedInformation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TenantCustomizedInformation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TenantCustomizedInformation>> CreateResponseAsync(TenantCustomizedInformation tenantCustomizedInformationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TenantCustomizedInformation>> CreateResponseAsync(TenantCustomizedInformation tenantCustomizedInformationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TenantCustomizedInformation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TenantCustomizedInformation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TenantCustomizedInformation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TenantCustomizedInformation.</returns>
-        System.Threading.Tasks.Task<TenantCustomizedInformation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TenantCustomizedInformation> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TenantCustomizedInformation and returns a <see cref="GraphResponse{TenantCustomizedInformation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TenantCustomizedInformation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TenantCustomizedInformation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TenantCustomizedInformation>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TenantCustomizedInformation using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TenantCustomizedInformation.</returns>
-        System.Threading.Tasks.Task<TenantCustomizedInformation> UpdateAsync(TenantCustomizedInformation tenantCustomizedInformationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TenantCustomizedInformation> UpdateAsync(TenantCustomizedInformation tenantCustomizedInformationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TenantCustomizedInformation using PATCH and returns a <see cref="GraphResponse{TenantCustomizedInformation}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TenantCustomizedInformation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TenantCustomizedInformation>> UpdateResponseAsync(TenantCustomizedInformation tenantCustomizedInformationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TenantCustomizedInformation>> UpdateResponseAsync(TenantCustomizedInformation tenantCustomizedInformationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TenantCustomizedInformation using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="tenantCustomizedInformationToUpdate">The TenantCustomizedInformation object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<TenantCustomizedInformation> PutAsync(TenantCustomizedInformation tenantCustomizedInformationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TenantCustomizedInformation> PutAsync(TenantCustomizedInformation tenantCustomizedInformationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TenantCustomizedInformation using PUT and returns a <see cref="GraphResponse{TenantCustomizedInformation}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="tenantCustomizedInformationToUpdate">The TenantCustomizedInformation object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{TenantCustomizedInformation}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TenantCustomizedInformation>> PutResponseAsync(TenantCustomizedInformation tenantCustomizedInformationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TenantCustomizedInformation>> PutResponseAsync(TenantCustomizedInformation tenantCustomizedInformationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

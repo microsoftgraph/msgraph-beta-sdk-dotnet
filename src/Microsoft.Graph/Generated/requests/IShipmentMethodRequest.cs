@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="shipmentMethodToCreate">The ShipmentMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ShipmentMethod.</returns>
-        System.Threading.Tasks.Task<ShipmentMethod> CreateAsync(ShipmentMethod shipmentMethodToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ShipmentMethod> CreateAsync(ShipmentMethod shipmentMethodToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ShipmentMethod using POST and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="shipmentMethodToCreate">The ShipmentMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> CreateResponseAsync(ShipmentMethod shipmentMethodToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> CreateResponseAsync(ShipmentMethod shipmentMethodToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ShipmentMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ShipmentMethod and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ShipmentMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ShipmentMethod.</returns>
-        System.Threading.Tasks.Task<ShipmentMethod> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ShipmentMethod> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ShipmentMethod and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ShipmentMethod using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ShipmentMethod.</returns>
-        System.Threading.Tasks.Task<ShipmentMethod> UpdateAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ShipmentMethod> UpdateAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ShipmentMethod using PATCH and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> UpdateResponseAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> UpdateResponseAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ShipmentMethod using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="shipmentMethodToUpdate">The ShipmentMethod object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ShipmentMethod> PutAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ShipmentMethod> PutAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ShipmentMethod using PUT and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="shipmentMethodToUpdate">The ShipmentMethod object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ShipmentMethod}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> PutResponseAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> PutResponseAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

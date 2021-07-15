@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="microsoftTunnelHealthThreshold">The MicrosoftTunnelHealthThreshold to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelHealthThreshold.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> AddAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThreshold, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> AddAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThreshold, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="microsoftTunnelHealthThreshold">The MicrosoftTunnelHealthThreshold to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> AddResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThreshold, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> AddResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThreshold, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelHealthThresholdsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelHealthThresholdsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementMicrosoftTunnelHealthThresholdsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementMicrosoftTunnelHealthThresholdsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelHealthThresholdsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelHealthThresholdsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementMicrosoftTunnelHealthThresholdsCollectionResponse>(null, cancellationToken);

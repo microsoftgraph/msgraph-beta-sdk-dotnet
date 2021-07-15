@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="siteSource">The SiteSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SiteSource.</returns>
-        System.Threading.Tasks.Task<SiteSource> AddAsync(SiteSource siteSource, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SiteSource> AddAsync(SiteSource siteSource, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified SiteSource to the collection via POST and returns a <see cref="GraphResponse{SiteSource}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="siteSource">The SiteSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SiteSource>> AddResponseAsync(SiteSource siteSource, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SiteSource>> AddResponseAsync(SiteSource siteSource, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICustodianSiteSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ICustodianSiteSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CustodianSiteSourcesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CustodianSiteSourcesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CustodianSiteSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CustodianSiteSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

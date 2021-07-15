@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleEligibilityScheduleRequest">The UnifiedRoleEligibilityScheduleRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleEligibilityScheduleRequestObject.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> AddAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequest, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> AddAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequest, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified UnifiedRoleEligibilityScheduleRequestObject to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleRequestObject}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleEligibilityScheduleRequest">The UnifiedRoleEligibilityScheduleRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleRequestObject>> AddResponseAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequest, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleRequestObject>> AddResponseAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequest, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationRoleEligibilityScheduleRequestsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RbacApplicationRoleEligibilityScheduleRequestsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleEligibilityScheduleRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleEligibilityScheduleRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

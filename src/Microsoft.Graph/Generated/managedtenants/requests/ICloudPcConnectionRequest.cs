@@ -26,7 +26,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cloudPcConnectionToCreate">The CloudPcConnection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcConnection.</returns>
-        System.Threading.Tasks.Task<CloudPcConnection> CreateAsync(CloudPcConnection cloudPcConnectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CloudPcConnection> CreateAsync(CloudPcConnection cloudPcConnectionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified CloudPcConnection using POST and returns a <see cref="GraphResponse{CloudPcConnection}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cloudPcConnectionToCreate">The CloudPcConnection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPcConnection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcConnection>> CreateResponseAsync(CloudPcConnection cloudPcConnectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPcConnection>> CreateResponseAsync(CloudPcConnection cloudPcConnectionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CloudPcConnection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CloudPcConnection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CloudPcConnection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CloudPcConnection.</returns>
-        System.Threading.Tasks.Task<CloudPcConnection> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CloudPcConnection> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CloudPcConnection and returns a <see cref="GraphResponse{CloudPcConnection}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPcConnection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcConnection>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPcConnection>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CloudPcConnection using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CloudPcConnection.</returns>
-        System.Threading.Tasks.Task<CloudPcConnection> UpdateAsync(CloudPcConnection cloudPcConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CloudPcConnection> UpdateAsync(CloudPcConnection cloudPcConnectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CloudPcConnection using PATCH and returns a <see cref="GraphResponse{CloudPcConnection}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CloudPcConnection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcConnection>> UpdateResponseAsync(CloudPcConnection cloudPcConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPcConnection>> UpdateResponseAsync(CloudPcConnection cloudPcConnectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CloudPcConnection using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cloudPcConnectionToUpdate">The CloudPcConnection object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<CloudPcConnection> PutAsync(CloudPcConnection cloudPcConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CloudPcConnection> PutAsync(CloudPcConnection cloudPcConnectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CloudPcConnection using PUT and returns a <see cref="GraphResponse{CloudPcConnection}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cloudPcConnectionToUpdate">The CloudPcConnection object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{CloudPcConnection}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcConnection>> PutResponseAsync(CloudPcConnection cloudPcConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPcConnection>> PutResponseAsync(CloudPcConnection cloudPcConnectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

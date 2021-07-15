@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="presence">The Presence to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Presence.</returns>
-        System.Threading.Tasks.Task<Presence> AddAsync(Presence presence, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Presence> AddAsync(Presence presence, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified Presence to the collection via POST and returns a <see cref="GraphResponse{Presence}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="presence">The Presence to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Presence>> AddResponseAsync(Presence presence, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Presence>> AddResponseAsync(Presence presence, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICloudCommunicationsPresencesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ICloudCommunicationsPresencesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CloudCommunicationsPresencesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudCommunicationsPresencesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudCommunicationsPresencesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudCommunicationsPresencesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

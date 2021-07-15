@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="appConsentRequest">The AppConsentRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppConsentRequestObject.</returns>
-        public System.Threading.Tasks.Task<AppConsentRequestObject> AddAsync(AppConsentRequestObject appConsentRequest, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<AppConsentRequestObject> AddAsync(AppConsentRequestObject appConsentRequest, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="appConsentRequest">The AppConsentRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppConsentRequestObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AppConsentRequestObject>> AddResponseAsync(AppConsentRequestObject appConsentRequest, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AppConsentRequestObject>> AddResponseAsync(AppConsentRequestObject appConsentRequest, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserAppConsentRequestsForApprovalCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IUserAppConsentRequestsForApprovalCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UserAppConsentRequestsForApprovalCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserAppConsentRequestsForApprovalCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserAppConsentRequestsForApprovalCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UserAppConsentRequestsForApprovalCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<UserAppConsentRequestsForApprovalCollectionResponse>(null, cancellationToken);

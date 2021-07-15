@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="riskyUserHistoryItem">The RiskyUserHistoryItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RiskyUserHistoryItem.</returns>
-        public System.Threading.Tasks.Task<RiskyUserHistoryItem> AddAsync(RiskyUserHistoryItem riskyUserHistoryItem, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<RiskyUserHistoryItem> AddAsync(RiskyUserHistoryItem riskyUserHistoryItem, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="riskyUserHistoryItem">The RiskyUserHistoryItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RiskyUserHistoryItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryItem>> AddResponseAsync(RiskyUserHistoryItem riskyUserHistoryItem, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryItem>> AddResponseAsync(RiskyUserHistoryItem riskyUserHistoryItem, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IRiskyUserHistoryCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IRiskyUserHistoryCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<RiskyUserHistoryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RiskyUserHistoryCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<RiskyUserHistoryCollectionResponse>(null, cancellationToken);

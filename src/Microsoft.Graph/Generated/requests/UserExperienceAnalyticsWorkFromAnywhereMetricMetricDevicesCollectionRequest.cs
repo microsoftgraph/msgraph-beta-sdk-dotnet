@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsWorkFromAnywhereDevice">The UserExperienceAnalyticsWorkFromAnywhereDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsWorkFromAnywhereDevice.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereDevice> AddAsync(UserExperienceAnalyticsWorkFromAnywhereDevice userExperienceAnalyticsWorkFromAnywhereDevice, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereDevice> AddAsync(UserExperienceAnalyticsWorkFromAnywhereDevice userExperienceAnalyticsWorkFromAnywhereDevice, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsWorkFromAnywhereDevice">The UserExperienceAnalyticsWorkFromAnywhereDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereDevice}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereDevice>> AddResponseAsync(UserExperienceAnalyticsWorkFromAnywhereDevice userExperienceAnalyticsWorkFromAnywhereDevice, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereDevice>> AddResponseAsync(UserExperienceAnalyticsWorkFromAnywhereDevice userExperienceAnalyticsWorkFromAnywhereDevice, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IUserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionResponse>(null, cancellationToken);

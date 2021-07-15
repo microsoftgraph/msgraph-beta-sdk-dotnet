@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="appScope">The AppScope to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppScope.</returns>
-        System.Threading.Tasks.Task<AppScope> AddAsync(AppScope appScope, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AppScope> AddAsync(AppScope appScope, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified AppScope to the collection via POST and returns a <see cref="GraphResponse{AppScope}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="appScope">The AppScope to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppScope}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppScope>> AddResponseAsync(AppScope appScope, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AppScope>> AddResponseAsync(AppScope appScope, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUnifiedRoleAssignmentMultipleAppScopesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IUnifiedRoleAssignmentMultipleAppScopesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultipleAppScopesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultipleAppScopesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultipleAppScopesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultipleAppScopesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

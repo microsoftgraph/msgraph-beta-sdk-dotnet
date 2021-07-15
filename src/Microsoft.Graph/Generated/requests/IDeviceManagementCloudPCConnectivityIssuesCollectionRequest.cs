@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="cloudPCConnectivityIssue">The CloudPCConnectivityIssue to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPCConnectivityIssue.</returns>
-        System.Threading.Tasks.Task<CloudPCConnectivityIssue> AddAsync(CloudPCConnectivityIssue cloudPCConnectivityIssue, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CloudPCConnectivityIssue> AddAsync(CloudPCConnectivityIssue cloudPCConnectivityIssue, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified CloudPCConnectivityIssue to the collection via POST and returns a <see cref="GraphResponse{CloudPCConnectivityIssue}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="cloudPCConnectivityIssue">The CloudPCConnectivityIssue to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPCConnectivityIssue}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPCConnectivityIssue>> AddResponseAsync(CloudPCConnectivityIssue cloudPCConnectivityIssue, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPCConnectivityIssue>> AddResponseAsync(CloudPCConnectivityIssue cloudPCConnectivityIssue, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementCloudPCConnectivityIssuesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDeviceManagementCloudPCConnectivityIssuesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementCloudPCConnectivityIssuesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementCloudPCConnectivityIssuesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCloudPCConnectivityIssuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCloudPCConnectivityIssuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

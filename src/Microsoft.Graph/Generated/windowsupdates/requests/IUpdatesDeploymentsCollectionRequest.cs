@@ -26,7 +26,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="deployment">The Deployment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Deployment.</returns>
-        System.Threading.Tasks.Task<Deployment> AddAsync(Deployment deployment, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Deployment> AddAsync(Deployment deployment, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified Deployment to the collection via POST and returns a <see cref="GraphResponse{Deployment}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="deployment">The Deployment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Deployment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Deployment>> AddResponseAsync(Deployment deployment, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Deployment>> AddResponseAsync(Deployment deployment, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUpdatesDeploymentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IUpdatesDeploymentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UpdatesDeploymentsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UpdatesDeploymentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UpdatesDeploymentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UpdatesDeploymentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

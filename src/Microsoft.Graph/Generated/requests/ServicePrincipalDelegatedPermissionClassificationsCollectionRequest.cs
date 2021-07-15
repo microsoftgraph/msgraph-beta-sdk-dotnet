@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="delegatedPermissionClassification">The DelegatedPermissionClassification to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DelegatedPermissionClassification.</returns>
-        public System.Threading.Tasks.Task<DelegatedPermissionClassification> AddAsync(DelegatedPermissionClassification delegatedPermissionClassification, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<DelegatedPermissionClassification> AddAsync(DelegatedPermissionClassification delegatedPermissionClassification, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="delegatedPermissionClassification">The DelegatedPermissionClassification to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> AddResponseAsync(DelegatedPermissionClassification delegatedPermissionClassification, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> AddResponseAsync(DelegatedPermissionClassification delegatedPermissionClassification, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IServicePrincipalDelegatedPermissionClassificationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IServicePrincipalDelegatedPermissionClassificationsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ServicePrincipalDelegatedPermissionClassificationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ServicePrincipalDelegatedPermissionClassificationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ServicePrincipalDelegatedPermissionClassificationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ServicePrincipalDelegatedPermissionClassificationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ServicePrincipalDelegatedPermissionClassificationsCollectionResponse>(null, cancellationToken);

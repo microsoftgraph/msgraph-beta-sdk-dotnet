@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="sensitivityLabelToCreate">The SensitivityLabel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SensitivityLabel.</returns>
-        System.Threading.Tasks.Task<SensitivityLabel> CreateAsync(SensitivityLabel sensitivityLabelToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SensitivityLabel> CreateAsync(SensitivityLabel sensitivityLabelToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified SensitivityLabel using POST and returns a <see cref="GraphResponse{SensitivityLabel}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="sensitivityLabelToCreate">The SensitivityLabel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SensitivityLabel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> CreateResponseAsync(SensitivityLabel sensitivityLabelToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> CreateResponseAsync(SensitivityLabel sensitivityLabelToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SensitivityLabel.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SensitivityLabel and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SensitivityLabel.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SensitivityLabel.</returns>
-        System.Threading.Tasks.Task<SensitivityLabel> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SensitivityLabel> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SensitivityLabel and returns a <see cref="GraphResponse{SensitivityLabel}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SensitivityLabel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SensitivityLabel using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SensitivityLabel.</returns>
-        System.Threading.Tasks.Task<SensitivityLabel> UpdateAsync(SensitivityLabel sensitivityLabelToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SensitivityLabel> UpdateAsync(SensitivityLabel sensitivityLabelToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SensitivityLabel using PATCH and returns a <see cref="GraphResponse{SensitivityLabel}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SensitivityLabel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> UpdateResponseAsync(SensitivityLabel sensitivityLabelToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> UpdateResponseAsync(SensitivityLabel sensitivityLabelToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SensitivityLabel using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="sensitivityLabelToUpdate">The SensitivityLabel object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<SensitivityLabel> PutAsync(SensitivityLabel sensitivityLabelToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SensitivityLabel> PutAsync(SensitivityLabel sensitivityLabelToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SensitivityLabel using PUT and returns a <see cref="GraphResponse{SensitivityLabel}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="sensitivityLabelToUpdate">The SensitivityLabel object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{SensitivityLabel}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> PutResponseAsync(SensitivityLabel sensitivityLabelToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> PutResponseAsync(SensitivityLabel sensitivityLabelToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

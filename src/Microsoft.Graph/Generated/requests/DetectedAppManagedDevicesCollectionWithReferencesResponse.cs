@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDetectedAppManagedDevicesCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDetectedAppManagedDevicesCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

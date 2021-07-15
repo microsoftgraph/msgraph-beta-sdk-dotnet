@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="tokenLifetimePolicy">The TokenLifetimePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TokenLifetimePolicy.</returns>
-        System.Threading.Tasks.Task<TokenLifetimePolicy> AddAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TokenLifetimePolicy> AddAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified TokenLifetimePolicy to the collection via POST and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="tokenLifetimePolicy">The TokenLifetimePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> AddResponseAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> AddResponseAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootTokenLifetimePoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IPolicyRootTokenLifetimePoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootTokenLifetimePoliciesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicyRootTokenLifetimePoliciesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicyRootTokenLifetimePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PolicyRootTokenLifetimePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

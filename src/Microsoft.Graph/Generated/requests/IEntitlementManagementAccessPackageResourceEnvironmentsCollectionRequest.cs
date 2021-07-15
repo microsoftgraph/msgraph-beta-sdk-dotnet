@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="accessPackageResourceEnvironment">The AccessPackageResourceEnvironment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageResourceEnvironment.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceEnvironment> AddAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironment, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AccessPackageResourceEnvironment> AddAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironment, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified AccessPackageResourceEnvironment to the collection via POST and returns a <see cref="GraphResponse{AccessPackageResourceEnvironment}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="accessPackageResourceEnvironment">The AccessPackageResourceEnvironment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageResourceEnvironment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceEnvironment>> AddResponseAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironment, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceEnvironment>> AddResponseAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironment, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEntitlementManagementAccessPackageResourceEnvironmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IEntitlementManagementAccessPackageResourceEnvironmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EntitlementManagementAccessPackageResourceEnvironmentsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EntitlementManagementAccessPackageResourceEnvironmentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EntitlementManagementAccessPackageResourceEnvironmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EntitlementManagementAccessPackageResourceEnvironmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

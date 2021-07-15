@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="synchronizationJob">The SynchronizationJob to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SynchronizationJob.</returns>
-        System.Threading.Tasks.Task<SynchronizationJob> AddAsync(SynchronizationJob synchronizationJob, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SynchronizationJob> AddAsync(SynchronizationJob synchronizationJob, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified SynchronizationJob to the collection via POST and returns a <see cref="GraphResponse{SynchronizationJob}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="synchronizationJob">The SynchronizationJob to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SynchronizationJob}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SynchronizationJob>> AddResponseAsync(SynchronizationJob synchronizationJob, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SynchronizationJob>> AddResponseAsync(SynchronizationJob synchronizationJob, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISynchronizationJobsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ISynchronizationJobsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SynchronizationJobsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SynchronizationJobsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SynchronizationJobsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SynchronizationJobsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="termsOfUseContainerToCreate">The TermsOfUseContainer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TermsOfUseContainer.</returns>
-        System.Threading.Tasks.Task<TermsOfUseContainer> CreateAsync(TermsOfUseContainer termsOfUseContainerToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TermsOfUseContainer> CreateAsync(TermsOfUseContainer termsOfUseContainerToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified TermsOfUseContainer using POST and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="termsOfUseContainerToCreate">The TermsOfUseContainer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> CreateResponseAsync(TermsOfUseContainer termsOfUseContainerToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> CreateResponseAsync(TermsOfUseContainer termsOfUseContainerToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TermsOfUseContainer.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TermsOfUseContainer and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TermsOfUseContainer.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TermsOfUseContainer.</returns>
-        System.Threading.Tasks.Task<TermsOfUseContainer> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TermsOfUseContainer> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TermsOfUseContainer and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TermsOfUseContainer using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TermsOfUseContainer.</returns>
-        System.Threading.Tasks.Task<TermsOfUseContainer> UpdateAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TermsOfUseContainer> UpdateAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TermsOfUseContainer using PATCH and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> UpdateResponseAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> UpdateResponseAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TermsOfUseContainer using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="termsOfUseContainerToUpdate">The TermsOfUseContainer object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<TermsOfUseContainer> PutAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TermsOfUseContainer> PutAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TermsOfUseContainer using PUT and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="termsOfUseContainerToUpdate">The TermsOfUseContainer object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{TermsOfUseContainer}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> PutResponseAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> PutResponseAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="unsupportedGroupPolicyExtensionToCreate">The UnsupportedGroupPolicyExtension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnsupportedGroupPolicyExtension.</returns>
-        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> CreateAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> CreateAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified UnsupportedGroupPolicyExtension using POST and returns a <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="unsupportedGroupPolicyExtensionToCreate">The UnsupportedGroupPolicyExtension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> CreateResponseAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> CreateResponseAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UnsupportedGroupPolicyExtension.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UnsupportedGroupPolicyExtension and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UnsupportedGroupPolicyExtension.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnsupportedGroupPolicyExtension.</returns>
-        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UnsupportedGroupPolicyExtension and returns a <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnsupportedGroupPolicyExtension using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnsupportedGroupPolicyExtension.</returns>
-        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> UpdateAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> UpdateAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnsupportedGroupPolicyExtension using PATCH and returns a <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> UpdateResponseAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> UpdateResponseAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnsupportedGroupPolicyExtension using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="unsupportedGroupPolicyExtensionToUpdate">The UnsupportedGroupPolicyExtension object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> PutAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> PutAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnsupportedGroupPolicyExtension using PUT and returns a <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="unsupportedGroupPolicyExtensionToUpdate">The UnsupportedGroupPolicyExtension object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> PutResponseAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> PutResponseAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtensionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

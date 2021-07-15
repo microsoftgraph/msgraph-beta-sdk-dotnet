@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windows81TrustedRootCertificateToCreate">The Windows81TrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows81TrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> CreateAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> CreateAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Windows81TrustedRootCertificate using POST and returns a <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windows81TrustedRootCertificateToCreate">The Windows81TrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> CreateResponseAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> CreateResponseAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows81TrustedRootCertificate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows81TrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows81TrustedRootCertificate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows81TrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows81TrustedRootCertificate and returns a <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows81TrustedRootCertificate using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows81TrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> UpdateAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> UpdateAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows81TrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> UpdateResponseAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> UpdateResponseAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows81TrustedRootCertificate using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windows81TrustedRootCertificateToUpdate">The Windows81TrustedRootCertificate object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> PutAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> PutAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows81TrustedRootCertificate using PUT and returns a <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windows81TrustedRootCertificateToUpdate">The Windows81TrustedRootCertificate object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> PutResponseAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> PutResponseAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

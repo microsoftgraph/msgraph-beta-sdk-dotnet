@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IB2cIdentityUserFlowUserFlowIdentityProvidersCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IB2cIdentityUserFlowUserFlowIdentityProvidersCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>
